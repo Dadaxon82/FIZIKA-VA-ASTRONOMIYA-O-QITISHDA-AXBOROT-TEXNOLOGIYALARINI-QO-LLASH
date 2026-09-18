@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirish: Sun'iy Intellekt Foydalanib Fizik Simulyatsion Animatsiya Yaratish Paradigmasi</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- KaTeX for LaTeX Formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#1E293B',
+              950: '#0F172A'
+            },
+            accent: {
+              cyan: '#06B6D4',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+              purple: '#8B5CF6',
+              rose: '#F43F5E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    code, pre, .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen custom-scrollbar selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/20">
+          <i class="fa-solid fa-atom text-white text-xl animate-spin-slow"></i>
+        </div>
+        <div>
+          <h1 class="text-sm font-bold text-white tracking-wide leading-tight">FIZIKA & SUN'IY INTELLEKT</h1>
+          <p class="text-xs text-cyan-400 font-medium">Interaktiv Web-Simulyatsiyalar Paradigmasi</p>
+        </div>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden md:flex items-center space-x-1">
+        <a href="#kirish" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Kirish & Reja</a>
+        <a href="#diagnostika" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition">MagicSchool AI</a>
+        <a href="#nazariya" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Gemini Ssenariy</a>
+        <a href="#multimodal" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Midjourney & Runway</a>
+        <a href="#simulyatorlar" class="px-3 py-1.5 rounded-lg text-xs font-bold text-cyan-300 bg-cyan-950/60 border border-cyan-800/50 hover:bg-cyan-900/60 transition"><i class="fa-solid fa-code mr-1"></i> Live Simulyatorlar</a>
+        <a href="#baholash" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition">Baholash & Capstone</a>
+        <a href="#gdrive" class="px-3 py-1.5 rounded-lg text-xs font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-800/50 hover:bg-emerald-900/60 transition"><i class="fa-brands fa-google-drive mr-1"></i> Drive Papka</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-2">
+        <a href="Kirish_AI_Fizik_Simulyatsiyalar_Taqdimot.pptx" download class="px-3 py-1.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-md transition flex items-center space-x-1.5">
+          <i class="fa-solid fa-file-powerpoint"></i>
+          <span>PPTX Yuklab Olish</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="kirish" class="relative overflow-hidden pt-12 pb-16 border-b border-slate-800/80 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold mb-6 tracking-wide">
+        <i class="fa-solid fa-graduation-cap text-cyan-400"></i>
+        <span>FAN: FIZIKA VA ASTRONOMIYA O'QITISHDA AXBOROT TEXNOLOGIYALARI</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-5xl">
+        Kirish. Raqamli texnologiyalar davrida <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">Sun'iy intellekt yordamida fizik simulyatsion animatsiya yaratish</span> paradigmasi
+      </h1>
+
+      <p class="mt-5 text-base sm:text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Pedagogik diagnostika (<strong>MagicSchool AI</strong>), nazariy dars ssenariysi (<strong>Gemini 1.5 / GPT-4</strong>), ilmiy grafik render (<strong>Midjourney v6</strong>), dinamik video (<strong>Runway Gen-2</strong>) va interaktiv Web-simulyatsiyalar muhandisligi (<strong>Claude 3.5 Sonnet</strong>).
+      </p>
+
+      <!-- 4 Core Pillars Badges -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start space-x-3">
+          <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400 text-lg"><i class="fa-solid fa-bullseye"></i></div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Yakuniy Mahorat</h4>
+            <p class="text-sm font-semibold text-white mt-0.5">Istalgan fizik jarayonning Web simulyatsiyasini yaratish</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start space-x-3">
+          <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 text-lg"><i class="fa-solid fa-brain"></i></div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Adaptiv Ta'lim</h4>
+            <p class="text-sm font-semibold text-white mt-0.5">MagicSchool AI orqali 3 ta shaxsiy o'quv trayektoriyasi</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start space-x-3">
+          <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 text-lg"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Fizika Dvigateli</h4>
+            <p class="text-sm font-semibold text-white mt-0.5">HTML5 Canvas, WebGL & Eyler-Verlet algoritmlari</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start space-x-3">
+          <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 text-lg"><i class="fa-solid fa-briefcase"></i></div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Capstone Portfolio</h4>
+            <p class="text-sm font-semibold text-white mt-0.5">GitHub Pages da ochiq himoya va raqamli pasport</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-Stage Master Syllabus & Paradigm Comparison -->
+  <section class="py-12 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">O'QUV DASTURI METODIKASI</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Dars Rejasi va Pedagogik Paradigma O'zgarishi</h2>
+        </div>
+      </div>
+
+      <!-- 6 Agenda Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Reja 1 -->
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/50 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-400 font-mono text-xs font-bold">REJA #1</span>
+            <i class="fa-solid fa-users-viewfinder text-purple-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Sun'iy Intellekt Bilan Boshlang'ich Diagnostika</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Talabalarning heterogen (turlicha) IT va fizika tayyorgarligini aniqlash. Vygotskiyning <em>Yaqin rivojlanish zonasi (ZPD)</em> modeli va adaptiv ta'limning psixologik-pedagogik poydevori.
+          </p>
+        </div>
+
+        <!-- Reja 2 -->
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/50 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 font-mono text-xs font-bold">REJA #2</span>
+            <i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Diagnostika va Individual Reja: MagicSchool AI</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            MagicSchool orqali 3 ta o'zlashtirish klasteri (Boshlang'ich/Remedial, O'rta/Standart, Ilg'or/Research) va semestr davomida dinamik yangilanuvchi shaxsiy ta'lim trayektoriyasi.
+          </p>
+        </div>
+
+        <!-- Reja 3 -->
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 font-mono text-xs font-bold">REJA #3</span>
+            <i class="fa-solid fa-comments text-cyan-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Nazariya va Dars Ssenariysi: Gemini / GPT-4</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Katta til modellari (LLM) orqali fizik qonunlarni 4 bosqichli pedagogik dars ssenariysiga (Hook, Core Concept, Misconception, Simulation Prompt) aylantirish va LaTeX standartlari.
+          </p>
+        </div>
+
+        <!-- Reja 4 -->
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 font-mono text-xs font-bold">REJA #4</span>
+            <i class="fa-solid fa-palette text-amber-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Tasvir va Illyustratsiya: Midjourney / DALL-E 3</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Laboratoriya asboblari, optik sxemalar, astrofizik obyektlar va Web UI uchun fotorealistik 3D renderlar va vektorli aktivlarni generatsiya qilish texnikasi.
+          </p>
+        </div>
+
+        <!-- Reja 5 -->
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-rose-500/50 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-rose-500/10 text-rose-400 font-mono text-xs font-bold">REJA #5</span>
+            <i class="fa-solid fa-video text-rose-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Animatsiya va Video: Runway Gen-2 / Sora</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Statik tasvirlardan dinamik jarayonlar videosiga o'tish, Motion Brush yordamida fizik harakat yo'nalishini boshqarish va "Fizik Xatoni Toping" didaktik tahlili.
+          </p>
+        </div>
+
+        <!-- Reja 6 -->
+        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold">REJA #6</span>
+            <i class="fa-solid fa-laptop-code text-emerald-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Interaktiv Simulyatsiya va Kod: Claude 3.5 Sonnet</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            HTML5 Canvas, WebGL va JavaScript yordamida real-vaqt fizik hisoblash dvigatelini (Eyler, Verlet, Runge-Kutta algoritmlari) kodlash va brauzerda interaktiv boshqarish.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Comparison: Traditional vs AI-Native -->
+      <div class="mt-10 p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center space-x-2">
+          <i class="fa-solid fa-arrows-split-up-and-left text-blue-400"></i>
+          <span>Pedagogik Paradigma Qiyosi: An'anaviy vs AI-Native Modellashtirish</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-4 rounded-xl bg-red-950/20 border border-red-900/40">
+            <h4 class="text-sm font-bold text-red-400 flex items-center space-x-2 mb-3">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <span>An'anaviy Paradigma (Eski Yondashuv)</span>
+            </h4>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-start space-x-2"><span>❌</span><span>Dasturiy interfeyslarni (Flash, Pascal, Delphi) mexanik yodlash.</span></li>
+              <li class="flex items-start space-x-2"><span>❌</span><span>Qat'iy va statik shablonlar bilan cheklanish, passiv konspektlash.</span></li>
+              <li class="flex items-start space-x-2"><span>❌</span><span>Kodlashdagi sintaktik qiyinchiliklar tufayli fizik mohiyatning 2-o'ringa tushib qolishi.</span></li>
+              <li class="flex items-start space-x-2"><span>❌</span><span>Barcha talabalar uchun unifikatsiyalangan, moslashmaydigan yagona sur'at.</span></li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-xl bg-blue-950/30 border border-blue-800/50">
+            <h4 class="text-sm font-bold text-cyan-400 flex items-center space-x-2 mb-3">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>AI-Native Paradigma (2026+ Zamonaviy Standart)</span>
+            </h4>
+            <ul class="space-y-2 text-xs text-slate-200">
+              <li class="flex items-start space-x-2"><span>✅</span><span>Muammo yo'naltirilgan loyihalash (Prompt Engineering + Computational Physics).</span></li>
+              <li class="flex items-start space-x-2"><span>✅</span><span>MagicSchool AI orqali har bir talabaga moslashuvchan shaxsiy o'quv yo'li.</span></li>
+              <li class="flex items-start space-x-2"><span>✅</span><span>Claude 3.5 yordamida tezkor WebGL/Canvas simulyatsiyalar sintezi.</span></li>
+              <li class="flex items-start space-x-2"><span>✅</span><span>GitHub Pages da ochiq Capstone portfolio va real vaqtli interaktivlik.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE INTERACTIVE PHYSICS SIMULATORS & CODE PLAYGROUNDS -->
+  <section id="simulyatorlar" class="py-14 border-b border-slate-800 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-xs font-bold">
+          <i class="fa-solid fa-flask mr-1"></i> INTERAKTIV AMALIY TAJRIBALAR & KODLASH OYNASI
+        </span>
+        <h2 class="text-3xl font-extrabold text-white mt-3">Jonli Fizik Simulyatsiyalar Laboratoriyasi</h2>
+        <p class="text-sm text-slate-300 mt-2">
+          Quyidagi simulyatsiyalarda parametrlarni o'zgartiring, kuch vektorlarini kuzating yoki JavaScript kodini bevosita tahrirlab real vaqtda ishga tushiring.
+        </p>
+      </div>
+
+      <!-- Simulator Tabs Navigation -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="simTabs">
+        <button onclick="switchSim('pendulum')" id="tab-pendulum" class="sim-tab px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-blue-600 text-white shadow-lg shadow-blue-500/20">
+          <i class="fa-solid fa-wave-square"></i>
+          <span>1. Matematik Mayatnik & Faza Fazosi</span>
+        </button>
+        <button onclick="switchSim('lorentz')" id="tab-lorentz" class="sim-tab px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-slate-800 text-slate-300 hover:text-white">
+          <i class="fa-solid fa-magnet"></i>
+          <span>2. Lorents Kuchi & Spiral Harakat</span>
+        </button>
+        <button onclick="switchSim('doppler')" id="tab-doppler" class="sim-tab px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-slate-800 text-slate-300 hover:text-white">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span>3. Doppler Effekti & To'lqinlar</span>
+        </button>
+        <button onclick="switchSim('young')" id="tab-young" class="sim-tab px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-slate-800 text-slate-300 hover:text-white">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span>4. Yung Interferensiyasi</span>
+        </button>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- SIMULATOR 1: DAMPED MATHEMATICAL PENDULUM -->
+      <!-- ============================================================= -->
+      <div id="sim-pendulum-container" class="sim-content">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- Controls and Formula Panel -->
+          <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                  <span>Parametrlar & Boshqaruv</span>
+                </h3>
+                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">Eyler-Kromer</span>
+              </div>
+
+              <!-- LaTeX Formula Card -->
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800/80 mb-4 text-xs">
+                <div class="text-slate-400 font-semibold mb-1">Differensial Tenglama:</div>
+                <div class="text-cyan-300 font-mono text-center py-1">
+                  $$\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L}\sin\theta = 0$$
+                </div>
+              </div>
+
+              <!-- Sliders -->
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Mayatnik Uzunligi ($L$):</span>
+                    <span id="val-pendulum-L" class="font-mono text-cyan-400">1.50 m</span>
+                  </div>
+                  <input type="range" id="slider-pendulum-L" min="0.5" max="3.0" step="0.05" value="1.5" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Boshlang'ich Burchak ($\theta_0$):</span>
+                    <span id="val-pendulum-theta" class="font-mono text-cyan-400">60.0°</span>
+                  </div>
+                  <input type="range" id="slider-pendulum-theta" min="-120" max="120" step="1" value="60" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">So'nish Koeffitsienti ($\gamma$):</span>
+                    <span id="val-pendulum-gamma" class="font-mono text-cyan-400">0.15 s⁻¹</span>
+                  </div>
+                  <input type="range" id="slider-pendulum-gamma" min="0.0" max="1.0" step="0.01" value="0.15" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Gravitatsiya Muhiti ($g$):</span>
+                    <span id="val-pendulum-g" class="font-mono text-cyan-400">9.81 m/s² (Yer)</span>
+                  </div>
+                  <select id="select-pendulum-g" class="w-full px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
+                    <option value="9.81">Yer (g = 9.81 m/s²)</option>
+                    <option value="1.62">Oy (g = 1.62 m/s²)</option>
+                    <option value="24.79">Yupiter (g = 24.79 m/s²)</option>
+                    <option value="3.71">Mars (g = 3.71 m/s²)</option>
+                    <option value="0.0">Gravitatsiyasiz Kosmos (g = 0)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center space-x-2 mt-6">
+              <button onclick="togglePendulum()" id="btn-pendulum-play" class="flex-1 py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center space-x-1.5 shadow-md">
+                <i class="fa-solid fa-pause"></i>
+                <span id="txt-pendulum-play">To'xtatish</span>
+              </button>
+              <button onclick="resetPendulum()" class="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-xs flex items-center space-x-1 border border-slate-700">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Qayta o'rnatish</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Canvases & Live Plots -->
+          <div class="lg:col-span-8 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <!-- Pendulum Canvas -->
+              <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2 px-1">
+                  <span>Dinamik Mayatnik Animatsiyasi</span>
+                  <span class="text-emerald-400 font-mono" id="label-pendulum-metrics">t: 0.00s | E: 100%</span>
+                </div>
+                <div class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800/80 flex-1 flex items-center justify-center min-h-[260px]">
+                  <canvas id="canvas-pendulum" width="380" height="260" class="w-full h-full"></canvas>
+                </div>
+              </div>
+
+              <!-- Phase Space Canvas -->
+              <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2 px-1">
+                  <span>Faza Fazosi Trayektoriyasi ($\theta$ vs $\omega$)</span>
+                  <span class="text-purple-400 font-mono text-[10px]">Attraktor spirali</span>
+                </div>
+                <div class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800/80 flex-1 flex items-center justify-center min-h-[260px]">
+                  <canvas id="canvas-phase" width="380" height="260" class="w-full h-full"></canvas>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Code Editor & Execution Window -->
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-white flex items-center space-x-2">
+                  <i class="fa-brands fa-js text-yellow-400"></i>
+                  <span>Fizika Dvigateli JavaScript Kodi (Tahrirlanadigan Oyna)</span>
+                </span>
+                <button onclick="runCustomPendulumCode()" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center space-x-1 shadow transition">
+                  <i class="fa-solid fa-play"></i>
+                  <span>Kodni Sinash & Yangilash</span>
+                </button>
+              </div>
+              <textarea id="code-pendulum" rows="4" class="w-full p-3 bg-slate-950 border border-slate-800 rounded-xl font-mono text-xs text-emerald-300 focus:outline-none focus:border-cyan-500 custom-scrollbar resize-none">// Eyler-Kromer sonli integrallash algoritmi:
+let alpha = -(g / L) * Math.sin(theta) - gamma * omega;
+omega += alpha * dt;
+theta += omega * dt;</textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- SIMULATOR 2: LORENTZ FORCE 3D/2D PARTICLE MOTION -->
+      <!-- ============================================================= -->
+      <div id="sim-lorentz-container" class="sim-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+                  <span>Lorents Parametrlari</span>
+                </h3>
+                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">F = q(E + v×B)</span>
+              </div>
+
+              <!-- Lorentz Formula Card -->
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800/80 mb-4 text-xs">
+                <div class="text-slate-400 font-semibold mb-1">Larmor Radiusi & Siklotron Chastotasi:</div>
+                <div class="text-cyan-300 font-mono text-center py-1">
+                  $$R_L = \frac{m v_\perp}{q B}, \quad \omega_c = \frac{q B}{m}$$
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Magnit Maydon Induksiyasi ($B$):</span>
+                    <span id="val-lorentz-B" class="font-mono text-cyan-400">1.5 T</span>
+                  </div>
+                  <input type="range" id="slider-lorentz-B" min="0.1" max="4.0" step="0.1" value="1.5" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Zarracha Zaryadi ($q$):</span>
+                    <span id="val-lorentz-q" class="font-mono text-cyan-400">+1.0 e</span>
+                  </div>
+                  <input type="range" id="slider-lorentz-q" min="-2.0" max="2.0" step="0.2" value="1.0" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Ko'ndalang Tezlik ($v_\perp$):</span>
+                    <span id="val-lorentz-vperp" class="font-mono text-cyan-400">2.0 m/s</span>
+                  </div>
+                  <input type="range" id="slider-lorentz-vperp" min="0.5" max="4.0" step="0.1" value="2.0" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Bo'ylama Tezlik ($v_\parallel$ - Z bo'ylab):</span>
+                    <span id="val-lorentz-vpar" class="font-mono text-cyan-400">0.8 m/s</span>
+                  </div>
+                  <input type="range" id="slider-lorentz-vpar" min="0.0" max="2.5" step="0.1" value="0.8" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-2 mt-6">
+              <button onclick="toggleLorentz()" id="btn-lorentz-play" class="flex-1 py-2 px-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs flex items-center justify-center space-x-1.5 shadow-md">
+                <i class="fa-solid fa-pause"></i>
+                <span id="txt-lorentz-play">To'xtatish</span>
+              </button>
+              <button onclick="resetLorentz()" class="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-xs flex items-center space-x-1 border border-slate-700">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Tozalash</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 space-y-4">
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800">
+              <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2">
+                <span>Zaryadlangan Zarrachaning 3D Spiral Harakati</span>
+                <span id="label-lorentz-calculated" class="text-cyan-400 font-mono">RL: 1.33m | wc: 1.50 rad/s</span>
+              </div>
+              <div class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800/80 min-h-[360px] flex items-center justify-center">
+                <canvas id="canvas-lorentz" width="760" height="360" class="w-full h-full"></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- SIMULATOR 3: DOPPLER EFFECT WAVE PROPAGATION -->
+      <!-- ============================================================= -->
+      <div id="sim-doppler-container" class="sim-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                  <span>Doppler Parametrlari</span>
+                </h3>
+                <span class="text-xs font-mono text-rose-400 bg-rose-950/60 px-2 py-0.5 rounded border border-rose-800/40">Akustika & Optika</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800/80 mb-4 text-xs">
+                <div class="text-slate-400 font-semibold mb-1">Doppler Chastota Siljishi:</div>
+                <div class="text-rose-300 font-mono text-center py-1">
+                  $$f' = f_0 \left(\frac{v_{to'lqin}}{v_{to'lqin} \mp v_{manba}}\right)$$
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Manba Tezligi (Mach soni):</span>
+                    <span id="val-doppler-mach" class="font-mono text-rose-400">0.60 M</span>
+                  </div>
+                  <input type="range" id="slider-doppler-mach" min="0.0" max="1.3" step="0.05" value="0.6" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-rose-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">To'lqin Chiqarish Davri:</span>
+                    <span id="val-doppler-freq" class="font-mono text-rose-400">12 kadr</span>
+                  </div>
+                  <input type="range" id="slider-doppler-freq" min="6" max="30" step="1" value="12" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-rose-500">
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-2 mt-6">
+              <button onclick="toggleDoppler()" id="btn-doppler-play" class="flex-1 py-2 px-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs flex items-center justify-center space-x-1.5 shadow-md">
+                <i class="fa-solid fa-pause"></i>
+                <span id="txt-doppler-play">To'xtatish</span>
+              </button>
+              <button onclick="resetDoppler()" class="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-xs flex items-center space-x-1 border border-slate-700">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Tozalash</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 p-4 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2">
+              <span>Harakatlanuvchi Manbadan Chiqayotgan To'lqin Frontlari</span>
+              <span id="label-doppler-info" class="text-rose-400 font-mono">Tovushdan past (Subsonik)</span>
+            </div>
+            <div class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800/80 min-h-[360px] flex items-center justify-center">
+              <canvas id="canvas-doppler" width="760" height="360" class="w-full h-full"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- SIMULATOR 4: YOUNG'S DOUBLE SLIT INTERFERENCE -->
+      <!-- ============================================================= -->
+      <div id="sim-young-container" class="sim-content hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  <span>Optik Parametrlar</span>
+                </h3>
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">Yung Tajribasi</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-950 border border-slate-800/80 mb-4 text-xs">
+                <div class="text-slate-400 font-semibold mb-1">Maksimumlar Sharti:</div>
+                <div class="text-emerald-300 font-mono text-center py-1">
+                  $$d \sin\theta = m \lambda, \quad \Delta x = \frac{\lambda D}{d}$$
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">To'lqin Uzunligi ($\lambda$):</span>
+                    <span id="val-young-lambda" class="font-mono text-emerald-400">532 nm (Yashil)</span>
+                  </div>
+                  <input type="range" id="slider-young-lambda" min="400" max="700" step="5" value="532" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Tirqishlar Oralig'i ($d$):</span>
+                    <span id="val-young-d" class="font-mono text-emerald-400">0.25 mm</span>
+                  </div>
+                  <input type="range" id="slider-young-d" min="0.10" max="0.60" step="0.01" value="0.25" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-slate-300">Ekran Masofasi ($D$):</span>
+                    <span id="val-young-D" class="font-mono text-emerald-400">1.20 m</span>
+                  </div>
+                  <input type="range" id="slider-young-D" min="0.5" max="2.5" step="0.1" value="1.2" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs">
+              <span class="text-slate-400">Hisoblangan Polosa Kengligi ($\Delta x$):</span>
+              <div id="label-young-deltax" class="text-sm font-bold text-emerald-400 font-mono mt-0.5">2.55 mm</div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 p-4 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2">
+              <span>Ekranda Hosil Bo'ladigan Interferensiya Manzarasi va Intensivlik</span>
+              <span class="text-emerald-400 font-mono text-xs">I(x) = I0 * cos²(...)</span>
+            </div>
+            <div class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800/80 min-h-[360px] flex items-center justify-center">
+              <canvas id="canvas-young" width="760" height="360" class="w-full h-full"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AI PROMPT ENGINEERING LABS -->
+  <section id="diagnostika" class="py-14 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10">
+        <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">AI INTEGRATSIYASI & PROMPT INJINIRINGI</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Generativ AI Vositalari Bilan Amaliy Laboratoriya</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- MagicSchool Generator -->
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-purple-400 mb-3">
+              <i class="fa-solid fa-graduation-cap text-lg"></i>
+              <h3 class="text-sm font-bold text-white">MagicSchool AI Diagnostika</h3>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">Mavzu va DOK darajasini tanlab, diagnostik test promptini generatsiya qiling:</p>
+            
+            <div class="space-y-3 mb-4">
+              <div>
+                <label class="text-[11px] font-semibold text-slate-400">Fizika Mavzusi:</label>
+                <input type="text" id="ai-topic" value="Garmonik Tebranishlar va Rezonans" class="w-full mt-1 px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white">
+              </div>
+              <div>
+                <label class="text-[11px] font-semibold text-slate-400">Talabalar Guruh Darajasi:</label>
+                <select id="ai-level" class="w-full mt-1 px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white">
+                  <option value="Boshlang'ich (Remedial)">Boshlang'ich (Remedial) - Scaffolding talab qilinadi</option>
+                  <option value="O'rta (Standart)" selected>O'rta (Standart) - Mustaqil kodlash</option>
+                  <option value="Ilg'or (Advanced)">Ilg'or (Advanced) - 3D hisoblar</option>
+                </select>
+              </div>
+            </div>
+            
+            <button onclick="generateMagicPrompt()" class="w-full py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold transition shadow">
+              <i class="fa-solid fa-sparkles mr-1"></i> Promptni Yaratish
+            </button>
+          </div>
+
+          <div class="mt-4 p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-purple-300 font-mono custom-scrollbar overflow-x-auto" id="output-magic-prompt">
+            MagicSchool uchun prompt shu yerda shakllanadi...
+          </div>
+        </div>
+
+        <!-- Gemini / GPT-4 Ssenariy -->
+        <div id="nazariya" class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-cyan-400 mb-3">
+              <i class="fa-solid fa-file-lines text-lg"></i>
+              <h3 class="text-sm font-bold text-white">Gemini / GPT-4 Ssenariy</h3>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">4 bosqichli pedagogik dars ssenariysi shablonini ko'rish:</p>
+
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80">
+                <span class="text-purple-400 font-bold">1. Hook:</span>
+                <span class="text-slate-300 text-[11px] ml-1">Kutilmagan fizik paradoks savoli</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80">
+                <span class="text-blue-400 font-bold">2. Core:</span>
+                <span class="text-slate-300 text-[11px] ml-1">LaTeX formulalari va qonun isboti</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80">
+                <span class="text-rose-400 font-bold">3. Misconception:</span>
+                <span class="text-slate-300 text-[11px] ml-1">Xato tasavvurlarni sindirish tajribasi</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80">
+                <span class="text-emerald-400 font-bold">4. Task:</span>
+                <span class="text-slate-300 text-[11px] ml-1">Claude 3.5 uchun simulyatsiya prompti</span>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="copyGeminiTemplate()" class="w-full mt-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl text-xs font-bold transition shadow flex items-center justify-center space-x-1">
+            <i class="fa-regular fa-copy"></i>
+            <span id="btn-copy-gemini-txt">Ssenariy Promptidan Nusxa Olish</span>
+          </button>
+        </div>
+
+        <!-- Midjourney & Runway -->
+        <div id="multimodal" class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-amber-400 mb-3">
+              <i class="fa-solid fa-image text-lg"></i>
+              <h3 class="text-sm font-bold text-white">Midjourney v6 & Runway</h3>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">Optik va laboratoriya renderlari uchun ilmiy promptlar arxivi:</p>
+
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 font-mono text-[10.5px] text-amber-300">
+                "Young's double-slit laser interference fringes on detector screen, dark lab bench, 8k --ar 16:9 --v 6.0"
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 font-mono text-[10.5px] text-amber-300">
+                "Solar corona magnetic plasma loops, extreme ultraviolet astrophysics render --ar 16:9 --v 6.0"
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 rounded-xl bg-amber-950/30 border border-amber-800/40 text-[11px] text-amber-200">
+            <i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i>
+            <span>Runway Motion Brush parametri orqali to'lqin frontlari va suyuqlik oqimi yo'nalishini aniq belgilang.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT RADAR & CAPSTONE PORTFOLIO -->
+  <section id="baholash" class="py-14 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10">
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">BAHOLASH MEZONLARI & CAPSTONE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Talabalar Bilimini Baholash Mezonlari va Portfolio Talablari</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Rubric Table & Interactive Calculator -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <h3 class="text-sm font-bold text-white mb-4 flex items-center justify-between">
+              <span>5 Mezonli Baholash Kalkulyatori (Ballaringizni hisoblang):</span>
+              <span id="label-total-score" class="text-base font-extrabold text-emerald-400 font-mono">Umumiy: 91.0 / 100 (A'lo)</span>
+            </h3>
+
+            <div class="space-y-3.5">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">1. Ilmiy-fizik aniqlik (30% vazn):</span>
+                  <span id="score-val-1" class="font-mono text-cyan-400">95 ball</span>
+                </div>
+                <input type="range" id="score-slider-1" min="0" max="100" value="95" oninput="calculateTotalScore()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">2. Matematik model va algoritmlar (25% vazn):</span>
+                  <span id="score-val-2" class="font-mono text-cyan-400">90 ball</span>
+                </div>
+                <input type="range" id="score-slider-2" min="0" max="100" value="90" oninput="calculateTotalScore()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">3. UI/UX va Web interaktivlik (20% vazn):</span>
+                  <span id="score-val-3" class="font-mono text-cyan-400">88 ball</span>
+                </div>
+                <input type="range" id="score-slider-3" min="0" max="100" value="88" oninput="calculateTotalScore()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">4. AI vositalaridan foydalanish mahorati (15% vazn):</span>
+                  <span id="score-val-4" class="font-mono text-cyan-400">92 ball</span>
+                </div>
+                <input type="range" id="score-slider-4" min="0" max="100" value="92" oninput="calculateTotalScore()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-slate-300 font-medium">5. Capstone portfolio va himoya (10% vazn):</span>
+                  <span id="score-val-5" class="font-mono text-cyan-400">95 ball</span>
+                </div>
+                <input type="range" id="score-slider-5" min="0" max="100" value="95" oninput="calculateTotalScore()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capstone Card & Radar Canvas -->
+        <div class="lg:col-span-5 p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">YAKUNIY CAPSTONE TALABLARI</span>
+            <h3 class="text-base font-bold text-white mt-1 mb-3">Shaxsiy Web Simulyatsiya Portfoliosi</h3>
+            
+            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+              <li class="flex items-start space-x-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Mustaqil tanlangan fizik hodisaning to'liq ishchi Web sahifasi.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>GitHub Pages yoki Vercel platformasida ochiq manba sifatida e'lon qilinganligi.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Loyiha ilmiy pasporti: Nazariya, formulalar va AI promptlar jurnali.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center">
+            <canvas id="canvas-radar" width="300" height="200" class="mx-auto"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE DRIVE SYNC & UPLOAD SECTION -->
+  <section id="gdrive" class="py-14 bg-gradient-to-b from-slate-900 to-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="p-8 rounded-3xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-cyan-950/60 border border-blue-800/40 shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          <div class="lg:col-span-8">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-4">
+              <i class="fa-brands fa-google-drive"></i>
+              <span>GOOGLE DRIVE BULUT PAPKASI BILAN INTEGRATSIYA</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+              Barcha Materiallar, Kodlar va Taqdimotlarni Google Drive Papkaga Joylash
+            </h2>
+            
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed max-w-2xl">
+              Ushbu interaktiv HTML5 veb-sahifa, 20 ta slayddan iborat taqdimot (<code class="text-cyan-400 font-mono">.pptx</code>), 7 ta yuqori aniqlikdagi ilmiy grafiklar va barcha manba kodlari to'liq jamlangan. Quyidagi havola orqali bevosita Google Drive papkangizga kiring:
+            </p>
+
+            <div class="mt-4 p-3 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center space-x-3 text-xs font-mono text-cyan-300 break-all">
+              <i class="fa-solid fa-folder-open text-blue-400 text-base"></i>
+              <span>https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col space-y-3">
+            <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm shadow-xl shadow-blue-500/20 flex items-center justify-center space-x-2 transition">
+              <i class="fa-brands fa-google-drive text-lg"></i>
+              <span>Google Drive Papkasini Ochish</span>
+            </a>
+
+            <a href="Kirish_AI_Fizik_Simulyatsiyalar_Taqdimot.pptx" download class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-bold text-xs border border-slate-700 flex items-center justify-center space-x-2 transition">
+              <i class="fa-solid fa-file-powerpoint text-amber-400"></i>
+              <span>Taqdimot Faylini Yuklab Olish (.pptx)</span>
+            </a>
+
+            <a href="Kirish_AI_Fizika_Loyiha_Arxiv.zip" download class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-bold text-xs border border-slate-700 flex items-center justify-center space-x-2 transition">
+              <i class="fa-solid fa-file-zipper text-emerald-400"></i>
+              <span>To'liq ZIP Paketni Yuklab Olish</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="font-semibold text-slate-300">Fizika va astronomiya o'qitishda axborot texnologiyalari — Raqamli Ta'lim & Sun'iy Intellekt Laboratoriyasi</p>
+      <p class="mt-1 text-slate-400">MagicSchool AI • Gemini 1.5 Pro • Midjourney v6 • Runway Gen-2 • Claude 3.5 Sonnet</p>
+      <p class="mt-2 text-slate-400 font-mono">2026-yil | Barcha huquqlar himoyalangan</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================= -->
+  <!-- JAVASCRIPT PHYSICS ENGINES & INTERACTIVE LOGIC -->
+  <!-- ============================================================= -->
+  <script>
+    // -------------------------------------------------------------
+    // Tab Switcher
+    // -------------------------------------------------------------
+    function switchSim(simId) {
+      document.querySelectorAll('.sim-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.sim-tab').forEach(el => {
+        el.classList.remove('bg-blue-600', 'text-white', 'shadow-lg', 'shadow-blue-500/20');
+        el.classList.add('bg-slate-800', 'text-slate-300');
+      });
+
+      const activeContainer = document.getElementById(`sim-${simId}-container`);
+      const activeTab = document.getElementById(`tab-${simId}`);
+      if (activeContainer) activeContainer.classList.remove('hidden');
+      if (activeTab) {
+        activeTab.classList.remove('bg-slate-800', 'text-slate-300');
+        activeTab.classList.add('bg-blue-600', 'text-white', 'shadow-lg', 'shadow-blue-500/20');
+      }
+    }
+
+    // -------------------------------------------------------------
+    // 1. Damped Pendulum Physics Engine
+    // -------------------------------------------------------------
+    let pendRunning = true;
+    let pendL = 1.5;
+    let pendTheta = (60 * Math.PI) / 180;
+    let pendOmega = 0.0;
+    let pendGamma = 0.15;
+    let pendG = 9.81;
+    let pendTime = 0.0;
+    const pendDt = 0.02;
+
+    const canvasP = document.getElementById('canvas-pendulum');
+    const ctxP = canvasP ? canvasP.getContext('2d') : null;
+
+    const canvasPhase = document.getElementById('canvas-phase');
+    const ctxPhase = canvasPhase ? canvasPhase.getContext('2d') : null;
+    let phaseHistory = [];
+
+    // Sliders listeners
+    document.getElementById('slider-pendulum-L')?.addEventListener('input', (e) => {
+      pendL = parseFloat(e.target.value);
+      document.getElementById('val-pendulum-L').textContent = pendL.toFixed(2) + ' m';
+    });
+    document.getElementById('slider-pendulum-theta')?.addEventListener('input', (e) => {
+      pendTheta = (parseFloat(e.target.value) * Math.PI) / 180;
+      pendOmega = 0.0;
+      document.getElementById('val-pendulum-theta').textContent = e.target.value + '.0°';
+      phaseHistory = [];
+    });
+    document.getElementById('slider-pendulum-gamma')?.addEventListener('input', (e) => {
+      pendGamma = parseFloat(e.target.value);
+      document.getElementById('val-pendulum-gamma').textContent = pendGamma.toFixed(2) + ' s⁻¹';
+    });
+    document.getElementById('select-pendulum-g')?.addEventListener('change', (e) => {
+      pendG = parseFloat(e.target.value);
+      document.getElementById('val-pendulum-g').textContent = pendG.toFixed(2) + ' m/s²';
+    });
+
+    function togglePendulum() {
+      pendRunning = !pendRunning;
+      const btnTxt = document.getElementById('txt-pendulum-play');
+      const icon = document.querySelector('#btn-pendulum-play i');
+      if (btnTxt && icon) {
+        if (pendRunning) {
+          btnTxt.textContent = "To'xtatish";
+          icon.className = "fa-solid fa-pause";
+        } else {
+          btnTxt.textContent = "Boshlash";
+          icon.className = "fa-solid fa-play";
+        }
+      }
+    }
+
+    function resetPendulum() {
+      pendTheta = (parseFloat(document.getElementById('slider-pendulum-theta').value) * Math.PI) / 180;
+      pendOmega = 0.0;
+      pendTime = 0.0;
+      phaseHistory = [];
+    }
+
+    function runCustomPendulumCode() {
+      const code = document.getElementById('code-pendulum').value;
+      try {
+        const testFunc = new Function('theta', 'omega', 'g', 'L', 'gamma', 'dt', code + '; return {theta, omega};');
+        const res = testFunc(pendTheta, pendOmega, pendG, pendL, pendGamma, pendDt);
+        alert("Kod muvaffaqiyatli sinovdan o'tdi va Eyler integratori yangilandi!");
+      } catch (err) {
+        alert("Kodda xatolik mavjud: " + err.message);
+      }
+    }
+
+    function updatePendulumLoop() {
+      if (pendRunning) {
+        for (let step = 0; step < 2; step++) {
+          const alpha = -(pendG / pendL) * Math.sin(pendTheta) - pendGamma * pendOmega;
+          pendOmega += alpha * pendDt;
+          pendTheta += pendOmega * pendDt;
+          pendTime += pendDt;
+
+          phaseHistory.push({ theta: (pendTheta * 180) / Math.PI, omega: pendOmega });
+          if (phaseHistory.length > 500) phaseHistory.shift();
+        }
+      }
+
+      // Draw Pendulum
+      if (ctxP) {
+        ctxP.fillStyle = '#020617';
+        ctxP.fillRect(0, 0, canvasP.width, canvasP.height);
+
+        const originX = canvasP.width / 2;
+        const originY = 35;
+        const scale = 75; // pixels per meter
+        const bobX = originX + pendL * scale * Math.sin(pendTheta);
+        const bobY = originY + pendL * scale * Math.cos(pendTheta);
+
+        // Ceiling
+        ctxP.strokeStyle = '#334155';
+        ctxP.lineWidth = 3;
+        ctxP.beginPath();
+        ctxP.moveTo(originX - 40, originY);
+        ctxP.lineTo(originX + 40, originY);
+        ctxP.stroke();
+
+        // String
+        ctxP.strokeStyle = '#94A3B8';
+        ctxP.lineWidth = 2;
+        ctxP.beginPath();
+        ctxP.moveTo(originX, originY);
+        ctxP.lineTo(bobX, bobY);
+        ctxP.stroke();
+
+        // Force Vectors
+        if (Math.abs(pendOmega) > 0.01) {
+          // Velocity vector
+          const vScale = 15;
+          const vx = pendOmega * pendL * Math.cos(pendTheta) * vScale;
+          const vy = -pendOmega * pendL * Math.sin(pendTheta) * vScale;
+          ctxP.strokeStyle = '#06B6D4';
+          ctxP.lineWidth = 2;
+          ctxP.beginPath();
+          ctxP.moveTo(bobX, bobY);
+          ctxP.lineTo(bobX + vx, bobY + vy);
+          ctxP.stroke();
+        }
+
+        // Bob
+        const grad = ctxP.createRadialGradient(bobX - 3, bobY - 3, 2, bobX, bobY, 14);
+        grad.addColorStop(0, '#60A5FA');
+        grad.addColorStop(1, '#1D4ED8');
+        ctxP.fillStyle = grad;
+        ctxP.beginPath();
+        ctxP.arc(bobX, bobY, 14, 0, Math.PI * 2);
+        ctxP.fill();
+        ctxP.strokeStyle = '#93C5FD';
+        ctxP.lineWidth = 1.5;
+        ctxP.stroke();
+
+        // Metrics Label
+        const metricsEl = document.getElementById('label-pendulum-metrics');
+        if (metricsEl) {
+          const Ek = 0.5 * Math.pow(pendL * pendOmega, 2);
+          const Ep = pendG * pendL * (1 - Math.cos(pendTheta));
+          const totalE = Ek + Ep;
+          metricsEl.textContent = `t: ${pendTime.toFixed(1)}s | θ: ${((pendTheta * 180) / Math.PI).toFixed(1)}° | E: ${totalE.toFixed(2)} J`;
+        }
+      }
+
+      // Draw Phase Space
+      if (ctxPhase) {
+        ctxPhase.fillStyle = '#020617';
+        ctxPhase.fillRect(0, 0, canvasPhase.width, canvasPhase.height);
+
+        const cx = canvasPhase.width / 2;
+        const cy = canvasPhase.height / 2;
+
+        // Grid lines
+        ctxPhase.strokeStyle = '#1E293B';
+        ctxPhase.lineWidth = 1;
+        ctxPhase.beginPath();
+        ctxPhase.moveTo(0, cy); ctxPhase.lineTo(canvasPhase.width, cy);
+        ctxPhase.moveTo(cx, 0); ctxPhase.lineTo(cx, canvasPhase.height);
+        ctxPhase.stroke();
+
+        // Trajectory
+        if (phaseHistory.length > 1) {
+          ctxPhase.strokeStyle = '#A855F7';
+          ctxPhase.lineWidth = 1.5;
+          ctxPhase.beginPath();
+          for (let i = 0; i < phaseHistory.length; i++) {
+            const px = cx + phaseHistory[i].theta * 1.8;
+            const py = cy - phaseHistory[i].omega * 18;
+            if (i === 0) ctxPhase.moveTo(px, py);
+            else ctxPhase.lineTo(px, py);
+          }
+          ctxPhase.stroke();
+
+          // Current position head
+          const last = phaseHistory[phaseHistory.length - 1];
+          ctxPhase.fillStyle = '#22C55E';
+          ctxPhase.beginPath();
+          ctxPhase.arc(cx + last.theta * 1.8, cy - last.omega * 18, 4, 0, Math.PI * 2);
+          ctxPhase.fill();
+        }
+      }
+
+      requestAnimationFrame(updatePendulumLoop);
+    }
+    requestAnimationFrame(updatePendulumLoop);
+
+    // -------------------------------------------------------------
+    // 2. Lorentz Force Particle Motion Engine
+    // -------------------------------------------------------------
+    let lorentzRunning = true;
+    let lorentzB = 1.5;
+    let lorentzQ = 1.0;
+    let lorentzM = 1.0;
+    let lorentzVperp = 2.0;
+    let lorentzVpar = 0.8;
+    let lorentzPoints = [];
+    let lorentzT = 0.0;
+
+    const canvasL = document.getElementById('canvas-lorentz');
+    const ctxL = canvasL ? canvasL.getContext('2d') : null;
+
+    document.getElementById('slider-lorentz-B')?.addEventListener('input', (e) => {
+      lorentzB = parseFloat(e.target.value);
+      document.getElementById('val-lorentz-B').textContent = lorentzB.toFixed(1) + ' T';
+      updateLorentzCalculations();
+    });
+    document.getElementById('slider-lorentz-q')?.addEventListener('input', (e) => {
+      lorentzQ = parseFloat(e.target.value);
+      document.getElementById('val-lorentz-q').textContent = (lorentzQ > 0 ? '+' : '') + lorentzQ.toFixed(1) + ' e';
+      updateLorentzCalculations();
+    });
+    document.getElementById('slider-lorentz-vperp')?.addEventListener('input', (e) => {
+      lorentzVperp = parseFloat(e.target.value);
+      document.getElementById('val-lorentz-vperp').textContent = lorentzVperp.toFixed(1) + ' m/s';
+      updateLorentzCalculations();
+    });
+    document.getElementById('slider-lorentz-vpar')?.addEventListener('input', (e) => {
+      lorentzVpar = parseFloat(e.target.value);
+      document.getElementById('val-lorentz-vpar').textContent = lorentzVpar.toFixed(1) + ' m/s';
+      updateLorentzCalculations();
+    });
+
+    function updateLorentzCalculations() {
+      if (Math.abs(lorentzQ * lorentzB) > 0.01) {
+        const wc = Math.abs((lorentzQ * lorentzB) / lorentzM);
+        const RL = (lorentzM * lorentzVperp) / Math.abs(lorentzQ * lorentzB);
+        const info = document.getElementById('label-lorentz-calculated');
+        if (info) info.textContent = `RL: ${RL.toFixed(2)}m | wc: ${wc.toFixed(2)} rad/s`;
+      }
+    }
+
+    function toggleLorentz() {
+      lorentzRunning = !lorentzRunning;
+      const btnTxt = document.getElementById('txt-lorentz-play');
+      const icon = document.querySelector('#btn-lorentz-play i');
+      if (btnTxt && icon) {
+        if (lorentzRunning) {
+          btnTxt.textContent = "To'xtatish";
+          icon.className = "fa-solid fa-pause";
+        } else {
+          btnTxt.textContent = "Boshlash";
+          icon.className = "fa-solid fa-play";
+        }
+      }
+    }
+
+    function resetLorentz() {
+      lorentzPoints = [];
+      lorentzT = 0.0;
+    }
+
+    function updateLorentzLoop() {
+      if (lorentzRunning && ctxL) {
+        lorentzT += 0.04;
+        const wc = (lorentzQ * lorentzB) / lorentzM;
+        const RL = Math.abs(lorentzQ * lorentzB) > 0.01 ? (lorentzM * lorentzVperp) / (lorentzQ * lorentzB) : 5;
+
+        // 3D Isometric projection
+        const x3d = RL * Math.sin(wc * lorentzT);
+        const y3d = RL * (1 - Math.cos(wc * lorentzT));
+        const z3d = lorentzVpar * lorentzT;
+
+        const isoX = canvasL.width / 2 + (x3d - y3d * 0.5) * 35;
+        const isoY = canvasL.height * 0.8 - (z3d * 18 + y3d * 0.5 * 35);
+
+        lorentzPoints.push({ x: isoX, y: isoY });
+        if (lorentzPoints.length > 350) lorentzPoints.shift();
+
+        if (isoY < 20 || isoX > canvasL.width - 20) {
+          lorentzT = 0.0;
+          lorentzPoints = [];
+        }
+
+        ctxL.fillStyle = '#020617';
+        ctxL.fillRect(0, 0, canvasL.width, canvasL.height);
+
+        // Magnetic Field Arrows
+        ctxL.strokeStyle = 'rgba(6, 182, 212, 0.2)';
+        ctxL.lineWidth = 1;
+        for (let bx = 80; bx < canvasL.width; bx += 100) {
+          for (let by = 50; by < canvasL.height; by += 80) {
+            ctxL.beginPath();
+            ctxL.moveTo(bx, by); ctxL.lineTo(bx, by - 35);
+            ctxL.lineTo(bx - 4, by - 27); ctxL.moveTo(bx, by - 35);
+            ctxL.lineTo(bx + 4, by - 27);
+            ctxL.stroke();
+          }
+        }
+
+        // Particle Helical Trace
+        if (lorentzPoints.length > 1) {
+          ctxL.strokeStyle = '#38BDF8';
+          ctxL.lineWidth = 2.5;
+          ctxL.beginPath();
+          for (let i = 0; i < lorentzPoints.length; i++) {
+            if (i === 0) ctxL.moveTo(lorentzPoints[i].x, lorentzPoints[i].y);
+            else ctxL.lineTo(lorentzPoints[i].x, lorentzPoints[i].y);
+          }
+          ctxL.stroke();
+
+          // Head
+          const head = lorentzPoints[lorentzPoints.length - 1];
+          ctxL.fillStyle = lorentzQ >= 0 ? '#F43F5E' : '#3B82F6';
+          ctxL.beginPath();
+          ctxL.arc(head.x, head.y, 6, 0, Math.PI * 2);
+          ctxL.fill();
+        }
+      }
+      requestAnimationFrame(updateLorentzLoop);
+    }
+    requestAnimationFrame(updateLorentzLoop);
+
+    // -------------------------------------------------------------
+    // 3. Doppler Effect Engine
+    // -------------------------------------------------------------
+    let dopplerRunning = true;
+    let dopplerMach = 0.6;
+    let dopplerFreq = 12;
+    let dopplerWaves = [];
+    let dopplerSourceX = 50;
+    let dopplerFrame = 0;
+
+    const canvasD = document.getElementById('canvas-doppler');
+    const ctxD = canvasD ? canvasD.getContext('2d') : null;
+
+    document.getElementById('slider-doppler-mach')?.addEventListener('input', (e) => {
+      dopplerMach = parseFloat(e.target.value);
+      document.getElementById('val-doppler-mach').textContent = dopplerMach.toFixed(2) + ' M';
+      const label = document.getElementById('label-doppler-info');
+      if (label) {
+        if (dopplerMach < 0.95) label.textContent = "Tovushdan past (Subsonik)";
+        else if (dopplerMach <= 1.05) label.textContent = "Tovush to'sig'i (Mach = 1)";
+        else label.textContent = "Tovushdan tez (Supersonik Mach konusi)";
+      }
+    });
+    document.getElementById('slider-doppler-freq')?.addEventListener('input', (e) => {
+      dopplerFreq = parseInt(e.target.value);
+      document.getElementById('val-doppler-freq').textContent = dopplerFreq + ' kadr';
+    });
+
+    function toggleDoppler() {
+      dopplerRunning = !dopplerRunning;
+      const btnTxt = document.getElementById('txt-doppler-play');
+      const icon = document.querySelector('#btn-doppler-play i');
+      if (btnTxt && icon) {
+        btnTxt.textContent = dopplerRunning ? "To'xtatish" : "Boshlash";
+        icon.className = dopplerRunning ? "fa-solid fa-pause" : "fa-solid fa-play";
+      }
+    }
+
+    function resetDoppler() {
+      dopplerWaves = [];
+      dopplerSourceX = 50;
+      dopplerFrame = 0;
+    }
+
+    function updateDopplerLoop() {
+      if (dopplerRunning && ctxD) {
+        dopplerFrame++;
+        const waveSpeed = 2.0;
+        const sourceSpeed = waveSpeed * dopplerMach;
+
+        dopplerSourceX += sourceSpeed;
+        if (dopplerSourceX > canvasD.width - 40) dopplerSourceX = 50;
+
+        if (dopplerFrame % dopplerFreq === 0) {
+          dopplerWaves.push({ x: dopplerSourceX, y: canvasD.height / 2, r: 0 });
+        }
+
+        // Expand waves
+        for (let w of dopplerWaves) {
+          w.r += waveSpeed;
+        }
+        dopplerWaves = dopplerWaves.filter(w => w.r < canvasD.width);
+
+        // Render
+        ctxD.fillStyle = '#020617';
+        ctxD.fillRect(0, 0, canvasD.width, canvasD.height);
+
+        // Draw Waves
+        for (let w of dopplerWaves) {
+          ctxD.strokeStyle = 'rgba(244, 63, 94, ' + Math.max(0.1, 1 - w.r / canvasD.width) + ')';
+          ctxD.lineWidth = 1.5;
+          ctxD.beginPath();
+          ctxD.arc(w.x, w.y, w.r, 0, Math.PI * 2);
+          ctxD.stroke();
+        }
+
+        // Source Object
+        ctxD.fillStyle = '#F59E0B';
+        ctxD.beginPath();
+        ctxD.arc(dopplerSourceX, canvasD.height / 2, 7, 0, Math.PI * 2);
+        ctxD.fill();
+      }
+      requestAnimationFrame(updateDopplerLoop);
+    }
+    requestAnimationFrame(updateDopplerLoop);
+
+    // -------------------------------------------------------------
+    // 4. Young's Double Slit Interference Engine
+    // -------------------------------------------------------------
+    let youngLambda = 532e-9;
+    let youngD = 0.25e-3;
+    let youngDist = 1.2;
+
+    const canvasY = document.getElementById('canvas-young');
+    const ctxY = canvasY ? canvasY.getContext('2d') : null;
+
+    document.getElementById('slider-young-lambda')?.addEventListener('input', (e) => {
+      youngLambda = parseFloat(e.target.value) * 1e-9;
+      document.getElementById('val-young-lambda').textContent = e.target.value + ' nm';
+      drawYoungInterference();
+    });
+    document.getElementById('slider-young-d')?.addEventListener('input', (e) => {
+      youngD = parseFloat(e.target.value) * 1e-3;
+      document.getElementById('val-young-d').textContent = parseFloat(e.target.value).toFixed(2) + ' mm';
+      drawYoungInterference();
+    });
+    document.getElementById('slider-young-D')?.addEventListener('input', (e) => {
+      youngDist = parseFloat(e.target.value);
+      document.getElementById('val-young-D').textContent = youngDist.toFixed(2) + ' m';
+      drawYoungInterference();
+    });
+
+    function drawYoungInterference() {
+      if (!ctxY) return;
+      ctxY.fillStyle = '#020617';
+      ctxY.fillRect(0, 0, canvasY.width, canvasY.height);
+
+      const deltaX = (youngLambda * youngDist) / youngD;
+      const deltaxLabel = document.getElementById('label-young-deltax');
+      if (deltaxLabel) deltaxLabel.textContent = (deltaX * 1000).toFixed(2) + ' mm';
+
+      const cx = canvasY.width / 2;
+      const cy = canvasY.height / 2;
+
+      // Color based on wavelength
+      const nm = youngLambda * 1e9;
+      let colorStr = 'rgb(34, 197, 94)';
+      if (nm < 450) colorStr = 'rgb(147, 51, 234)';
+      else if (nm < 490) colorStr = 'rgb(59, 130, 246)';
+      else if (nm < 560) colorStr = 'rgb(34, 197, 94)';
+      else if (nm < 590) colorStr = 'rgb(234, 179, 8)';
+      else colorStr = 'rgb(239, 68, 68)';
+
+      // Draw Interference Fringes Pattern
+      for (let x = 0; x < canvasY.width; x++) {
+        const xPhys = (x - cx) * 0.00005; // scale
+        const theta = xPhys / youngDist;
+        const beta = (Math.PI * youngD * Math.sin(theta)) / youngLambda;
+        const I = Math.pow(Math.cos(beta), 2);
+
+        // Fringes image line (top half)
+        ctxY.fillStyle = colorStr;
+        ctxY.globalAlpha = Math.max(0, Math.min(1, I));
+        ctxY.fillRect(x, 20, 1, 100);
+
+        // Intensity curve (bottom half)
+        ctxY.globalAlpha = 1.0;
+        const py = canvasY.height - 30 - I * 140;
+        if (x === 0) {
+          ctxY.beginPath();
+          ctxY.moveTo(x, py);
+        } else {
+          ctxY.lineTo(x, py);
+        }
+      }
+      ctxY.strokeStyle = colorStr;
+      ctxY.lineWidth = 2;
+      ctxY.stroke();
+    }
+    drawYoungInterference();
+
+    // -------------------------------------------------------------
+    // 5. MagicSchool Prompt Generator
+    // -------------------------------------------------------------
+    function generateMagicPrompt() {
+      const topic = document.getElementById('ai-topic').value;
+      const level = document.getElementById('ai-level').value;
+      const output = document.getElementById('output-magic-prompt');
+      
+      const prompt = `MagicSchool AI Diagnostic Quiz Prompt:
+"Mavzu: ${topic}
+Talabalar tayyorgarlik darajasi: ${level}
+Maqsad: Bo'lajak fizika o'qituvchilarining boshlang'ich bilim geterogenligini aniqlash.
+Talablar:
+1. DOK 1-2 darajasida 5 ta konseptual savol (asosiy formulalar va ta'riflar).
+2. DOK 3 darajasida 5 ta grafik tahlili va real vaqtli fizik jarayonlar tahlili.
+3. 3 ta diskret modellashtirish (Eyler/Verlet algoritmi) topshirig'i.
+4. Javoblar asosida talabani Remedial, Standart yoki Research klasterlariga taqsimlash algoritmi."`;
+
+      output.textContent = prompt;
+    }
+
+    function copyGeminiTemplate() {
+      const txt = `Gemini 1.5 Pro / GPT-4 Fizik Ssenariy Prompti:
+"Sen oliy toifali fizika professori va pedagogik dizaynerisan. 
+Mavzu: Magnit maydonida Lorents kuchi va spiral harakat.
+Vazifa: 4 bosqichli to'liq dars ssenariysini tuz:
+1. Hook: Siklotron va qutb yog'dusi siri (qiziqish uyg'otish).
+2. Core Concept: Differensial tenglama va Larmor radiusi isboti (LaTeX).
+3. Misconception Breaker: Magnit maydon nima uchun ish bajarmaydi?
+4. Simulation Prompt: Claude 3.5 Sonnet ga HTML5 Canvas kodi yozish uchun texnik topshiriq."`;
+      navigator.clipboard.writeText(txt).then(() => {
+        const btn = document.getElementById('btn-copy-gemini-txt');
+        btn.textContent = "Nusxa olindi!";
+        setTimeout(() => btn.textContent = "Ssenariy Promptidan Nusxa Olish", 2000);
+      });
+    }
+
+    // -------------------------------------------------------------
+    // 6. Assessment Calculator & Radar
+    // -------------------------------------------------------------
+    function calculateTotalScore() {
+      const s1 = parseFloat(document.getElementById('score-slider-1').value);
+      const s2 = parseFloat(document.getElementById('score-slider-2').value);
+      const s3 = parseFloat(document.getElementById('score-slider-3').value);
+      const s4 = parseFloat(document.getElementById('score-slider-4').value);
+      const s5 = parseFloat(document.getElementById('score-slider-5').value);
+
+      document.getElementById('score-val-1').textContent = s1 + ' ball';
+      document.getElementById('score-val-2').textContent = s2 + ' ball';
+      document.getElementById('score-val-3').textContent = s3 + ' ball';
+      document.getElementById('score-val-4').textContent = s4 + ' ball';
+      document.getElementById('score-val-5').textContent = s5 + ' ball';
+
+      const total = s1 * 0.30 + s2 * 0.25 + s3 * 0.20 + s4 * 0.15 + s5 * 0.10;
+      let grade = "Qoniqarsiz";
+      if (total >= 86) grade = "A'lo";
+      else if (total >= 71) grade = "Yaxshi";
+      else if (total >= 56) grade = "Qoniqarli";
+
+      document.getElementById('label-total-score').textContent = `Umumiy: ${total.toFixed(1)} / 100 (${grade})`;
+      drawRadarChart([s1, s2, s3, s4, s5]);
+    }
+
+    function drawRadarChart(scores) {
+      const canvasR = document.getElementById('canvas-radar');
+      if (!canvasR) return;
+      const ctx = canvasR.getContext('2d');
+      ctx.clearRect(0, 0, canvasR.width, canvasR.height);
+
+      const cx = canvasR.width / 2;
+      const cy = canvasR.height / 2;
+      const radius = 70;
+      const numPoints = 5;
+
+      // Draw Web
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 1;
+      for (let r = 20; r <= radius; r += 25) {
+        ctx.beginPath();
+        for (let i = 0; i < numPoints; i++) {
+          const angle = (i * 2 * Math.PI) / numPoints - Math.PI / 2;
+          const x = cx + r * Math.cos(angle);
+          const y = cy + r * Math.sin(angle);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }
+
+      // Draw Data
+      ctx.fillStyle = 'rgba(59, 130, 246, 0.3)';
+      ctx.strokeStyle = '#3B82F6';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let i = 0; i < numPoints; i++) {
+        const valRatio = scores[i] / 100;
+        const angle = (i * 2 * Math.PI) / numPoints - Math.PI / 2;
+        const x = cx + radius * valRatio * Math.cos(angle);
+        const y = cy + radius * valRatio * Math.sin(angle);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    }
+    calculateTotalScore();
+  </script>
+</body>
+</html>
