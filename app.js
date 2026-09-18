@@ -32,6 +32,7 @@
       canvas.height = height * dpr;
     }
     const ctx = canvas.getContext('2d');
+    if (!ctx) return null;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     return { ctx, width, height };
   }
@@ -47,12 +48,12 @@
   switchSimulator('pendulum');
 
   // ---------- Damped nonlinear pendulum ----------
-  // θ¨ = -(g/L)sinθ - γθ˙. RK4 is used for stable, accurate integration.
   const pendulum = { running: true, theta: Math.PI / 3, omega: 0, L: 1.5, g: 9.81, gamma: .15, t: 0, path: [], accumulator: 0, last: performance.now() };
   const pCanvas = $('#canvas-pendulum');
   const phaseCanvas = $('#canvas-phase');
   const p = { L: $('#pend-L'), theta: $('#pend-theta'), gamma: $('#pend-gamma'), g: $('#pend-g'), play: $('#pend-play'), reset: $('#pend-reset') };
   const pendulumDerivative = (theta, omega) => [omega, -(pendulum.g / pendulum.L) * Math.sin(theta) - pendulum.gamma * omega];
+
   function integratePendulum(dt) {
     const [k1t, k1o] = pendulumDerivative(pendulum.theta, pendulum.omega);
     const [k2t, k2o] = pendulumDerivative(pendulum.theta + k1t * dt / 2, pendulum.omega + k1o * dt / 2);
@@ -62,49 +63,105 @@
     pendulum.omega += dt * (k1o + 2 * k2o + 2 * k3o + k4o) / 6;
     pendulum.t += dt;
   }
+
   function updatePendulumLabels() {
     text('#pend-L-value', `${pendulum.L.toFixed(2)} m`);
     text('#pend-theta-value', `${(pendulum.theta * 180 / Math.PI).toFixed(1)}°`);
     text('#pend-gamma-value', `${pendulum.gamma.toFixed(2)} s⁻¹`);
     text('#pend-g-value', `${pendulum.g.toFixed(2)} m/s²`);
   }
+
   function resetPendulum() {
-    pendulum.L = Number(p.L.value); pendulum.theta = Number(p.theta.value) * Math.PI / 180;
-    pendulum.gamma = Number(p.gamma.value); pendulum.g = Number(p.g.value);
-    pendulum.omega = 0; pendulum.t = 0; pendulum.accumulator = 0; pendulum.path = [];
+    pendulum.L = Number(p.L?.value ?? pendulum.L);
+    pendulum.theta = Number(p.theta?.value ?? (pendulum.theta * 180 / Math.PI)) * Math.PI / 180;
+    pendulum.gamma = Number(p.gamma?.value ?? pendulum.gamma);
+    pendulum.g = Number(p.g?.value ?? pendulum.g);
+    pendulum.omega = 0;
+    pendulum.t = 0;
+    pendulum.accumulator = 0;
+    pendulum.path = [];
     updatePendulumLabels();
   }
-  function togglePendulum() { pendulum.running = !pendulum.running; p.play.textContent = pendulum.running ? 'To‘xtatish' : 'Boshlash'; }
+
+  function togglePendulum() {
+    pendulum.running = !pendulum.running;
+    if (p.play) p.play.textContent = pendulum.running ? 'To‘xtatish' : 'Boshlash';
+  }
+
   [p.L, p.theta, p.gamma, p.g].forEach(el => el?.addEventListener('input', resetPendulum));
-  p.play?.addEventListener('click', togglePendulum); p.reset?.addEventListener('click', resetPendulum);
+  p.play?.addEventListener('click', togglePendulum);
+  p.reset?.addEventListener('click', resetPendulum);
 
   function drawPendulum() {
-    const a = canvasContext(pCanvas), ph = canvasContext(phaseCanvas);
-    if (!a || !ph) return;
+    const a = canvasContext(pCanvas);
+    if (!a) return;
+
     const { ctx, width: w, height: h } = a;
     ctx.clearRect(0, 0, w, h);
-    const pivotX = w / 2, pivotY = 28;
+    const pivotX = w / 2;
+    const pivotY = 28;
     const length = Math.min(w * .38, h * .78) * (pendulum.L / 3);
     const bobX = pivotX + Math.sin(pendulum.theta) * length;
     const bobY = pivotY + Math.cos(pendulum.theta) * length;
 
-    ctx.strokeStyle = '#60a5fa'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(pivotX, pivotY); ctx.lineTo(bobX, bobY); ctx.stroke();
-    ctx.fillStyle = '#e0f2fe'; ctx.beginPath(); ctx.arc(pivotX, pivotY, 5, 0, TAU); ctx.fill();
-    const glow = ctx.createRadialGradient(bobX - 3, bobY - 4, 1, bobX, bobY, 17);
-    glow.addColorStop(0, '#fff'); glow.addColorStop(.4, '#22d3ee'); glow.addColorStop(1, '#2563eb');
-    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(bobX, bobY, 14, 0, TAU); ctx.fill();
+    ctx.strokeStyle = '#60a5fa';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(pivotX, pivotY);
+    ctx.lineTo(bobX, bobY);
+    ctx.stroke();
 
-    const pc = ph.ctx, pw = ph.width, phh = ph.height;
-    pc.clearRect(0, 0, pw, phh); pc.strokeStyle = '#24344f'; pc.lineWidth = 1;
-    for (let i = 1; i < 6; i++) { pc.beginPath(); pc.moveTo(i * pw / 6, 0); pc.lineTo(i * pw / 6, phh); pc.moveTo(0, i * phh / 6); pc.lineTo(pw, i * phh / 6); pc.stroke(); }
-    pendulum.path.push([pendulum.theta, pendulum.omega]); if (pendulum.path.length > 500) pendulum.path.shift();
-    pc.beginPath(); pendulum.path.forEach(([x, y], i) => { const px = pw / 2 + x * pw / 2.8; const py = phh / 2 - y * phh / 5; i ? pc.lineTo(px, py) : pc.moveTo(px, py); });
-    pc.strokeStyle = '#a78bfa'; pc.lineWidth = 2; pc.stroke();
+    ctx.fillStyle = '#e0f2fe';
+    ctx.beginPath();
+    ctx.arc(pivotX, pivotY, 5, 0, TAU);
+    ctx.fill();
+
+    const glow = ctx.createRadialGradient(bobX - 3, bobY - 4, 1, bobX, bobY, 17);
+    glow.addColorStop(0, '#fff');
+    glow.addColorStop(.4, '#22d3ee');
+    glow.addColorStop(1, '#2563eb');
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(bobX, bobY, 14, 0, TAU);
+    ctx.fill();
+
+    if (phaseCanvas) {
+      const ph = canvasContext(phaseCanvas);
+      if (ph) {
+        const pc = ph.ctx;
+        const pw = ph.width;
+        const phh = ph.height;
+        pc.clearRect(0, 0, pw, phh);
+        pc.strokeStyle = '#24344f';
+        pc.lineWidth = 1;
+        for (let i = 1; i < 6; i++) {
+          pc.beginPath();
+          pc.moveTo(i * pw / 6, 0);
+          pc.lineTo(i * pw / 6, phh);
+          pc.moveTo(0, i * phh / 6);
+          pc.lineTo(pw, i * phh / 6);
+          pc.stroke();
+        }
+        pendulum.path.push([pendulum.theta, pendulum.omega]);
+        if (pendulum.path.length > 500) pendulum.path.shift();
+
+        pc.beginPath();
+        pendulum.path.forEach(([x, y], i) => {
+          const px = pw / 2 + x * pw / 2.8;
+          const py = phh / 2 - y * phh / 5;
+          if (i === 0) pc.moveTo(px, py);
+          else pc.lineTo(px, py);
+        });
+        pc.strokeStyle = '#a78bfa';
+        pc.lineWidth = 2;
+        pc.stroke();
+      }
+    }
+
     text('#pend-stat', `t ${pendulum.t.toFixed(2)} s · ω ${pendulum.omega.toFixed(2)} rad/s`);
   }
 
   // ---------- Charged particle in uniform B field ----------
-  // For B || z, x(t)=v⊥/ωc sin(ωct), y(t)=v⊥/ωc[cos(ωct)-1], z(t)=v∥t.
   const lorentz = { running: true, B: 1.5, q: 1, vp: 2, vz: .8, t: 0 };
   const lCanvas = $('#canvas-lorentz');
   const l = { B: $('#lorentz-B'), q: $('#lorentz-q'), vp: $('#lorentz-vp'), vz: $('#lorentz-vz'), play: $('#lorentz-play'), reset: $('#lorentz-reset') };
@@ -136,7 +193,6 @@
   }
 
   // ---------- Doppler wavefronts ----------
-  // Each ring is emitted at a known retarded time. Radius = c(t-te), source x = v*t.
   const doppler = { running: true, mach: .6, period: 12, t: 0, emissions: [] };
   const dCanvas = $('#canvas-doppler'); const d = { mach: $('#doppler-mach'), period: $('#doppler-period'), play: $('#doppler-play'), reset: $('#doppler-reset') };
   function updateDoppler() { doppler.mach = Number(d.mach.value); doppler.period = Number(d.period.value); text('#doppler-mach-value', `${doppler.mach.toFixed(2)} M`); text('#doppler-period-value', `${doppler.period} kadr`); text('#doppler-stat', doppler.mach < 1 ? 'Subsonik · c = 1' : doppler.mach < 1.2 ? 'Transonik' : 'Supersonik · Mach cone'); }
@@ -159,7 +215,6 @@
   }
 
   // ---------- Young double-slit ----------
-  // Fringe spacing β = λD/d. Inputs are converted to SI before display in mm.
   const young = { lambda: 532, d: .25, D: 1.2 }; const yCanvas = $('#canvas-young'); const y = { lambda: $('#young-lambda'), d: $('#young-d'), D: $('#young-D') };
   function fringeSpacingMm() { return (young.lambda * 1e-9 * young.D / (young.d * 1e-3)) * 1e3; }
   function updateYoung() { young.lambda = Number(y.lambda.value); young.d = Number(y.d.value); young.D = Number(y.D.value); text('#young-lambda-value', `${young.lambda} nm`); text('#young-d-value', `${young.d.toFixed(2)} mm`); text('#young-D-value', `${young.D.toFixed(2)} m`); text('#young-stat', `β = ${fringeSpacingMm().toFixed(2)} mm`); }
