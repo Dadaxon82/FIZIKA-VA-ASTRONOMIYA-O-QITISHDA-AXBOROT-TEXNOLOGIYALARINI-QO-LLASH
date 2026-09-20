@@ -513,8 +513,8 @@ class KeplerianEngine {
           <canvas id="astronomy-canvas" width="800" height="480" style="display: block; width: 100%; height: auto;"></canvas>
           
           <!-- Live Telemetry Overlay -->
-          <div style="position: absolute; top: 12px; left: 12px; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px); padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid rgba(56, 189, 248, 0.3); font-family: monospace; font-size: 0.82rem; color: #E2E8F0; pointer-events: none;">
-            <div style="color: var(--accent-cyan); font-weight: bold; margin-bottom: 4px;">🛰️ TELEMETRIYA HUD (Oniy Ko'rsatkichlar):</div>
+          <div class="astro-telemetry-hud">
+            <div class="hud-title">🛰️ TELEMETRIYA HUD (Oniy Ko'rsatkichlar):</div>
             <div>Kadr Chastotasi: <span id="astro-stat-fps" style="color: var(--accent-emerald);">60 FPS</span></div>
             <div>Sayyora Masofasi: <span id="astro-stat-dist" style="color: var(--accent-cyan);">1.000 AU (149.6 mln km)</span></div>
             <div>Orbital Tezlik: <span id="astro-stat-vel" style="color: var(--accent-amber);">29.78 km/s</span></div>
