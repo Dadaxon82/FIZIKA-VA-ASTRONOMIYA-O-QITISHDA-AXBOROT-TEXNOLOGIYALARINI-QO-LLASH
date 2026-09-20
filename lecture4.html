@@ -17,8 +17,8 @@
           delimiters: [
             {left: "$$", right: "$$", display: true},
             {left: "$", right: "$", display: false},
-            {left: "\(", right: "\)", display: false},
-            {left: "\[", right: "\]", display: true}
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
           ],
           throwOnError: false
         });
@@ -175,7 +175,7 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo'llanma berilsin.
               <h4 style="color:var(--accent-emerald); margin-bottom:8px;">🎯 Diagnostika Maqsadlari:</h4>
               <ul style="padding-left:18px; line-height:1.8; font-size:0.92rem; color:var(--text-secondary);">
                 <li>Talabaning analitik integrallash bilan sonli diskretlash farqini bilishi;</li>
-                <li>Lokal kesish xatosi ($	ext{LTE} \propto \Delta t^2$) va global xato ($	ext{GTE} \propto \Delta t$) ni ajrata olishi;</li>
+                <li>Lokal kesish xatosi ($\text{LTE} \propto \Delta t^2$) va global xato ($\text{GTE} \propto \Delta t$) ni ajrata olishi;</li>
                 <li>Kompyuter animatsiyasida $\Delta t$ ning 60 FPS kadrlar chastotasi bilan bog'liqligini tushunishi.</li>
               </ul>
             </div>
@@ -199,7 +199,7 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo'llanma berilsin.
 
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:18px;">
             Garmonik tebranishning 2-tartibli differensial tenglamasi $\ddot{x} + \omega_0^2 x = 0$ ni 1-tartibli tenglamalar sistemasiga keltiramiz:
-            $$egin{cases} rac{dx}{dt} = v \ rac{dv}{dt} = -\omega_0^2 x \end{cases}$$
+            $$\begin{cases} \frac{dx}{dt} = v \\ \frac{dv}{dt} = -\omega_0^2 x \end{cases}$$
           </p>
 
           <div class="grid-3" style="margin-bottom:24px;">
@@ -233,7 +233,7 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo'llanma berilsin.
               <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">4-tartibli yuqori aniqlik ($\mathcal{O}(\Delta t^4)$):</p>
               <div style="font-family:monospace; font-size:0.85rem; background:#0F172A; padding:10px; border-radius:6px; color:#F8FAFC;">
                 $k_1, k_2, k_3, k_4$ qiyaliklari<br>
-                $x_{n+1} = x_n + rac{\Delta t}{6}(k_1^x + 2k_2^x + 2k_3^x + k_4^x)$
+                $x_{n+1} = x_n + \frac{\Delta t}{6}(k_1^x + 2k_2^x + 2k_3^x + k_4^x)$
               </div>
               <p style="font-size:0.83rem; color:#BAE6FD; margin-top:10px;">
                 ⭐ <strong>Standart:</strong> Xatolik o'ta kichik ($\sim 10^{-10}$), professional simulyatsiyalarning tayanch dvigateli.
@@ -246,10 +246,10 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo'llanma berilsin.
             <h4 style="color:#FBBF24; margin-bottom:10px;">🧠 Claude 3.5 Sonnet: RK4 Oraliq Qiyaliklarining Fizik Ma'nosi</h4>
             <ul style="line-height:1.8; font-size:0.92rem; color:var(--text-secondary); padding-left:20px;">
               <li><strong>$k_1 = f(t_n, y_n)$</strong>: Interval boshidagi boshlang'ich qiyalik (Klassik Eyler vektori).</li>
-              <li><strong>$k_2 = f(t_n + rac{\Delta t}{2}, y_n + rac{\Delta t}{2} k_1)$</strong>: $k_1$ yordamida oraliq nuqtaga ($\Delta t/2$) borib, u yerdagi yangilangan qiyalikni baholash.</li>
-              <li><strong>$k_3 = f(t_n + rac{\Delta t}{2}, y_n + rac{\Delta t}{2} k_2)$</strong>: $k_2$ qiyaligi orqali oraliq nuqtadagi qiyalikni ikkinchi bor aniqlashtirish.</li>
+              <li><strong>$k_2 = f(t_n + \frac{\Delta t}{2}, y_n + \frac{\Delta t}{2} k_1)$</strong>: $k_1$ yordamida oraliq nuqtaga ($\Delta t/2$) borib, u yerdagi yangilangan qiyalikni baholash.</li>
+              <li><strong>$k_3 = f(t_n + \frac{\Delta t}{2}, y_n + \frac{\Delta t}{2} k_2)$</strong>: $k_2$ qiyaligi orqali oraliq nuqtadagi qiyalikni ikkinchi bor aniqlashtirish.</li>
               <li><strong>$k_4 = f(t_n + \Delta t, y_n + \Delta t k_3)$</strong>: Oraliq qiyalik $k_3$ asosida to'liq qadam ($\Delta t$) oxiridagi yakuniy qiyalikni bashorat qilish.</li>
-              <li>Yakuniy natija Simpson qoidasi bo'yicha o'rtacha qiyalik sifatida olinadi: $k_{avg} = rac{k_1 + 2k_2 + 2k_3 + k_4}{6}$.</li>
+              <li>Yakuniy natija Simpson qoidasi bo'yicha o'rtacha qiyalik sifatida olinadi: $k_{avg} = \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}$.</li>
             </ul>
           </div>
         </div>
@@ -284,8 +284,7 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo'llanma berilsin.
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 14px; border-radius:8px; border:1px solid var(--border-color);">
                   <strong>2. $L_2$ Integrallangan Normasi:</strong><br>
-                  $\|e\|_2 = \sqrt{rac{1}{N} \sum_{n=1}^N \left(x_{num}(t_n) - x_{exact}(t_n)
-ight)^2}$
+                  $\|e\|_2 = \sqrt{\frac{1}{N} \sum_{n=1}^N \left(x_{num}(t_n) - x_{exact}(t_n)\right)^2}$
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 14px; border-radius:8px; border:1px solid var(--border-color);">
                   <strong>3. Faza Xatosi ($\Delta \phi$):</strong><br>
@@ -293,7 +292,7 @@ ight)^2}$
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 14px; border-radius:8px; border:1px solid var(--border-color);">
                   <strong>4. Nisbiy Energiya Dreyfi:</strong><br>
-                  $rac{\Delta E(t)}{E_0} = rac{|E_{num}(t) - E_0|}{E_0} 	imes 100\%$
+                  $\frac{\Delta E(t)}{E_0} = \frac{|E_{num}(t) - E_0|}{E_0} \times 100\%$
                 </div>
               </div>
             </div>
@@ -302,7 +301,7 @@ ight)^2}$
               <h4 style="color:var(--accent-emerald); margin-bottom:12px;">📈 Vaqt Bo'yicha Siljish Grafigi:</h4>
               <img src="assets/fig_numerical_integration_comparison.png" alt="Numerical Integration Comparison" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
               <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px; text-align:center;">
-                $\Delta t = 0.25	ext{ s}$ qadamda Forward Euler (qizil) amplitudasining eksponensial o'sishi va RK4 (moviy) ning aniq yechim bilan mos kelishi.
+                $\Delta t = 0.25\text{ s}$ qadamda Forward Euler (qizil) amplitudasining eksponensial o'sishi va RK4 (moviy) ning aniq yechim bilan mos kelishi.
               </p>
             </div>
           </div>
@@ -318,7 +317,7 @@ ight)^2}$
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
             Sonli usulning nazariy tartibini ($p$) isbotlash uchun xatolikning qadamga bog'liqligi logarifmik masshtabda o'rganiladi:
             $$E(\Delta t) = C \cdot \Delta t^p \implies \log E(\Delta t) = p \cdot \log(\Delta t) + \log C$$
-            Log-Log grafigining qiyalik burchagi $	anlpha = p$ integratsiyalash tartibini to'g'ridan-to'g'ri ko'rsatadi.
+            Log-Log grafigining qiyalik burchagi $\tan\alpha = p$ integratsiyalash tartibini to'g'ridan-to'g'ri ko'rsatadi.
           </p>
 
           <div class="grid-2" style="margin-bottom:20px;">
@@ -332,28 +331,28 @@ ight)^2}$
                   <tr style="border-bottom:1px solid var(--border-color); text-align:left; color:#38BDF8;">
                     <th style="padding:6px;">Usul</th>
                     <th style="padding:6px;">Qiyalik ($p$)</th>
-                    <th style="padding:6px;">$\Delta t = 0.1	ext{ s}$ Xato</th>
-                    <th style="padding:6px;">$\Delta t = 0.01	ext{ s}$ Xato</th>
+                    <th style="padding:6px;">$\Delta t = 0.1\text{ s}$ Xato</th>
+                    <th style="padding:6px;">$\Delta t = 0.01\text{ s}$ Xato</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
                     <td style="padding:6px; color:#F43F5E; font-weight:600;">Forward Euler</td>
-                    <td style="padding:6px;">$p pprox 1.0$</td>
-                    <td style="padding:6px;">$\sim 2.5 	imes 10^{-1}$</td>
-                    <td style="padding:6px;">$\sim 2.5 	imes 10^{-2}$</td>
+                    <td style="padding:6px;">$p \approx 1.0$</td>
+                    <td style="padding:6px;">$\sim 2.5 \times 10^{-1}$</td>
+                    <td style="padding:6px;">$\sim 2.5 \times 10^{-2}$</td>
                   </tr>
                   <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
                     <td style="padding:6px; color:#FBBF24; font-weight:600;">Heun / RK2</td>
-                    <td style="padding:6px;">$p pprox 2.0$</td>
-                    <td style="padding:6px;">$\sim 4.1 	imes 10^{-3}$</td>
-                    <td style="padding:6px;">$\sim 4.1 	imes 10^{-5}$</td>
+                    <td style="padding:6px;">$p \approx 2.0$</td>
+                    <td style="padding:6px;">$\sim 4.1 \times 10^{-3}$</td>
+                    <td style="padding:6px;">$\sim 4.1 \times 10^{-5}$</td>
                   </tr>
                   <tr>
                     <td style="padding:6px; color:#38BDF8; font-weight:600;">Klassik RK4</td>
-                    <td style="padding:6px;">$p pprox 4.0$</td>
-                    <td style="padding:6px;">$\sim 1.2 	imes 10^{-7}$</td>
-                    <td style="padding:6px;">$\sim 1.2 	imes 10^{-11}$</td>
+                    <td style="padding:6px;">$p \approx 4.0$</td>
+                    <td style="padding:6px;">$\sim 1.2 \times 10^{-7}$</td>
+                    <td style="padding:6px;">$\sim 1.2 \times 10^{-11}$</td>
                   </tr>
                 </tbody>
               </table>
@@ -371,7 +370,7 @@ ight)^2}$
           <span class="badge badge-rose">5-Bosqich: Integratsiya Qadamini Vizual Sinash</span>
           <h2 style="margin-top: 12px; margin-bottom: 12px;">Interaktiv Xatolik va Barqarorlik Sandboxing Laboratoriyasi</h2>
           <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">
-            Vaqt qadami $\Delta t$, mayatnik uzunligi $L$ va boshlang'ich burchak $	heta_0$ ni o'zgartiring. 4 ta usulning bir vaqtning o'zida harakatini, to'lqin shaklini, fazaviy portretini va energiya dreyfini jonli kuzating:
+            Vaqt qadami $\Delta t$, mayatnik uzunligi $L$ va boshlang'ich burchak $\theta_0$ ni o'zgartiring. 4 ta usulning bir vaqtning o'zida harakatini, to'lqin shaklini, fazaviy portretini va energiya dreyfini jonli kuzating:
           </p>
 
           <!-- Preset Scenario Buttons -->
@@ -411,7 +410,7 @@ ight)^2}$
 
               <div>
                 <label style="font-size:0.85rem; font-weight:700; color:#FBBF24; display:flex; justify-content:space-between;">
-                  <span>Boshlang'ich Burchak ($	heta_0$):</span>
+                  <span>Boshlang'ich Burchak ($\theta_0$):</span>
                   <span id="val-amp" style="font-family:var(--font-mono); color:#F8FAFC;">0.50 rad (28.6°)</span>
                 </label>
                 <input type="range" id="slider-amp" min="0.1" max="1.4" step="0.05" value="0.5" style="width:100%; margin-top:8px;">
@@ -457,14 +456,14 @@ ight)^2}$
 
             <div class="glass-panel" style="padding:14px;">
               <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                <span style="font-size:0.85rem; font-weight:700; color:#34D399;">📈 Siljish Grafigi $	heta(t)$ [rad]</span>
+                <span style="font-size:0.85rem; font-weight:700; color:#34D399;">📈 Siljish Grafigi $\theta(t)$ [rad]</span>
                 <span style="font-size:0.8rem; color:var(--text-muted);">Qadamlar: <span id="telemetry-step" style="color:#F8FAFC; font-family:var(--font-mono);">0</span></span>
               </div>
               <canvas id="sim-graph-canvas" width="480" height="260" style="width:100%; height:260px; background:#0F172A; border-radius:8px; display:block;"></canvas>
             </div>
 
             <div class="glass-panel" style="padding:14px;">
-              <span style="font-size:0.85rem; font-weight:700; color:#A855F7; display:block; margin-bottom:8px;">🌀 Fazaviy Portret ($\omega$ vs $	heta$)</span>
+              <span style="font-size:0.85rem; font-weight:700; color:#A855F7; display:block; margin-bottom:8px;">🌀 Fazaviy Portret ($\omega$ vs $\theta$)</span>
               <canvas id="sim-phase-canvas" width="480" height="240" style="width:100%; height:240px; background:#0F172A; border-radius:8px; display:block;"></canvas>
             </div>
 
@@ -483,8 +482,8 @@ ight)^2}$
                   <tr style="border-bottom:1px solid var(--border-color); text-align:left; color:#94A3B8;">
                     <th style="padding:8px;">Sonli Usul</th>
                     <th style="padding:8px;">Nazariy Tartib</th>
-                    <th style="padding:8px;">Joriy Burchak $	heta(t)$</th>
-                    <th style="padding:8px;">Mutlaq Xato $|	heta_{num} - 	heta_{exact}|$</th>
+                    <th style="padding:8px;">Joriy Burchak $\theta(t)$</th>
+                    <th style="padding:8px;">Mutlaq Xato $|\theta_{num} - \theta_{exact}|$</th>
                     <th style="padding:8px;">Energiya O'zgarishi $\Delta E/E_0$</th>
                   </tr>
                 </thead>

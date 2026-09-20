@@ -245,19 +245,27 @@ document.addEventListener('DOMContentLoaded', () => {
   if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
   drawerLinks.forEach(link => link.addEventListener('click', toggleDrawer));
 
-  // Tabs
-  const tabButtons = document.querySelectorAll('.tab-btn');
+  // Tabs (scoped to the button's own .tabs-nav so nested tab groups,
+  // e.g. simulator sub-tabs inside a module tab, don't clobber each other)
+  // Buttons with their own onclick="switchTab(...)" (e.g. lecture4.html)
+  // manage themselves and are skipped here to avoid fighting that handler.
+  const tabButtons = document.querySelectorAll('.tab-btn[data-tab]');
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-tab');
-      const parent = btn.closest('.tabs-container') || document;
-      
-      parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const nav = btn.closest('.tabs-nav');
+      const parent = (nav && nav.parentElement) || btn.closest('.tabs-container') || document;
+      const navButtons = nav ? nav.querySelectorAll('.tab-btn') : parent.querySelectorAll('.tab-btn');
+
+      navButtons.forEach(b => b.classList.remove('active'));
+      parent.querySelectorAll(':scope > .tab-content').forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
       const targetContent = document.getElementById(targetId);
       if (targetContent) targetContent.classList.add('active');
+
+      // Let simulators recompute their canvas size now that they're visible
+      window.dispatchEvent(new Event('resize'));
     });
   });
 
