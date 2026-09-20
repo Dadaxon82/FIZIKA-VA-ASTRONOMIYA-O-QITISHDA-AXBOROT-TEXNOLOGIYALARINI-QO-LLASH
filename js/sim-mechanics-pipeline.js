@@ -21,9 +21,7 @@ function initMechanicsPipeline() {
   const rampGroup = document.getElementById('ramp-controls-group');
   const collisionGroup = document.getElementById('collision-controls-group');
 
-  const btnPlay = document.getElementById('btn-mech-play');
   const btnPlayInner = document.getElementById('btn-mech-play-inner');
-  const btnReset = document.getElementById('btn-mech-reset');
   const btnResetInner = document.getElementById('btn-mech-reset-inner');
 
   const slRampAngle = document.getElementById('sl-ramp-angle');
@@ -338,20 +336,15 @@ function initMechanicsPipeline() {
 
   function togglePlay() {
     running = !running;
-    const label = running ? '⏸️ To\'xtatish' : '▶️ Davom Ettirish';
-    btnPlay.textContent = label;
-    btnPlayInner.textContent = label;
+    btnPlayInner.textContent = running ? '⏸️ To\'xtatish' : '▶️ Davom Ettirish';
   }
-  btnPlay.addEventListener('click', togglePlay);
   btnPlayInner.addEventListener('click', togglePlay);
 
   function resetSim() {
     resetAll();
     running = true;
-    btnPlay.textContent = "⏸️ To'xtatish";
     btnPlayInner.textContent = "⏸️ To'xtatish";
   }
-  btnReset.addEventListener('click', resetSim);
   btnResetInner.addEventListener('click', resetSim);
 
   // -----------------------------------------------------------------------

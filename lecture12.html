@@ -584,17 +584,11 @@ class PhysicsParticle2D {
           Quyidagi interaktiv laboratoriyada siz <strong>Qiya tekislikdagi dinamika</strong> va <strong>2D Elastik to'qnashuvlar</strong> jarayonini real vaqt rejimida sinab ko'rishingiz, simplektik integrator va oddiy Eyler xatoliklarini energiya grafigida solishtirishingiz hamda 4 bosqichli to'liq AI-Pipeline konveyerini ishga tushirishingiz mumkin!
         </p>
 
-        <!-- Mode & Global Action Bar -->
-        <div style="display: flex; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-          <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-            <span style="font-size: 0.88rem; color: var(--text-secondary); font-weight: bold;">Eksperiment Rejimi:</span>
-            <button class="btn btn-secondary mech-mode-btn active" data-mode="ramp">📐 1-Rejim: Qiya Tekislik va Ishqalanish Dinamikasi</button>
-            <button class="btn btn-secondary mech-mode-btn" data-mode="collision">💥 2-Rejim: 2D Elastik Zarrachalar To'qnashuvi</button>
-          </div>
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <button id="btn-mech-play" class="btn btn-secondary" style="min-width: 140px; font-weight: 600;">⏸️ To'xtatish</button>
-            <button id="btn-mech-reset" class="btn btn-primary" style="min-width: 150px; font-weight: 600;">🔄 Qayta Boshlash</button>
-          </div>
+        <!-- Mode Selector Bar -->
+        <div style="display: flex; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;">
+          <span style="font-size: 0.88rem; color: var(--text-secondary); font-weight: bold;">Eksperiment Rejimi:</span>
+          <button class="btn btn-secondary mech-mode-btn active" data-mode="ramp">📐 1-Rejim: Qiya Tekislik va Ishqalanish Dinamikasi</button>
+          <button class="btn btn-secondary mech-mode-btn" data-mode="collision">💥 2-Rejim: 2D Elastik Zarrachalar To'qnashuvi</button>
         </div>
 
         <!-- Controls Bar -->
