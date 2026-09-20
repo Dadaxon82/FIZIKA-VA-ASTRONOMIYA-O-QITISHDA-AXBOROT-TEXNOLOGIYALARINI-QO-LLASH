@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8-Ma'ruza: AI Yordamida Fizika Dasturlash: Vektorlar, Kuchlar, To‘qnashuvlar</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+                        <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link ">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link ">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link ">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link ">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link ">6-Modul: Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link ">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link active">8-Modul: Vektorlar & To'qnashuv</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+                <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link ">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link ">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link ">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link ">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link ">📐 6-Modul: Shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link ">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link active">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-cyan">8-Modul: Dasturlash & Vektor Mexanikasi</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        AI Yordamida Fizika Dasturlash: Vektorlar, Kuchlar, To‘qnashuvlar
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Vektor arifmetikasi, Nyuton qonunlariga asoslangan kuch-tezlanish hisoblash, Claude 3.5 Sonnet bilan juftlikda dasturlash (Pair-Programming), 2D elastik to‘qnashuv impulsi (Impulse-based Collision Resolution), WolframAlpha tekshiruvi va ChatGPT traektoriya tahlili.
+      </p>
+    </div>
+
+    <!-- 6-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 8-Ma'ruza Rejasi va AI Texnologik Konveyeri:</h3>
+      <div class="grid-3" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. AI Diagnostika & Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI: Vektorli algebra va to'qnashuvlar bo'yicha 3 klasterli adaptiv yo'l xaritasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. Juftlikda Dasturlash:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet: Driver-Navigator modeli, energiya saqlanishi va penetratsiyani debugging qilish.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">3. Vektor Arifmetikasi & Impuls:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">WolframAlpha: Skalyar ko'paytma, 2D elastik impuls ($j$) va MTV positional correction.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">4. Dvigatel Kodi (Artifacts):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet (Artifacts): Vector2D, RigidBody2D va CollisionResolver to'liq ES6 kodi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-rose);">5. Traektoriya & Grafika:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">ChatGPT (Code Interpreter): $x(t), y(t)$ traektoriya izlari, kinetik energiya va impuls saqlanishi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: #38BDF8;">6. Simulyatsiya & Test:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">HTML5 Canvas 2D to'qnashuvlar laboratoriyasi, vektorlar overleyi, diagnostika va adabiyotlar.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs Container: 7 Main Stages -->
+    <div class="tabs-container" style="margin-bottom: 40px;">
+      <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')">1. AI Diagnostika</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')">2. Juftlikda Dasturlash</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')">3. Vektor Arifmetikasi</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')">4. Dvigatel Kodi</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')">5. Traektoriya Grafiklari</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')">6. Interaktiv Laboratoriya</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')">7. Test & Manbalar</button>
+      </div>
+
+      <!-- TAB 1: AI Diagnostika & Individual Reja -->
+      <div id="tab-sec1" class="tab-content active">
+        <div class="glass-panel">
+          <span class="badge badge-cyan">1-Bosqich: Kognitiv Diagnostika</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: Vektor Mexanikasi va 3 Klasterli Adaptiv O'quv Rejasi</h2>
+
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Nazariy-Metodologik Asos va Ilmiy Manbalar (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              Fizika dasturlashda vektorli tafakkur va to'qnashuvlar mexanikasini o'zlashtirish <strong>Lev Vygotskiyning "Eng Yaqin Rivojlanish Zonasi" (ZPD, 1978)</strong> hamda <strong>Bloomning taksonomiyasi (Anderson & Krathwohl, 2001)</strong> prinsiplariga tayanadi. Talabalarning boshlang'ich vektor-fizik va dasturlash bilimlari MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratiladi.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(56, 189, 248, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; MagicSchool AI Research (2024). <a href="https://www.magicschool.ai" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">magicschool.ai</a>.
+            </div>
+          </div>
+
+          <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
+            Fizika dvigatellarini yaratishda vektorli arifmetika (qo'shish, ayirish, skalyar ko'paytma, normalizatsiya, akslantirish) fundamental poydevor hisoblanadi. MagicSchool AI kirish diagnostikasi orqali talabalarni quyidagi 3 klasterga ajratadi:
+          </p>
+
+          <div class="grid-3" style="margin-bottom: 24px;">
+            <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-cyan);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h4 style="color: var(--accent-cyan);">Klaster A (Boshlang'ich)</h4>
+                <span class="badge badge-cyan" style="font-size:0.75rem;">Scaffolding</span>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
+                Skalyar tezlik va massani biladi, biroq 2D vektorli qo'shish va skalyar ko'paytmani chalkashtiradi. To'qnashuvda faqat bitta o'q bo'yicha tezlik ishorasini almashtirishga urinadi.
+              </p>
+              <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+                <strong>O'quv Trayektoriyasi:</strong> Vector2D klassini bosqichma-bosqich yozish, 1D markaziy elastik to'qnashuvlar va devorga elastik urilish.
+              </div>
+            </div>
+
+            <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-emerald);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h4 style="color: var(--accent-emerald);">Klaster B (O'rta / Standart)</h4>
+                <span class="badge badge-emerald" style="font-size:0.75rem;">Dvigatel Quruvchi</span>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
+                2D vektorli algebrani yaxshi biladi. Impuls saqlanish qonunini tushunadi. Penetratsiya (jismlar bir-biriga kirib ketishi) va energiya yo'qolishi xatolariga yo'l qo'yadi.
+              </p>
+              <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+                <strong>O'quv Trayektoriyasi:</strong> 2D impuls formulasi ($j$), MTV positional correction va Claude 3.5 Sonnet bilan juftlikda dasturlash.
+              </div>
+            </div>
+
+            <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-purple);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h4 style="color: var(--accent-purple);">Klaster C (Ilg'or / Research)</h4>
+                <span class="badge badge-purple" style="font-size:0.75rem;">Tadqiqotchi</span>
+              </div>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
+                Qattiq jism (Rigid Body) dinamikasini biladi. Aylanma inersiya va burchak tezligini hisobga olgan holda to'qnashuvlarni modellashtira oladi.
+              </p>
+              <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+                <strong>O'quv Trayektoriyasi:</strong> Separating Axis Theorem (SAT) ko'pburchaklar uchun, aylanishli impuls almashinuvi va parallel hisoblash.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4-Week Roadmap Table -->
+          <h3 style="color:var(--accent-amber); margin:24px 0 14px 0; font-size:1.15rem;">🗺️ 4 Haftalik Adaptiv Vektor Dasturlash Yo'l Xaritasi:</h3>
+          <div style="overflow-x:auto; margin-bottom:24px;">
+            <table class="styled-table" style="width:100%;">
+              <thead>
+                <tr>
+                  <th>Bosqich</th>
+                  <th>Hafta</th>
+                  <th>Klaster A (Boshlang'ich)</th>
+                  <th>Klaster B (Standart)</th>
+                  <th>Klaster C (Ilg'or)</th>
+                  <th>Baholash Mezonlari</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1-Hafta</strong></td>
+                  <td>Vektor Arifmetikasi</td>
+                  <td>Vector2D klassi (add, sub, mult, mag)</td>
+                  <td>Skalyar ko'paytma (dot) va normalizatsiya</td>
+                  <td>Vektorli proyeksiyalar va akslantirish (reflect)</td>
+                  <td>Vektor funksiyalari to'g'riligi (100%)</td>
+                </tr>
+                <tr>
+                  <td><strong>2-Hafta</strong></td>
+                  <td>To'qnashuv Impulsi</td>
+                  <td>1D elastik to'qnashuv va tezliklar almashinuvi</td>
+                  <td>2D impuls tenglamasi ($j$) va nisbiy tezlik</td>
+                  <td>Aylanma inersiya va burchak momenti impulsi</td>
+                  <td>Impuls saqlanish aniqligi</td>
+                </tr>
+                <tr>
+                  <td><strong>3-Hafta</strong></td>
+                  <td>AI Debugging & Penetratsiya</td>
+                  <td>Claude bilan oddiy xatolarni tuzatish</td>
+                  <td>Positional correction (MTV) bilan sinkingni yo'qotish</td>
+                  <td>SAT (Separating Axis Theorem) ko'pburchaklar uchun</td>
+                  <td>Penetratsiya yo'qligi ($0\text{ px}$)</td>
+                </tr>
+                <tr>
+                  <td><strong>4-Hafta</strong></td>
+                  <td>Capstone & Traektoriya</td>
+                  <td>Bilyard to'qnashuvi simulyatsiyasi</td>
+                  <td>Ko'p zarrachali dvigatel va energiya telemetriyasi</td>
+                  <td>Parametrik tahlil va fazoviy faza fazosi grafigi</td>
+                  <td>Akademik loyiha himoyasi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>MagicSchool AI uchun Moslashtirilgan Diagnostika Prompti</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen Oliy ta'lim hisoblash fizikasi va dasturlash metodistisan. Talabalarning '2D Vektor Mexanikasi va To'qnashuvlar Dvigateli' bo'yicha tayyorgarligini baholash uchun 5 ta kognitiv test savoli ishlab chiq: 1) Ikki vektor skalyar ko'paytmasi noldan kichik bo'lishining fizik ma'nosi, 2) 2D to'qnashuvda nisbiy tezlikning normalga proyeksiyasi v_norm > 0 bo'lsa nima sodir bo'ladi, 3) To'qnashuv impuls moduli formulasidagi (1 + e) hadi nimani ifodalaydi, 4) Nima uchun jismlar to'qnashganda bir-birining ichiga kirib qoladi (sinking) va uni qanday tuzatish mumkin, 5) Elastik to'qnashuvda umumiy kinetik energiya va impuls saqlanish sharti. Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.">Nusxalash</button>
+            </div>
+            <div class="code-content">
+Sen Oliy ta'lim hisoblash fizikasi va dasturlash metodistisan. Talabalarning "2D Vektor Mexanikasi va To'qnashuvlar Dvigateli" bo'yicha tayyorgarligini baholash uchun 5 ta kognitiv test savoli ishlab chiq:
+1) Ikki vektor skalyar ko'paytmasi noldan kichik bo'lishining fizik ma'nosi,
+2) 2D to'qnashuvda nisbiy tezlikning normalga proyeksiyasi v_norm > 0 bo'lsa nima sodir bo'ladi,
+3) To'qnashuv impuls moduli formulasidagi (1 + e) hadi nimani ifodalaydi,
+4) Nima uchun jismlar to'qnashganda bir-birining ichiga kirib qoladi (sinking) va uni qanday tuzatish mumkin,
+5) Elastik to'qnashuvda umumiy kinetik energiya va impuls saqlanish sharti.
+Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Juftlikda Dasturlash (Pair-Programming) -->
+      <div id="tab-sec2" class="tab-content">
+        <div class="glass-panel">
+          <span class="badge badge-emerald">2-Bosqich: AI Juftlikda Dasturlash</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude 3.5 Sonnet Bilan Juftlikda Dasturlash (Pair-Programming) va Debugging</h2>
+
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(52, 211, 153, 0.05); border-left: 4px solid var(--accent-emerald); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-emerald); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Metodologik Asos va Ilmiy-Texnik Manbalar (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              Dasturiy injiniring va fizika ta'limida <strong>Driver-Navigator modeli (Williams & Kessler, 2002, <em>Pair Programming Illuminated</em>)</strong> talabalarning dasturlashdagi konseptual va mantiqiy xatolarini 40% dan ko'proqqa qisqartirishi ilmiy isbotlangan (Begel & Nagappan, IEEE 2008). <strong>Claude 3.5 Sonnet</strong> bilan tashkil etilgan juftlikda dasturlash sessiyasida talaba kod yozadi (Driver), AI esa navigatorda fizik qonuniyatlarning buzilishini (energiya saqlanmasligi, massalar teskariligi, penetratsiya) Sokratik dialog uslubida real vaqtda aniqlaydi va tuzatish taklif etadi.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(52, 211, 153, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Williams, L., & Kessler, R. (2002). <em>Pair Programming Illuminated</em>. Addison-Wesley (ISBN: 978-0201745764); Begel, A., & Nagappan, N. (2008). <em>Pair programming: what's in it for me?</em> IEEE ESEM, DOI: <a href="https://doi.org/10.1145/1414004.1414026" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">10.1145/1414004.1414026</a>; Anthropic Research (2024). <em>Claude 3.5 Sonnet System Capabilities</em>. <a href="https://www.anthropic.com" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">anthropic.com</a>.
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-bottom:24px;">
+            <img src="assets/fig_pair_programming_workflow.png" alt="AI Pair Programming Workflow" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+          </div>
+
+          <div class="glass-panel" style="background:rgba(15,23,42,0.85); border:1px solid rgba(56,189,248,0.25); margin-bottom:24px;">
+            <h4 style="color:#38BDF8; margin-bottom:14px;">💬 Real Sokratik Debugging Dialogi Transkripti:</h4>
+            
+            <div style="margin-bottom:14px; padding:12px 16px; background:rgba(255,255,255,0.03); border-radius:8px; border-left:3px solid #38BDF8;">
+              <strong style="color:#38BDF8;">Talaba (Driver):</strong> "Men 2 ta to'p to'qnashuvini yozdim. To'plar bir-biriga urilganda to'xtab qolmayapti, balki bir-birining ichiga kirib, yopishib tebranyapti. Kodimda impuls to'g'ri hisoblangan:"
+              <div style="font-family:var(--font-mono); font-size:0.82rem; color:#FBBF24; margin-top:4px;">
+                p1.vel.add(Vector2D.mult(n_hat, impulse / p1.m));<br>
+                p2.vel.sub(Vector2D.mult(n_hat, impulse / p2.m));
+              </div>
+            </div>
+
+            <div style="margin-bottom:14px; padding:12px 16px; background:rgba(52,211,153,0.05); border-radius:8px; border-left:3px solid #34D399;">
+              <strong style="color:#34D399;">Claude 3.5 Sonnet (Navigator):</strong> "Ajoyib boshlanish! Tezliklar impulsi to'g'ri yangilanmoqda. Biroq jism koordinatalariga e'tibor bering: to'qnashuv aniqlangan paytda ikkala shar allaqachon bir necha piksel bir-birining ichiga kirib bo'lgan (`dist < r1 + r2`). Agar siz faqat tezlikni o'zgartirsangiz va ular keyingi kadrda ham ajralishga ulgurmasa, impuls yana qayta qo'llanadi! Buni bartaraf etish uchun qanday geometrik siljish (Positional Correction) qilish kerak deb o'ylaysiz?"
+            </div>
+
+            <div style="margin-bottom:14px; padding:12px 16px; background:rgba(255,255,255,0.03); border-radius:8px; border-left:3px solid #38BDF8;">
+              <strong style="color:#38BDF8;">Talaba (Driver):</strong> "Aha! Penetratsiya chuqurligi `penetration = (r1 + r2) - dist` ga teng. Demak, ikkala to'pni normal yo'nalish bo'yicha qarama-qarshi tomonga `penetration / 2` masofaga surib qo'yishim kerak ekan!"
+            </div>
+
+            <div style="padding:12px 16px; background:rgba(52,211,153,0.05); border-radius:8px; border-left:3px solid #34D399;">
+              <strong style="color:#34D399;">Claude 3.5 Sonnet (Navigator):</strong> "Ofarin! Aynan shunday. Bunga fizikada **Minimum Translation Vector (MTV)** orqali penetratsiyani yo'qotish deyiladi. Endi yana bir muhim shart: agar jismlar allaqachon bir-biridan uzoqlashayotgan bo'lsa (`v_rel . n > 0`), impuls hisoblanmasligi kerak, aks holda ular sun'iy ravishda tortishib qoladi."
+            </div>
+          </div>
+
+          <!-- 3 Main Physical Engine Bugs Cards -->
+          <h4 style="color:var(--accent-amber); margin: 20px 0 12px 0;">⚠️ Juftlikda Dasturlashda Aniqlanadigan 3 Ta Asosiy Fizik-Algoritmik Xato:</h4>
+          <div class="grid-3" style="gap:14px; margin-bottom:24px;">
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7); border-left:4px solid #F43F5E;">
+              <h5 style="color:#F43F5E; margin-bottom:6px;">1. Penetratsiya va Yopishish (Sinking)</h5>
+              <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.6; margin-bottom:6px;">
+                <strong>Sababi:</strong> Diskret vaqt qadami ($\Delta t$) tufayli to'qnashuv paytida jismlar bir-birining ichiga kirib ketadi. Faqat tezlik o'zgartirilsa, keyingi kadrda ham $d < r_1 + r_2$ qolib, impuls qayta-qayta hisoblanadi.
+              </p>
+              <div style="font-size:0.80rem; color:var(--accent-emerald);">
+                <strong>Yechim:</strong> Positional correction (MTV) orqali jismlarni $\frac{\text{penetration}}{2}$ ga qarama-qarshi surish.
+              </div>
+            </div>
+
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7); border-left:4px solid #FBBF24;">
+              <h5 style="color:#FBBF24; margin-bottom:6px;">2. Sun'iy Energiya Yaratilishi (Sticking Bug)</h5>
+              <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.6; margin-bottom:6px;">
+                <strong>Sababi:</strong> Jismlar to'qnashib, allaqachon bir-biridan uzoqlashayotgan paytda ($v_{norm} \ge 0$) impuls sharti tekshirilmasa, dvigatel ularga yana teskari impuls berib, sun'iy tortishish va cheksiz tezlanish hosil qiladi.
+              </p>
+              <div style="font-size:0.80rem; color:var(--accent-emerald);">
+                <strong>Yechim:</strong> Qat'iy `if (vNorm < 0)` shartini qo'yish.
+              </div>
+            </div>
+
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7); border-left:4px solid #38BDF8;">
+              <h5 style="color:#38BDF8; margin-bottom:6px;">3. Massalar Teskariligi (Inertia Singularity)</h5>
+              <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.6; margin-bottom:6px;">
+                <strong>Sababi:</strong> Harakatsiz devor yoki cheksiz massali to'siq bilan to'qnashganda $m = \infty$ ni dasturda nolga bo'lish ($1/0$) orqali `NaN` yoki `Infinity` xatosi kelib chiqadi.
+              </p>
+              <div style="font-size:0.80rem; color:var(--accent-emerald);">
+                <strong>Yechim:</strong> To'siqlar uchun $invMass = 0$ qiymatidan foydalanish.
+              </div>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>Claude 3.5 Sonnet bilan Juftlikda Dasturlash va Debugging Prompti</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen tajribali Fizika Dasturlash bo'yicha Senior Navigator (Pair-programmer) vazifasini bajarasan. Men senga o'zim yozgan JavaScript/Canvas fizika dvigateli kodini yuboraman. Sen: 1) Koddagi fizik va matematik xatolarni (energiya saqlanishi, impuls, penetratsiya) aniqla; 2) Menga tayyor kodni darhol bermasdan, Sokratik savollar orqali xatoni o'zim topishimga yordam ber; 3) Zero-allocation va ES6 Vector2D klassi bo'yicha optimallashtirish tavsiyalarini ber.">Nusxalash</button>
+            </div>
+            <div class="code-content">
+Sen tajribali Fizika Dasturlash bo'yicha Senior Navigator (Pair-programmer) vazifasini bajarasan.
+Men senga o'zim yozgan JavaScript/Canvas fizika dvigateli kodini yuboraman.
+Sen:
+1) Koddagi fizik va matematik xatolarni (energiya saqlanishi, impuls, penetratsiya) aniqla;
+2) Menga tayyor kodni darhol bermasdan, Sokratik savollar orqali xatoni o'zim topishimga yordam ber;
+3) Zero-allocation va ES6 Vector2D klassi bo'yicha optimallashtirish tavsiyalarini ber.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Vektor Arifmetikasi & Impuls -->
+      <div id="tab-sec3" class="tab-content">
+        <div class="glass-panel">
+          <span class="badge badge-amber">3-Bosqich: Matematik Apparat</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">Vektor Arifmetikasi va 2D To‘qnashuv Impuls Mexanikasi: WolframAlpha</h2>
+
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(251, 191, 36, 0.05); border-left: 4px solid var(--accent-amber); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-amber); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Nazariy Mexanika va Impuls Saqlanish Qonuni Asoslari (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              2D qattiq jismlar to'qnashuvi <strong>David Baraff (1997, <em>Physically Based Modeling: Rigid Body Simulation</em>, SIGGRAPH)</strong>, <strong>Halliday, Resnick & Walker (2018, <em>Fundamentals of Physics</em>, 11th ed., Ch. 9)</strong> hamda <strong>Christer Ericson (2004, <em>Real-Time Collision Detection</em>)</strong> darsliklari asosida impuls dinamikasi orqali modellashtiriladi. WolframAlpha yordamida nochiziqli vektorli tenglamalar tizimi va kinetik energiya yo'qotilishi analitik tarzda tekshiriladi.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(251, 191, 36, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Baraff, D. (1997). <a href="https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf" target="_blank" style="color: var(--accent-amber); text-decoration: underline;">SIGGRAPH Course Notes</a>; Halliday, Resnick, & Walker (2018). <em>Fundamentals of Physics</em>, Wiley (ISBN: 978-1119286240); Ericson, C. (2004). <em>Real-Time Collision Detection</em>, CRC Press (ISBN: 978-1558607323); Wolfram|Alpha Dynamics Solver: <a href="https://www.wolframalpha.com" target="_blank" style="color: var(--accent-amber); text-decoration: underline;">wolframalpha.com</a>.
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-bottom:20px;">
+            <img src="assets/fig_vector_math_operations.png" alt="Vector Math Operations" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+          </div>
+
+          <div class="grid-2" style="margin-bottom:24px;">
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7);">
+              <h4 style="color:#38BDF8; margin-bottom:10px;">📐 Asosiy Vektor Tenglamalari:</h4>
+              <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary); margin-bottom:10px;">
+                <strong>1. Nisbiy Masofa va Birlik Normal Vektor:</strong>
+                $$\vec{r}_{rel} = \vec{r}_1 - \vec{r}_2, \quad d = |\vec{r}_{rel}| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}, \quad \hat{n} = \frac{\vec{r}_{rel}}{d}$$
+              </p>
+              <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary); margin-bottom:10px;">
+                <strong>2. Nisbiy Tezlik va Normal Proyeksiya:</strong>
+                $$\vec{v}_{rel} = \vec{v}_1 - \vec{v}_2, \quad v_{norm} = \vec{v}_{rel} \cdot \hat{n} = (v_{1x} - v_{2x})n_x + (v_{1y} - v_{2y})n_y$$
+                <em>Agar $v_{norm} \ge 0$ bo'lsa, jismlar bir-biridan uzoqlashmoqda va impuls hisoblanmaydi!</em>
+              </p>
+              <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary); margin-bottom:10px;">
+                <strong>3. To'qnashuv Impuls Skalyar Moduli ($j$):</strong>
+                $$j = \frac{-(1 + e) v_{norm}}{\frac{1}{m_1} + \frac{1}{m_2}} = \frac{-(1 + e)(\vec{v}_{rel} \cdot \hat{n})}{\frac{1}{m_1} + \frac{1}{m_2}}$$
+                <em>(bu yerda $e \in [0, 1]$ — tiklanish/elastiklik koeffitsienti).</em>
+              </p>
+              <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary);">
+                <strong>4. Tezliklarning Yangilanishi:</strong>
+                $$\vec{v}_1' = \vec{v}_1 + \frac{j}{m_1}\hat{n}, \quad \vec{v}_2' = \vec{v}_2 - \frac{j}{m_2}\hat{n}$$
+              </p>
+            </div>
+
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7); text-align:center;">
+              <h4 style="color:#34D399; margin-bottom:10px;">💥 2D Impuls To'qnashuv Chizmasi</h4>
+              <img src="assets/fig_2d_collision_impulse.png" alt="2D Collision Impulse" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-bottom:20px;">
+            <img src="assets/fig_penetration_resolution.png" alt="Penetration Resolution" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+          </div>
+
+          <!-- 1D vs 2D Comparison Table -->
+          <h4 style="color:var(--accent-amber); margin: 20px 0 12px 0;">📊 1D To'g'ri Chiziqli va 2D Tekislikdagi To'qnashuvlar Qiyosiy Tahlili:</h4>
+          <div style="overflow-x:auto; margin-bottom:20px;">
+            <table class="styled-table" style="width:100%;">
+              <thead>
+                <tr>
+                  <th>Xususiyat / Parametr</th>
+                  <th>1D Markaziy To'qnashuv</th>
+                  <th>2D Qiya (Oblique) To'qnashuv</th>
+                  <th>Fizik Saqlanish Qonuni</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Tezliklar Yo'nalishi</strong></td>
+                  <td>Faqat bitta o'q ($x$) bo'ylab ishora o'zgaradi</td>
+                  <td>Normal ($\hat{n}$) va tangensial ($\hat{t}$) o'qlarga ajraladi</td>
+                  <td>Impuls vektorining o'qlardagi proyeksiyalari</td>
+                </tr>
+                <tr>
+                  <td><strong>Normal Bo'yicha Impuls ($j$)</strong></td>
+                  <td>$j = \frac{-(1+e)(v_1 - v_2)}{1/m_1 + 1/m_2}$</td>
+                  <td>$j = \frac{-(1+e)(\vec{v}_{rel} \cdot \hat{n})}{1/m_1 + 1/m_2}$</td>
+                  <td>Nyutonning 3-qonuni ($\vec{F}_{12} = -\vec{F}_{21}$)</td>
+                </tr>
+                <tr>
+                  <td><strong>Tangensial Tezlik ($v_t$)</strong></td>
+                  <td>Mavjud emas ($v_t = 0$)</td>
+                  <td>Ishqalanishsiz holda o'zgarmaydi ($v_{1t}' = v_{1t}$)</td>
+                  <td>Urinma tekislikda kuch yo'qligi</td>
+                </tr>
+                <tr>
+                  <td><strong>Kinetik Energiya Farqi ($\Delta E_k$)</strong></td>
+                  <td>$\Delta E_k = \frac{1}{2}(1-e^2)\mu(v_1 - v_2)^2$</td>
+                  <td>$\Delta E_k = \frac{1}{2}(1-e^2)\mu(\vec{v}_{rel}\cdot\hat{n})^2$</td>
+                  <td>Termodinamikaning 1-qonuni (Issiqlik ajralishi)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>WolframAlpha uchun 3 Ta Ixtisoslashgan Impuls va Dinamika So'rovlari</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="1) solve {m1*v1 + m2*v2 = m1*u1 + m2*u2, (u2 - u1) = -e*(v2 - v1)} for u1, u2
+2) DeltaEk = 1/2 * (1 - e^2) * (m1*m2)/(m1+m2) * (v1 - v2)^2 where m1=3, m2=5, v1=10, v2=-4, e=0.8
+3) 2D elastic collision vector: v1 = {4, 2}, v2 = {-2, 1}, n = {1, 0}, m1=2, m2=2">Nusxalash</button>
+            </div>
+            <div class="code-content">
+1) Umumiy 1D/2D impuls va tezliklar yechimi:
+   solve {m1*v1 + m2*v2 = m1*u1 + m2*u2, (u2 - u1) = -e*(v2 - v1)} for u1, u2
+
+2) Noelastik to'qnashuvda energiya yo'qolishi (e = 0.8):
+   DeltaEk = 1/2 * (1 - e^2) * (m1*m2)/(m1+m2) * (v1 - v2)^2 where m1=3, m2=5, v1=10, v2=-4, e=0.8
+
+3) 2D vektorli to'qnashuv yechimi:
+   2D elastic collision vector: v1 = {4, 2}, v2 = {-2, 1}, n = {1, 0}, m1=2, m2=2
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Fizika Dvigateli To'liq Kodi -->
+      <div id="tab-sec4" class="tab-content">
+        <div class="glass-panel">
+          <span class="badge badge-purple">4-Bosqich: Kod Strukturası</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude 3.5 Sonnet (Artifacts): To'liq Fizika Dvigateli Kodi</h2>
+
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(168, 85, 247, 0.05); border-left: 4px solid var(--accent-purple); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-purple); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Dasturiy Standart va Arxitekturaviy Manbalar (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              Fizik dvigatel arxitekturasi <strong>Jason Gregory (2018, <em>Game Engine Architecture</em>, 3rd ed., CRC Press)</strong> hamda <strong>Glenn Fiedler (2004, <em>Collision Response</em>)</strong> prinsiplari asosida modulli ECMAScript 6 (ES6) formatida ishlab chiqilgan. Xotira ajratilishini (Memory Allocation) minimallashtirish, zarrachalar to'qnashuvini diskret vaqt qadamlarida deterministik integratsiyalash ta'minlangan.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(168, 85, 247, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Gregory, J. (2018). <em>Game Engine Architecture</em>, CRC Press (ISBN: 978-1138035485); Fiedler, G. (2004). <a href="https://gafferongames.com/post/collision_response_and_coulomb_friction/" target="_blank" style="color: var(--accent-purple); text-decoration: underline;">Gaffer on Games: Collision Response</a>; Millington, I. (2010). <em>Game Physics Engine Development</em>, Morgan Kaufmann (ISBN: 978-0123819765); Mozilla Developer Network (MDN) 2D Physics: <a href="https://developer.mozilla.org" target="_blank" style="color: var(--accent-purple); text-decoration: underline;">developer.mozilla.org</a>.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>Claude 3.5 Sonnet tomonidan Generatsiya Qilingan 2D Modular Physics Engine Kodi (ES6)</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="// Claude 3.5 Sonnet 2D Vector Physics Engine (ES6)
+class Vector2D {
+  constructor(x = 0, y = 0) { this.x = x; this.y = y; }
+  set(x, y) { this.x = x; this.y = y; return this; }
+  add(v) { this.x += v.x; this.y += v.y; return this; }
+  sub(v) { this.x -= v.x; this.y -= v.y; return this; }
+  mult(n) { this.x *= n; this.y *= n; return this; }
+  mag() { return Math.sqrt(this.x * this.x + this.y * this.y); }
+  dot(v) { return this.x * v.x + this.y * v.y; }
+  normalize() { const m = this.mag(); if (m > 0) { this.x /= m; this.y /= m; } return this; }
+  dist(v) { const dx = this.x - v.x, dy = this.y - v.y; return Math.sqrt(dx * dx + dy * dy); }
+}
+
+class RigidBody2D {
+  constructor(x, y, vx, vy, mass, radius, color = '#38BDF8') {
+    this.pos = new Vector2D(x, y);
+    this.vel = new Vector2D(vx, vy);
+    this.acc = new Vector2D(0, 0);
+    this.m = mass;
+    this.invM = mass > 0 ? 1 / mass : 0; // mass=0 bo'lsa harakatsiz to'siq
+    this.r = radius;
+    this.color = color;
+    this.trail = [];
+  }
+
+  update(dt) {
+    this.vel.x += this.acc.x * dt;
+    this.vel.y += this.acc.y * dt;
+    this.pos.x += this.vel.x * dt;
+    this.pos.y += this.vel.y * dt;
+    
+    // Traektoriya izi
+    this.trail.push({ x: this.pos.x, y: this.pos.y });
+    if (this.trail.length > 50) this.trail.shift();
+  }
+}
+
+function resolveCollision(b1, b2, restitution = 1.0) {
+  const dx = b1.pos.x - b2.pos.x;
+  const dy = b1.pos.y - b2.pos.y;
+  const dist = Math.sqrt(dx * dx + dy * dy);
+  const minDist = b1.r + b2.r;
+
+  if (dist < minDist && dist > 0) {
+    const nx = dx / dist;
+    const ny = dy / dist;
+    const vRelX = b1.vel.x - b2.vel.x;
+    const vRelY = b1.vel.y - b2.vel.y;
+    const vNorm = vRelX * nx + vRelY * ny;
+
+    // Faqat bir-biriga yaqinlashayotganda impuls qo'llash
+    if (vNorm < 0) {
+      const impulse = -(1 + restitution) * vNorm / (b1.invM + b2.invM);
+      b1.vel.x += (impulse * b1.invM) * nx;
+      b1.vel.y += (impulse * b1.invM) * ny;
+      b2.vel.x -= (impulse * b2.invM) * nx;
+      b2.vel.y -= (impulse * b2.invM) * ny;
+    }
+
+    // Minimum Translation Vector (MTV) Positional Correction
+    const penetration = minDist - dist;
+    const totalInvM = b1.invM + b2.invM;
+    if (totalInvM > 0) {
+      b1.pos.x += (penetration * (b1.invM / totalInvM)) * nx;
+      b1.pos.y += (penetration * (b1.invM / totalInvM)) * ny;
+      b2.pos.x -= (penetration * (b2.invM / totalInvM)) * nx;
+      b2.pos.y -= (penetration * (b2.invM / totalInvM)) * ny;
+    }
+  }
+}">Nusxalash</button>
+            </div>
+            <div class="code-content">
+// Claude 3.5 Sonnet 2D Vector Physics Engine (ES6)
+class Vector2D {
+  constructor(x = 0, y = 0) { this.x = x; this.y = y; }
+  set(x, y) { this.x = x; this.y = y; return this; }
+  add(v) { this.x += v.x; this.y += v.y; return this; }
+  sub(v) { this.x -= v.x; this.y -= v.y; return this; }
+  mult(n) { this.x *= n; this.y *= n; return this; }
+  mag() { return Math.sqrt(this.x * this.x + this.y * this.y); }
+  dot(v) { return this.x * v.x + this.y * v.y; }
+  normalize() { const m = this.mag(); if (m > 0) { this.x /= m; this.y /= m; } return this; }
+  dist(v) { const dx = this.x - v.x, dy = this.y - v.y; return Math.sqrt(dx * dx + dy * dy); }
+}
+
+class RigidBody2D {
+  constructor(x, y, vx, vy, mass, radius, color = '#38BDF8') {
+    this.pos = new Vector2D(x, y);
+    this.vel = new Vector2D(vx, vy);
+    this.acc = new Vector2D(0, 0);
+    this.m = mass;
+    this.invM = mass > 0 ? 1 / mass : 0; // mass=0 bo'lsa harakatsiz to'siq
+    this.r = radius;
+    this.color = color;
+    this.trail = [];
+  }
+
+  update(dt) {
+    this.vel.x += this.acc.x * dt;
+    this.vel.y += this.acc.y * dt;
+    this.pos.x += this.vel.x * dt;
+    this.pos.y += this.vel.y * dt;
+    
+    // Traektoriya izi
+    this.trail.push({ x: this.pos.x, y: this.pos.y });
+    if (this.trail.length > 50) this.trail.shift();
+  }
+}
+
+function resolveCollision(b1, b2, restitution = 1.0) {
+  const dx = b1.pos.x - b2.pos.x;
+  const dy = b1.pos.y - b2.pos.y;
+  const dist = Math.sqrt(dx * dx + dy * dy);
+  const minDist = b1.r + b2.r;
+
+  // 1. To'qnashuvni aniqlash
+  if (dist < minDist && dist > 0) {
+    const nx = dx / dist;
+    const ny = dy / dist;
+    const vRelX = b1.vel.x - b2.vel.x;
+    const vRelY = b1.vel.y - b2.vel.y;
+    const vNorm = vRelX * nx + vRelY * ny;
+
+    // 2. Yaqinlashish shartini tekshirish (vNorm < 0)
+    if (vNorm < 0) {
+      const impulse = -(1 + restitution) * vNorm / (b1.invM + b2.invM);
+      b1.vel.x += (impulse * b1.invM) * nx;
+      b1.vel.y += (impulse * b1.invM) * ny;
+      b2.vel.x -= (impulse * b2.invM) * nx;
+      b2.vel.y -= (impulse * b2.invM) * ny;
+    }
+
+    // 3. Positional correction (Penetratsiyani massalarga mutanosib yo'qotish)
+    const penetration = minDist - dist;
+    const totalInvM = b1.invM + b2.invM;
+    if (totalInvM > 0) {
+      b1.pos.x += (penetration * (b1.invM / totalInvM)) * nx;
+      b1.pos.y += (penetration * (b1.invM / totalInvM)) * ny;
+      b2.pos.x -= (penetration * (b2.invM / totalInvM)) * nx;
+      b2.pos.y -= (penetration * (b2.invM / totalInvM)) * ny;
+    }
+  }
+}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: Harakat Traektoriyasi Grafiklari -->
+      <div id="tab-sec5" class="tab-content">
+        <div class="glass-panel">
+          <span class="badge badge-rose">5-Bosqich: Traektoriya & Ma'lumotlar</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">Harakat Traektoriyasi va Saqlanish Qonunlari Grafiklari: ChatGPT</h2>
+
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(244, 63, 94, 0.05); border-left: 4px solid var(--accent-rose); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-rose); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Fazoviy Dinamika va Sonli Tahlil Manbalari (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              Fizika simulyatsiyasining ilmiy haqiqiyligi <strong>umumiy impuls ($\vec{P} = \text{const}$)</strong> va <strong>kinetik energiya ($E_k$)</strong> saqlanish qonunlari orqali tekshiriladi (Marion & Thornton, 1995, <em>Classical Dynamics of Particles and Systems</em>; Hairer et al., 2006, <em>Geometric Numerical Integration</em>). <strong>ChatGPT Code Interpreter</strong> simulyatsiyadan olingan telemetriya ma'lumotlarini qayta ishlab, faza fazosi va energiya dissipatsiyasini Matplotlib orqali tahlil qiladi.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(244, 63, 94, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Marion, J. B., & Thornton, S. T. (1995). <em>Classical Dynamics</em>, Saunders College Pub.; Hairer, E., et al. (2006). <em>Geometric Numerical Integration</em>, Springer, DOI: <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" style="color: var(--accent-rose); text-decoration: underline;">10.1007/3-540-30666-8</a>; Hunter, J. D. (2007). <em>Matplotlib: A 2D Graphics Environment</em>, Computing in Science & Eng., DOI: <a href="https://doi.org/10.1109/MCSE.2007.55" target="_blank" style="color: var(--accent-rose); text-decoration: underline;">10.1109/MCSE.2007.55</a>; OpenAI (2024). <a href="https://openai.com" target="_blank" style="color: var(--accent-rose); text-decoration: underline;">openai.com</a>.
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap:16px; margin-bottom:24px;">
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7);">
+              <h4 style="color:#38BDF8; margin-bottom:10px;">📊 ChatGPT Code Interpreter uchun Python Tahlil Skripti:</h4>
+              <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.82rem; color:#34D399; line-height:1.6;">
+                import matplotlib.pyplot as plt<br>
+                import numpy as np<br><br>
+                # Telemetriya ma'lumotlarini tekshirish<br>
+                time = np.linspace(0, 10, 500)<br>
+                energy_elastic = 0.5 * m1 * v1**2 + 0.5 * m2 * v2**2<br>
+                momentum_x = m1 * vx1 + m2 * vx2<br><br>
+                plt.plot(time, energy_elastic, label='Kinetik Energiya (Ek)')<br>
+                plt.axhline(energy_elastic[0], color='r', linestyle='--', label='Nazariy Ek')<br>
+                plt.title('Elastik To\'qnashuvda Energiya Saqlanishi')<br>
+                plt.xlabel('Vaqt t (s)')<br>
+                plt.ylabel('Energiya (J)')<br>
+                plt.legend()<br>
+                plt.show()
+              </div>
+            </div>
+
+            <div class="glass-panel" style="background:rgba(15,23,42,0.7);">
+              <h4 style="color:#FBBF24; margin-bottom:10px;">📈 To'qnashuv Natijalari Tahlili:</h4>
+              <ul style="padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-secondary);">
+                <li><strong>Elastik to'qnashuv ($e = 1.0$):</strong> Umumiy kinetik energiya $E_k(t) = \text{const}$ bo'lib saqlanadi.</li>
+                <li><strong>Noelastik to'qnashuv ($e &lt; 1.0$):</strong> Energiya farqi $\Delta E_k = \frac{1}{2}(1 - e^2)\frac{m_1 m_2}{m_1 + m_2} v_{norm}^2$ ko'rinishida ichki energiyaga (issiqlikka) aylanadi.</li>
+                <li><strong>Impuls saqlanishi:</strong> Tashqi kuchlar bo'lmaganda ($g = 0$), to'liq impuls $\vec{P} = \text{const}$ barcha $e$ qiymatlarida qat'iy saqlanadi.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Telemetry Data Schema Table -->
+          <h4 style="color:var(--accent-cyan); margin: 20px 0 12px 0;">📑 Simulyatsiyadan Eksport Qilinadigan Telemetriya Ma'lumotlari Strukturasi:</h4>
+          <div style="overflow-x:auto; margin-bottom:20px;">
+            <table class="styled-table" style="width:100%;">
+              <thead>
+                <tr>
+                  <th>Parametr</th>
+                  <th>Turi / Birligi</th>
+                  <th>Fizik Tavsifi</th>
+                  <th>ChatGPT Tahlil Maqsadi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>time_s</code></td>
+                  <td>Float (s)</td>
+                  <td>Vaqt koordinatasi ($\Delta t = 1/60\text{ s}$)</td>
+                  <td>Vaqt shkalasi bo'yicha bog'lanish</td>
+                </tr>
+                <tr>
+                  <td><code>p1_x, p1_y, p2_x, p2_y</code></td>
+                  <td>Float (px / m)</td>
+                  <td>Jismlarning fazoviy koordinatalari</td>
+                  <td>2D traektoriya va to'qnashuv nuqtasi grafigi</td>
+                </tr>
+                <tr>
+                  <td><code>v1_mag, v2_mag</code></td>
+                  <td>Float (m/s)</td>
+                  <td>Tezlik vektorlari modullari</td>
+                  <td>Tezliklar o'zgarishi va nisbiy tezlik</td>
+                </tr>
+                <tr>
+                  <td><code>total_energy_J</code></td>
+                  <td>Float (J)</td>
+                  <td>$E_k = \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2$</td>
+                  <td>Energiya saqlanishi va dissipatsiyani tekshirish</td>
+                </tr>
+                <tr>
+                  <td><code>total_momentum_kgms</code></td>
+                  <td>Vector2D $(P_x, P_y)$</td>
+                  <td>$\vec{P} = m_1\vec{v}_1 + m_2\vec{v}_2$</td>
+                  <td>Impuls saqlanish qonuni doimiyligini tekshirish</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>ChatGPT uchun Traektoriya va Telemetriya Tahlili Prompti</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Men senga 2D to'qnashuvlar simulyatsiyasidan eksport qilingan vaqt bo'yicha ma'lumotlar massivini (t, x1, y1, vx1, vy1, x2, y2, vx2, vy2, Ek, Px, Py) beraman. Python Matplotlib orqali: 1) Har ikkala jismning 2D tekislikdagi (x, y) traektoriya grafigini chiz; 2) To'qnashuv nuqtasida tezlik vektorlari yo'nalishini ko'rsat; 3) Vaqtga bog'liq kinetik energiya Ek(t) va to'liq impuls P(t) grafiklarini hosil qilib, energiya yo'qotilishi nazariy formulaga mos kelishini tekshir.">Nusxalash</button>
+            </div>
+            <div class="code-content">
+Men senga 2D to'qnashuvlar simulyatsiyasidan eksport qilingan vaqt bo'yicha ma'lumotlar massivini (t, x1, y1, vx1, vy1, x2, y2, vx2, vy2, Ek, Px, Py) beraman.
+Python Matplotlib orqali:
+1) Har ikkala jismning 2D tekislikdagi (x, y) traektoriya grafigini chiz;
+2) To'qnashuv nuqtasida tezlik vektorlari yo'nalishini ko'rsat;
+3) Vaqtga bog'liq kinetik energiya Ek(t) va to'liq impuls P(t) grafiklarini hosil qilib, energiya yo'qotilishi nazariy formulaga mos kelishini tekshir.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: Interaktiv Laboratoriya -->
+      <div id="tab-sec6" class="tab-content">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+            <div>
+              <span class="badge badge-cyan">Jonli Simulyatsiya</span>
+              <h2 style="margin-top: 6px;">2D Vektorlar va To‘qnashuvlar Laboratoriyasi</h2>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <button id="prog-play-btn" class="btn btn-primary">⏸ To'xtatish</button>
+              <button id="prog-reset-btn" class="btn btn-secondary">↺ Qayta o'rnatish</button>
+            </div>
+          </div>
+
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Interaktiv Ta'lim va PhET Metodologiyasi (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              Interaktiv fizika simulyatsiyalari talabalarning mexanik hodisalarni chuqur tushunishida <strong>Nobel mukofoti laureati Carl Wieman (PhET Interactive Simulations, 2008, <em>Science</em>)</strong> tamoyillariga muvofiq intellektual vosita bo'lib xizmat qiladi. Dinamik vektor o'qlari, traektoriya izlari va real vaqtli telemetriya nazariy bilimlarni to'g'ridan-to'g'ri eksperimental tadqiqotga aylantiradi.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(56, 189, 248, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>, Science, DOI: <a href="https://doi.org/10.1126/science.1161948" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">10.1126/science.1161948</a>; PhET Interactive Simulations, University of Colorado Boulder: <a href="https://phet.colorado.edu" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">phet.colorado.edu</a>; Ericson, B. J. et al. (2020). <em>Interactive Learning in STEM</em>, JECR.
+            </div>
+          </div>
+
+          <!-- Main Simulation Canvas -->
+          <div style="background:#0F172A; border-radius:12px; border:1px solid rgba(255,255,255,0.1); overflow:hidden; margin-bottom:20px; text-align:center;">
+            <canvas id="collision-canvas" style="width:100%; height:450px; display:block;"></canvas>
+          </div>
+
+          <!-- Controls & Telemetry HUD -->
+          <div class="grid-2" style="gap:20px; margin-bottom:24px;">
+            
+            <!-- Sliders Panel -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8);">
+              <h4 style="color:#38BDF8; margin-bottom:14px;">🎛️ Parametrlar va Ssenariylar:</h4>
+              
+              <div class="slider-group" style="margin-bottom:14px;">
+                <label style="font-size:0.88rem; display:block; margin-bottom:6px; color:#F8FAFC;">Tajriba Ssenariysi (Preset):</label>
+                <select id="prog-preset" style="width:100%; padding:8px 12px; background:#1E293B; border:1px solid #334155; color:#F8FAFC; border-radius:6px;">
+                  <option value="head-on">1. Markaziy Elastik To'qnashuv (m1 = m2)</option>
+                  <option value="heavy-light">2. Og'ir va Yengil Jism To'qnashuvi (m1 = 5*m2)</option>
+                  <option value="oblique">3. Qiya To'qnashuv (2D Oblique Collision)</option>
+                  <option value="multi">4. Ko'p Jismli Gaz / Bilyard Modeli (Multi-ball)</option>
+                </select>
+              </div>
+
+              <div class="slider-group" style="margin-bottom:12px;">
+                <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
+                  <span>Tiklanish Koeffitsienti ($e$):</span>
+                  <strong id="prog-restitution-val" style="color:#FBBF24;">1.00</strong>
+                </div>
+                <input type="range" id="prog-restitution" min="0.0" max="1.0" step="0.05" value="1.0" style="width:100%;">
+              </div>
+
+              <div class="grid-2" style="gap:12px; margin-bottom:12px;">
+                <div class="slider-group">
+                  <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
+                    <span>Massa $m_1$:</span>
+                    <strong id="prog-m1-val" style="color:#38BDF8;">3.0 kg</strong>
+                  </div>
+                  <input type="range" id="prog-m1" min="1.0" max="15.0" step="0.5" value="3.0" style="width:100%;">
+                </div>
+
+                <div class="slider-group">
+                  <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
+                    <span>Massa $m_2$:</span>
+                    <strong id="prog-m2-val" style="color:#34D399;">3.0 kg</strong>
+                  </div>
+                  <input type="range" id="prog-m2" min="1.0" max="15.0" step="0.5" value="3.0" style="width:100%;">
+                </div>
+              </div>
+
+              <div style="display:flex; gap:16px; margin-top:14px; font-size:0.88rem; flex-wrap:wrap;">
+                <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" id="prog-vec-toggle" checked> Tezlik vektorlari ($\vec{v}$)
+                </label>
+                <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" id="prog-trail-toggle" checked> Harakat traektoriyasi izi
+                </label>
+              </div>
+            </div>
+
+            <!-- HUD Telemetry -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8);">
+              <h4 style="color:#34D399; margin-bottom:14px;">📊 Real Vaqtli Telemetriya (HUD):</h4>
+              
+              <div class="grid-2" style="gap:10px; font-size:0.88rem;">
+                <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                  <span style="color:var(--text-muted);">Umumiy Energiya ($E_k$):</span><br>
+                  <strong id="prog-hud-energy" style="color:#38BDF8; font-size:1.15rem;">0.00 kJ</strong>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                  <span style="color:var(--text-muted);">Umumiy Impuls ($\vec{P}$):</span><br>
+                  <strong id="prog-hud-mom" style="color:#34D399; font-size:1.15rem;">(0, 0)</strong>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                  <span style="color:var(--text-muted);">To'qnashuvlar Soni:</span><br>
+                  <strong id="prog-hud-coll" style="color:#FBBF24;">0 marta</strong>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                  <span style="color:var(--text-muted);">1-Jism Tezligi ($v_1$):</span><br>
+                  <strong id="prog-hud-v1" style="color:#38BDF8;">0.0 px/s</strong>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06); grid-column:span 2;">
+                  <span style="color:var(--text-muted);">2-Jism Tezligi ($v_2$):</span><br>
+                  <strong id="prog-hud-v2" style="color:#34D399;">0.0 px/s</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 3 Structured Lab Experiments Guide -->
+          <div class="glass-panel" style="background:rgba(15,23,42,0.85); border-left:4px solid var(--accent-cyan);">
+            <h4 style="color:var(--accent-cyan); margin-bottom:14px;">🧪 Laboratoriya Eksperimental Tadqiqot Topshiriqlari (PhET Metodikasi):</h4>
+            <div class="grid-3" style="gap:14px;">
+              <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <strong style="color:#38BDF8;">1-Tajriba: Tezliklar Almashinuvi</strong>
+                <p style="font-size:0.83rem; color:var(--text-secondary); line-height:1.5; margin:6px 0;">
+                  Presetdan 1-ssenariyni tanlang ($m_1 = m_2 = 3\text{ kg}, e = 1.0$). Sharlarning to'qnashuvdan keyingi tezliklarini kuzating. Tezliklar to'liq o'zaro almashganini ($v_1' = v_2, v_2' = v_1$) va $E_k = \text{const}$ ekanligini tasdiqlang.
+                </p>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <strong style="color:#34D399;">2-Tajriba: Asimmetrik Massalar</strong>
+                <p style="font-size:0.83rem; color:var(--text-secondary); line-height:1.5; margin:6px 0;">
+                  2-ssenariyni tanlang ($m_1 = 15\text{ kg}, m_2 = 3\text{ kg}$). Og'ir jism yengil jismga urilganda, yengil jism tezligi deyarli $v_2' \approx 2v_1$ gacha oshishini va impuls uzatilishini tahlil qiling.
+                </p>
+              </div>
+
+              <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <strong style="color:#FBBF24;">3-Tajriba: Noelastik Dissipatsiya</strong>
+                <p style="font-size:0.83rem; color:var(--text-secondary); line-height:1.5; margin:6px 0;">
+                  $e = 0.5$ qilib o'rnating. HUD darchasidagi umumiy kinetik energiya kamayishini o'lchang va $\Delta E_k = \frac{1}{2}(1-e^2)\mu v_{norm}^2$ nazariy formulasiga solishtiring.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 7: Diagnostik Test & Adabiyotlar -->
+      <div id="tab-sec7" class="tab-content">
+        <div class="glass-panel" style="margin-bottom:30px;">
+          <span class="badge badge-cyan">O'z-o'zini Baholash</span>
+          <!-- Scientific Citation Box -->
+          <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-weight: 700; color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 6px;">
+              📚 Psixometrik Baholash va Test Metodologiyasi (WWW):
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 8px 0;">
+              Ushbu test savollari <strong>Klassik Test Nazariyasi (CTT)</strong> hamda <strong>Bloom taksonomiyasining tahlil va sintez darajalari</strong> asosida ishlab chiqilgan bo'lib, 2D vektor mexanikasi, to'qnashuv impulsi va kompyuter fizikasi algoritmlarini kompleks baholashga mo'ljallangan.
+            </p>
+            <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(56, 189, 248, 0.2); padding-top: 6px;">
+              🔗 <em>Asosiy Manbalar:</em> Anderson, L. W., & Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>; Ebel, R. L., & Frisbie, D. A. (1991). <em>Essentials of Educational Measurement</em>, Prentice Hall.
+            </div>
+          </div>
+
+          <p style="color:var(--text-secondary); margin-bottom:24px;">
+            2D vektor mexanikasi, to'qnashuv impulsi va fizik dasturlash bo'yicha bilimlaringizni sinab ko'ring:
+          </p>
+
+          <div id="quiz8-container">
+            
+            <!-- Question 1 -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-cyan);">
+              <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
+                1-Savol: 2D elastik to'qnashuvda nisbiy tezlikning normalga proyeksiyasi $v_{norm} = \vec{v}_{rel} \cdot \hat{n} > 0$ bo'lsa, fizik dvigatel qanday qaror qabul qilishi kerak?
+              </h4>
+              <div class="quiz-options" id="quiz8-options-1">
+                <div class="quiz-option-card" onclick="selectQuiz8Option(1, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-1" style="display:none;">
+                  <span>A) Impuls hisoblanmaydi, chunki jismlar allaqachon bir-biridan uzoqlashmoqda</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz8Option(1, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-1" style="display:none;">
+                  <span>B) Ikkala jism tezligi nolga tenglashtiriladi</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz8Option(1, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-1" style="display:none;">
+                  <span>C) Jismlar massasi 2 barobar oshiriladi</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-emerald);">
+              <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
+                2-Savol: Simulyatsiyada to'qnashgan shar shaklidagi jismlarning bir-birining ichiga kirib qolishi (interpenetration / sinking) qanday usul bilan bartaraf etiladi?
+              </h4>
+              <div class="quiz-options" id="quiz8-options-2">
+                <div class="quiz-option-card" onclick="selectQuiz8Option(2, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-2" style="display:none;">
+                  <span>A) Faqat gravitatsiya kuchini o'chirish orqali</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz8Option(2, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-2" style="display:none;">
+                  <span>B) Minimum Translation Vector (MTV) positional correction: jismlarni to'qnashuv normali bo'yicha penetratsiya chuqurligining yarmiga (`penetration / 2`) qarama-qarshi surib qo'yish orqali</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz8Option(2, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-2" style="display:none;">
+                  <span>C) Canvas rangini o'zgartirish orqali</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-purple);">
+              <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
+                3-Savol: Mutlaq noelastik to'qnashuvda ($e = 0$) to'qnashuvdan keyin jismlarning normal o'q bo'yicha nisbiy tezligi qanday bo'ladi?
+              </h4>
+              <div class="quiz-options" id="quiz8-options-3">
+                <div class="quiz-option-card" onclick="selectQuiz8Option(3, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-3" style="display:none;">
+                  <span>A) 0 ga teng bo'ladi (jismlar normal bo'yicha bir xil tezlikda birgalikda harakatlanadi)</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz8Option(3, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-3" style="display:none;">
+                  <span>B) Cheksiz katta bo'ladi</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz8Option(3, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q8-3" style="display:none;">
+                  <span>C) Boshlang'ich tezlikdan 2 barobar katta bo'ladi</span>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="checkDiagnostic8Quiz()" class="btn btn-primary">Natijani Tekshirish va Kompetensiya Xulosasini Olish →</button>
+            <div id="diag8-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Academic Bibliography Section -->
+        <div class="glass-panel" style="background: rgba(15, 23, 42, 0.75); border-left: 4px solid var(--accent-amber);">
+          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 8-Modul Bo'yicha To'liq Ilmiy-Uslubiy Adabiyotlar Ro'yxati (APA 7th):</h3>
+          <ol style="padding-left: 20px; font-size: 0.88rem; line-height: 1.8; color: var(--text-secondary);">
+            <li><strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). John Wiley & Sons. (Chapter 9: Center of Mass and Linear Momentum — 2D Collisions & Energy Dissipation, pp. 215–248). ISBN: 978-1119286240.</li>
+            <li><strong>Serway, R. A., & Jewett, J. W. (2018).</strong> <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning. (Chapter 9: Linear Momentum and Collisions). ISBN: 978-1337553292.</li>
+            <li><strong>Baraff, D. (1997).</strong> <em>Physically Based Modeling: Rigid Body Simulation</em>. SIGGRAPH Course Notes, Robotics Institute, Carnegie Mellon University. URL: <a href="https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf" target="_blank" style="color: var(--accent-amber);">cs.cmu.edu/~baraff/sigcourse/notesd1.pdf</a>.</li>
+            <li><strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press / Taylor & Francis Group. (Chapter 12: The Physics Engine & Rigid Body Dynamics, pp. 680–745). ISBN: 978-1138035485.</li>
+            <li><strong>Williams, L., & Kessler, R. (2002).</strong> <em>Pair Programming Illuminated</em>. Addison-Wesley Professional. (ISBN: 978-0201745764).</li>
+            <li><strong>Begel, A., & Nagappan, N. (2008).</strong> <em>Pair programming: what's in it for me?</em> In <em>Proceedings of the 2008 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '08)</em>, pp. 120–128. DOI: <a href="https://doi.org/10.1145/1414004.1414026" target="_blank" style="color: var(--accent-amber);">10.1145/1414004.1414026</a>.</li>
+            <li><strong>Fiedler, G. (2004).</strong> Collision response and numerical physics integration. <em>Gaffer on Games</em>. URL: <a href="https://gafferongames.com/post/collision_response_and_coulomb_friction/" target="_blank" style="color: var(--accent-amber);">gafferongames.com</a>.</li>
+            <li><strong>Marion, J. B., & Thornton, S. T. (1995).</strong> <em>Classical Dynamics of Particles and Systems</em> (4th ed.). Saunders College Publishing. (ISBN: 978-0030973024).</li>
+            <li><strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. DOI: <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" style="color: var(--accent-amber);">10.1007/3-540-30666-8</a>.</li>
+            <li><strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. <em>Science</em>, 322(5902), 682–683. DOI: <a href="https://doi.org/10.1126/science.1161948" target="_blank" style="color: var(--accent-amber);">10.1126/science.1161948</a>.</li>
+            <li><strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom's Taxonomy of Educational Objectives</em>. Longman. ISBN: 978-0801319037.</li>
+            <li><strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press. ISBN: 978-0674576292.</li>
+          </ol>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-physics-programming.js"></script>
+  <script src="js/ui-controller.js"></script>
+
+  <script>
+    // Tab switching engine
+    window.switchTab = function(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+
+      if (tabId === 'tab-sec6' && window.physProgSim) {
+        window.physProgSim.initCanvasSize();
+      }
+    };
+
+    // Diagnostic Quiz 8 Engine
+    let userAnswers8 = {};
+    window.selectQuiz8Option = function(qId, optIdx) {
+      userAnswers8[qId] = optIdx;
+      const container = document.getElementById(`quiz8-options-${qId}`);
+      if (!container) return;
+      const items = container.querySelectorAll('.quiz-option-card');
+      items.forEach((item, idx) => {
+        const isSelected = (idx === optIdx);
+        item.classList.toggle('selected', isSelected);
+        const radio = item.querySelector('input[type="radio"]');
+        if (radio) radio.checked = isSelected;
+        const dot = item.querySelector('.quiz-dot');
+        if (dot) dot.textContent = isSelected ? '🔘' : '⚪';
+      });
+    };
+
+    window.checkDiagnostic8Quiz = function() {
+      const feedbackEl = document.getElementById('diag8-feedback');
+      if (!feedbackEl) return;
+
+      const answers = [0, 1, 0]; // Correct indices for Q1, Q2, Q3
+      const explanations = [
+        "Agar v_norm > 0 bo'lsa, jismlar uzoqlashmoqda, shuning uchun impuls qo'llanmaydi.",
+        "MTV positional correction orqali jismlar normal o'q bo'yicha penetratsiyaning yarmiga surilib, sinking xatosi to'liq bartaraf etiladi.",
+        "Mutlaq noelastik to'qnashuvda (e = 0) to'qnashuvdan so'ng normal bo'yicha nisbiy tezlik 0 bo'lib, jismlar birgalikda harakatlanadi."
+      ];
+
+      let correctCount = 0;
+      let allAnswered = true;
+      for (let i = 1; i <= 3; i++) {
+        if (userAnswers8[i] === undefined) allAnswered = false;
+      }
+
+      if (!allAnswered) {
+        feedbackEl.innerHTML = `<div style="background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
+        </div>`;
+        return;
+      }
+
+      let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
+        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 8-Modul Vektorlar & To'qnashuv Natijasi:</h4>`;
+
+      for (let i = 1; i <= 3; i++) {
+        const userOpt = userAnswers8[i];
+        const isCorr = (userOpt === answers[i - 1]);
+        if (isCorr) correctCount++;
+
+        htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
+          <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#34D399' : '#F43F5E'};">
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To'g'ri!" : "Xato!"}
+          </div>
+          <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${explanations[i - 1]}</div>
+        </div>`;
+      }
+
+      let badgeName = "Fizika Dasturlash va To'qnashuvlar Mutaxassisi (To'liq O'zlashtirildi)";
+      let badgeColor = '#34D399';
+      if (correctCount < 3) {
+        badgeName = "Vektor Mexanikasi Tadqiqotchisi (Qisman O'zlashtirildi)";
+        badgeColor = '#38BDF8';
+      }
+
+      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${badgeColor}; text-align:center;">
+        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Vektor Dasturlash Kompetensiyangiz:</div>
+        <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${badgeName}</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
+      </div></div>`;
+
+      feedbackEl.innerHTML = htmlResult;
+    };
+  </script>
+</body>
+</html>
