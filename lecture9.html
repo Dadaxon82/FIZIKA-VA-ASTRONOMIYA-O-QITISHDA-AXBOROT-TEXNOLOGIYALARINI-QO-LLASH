@@ -245,7 +245,7 @@
           </div>
 
           <div style="text-align: center; margin: 25px 0;">
-            <img src="assets/fig_few_shot_chain_of_thought.png" alt="Chain of Thought vs Zero-Shot" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+            <img src="assets/fig_few_shot_chain_of_thought.svg" alt="Chain of Thought vs Zero-Shot" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 6px;">
               1-Rasm: Promptlash strategiyalari (Zero-Shot, Few-Shot, CoT) bo'yicha sintaktik va fizik aniqlik darajasi.
             </div>
@@ -316,7 +316,7 @@
               </div>
               <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
                 <strong>Generatsiya qilingan kod kamchiliklari:</strong><br>
-                1. <em>Dinamik kuchlar yo'q:</em> Faqat analitik $y = v_{0y}t - rac{1}{2}gt^2$ chizilgan. Shamol yoki havo qarshiligi hisobga olinmagan.<br>
+                1. <em>Dinamik kuchlar yo'q:</em> Faqat analitik $y = v_{0y}t - \frac{1}{2}gt^2$ chizilgan. Shamol yoki havo qarshiligi hisobga olinmagan.<br>
                 2. <em>Masshtab buzilishi:</em> Metr va piksel o'rtasida bog'liqlik yo'q, shuning uchun snaryad 0.1 soniyada ekrandan chiqib ketadi.<br>
                 3. <em>Chegara xatosi:</em> Yerga urilganda harakat to'xtab qoladi yoki snaryad pastga qarab cheksiz tushaveradi.
               </p>
@@ -362,7 +362,7 @@
           </div>
 
           <div style="text-align: center; margin: 25px 0;">
-            <img src="assets/fig_antigravity_monitoring_architecture.png" alt="Antigravity AI Monitoring Architecture" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+            <img src="assets/fig_antigravity_monitoring_architecture.svg" alt="Antigravity AI Monitoring Architecture" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 6px;">
               2-Rasm: Google Antigravity AI ning 4 ustunli kod nazorati va avtomatik Self-Healing sikli.
             </div>
@@ -382,15 +382,15 @@
               <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">2. Fizik Invariantlar Nazorati</h4>
               <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6;">
                 Simulyatsiya davomida real vaqtda energetik drift tekshiriladi:
-                $$rac{|E(t) - E_0|}{E_0} < 10^{-3}$$
-                Yopiq tizimlarda impuls invariantligi $\sum ec{p} = 	ext{const}$ hamda to'qnashuvlarda penetratsiya (overlap) yo'qligi dinamik tasdiqlanadi.
+                $$\frac{|E(t) - E_0|}{E_0} < 10^{-3}$$
+                Yopiq tizimlarda impuls invariantligi $\sum \vec{p} = \text{const}$ hamda to'qnashuvlarda penetratsiya (overlap) yo'qligi dinamik tasdiqlanadi.
               </p>
             </div>
 
             <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-amber);">
               <h4 style="color: var(--accent-amber); margin-bottom: 8px;">3. Dinamik Kadr Profayleri (60 FPS)</h4>
               <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6;">
-                Kadrlar oralig'i $\Delta t \le 16.6	ext{ ms}$ ekanligi, "Spiral of Death" (vaqt o'sishi oqibatida tsikl qotishi) ning oldi olinishi va Garbage Collector yukini minimallashtirish uchun obyektlar havzasi (Object Pool) nazorat qilinadi.
+                Kadrlar oralig'i $\Delta t \le 16.6\text{ ms}$ ekanligi, "Spiral of Death" (vaqt o'sishi oqibatida tsikl qotishi) ning oldi olinishi va Garbage Collector yukini minimallashtirish uchun obyektlar havzasi (Object Pool) nazorat qilinadi.
               </p>
             </div>
 
@@ -424,7 +424,7 @@
           </div>
 
           <div style="text-align: center; margin: 25px 0;">
-            <img src="assets/fig_prompt_engineering_flow.png" alt="Prompt Engineering Workflow" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+            <img src="assets/fig_prompt_engineering_flow.svg" alt="Prompt Engineering Workflow" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 6px;">
               3-Rasm: Fizik g'oyadan interaktiv Canvas simulyatsiyasigacha bo'lgan to'liq konveyer.
             </div>
@@ -450,7 +450,7 @@
             <div style="margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">
               <span style="color: var(--accent-amber); font-weight: bold; font-size: 0.95rem;">3. Fizik Chegaralar va Matematik Tenglamalar (Constraints & Physics):</span>
               <p style="font-size: 0.86rem; color: var(--text-secondary); margin: 4px 0 0 10px; line-height: 1.55;">
-                Differensial tenglama, chegaraviy shartlar va integratsiya usuli aniq ifodalanadi: <em>"Kuch formulasi: $ec{F} = k rac{q_1 q_2}{r^2} \hat{r}$. Singulyarlikdan qochish uchun $r_{eff} = \max(r, 10	ext{px})$. Sonli usul: Velocity Verlet (yoki Semi-implicit Euler). Devorlar bilan elastik to'qnashuv ($e=0.95$)."</em>
+                Differensial tenglama, chegaraviy shartlar va integratsiya usuli aniq ifodalanadi: <em>"Kuch formulasi: $\vec{F} = k \frac{q_1 q_2}{r^2} \hat{r}$. Singulyarlikdan qochish uchun $r_{eff} = \max(r, 10\text{px})$. Sonli usul: Velocity Verlet (yoki Semi-implicit Euler). Devorlar bilan elastik to'qnashuv ($e=0.95$)."</em>
               </p>
             </div>
 
@@ -491,7 +491,7 @@
           </div>
 
           <div style="text-align: center; margin: 25px 0;">
-            <img src="assets/fig_prompt_taxonomy_matrix.png" alt="Physics Prompt Taxonomy Matrix" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+            <img src="assets/fig_prompt_taxonomy_matrix.svg" alt="Physics Prompt Taxonomy Matrix" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 6px;">
               4-Rasm: Fizika fanlari bo'yicha prompt-muhandislik taksonomiyasi va shablonlar matritsasi.
             </div>
@@ -511,7 +511,7 @@
                   "Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yarat. Shartlar: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, shamol kuchi F_wind = const. Yerga urilganda sakrash restitutsiyasi e=0.7. Real-vaqtda uchish masofasi (L) va maksimal balandlik (H) hisoblansin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yarat. Shartlar: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, shamol kuchi F_wind = const. Yerga urilganda sakrash restitutsiyasi e=0.7. Real-vaqtda uchish masofasi (L) va maksimal balandlik (H) hisoblansin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yarat. Shartlar: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, shamol kuchi F_wind = const. Yerga urilganda sakrash restitutsiyasi e=0.7. Real-vaqtda uchish masofasi (L) va maksimal balandlik (H) hisoblansin.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 2: Spring -->
@@ -525,7 +525,7 @@
                   "HTML5 Canvasda vertikal so'nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'HTML5 Canvasda vertikal so'nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="HTML5 Canvasda vertikal so'nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 3: 2D Collision -->
@@ -539,7 +539,7 @@
                   "2D fazoda turli massali sharlar to'qnashuvi uchun JavaScript dvigatelini yoz. To'qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, '2D fazoda turli massali sharlar to'qnashuvi uchun JavaScript dvigatelini yoz. To'qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="2D fazoda turli massali sharlar to'qnashuvi uchun JavaScript dvigatelini yoz. To'qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 4: Ideal Gas / Brownian -->
@@ -553,7 +553,7 @@
                   "Idishdagi N=100 ta gaz molekulalarining elastik to'qnashuvini modellashtiruvchi Canvas dasturini yarat. Harorat (T) o'zgarganda molekulalar tezligi Maksvell-Bolsman taqsimotiga mos kelsin, devorlarga tushayotgan bosim (P) hisoblansin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Idishdagi N=100 ta gaz molekulalarining elastik to'qnashuvini modellashtiruvchi Canvas dasturini yarat. Harorat (T) o'zgarganda molekulalar tezligi Maksvell-Bolsman taqsimotiga mos kelsin, devorlarga tushayotgan bosim (P) hisoblansin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Idishdagi N=100 ta gaz molekulalarining elastik to'qnashuvini modellashtiruvchi Canvas dasturini yarat. Harorat (T) o'zgarganda molekulalar tezligi Maksvell-Bolsman taqsimotiga mos kelsin, devorlarga tushayotgan bosim (P) hisoblansin.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 5: Heat Diffusion -->
@@ -567,7 +567,7 @@
                   "Fure qonuni asosida 2D metall plastinkada issiqlik tarqalishi differensial tenglamasini (dT/dt = alpha * nabla^2 T) sonli to'r (grid) usulida Canvasda rangli xarita (heatmap) ko'rinishida animatsiya qiladigan ES6 klassini yoz."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Fure qonuni asosida 2D metall plastinkada issiqlik tarqalishi differensial tenglamasini (dT/dt = alpha * nabla^2 T) sonli to'r (grid) usulida Canvasda rangli xarita (heatmap) ko'rinishida animatsiya qiladigan ES6 klassini yoz.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Fure qonuni asosida 2D metall plastinkada issiqlik tarqalishi differensial tenglamasini (dT/dt = alpha * nabla^2 T) sonli to'r (grid) usulida Canvasda rangli xarita (heatmap) ko'rinishida animatsiya qiladigan ES6 klassini yoz.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 6: Coulomb Field -->
@@ -581,7 +581,7 @@
                   "Foydalanuvchi sichqoncha bilan musbat va manfiy zaryadlarni qo'yadigan, ular orasidagi elektrostatik kuch chiziqlari (E-field lines) va ekvipotensial sirtlarni Runge-Kutta 2 usulida chizadigan interaktiv Canvas yarat."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Foydalanuvchi sichqoncha bilan musbat va manfiy zaryadlarni qo'yadigan, ular orasidagi elektrostatik kuch chiziqlari (E-field lines) va ekvipotensial sirtlarni Runge-Kutta 2 usulida chizadigan interaktiv Canvas yarat.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Foydalanuvchi sichqoncha bilan musbat va manfiy zaryadlarni qo'yadigan, ular orasidagi elektrostatik kuch chiziqlari (E-field lines) va ekvipotensial sirtlarni Runge-Kutta 2 usulida chizadigan interaktiv Canvas yarat.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 7: Lorentz & Cyclotron -->
@@ -595,7 +595,7 @@
                   "Bir jinsli magnit (B) va elektr (E) maydondagi zaryadlangan zarracha traektoriyasini Boris integratori yordamida modellashtir. Siklotron radiusi R = mv/(qB) va spiral harakat qadami real-vaqtda ekranda ko'rsatilsin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Bir jinsli magnit (B) va elektr (E) maydondagi zaryadlangan zarracha traektoriyasini Boris integratori yordamida modellashtir. Siklotron radiusi R = mv/(qB) va spiral harakat qadami real-vaqtda ekranda ko'rsatilsin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Bir jinsli magnit (B) va elektr (E) maydondagi zaryadlangan zarracha traektoriyasini Boris integratori yordamida modellashtir. Siklotron radiusi R = mv/(qB) va spiral harakat qadami real-vaqtda ekranda ko'rsatilsin.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 8: Double-Slit Wave -->
@@ -609,7 +609,7 @@
                   "Yung tajribasidagi ikki tirqishli to'lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O'ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Yung tajribasidagi ikki tirqishli to'lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O'ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Yung tajribasidagi ikki tirqishli to'lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O'ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 9: Refraction & Snell -->
@@ -623,7 +623,7 @@
                   "Nur optikasi: n1 va n2 sindirish ko'rsatkichli ikki muhit chegarasida nurning sinishi (n1*sin(a) = n2*sin(b)) va to'la ichki qaytish (a >= a_crit) hodisasini sichqoncha bilan nur burchagini o'zgartiruvchi Canvasda modellashtir."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Nur optikasi: n1 va n2 sindirish ko'rsatkichli ikki muhit chegarasida nurning sinishi (n1*sin(a) = n2*sin(b)) va to'la ichki qaytish (a >= a_crit) hodisasini sichqoncha bilan nur burchagini o'zgartiruvchi Canvasda modellashtir.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Nur optikasi: n1 va n2 sindirish ko'rsatkichli ikki muhit chegarasida nurning sinishi (n1*sin(a) = n2*sin(b)) va to'la ichki qaytish (a >= a_crit) hodisasini sichqoncha bilan nur burchagini o'zgartiruvchi Canvasda modellashtir.">📋 Nusxa Olish</button>
             </div>
 
             <!-- Prompt 10: Bohr Atom -->
@@ -637,7 +637,7 @@
                   "Vodorod atomining Bohr modeli: n=1,2,3,4 statsionar orbitalar. Foydalanuvchi orbitalarni bosganda elektronning kvant sakrashi va nurlangan foton to'lqin paketi animatsiyasi chiqarilsin. Energiya sathi En = -13.6/n^2 eV hisoblansin."
                 </p>
               </div>
-              <button class="btn btn-secondary btn-sm" style="align-self: flex-start;" onclick="copyPromptToClipboard(this, 'Vodorod atomining Bohr modeli: n=1,2,3,4 statsionar orbitalar. Foydalanuvchi orbitalarni bosganda elektronning kvant sakrashi va nurlangan foton to'lqin paketi animatsiyasi chiqarilsin. Energiya sathi En = -13.6/n^2 eV hisoblansin.')">📋 Nusxa Olish</button>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" style="align-self: flex-start;" data-prompt="Vodorod atomining Bohr modeli: n=1,2,3,4 statsionar orbitalar. Foydalanuvchi orbitalarni bosganda elektronning kvant sakrashi va nurlangan foton to'lqin paketi animatsiyasi chiqarilsin. Energiya sathi En = -13.6/n^2 eV hisoblansin.">📋 Nusxa Olish</button>
             </div>
 
           </div>
@@ -721,13 +721,13 @@
               </div>
 
               <div class="canvas-wrapper" style="position: relative; width: 100%; height: 380px; background: #0B0F19; border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden;">
-                <canvas id="prompt-sandbox-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                <canvas id="prompt-sandbox-canvas" width="700" height="380" style="width: 100%; height: 100%; display: block;"></canvas>
               </div>
 
               <!-- Canvas Toggles -->
               <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 0.84rem; color: var(--text-secondary);">
                 <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                  <input type="checkbox" id="chk-show-vectors" checked> Vektorlar ($ec{v}$)
+                  <input type="checkbox" id="chk-show-vectors" checked> Vektorlar ($\vec{v}$)
                 </label>
                 <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
                   <input type="checkbox" id="chk-show-trails" checked> Traektoriya Izi
@@ -748,7 +748,7 @@
                 <strong id="stat-energy" style="color: var(--accent-emerald); margin-left: 6px;">0.00 J</strong>
               </div>
               <div>
-                <span style="color: var(--text-muted);">Tezlik ($|ec{v}|$):</span>
+                <span style="color: var(--text-muted);">Tezlik ($|\vec{v}|$):</span>
                 <strong id="stat-vel" style="color: var(--accent-amber); margin-left: 6px;">0.00 m/s</strong>
               </div>
               <div>
@@ -836,7 +836,7 @@
               <div>
                 <h4 style="color: var(--accent-cyan); margin-bottom: 4px;">📊 9-Ma'ruza Taqdimot Fayli (.PPTX)</h4>
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-                  20 ta professional qorong'i mavzudagi 16:9 slaydlar, arxitektura diagrammalari va ilmiy manbalar.
+                  10 ta professional qorong'i mavzudagi 16:9 slayd, arxitektura diagrammalari va ilmiy manbalar.
                 </p>
               </div>
               <a href="assets/AI_Prompt_Muhandislik_Kod_Generatsiyasi_Taqdimot.pptx" download class="btn btn-secondary btn-sm" style="display: flex; align-items: center; gap: 6px;">
@@ -913,6 +913,22 @@
   <script src="js/sim-prompt-engineering.js"></script>
   <script src="js/ui-controller.js"></script>
   <script>
+    // Tab switching engine
+    window.switchTab = function(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+
+      if (tabId === 'tab-sec6' && window.promptEngLab) {
+        window.promptEngLab.initCanvasSize();
+      }
+    };
+
     function checkQuiz() {
       const q1 = document.querySelector('input[name="q1"]:checked');
       const q2 = document.querySelector('input[name="q2"]:checked');
