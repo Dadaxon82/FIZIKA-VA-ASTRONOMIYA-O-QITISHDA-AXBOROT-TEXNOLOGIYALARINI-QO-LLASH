@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" font-family="Inter, sans-serif">
+  <rect width="980" height="420" fill="#0B0F19"/>
+  <text x="490" y="32" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="700">Qiya Tekislik FBD va 2D Elastik To'qnashuv Impulsi</text>
+
+  <!-- Left: inclined plane FBD -->
+  <g>
+    <text x="220" y="65" text-anchor="middle" fill="#38BDF8" font-size="13" font-weight="700">Erkin Jism Diagrammasi (FBD)</text>
+    <polygon points="60,340 400,340 400,140" fill="none" stroke="#334155" stroke-width="2"/>
+    <rect x="230" y="205" width="46" height="30" fill="#FBBF24" stroke="#0B0F19" transform="rotate(-33 253 220)"/>
+    <!-- Force vectors from block center -->
+    <line x1="253" y1="220" x2="253" y2="290" stroke="#F43F5E" stroke-width="3" marker-end="url(#arRed)"/>
+    <text x="260" y="285" fill="#F43F5E" font-size="12" font-weight="700">mg</text>
+    <line x1="253" y1="220" x2="205" y2="178" stroke="#34D399" stroke-width="3" marker-end="url(#arGreen)"/>
+    <text x="175" y="168" fill="#34D399" font-size="12" font-weight="700">N</text>
+    <line x1="253" y1="220" x2="300" y2="245" stroke="#FBBF24" stroke-width="3" marker-end="url(#arYellow)"/>
+    <text x="305" y="260" fill="#FBBF24" font-size="12" font-weight="700">F_ishq</text>
+    <path d="M 100 340 A 40 40 0 0 0 130 313" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+    <text x="112" y="330" fill="#94A3B8" font-size="12">α</text>
+  </g>
+
+  <g font-size="12" fill="#CBD5E1">
+    <text x="60" y="375">F∥ = mg sinα,  N = mg cosα</text>
+    <text x="60" y="395">Harakat sharti: tanα &gt; μₛ ⇒ a = g(sinα - μₖcosα)</text>
+  </g>
+
+  <!-- Right: 2D collision -->
+  <g>
+    <text x="740" y="65" text-anchor="middle" fill="#C084FC" font-size="13" font-weight="700">2D Elastik To'qnashuv Impulsi</text>
+    <rect x="560" y="100" width="360" height="230" rx="8" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+    <circle cx="640" cy="180" r="20" fill="#38BDF8" opacity="0.9"/>
+    <text x="640" y="185" text-anchor="middle" fill="#0B0F19" font-size="11" font-weight="700">m₁</text>
+    <line x1="640" y1="180" x2="700" y2="180" stroke="#38BDF8" stroke-width="2" marker-end="url(#arBlue)"/>
+
+    <circle cx="760" cy="220" r="26" fill="#FBBF24" opacity="0.9"/>
+    <text x="760" y="225" text-anchor="middle" fill="#0B0F19" font-size="11" font-weight="700">m₂</text>
+    <line x1="760" y1="220" x2="720" y2="200" stroke="#FBBF24" stroke-width="2" marker-end="url(#arYellow2)"/>
+
+    <line x1="690" y1="195" x2="720" y2="210" stroke="#F43F5E" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="700" y="245" fill="#F43F5E" font-size="11">kontakt normali n</text>
+  </g>
+
+  <g font-size="12" fill="#CBD5E1">
+    <text x="560" y="365">J = -(1+e)(v₁-v₂)·n / (1/m₁ + 1/m₂)</text>
+    <text x="560" y="385">v₁' = v₁ + (J/m₁)n,  v₂' = v₂ - (J/m₂)n</text>
+  </g>
+
+  <defs>
+    <marker id="arRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#F43F5E"/></marker>
+    <marker id="arGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#34D399"/></marker>
+    <marker id="arYellow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#FBBF24"/></marker>
+    <marker id="arBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#38BDF8"/></marker>
+    <marker id="arYellow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#FBBF24"/></marker>
+  </defs>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" font-family="Inter, sans-serif">
+  <rect width="980" height="380" fill="#0B0F19"/>
+  <text x="490" y="34" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="700">Runway Gen-2 orqali Kinematik Video Sintezi Konveyeri</text>
+
+  <g font-size="13" font-weight="700">
+    <rect x="60" y="90" width="250" height="120" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+    <text x="185" y="122" text-anchor="middle" fill="#38BDF8">1. Fizik Parametrlarni</text>
+    <text x="185" y="140" text-anchor="middle" fill="#38BDF8">Promptga Joylash</text>
+    <text x="185" y="164" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="400">massa, ishqalanish,</text>
+    <text x="185" y="182" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="400">burchak, yorug'lik</text>
+
+    <rect x="365" y="90" width="250" height="120" rx="10" fill="#0F172A" stroke="#F43F5E" stroke-width="2"/>
+    <text x="490" y="122" text-anchor="middle" fill="#F43F5E">2. Neyron Video</text>
+    <text x="490" y="140" text-anchor="middle" fill="#F43F5E">Sintezi (Runway Gen-2)</text>
+    <text x="490" y="164" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="400">Latent Diffusion,</text>
+    <text x="490" y="182" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="400">120fps slow-motion</text>
+
+    <rect x="670" y="90" width="250" height="120" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="2"/>
+    <text x="795" y="122" text-anchor="middle" fill="#34D399">3. Taqqoslovchi</text>
+    <text x="795" y="140" text-anchor="middle" fill="#34D399">Tahlil</text>
+    <text x="795" y="164" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="400">Video vs Canvas</text>
+    <text x="795" y="182" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="400">simulyatsiya natijalari</text>
+  </g>
+
+  <line x1="310" y1="150" x2="365" y2="150" stroke="#94A3B8" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="615" y1="150" x2="670" y2="150" stroke="#94A3B8" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="240" y="260" width="500" height="80" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="490" y="290" text-anchor="middle" fill="#CBD5E1" font-size="13" font-weight="700">Dual-Coding Theory (Paivio, 2007):</text>
+  <text x="490" y="312" text-anchor="middle" fill="#94A3B8" font-size="11">Vizual + verbal kanallar parallel faollashganda</text>
+  <text x="490" y="328" text-anchor="middle" fill="#94A3B8" font-size="11">uzoq muddatli xotiraga muhrlanish 60% tezlashadi</text>
+
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#94A3B8"/></marker>
+  </defs>
+</svg>

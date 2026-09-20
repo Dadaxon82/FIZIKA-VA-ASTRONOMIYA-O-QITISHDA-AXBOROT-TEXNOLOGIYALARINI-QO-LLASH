@@ -156,7 +156,7 @@
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_mechanics_pipeline.png" alt="To'liq AI Pipeline Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_mechanics_pipeline.svg" alt="To'liq AI Pipeline Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">12.1-rasm: Klassik mexanikani o'rganishda yaxlit 4 bosqichli AI-Pipeline konveyeri.</div>
         </div>
 
@@ -208,7 +208,7 @@
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_newton_laws_simulation.png" alt="Nyuton Dinamikasi va To'qnashuv Simulyatsiyasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_newton_laws_simulation.svg" alt="Nyuton Dinamikasi va To'qnashuv Simulyatsiyasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">12.2-rasm: Qiya tekislikdagi kuchlar balansi (FBD) va 2D elastik to'qnashuv impulsi matematik apparati.</div>
         </div>
 
@@ -476,7 +476,7 @@ class PhysicsParticle2D {
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_energy_momentum_phase.png" alt="Fazaviy Fazo va Energiya Saqlanishi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_energy_momentum_phase.svg" alt="Fazaviy Fazo va Energiya Saqlanishi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">12.3-rasm: Simplektik Eyler-Kromer va oddiy Eyler integratsiyasida fazaviy portret va energiya saqlanishi auditi.</div>
         </div>
 
@@ -530,7 +530,7 @@ class PhysicsParticle2D {
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_video_gen_kinematics.png" alt="Generativ Video Sintezi Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_video_gen_kinematics.svg" alt="Generativ Video Sintezi Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">12.4-rasm: Claude 3.5 prompt-muhandisligi orqali Runway Gen-2 da kinematik video sintez qilish bosqichlari.</div>
         </div>
 
@@ -793,6 +793,42 @@ class PhysicsParticle2D {
 
   <!-- Quiz Script & Scripts Inclusion -->
   <script>
+    // Horizontal tab-nav scroll controls (prev/next arrows + progress track)
+    window.scrollTabsNav = function(delta) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) nav.scrollBy({ left: delta, behavior: 'smooth' });
+    };
+
+    function updateTabsScrollUI() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      const prevBtn = document.getElementById('tabs-scroll-prev');
+      const nextBtn = document.getElementById('tabs-scroll-next');
+      if (!nav || !thumb) return;
+
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 1) {
+        thumb.style.width = '100%';
+        thumb.style.marginLeft = '0%';
+      } else {
+        const visibleFrac = Math.min(1, nav.clientWidth / nav.scrollWidth);
+        const scrolledFrac = nav.scrollLeft / maxScroll;
+        thumb.style.width = (visibleFrac * 100) + '%';
+        thumb.style.marginLeft = (scrolledFrac * (1 - visibleFrac) * 100) + '%';
+      }
+      if (prevBtn) prevBtn.disabled = nav.scrollLeft <= 1;
+      if (nextBtn) nextBtn.disabled = nav.scrollLeft >= maxScroll - 1;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollUI);
+        window.addEventListener('resize', updateTabsScrollUI);
+        updateTabsScrollUI();
+      }
+    });
+
     window.switchTab = function(evt, tabId) {
       if (!tabId && evt && evt.currentTarget) {
         tabId = evt.currentTarget.getAttribute('data-tab');
