@@ -6,7 +6,13 @@
  * saqlaydigan yopiq shakldagi orbita hisoblanadi. Uzunlik/vaqt/massa
  * birliklari AU-yil-Quyosh massasi tizimida (G' = 4pi^2), bu haqiqiy
  * km/s va yil qiymatlarini to'g'ridan-to'g'ri beradi.
+ *
+ * Vizuallashtirish uchun Three.js orqali haqiqiy 3D sahna ishlatiladi
+ * (OrbitControls bilan sichqoncha/barmoq orqali aylantirish/kattalashtirish).
  */
+import * as THREE from 'three';
+import { OrbitControls } from './vendor/OrbitControls.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   initAstronomyVisualizationLab();
 });
@@ -14,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function initAstronomyVisualizationLab() {
   const canvas = document.getElementById('astronomy-canvas');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
 
   const presetBtns = document.querySelectorAll('.astro-preset-btn');
   const sliderE = document.getElementById('sl-eccentricity');
@@ -37,7 +42,9 @@ function initAstronomyVisualizationLab() {
   const AU_YR_TO_KMS = 4.74047; // 1 AU/yil = 4.74 km/s
   const KM_PER_AU = 149.6e6;
   const BASE_YEARS_PER_SEC = 0.12; // animatsiya tezligi (bir yil taxminan ~8s da, x1.0 tezlikda)
+  const TRAIL_LEN = 220;
 
+  // ---- Fizika: Kepler yopiq yechimi (o'zgarishsiz) ----
   class KeplerBody {
     constructor(a, e, opts = {}) {
       this.a = a;
@@ -92,24 +99,24 @@ function initAstronomyVisualizationLab() {
     let list = [];
 
     if (name === 'exoplanet') {
-      const star = new KeplerBody(0, 0, { M: 0.9, color: '#FBBF24', radius: 16, label: "Yulduz" });
-      star.mu = 0; star.r = 0; star.x = 0; star.y = 0; star.vx = 0; star.vy = 0; star.speed = 0; star.advance = () => {};
-      const planet = new KeplerBody(a0, e0, { M: 0.9, theta: 0, color: '#F97316', radius: 8, label: "Hot Jupiter", isPrimary: true });
+      const star = new KeplerBody(0, 0, { M: 0.9, color: '#FBBF24', radius: 0.34, label: "Yulduz" });
+      star.r = 0; star.x = 0; star.y = 0; star.vx = 0; star.vy = 0; star.speed = 0; star.advance = () => {};
+      const planet = new KeplerBody(a0, e0, { M: 0.9, theta: 0, color: '#F97316', radius: 0.14, label: "Hot Jupiter", isPrimary: true });
       list = [star, planet];
       primary = planet;
     } else if (name === 'binary') {
-      const starB = new KeplerBody(a0, e0, { M: 1.0, theta: 0, color: '#38BDF8', radius: 10, label: "Yulduz B", isPrimary: true });
-      const starA = new KeplerBody(a0, e0, { M: 1.0, theta: Math.PI, color: '#F43F5E', radius: 10, label: "Yulduz A", mirrorOf: starB });
+      const starB = new KeplerBody(a0, e0, { M: 1.0, theta: 0, color: '#38BDF8', radius: 0.2, label: "Yulduz B", isPrimary: true });
+      const starA = new KeplerBody(a0, e0, { M: 1.0, theta: Math.PI, color: '#F43F5E', radius: 0.2, label: "Yulduz A", mirrorOf: starB });
       list = [starA, starB];
       primary = starB;
     } else {
       // solar: markaziy Quyosh (statik) + ichki sayyoralar + Yupiter + kometa
-      const mercury = new KeplerBody(0.39, 0.206, { color: '#94A3B8', radius: 3, label: "Merkuriy" });
-      const venus = new KeplerBody(0.72, 0.007, { color: '#FBBF24', radius: 4, label: "Venera" });
-      const earth = new KeplerBody(a0, e0, { color: '#38BDF8', radius: 5, label: "Yer", isPrimary: true });
-      const mars = new KeplerBody(1.52, 0.093, { color: '#F43F5E', radius: 4, label: "Mars" });
-      const jupiter = new KeplerBody(2.8, 0.048, { color: '#C084FC', radius: 9, label: "Yupiter" });
-      const comet = new KeplerBody(2.2, 0.85, { color: '#F8FAFC', radius: 2, label: "Kometa" });
+      const mercury = new KeplerBody(0.39, 0.206, { color: '#94A3B8', radius: 0.05, label: "Merkuriy" });
+      const venus = new KeplerBody(0.72, 0.007, { color: '#FBBF24', radius: 0.07, label: "Venera" });
+      const earth = new KeplerBody(a0, e0, { color: '#38BDF8', radius: 0.08, label: "Yer", isPrimary: true });
+      const mars = new KeplerBody(1.52, 0.093, { color: '#F43F5E', radius: 0.06, label: "Mars" });
+      const jupiter = new KeplerBody(2.8, 0.048, { color: '#C084FC', radius: 0.16, label: "Yupiter" });
+      const comet = new KeplerBody(2.2, 0.85, { color: '#F8FAFC', radius: 0.03, label: "Kometa" });
       list = [mercury, venus, earth, mars, jupiter, comet];
       primary = earth;
     }
@@ -127,11 +134,149 @@ function initAstronomyVisualizationLab() {
     }
   }
 
+  // ==========================================================================
+  // 3D SAHNA (Three.js)
+  // ==========================================================================
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0b0f19);
+  scene.fog = new THREE.FogExp2(0x0b0f19, 0.018);
+
+  const camera = new THREE.PerspectiveCamera(48, 800 / 480, 0.05, 500);
+  camera.position.set(4.5, 4.2, 7.5);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.minDistance = 1.2;
+  controls.maxDistance = 30;
+  controls.target.set(0, 0, 0);
+
+  // Yulduzlar foni
+  {
+    const starGeo = new THREE.BufferGeometry();
+    const starCount = 1200;
+    const positions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      const r = 60 + Math.random() * 140;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = r * Math.cos(phi);
+      positions[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
+    }
+    starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.35, sizeAttenuation: true, transparent: true, opacity: 0.75 });
+    scene.add(new THREE.Points(starGeo, starMat));
+  }
+
+  const ambientLight = new THREE.AmbientLight(0x404860, 1.1);
+  scene.add(ambientLight);
+  const centerLight = new THREE.PointLight(0xfff2d9, 3.2, 60, 1.6);
+  scene.add(centerLight);
+
+  // Markaziy jism (Quyosh/Yulduz) mesh(lar)i — preset almashganda qayta yaratiladi
+  let centerMeshes = [];
+  function clearCenterMeshes() {
+    centerMeshes.forEach(m => { scene.remove(m); m.geometry.dispose(); m.material.dispose(); });
+    centerMeshes = [];
+  }
+  function addStarMesh(radius, color) {
+    const geo = new THREE.SphereGeometry(radius, 32, 32);
+    const mat = new THREE.MeshBasicMaterial({ color });
+    const mesh = new THREE.Mesh(geo, mat);
+    scene.add(mesh);
+    centerMeshes.push(mesh);
+
+    const glowGeo = new THREE.SphereGeometry(radius * 1.8, 32, 32);
+    const glowMat = new THREE.MeshBasicMaterial({
+      color, transparent: true, opacity: 0.16, depthWrite: false,
+      blending: THREE.AdditiveBlending
+    });
+    const glow = new THREE.Mesh(glowGeo, glowMat);
+    scene.add(glow);
+    centerMeshes.push(glow);
+    return mesh;
+  }
+
+  // Har bir jism uchun: mesh, orbita chizig'i, iz (trail)
+  const bodyViews = new Map();
+
+  function makeOrbitLine(body, color, mirror) {
+    // "mirror" — binary tizimda ikkinchi yulduzning orbitasi, teng massalar
+    // taxminida barysentr (koordinata boshi) atrofida nuqtaviy simmetrik
+    // bo'ladi (r_A = -r_B), shu sababli oddiy 180° burilish emas, aynan
+    // nuqtaviy aks (x,z) -> (-x,-z) qo'llaniladi.
+    const points = [];
+    const N = 128;
+    for (let i = 0; i <= N; i++) {
+      const th = (i / N) * Math.PI * 2;
+      const r = body.p / (1 + body.e * Math.cos(th));
+      let x = r * Math.cos(th);
+      let z = -r * Math.sin(th);
+      if (mirror) { x = -x; z = -z; }
+      points.push(new THREE.Vector3(x, 0, z));
+    }
+    const geo = new THREE.BufferGeometry().setFromPoints(points);
+    const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.35 });
+    return new THREE.Line(geo, mat);
+  }
+
+  function makeTrailLine(color) {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(TRAIL_LEN * 3), 3));
+    geo.setDrawRange(0, 0);
+    const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.45 });
+    return new THREE.Line(geo, mat);
+  }
+
+  function rebuildBodyViews() {
+    // eski ko'rinishlarni tozalash
+    for (const view of bodyViews.values()) {
+      scene.remove(view.mesh, view.orbit, view.trail, view.velocityArrow, view.gravityArrow);
+      view.mesh.geometry.dispose(); view.mesh.material.dispose();
+      view.orbit.geometry.dispose(); view.orbit.material.dispose();
+      view.trail.geometry.dispose(); view.trail.material.dispose();
+    }
+    bodyViews.clear();
+    clearCenterMeshes();
+
+    if (preset === 'exoplanet') {
+      addStarMesh(0.34, 0xfbbf24);
+    } else if (preset !== 'binary') {
+      addStarMesh(0.26, 0xf59e0b);
+    }
+
+    for (const b of bodies) {
+      const colorNum = new THREE.Color(b.color).getHex();
+      const geo = new THREE.SphereGeometry(b.radius, 20, 16);
+      const mat = new THREE.MeshStandardMaterial({ color: colorNum, roughness: 0.6, metalness: 0.1, emissive: colorNum, emissiveIntensity: 0.15 });
+      const mesh = new THREE.Mesh(geo, mat);
+      scene.add(mesh);
+
+      const orbit = b.mirrorOf ? makeOrbitLine(b.mirrorOf, colorNum, true) : makeOrbitLine(b, colorNum, false);
+      scene.add(orbit);
+
+      const trail = makeTrailLine(colorNum);
+      scene.add(trail);
+
+      const velocityArrow = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 1, 0xf8fafc, 0.12, 0.06);
+      const gravityArrow = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 1, 0xf43f5e, 0.1, 0.05);
+      velocityArrow.visible = false; gravityArrow.visible = false;
+      scene.add(velocityArrow, gravityArrow);
+
+      bodyViews.set(b, { mesh, orbit, trail, velocityArrow, gravityArrow, trailPoints: [] });
+    }
+  }
+
   function resetSimulation() {
     bodies = buildPreset(preset);
     syncMirrors();
     lastTime = null;
     updateSliderLabels();
+    rebuildBodyViews();
   }
 
   function updateSliderLabels() {
@@ -150,13 +295,36 @@ function initAstronomyVisualizationLab() {
     });
   });
 
+  function rebuildOrbitLineFor(body) {
+    const view = bodyViews.get(body);
+    if (!view) return;
+    scene.remove(view.orbit);
+    view.orbit.geometry.dispose(); view.orbit.material.dispose();
+    const colorNum = new THREE.Color(body.color).getHex();
+    view.orbit = body.mirrorOf
+      ? makeOrbitLine(body.mirrorOf, colorNum, true)
+      : makeOrbitLine(body, colorNum, false);
+    scene.add(view.orbit);
+  }
+
+  function rebuildPrimaryOrbit() {
+    if (!primary) return;
+    rebuildOrbitLineFor(primary);
+    // binary: ikkinchi yulduzning aksli orbitasi ham qayta chiziladi
+    for (const b of bodies) {
+      if (b.mirrorOf === primary) rebuildOrbitLineFor(b);
+    }
+  }
+
   sliderE.addEventListener('input', () => {
     if (primary) primary.e = parseFloat(sliderE.value);
     updateSliderLabels();
+    rebuildPrimaryOrbit();
   });
   sliderA.addEventListener('input', () => {
     if (primary) primary.a = parseFloat(sliderA.value);
     updateSliderLabels();
+    rebuildPrimaryOrbit();
   });
   sliderSpeed.addEventListener('input', updateSliderLabels);
 
@@ -169,84 +337,56 @@ function initAstronomyVisualizationLab() {
     bodies.forEach(b => { b.theta = b.mirrorOf ? b.theta : 0; b.trail = []; });
     bodies.forEach(b => { if (!b.mirrorOf) b.initCompute(); });
     syncMirrors();
+    for (const view of bodyViews.values()) {
+      view.trailPoints = [];
+      view.trail.geometry.setDrawRange(0, 0);
+    }
   });
 
-  // ---- World-to-Screen transformatsiyasi (sahifaning 3-bo'limidagi formula) ----
-  function worldToScreen(x, y, w, h, scale) {
-    return { sx: w / 2 + x * scale, sy: h / 2 - y * scale };
+  // Dunyo koordinatasi (x, y orbital tekislik) -> 3D (x, 0, z)
+  function worldToScene3D(x, y) {
+    return new THREE.Vector3(x, 0, -y);
   }
 
-  function drawArrow(fromX, fromY, toX, toY, color) {
-    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(fromX, fromY); ctx.lineTo(toX, toY); ctx.stroke();
-    const angle = Math.atan2(toY - fromY, toX - fromX);
-    ctx.beginPath();
-    ctx.moveTo(toX, toY);
-    ctx.lineTo(toX - 8 * Math.cos(angle - 0.4), toY - 8 * Math.sin(angle - 0.4));
-    ctx.lineTo(toX - 8 * Math.cos(angle + 0.4), toY - 8 * Math.sin(angle + 0.4));
-    ctx.closePath(); ctx.fill();
-  }
-
-  function drawScene() {
-    const w = canvas.clientWidth || 800, h = canvas.clientHeight || 480;
-    ctx.clearRect(0, 0, w, h);
-
-    const maxA = Math.max(3.2, ...bodies.filter(b => !b.mirrorOf).map(b => b.a * (1 + b.e)));
-    const scale = (Math.min(w, h) / 2 - 20) / maxA;
+  function updateScene() {
     const showTrails = chkTrails ? chkTrails.checked : true;
     const showVectors = chkVectors ? chkVectors.checked : true;
 
-    // Markaziy jism (Quyosh/Yulduz)
-    const center = worldToScreen(0, 0, w, h, scale);
-    if (preset !== 'binary') {
-      const sunR = preset === 'exoplanet' ? 16 : 12;
-      const grad = ctx.createRadialGradient(center.sx, center.sy, 0, center.sx, center.sy, sunR * 2);
-      grad.addColorStop(0, '#FFF7ED');
-      grad.addColorStop(1, preset === 'exoplanet' ? '#FBBF24' : '#F59E0B');
-      ctx.fillStyle = grad;
-      ctx.beginPath(); ctx.arc(center.sx, center.sy, sunR, 0, Math.PI * 2); ctx.fill();
-    }
-
     for (const b of bodies) {
-      const p = worldToScreen(b.x, b.y, w, h, scale);
+      const view = bodyViews.get(b);
+      if (!view) continue;
+      const pos = worldToScene3D(b.x, b.y);
+      view.mesh.position.copy(pos);
 
+      view.trail.visible = showTrails;
       if (showTrails) {
-        b.trail.push({ x: p.sx, y: p.sy });
-        if (b.trail.length > 260) b.trail.shift();
-        if (b.trail.length > 1) {
-          ctx.beginPath();
-          ctx.strokeStyle = b.color; ctx.globalAlpha = 0.35; ctx.lineWidth = 1.5;
-          b.trail.forEach((pt, i) => i === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y));
-          ctx.stroke();
-          ctx.globalAlpha = 1;
+        view.trailPoints.push(pos.clone());
+        if (view.trailPoints.length > TRAIL_LEN) view.trailPoints.shift();
+        const posAttr = view.trail.geometry.getAttribute('position');
+        for (let i = 0; i < view.trailPoints.length; i++) {
+          posAttr.setXYZ(i, view.trailPoints[i].x, view.trailPoints[i].y, view.trailPoints[i].z);
         }
+        posAttr.needsUpdate = true;
+        view.trail.geometry.setDrawRange(0, view.trailPoints.length);
       }
 
-      ctx.fillStyle = b.color;
-      ctx.beginPath(); ctx.arc(p.sx, p.sy, b.radius, 0, Math.PI * 2); ctx.fill();
-
-      if (b.isPrimary && showVectors) {
-        const vScale = 6;
-        drawArrow(p.sx, p.sy, p.sx + b.vx * vScale, p.sy - b.vy * vScale, '#F8FAFC');
+      const showArrowsForThis = b.isPrimary && showVectors;
+      view.velocityArrow.visible = showArrowsForThis;
+      view.gravityArrow.visible = showArrowsForThis;
+      if (showArrowsForThis) {
+        const vVec = new THREE.Vector3(b.vx, 0, -b.vy);
+        const vLen = vVec.length();
+        if (vLen > 1e-4) {
+          view.velocityArrow.position.copy(pos);
+          view.velocityArrow.setDirection(vVec.clone().normalize());
+          view.velocityArrow.setLength(Math.min(2.2, 0.35 * vLen), 0.12, 0.06);
+        }
         if (b.r > 0.001) {
-          const nx = -b.x / b.r, ny = -b.y / b.r;
-          drawArrow(p.sx, p.sy, p.sx + nx * 22, p.sy - ny * 22, '#F43F5E');
+          const gVec = new THREE.Vector3(-b.x / b.r, 0, b.y / b.r);
+          view.gravityArrow.position.copy(pos);
+          view.gravityArrow.setDirection(gVec);
+          view.gravityArrow.setLength(0.55, 0.1, 0.05);
         }
-      }
-    }
-
-    // Ekzosayyora tranzit indikatori: sayyora yulduz oldidan o'tayotganda
-    if (preset === 'exoplanet') {
-      const planet = bodies.find(b => b.isPrimary);
-      const screenPlanet = worldToScreen(planet.x, planet.y, w, h, scale);
-      const dx = screenPlanet.sx - center.sx;
-      const transiting = Math.abs(dx) < 16 && planet.y > 0;
-      if (transiting) {
-        ctx.fillStyle = 'rgba(0,0,0,0.35)';
-        ctx.beginPath(); ctx.arc(center.sx, center.sy, 16, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = '#F8FAFC';
-        ctx.font = '12px monospace';
-        ctx.fillText('🔭 TRANZIT ANIQLANDI (yorug\'lik pasaymoqda)', 14, h - 16);
       }
     }
   }
@@ -282,17 +422,33 @@ function initAstronomyVisualizationLab() {
       syncMirrors();
     }
 
-    drawScene();
+    updateScene();
     updateHUD();
+    controls.update();
+    renderer.render(scene, camera);
     requestAnimationFrame(loop);
   }
 
-  const resizeFn = setupResponsiveCanvas(canvas, 480 / 800, () => drawScene());
+  function resizeRenderer() {
+    const w = Math.max(1, canvas.clientWidth || 800);
+    const h = Math.max(1, canvas.clientHeight || 480);
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(resizeRenderer).observe(canvas.parentElement);
+  } else {
+    window.addEventListener('resize', resizeRenderer);
+  }
+  resizeRenderer();
+
   resetSimulation();
   requestAnimationFrame(loop);
 
   window.astroVizLab = {
-    initCanvasSize: () => resizeFn()
+    initCanvasSize: () => resizeRenderer()
   };
 
   // ---- Audio-vizual sinxronizatsiya: TTS demo (Web Speech API) ----
