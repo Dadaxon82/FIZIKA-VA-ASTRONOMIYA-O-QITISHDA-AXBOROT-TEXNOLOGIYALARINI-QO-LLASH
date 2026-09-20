@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2-Mavzu: Fizik Jarayonni Modellashtirish Metodologiyasi | Oliy Ta'lim Veb Laboratoriyasi</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement !== "undefined") {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3v18M3 12h18"></path>
+        </svg>
+        <span>Fizika AI Portal</span>
+      </a>
+
+                              <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link ">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link active">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link ">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link ">5-Modul: Model Turlari</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="mobile-drawer-overlay"></div>
+  <nav id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="badge badge-cyan">Navigatsiya</span>
+      <button onclick="document.getElementById('hamburger-btn').click()" style="background:none;border:none;color:#94A3B8;font-size:1.4rem;cursor:pointer;">✕</button>
+    </div>
+                    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link ">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link active">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link ">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link ">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </nav>
+
+  <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
+    
+    <!-- Hero / Title Section -->
+    <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span class="badge badge-purple">2-Mavzu</span>
+        <span class="badge badge-cyan">Hisoblash Fizikasi & Metodologiya</span>
+        <span class="badge badge-emerald">Teskari Muhandislik (Reverse Engineering)</span>
+      </div>
+      <h1 style="margin-bottom: 16px;">
+        Fizik Jarayonni Modellashtirish Metodologiyasi: <br>
+        <span class="text-gradient">Kuzatishdan Vizual Kod va Debugginggacha</span>
+      </h1>
+      <p style="font-size: 1.15rem; color: #CBD5E1; max-width: 1050px; line-height: 1.7;">
+        Ushbu ma'ruzada har qanday fizik hodisani kompyuterda animatsiya va simulyatsiya qilishning fundamental ilmiy-metodologik konveyeri o'rganiladi: 
+        <strong>Hodisani kuzatish (PhET/Vascak) $\to$ Fizik qonunni aniqlash (Gemini) $\to$ Matematik model (WolframAlpha) $\to$ Algoritmlashtirish (Claude 3.5) $\to$ Vizual kod (Canvas) $\to$ Xatolarni tuzatish (Code Interpreter)</strong>.
+      </p>
+    </div>
+
+    <!-- 7-Stage Reja Banner -->
+    <div class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-purple);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 7 Bosqichli Ma'ruza Rejasi va AI Vositalari:</h3>
+      <div class="grid-4" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. AI Diagnostika:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI orqali dastlabki bilim darajasini aniqlash.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. Hodisani Kuzatish:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">PhET Interactive Simulations va Vascak.cz tahlili.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">3. Fizik Qonunni Aniqlash:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Gemini 1.5 Pro / GPT-4 orqali qonuniyatlarni verifikatsiya qilish.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">4. Matematik Model:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">WolframAlpha / ChatGPT orqali differensial tenglamalar apparati.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: #38BDF8;">5. Algoritm & Mantiq:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet: Eyler-Kromer va RK4 sonli diskretlash.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: #34D399;">6. Vizual Kod & Canvas:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude Artifacts orqali HTML5 Canvas render dvigateli.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-rose);">7. Debugging:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Code Interpreter: Chegaraviy shartlar, birliklar va faza tahlili.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: #FBBF24;">🔄 Teskari Muhandislik:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Tayyor simulyatsiyani dekonstruksiya qilib yangi model yaratish.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Methodology Pipeline Flowchart -->
+    <div class="glass-panel" style="margin-bottom: 40px; text-align: center;">
+      <span class="badge badge-cyan" style="margin-bottom: 12px;">Ilmiy Konveyer</span>
+      <h2 style="margin-bottom: 14px;">Fizik Modellashtirishning Umumiy Metodologik Zanjiri</h2>
+      <p style="max-width: 850px; margin: 0 auto 30px;">
+        Har qanday fizik simulyatsiyani yaratishda quyidagi fundamental zanjir bo'yicha qat'iy harakat qilinadi:
+      </p>
+
+      <div class="grid-4" style="text-align: left; margin-bottom: 20px;">
+        <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-md); padding: 18px;">
+          <span class="badge badge-cyan" style="margin-bottom: 8px;">1-Qadam</span>
+          <h4 style="margin-bottom: 6px;">Hodisani Kuzatish</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            PhET / Vascak.cz dagi hodisaning vizual harakatini kuzatish, o'zgaruvchilarni va erkinlik darajalarini ajratish.
+          </p>
+        </div>
+
+        <div style="background: rgba(52, 211, 153, 0.05); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: var(--radius-md); padding: 18px;">
+          <span class="badge badge-emerald" style="margin-bottom: 8px;">2-Qadam</span>
+          <h4 style="margin-bottom: 6px;">Fizik Qonunni Aniqlash</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            Nyuton mexanikasi, Lorents kuchi, energiya va impuls saqlanish qonuniyatlarini aniqlash (Gemini / GPT-4).
+          </p>
+        </div>
+
+        <div style="background: rgba(192, 132, 252, 0.05); border: 1px solid rgba(192, 132, 252, 0.25); border-radius: var(--radius-md); padding: 18px;">
+          <span class="badge badge-purple" style="margin-bottom: 8px;">3-Qadam</span>
+          <h4 style="margin-bottom: 6px;">Matematik Model Qurish</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            Differensial tenglamalar sistemasini tuzish ($dx/dt, dv/dt$) va chegaraviy shartlarni belgilash (WolframAlpha).
+          </p>
+        </div>
+
+        <div style="background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: var(--radius-md); padding: 18px;">
+          <span class="badge badge-rose" style="margin-bottom: 8px;">4-Qadam</span>
+          <h4 style="margin-bottom: 6px;">Algoritm & Vizual Kod</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            Simplektik Eyler-Kromer yoki RK4 orqali diskretlash va Canvasda 60 FPS tezlikda render qilish (Claude 3.5).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs Container: 6 Main Methodological Modules -->
+    <div class="tabs-container" style="margin-bottom: 40px;">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="tab-diag2">1. AI Diagnostika (MagicSchool)</button>
+        <button class="tab-btn" data-tab="tab-reverse2">2. Teskari Muhandislik (PhET & Vascak)</button>
+        <button class="tab-btn" data-tab="tab-math">3. Matematik Model (Differensial Tenglamalar)</button>
+        <button class="tab-btn" data-tab="tab-sims">4. Jonli Simulyatorlar (Drag, Integratorlar, Impuls)</button>
+        <button class="tab-btn" data-tab="tab-debug-sandboxes">5. 4 ta Debugging Sandboxes</button>
+        <button class="tab-btn" data-tab="tab-prompts2">6. Tizimli Promptlar Arxivi</button>
+      </div>
+
+      <!-- Tab 1: AI Diagnostika (MagicSchool) -->
+      <div id="tab-diag2" class="tab-content active">
+        <div class="glass-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h2 style="font-size: 1.4rem;">🧠 MagicSchool AI: Modellashtirish Ko'nikmalari Diagnostikasi</h2>
+            <span class="badge badge-cyan">Adaptiv Reja</span>
+          </div>
+
+          <p style="margin-bottom: 20px;">
+            Fizik jarayonlarni kompyuterda modellashtirishdan oldin har bir talabaning differensial hisob, diskretlash va fizik koordinatalar bo'yicha boshlang'ich bilim darajasi aniqlanadi:
+          </p>
+
+          <div class="grid-3" style="margin-bottom: 24px;">
+            <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+              <span class="badge badge-cyan" style="margin-bottom: 8px;">A Klaster (Remedial)</span>
+              <h4 style="margin-bottom: 6px;">1D Harakat & Skalyar Tenglamalar</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                To'g'ri chiziqli tekis va tekis o'zgaruvchan harakat, tayyor matematik formulalar va sodda Eyler qadami.
+              </p>
+            </div>
+
+            <div style="background: rgba(52, 211, 153, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+              <span class="badge badge-emerald" style="margin-bottom: 8px;">B Klaster (Standart)</span>
+              <h4 style="margin-bottom: 6px;">2D Vektor Harakat & Eyler-Kromer</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Gorizontal otilgan jism, chiziqli havo qarshiligi ($F = -kv$), simplektik Eyler-Kromer integratori va elastik urilishlar.
+              </p>
+            </div>
+
+            <div style="background: rgba(192, 132, 252, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+              <span class="badge badge-purple" style="margin-bottom: 8px;">C Klaster (Advanced)</span>
+              <h4 style="margin-bottom: 6px;">No-chiziqli Tizimlar & RK4</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Kvadratik aerodinamik drag ($F = -kv^2$), o'zgaruvchan massa (Meshcherskiy tenglamasi), 4-tartibli Runge-Kutta va faza fazosi tahlili.
+              </p>
+            </div>
+          </div>
+
+          <!-- Diagnostic Quiz Simulator for Modeling -->
+          <div style="background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+              <h4 style="font-size: 1.15rem; color: var(--accent-cyan);">🧪 Modellashtirish Diagnostika Testi (3 ta Savol)</h4>
+              <span class="badge badge-emerald">Interaktiv Sinov</span>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 20px;">
+              Quyidagi savollarga javob bering. Tizim natijaga qarab sizga mos <strong>modellashtirish o'quv trayektoriyasini (Klaster A, B yoki C)</strong> tavsiya qiladi:
+            </p>
+
+            <!-- Q1 -->
+            <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; color: #F8FAFC;">
+                1. Kvadratik havo qarshiligida ($\vec{F}_{drag} = -k v \vec{v}$) harakatlanayotgan jism uchun $x$ va $y$ o'qlari bo'yicha differensial tenglamalar qanday yoziladi?
+              </p>
+              <div id="quiz2-options-1" style="display:flex; flex-direction:column; gap:8px;">
+                <div class="quiz-option-card" onclick="selectQuiz2Option(1, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-1" style="display:none;">
+                  <span>A) $dv_x/dt = -k v_x^2, \quad dv_y/dt = -g - k v_y^2$</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz2Option(1, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-1" style="display:none;">
+                  <span>B) $dv_x/dt = -\frac{k}{m}\sqrt{v_x^2+v_y^2}\cdot v_x, \quad dv_y/dt = -g - \frac{k}{m}\sqrt{v_x^2+v_y^2}\cdot v_y$</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz2Option(1, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-1" style="display:none;">
+                  <span>C) $dv_x/dt = 0, \quad dv_y/dt = -g$</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; color: #F8FAFC;">
+                2. Nega brauzer Canvas ekranida $y$ koordinatani $y_{ekran} = H - (y_{fizik} \cdot \text{scale})$ ko'rinishida o'zgartirish shart?
+              </p>
+              <div id="quiz2-options-2" style="display:flex; flex-direction:column; gap:8px;">
+                <div class="quiz-option-card" onclick="selectQuiz2Option(2, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-2" style="display:none;">
+                  <span>A) Canvasda $Y$ o'qi pastga yo'nalgan, Dekart koordinatalarida esa yuqoriga yo'nalgan</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz2Option(2, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-2" style="display:none;">
+                  <span>B) Gravitatsiya kuchini yo'qotish uchun</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz2Option(2, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-2" style="display:none;">
+                  <span>C) JavaScript faqat manfiy sonlarni qabul qilgani uchun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div style="margin-bottom: 20px;">
+              <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; color: #F8FAFC;">
+                3. Jism devordan mutlaq noelastik urilganda ($e = 0$), to'qnashuvdan keyin uning tezligi qanday bo'ladi?
+              </p>
+              <div id="quiz2-options-3" style="display:flex; flex-direction:column; gap:8px;">
+                <div class="quiz-option-card" onclick="selectQuiz2Option(3, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-3" style="display:none;">
+                  <span>A) $v' = -v$ (to'liq qaytadi)</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz2Option(3, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-3" style="display:none;">
+                  <span>B) $v' = 0$ (jism devorga yopishib to'xtaydi, kinetik energiya issiqlikka aylanadi)</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz2Option(3, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q2-3" style="display:none;">
+                  <span>C) $v' = 2v$</span>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="checkDiagnostic2Quiz()" class="btn btn-primary">Natijani Tekshirish va Modellashtirish Rejasini Aniqlash →</button>
+            <div id="diag2-feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Teskari Muhandislik (PhET & Vascak.cz) -->
+      <div id="tab-reverse2" class="tab-content">
+        <div class="glass-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h2 style="font-size: 1.4rem;">🔬 Teskari Muhandislik (Reverse Engineering): PhET va Vascak.cz</h2>
+            <span class="badge badge-emerald">Dekonstruksiya Metodikasi</span>
+          </div>
+
+          <p style="margin-bottom: 20px;">
+            <strong>Teskari muhandislik</strong> — mavjud sifatli simulyatsiyani (masalan: <a href="https://phet.colorado.edu" target="_blank" style="color:var(--accent-cyan);">PhET Interactive Simulations</a> yoki <a href="https://www.vascak.cz" target="_blank" style="color:var(--accent-emerald);">Vascak.cz</a>) tahlil qilib, uning ortidagi fizik tenglamalar, parametrlar va algoritmlarni mustaqil tiklash metodikasidir:
+          </p>
+
+          <div class="grid-2" style="margin-bottom: 24px;">
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">🌐 1. PhET Interactive Simulations (Kolorado Universiteti)</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 12px; color: var(--text-secondary);">
+                Dunyo miqyosidagi ochiq manbali fizik simulyatsiyalar portali. HTML5 Canvas/SVG texnologiyalariga asoslangan bo'lib, mikrodunyo va makrodunyo hodisalarini interaktiv o'rganish imkonini beradi.
+              </p>
+              <ul style="font-size: 0.85rem; color: #CBD5E1; display:flex; flex-direction:column; gap:6px;">
+                <li>🔹 <strong>Afzalligi:</strong> Yuqori ilmiy aniqlik, real vaqtli vektor ko'rsatkichlari.</li>
+                <li>🔹 <strong>Tahlil obyekti:</strong> <em>Projectile Motion, Wave Interference, Gravity & Orbits</em>.</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="margin-bottom: 12px; color: var(--accent-emerald);">🌐 2. Vascak.cz Fizika Animatsiyalari (Vladimir Vaschak)</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 12px; color: var(--text-secondary);">
+                Yuzlab ixcham va toza fizik animatsiyalar to'plami. Elektrodinamika, optika va atom fizikasidagi abstrakt tushunchalarni sodda mexanizmlar orqali namoyish etadi.
+              </p>
+              <ul style="font-size: 0.85rem; color: #CBD5E1; display:flex; flex-direction:column; gap:6px;">
+                <li>🔹 <strong>Afzalligi:</strong> Ixcham HTML5 Canvas kodi, sodda parametrli modellar.</li>
+                <li>🔹 <strong>Tahlil obyekti:</strong> <em>Lorentz Force, Cyclotron, Doppler Effect, Young Slit</em>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4-Layer Deconstruction Matrix -->
+          <h3 style="font-size: 1.2rem; margin-bottom: 14px;">📊 4 Qatlamli Dekonstruksiya Matritsasi:</h3>
+          <div class="grid-4" style="margin-bottom: 24px;">
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+              <span class="badge badge-cyan" style="margin-bottom:8px;">1. UI & Kirish O'zgaruvchilari</span>
+              <p style="font-size:0.85rem;">Slayderlar, tugmalar, kirish massasi $m$, burchagi $\alpha$, tezligi $v_0$.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+              <span class="badge badge-emerald" style="margin-bottom:8px;">2. Holat Vektorlari</span>
+              <p style="font-size:0.85rem;">Har kadrda o'zgaruvchi: koordinata $\vec{r}(t)$, tezlik $\vec{v}(t)$, tezlanish $\vec{a}(t)$.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+              <span class="badge badge-purple" style="margin-bottom:8px;">3. Differensial Tenglama</span>
+              <p style="font-size:0.85rem;">Nyuton qonunlari $m\vec{a} = \sum \vec{F}_i$, havo qarshiligi, prujina kuchi $-kx$.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+              <span class="badge badge-rose" style="margin-bottom:8px;">4. Chiqish Telemetriyasi</span>
+              <p style="font-size:0.85rem;">Uchish masofasi $R$, to'liq energiya $E_k+E_p$, faza grafigi $\theta(\omega)$.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Matematik Model & Tenglamalar -->
+      <div id="tab-math" class="tab-content">
+        <div class="glass-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h2 style="font-size: 1.4rem;">📐 Matematik Modellar va Differensial Tenglamalar Apparati</h2>
+            <span class="badge badge-purple">WolframAlpha & ChatGPT</span>
+          </div>
+
+          <p style="margin-bottom: 24px;">
+            Fizik simulyatsiyaning asosi — analitik formulalar emas, balki differensial tenglamalar sistemasidir. Chunki analitik formulalar (masalan, $x = v_0 t$) faqat ideal holatlarda ishlaydi; qarshilik kuchi, no-chiziqlik yoki to'qnashuvlar bo'lganda esa faqat sonli integrallash mumkin:
+          </p>
+
+          <div class="grid-2" style="gap: 20px; margin-bottom: 24px;">
+            
+            <!-- Model 1 -->
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">1. Kvadratik Aerodinamik Havo Qarshiligi</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 10px;">Nyutonning ikkinchi qonuni vektor ko'rinishida:</p>
+              <div style="font-size: 0.95rem; margin-bottom: 10px;">
+                $$m\frac{d\vec{v}}{dt} = m\vec{g} - \frac{1}{2} C_d \rho A v \vec{v}$$
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Koordinatalar bo'yicha bog'langan sistema ($v = \sqrt{v_x^2 + v_y^2}$):
+              </p>
+              <div style="font-size: 0.9rem;">
+                $$\begin{cases} \frac{dx}{dt} = v_x, & \frac{dv_x}{dt} = -\frac{k}{m} \sqrt{v_x^2+v_y^2} \cdot v_x \\ \frac{dy}{dt} = v_y, & \frac{dv_y}{dt} = -g - \frac{k}{m} \sqrt{v_x^2+v_y^2} \cdot v_y \end{cases}$$
+              </div>
+            </div>
+
+            <!-- Model 2 -->
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">2. So'nuvchi Matematik Mayatnik (No-chiziqli)</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 10px;">Kichik burchaklar ($\sin\theta \approx \theta$) cheklovisiz to'liq tenglama:</p>
+              <div style="font-size: 0.95rem; margin-bottom: 10px;">
+                $$\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L}\sin\theta = 0$$
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Holat fazosi ko'rinishi ($\theta$ va $\omega = d\theta/dt$):
+              </p>
+              <div style="font-size: 0.9rem;">
+                $$\begin{cases} \frac{d\theta}{dt} = \omega \\ \frac{d\omega}{dt} = -\frac{g}{L}\sin\theta - \gamma\omega \end{cases}$$
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sonli Integrallash Isbotlari -->
+          <div style="background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+            <h4 style="color: var(--accent-amber); margin-bottom: 10px;">⚡ Sonli Integrallash Algoritmlari Solishtiruvi:</h4>
+            <div class="grid-3" style="font-size: 0.88rem;">
+              <div>
+                <strong style="color:#F43F5E;">1. Forward Euler (Klassik):</strong><br>
+                $x_{n+1} = x_n + v_n \Delta t$<br>
+                $v_{n+1} = v_n + a_n \Delta t$<br>
+                <span style="color:#F43F5E;">⚠️ Beqaror ($E \propto (1+\omega^2\Delta t^2)^n$)</span>
+              </div>
+              <div>
+                <strong style="color:#34D399;">2. Euler-Cromer (Simplektik):</strong><br>
+                $v_{n+1} = v_n + a(x_n)\Delta t$<br>
+                $x_{n+1} = x_n + v_{n+1}\Delta t$<br>
+                <span style="color:#34D399;">✅ Simplektik (Energiya saqlanadi)</span>
+              </div>
+              <div>
+                <strong style="color:#38BDF8;">3. Runge-Kutta 4 (RK4):</strong><br>
+                $y_{n+1} = y_n + \frac{\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$<br>
+                Xatolik: $O(\Delta t^5)$<br>
+                <span style="color:#38BDF8;">✅ Maksimal aniqlik</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Jonli Simulyatorlar -->
+      <div id="tab-sims" class="tab-content">
+        
+        <!-- Simulators sub-nav -->
+        <div class="tabs-nav" style="border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 20px;">
+          <button class="tab-btn active" data-tab="subtab-projectile">1. Aerodinamik Drag (RK4)</button>
+          <button class="tab-btn" data-tab="subtab-spring">2. Integratorlar Xatosi (Eyler vs RK4)</button>
+          <button class="tab-btn" data-tab="subtab-collision">3. To'qnashuvlar (Impuls & Restitution)</button>
+        </div>
+
+        <!-- Subtab 1: Projectile Drag -->
+        <div id="subtab-projectile" class="tab-content active">
+          <div class="sim-container">
+            <div class="canvas-viewport-wrapper">
+              <canvas id="projectile-canvas" class="sim-canvas"></canvas>
+              <div class="sim-hud">
+                <div class="hud-pill">Uchish Masofasi R: <span id="proj-range" class="hud-pill-val">0.0 m</span></div>
+                <div class="hud-pill">Maksimal Balandlik H_max: <span id="proj-apex" class="hud-pill-val">0.0 m</span></div>
+                <div class="hud-pill">Chekli Tezlik v_t: <span id="proj-vterm" class="hud-pill-val">0.0 m/s</span></div>
+              </div>
+            </div>
+
+            <div class="sim-controls">
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">Otish Parametrlari (RK4)</h3>
+              
+              <div class="control-group">
+                <label class="control-label">Boshlang'ich Tezlik v0: <span id="val-proj-v0" class="control-val">35.0 m/s</span></label>
+                <input type="range" id="slider-proj-v0" class="slider-input" min="10" max="60" step="1" value="35">
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">Otish Burchagi α: <span id="val-proj-angle" class="control-val">45°</span></label>
+                <input type="range" id="slider-proj-angle" class="slider-input" min="10" max="85" step="1" value="45">
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">Qarshilik Koeffitsienti k: <span id="val-proj-k" class="control-val">0.08</span></label>
+                <input type="range" id="slider-proj-k" class="slider-input" min="0.0" max="0.25" step="0.01" value="0.08">
+              </div>
+
+              <div class="sim-info-box">
+                <span style="color:#FBBF24;">Sariq uzuq-chiziq:</span> Vakuumdagi ideal parabola.<br>
+                <span style="color:#38BDF8;">Moviy qalin chiziq:</span> Kvadratik havo qarshiligidagi real trayektoriya ($F_{drag} = -k v \vec{v}$).
+              </div>
+
+              <div class="control-actions">
+                <button id="btn-proj-launch" class="btn btn-primary btn-sm" style="flex:1;">Otish (Launch)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 2: Integrators Comparison -->
+        <div id="subtab-spring" class="tab-content">
+          <div class="sim-container">
+            <div class="canvas-viewport-wrapper">
+              <canvas id="spring-canvas" class="sim-canvas"></canvas>
+              <div class="sim-hud">
+                <div class="hud-pill">Klassik Eyler Xatosi: <span id="spring-euler-err" class="hud-pill-val text-rose">+0%</span></div>
+              </div>
+            </div>
+
+            <div class="sim-controls">
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">Sonli Integratorlar Xatoligi</h3>
+              <div class="sim-info-box">
+                <span style="color:#F43F5E;">Qizil (Klassik Eyler):</span> $E_{n+1} \approx E_n(1 + \omega^2\Delta t^2)$ — har bir qadamda energiya sun'iy oshib, faza fazosida spiral bo'lib portlaydi.<br><br>
+                <span style="color:#34D399;">Yashil (Simplektik Eyler-Kromer):</span> Faza fazosi maydonini saqlaydi, berk ellips hosil qiladi.<br><br>
+                <span style="color:#38BDF8;">Moviy (RK4):</span> Aniq nazariy doira.
+              </div>
+
+              <div class="control-actions">
+                <button id="btn-spring-reset" class="btn btn-secondary btn-sm" style="flex:1;">Qayta Boshlash</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 3: Collisions -->
+        <div id="subtab-collision" class="tab-content">
+          <div class="sim-container">
+            <div class="canvas-viewport-wrapper">
+              <canvas id="collision-canvas" class="sim-canvas"></canvas>
+              <div class="sim-hud">
+                <div class="hud-pill">To'liq Impuls P: <span id="collision-p" class="hud-pill-val">0.00 kg·m/s</span></div>
+                <div class="hud-pill">Kinetik Energiya Ek: <span id="collision-e" class="hud-pill-val">0.00 J</span></div>
+              </div>
+            </div>
+
+            <div class="sim-controls">
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">To'qnashuv Parametrlari</h3>
+              
+              <div class="control-group">
+                <label class="control-label">Tiklanish Koeffitsienti e: <span id="val-col-e" class="control-val">1.00 (Elastik)</span></label>
+                <input type="range" id="slider-col-e" class="slider-input" min="0.0" max="1.0" step="0.05" value="1.0">
+              </div>
+
+              <div class="sim-info-box">
+                $e = 1.0$: To'liq elastik to'qnashuv ($E_k = \text{const}$).<br>
+                $e &lt; 1.0$: Noelastik to'qnashuv (kinetik energiya issiqlikka aylanadi).
+              </div>
+
+              <div class="control-actions">
+                <button id="btn-col-reset" class="btn btn-secondary btn-sm" style="flex:1;">Qayta Boshlash</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tab 5: 4 ta Debugging Sandboxes -->
+      <div id="tab-debug-sandboxes" class="tab-content">
+        <div class="grid-2">
+          
+          <!-- Sandbox 1 -->
+          <div class="glass-panel">
+            <span class="badge badge-rose" style="margin-bottom:8px;">1-Tipik Xatolik</span>
+            <h3 style="font-size:1.15rem; margin-bottom:8px;">Burchak Birligi (Gradus vs Radian)</h3>
+            <p style="font-size:0.88rem; margin-bottom:12px;">JavaScript <code>Math.sin()</code> faqat radianda ishlaydi. <code>angle = 45°</code> ni to'g'irlang:</p>
+            
+            <textarea id="debug-code-angle" style="width:100%; height:75px; background:#0B1120; color:#E2E8F0; font-family:var(--font-mono); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-sm); padding:10px; font-size:0.88rem; margin-bottom:10px;">// Noto'g'ri:
+var result = Math.sin(angle);</textarea>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button onclick="runDebugSandbox('angle')" class="btn btn-primary btn-sm">Test Qilish</button>
+              <div id="debug-out-angle" class="hud-pill">Kodni sinab ko'ring</div>
+            </div>
+          </div>
+
+          <!-- Sandbox 2 -->
+          <div class="glass-panel">
+            <span class="badge badge-amber" style="margin-bottom:8px;">2-Tipik Xatolik</span>
+            <h3 style="font-size:1.15rem; margin-bottom:8px;">Eyler Beqarorligi (Energiya Portlashi)</h3>
+            <p style="font-size:0.88rem; margin-bottom:12px;">Klassik Eylerni Simplektik Eyler-Kromerga almashtiring:</p>
+            
+            <textarea id="debug-code-euler" style="width:100%; height:75px; background:#0B1120; color:#E2E8F0; font-family:var(--font-mono); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-sm); padding:10px; font-size:0.88rem; margin-bottom:10px;">// Noto'g'ri Eyler:
+x += v * dt;
+v += -(omega*omega*x) * dt;</textarea>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button onclick="runDebugSandbox('euler')" class="btn btn-primary btn-sm">Test Qilish</button>
+              <div id="debug-out-euler" class="hud-pill">Kodni sinab ko'ring</div>
+            </div>
+          </div>
+
+          <!-- Sandbox 3 -->
+          <div class="glass-panel">
+            <span class="badge badge-purple" style="margin-bottom:8px;">3-Tipik Xatolik</span>
+            <h3 style="font-size:1.15rem; margin-bottom:8px;">Devor Tunnel Effekti (Chegaradan Chiqish)</h3>
+            <p style="font-size:0.88rem; margin-bottom:12px;">Jism devordan o'tib ketmasligi uchun uning o'rnini $W - r$ chegarasida mahkamlang:</p>
+            
+            <textarea id="debug-code-boundary" style="width:100%; height:75px; background:#0B1120; color:#E2E8F0; font-family:var(--font-mono); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-sm); padding:10px; font-size:0.88rem; margin-bottom:10px;">// Noto'g'ri:
+if (x > W) v = -v;</textarea>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button onclick="runDebugSandbox('boundary')" class="btn btn-primary btn-sm">Test Qilish</button>
+              <div id="debug-out-boundary" class="hud-pill">Kodni sinab ko'ring</div>
+            </div>
+          </div>
+
+          <!-- Sandbox 4 -->
+          <div class="glass-panel">
+            <span class="badge badge-cyan" style="margin-bottom:8px;">4-Tipik Xatolik</span>
+            <h3 style="font-size:1.15rem; margin-bottom:8px;">Singulyarlik ($r \to 0$ da Cheksiz Kuch)</h3>
+            <p style="font-size:0.88rem; margin-bottom:12px;">Gravitatsiya / Kulon kuchida maxraj nol bo'lmasligi uchun yumshatuvchi <code>eps = 0.5</code> qo'shing:</p>
+            
+            <textarea id="debug-code-singularity" style="width:100%; height:75px; background:#0B1120; color:#E2E8F0; font-family:var(--font-mono); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-sm); padding:10px; font-size:0.88rem; margin-bottom:10px;">// Noto'g'ri:
+var F = (G * M * m) / (r * r);</textarea>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button onclick="runDebugSandbox('singularity')" class="btn btn-primary btn-sm">Test Qilish</button>
+              <div id="debug-out-singularity" class="hud-pill">Kodni sinab ko'ring</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 6: Prompts Archive -->
+      <div id="tab-prompts2" class="tab-content">
+        <div class="glass-panel">
+          <h2 style="font-size:1.4rem; margin-bottom:16px;">Teskari Muhandislik va Modellashtirish Promptlari</h2>
+          
+          <div class="code-block">
+            <div class="code-header">
+              <span>Claude 3.5 Sonnet uchun Kvadratik Drag Simulyatsiya Prompti</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen hisoblash fizikasi bo'yicha mutaxassissan. Gorizontal otilgan jism harakatini kvadratik havo qarshiligi (F = -0.5*Cd*rho*A*v*v) bilan bitta HTML5 faylida Canvas va Vanilla JS yordamida yozib ber. 4-tartibli Runge-Kutta (RK4) usulidan foydalan. Real vaqtda ham vakuumdagi parabolani (sariq uzuq-chiziq), ham havo qarshiligidagi real egri chiziqni (moviy) chizsin. Telemetriya panelida uchish masofasi, maksimal balandlik va chekli tezlikni (terminal velocity) chiqar.">Nusxalash</button>
+            </div>
+            <div class="code-content">
+Sen hisoblash fizikasi bo'yicha mutaxassissan. Gorizontal otilgan jism harakatini kvadratik havo qarshiligi (F = -0.5*Cd*rho*A*v*v) bilan bitta HTML5 faylida Canvas va Vanilla JS yordamida yozib ber. 4-tartibli Runge-Kutta (RK4) usulidan foydalan. Real vaqtda ham vakuumdagi parabolani (sariq uzuq-chiziq), ham havo qarshiligidagi real egri chiziqni (moviy) chizsin. Telemetriya panelida uchish masofasi, maksimal balandlik va chekli tezlikni (terminal velocity) chiqar.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-projectile.js"></script>
+  <script src="js/sim-spring.js"></script>
+  <script src="js/sim-collision.js"></script>
+  <script src="js/debugging-lab.js"></script>
+  <script src="js/ui-controller.js"></script>
+
+  <script>
+    // Diagnostic Quiz 2 Engine
+    let userAnswers2 = {};
+    window.selectQuiz2Option = function(qId, optIdx) {
+      userAnswers2[qId] = optIdx;
+      const container = document.getElementById(`quiz2-options-${qId}`);
+      if (!container) return;
+      const items = container.querySelectorAll('.quiz-option-card');
+      items.forEach((item, idx) => {
+        item.classList.toggle('selected', idx === optIdx);
+      });
+    };
+
+    window.checkDiagnostic2Quiz = function() {
+      const feedbackEl = document.getElementById('diag2-feedback');
+      if (!feedbackEl) return;
+
+      const answers = [1, 0, 1]; // Correct indices for Q1, Q2, Q3
+      const explanations = [
+        "Kvadratik drag tezlik vektoriga qarama-qarshi yo'nalgan bo'lib, har bir o'qqa v_x/v va v_y/v koeffitsienti bilan tushadi.",
+        "Canvas koordinata tizimida Y o'qi pastga qaragan, shuning uchun fizik Y ni ekranga chiqarishda H - Y_fizik o'girish shart.",
+        "Mutlaq noelastik urilishda e = 0 bo'lib, jism barcha kinetik energiyasini yo'qotadi va to'xtaydi."
+      ];
+
+      let correctCount = 0;
+      let allAnswered = true;
+      for (let i = 1; i <= 3; i++) {
+        if (userAnswers2[i] === undefined) allAnswered = false;
+      }
+
+      if (!allAnswered) {
+        feedbackEl.innerHTML = `<div class="toast" style="background:#0F172A; border-color:#F59E0B; color:#FBBF24; display:flex; gap:10px; padding:12px 16px; border-radius:10px; margin-top:12px;">
+          <span>⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
+        </div>`;
+        return;
+      }
+
+      let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
+        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 Modellashtirish Diagnostikasi Natijasi:</h4>`;
+
+      for (let i = 1; i <= 3; i++) {
+        const userOpt = userAnswers2[i];
+        const isCorr = (userOpt === answers[i - 1]);
+        if (isCorr) correctCount++;
+
+        htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
+          <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#34D399' : '#F43F5E'};">
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? 'To\\'g\\'ri!' : 'Xato!'}
+          </div>
+          <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${explanations[i - 1]}</div>
+        </div>`;
+      }
+
+      let cluster = 'B Klaster (2D Modellashtirish & Simplektik Eyler-Kromer)';
+      let clusterColor = '#34D399';
+      if (correctCount === 3) {
+        cluster = 'C Klaster (No-chiziqli Tizimlar, Aerodinamik Drag & RK4 Integratori)';
+        clusterColor = '#C084FC';
+      } else if (correctCount <= 1) {
+        cluster = 'A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)';
+        clusterColor = '#38BDF8';
+      }
+
+      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
+        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Siz Uchun Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>
+        <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${cluster}</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${clusterColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
+      </div></div>`;
+
+      feedbackEl.innerHTML = htmlResult;
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const projSim = new ProjectileSimulation('projectile-canvas');
+      const sprSim = new SpringSimulation('spring-canvas');
+      const colSim = new CollisionSimulation('collision-canvas');
+
+      // Projectile Sliders
+      const sPV0 = document.getElementById('slider-proj-v0');
+      if (sPV0) sPV0.addEventListener('input', (e) => {
+        projSim.v0 = parseFloat(e.target.value);
+        document.getElementById('val-proj-v0').textContent = projSim.v0.toFixed(1) + ' m/s';
+      });
+
+      const sPAngle = document.getElementById('slider-proj-angle');
+      if (sPAngle) sPAngle.addEventListener('input', (e) => {
+        projSim.angleDeg = parseFloat(e.target.value);
+        document.getElementById('val-proj-angle').textContent = projSim.angleDeg + '°';
+      });
+
+      const sPK = document.getElementById('slider-proj-k');
+      if (sPK) sPK.addEventListener('input', (e) => {
+        projSim.kDrag = parseFloat(e.target.value);
+        document.getElementById('val-proj-k').textContent = projSim.kDrag.toFixed(2);
+      });
+
+      const btnPLaunch = document.getElementById('btn-proj-launch');
+      if (btnPLaunch) btnPLaunch.addEventListener('click', () => projSim.reset());
+
+      // Spring Reset
+      const btnSReset = document.getElementById('btn-spring-reset');
+      if (btnSReset) btnSReset.addEventListener('click', () => sprSim.reset());
+
+      // Collision
+      const sCE = document.getElementById('slider-col-e');
+      if (sCE) sCE.addEventListener('input', (e) => {
+        colSim.eRestitution = parseFloat(e.target.value);
+        document.getElementById('val-col-e').textContent = colSim.eRestitution.toFixed(2);
+      });
+
+      const btnCReset = document.getElementById('btn-col-reset');
+      if (btnCReset) btnCReset.addEventListener('click', () => colSim.reset());
+    });
+  </script>
+</body>
+</html>

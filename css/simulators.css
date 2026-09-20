@@ -1,0 +1,183 @@
+/* ==========================================================================
+   SIMULATORS.CSS - Physics Canvas Layouts, HUD Overlays, Telemetry & Controls
+   ========================================================================== */
+
+.sim-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 1024px) {
+  .sim-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.canvas-viewport-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background: #060911;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sim-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+}
+
+/* Simulation HUD Overlay */
+.sim-hud {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hud-pill {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-pill-val {
+  font-weight: 700;
+  color: var(--accent-cyan);
+}
+
+/* Energy Bar HUD */
+.energy-hud {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+.energy-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.bar-kinetic { background: var(--accent-cyan); height: 100%; transition: width 0.05s ease; }
+.bar-potential { background: var(--accent-rose); height: 100%; transition: width 0.05s ease; }
+
+/* Control Panel */
+.sim-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: rgba(15, 23, 42, 0.5);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.control-val {
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+}
+
+.slider-input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  transition: transform 0.1s ease;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.control-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.sim-info-box {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Phase Space Mini View */
+.phase-space-canvas {
+  width: 100%;
+  height: 120px;
+  background: #04060A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  display: block;
+}
