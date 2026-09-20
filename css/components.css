@@ -188,6 +188,119 @@
   .hamburger-btn { display: flex; }
 }
 
+/* ==========================================================================
+   lecture6.html / lecture7.html'da ishlatilgan muqobil sinf nomlari.
+   Bular .site-header / .brand-logo / .mobile-drawer-overlay / .container /
+   .section-header bilan bir xil ko'rinish va xatti-harakat berish uchun
+   qo'shildi (avval bu sinflar hech qanday CSS qoidasiga ega emas edi —
+   natijada navigatsiya paneli shaffof va sticky bo'lmagan, logotip
+   tekislanmagan, drawer orqa foni ko'rinmas edi).
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.nav-logo-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.nav-logo-text {
+  white-space: nowrap;
+}
+
+/* Hamburger tugmasi ichida to'g'ridan-to'g'ri <span> (o'rovchi
+   .hamburger-icon'siz) ishlatilgan hollar uchun */
+.hamburger-btn > span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  margin: 5px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-btn.active > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.active > span:nth-child(2) { opacity: 0; }
+.hamburger-btn.active > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.drawer-close {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 1.3rem;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.drawer-close:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-cyan);
+}
+
+.main-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 40px 24px 90px;
+}
+
+.hero-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .main-container { padding: 24px 16px 60px; }
+  .hero-panel { padding: 18px; }
+}
+
 /* Badges */
 .badge {
   display: inline-flex;
@@ -399,6 +512,12 @@
   .btn {
     padding: 8px 16px;
     font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-actions .btn {
+    display: none;
   }
 }
 

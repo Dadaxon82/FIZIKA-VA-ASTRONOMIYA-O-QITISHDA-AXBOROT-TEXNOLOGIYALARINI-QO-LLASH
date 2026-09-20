@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" font-family="Inter, sans-serif">
+  <rect width="980" height="420" fill="#0B0F19"/>
+  <text x="490" y="38" text-anchor="middle" fill="#F8FAFC" font-size="22" font-weight="700">O'zgaruvchan (Variable) vs Qat'iy (Fixed) Vaqt Qadami</text>
+
+  <!-- Variable dt timeline -->
+  <text x="60" y="100" fill="#F43F5E" font-size="17" font-weight="700">O'zgaruvchan dt (beqaror)</text>
+  <line x1="60" y1="140" x2="920" y2="140" stroke="#334155" stroke-width="2"/>
+  <g>
+    <!-- uneven ticks representing lag spikes -->
+    <circle cx="90" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="150" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="190" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="430" cy="140" r="9" fill="#F43F5E"/>
+    <text x="430" y="118" text-anchor="middle" fill="#FCA5A5" font-size="12">katta dt (lag)!</text>
+    <circle cx="480" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="520" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="600" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="760" cy="140" r="9" fill="#F43F5E"/>
+    <text x="760" y="118" text-anchor="middle" fill="#FCA5A5" font-size="12">yana lag!</text>
+    <circle cx="820" cy="140" r="6" fill="#F43F5E"/>
+    <circle cx="880" cy="140" r="6" fill="#F43F5E"/>
+  </g>
+  <text x="60" y="168" fill="#94A3B8" font-size="13">x += v · dt — dt katta bo'lganda jism devordan "tunnellab" o'tib ketishi mumkin</text>
+
+  <!-- Fixed dt timeline -->
+  <text x="60" y="230" fill="#34D399" font-size="17" font-weight="700">Fixed dt Akkumulyator (barqaror, deterministik)</text>
+  <line x1="60" y1="270" x2="920" y2="270" stroke="#334155" stroke-width="2"/>
+  <g fill="#34D399">
+    <circle cx="90" cy="270" r="6"/><circle cx="145" cy="270" r="6"/><circle cx="200" cy="270" r="6"/>
+    <circle cx="255" cy="270" r="6"/><circle cx="310" cy="270" r="6"/><circle cx="365" cy="270" r="6"/>
+    <circle cx="420" cy="270" r="6"/><circle cx="475" cy="270" r="6"/><circle cx="530" cy="270" r="6"/>
+    <circle cx="585" cy="270" r="6"/><circle cx="640" cy="270" r="6"/><circle cx="695" cy="270" r="6"/>
+    <circle cx="750" cy="270" r="6"/><circle cx="805" cy="270" r="6"/><circle cx="860" cy="270" r="6"/>
+  </g>
+  <text x="60" y="298" fill="#94A3B8" font-size="13">Har bir qadam = Δt_fixed (1/60 s). Lag bo'lsa, bir nechta qadam ketma-ket "yutiladi" (while accumulator ≥ Δt)</text>
+
+  <!-- Legend / explanation box -->
+  <rect x="60" y="330" width="860" height="70" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="80" y="355" fill="#38BDF8" font-size="14" font-weight="700">Alpha Interpolyatsiya:</text>
+  <text x="80" y="378" fill="#CBD5E1" font-size="13">x_render = x_prev · (1 − α) + x_curr · α,  bu yerda α = accumulator / Δt_fixed — kadrlar orasida silliq ko'rsatish uchun.</text>
+</svg>

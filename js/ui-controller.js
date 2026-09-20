@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const drawerOverlay = document.getElementById('drawer-overlay');
+  const drawerCloseBtn = document.getElementById('drawer-close');
   const drawerLinks = document.querySelectorAll('.drawer-link');
 
   const toggleDrawer = () => {
@@ -243,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleDrawer);
   if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', toggleDrawer);
   drawerLinks.forEach(link => link.addEventListener('click', toggleDrawer));
 
   // Tabs (scoped to the button's own .tabs-nav so nested tab groups,

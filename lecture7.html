@@ -282,7 +282,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
             <div class="glass-panel" style="background:rgba(15,23,42,0.7); text-align:center;">
               <h4 style="color:#34D399; margin-bottom:10px;">📊 Animatsiya Konveyeri (Pipeline)</h4>
-              <img src="assets/fig_requestanimationframe_loop.png" alt="HTML5 Canvas Animation Loop Pipeline" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
+              <img src="assets/fig_requestanimationframe_loop.svg" alt="HTML5 Canvas Animation Loop Pipeline" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
             </div>
           </div>
 
@@ -327,7 +327,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
           </p>
 
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="assets/fig_fixed_vs_variable_dt.png" alt="Fixed vs Variable Timestep" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+            <img src="assets/fig_fixed_vs_variable_dt.svg" alt="Fixed vs Variable Timestep" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
           </div>
 
           <div class="grid-2" style="margin-bottom:24px;">
@@ -390,7 +390,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
           </div>
 
           <div style="text-align:center; margin-bottom:24px;">
-            <img src="assets/fig_canvas_layering_optimization.png" alt="Canvas Optimization Performance" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+            <img src="assets/fig_canvas_layering_optimization.svg" alt="Canvas Optimization Performance" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
           </div>
 
           <div class="grid-3" style="gap:14px; margin-bottom:24px;">
@@ -455,7 +455,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
             <div class="glass-panel" style="background:rgba(15,23,42,0.7); text-align:center;">
               <h4 style="color:#34D399; margin-bottom:10px;">🔍 Standart vs Retina High-DPI Sifat</h4>
-              <img src="assets/fig_retina_hidpi_scaling.png" alt="Retina High DPI Canvas Scaling" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
+              <img src="assets/fig_retina_hidpi_scaling.svg" alt="Retina High DPI Canvas Scaling" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
             </div>
           </div>
         </div>
@@ -477,7 +477,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
           <!-- Main Simulation Canvas -->
           <div style="background:#0F172A; border-radius:12px; border:1px solid rgba(255,255,255,0.1); overflow:hidden; margin-bottom:14px; text-align:center;">
-            <canvas id="arch-canvas" style="width:100%; height:420px; display:block;"></canvas>
+            <canvas id="arch-canvas" width="800" height="420" style="width:100%; aspect-ratio:800/420; display:block;"></canvas>
           </div>
 
           <!-- Frame Pacing Graph Canvas -->
@@ -486,7 +486,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               <span style="font-size:0.85rem; font-weight:700; color:#38BDF8;">📈 Kadr Vaqti Pacing Grafigi (Frame Time History — ms):</span>
               <span style="font-size:0.75rem; color:#94A3B8;">Yashil: &lt;18ms (60FPS) | Sariq: 18-25ms | Qizil: &gt;25ms (Jank)</span>
             </div>
-            <canvas id="arch-graph-canvas" style="width:100%; height:90px; display:block; border-radius:6px; background:#0B0F19;"></canvas>
+            <canvas id="arch-graph-canvas" width="800" height="90" style="width:100%; aspect-ratio:800/90; display:block; border-radius:6px; background:#0B0F19;"></canvas>
           </div>
 
           <!-- Controls & Telemetry HUD -->
