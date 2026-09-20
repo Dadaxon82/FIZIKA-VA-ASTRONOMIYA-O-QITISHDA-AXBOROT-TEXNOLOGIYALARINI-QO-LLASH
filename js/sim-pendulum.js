@@ -36,15 +36,18 @@ class PendulumSimulation {
   }
 
   resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const rect = this.canvas.parentElement.getBoundingClientRect();
-    this.canvas.width = rect.width * window.devicePixelRatio || 600;
-    this.canvas.height = (rect.width * 0.6) * window.devicePixelRatio || 400;
-    this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    
+    this.canvas.width = (rect.width * dpr) || 600;
+    this.canvas.height = (rect.width * 0.6 * dpr) || 400;
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
     if (this.phaseCanvas) {
-      this.phaseCanvas.width = 300 * window.devicePixelRatio;
-      this.phaseCanvas.height = 120 * window.devicePixelRatio;
-      this.phaseCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const phaseRect = this.phaseCanvas.parentElement.getBoundingClientRect();
+      const phaseWidth = phaseRect.width || 300;
+      this.phaseCanvas.width = phaseWidth * dpr;
+      this.phaseCanvas.height = 120 * dpr;
+      this.phaseCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
   }
 

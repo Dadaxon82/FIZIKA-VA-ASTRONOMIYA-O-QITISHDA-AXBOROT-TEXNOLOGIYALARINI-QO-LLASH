@@ -34,10 +34,11 @@ class LorentzSimulation {
   }
 
   resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const rect = this.canvas.parentElement.getBoundingClientRect();
-    this.canvas.width = rect.width * window.devicePixelRatio || 600;
-    this.canvas.height = (rect.width * 0.6) * window.devicePixelRatio || 400;
-    this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    this.canvas.width = (rect.width * dpr) || 600;
+    this.canvas.height = (rect.width * 0.6 * dpr) || 400;
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   initEvents() {

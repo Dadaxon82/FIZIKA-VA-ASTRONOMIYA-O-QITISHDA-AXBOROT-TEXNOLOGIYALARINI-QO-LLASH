@@ -75,6 +75,37 @@ body {
   padding: 0 24px;
 }
 
+/* ==========================================================================
+   RESPONSIVE OVERFLOW GUARDS
+   Uzun kod va matematik formulalar tor ekranlarda sahifadan tashqariga
+   chiqib ketmasligi uchun: har biri o'z ichida gorizontal suriladi,
+   sahifaning o'zi esa hech qachon gorizontal skrollanmaydi (body'dagi
+   overflow-x: hidden shu bilan birga ishlaydi).
+   ========================================================================== */
+pre, code {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* KaTeX tomonidan render qilingan formulalar (auto-render.min.js orqali) */
+.katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px; /* pastki scrollbar formulaga yopishib qolmasin */
+}
+
+.katex {
+  max-width: 100%;
+  white-space: normal;
+}
+
+img, svg, canvas, video, table {
+  max-width: 100%;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-main);
@@ -152,6 +183,15 @@ p { color: var(--text-secondary); font-size: 1.05rem; }
   gap: 20px;
 }
 
+/* Grid katak <canvas>/<pre>/<img> kabi "replaced" elementlar tufayli
+   torayolmay, sig'may qolishining oldini oladi (klassik Grid "blowout"):
+   default min-width:auto o'rniga 0 qo'yiladi, shunda katak konteyner
+   kengligiga moslashadi, ichidagi element esa o'zining overflow-x/
+   max-width qoidasi bilan (yoki aspect-ratio bilan) siqiladi. */
+.grid-2 > *, .grid-3 > *, .grid-4 > * {
+  min-width: 0;
+}
+
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(1, 1fr); }
@@ -161,4 +201,17 @@ p { color: var(--text-secondary); font-size: 1.05rem; }
   .grid-2, .grid-4 { grid-template-columns: 1fr; }
   .container { padding: 0 16px; }
   .glass-panel { padding: 20px; }
+  p { font-size: 0.98rem; }
+  .katex-display { font-size: 0.9em; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 12px; }
+  .glass-panel { padding: 14px; border-radius: var(--radius-md); }
+  h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  h2 { font-size: clamp(1.3rem, 6vw, 1.7rem); }
+  h3 { font-size: clamp(1.05rem, 5vw, 1.25rem); }
+  p { font-size: 0.92rem; }
+  .katex-display { font-size: 0.8em; }
+  .katex { font-size: 0.95em; }
 }
