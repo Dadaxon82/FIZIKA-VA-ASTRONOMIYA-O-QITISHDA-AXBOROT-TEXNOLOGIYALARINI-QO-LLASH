@@ -562,3 +562,92 @@
     font-size: 0.85rem;
   }
 }
+
+/* ==========================================================================
+   lecture10.html'da ishlatilgan muqobil sinf nomlari (.card, .citation-box,
+   .sim-canvas-container, .footer va h.k.) — bu sinflar hech qanday CSS
+   qoidasiga ega emas edi, natijada butun sahifa uslubsiz, oddiy matn
+   ko'rinishida chiqardi (kartalar fon/chegara/boshliqsiz, iqtibos
+   qutilar ajratilmagan, footer stilsiz).
+   ========================================================================== */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.citation-box {
+  background: rgba(56, 189, 248, 0.05);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.citation-title {
+  font-weight: 700;
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.citation-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.citation-link {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+.sim-canvas-container {
+  margin-bottom: 8px;
+}
+
+.astro-preset-btn.active {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-cyan);
+  color: var(--text-main);
+}
+
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 30px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-container,
+.footer-content {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .card { padding: 18px; }
+  .card-title { font-size: 1.2rem; }
+}

@@ -137,7 +137,7 @@
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_astronomy_visualization_pipeline.png" alt="Astronomik Vizuallashtirish Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_astronomy_visualization_pipeline.svg" alt="Astronomik Vizuallashtirish Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">10.1-rasm: Katta astronomik ma'lumotlarni qayta ishlash, vizuallashtirish va audio-vizual sinxronlashtirishning umumiy arxitekturasi.</div>
         </div>
 
@@ -209,7 +209,7 @@
         </div>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_kepler_orbital_mechanics.png" alt="Kepler Orbital Mexanikasi va Invariantlar" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_kepler_orbital_mechanics.svg" alt="Kepler Orbital Mexanikasi va Invariantlar" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">10.2-rasm: Kepler elliptik orbitasi, sektor maydonlari ($dA/dt = \text{const}$), perigeliy/afeliy tezliklari va invariant vektorlar diagrammasi.</div>
         </div>
 
@@ -413,7 +413,7 @@ class KeplerianEngine {
         </div>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_astronomy_data_spectrum_chart.png" alt="Astronomik Ma'lumotlar Spektri va Tranzit Egri Chizig'i" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_astronomy_data_spectrum_chart.svg" alt="Astronomik Ma'lumotlar Spektri va Tranzit Egri Chizig'i" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">10.3-rasm: Ekzosayyora tranzit fotometriyasi ($\Delta F/F$), Doppler radial tezlik spektri va fazoviy vaqt grafiklari.</div>
         </div>
 
@@ -423,7 +423,7 @@ class KeplerianEngine {
         </p>
 
         <div style="text-align: center; margin: 20px 0;">
-          <img src="assets/fig_tts_engines_comparison_matrix.png" alt="TTS Dvigatellari Qiyosiy Matritsasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_tts_engines_comparison_matrix.svg" alt="TTS Dvigatellari Qiyosiy Matritsasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">10.4-rasm: Muxlisa AI, Aisha AI, ElevenLabs va Google Cloud TTS tizimlarining ko'p o'lchamli qiyosiy baholash matritsasi.</div>
         </div>
 
@@ -677,6 +677,22 @@ class KeplerianEngine {
 
   <!-- Quiz Script & Scripts Inclusion -->
   <script>
+    // Tab switching engine
+    window.switchTab = function(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+
+      if (tabId === 'tab-reja6' && window.astroVizLab) {
+        window.astroVizLab.initCanvasSize();
+      }
+    };
+
     function checkAstroQuiz() {
       const q1 = document.querySelector('input[name="q1"]:checked');
       const q2 = document.querySelector('input[name="q2"]:checked');

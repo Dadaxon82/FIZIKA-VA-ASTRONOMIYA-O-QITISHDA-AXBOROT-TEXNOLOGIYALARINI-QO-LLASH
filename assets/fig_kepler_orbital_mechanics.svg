@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Inter, sans-serif">
+  <rect width="900" height="480" fill="#0B0F19"/>
+  <text x="450" y="34" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="700">Kepler Elliptik Orbitasi va Invariantlar</text>
+
+  <!-- Ellipse orbit, Sun at one focus -->
+  <ellipse cx="470" cy="260" rx="320" ry="180" fill="none" stroke="#38BDF8" stroke-width="2"/>
+  <!-- focus (sun) -->
+  <circle cx="630" cy="260" r="14" fill="#FBBF24"/>
+  <text x="630" y="300" text-anchor="middle" fill="#FBBF24" font-size="12" font-weight="700">Quyosh (fokus)</text>
+
+  <!-- perihelion and aphelion -->
+  <circle cx="790" cy="260" r="6" fill="#34D399"/>
+  <text x="790" y="240" text-anchor="middle" fill="#34D399" font-size="11">Perigeliy (r_p)</text>
+  <circle cx="150" cy="260" r="6" fill="#F43F5E"/>
+  <text x="150" y="240" text-anchor="middle" fill="#F43F5E" font-size="11">Afeliy (r_a)</text>
+
+  <!-- planet position + velocity vector -->
+  <circle cx="600" cy="120" r="8" fill="#C084FC"/>
+  <line x1="630" y1="260" x2="600" y2="120" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="600" y1="120" x2="670" y2="95" stroke="#F8FAFC" stroke-width="2" marker-end="url(#kv)"/>
+  <text x="690" y="90" fill="#F8FAFC" font-size="11">v</text>
+
+  <!-- sector area (2nd law) -->
+  <path d="M 630 260 L 600 120 A 320 180 0 0 1 660 108 Z" fill="rgba(52,211,153,0.15)" stroke="#34D399" stroke-width="1"/>
+  <text x="520" y="150" fill="#34D399" font-size="11">dA/dt = const</text>
+
+  <!-- formula box -->
+  <rect x="60" y="360" width="780" height="100" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="450" y="388" text-anchor="middle" fill="#CBD5E1" font-size="13" font-weight="700">Saqlanuvchi Invariantlar</text>
+  <text x="450" y="412" text-anchor="middle" fill="#94A3B8" font-size="12" font-family="monospace">E = v²/2 - GM/r = const = -GM/2a</text>
+  <text x="450" y="434" text-anchor="middle" fill="#94A3B8" font-size="12" font-family="monospace">|L| = |r × v| = sqrt(GMa(1-e²)) = const</text>
+
+  <defs>
+    <marker id="kv" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#F8FAFC"/></marker>
+  </defs>
+</svg>
