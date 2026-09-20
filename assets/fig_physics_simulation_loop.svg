@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 340" font-family="Inter, sans-serif">
+  <defs>
+    <marker id="loopArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#38BDF8"/></marker>
+  </defs>
+
+  <rect width="980" height="340" fill="#0B0F19"/>
+  <text x="490" y="36" text-anchor="middle" fill="#F8FAFC" font-size="22" font-weight="700">Physics Main Loop (Fizik Hisoblash Konveyeri)</text>
+
+  <!-- 5 boxes in a row -->
+  <g font-size="15" fill="#F8FAFC" text-anchor="middle">
+    <!-- 1 -->
+    <rect x="30" y="120" width="160" height="90" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5"/>
+    <text x="110" y="155" font-weight="700">1. Boshlang'ich</text>
+    <text x="110" y="175">holat (s₀, v₀)</text>
+
+    <!-- 2 -->
+    <rect x="230" y="120" width="160" height="90" rx="12" fill="#0F172A" stroke="#34D399" stroke-width="2.5"/>
+    <text x="310" y="155" font-weight="700">2. Kuchlarni</text>
+    <text x="310" y="175">hisoblash (ΣF)</text>
+
+    <!-- 3 -->
+    <rect x="430" y="120" width="160" height="90" rx="12" fill="#0F172A" stroke="#FBBF24" stroke-width="2.5"/>
+    <text x="510" y="155" font-weight="700">3. Tezlanish</text>
+    <text x="510" y="175">a = ΣF / m</text>
+
+    <!-- 4 -->
+    <rect x="630" y="120" width="160" height="90" rx="12" fill="#0F172A" stroke="#C084FC" stroke-width="2.5"/>
+    <text x="710" y="150" font-weight="700">4. Integrallash</text>
+    <text x="710" y="170">(Eyler-Kromer)</text>
+    <text x="710" y="188" font-size="12" fill="#94A3B8">v+=a·dt; s+=v·dt</text>
+
+    <!-- 5 -->
+    <rect x="800" y="120" width="150" height="90" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="2.5"/>
+    <text x="875" y="155" font-weight="700">5. Render</text>
+    <text x="875" y="175">(Canvas chizish)</text>
+  </g>
+
+  <!-- Arrows between boxes -->
+  <g stroke="#38BDF8" stroke-width="2.5" marker-end="url(#loopArrow)">
+    <line x1="190" y1="165" x2="226" y2="165"/>
+    <line x1="390" y1="165" x2="426" y2="165"/>
+    <line x1="590" y1="165" x2="626" y2="165"/>
+    <line x1="790" y1="165" x2="796" y2="165"/>
+  </g>
+
+  <!-- Loop-back arrow from Render to Kuchlarni hisoblash -->
+  <path d="M 875 210 L 875 280 L 310 280 L 310 214" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#loopArrow)"/>
+  <text x="590" y="300" text-anchor="middle" fill="#94A3B8" font-size="14">requestAnimationFrame(loop) — har kadrda takrorlanadi (~60 fps, dt ≈ 0.016 s)</text>
+</svg>
