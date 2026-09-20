@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" font-family="Inter, sans-serif">
+  <defs>
+    <marker id="rafArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#38BDF8"/></marker>
+  </defs>
+  <rect width="980" height="380" fill="#0B0F19"/>
+  <text x="490" y="38" text-anchor="middle" fill="#F8FAFC" font-size="22" font-weight="700">HTML5 Canvas Animatsiya Pipeline (requestAnimationFrame)</text>
+
+  <g font-size="14" fill="#F8FAFC" text-anchor="middle">
+    <rect x="30" y="150" width="170" height="90" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5"/>
+    <text x="115" y="185" font-weight="700">Brauzer Kadri</text>
+    <text x="115" y="205">(~16.6 ms, 60Hz)</text>
+
+    <rect x="245" y="150" width="170" height="90" rx="12" fill="#0F172A" stroke="#34D399" stroke-width="2.5"/>
+    <text x="330" y="180" font-weight="700">requestAnimation-</text>
+    <text x="330" y="198">Frame(loop)</text>
+    <text x="330" y="216" font-size="11" fill="#94A3B8">callback chaqiriladi</text>
+
+    <rect x="460" y="150" width="170" height="90" rx="12" fill="#0F172A" stroke="#FBBF24" stroke-width="2.5"/>
+    <text x="545" y="180" font-weight="700">Akkumulyator</text>
+    <text x="545" y="198">(Fix Your Timestep)</text>
+    <text x="545" y="216" font-size="11" fill="#94A3B8">accumulator += dt</text>
+
+    <rect x="675" y="150" width="140" height="90" rx="12" fill="#0F172A" stroke="#C084FC" stroke-width="2.5"/>
+    <text x="745" y="180" font-weight="700">Fizika</text>
+    <text x="745" y="198">Yangilash</text>
+    <text x="745" y="216" font-size="11" fill="#94A3B8">while(acc&gt;=dt)</text>
+
+    <rect x="835" y="150" width="115" height="90" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="2.5"/>
+    <text x="892" y="185" font-weight="700">Render</text>
+    <text x="892" y="203" font-size="11" fill="#94A3B8">Canvas chizish</text>
+  </g>
+
+  <g stroke="#38BDF8" stroke-width="2.5" marker-end="url(#rafArrow)">
+    <line x1="200" y1="195" x2="241" y2="195"/>
+    <line x1="415" y1="195" x2="456" y2="195"/>
+    <line x1="630" y1="195" x2="671" y2="195"/>
+    <line x1="815" y1="195" x2="831" y2="195"/>
+  </g>
+
+  <path d="M 892 240 L 892 300 L 330 300 L 330 244" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#rafArrow)"/>
+  <text x="610" y="320" text-anchor="middle" fill="#94A3B8" font-size="14">Har bir brauzer kadrida takrorlanadi — ekran yangilanish chastotasiga sinxron</text>
+</svg>

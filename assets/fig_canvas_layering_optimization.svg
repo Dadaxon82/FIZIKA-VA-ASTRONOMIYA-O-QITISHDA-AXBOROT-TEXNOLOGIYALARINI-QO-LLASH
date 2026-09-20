@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" font-family="Inter, sans-serif">
+  <rect width="980" height="400" fill="#0B0F19"/>
+  <text x="490" y="38" text-anchor="middle" fill="#F8FAFC" font-size="22" font-weight="700">Canvas Qatlamlash (Multi-Layer) Optimizatsiyasi</text>
+
+  <!-- BEFORE: single canvas -->
+  <text x="230" y="80" text-anchor="middle" fill="#F43F5E" font-size="16" font-weight="700">❌ Oldin: Bitta Canvas</text>
+  <rect x="60" y="100" width="340" height="220" rx="10" fill="#0F172A" stroke="#F43F5E" stroke-width="2.5"/>
+  <g stroke="#334155" stroke-width="1">
+    <line x1="60" y1="140" x2="400" y2="140"/><line x1="60" y1="180" x2="400" y2="180"/>
+    <line x1="60" y1="220" x2="400" y2="220"/><line x1="60" y1="260" x2="400" y2="260"/>
+    <line x1="100" y1="100" x2="100" y2="320"/><line x1="160" y1="100" x2="160" y2="320"/>
+    <line x1="220" y1="100" x2="220" y2="320"/><line x1="280" y1="100" x2="280" y2="320"/>
+    <line x1="340" y1="100" x2="340" y2="320"/>
+  </g>
+  <circle cx="150" cy="200" r="10" fill="#F43F5E"/>
+  <circle cx="260" cy="160" r="8" fill="#FBBF24"/>
+  <circle cx="320" cy="270" r="9" fill="#38BDF8"/>
+  <text x="230" y="345" text-anchor="middle" fill="#94A3B8" font-size="12">Har kadrda: PANJARA + ZARRACHALAR birga qayta chiziladi</text>
+
+  <!-- AFTER: two layered canvases -->
+  <text x="740" y="80" text-anchor="middle" fill="#34D399" font-size="16" font-weight="700">✅ Keyin: 2 Qatlamli Canvas</text>
+
+  <!-- background layer -->
+  <rect x="580" y="100" width="320" height="100" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5"/>
+  <g stroke="#334155" stroke-width="1">
+    <line x1="580" y1="130" x2="900" y2="130"/><line x1="580" y1="160" x2="900" y2="160"/>
+    <line x1="620" y1="100" x2="620" y2="200"/><line x1="680" y1="100" x2="680" y2="200"/>
+    <line x1="740" y1="100" x2="740" y2="200"/><line x1="800" y1="100" x2="800" y2="200"/>
+    <line x1="860" y1="100" x2="860" y2="200"/>
+  </g>
+  <text x="740" y="118" text-anchor="middle" fill="#38BDF8" font-size="12" font-weight="700">Qatlam 1: Fon (statik)</text>
+  <text x="740" y="192" text-anchor="middle" fill="#94A3B8" font-size="11">1 marta chiziladi, keyin qayta chizilmaydi</text>
+
+  <!-- plus sign -->
+  <text x="740" y="228" text-anchor="middle" fill="#94A3B8" font-size="20">+</text>
+
+  <!-- foreground layer -->
+  <rect x="580" y="240" width="320" height="100" rx="10" fill="rgba(52,211,153,0.05)" stroke="#34D399" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <circle cx="650" cy="290" r="10" fill="#F43F5E"/>
+  <circle cx="760" cy="270" r="8" fill="#FBBF24"/>
+  <circle cx="820" cy="310" r="9" fill="#38BDF8"/>
+  <text x="740" y="258" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">Qatlam 2: Dinamik (shaffof)</text>
+  <text x="740" y="332" text-anchor="middle" fill="#94A3B8" font-size="11">Faqat zarrachalar har kadrda yangilanadi</text>
+
+  <text x="740" y="368" text-anchor="middle" fill="#94A3B8" font-size="12">Natija: ortiqcha chizish operatsiyalari ~70% ga qisqaradi</text>
+</svg>
