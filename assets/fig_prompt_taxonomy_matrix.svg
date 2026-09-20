@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Inter, sans-serif">
+  <rect width="900" height="380" fill="#0B0F19"/>
+  <text x="450" y="34" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="700">Fizika Bo'limlari Bo'yicha Prompt-Muhandislik Taksonomiyasi</text>
+
+  <g font-size="12">
+    <rect x="40" y="60" width="160" height="90" rx="10" fill="rgba(56,189,248,0.08)" stroke="#38BDF8" stroke-width="2"/>
+    <text x="120" y="95" text-anchor="middle" fill="#38BDF8" font-weight="700">Mexanika</text>
+    <text x="120" y="118" text-anchor="middle" fill="#94A3B8" font-size="10">Snaryad, Prujina</text>
+
+    <rect x="225" y="60" width="160" height="90" rx="10" fill="rgba(52,211,153,0.08)" stroke="#34D399" stroke-width="2"/>
+    <text x="305" y="95" text-anchor="middle" fill="#34D399" font-weight="700">Impuls</text>
+    <text x="305" y="118" text-anchor="middle" fill="#94A3B8" font-size="10">2D To'qnashuv</text>
+
+    <rect x="410" y="60" width="160" height="90" rx="10" fill="rgba(251,191,36,0.08)" stroke="#FBBF24" stroke-width="2"/>
+    <text x="490" y="95" text-anchor="middle" fill="#FBBF24" font-weight="700">Termodinamika</text>
+    <text x="490" y="118" text-anchor="middle" fill="#94A3B8" font-size="10">MKT, Issiqlik</text>
+
+    <rect x="595" y="60" width="130" height="90" rx="10" fill="rgba(192,132,252,0.08)" stroke="#C084FC" stroke-width="2"/>
+    <text x="660" y="95" text-anchor="middle" fill="#C084FC" font-weight="700">Elektrodinamika</text>
+    <text x="660" y="118" text-anchor="middle" fill="#94A3B8" font-size="10">Kulon, Lorents</text>
+
+    <rect x="740" y="60" width="120" height="90" rx="10" fill="rgba(244,63,94,0.08)" stroke="#F43F5E" stroke-width="2"/>
+    <text x="800" y="95" text-anchor="middle" fill="#F43F5E" font-weight="700">Optika/Kvant</text>
+    <text x="800" y="118" text-anchor="middle" fill="#94A3B8" font-size="10">Difraksiya, Bor</text>
+  </g>
+
+  <line x1="40" y1="190" x2="860" y2="190" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="220" text-anchor="middle" fill="#94A3B8" font-size="13">Har bir bo'lim uchun 2 tadan tayyor prompt shabloni — jami 10 ta</text>
+
+  <rect x="150" y="250" width="600" height="90" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="450" y="280" text-anchor="middle" fill="#CBD5E1" font-size="13" font-weight="700">Har bir shablon 5 elementli standartga mos:</text>
+  <text x="450" y="305" text-anchor="middle" fill="#94A3B8" font-size="12">Rol → Kontekst → Fizik Chegaralar → Chiqish Formati → Self-Refine</text>
+</svg>
