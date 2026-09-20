@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-Mavzu: Fizik Jarayonlarni Modellashtirish — Bilish Metodi Sifatida. Model Turlari | Oliy Ta'lim Veb Laboratoriyasi</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement !== "undefined") {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3v18M3 12h18"></path>
+        </svg>
+        <span>Fizika AI Portal</span>
+      </a>
+
+                        <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link ">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link ">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link ">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link active">5-Modul: Model Turlari</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="mobile-drawer-overlay"></div>
+  <nav id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="badge badge-cyan">Navigatsiya</span>
+      <button onclick="document.getElementById('hamburger-btn').click()" style="background:none;border:none;color:#94A3B8;font-size:1.4rem;cursor:pointer;">✕</button>
+    </div>
+                <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link ">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link ">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link ">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link active">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </nav>
+
+  <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
+    
+    <!-- Hero / Title Section -->
+    <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span class="badge badge-cyan">5-Mavzu</span>
+        <span class="badge badge-emerald">Modellar Taksonomiyasi</span>
+        <span class="badge badge-purple">Deterministik vs Stoxastik Dinamika</span>
+      </div>
+      <h1 style="margin-bottom: 16px;">
+        Fizik Jarayonlarni Modellashtirish — Bilish Metodi Sifatida. <br>
+        <span class="text-gradient">Model Turlari va AI-Integratsiyasi</span>
+      </h1>
+      <p style="font-size: 1.15rem; color: #CBD5E1; max-width: 1050px; line-height: 1.7;">
+        Fizik bilish metodologiyasida <strong>Statik va Dinamik</strong>, <strong>Deterministik va Stoxastik</strong>, <strong>Diskret va Uzluksiz</strong> modellar tasnifi har tomonlama o'rganiladi. PhET Interactive Simulations (<em>Gravity and Orbits</em>, <em>Gas Properties</em>, <em>Wave on a String</em>) hamda Vascak.cz platformalarining simulyatsiyalari teskari muhandislik (Reverse Engineering) orqali tahlil qilinib, Claude 3.5 Sonnet yordamida deterministik Kepler harakati hamda stoxastik Maksvell-Bolsman gaz kinetikasi interaktiv modellari yaratiladi.
+      </p>
+    </div>
+
+    <!-- 5-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-cyan);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma'ruza Rejasi va Didaktik Integratsiya Bosqichlari:</h3>
+      <div class="grid-3">
+        <div style="background:rgba(255,255,255,0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+          <strong style="color:var(--accent-cyan);">1. Sun'iy Intellekt uchun Diagnostika:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">MagicSchool AI orqali talabaning model turlari (Statik/Dinamik, Deterministik/Stoxastik) bo'yicha tayyorgarligini testlash.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+          <strong style="color:var(--accent-emerald);">2. Model Turlarini Vizual Tahlil Qilish:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">PhET (Gas Properties, Gravity and Orbits) va Vascak.cz simulyatsiyalarining teskari muhandislik tasnifi.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+          <strong style="color:var(--accent-purple);">3. Modellar Tasnifi va Nazariy Solishtirish:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">Gemini 1.5 Pro / GPT-4 orqali 6-katakli kengaytirilgan taksonomik matritsani matematik formalizatsiya qilish.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+          <strong style="color:var(--accent-rose);">4. Stoxastik va Deterministik Modellar Kodi:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">Claude 3.5 Sonnet yordamida Kepler orbitasi (deterministik) va 2D Gaz kinetikasi (stoxastik) dasturiy ta'minotini yozish.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+          <strong style="color:var(--accent-amber);">5. Taqqoslama Jadvallar va Tuzilma:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">Claude Sonnet orqali hisoblash murakkabligi, xatolik manbalari va didaktik qo'llash tavsiyanomasini ishlab chiqish.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+          <strong style="color:#EC4899;">6. Interaktiv Dual-Engine Sandbox:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">Kepler elliptik harakati va Maksvell-Bolsman tezliklar taqsimoti jonli telemetriyali veb-simulyatori.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Workflow Diagram Banner -->
+    <div class="glass-panel" style="margin-bottom: 40px; text-align:center;">
+      <h3 style="margin-bottom: 12px; color: var(--accent-cyan);">🔬 5-Mavzu Bo'yicha Ilmiy AI-Pipeline Konveyeri:</h3>
+      <img src="assets/fig_lecture5_workflow.png" alt="Lecture 5 AI Workflow" style="max-width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1); margin-top:10px;">
+    </div>
+
+    <!-- Tabbed Educational Sections -->
+    <div class="tabs-container">
+      <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')">1. Modellashtirish Epistemologiyasi</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')">2. PhET & Vascak Teskari Muhandislik</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')">3. Modellar Tasnifi (Gemini/GPT-4)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')">4. Deterministik & Stoxastik Kod (Claude 3.5)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')">5. Interaktiv Dual-Engine Sandbox</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')">6. Taqqoslash Matritsasi & Diagnostika</button>
+      </div>
+
+      <!-- TAB 1: Modellashtirish Epistemologiyasi -->
+      <div id="tab-sec1" class="tab-content active">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <h2 style="color:var(--accent-cyan); margin-bottom:16px;">1. Modellashtirish — Bilishning Universal Metodi Sifatida</h2>
+          <p style="line-height:1.8; margin-bottom:16px;">
+            Fizika fanida <strong>modellashtirish</strong> — bu real dunyodagi murakkab fizik hodisa, jism yoki tizimning eng muhim qonuniyatlarini saqlagan holda, uning soddalashtirilgan abstrakt nusxasini (modelini) yaratish va o'rganish jarayonidir. Real fizik obyektlar cheksiz ko'p faktorlar (havo qarshiligi, harorat o'zgarishi, gravitatsion nobirjinslik, relyativistik effektlar) ta'sirida bo'ladi. Ularning barchasini birdaniga hisobga olish inson miyasi uchun ham, eng kuchli superkompyuterlar uchun ham imkonsizdir.
+          </p>
+
+          <div class="grid-3" style="margin:24px 0;">
+            <div style="background:rgba(15,23,42,0.6); padding:18px; border-radius:10px; border-top:3px solid var(--accent-cyan);">
+              <h4 style="color:var(--accent-cyan); margin-bottom:8px;">1. Obyekt va Abstraksiya</h4>
+              <p style="font-size:0.9rem; line-height:1.6; color:#94A3B8;">
+                Real jism o'lchamlari trayektoriya uzunligiga nisbatan juda kichik bo'lsa, u <strong>moddiy nuqta</strong> deb olinadi. Molekulalar o'zaro ta'sir kuchlari hisobga olinmasa, <strong>ideal gaz</strong> modeli yuzaga keladi.
+              </p>
+            </div>
+            <div style="background:rgba(15,23,42,0.6); padding:18px; border-radius:10px; border-top:3px solid var(--accent-emerald);">
+              <h4 style="color:var(--accent-emerald); margin-bottom:8px;">2. Matematik Model</h4>
+              <p style="font-size:0.9rem; line-height:1.6; color:#94A3B8;">
+                Fizika qonunlarining differensial va algebraik tenglamalar ko'rinishidagi ifodasi: Nyutonning 2-qonuni, Maksvell elektrodinamika tenglamalari, Shryodinger to'lqin tenglamasi.
+              </p>
+            </div>
+            <div style="background:rgba(15,23,42,0.6); padding:18px; border-radius:10px; border-top:3px solid var(--accent-purple);">
+              <h4 style="color:var(--accent-purple); margin-bottom:8px;">3. Kompyuter Eksperimenti</h4>
+              <p style="font-size:0.9rem; line-height:1.6; color:#94A3B8;">
+                Matematik tenglamalarning sonli usullar (Euler, RK4, Monte-Karlo) yordamida diskretlashtirilgan dasturiy kodi va interaktiv simulyatsiyasi orqali yangi bilimlarni kashf etish.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="color:#F8FAFC; margin:20px 0 12px 0;">Fizik Modellashtirish Zanjiri:</h3>
+          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); font-family:var(--font-mono); font-size:0.95rem; color:#38BDF8; text-align:center;">
+            Real Fizik Obyekt &rarr; Gipoteza & Cheklovlar &rarr; Matematik Tenglamalar &rarr; Sonli Algoritm &rarr; Dasturiy Kod &rarr; Vizual Simulyatsiya &rarr; Verifikatsiya
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PhET & Vascak Teskari Muhandislik (TO'LIQ VA BATAFSIL KENGAYTIRILGAN) -->
+      <div id="tab-sec2" class="tab-content">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <h2 style="color:var(--accent-cyan); margin-bottom:16px;">2. PhET va Vascak.cz Simulyatsiyalarining Teskari Muhandisligi (Reverse Engineering) va Modellarni Tasniflash Metodologiyasi</h2>
+          <p style="line-height:1.8; margin-bottom:16px;">
+            Oliy ta'lim talabalarida ilmiy-tadqiqot va dasturlash ko'nikmalarini shakllantirishning eng samarali usullaridan biri — jahon miqyosidagi ochiq fizik simulyatsiyalar (Kolorado universitetining <strong>PhET Interactive Simulations</strong> va Chexiya o'qituvchisi Vladimir Vascakning <strong>Vascak.cz</strong> resurslari) motorini <em>teskari muhandislik (Reverse Engineering)</em> usulida tahlil qilishdir. Bu yondashuv tayyor animatsiyani shunchaki tomosha qilishdan farqli o'laroq, animatsiya orqasida yotgan <strong>differensial tenglamalar</strong>, <strong>chegaraviy shartlar</strong>, <strong>saqlanish qonunlari</strong> va <strong>sonli algoritmlar</strong>ni aniqlash hamda qayta tiklash imkonini beradi.
+          </p>
+
+          <!-- Banner Diagram -->
+          <div style="text-align:center; margin:24px 0;">
+            <img src="assets/fig_phet_reverse_engineering_models.png" alt="PhET Reverse Engineering" style="max-width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+          </div>
+
+          <!-- Section 2.1: Reverse Engineering 5-Step Methodology -->
+          <div class="glass-panel" style="background:rgba(15,23,42,0.9); margin-bottom:24px; border-left:4px solid var(--accent-cyan);">
+            <h3 style="color:var(--accent-cyan); margin-bottom:12px;">🔬 Teskari Muhandislikning 5 Bosqichli Ilmiy-Metodologik Algoritmi:</h3>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px;">
+                <strong style="color:#38BDF8;">1. Vizual Fenomenologiya:</strong>
+                <p style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">Simulyatsiyadagi jism harakati (aylana, ellips, to'lqin, to'qnashuv) va boshqaruvchi slayderlar ro'yxatini tuzish.</p>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px;">
+                <strong style="color:#34D399;">2. Holat Vektori (State Vector):</strong>
+                <p style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">Tizimning erkinlik darajalarini aniqlash: $\vec{S}(t) = \{x, y, z, v_x, v_y, v_z, m, T, P\}$.</p>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px;">
+                <strong style="color:#A855F7;">3. Fizik Qonunlarni Tiklash:</strong>
+                <p style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">Harakatni boshqaruvchi asosiy differensial yoki statistik tenglamalarni (Nyuton, Maksvell, Bolsman) yozish.</p>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px;">
+                <strong style="color:#FBBF24;">4. Chegaraviy Shartlar:</strong>
+                <p style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">Elastik devorlar, ochiq chegaralar, so'nish koeffitsientlari va cheklovlarni formalizatsiya qilish.</p>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px;">
+                <strong style="color:#F43F5E;">5. Dasturiy Rekonstruksiya:</strong>
+                <p style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">Claude 3.5 Sonnet / Python yordamida modelning soddalashtirilgan ishchi HTML5 Canvas prototipini yaratish.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2.2: PhET Deep Dives -->
+          <h3 style="color:#F8FAFC; margin:28px 0 16px 0;">🌐 PhET Interactive Simulations Loyihalarining Chuqur Teskari Muhandisligi:</h3>
+
+          <!-- PhET 1: Gravity and Orbits -->
+          <div class="glass-panel" style="background:rgba(15,23,42,0.75); margin-bottom:20px; border:1px solid rgba(56,189,248,0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="color:var(--accent-cyan); font-size:1.15rem;">1. PhET: Gravity and Orbits (Gravitatsiya va Orbital Harakat)</h4>
+              <span class="badge badge-cyan">Deterministik Dinamik Uzluksiz</span>
+            </div>
+            <div class="grid-2" style="gap:20px;">
+              <div>
+                <p style="font-size:0.9rem; line-height:1.7; color:#CBD5E1;">
+                  <strong>Matematik Model:</strong> Ikki jism gravitatsion o'zaro ta'siri Nyutonning 2-qonuni va Butun olam tortishish qonuni orqali 2-tartibli nochiziqli differensial tenglamalar sistemasi ko'rinishida yoziladi:
+                  $$\frac{d^2\vec{r}}{dt^2} = - \frac{G M}{r^3} \vec{r} \iff \begin{cases} \frac{dv_x}{dt} = - \frac{GM x}{(x^2+y^2)^{3/2}} \\ \frac{dv_y}{dt} = - \frac{GM y}{(x^2+y^2)^{3/2}} \end{cases}$$
+                  <strong>Saqlanish Qonunlari (Invariantlar):</strong>
+                  <br>• To'liq mexanik energiya: $E = \frac{1}{2}m(v_x^2 + v_y^2) - \frac{GMm}{\sqrt{x^2+y^2}} = \text{const}$
+                  <br>• Burchak momenti (Impuls momenti): $\vec{L} = \vec{r} \times m\vec{v} = m(x v_y - y v_x)\vec{k} = \text{const}$
+                  <br>• Laplas-Runge-Lents vektori $\vec{A} = \vec{v} \times \vec{L} - GMm\frac{\vec{r}}{r} = \text{const}$ (orbita perigeliysining fazoda burilmasligini ta'minlaydi).
+                </p>
+              </div>
+              <div style="background:rgba(0,0,0,0.3); padding:14px; border-radius:8px; font-size:0.88rem; color:#94A3B8; line-height:1.6;">
+                <strong style="color:#38BDF8;">Teskari Muhandislik Xulosalari:</strong>
+                <ul style="margin-top:6px; padding-left:18px;">
+                  <li><strong>Orbita Geometriyasi:</strong> $v_0 = \sqrt{GM/r_0}$ bo'lganda doira ($e=0$), $v_0 < \sqrt{2GM/r_0}$ da ellips ($0 < e < 1$), $v_0 = \sqrt{2GM/r_0}$ da parabola ($e=1$), $v_0 > \sqrt{2GM/r_0}$ da giperbola ($e>1$).</li>
+                  <li><strong>Sonli Integrator:</strong> PhET bu simulyatsiyada oddiy Eyler usulini ishlata olmaydi (chunki orbita spiral shaklida portlaydi). Simplektik <em>Verlet</em> yoki 4-tartibli <em>Runge-Kutta (RK4)</em> usuli qo'llanilgan.</li>
+                  <li><strong>Tasnifi:</strong> <em>100% Deterministik Dinamik Model</em> — boshlang'ich koordinata $(x_0, y_0)$ va tezlik $(v_{x0}, v_{y0})$ ma'lum bo'lsa, istalgan kelajak vaqt $t$ dagi holat Koshi teoremasiga ko'ra bir qiymatli aniqlanadi.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- PhET 2: Gas Properties -->
+          <div class="glass-panel" style="background:rgba(15,23,42,0.75); margin-bottom:20px; border:1px solid rgba(244,63,94,0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="color:var(--accent-rose); font-size:1.15rem;">2. PhET: Gas Properties (Ideal Gaz Xossalari va MKT)</h4>
+              <span class="badge badge-rose">Stoxastik Dinamik Diskret</span>
+            </div>
+            <div class="grid-2" style="gap:20px;">
+              <div>
+                <p style="font-size:0.9rem; line-height:1.7; color:#CBD5E1;">
+                  <strong>Matematik Model:</strong> $N$ ta mutlaq elastik qattiq disklar (Hard-Sphere Model). Zarrachalar to'qnashuvida impuls va mexanik energiya saqlanadi:
+                  $$\vec{v}_1' = \vec{v}_1 - \frac{2 m_2}{m_1+m_2}\frac{(\vec{v}_1-\vec{v}_2)\cdot(\vec{r}_1-\vec{r}_2)}{\|\vec{r}_1-\vec{r}_2\|^2}(\vec{r}_1-\vec{r}_2)$$
+                  <strong>Makroskopik va Mikroskopik Parametrlar Bog'liqligi:</strong>
+                  <br>• Devorga berilgan impuls oqimi va Bosim: $P = \frac{1}{A \Delta t} \sum_{k} 2 m |v_{\perp, k}|$
+                  <br>• Harorat va O'rtacha Kinetik Energiya: $\langle E_k \rangle = \frac{1}{2}m\langle v^2 \rangle = k_B T \quad \text{(2D holatda)}$
+                  <br>• Maksvell-Bolsman tezliklar taqsimoti:
+                  $$f(v) = \frac{m}{k_B T} v \exp\left(-\frac{m v^2}{2 k_B T}\right)$$
+                </p>
+              </div>
+              <div style="background:rgba(0,0,0,0.3); padding:14px; border-radius:8px; font-size:0.88rem; color:#94A3B8; line-height:1.6;">
+                <strong style="color:#F43F5E;">Teskari Muhandislik Xulosalari:</strong>
+                <ul style="margin-top:6px; padding-left:18px;">
+                  <li><strong>Dinamik Xaos va Tasodifiylik:</strong> Garchi har bir to'qnashuv Nyuton mexanikasiga bo'ysunsa-da, $N \sim 100$ ta zarrachada traektoriyalarning boshlang'ich shartlarga o'ta yuqori sezgirligi (Lyapunov eksponentasi $\lambda > 0$) tufayli tizim xaotik bo'ladi.</li>
+                  <li><strong>Statistik Muvozanat:</strong> Boshida barcha zarrachalarga bir xil tezlik berilsa ham, 2-3 soniya to'qnashuvlardan so'ng tezliklar Maksvell taqsimoti egri chizig'iga o'z-o'zidan kelib tushadi.</li>
+                  <li><strong>Tasnifi:</strong> <em>Stoxastik Dinamik Diskret Model</em> — alohida zarracha traektoriyasi tasodifiy (Broun harakati), ammo butun ansambl qat'iy statistik qonuniyatlarga bo'ysunadi.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- PhET 3: Wave on a String -->
+          <div class="glass-panel" style="background:rgba(15,23,42,0.75); margin-bottom:20px; border:1px solid rgba(52,211,153,0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="color:var(--accent-emerald); font-size:1.15rem;">3. PhET: Wave on a String (Torda To'lqin Tarqalishi)</h4>
+              <span class="badge badge-emerald">Deterministik Uzluksiz Maydon Modeli</span>
+            </div>
+            <div class="grid-2" style="gap:20px;">
+              <div>
+                <p style="font-size:0.9rem; line-height:1.7; color:#CBD5E1;">
+                  <strong>Matematik Model:</strong> 1D tor tebranishining xususiy hosilali differensial to'lqin tenglamasi (D'Alamber tenglamasi):
+                  $$\frac{\partial^2 u}{\partial t^2} = v^2 \frac{\partial^2 u}{\partial x^2} - \gamma \frac{\partial u}{\partial t}, \quad v = \sqrt{\frac{T_{\text{taranglik}}}{\mu_{\text{chiziqli zichlik}}}}$$
+                  <strong>Chegaraviy Shartlar (Boundary Conditions):</strong>
+                  <br>• <em>Qattiq mahkamlangan uch (Fixed End):</em> $u(L, t) = 0 \implies$ to'lqin $\pi$ faza siljishi bilan qaytadi (to'ntariladi).
+                  <br>• <em>Erkin uch (Loose End):</em> $\frac{\partial u}{\partial x}\big|_{x=L} = 0 \implies$ to'lqin faza o'zgarmasdan qaytadi.
+                  <br>• <em>Cheksiz muhit (No End):</em> Chegaradan to'lqin qaytmasdan to'liq yutiladi.
+                </p>
+              </div>
+              <div style="background:rgba(0,0,0,0.3); padding:14px; border-radius:8px; font-size:0.88rem; color:#94A3B8; line-height:1.6;">
+                <strong style="color:#34D399;">Teskari Muhandislik Xulosalari:</strong>
+                <ul style="margin-top:6px; padding-left:18px;">
+                  <li><strong>Diskretlash Usuli:</strong> Uzluksiz tor kompyuterda $N$ ta o'zaro prujinalar bilan ulangan diskret moddiy nuqtalar zanjiri (Chekli Ayirmalar — FDM) sifatida modellangan.</li>
+                  <li><strong>Rezonans va Turg'un To'lqinlar:</strong> Manba chastotasi $\nu = \frac{n v}{2L}$ bo'lganda, torda turg'un to'lqinlar (tugunlar va bo'rtiqlar) hosil bo'ladi.</li>
+                  <li><strong>Tasnifi:</strong> <em>Deterministik Uzluksiz Maydon Modeli</em> — fazoda vaqt bo'yicha to'lqin maydoni $u(x, t)$ ning evolyutsiyasini aniq ifodalaydi.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2.3: Vascak.cz Physics Simulations Analysis -->
+          <h3 style="color:#F8FAFC; margin:28px 0 16px 0;">🇨🇿 Vascak.cz Fizik Simulyatsiyalari Bazasining Didaktik va Teskari Muhandislik Tahlili:</h3>
+          <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.7; margin-bottom:16px;">
+            <strong>Vascak.cz</strong> — Chexiyalik fizik Vladimir Vascak tomonidan yaratilgan, 200 dan ortiq interaktiv HTML5 Canvas animatsiyalarini o'z ichiga olgan jahon miqyosidagi ochiq ta'lim platformasidir. Vascak simulyatsiyalarining asosiy kuchi — ularning vizual soddaligi, harakat formulalari bilan bevosita ko'rgazmali bog'langanligi va brauzerda o'ta tez (60 FPS) ishlashidadir.
+          </p>
+
+          <div class="grid-3" style="gap:16px;">
+            <div style="background:rgba(15,23,42,0.7); padding:16px; border-radius:10px; border:1px solid var(--accent-cyan);">
+              <h4 style="color:var(--accent-cyan); margin-bottom:8px;">1. Mexanika Bo'limi (Vascak.cz)</h4>
+              <p style="font-size:0.85rem; color:#94A3B8; line-height:1.6;">
+                <strong>Modellar:</strong> Kepler qonunlari, Matematik mayatnik, Prujinali ossilyator, Erkin tushish.<br>
+                <strong>Tasnifi:</strong> <em>Deterministik Dinamik Model</em>.<br>
+                <strong>Didaktik Qo'llanish:</strong> Nyuton mexanikasi tenglamalarining qat'iy analitik va sonli yechimlari orqali trayektoriya va energiyaning vaqt bo'yicha o'zgarishini ko'rsatish.
+              </p>
+            </div>
+
+            <div style="background:rgba(15,23,42,0.7); padding:16px; border-radius:10px; border:1px solid var(--accent-amber);">
+              <h4 style="color:var(--accent-amber); margin-bottom:8px;">2. Molekulyar Fizika & MKT</h4>
+              <p style="font-size:0.85rem; color:#94A3B8; line-height:1.6;">
+                <strong>Modellar:</strong> Broun harakati (Brownian Motion), Karno sikli, Gaz qonunlari (Boyl-Mariott, Gey-Lyussak).<br>
+                <strong>Tasnifi:</strong> <em>Stoxastik & Fenomenologik Model</em>.<br>
+                <strong>Didaktik Qo'llanish:</strong> Og'ir chang zarrachasining engil molekulalar zarbasi ostida xaotik siljishi (Langevin tenglamasi) orqali stoxastik dinamikani tushuntirish.
+              </p>
+            </div>
+
+            <div style="background:rgba(15,23,42,0.7); padding:16px; border-radius:10px; border:1px solid var(--accent-purple);">
+              <h4 style="color:var(--accent-purple); margin-bottom:8px;">3. Elektrodinamika & To'lqinlar</h4>
+              <p style="font-size:0.85rem; color:#94A3B8; line-height:1.6;">
+                <strong>Modellar:</strong> Doppler effekti, RLC zanjiri tebranishlari, Lorents kuchi, Yung interferensiyasi.<br>
+                <strong>Tasnifi:</strong> <em>Deterministik Maydon va Garmonik Model</em>.<br>
+                <strong>Didaktik Qo'llanish:</strong> To'lqin frontlarining sferik tarqalishi va faza superpozitsiyasini vizual ko'rish.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 2.4: Comparison Table for Reverse Engineering -->
+          <h3 style="color:#F8FAFC; margin:28px 0 16px 0;">📊 PhET va Vascak.cz Simulyatsiyalarining Teskari Muhandislik Pasporti:</h3>
+          <div style="overflow-x:auto;">
+            <table class="styled-table" style="width:100%;">
+              <thead>
+                <tr>
+                  <th>Platforma & Simulyatsiya</th>
+                  <th>Boshqariluvchi Kirish Parametrlari</th>
+                  <th>Tiklanuvchi Matematik Model</th>
+                  <th>Modelning Taksonomik Turi</th>
+                  <th>Didaktik Ahamiyati</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>PhET: Gravity & Orbits</strong></td>
+                  <td>Massalar $M, m$, Boshlang'ich radius $r_0$, Tezlik $v_0$</td>
+                  <td>$\vec{a} = -GM\vec{r}/r^3$ (Koshi masalasi)</td>
+                  <td><span class="badge badge-cyan">Deterministik Dinamik</span></td>
+                  <td>Orbita barqarorligi va Nyuton mexanikasi determinizmini isbotlash</td>
+                </tr>
+                <tr>
+                  <td><strong>PhET: Gas Properties</strong></td>
+                  <td>Molekulalar soni $N$, Harorat $T$, Hajm $V$</td>
+                  <td>Elastik to'qnashuvlar & Maksvell-Bolsman taqsimoti</td>
+                  <td><span class="badge badge-rose">Stoxastik Diskret</span></td>
+                  <td>Xaosdan statistik qonuniyat (Maksvell egri chizig'i) kelib chiqishini ko'rsatish</td>
+                </tr>
+                <tr>
+                  <td><strong>PhET: Wave on String</strong></td>
+                  <td>Amplituda $A$, Chastota $\nu$, Taranglik $T$, So'nish $\gamma$</td>
+                  <td>$\partial^2 u/\partial t^2 = v^2 \partial^2 u/\partial x^2 - \gamma \partial u/\partial t$</td>
+                  <td><span class="badge badge-emerald">Uzluksiz Maydon</span></td>
+                  <td>Turg'un to'lqinlar, rezonans va chegaraviy shartlarni o'rganish</td>
+                </tr>
+                <tr>
+                  <td><strong>Vascak: Brownian Motion</strong></td>
+                  <td>Zarrachalar radiusi $R$, Harorat $T$, Zarrachalar soni</td>
+                  <td>Langevin tenglamasi: $m\dot{v} = -\gamma v + \xi(t)$</td>
+                  <td><span class="badge badge-amber">Stoxastik Dinamik</span></td>
+                  <td>Fluktuatsiya-dissipatsiya teoremasi va Broun diffuziyasini tushuntirish</td>
+                </tr>
+                <tr>
+                  <td><strong>Vascak: RLC Circuit</strong></td>
+                  <td>Induktivlik $L$, Sig'im $C$, Qarshilik $R$, Kuchlanish $U_0$</td>
+                  <td>$L\ddot{q} + R\dot{q} + q/C = U(t)$</td>
+                  <td><span class="badge badge-purple">Deterministik Garmonik</span></td>
+                  <td>Elektromagnit tebranishlar va so'nish dekrementini tahlil qilish</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.3); border-radius:8px; padding:14px; margin-top:20px;">
+            <strong style="color:var(--accent-cyan);">💡 Didaktik Xulosa:</strong>
+            <p style="font-size:0.88rem; color:#CBD5E1; margin-top:4px;">
+              PhET va Vascak.cz platformalarini "teskari muhandislik" qilish orqali talabalar passiv foydalanuvchidan <strong>aktiv fizik-tadqiqotchi va model arxitektori</strong> darajasiga ko'tariladilar. Bu metod orqali talaba har qanday fizik jarayonni ko'rgan zahoti uning differensial tenglamasini, chegaraviy shartlarini va adekvat model turini aniqlash malakasiga ega bo'ladi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Modellar Tasnifi (Gemini / GPT-4) -->
+      <div id="tab-sec3" class="tab-content">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <h2 style="color:var(--accent-cyan); margin-bottom:16px;">3. Modellar Tasnifi (Taksonomiyasi) va Nazariy Solishtirish</h2>
+          <p style="line-height:1.8; margin-bottom:16px;">
+            Gemini 1.5 Pro va GPT-4 yordamida olib borilgan ilmiy-metodologik tahlillar asosida fizik modellar 3 ta asosiy koordinata o'qi bo'yicha 6 ta yirik sinfga ajratiladi.
+          </p>
+
+          <div style="text-align:center; margin:20px 0;">
+            <img src="assets/fig_model_taxonomy_matrix.png" alt="Model Taxonomy Matrix" style="max-width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+          </div>
+
+          <h3 style="color:#F8FAFC; margin:24px 0 12px 0;">Modellar Tasnifining 3 Asosiy Mezoni:</h3>
+          
+          <div class="grid-3" style="gap:16px; margin-bottom:20px;">
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:8px; border:1px solid rgba(56,189,248,0.2);">
+              <h4 style="color:var(--accent-cyan); margin-bottom:6px;">1. Vaqt omili: Statik vs Dinamik</h4>
+              <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">
+                <strong>Statik:</strong> Tizim parametrlari vaqt o'tishi bilan o'zgarmaydi ($\partial / \partial t = 0$). Muvozanat shartlari: $\sum \vec{F} = 0, \sum \vec{M} = 0$.<br>
+                <strong>Dinamik:</strong> Tizim holati vaqt o'tishi bilan evolyutsiya qiladi: $\frac{d\vec{p}}{dt} = \vec{F}$.
+              </p>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:8px; border:1px solid rgba(244,63,94,0.2);">
+              <h4 style="color:var(--accent-rose); margin-bottom:6px;">2. Tasodifiylik: Deterministik vs Stoxastik</h4>
+              <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">
+                <strong>Deterministik:</strong> Boshlang'ich shartlar berilsa, yechim 100% bir qiymatli yagona bo'ladi (Koshi masalasi).<br>
+                <strong>Stoxastik:</strong> Tasodifiy ehtimolliklar, fluktuatsiyalar va Monte-Karlo statistikasi ustuvor bo'ladi.
+              </p>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:8px; border:1px solid rgba(52,211,153,0.2);">
+              <h4 style="color:var(--accent-emerald); margin-bottom:6px;">3. Fazoviy tuzilma: Diskret vs Uzluksiz</h4>
+              <p style="font-size:0.88rem; color:#94A3B8; line-height:1.6;">
+                <strong>Diskret:</strong> Alohida moddiy nuqtalar, molekulalar, tugunlar $(x_i, v_i)$ orqali ifodalanadi.<br>
+                <strong>Uzluksiz:</strong> Tutash muhit maydonlari $\rho(x,y,z), P(x,y,z), \vec{v}(x,y,z)$ va xususiy hosilali differensial tenglamalar (PDE).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Deterministik & Stoxastik Kod (Claude 3.5 Sonnet) -->
+      <div id="tab-sec4" class="tab-content">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <h2 style="color:var(--accent-cyan); margin-bottom:16px;">4. Claude 3.5 Sonnet: Deterministik va Stoxastik Modellar Dasturiy Kodi</h2>
+          <p style="line-height:1.8; margin-bottom:16px;">
+            Quyida Claude 3.5 Sonnet tomonidan generatsiya qilingan va o'quv jarayonida bevosita qo'llanilishi mumkin bo'lgan ikkita fundamental model kodi keltirilgan:
+          </p>
+
+          <div class="grid-2">
+            <div>
+              <h3 style="color:var(--accent-cyan); margin-bottom:8px;">1. Deterministik Kepler Harakati Kodi (Python / JS)</h3>
+              <div style="background:#0F172A; padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); font-family:var(--font-mono); font-size:0.82rem; color:#CBD5E1; max-height:400px; overflow-y:auto;">
+<pre><code>// Deterministik Kepler Simplektik Integratori
+function stepKepler(planet, GM, dt) {
+    const r2 = planet.x * planet.x + planet.y * planet.y;
+    const r = Math.sqrt(r2);
+    
+    // Gravitatsiya tezlanishi a = -GM / r^3 * r
+    const a = -GM / (r2 * r);
+    const ax = a * planet.x;
+    const ay = a * planet.y;
+    
+    // Simplektik Eyler-Kromer (v yangilanib, keyin x topiladi)
+    planet.vx += ax * dt;
+    planet.vy += ay * dt;
+    
+    planet.x += planet.vx * dt;
+    planet.y += planet.vy * dt;
+    
+    // Invariantlar: E va L
+    const Ek = 0.5 * (planet.vx**2 + planet.vy**2);
+    const Ep = -GM / r;
+    const Etot = Ek + Ep;
+    const L = planet.x * planet.vy - planet.y * planet.vx;
+    return { Etot, L };
+}</code></pre>
+              </div>
+            </div>
+
+            <div>
+              <h3 style="color:var(--accent-rose); margin-bottom:8px;">2. Stoxastik 2D Gaz To'qnashuvi Kodi (Python / JS)</h3>
+              <div style="background:#0F172A; padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); font-family:var(--font-mono); font-size:0.82rem; color:#CBD5E1; max-height:400px; overflow-y:auto;">
+<pre><code>// Stoxastik 2D Elastik To'qnashuvlar
+function resolveParticleCollision(p1, p2) {
+    const dx = p2.x - p1.x;
+    const dy = p2.y - p1.y;
+    const dist2 = dx * dx + dy * dy;
+    const minDist = p1.r + p2.r;
+    
+    if (dist2 < minDist * minDist) {
+        const dist = Math.sqrt(dist2) || 0.001;
+        const nx = dx / dist;
+        const ny = dy / dist;
+        
+        // Nisbiy tezlik
+        const kx = p1.vx - p2.vx;
+        const ky = p1.vy - p2.vy;
+        const pvn = kx * nx + ky * ny;
+        
+        if (pvn > 0) {
+            const impulse = (2 * pvn) / (p1.m + p2.m);
+            p1.vx -= impulse * p2.m * nx;
+            p1.vy -= impulse * p2.m * ny;
+            p2.vx += impulse * p1.m * nx;
+            p2.vy += impulse * p1.m * ny;
+        }
+    }
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: Interaktiv Dual-Engine Sandbox -->
+      <div id="tab-sec5" class="tab-content">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <h2 style="color:var(--accent-cyan); margin-bottom:8px;">5. Interaktiv Dual-Engine Sandbox: Deterministik vs Stoxastik Modellar</h2>
+          <p style="color:#94A3B8; margin-bottom:20px;">
+            Quyidagi ikkita interaktiv fizik motor yordamida deterministik orbital harakat va stoxastik gaz kinetikasi qonuniyatlarini real vaqtda sinab ko'ring.
+          </p>
+
+          <!-- Grid: Engine 1 (Left) & Engine 2 (Right) -->
+          <div class="grid-2" style="gap:24px;">
+            
+            <!-- ENGINE 1: KEPLER DETERMINISTIC -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.85); border:1px solid var(--accent-cyan);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <h3 style="color:var(--accent-cyan); font-size:1.1rem;">🌌 1-Motor: Deterministik Kepler Orbitasi</h3>
+                <span class="badge badge-cyan">ODE / Simplektik</span>
+              </div>
+              
+              <div style="position:relative; width:100%; height:320px; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+                <canvas id="kepler-canvas" width="480" height="320" style="width:100%; height:100%; display:block;"></canvas>
+              </div>
+
+              <!-- Controls -->
+              <div style="margin-top:12px; display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                  <span>Boshlang'ich Tezlik $v_0$:</span>
+                  <span id="kepler-speed-val" style="color:var(--accent-cyan); font-weight:bold;">1.00x</span>
+                </div>
+                <input type="range" id="kepler-speed" min="0.5" max="1.5" step="0.02" value="1.0" style="width:100%;">
+
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                  <span>Markaziy Massa $M$:</span>
+                  <span id="kepler-mass-val" style="color:var(--accent-amber); font-weight:bold;">40000</span>
+                </div>
+                <input type="range" id="kepler-mass" min="15000" max="70000" step="1000" value="40000" style="width:100%;">
+
+                <div style="display:flex; gap:8px; margin-top:6px;">
+                  <button id="kepler-play" class="btn btn-amber btn-sm" style="flex:1;">⏸ To'xtatish</button>
+                  <button id="kepler-reset" class="btn btn-secondary btn-sm" style="flex:1;">🔄 Qayta tiklash</button>
+                  <button id="kepler-clear" class="btn btn-secondary btn-sm" style="flex:1;">🧹 Tozalash</button>
+                </div>
+              </div>
+
+              <!-- Telemetry -->
+              <div style="margin-top:12px; padding:10px; background:rgba(0,0,0,0.3); border-radius:6px; font-family:var(--font-mono); font-size:0.78rem; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                <div>Radius $r$: <span id="kep-r" style="color:#38BDF8;">1.80 a.b.</span></div>
+                <div>Tezlik $v$: <span id="kep-v" style="color:#34D399;">14.5 km/s</span></div>
+                <div>Kin. Energiya $E_k$: <span id="kep-ek" style="color:#FBBF24;">105.1 J/kg</span></div>
+                <div>Pot. Energiya $E_p$: <span id="kep-ep" style="color:#F43F5E;">-222.2 J/kg</span></div>
+                <div>To'liq $E_{tot}$: <span id="kep-etot" style="color:#A855F7;">-117.1 J/kg</span></div>
+                <div>Moment $L$: <span id="kep-l" style="color:#38BDF8;">2610</span></div>
+              </div>
+            </div>
+
+            <!-- ENGINE 2: GAS STOCHASTIC -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.85); border:1px solid var(--accent-rose);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <h3 style="color:var(--accent-rose); font-size:1.1rem;">💨 2-Motor: Stoxastik 2D Gaz Kinetikasi</h3>
+                <span class="badge badge-rose">MKT / Maksvell</span>
+              </div>
+              
+              <div style="position:relative; width:100%; height:200px; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+                <canvas id="gas-canvas" width="480" height="200" style="width:100%; height:100%; display:block;"></canvas>
+              </div>
+
+              <!-- Live Maxwell-Boltzmann Histogram -->
+              <div style="position:relative; width:100%; height:120px; background:#0F172A; border-radius:8px; overflow:hidden; border:1px solid #334155; margin-top:8px;">
+                <canvas id="gas-hist-canvas" width="480" height="120" style="width:100%; height:100%; display:block;"></canvas>
+              </div>
+
+              <!-- Controls -->
+              <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px;">
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                  <span>Molekulalar soni $N$:</span>
+                  <span id="gas-count-val" style="color:var(--accent-rose); font-weight:bold;">80</span>
+                </div>
+                <input type="range" id="gas-count" min="20" max="180" step="5" value="80" style="width:100%;">
+
+                <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                  <span>Harorat $T$:</span>
+                  <span id="gas-temp-val" style="color:var(--accent-amber); font-weight:bold;">300 K</span>
+                </div>
+                <input type="range" id="gas-temp" min="60" max="700" step="10" value="300" style="width:100%;">
+
+                <div style="display:flex; gap:6px; margin-top:4px;">
+                  <button id="gas-play" class="btn btn-amber btn-sm" style="flex:1;">⏸ To'xtatish</button>
+                  <button id="gas-heat" class="btn btn-rose btn-sm" style="flex:1;">🔥 Qizdirish</button>
+                  <button id="gas-cool" class="btn btn-cyan btn-sm" style="flex:1;">❄️ Sovitish</button>
+                  <button id="gas-reset" class="btn btn-secondary btn-sm" style="flex:1;">🔄 Tiklash</button>
+                </div>
+              </div>
+
+              <!-- Telemetry -->
+              <div style="margin-top:10px; padding:10px; background:rgba(0,0,0,0.3); border-radius:6px; font-family:var(--font-mono); font-size:0.78rem; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                <div>Harorat $T$: <span id="gas-t-display" style="color:#FBBF24;">300 K</span></div>
+                <div>Bosim $P$: <span id="gas-p-display" style="color:#38BDF8;">1.00 kPa</span></div>
+                <div>O'rtacha $v_{avg}$: <span id="gas-vavg-display" style="color:#34D399;">450 m/s</span></div>
+                <div>Ehtimolli $v_p$: <span id="gas-vp-display" style="color:#F43F5E;">390 m/s</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: Taqqoslash Matritsasi & Diagnostika -->
+      <div id="tab-sec6" class="tab-content">
+        <div class="glass-panel" style="margin-bottom: 30px;">
+          <h2 style="color:var(--accent-cyan); margin-bottom:16px;">6. Taksonomik Taqqoslash Matritsasi va AI Diagnostik Test</h2>
+          
+          <div style="overflow-x:auto; margin-bottom:30px;">
+            <table class="styled-table" style="width:100%;">
+              <thead>
+                <tr>
+                  <th>Model Turi</th>
+                  <th>Matematik Apparat</th>
+                  <th>Boshlang'ich Shartlar</th>
+                  <th>Hisoblash Usuli</th>
+                  <th>Xatolik Manbai</th>
+                  <th>Tipik Fizik Misollar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:var(--accent-cyan);">Statik Deterministik</strong></td>
+                  <td>Algebraik / Laplas tenglamalari</td>
+                  <td>Chegaraviy kuchlar va potensiallar</td>
+                  <td>Matritsali Gauss, Chekli Elementlar (FEM)</td>
+                  <td>Diskretlash panjarasi xatosi</td>
+                  <td>Ko'prik fermalari, elektrostatik maydon potensiali</td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--accent-emerald);">Dinamik Deterministik</strong></td>
+                  <td>Oddiy differensial tenglamalar (ODE)</td>
+                  <td>Koshi shartlari $(x_0, v_0)$</td>
+                  <td>Euler-Cromer, Verlet, RK4</td>
+                  <td>Vaqt qadami kesish xatosi $O(\Delta t^p)$</td>
+                  <td>Kepler orbitasi, prujinali mayatnik, to'p harakati</td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--accent-rose);">Dinamik Stoxastik</strong></td>
+                  <td>Ehtimollar nazariyasi, MKT tenglamalari</td>
+                  <td>Zarrachalar soni $N$, Harorat $T$</td>
+                  <td>Elastik to'qnashuvlar, Monte-Karlo</td>
+                  <td>Statistik fluktuatsiya $O(1/\sqrt{N})$</td>
+                  <td>Broun harakati, ideal gaz, radioaktiv yemirilish</td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--accent-purple);">Uzluksiz Maydon Modeli</strong></td>
+                  <td>Xususiy hosilali tenglamalar (PDE)</td>
+                  <td>Boshlang'ich va chegaraviy shartlar</td>
+                  <td>Chekli ayirmalar (FDM), Chekli hajmlar (FVM)</td>
+                  <td>Fazoviy va vaqt qadami xatosi</td>
+                  <td>Navier-Stokes gidrodinamikasi, Maksvell to'lqinlari</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- DIAGNOSTIC QUIZ SECTION -->
+          <h3 style="color:var(--accent-amber); margin:30px 0 16px 0;">🧪 MagicSchool AI Diagnostik Testi (Model Turlari):</h3>
+          <div id="quiz5-container">
+            
+            <!-- Question 1 -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-cyan);">
+              <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
+                1-Savol: Ko'prik fermasi statik muvozanat modelida tashqi davriy kuch ta'sirida qanday holatda tizim dinamik modelga o'tishni talab qiladi?
+              </h4>
+              <div class="quiz-options" id="quiz5-options-1">
+                <div class="quiz-option-card" onclick="selectQuiz5Option(1, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-1" style="display:none;">
+                  <span>A) Tashqi kuch chastotasi konstruksiyaning xususiy tebranish chastotasiga yaqinlashib, rezonans va inersiya kuchlari ($\frac{d^2x}{dt^2} \neq 0$) muhim ahamiyat kasb etganda</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz5Option(1, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-1" style="display:none;">
+                  <span>B) Ko'prik uzunligi 100 metrdan oshganda</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz5Option(1, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-1" style="display:none;">
+                  <span>C) Faqat havo harorati 0 gradusdan pastga tushganda</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-emerald);">
+              <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
+                2-Savol: Nima sababdan PhET "Gravity and Orbits" simulyatsiyasidagi ikki jism masalasi qat'iy deterministik model hisoblanadi?
+              </h4>
+              <div class="quiz-options" id="quiz5-options-2">
+                <div class="quiz-option-card" onclick="selectQuiz5Option(2, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-2" style="display:none;">
+                  <span>A) Chunki sayyoralar faqat yozda harakatlanadi</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz5Option(2, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-2" style="display:none;">
+                  <span>B) Chunki harakat Nyutonning 2-qonuni differensial tenglamasi bilan ifodalanadi va boshlang'ich koordinata hamda tezlik $(x_0, v_0)$ berilsa, kelajakdagi orbita Koshi teoremasiga binoan 100% bir qiymatli yagona bo'ladi</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz5Option(2, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-2" style="display:none;">
+                  <span>C) Chunki sayyora massasi markaziy jism massasidan doimo katta</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-rose);">
+              <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
+                3-Savol: Gaz molekulalari to'qnashuvida (PhET "Gas Properties") alohida molekula trayektoriyasi deterministik emas, balki stoxastik model orqali o'rganilishiga asosiy sabab nima?
+              </h4>
+              <div class="quiz-options" id="quiz5-options-3">
+                <div class="quiz-option-card" onclick="selectQuiz5Option(3, 0)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-3" style="display:none;">
+                  <span>A) Makroskopik hajmda zarrachalar soni juda ko'p ($N \sim 10^{23}$) va boshlang'ich shartlarga o'ta yuqori sezgirlik (dinamik xaos) tufayli alohida zarrachani emas, butun ansamblning Maksvell statistik taqsimotini hisoblash ancha adekvat va samaralidir</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz5Option(3, 1)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-3" style="display:none;">
+                  <span>B) Gaz molekulalarida impuls saqlanmasligi tufayli</span>
+                </div>
+                <div class="quiz-option-card" onclick="selectQuiz5Option(3, 2)">
+                  <span class="quiz-dot">⚪</span>
+                  <input type="radio" name="q5-3" style="display:none;">
+                  <span>C) Molekulalar faqat to'g'ri chiziq bo'ylab harakatlana olgani uchun</span>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="checkDiagnostic5Quiz()" class="btn btn-primary">Natijani Tekshirish va Sertifikatni Olish →</button>
+            <div id="diag5-feedback"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/sim-model-taxonomy.js"></script>
+  <script src="js/ui-controller.js"></script>
+
+  <script>
+    // Tab switching engine
+    window.switchTab = function(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+    };
+
+    // Diagnostic Quiz 5 Engine
+    let userAnswers5 = {};
+    window.selectQuiz5Option = function(qId, optIdx) {
+      userAnswers5[qId] = optIdx;
+      const container = document.getElementById(`quiz5-options-${qId}`);
+      if (!container) return;
+      const items = container.querySelectorAll('.quiz-option-card');
+      items.forEach((item, idx) => {
+        const isSelected = (idx === optIdx);
+        item.classList.toggle('selected', isSelected);
+        const radio = item.querySelector('input[type="radio"]');
+        if (radio) radio.checked = isSelected;
+        const dot = item.querySelector('.quiz-dot');
+        if (dot) dot.textContent = isSelected ? '🔘' : '⚪';
+      });
+    };
+
+    window.checkDiagnostic5Quiz = function() {
+      const feedbackEl = document.getElementById('diag5-feedback');
+      if (!feedbackEl) return;
+
+      const answers = [0, 1, 0]; // Correct indices for Q1, Q2, Q3
+      const explanations = [
+        "Rezonans va vaqt bo'yicha tebranishlar yuzaga kelganda statik muvozanat (ΣF=0) buziladi va differensial harakat tenglamasiga (dinamik model) o'tiladi.",
+        "Koshi teoremasiga ko'ra, 2-tartibli differensial tenglamada boshlang'ich holat (x0, v0) ma'lum bo'lsa, orbita 100% deterministik aniqlanadi.",
+        "Katta sonlar ansamblida dinamik xaos tufayli deterministik kuzatish imkonsiz, shuning uchun statistik (stoxastik) Maksvell-Bolsman taqsimoti qo'llaniladi."
+      ];
+
+      let correctCount = 0;
+      let allAnswered = true;
+      for (let i = 1; i <= 3; i++) {
+        if (userAnswers5[i] === undefined) allAnswered = false;
+      }
+
+      if (!allAnswered) {
+        feedbackEl.innerHTML = `<div style="background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
+        </div>`;
+        return;
+      }
+
+      let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
+        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 5-Modul Modellar Taksonomiyasi Natijasi:</h4>`;
+
+      for (let i = 1; i <= 3; i++) {
+        const userOpt = userAnswers5[i];
+        const isCorr = (userOpt === answers[i - 1]);
+        if (isCorr) correctCount++;
+
+        htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
+          <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#34D399' : '#F43F5E'};">
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? 'To\'g\'ri!' : 'Xato!'}
+          </div>
+          <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${explanations[i - 1]}</div>
+        </div>`;
+      }
+
+      let badgeName = 'Fizik Modellashtirish Taksonomisti (Mukammal O\'zlashtirildi)';
+      let badgeColor = '#34D399';
+      if (correctCount < 3) {
+        badgeName = 'Fizik Modellar Tadqiqotchisi (Qisman O\'zlashtirildi)';
+        badgeColor = '#38BDF8';
+      }
+
+      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${badgeColor}; text-align:center;">
+        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Modellar Taksonomiyasi Kompetensiyangiz:</div>
+        <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${badgeName}</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
+      </div></div>`;
+
+      feedbackEl.innerHTML = htmlResult;
+    };
+  </script>
+</body>
+</html>
