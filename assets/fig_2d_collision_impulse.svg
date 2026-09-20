@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" font-family="Inter, sans-serif">
+  <rect width="500" height="420" fill="#0B0F19"/>
+  <text x="250" y="34" text-anchor="middle" fill="#F8FAFC" font-size="17" font-weight="700">2D To'qnashuv Impulsi</text>
+
+  <!-- Ball 1 before -->
+  <circle cx="120" cy="180" r="34" fill="#38BDF8" opacity="0.9"/>
+  <text x="120" y="186" text-anchor="middle" fill="#0B0F19" font-size="13" font-weight="700">m1</text>
+  <line x1="120" y1="180" x2="220" y2="180" stroke="#38BDF8" stroke-width="3" marker-end="url(#c1)"/>
+  <text x="170" y="168" text-anchor="middle" fill="#38BDF8" font-size="11">v1</text>
+
+  <!-- Ball 2 before -->
+  <circle cx="360" cy="230" r="24" fill="#FBBF24" opacity="0.9"/>
+  <text x="360" y="235" text-anchor="middle" fill="#0B0F19" font-size="12" font-weight="700">m2</text>
+  <line x1="360" y1="230" x2="290" y2="230" stroke="#FBBF24" stroke-width="3" marker-end="url(#c2)"/>
+  <text x="320" y="218" text-anchor="middle" fill="#FBBF24" font-size="11">v2</text>
+
+  <!-- Contact normal at impact point -->
+  <line x1="220" y1="205" x2="220" y2="140" stroke="#F43F5E" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#c3)"/>
+  <text x="235" y="145" fill="#F43F5E" font-size="11">n̂ (normal)</text>
+  <circle cx="220" cy="205" r="3" fill="#F8FAFC"/>
+  <text x="225" y="215" fill="#94A3B8" font-size="10">to'qnashuv nuqtasi</text>
+
+  <!-- Impulse formula box -->
+  <rect x="40" y="290" width="420" height="100" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="2"/>
+  <text x="250" y="315" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">Impuls Skalyar Moduli</text>
+  <text x="250" y="345" text-anchor="middle" fill="#CBD5E1" font-size="14" font-family="monospace">j = -(1+e)(v_rel · n̂) / (1/m1 + 1/m2)</text>
+  <text x="250" y="370" text-anchor="middle" fill="#94A3B8" font-size="11">v1' = v1 + (j/m1)n̂,   v2' = v2 - (j/m2)n̂</text>
+
+  <defs>
+    <marker id="c1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#38BDF8"/></marker>
+    <marker id="c2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#FBBF24"/></marker>
+    <marker id="c3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#F43F5E"/></marker>
+  </defs>
+</svg>

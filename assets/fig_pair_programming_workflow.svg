@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Inter, sans-serif">
+  <rect width="900" height="380" fill="#0B0F19"/>
+  <text x="450" y="36" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="700">AI Bilan Juftlikda Dasturlash (Driver-Navigator) Ish Jarayoni</text>
+
+  <!-- Driver box -->
+  <rect x="60" y="90" width="280" height="200" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5"/>
+  <text x="200" y="125" text-anchor="middle" fill="#38BDF8" font-size="16" font-weight="700">👤 Talaba (Driver)</text>
+  <text x="200" y="155" text-anchor="middle" fill="#CBD5E1" font-size="12">Kodni yozadi</text>
+  <text x="200" y="178" text-anchor="middle" fill="#CBD5E1" font-size="12">Vector2D / RigidBody2D</text>
+  <text x="200" y="201" text-anchor="middle" fill="#CBD5E1" font-size="12">klasslarini amalga oshiradi</text>
+  <text x="200" y="230" text-anchor="middle" fill="#94A3B8" font-size="11">Klaviatura va sichqoncha</text>
+  <text x="200" y="248" text-anchor="middle" fill="#94A3B8" font-size="11">nazorati to'liq talabada</text>
+
+  <!-- Navigator box -->
+  <rect x="560" y="90" width="280" height="200" rx="12" fill="#0F172A" stroke="#34D399" stroke-width="2.5"/>
+  <text x="700" y="125" text-anchor="middle" fill="#34D399" font-size="16" font-weight="700">🤖 Claude 3.5 Sonnet (Navigator)</text>
+  <text x="700" y="155" text-anchor="middle" fill="#CBD5E1" font-size="12">Fizik xatolarni kuzatadi</text>
+  <text x="700" y="178" text-anchor="middle" fill="#CBD5E1" font-size="12">(energiya, impuls, penetratsiya)</text>
+  <text x="700" y="201" text-anchor="middle" fill="#CBD5E1" font-size="12">Sokratik savollar beradi</text>
+  <text x="700" y="230" text-anchor="middle" fill="#94A3B8" font-size="11">To'g'ridan-to'g'ri kod</text>
+  <text x="700" y="248" text-anchor="middle" fill="#94A3B8" font-size="11">yozmaydi, faqat yo'naltiradi</text>
+
+  <!-- Bidirectional arrows -->
+  <line x1="345" y1="150" x2="555" y2="150" stroke="#FBBF24" stroke-width="2.5" marker-end="url(#arrowY)"/>
+  <text x="450" y="140" text-anchor="middle" fill="#FBBF24" font-size="11">Kod ulashish</text>
+
+  <line x1="555" y1="220" x2="345" y2="220" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#arrowR)"/>
+  <text x="450" y="243" text-anchor="middle" fill="#F43F5E" font-size="11">Fikr-mulohaza / Savol</text>
+
+  <defs>
+    <marker id="arrowY" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#FBBF24"/>
+    </marker>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#F43F5E"/>
+    </marker>
+  </defs>
+
+  <!-- Cycle loop label -->
+  <rect x="330" y="320" width="240" height="42" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="450" y="346" text-anchor="middle" fill="#C084FC" font-size="12" font-weight="700">Iterativ tsikl: Yoz → Tekshir → Tuzat</text>
+</svg>
