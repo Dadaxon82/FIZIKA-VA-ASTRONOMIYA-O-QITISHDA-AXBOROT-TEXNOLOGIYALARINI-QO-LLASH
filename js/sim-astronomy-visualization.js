@@ -458,6 +458,8 @@ function initAstronomyVisualizationLab() {
 function initTtsNarrativeDemo() {
   const selectEngine = document.getElementById('select-tts-engine');
   const btnPlay = document.getElementById('btn-play-narrative');
+  const btnPause = document.getElementById('btn-pause-narrative');
+  const btnStop = document.getElementById('btn-stop-narrative');
   const narrativeText = document.getElementById('current-narrative-text');
   const waveCanvas = document.getElementById('tts-audio-wave');
   if (!btnPlay || !waveCanvas) return;
@@ -522,43 +524,95 @@ function initTtsNarrativeDemo() {
     google: 'Google Cloud Neural2'
   };
 
+  let sentenceIndex = 0;
+  let engineLabel = 'TTS';
+  let isSpeaking = false;
+  let isPaused = false;
+  let stoppedManually = false;
+
+  function setControlsState() {
+    if (btnPause) {
+      btnPause.disabled = !isSpeaking;
+      btnPause.textContent = isPaused ? '▶ Davom ettirish' : '⏸ Pauza';
+    }
+    if (btnStop) btnStop.disabled = !isSpeaking;
+  }
+
+  function speakNext() {
+    if (sentenceIndex >= NARRATIVES.length) {
+      narrativeText.textContent = `"${NARRATIVES[NARRATIVES.length - 1]}" — bayon yakunlandi.`;
+      stopWave();
+      isSpeaking = false;
+      isPaused = false;
+      setControlsState();
+      return;
+    }
+    const text = NARRATIVES[sentenceIndex];
+    narrativeText.textContent = `[${engineLabel}] "${text}"`;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'uz-UZ';
+    utter.rate = 0.95;
+
+    utter.onstart = () => {
+      waveAmplitude = 1;
+      if (!waveAnimId) animateWave();
+    };
+    utter.onboundary = () => { waveAmplitude = 0.6 + Math.random() * 0.4; };
+    utter.onend = () => {
+      if (stoppedManually) return;
+      sentenceIndex++;
+      speakNext();
+    };
+    utter.onerror = () => {
+      if (stoppedManually) return;
+      stopWave();
+      isSpeaking = false;
+      isPaused = false;
+      setControlsState();
+    };
+    window.speechSynthesis.speak(utter);
+  }
+
   btnPlay.addEventListener('click', () => {
     if (!('speechSynthesis' in window)) {
       narrativeText.textContent = "⚠️ Brauzeringiz nutq sintezini (Web Speech API) qo'llab-quvvatlamaydi.";
       return;
     }
 
+    stoppedManually = false;
     window.speechSynthesis.cancel();
-    const engineLabel = ENGINE_LABELS[selectEngine.value] || 'TTS';
-    let sentenceIndex = 0;
-
-    function speakNext() {
-      if (sentenceIndex >= NARRATIVES.length) {
-        narrativeText.textContent = `"${NARRATIVES[NARRATIVES.length - 1]}" — bayon yakunlandi.`;
-        stopWave();
-        return;
-      }
-      const text = NARRATIVES[sentenceIndex];
-      narrativeText.textContent = `[${engineLabel}] "${text}"`;
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = 'uz-UZ';
-      utter.rate = 0.95;
-
-      utter.onstart = () => {
-        waveAmplitude = 1;
-        if (!waveAnimId) animateWave();
-      };
-      utter.onboundary = () => { waveAmplitude = 0.6 + Math.random() * 0.4; };
-      utter.onend = () => {
-        sentenceIndex++;
-        speakNext();
-      };
-      utter.onerror = () => {
-        stopWave();
-      };
-      window.speechSynthesis.speak(utter);
-    }
-
+    engineLabel = ENGINE_LABELS[selectEngine.value] || 'TTS';
+    sentenceIndex = 0;
+    isSpeaking = true;
+    isPaused = false;
+    setControlsState();
     speakNext();
   });
+
+  if (btnPause) {
+    btnPause.addEventListener('click', () => {
+      if (!isSpeaking) return;
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+      } else {
+        window.speechSynthesis.pause();
+        isPaused = true;
+      }
+      setControlsState();
+    });
+  }
+
+  if (btnStop) {
+    btnStop.addEventListener('click', () => {
+      if (!isSpeaking) return;
+      stoppedManually = true;
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+      isPaused = false;
+      stopWave();
+      narrativeText.textContent = "\"Ovozli tushuntirishni boshlash uchun yuqoridagi tugmani bosing...\"";
+      setControlsState();
+    });
+  }
 }
