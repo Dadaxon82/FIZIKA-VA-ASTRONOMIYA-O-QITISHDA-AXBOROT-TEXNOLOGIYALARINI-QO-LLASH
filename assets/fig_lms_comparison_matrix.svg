@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" font-family="Inter, sans-serif">
+  <rect width="980" height="420" fill="#0B0F19"/>
+  <text x="490" y="34" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="700">4 Ta Yetakchi LMS Platformasining Fizika/STEM Imkoniyatlari</text>
+
+  <!-- Column headers -->
+  <g font-size="13" font-weight="700">
+    <rect x="40" y="60" width="200" height="40" fill="#0F172A" stroke="#1E293B"/>
+    <text x="140" y="85" text-anchor="middle" fill="#94A3B8">Mezon</text>
+
+    <rect x="240" y="60" width="180" height="40" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+    <text x="330" y="85" text-anchor="middle" fill="#38BDF8">Moodle</text>
+
+    <rect x="420" y="60" width="180" height="40" fill="#0F172A" stroke="#C084FC" stroke-width="2"/>
+    <text x="510" y="85" text-anchor="middle" fill="#C084FC">Canvas LMS</text>
+
+    <rect x="600" y="60" width="180" height="40" fill="#0F172A" stroke="#FBBF24" stroke-width="2"/>
+    <text x="690" y="85" text-anchor="middle" fill="#FBBF24">Open edX</text>
+
+    <rect x="780" y="60" width="180" height="40" fill="#0F172A" stroke="#F43F5E" stroke-width="2"/>
+    <text x="870" y="85" text-anchor="middle" fill="#F43F5E">Google Classroom</text>
+  </g>
+
+  <!-- Rows -->
+  <g font-size="12">
+    <!-- Row labels -->
+    <rect x="40" y="100" width="200" height="55" fill="#0F172A" stroke="#1E293B"/>
+    <text x="52" y="132" fill="#E2E8F0">LaTeX / MathJax</text>
+    <rect x="40" y="155" width="200" height="55" fill="#0F172A" stroke="#1E293B"/>
+    <text x="52" y="187" fill="#E2E8F0">LTI 1.3 Advantage</text>
+    <rect x="40" y="210" width="200" height="55" fill="#0F172A" stroke="#1E293B"/>
+    <text x="52" y="242" fill="#E2E8F0">xAPI Telemetriya</text>
+    <rect x="40" y="265" width="200" height="55" fill="#0F172A" stroke="#1E293B"/>
+    <text x="52" y="297" fill="#E2E8F0">Python / STACK Sandbox</text>
+
+    <!-- Moodle column -->
+    <rect x="240" y="100" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="330" y="132" text-anchor="middle" fill="#34D399">A'lo (Native)</text>
+    <rect x="240" y="155" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="330" y="187" text-anchor="middle" fill="#34D399">To'liq</text>
+    <rect x="240" y="210" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="330" y="242" text-anchor="middle" fill="#34D399">Logstore Plagin</text>
+    <rect x="240" y="265" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="330" y="297" text-anchor="middle" fill="#34D399">A'lo (STACK/Maxima)</text>
+
+    <!-- Canvas column -->
+    <rect x="420" y="100" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="510" y="132" text-anchor="middle" fill="#34D399">A'lo (Editor)</text>
+    <rect x="420" y="155" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="510" y="187" text-anchor="middle" fill="#34D399">Yetakchi (OAuth2)</text>
+    <rect x="420" y="210" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="510" y="242" text-anchor="middle" fill="#34D399">Caliper &amp; xAPI</text>
+    <rect x="420" y="265" width="180" height="55" fill="rgba(251,191,36,0.08)" stroke="#1E293B"/>
+    <text x="510" y="297" text-anchor="middle" fill="#FBBF24">Tashqi LTI orqali</text>
+
+    <!-- Open edX column -->
+    <rect x="600" y="100" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="690" y="132" text-anchor="middle" fill="#34D399">A'lo (MathJax)</text>
+    <rect x="600" y="155" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="690" y="187" text-anchor="middle" fill="#34D399">XBlock &amp; LTI 1.3</text>
+    <rect x="600" y="210" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="690" y="242" text-anchor="middle" fill="#34D399">Tracking Logs</text>
+    <rect x="600" y="265" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="690" y="297" text-anchor="middle" fill="#34D399">A'lo (CodeJail)</text>
+
+    <!-- Google Classroom column -->
+    <rect x="780" y="100" width="180" height="55" fill="rgba(251,191,36,0.08)" stroke="#1E293B"/>
+    <text x="870" y="132" text-anchor="middle" fill="#FBBF24">Qo'shimchalar</text>
+    <rect x="780" y="155" width="180" height="55" fill="rgba(244,63,94,0.08)" stroke="#1E293B"/>
+    <text x="870" y="187" text-anchor="middle" fill="#F87171">Cheklangan</text>
+    <rect x="780" y="210" width="180" height="55" fill="rgba(244,63,94,0.08)" stroke="#1E293B"/>
+    <text x="870" y="242" text-anchor="middle" fill="#F87171">Drive Logs Only</text>
+    <rect x="780" y="265" width="180" height="55" fill="rgba(52,211,153,0.08)" stroke="#1E293B"/>
+    <text x="870" y="297" text-anchor="middle" fill="#34D399">Google Colab</text>
+  </g>
+
+  <text x="490" y="355" text-anchor="middle" fill="#94A3B8" font-size="12">Manba: 1EdTech Consortium (2023) LTI 1.3 standarti va platformalarning rasmiy hujjatlari asosida</text>
+</svg>
