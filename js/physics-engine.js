@@ -193,3 +193,56 @@ function wavelengthToRGB(wavelength) {
 
   return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${alpha})`;
 }
+
+/**
+ * Canvasni ota konteyner (parent) o'lchamiga moslab qayta o'lchaydi va
+ * Retina/DPR ekranlarda xira ko'rinmasligi uchun devicePixelRatio'ni
+ * hisobga oladi. `ctx.scale()` o'rniga `ctx.setTransform()` ishlatiladi,
+ * shunda resize bir necha marta chaqirilganda (ekran aylantirilganda,
+ * oyna o'lchami o'zgarganda) masshtab hech qachon kumulyativ (jamlanib)
+ * oshib ketmaydi.
+ *
+ * @param {HTMLCanvasElement} canvas
+ * @param {number} [aspectRatio] - balandlik/kenglik nisbati (masalan 0.6).
+ *   Berilmasa, konteynerning haqiqiy balandligi ishlatiladi.
+ * @param {(width:number, height:number) => void} [onResize] - har bir
+ *   qayta o'lchashdan keyin chaqiriladi (CSS piksellardagi yangi o'lcham bilan).
+ * @returns {() => void} resize funksiyasining o'zi (darhol chaqirish uchun)
+ */
+function setupResponsiveCanvas(canvas, aspectRatio, onResize) {
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    const parent = canvas.parentElement;
+    if (!parent) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const cssWidth = Math.max(1, Math.floor(parent.clientWidth));
+    const cssHeight = Math.max(1, Math.floor(
+      aspectRatio ? cssWidth * aspectRatio : (parent.clientHeight || cssWidth * 0.6)
+    ));
+
+    canvas.width = cssWidth * dpr;
+    canvas.height = cssHeight * dpr;
+    canvas.style.width = cssWidth + 'px';
+    canvas.style.height = cssHeight + 'px';
+
+    // Kumulyativ emas, mutlaq masshtab — har chaqiriqda avvalgisini
+    // qayta yozadi, shuning uchun bir necha marta resize chaqirilishi
+    // xavfsiz.
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    if (typeof onResize === 'function') onResize(cssWidth, cssHeight);
+  }
+
+  resize();
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const observer = new ResizeObserver(resize);
+    observer.observe(canvas.parentElement);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+
+  return resize;
+}

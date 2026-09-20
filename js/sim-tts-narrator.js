@@ -24,10 +24,11 @@ class TTSNarrator {
 
   resize() {
     if (!this.canvas) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const rect = this.canvas.parentElement.getBoundingClientRect();
-    this.canvas.width = rect.width * window.devicePixelRatio || 500;
-    this.canvas.height = 100 * window.devicePixelRatio;
-    this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    this.canvas.width = (rect.width * dpr) || 500;
+    this.canvas.height = 100 * dpr;
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     this.renderWave(0);
   }
 

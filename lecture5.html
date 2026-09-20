@@ -491,7 +491,7 @@ function stepKepler(planet, GM, dt) {
                   <span style="font-size:0.85rem; color:#94A3B8;">🔴 Yuqoridagi kodning jonli simulyatsiyasi:</span>
                   <button id="kepler-code-play" class="btn btn-secondary btn-sm">⏸</button>
                 </div>
-                <div style="position:relative; width:100%; height:220px; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+                <div style="position:relative; width:100%; aspect-ratio:480/220; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
                   <canvas id="kepler-code-canvas" width="480" height="220" style="width:100%; height:100%; display:block;"></canvas>
                 </div>
               </div>
@@ -533,7 +533,7 @@ function resolveParticleCollision(p1, p2) {
                   <span style="font-size:0.85rem; color:#94A3B8;">🔴 Yuqoridagi kodning jonli simulyatsiyasi:</span>
                   <button id="gas-code-play" class="btn btn-secondary btn-sm">⏸</button>
                 </div>
-                <div style="position:relative; width:100%; height:220px; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+                <div style="position:relative; width:100%; aspect-ratio:480/220; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
                   <canvas id="gas-code-canvas" width="480" height="220" style="width:100%; height:100%; display:block;"></canvas>
                 </div>
               </div>
@@ -560,7 +560,7 @@ function resolveParticleCollision(p1, p2) {
                 <span class="badge badge-cyan">ODE / Simplektik</span>
               </div>
               
-              <div style="position:relative; width:100%; height:320px; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+              <div style="position:relative; width:100%; aspect-ratio:480/320; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
                 <canvas id="kepler-canvas" width="480" height="320" style="width:100%; height:100%; display:block;"></canvas>
               </div>
 
@@ -603,12 +603,12 @@ function resolveParticleCollision(p1, p2) {
                 <span class="badge badge-rose">MKT / Maksvell</span>
               </div>
               
-              <div style="position:relative; width:100%; height:200px; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+              <div style="position:relative; width:100%; aspect-ratio:480/200; background:#0B0F19; border-radius:8px; overflow:hidden; border:1px solid #334155;">
                 <canvas id="gas-canvas" width="480" height="200" style="width:100%; height:100%; display:block;"></canvas>
               </div>
 
               <!-- Live Maxwell-Boltzmann Histogram -->
-              <div style="position:relative; width:100%; height:120px; background:#0F172A; border-radius:8px; overflow:hidden; border:1px solid #334155; margin-top:8px;">
+              <div style="position:relative; width:100%; aspect-ratio:480/120; background:#0F172A; border-radius:8px; overflow:hidden; border:1px solid #334155; margin-top:8px;">
                 <canvas id="gas-hist-canvas" width="480" height="120" style="width:100%; height:100%; display:block;"></canvas>
               </div>
 
