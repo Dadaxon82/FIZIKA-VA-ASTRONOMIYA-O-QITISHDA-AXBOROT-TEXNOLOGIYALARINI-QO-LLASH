@@ -627,7 +627,9 @@
   margin-bottom: 8px;
 }
 
-.astro-preset-btn.active {
+.astro-preset-btn.active,
+.lms-topic-btn.active,
+.lms-cluster-btn.active {
   background: var(--bg-card-hover);
   border-color: var(--accent-cyan);
   color: var(--text-main);

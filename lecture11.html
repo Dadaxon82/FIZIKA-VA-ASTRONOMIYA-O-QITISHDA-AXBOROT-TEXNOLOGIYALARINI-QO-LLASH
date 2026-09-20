@@ -139,7 +139,7 @@
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_lms_architecture_physics.png" alt="LMS Arxitekturasi va AI Integratsiyasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_lms_architecture_physics.svg" alt="LMS Arxitekturasi va AI Integratsiyasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">11.1-rasm: Fizika kursini masofaviy loyihalashtirish: LMS arxitekturasi, Otter.ai NLP oqimi va MagicSchool AI qayta aloqa sikli.</div>
         </div>
 
@@ -191,7 +191,7 @@
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_lms_comparison_matrix.png" alt="LMS Platformalar Qiyosiy Matritsasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_lms_comparison_matrix.svg" alt="LMS Platformalar Qiyosiy Matritsasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">11.2-rasm: Fizika va STEM ta'limida 4 ta yetakchi LMS platformasining imkoniyatlari qiyosiy matritsasi.</div>
         </div>
 
@@ -311,7 +311,7 @@
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_adaptive_learning_loop.png" alt="Adaptiv O'quv Trayektoriyasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_adaptive_learning_loop.svg" alt="Adaptiv O'quv Trayektoriyasi" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">11.3-rasm: MagicSchool AI diagnostikasi va klasterlar bo'yicha kognitiv o'sish ko'rsatkichlari.</div>
         </div>
 
@@ -471,7 +471,7 @@ Dars transkripti: \${otterRawTranscript}
         </p>
 
         <div style="text-align: center; margin: 25px 0;">
-          <img src="assets/fig_student_portfolio_pipeline.png" alt="Raqamli Portfolio Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+          <img src="assets/fig_student_portfolio_pipeline.svg" alt="Raqamli Portfolio Konveyeri" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">11.4-rasm: Google Antigravity AI: Talaba raqamli fizik portfelini yaratish va avtomatik audit qilish konveyeri.</div>
         </div>
 
@@ -569,8 +569,8 @@ Dars transkripti: \${otterRawTranscript}
 
         <!-- Mathematical Physics Reference Panel -->
         <div class="glass-panel" style="margin-bottom: 20px; border-left: 4px solid var(--accent-cyan);">
-          <h4 style="color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 6px;">📐 Tebranish Dinamikasi Nazariy Asosi:</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+          <h4 id="lms-theory-title" style="color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 6px;">📐 Tebranish Dinamikasi Nazariy Asosi:</h4>
+          <p id="lms-theory-text" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
             Harakat tenglamasi: $$m \ddot{x} + \gamma \dot{x} + kx = 0$$, bu yerda so'nish koeffitsiyenti $\beta = \frac{\gamma}{2m}$, xos burchak chastotasi $\omega_0 = \sqrt{\frac{k}{m}}$, to'liq mexanik energiya $E(t) = \frac{1}{2}mv^2 + \frac{1}{2}kx^2$, energiyaning kamayish tezligi $\frac{dE}{dt} = -\gamma v^2 \le 0$.
           </p>
         </div>
@@ -579,20 +579,20 @@ Dars transkripti: \${otterRawTranscript}
         <div class="grid-2" style="gap: 20px; margin-bottom: 25px;">
           <!-- Left: Embed Physics Simulation -->
           <div style="background: #0B0F19; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 16px;">
-            <h4 style="color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 10px;">🎮 LMS Ichki Simulyatsiya Moduli (Prujinali Tebranish):</h4>
+            <h4 id="lms-sim-title" style="color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 10px;">🎮 LMS Ichki Simulyatsiya Moduli (Prujinali Tebranish):</h4>
             <canvas id="lms-physics-canvas" width="550" height="260" style="display: block; width: 100%; height: auto; background: #070A13; border-radius: var(--radius-md);"></canvas>
             
             <div class="grid-3" style="gap: 10px; margin-top: 14px;">
               <div>
-                <label style="font-size: 0.8rem; color: var(--text-secondary);">Massa ($m$): <strong id="val-lms-mass" style="color: var(--accent-cyan);">1.0 kg</strong></label>
+                <label style="font-size: 0.8rem; color: var(--text-secondary);"><span id="lbl-lms-mass">Massa ($m$):</span> <strong id="val-lms-mass" style="color: var(--accent-cyan);">1.0 kg</strong></label>
                 <input id="sl-lms-mass" type="range" min="0.5" max="3.0" step="0.1" value="1.0" style="width: 100%;">
               </div>
               <div>
-                <label style="font-size: 0.8rem; color: var(--text-secondary);">Qattiqlik ($k$): <strong id="val-lms-k" style="color: var(--accent-emerald);">15.0 N/m</strong></label>
+                <label style="font-size: 0.8rem; color: var(--text-secondary);"><span id="lbl-lms-k">Qattiqlik ($k$):</span> <strong id="val-lms-k" style="color: var(--accent-emerald);">15.0 N/m</strong></label>
                 <input id="sl-lms-k" type="range" min="5.0" max="40.0" step="1.0" value="15.0" style="width: 100%;">
               </div>
               <div>
-                <label style="font-size: 0.8rem; color: var(--text-secondary);">So'nish ($\gamma$): <strong id="val-lms-damp" style="color: var(--accent-amber);">0.15</strong></label>
+                <label style="font-size: 0.8rem; color: var(--text-secondary);"><span id="lbl-lms-damp">So'nish ($\gamma$):</span> <strong id="val-lms-damp" style="color: var(--accent-amber);">0.15</strong></label>
                 <input id="sl-lms-damp" type="range" min="0.0" max="0.8" step="0.02" value="0.15" style="width: 100%;">
               </div>
             </div>
@@ -763,6 +763,22 @@ Dars transkripti: \${otterRawTranscript}
 
   <!-- Quiz Script & Scripts Inclusion -->
   <script>
+    // Tab switching engine
+    window.switchTab = function(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+
+      if (tabId === 'tab-reja6' && window.lmsDistanceLab) {
+        window.lmsDistanceLab.initCanvasSize();
+      }
+    };
+
     function checkLMSQuiz() {
       const q1 = document.querySelector('input[name="q1"]:checked');
       const q2 = document.querySelector('input[name="q2"]:checked');
