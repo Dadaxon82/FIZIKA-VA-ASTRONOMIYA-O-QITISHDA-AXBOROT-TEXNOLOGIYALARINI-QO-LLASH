@@ -629,10 +629,72 @@
 
 .astro-preset-btn.active,
 .lms-topic-btn.active,
-.lms-cluster-btn.active {
+.lms-cluster-btn.active,
+.mech-mode-btn.active {
   background: var(--bg-card-hover);
   border-color: var(--accent-cyan);
   color: var(--text-main);
+}
+
+/* Scrollable tabs nav (prev/next arrows + progress track) */
+.tabs-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.tabs-scroll-wrapper .tabs-nav {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+  scrollbar-width: none;
+}
+
+.tabs-scroll-wrapper .tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-scroll-btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.tabs-scroll-btn:hover {
+  color: var(--text-main);
+  border-color: var(--accent-cyan);
+}
+
+.tabs-scroll-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tabs-scroll-track-container {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.tabs-scroll-thumb {
+  height: 100%;
+  width: 30%;
+  background: var(--accent-cyan);
+  border-radius: 2px;
 }
 
 .astro-telemetry-hud {
