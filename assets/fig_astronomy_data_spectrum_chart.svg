@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Inter, sans-serif">
+  <rect width="900" height="420" fill="#0B0F19"/>
+  <text x="450" y="34" text-anchor="middle" fill="#F8FAFC" font-size="19" font-weight="700">Ekzosayyora Aniqlash: Doppler va Tranzit Grafiklari</text>
+
+  <!-- Radial velocity chart -->
+  <text x="230" y="66" text-anchor="middle" fill="#F43F5E" font-size="14" font-weight="700">Doppler Radial Tezlik Egri Chizig'i</text>
+  <rect x="60" y="80" width="340" height="140" fill="none" stroke="#334155"/>
+  <line x1="60" y1="150" x2="400" y2="150" stroke="#334155" stroke-dasharray="3,3"/>
+  <path d="M 60 150 Q 100 90 140 150 T 220 150 T 300 150 T 380 150" fill="none" stroke="#F43F5E" stroke-width="2.5"/>
+  <text x="230" y="238" text-anchor="middle" fill="#94A3B8" font-size="11">v_r(t) = K[cos(θ+ω) + e·cosω]</text>
+
+  <!-- Transit light curve chart -->
+  <text x="670" y="66" text-anchor="middle" fill="#38BDF8" font-size="14" font-weight="700">Tranzit Yorug'lik Egri Chizig'i</text>
+  <rect x="500" y="80" width="340" height="140" fill="none" stroke="#334155"/>
+  <path d="M 500 100 L 620 100 L 640 140 L 700 140 L 720 100 L 840 100" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+  <text x="670" y="238" text-anchor="middle" fill="#94A3B8" font-size="11">ΔF/F = (R_p/R*)²</text>
+
+  <!-- explanation -->
+  <rect x="60" y="280" width="780" height="110" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="80" y="308" fill="#FBBF24" font-size="13" font-weight="700">Fizik ma'nosi:</text>
+  <text x="80" y="332" fill="#CBD5E1" font-size="12">Doppler usuli — yulduzning sayyora tortishishi ostida tebranishidan spektral chiziqlar siljishi orqali</text>
+  <text x="80" y="352" fill="#CBD5E1" font-size="12">sayyora massasini (m_p·sin i) aniqlaydi. Tranzit fotometriyasi — sayyora yulduz oldidan o'tganda</text>
+  <text x="80" y="372" fill="#CBD5E1" font-size="12">yorug'lik oqimining vaqtinchalik pasayishidan sayyora radiusini (R_p/R*) hisoblaydi.</text>
+</svg>
