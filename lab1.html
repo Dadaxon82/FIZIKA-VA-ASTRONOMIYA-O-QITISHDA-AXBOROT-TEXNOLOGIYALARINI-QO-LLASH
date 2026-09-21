@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-Laboratoriya: Sun'iy Intellekt Vositalari Yordamida Fizik Simulyatsion Animatsiyalarning Dastlabki Vizual Loyihasini Yaratish</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    .prompt-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.45;
+      resize: vertical;
+      margin-bottom: 6px;
+    }
+    .prompt-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .roadmap-node {
+      position: relative;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 14px;
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr 120px 80px;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 640px) {
+      .rubric-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-Modul: Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul: Prompt Muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-Modul: Masofaviy Ta'lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika & Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-Modul: Termodinamika & Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio Sintez</a></li>
+        <li><a href="lab1.html" class="nav-link active">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-Modul: Shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-Modul: Masofaviy Ta'lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link active">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-cyan">1-Laboratoriya Mashg'uloti: Generativ AI & Fizik Simulyatsiya Loyihasi</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        Sun'iy Intellekt Vositalari Yordamida Fizik Simulyatsion Animatsiyalarning Dastlabki Vizual Loyihasini Yaratish
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Fanning maqsad va vazifalari, talabadan kutiladigan yakuniy natijalar va mahorat — istalgan fizik jarayonning raqamli texnologiyalardan foydalanib simulyatsion veb-sahifalarini mustaqil yarata olish — to'liq 6 bosqichli <strong>AI-Pipeline konveyeri</strong> (MagicSchool AI diagnostikasi &rarr; Gemini/GPT-4 dars ssenariysi &rarr; Midjourney vizual konsept &rarr; Runway/Sora video animatsiya &rarr; Claude 3.5 Sonnet deterministik Canvas simulyatsiyasi) orqali shakllantiriladi.
+      </p>
+    </div>
+
+    <!-- 6-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 1-Laboratoriya Mashg'uloti Rejasi va To'liq AI-Pipeline Konveyeri:</h3>
+      <div class="grid-3" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. AI Diagnostika & Maqsadlar:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Fanning maqsadi, kutiladigan yakuniy natijalar, Vygotskiy ZPD va Bloom taksonomiyasi bo'yicha mahorat mezonlari.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. MagicSchool & Yo'l Xaritasi:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI diagnostikasi, 3 ta kognitiv klaster va semestr yo'l xaritasi (Nazariya &rarr; Tahlil &rarr; Kod &rarr; Ovoz &rarr; Himoya).</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">3. Dars Ssenariysi (Gemini / GPT-4):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Fizik hodisani modellashtirishning 4 bosqichli Storyboardi, pedagogik dekompozitsiya va JSON parametrlar xaritasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">4. Tasvir & Grafik (Midjourney):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Midjourney V6 / DALL-E 3 orqali 8K fotorealistik va sxematik 2D/3D vizual aktivlar, asbob-uskunalar va HUD overlays.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-rose);">5. Animatsiya (Runway / Sora):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Runway Gen-2 va Pika Labs orqali harakat dinamikasi (Motion Brush, Camera Control), generativ videodagi fizik cheklovlar tahlili.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: #38bdf8;">6 & 7. Interaktiv Kod & Sandbox:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet deterministik Canvas dasturlash, qiyosiy laboratoriya, Capstone rubrikasi va APA 7 manbalar.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. AI Diagnostika & Maqsadlar</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. MagicSchool & Yo'l Xaritasi</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Dars Ssenariysi (Gemini / GPT-4)</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Tasvir & Grafik (Midjourney)</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Animatsiya (Runway / Sora)</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Interaktiv Kod (Claude 3.5)</button>
+        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')">7. Laboratoriya Dastgohi & Test</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: AI Diagnostika va Maqsadlar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Sun'iy Intellekt Uchun Diagnostika va Individual Reja</h2>
+          <span class="badge badge-cyan">Paradigma & Kutiladigan Mahorat</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Oliy ta'limda fizika va astronomiya fanlarini o'qitishda an'anaviy yondashuv talabalarga tayyor dasturiy interfeyslarni passiv o'rganishni taklif etardi. Mazkur yangilangan laboratoriya kursi tubdan boshqacha pedagogik paradigmaga tayanadi: <strong>Talaba — raqamli fizik muhitning mustaqil arxitektori, modellashtiruvchisi va ijodkori</strong>ga aylanadi.
+        </p>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">1.1. Fanning Maqsadi va Yakuniy Mahorat Mezonlari (Learning Outcomes):</h3>
+        <div class="glass-panel" style="border-left: 4px solid var(--accent-cyan); margin-bottom: 25px; padding: 20px;">
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.75; font-size: 0.95rem; color: var(--text-secondary);">
+            <li><strong>Matematik Dekompozitsiya:</strong> Istalgan klassik yoki zamonaviy fizik jarayonni (mexanika, termodinamika, elektrodinamika, optika, kvant fizikasi) differensial tenglamalar orqali ifodalash va parametrlarni aniqlash;</li>
+            <li><strong>AI Dars Ssenariysi & Storyboard:</strong> Generativ sun'iy intellekt (Gemini 1.5 Pro / GPT-4o) yordamida jarayonning ko'rgazmali pedagogik ssenariysi va vaqt shkalasini loyihalash;</li>
+            <li><strong>Vizual Aktivlar Generatsiyasi:</strong> Midjourney V6 va DALL-E 3 orqali asboblar, laboratoriya stendlari va HUD overlays aktivlarini yuqori aniqlikda yaratish;</li>
+            <li><strong>Deterministik Dasturlash:</strong> Claude 3.5 Sonnet yordamida ushbu konseptni matematik jihatdan qat'iy <strong>HTML5 Canvas / WebGL</strong> interaktiv veb-simulyatsiyasiga aylantirish;</li>
+            <li><strong>Audio Sintez & Portfolio:</strong> O'zlashtirilgan modellarni audio-narratsiya bilan boyitish va o'zining raqamli <strong>Capstone Portfoliosi</strong>da muvaffaqiyatli himoya qilish.</li>
+          </ul>
+        </div>
+
+        <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 14px;">1.2. Kognitiv Diagnostika va Vygotskiy ZPD Modeli:</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
+          Har bir talabaning boshlang'ich matematik tayyorgarligi, fizik qonuniyatlarni tasavvur qilish qobiliyati va axborot texnologiyalari (dasturlash asoslari) bo'yicha savodxonligi turlicha. Shu sababli, ta'lim jarayoni Lev Vygotskiyning <em>"Yaqin Rivojlanish Zonasi"</em> (Zone of Proximal Development — ZPD) hamda Bloomning yangilangan taksonomiyasi asosida 3 bosqichda tashkil etiladi:
+        </p>
+
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(56, 189, 248, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-cyan);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">1. Bilish va Tushunish</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Fizik formulalar ($F=ma, E=mc^2, T=2\pi\sqrt{l/g}$), kattaliklar va o'lchov birliklarini to'g'ri ifodalash. Sun'iy intellektga beriladigan boshlang'ich ma'lumotlar aniqligi.
+            </p>
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-emerald);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">2. Qo'llash va Tahlil</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Generativ AI video modellaridagi vizual xatoliklarni (fazaviy siljish, energiyaning saqlanmasligi) tahlil qilish va differensial tenglamalar yordamida tuzatish.
+            </p>
+          </div>
+          <div style="background: rgba(245, 158, 11, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-amber);">
+            <h4 style="color: var(--accent-amber); margin-bottom: 8px;">3. Baholash va Yaratish</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Noldan boshlab to'liq interaktiv, parametrlari foydalanuvchi tomonidan real vaqtda o'zgartiriladigan fizik Web laboratoriyasini kodlash va himoya qilish.
+            </p>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Ta'limiy Diagnostika Asosi (1-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Koehler, M. J., & Mishra, P. (2009).</strong> <em>What is technological pedagogical content knowledge (TPACK)?</em> Contemporary Issues in Technology and Teacher Education, 9(1), 60–70. <a href="https://doi.org/10.1016/j.compedu.2008.11.009" target="_blank" class="citation-link">https://doi.org/10.1016/j.compedu.2008.11.009</a><br>
+            <em>Iqtibos mazmuni:</em> Texnologik, pedagogik va mazmuniy bilimlar sintezi (TPACK) orqali talabalar passiv axborot qabul qiluvchidan murakkab ilmiy simulyatsiyalarning mustaqil ijodkoriga aylanadilar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: MagicSchool & Yo'l Xaritasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2. Diagnostika va Individual Reja: MagicSchool AI</h2>
+          <span class="badge badge-emerald">Vygotskiy ZPD & Semestr Yo'l Xaritasi</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          <strong>MagicSchool AI</strong> ta'limiy sun'iy intellekt platformasi yordamida o'tkaziladigan kirish so'rovnomasi natijalariga ko'ra talabalar 3 ta kognitiv klasterga ajratiladi va ularga individual rivojlanish trayektoriyalari taqdim etiladi:
+        </p>
+
+        <h3 style="color: var(--accent-emerald); margin-top: 25px; margin-bottom: 14px;">2.1. 3 Kognitiv Klaster Bo'yicha Individual Trayektoriya:</h3>
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(251, 191, 36, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-amber);">
+            <h4 style="color: var(--accent-amber); margin-bottom: 8px;">Klaster 1: Bazaviy (Foundational)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Tavsif:</strong> Matematik apparat va dasturlash bo'yicha boshlang'ich ko'nikmalarga ega talabalar.<br>
+              <strong>AI Yechimi:</strong> Tayyor Canvas andazalari, vizual blok-sxemalar va qadamma-qadam tushuntirilgan promptlar orqali 1 ta tayyor modelni o'zgartirish va tahlil qilish.
+            </p>
+          </div>
+          <div style="background: rgba(56, 189, 248, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-cyan);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Klaster 2: Standart (Core)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Tavsif:</strong> Fizika qonunlarini yaxshi tushunadigan va veb-texnologiyalardan xabardor talabalar.<br>
+              <strong>AI Yechimi:</strong> Gemini &rarr; Midjourney &rarr; Runway &rarr; Claude pipeline'ini to'liq mustaqil bajarib, yangi fizik hodisaning interaktiv simulyatsiyasini yaratish.
+            </p>
+          </div>
+          <div style="background: rgba(168, 85, 247, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-purple);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 8px;">Klaster 3: Ilg'or (Advanced / Research)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Tavsif:</strong> Murakkab matematik fizika va yuqori dasturlash iqtidoriga ega talabalar.<br>
+              <strong>AI Yechimi:</strong> Nochiziqli tebranishlar, fazalar fazosi portreti, WebGL shaderlari va 4-tartibli Runge-Kutta (RK4) hisoblash yadrosini ishlab chiqish.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">2.2. Butun Semestr Davomidagi Yo'l Xaritasi (Roadmap):</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
+          Talaba semestr davomida loyihani tayyorlashda quyidagi qat'iy 5 bosqichli professional metodologiya bo'yicha harakatlanadi:
+        </p>
+
+        <div style="margin-bottom: 25px;">
+          <div class="roadmap-node" style="border-color: var(--accent-cyan);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <h4 style="margin: 0; color: var(--accent-cyan);">1-Bosqich: Nazariya va Matematik Modellash</h4>
+              <span class="badge badge-cyan">1-4 Haftalar</span>
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Fizik jarayonning qonuniyati tanlanadi, differensial tenglamalari tuziladi va boshlang'ich/chegaraviy shartlar ($y_0, v_0, \theta_0, t_0$) aniqlanadi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-color: var(--accent-emerald);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <h4 style="margin: 0; color: var(--accent-emerald);">2-Bosqich: Tayyor Namunalar Tahlili & AI Storyboard</h4>
+              <span class="badge badge-emerald">5-7 Haftalar</span>
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              PhET va Vascak.cz modellari tahlil qilinadi. Gemini yordamida dars ssenariysi va Midjourney/Runway orqali vizual video loyihasi tayyorlanadi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-color: var(--accent-amber);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <h4 style="margin: 0; color: var(--accent-amber);">3-Bosqich: Claude 3.5 Sonnet Bilan Kod Yozish</h4>
+              <span class="badge badge-amber">8-11 Haftalar</span>
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Deterministik HTML5 Canvas, interaktiv slayderlar, real vaqtli telemetriya grafiklari va matematik hisoblash algoritmlari to'liq dasturlanadi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-color: var(--accent-purple);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <h4 style="margin: 0; color: var(--accent-purple);">4-Bosqich: Audio-Narratsiya Sintezi (TTS)</h4>
+              <span class="badge badge-purple">12-13 Haftalar</span>
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Muxlisa AI / ElevenLabs orqali ilmiy audio tushuntirish sintez qilinadi va veb-sahifadagi animatsiya bilan millisekund darajasida sinxronlashtiriladi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-color: var(--accent-rose);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <h4 style="margin: 0; color: var(--accent-rose);">5-Bosqich: Yakuniy Loyiha (Capstone) Himoyasi</h4>
+              <span class="badge badge-rose">14-15 Haftalar</span>
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Tayyor loyiha mustaqil veb-sahifa ko'rinishida taqdim etiladi, qat'iy rubrikalar asosida baholanadi va talabaning shaxsiy portfolioga kiritiladi.
+            </p>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Individual Ta'lim (2-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.<br>
+            <em>Iqtibos mazmuni:</em> Kognitiv diagnostika orqali har bir talabaning aktual rivojlanish darajasi va potensial imkoniyatlari o'rtasidagi masofaga moslashtirilgan ta'lim muhiti eng yuqori samaradorlikni ta'minlaydi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: Dars Ssenariysi (Gemini / GPT-4) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3. Nazariya va Dars Ssenariysi: Gemini yoki GPT-4</h2>
+          <span class="badge badge-amber">Storyboard & Pedagogik Dekompozitsiya</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Har qanday muvaffaqiyatli simulyatsiya ortida puxta o'ylangan dars ssenariysi (*storyboard*) yotadi. Katta til modellari (LLM — <strong>Google Gemini 1.5 Pro</strong> yoki <strong>GPT-4o</strong>) fizik qonuniyatni qismlarga ajratish va talaba uchun eng qulay tushuntirish ketma-ketligini tuzishda xizmat qiladi:
+        </p>
+
+        <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 14px;">3.1. 4 Bosqichli Fizik Storyboard Strukturasi:</h3>
+        <div class="glass-panel" style="margin-bottom: 25px; padding: 20px;">
+          <ol style="margin: 0; padding-left: 20px; line-height: 1.8; font-size: 0.95rem; color: var(--text-secondary);">
+            <li><strong>Muammoni O'rtaga Tashlash (0-5s):</strong> Hayotiy yoki eksperimental kognitiv to'qnashuv (masalan: <em>"Vakuumda og'ir metall shar va yengil pat bir xil vaqtda tushadimi?"</em>).</li>
+            <li><strong>Matematik Model va Kuchlar Balansi (5-15s):</strong> Nyuton qonunlari $m\vec{a} = \sum \vec{F}_i$, gravitatsiya va havoning turbulent qarshilik kuchlari formulasi ($F_{\text{drag}} = \frac{1}{2}\rho C_d A v^2$).</li>
+            <li><strong>Parametrlarning Dinamik Ta'siri (15-25s):</strong> O'zgaruvchilarni (massa $m$, jism shakli $C_d$, gravitatsiya $g$) o'zgartirganda natijaning qanday o'zgarishi va limit tezlik $v_{\text{term}} = \sqrt{2mg/(\rho A C_d)}$.</li>
+            <li><strong>Xulosa va Amaliy Tatbiq (25-30s):</strong> Koinot fazosi, erkin tushish tezlanishi va inersiya qonunining fundamental xulosalari.</li>
+          </ol>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">3.2. Gemini 1.5 Pro / GPT-4o Uchun Tizimli Prompt Andazasi:</h3>
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span class="badge badge-amber">Tizimli Prompt (System Prompt)</span>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="code-gemini-template">📋 Nusxalash</button>
+          </div>
+          <textarea id="code-gemini-template" class="prompt-textarea" readonly style="min-height: 135px;">Siz Oliy ta'lim fizika professori va pedagogik dizaynersiz.
+Mavzu: [FIZIK MAVZU NOMI]
+Vazifa: Ushbu mavzuni 1-kurs talabalariga raqamli simulyatsiya orqali tushuntirish uchun 30 soniyalik ssenariy (Storyboard) va JSON formatidagi parametrlar xaritasini tuzib bering.
+Talablar:
+1. Ssenariy 4 ta sahnadan iborat bo'lsin: Muammo, Nazariya, Dinamik tahlil, Xulosa.
+2. Har bir sahna uchun aniq vaqt (timestamp), vizual tasvir tavsifi, fizik formulalar va audio tushuntirish matnini bering.
+3. Simulyatsiyada boshqarilishi kerak bo'lgan asosiy parametrlarni (Slayderlar: min, max, default) JSON formatida taqdim eting.</textarea>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & LLM Ssenariy Asosi (3-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Google DeepMind. (2024).</strong> <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens</em>. Google Research Technical Report.<br>
+            <em>Iqtibos mazmuni:</em> Multimodal katta til modellari darslik matnlari, formulalar va eksperimental ma'lumotlarni yaxlit pedagogik ssenariylarga aylantirishda yuqori mantiqiy izchillikni namoyon etadi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Tasvir & Grafik (Midjourney) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4. Tasvir va Illyustratsiya: Midjourney yoki DALL-E 3</h2>
+          <span class="badge badge-purple">8K Vizual Aktivlar & HUD Overlays</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Simulyatsiyaning interfeysi (UI/UX) va fon elementlari talabada estetik zavq va chuqur qiziqish uyg'otishi lozim. <strong>Midjourney v6</strong> va <strong>DALL-E 3</strong> orqali laboratoriya asboblari, shaffof vakuum kolbalari, optik prizmalar va lazer nurlari kabi yuqori aniqlikdagi 8K grafik aktivlar generatsiya qilinadi:
+        </p>
+
+        <h3 style="color: var(--accent-purple); margin-top: 25px; margin-bottom: 14px;">4.1. Fotorealistik va Sxematik Fizik Aktivlar Generatsiyasi:</h3>
+        <div class="grid-2" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(168, 85, 247, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-purple);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 8px;">🎨 Ilmiy Stilistika Parametrlari</h4>
+            <ul style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; padding-left: 18px; line-height: 1.65;">
+              <li><code>--ar 16:9</code> — Veb-ekranlar uchun standart tomonlar nisbati;</li>
+              <li><code>--style raw</code> — Neyron tarmoq badiiy bezaklarisiz, real ilmiy aniqlik;</li>
+              <li><code>--v 6.0</code> — Yuqori detallik va fotorealistik yorug'lik fizikasi;</li>
+              <li><code>volumetric lighting, caustics</code> — Optik nurlanish va sinish effektlari.</li>
+            </ul>
+          </div>
+
+          <div style="background: rgba(56, 189, 248, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-cyan);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">📐 2D/3D Vektorli HUD Ko'rsatkichlari</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.65;">
+              Midjourney yordamida nafaqat statik fonlar, balki asboblar shkalalari, kuch vektorlari ($\vec{F}, \vec{v}, \vec{a}$), koordinata to'rlari va raqamli telemetriya datchiklari (HUD overlays) loyihalanadi.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">4.2. Midjourney V6 Prompt Misoli:</h3>
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span class="badge badge-purple">Midjourney V6 Prompt</span>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="code-mj-example">📋 Nusxalash</button>
+          </div>
+          <textarea id="code-mj-example" class="prompt-textarea" readonly style="min-height: 90px;">/imagine prompt: high precision physics laboratory experiment, transparent vacuum glass tube with glowing velocity vector indicators, dark modern scientific laboratory background, volumetric laser lighting, photorealistic 8k, raytracing glass reflections, digital HUD data display --ar 16:9 --v 6.0 --style raw</textarea>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Tasviriy Modellar (4-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Midjourney Inc. (2024).</strong> <em>Midjourney V6 Prompting and Scientific Illustration Reference</em>. Midjourney Documentation.<br>
+            <em>Iqtibos mazmuni:</em> Yuqori aniqlikdagi ilmiy tasvirlar talabaning fazoviy tasavvurini rivojlantirib, murakkab mikroskopik hodisalarni vizual anglash darajasini keskin oshiradi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Animatsiya (Runway / Sora) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">5. Animatsiya va Video: Runway Gen-2, Sora yoki Pika Labs</h2>
+          <span class="badge badge-rose">Motion Brush & Video Prototip</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Midjourney yaratgan statik tasvir <strong>Runway Gen-2</strong>, <strong>OpenAI Sora</strong> yoki <strong>Pika Labs</strong> platformalariga kiritilib, harakatlantiriladi. Bu bosqich talabalarga fizik jarayonning dinamik prototipini video formatida tezkor ko'rish va harakat xarakterini baholash imkonini beradi:
+        </p>
+
+        <h3 style="color: var(--accent-rose); margin-top: 25px; margin-bottom: 14px;">5.1. Generativ Videoda Fizik Dinamika va Motion Brush:</h3>
+        <div class="grid-2" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(244, 63, 94, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-rose);">
+            <h4 style="color: var(--accent-rose); margin-bottom: 8px;">🖌️ Motion Brush Texnologiyasi</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.65;">
+              Faqatgina harakatlanishi kerak bo'lgan obyekt (masalan, mayatnik sharchasi yoki tushayotgan jism) bo'yaladi va unga vektorli tezlik yo'nalishi beriladi ($+Y$ vertikal pastga yoki $+X$ gorizontal).
+            </p>
+          </div>
+          <div style="background: rgba(56, 189, 248, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-cyan);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">🎥 Kamera Dinamikasi (Camera Control)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.65;">
+              O'lchov asbobiga yaqinlashish (*Zoom in*), mayatnik harakati bo'ylab panoramali kuzatish (*Pan right/left*) va sekinlashtirilgan tasvir (*Slow-motion 60fps*) orqali fizik hodisaning eng nozik nuqtalari ochib beriladi.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-panel" style="border-left: 4px solid var(--accent-rose); margin-bottom: 25px; padding: 20px;">
+          <h4 style="margin: 0 0 8px 0; color: var(--accent-rose);">⚠️ Generativ Videoning Fizik Cheklovlari (Scientific Limitations):</h4>
+          <p style="margin: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65;">
+            Neyron tarmoqlar statistik ehtimollik asosida piksellarni generatsiya qiladi — ular Nyuton tenglamalarini bevosita hisoblamaydi. Shu sababli generativ videolarda <em>energiyaning saqlanmasligi, fazaviy noaniqlik va tasvir buzilishlari (artefaktlar)</em> uchraydi. <strong>Shu sababli, to'liq ilmiy aniqlik uchun biz keyingi bosqichda kod yozishga (Claude 3.5) o'tamiz!</strong>
+          </p>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Video Generatsiyasi (5-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>OpenAI. (2024).</strong> <em>Video generation models as world simulators (Sora Technical Report)</em>. OpenAI Research. <a href="https://openai.com/research/sora" target="_blank" class="citation-link">https://openai.com/research/sora</a><br>
+            <em>Iqtibos mazmuni:</em> Diffuzion video modellar 3D fazo va obyektlar barqarorligini aks ettirsa-da, aniq fizik qonunlar bilan cheklangan hisoblashlarda deterministik kodlash bilan to'ldirilishi shart.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Interaktiv Kod (Claude 3.5) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">6. Interaktiv Simulyatsiya va Kod: Claude 3.5 Sonnet</h2>
+          <span class="badge badge-cyan">HTML5 Canvas & Euler-Cromer Integrallash</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          <strong>Claude 3.5 Sonnet</strong> — fizik va matematik dasturlash bo'yicha eng yuqori aniqlikka ega modeldir. U oldingi bosqichlarda yaratilgan video-konseptni to'liq interaktiv, parametrlari o'zgaruvchan <strong>HTML5 Canvas va JavaScript</strong> dasturiy kodiga o'gira oladi:
+        </p>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">6.1. Deterministik Hisoblash Yadrosi (Euler-Cromer / Runge-Kutta):</h3>
+        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; margin-bottom: 25px;">
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">
+            Fizik simulyatsiyada $60\text{ FPS}$ kadr chastotasida har bir $\Delta t = 0.016\text{ s}$ vaqt qadamida differensial tenglamalar to'g'ridan-to'g'ri integrallanadi:
+          </p>
+          <div style="font-size: 0.95rem; color: #f8fafc; font-family: var(--font-mono); background: #0b1120; padding: 14px; border-radius: 6px; line-height: 1.6;">
+            // 1. Tezlanish hisobi (Nyuton 2-qonuni)<br>
+            const a = g - (k / m) * v * Math.abs(v);<br><br>
+            // 2. Tezlik va koordinatani yangilash (Euler-Cromer)<br>
+            v += a * dt;<br>
+            y += v * dt;
+          </div>
+        </div>
+
+        <h3 style="color: var(--accent-emerald); margin-top: 25px; margin-bottom: 14px;">6.2. Claude 3.5 Sonnet Bilan Ishlashning Tizimli Prompti:</h3>
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span class="badge badge-cyan">Claude 3.5 Coding Prompt</span>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="code-claude-template">📋 Nusxalash</button>
+          </div>
+          <textarea id="code-claude-template" class="prompt-textarea" readonly style="min-height: 120px;">Siz tajribali Computational Physics (Hisoblash fizikasi) dasturchisisiz.
+Vazifa: [FIZIK MAVZU] bo'yicha sof JavaScript va HTML5 Canvas orqali interaktiv simulyatsiya yozing.
+Qoidalar:
+1. Hech qanday tashqi kutubxonalarsiz (Pure Vanilla JS & Canvas 2D Context).
+2. Sonli integrallash usuli: Euler-Cromer yoki RK4. Energiyaning saqlanish qonuni kafolatlansin.
+3. Interfeys: Dark theme, slayderlar (Range inputs), Reset/Play tugmalari va real vaqtli telemetriya grafigi bo'lsin.</textarea>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Hisoblash Fizikasi (6-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Giordano, N. J., & Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson Prentice Hall.<br>
+            <em>Iqtibos mazmuni:</em> Differensial tenglamalarni sonli usullar yordamida kompyuterda modellashtirish talabalarga analitik yechimi mavjud bo'lmagan real nochiziqli fizik jarayonlarni chuqur o'rganish imkonini beradi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 7: Interaktiv Laboratoriya Dastgohi, Test & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja7" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">7. Interaktiv Laboratoriya Dastgohi, Test & Manbalar</h2>
+          <span class="badge badge-cyan">Dual-Canvas Sandbox & Portfolio</span>
+        </div>
+
+        <!-- 1. AI Pipeline & Prompt Studio -->
+        <div class="glass-panel" style="margin-bottom: 25px; padding: 20px;">
+          <h3 style="color: var(--accent-cyan); margin-top: 0; margin-bottom: 8px;">
+            🧪 1. AI Pipeline & Prompt Muhandisligi Generator Studiyasi
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem;">
+            Fizik mavzuni tanlang va barcha 5 ta sun'iy intellekt vositasi uchun ilmiy jihatdan sozlangan tayyor promptlarni avtomatik oling:
+          </p>
+
+          <div style="margin-bottom: 20px;">
+            <label for="lab1-topic-select" style="font-weight: 700; color: var(--accent-cyan); display: block; margin-bottom: 6px;">
+              Fizik Mavzuni Tanlang:
+            </label>
+            <select id="lab1-topic-select" style="width: 100%; max-width: 450px; padding: 10px; background: rgba(15,23,42,0.9); border: 1px solid rgba(56,189,248,0.4); color: #fff; border-radius: var(--radius-sm); font-size: 0.95rem;">
+              <option value="free-fall">1. Vakuumda va Muhitda Jismning Erkin Tushishi (y = v₀t + gt²/2)</option>
+              <option value="pendulum">2. Matematik Mayatnikning Garmonik Tebranishlari (T = 2π√(l/g))</option>
+              <option value="refraction">3. Yorug'likning Sinishi va Snellius Qonuni (n₁ sin α = n₂ sin β)</option>
+              <option value="circular-motion">4. Tekis Aylanma Harakat va Markazga Intilma Kuch (F = mω²R)</option>
+            </select>
+          </div>
+
+          <!-- Active Topic Header & Math -->
+          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+            <h4 id="prompt-studio-title" style="margin-top: 0; color: var(--accent-cyan); font-size: 1.15rem;">
+              Vakuumda va Muhitda Jismning Erkin Tushishi
+            </h4>
+            <div id="prompt-studio-math" style="font-size: 1.05rem; color: var(--text-secondary); overflow-x: auto;">
+              $$y(t) = v_0 t + \frac{1}{2}g t^2, \quad v(t) = v_0 + g t, \quad F_{\text{qarshilik}} = -k v$$
+            </div>
+          </div>
+
+          <!-- Prompts Grid -->
+          <div style="display: grid; grid-template-columns: 1fr; gap: 14px;">
+            <div class="prompt-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span class="badge badge-emerald">1. MagicSchool AI (Diagnostik So'rovnoma)</span>
+                <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-magicschool">📋 Nusxalash</button>
+              </div>
+              <textarea id="prompt-magicschool" class="prompt-textarea" readonly></textarea>
+            </div>
+
+            <div class="prompt-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span class="badge badge-amber">2. Google Gemini / GPT-4 (Dars Ssenariysi & Storyboard)</span>
+                <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-gemini">📋 Nusxalash</button>
+              </div>
+              <textarea id="prompt-gemini" class="prompt-textarea" readonly></textarea>
+            </div>
+
+            <div class="prompt-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span class="badge badge-purple">3. Midjourney V6 (Konsept-Art & UI Aktivlari)</span>
+                <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-midjourney">📋 Nusxalash</button>
+              </div>
+              <textarea id="prompt-midjourney" class="prompt-textarea" readonly></textarea>
+            </div>
+
+            <div class="prompt-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span class="badge badge-rose">4. Runway Gen-2 / Sora (Video Prototip & Motion Brush)</span>
+                <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-runway">📋 Nusxalash</button>
+              </div>
+              <textarea id="prompt-runway" class="prompt-textarea" readonly></textarea>
+            </div>
+
+            <div class="prompt-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span class="badge badge-cyan">5. Claude 3.5 Sonnet (HTML5 Canvas & JS Kod)</span>
+                <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-claude">📋 Nusxalash</button>
+              </div>
+              <textarea id="prompt-claude" class="prompt-textarea" readonly style="min-height: 120px;"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Live Comparative Canvas Simulator -->
+        <div class="glass-panel" style="margin-bottom: 25px; padding: 20px;">
+          <h3 style="color: var(--accent-emerald); margin-top: 0; margin-bottom: 8px;">
+            📊 2. Qiyosiy Laboratoriya: Deterministik Canvas vs Generativ AI Video Drift
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem;">
+            Matematik jihatdan qat'iy model (chapda) bilan neyron tarmoq generativ videosidagi ehtimoliy siljishlarni (o'ngda) real vaqtda solishtiring:
+          </p>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; align-items: center;">
+            <div>
+              <label for="comp-sim-mode" style="font-size: 0.85rem; color: var(--text-secondary);">Model Rejimi:</label>
+              <select id="comp-sim-mode" style="padding: 6px 10px; background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 4px; font-size: 0.85rem;">
+                <option value="pendulum">Matematik Mayatnik Tebranishi</option>
+                <option value="free-fall">Jismning Erkin Tushishi</option>
+              </select>
+            </div>
+
+            <button id="comp-sim-play" class="btn btn-primary btn-sm">⏸ To'xtatish</button>
+            <button id="comp-sim-reset" class="btn btn-secondary btn-sm">🔄 Qayta O'rnatish</button>
+
+            <div style="display: flex; align-items: center; gap: 8px; margin-left: auto;">
+              <label for="comp-sim-noise" style="font-size: 0.85rem; color: var(--accent-amber);">AI Noaniqlik (Drift):</label>
+              <input type="range" id="comp-sim-noise" min="0" max="0.5" step="0.05" value="0.1" style="width: 100px;">
+              <span id="comp-sim-noise-val" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--accent-amber);">10%</span>
+            </div>
+          </div>
+
+          <div style="background: #020617; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: var(--shadow-lg);">
+            <canvas id="lab1-sim-canvas" width="800" height="360" style="width: 100%; height: auto; display: block;"></canvas>
+          </div>
+
+          <div id="comp-sim-delta" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary); text-align: right;">
+            Burchakli xatolik: <strong style="color: #34d399;">0.00°</strong>
+          </div>
+        </div>
+
+        <!-- 3. Capstone Portfolio Rubric Calculator -->
+        <div class="glass-panel" style="margin-bottom: 25px; padding: 20px;">
+          <h3 style="color: var(--accent-amber); margin-top: 0; margin-bottom: 8px;">
+            🏆 3. Yakuniy Loyiha (Capstone) Baholash Rubrikasi Kalkulyatori
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem;">
+            Talabaning yakuniy portfoliosi qanday mezonlar asosida baholanishini ko'ring va o'z loyihangiz ballini hisoblang:
+          </p>
+
+          <div style="margin-bottom: 15px;">
+            <div class="rubric-row">
+              <div>
+                <strong>1. Nazariy va Matematik Asos (20 ball)</strong>
+                <div style="font-size: 0.82rem; color: var(--text-secondary);">Differensial tenglamalarning to'g'riligi, fizik kattaliklarning to'liq ifodalanishi.</div>
+              </div>
+              <input type="range" id="rubric-math" class="rubric-slider" min="0" max="20" value="18">
+              <span id="rubric-math-val" style="font-family: var(--font-mono); font-weight: 700; text-align: right;">18 ball</span>
+            </div>
+
+            <div class="rubric-row">
+              <div>
+                <strong>2. AI Video Storyboard va Vizual Konsept (20 ball)</strong>
+                <div style="font-size: 0.82rem; color: var(--text-secondary);">Gemini ssenariysi, Midjourney rasmlari va Runway video harakatlarining uyg'unligi.</div>
+              </div>
+              <input type="range" id="rubric-ai" class="rubric-slider" min="0" max="20" value="19">
+              <span id="rubric-ai-val" style="font-family: var(--font-mono); font-weight: 700; text-align: right;">19 ball</span>
+            </div>
+
+            <div class="rubric-row">
+              <div>
+                <strong>3. HTML5 Canvas Interaktivligi & Hisoblash Dvigateli (30 ball)</strong>
+                <div style="font-size: 0.82rem; color: var(--text-secondary);">Euler/RK integrallash, slayderlar boshqaruvi, real vaqtli grafiklar va xatoliksiz ishlash.</div>
+              </div>
+              <input type="range" id="rubric-code" class="rubric-slider" min="0" max="30" value="28">
+              <span id="rubric-code-val" style="font-family: var(--font-mono); font-weight: 700; text-align: right;">28 ball</span>
+            </div>
+
+            <div class="rubric-row">
+              <div>
+                <strong>4. Audio-Narratsiya va Ilmiy Tushuntirish Sintezi (15 ball)</strong>
+                <div style="font-size: 0.82rem; color: var(--text-secondary);">Muxlisa AI / ElevenLabs orqali sintez qilingan ovozning animatsiyaga sinxronligi.</div>
+              </div>
+              <input type="range" id="rubric-audio" class="rubric-slider" min="0" max="15" value="14">
+              <span id="rubric-audio-val" style="font-family: var(--font-mono); font-weight: 700; text-align: right;">14 ball</span>
+            </div>
+
+            <div class="rubric-row">
+              <div>
+                <strong>5. Portfolio Arxitekturasi va Himoya Taqdimoti (15 ball)</strong>
+                <div style="font-size: 0.82rem; color: var(--text-secondary);">GitHub Pages / serverga joylashtirish, kod tozaligi va ilmiy savollarga javob bera olish.</div>
+              </div>
+              <input type="range" id="rubric-defense" class="rubric-slider" min="0" max="15" value="14">
+              <span id="rubric-defense-val" style="font-family: var(--font-mono); font-weight: 700; text-align: right;">14 ball</span>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(15,23,42,0.8); padding: 14px 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); flex-wrap: wrap; gap: 10px;">
+            <div>
+              <span style="font-size: 0.95rem; color: var(--text-secondary);">Umumiy Capstone Balli:</span>
+              <div id="rubric-total-score" style="font-size: 1.8rem; font-weight: 800; color: var(--accent-cyan); font-family: var(--font-mono);">93 / 100</div>
+            </div>
+            <div>
+              <span id="rubric-grade-badge" class="badge badge-emerald" style="font-size: 1.05rem; padding: 8px 18px;">
+                A (A'lo / Mukammal Portfolio)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Diagnostic Quiz Section -->
+        <div class="glass-panel" style="margin-bottom: 25px; padding: 20px;">
+          <h3 style="color: var(--accent-cyan); margin-top: 0; margin-bottom: 8px;">
+            📝 4. Diagnostik Nazorat Testi (3 ta Savol)
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem;">
+            Mashg'ulot bo'yicha olgan bilimlaringizni sinab ko'ring (to'g'ri javoblar test topshirilgach tushuntirish bilan ko'rsatiladi):
+          </p>
+
+          <form id="lab1-quiz-form">
+            <div style="margin-bottom: 18px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="margin-top: 0; color: var(--accent-cyan); font-size: 1rem;">1-Savol: MagicSchool AI platformasining ushbu kursdagi asosiy vazifasi nimadan iborat?</h4>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px; font-size: 0.92rem;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q1" value="A" required style="margin-top: 3px;">
+                  <span>A) Faqatgina fizik formulalarni hisoblaydigan kalkulyator vazifasini bajarish</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q1" value="B" style="margin-top: 3px;">
+                  <span>B) JavaScript kodini avtomatik kompilyatsiya qilish</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q1" value="C" style="margin-top: 3px;">
+                  <span>C) Talabaning boshlang'ich bilimini aniqlab, unga Vygotskiy ZPD asosida individual o'quv trayektoriyasini shakllantirish</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q1" value="D" style="margin-top: 3px;">
+                  <span>D) HTML5 veb-sahifalarini serverga avtomatik yuklash</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 18px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="margin-top: 0; color: var(--accent-cyan); font-size: 1rem;">2-Savol: Nega generativ video modellaridan (Runway, Sora) so'ng Claude 3.5 orqali Canvas kodini yozish bosqichi talab etiladi?</h4>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px; font-size: 0.92rem;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q2" value="A" required style="margin-top: 3px;">
+                  <span>A) Chunki videoni veb-sahifaga joylab bo'lmaydi</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q2" value="B" style="margin-top: 3px;">
+                  <span>B) Chunki generativ video ehtimoliy piksellardan iborat bo'lib, qat'iy matematik aniqlik va foydalanuvchi interaktivligini (slayderlar bilan boshqarishni) ta'minlay olmaydi</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q2" value="C" style="margin-top: 3px;">
+                  <span>C) Chunki video fayllar juda kam joy egallaydi</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q2" value="D" style="margin-top: 3px;">
+                  <span>D) Chunki video orqali tovushni eshitib bo'lmaydi</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 18px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <h4 style="margin-top: 0; color: var(--accent-cyan); font-size: 1rem;">3-Savol: Kurs yo'l xaritasida (Roadmap) loyihani yaratishning to'g'ri ketma-ketligi qaysi qatorda to'g'ri ko'rsatilgan?</h4>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px; font-size: 0.92rem;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q3" value="A" required style="margin-top: 3px;">
+                  <span>A) Himoya &rarr; Kod yozish &rarr; Nazariya &rarr; Ovozlashtirish &rarr; Tahlil</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q3" value="B" style="margin-top: 3px;">
+                  <span>B) Kod yozish &rarr; Nazariya &rarr; Himoya &rarr; Tahlil &rarr; Ovozlashtirish</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q3" value="C" style="margin-top: 3px;">
+                  <span>C) Ovozlashtirish &rarr; Tayyor namunani tahlil &rarr; Kod yozish &rarr; Nazariya</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="q3" value="D" style="margin-top: 3px;">
+                  <span>D) Nazariya &rarr; Tayyor namunani tahlil &rarr; Kod yozish &rarr; Ovozlashtirish &rarr; Yakuniy loyiha (Capstone) himoyasi</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="padding: 10px 24px; font-weight: 700;">
+              Javoblarni Tekshirish va Natijani Ko'rish
+            </button>
+          </form>
+
+          <div id="quiz-result" style="display: none; margin-top: 20px; font-size: 1.05rem; font-weight: 700; padding: 14px; background: rgba(0,0,0,0.3); border-radius: var(--radius-md); border: 1px solid var(--border-color);"></div>
+        </div>
+
+        <!-- 5. APA 7th Edition Bibliography -->
+        <div class="glass-panel" style="padding: 20px;">
+          <h3 style="color: var(--accent-purple); margin-top: 0; margin-bottom: 12px;">
+            📚 5. Foydalanilgan Ilmiy-Uslubiy Adabiyotlar Ro'yxati (APA 7th Edition)
+          </h3>
+          <ol style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px; margin: 0;">
+            <li style="margin-bottom: 8px;"><strong>Bloom, B. S. (1956).</strong> <em>Taxonomy of Educational Objectives: The Classification of Educational Goals</em>. Longmans, Green.</li>
+            <li style="margin-bottom: 8px;"><strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.</li>
+            <li style="margin-bottom: 8px;"><strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> PhET: Simulations that enhance learning. <em>Science</em>, 322(5902), 682–683. https://doi.org/10.1126/science.1161948</li>
+            <li style="margin-bottom: 8px;"><strong>Runway AI, Inc. (2024).</strong> <em>Gen-2 Multi-Motion Brush and Camera Dynamics Architecture Guide</em>. Runway Research. https://runwayml.com/research</li>
+            <li style="margin-bottom: 8px;"><strong>OpenAI. (2024).</strong> <em>Video generation models as world simulators (Sora Technical Report)</em>. OpenAI. https://openai.com/research/sora</li>
+            <li style="margin-bottom: 8px;"><strong>Anthropic. (2024).</strong> <em>Claude 3.5 Sonnet Model Card and System Prompt Engineering</em>. Anthropic Research. https://www.anthropic.com</li>
+            <li style="margin-bottom: 8px;"><strong>Google DeepMind. (2024).</strong> <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens</em>. Google Research.</li>
+            <li style="margin-bottom: 8px;"><strong>MagicSchool AI. (2024).</strong> <em>AI-Driven Diagnostic Assessment and Personalized Learning Pathways in STEM</em>. MagicSchool Whitepaper.</li>
+            <li style="margin-bottom: 8px;"><strong>Midjourney Inc. (2024).</strong> <em>Midjourney V6 Prompting and Parameter Reference</em>. Midjourney Documentation.</li>
+            <li style="margin-bottom: 8px;"><strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.</li>
+            <li style="margin-bottom: 8px;"><strong>Giordano, N. J., & Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson Prentice Hall.</li>
+            <li style="margin-bottom: 8px;"><strong>Landau, R. H., Páez, M. J., & Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH.</li>
+            <li style="margin-bottom: 8px;"><strong>Vascak, V. (2024).</strong> <em>Physics Animations and Simulations at School</em>. Vascak Education Portal. https://www.vascak.cz</li>
+            <li style="margin-bottom: 8px;"><strong>Young, H. D., & Freedman, R. A. (2020).</strong> <em>Sears and Zemansky's University Physics with Modern Physics</em> (15th ed.). Pearson.</li>
+            <li style="margin-bottom: 8px;"><strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). John Wiley & Sons.</li>
+            <li style="margin-bottom: 8px;"><strong>Koehler, M. J., & Mishra, P. (2009).</strong> What is technological pedagogical content knowledge (TPACK)? <em>Contemporary Issues in Technology and Teacher Education</em>, 9(1), 60–70.</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-copy">
+        &copy; 2026 Oliy Ta'lim Veb Laboratoriyasi. Barcha huquqlar himoyalangan.
+      </p>
+      <p class="footer-sub">
+        Fizika va astronomiya o'qitishda zamonaviy axborot texnologiyalari va sun'iy intellekt integratsiyasi kursi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function scrollTabsNav(offset) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.scrollBy({ left: offset, behavior: 'smooth' });
+        setTimeout(updateTabsScrollProgress, 180);
+      }
+    }
+
+    function updateTabsScrollProgress() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      if (!nav || !thumb) return;
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 0) {
+        thumb.style.width = '100%';
+        thumb.style.transform = 'translateX(0%)';
+        return;
+      }
+      const ratio = nav.scrollLeft / maxScroll;
+      const thumbWidthPercent = Math.max(18, Math.round((nav.clientWidth / nav.scrollWidth) * 100));
+      thumb.style.width = thumbWidthPercent + '%';
+      const availableTrack = 100 - thumbWidthPercent;
+      thumb.style.transform = 'translateX(' + (ratio * availableTrack * (100 / thumbWidthPercent)) + '%)';
+    }
+
+    window.switchTab = function(event, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(el => el.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(el => el.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        activeBtn = event.currentTarget;
+      } else {
+        const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (btn) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        }
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          setTimeout(updateTabsScrollProgress, 200);
+        }
+      }
+
+      if (window.renderMathInElement && target) {
+        window.renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+      }
+    };
+    window.openTab = window.switchTab;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollProgress, { passive: true });
+        window.addEventListener('resize', updateTabsScrollProgress);
+        setTimeout(updateTabsScrollProgress, 100);
+      }
+    });
+  </script>
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-lab1-pipeline.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>
