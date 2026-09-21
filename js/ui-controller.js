@@ -295,7 +295,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Copy Prompt
   document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const text = btn.getAttribute('data-prompt') || btn.parentElement.innerText;
+      let text = btn.getAttribute('data-prompt');
+      if (!text) {
+        const targetId = btn.getAttribute('data-target');
+        const targetEl = targetId ? document.getElementById(targetId) : null;
+        text = targetEl ? (targetEl.value !== undefined ? targetEl.value : targetEl.innerText) : btn.parentElement.innerText;
+      }
       navigator.clipboard.writeText(text).then(() => {
         window.showToast("Prompt nusxalandi!");
       });

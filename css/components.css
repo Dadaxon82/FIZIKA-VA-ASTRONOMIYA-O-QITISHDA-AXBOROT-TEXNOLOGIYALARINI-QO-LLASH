@@ -616,11 +616,14 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .citation-link {
   color: var(--accent-cyan);
   text-decoration: underline;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .sim-canvas-container {
