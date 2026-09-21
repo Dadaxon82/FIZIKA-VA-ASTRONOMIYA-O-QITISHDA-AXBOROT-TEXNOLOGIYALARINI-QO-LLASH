@@ -58,9 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------------------------------------------------
 // Eslatma: PhET havolalari rasmiy, barqaror URL sxemasiga ega
 // (https://phet.colorado.edu/sims/html/{slug}/latest/{slug}_en.html).
-// Vascak.cz'ning aniq ichki animatsiya sahifalari uchun ishonchli havola
-// aniqlanmagani sababli, barcha Vascak tugmalari uning haqiqiy asosiy
-// portaliga yo'naltiriladi (mavzuga oid ko'rsatma tavsif panelida beriladi).
+// Vascak.cz havolalari uning "physicsatschool" Canvas animatsiyalariga
+// bevosita ishora qiladi (?l=uz — o'zbekcha til parametri bilan).
 const ONLINE_SIMS = {
   'phet-gas': {
     url: 'https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_en.html',
@@ -111,46 +110,46 @@ const ONLINE_SIMS = {
     ]
   },
   'vascak-isotherm': {
-    url: 'https://www.vascak.cz/physicsanimations.php',
+    url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izotermicky_dej_Canvas.html?l=uz',
     title: '🌡️ Vascak.cz: Izotermik Jarayon (Boyl-Mariott Qonuni)',
     badge: 'Vascak.cz',
-    desc: "Vascak.cz portalidagi \"Gas laws\" bo'limida T=const sharoitida bosim va hajm orasidagi teskari proporsionallikni sinab ko'ring.",
+    desc: "T=const sharoitida bosim va hajm orasidagi teskari proporsionallikni sinab ko'ring.",
     eqs: "$$PV = \\text{const} \\;\\; (T = \\text{const})$$",
     tasks: [
-      "1. Portalning \"Gas laws\" bo'limini oching va izotermik animatsiyani tanlang.",
-      "2. Hajmni ikki marta kamaytirib, bosimning ikki marta ortishini tasdiqlang.",
-      "3. P-V grafigida giperbola shaklini kuzating."
+      "1. Porshenni surib hajmni ikki marta kamaytiring va bosimning ikki marta ortishini tasdiqlang.",
+      "2. P-V grafigida giperbola shaklini kuzating.",
+      "3. Haroratni o'zgartirib, egri chiziq (izoterma) qanday siljishini kuzating."
     ]
   },
   'vascak-isobar': {
-    url: 'https://www.vascak.cz/physicsanimations.php',
+    url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izobaricky_dej_Canvas.html?l=uz',
     title: '⚖️ Vascak.cz: Izobarik Jarayon (Gey-Lyussak Qonuni)',
     badge: 'Vascak.cz',
-    desc: "Vascak.cz portalidagi \"Gas laws\" bo'limida P=const sharoitida hajm va haroratning to'g'ri proporsionalligini o'rganing.",
+    desc: "P=const sharoitida hajm va haroratning to'g'ri proporsionalligini o'rganing.",
     eqs: "$$\\frac{V}{T} = \\text{const} \\;\\; (P = \\text{const})$$",
     tasks: [
-      "1. Portalning \"Gas laws\" bo'limini oching va izobarik animatsiyani tanlang.",
-      "2. Haroratni oshirib, hajmning chiziqli o'sishini kuzating.",
-      "3. V-T grafigida to'g'ri chiziqni tasdiqlang."
+      "1. Haroratni oshirib, hajmning chiziqli o'sishini kuzating.",
+      "2. V-T grafigida to'g'ri chiziqni tasdiqlang.",
+      "3. Bosim qiymatini o'zgartirib, chiziq qiyaligi qanday o'zgarishini kuzating."
     ]
   },
   'vascak-isochore': {
-    url: 'https://www.vascak.cz/physicsanimations.php',
+    url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izochoricky_dej_Canvas.html?l=uz',
     title: '🔒 Vascak.cz: Izoxorik Jarayon (Sharl Qonuni)',
     badge: 'Vascak.cz',
-    desc: "Vascak.cz portalidagi \"Gas laws\" bo'limida V=const sharoitida bosim va haroratning to'g'ri proporsionalligini kuzating.",
+    desc: "V=const sharoitida bosim va haroratning to'g'ri proporsionalligini kuzating.",
     eqs: "$$\\frac{P}{T} = \\text{const} \\;\\; (V = \\text{const})$$",
     tasks: [
-      "1. Portalning \"Gas laws\" bo'limini oching va izoxorik animatsiyani tanlang.",
-      "2. Idishni qizdirib, bosim ortishini (portlash xavfisiz) kuzating.",
-      "3. P-T grafigida to'g'ri chiziqni tasdiqlang."
+      "1. Idishni qizdirib, bosim ortishini (portlash xavfisiz) kuzating.",
+      "2. P-T grafigida to'g'ri chiziqni tasdiqlang.",
+      "3. Hajm qiymatini o'zgartirib, chiziq qiyaligi qanday o'zgarishini kuzating."
     ]
   },
   'vascak-adiabat': {
-    url: 'https://www.vascak.cz/physicsanimations.php',
+    url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_adiabaticky_dej_Canvas.html?l=uz',
     title: "⚡ Vascak.cz: Adiabatik Jarayon (Puasson Tenglamasi)",
     badge: 'Vascak.cz',
-    desc: "Vascak.cz portalida issiqlik almashinuvisiz ($Q=0$) tezkor siqilish/kengayish jarayonida haroratning o'zgarishini o'rganing.",
+    desc: "Issiqlik almashinuvisiz ($Q=0$) tezkor siqilish/kengayish jarayonida haroratning o'zgarishini o'rganing.",
     eqs: "$$PV^{\\gamma} = \\text{const}, \\qquad TV^{\\gamma-1} = \\text{const}$$",
     tasks: [
       "1. Porshenni tez suring (adiabatik yaqinlashish) va harorat o'zgarishini kuzating.",
@@ -159,13 +158,13 @@ const ONLINE_SIMS = {
     ]
   },
   'vascak-carnot': {
-    url: 'https://www.vascak.cz/physicsanimations.php',
+    url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_carnot_Canvas.html?l=uz',
     title: '⚙️ Vascak.cz: Karno Sikli (Carnot Cycle)',
     badge: 'Vascak.cz',
-    desc: "Vascak.cz portalidagi Karno issiqlik dvigateli animatsiyasida 4 bosqichli sikl (2 izoterma + 2 adiabata) va F.I.K.ni kuzating.",
+    desc: "Karno issiqlik dvigateli animatsiyasida 4 bosqichli sikl (2 izoterma + 2 adiabata) va F.I.K.ni kuzating.",
     eqs: "$$\\eta_{max} = 1 - \\frac{T_C}{T_H}$$",
     tasks: [
-      "1. Portalda Karno sikli animatsiyasini toping va 4 bosqichni ketma-ket kuzating.",
+      "1. Karno sikli animatsiyasida 4 bosqichni ketma-ket kuzating.",
       "2. $T_H$ va $T_C$ qiymatlarini o'zgartirib, F.I.K.ning o'zgarishini hisoblang.",
       "3. P-V diagrammasidagi yopiq egri chiziq ichidagi maydonni foydali ish bilan bog'lang."
     ]
