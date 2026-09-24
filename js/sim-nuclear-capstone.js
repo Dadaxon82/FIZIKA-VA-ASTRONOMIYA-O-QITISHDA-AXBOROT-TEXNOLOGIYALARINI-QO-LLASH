@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // Eslatma: Vascak.cz tugmalari template.php (reklamali qobiq) o'rniga
 // to'g'ridan-to'g'ri reklamasiz canvas animatsiyasini ochadi — lecture13'da
 // foydalanuvchi tasdiqlagan .../canvas/{slug}_Canvas.html?l=uz formati.
-// Slug'lar: jadro_rozpad, jadro_reakce, jadro_zareni, jadro_rady.
-// Vascak.cz'da termoyadroviy sintez animatsiyasining slug'i topilmagani
-// sababli, "Quyosh sintezi" repozitoriyadagi o'z reklamasiz HTML5
-// simulyatsiyamizni (sims/quyosh-sintezi.html) ochadi.
+// Slug'lar: jadro_rozpad, jadro_reakce, jadro_zareni.
+// "Quyosh sintezi" va "Radioaktiv qatorlar" uchun Vascak.cz'dagi aniq
+// animatsiya havolasini tasdiqlab bo'lmagani sababli, ular repozitoriyadagi
+// o'z reklamasiz HTML5 simulyatsiyalarimizni ochadi (sims/ papkasi).
 const vascakCanvas = slug => `https://www.vascak.cz/data/android/physicsatschool/canvas/${slug}_Canvas.html?l=uz`;
 
 const NUCLEAR_ONLINE_SIMS = {
@@ -144,9 +144,9 @@ const NUCLEAR_ONLINE_SIMS = {
     ]
   },
   'vascak-series': {
-    url: vascakCanvas('jadro_rady'),
-    title: '📜 Vascak.cz: Radioaktiv Qatorlar',
-    desc: "Og'ir radioaktiv yadrolarning ketma-ket $\\alpha$- va $\\beta^-$-yemirilishlar orqali barqaror qo'rg'oshin izotopiga aylanish zanjiri.",
+    url: 'sims/radioaktiv-qatorlar.html',
+    title: '📜 Radioaktiv Qatorlar: Uran (U-238) va Toriy (Th-232) Zanjirlari',
+    desc: "Og'ir radioaktiv yadrolarning ketma-ket $\\alpha$- va $\\beta^-$-yemirilishlar orqali barqaror qo'rg'oshin izotopiga aylanish zanjiri N–Z diagrammasida, har bir bosqichda A va Z balansi bilan (portalning o'z reklamasiz HTML5 simulyatsiyasi).",
     eqs: "$$^{238}_{92}\\text{U} \\rightarrow \\dots \\rightarrow ^{206}_{82}\\text{Pb} \\quad (8\\alpha,\\ 6\\beta^-)$$",
     tasks: [
       "1. Qatorning boshlang'ich va oxirgi izotopini aniqlang.",
