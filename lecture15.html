@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15-Ma'ruza: Yadro Fizikasi Qonuniyatlari va Yakuniy Loyiha Metodologiyasi</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-Modul: Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul: Prompt Muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-Modul: Masofaviy Ta'lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika & Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-Modul: Termodinamika & Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio</a></li>
+        <li><a href="lecture15.html" class="nav-link active">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Laboratoriya</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-Modul: Shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-Modul: Masofaviy Ta'lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio</a></li>
+      <li><a href="lecture15.html" class="drawer-link active">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-rose">15-Modul: Yadro Fizikasi, Capstone Yakuniy Loyiha & 7 AI Pipeline</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        Yadro Fizikasi Qonuniyatlari va Yakuniy Mustaqil Loyiha (Capstone) Metodologiyasi
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Radioaktiv yemirilish qonuni ($N(t)=N_0 e^{-\lambda t}$), Uran-235 zanjirli yadro bo'linishi (fission: $E=\Delta mc^2 \approx 200\text{ MeV}$) va termoyadroviy sintez (fusion: $^{2}\text{H}+^{3}\text{H}\rightarrow^{4}\text{He}+n+17.6\text{ MeV}$) jarayonlarini modellashtirish hamda talabaning mustaqil tanlagan fizik mavzusi bo'yicha to'liq <strong>7 ta AI vosita</strong> (MagicSchool &rarr; PhET/Vascak &rarr; Claude 3.5 Sonnet &rarr; Google Antigravity &rarr; ElevenLabs/Muxlisa &rarr; Otter.ai &rarr; Undetectable AI) yordamida yakuniy mustaqil loyihani (Capstone) yaratish va himoya qilish metodologiyasi.
+      </p>
+    </div>
+
+    <!-- 5-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-rose);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 15-Ma'ruza Rejasi va To'liq AI-Pipeline Konveyeri:</h3>
+      <div class="grid-3" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">1. AI Diagnostika & Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI: ZPD va Blum taksonomiyasi asosida 3 klasterli individual yadro fizikasi va Capstone rejasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. Teskari Muhandislik (PhET/Vascak):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">PhET Nuclear Fission, Radioactive Dating va Vascak.cz modellarini dekonstruksiya qilish.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">3. Simulyator Kodi (Claude 3.5 Sonnet):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Monte-Karlo yemirilishi, neytron ko'payish zanjiri ($k$), mass-defekt energiyasi va Tokamak plazmasi kodi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-rose);">4. Monitoring (Google Antigravity AI):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Barion/lepton sonlari saqlanishi, energiya-massa dreyfi $|\Delta E/E_0| < 0.0001\%$ va xavfsizlik auditi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">5. Baholash Rubrikalari (MagicSchool AI):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Capstone loyihani baholash uchun 5 ta mezonli 100 ballik shkala va himoya reglamenti.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: #38bdf8;">6 & 7. Capstone, Sandbox & Manbalar:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Undetectable AI akademik halollik nazorati, dual-canvas sandbox va APA 7th manbalar.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. AI Diagnostika & Reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Teskari Muhandislik Tahlili</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. To'liq Simulyator Kodi</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Jarayon Monitoringi (Antigravity)</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Baholash Rubrikalari</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Capstone & Undetectable AI</button>
+        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')">7. Interaktiv Sandbox & Manbalar</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: AI Diagnostika va Individual Reja -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Sun'iy Intellekt Uchun Diagnostika va Individual Reja</h2>
+          <span class="badge badge-amber">MagicSchool AI & Vygotsky ZPD</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Yadro fizikasi mikrodunyosi ko'zga ko'rinmas kvant-yadro kuchlari ($10^{-15}\text{ m}$), stoxastik radioaktiv yemirilish, zanjirli yadro bo'linishi va yuqori energiyali termoyadroviy sintez jarayonlaridan iborat. <strong>MagicSchool AI</strong> yordamida <em>Vygotskiy Yaqin Rivojlanish Zonasi (ZPD)</em> asosida talabalar 3 ta kognitiv klasterga ajratilib, shaxsiylashtirilgan o'quv traektoriyasi shakllantiriladi:
+        </p>
+
+        <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 14px;">3 Kognitiv Klaster Bo'yicha Individual Yadro Fizikasi & Capstone Traektoriyasi:</h3>
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(244, 63, 94, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-rose);">
+            <h4 style="color: var(--accent-rose); margin-bottom: 8px;">Klaster A: Boshlang'ich (Foundational)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Tavsif:</strong> Radioaktiv yemirilish qonuni ($N(t) = N_0 2^{-t/T_{1/2}}$), $\alpha, \beta, \gamma$ nurlanish turlari va yadro bog'lanish energiyasi tushunchasini o'zlashtiruvchi daraja.<br>
+              <strong>AI Strategiyasi:</strong> PhET Radioactive Dating Game orqali stoxastik yemirilish egri chiziqlarini ko'rish va hisoblash.
+            </p>
+          </div>
+          <div style="background: rgba(251, 191, 36, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-amber);">
+            <h4 style="color: var(--accent-amber); margin-bottom: 8px;">Klaster B: Amaliyotchi (Core)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Tavsif:</strong> Uran-235 zanjirli bo'linishi ($^{235}\text{U} + n \rightarrow \text{Ba} + \text{Kr} + 3n + 200\text{ MeV}$), ko'payish koeffitsiyenti $k$ va reaktor boshqaruvi.<br>
+              <strong>AI Strategiyasi:</strong> Claude 3.5 Sonnet orqali neytronlar kinetikasi va mass-defekt energiyasini hisoblovchi kod yaratish.
+            </p>
+          </div>
+          <div style="background: rgba(52, 211, 153, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-emerald);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">Klaster C: Tadqiqotchi / Capstone</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Tavsif:</strong> Termoyadroviy sintez (D-T Tokamak plazmasi), mustaqil tanlangan murakkab fizik jarayonni noldan simulyatsiya qilish va uni to'liq ilmiy himoya qilish.<br>
+              <strong>AI Strategiyasi:</strong> Barcha 7 ta AI vositani yaxlit pipeline konveyeriga birlashtirish va Undetectable AI bilan hisobot originalligini kafolatlash.
+            </p>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Ta'limiy Diagnostika Asosi (1-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Krane, K. S. (1987).</strong> <em>Introductory Nuclear Physics</em> (3rd ed.). John Wiley & Sons. <br>
+            <em>Iqtibos mazmuni:</em> Yadro fizikasi qonuniyatlarini o'qitishda stoxastik yemirilish va zanjirli bo'linish modellarining vizual dinamikasi talabalarning abstrakt kvant tafakkurini rivojlantirishda eng samarali vositadir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: Teskari Muhandislik Tahlili -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2. Teskari Muhandislik Tahlili: PhET & Vascak.cz</h2>
+          <span class="badge badge-emerald">Reverse Engineering & Nuclear Model Deconstruction</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Yadro fizikasi modellarini yaratishda xalqaro e'tirof etilgan laboratoriyalar (<strong>PhET Interactive Simulations</strong> — <em>Nuclear Fission</em>, <em>Radioactive Dating Game</em>, <em>Alpha Decay</em> hamda <strong>Vascak.cz</strong> — <em>Radioactive Decay</em>, <em>Nuclear Reactor</em>) teskari muhandislik orqali dekonstruksiya qilinadi:
+        </p>
+
+        <!-- Reverse Engineering Matrix -->
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-rose); margin-bottom: 8px;">1. PhET "Nuclear Fission"</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              • <strong>Bitta Yadro Bo'linishi:</strong> $^{235}_{92}\text{U} + ^{1}_0n \rightarrow ^{141}_{56}\text{Ba} + ^{92}_{36}\text{Kr} + 3 ^{1}_0n + 200\text{ MeV}$.<br>
+              • <strong>Zanjirli Reaksiya:</strong> Neytronlarning geometrik ko'payishi $n(t) = n_0 k^{t/\tau}$ va boshqaruv sterjenlari dinamikasi.
+            </p>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">2. PhET "Radioactive Dating"</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              • <strong>Stoxastik Yemirilish:</strong> Har bir yadro uchun $\Delta t$ vaqt oralig'ida yemirilish ehtimolligi $P = 1 - e^{-\lambda \Delta t}$.<br>
+              • <strong>Izotopik Tahlil:</strong> Uglerod-14 va Uran-238 orqali arxeologik yoshni hisoblash.
+            </p>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">3. Vascak.cz "Nuclear Reactor"</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              • <strong>Reaktor Termogidravlikasi:</strong> TVEL issiqlik ajratishi va sovutish konturi issiqlik balansi: $Q = \dot{m} c_p \Delta T$.<br>
+              • <strong>Kritiklik Holati:</strong> $k = 1.000$ kritik, $k > 1$ o'ta kritik, $k < 1$ subkritik rejimlar.
+            </p>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Teskari Muhandislik Asosi (2-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" class="citation-link">https://doi.org/10.1126/science.1161948</a><br>
+            <em>Iqtibos mazmuni:</em> Virtual yadro simulyatsiyalari talabalarda atom stansiyalari xavfsizligi va zanjirli reaksiyalarning jismoniy mexanizmini to'liq tushunishga xizmat qiladi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: To'liq Simulyator Kodi Generatsiyasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3. To'liq Simulyator Kodi Generatsiyasi: Claude 3.5 Sonnet</h2>
+          <span class="badge badge-cyan">Full JavaScript Nuclear Engine & Monte Carlo Solvers</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Yadro fizikasi qonuniyatlarini raqamli modellashtirish uchun <strong>Claude 3.5 Sonnet</strong> yordamida sof JavaScript va HTML5 Canvas dvigateli kodi generatsiya qilinadi:
+        </p>
+
+        <!-- Theoretical Equations Box -->
+        <div class="glass-panel" style="margin-bottom: 25px; border-left: 4px solid var(--accent-cyan);">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">📐 Yadro Fizikasining Fundamental Formulalari:</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: 0.9rem; color: var(--text-secondary);">
+            <div>
+              <strong>1. Radioaktiv yemirilish qonuni:</strong><br>
+              $$N(t) = N_0 e^{-\lambda t} = N_0 2^{-t/T_{1/2}}, \quad A(t) = \lambda N(t)$$
+              <strong>2. Mass-defekt va bog'lanish energiyasi:</strong><br>
+              $$\Delta m = [Z m_p + (A-Z)m_n] - M_{\text{yadro}}, \quad E_{\text{bog'}} = \Delta m c^2$$
+            </div>
+            <div>
+              <strong>3. Uran-235 bo'linish zanjirli reaksiyasi:</strong><br>
+              $$^{235}_{92}\text{U} + ^{1}_0n \rightarrow ^{141}_{56}\text{Ba} + ^{92}_{36}\text{Kr} + 3 ^{1}_0n + 200\text{ MeV}$$
+              <strong>4. D-T termoyadroviy sintez:</strong><br>
+              $$^{2}_{1}\text{H} + ^{3}_{1}\text{H} \rightarrow ^{4}_{2}\text{He} + ^{1}_{0}n + 17.6\text{ MeV}$$
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block" style="margin: 20px 0;">
+<pre><code>// ============================================================================
+// 15-Ma'ruza: Claude 3.5 Sonnet Yadro Fizikasi va Zanjirli Reaksiya Dvigateli
+// ============================================================================
+
+// 1. Stoxastik Monte-Karlo Radioaktiv Yemirilish Integratori
+function simulateRadioactiveDecay(nuclei, lambda, dt) {
+  const prob = 1 - Math.exp(-lambda * dt);
+  let decayedCount = 0;
+  for (let n of nuclei) {
+    if (n.state === 'active' && Math.random() < prob) {
+      n.state = 'decayed';
+      decayedCount++;
+    }
+  }
+  return { decayedCount, remaining: nuclei.filter(n => n.state === 'active').length };
+}
+
+// 2. Uran-235 Zanjirli Bo'linishi va Neytronlar Dinamikasi
+function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
+  let energyYield = 0;
+  for (let i = neutrons.length - 1; i >= 0; i--) {
+    const n = neutrons[i];
+    n.x += n.vx * dt;
+    n.y += n.vy * dt;
+    n.life -= dt;
+
+    // Boshqaruv sterjeni yutishi (Kadmiy / Bor)
+    if (Math.abs(n.x - 290) < 16 && n.y < 30 + 220 * controlRodDepth) {
+      n.life = 0;
+    }
+
+    // Uran-235 yadrosi bilan to'qnashuv
+    for (let nucl of nuclei) {
+      if (nucl.state === 'stable' && Math.hypot(n.x - nucl.x, n.y - nucl.y) < nucl.r + 4) {
+        nucl.state = 'fissioned';
+        energyYield += 200; // MeV
+        // 3 ta yangi tezkor neytron ajralishi
+        for (let k = 0; k < 3; k++) {
+          const a = Math.random() * Math.PI * 2;
+          neutrons.push({ x: nucl.x, y: nucl.y, vx: Math.cos(a)*180, vy: Math.sin(a)*180, life: 6.0 });
+        }
+        n.life = 0;
+        break;
+      }
+    }
+    if (n.life <= 0) neutrons.splice(i, 1);
+  }
+  return { energyYield, neutronCount: neutrons.length };
+}</code></pre>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Yadroviy Modellashtirish Asosi (3-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I & III</em>. Basic Books. <a href="https://www.feynmanlectures.caltech.edu" target="_blank" class="citation-link">https://www.feynmanlectures.caltech.edu</a><br>
+            <em>Iqtibos mazmuni:</em> Kvant-yadroviy jarayonlarni diskret zarrachalar va Monte-Karlo stoxastikasi orqali modellashtirish mikrodunyo qonuniyatlarining tabiatiga eng mos keluvchi usuldir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Jarayon Monitoringi (Google Antigravity AI) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4. Jarayon Monitoringi: Google Antigravity AI</h2>
+          <span class="badge badge-rose">Conservation Laws, Baryon Number & Energy-Mass Audit</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Yadro reaksiyalari modellashtirilganda hisoblash diskretizatsiyasi hisobiga barion va lepton zaryadlari buzilishi, mass-defekt energiyasida dreyf paydo bo'lishi mumkin. <strong>Google Antigravity AI</strong> monitoring agenti simulyatsiya aniqligini nazorat qiladi:
+        </p>
+
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <strong style="color: var(--accent-cyan);">1. Barion va Lepton Balansi:</strong><br>
+            <span style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Reaksiyadan oldingi va keyingi nuklonlar soni $\sum A_{\text{bosh}} = \sum A_{\text{oxir}} = 236$ aniqligi 100% saqlanadi.
+            </span>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <strong style="color: var(--accent-emerald);">2. Elektr Zaryadi Saqlanishi:</strong><br>
+            <span style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Protonlar zaryadi balansi $\sum Z_{\text{bosh}} = \sum Z_{\text{oxir}} = 92$ qat'iy nazorat qilinadi.
+            </span>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <strong style="color: var(--accent-rose);">3. Energiya-Massa Ekvivalentligi:</strong><br>
+            <span style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Ajralib chiqayotgan $Q = \Delta m c^2$ energiyaning nazariy qiymatdan dreyfi $|\Delta E / E_0| < 0.0001\%$ darajasida saqlanadi.
+            </span>
+          </div>
+        </div>
+
+        <div class="code-block" style="margin: 20px 0;">
+          <pre style="background: #090d16; padding: 16px; border-radius: 8px; color: #f8fafc; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;">
+[ANTIGRAVITY-AGENT] >> Initializing Nuclear Physics & Capstone Pipeline Telemetry...
+[AUDIT: BARYON-NUMBER] Initial A=236 (U-235+n) -> Final A=141(Ba) + 92(Kr) + 3(n) = 236 -> [CONSERVED 100%]
+[AUDIT: CHARGE-BALANCE] Initial Z=92 -> Final Z=56(Ba) + 36(Kr) = 92 -> [CONSERVED 100%]
+[ENERGY-AUDIT] Fission Mass Defect: Δm = 0.215 amu -> Energy Released: Q = 200.2 MeV -> [DRIFT 0.0000%]
+[CONTROL-ROD-CHECK] Rod Depth: 20% | Multiplication Factor k = 1.05 -> [STEADY CRITICAL REGIME]
+[STATUS] ALL NUCLEAR DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.</pre>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Loyiha Monitoringi Asosi (4-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley. <br>
+            <em>Iqtibos mazmuni:</em> Kvant va yadro fizikasi modellarida saqlanish qonunlarining sonli verifikatsiyasi simulyatsiyaning ilmiy haqiqiyligini kafolatlaydi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Baholash Rubrikalari (MagicSchool AI) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">5. Baholash Rubrikalari: MagicSchool AI</h2>
+          <span class="badge badge-purple">100-Point Capstone Assessment Rubric</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Yakuniy Mustaqil Loyiha (Capstone Project)ni xolis, shaffof va standartlashtirilgan tarzda baholash uchun <strong>MagicSchool AI</strong> yordamida 5 ta mezonli 100 ballik kompleks rubrika ishlab chiqildi:
+        </p>
+
+        <!-- 100-point Rubric Table -->
+        <div style="overflow-x: auto; margin-bottom: 25px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: var(--text-secondary);">
+            <thead>
+              <tr style="background: rgba(255,255,255,0.05); color: var(--text-primary); border-bottom: 2px solid var(--border-color);">
+                <th style="padding: 10px; text-align: left;">Baholash Mezoni</th>
+                <th style="padding: 10px; text-align: center;">Maks. Ball</th>
+                <th style="padding: 10px; text-align: left;">A'lo (86-100%)</th>
+                <th style="padding: 10px; text-align: left;">Yaxshi (71-85%)</th>
+                <th style="padding: 10px; text-align: left;">Qoniqarli (55-70%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px; font-weight: bold; color: var(--accent-cyan);">1. Fizik Adekvatlik & Matematik Aniqlik</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">25 ball</td>
+                <td style="padding: 10px;">Differensial tenglamalar, saqlanish qonunlari va mass-defekt formulalari xatosiz modellashtirilgan.</td>
+                <td style="padding: 10px;">Formulalarda kichik noaniqlik bor, lekin asosiy dinamika to'g'ri.</td>
+                <td style="padding: 10px;">Statik formulalar kiritilgan, differensial hisob yo'q.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px; font-weight: bold; color: var(--accent-emerald);">2. Kod Arxitekturasi & Interaktivlik</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">20 ball</td>
+                <td style="padding: 10px;">Modulli sof JavaScript kodi, 60 FPS, to'liq interaktiv slayderlar va sichqoncha bilan boshqaruv.</td>
+                <td style="padding: 10px;">Kod barqaror ishlaydi, biroq ayrim boshqaruv tugmalarida kechikish bor.</td>
+                <td style="padding: 10px;">Slayderlar cheklangan, interaktivlik past.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px; font-weight: bold; color: var(--accent-purple);">3. Multimodal Ovoz & Vizual Dizayn</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">20 ball</td>
+                <td style="padding: 10px;">Muxlisa AI / ElevenLabs audio-narratsiyasi, spektrogramma va qorong'u rejimli zamonaviy UI.</td>
+                <td style="padding: 10px;">Ovoz mavjud, lekin animatsiya bilan to'liq sinxronlashmagan.</td>
+                <td style="padding: 10px;">Faqat matnli izohlar bor, audio sintez yo'q.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px; font-weight: bold; color: var(--accent-rose);">4. Telemetriya & Saqlanish Qonunlari Auditi</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">15 ball</td>
+                <td style="padding: 10px;">Google Antigravity AI monitoringi: barion soni, energiya dreyfi doimiy auditda.</td>
+                <td style="padding: 10px;">Telemetriya ko'rsatkichlari bor, lekin saqlanish balansi to'liq emas.</td>
+                <td style="padding: 10px;">Telemetriya mavjud emas.</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; font-weight: bold; color: #38bdf8;">5. Ilmiy Himoya & Raqamli Portfolio</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">20 ball</td>
+                <td style="padding: 10px;">Otter.ai transkripsiyasi, to'liq portfolio pasporti va Undetectable AI originallik sertifikati.</td>
+                <td style="padding: 10px;">Portfolio tayyorlangan, ammo ilmiy atamalar izohi yetarli emas.</td>
+                <td style="padding: 10px;">Qisqa hisobot bilan cheklangan.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Baholash Rubrikasi Asosi (5-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href="https://doi.org/10.1007/s11092-008-9068-5" target="_blank" class="citation-link">https://doi.org/10.1007/s11092-008-9068-5</a><br>
+            <em>Iqtibos mazmuni:</em> Aniq rubrikalar talabaga o'z mustaqil loyihasi ustida maqsadli ishlash va yuqori akademik sifatga erishish imkoniyatini yaratadi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Capstone Mustaqil Loyiha & Undetectable AI -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">6. Capstone Mustaqil Loyiha Metodologiyasi & Undetectable AI</h2>
+          <span class="badge badge-cyan">Full 7-AI Pipeline & Academic Integrity</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          15-Ma'ruzaning eng muhim qismi — <strong>Yakuniy Mustaqil Loyiha (Capstone Project)</strong> metodologiyasidir. Har bir talaba o'quv dasturida o'qitilmagan yangi fizik jarayonni tanlab, 7 ta sun'iy intellekt vositasi yordamida to'liq mustaqil simulyatsion veb-sahifasini yaratadi:
+        </p>
+
+        <!-- 7-AI Pipeline Lifecycle Cards -->
+        <div class="grid-2" style="gap: 20px; margin-bottom: 25px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 12px;">🚀 7 Bosqichli Yaxlit AI Pipeline Hayotiy Sikli:</h4>
+            <ol style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
+              <li><strong>MagicSchool AI:</strong> Mavzu diagnostikasi va individual reja tuzish.</li>
+              <li><strong>PhET / Vascak.cz:</strong> Mavjud ilmiy laboratoriyani dekonstruksiya qilish.</li>
+              <li><strong>Claude 3.5 Sonnet:</strong> Sof JavaScript fizik dvigatel kodini generatsiya qilish.</li>
+              <li><strong>Google Antigravity AI:</strong> Real vaqt telemetriyasi va energiya saqlanishini audit qilish.</li>
+              <li><strong>Muxlisa AI / ElevenLabs:</strong> O'zbek neyron TTS ovozli ilmiy tushuntirishni sinxronlash.</li>
+              <li><strong>Otter.ai:</strong> Himoya nutqi transkripsiyasi va raqamli portfolio pasporti.</li>
+              <li><strong>Undetectable AI:</strong> Matn originalligini tekshirish va akademik halollikni tasdiqlash.</li>
+            </ol>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-rose); margin-bottom: 12px;">🛡️ Undetectable AI & Akademik Halollik Nazorati:</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
+              • <strong>Majburiy Talab:</strong> Talaba AI yozgan umumiy matnlarni o'zining shaxsiy virtual tajriba o'lchovlari, formulalari va tahlillari bilan boyitishi shart.<br>
+              • <strong>AI Detektor Filtrlari:</strong> Loyiha hisoboti Undetectable AI, Turnitin AI va GPTZero orqali tekshiriladi. Mustaqil mualliflik ulushi <strong>85%+</strong> bo'lishi kafolatlanadi.<br>
+              • <strong>Plagiatga Qarshi:</strong> Qo'llanilgan barcha ilmiy manbalar va AI vositalariga APA 7 standarti bo'yicha havola keltiriladi.
+            </p>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Akademik Halollik Asosi (6-Bo'lim):</div>
+          <p class="citation-text">
+            <strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292. <a href="https://doi.org/10.1007/s10648-019-09465-5" target="_blank" class="citation-link">https://doi.org/10.1007/s10648-019-09465-5</a><br>
+            <em>Iqtibos mazmuni:</em> Sun'iy intellekt vositalari bilan ishlashda talabaning mustaqil fikrlashi va generatsiya qilingan ma'lumotlarni tanqidiy tahlil qilishi kognitiv chuqurlikni va haqiqiy amaliy kompetensiyani ta'minlaydi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 7: Interaktiv Sandbox, Test & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja7" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">7. Interaktiv Simulyator Sandbox, Diagnostik Test & Manbalar</h2>
+          <span class="badge badge-rose">HTML5 Canvas, Nuclear Reactor & APA 7th Bibliography</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Quyidagi laboratoriyada siz <strong>Radioaktiv yemirilish</strong>, <strong>Uran-235 zanjirli bo'linishi</strong>, <strong>Termoyadroviy sintez (Tokamak)</strong> va <strong>Capstone monitoring konsoli</strong> sinxron ishlashini mustaqil boshqarishingiz mumkin!
+        </p>
+
+        <!-- Mode Bar -->
+        <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+            <span style="font-size: 0.88rem; color: var(--text-secondary); font-weight: bold;">3D Eksperiment Rejimi:</span>
+            <button class="btn btn-secondary nuclear-mode-btn" data-mode="decay">⏳ 1: 3D Radioaktiv Yemirilish</button>
+            <button class="btn btn-secondary nuclear-mode-btn active" data-mode="fission">☢️ 2: 3D Uran-235 Bo'linishi</button>
+            <button class="btn btn-secondary nuclear-mode-btn" data-mode="fusion">🌌 3: 3D Termoyadroviy Sintez</button>
+            <button class="btn btn-secondary nuclear-mode-btn" data-mode="capstone">🎓 4: 3D Capstone Konsoli</button>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <button id="btn-nuclear-autorotate" class="btn btn-secondary active" style="min-width: 135px; font-weight: 600;">
+              🔄 3D Aylanish: ON
+            </button>
+            <button id="btn-nuclear-reset-cam" class="btn btn-secondary" style="min-width: 130px; font-weight: 600;">
+              📐 3D Kamera Reset
+            </button>
+            <button id="btn-nuclear-play-narration" class="btn btn-primary" style="background: #a855f7; border-color: #a855f7; min-width: 160px; font-weight: 600;">
+              🎙️ Muxlisa AI Audio
+            </button>
+            <button id="btn-nuclear-play" class="btn btn-secondary" style="min-width: 110px; font-weight: 600;"><span style="font-size: 1.1rem; line-height: 1;">⏸</span> To'xtatish</button>
+            <button id="btn-nuclear-reset" class="btn btn-primary" style="min-width: 120px; font-weight: 600;"><span style="font-size: 1.15rem; line-height: 1;">↺</span> Qayta Boshlash</button>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="glass-panel" style="margin-bottom: 20px; padding: 18px;">
+          
+          <div id="fission-controls-group" class="grid-3" style="gap: 16px;">
+            <div>
+              <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+                3D Kadmiy Sterjenlari Chuqurligi: <strong id="val-control-rods" style="color: var(--accent-amber);">20%</strong>
+              </label>
+              <input type="range" id="sl-control-rods" min="0" max="1" value="0.2" step="0.05" style="width: 100%;">
+            </div>
+            <div>
+              <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+                3D Fazoga Yangi Neytron Otish:
+              </label>
+              <button id="btn-nuclear-inject-neutron" class="btn btn-secondary btn-sm" style="width: 100%; color: var(--accent-rose); border-color: var(--accent-rose);">
+                🚀 3D Neytron Uchirish
+              </button>
+            </div>
+            <div>
+              <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;">
+                💡 3D Boshqaruv: Sichqoncha bilan 360° aylantiring va g'ildirak bilan masshtablang!
+              </span>
+            </div>
+          </div>
+
+          <div id="decay-controls-group" class="grid-3" style="gap: 16px; display: none;">
+            <div>
+              <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+                Yarim Yemirilish Davri ($T_{1/2}$): <strong id="val-decay-halflife" style="color: var(--accent-emerald);">4.5 s</strong>
+              </label>
+              <input type="range" id="sl-decay-halflife" min="1.5" max="10.0" value="4.5" step="0.5" style="width: 100%;">
+            </div>
+            <div>
+              <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;">
+                💡 3D Kristall Panjara: 64 ta yadro stoxastik eksponentsial kamayishi.
+              </span>
+            </div>
+          </div>
+
+          <!-- Telemetry -->
+          <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(255,255,255,0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; text-align: center;">
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <div id="telemetry-label1" style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Ajralgan Energiya</div>
+              <div id="telemetry-param1" style="font-size: 1.05rem; font-weight: 700; color: var(--accent-rose); font-family: var(--font-mono);">0 MeV</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <div id="telemetry-label2" style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Koeffitsiyent (k)</div>
+              <div id="telemetry-param2" style="font-size: 1.05rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">1.05</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <div id="telemetry-label3" style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">U-235 Yadrolari</div>
+              <div id="telemetry-param3" style="font-size: 1.05rem; font-weight: 700; color: var(--accent-emerald); font-family: var(--font-mono);">52 ta</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <div id="telemetry-label4" style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Erkin Neytronlar</div>
+              <div id="telemetry-param4" style="font-size: 1.05rem; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">2 ta</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Canvases -->
+        <div class="grid-2" style="gap: 20px; align-items: start;">
+          <div class="glass-panel" style="padding: 12px; text-align: center;">
+            <h4 style="color: var(--accent-rose); font-size: 0.95rem; margin-bottom: 10px;">🎮 1. Asosiy 3D Yadro Reaktori & Tokamak Plazma Fazosi:</h4>
+            <canvas id="nuclear-canvas" width="580" height="360" style="display: block; margin: 0 auto; max-width: 100%; height: auto; cursor: grab;"></canvas>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">💡 3D Fazoviy Rejim: Sichqoncha yoki sensor bilan 360° erkin aylantiring, g'ildirak orqali yaqinlashtiring.</div>
+          </div>
+          <div class="glass-panel" style="padding: 12px; text-align: center;">
+            <h4 style="color: var(--accent-emerald); font-size: 0.95rem; margin-bottom: 10px;">📊 2. Real-Vaqt Energiya & Yemirilish Grafigi:</h4>
+            <canvas id="nuclear-graph-canvas" width="460" height="360" style="display: block; margin: 0 auto; max-width: 100%; height: auto;"></canvas>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Grafik: Eksponentsial yemirilish egri chizig'i $N(t)$ va energiya oqimi.</div>
+          </div>
+        </div>
+
+        <!-- PhET & Vascak Hub -->
+        <div class="glass-panel" style="margin-top: 28px; border-left: 4px solid var(--accent-rose); padding: 22px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <span class="badge badge-rose">🌐 Jonli Virtual Laboratoriyalar</span>
+              <h3 style="margin-top: 6px; font-size: 1.3rem; color: #F8FAFC;">
+                PhET & Vascak.cz Yadro Fizikasi Xabi
+              </h3>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a id="link-nuclear-sim-direct" href="https://phet.colorado.edu/sims/html/build-a-nucleus/latest/build-a-nucleus_all.html" target="_blank" class="btn btn-secondary btn-sm" style="color: var(--accent-rose);">
+                🔗 Yangi Oynada Ochish
+              </a>
+              <button id="btn-fullscreen-nuclear-sim" class="btn btn-primary btn-sm" onclick="toggleNuclearOnlineSimFullscreen()">
+                ⛶ To'liq Ekran
+              </button>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="width: 100%; font-size: 0.78rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px;">🧪 PhET Interactive Simulations (HTML5):</div>
+            <button class="btn btn-sm btn-primary nuclear-online-sim-btn active" data-sim="phet-fission" onclick="switchNuclearOnlineSim('phet-fission')">
+              ☢️ PhET: Build a Nucleus (Yadro Sintezi)
+            </button>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="phet-decay" onclick="switchNuclearOnlineSim('phet-decay')">
+              ⏳ PhET: Isotopes & Dating (Izotoplar)
+            </button>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="phet-rutherford" onclick="switchNuclearOnlineSim('phet-rutherford')">
+              🎯 PhET: Rutherford Scattering
+            </button>
+
+            <div style="width: 100%; font-size: 0.78rem; color: var(--accent-amber); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-top: 8px; margin-bottom: 2px;">🔄 Vascak.cz Yadro Fizikasi (O'zbek tilida, Reklamasiz HTML5):</div>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="vascak-decay" onclick="switchNuclearOnlineSim('vascak-decay')">
+              ☢️ Vascak: Radioaktiv Yemirilish
+            </button>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="vascak-reactions" onclick="switchNuclearOnlineSim('vascak-reactions')">
+              💥 Vascak: Yadro Reaksiyalari
+            </button>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="vascak-radiation" onclick="switchNuclearOnlineSim('vascak-radiation')">
+              🛡️ Vascak: Radioaktiv Nurlanish
+            </button>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="vascak-fusion" onclick="switchNuclearOnlineSim('vascak-fusion')">
+              🌌 Vascak: Quyosh Sintezi
+            </button>
+            <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="vascak-series" onclick="switchNuclearOnlineSim('vascak-series')">
+              📜 Vascak: Radioaktiv Qatorlar
+            </button>
+          </div>
+
+          <!-- Iframe -->
+          <div id="nuclear-sim-container" style="position: relative; width: 100%; height: 680px; min-height: 600px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000;">
+            <iframe id="nuclear-sim-iframe" 
+                    src="https://phet.colorado.edu/sims/html/build-a-nucleus/latest/build-a-nucleus_all.html" 
+                    style="width: 100%; height: 100%; border: none; display: block;" 
+                    allowfullscreen
+                    loading="lazy"></iframe>
+          </div>
+
+          <div id="nuclear-sim-info" style="margin-top: 18px; background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+            <h4 id="nuclear-sim-title" style="color: var(--accent-rose); font-size: 1.1rem; margin: 0 0 8px 0;">
+              ☢️ PhET Interactive Simulations: Build a Nucleus (Atom Yadrosi Sintezi & Bog'lanish)
+            </h4>
+            <p id="nuclear-sim-desc" style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6;">
+              Atom yadrosining proton va neytronlardan tuzilishi, yadro barqarorlik oroli (Island of Stability), bog'lanish energiyasi va radioaktiv yemirilish/bo'linish chegaralarini o'rganish.
+            </p>
+            <div id="nuclear-sim-eqs" style="background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-amber); margin-bottom: 14px;">
+              $$E_b = [Z m_p + (A-Z) m_n - M(A,Z)] c^2 = \Delta m c^2, \quad ^{235}_{92}\text{U} + n \rightarrow \text{Bo'linish}$$
+            </div>
+            <ul id="nuclear-sim-tasks" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; padding-left: 20px;">
+              <li>1. Proton va neytronlarni qo'shib, barqaror va radioaktiv beqaror izotoplar hosil bo'lishini kuzating.</li>
+              <li>2. Yadroning solishtirma bog'lanish energiyasi $E_b / A$ ning massa soniga bog'liqligini tahlil qiling.</li>
+              <li>3. Zanjirli yadro bo'linishi va sintezi reaksiyalarining energetik yutug'ini baholang.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3-Question Diagnostic Test -->
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 35px 0;">
+        <h3 style="color: var(--accent-rose); margin-bottom: 16px;">🧠 15-Modul Diagnostik Testi (3 Ta Kognitiv Savol):</h3>
+        
+        <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 16px;">
+          <strong style="color: var(--text-primary); font-size: 0.95rem;">1-Savol: Radioaktiv yemirilish qonuniga ko'ra, $t = 2 T_{1/2}$ vaqt o'tgach, boshlang'ich yadrolarning necha foizi yemirilib ulguradi?</strong>
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+            <label><input type="radio" name="q1" value="A"> A) 50%</label>
+            <label><input type="radio" name="q1" value="B"> B) 75%</label>
+            <label><input type="radio" name="q1" value="C"> C) 25%</label>
+            <label><input type="radio" name="q1" value="D"> D) 100%</label>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 16px;">
+          <strong style="color: var(--text-primary); font-size: 0.95rem;">2-Savol: Yadro reaktorida zanjirli reaksiya barqaror (turg'un kritik rejimda) kechishi uchun neytronlarning ko'payish koeffitsiyenti $k$ nechaga teng bo'lishi shart?</strong>
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+            <label><input type="radio" name="q2" value="A"> A) $k = 1.000$</label>
+            <label><input type="radio" name="q2" value="B"> B) $k > 1.5$</label>
+            <label><input type="radio" name="q2" value="C"> C) $k = 0$</label>
+            <label><input type="radio" name="q2" value="D"> D) $k < 0.5$</label>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <strong style="color: var(--text-primary); font-size: 0.95rem;">3-Savol: Capstone mustaqil loyihasida Undetectable AI va akademik halollik talabiga ko'ra, talabaning shaxsiy mualliflik ulushi kamida necha foiz bo'lishi shart?</strong>
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+            <label><input type="radio" name="q3" value="A"> A) 85% va undan yuqori</label>
+            <label><input type="radio" name="q3" value="B"> B) 10%</label>
+            <label><input type="radio" name="q3" value="C"> C) 30%</label>
+            <label><input type="radio" name="q3" value="D"> D) Muhim emas</label>
+          </div>
+        </div>
+
+        <button id="btn-check-quiz" class="btn btn-primary" onclick="checkNuclearQuiz()">✅ Natijani Tekshirish</button>
+        <div id="quiz-result" style="margin-top: 14px; font-weight: bold; font-size: 1rem; display: none;"></div>
+
+        <!-- 16 APA 7th Edition Bibliography -->
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 35px 0;">
+        <h3 style="color: var(--accent-emerald); margin-bottom: 16px;">📚 15-Modul Bo'yicha Nufuzli Ilmiy va Didaktik Manbalar (APA 7th Edition):</h3>
+        
+        <ol style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
+          <li style="margin-bottom: 8px;"><strong>Krane, K. S. (1987).</strong> <em>Introductory Nuclear Physics</em> (3rd ed.). John Wiley & Sons.</li>
+          <li style="margin-bottom: 8px;"><strong>Griffiths, D. J. (2018).</strong> <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press.</li>
+          <li style="margin-bottom: 8px;"><strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I & III</em>. Basic Books. <a href="https://www.feynmanlectures.caltech.edu" target="_blank" class="citation-link">https://www.feynmanlectures.caltech.edu</a></li>
+          <li style="margin-bottom: 8px;"><strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" class="citation-link">https://doi.org/10.1126/science.1161948</a></li>
+          <li style="margin-bottom: 8px;"><strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.</li>
+          <li style="margin-bottom: 8px;"><strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781316941355" target="_blank" class="citation-link">https://doi.org/10.1017/9781316941355</a></li>
+          <li style="margin-bottom: 8px;"><strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305–308. <a href="https://doi.org/10.1126/science.1230579" target="_blank" class="citation-link">https://doi.org/10.1126/science.1230579</a></li>
+          <li style="margin-bottom: 8px;"><strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87–105.</li>
+          <li style="margin-bottom: 8px;"><strong>Vascak, V. (2024).</strong> <em>Physics Animations & Nuclear Physics Laboratory</em>. Vascak Education Portal. <a href="https://www.vascak.cz/physicsanimations.php" target="_blank" class="citation-link">https://www.vascak.cz/physicsanimations.php</a></li>
+          <li style="margin-bottom: 8px;"><strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292.</li>
+          <li style="margin-bottom: 8px;"><strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31.</li>
+          <li style="margin-bottom: 8px;"><strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136–153.</li>
+          <li style="margin-bottom: 8px;"><strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64–70.</li>
+          <li style="margin-bottom: 8px;"><strong>Einstein, A. (1905).</strong> <em>Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?</em> Annalen der Physik, 18(13), 639–641.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Fizika va Astronomiya O'qitishda Axborot Texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+        15-Modul: Yadro Fizikasi Qonuniyatlari va Yakuniy Mustaqil Loyiha Metodologiyasi &bull; 7 AI Pipeline (MagicSchool, PhET, Claude, Antigravity, Muxlisa, Otter.ai, Undetectable AI).
+      </p>
+    </div>
+  </footer>
+
+  <!-- Quiz Script & Tab Controller -->
+  <script>
+    window.switchTab = function(evt, tabId) {
+      if (!tabId && evt && evt.currentTarget) {
+        tabId = evt.currentTarget.getAttribute('data-tab');
+      }
+      if (!tabId) return;
+
+      const contents = document.querySelectorAll('.tab-content, .tab-pane, .tab-panel');
+      contents.forEach(c => c.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn, .tab-button');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active');
+        activeBtn = evt.currentTarget;
+      } else {
+        buttons.forEach(b => {
+          const onclickAttr = b.getAttribute('onclick') || '';
+          const dataTabAttr = b.getAttribute('data-tab') || '';
+          if (onclickAttr.includes(tabId) || dataTabAttr === tabId) {
+            b.classList.add('active');
+            if (!activeBtn) activeBtn = b;
+          }
+        });
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          if (window.updateTabsScrollProgress) {
+            setTimeout(window.updateTabsScrollProgress, 200);
+          }
+        }
+      }
+
+      if (tabId === 'tab-reja7' && window.nuclearCapstonePipeline) {
+        setTimeout(() => window.nuclearCapstonePipeline.initCanvasSize(), 50);
+      }
+    };
+    window.openTab = window.switchTab;
+
+    function checkNuclearQuiz() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      const res = document.getElementById('quiz-result');
+      
+      if (!q1 || !q2 || !q3) {
+        res.style.display = 'block';
+        res.style.color = '#F59E0B';
+        res.textContent = '⚠️ Iltimos, barcha 3 ta savolga javob bering!';
+        return;
+      }
+      
+      let score = 0;
+      let feedback = [];
+
+      if (q1.value === 'B') {
+        score++;
+        feedback.push('1-Savol: To\'g\'ri! 2 ta yarim yemirilish davridan so\'ng boshlang\'ich yadrolarning 75% qismi yemirilib, faqat 25% qoladi.');
+      } else {
+        feedback.push('1-Savol: Noto\'g\'ri. $t=2T_{1/2}$ da $N = N_0/4$ qoladi, ya\'ni 75% yemirilib ketadi (B varianti).');
+      }
+
+      if (q2.value === 'A') {
+        score++;
+        feedback.push('2-Savol: To\'g\'ri! Reaktor turg\'un ishlashi uchun ko\'payish koeffitsiyenti aynan $k = 1.000$ bo\'lishi kerak.');
+      } else {
+        feedback.push('2-Savol: Noto\'g\'ri. Turg\'un boshqariluvchi kritik holatda $k=1.000$ bo\'ladi (A varianti).');
+      }
+
+      if (q3.value === 'A') {
+        score++;
+        feedback.push('3-Savol: To\'g\'ri! Undetectable AI va akademik halollik talabiga binoan, mualliflik originalligi kamida 85% bo\'lishi shart.');
+      } else {
+        feedback.push('3-Savol: Noto\'g\'ri. Mustaqil bajarilganlik mezoniga ko\'ra originallik kamida 85%+ bo\'lishi talab etiladi (A varianti).');
+      }
+      
+      res.style.display = 'block';
+      if (score === 3) {
+        res.style.color = '#34D399';
+        res.innerHTML = `🎉 Tabriklaymiz! 3/3 (100%) - Yadro fizikasi qonuniyatlari va Capstone mustaqil loyiha talablarini mukammal o'zlashtirdingiz!<br><br><div style="color:#CBD5E1; font-size:0.9rem; line-height:1.6;">${feedback.join('<br>')}</div>`;
+      } else {
+        res.style.color = '#F87171';
+        res.innerHTML = `Natija: ${score}/3 ta to'g'ri.<br><br><div style="color:#CBD5E1; font-size:0.9rem; line-height:1.6;">${feedback.join('<br>')}</div>`;
+      }
+
+      if (window.renderMathInElement) {
+        renderMathInElement(res, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+      }
+    }
+  </script>
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-nuclear-capstone.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>
