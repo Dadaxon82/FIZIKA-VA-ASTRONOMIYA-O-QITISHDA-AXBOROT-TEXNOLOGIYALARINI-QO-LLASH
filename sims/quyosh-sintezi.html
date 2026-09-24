@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quyosh Sintezi: Proton-Proton Zanjiri</title>
+  <style>
+    :root {
+      --bg: #050816; --panel: #0B1120; --border: rgba(148,163,184,0.18);
+      --text: #E2E8F0; --muted: #94A3B8;
+      --p: #F43F5E; --d: #FBBF24; --he3: #38BDF8; --he4: #34D399; --pos: #F8FAFC; --nu: #A855F7; --gamma: #FDE68A;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { display: flex; flex-direction: column; overflow: hidden; }
+    header { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+    h1 { font-size: 1rem; margin: 0; }
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 0.85rem; color: var(--muted); }
+    .controls input[type=range] { width: 130px; vertical-align: middle; }
+    button { background: #1E293B; color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; font: inherit; cursor: pointer; }
+    button:hover { border-color: #38BDF8; }
+    main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 300px; min-height: 0; }
+    #stage { position: relative; min-height: 0; }
+    canvas { width: 100%; height: 100%; display: block; }
+    aside { border-left: 1px solid var(--border); background: var(--panel); padding: 12px; overflow-y: auto; font-size: 0.82rem; line-height: 1.55; }
+    aside h2 { font-size: 0.85rem; margin: 0 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+    .stat { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px; text-align: center; }
+    .stat b { display: block; font-family: ui-monospace, monospace; font-size: 1rem; }
+    .stat span { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
+    .step { border-left: 3px solid var(--border); padding: 4px 8px; margin-bottom: 6px; font-family: ui-monospace, monospace; font-size: 0.78rem; }
+    .step.flash { border-left-color: #FBBF24; background: rgba(251,191,36,0.08); }
+    .legend span { display: inline-flex; align-items: center; gap: 4px; margin: 0 10px 4px 0; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    #log { font-family: ui-monospace, monospace; font-size: 0.74rem; color: var(--muted); max-height: 160px; overflow-y: auto; }
+    .note { color: var(--muted); font-size: 0.74rem; margin-top: 10px; }
+    @media (max-width: 720px) {
+      body { overflow: auto; }
+      main { grid-template-columns: 1fr; }
+      #stage { height: 60vh; }
+      aside { border-left: 0; border-top: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌌 Quyosh yadrosida termoyadroviy sintez: proton-proton (pp-I) zanjiri</h1>
+    <div class="controls">
+      <label>Yadro harorati: <b id="tval">15.0</b> mln K
+        <input type="range" id="temp" min="8" max="25" step="0.5" value="15">
+      </label>
+      <button id="play">⏸ To'xtatish</button>
+      <button id="reset">↺ Qayta boshlash</button>
+    </div>
+  </header>
+  <main>
+    <div id="stage"><canvas id="c"></canvas></div>
+    <aside>
+      <h2>Telemetriya</h2>
+      <div class="stats">
+        <div class="stat"><b id="sP">0</b><span>Protonlar ¹H</span></div>
+        <div class="stat"><b id="sHe4">0</b><span>Geliy-4 hosil bo'ldi</span></div>
+        <div class="stat"><b id="sE">0</b><span>Ajralgan energiya, MeV</span></div>
+        <div class="stat"><b id="sNu">0</b><span>Neytrinolar</span></div>
+      </div>
+
+      <h2>pp-I zanjiri bosqichlari</h2>
+      <div class="step" id="st1">1) ¹H + ¹H → ²H + e⁺ + νₑ &nbsp;(+1.44 MeV*)</div>
+      <div class="step" id="st2">2) ²H + ¹H → ³He + γ &nbsp;(+5.49 MeV)</div>
+      <div class="step" id="st3">3) ³He + ³He → ⁴He + 2 ¹H &nbsp;(+12.86 MeV)</div>
+      <div class="step">Jami: 4 ¹H → ⁴He + 2e⁺ + 2νₑ &nbsp;(≈ 26.7 MeV)</div>
+
+      <h2 style="margin-top:12px;">Belgilar</h2>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--p)"></i>¹H proton</span>
+        <span><i class="dot" style="background:var(--d)"></i>²H deyteriy</span>
+        <span><i class="dot" style="background:var(--he3)"></i>³He</span>
+        <span><i class="dot" style="background:var(--he4)"></i>⁴He</span>
+        <span><i class="dot" style="background:var(--pos)"></i>e⁺</span>
+        <span><i class="dot" style="background:var(--nu)"></i>νₑ</span>
+        <span><i class="dot" style="background:var(--gamma)"></i>γ</span>
+      </div>
+
+      <h2 style="margin-top:12px;">Reaksiyalar jurnali</h2>
+      <div id="log"></div>
+
+      <p class="note">* 1-bosqich energiyasi pozitronning elektron bilan annigilyatsiyasini o'z ichiga oladi; uning bir qismini (o'rtacha ≈ 0.26 MeV) neytrino olib ketadi.
+      Haqiqiy Quyoshda 1-bosqich kuchsiz o'zaro ta'sir tufayli juda sekin (bitta proton uchun o'rtacha milliardlab yil); ko'rgazmalilik uchun
+      bu modelda barcha reaksiya tezliklari tezlashtirilgan, ammo ularning nisbiy tartibi (1-bosqich eng sekin) va haroratga kuchli bog'liqligi saqlangan.</p>
+    </aside>
+  </main>
+
+  <script>
+  (function () {
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const tempEl = document.getElementById('temp');
+    const tval = document.getElementById('tval');
+    const playBtn = document.getElementById('play');
+    const logEl = document.getElementById('log');
+
+    const COLORS = { p: '#F43F5E', d: '#FBBF24', he3: '#38BDF8', he4: '#34D399', pos: '#F8FAFC', nu: '#A855F7', gamma: '#FDE68A' };
+    const RADIUS = { p: 5, d: 6.5, he3: 8, he4: 9 };
+    const Q = { pp: 1.44, pd: 5.49, hh: 12.86 };
+
+    let W = 0, H = 0, particles = [], flashes = [], running = true;
+    let stats;
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const r = canvas.parentElement.getBoundingClientRect();
+      W = Math.max(200, r.width); H = Math.max(200, r.height);
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function speed() { return 80 * Math.sqrt(parseFloat(tempEl.value) / 15); }
+
+    function spawn(type, x, y) {
+      const a = Math.random() * Math.PI * 2, s = speed() * (0.6 + Math.random() * 0.8) / Math.sqrt({ p: 1, d: 2, he3: 3, he4: 4 }[type]);
+      particles.push({ type, x: x ?? Math.random() * W, y: y ?? Math.random() * H, vx: Math.cos(a) * s, vy: Math.sin(a) * s, dead: false });
+    }
+
+    function reset() {
+      particles = []; flashes = [];
+      stats = { he4: 0, energy: 0, nu: 0 };
+      logEl.innerHTML = '';
+      for (let i = 0; i < 90; i++) spawn('p');
+    }
+
+    // Reaksiya ehtimolligi: Gamov omili tufayli haroratga kuchli bog'liq (T^n).
+    // pp (kuchsiz o'zaro ta'sir) eng sekin, pd eng tez, 3He+3He oraliq.
+    function prob(kind) {
+      const t = parseFloat(tempEl.value) / 15;
+      const base = { pp: 0.12, pd: 0.8, hh: 1.0 }[kind];
+      const n = { pp: 4, pd: 4, hh: 16 }[kind];
+      return Math.min(1, base * Math.pow(t, n));
+    }
+
+    function log(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      logEl.prepend(div);
+      while (logEl.children.length > 40) logEl.lastChild.remove();
+    }
+
+    function flashStep(id) {
+      const el = document.getElementById(id);
+      el.classList.add('flash');
+      setTimeout(() => el.classList.remove('flash'), 400);
+    }
+
+    function emit(kind, x, y, n) {
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2, s = kind === 'nu' ? 260 : 180;
+        flashes.push({ kind, x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 1.2 });
+      }
+    }
+
+    function react(a, b) {
+      const types = [a.type, b.type].sort().join('+');
+      const x = (a.x + b.x) / 2, y = (a.y + b.y) / 2;
+      if (types === 'p+p' && Math.random() < prob('pp')) {
+        a.dead = b.dead = true; spawn('d', x, y);
+        emit('pos', x, y, 1); emit('nu', x, y, 1);
+        stats.energy += Q.pp; stats.nu++;
+        log('¹H + ¹H → ²H + e⁺ + νₑ'); flashStep('st1');
+      } else if (types === 'd+p' && Math.random() < prob('pd')) {
+        a.dead = b.dead = true; spawn('he3', x, y);
+        emit('gamma', x, y, 1);
+        stats.energy += Q.pd;
+        log('²H + ¹H → ³He + γ'); flashStep('st2');
+      } else if (types === 'he3+he3' && Math.random() < prob('hh')) {
+        a.dead = b.dead = true; spawn('he4', x, y); spawn('p', x, y); spawn('p', x, y);
+        stats.energy += Q.hh; stats.he4++;
+        log('³He + ³He → ⁴He + 2¹H'); flashStep('st3');
+      }
+    }
+
+    function step(dt) {
+      for (const p of particles) {
+        p.x += p.vx * dt; p.y += p.vy * dt;
+        if (p.x < 0) { p.x = 0; p.vx = Math.abs(p.vx); }
+        if (p.x > W) { p.x = W; p.vx = -Math.abs(p.vx); }
+        if (p.y < 0) { p.y = 0; p.vy = Math.abs(p.vy); }
+        if (p.y > H) { p.y = H; p.vy = -Math.abs(p.vy); }
+      }
+      const n = particles.length;
+      for (let i = 0; i < n; i++) {
+        const a = particles[i]; if (a.dead || a.type === 'he4') continue;
+        for (let j = i + 1; j < n; j++) {
+          const b = particles[j]; if (b.dead || b.type === 'he4') continue;
+          const r = RADIUS[a.type] + RADIUS[b.type];
+          const dx = b.x - a.x, dy = b.y - a.y;
+          if (dx * dx + dy * dy < r * r) {
+            react(a, b);
+            if (!a.dead) {
+              // Kulon itarishi: reaksiya bo'lmasa, zarralar elastik qaytadi
+              const d = Math.hypot(dx, dy) || 1, nx = dx / d, ny = dy / d;
+              const rel = (a.vx - b.vx) * nx + (a.vy - b.vy) * ny;
+              if (rel > 0) { a.vx -= rel * nx; a.vy -= rel * ny; b.vx += rel * nx; b.vy += rel * ny; }
+            }
+            if (a.dead) break;
+          }
+        }
+      }
+      particles = particles.filter(p => !p.dead);
+      // ⁴He "kul" sifatida yig'ilib qoladi; protonlar kamaysa yangi yoqilg'i qo'shiladi
+      while (particles.filter(p => p.type === 'p').length < 40) spawn('p');
+      const he4 = particles.filter(p => p.type === 'he4');
+      if (he4.length > 25) particles.splice(particles.indexOf(he4[0]), 1);
+
+      for (const f of flashes) { f.x += f.vx * dt; f.y += f.vy * dt; f.life -= dt; }
+      flashes = flashes.filter(f => f.life > 0);
+    }
+
+    function draw() {
+      const t = parseFloat(tempEl.value);
+      const g = ctx.createRadialGradient(W / 2, H / 2, 10, W / 2, H / 2, Math.max(W, H) * 0.7);
+      g.addColorStop(0, `rgba(251,146,60,${0.10 + (t - 8) * 0.008})`);
+      g.addColorStop(1, 'rgba(5,8,22,1)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.fillStyle = COLORS[p.type];
+        ctx.shadowColor = COLORS[p.type]; ctx.shadowBlur = 8;
+        ctx.arc(p.x, p.y, RADIUS[p.type], 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.shadowBlur = 0;
+      for (const f of flashes) {
+        ctx.globalAlpha = Math.max(0, f.life / 1.2);
+        ctx.fillStyle = COLORS[f.kind];
+        ctx.beginPath();
+        if (f.kind === 'gamma') {
+          ctx.strokeStyle = COLORS.gamma; ctx.lineWidth = 2;
+          ctx.moveTo(f.x, f.y); ctx.lineTo(f.x - f.vx * 0.05, f.y - f.vy * 0.05); ctx.stroke();
+        } else {
+          ctx.arc(f.x, f.y, f.kind === 'nu' ? 2 : 3, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      document.getElementById('sP').textContent = particles.filter(p => p.type === 'p').length;
+      document.getElementById('sHe4').textContent = stats.he4;
+      document.getElementById('sE').textContent = stats.energy.toFixed(2);
+      document.getElementById('sNu').textContent = stats.nu;
+    }
+
+    let last = performance.now();
+    function loop(now) {
+      const dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (running) step(dt);
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    tempEl.addEventListener('input', () => {
+      tval.textContent = parseFloat(tempEl.value).toFixed(1);
+      const k = speed() / 80;
+      for (const p of particles) {
+        const s = Math.hypot(p.vx, p.vy) || 1;
+        const target = 80 * k * (0.6 + Math.random() * 0.8) / Math.sqrt({ p: 1, d: 2, he3: 3, he4: 4 }[p.type]);
+        p.vx *= target / s; p.vy *= target / s;
+      }
+    });
+    playBtn.addEventListener('click', () => { running = !running; playBtn.textContent = running ? "⏸ To'xtatish" : '▶ Davom etish'; });
+    document.getElementById('reset').addEventListener('click', reset);
+    window.addEventListener('resize', resize);
+
+    resize(); reset(); requestAnimationFrame(loop);
+  })();
+  </script>
+</body>
+</html>

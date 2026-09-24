@@ -56,12 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------------------------------------------------
 // PHET / VASCAK.CZ JONLI SIMULYATOR ALMASHTIRGICHI
 // ---------------------------------------------------------------------------
-// Eslatma: Vascak.cz'ning "jadro_rozpad", "jadro_reakce" va "jadro_zareni"
-// sahifalari tasdiqlangan. "Quyosh sintezi" va "Radioaktiv qatorlar" uchun
-// aniq ichki havola tasdiqlanmagani sababli, bu ikki tugma Vascak.cz'ning
-// animatsiyalar ro'yxatiga (Nuclear physics bo'limi) yo'naltirilgan.
-const VASCAK_BASE = 'https://www.vascak.cz/data/android/physicsatschool/template.php?l=uz&s=';
-const VASCAK_INDEX = 'https://www.vascak.cz/physicsanimations.php';
+// Eslatma: Vascak.cz tugmalari template.php (reklamali qobiq) o'rniga
+// to'g'ridan-to'g'ri reklamasiz canvas animatsiyasini ochadi — lecture13'da
+// foydalanuvchi tasdiqlagan .../canvas/{slug}_Canvas.html?l=uz formati.
+// Slug'lar: jadro_rozpad, jadro_reakce, jadro_zareni, jadro_rady.
+// Vascak.cz'da termoyadroviy sintez animatsiyasining slug'i topilmagani
+// sababli, "Quyosh sintezi" repozitoriyadagi o'z reklamasiz HTML5
+// simulyatsiyamizni (sims/quyosh-sintezi.html) ochadi.
+const vascakCanvas = slug => `https://www.vascak.cz/data/android/physicsatschool/canvas/${slug}_Canvas.html?l=uz`;
 
 const NUCLEAR_ONLINE_SIMS = {
   'phet-fission': {
@@ -98,7 +100,7 @@ const NUCLEAR_ONLINE_SIMS = {
     ]
   },
   'vascak-decay': {
-    url: VASCAK_BASE + 'jadro_rozpad',
+    url: vascakCanvas('jadro_rozpad'),
     title: '☢️ Vascak.cz: Radioaktiv Yemirilish Qonuni',
     desc: "Radioaktiv yadrolar sonining vaqt bo'yicha eksponensial kamayishi va yarim yemirilish davrining vizual modeli.",
     eqs: "$$N(t) = N_0 \\, 2^{-t/T_{1/2}}, \\qquad \\lambda = \\frac{\\ln 2}{T_{1/2}}$$",
@@ -109,7 +111,7 @@ const NUCLEAR_ONLINE_SIMS = {
     ]
   },
   'vascak-reactions': {
-    url: VASCAK_BASE + 'jadro_reakce',
+    url: vascakCanvas('jadro_reakce'),
     title: '💥 Vascak.cz: Yadro Reaksiyasi',
     desc: "Neytron ta'sirida og'ir yadroning bo'linishi, bo'linish mahsulotlari va yangi neytronlarning ajralishi.",
     eqs: "$$^{235}_{92}\\text{U} + ^{1}_{0}n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3\\,^{1}_{0}n$$",
@@ -120,7 +122,7 @@ const NUCLEAR_ONLINE_SIMS = {
     ]
   },
   'vascak-radiation': {
-    url: VASCAK_BASE + 'jadro_zareni',
+    url: vascakCanvas('jadro_zareni'),
     title: '🛡️ Vascak.cz: Radioaktiv Nurlanish',
     desc: "$\\alpha$, $\\beta$ va $\\gamma$ nurlanishlarning magnit maydonda og'ishi va turli materiallardan o'tish qobiliyati.",
     eqs: "$$\\alpha = {}^{4}_{2}\\text{He}^{2+}, \\quad \\beta^- = e^-, \\quad \\gamma = \\text{foton}$$",
@@ -131,23 +133,23 @@ const NUCLEAR_ONLINE_SIMS = {
     ]
   },
   'vascak-fusion': {
-    url: VASCAK_INDEX,
-    title: '🌌 Vascak.cz: Termoyadroviy Sintez',
-    desc: "Vascak.cz animatsiyalar ro'yxatining \"Nuclear physics\" bo'limidan termoyadroviy sintezga oid animatsiyani toping (aniq ichki havola hali tasdiqlanmagan).",
-    eqs: "$$^{2}_{1}\\text{H} + ^{3}_{1}\\text{H} \\rightarrow ^{4}_{2}\\text{He} + ^{1}_{0}n + 17.6\\text{ MeV}$$",
+    url: 'sims/quyosh-sintezi.html',
+    title: "🌌 Quyosh Sintezi: Proton-Proton (pp-I) Zanjiri",
+    desc: "Quyosh yadrosida vodorodning geliyga aylanishi: uch bosqichli pp-I zanjiri, pozitron, neytrino va gamma-kvant ajralishi hamda reaksiya tezligining haroratga kuchli bog'liqligi (portalning o'z reklamasiz HTML5 simulyatsiyasi).",
+    eqs: "$$4\\,^{1}_{1}\\text{H} \\rightarrow ^{4}_{2}\\text{He} + 2e^+ + 2\\nu_e + 26.7\\text{ MeV}$$",
     tasks: [
-      "1. Ro'yxatdan \"Nuclear physics\" bo'limini oching.",
-      "2. Sintez uchun nega juda yuqori harorat (Kulon to'sig'ini yengish) kerakligini tushuntiring.",
-      "3. 17.6 MeV energiyaning He-4 (3.5 MeV) va neytron (14.1 MeV) orasida taqsimlanishini tahlil qiling."
+      "1. Uch bosqichdan qaysi biri eng sekin kechishini kuzating va sababini (kuchsiz o'zaro ta'sir) tushuntiring.",
+      "2. Haroratni 10 dan 20 mln K gacha oshirib, ⁴He hosil bo'lish tezligi qanday o'zgarishini qayd eting.",
+      "3. Bitta ⁴He yadrosi uchun ajralgan energiyani 26.7 MeV bilan solishtiring (neytrinolar olib ketgan qismni hisobga oling)."
     ]
   },
   'vascak-series': {
-    url: VASCAK_INDEX,
+    url: vascakCanvas('jadro_rady'),
     title: '📜 Vascak.cz: Radioaktiv Qatorlar',
-    desc: "Vascak.cz animatsiyalar ro'yxatining \"Nuclear physics\" bo'limidan radioaktiv qatorlarga oid animatsiyani toping (aniq ichki havola hali tasdiqlanmagan).",
+    desc: "Og'ir radioaktiv yadrolarning ketma-ket $\\alpha$- va $\\beta^-$-yemirilishlar orqali barqaror qo'rg'oshin izotopiga aylanish zanjiri.",
     eqs: "$$^{238}_{92}\\text{U} \\rightarrow \\dots \\rightarrow ^{206}_{82}\\text{Pb} \\quad (8\\alpha,\\ 6\\beta^-)$$",
     tasks: [
-      "1. Ro'yxatdan \"Nuclear physics\" bo'limini oching.",
+      "1. Qatorning boshlang'ich va oxirgi izotopini aniqlang.",
       "2. U-238 qatorida nechta $\\alpha$ va $\\beta^-$ yemirilish borligini $A$ va $Z$ balansidan hisoblang.",
       "3. Har bir $\\alpha$-yemirilishda $A$ 4 ga, $Z$ 2 ga kamayishini tekshiring."
     ]
