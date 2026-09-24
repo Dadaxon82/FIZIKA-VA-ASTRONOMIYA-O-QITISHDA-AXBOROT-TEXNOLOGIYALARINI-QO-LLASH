@@ -36,7 +36,7 @@
         <li><a href="lecture11.html" class="nav-link">11-Modul: Masofaviy Ta'lim</a></li>
         <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika & Pipeline</a></li>
         <li><a href="lecture13.html" class="nav-link">13-Modul: Termodinamika & Stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio Sintez</a></li>
         <li><a href="lecture15.html" class="nav-link active">15-Modul: Yadro Fizikasi & Capstone</a></li>
         <li><a href="lab1.html" class="nav-link">🧪 1-Laboratoriya</a></li>
       </ul>
@@ -73,7 +73,7 @@
       <li><a href="lecture11.html" class="drawer-link">🎓 11-Modul: Masofaviy Ta'lim</a></li>
       <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
       <li><a href="lecture13.html" class="drawer-link">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio</a></li>
+      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
       <li><a href="lecture15.html" class="drawer-link active">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
       <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
@@ -194,8 +194,8 @@
         <div class="citation-box">
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Ta'limiy Diagnostika Asosi (1-Bo'lim):</div>
           <p class="citation-text">
-            <strong>Krane, K. S. (1987).</strong> <em>Introductory Nuclear Physics</em> (3rd ed.). John Wiley & Sons. <br>
-            <em>Iqtibos mazmuni:</em> Yadro fizikasi qonuniyatlarini o'qitishda stoxastik yemirilish va zanjirli bo'linish modellarining vizual dinamikasi talabalarning abstrakt kvant tafakkurini rivojlantirishda eng samarali vositadir.
+            <strong>Krane, K. S. (1988).</strong> <em>Introductory Nuclear Physics</em>. John Wiley & Sons.<br>
+            <em>Manba mazmuni:</em> Yadro fizikasining asosiy universitet darsligi: radioaktiv yemirilish qonuni (6-bob), $\alpha$-, $\beta$- va $\gamma$-yemirilish (8–10-boblar), yadro bo'linishi (13-bob) va termoyadroviy sintez (14-bob). Ushbu bo'limdagi klaster traektoriyalarining fizik mazmuni shu darslikka tayanadi.
           </p>
         </div>
       </div>
@@ -229,7 +229,7 @@
             <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">2. PhET "Radioactive Dating"</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
               • <strong>Stoxastik Yemirilish:</strong> Har bir yadro uchun $\Delta t$ vaqt oralig'ida yemirilish ehtimolligi $P = 1 - e^{-\lambda \Delta t}$.<br>
-              • <strong>Izotopik Tahlil:</strong> Uglerod-14 va Uran-238 orqali arxeologik yoshni hisoblash.
+              • <strong>Izotopik Tahlil:</strong> Uglerod-14 ($T_{1/2} \approx 5730$ yil) orqali arxeologik, Uran-238 ($T_{1/2} \approx 4.47 \cdot 10^9$ yil) orqali geologik yoshni hisoblash.
             </p>
           </div>
 
@@ -246,7 +246,8 @@
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Teskari Muhandislik Asosi (2-Bo'lim):</div>
           <p class="citation-text">
             <strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" class="citation-link">https://doi.org/10.1126/science.1161948</a><br>
-            <em>Iqtibos mazmuni:</em> Virtual yadro simulyatsiyalari talabalarda atom stansiyalari xavfsizligi va zanjirli reaksiyalarning jismoniy mexanizmini to'liq tushunishga xizmat qiladi.
+            <em>Manba mazmuni:</em> PhET simulyatsiyalarini loyihalash tamoyillari: ko'zga ko'rinmas jarayonlarni vizuallashtirish, darhol qayta aloqa beruvchi interaktiv boshqaruv va talabaning mustaqil tadqiqotini rag'batlantirish orqali konseptual tushunishni chuqurlashtirish.<br>
+            <em>Eslatma:</em> PhET'ning <em>Nuclear Fission</em>, <em>Radioactive Dating Game</em> va <em>Alpha Decay</em> simulyatsiyalari eski Java versiyada mavjud; brauzerda (HTML5) ishlaydigan eng yaqin muqobil — <em>Build a Nucleus</em> (7-bo'limdagi jonli laboratoriya).
           </p>
         </div>
       </div>
@@ -340,8 +341,8 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
         <div class="citation-box">
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Yadroviy Modellashtirish Asosi (3-Bo'lim):</div>
           <p class="citation-text">
-            <strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I & III</em>. Basic Books. <a href="https://www.feynmanlectures.caltech.edu" target="_blank" class="citation-link">https://www.feynmanlectures.caltech.edu</a><br>
-            <em>Iqtibos mazmuni:</em> Kvant-yadroviy jarayonlarni diskret zarrachalar va Monte-Karlo stoxastikasi orqali modellashtirish mikrodunyo qonuniyatlarining tabiatiga eng mos keluvchi usuldir.
+            <strong>Metropolis, N., & Ulam, S. (1949).</strong> <em>The Monte Carlo Method</em>. Journal of the American Statistical Association, 44(247), 335–341. <a href="https://doi.org/10.1080/01621459.1949.10483310" target="_blank" class="citation-link">https://doi.org/10.1080/01621459.1949.10483310</a><br>
+            <em>Manba mazmuni:</em> Monte-Karlo usulining asos soluvchi maqolasi: tasodifiy sonlar yordamida neytronlar ko'payishi kabi stoxastik jarayonlarni statistik modellashtirish. Yuqoridagi <code>simulateRadioactiveDecay</code> va <code>updateFissionChainReaction</code> funksiyalari aynan shu yondashuvga asoslangan.
           </p>
         </div>
       </div>
@@ -387,8 +388,8 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
 [ANTIGRAVITY-AGENT] >> Initializing Nuclear Physics & Capstone Pipeline Telemetry...
 [AUDIT: BARYON-NUMBER] Initial A=236 (U-235+n) -> Final A=141(Ba) + 92(Kr) + 3(n) = 236 -> [CONSERVED 100%]
 [AUDIT: CHARGE-BALANCE] Initial Z=92 -> Final Z=56(Ba) + 36(Kr) = 92 -> [CONSERVED 100%]
-[ENERGY-AUDIT] Fission Mass Defect: Δm = 0.215 amu -> Energy Released: Q = 200.2 MeV -> [DRIFT 0.0000%]
-[CONTROL-ROD-CHECK] Rod Depth: 20% | Multiplication Factor k = 1.05 -> [STEADY CRITICAL REGIME]
+[ENERGY-AUDIT] Fission Mass Defect: Δm = 0.1860 u -> Prompt Q = 173.3 MeV (+ fragment β/γ decays ≈ 200 MeV total) -> [DRIFT 0.0000%]
+[CONTROL-ROD-CHECK] Rod Depth: 20% | Multiplication Factor k = 1.000 -> [STEADY CRITICAL REGIME]
 [STATUS] ALL NUCLEAR DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.</pre>
         </div>
 
@@ -396,7 +397,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Loyiha Monitoringi Asosi (4-Bo'lim):</div>
           <p class="citation-text">
             <strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley. <br>
-            <em>Iqtibos mazmuni:</em> Kvant va yadro fizikasi modellarida saqlanish qonunlarining sonli verifikatsiyasi simulyatsiyaning ilmiy haqiqiyligini kafolatlaydi.
+            <em>Manba mazmuni:</em> 42-bob (<em>Nuclear Physics</em>) va 43-bob (<em>Energy from the Nucleus</em>): yadro reaksiyalarida massa soni $A$ va zaryad soni $Z$ saqlanishi, $Q = \Delta m c^2$ energiya balansi hamda reaktorning ko'payish koeffitsiyenti $k$ — telemetriya auditidagi tekshiruvlarning nazariy asosi.
           </p>
         </div>
       </div>
@@ -472,7 +473,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Baholash Rubrikasi Asosi (5-Bo'lim):</div>
           <p class="citation-text">
             <strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href="https://doi.org/10.1007/s11092-008-9068-5" target="_blank" class="citation-link">https://doi.org/10.1007/s11092-008-9068-5</a><br>
-            <em>Iqtibos mazmuni:</em> Aniq rubrikalar talabaga o'z mustaqil loyihasi ustida maqsadli ishlash va yuqori akademik sifatga erishish imkoniyatini yaratadi.
+            <em>Manba mazmuni:</em> Shakllantiruvchi baholashning besh asosiy strategiyasi, jumladan o'quv maqsadlari va muvaffaqiyat mezonlarini talabaga oldindan aniq tushuntirish — Capstone rubrikasini himoyadan oldin e'lon qilishning nazariy asosi.
           </p>
         </div>
       </div>
@@ -511,8 +512,9 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
             <h4 style="color: var(--accent-rose); margin-bottom: 12px;">🛡️ Undetectable AI & Akademik Halollik Nazorati:</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
               • <strong>Majburiy Talab:</strong> Talaba AI yozgan umumiy matnlarni o'zining shaxsiy virtual tajriba o'lchovlari, formulalari va tahlillari bilan boyitishi shart.<br>
-              • <strong>AI Detektor Filtrlari:</strong> Loyiha hisoboti Undetectable AI, Turnitin AI va GPTZero orqali tekshiriladi. Mustaqil mualliflik ulushi <strong>85%+</strong> bo'lishi kafolatlanadi.<br>
-              • <strong>Plagiatga Qarshi:</strong> Qo'llanilgan barcha ilmiy manbalar va AI vositalariga APA 7 standarti bo'yicha havola keltiriladi.
+              • <strong>AI Detektor Filtrlari:</strong> Loyiha hisoboti Undetectable AI, Turnitin AI va GPTZero orqali tekshiriladi. Mustaqil mualliflik ulushi <strong>85%+</strong> bo'lishi talab etiladi; biroq detektor natijasi yagona dalil emas — loyiha jarayoni (kod tarixi, qoralamalar, himoya nutqi) ham baholanadi.<br>
+              • <strong>Plagiatga Qarshi:</strong> Qo'llanilgan barcha ilmiy manbalar va AI vositalariga APA 7 standarti bo'yicha havola keltiriladi.<br>
+              • <strong>Muhim Eslatma:</strong> Undetectable AI xizmati asosan AI-matnni "insoniylashtirish" (detektorlarni chetlab o'tish) vositasi sifatida tanilgan. Loyihada undan faqat AI-detektor moduli sifatida foydalaniladi; hisobot matnini "humanizer" orqali qayta yozdirish akademik halollikni buzish hisoblanadi.
             </p>
           </div>
         </div>
@@ -520,8 +522,10 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
         <div class="citation-box">
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar & Akademik Halollik Asosi (6-Bo'lim):</div>
           <p class="citation-text">
-            <strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292. <a href="https://doi.org/10.1007/s10648-019-09465-5" target="_blank" class="citation-link">https://doi.org/10.1007/s10648-019-09465-5</a><br>
-            <em>Iqtibos mazmuni:</em> Sun'iy intellekt vositalari bilan ishlashda talabaning mustaqil fikrlashi va generatsiya qilingan ma'lumotlarni tanqidiy tahlil qilishi kognitiv chuqurlikni va haqiqiy amaliy kompetensiyani ta'minlaydi.
+            <strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href="https://doi.org/10.1007/s40979-023-00146-z" target="_blank" class="citation-link">https://doi.org/10.1007/s40979-023-00146-z</a><br>
+            <em>Manba mazmuni:</em> 14 ta AI-detektor (jumladan Turnitin) sinovdan o'tkazilgan: vositalar na aniq, na ishonchli ekani, matnni qayta ifodalash (obfuscation) esa aniqlikni keskin pasaytirishi ko'rsatilgan. Shu sababli detektor foizi akademik halollikning yagona dalili sifatida qabul qilinmaydi.<br><br>
+            <strong>Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href="https://doi.org/10.1080/14703297.2023.2190148" target="_blank" class="citation-link">https://doi.org/10.1080/14703297.2023.2190148</a><br>
+            <em>Manba mazmuni:</em> Generativ AI davrida akademik halollikni ta'minlash strategiyalari: aniq qoidalar, jarayonga yo'naltirilgan topshiriqlar va og'zaki himoya.
           </p>
         </div>
       </div>
@@ -663,7 +667,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
             <div style="width: 100%; font-size: 0.78rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px;">🧪 PhET Interactive Simulations (HTML5):</div>
             <button class="btn btn-sm btn-primary nuclear-online-sim-btn active" data-sim="phet-fission" onclick="switchNuclearOnlineSim('phet-fission')">
-              ☢️ PhET: Build a Nucleus (Yadro Sintezi)
+              ☢️ PhET: Build a Nucleus (Yadro Tuzilishi)
             </button>
             <button class="btn btn-sm btn-secondary nuclear-online-sim-btn" data-sim="phet-decay" onclick="switchNuclearOnlineSim('phet-decay')">
               ⏳ PhET: Isotopes & Dating (Izotoplar)
@@ -704,7 +708,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
               ☢️ PhET Interactive Simulations: Build a Nucleus (Atom Yadrosi Sintezi & Bog'lanish)
             </h4>
             <p id="nuclear-sim-desc" style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6;">
-              Atom yadrosining proton va neytronlardan tuzilishi, yadro barqarorlik oroli (Island of Stability), bog'lanish energiyasi va radioaktiv yemirilish/bo'linish chegaralarini o'rganish.
+              Atom yadrosining proton va neytronlardan tuzilishi, nuklidlar xaritasidagi barqarorlik yo'lagi (Band of Stability), bog'lanish energiyasi va radioaktiv yemirilish/bo'linish chegaralarini o'rganish.
             </p>
             <div id="nuclear-sim-eqs" style="background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-amber); margin-bottom: 14px;">
               $$E_b = [Z m_p + (A-Z) m_n - M(A,Z)] c^2 = \Delta m c^2, \quad ^{235}_{92}\text{U} + n \rightarrow \text{Bo'linish}$$
@@ -754,25 +758,31 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
         <button id="btn-check-quiz" class="btn btn-primary" onclick="checkNuclearQuiz()">✅ Natijani Tekshirish</button>
         <div id="quiz-result" style="margin-top: 14px; font-weight: bold; font-size: 1rem; display: none;"></div>
 
-        <!-- 16 APA 7th Edition Bibliography -->
+        <!-- 20 APA 7th Edition Bibliography -->
         <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 35px 0;">
         <h3 style="color: var(--accent-emerald); margin-bottom: 16px;">📚 15-Modul Bo'yicha Nufuzli Ilmiy va Didaktik Manbalar (APA 7th Edition):</h3>
         
         <ol style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
-          <li style="margin-bottom: 8px;"><strong>Krane, K. S. (1987).</strong> <em>Introductory Nuclear Physics</em> (3rd ed.). John Wiley & Sons.</li>
-          <li style="margin-bottom: 8px;"><strong>Griffiths, D. J. (2018).</strong> <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press.</li>
-          <li style="margin-bottom: 8px;"><strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I & III</em>. Basic Books. <a href="https://www.feynmanlectures.caltech.edu" target="_blank" class="citation-link">https://www.feynmanlectures.caltech.edu</a></li>
-          <li style="margin-bottom: 8px;"><strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" class="citation-link">https://doi.org/10.1126/science.1161948</a></li>
+          <li style="margin-bottom: 8px;"><strong>Krane, K. S. (1988).</strong> <em>Introductory Nuclear Physics</em>. John Wiley & Sons.</li>
+          <li style="margin-bottom: 8px;"><strong>Lamarsh, J. R., & Baratta, A. J. (2001).</strong> <em>Introduction to Nuclear Engineering</em> (3rd ed.). Prentice Hall.</li>
+          <li style="margin-bottom: 8px;"><strong>Chen, F. F. (2016).</strong> <em>Introduction to Plasma Physics and Controlled Fusion</em> (3rd ed.). Springer. <a href="https://doi.org/10.1007/978-3-319-22309-4" target="_blank" class="citation-link">https://doi.org/10.1007/978-3-319-22309-4</a></li>
+          <li style="margin-bottom: 8px;"><strong>Griffiths, D. J., & Schroeter, D. F. (2018).</strong> <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781316995433" target="_blank" class="citation-link">https://doi.org/10.1017/9781316995433</a></li>
           <li style="margin-bottom: 8px;"><strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.</li>
-          <li style="margin-bottom: 8px;"><strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781316941355" target="_blank" class="citation-link">https://doi.org/10.1017/9781316941355</a></li>
+          <li style="margin-bottom: 8px;"><strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics</em> (New millennium ed., Vols. I & III). Basic Books. <a href="https://www.feynmanlectures.caltech.edu" target="_blank" class="citation-link">https://www.feynmanlectures.caltech.edu</a></li>
+          <li style="margin-bottom: 8px;"><strong>Einstein, A. (1905).</strong> <em>Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?</em> Annalen der Physik, 18(13), 639–641. <a href="https://doi.org/10.1002/andp.19053231314" target="_blank" class="citation-link">https://doi.org/10.1002/andp.19053231314</a></li>
+          <li style="margin-bottom: 8px;"><strong>Metropolis, N., & Ulam, S. (1949).</strong> <em>The Monte Carlo Method</em>. Journal of the American Statistical Association, 44(247), 335–341. <a href="https://doi.org/10.1080/01621459.1949.10483310" target="_blank" class="citation-link">https://doi.org/10.1080/01621459.1949.10483310</a></li>
+          <li style="margin-bottom: 8px;"><strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" class="citation-link">https://doi.org/10.1126/science.1161948</a></li>
+          <li style="margin-bottom: 8px;"><strong>PhET Interactive Simulations. (n.d.).</strong> <em>Build a Nucleus</em> [HTML5 simulyatsiya]. University of Colorado Boulder. <a href="https://phet.colorado.edu/en/simulations/build-a-nucleus" target="_blank" class="citation-link">https://phet.colorado.edu/en/simulations/build-a-nucleus</a></li>
+          <li style="margin-bottom: 8px;"><strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations: Nuclear Physics</em> [HTML5 animatsiyalar]. Vascak.cz. <a href="https://www.vascak.cz/physicsanimations.php" target="_blank" class="citation-link">https://www.vascak.cz/physicsanimations.php</a></li>
           <li style="margin-bottom: 8px;"><strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305–308. <a href="https://doi.org/10.1126/science.1230579" target="_blank" class="citation-link">https://doi.org/10.1126/science.1230579</a></li>
-          <li style="margin-bottom: 8px;"><strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87–105.</li>
-          <li style="margin-bottom: 8px;"><strong>Vascak, V. (2024).</strong> <em>Physics Animations & Nuclear Physics Laboratory</em>. Vascak Education Portal. <a href="https://www.vascak.cz/physicsanimations.php" target="_blank" class="citation-link">https://www.vascak.cz/physicsanimations.php</a></li>
-          <li style="margin-bottom: 8px;"><strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292.</li>
-          <li style="margin-bottom: 8px;"><strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31.</li>
-          <li style="margin-bottom: 8px;"><strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136–153.</li>
-          <li style="margin-bottom: 8px;"><strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64–70.</li>
-          <li style="margin-bottom: 8px;"><strong>Einstein, A. (1905).</strong> <em>Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?</em> Annalen der Physik, 18(13), 639–641.</li>
+          <li style="margin-bottom: 8px;"><strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136–153. <a href="https://doi.org/10.1016/j.compedu.2011.07.017" target="_blank" class="citation-link">https://doi.org/10.1016/j.compedu.2011.07.017</a></li>
+          <li style="margin-bottom: 8px;"><strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781316941355" target="_blank" class="citation-link">https://doi.org/10.1017/9781316941355</a></li>
+          <li style="margin-bottom: 8px;"><strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292. <a href="https://doi.org/10.1007/s10648-019-09465-5" target="_blank" class="citation-link">https://doi.org/10.1007/s10648-019-09465-5</a></li>
+          <li style="margin-bottom: 8px;"><strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2–3), 87–105. <a href="https://doi.org/10.1016/S1096-7516(00)00016-6" target="_blank" class="citation-link">https://doi.org/10.1016/S1096-7516(00)00016-6</a></li>
+          <li style="margin-bottom: 8px;"><strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href="https://doi.org/10.1007/s11092-008-9068-5" target="_blank" class="citation-link">https://doi.org/10.1007/s11092-008-9068-5</a></li>
+          <li style="margin-bottom: 8px;"><strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64–70. <a href="https://doi.org/10.1207/s15430421tip4102_2" target="_blank" class="citation-link">https://doi.org/10.1207/s15430421tip4102_2</a></li>
+          <li style="margin-bottom: 8px;"><strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href="https://doi.org/10.1007/s40979-023-00146-z" target="_blank" class="citation-link">https://doi.org/10.1007/s40979-023-00146-z</a></li>
+          <li style="margin-bottom: 8px;"><strong>Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href="https://doi.org/10.1080/14703297.2023.2190148" target="_blank" class="citation-link">https://doi.org/10.1080/14703297.2023.2190148</a></li>
         </ol>
       </div>
     </section>
