@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radioaktiv Qatorlar</title>
+  <style>
+    :root {
+      --bg: #050816; --panel: #0B1120; --border: rgba(148,163,184,0.18);
+      --text: #E2E8F0; --muted: #94A3B8; --alpha: #F43F5E; --beta: #38BDF8; --stable: #34D399; --cur: #FBBF24;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { display: flex; flex-direction: column; overflow: hidden; }
+    header { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+    h1 { font-size: 1rem; margin: 0; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 0.85rem; color: var(--muted); }
+    select, button { background: #1E293B; color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; font: inherit; cursor: pointer; }
+    button:hover, select:hover { border-color: #38BDF8; }
+    main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 320px; min-height: 0; }
+    #stage { position: relative; min-height: 0; }
+    canvas { width: 100%; height: 100%; display: block; }
+    aside { border-left: 1px solid var(--border); background: var(--panel); padding: 12px; overflow-y: auto; font-size: 0.82rem; line-height: 1.55; }
+    aside h2 { font-size: 0.8rem; margin: 12px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    aside h2:first-child { margin-top: 0; }
+    .cur { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.35); border-radius: 8px; padding: 10px; }
+    .cur .name { font-size: 1.5rem; font-weight: 700; font-family: ui-monospace, monospace; color: var(--cur); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .stat { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px; text-align: center; }
+    .stat b { display: block; font-family: ui-monospace, monospace; font-size: 1rem; }
+    .stat span { font-size: 0.66rem; color: var(--muted); text-transform: uppercase; }
+    table { width: 100%; border-collapse: collapse; font-family: ui-monospace, monospace; font-size: 0.74rem; }
+    td { padding: 3px 4px; border-bottom: 1px solid var(--border); }
+    tr.done td { color: var(--muted); }
+    tr.now td { color: var(--cur); font-weight: 700; }
+    .a { color: var(--alpha); } .b { color: var(--beta); } .s { color: var(--stable); }
+    .note { color: var(--muted); font-size: 0.74rem; }
+    @media (max-width: 760px) {
+      body { overflow: auto; }
+      main { grid-template-columns: 1fr; }
+      #stage { height: 58vh; }
+      aside { border-left: 0; border-top: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📜 Radioaktiv qatorlar: N–Z diagrammasida yemirilish zanjiri</h1>
+    <div class="controls">
+      <select id="series">
+        <option value="u238">Uran qatori (U-238 → Pb-206)</option>
+        <option value="th232">Toriy qatori (Th-232 → Pb-208)</option>
+      </select>
+      <button id="prev">◀ Orqaga</button>
+      <button id="next">Keyingi yemirilish ▶</button>
+      <button id="auto">⏵ Avto</button>
+      <button id="reset">↺ Boshidan</button>
+    </div>
+  </header>
+  <main>
+    <div id="stage"><canvas id="c"></canvas></div>
+    <aside>
+      <h2>Joriy yadro</h2>
+      <div class="cur">
+        <div class="name" id="curName">²³⁸U</div>
+        <div id="curInfo"></div>
+      </div>
+
+      <h2>Saqlanish balansi</h2>
+      <div class="stats">
+        <div class="stat"><b id="nA" class="a">0</b><span>α-yemirilish</span></div>
+        <div class="stat"><b id="nB" class="b">0</b><span>β⁻-yemirilish</span></div>
+        <div class="stat"><b id="dA">0</b><span>ΔA</span></div>
+      </div>
+      <p class="note" id="balance"></p>
+
+      <h2>Zanjir</h2>
+      <table><tbody id="chain"></tbody></table>
+
+      <p class="note">α-yemirilish: A → A−4, Z → Z−2 (diagrammada chapga-pastga).
+      β⁻-yemirilish: A o'zgarmaydi, Z → Z+1, N → N−1 (o'ngga emas, yuqoriga-chapga).
+      Yarim yemirilish davrlari: NUBASE2020 ma'lumotlari (yaxlitlangan). Qatorlardagi kichik tarmoqlanishlar ko'rsatilmagan;
+      toriy qatorida Bi-212 ning asosiy (64%) β⁻ tarmog'i berilgan.</p>
+    </aside>
+  </main>
+
+  <script>
+  (function () {
+    const SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+    const sup = n => String(n).split('').map(c => SUP[c]).join('');
+
+    // [belgi, A, Z, yemirilish turi, yarim yemirilish davri]
+    const SERIES = {
+      u238: [
+        ['U', 238, 92, 'α', '4.47·10⁹ yil'],
+        ['Th', 234, 90, 'β⁻', '24.1 kun'],
+        ['Pa', 234, 91, 'β⁻', '1.17 min (²³⁴ᵐPa)'],
+        ['U', 234, 92, 'α', '2.46·10⁵ yil'],
+        ['Th', 230, 90, 'α', '7.54·10⁴ yil'],
+        ['Ra', 226, 88, 'α', '1600 yil'],
+        ['Rn', 222, 86, 'α', '3.82 kun'],
+        ['Po', 218, 84, 'α', '3.10 min'],
+        ['Pb', 214, 82, 'β⁻', '26.8 min'],
+        ['Bi', 214, 83, 'β⁻', '19.9 min'],
+        ['Po', 214, 84, 'α', '164 μs'],
+        ['Pb', 210, 82, 'β⁻', '22.2 yil'],
+        ['Bi', 210, 83, 'β⁻', '5.01 kun'],
+        ['Po', 210, 84, 'α', '138.4 kun'],
+        ['Pb', 206, 82, 'barqaror', '—']
+      ],
+      th232: [
+        ['Th', 232, 90, 'α', '1.40·10¹⁰ yil'],
+        ['Ra', 228, 88, 'β⁻', '5.75 yil'],
+        ['Ac', 228, 89, 'β⁻', '6.15 soat'],
+        ['Th', 228, 90, 'α', '1.91 yil'],
+        ['Ra', 224, 88, 'α', '3.63 kun'],
+        ['Rn', 220, 86, 'α', '55.6 s'],
+        ['Po', 216, 84, 'α', '0.145 s'],
+        ['Pb', 212, 82, 'β⁻', '10.6 soat'],
+        ['Bi', 212, 83, 'β⁻', '60.6 min (64%)'],
+        ['Po', 212, 84, 'α', '0.30 μs'],
+        ['Pb', 208, 82, 'barqaror', '—']
+      ]
+    };
+
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const sel = document.getElementById('series');
+    let W = 0, H = 0, chain = SERIES.u238, idx = 0, anim = 1, autoTimer = null;
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const r = canvas.parentElement.getBoundingClientRect();
+      W = Math.max(240, r.width); H = Math.max(240, r.height);
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    const label = n => sup(n[1]) + n[0];
+
+    function bounds() {
+      const Ns = chain.map(n => n[1] - n[2]), Zs = chain.map(n => n[2]);
+      return { nMin: Math.min(...Ns) - 2, nMax: Math.max(...Ns) + 2, zMin: Math.min(...Zs) - 1, zMax: Math.max(...Zs) + 1 };
+    }
+
+    function draw() {
+      ctx.fillStyle = '#050816'; ctx.fillRect(0, 0, W, H);
+      const b = bounds();
+      const padL = 46, padB = 38, padT = 20, padR = 16;
+      const cw = (W - padL - padR) / (b.nMax - b.nMin + 1);
+      const ch = (H - padT - padB) / (b.zMax - b.zMin + 1);
+      const cell = Math.min(cw, ch);
+      const ox = padL + ((W - padL - padR) - cell * (b.nMax - b.nMin + 1)) / 2;
+      const oy = padT + ((H - padT - padB) - cell * (b.zMax - b.zMin + 1)) / 2;
+      const X = N => ox + (N - b.nMin + 0.5) * cell;
+      const Y = Z => oy + (b.zMax - Z + 0.5) * cell;
+
+      // Panjara va o'qlar
+      ctx.strokeStyle = 'rgba(148,163,184,0.08)'; ctx.lineWidth = 1;
+      for (let N = b.nMin; N <= b.nMax + 1; N++) { const x = ox + (N - b.nMin) * cell; ctx.beginPath(); ctx.moveTo(x, oy); ctx.lineTo(x, oy + cell * (b.zMax - b.zMin + 1)); ctx.stroke(); }
+      for (let Z = b.zMin; Z <= b.zMax + 1; Z++) { const y = oy + (Z - b.zMin) * cell; ctx.beginPath(); ctx.moveTo(ox, y); ctx.lineTo(ox + cell * (b.nMax - b.nMin + 1), y); ctx.stroke(); }
+      ctx.fillStyle = '#94A3B8'; ctx.font = '11px ui-monospace, monospace'; ctx.textAlign = 'center';
+      for (let N = b.nMin; N <= b.nMax; N += 2) ctx.fillText(N, X(N), oy + cell * (b.zMax - b.zMin + 1) + 14);
+      ctx.fillText('Neytronlar soni N', W / 2, H - 6);
+      ctx.textAlign = 'right';
+      for (let Z = b.zMin; Z <= b.zMax; Z++) ctx.fillText(Z, ox - 6, Y(Z) + 4);
+      ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText('Zaryad soni Z', 0, 0); ctx.restore();
+
+      // O'tilgan yo'l (strelkalar)
+      for (let i = 0; i < chain.length - 1; i++) {
+        if (i >= idx) {
+          // hali o'tilmagan yemirilishlar xira ko'rsatiladi
+          arrow(chain[i], chain[i + 1], 'rgba(148,163,184,0.18)', 1);
+          continue;
+        }
+        const t = i === idx - 1 ? anim : 1;
+        arrow(chain[i], chain[i + 1], chain[i][3] === 'α' ? '#F43F5E' : '#38BDF8', t);
+      }
+
+      function arrow(a, c, color, t) {
+        const x1 = X(a[1] - a[2]), y1 = Y(a[2]);
+        const x2 = x1 + (X(c[1] - c[2]) - x1) * t, y2 = y1 + (Y(c[2]) - y1) * t;
+        ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+        const ang = Math.atan2(y2 - y1, x2 - x1), h = Math.max(6, cell * 0.22);
+        ctx.beginPath(); ctx.moveTo(x2, y2);
+        ctx.lineTo(x2 - h * Math.cos(ang - 0.4), y2 - h * Math.sin(ang - 0.4));
+        ctx.lineTo(x2 - h * Math.cos(ang + 0.4), y2 - h * Math.sin(ang + 0.4));
+        ctx.closePath(); ctx.fill();
+      }
+
+      // Nuklidlar
+      ctx.textAlign = 'center';
+      chain.forEach((n, i) => {
+        const x = X(n[1] - n[2]), y = Y(n[2]);
+        const s = cell * 0.82;
+        const isCur = i === idx, done = i < idx;
+        ctx.fillStyle = isCur ? 'rgba(251,191,36,0.25)' : n[3] === 'barqaror' ? 'rgba(52,211,153,0.2)' : done ? 'rgba(148,163,184,0.10)' : 'rgba(30,41,59,0.9)';
+        ctx.strokeStyle = isCur ? '#FBBF24' : n[3] === 'barqaror' ? '#34D399' : n[3] === 'α' ? 'rgba(244,63,94,0.7)' : 'rgba(56,189,248,0.7)';
+        ctx.lineWidth = isCur ? 3 : 1.5;
+        ctx.beginPath(); ctx.rect(x - s / 2, y - s / 2, s, s); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = isCur ? '#FDE68A' : done ? '#64748B' : '#E2E8F0';
+        ctx.font = `${Math.max(9, Math.min(15, cell * 0.28))}px ui-monospace, monospace`;
+        ctx.fillText(label(n), x, y + 4);
+      });
+    }
+
+    function renderPanel() {
+      const n = chain[idx];
+      document.getElementById('curName').textContent = label(n);
+      document.getElementById('curInfo').innerHTML =
+        `A = ${n[1]}, Z = ${n[2]}, N = ${n[1] - n[2]}<br>` +
+        (n[3] === 'barqaror'
+          ? '<span class="s">Barqaror yadro — qator tugadi.</span>'
+          : `Yemirilish: <b class="${n[3] === 'α' ? 'a' : 'b'}">${n[3]}</b>, T½ = ${n[4]}`);
+
+      let a = 0, bb = 0;
+      for (let i = 0; i < idx; i++) chain[i][3] === 'α' ? a++ : bb++;
+      document.getElementById('nA').textContent = a;
+      document.getElementById('nB').textContent = bb;
+      document.getElementById('dA').textContent = chain[0][1] - n[1];
+      document.getElementById('balance').innerHTML =
+        `A: ${chain[0][1]} − 4·${a} = ${chain[0][1] - 4 * a} ${chain[0][1] - 4 * a === n[1] ? '✓' : '✗'}<br>` +
+        `Z: ${chain[0][2]} − 2·${a} + ${bb} = ${chain[0][2] - 2 * a + bb} ${chain[0][2] - 2 * a + bb === n[2] ? '✓' : '✗'}`;
+
+      document.getElementById('chain').innerHTML = chain.map((m, i) =>
+        `<tr class="${i < idx ? 'done' : i === idx ? 'now' : ''}"><td>${label(m)}</td><td class="${m[3] === 'α' ? 'a' : m[3] === 'β⁻' ? 'b' : 's'}">${m[3]}</td><td>${m[4]}</td></tr>`
+      ).join('');
+    }
+
+    function go(to) {
+      idx = Math.max(0, Math.min(chain.length - 1, to));
+      anim = 0;
+      renderPanel();
+    }
+
+    function stopAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      document.getElementById('auto').textContent = '⏵ Avto';
+    }
+
+    document.getElementById('next').addEventListener('click', () => { stopAuto(); go(idx + 1); });
+    document.getElementById('prev').addEventListener('click', () => { stopAuto(); go(idx - 1); anim = 1; });
+    document.getElementById('reset').addEventListener('click', () => { stopAuto(); go(0); anim = 1; });
+    document.getElementById('auto').addEventListener('click', () => {
+      if (autoTimer) return stopAuto();
+      if (idx >= chain.length - 1) go(0);
+      document.getElementById('auto').textContent = '⏸ Pauza';
+      autoTimer = setInterval(() => { if (idx >= chain.length - 1) stopAuto(); else go(idx + 1); }, 1200);
+    });
+    sel.addEventListener('change', () => { stopAuto(); chain = SERIES[sel.value]; go(0); anim = 1; });
+    window.addEventListener('resize', resize);
+
+    let last = performance.now();
+    function loop(now) {
+      const dt = (now - last) / 1000; last = now;
+      if (anim < 1) anim = Math.min(1, anim + dt * 2.5);
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    resize(); renderPanel(); requestAnimationFrame(loop);
+  })();
+  </script>
+</body>
+</html>
