@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6-Laboratoriya: Jismlarning Erkin Harakat Diagrammasini (Vektor Kuchlar Tizimini) Tuzish va Uni AI Tasvir Generatorlari Orqali Chizish</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    .prompt-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      resize: vertical;
+      margin-bottom: 8px;
+    }
+    .prompt-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .roadmap-node {
+      position: relative;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 14px;
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tool-grid-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .tool-grid-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 90px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 768px) {
+      .rubric-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      background: rgba(56, 189, 248, 0.05);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .task-step-box {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .proto-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .proto-table th, .proto-table td {
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .proto-table th {
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .proto-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.015);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-Modul: FBD & Shakllantirish</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Lab</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Lab</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Lab</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Lab</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-Lab</a></li>
+        <li><a href="lab6.html" class="nav-link active">🧪 6-Lab</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Lab</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-Modul: FBD Shakllantirish</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link active">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-cyan">6-Laboratoriya Mashg'uloti: Mexanika & AI Vision Integratsiyasi</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        Jismlarning Erkin Harakat Diagrammasini (Vektor Kuchlar Tizimini) Tuzish va Uni AI Tasvir Generatorlari (Midjourney/DALL-E) Orqali Chizish
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Klassik Nyuton mexanikasida har qanday dinamik masalani to'g'ri yechishning poydevori — <strong>Erkin Jism Diagrammasi (Free Body Diagram — FBD)</strong> hisoblanadi. Mazkur laboratoriya mashg'ulotida talabalar berilgan mexanik jarayon (qiya tekislikdagi jism dinamikasi) uchun qo'lda yoki <strong>Midjourney v6 / DALL-E 3</strong> generativ AI vositalari orqali aniq texnik vektor diagrammasini hosil qiladi, so'ngra <strong>Claude 3.5 Sonnet (Vision)</strong> multimodal modeli yordamida diagrammani tahlil qilib, Nyutonning ikkinchi qonuni bo'yicha differensial tenglamalar tizimini va Eyler-Kromer simulyatsiya psevdokodini tuzadi.
+      </p>
+    </div>
+
+    <!-- 4-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 6-Laboratoriya Mashg'uloti Rejasi va Tahliliy Bosqichlari:</h3>
+      <div class="grid-4" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. Diagnostika & Individual Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">TPACK va ZPD asosida FBD tushunchalari, vektorlar proyeksiyasi va AI vositalari bo'yicha diagnostik test hamda shaxsiy yo'riqnoma.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">2. FBD dan Tenglamalar Tizimiga:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Erkin jism diagrammasi qoidalari, Kulon-Amonton ishqalanishi va Midjourney/DALL-E uchun muhandislik prompti.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">3. Claude 3.5 Sonnet (Vision):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Multimodal tasvir tahlili, kuch vektorlarini optik aniqlash, proyeksiyalarni tekshirish va algebraik tenglamalar chiqarish.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">4. Psevdokod va Simulyatsiya:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Differensial tenglamadan simplektik Eyler-Kromer sonli integratsiya psevdokodiga o'tish va Claude orqali audit.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. Diagnostika & Individual Reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. FBD & Tenglamalar Nazariyasi</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Claude 3.5 Vision Tahlili</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Psevdokod & Simulyatsiya Algoritmi</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Interaktiv FBD Dastgohi (Stend)</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Baholash Rubrikasi & Manbalar</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-track">
+        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          1. Sun'iy Intellekt Uchun Kognitiv Diagnostika va Individual Ta'lim Trayektoriyasi
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Erkin Jism Diagrammasi (FBD) — fizika ta'limida talabalar eng ko'p konseptual xatolikka yo'l qo'yadigan sohalardan biridir (<em>McDermott & Shaffer, 2002</em>). Ko'pincha talabalar jism harakat qilayotgan yo'nalishda xayoliy "harakat kuchi" mavjud deb hisoblashadi yoki Nyutonning uchinchi qonunidagi ta'sir-aks-ta'sir juftligini bitta diagrammaga kiritib qo'yishadi. <strong>TPACK</strong> (Mishra & Koehler) va <strong>ZPD</strong> (Vygotskiy) tamoyillari asosida quyidagi 4 ta diagnostik savol talabaning tayyorgarlik darajasini aniqlaydi va Claude 3.5 Sonnet bilan muloqot uchun moslashtirilgan shaxsiy yo'riqnomani yaratadi.
+        </p>
+
+        <!-- Quiz Box -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <h4 style="margin-bottom: 16px; color: #fff;">🧠 Boshlang'ich Kognitiv Diagnostika Testi (4 ta savol):</h4>
+
+          <!-- Savol 1 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">1. Erkin Jism Diagrammasini (Free Body Diagram — FBD) chizishning eng fundamental qoidasi nima?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q1" value="a">
+              <span>A) Jismga ta'sir qiluvchi kuchlar bilan birga, jismning o'zi boshqa jismlarga ko'rsatayotgan barcha ta'sir kuchlari ham ko'rsatiladi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q1" value="b">
+              <span>B) Faqat o'rganilayotgan jismga boshqa obyektlar (Yer, tayanch, ip, sirt) tomonidan ta'sir etuvchi tashqi kuchlar ko'rsatiladi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q1" value="c">
+              <span>C) Jismning tezlik va tezlanish vektorlari ham bevosita kuchlar qatorida bitta nuqtadan chizilishi shart.</span>
+            </label>
+          </div>
+
+          <!-- Savol 2 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">2. Gorizontga nisbatan $\alpha$ burchak ostida qiyalikda turgan jism uchun Dekart koordinata o'qlarini qanday tanlash analitik hisoblashni eng qulaylashtiradi?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q2" value="a">
+              <span>A) $X$ o'qini qiya tekislik sirti bo'ylab pastga (yoki yuqoriga), $Y$ o'qini esa sirtga tik perpendikulyar yo'naltirish orqali (chunki $a_y = 0$).</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q2" value="b">
+              <span>B) Qat'iy gorizontal va vertikal o'qlarni tanlash (chunki og'irlik kuchi $mg$ proyeksiyalarsiz qoladi).</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q2" value="c">
+              <span>C) Koordinata o'qlarining yo'nalishi umuman ahamiyatsiz, kuchlar o'zaro ixtiyoriy burchak ostida qo'shiladi.</span>
+            </label>
+          </div>
+
+          <!-- Savol 3 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">3. Midjourney v6 yoki DALL-E 3 kabi AI tasvir generatorlarida ilmiy jihatdan to'g'ri FBD diagrammasini generatsiya qilishda qaysi uslubiy yondashuv zarur?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q3" value="a">
+              <span>A) Realistik badiiy fotosurat uslubi (3D render, murakkab soyalar va yorug'lik effektlari).</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q3" value="b">
+              <span>B) Anime va fantastik illyustratsiya uslubi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q3" value="c">
+              <span>C) Aniq o'qlar, vektor etiketkalari ($\vec{N}, m\vec{g}, \vec{F}_{fr}$), oq fon va ISO muhandislik chizmasi (vector technical blueprint) uslubi.</span>
+            </label>
+          </div>
+
+          <!-- Savol 4 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">4. Claude 3.5 Sonnet (Vision) multimodal modeliga FBD diagrammasi tasviri yuklanganda, uning asosiy kognitiv vazifasi nimadan iborat?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q4" value="a">
+              <span>A) Faqat tasvir piksellarining ranglarini va kontrastini tahlil qilish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q4" value="b">
+              <span>B) Vektorlarning fazoviy yo'nalishini aniqlash, burchaklarni hisobga olib proyeksiyalarni ajratish va Nyutonning ikkinchi qonuni tenglamalarini hosil qilish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag6_q4" value="c">
+              <span>C) Tasvirni faqat matnli fayl nomiga o'girish.</span>
+            </label>
+          </div>
+
+          <button id="diag6-submit-btn" class="btn btn-primary" style="margin-top: 10px;">
+            Diagnostika Natijasini Hisoblash & Shaxsiy Rejani Shakllantirish →
+          </button>
+        </div>
+
+        <!-- Result Box -->
+        <div id="diag6-result-box" style="display: none; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--accent-cyan); border-radius: var(--radius-md); padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+            <h4 style="color: var(--accent-cyan); margin: 0;">📊 Diagnostika Natijalari va Shaxsiy O'quv Traektoriyasi:</h4>
+            <span id="diag6-score-val" class="badge badge-cyan" style="font-size: 1rem; padding: 6px 14px;">0 / 100</span>
+          </div>
+          <p><strong>Aniqlangan ta'lim klasteri:</strong> <span id="diag6-cluster-val" style="color: var(--accent-emerald); font-weight: 600;">-</span></p>
+          <p id="diag6-plan-desc" style="color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6;">-</p>
+
+          <h5 style="color: #fff; margin-bottom: 8px;">🤖 Claude 3.5 Sonnet Uchun Moslashtirilgan Boshlang'ich Prompt:</h5>
+          <textarea id="diag6-personalized-prompt" class="prompt-textarea" readonly></textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag6-personalized-prompt">
+            📋 Promptdan Nusxa Olish
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: Erkin Jism Diagrammasi va Tenglamalar Nazariyasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-purple);">
+          2. Erkin Jism Diagrammasidan (FBD) Matematik Tenglamalar Tizimiga O'tish
+        </h2>
+
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Mexanika masalalarini kompyuter modellashtirishning birinchi qadami — fizik obyektni atrof-muhitdan <strong>izolyatsiya qilish</strong> va unga ta'sir etayotgan barcha kuchlar majmuini bitta nuqtada (massa markazida) jamlangan vektorlar ko'rinishida tasvirlashdan iborat. Bu usul fanda <strong>Erkin Jism Diagrammasi (Free Body Diagram — FBD)</strong> deb ataladi.
+        </p>
+
+        <!-- Theoretical Core Grid -->
+        <div class="grid-2" style="gap: 20px; margin-bottom: 25px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 12px;">📐 FBD Qoidalari va Kuchlar Balansi:</h4>
+            <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-secondary);">
+              <li><strong>1. Izolyatsiya:</strong> Jism atrofidagi barcha tayanchlar, iplar va sirtlar olib tashlanadi va ularning o'rniga faqat kuch vektorlari qo'yiladi.</li>
+              <li><strong>2. Gravitatsiya kuchi ($\vec{F}_g = m\vec{g}$):</strong> Har doim Yer markaziga, ya'ni qat'iy vertikal pastga yo'naladi.</li>
+              <li><strong>3. Normal reaksiya kuchi ($\vec{N}$):</strong> Sirt tomonidan jismga ta'sir qilib, har doim tegish sirtiga tik (perpendikulyar) yo'naladi.</li>
+              <li><strong>4. Ishqalanish kuchi ($\vec{F}_{fr}$):</strong> Sirt bo'ylab urinma yo'nalishda, jismning nisbiy siljish tendensiyasiga teskari yo'naladi.</li>
+            </ul>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 12px;">⚖️ Qiya Tekislikdagi Vektor Proyeksiyalari:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">
+              Agar gorizont bilan qiyalik burchagi $\alpha$ bo'lsa, og'irlik kuchi koordinata o'qlari bo'yicha ajraladi:
+            </p>
+            <div style="background: rgba(15, 23, 42, 0.8); padding: 12px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.92rem; margin-bottom: 10px;">
+              $$F_{g\parallel} = mg \sin\alpha \quad \text{(Sirt bo'ylab pastga)}$$
+              $$F_{g\perp} = mg \cos\alpha \quad \text{(Sirtga perpendikulyar)}$$
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              Sirtga tik yo'nalishda harakat bo'lmagani uchun: $\sum F_y = N - mg\cos\alpha = 0 \implies N = mg\cos\alpha$.
+            </p>
+          </div>
+        </div>
+
+        <!-- Friction Laws & Dynamic Equations -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+          <h4 style="color: var(--accent-emerald); margin-bottom: 14px;">🔬 Kulon-Amonton Ishqalanish Qonuni va Harakat Dinamikasi:</h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+            Statik va kinetik ishqalanish holatlari jismning qiya tekislikda tinch turishi yoki sirpanib tushishini belgilaydi:
+          </p>
+
+          <table class="proto-table">
+            <thead>
+              <tr>
+                <th>Holat</th>
+                <th>Fizik Shart</th>
+                <th>Ishqalanish Kuchi ($F_{fr}$)</th>
+                <th>Natijaviy Tezlanish ($a$)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tinchlik (Stick)</strong></td>
+                <td>$\tan\alpha \le \mu_s$</td>
+                <td>$F_{fr} = mg\sin\alpha \le \mu_s N$</td>
+                <td>$a = 0$ (Muvozanat holati)</td>
+              </tr>
+              <tr>
+                <td><strong>Kritik Chegara</strong></td>
+                <td>$\tan\alpha = \mu_s$</td>
+                <td>$F_{fr}^{max} = \mu_s mg\cos\alpha$</td>
+                <td>$a = 0$ (Sirpanish boshlanish arafasi)</td>
+              </tr>
+              <tr>
+                <td><strong>Sirpanish (Slip)</strong></td>
+                <td>$\tan\alpha > \mu_s$</td>
+                <td>$F_{fr} = \mu_k mg\cos\alpha$</td>
+                <td>$a = g(\sin\alpha - \mu_k \cos\alpha)$</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- AI Image Generation Prompt Engineering (Midjourney & DALL-E) -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="color: var(--accent-amber); margin-bottom: 14px;">🎨 Midjourney v6 va DALL-E 3 Uchun Texnik FBD Prompt Muhandisligi:</h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+            Generativ AI tasvir modellari badiiy tasvirlar yaratishga o'rgatilgani tufayli, ularga standart so'zlar bilan murojaat qilinsa, fizika qonunlariga zid bo'lgan dekorativ rasmlar hosil qiladi. Aniq ilmiy FBD olish uchun <strong>minimalist ISO texnik chizma</strong> leksikasidan foydalanish shart:
+          </p>
+
+          <div class="prompt-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+              <strong style="color: var(--accent-cyan);">Midjourney v6 Parametrik Prompti (Incline FBD Blueprint):</strong>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="midjourney-fbd-prompt">Nusxa olish</button>
+            </div>
+            <textarea id="midjourney-fbd-prompt" class="prompt-textarea" readonly>A 2D minimalist vector technical diagram of a physics free body diagram (FBD), an inclined plane ramp at 30 degrees angle with a rectangular block mass sliding down. Crisp vector arrows originating from center of mass: gravity force vector labeled "mg" pointing straight down in crimson red, normal force vector labeled "N" pointing perpendicular to ramp surface in sky blue, kinetic friction vector labeled "F_fr" pointing parallel up the slope in amber orange. Dotted component arrows for mg*sin(theta) and mg*cos(theta). Clean white background, crisp technical CAD blueprint style, ISO engineering illustration, high contrast, zero shadows, schematic educational diagram --ar 16:9 --v 6.0 --style raw</textarea>
+          </div>
+
+          <div class="prompt-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+              <strong style="color: var(--accent-purple);">DALL-E 3 (OpenAI ChatGPT Plus) Prompti:</strong>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="dalle-fbd-prompt">Nusxa olish</button>
+            </div>
+            <textarea id="dalle-fbd-prompt" class="prompt-textarea" readonly>Create a clean, precise educational physics vector illustration of a Free Body Diagram (FBD) for a block on an inclined plane. The incline is angled at alpha=30 degrees. The block is on the slope. From the block's center of mass, draw four distinct color-coded vector arrows: 1) Gravity vector mg pointing directly downward vertically (red). 2) Normal force N pointing perpendicular to the ramp surface upwards (blue). 3) Friction force F_friction pointing along the ramp surface upwards (yellow). 4) Dotted projections showing coordinate axes x' parallel to slope and y' normal to slope. Solid pure white background, flat 2D graphic design, textbook diagram style, sharp lines and clear mathematical typography labels.</textarea>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: Claude 3.5 Sonnet (Vision) Tahlili -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-emerald);">
+          3. Diagrammani O'qish va Tenglamalar Tuzish: Claude 3.5 Sonnet (Vision)
+        </h2>
+
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Claude 3.5 Sonnet — hozirgi kunda ilmiy diagrammalar, chizmalar va qo'lyozma formulalarni tahlil qilishda eng yuqori <strong>Spatial-Geometric Reasoning</strong> (fazoviy-geometrik mulohaza) qobiliyatiga ega multimodal AI modeli hisoblanadi (<em>Anthropic, 2024</em>). Talaba qo'lda chizgan yoki DALL-E/Midjourney orqali yaratgan tasvirni yuklaganida, Claude quyidagi 4 bosqichli optik-mantiqiy protokol bo'yicha tahlil yuritadi:
+        </p>
+
+        <!-- Pipeline Stages -->
+        <div class="grid-2" style="gap: 16px; margin-bottom: 25px;">
+          <div class="roadmap-node">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">1-Bosqich: Ob'yekt va Vektor Segmentatsiyasi</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Tasvirdagi qiya tekislik sirtining gorizontga nisbatan burchagini ($\alpha$), jismning joylashuvini hamda undan chiquvchi barcha kuch vektorlarining boshlanish va tugash nuqtalarini aniqlaydi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-left-color: var(--accent-purple);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 8px;">2-Bosqich: Fazoviy Orientatsiya va Burchaklar</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Og'irlik kuchi $\vec{F}_g$ bilan normal o'q orasidagi burchak aynan $\alpha$ ga teng ekanligini geometrik o'xshashlik orqali tekshiradi va trigonometrik proyeksiyalarni ($\sin\alpha$ va $\cos\alpha$) joylashtiradi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-left-color: var(--accent-emerald);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">3-Bosqich: Xatoliklar va Bo'shliqlarni Audit Qilish</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Diagrammada ortiqcha xayoliy kuchlar (masalan, harakat yo'nalishidagi asossiz vektor) bor-yo'qligini, vektorlar yo'nalishining to'g'riligini va masshtab mutanosibligini tekshiradi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-left-color: var(--accent-amber);">
+            <h4 style="color: var(--accent-amber); margin-bottom: 8px;">4-Bosqich: Algebraik Tenglamalar Tizimini Yozish</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Nyutonning ikkinchi qonuni $\sum \vec{F} = m\vec{a}$ ni tanlangan koordinata o'qlari bo'yicha skalyar proyeksiyalar tizimiga aylantiradi va tezlanish uchun analitik ifodani keltiradi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Master Claude Vision Prompts -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 14px;">📸 Claude 3.5 Sonnet (Vision) ga Tasvir Yuklash Uchun Ekspert Promptlari:</h4>
+
+          <div class="prompt-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+              <strong style="color: var(--accent-cyan);">1-Prompt: Diagrammani Optik Dekonstruksiya Qilish va Tenglamalar Chiqarish:</strong>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="claude-vision-p1">Nusxa olish</button>
+            </div>
+            <textarea id="claude-vision-p1" class="prompt-textarea" readonly>Sen fizika va nazariy mexanika bo'yicha xalqaro darajadagi akademik konsultantsan.
+Men senga qiya tekislikdagi jism uchun tuzilgan Erkin Jism Diagrammasi (Free Body Diagram - FBD) tasvirini ilova qilmoqdaman.
+
+Iltimos, ushbu diagrammani quyidagi qat'iy 5 bosqichli algoritm bo'yicha tahlil qilib ber:
+1. DIAGRAMMADAGI KUCHLAR IDENTIFIKATSIYASI: Tasvirdagi barcha vektorlarni aniqla (nomlanishi, qo'yilish nuqtasi, fazoviy yo'nalishi va rangi).
+2. KOORDINATA TIZIMI VA BURCHAKLAR: Qiya tekislikka parallel (X') va perpendikulyar (Y') o'qlar tizimini aniqla. Og'irlik kuchi mg ning ushbu o'qlardagi proyeksiyalarini trigonometrik ifodalab ber.
+3. KONSEPTUAL XATOLIKLAR AUDITI: Chizmada ortiqcha, noo'rin yoki yo'nalishi noto'g'ri chizilgan vektorlar bormi? (Ayniqsa harakat yo'nalishidagi "xayoliy kuch" yoki ishqalanish yo'nalishiga alohida e'tibor qarat).
+4. NYUTONNING IKKINCHI QONUNI TENGLAMALARI:
+   - Y' o'qi bo'yicha: sum(F_y') = N - mg*cos(alpha) = 0
+   - X' o'qi bo'yicha: sum(F_x') = mg*sin(alpha) - F_fr = m*a
+5. TEZLANISH VA CHEGARA SHARTLARI: Jismning to'xtab turishi (Stick) va sirpanib tushishi (Slip) shartlarini mu_s va mu_k koeffitsiyentlari orqali matematik isbotlab ber.</textarea>
+          </div>
+
+          <div class="prompt-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+              <strong style="color: var(--accent-purple);">2-Prompt: Sokratik Metodda Talabaning Qo'l Chizmasini Tekshirish:</strong>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="claude-vision-p2">Nusxa olish</button>
+            </div>
+            <textarea id="claude-vision-p2" class="prompt-textarea" readonly>Iltimos, men ilova qilgan qo'lda chizilgan FBD eskizimga pedagogik mentor sifatida baho ber. To'g'ridan-to'g'ri tayyor yechimni aytmasdan, Sokratik savollar orqali:
+1. Chizmamda qaysi kuch vektori Nyuton mexanikasi talablariga to'liq javob bermayotganini payqashimga yordam beruvchi savol ber;
+2. Burchaklar o'xshashligini isbotlashim uchun yo'naltiruvchi geometrik maslahat taqdim et;
+3. Agar ushbu tizimga tashqi tortish kuchi (masalan, yuqoriga qarata burchak ostida tortuvchi F_tashqi) qo'shilsa, FBD va tenglamalar qanday o'zgarishini so'ra.</textarea>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Psevdokod Generatsiyasi va Simulyatsiya Algoritmi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-amber);">
+          4. Psevdokod Generatsiyasi va Simulyatsiya Algoritmi: Claude 3.5 Sonnet
+        </h2>
+
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          FBD tahlili orqali hosil qilingan analitik differensial tenglama:
+          $$\frac{d^2 x}{dt^2} = g(\sin\alpha - \mu_k \cos\alpha)$$
+          kompyuter muhitida diskret vaqt qadami ($\Delta t$) bo'yicha sonli integratsiyalanadi. Oddiy Eyler usulida energiya sun'iy ravishda ko'payib ketishi mumkinligi sababli, <strong>Simplektik Eyler-Kromer (Euler-Cromer)</strong> integratori qo'llaniladi.
+        </p>
+
+        <!-- Algorithmic Architecture Card -->
+        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 25px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 14px;">💻 Eyler-Kromer Simplektik Integratsiya Psevdokodi:</h4>
+
+          <pre style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); color: #38bdf8; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.55; overflow-x: auto;">
+ALGORITM: InclinePlane_FBD_Simulation
+KIRUVCHI PARAMETRLAR:
+    m          <- Jism massasi (kg)
+    alpha_deg  <- Qiyalik burchagi (daraja)
+    mu_s       <- Statik ishqalanish koeffitsiyenti
+    mu_k       <- Kinetik ishqalanish koeffitsiyenti
+    g          <- 9.80665 (m/s^2)
+    dt         <- Integratsiya vaqt qadami (sekund, masalan 0.016)
+    x0, v0     <- Boshlang'ich koordinata va tezlik
+
+BOSHLANG'ICH HISOB-KITOBLAR:
+    alpha_rad = alpha_deg * PI / 180.0
+    F_gravity = m * g
+    N = F_gravity * cos(alpha_rad)
+    F_parallel = F_gravity * sin(alpha_rad)
+    F_static_max = mu_s * N
+
+HAR BIR VAQT QADAMIDA (Simulyatsiya Tsikli):
+    AGAR (|v| < EPSILON VA F_parallel <= F_static_max) BO'LSA:
+        # Jism tinch turadi (Stick holati)
+        a = 0.0
+        v = 0.0
+        F_friction = F_parallel
+    AKS HOLDA:
+        # Jism harakatlanadi (Slip holati)
+        harakat_yonalishi = sign(v) agar v != 0 aks holda 1
+        F_friction = mu_k * N * harakat_yonalishi
+        F_net = F_parallel - F_friction
+        a = F_net / m
+        
+        # Simplektik Eyler-Kromer yangilanishi:
+        v = v + a * dt
+        x = x + v * dt
+
+CHIQARUVCHI PARAMETRLAR:
+    x (koordinata), v (tezlik), a (tezlanish), N, F_friction, F_net</pre>
+        </div>
+
+        <!-- Verification Prompt for Claude -->
+        <div class="prompt-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+            <strong style="color: var(--accent-emerald);">Claude 3.5 Sonnet Uchun Algoritmik Verifikatsiya va Kod Generatsiyasi Prompti:</strong>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="claude-code-p3">Nusxa olish</button>
+          </div>
+          <textarea id="claude-code-p3" class="prompt-textarea" readonly>Sen tajribali fizik-dasturchi va ilmiy dasturlash mutaxassisisan.
+Biz FBD tahlilidan quyidagi differensial tenglamani chiqardik:
+m * d^2x/dt^2 = m*g*sin(alpha) - mu_k * m*g*cos(alpha) (agar tan(alpha) > mu_s bo'lsa).
+
+Iltimos, ushbu jarayonni JavaScript (HTML5 Canvas uchun) yoki Python (NumPy/Matplotlib) tilida to'liq ishlovchi professional modulga aylantirib ber:
+1. "Stick-Slip" chegaraviy o'tishini silliq modellashtiruvchi shartli mantiqni to'g'ri realizatsiya qil;
+2. Eyler-Kromer simplektik qadamini energiya dreyfini minimallashtiruvchi tarzda yoz;
+3. Grafik interfeysda kuch vektorlari (N, mg, F_fr va ularning proyeksiyalari) real vaqt rejimida kattaligi va yo'nalishiga qarab masshtablanib chizilishi uchun matematik funksiyani taqdim et;
+4. Kodga xalqaro akademik standartdagi to'liq sharhlar (docstrings) berilsin.</textarea>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Interaktiv FBD Dastgohi (Stend) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          5. Interaktiv FBD Dastgohi: Qiya Tekislik va Vektorlar Fazosi Simulyatori
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+          Ushbu interaktiv laboratoriya stendida siz qiya tekislik burchagi ($\alpha$), sirt ishqalanish koeffitsiyenti ($\mu$) hamda jism massasini ($m$) o'zgartirib, real vaqt rejimida jism dinamikasini kuzatishingiz mumkin. Chapdagi dastgohda qiya tekislikdagi harakat va vektorlar ko'rinsa, o'ngdagi alohida darchada <strong>izolyatsiya qilingan klassik FBD diagrammasi</strong> va koordinata o'qlari proyeksiyalari aks etadi.
+        </p>
+
+        <!-- Simulator Controls Bar -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <div class="grid-3" style="gap: 16px; margin-bottom: 14px;">
+            <div>
+              <label style="font-size: 0.88rem; color: var(--text-secondary); display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Qiyalik Burchagi ($\alpha$):</span>
+                <strong id="lab6-angle-val" style="color: var(--accent-amber);">30°</strong>
+              </label>
+              <input type="range" id="lab6-angle-slider" min="0" max="60" step="1" value="30" style="width: 100%;">
+            </div>
+
+            <div>
+              <label style="font-size: 0.88rem; color: var(--text-secondary); display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Ishqalanish Koeffitsiyenti ($\mu$):</span>
+                <strong id="lab6-mu-val" style="color: var(--accent-cyan);">0.25</strong>
+              </label>
+              <input type="range" id="lab6-mu-slider" min="0.0" max="0.8" step="0.01" value="0.25" style="width: 100%;">
+            </div>
+
+            <div>
+              <label style="font-size: 0.88rem; color: var(--text-secondary); display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Jism Massasi ($m$):</span>
+                <strong id="lab6-mass-val" style="color: var(--accent-emerald);">2.0 kg</strong>
+              </label>
+              <input type="range" id="lab6-mass-slider" min="0.5" max="10.0" step="0.5" value="2.0" style="width: 100%;">
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button id="lab6-play-btn" class="btn btn-primary btn-sm">▶ Simulyatsiyani Boshlash</button>
+            <button id="lab6-pause-btn" class="btn btn-secondary btn-sm" disabled>⏸ To'xtatib Turish</button>
+            <button id="lab6-reset-btn" class="btn btn-secondary btn-sm">🔄 Dastlabki Holatga Qaytarish</button>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; margin-left: 14px; cursor: pointer; color: var(--text-secondary);">
+              <input type="checkbox" id="lab6-show-comp-check" checked>
+              <span>Vektor Proyeksiyalarini ($mg\sin\alpha, mg\cos\alpha$) Ko'rsatish</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Dual Canvas Area -->
+        <div class="grid-2" style="gap: 18px; margin-bottom: 20px;">
+          <!-- Canvas 1: Incline Ramp View -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-cyan);">🏔 Qiya Tekislik va Jism Dinamikasi</span>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Real-vaqt Nyuton mexanikasi</span>
+            </div>
+            <canvas id="lab6-incline-canvas" width="460" height="320" style="width: 100%; height: auto; background: #0b1120; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.05);"></canvas>
+          </div>
+
+          <!-- Canvas 2: Isolated FBD View -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-purple);">🎯 Izolyatsiya Qilingan FBD Vektorlar Fazosi</span>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">(X', Y') burilgan o'qlar</span>
+            </div>
+            <canvas id="lab6-fbd-canvas" width="460" height="320" style="width: 100%; height: auto; background: #0b1120; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.05);"></canvas>
+          </div>
+        </div>
+
+        <!-- Telemetry & HUD Panel -->
+        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+          <h4 style="margin-bottom: 12px; color: #fff; font-size: 0.95rem;">📊 Real Vaqtli Datchiklar va Telemetriya Ko'rsatkichlari:</h4>
+          <div class="grid-4" style="gap: 12px; font-family: var(--font-mono); font-size: 0.85rem;">
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #f43f5e;">Og'irlik Kuchi ($F_g$):</span><br>
+              <strong id="hud-lab6-fg" style="font-size: 1.1rem; color: #fff;">19.6 N</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #38bdf8;">Normal Reaksiya ($N$):</span><br>
+              <strong id="hud-lab6-n" style="font-size: 1.1rem; color: #fff;">17.0 N</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #a855f7;">Parallel Og'irlik ($F_{g\parallel}$):</span><br>
+              <strong id="hud-lab6-fpar" style="font-size: 1.1rem; color: #fff;">9.8 N</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #eab308;">Ishqalanish Kuchi ($F_{fr}$):</span><br>
+              <strong id="hud-lab6-ffr" style="font-size: 1.1rem; color: #fff;">4.2 N</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #ec4899;">Natijaviy Kuch ($F_{net}$):</span><br>
+              <strong id="hud-lab6-fnet" style="font-size: 1.1rem; color: #fff;">5.55 N</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #10b981;">Tezlanish ($a$):</span><br>
+              <strong id="hud-lab6-acc" style="font-size: 1.1rem; color: #fff;">2.78 m/s²</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #38bdf8;">Tezlik ($v$):</span><br>
+              <strong id="hud-lab6-vel" style="font-size: 1.1rem; color: #fff;">0.00 m/s</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: #cbd5e1;">Mexanik Holat:</span><br>
+              <strong id="hud-lab6-status" style="font-size: 0.85rem; color: #10b981;">Harakatda</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-emerald);">
+          6. Akademik Baholash Rubrikasi (100 Ballik Tizim) va Ilmiy Manbalar
+        </h2>
+
+        <!-- Interactive Rubric Calculator -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+          <h4 style="margin-bottom: 14px; color: #fff;">🧮 Laboratoriya Ishini Baholash Mezonlari Kalkulyatori:</h4>
+
+          <div class="rubric-row">
+            <div>
+              <strong>1. Erkin Jism Diagrammasi (FBD) tuzilishi va vektorlar to'g'riligi:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Jism izolyatsiyasi, kontakt va masofaviy kuchlarning to'g'ri yo'naltirilishi, koordinata o'qlarining tanlanishi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric6_c1" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="15">Qoniqarli (15 ball)</option>
+                <option value="8">Qoniqarsiz (8 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-cyan);">Max: 25 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>2. AI Tasvir Generatorlari (Midjourney/DALL-E) orqali chizish:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                ISO muhandislik formati, parametrli prompt muhandisligi va ilmiy aniqlikka erishish sifati.
+              </div>
+            </div>
+            <div>
+              <select id="rubric6_c2" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="12">Qoniqarli (12 ball)</option>
+                <option value="5">Qoniqarsiz (5 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-purple);">Max: 20 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>3. Claude 3.5 Sonnet (Vision) bilan tahlil va tenglamalar tizimi:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Tasvirni optik dekonstruksiya qilish, trigonometrik proyeksiyalar audit va Nyuton tenglamalarini to'g'ri chiqarish.
+              </div>
+            </div>
+            <div>
+              <select id="rubric6_c3" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="15">Qoniqarli (15 ball)</option>
+                <option value="8">Qoniqarsiz (8 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-emerald);">Max: 25 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>4. Psevdokod generatsiyasi va Eyler-Kromer simulyatsiyasi:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Stick-Slip shartlarini tekshiruvchi simplektik integratsiya algoritmi va kod verifikatsiyasi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric6_c4" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="12">Qoniqarli (12 ball)</option>
+                <option value="5">Qoniqarsiz (5 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-amber);">Max: 20 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>5. IMRaD formatidagi hisobot sifati va og'zaki himoya:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Kirish, Metod, Natijalar, Muhokama tuzilmasi, ilmiy xulosalar va savol-javobdagi ravonlik.
+              </div>
+            </div>
+            <div>
+              <select id="rubric6_c5" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="10">A'lo (10 ball)</option>
+                <option value="8">Yaxshi (8 ball)</option>
+                <option value="6">Qoniqarli (6 ball)</option>
+                <option value="3">Qoniqarsiz (3 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-cyan);">Max: 10 b.</div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; flex-wrap: wrap; gap: 12px;">
+            <button id="lab6-calc-rubric-btn" class="btn btn-primary">
+              Umumiy Ballni Hisoblash & Akademik Bahoni Aniqlash
+            </button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span id="lab6-total-score" style="font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; color: #fff;">100 / 100</span>
+              <span id="lab6-grade-badge" class="badge badge-emerald" style="font-size: 0.95rem;">A'LO (5)</span>
+            </div>
+          </div>
+          <p id="lab6-rubric-feedback" style="margin-top: 12px; font-size: 0.9rem; color: var(--text-secondary);"></p>
+        </div>
+
+        <!-- Academic Bibliography (APA 7) -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="margin-bottom: 14px; color: var(--accent-cyan);">📚 Butunjahon O'rgimchak To'ri (WWW) Ilmiy Adabiyotlari (APA 7 Standarti):</h4>
+          <ol style="padding-left: 20px; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">
+            <li>
+              <strong>Anthropic.</strong> (2024). <em>The Claude 3.5 Sonnet Model Card and Multimodal Vision System</em>. Anthropic Research. https://www.anthropic.com/claude
+            </li>
+            <li>
+              <strong>Halliday, D., Resnick, R., & Walker, J.</strong> (2018). <em>Fundamentals of Physics</em> (11th ed.). Wiley. [Free Body Diagrams and Inclined Plane Dynamics, Chapter 5-6].
+            </li>
+            <li>
+              <strong>Knight, R. D.</strong> (2016). <em>Physics for Scientists and Engineers: A Strategic Approach with Modern Physics</em> (4th ed.). Pearson. [A Step-by-Step Strategy for Free-Body Diagrams].
+            </li>
+            <li>
+              <strong>McDermott, L. C., & Shaffer, P. S.</strong> (2002). <em>Tutorials in Introductory Physics</em>. Physics Education Group, University of Washington. Prentice Hall.
+            </li>
+            <li>
+              <strong>Mishra, P., & Koehler, M. J.</strong> (2006). Technological pedagogical content knowledge: A framework for teacher knowledge. <em>Teachers College Record</em>, 108(6), 1017–1054.
+            </li>
+            <li>
+              <strong>OpenAI.</strong> (2023). <em>DALL-E 3 System Card and Scientific Diagram Generation Architecture</em>. OpenAI Research. https://openai.com/research/dall-e-3
+            </li>
+            <li>
+              <strong>Hairer, E., Lubich, C., & Wanner, G.</strong> (2006). <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer-Verlag.
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Tab navigatsiyasi gorizontal scrollini yangilash
+    function updateTabsScrollProgress() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      if (!nav || !thumb) return;
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 0) {
+        thumb.style.width = '100%';
+        thumb.style.transform = 'translateX(0)';
+        return;
+      }
+      const ratio = nav.clientWidth / nav.scrollWidth;
+      thumb.style.width = Math.max(ratio * 100, 15) + '%';
+      const progress = nav.scrollLeft / maxScroll;
+      const maxTranslate = nav.clientWidth * (1 - ratio);
+      thumb.style.transform = `translateX(${progress * maxTranslate}px)`;
+    }
+
+    function scrollTabsNav(offset) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.scrollBy({ left: offset, behavior: 'smooth' });
+        setTimeout(updateTabsScrollProgress, 180);
+      }
+    }
+
+    window.switchTab = function(event, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        activeBtn = event.currentTarget;
+      } else {
+        const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (btn) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        }
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          setTimeout(updateTabsScrollProgress, 200);
+        }
+      }
+
+      if (window.renderMathInElement && target) {
+        window.renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+      }
+
+      if (tabId === 'tab-reja5' && window.triggerLab6CanvasRedraw) {
+        setTimeout(window.triggerLab6CanvasRedraw, 50);
+      }
+    };
+    window.openTab = window.switchTab;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollProgress, { passive: true });
+        window.addEventListener('resize', updateTabsScrollProgress);
+        setTimeout(updateTabsScrollProgress, 100);
+      }
+    });
+  </script>
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-lab6-fbd.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>

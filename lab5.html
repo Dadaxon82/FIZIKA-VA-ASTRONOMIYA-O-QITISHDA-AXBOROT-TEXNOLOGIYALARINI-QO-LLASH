@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-Laboratoriya: Deterministik va Stoxastik Modellarni Kompyuter Simulyatsiyalari Asosida Taqqoslash va Ularning O'ziga Xos Xususiyatlarini Vizual Tahlil Qilish</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    .prompt-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      resize: vertical;
+      margin-bottom: 8px;
+    }
+    .prompt-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .roadmap-node {
+      position: relative;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 14px;
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tool-grid-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .tool-grid-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 90px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 768px) {
+      .rubric-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      background: rgba(56, 189, 248, 0.05);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .task-step-box {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .proto-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .proto-table th, .proto-table td {
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .proto-table th {
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .proto-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.015);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Lab</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Lab</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Lab</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Lab</a></li>
+        <li><a href="lab5.html" class="nav-link active">🧪 5-Lab</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-Lab</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Lab</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link active">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-purple">5-Laboratoriya Mashg'uloti: Model Turlari & Kompyuter Simulyatsiyasi</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        Deterministik va Stoxastik Modellarni Kompyuter Simulyatsiyalari Asosida Taqqoslash va Ularning O'ziga Xos Xususiyatlarini Vizual Tahlil Qilish
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Kompyuterda fizik jarayonlarni modellashtirishning ikkita yirik paradigmasi mavjud: qat'iy sabab-oqibat qonuniyatiga bo'ysunuvchi <strong>Deterministik dinamik modellar</strong> (Nyuton mexanikasi, orbital dinamika) hamda tasodifiy ehtimolli fluktuatsiyalarga tayanuvchi <strong>Stoxastik modellar</strong> (gazlarning kinetik nazariyasi, Broun harakati). Mazkur laboratoriya mashg'ulotida talabalar <strong>PhET Interactive Simulations</strong> bazasidagi ikkita etalon simulyatsiyani (<em>«Gravity and Orbits»</em> va <em>«Gas Properties»</em>) tanlab oladi, ularning matematik apparatini, kirish-chiqish parametrlarini qiyoslaydi hamda <strong>Claude 3.5 Sonnet yoki Gemini</strong> yordamida chuqur tahliliy taqqoslash hisobotini tayyorlaydi.
+      </p>
+    </div>
+
+    <!-- 4-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-purple);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 5-Laboratoriya Mashg'uloti Rejasi va Tahliliy Konveyeri:</h3>
+      <div class="grid-4" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. Diagnostika & Individual Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Laplas determinizmi, ergodiklik va statistik fluktuatsiyalar bo'yicha kognitiv diagnostika hamda shaxsiy ta'lim traektoriyasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">2. Model Turlarini Aniqlash & Taqqoslash:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Differensial tenglamalar vs Ehtimollik zichligi, takrorlanuvchanlik va fazaviy fazoning xatti-harakati.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">3. Virtual Baza (PhET Simulations):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">«Gravity and Orbits» va «Gas Properties» simulyatsiyalarining interfeysi, boshqaruv elementlari va o'lchov datchiklari.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">4. Tahlil va Qiyosiy Hisobot (Claude / Gemini):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">8 ta mezonli qiyosiy taqqoslash jadvalini to'ldirish va IMRaD formatidagi ilmiy hisobot loyihasini shakllantirish.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. Diagnostika & Individual Reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Model Turlari Nazariyasi</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Virtual Baza: PhET Simulations</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Tahlil & Qiyosiy Hisobot (AI)</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Interaktiv Dual Dastgoh (Stend)</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Baholash Rubrikasi & Manbalar</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-track">
+        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Sun'iy Intellekt Uchun Diagnostika va Individual Reja</h2>
+          <span class="badge badge-cyan">TPACK Modeli & Vygotskiy ZPD</span>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 15px; margin-bottom: 12px;">1.1. Laboratoriyaning Maqsadi va Kutiladigan Natijalar (Learning Outcomes):</h3>
+        <p style="font-size: 1.02rem; line-height: 1.7; margin-bottom: 16px;">
+          Mazkur laboratoriya mashg'ulotini muvaffaqiyatli bajargan talaba quyidagi ilmiy-metodik ko'nikmalarga ega bo'ladi:
+        </p>
+
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--accent-cyan);">1. Metodologik Kompetensiya:</strong>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.55;">
+              Ixtiyoriy fizik jarayonni model turi bo'yicha (deterministik dinamik yoki stoxastik ehtimolli) mustaqil tasniflay oladi va ularning chegaralarini asoslaydi.
+            </p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--accent-purple);">2. Simulyatsion Ko'nikma:</strong>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.55;">
+              PhET Interactive Simulations interfeysida gravitatsiya orbitalarini va gaz xossalarini mustaqil parametrlar orqali boshqaradi va datchiklar yordamida o'lchov oladi.
+            </p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--accent-emerald);">3. SI-Tahliliy Kompetensiya:</strong>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.55;">
+              Claude 3.5 Sonnet yoki Gemini yordamida modellarning matematik apparatini, ergodik xususiyatlarini va IMRaD hisobotini tizimli shakllantiradi.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 12px;">1.2. Boshlang'ich SI-Kompetensiyalar Diagnostika Testi:</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+          Quyidagi 4 ta diagnostik savolga javob bering. Test natijasi sizning dastlabki tayyorgarlik darajangizni aniqlab, 5-laboratoriya uchun moslashtirilgan sun'iy intellekt yo'riqnomasini (prompt) shakllantiradi:
+        </p>
+
+        <!-- Diagnostika Test Formasi -->
+        <div class="glass-panel" style="padding: 20px; margin-bottom: 25px;">
+          <form id="diag5-form">
+            
+            <!-- Savol 1 -->
+            <div style="margin-bottom: 20px;">
+              <p style="font-weight: 600; color: #fff; margin-bottom: 10px;">
+                1. Deterministik modelning eng muhim fundamental xususiyati nima?
+              </p>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q1" value="a">
+                <span>A) Boshlang'ich shartlar va parametrlar aniq ma'lum bo'lsa, tizimning har bir kelgusi holati 100% bir qiymatli va takrorlanuvchan ravishda aniqlanadi</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q1" value="b">
+                <span>B) Har bir simulyatsiya qayta ishga tushirilganda butunlay tasodifiy yangi natija beradi</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q1" value="c">
+                <span>C) Unda fizik formulalar umuman ishlatilmaydi</span>
+              </label>
+            </div>
+
+            <!-- Savol 2 -->
+            <div style="margin-bottom: 20px;">
+              <p style="font-weight: 600; color: #fff; margin-bottom: 10px;">
+                2. Nima sababdan idishdagi gaz molekulalarining harakati (PhET «Gas Properties») stoxastik model sifatida qaraladi?
+              </p>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q1" value="a">
+                <span>A) Gaz molekulalari Nyuton qonunlariga bo'ysunmagani sababli</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q2" value="b">
+                <span>B) Gaz harorati doimo o'zgarib turishi sababli</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q2" value="c">
+                <span>C) Gigant miqdordagi zarralarning ($N \sim 10^{23}$) xaotik to'qnashuvlari mikroskopik darajada noaniqlik tug'diradi va tizim faqat ehtimollik taqsimotlari (Maksvell-Bolsman) bilan tavsiflanadi</span>
+              </label>
+            </div>
+
+            <!-- Savol 3 -->
+            <div style="margin-bottom: 20px;">
+              <p style="font-weight: 600; color: #fff; margin-bottom: 10px;">
+                3. PhET «Gravity and Orbits» va «Gas Properties» simulyatsiyalari o'rtasidagi asosiy metodologik farq nimadan iborat?
+              </p>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q3" value="a">
+                <span>A) Ikkala simulyatsiya ham mutlaqo bir xil tenglamalardan foydalanadi</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q3" value="b">
+                <span>B) «Gravity and Orbits» — analitik aniq deterministik orbital dinamika, «Gas Properties» esa ko'p zarrali stoxastik kinetik va statistik modeldir</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q3" value="c">
+                <span>C) Gravitatsiya simulyatsiyasi faqat 2D, gaz esa faqat 1D o'lchamda ishlaydi</span>
+              </label>
+            </div>
+
+            <!-- Savol 4 -->
+            <div style="margin-bottom: 22px;">
+              <p style="font-weight: 600; color: #fff; margin-bottom: 10px;">
+                4. Mazkur laboratoriyada Claude 3.5 Sonnet yoki Gemini sun'iy intellekt vositalarining integratsiyasidan ko'zlangan asosiy maqsad nima?
+              </p>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q4" value="a">
+                <span>A) PhET saytiga kirish parollarini buzish</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q4" value="b">
+                <span>B) Faqat tayyor rasm chizib berish</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="diag5_q4" value="c">
+                <span>C) Har ikki modelning matematik apparatini (differensial tenglama vs ehtimollik zichligi), parametrlar sezgirligini chuqur tahlil qilish hamda akademik taqqoslash hisobotini tuzish</span>
+              </label>
+            </div>
+
+            <button type="button" id="diag5-submit-btn" class="btn btn-primary" style="padding: 10px 24px;">
+              🎯 Diagnostika Natijasini Aniqlash va Individual Reja Tuzish
+            </button>
+          </form>
+
+          <!-- Diagnostika Natijasi Bloki -->
+          <div id="diag5-result-box" style="display: none; margin-top: 20px; padding: 18px; border-radius: var(--radius-md); background: rgba(56, 189, 248, 0.08); border: 1px solid var(--accent-cyan);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+              <h4 id="diag5-cluster-val" style="color: var(--accent-cyan); margin: 0;"></h4>
+              <span id="diag5-score-val" class="badge badge-emerald" style="font-size: 0.95rem;"></span>
+            </div>
+            <p id="diag5-plan-desc" style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.65; margin-bottom: 14px;"></p>
+            
+            <label style="font-size: 0.85rem; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 6px;">
+              📋 Shaxsiy SI-Konsultant Uchun Tayyor Yo'riqnoma (Prompt):
+            </label>
+            <textarea id="diag5-personalized-prompt" class="prompt-textarea" readonly style="min-height: 90px;"></textarea>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag5-personalized-prompt">📋 Promptni Nusxalash</button>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Pedagogik Diagnostika (1-Reja):</div>
+          <p class="citation-text">
+            <strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological pedagogical content knowledge: A framework for teacher knowledge</em>. Teachers College Record, 108(6), 1017-1054.<br>
+            <strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.<br>
+            <em>Asosli xulosa:</em> Talabalarning model turlari (deterministik va stoxastik) bo'yicha tafakkurini tashxislash ularda tasodifiylik va qat'iy qonuniyat o'rtasidagi dialektik bog'liqlikni tushunish samaradorligini 45% ga oshiradi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: Model Turlari Nazariyasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2. Model Turlarini Aniqlash va Taqqoslash (Deterministik vs Stoxastik)</h2>
+          <span class="badge badge-purple">Ilmiy Paradigma & Matematik Poydevor</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Fizika fanida real voqelikni kompyuterda ifodalash uchun qo'llaniladigan barcha modellar axborotning noaniqlik darajasiga ko'ra ikkita asosiy toifaga ajratiladi:
+        </p>
+
+        <!-- 2 Ta Model Turi Kartasi -->
+        <div class="grid-2" style="gap: 18px; margin-bottom: 25px;">
+          
+          <div class="tool-grid-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span class="badge badge-cyan">Dinamik & Deterministik</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Nyuton / Kepler</span>
+              </div>
+              <h4 style="color: #fff; margin-bottom: 8px;">1. Deterministik Model (Deterministik Dinamika)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                Tizimning joriy holati ma'lum bir qat'iy matematik formula yoki differensial tenglamalar orqali keyingi holatni 100% kafolatli aniqlaydi. Tasodifiylik elementi mutlaqo mavjud emas. Bir xil boshlang'ich shartlarda simulyatsiya har safar bir xil natija beradi.
+              </p>
+              <div style="margin-top: 10px; padding: 10px; background: rgba(56, 189, 248, 0.05); border-radius: 4px; font-size: 0.84rem; color: var(--accent-cyan);">
+                <strong>Matematik ifodasi:</strong> $\frac{d\vec{r}}{dt} = \vec{v}, \quad \frac{d\vec{v}}{dt} = \frac{\vec{F}(\vec{r})}{m}$<br>
+                <em>Misol:</em> Quyosh atrofida sayyoralarning harakati (PhET «Gravity and Orbits»).
+              </div>
+            </div>
+            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; color: var(--accent-cyan);">
+              💡 <em>Tarixiy asos: Laplas demoni (1814) — butun koinot mexanik soatdek qat'iy harakat qiladi.</em>
+            </div>
+          </div>
+
+          <div class="tool-grid-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span class="badge badge-purple">Ehtimolli & Statistik</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple);">Bolsman / Maksvell</span>
+              </div>
+              <h4 style="color: #fff; margin-bottom: 8px;">2. Stoxastik Model (Ehtimollik Nazariyasi)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                Tizim o'z ichiga tasodifiy o'zgaruvchilarni, ehtimollik taqsimotlarini yoki fluktuatsiyalarni oladi. Tizimning kelgusi holatini yakka zarracha uchun aniq aytib bo'lmaydi, biroq butun ansambl uchun statistik qonuniyatlar (o'rtacha tezlik, bosim, entropiya) qat'iy saqlanadi.
+              </p>
+              <div style="margin-top: 10px; padding: 10px; background: rgba(168, 85, 247, 0.05); border-radius: 4px; font-size: 0.84rem; color: var(--accent-purple);">
+                <strong>Matematik ifodasi:</strong> $f(v) = 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} v^2 \exp\left(-\frac{m v^2}{2 k_B T}\right)$<br>
+                <em>Misol:</em> Idishdagi ideal gaz molekulalari va Broun harakati (PhET «Gas Properties»).
+              </div>
+            </div>
+            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; color: var(--accent-purple);">
+              💡 <em>Tarixiy asos: Maksvell-Bolsman statistik mexanikasi (1877) va Eynshteynning Broun harakati nazariyasi (1905).</em>
+            </div>
+          </div>
+
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">2.1. Fundamental Qiyosiy Taqqoslash Jadvali (8 Mezon):</h3>
+        
+        <table class="proto-table">
+          <thead>
+            <tr>
+              <th>Taqqoslash Mezoni</th>
+              <th>Deterministik Model («Gravity and Orbits»)</th>
+              <th>Stoxastik Model («Gas Properties»)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Matematik apparat</strong></td>
+              <td>Oddiy differensial tenglamalar (Nyutonning gravitatsiya qonuni)</td>
+              <td>Ehtimollik zichligi, Maksvell-Bolsman taqsimoti, Langeven tenglamasi</td>
+            </tr>
+            <tr>
+              <td><strong>2. Takrorlanuvchanlik</strong></td>
+              <td>100% takrorlanuvchan (bir xil $x_0, v_0$ da traektoriya mutlaqo bir xil)</td>
+              <td>Har bir alohida traektoriya noyob, lekin statistik o'rtacha qiymatlar barqaror</td>
+            </tr>
+            <tr>
+              <td><strong>3. Kirish parametrlari</strong></td>
+              <td>Sayyora massasi $m$, Quyosh massasi $M$, masofa $r$, orbital tezlik $v_0$</td>
+              <td>Molekulalar soni $N$, gaz harorati $T$, hajm $V$, zarracha massasi $m$</td>
+            </tr>
+            <tr>
+              <td><strong>4. Chiqish kattaliklari</strong></td>
+              <td>Orbita radiusi, eksentrisitet, aylanish davri $T$, fazaviy koordinatalar $(x, y)$</td>
+              <td>Gaz bosimi $P$, o'rtacha kvadratik tezlik $v_{rms}$, tezlik gistogrammasi, diffuziya</td>
+            </tr>
+            <tr>
+              <td><strong>5. Tizim holati (State)</strong></td>
+              <td>Har bir vaqt nuqtasida diskret aniq koordinata va impuls $(\vec{r}, \vec{p})$</td>
+              <td>Ansamblning makroskopik holati $(P, V, T, S)$ va fluktuatsiyalar</td>
+            </tr>
+            <tr>
+              <td><strong>6. Qaytaruvchanlik (Time-reversal)</strong></td>
+              <td>Vaqt bo'yicha to'liq simmetrik ($t \to -t$ da Nyuton tenglamalari o'zgarmaydi)</td>
+              <td>Qaytmas jarayon (Termodinamikaning 2-qonuni, Entropiya $\Delta S \ge 0$)</td>
+            </tr>
+            <tr>
+              <td><strong>7. Sezgirlik (Sensitivity)</strong></td>
+              <td>Regulyar orbitalarda past; ko'p jism gravitatsiyasida xaos yuzaga kelishi mumkin</td>
+              <td>Bitta zarrachaga o'ta sezgir, biroq makroskopik ko'rsatkichlar fluktuatsiyaga chidamli</td>
+            </tr>
+            <tr>
+              <td><strong>8. Hisoblash resursi</strong></td>
+              <td>Zarralar soni kam bo'lsa (2-3 ta jism) juda yengil va tez hisoblanadi</td>
+              <td>Katta $N$ zarralar to'qnashuvini hisoblash $\mathcal{O}(N^2)$ kuch talab etadi</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Model Turlari Nazariyasi (2-Reja):</div>
+          <p class="citation-text">
+            <strong>Gardiner, C. W. (2004).</strong> <em>Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences</em> (3rd ed.). Springer.<br>
+            <strong>Laplace, P. S. (1814).</strong> <em>A Philosophical Essay on Probabilities</em>.<br>
+            <em>Asosli xulosa:</em> Deterministik va stoxastik yondashuvlar bir-birini inkor etmaydi, balki to'ldiradi. Gigant mikroskopik deterministik tizimlar (gaz zarralari) makroskopik darajada muqarrar ravishda stoxastik xatti-harakatni namoyon qiladi (Ergodik gipoteza).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: Virtual Baza (PhET Simulations) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3. Virtual Laboratoriya Bazasi: PhET Interactive Simulations</h2>
+          <span class="badge badge-emerald">Kolorado Universiteti Ochiq Ta'lim Resursi</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Talaba quyidagi ikkita rasmiy <strong>PhET Interactive Simulations</strong> laboratoriyasiga kirib, ularni qiyosiy amaliy tadqiqot ob'yekti sifatida o'rganadi:
+        </p>
+
+        <!-- 2 Ta PhET Karta -->
+        <div class="grid-2" style="gap: 18px; margin-bottom: 25px;">
+          
+          <!-- PhET 1: Gravity and Orbits -->
+          <div class="tool-grid-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span class="badge badge-cyan">1-Ob'yekt: Deterministik</span>
+                <a href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html" target="_blank" class="btn btn-secondary btn-sm">PhET Ochish ↗</a>
+              </div>
+              <h4 style="color: #fff; margin-bottom: 8px;">PhET: «Gravity and Orbits» (Gravitatsiya va Orbitalar)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+                Quyosh, Yer, Oy va Sun'iy yo'ldoshning o'zaro gravitatsiyaviy tortishish harakatini modellashtiradi.
+              </p>
+              <div class="task-step-box" style="margin-top: 10px;">
+                <strong>O'rganiladigan boshqaruv elementlari:</strong><br>
+                • «Star Mass» va «Planet Mass» slayderlari;<br>
+                • «Velocity» vektori strelkasini cho'zish orqali boshlang'ich tezlikni o'zgartirish;<br>
+                • «Path» (Orbita traektoriyasi) va «Grid» (Koordinata to'ri) tugmalari;<br>
+                • «Gravity Force» (Gravitatsiya kuchi vektorlari) dinamikasi.
+              </div>
+            </div>
+            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; color: var(--accent-cyan);">
+              💡 <em>Tajriba vazifasi: Orbital tezlikni $v_0$ o'zgartirib, aylanma, elliptik va giperbolik traektoriyalarni kuzating.</em>
+            </div>
+          </div>
+
+          <!-- PhET 2: Gas Properties -->
+          <div class="tool-grid-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span class="badge badge-purple">2-Ob'yekt: Stoxastik</span>
+                <a href="https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html" target="_blank" class="btn btn-secondary btn-sm">PhET Ochish ↗</a>
+              </div>
+              <h4 style="color: #fff; margin-bottom: 8px;">PhET: «Gas Properties» (Gaz Xossalari)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+                Yopiq idish ichidagi yuzlab gaz molekulalarining xaotik to'qnashuvlari va termodinamik parametrlarni o'rganadi.
+              </p>
+              <div class="task-step-box" style="margin-top: 10px;">
+                <strong>O'rganiladigan boshqaruv elementlari:</strong><br>
+                • Nasos orqali idishga $N$ ta og'ir (ko'k) yoki yengil (qizil) zarrachalar kiritish;<br>
+                • «Heat / Cool» o'txonasi orqali harorat $T$ ni boshqarish;<br>
+                • Idish hajmini $V$ kengaytirish yoki toraytirish dastagi;<br>
+                • Manometr (Bosim $P$ o'lchagichi) va Tezlik taqsimoti gistogrammasi («Energy» bo'limi).
+              </div>
+            </div>
+            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; color: var(--accent-purple);">
+              💡 <em>Tajriba vazifasi: Haroratni oshirganda manometr tilchasidagi fluktuatsiyalar va tezlik gistogrammasi siljishini qayd qiling.</em>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & Interaktiv Simulyatsiyalar (3-Reja):</div>
+          <p class="citation-text">
+            <strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683.<br>
+            <strong>Perkins, K. K., et al. (2006).</strong> <em>PhET: Interactive Simulations for Teaching and Learning Physics</em>. The Physics Teacher, 44(1), 18-23.<br>
+            <em>Asosli xulosa:</em> PhET simulyatsiyalarining ko'rgazmali animatsiyasi talabalarga ko'rinmas mikroskopik xaotik jarayonlar va astronomik makromodellarni bevosita manipulyatsiya qilish orqali tushunishga imkon beradi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Tahlil & Qiyosiy Hisobot (AI) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4. Modellarni Tahlil Qilish va Qiyosiy Hisobot: Claude 3.5 Sonnet yoki Gemini</h2>
+          <span class="badge badge-amber">Sokratik Konsultatsiya & IMRaD Akademik Hisoboti</span>
+        </div>
+
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+          Talaba PhET simulyatsiyalarida tajriba o'tkazgach, olingan kuzatuvlarni umumlashtirish, matematik formulalarini tasdiqlash va akademik hisobot loyihasini yozish uchun <strong>Claude 3.5 Sonnet</strong> yoki <strong>Google Gemini</strong> platformalariga quyidagi maqsadli yo'riqnomalarni (promptlarni) yuboradi:
+        </p>
+
+        <!-- Prompt 1: Claude Sokratik Tahlil -->
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <strong style="color: var(--accent-cyan);">1-Yo'riqnoma: Claude 3.5 Sonnet — Matematik Apparat va Qiyosiy Tahlil</strong>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="task-claude-detstoch-prompt">📋 Nusxa Olish</button>
+          </div>
+          <div class="task-step-box">
+            Ushbu yo'riqnoma orqali Claude ikkala modelning differensial va statistik tenglamalarini tahlil qilib, taqqoslash xulosasini beradi:
+          </div>
+          <textarea id="task-claude-detstoch-prompt" class="prompt-textarea" readonly>Kontekst: Fizika ta'limida kompyuterli modellashtirish kursi (5-Laboratoriya ishi).
+Vazifa: Quyidagi ikkita modelni qiyosiy taqqoslab, akademik xulosa bering:
+1. Deterministik model: PhET «Gravity and Orbits» (Quyosh-Sayyora gravitatsiyasi, F = G*M*m/r^2).
+2. Stoxastik model: PhET «Gas Properties» (Yopiq idishdagi N ta gaz molekulasining xaotik to'qnashuvi va Maksvell-Bolsman tezlik taqsimoti).
+
+Talab qilinadigan bo'limlar:
+A) Har bir modelning matematik poydevori (Nyuton differensial tenglamasi vs Bolsman kinetik tenglamasi va ehtimollik zichligi).
+B) Nima uchun gravitatsiya orbitasi vaqt bo'yicha qaytaruvchan (reversible), lekin gaz diffuziyasi qaytmas (irreversible, dS >= 0) hisoblanadi?
+C) 8 ta mezon bo'yicha to'ldirilgan batafsil qiyosiy jadval.</textarea>
+        </div>
+
+        <!-- Prompt 2: Gemini IMRaD Hisobot Generatori -->
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <strong style="color: var(--accent-amber);">2-Yo'riqnoma: Google Gemini — IMRaD Formatidagi Laboratoriya Hisoboti</strong>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="task-gemini-imrad-prompt">📋 Nusxa Olish</button>
+          </div>
+          <div class="task-step-box">
+            Ushbu yo'riqnoma yordamida Gemini xalqaro akademik standart (IMRaD) bo'yicha to'liq hisobot matnini generatsiya qiladi:
+          </div>
+          <textarea id="task-gemini-imrad-prompt" class="prompt-textarea" readonly>Roli: Hisoblash fizikasi va ilmiy maqolalar tahririyati bo'yicha akademik maslahatchi.
+Mavzu: Deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash (PhET «Gravity and Orbits» va «Gas Properties» misolida).
+Vazifa: Talaba uchun 5-laboratoriya ishi bo'yicha IMRaD (Introduction, Methods, Results, and Discussion) formatida ilmiy hisobot loyihasini tayyorlab bering.
+
+Quyidagi elementlar bo'lishi shart:
+1. Introduction: Determinizm (Laplas) va stoxastika (Bolsman) tushunchalari, dolzarbligi.
+2. Methods: PhET virtual laboratoriyasi parametrlari, o'lchov datchiklari.
+3. Results: Olingan orbital parametrlari va gaz bosimi/tezlik gistogrammasi taqqoslama natijalari.
+4. Discussion: Ergodik gipoteza, fluktuatsiyalar chegarasi va kompyuter modellarining aniqlik xulosasi.</textarea>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba & AI Tahlil (4-Reja):</div>
+          <p class="citation-text">
+            <strong>Anthropic. (2024).</strong> <em>The Claude 3 Model Family: Scientific Reasoning and Code Synthesis</em>.<br>
+            <strong>Google DeepMind. (2024).</strong> <em>Gemini: A Family of Highly Capable Multimodal Models</em>.<br>
+            <em>Asosli xulosa:</em> Generativ sun'iy intellekt talabaning simulyatsiya davomida olgan xom ma'lumotlarini qat'iy ilmiy IMRaD strukturasiga keltirishda samarali kognitiv yo'naltiruvchi bo'lib xizmat qiladi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Interaktiv Dual Dastgoh (Stend) -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">5. Interaktiv Dual Dastgoh: Deterministik va Stoxastik Modellarni Jonli Taqqoslash</h2>
+          <span class="badge badge-cyan">Parallel Canvas Simulyatori & Haqiqiy Vaqtli Statistik Tahlil</span>
+        </div>
+
+        <p style="font-size: 1.02rem; line-height: 1.65; margin-bottom: 20px;">
+          Ushbu dastgohda ikkita fizik tizim parallel ishlaydi. <strong>Chap tomonda</strong> — Nyuton gravitatsiya qonuniga bo'ysunuvchi <em>deterministik orbital harakat</em>; <strong>O'ng tomonda</strong> — elastik to'qnashuvchi molekulalar va <em>tasodifiy Broun harakati (stoxastik model)</em>:
+        </p>
+
+        <!-- Boshqaruv Tugmalari -->
+        <div class="glass-panel" style="padding: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; gap: 10px;">
+            <button id="lab5-btn-play" class="btn btn-primary" style="padding: 9px 20px;">▶ Ikkala Simulyatsiyani Boshlash</button>
+            <button id="lab5-btn-pause" class="btn btn-secondary" style="padding: 9px 18px;">⏸ Pauza</button>
+            <button id="lab5-btn-reset" class="btn btn-secondary" style="padding: 9px 18px;">🔄 Qayta O'rnatish</button>
+          </div>
+          <div style="font-size: 0.88rem; color: var(--text-secondary);">
+            💡 Har ikki tizimni parallel ishga tushirib, takrorlanuvchanlik va fluktuatsiyalarni kuzating.
+          </div>
+        </div>
+
+        <!-- 2 Ta Parallel Simulyatsiya Bloki -->
+        <div class="grid-2" style="gap: 18px; margin-bottom: 25px;">
+          
+          <!-- Chap Oyna: Deterministik -->
+          <div style="background: #060911; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="color: var(--accent-cyan); font-size: 0.95rem; margin: 0;">
+                🪐 1-Model: Deterministik («Gravity & Orbits»)
+              </h4>
+              <span class="badge badge-cyan" style="font-size: 0.75rem;">100% Takrorlanuvchan</span>
+            </div>
+
+            <!-- Canvas 1 -->
+            <canvas id="lab5-det-canvas" width="460" height="260" style="width: 100%; height: auto; display: block; background: #060911; border-radius: var(--radius-sm); margin-bottom: 12px;"></canvas>
+
+            <!-- Slayderlar -->
+            <div class="grid-2" style="gap: 12px; font-size: 0.82rem;">
+              <div>
+                <label style="color: var(--accent-cyan); font-weight: 600; display: block; margin-bottom: 2px;">
+                  Sayyora massasi: <span id="lab5-mass-val" style="color: #fff; font-family: var(--font-mono);">1.0 M⊕</span>
+                </label>
+                <input type="range" id="lab5-mass-slider" min="0.2" max="3.0" step="0.1" value="1.0" style="width: 100%; cursor: pointer;">
+              </div>
+              <div>
+                <label style="color: var(--accent-emerald); font-weight: 600; display: block; margin-bottom: 2px;">
+                  Boshlang'ich tezlik v₀: <span id="lab5-vel-val" style="color: #fff; font-family: var(--font-mono);">2.8</span>
+                </label>
+                <input type="range" id="lab5-vel-slider" min="1.5" max="4.0" step="0.1" value="2.8" style="width: 100%; cursor: pointer;">
+              </div>
+            </div>
+
+            <!-- Ko'rsatkichlar -->
+            <div style="display: flex; justify-content: space-between; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 0.8rem;">
+              <div>Aylanish davri T: <span id="lab5-det-period" style="color: var(--accent-cyan); font-weight: bold;">--</span></div>
+              <div>Mexanik energiya: <span id="lab5-det-energy" style="color: var(--accent-emerald); font-weight: bold;">--</span></div>
+            </div>
+          </div>
+
+          <!-- O'ng Oyna: Stoxastik -->
+          <div style="background: #060911; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="color: var(--accent-purple); font-size: 0.95rem; margin: 0;">
+                💨 2-Model: Stoxastik («Gas Properties»)
+              </h4>
+              <span class="badge badge-purple" style="font-size: 0.75rem;">Fluktuatsiyali</span>
+            </div>
+
+            <!-- Canvas 2 -->
+            <canvas id="lab5-stoch-canvas" width="460" height="260" style="width: 100%; height: auto; display: block; background: #060911; border-radius: var(--radius-sm); margin-bottom: 12px;"></canvas>
+
+            <!-- Slayderlar -->
+            <div class="grid-2" style="gap: 12px; font-size: 0.82rem;">
+              <div>
+                <label style="color: var(--accent-purple); font-weight: 600; display: block; margin-bottom: 2px;">
+                  Gaz harorati T: <span id="lab5-temp-val" style="color: #fff; font-family: var(--font-mono);">300 K</span>
+                </label>
+                <input type="range" id="lab5-temp-slider" min="100" max="600" step="25" value="300" style="width: 100%; cursor: pointer;">
+              </div>
+              <div>
+                <label style="color: var(--accent-rose); font-weight: 600; display: block; margin-bottom: 2px;">
+                  Molekulalar soni N: <span id="lab5-count-val" style="color: #fff; font-family: var(--font-mono);">65 ta</span>
+                </label>
+                <input type="range" id="lab5-count-slider" min="20" max="130" step="5" value="65" style="width: 100%; cursor: pointer;">
+              </div>
+            </div>
+
+            <!-- Ko'rsatkichlar -->
+            <div style="display: flex; justify-content: space-between; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 0.8rem;">
+              <div>O'rtacha tezlik: <span id="lab5-stoch-avgspeed" style="color: var(--accent-purple); font-weight: bold;">--</span></div>
+              <div>Entropiya S: <span id="lab5-stoch-entropy" style="color: var(--accent-rose); font-weight: bold;">--</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tahliliy Qiyoslash Xulosasi Bloki -->
+        <div class="glass-panel" style="padding: 18px;">
+          <h4 style="color: var(--accent-amber); margin-bottom: 8px; font-size: 1.05rem;">
+            🔍 Laboratoriya Kuzatuvi & Amaliy Xulosa:
+          </h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+            1. <strong>Deterministik orbital modelda:</strong> Sayyora boshlang'ich tezlik $v_0$ va massasi asosida aniq bitta yopiq Kepler ellipsi bo'ylab harakatlanadi. Pauza qilib qayta ishga tushirilsa ham, uning fazaviy traektoriyasi millimetrigacha bir xil takrorlanadi.<br>
+            2. <strong>Stoxastik gaz modelida:</strong> Har bir molekulaning to'qnashuvi individual darajada deterministik elastik qonunlarga bo'ysunsa-da, yuzlab zarralar to'plamida markaziy og'ir zarrachaning (qizil shar) harakati <em>tasodifiy Broun dreyfi</em> ($\langle r^2 \rangle \propto 2Dt$) ko'rinishida namoyon bo'ladi va tezliklar doimo Maksvell-Bolsman taqsimotiga intiladi.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">6. Baholash Rubrikasi (100 Ball) & Ilmiy Manbalar (APA 7)</h2>
+          <span class="badge badge-emerald">Akademik Baholash & Bibliografiya</span>
+        </div>
+
+        <p style="font-size: 1.02rem; line-height: 1.65; margin-bottom: 20px;">
+          5-laboratoriya mashg'uloti talabaning deterministik va stoxastik modellarni ajrata olishini, PhET simulyatsiyalarini tadqiq qilish hamda qiyosiy hisobot tuzish sifatini 100 ballik shkalada baholaydi:
+        </p>
+
+        <!-- Interaktiv Rubrika Kalkulyatori -->
+        <div class="glass-panel" style="padding: 22px; margin-bottom: 28px;">
+          <h3 style="color: var(--accent-cyan); margin-bottom: 14px; font-size: 1.15rem;">
+            📊 Interaktiv Rubrika Kalkulyatori (5-Laboratoriya):
+          </h3>
+
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--text-main);">1. Nazariy Tushuncha & Diagnostika Testi</strong><br>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Laplas determinizmi va Bolsman statistik mexanikasi farqlarini to'g'ri izohlash.</span>
+            </div>
+            <div>
+              <select class="rubric5-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+                <option value="15">A'lo (15 ball)</option>
+                <option value="12">Yaxshi (12 ball)</option>
+                <option value="8">Qoniqarli (8 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 15b</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--text-main);">2. PhET «Gravity and Orbits» Deterministik Tahlili</strong><br>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Orbital tezlik, massalar nisbati va traektoriya barqarorligini eksperimental o'rganish.</span>
+            </div>
+            <div>
+              <select class="rubric5-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="14">Qoniqarli (14 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 25b</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--text-main);">3. PhET «Gas Properties» Stoxastik Tahlili</strong><br>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Molekulalar soni, harorat va Maksvell-Bolsman tezlik gistogrammasi fluktuatsiyalarini o'lchash.</span>
+            </div>
+            <div>
+              <select class="rubric5-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="14">Qoniqarli (14 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 25b</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--text-main);">4. 8 Mezonli Qiyosiy Taqqoslash Jadvalini Tuzish</strong><br>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Matematik apparat, takrorlanuvchanlik, qaytuvchanlik va hisoblash resurslarini qiyoslash.</span>
+            </div>
+            <div>
+              <select class="rubric5-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="10">Qoniqarli (10 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 20b</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--text-main);">5. Claude / Gemini AI Yordamida IMRaD Hisoboti</strong><br>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Ergodiklik xulosasi, ilmiy savodxonlik va himoyadagi mustaqil tahliliy fikr.</span>
+            </div>
+            <div>
+              <select class="rubric5-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+                <option value="15">A'lo (15 ball)</option>
+                <option value="12">Yaxshi (12 ball)</option>
+                <option value="8">Qoniqarli (8 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 15b</div>
+          </div>
+
+          <!-- Umumiy Ball Natijasi -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 10px;">
+            <div>
+              <span style="font-size: 1.05rem; color: var(--text-main); font-weight: 600;">Jami To'plangan Ball:</span>
+              <span id="rubric5-total-score" style="font-family: var(--font-mono); font-size: 1.35rem; color: var(--accent-emerald); font-weight: bold; margin-left: 10px;">100 / 100 ball</span>
+            </div>
+            <div>
+              <span id="rubric5-grade-badge" class="badge badge-emerald" style="font-size: 0.95rem; padding: 6px 14px;">A (A'lo — 5)</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-top: 30px; margin-bottom: 14px;">📚 Foydalanilgan Ilmiy-Metodik Adabiyotlar (APA 7 Standarti):</h3>
+        <div class="glass-panel" style="padding: 20px; line-height: 1.8; font-size: 0.92rem; color: var(--text-secondary);">
+          <ul style="margin: 0; padding-left: 20px;">
+            <li>
+              <strong>Anthropic. (2024).</strong> <em>The Claude 3 Model Family: Architecture, Reasoning Benchmarks, and Code Synthesis</em>. Technical Report.
+            </li>
+            <li>
+              <strong>Einstein, A. (1905).</strong> <em>Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen</em>. Annalen der Physik, 322(8), 549-560.
+            </li>
+            <li>
+              <strong>Gardiner, C. W. (2004).</strong> <em>Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences</em> (3rd ed.). Springer.
+            </li>
+            <li>
+              <strong>Google DeepMind. (2024).</strong> <em>Gemini: A Family of Highly Capable Multimodal Models</em>. Technical Whitepaper.
+            </li>
+            <li>
+              <strong>Laplace, P. S. (1814).</strong> <em>Essai philosophique sur les probabilités</em>. Courcier.
+            </li>
+            <li>
+              <strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological pedagogical content knowledge: A framework for teacher knowledge</em>. Teachers College Record, 108(6), 1017-1054.
+            </li>
+            <li>
+              <strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.
+            </li>
+            <li>
+              <strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-copy">
+        &copy; 2026 Oliy Ta'lim Veb Laboratoriyasi. Barcha huquqlar himoyalangan.
+      </p>
+      <p class="footer-sub">
+        Fizika va astronomiya o'qitishda axborot texnologiyalari va kompyuterli modellashtirish kursi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function scrollTabsNav(offset) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.scrollBy({ left: offset, behavior: 'smooth' });
+        setTimeout(updateTabsScrollProgress, 180);
+      }
+    }
+
+    function updateTabsScrollProgress() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      if (!nav || !thumb) return;
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 0) {
+        thumb.style.width = '100%';
+        thumb.style.transform = 'translateX(0%)';
+        return;
+      }
+      const ratio = nav.scrollLeft / maxScroll;
+      const thumbWidthPercent = Math.max(18, Math.round((nav.clientWidth / nav.scrollWidth) * 100));
+      thumb.style.width = thumbWidthPercent + '%';
+      const availableTrack = 100 - thumbWidthPercent;
+      thumb.style.transform = 'translateX(' + (ratio * availableTrack * (100 / thumbWidthPercent)) + '%)';
+    }
+
+    window.switchTab = function(event, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(el => el.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(el => el.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        activeBtn = event.currentTarget;
+      } else {
+        const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (btn) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        }
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          setTimeout(updateTabsScrollProgress, 200);
+        }
+      }
+
+      if (window.renderMathInElement && target) {
+        window.renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+      }
+
+      if (tabId === 'tab-reja5' && window.triggerLab5CanvasRedraw) {
+        setTimeout(window.triggerLab5CanvasRedraw, 50);
+      }
+    };
+    window.openTab = window.switchTab;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollProgress, { passive: true });
+        window.addEventListener('resize', updateTabsScrollProgress);
+        setTimeout(updateTabsScrollProgress, 100);
+      }
+    });
+  </script>
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-lab5-deterministic-stochastic.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>

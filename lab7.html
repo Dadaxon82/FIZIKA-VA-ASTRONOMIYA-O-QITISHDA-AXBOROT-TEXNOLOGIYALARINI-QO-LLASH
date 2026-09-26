@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-Laboratoriya: HTML5 Canvas va JavaScript Asosida Kadrlar Chastotasini (Delta-Time) Hisobga Olgan Holda Oddiy Fizik Tebranishlar Animatsiyasini Kodlash</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    .prompt-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      resize: vertical;
+      margin-bottom: 8px;
+    }
+    .prompt-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .roadmap-node {
+      position: relative;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 14px;
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 90px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 768px) {
+      .rubric-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      background: rgba(56, 189, 248, 0.05);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .proto-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .proto-table th, .proto-table td {
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .proto-table th {
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .proto-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.015);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Lab</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Lab</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Lab</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Lab</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-Lab</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-Lab</a></li>
+        <li><a href="lab7.html" class="nav-link active">🧪 7-Lab</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link active">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-emerald">7-Laboratoriya Mashg'uloti: Web Graphics & Real-Time Physics</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        HTML5 Canvas va JavaScript Asosida Kadrlar Chastotasini (Delta-Time) Hisobga Olgan Holda Oddiy Fizik Tebranishlar Animatsiyasini Kodlash
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Kompyuter grafikasi va interaktiv fizik modellashtirishning eng muhim poydevori — apparat ekran yangilanishiga (V-Sync) bog'liq bo'lmagan, <strong>Delta-Time ($\Delta t$)</strong> ga asoslangan kadr siklini to'g'ri arxitekturalashdir. Mazkur laboratoriya mashg'ulotida talabalar <code>requestAnimationFrame</code> tsiklini yozadi, delta-timeni aniq o'lchaydi, tekis va garmonik tebranma harakatlarni kodlaydi hamda <strong>Google Antigravity AI</strong> agentlik platformasi yordamida kod sifatini, kadrlar barqarorligini (FPS/Jank) avtomatik monitoring qiladi.
+      </p>
+    </div>
+
+    <!-- 4-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-emerald);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 7-Laboratoriya Mashg'uloti Rejasi va Tahliliy Bosqichlari:</h3>
+      <div class="grid-4" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. Diagnostika & Shaxsiy Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">TPACK va ZPD asosida brauzer Event Loop, V-Sync va delta-time bo'yicha diagnostik test hamda shaxsiy o'quv traektoriyasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. Canvas: Birinchi Kadr Sikli:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Canvas 2D konteksti, requestAnimationFrame, timestamp vaqt qadami, Fiedler akkumulyatori va harakat qonunlari.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">3. Google Antigravity AI Monitoring:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Avtonom test ijrosi, kadrlar chastotasi dreyfi (Jank/FPS drop) tahlili va kodning avtomatik sifat nazorati.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">4. Claude 3.5 Sonnet (Artifacts):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Mustaqil interaktiv Canvas shablonini generatsiya qilish, garmonik tebranishlar differensial tenglamasi va Sokratik audit.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. Diagnostika & Individual Reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Canvas Kadr Sikli Nazariyasi</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Google Antigravity AI Monitoring</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Claude 3.5 Artifacts Shabloni</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Interaktiv Kadr & Tebranish Dastgohi</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Baholash Rubrikasi & Manbalar</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-track">
+        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          1. Sun'iy Intellekt Uchun Kognitiv Diagnostika va Individual Ta'lim Trayektoriyasi
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Dasturlashda yangi boshlovchi talabalar animatsiyalarni ko'pincha <code>setInterval(loop, 16)</code> yordamida yozishadi va har bir kadrda obyekt koordinatasiga qat'iy 5 yoki 10 piksel qo'shib borishadi. Bu esa monitor yangilanish chastotasi (60Hz, 120Hz, 144Hz yoki 240Hz) har xil bo'lgan qurilmalarda fizika tezligining keskin o'zgarib ketishiga sabab bo'ladi. <strong>TPACK</strong> (Mishra & Koehler) va <strong>ZPD</strong> (Vygotskiy) tamoyillari asosida quyidagi 4 ta diagnostik savol talabaning tayyorgarlik darajasini aniqlaydi va shaxsiy o'quv yo'riqnomasini yaratadi.
+        </p>
+
+        <!-- Quiz Box -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <h4 style="margin-bottom: 16px; color: #fff;">🧠 Boshlang'ich Kognitiv Diagnostika Testi (4 ta savol):</h4>
+
+          <!-- Savol 1 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">1. Nima uchun veb-brauzerda fizik animatsiyalar uchun <code>setInterval</code> yoki <code>setTimeout</code> o'rniga <code>requestAnimationFrame</code> qo'llanilishi shart?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q1" value="a">
+              <span>A) Ekran apparat yangilanish chastotasi (V-Sync) bilan sinxronlashadi, ortiqcha yuklamani kamaytiradi va tab fonga o'tganda avtomatik to'xtaydi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q1" value="b">
+              <span>B) Chunki requestAnimationFrame doimo qat'iy 1000 FPS tezlikda ishlaydi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q1" value="c">
+              <span>C) setInterval faqat 3D grafika uchun, requestAnimationFrame esa faqat matnlar uchun mo'ljallangan.</span>
+            </label>
+          </div>
+
+          <!-- Savol 2 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">2. Delta-Time ($\Delta t$) parametrining fizik kompyuter simulyatsiyalaridagi eng asosiy vazifasi nima?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q2" value="a">
+              <span>A) Har bir kadrda obyektning rangini tasodifiy o'zgartirish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q2" value="b">
+              <span>B) Monitor kadrlar chastotasi (FPS) qanday bo'lishidan qat'i nazar, jismning real vaqt birligidagi harakat tezligi va fizik qonuniyatlar bir xil saqlanishini ta'minlash ($x += v \cdot \Delta t$).</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q2" value="c">
+              <span>C) Canvas o'lchamlarini avtomatik kattalashtirish.</span>
+            </label>
+          </div>
+
+          <!-- Savol 3 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">3. Glenn Fiedlerning "Fix Your Timestep" maqolasiga ko'ra, brauzer qotib qolganda (katta $\Delta t$ sakrashida) jism devordan o'tib ketmasligi uchun qanday himoya chorasi qo'llaniladi?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q3" value="a">
+              <span>A) Butun kompyuterni qayta ishga tushirish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q3" value="b">
+              <span>B) Tezlikni nolga tenglashtirib simulyatsiyani o'chirish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q3" value="c">
+              <span>C) $\Delta t$ ni yuqori chegaralash (masalan, <code>Math.min(dt, 0.1)</code>) va diskret akkumulyator orqali turg'un ichki qadamlarda integratsiyalash.</span>
+            </label>
+          </div>
+
+          <!-- Savol 4 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">4. Google Antigravity AI platformasining ushbu laboratoriya topshirig'idagi roli va afzalligi nimadan iborat?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q4" value="a">
+              <span>A) Faqat tayyor rasmlarni yuklab olish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q4" value="b">
+              <span>B) Yozilgan JavaScript kodini terminal va brauzer muhitida ishga tushirib, kadrlar tushishi (Jank), kadr vaqti barqarorligi va DOM renderini avtomatik monitoring qilish.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag7_q4" value="c">
+              <span>C) Faqat matn tarjimoni sifatida ishlash.</span>
+            </label>
+          </div>
+
+          <button id="diag7-submit-btn" class="btn btn-primary" style="margin-top: 10px;">
+            Diagnostika Natijasini Hisoblash & Shaxsiy Rejani Shakllantirish →
+          </button>
+        </div>
+
+        <!-- Result Box -->
+        <div id="diag7-result-box" style="display: none; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--accent-cyan); border-radius: var(--radius-md); padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+            <h4 style="color: var(--accent-cyan); margin: 0;">📊 Diagnostika Natijalari va Shaxsiy O'quv Traektoriyasi:</h4>
+            <span id="diag7-score-val" class="badge badge-cyan" style="font-size: 1rem; padding: 6px 14px;">0 / 100</span>
+          </div>
+          <p><strong>Aniqlangan ta'lim klasteri:</strong> <span id="diag7-cluster-val" style="color: var(--accent-emerald); font-weight: 600;">-</span></p>
+          <p id="diag7-plan-desc" style="color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6;">-</p>
+
+          <h5 style="color: #fff; margin-bottom: 8px;">🤖 Claude 3.5 & Google Antigravity Uchun Boshlang'ich Prompt:</h5>
+          <textarea id="diag7-personalized-prompt" class="prompt-textarea" readonly></textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag7-personalized-prompt">
+            📋 Promptdan Nusxa Olish
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: HTML5 Canvas Kadr Sikli Nazariyasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-emerald);">
+          2. HTML5 Canvas: Birinchi Kadr Sikli va Delta-Time Arxitekturasi
+        </h2>
+
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Veb-brauzerda silliq 60 kadr/sekund (yoki 120Hz ekranlarda 120 FPS) chastotada fizik jarayonlarni tasvirlash — brauzerning <strong>Event Loop</strong> va <strong>Compositor Thread</strong> mexanizmlari bilan to'g'ridan-to'g'ri bog'liq. Standart <code>CanvasRenderingContext2D</code> muhitida animatsiya quyidagi 3 ta ajralmas bosqichdan iborat:
+        </p>
+
+        <!-- Pipeline Stages -->
+        <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
+          <div class="roadmap-node">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">1. Tozalash (Clear)</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              <code>ctx.clearRect(0, 0, width, height)</code> chaqirilib, o'tgan kadrdagi barcha piksellar to'liq tozalanadi yoki yarim shaffof rang bilan to'ldirilib harakat izi (motion blur) hosil qilinadi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-left-color: var(--accent-purple);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 8px;">2. Fizik Yangilanish (Update)</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Delta-Time orqali tezlik va koordinata o'zgaradi: $x_{yangi} = x_{eski} + v_x \cdot \Delta t$. Devorlar bilan elastik to'qnashuv va chegaraviy shartlar hisoblanadi.
+            </p>
+          </div>
+
+          <div class="roadmap-node" style="border-left-color: var(--accent-emerald);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">3. Qayta Chizish (Render)</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              <code>beginPath()</code>, <code>arc()</code>, <code>fill()</code>, <code>stroke()</code> buyruqlari bilan geometrik jismlar, vektor nayzalari va o'lchov datchiklari GPU buferiga yuboriladi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Delta Time Mathematics & Fiedler Formula -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 14px;">⏱ Delta-Time Matematik Modeli va Glenn Fiedler Qoidasi:</h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            <code>requestAnimationFrame(callback)</code> funksiyasi o'zining argumenti sifatida millisekundlarda o'lchanadigan yuqori aniqlikdagi <strong>DOMHighResTimeStamp</strong> qiymatini uzatadi.
+          </p>
+
+          <div style="background: rgba(15, 23, 42, 0.8); padding: 14px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.92rem; margin-bottom: 14px;">
+            $$\Delta t = \frac{t_{joriy} - t_{oldingi}}{1000} \quad \text{[sekundlarda]}$$
+            $$\Delta t_{xavfsiz} = \min(\Delta t, 0.1) \quad \text{[«Spiral of Death» oldini olish chegarasi]}$$
+          </div>
+
+          <table class="proto-table">
+            <thead>
+              <tr>
+                <th>Monitor Chastotasi</th>
+                <th>Kadrlar Vaqti ($\Delta t$)</th>
+                <th>Kadrga Bog'liq Harakat ($x += 5$)</th>
+                <th>Delta-Time Bilan Harakat ($x += 300 \cdot \Delta t$)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>60 Hz (Ofis monitori)</strong></td>
+                <td>$\approx 16.67\text{ ms}$</td>
+                <td>Sekundiga 300 piksel</td>
+                <td>Sekundiga 300 piksel (Etalon)</td>
+              </tr>
+              <tr>
+                <td><strong>144 Hz (O'yin monitori)</strong></td>
+                <td>$\approx 6.94\text{ ms}$</td>
+                <td>Sekundiga 720 piksel (<strong>2.4 baravar tez!</strong>)</td>
+                <td>Sekundiga 300 piksel (<strong>O'zgarmas!</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>30 FPS (Kuchli yuklama/lag)</strong></td>
+                <td>$\approx 33.33\text{ ms}$</td>
+                <td>Sekundiga 150 piksel (<strong>2 baravar sekin!</strong>)</td>
+                <td>Sekundiga 300 piksel (<strong>O'zgarmas!</strong>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Skeleton Code Snippet -->
+        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+          <h4 style="color: var(--accent-amber); margin-bottom: 12px;">💻 Etalon HTML5 Canvas Kadr Sikli Skeleti (JavaScript):</h4>
+          <pre style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); color: #38bdf8; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.55; overflow-x: auto;">
+const canvas = document.getElementById("simCanvas");
+const ctx = canvas.getContext("2d");
+
+let lastTime = 0;
+let x = 50, y = 100;
+let vx = 200, vy = 120; // Tezlik: piksel/sekund
+const radius = 15;
+
+function gameLoop(timestamp) {
+  if (!lastTime) lastTime = timestamp;
+  
+  // 1. Delta-time hisoblash (sekundlarda)
+  const rawDt = (timestamp - lastTime) / 1000;
+  lastTime = timestamp;
+  
+  // 2. Fiedler xavfsizlik chegarasi (0.1 soniyadan oshmasligi shart)
+  const dt = Math.min(rawDt, 0.1);
+  
+  // 3. Fizik yangilanish (Mustaqil tezlik)
+  x += vx * dt;
+  y += vy * dt;
+  
+  // Devorlar bilan elastik to'qnashuv
+  if (x - radius <= 0 || x + radius >= canvas.width) vx = -vx;
+  if (y - radius <= 0 || y + radius >= canvas.height) vy = -vy;
+  
+  // 4. Kadrni tozalash va chizish
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  ctx.fillStyle = "#38bdf8";
+  ctx.fill();
+  
+  // Keyingi kadrni so'rash
+  requestAnimationFrame(gameLoop);
+}
+
+// Siklni boshlash
+requestAnimationFrame(gameLoop);</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: Google Antigravity AI Monitoring -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-purple);">
+          3. Kod Yozish va Jarayon Monitoringi: Google Antigravity AI
+        </h2>
+
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          <strong>Google Antigravity AI</strong> — dasturchi va talabalarga ko'p bosqichli axborot tizimlarini yaratish, terminal buyruqlarini avtonom bajarish, kod sifatini tekshirish hamda real vaqtli telemetriya nazoratini ta'minlovchi ilg'or agentlik platformasidir. Ushbu laboratoriyada Antigravity AI Canvas animatsiyasining quyidagi kritik ko'rsatkichlarini avtomatik monitoring qiladi:
+        </p>
+
+        <!-- Antigravity Architecture Cards -->
+        <div class="grid-2" style="gap: 16px; margin-bottom: 25px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">📊 1. Jank (Kadr Tushishi) Monitoringi:</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Agar bitta kadrni hisoblash 16.67 ms dan oshib ketsa, Antigravity telemetriya agenti kadrlar tushib qolganini (Jank) qayd etadi. Brauzer xotirasida axlat yig'uvchi (Garbage Collector — GC) chaqiruvlari sonini minimallashtirish bo'yicha tavsiyalar beradi.
+            </p>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 10px;">🛡 2. Object Pooling & Xotira Auditi:</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Kadr sikli ichida <code>new Object()</code> yoki massivlarni qayta yaratish xotira oqishiga olib keladi. Antigravity AI talaba kodini statik tahlil qilib, <strong>Zero-Allocation Loop</strong> talablariga rioya etilganini tekshiradi.
+            </p>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 10px;">⚡ 3. Terminalda Avtonom Sinov:</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Talaba yozgan kodi uchun Headless brauzer (Puppeteer / Playwright) orqali kadrlar siklining 1000 ta kadr davomidagi o'rtacha delta-time ko'rsatkichini va dispersiyasini ($\sigma$) avtonom hisoblaydi.
+            </p>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-amber); margin-bottom: 10px;">📝 4. Avtomatlashtirilgan Hisobot:</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Kadrlar o'tkazuvchanligi, integratsiya xatoligi va animatsiyaning energiya saqlanish darajasini baholab, talaba uchun rasmiy laboratoriya xulosasini shakllantiradi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Antigravity AI Prompt Studio -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 14px;">🤖 Google Antigravity AI Uchun Monitoring Yo'riqnomasi Prompti:</h4>
+
+          <div class="prompt-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+              <strong style="color: var(--accent-cyan);">Antigravity AI Agentlik Vazifasi (Frame Pacing & Telemetry Audit):</strong>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="antigravity-monitor-prompt">Nusxa olish</button>
+            </div>
+            <textarea id="antigravity-monitor-prompt" class="prompt-textarea" readonly>Sen Google Antigravity AI yuqori darajali dasturiy tahlil agentisan.
+Mening vazifam: HTML5 Canvas va JavaScript yordamida requestAnimationFrame va delta-time asosida ishlovchi fizik kadr siklini yaratish.
+
+Iltimos, mening loyiham bo'yicha quyidagi monitoring va audit choralarini amalga oshir:
+1. KADR SIKLI SINTAKSIK AUDITI: Kodimda requestAnimationFrame to'g'ri rekursiv chaqirilganmi? Timestamp parametri to'g'ri ushlanganmi?
+2. DELTA-TIME XAVFSIZLIK CHEGARASI: dt hisoblashda 0.1 sekundlik maksimal chegara (clamp) qo'yilganmi? Agar brauzer minimallashtirilsa yoki kompyuter qotsa, "spiral of death" yuzaga kelmaydimi?
+3. GARBAGE COLLECTION & ZERO-ALLOCATION: Har bir kadr sikli ichida ortiqcha obyektlar yaratilmayaptimi? Xotira oqishi xavfi bormi?
+4. AVTOMATLASHTIRILGAN TEST: 60 FPS, 30 FPS va 15 FPS rejimlarida to'pning 5 soniya ichida bosib o'tgan masofasi teng chiqishini matematik va mantiqiy isbotlab, monitoring hisobotini tuzib ber.</textarea>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Claude 3.5 Sonnet (Artifacts) Shabloni -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-amber);">
+          4. Canvas Boshlang'ich Shabloni: Claude 3.5 Sonnet (Artifacts)
+        </h2>
+
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          <strong>Claude 3.5 Sonnet (Artifacts)</strong> — dasturiy komponentlarni alohida interaktiv oyna ichida bir vaqtning o'zida ham kod, ham to'g'ridan-to'g'ri ishlovchi vizual ilova sifatida ko'rsatish imkoniyatiga ega. Quyida oddiy to'p harakatidan <strong>Garmonik Tebranishlar (Prujinali Ossilyator)</strong> fizik modeliga o'tish kodi keltirilgan:
+        </p>
+
+        <!-- Differential Equation & Simulation Code -->
+        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 25px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">📐 Garmonik Ossilyator Matematik Modeli:</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Guk qonuni va Nyutonning 2-qonuni bo'yicha erkin prujinali tebranishlar differensial tenglamasi:
+          </p>
+          <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 14px;">
+            $$\frac{d^2 x}{dt^2} + \omega_0^2 x = 0, \quad \omega_0 = \sqrt{\frac{k}{m}}$$
+            $$x(t) = A \cos(\omega_0 t + \phi_0), \quad v(t) = -A \omega_0 \sin(\omega_0 t + \phi_0)$$
+          </div>
+
+          <h5 style="color: #fff; margin-bottom: 8px;">Claude Artifacts Uchun To'liq Ishlovchi Komponent:</h5>
+          <pre style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); color: #38bdf8; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.55; overflow-x: auto;">
+class HarmonicOscillator {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d");
+    this.amplitude = 80; // piksel
+    this.omega = 3.5;    // burchak chastotasi rad/s
+    this.phase = 0;
+    this.lastTime = 0;
+    
+    this.loop = this.loop.bind(this);
+    requestAnimationFrame(this.loop);
+  }
+
+  loop(timestamp) {
+    if (!this.lastTime) this.lastTime = timestamp;
+    const dt = Math.min((timestamp - this.lastTime) / 1000, 0.1);
+    this.lastTime = timestamp;
+
+    // Garmonik faza va siljish yangilanishi
+    this.phase += this.omega * dt;
+    const x = this.amplitude * Math.cos(this.phase);
+    const v = -this.amplitude * this.omega * Math.sin(this.phase);
+
+    // Chizish
+    this.render(x, v);
+    requestAnimationFrame(this.loop);
+  }
+
+  render(displacement, velocity) {
+    const w = this.canvas.width;
+    const h = this.canvas.height;
+    const cy = h / 2;
+    const cx = w / 2 + displacement;
+
+    this.ctx.clearRect(0, 0, w, h);
+    
+    // Muvozanat chizig'i
+    this.ctx.strokeStyle = "rgba(255,255,255,0.2)";
+    this.ctx.beginPath();
+    this.ctx.moveTo(w / 2, 20);
+    this.ctx.lineTo(w / 2, h - 20);
+    this.ctx.stroke();
+
+    // Prujina
+    this.ctx.strokeStyle = "#38bdf8";
+    this.ctx.lineWidth = 2;
+    this.ctx.beginPath();
+    this.ctx.moveTo(30, cy);
+    this.ctx.lineTo(cx, cy);
+    this.ctx.stroke();
+
+    // Yuk (to'p)
+    this.ctx.fillStyle = "#a855f7";
+    this.ctx.beginPath();
+    this.ctx.arc(cx, cy, 16, 0, Math.PI * 2);
+    this.ctx.fill();
+  }
+}</pre>
+        </div>
+
+        <!-- Claude Prompt Card -->
+        <div class="prompt-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+            <strong style="color: var(--accent-emerald);">Claude 3.5 Sonnet Artifacts Generator Prompti:</strong>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="claude-artifacts-prompt">Nusxa olish</button>
+          </div>
+          <textarea id="claude-artifacts-prompt" class="prompt-textarea" readonly>Iltimos, Claude Artifacts muhitida to'g'ridan-to'g'ri ishga tushuvchi bitta mustaqil HTML5 Canvas komponentini yaratib ber.
+Komponentda quyidagilar bo'lsin:
+1. Garmonik tebranma harakat (prujinaga mahkamlangan sharik);
+2. requestAnimationFrame va delta-time asosidagi toza kadr sikli;
+3. Ekranning o'ng tomonida kadrlar chastotasini sun'iy 60 FPS, 30 FPS va 15 FPS ga o'zgartiruvchi tugmalar;
+4. "Delta-Time bilan" va "Delta-timesiz" holatlarini solishtiruvchi belgilagich (checkbox);
+5. Real vaqtli FPS va delta-time o'lchov datchigi (HUD).
+Kod to'liq zamonaviy ES6 sinflarida va toza o'zbekcha izohlar bilan taqdim etilsin.</textarea>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Interaktiv Kadr & Tebranish Dastgohi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          5. Interaktiv Dastgoh: Kadrlar Chastotasi, Delta-Time va Tebranishlar Sandboksi
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+          Ushbu interaktiv laboratoriya stendida siz <strong>Delta-Time integratsiyasining ahamiyatini ko'zingiz bilan ko'rishingiz mumkin</strong>. Ekranning o'ng tomonidagi sozlamalardan kadrlar chastotasini sun'iy ravishda 60 FPS dan 30 yoki 15 FPS ga tushirib ko'ring: agar <em>«Delta-Time Integratsiyasi»</em> yoqilgan bo'lsa, jismning harakat tezligi zarracha o'zgarmaydi! Agar uni o'chirib qo'ysangiz, kadrlar soni pasayishi bilan to'p 4 baravargacha sekinlashib ketadi (katta xatolik!).
+        </p>
+
+        <!-- Controls Bar -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <div class="grid-3" style="gap: 16px; margin-bottom: 14px;">
+            <div>
+              <label style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+                Fizik Rejimni Tanlash:
+              </label>
+              <select id="lab7-mode-select" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="ball">⚽ 2D Elastik To'p Harakati</option>
+                <option value="oscillator">〰️ Prujinali Garmonik Tebranish</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+                Sun'iy Kadrlar Cheklovi (FPS Throttle):
+              </label>
+              <select id="lab7-throttle-select" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="0">⚡ Cheklovsiz (Ekran V-Sync / 60+ Hz)</option>
+                <option value="60">🖥 60 FPS (Standart kadr)</option>
+                <option value="30">🐢 30 FPS (Cheklangan)</option>
+                <option value="15">🐌 15 FPS (Past chastotali lag)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.88rem; color: var(--text-secondary); display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Harakat Tezligi / Masshtab:</span>
+                <strong id="lab7-speed-val" style="color: var(--accent-cyan);">1.0x</strong>
+              </label>
+              <input type="range" id="lab7-speed-slider" min="0.2" max="2.5" step="0.1" value="1.0" style="width: 100%;">
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button id="lab7-play-btn" class="btn btn-primary btn-sm">▶ Animatsiyani Boshlash</button>
+            <button id="lab7-pause-btn" class="btn btn-secondary btn-sm" disabled>⏸ To'xtatib Turish</button>
+            <button id="lab7-reset-btn" class="btn btn-secondary btn-sm">🔄 Dastlabki Holat</button>
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-left: 14px; cursor: pointer; color: #fff; font-weight: 600;">
+              <input type="checkbox" id="lab7-dt-check" checked>
+              <span style="color: var(--accent-emerald);">Delta-Time Integratsiyasi YOQILGAN (To'g'ri fizika)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Dual Canvas Area -->
+        <div class="grid-2" style="gap: 18px; margin-bottom: 20px;">
+          <!-- Canvas 1: Main Sandbox -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-cyan);">🖥 HTML5 Canvas Fizik Maydoni</span>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">requestAnimationFrame</span>
+            </div>
+            <canvas id="lab7-main-canvas" width="460" height="300" style="width: 100%; height: auto; background: #070b14; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.05);"></canvas>
+          </div>
+
+          <!-- Canvas 2: FPS / Delta-time Monitor -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-purple);">📈 Real-Vaqt Telemetriya & Delta-Time Ossillografi</span>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Frame time tahlili</span>
+            </div>
+            <canvas id="lab7-fps-canvas" width="460" height="300" style="width: 100%; height: auto; background: #090d16; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.05);"></canvas>
+          </div>
+        </div>
+
+        <!-- Telemetry Panel -->
+        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+          <h4 style="margin-bottom: 12px; color: #fff; font-size: 0.95rem;">📊 Jonli Datchiklar va Kadr Telemetriyasi:</h4>
+          <div class="grid-4" style="gap: 12px; font-family: var(--font-mono); font-size: 0.85rem;">
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: var(--text-secondary);">Kadrlar Chastotasi:</span><br>
+              <strong id="hud-lab7-fps" style="font-size: 1.15rem; color: #10b981;">60.0 FPS</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: var(--text-secondary);">Kadr Oralig'i ($\Delta t$):</span><br>
+              <strong id="hud-lab7-dt" style="font-size: 1.15rem; color: #38bdf8;">16.67 ms</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: var(--text-secondary);">Fizik Rejim:</span><br>
+              <strong id="hud-lab7-mode" style="font-size: 0.95rem; color: #fff;">2D Elastik To'p</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+              <span style="color: var(--text-secondary);">Tezlik Ko'rsatkichi:</span><br>
+              <strong id="hud-lab7-speed" style="font-size: 1.15rem; color: #f59e0b;">1.0x</strong>
+            </div>
+          </div>
+          <div style="margin-top: 10px; font-size: 0.88rem; color: var(--text-secondary);">
+            Holat: <strong id="hud-lab7-status" style="color: #10b981;">Barqaror (FPS ga bog'liq emas)</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 14px; color: var(--accent-emerald);">
+          6. Akademik Baholash Rubrikasi (100 Ballik Tizim) va Ilmiy Manbalar
+        </h2>
+
+        <!-- Interactive Rubric Calculator -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+          <h4 style="margin-bottom: 14px; color: #fff;">🧮 Laboratoriya Ishini Baholash Mezonlari Kalkulyatori:</h4>
+
+          <div class="rubric-row">
+            <div>
+              <strong>1. HTML5 Canvas kadr sikli va requestAnimationFrame to'g'ri tuzilishi:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Apparat V-Sync bilan sinxronlashish, clearRect tozalash va zaxira kadr chaqiruvlari.
+              </div>
+            </div>
+            <div>
+              <select id="rubric7_c1" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="15">Qoniqarli (15 ball)</option>
+                <option value="8">Qoniqarsiz (8 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-cyan);">Max: 25 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>2. Delta-Time ($\Delta t$) va Fiedler akkumulyatori integratsiyasi:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                dt hisoblash, millisekunddan sekundga o'tish, dt ni chegaralash va turli FPS da o'zgarmas tezlik.
+              </div>
+            </div>
+            <div>
+              <select id="rubric7_c2" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="15">Qoniqarli (15 ball)</option>
+                <option value="8">Qoniqarsiz (8 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-purple);">Max: 25 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>3. Google Antigravity AI monitoringi va telemetriya tahlili:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Jank / Frame drop monitoringi, terminal testlari va Garbage Collection xotira auditi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric7_c3" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="12">Qoniqarli (12 ball)</option>
+                <option value="5">Qoniqarsiz (5 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-emerald);">Max: 20 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>4. Claude 3.5 Sonnet (Artifacts) shabloni va garmonik tebranishlar:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Prujina ossilyatori differensial tenglamasini diskretlashtirish va modulli ES6 klassi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric7_c4" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="12">Qoniqarli (12 ball)</option>
+                <option value="5">Qoniqarsiz (5 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-amber);">Max: 20 b.</div>
+          </div>
+
+          <div class="rubric-row">
+            <div>
+              <strong>5. IMRaD hisobot sifati va og'zaki himoya:</strong>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Kirish, Metodologiya, Natijalar, Muhokama va ilmiy xulosalarning to'liqligi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric7_c5" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <option value="10">A'lo (10 ball)</option>
+                <option value="8">Yaxshi (8 ball)</option>
+                <option value="6">Qoniqarli (6 ball)</option>
+                <option value="3">Qoniqarsiz (3 ball)</option>
+              </select>
+            </div>
+            <div style="font-family: var(--font-mono); text-align: right; color: var(--accent-cyan);">Max: 10 b.</div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; flex-wrap: wrap; gap: 12px;">
+            <button id="lab7-calc-rubric-btn" class="btn btn-primary">
+              Umumiy Ballni Hisoblash & Akademik Bahoni Aniqlash
+            </button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span id="lab7-total-score" style="font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; color: #fff;">100 / 100</span>
+              <span id="lab7-grade-badge" class="badge badge-emerald" style="font-size: 0.95rem;">A'LO (5)</span>
+            </div>
+          </div>
+          <p id="lab7-rubric-feedback" style="margin-top: 12px; font-size: 0.9rem; color: var(--text-secondary);"></p>
+        </div>
+
+        <!-- Academic Bibliography (APA 7) -->
+        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="margin-bottom: 14px; color: var(--accent-cyan);">📚 Butunjahon O'rgimchak To'ri (WWW) Ilmiy Adabiyotlari (APA 7 Standarti):</h4>
+          <ol style="padding-left: 20px; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">
+            <li>
+              <strong>Fiedler, G.</strong> (2004). <em>Fix Your Timestep! Physics in Games and Real-Time Simulations</em>. Gaffer on Games. https://gafferongames.com/post/fix_your_timestep/
+            </li>
+            <li>
+              <strong>Mozilla Developer Network (MDN).</strong> (2024). <em>Window.requestAnimationFrame() API and CanvasRenderingContext2D Performance</em>. MDN Web Docs. https://developer.mozilla.org
+            </li>
+            <li>
+              <strong>W3C Web Performance Working Group.</strong> (2023). <em>Timing control for script-based animations (Level 2)</em>. World Wide Web Consortium (W3C) Recommendation.
+            </li>
+            <li>
+              <strong>Google Chrome DevTools Team.</strong> (2024). <em>Rendering performance, V-Sync and Frame Jank diagnostics</em>. Chrome for Developers. https://developer.chrome.com
+            </li>
+            <li>
+              <strong>Anthropic.</strong> (2024). <em>Claude 3.5 Sonnet Interactive Artifacts and Educational Visualization Architecture</em>. Anthropic Research. https://www.anthropic.com
+            </li>
+            <li>
+              <strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P.</strong> (2007). <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    function updateTabsScrollProgress() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      if (!nav || !thumb) return;
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 0) {
+        thumb.style.width = '100%';
+        thumb.style.transform = 'translateX(0)';
+        return;
+      }
+      const ratio = nav.clientWidth / nav.scrollWidth;
+      thumb.style.width = Math.max(ratio * 100, 15) + '%';
+      const progress = nav.scrollLeft / maxScroll;
+      const maxTranslate = nav.clientWidth * (1 - ratio);
+      thumb.style.transform = `translateX(${progress * maxTranslate}px)`;
+    }
+
+    function scrollTabsNav(offset) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.scrollBy({ left: offset, behavior: 'smooth' });
+        setTimeout(updateTabsScrollProgress, 180);
+      }
+    }
+
+    window.switchTab = function(event, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        activeBtn = event.currentTarget;
+      } else {
+        const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (btn) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        }
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          setTimeout(updateTabsScrollProgress, 200);
+        }
+      }
+
+      if (window.renderMathInElement && target) {
+        window.renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+      }
+
+      if (tabId === 'tab-reja5' && window.triggerLab7CanvasRedraw) {
+        setTimeout(window.triggerLab7CanvasRedraw, 50);
+      }
+    };
+    window.openTab = window.switchTab;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollProgress, { passive: true });
+        window.addEventListener('resize', updateTabsScrollProgress);
+        setTimeout(updateTabsScrollProgress, 100);
+      }
+    });
+  </script>
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-lab7-canvas-fps.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>
