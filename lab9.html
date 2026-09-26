@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-Laboratoriya: Kod Generatsiyasi Uchun Maqsadli So'rovlar (Promptlar) Tuzish, Ularni Taqqoslash va Fizika Fani Uchun Shaxsiy Prompt-Kutubxona Shakllantirish</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/simulators.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    .prompt-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      resize: vertical;
+      margin-bottom: 8px;
+    }
+    .prompt-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .roadmap-node {
+      position: relative;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 14px;
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 90px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 768px) {
+      .rubric-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      background: rgba(56, 189, 248, 0.05);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .proto-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .proto-table th, .proto-table td {
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .proto-table th {
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .proto-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.015);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul: Prompt Muhandislik</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Lab</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Lab</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Lab</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Lab</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-Lab</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-Lab</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Lab</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-Lab</a></li>
+        <li><a href="lab9.html" class="nav-link active">🧪 9-Lab</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Lab</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link active">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-purple">9-Laboratoriya Mashg'uloti: Prompt Engineering & Physics Code Synthesis</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        Kod Generatsiyasi Uchun Maqsadli So'rovlar (Promptlar) Tuzish, Ularni Taqqoslash va Fizika Fani Uchun Shaxsiy Prompt-Kutubxona Shakllantirish
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Generativ sun'iy intellekt modellarining fizik simulyatsiyalar yaratishdagi samaradorligi va xatosiz ishlashi bevosita <strong>Prompt Muhandisligi (Prompt Engineering)</strong> sifatiga bog'liq. Ushbu laboratoriya mashg'ulotida talabalar bitta fizik jarayon (masalan, garmonik va so'nuvchi mayatnik tebranishi) uchun 4 xil darajadagi so'rovlarni (Zero-shot, chegaralangan so'rov, Chain-of-Thought va tizimli XML master-prompt) amalda sinab ko'radi, <strong>Claude 3.5 Sonnet</strong> orqali kod generatsiya qiladi, <strong>Google Antigravity AI</strong> da jarayon va kadrlar barqarorligini qayd etadi, <strong>GPT-4</strong> vositasida prompt strukturasini baholab, fizika ta'limi uchun shaxsiy prompt-kutubxonasini shakllantiradi.
+      </p>
+    </div>
+
+    <!-- 5-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-purple);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 9-Laboratoriya Mashg'uloti Rejasi va Tahliliy Bosqichlari:</h3>
+      <div class="grid-4" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. Diagnostika & Shaxsiy Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">TPACK va ZPD mezonlari asosida prompt strukturalari, CoT mantiqi va fizik cheklovlar bo'yicha diagnostik test hamda individual o'quv traektoriyasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. Prompt-Muhandislik Amaliyoti:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Rol-Kontekst-Vazifa-Cheklovlar arxitekturasi, Zero-shot, Few-shot, Chain-of-Thought va XML semantik teglari asosida 4 darajali so'rovlar evolyutsiyasi.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">3. Claude 3.5 Sonnet Sinovlari:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Artifacts interfeysida 4 xil darajadagi promptlarni sinovdan o'tkazish, sintaksis va semantik tahlil hamda generatsiya qilingan kodlarni solishtirish.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">4. Antigravity AI & GPT-4 Auditi:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Antigravity AI orqali kod metrikalari monitoringi va GPT-4 yordamida prompt strukturasini baholash va takomillashtirish.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. Diagnostika & Individual Reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Prompt Muhandisligi Nazariyasi</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Claude 3.5 Sinovlari & Kod</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Antigravity AI & GPT-4 Auditi</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Interaktiv Sandboks & Kutubxona</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Baholash Rubrikasi & Manbalar</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-track">
+        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          1. Sun'iy Intellekt Uchun Kognitiv Diagnostika va Individual Ta'lim Trayektoriyasi
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Fizika ta'limida dasturiy kod generatsiyasi oddiy matn yaratishdan tubdan farq qiladi: sun'iy intellektga berilayotgan so'rovda matematik modellar, differensial tenglamalar, saqlanish qonunlari va raqamli integratsiya usullari aniq ko'rsatilmasa, model "sodda halyutsinatsiya"ga uchrab, vizual jihatdan harakatlanadigan, biroq fizik qonunlarga zid bo'lgan psevdo-kod yaratadi. <strong>TPACK</strong> (Mishra & Koehler, 2006) va <strong>ZPD</strong> (Vygotskiy) asosidagi 4 ta diagnostik savol talabaning dastlabki darajasini aniqlaydi.
+        </p>
+
+        <!-- Quiz Box -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <h4 style="margin-bottom: 16px; color: #fff;">🧠 Boshlang'ich Kognitiv Diagnostika Testi (4 ta savol):</h4>
+
+          <!-- Savol 1 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">1. Ilmiy-texnik kod generatsiyasi uchun tuziladigan professional prompt tarkibidagi eng zarur 5 ta poydevor komponent qaysilar?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q1" value="a">
+              <span>A) Faqat dasturlash tili nomi, fayl kengaytmasi va ranglar palitrasi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q1" value="b">
+              <span>B) Salomlashish, minnatdorchilik bildirish va 500 ta tasodifiy so'z.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q1" value="c">
+              <span>C) Tizimli Rol (Role), Vaziyat Konteksti (Context), Aniq Ko'rsatma (Instruction), Fizik Cheklovlar (Constraints) va Chiqish Formati (Output Format).</span>
+            </label>
+          </div>
+
+          <!-- Savol 2 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">2. Fizik masalalarni modellashtirishda "Chain-of-Thought" (CoT — Fikrlash zanjiri) yondashuvi nima uchun oddiy Zero-shot so'rovidan ancha ustun?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q2" value="a">
+              <span>A) Chunki u modelning ishlash tezligini 10 barobar oshiradi va xotirani tozalaydi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q2" value="b">
+              <span>B) Chunki model bevosita yakuniy kodga sakramasdan, avval differensial tenglamani, kuchlar proyeksiyasini va integratsiya qadamini ketma-ket mulohaza qiladi, bu esa halyutsinatsiyani keskin kamaytiradi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q2" value="c">
+              <span>C) Chunki Chain-of-Thought faqat matnlarni ingliz tilidan tarjima qilishda ishlatiladi.</span>
+            </label>
+          </div>
+
+          <!-- Savol 3 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">3. Claude 3.5 Sonnet va Google Antigravity AI vositalarining fizika simulyatsiyasini yaratishdagi integratsiyasi qanday kechadi?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q3" value="a">
+              <span>A) Claude 3.5 Sonnet Artifacts orqali sifatli mustaqil Canvas kodini yaratadi, Google Antigravity AI esa kodning kadrlar chastotasi (FPS), energiya saqlanishi va fizik qonuniyatlarga mosligini avtomat monitoring qiladi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q3" value="b">
+              <span>B) Ikkala platforma faqat internet tezligini o'lchash uchun xizmat qiladi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q3" value="c">
+              <span>C) Antigravity AI kod yozadi, Claude esa faqat matn shriftini tanlaydi.</span>
+            </label>
+          </div>
+
+          <!-- Savol 4 -->
+          <div style="margin-bottom: 18px;">
+            <p style="font-weight: 600; margin-bottom: 8px;">4. GPT-4 orqali yozilgan fizik prompt strukturasini baholash va takomillashtirishda qaysi asosiy mezonlarga e'tibor qaratiladi?</p>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q4" value="a">
+              <span>A) Prompt matnining harflar soni va undagi tinish belgilari miqdori.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q4" value="b">
+              <span>B) Foydalanuvchining kompyuter operatsion tizimi turi.</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="diag9_q4" value="c">
+              <span>C) Semantik aniqlik, fizik qonuniyatlar va chegaraviy shartlarning to'liqligi, sonli integratsiya usulining qat'iyligi hamda noaniqliklarni istisno qilish darajasi.</span>
+            </label>
+          </div>
+
+          <button id="diag9-submit-btn" class="btn btn-primary" style="margin-top: 10px;">
+            Diagnostika Natijasini Hisoblash & Shaxsiy Rejani Tuzish
+          </button>
+        </div>
+
+        <!-- Result Box -->
+        <div id="diag9-result-box" style="display: none; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--accent-cyan); border-radius: var(--radius-md); padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <h4 style="margin: 0; color: var(--accent-cyan); font-size: 1.2rem;">
+              Sizning Kognitiv Profilingiz: <span id="diag9-score-val" style="color: #fff; font-weight: 700;"></span>
+            </h4>
+            <span class="badge badge-cyan" id="diag9-cluster-val">Klaster Aniqlanmoqda</span>
+          </div>
+          <p id="diag9-plan-desc" style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; font-size: 0.95rem;"></p>
+
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; color: #fff;">
+            📋 Claude 3.5 Sonnet & Antigravity AI Uchun Shaxsiylashtirilgan Prompt:
+          </label>
+          <textarea id="diag9-personalized-prompt" class="prompt-textarea" readonly style="min-height: 130px;"></textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag9-personalized-prompt">
+            📋 Promptdan Nusxa Olish
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: Prompt-Muhandislik Amaliyoti va Nazariyasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-emerald);">
+          2. Prompt-Muhandislik Nazariyasi va Fizika Fani Uchun So'rovlar Arxitekturasi
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
+          Prompt muhandisligi — bu sun'iy intellekt modellariga (LLM) o'zimiz istagan aniq fizik natijani, to'g'ri sonli hisob-kitoblarni va barqaror dasturiy kodni ishlab chiqarishga yo'naltirilgan kiruvchi ma'lumotlarni tizimli shakllantirish fanidir (Brown et al., 2020; Wei et al., 2022).
+        </p>
+
+        <!-- Subsection 2.1 -->
+        <div class="roadmap-node">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">2.1. Professional Fizik Promptning 5 Ta Ustuni:</h4>
+          <div class="grid-2" style="gap: 12px; margin-top: 10px;">
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <strong style="color: var(--accent-cyan);">1. Tizimli Rol (System Role):</strong><br>
+              <span style="font-size: 0.88rem; color: var(--text-secondary);">AI modelining o'zini kim deb tasavvur qilishi: masalan, <em>"Sen hisoblash fizikasi va JavaScript Canvas bo'yicha yetakchi dasturchisan."</em></span>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <strong style="color: var(--accent-emerald);">2. Kontekst va Didaktik Maqsad:</strong><br>
+              <span style="font-size: 0.88rem; color: var(--text-secondary);">Simulyatsiyaning o'rni va vazifasi: masalan, <em>"Oliy ta'lim talabalari uchun so'nuvchi tebranishlar va fazaviy portretni tushuntirish laboratoriyasi."</em></span>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <strong style="color: var(--accent-purple);">3. Matematik & Fizik Chegaralar:</strong><br>
+              <span style="font-size: 0.88rem; color: var(--text-secondary);">Aniq tenglamalar: $m \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{mg}{L}\sin\theta = 0$, integratsiya usuli (Simplektik Eyler yoki Velocity Verlet).</span>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <strong style="color: var(--accent-amber);">4. Dasturiy & Kadr Cheklovlari:</strong><br>
+              <span style="font-size: 0.88rem; color: var(--text-secondary);">`requestAnimationFrame`, `delta-time` clamping ($dt \le 0.04\text{s}$), masshtab omillari va DPI retina sozlamalari.</span>
+            </div>
+          </div>
+          <div style="margin-top: 12px; background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+            <strong style="color: #38bdf8;">5. Chiqish Formati (Output Specification):</strong><br>
+            <span style="font-size: 0.88rem; color: var(--text-secondary);"><em>"Bitta to'liq mustaqil HTML5 fayli, tashqi kutubxonalarsiz, KaTeX formulalari va real vaqt energiya grafigi bilan."</em></span>
+          </div>
+        </div>
+
+        <!-- Subsection 2.2: 4 Levels -->
+        <div class="roadmap-node" style="border-left-color: var(--accent-emerald);">
+          <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">2.2. Fizik So'rovlarning 4 Bosqichli Evolyutsiyasi:</h4>
+          <table class="proto-table">
+            <thead>
+              <tr>
+                <th>Daraja</th>
+                <th>Turi</th>
+                <th>Xarakteristikasi</th>
+                <th>Kutiladigan Kod Sifati & Xatolar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1-Daraja</strong></td>
+                <td>Sodda Zero-shot</td>
+                <td>"Mayatnik kodi yozib ber" kabi noaniq va qisqa iboralar.</td>
+                <td>Delta-time yo'q, energiya saqlanmaydi, kadr chastotasiga bog'liq, xatolik darajasi &gt; 50%.</td>
+              </tr>
+              <tr>
+                <td><strong>2-Daraja</strong></td>
+                <td>Fizik Chegarali</td>
+                <td>Massa, uzunlik va oddiy Nyuton qonuni ko'rsatilgan so'rov.</td>
+                <td>Differensial tenglama to'g'ri, ammo Eyler usuli tufayli tebranish sekin-asta portlaydi.</td>
+              </tr>
+              <tr>
+                <td><strong>3-Daraja</strong></td>
+                <td>Role + CoT</td>
+                <td>Ekspert roli, bosqichma-bosqich fizik mulohaza va simplektik usul talabi.</td>
+                <td>Yuqori barqarorlik, energiya invariantligi, so'nish koeffitsiyenti to'g'ri hisoblangan.</td>
+              </tr>
+              <tr>
+                <td><strong>4-Daraja</strong></td>
+                <td>Tizimli XML Master</td>
+                <td>Rol, kontekst, XML teglari, xatoliklarni oldini olish va fazaviy portret talabi.</td>
+                <td>Mukammal akademik daraja, Velocity Verlet integratsiyasi, telemetriya va to'liq responsivlik.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Subsection 2.3: XML Tagging -->
+        <div class="roadmap-node" style="border-left-color: var(--accent-purple);">
+          <h4 style="color: var(--accent-purple); margin-bottom: 8px;">2.3. Zamonaviy XML Teglari Asosida Prompt Tuzish (Anthropic Standarti):</h4>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 10px;">
+            Claude 3.5 Sonnet kabi ilg'or modellar XML teglari (<code>&lt;context&gt;</code>, <code>&lt;physics_model&gt;</code>, <code>&lt;constraints&gt;</code>) orqali berilgan so'rovlarni semantik jihatdan 35% aniqroq qayta ishlaydi va ko'rsatmalarni chalkashtirib yubormaydi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: Claude 3.5 Sinovlari va Kod Generatsiyasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-purple);">
+          3. Promptlar Sinovi va Kod Generatsiyasi: Claude 3.5 Sonnet (Artifacts)
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Talaba Claude 3.5 Sonnet bilan muloqotda bitta fizik hodisa (garmonik va so'nuvchi mayatnik) misolida 4 xil darajadagi promptlarni sinab ko'radi va ularning natijasida olingan kodlarni qiyoslaydi.
+        </p>
+
+        <!-- Prompt 1 Card -->
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin: 0; color: #f43f5e;">1-Sinov: Noaniq Zero-shot Prompt (Boshlang'ich Daraja)</h4>
+            <span class="badge badge-purple">Past Sifat (35/100)</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
+            <strong>Kamchiliklari:</strong> Hech qanday fizik kattaliklar (ip uzunligi, massa, qarshilik kuchi) berilmagan. Natijada AI o'zboshimchalik bilan qat'iy piksel qo'shadi, delta-time hisobga olinmaydi.
+          </p>
+          <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Uchun Sinov Prompti:</label>
+          <textarea id="prompt-test1" class="prompt-textarea" readonly>Menga brauzerda mayatnik tebranishini ko'rsatadigan HTML va JavaScript kodi yozib ber.</textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-test1">📋 Nusxa Olish</button>
+        </div>
+
+        <!-- Prompt 2 Card -->
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin: 0; color: #f59e0b;">2-Sinov: Fizik Chegaralari Ko'rsatilgan Prompt</h4>
+            <span class="badge badge-amber">O'rta Sifat (68/100)</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
+            <strong>Kamchiliklari:</strong> Aniq tenglama berilgan, biroq sonli integratsiya usuli (Oddiy Eyler) sababli energiya saqlanmaydi va vaqt o'tishi bilan amplitudaning sun'iy o'sishi kuzatiladi.
+          </p>
+          <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Uchun Sinov Prompti:</label>
+          <textarea id="prompt-test2" class="prompt-textarea" readonly>HTML5 Canvasda oddiy mayatnik harakatini chizib ber. Ip uzunligi L=1.5m, massa m=2kg, gravitatsiya g=9.8 m/s^2. Tebranish tenglamasi d2(theta)/dt2 = -(g/L)*sin(theta). Eyler usulidan foydalan.</textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-test2">📋 Nusxa Olish</button>
+        </div>
+
+        <!-- Prompt 3 Card -->
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin: 0; color: var(--accent-cyan);">3-Sinov: Role + Chain-of-Thought (CoT) Prompt</h4>
+            <span class="badge badge-cyan">Yuqori Sifat (88/100)</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
+            <strong>Afzalliklari:</strong> Modelga ekspert roli yuklatilgan va fizik qadamlar (qarshilik kuchi, Simplektik Eyler, kadrlar vaqti) ketma-ket uqtirilgan. Energiya barqarorligi ta'minlanadi.
+          </p>
+          <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Uchun Sinov Prompti:</label>
+          <textarea id="prompt-test3" class="prompt-textarea" readonly style="min-height: 130px;">Sen tajribali hisoblash fizikasisan. Kichik burchaklar uchun emas, balki ixtiyoriy burchak ostidagi mayatnikning garmonik va so'nuvchi tebranishini modellashtir.
+Avvalo quyidagi fizik bosqichlarni mulohaza qil:
+1. Havoning qarshilik kuchi F_q = -b * v ekanligini inobatga ol;
+2. Standart Eyler emas, Simplektik Eyler usuli orqali mexanik energiyaning saqlanishini kafolatla;
+3. Animatsiyani requestAnimationFrame va haqiqiy delta-time (dt <= 0.04s) bilan sinxronla;
+4. Kodni bitta to'liq mustaqil HTML fayli ko'rinishida yozib ber.</textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-test3">📋 Nusxa Olish</button>
+        </div>
+
+        <!-- Prompt 4 Card -->
+        <div class="prompt-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin: 0; color: var(--accent-emerald);">4-Sinov: To'liq Ishlab Chiqilgan XML Master Prompt (Capstone Darajasi)</h4>
+            <span class="badge badge-emerald">Akademik Benchmark (98/100)</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
+            <strong>Afzalliklari:</strong> Barcha talablar (fizik model, simplektik integratsiya, fazaviy portret, telemetriya, interaktivlik) strukturaviy XML teglariga ajratilgan. Kod 100% barqaror va ilmiy talablarga to'la mos keladi.
+          </p>
+          <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Uchun Sinov Prompti:</label>
+          <textarea id="prompt-test4" class="prompt-textarea" readonly style="min-height: 160px;"><system_role>Sen hisoblash fizikasi va Canvas grafikasi bo'yicha katta dasturchi hamda fizika o'qituvchisisan.</system_role>
+<context>Universitet talabalari uchun nomuvofiq garmonik tebranishlar va fazaviy fazoning vizual laboratoriyasi.</context>
+<physics_model>
+- Differensial tenglama: d²θ/dt² + 2β·dθ/dt + (g/L)·sinθ = 0
+- Simplektik integratsiya: Velocity Verlet yoki Simplektik Eyler usuli
+- Kinetik va potensial energiya hisobi: E = m·g·L·(1 - cosθ) + 0.5·m·(L·ω)²
+</physics_model>
+<constraints>
+- Ekran o'lchamiga moslashuvchanlik (Responsive Canvas)
+- Delta-time: dt = Math.min((t - lastT)/1000, 0.04)
+- Yon panelda real vaqt fazaviy portreti (θ vs ω) grafigi
+</constraints>
+<output_format>To'liq va xatosiz mustaqil HTML5/JavaScript kodi.</output_format></textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-test4">📋 Nusxa Olish</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Antigravity AI va GPT-4 Auditi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-amber);">
+          4. Natijalarni Qayd Etish va Prompt Strukturasini Baholash: Google Antigravity AI & GPT-4
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Prompt muhandisligining yakuniy maqsadi — yozilgan so'rovning barqaror va takrorlanuvchan natija berishini isbotlashdir. Bu jarayonda <strong>Google Antigravity AI</strong> agentlik tizimi kod unumdorligini, kadrlar barqarorligini va fizik xatoliklarni avtomat qayd etsa, <strong>GPT-4</strong> prompt strukturasining semantik sifatini tekshirib beradi.
+        </p>
+
+        <!-- Subsection 4.1 -->
+        <div class="roadmap-node">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">4.1. Google Antigravity AI Avtonom Monitoringi:</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
+            Antigravity AI har bir generatsiya qilingan kod versiyasi bo'yicha quyidagi metrikalarni avtomatik tarzda o'lchaydi:
+          </p>
+          <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; padding-left: 20px;">
+            <li><strong>Kadrlar Yangilanish Tezligi (FPS & Jank):</strong> 1-darajali kodda kadrlar sakrashi ($Jank > 15\%$), 4-darajali kodda esa barqaror $60.0 \pm 0.2\text{ FPS}$.</li>
+            <li><strong>Energiya Dreyfi ($\Delta E / E_0$):</strong> 10 000 kadr davomida standart Eyler usulida energiya $340\%$ ga oshib ketishi, Velocity Verletda esa dreyf $0.05\%$ dan oshmasligi.</li>
+            <li><strong>Vaqt Bog'liqligi (V-Sync Drift):</strong> Turli monitorlarda (60Hz, 120Hz, 144Hz) harakat tezligining o'zgarmasligi.</li>
+          </ul>
+        </div>
+
+        <!-- Subsection 4.2: GPT-4 Prompt Structure Evaluator -->
+        <div class="roadmap-node" style="border-left-color: var(--accent-amber);">
+          <h4 style="color: var(--accent-amber); margin-bottom: 8px;">4.2. GPT-4 Yordamida Prompt Strukturasini Baholash Topshirig'i:</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px;">
+            Talaba o'zi tuzgan har bir yangi promptni GPT-4 modeliga kiritib, quyidagi maxsus audit so'rovi orqali uning struktura mukammalligini baholatadi:
+          </p>
+          <textarea id="prompt-gpt4-audit" class="prompt-textarea" readonly style="min-height: 140px;">Sen prompt muhandisligi va hisoblash fizikasi bo'yicha yetakchi ekspertsan.
+Men fizika darsi uchun quyidagi so'rovni (promptni) yozdim:
+[O'z promptingizni shu yerga qo'ying]
+
+Iltimos, ushbu promptni quyidagi 4 ta mezon bo'yicha 100 ballik shkalada baholab bering:
+1. Semantik aniqlik va rollar taqsimoti (25 ball)
+2. Fizik chegaralar va matematik model to'liqligi (25 ball)
+3. Sonli integratsiya va kadrlar barqarorligi talablari (25 ball)
+4. Halyutsinatsiyani cheklash va chiqish formati qat'iyligi (25 ball)
+
+So'ngra ushbu promptni yanada takomillashtirilgan XML master-shablon ko'rinishida qayta yozib bering.</textarea>
+          <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-gpt4-audit">📋 Nusxa Olish</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Interaktiv Dastgoh & Prompt-Kutubxona Sandboksi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          5. Interaktiv Prompt Sandboksi va Shaxsiy Fizika Prompt-Kutubxonasi
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Quyidagi laboratoriya dastgohida 4 xil darajadagi promptlar orqali olingan simulyatsiya kodlari jonli rejimda ishlaydi. Siz turli darajalarni tanlab, ularning fizik aniqligi, fazaviy portreti va energiya barqarorligini o'z ko'zingiz bilan solishtirishingiz hamda o'zingizning shaxsiy promptlaringizni kutubxonaga saqlashingiz mumkin.
+        </p>
+
+        <!-- Comparison Sandbox Grid: Left Canvases, Right Controls -->
+        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-bottom: 30px;">
+          
+          <!-- Canvases Column -->
+          <div>
+            <div style="background: rgba(15, 23, 42, 0.95); border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+              <div style="padding: 10px 16px; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <span id="lab9-profile-title" style="font-weight: 600; font-size: 0.95rem; color: #fff;">4-Daraja: To'liq Ishlab Chiqilgan XML Master Prompt</span>
+                <span id="lab9-profile-risk" style="font-size: 0.8rem; color: #10b981; font-weight: 600;">Xavf: Minimal (0.01%)</span>
+              </div>
+              <canvas id="lab9-sim-canvas" width="800" height="400" style="display: block; width: 100%; height: auto; background: #090d16;"></canvas>
+            </div>
+
+            <!-- Phase Portrait & Energy Canvas -->
+            <div style="margin-top: 14px; background: rgba(15, 23, 42, 0.95); border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden;">
+              <div style="padding: 6px 14px; background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border-color); font-size: 0.82rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
+                <span>📈 Chap: Fazaviy Portret (θ vs ω)</span>
+                <span>O'ng: To'liq Energiya Barqarorligi (E = Ep + Ek) 📊</span>
+              </div>
+              <canvas id="lab9-phase-canvas" width="800" height="120" style="display: block; width: 100%; height: auto; background: #070a10;"></canvas>
+            </div>
+          </div>
+
+          <!-- Controls & Metrics Column -->
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            
+            <!-- Controls Panel -->
+            <div class="glass-panel" style="padding: 16px; border: 1px solid var(--border-color);">
+              <h4 style="margin: 0 0 12px 0; color: #fff; font-size: 1.05rem;">⚙️ Prompt Darajasi Tanlovi</h4>
+
+              <div style="margin-bottom: 12px;">
+                <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">Sinov Qilinayotgan Prompt:</label>
+                <select id="lab9-prompt-level-select" style="width: 100%; padding: 8px 10px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.88rem;">
+                  <option value="level4" selected>4-Daraja: XML Master Prompt (98/100)</option>
+                  <option value="level3">3-Daraja: Role + Chain-of-Thought (88/100)</option>
+                  <option value="level2">2-Daraja: Chegaralangan Prompt (68/100)</option>
+                  <option value="level1">1-Daraja: Sodda Zero-shot (35/100)</option>
+                </select>
+              </div>
+
+              <!-- Sliders -->
+              <div style="margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                  <span style="color: var(--text-secondary);">Ip Uzunligi (L):</span>
+                  <strong id="lab9-length-val" style="color: var(--accent-cyan);">1.80 m</strong>
+                </div>
+                <input type="range" id="lab9-length-slider" min="100" max="240" step="10" value="180" style="width: 100%;">
+              </div>
+
+              <div style="margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                  <span style="color: var(--text-secondary);">Qarshilik Koeffitsiyenti (β):</span>
+                  <strong id="lab9-damping-val" style="color: var(--accent-cyan);">0.050</strong>
+                </div>
+                <input type="range" id="lab9-damping-slider" min="0" max="0.2" step="0.01" value="0.05" style="width: 100%;">
+              </div>
+
+              <!-- Action Buttons -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+                <button id="lab9-play-btn" class="btn btn-primary btn-sm">▶ Boshlash</button>
+                <button id="lab9-pause-btn" class="btn btn-secondary btn-sm" disabled>⏸ To'xtatish</button>
+                <button id="lab9-reset-btn" class="btn btn-secondary btn-sm">🔄 Qayta</button>
+              </div>
+            </div>
+
+            <!-- Metrics HUD -->
+            <div class="glass-panel" style="padding: 16px; border: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.65);">
+              <h4 style="margin: 0 0 10px 0; color: var(--accent-cyan); font-size: 1rem;">📊 Antigravity AI Telemetriyasi</h4>
+              
+              <div style="margin-bottom: 8px; font-size: 0.86rem; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                <span style="color: var(--text-secondary);">Sonli Integratsiya:</span>
+                <strong id="lab9-profile-method" style="color: #fff; font-size: 0.82rem;">Velocity Verlet</strong>
+              </div>
+
+              <div style="margin-bottom: 8px; font-size: 0.86rem; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                <span style="color: var(--text-secondary);">Kod Sifati Indeksi:</span>
+                <strong id="lab9-profile-quality" style="color: #10b981;">98 / 100</strong>
+              </div>
+
+              <div style="margin-bottom: 8px; font-size: 0.86rem; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                <span style="color: var(--text-secondary);">Fizik Aniqlik Darajasi:</span>
+                <strong id="lab9-profile-accuracy" style="color: #10b981;">99.5 %</strong>
+              </div>
+
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-top: 6px;">
+                <span id="lab9-profile-features">Benuqson energetik barqarorlik, fazaviy traektoriya chizig'i, to'liq telemetriya.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Prompt Preview Textarea -->
+        <div style="margin-bottom: 30px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; color: #fff;">
+            📄 Tanlangan Darajadagi Haqiqiy Prompt Matni:
+          </label>
+          <textarea id="lab9-prompt-preview-text" class="prompt-textarea" style="min-height: 110px;" readonly></textarea>
+        </div>
+
+        <!-- Personal Prompt Library Manager -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <h3 style="margin: 0; color: #fff; font-size: 1.25rem;">📚 Fizika Fani Uchun Shaxsiy Prompt-Kutubxona</h3>
+            <button id="lab9-export-lib-btn" class="btn btn-secondary btn-sm">💾 Kutubxonani Eksport Qilish (JSON)</button>
+          </div>
+
+          <!-- Add Prompt Form -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 4px;">Bo'lim (Soha):</label>
+              <select id="lab9-lib-topic" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="Mexanika">Mexanika</option>
+                <option value="Termodinamika">Termodinamika</option>
+                <option value="Elektrodinamika">Elektrodinamika</option>
+                <option value="Optika">Optika</option>
+                <option value="Astronomiya">Astronomiya & Astrofizika</option>
+              </select>
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 4px;">Mo'ljallangan AI Model:</label>
+              <select id="lab9-lib-model" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="Claude 3.5 Sonnet">Claude 3.5 Sonnet</option>
+                <option value="Google Antigravity AI">Google Antigravity AI</option>
+                <option value="GPT-4">GPT-4</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 12px;">
+            <label style="display: block; font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 4px;">Prompt Sarlavhasi / Maqsadi:</label>
+            <input type="text" id="lab9-lib-title" placeholder="Masalan: Prujinali mayatnikning fazaviy portreti..." style="width: 100%; padding: 8px 12px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.88rem;">
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 4px;">To'liq Prompt Matni (XML yoki CoT formatida):</label>
+            <textarea id="lab9-lib-content" placeholder="<system_role>...</system_role>&#10;<physics_model>...</physics_model>" class="prompt-textarea" style="min-height: 90px;"></textarea>
+          </div>
+
+          <button id="lab9-add-prompt-btn" class="btn btn-primary btn-sm" style="margin-bottom: 20px;">
+            ➕ Yangi Promptni Kutubxonaga Saqlash
+          </button>
+
+          <!-- List of Saved Prompts -->
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px; font-size: 1.05rem;">Saqlangan Promptlar Ro'yxati:</h4>
+          <div id="lab9-prompt-library-list"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="glass-panel" style="margin-bottom: 25px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
+          6. Akademik Baholash Rubrikasi (100 Ball) va Ilmiy-Metodologik Manbalar
+        </h2>
+        <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+          Talabalarning 9-laboratoriya mashg'uloti bo'yicha erishgan bilimlari, prompt muhandisligi ko'nikmalari va shaxsiy prompt-kutubxona sifati quyidagi 5 ta xalqaro akademik mezon bo'yicha baholanadi.
+        </p>
+
+        <!-- Rubric Calculator Card -->
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+          <h3 style="margin-bottom: 16px; color: #fff; font-size: 1.2rem;">💯 100 Ballik Baholash Mezonlari Kalkulyatori:</h3>
+
+          <!-- Mezon 1 -->
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--accent-cyan);">1. Prompt Strukturalash va Arxitektura:</strong>
+              <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
+                Rol, Kontekst, Vazifa, Fizik chegaralar va Chiqish formati to'liqligi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric9_c1" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="15">Qoniqarli (15 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; color: var(--accent-cyan); font-weight: 600;">Max: 25</div>
+          </div>
+
+          <!-- Mezon 2 -->
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--accent-emerald);">2. 4 Xil Prompt Darajasini Taqqoslash va Tahlil:</strong>
+              <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
+                Zero-shot, chegaralangan, CoT va XML master-prompt kod sifati va energiya dreyfi tahlili.
+              </div>
+            </div>
+            <div>
+              <select id="rubric9_c2" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="25">A'lo (25 ball)</option>
+                <option value="20">Yaxshi (20 ball)</option>
+                <option value="15">Qoniqarli (15 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; color: var(--accent-emerald); font-weight: 600;">Max: 25</div>
+          </div>
+
+          <!-- Mezon 3 -->
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--accent-purple);">3. Claude 3.5 Sonnet Kod Generatsiyasi:</strong>
+              <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
+                Artifacts orqali mustaqil Canvas kodini yaratish va sintaksis/semantik xatoliklarni tuzatish.
+              </div>
+            </div>
+            <div>
+              <select id="rubric9_c3" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="12">Qoniqarli (12 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; color: var(--accent-purple); font-weight: 600;">Max: 20</div>
+          </div>
+
+          <!-- Mezon 4 -->
+          <div class="rubric-row">
+            <div>
+              <strong style="color: var(--accent-amber);">4. Google Antigravity AI va GPT-4 Auditi:</strong>
+              <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
+                Antigravity AI monitoring metrikalari (FPS/Jank) va GPT-4 prompt tahlili rubrikasi.
+              </div>
+            </div>
+            <div>
+              <select id="rubric9_c4" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="20">A'lo (20 ball)</option>
+                <option value="16">Yaxshi (16 ball)</option>
+                <option value="12">Qoniqarli (12 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; color: var(--accent-amber); font-weight: 600;">Max: 20</div>
+          </div>
+
+          <!-- Mezon 5 -->
+          <div class="rubric-row">
+            <div>
+              <strong style="color: #38bdf8;">5. Shaxsiy Prompt-Kutubxona va Akademik Hisobot:</strong>
+              <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
+                Fizika bo'limlari bo'yicha kamida 4 ta promptni kutubxonaga kiritish va sof o'zbek tilidagi xulosalar.
+              </div>
+            </div>
+            <div>
+              <select id="rubric9_c5" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                <option value="10">A'lo (10 ball)</option>
+                <option value="8">Yaxshi (8 ball)</option>
+                <option value="6">Qoniqarli (6 ball)</option>
+                <option value="0">Bajarilmadi (0 ball)</option>
+              </select>
+            </div>
+            <div style="text-align: right; color: #38bdf8; font-weight: 600;">Max: 10</div>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+            <button id="lab9-calc-rubric-btn" class="btn btn-primary">
+              Umumiy Ballni Hisoblash
+            </button>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span style="font-size: 1.1rem; color: var(--text-secondary);">Umumiy Natija:</span>
+              <strong id="lab9-total-score" style="font-size: 1.4rem; color: #fff;">0 / 100</strong>
+              <span id="lab9-grade-badge" class="badge badge-cyan" style="font-size: 0.95rem; padding: 6px 14px;">Baholanmagan</span>
+            </div>
+          </div>
+          <p id="lab9-rubric-feedback" style="margin-top: 14px; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;"></p>
+        </div>
+
+        <!-- Academic Bibliography (APA 7) -->
+        <div class="roadmap-node">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px;">📚 Foydalanilgan Ilmiy-Metodologik Adabiyotlar (APA 7 Standarti):</h4>
+          <ol style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 20px;">
+            <li>Anthropic. (2024). <em>Prompt Engineering Interactive Tutorial & XML Tag Optimization Guidelines</em>. Anthropic User Guides. https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags</li>
+            <li>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., ... & Amodei, D. (2020). <em>Language Models are Few-Shot Learners</em>. Advances in Neural Information Processing Systems (NeurIPS 2020), 33, 1877-1901.</li>
+            <li>Google. (2024). <em>Prompt Engineering Best Practices for Scientific Reasoning and Code Generation</em>. Google DeepMind Technical Publications.</li>
+            <li>Mishra, P., & Koehler, M. J. (2006). <em>Technological pedagogical content knowledge: A framework for teacher knowledge</em>. Teachers College Record, 108(6), 1017-1054.</li>
+            <li>OpenAI. (2023). <em>GPT-4 Technical Report: Prompt Structuring, Accuracy, and Hallucination Reduction in Scientific Domains</em>. arXiv preprint arXiv:2303.08774.</li>
+            <li>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q. V., & Zhou, D. (2022). <em>Chain-of-thought prompting elicits reasoning in large language models</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 24824-24837.</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-icon">🪐</span>
+            <span class="footer-logo-text">Fizika & AI Portal</span>
+          </div>
+          <p class="footer-desc">
+            Fizika va astronomiya ta'limida axborot texnologiyalari fanidan virtual laboratoriyalar, interaktiv simulyatsiyalar va zamonaviy AI vositalari integratsiyasi portali.
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Tezkor Havolalar</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Bosh Sahifa</a></li>
+            <li><a href="lab1.html">1-Laboratoriya</a></li>
+            <li><a href="lab8.html">8-Laboratoriya</a></li>
+            <li><a href="lab9.html">9-Laboratoriya</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Resurslar</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank">Google Drive Papka</a></li>
+            <li><a href="https://claude.ai" target="_blank">Claude AI</a></li>
+            <li><a href="https://openai.com" target="_blank">ChatGPT / GPT-4</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fizika va astronomiya o'qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tab Scroll Helper Script & Main JS -->
+  <script>
+    function scrollTabsNav(offset) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.scrollBy({ left: offset, behavior: 'smooth' });
+        setTimeout(updateTabsScrollProgress, 250);
+      }
+    }
+
+    function updateTabsScrollProgress() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      if (!nav || !thumb) return;
+
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 0) {
+        thumb.style.width = '100%';
+        thumb.style.transform = 'translateX(0)';
+        return;
+      }
+
+      const ratio = nav.clientWidth / nav.scrollWidth;
+      const thumbWidthPercent = Math.max(ratio * 100, 15);
+      thumb.style.width = thumbWidthPercent + '%';
+
+      const scrollFraction = nav.scrollLeft / maxScroll;
+      const maxTranslatePercent = (100 - thumbWidthPercent);
+      const translateVal = scrollFraction * maxTranslatePercent;
+      thumb.style.transform = `translateX(${translateVal}%)`;
+    }
+
+    window.switchTab = function(event, tabId) {
+      const allTabs = document.querySelectorAll('.tab-content');
+      allTabs.forEach(t => t.classList.remove('active'));
+
+      const allBtns = document.querySelectorAll('.tab-btn');
+      allBtns.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        activeBtn = event.currentTarget;
+      } else {
+        const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (btn) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        }
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          setTimeout(updateTabsScrollProgress, 200);
+        }
+      }
+
+      if (window.renderMathInElement && target) {
+        window.renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+      }
+
+      if (tabId === 'tab-reja5' && window.triggerLab9CanvasRedraw) {
+        setTimeout(window.triggerLab9CanvasRedraw, 50);
+      }
+    };
+    window.openTab = window.switchTab;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollProgress, { passive: true });
+        window.addEventListener('resize', updateTabsScrollProgress);
+        setTimeout(updateTabsScrollProgress, 100);
+      }
+    });
+  </script>
+  <script src="js/physics-engine.js"></script>
+  <script src="js/sim-lab9-prompt-library.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>
