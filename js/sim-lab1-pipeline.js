@@ -17,14 +17,14 @@
       math: "$$y(t) = v_0 t + \\frac{1}{2}g t^2, \\quad v(t) = v_0 + g t, \\quad F_{\\text{qarshilik}} = -k v$$",
       name: "jismning erkin tushishi (vakuum va havo qarshiligida)",
       formula: "y = v0*t + 0.5*g*t^2, F_drag = -k*v yoki -0.5*rho*Cd*A*v^2",
-      params: "boshlang'ich tezlik v0, gravitatsiya g, qarshilik koeffitsienti k"
+      params: "boshlang'ich tezlik v0, gravitatsiya g, qarshilik koeffitsiyenti k"
     },
     'pendulum': {
       title: "Matematik Mayatnikning Garmonik Tebranishlari",
       math: "$$T = 2\\pi\\sqrt{\\frac{l}{g}}, \\quad \\theta''(t) + \\frac{g}{l}\\sin\\theta + \\gamma\\theta' = 0$$",
       name: "matematik mayatnikning tebranishlari",
       formula: "theta'' = -(g/l)*sin(theta) - gamma*theta'",
-      params: "ip uzunligi l, boshlang'ich burchak theta0, so'nish koeffitsienti gamma"
+      params: "ip uzunligi l, boshlang'ich burchak theta0, so'nish koeffitsiyenti gamma"
     },
     'refraction': {
       title: "Yorug'likning Sinishi va Snellius Qonuni",

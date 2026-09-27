@@ -1,5 +1,5 @@
 /**
- * 10-Laboratoriya: orbital elementlar asosida traektoriya va sinxron ovozli tushuntirish.
+ * 10-Laboratoriya: orbital elementlar asosida trayektoriya va sinxron ovozli tushuntirish.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
  * 2. Dastgoh: Kepler tenglamasi M = E − e·sin E (Nyuton-Rafson), teng vaqtlarda
  *    chiziladigan yuzalar (2-qonun), vis-viva tezligi. 30 s lik ssenariy 4 ta

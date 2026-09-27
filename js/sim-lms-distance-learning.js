@@ -58,7 +58,7 @@ function initLmsDistanceLab() {
       summaryHtml: "1. Asosiy tenglama: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$.<br>2. So'nish koeffitsiyenti: $$\\beta = \\gamma / (2m)$$, xos chastota: $$\\omega_0 = \\sqrt{k/m}$$.<br>3. Tavsiya: Eyler o'rniga simplektik integrator qo'llash.",
       actions: [
         "1. Prujina qattiqligi $k$ va so'nish parametri $\\gamma$ ni o'zgartirib faza portretini chizish.",
-        "2. Kichik tebranishlar uchun energiyaning eksponentsial kamayish grafigini tekshirish.",
+        "2. Kichik tebranishlar uchun energiyaning eksponensial kamayish grafigini tekshirish.",
         "3. Shaxsiy loyiha kodini GitHub Pages portfeliga yuklash."
       ],
       sliders: {
