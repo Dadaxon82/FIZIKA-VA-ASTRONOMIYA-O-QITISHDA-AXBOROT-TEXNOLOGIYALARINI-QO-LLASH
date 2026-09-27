@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14-Laboratoriya: Elektromagnit maydonlar va elektr zanjirlari harakatini modellashtiruvchi interaktiv kodlarni yaratish hamda jarayonni AI orqali audio-ovozlashtirish</title>
+  <style>
+/* MAIN.CSS */
+/* ==========================================================================
+   MAIN.CSS - Core Design System, Variables, Dark Glassmorphism & Layout
+   ========================================================================== */
+
+:root {
+  --bg-primary: #090D16;
+  --bg-secondary: #0F172A;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(56, 189, 248, 0.4);
+  --border-active: rgba(129, 140, 248, 0.6);
+  
+  --text-main: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  --accent-cyan: #38BDF8;
+  --accent-indigo: #818CF8;
+  --accent-emerald: #34D399;
+  --accent-amber: #FBBF24;
+  --accent-rose: #F43F5E;
+  --accent-purple: #C084FC;
+  
+  --gradient-brand: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+  --gradient-emerald: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  --gradient-amber: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  --gradient-rose: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
+  --gradient-dark: linear-gradient(180deg, #090D16 0%, #0F172A 100%);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.2);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+/* Global Reset & Responsive Protection */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.65;
+  background-image: 
+    radial-gradient(at 10% 15%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+    radial-gradient(at 90% 85%, rgba(129, 140, 248, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(192, 132, 252, 0.04) 0px, transparent 60%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.container, .main-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Text Wrapping & Word-Break */
+p, h1, h2, h3, h4, h5, h6, span, li, td, th, div, label, blockquote {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(1.8rem, 4vw, 3.2rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.45rem, 3vw, 2.3rem); letter-spacing: -0.02em; }
+h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); }
+p { color: var(--text-secondary); font-size: 1.02rem; }
+
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-cyan { color: var(--accent-cyan); }
+.text-emerald { color: var(--accent-emerald); }
+.text-amber { color: var(--accent-amber); }
+.text-rose { color: var(--accent-rose); }
+.text-purple { color: var(--accent-purple); }
+
+/* Glass Panels & Cards */
+.glass-panel, .hero-panel, .card {
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.glass-panel:hover, .card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* Images & Media */
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* KaTeX & MathJax Mobile Overflow Protection */
+.katex-display, .katex-html, .MathJax, .MathJax_Display {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 8px 4px !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.4) transparent;
+}
+
+.katex-display::-webkit-scrollbar {
+  height: 4px;
+}
+
+.katex-display::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.4);
+  border-radius: 4px;
+}
+
+/* Tables Responsive */
+.styled-table-wrapper, div[style*="overflow-x:auto"] {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+
+.styled-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 16px; }
+  .container, .main-container { padding: 0 16px; }
+  .glass-panel, .hero-panel, .card { padding: 20px 16px; border-radius: var(--radius-md); }
+  
+  h1 { font-size: clamp(1.5rem, 5.5vw, 2.0rem); }
+  h2 { font-size: clamp(1.25rem, 4.5vw, 1.65rem); }
+  h3 { font-size: clamp(1.05rem, 3.8vw, 1.3rem); }
+  p { font-size: 0.95rem; }
+  
+  .katex { font-size: 0.92em; }
+}
+
+@media (max-width: 480px) {
+  .container, .main-container { padding: 0 12px; }
+  .glass-panel, .hero-panel, .card { padding: 16px 12px; }
+  .katex { font-size: 0.85em; }
+  
+  /* Compact buttons and paddings */
+  .btn { padding: 8px 14px !important; font-size: 0.85rem !important; }
+}
+
+
+/* COMPONENTS.CSS */
+/* ==========================================================================
+   COMPONENTS.CSS - Navigation, Drawer Menu, Badges, Tabs, Code, Toasts
+   ========================================================================== */
+
+/* Header & Navbar */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.brand-logo svg {
+  width: 32px;
+  height: 32px;
+  color: var(--accent-cyan);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-main);
+  background: var(--bg-card-hover);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-cyan);
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-btn.active .hamburger-icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.active .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active .hamburger-icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  z-index: 1100;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  overflow-y: auto;
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.drawer-link:hover, .drawer-link.active {
+  color: var(--accent-cyan);
+  background: var(--bg-card-hover);
+}
+
+@media (max-width: 868px) {
+  .nav-links { display: none; }
+  .hamburger-btn { display: flex; }
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.badge-cyan { background: rgba(56, 189, 248, 0.12); color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.3); }
+.badge-emerald { background: rgba(52, 211, 153, 0.12); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.3); }
+.badge-amber { background: rgba(251, 191, 36, 0.12); color: var(--accent-amber); border-color: rgba(251, 191, 36, 0.3); }
+.badge-rose { background: rgba(244, 63, 94, 0.12); color: var(--accent-rose); border-color: rgba(244, 63, 94, 0.3); }
+.badge-purple { background: rgba(192, 132, 252, 0.12); color: var(--accent-purple); border-color: rgba(192, 132, 252, 0.3); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--gradient-brand);
+  color: #090D16;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  color: var(--accent-cyan);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Tabs & Carousel Scroll Navigation */
+.tabs-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.tabs-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  user-select: none;
+}
+
+.tabs-scroll-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  transform: scale(1.05);
+}
+
+.tabs-scroll-btn:active {
+  transform: scale(0.95);
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  flex: 1;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide native browser scrollbar across WebKit/Blink (Chrome/Safari/Edge/Opera) */
+.tabs-nav::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Scroll Progress Track Indicator */
+.tabs-scroll-track-container {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  margin-top: 4px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs-scroll-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background: var(--gradient-brand);
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  transition: width 0.1s ease, left 0.1s ease;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+}
+
+.tab-btn.active {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Code Snippet Block */
+.code-block {
+  background: #0B1120;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(15, 23, 42, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.code-content {
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #E2E8F0;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-cyan);
+  color: var(--text-main);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  animation: toastSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes toastSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Quiz Option Cards */
+.quiz-option-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.92rem;
+  color: var(--text-main);
+}
+
+.quiz-option-card:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.quiz-option-card.selected {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+
+/* SIMULATORS.CSS */
+/* ==========================================================================
+   SIMULATORS.CSS - Responsive Physics Canvas Layouts, HUD & High-DPI Adaptation
+   ========================================================================== */
+
+.sim-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .sim-container {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}
+
+/* Canvas Viewport & High-DPI Container */
+.canvas-viewport-wrapper, .canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 280px;
+  background: #060911;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y;
+}
+
+/* Responsive Canvas Element */
+canvas, .sim-canvas {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  box-sizing: border-box;
+  touch-action: pan-y;
+}
+
+/* Simulation HUD Overlay */
+.sim-hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hud-pill {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hud-pill-val {
+  font-weight: 700;
+  color: var(--accent-cyan);
+}
+
+/* Energy Bar HUD */
+.energy-hud {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.energy-bar-wrap {
+  flex: 1;
+  min-width: 120px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.energy-fill-kinetic {
+  background: #34D399;
+  height: 100%;
+  transition: width 0.05s linear;
+}
+
+.energy-fill-potential {
+  background: #38BDF8;
+  height: 100%;
+  transition: width 0.05s linear;
+}
+
+/* Simulation Controls Panel */
+.sim-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.control-label {
+  color: var(--text-secondary);
+}
+
+.control-value {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Sliders */
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-cyan);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .canvas-viewport-wrapper, .canvas-container {
+    min-height: 240px;
+  }
+  .hud-pill {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+}
+
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    .prompt-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      resize: vertical;
+      margin-bottom: 8px;
+    }
+    .prompt-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .roadmap-node {
+      position: relative;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 14px;
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .rubric-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 90px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 768px) {
+      .rubric-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      background: rgba(56, 189, 248, 0.05);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .proto-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .proto-table th, .proto-table td {
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .proto-table th {
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .proto-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.015);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🪐</span>
+        <span class="nav-logo-text">Fizika & AI Portal</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="Kirish_AI_Fizik_Simulyatsiyalar_Web.html" class="nav-link">1-Modul</a></li>
+        <li><a href="Fizik_Jarayonni_Modellashtirish_Web.html" class="nav-link">2-Modul</a></li>
+        <li><a href="Fizik_va_Astronomik_Malumotlarni_Vizuallashtirish_Web.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
+        <li><a href="Mexanika_Qonuniyatlarini_Modellashtirish_Web.html" class="nav-link">12-Modul</a></li>
+        <li><a href="1_Laboratoriya_AI_Fizik_Vizual_Loyiha_Web.html" class="nav-link">🧪 1-Lab</a></li>
+        <li><a href="2_Laboratoriya_LLM_Matematik_Model_Formulalar_Web.html" class="nav-link">🧪 2-Lab</a></li>
+        <li><a href="3_Laboratoriya_AI_Ekotizim_Virtual_Muhit_Web.html" class="nav-link">🧪 3-Lab</a></li>
+        <li><a href="4_Laboratoriya_WolframAlpha_AI_Hisoblash_Aniqligi_Web.html" class="nav-link">🧪 4-Lab</a></li>
+        <li><a href="5_Laboratoriya_Deterministik_Stoxastik_Modellar_Web.html" class="nav-link">🧪 5-Lab</a></li>
+        <li><a href="6_Laboratoriya_FBD_Diagramma_AI_Tasvir_Web.html" class="nav-link">🧪 6-Lab</a></li>
+        <li><a href="7_Laboratoriya_HTML5_Canvas_Delta_Time_Web.html" class="nav-link">🧪 7-Lab</a></li>
+        <li><a href="8_Laboratoriya_AI_Pair_Programming_Fizika_Dvigateli_Web.html" class="nav-link">🧪 8-Lab</a></li>
+        <li><a href="9_Laboratoriya_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html" class="nav-link">🧪 9-Lab</a></li>
+        <li><a href="10_Laboratoriya_Astronomik_Traektoriyalar_Ovoz_Sintezi_Web.html" class="nav-link active">🧪 10-Lab</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
+          Google Drive
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs Modullari & Laboratoriyalar</span>
+      <button id="drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="Kirish_AI_Fizik_Simulyatsiyalar_Web.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="Fizik_Jarayonni_Modellashtirish_Web.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="Fizik_Animatsiya_Arxitekturasi_Web.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="AI_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="Fizik_va_Astronomik_Malumotlarni_Vizuallashtirish_Web.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="Mexanika_Qonuniyatlarini_Modellashtirish_Web.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="1_Laboratoriya_AI_Fizik_Vizual_Loyiha_Web.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="2_Laboratoriya_LLM_Matematik_Model_Formulalar_Web.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="3_Laboratoriya_AI_Ekotizim_Virtual_Muhit_Web.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+      <li><a href="4_Laboratoriya_WolframAlpha_AI_Hisoblash_Aniqligi_Web.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+      <li><a href="5_Laboratoriya_Deterministik_Stoxastik_Modellar_Web.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+      <li><a href="6_Laboratoriya_FBD_Diagramma_AI_Tasvir_Web.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+      <li><a href="7_Laboratoriya_HTML5_Canvas_Delta_Time_Web.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="8_Laboratoriya_AI_Pair_Programming_Fizika_Dvigateli_Web.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+      <li><a href="9_Laboratoriya_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
+      <li><a href="10_Laboratoriya_Astronomik_Traektoriyalar_Ovoz_Sintezi_Web.html" class="drawer-link active">🧪 14-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <div class="hero-panel" style="margin-bottom: 30px;">
+      <span class="badge badge-cyan">14-Laboratoriya Mashg'uloti: Elektromagnit Maydonlar va AI Ovozli Simulyatsiyasi</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+        Elektromagnit maydonlar va elektr zanjirlari harakatini modellashtiruvchi interaktiv kodlarni yaratish hamda jarayonni AI orqali audio-ovozlashtirish
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
+        Zamonaviy ta'limni boshqarish tizimlari (LMS - Learning Management Systems) o'quv jarayonini markazlashtirish va samaradorligini oshirish uchun keng qo'llaniladi. Ushbu laboratoriya mashg'ulotida talabalar o'zlarining laboratoriya ishini (izohlar, savol-javoblar) <strong>Otter.ai</strong> platformasi yordamida yozib oladi, nutqni matnga avtomatik o'girib (transkripsiya) raqamli konspekt generatsiya qiladi. Olingan ma'lumotlarni <strong>MagicSchool AI</strong> yordamida shaxsiy o'quv trayektoriyasiga moslashtirib monitoring qiladi hamda yaratilgan kontentni Google Classroom yoki Moodle kabi <strong>LMS</strong> platformalarida portfolioga joylashtirish ko'nikmalarini shakllantiradi.
+      </p>
+    </div>
+
+    <!-- 4-Stage Reja Grid -->
+    <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 14-Laboratoriya Mashg'uloti Rejasi va Tahliliy Bosqichlari:</h3>
+      <div class="grid-4" style="gap: 14px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-cyan);">1. Diagnostika & Individual Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Ideal gaz qonuniyatlari, stoxastik jarayonlar hamda AI tizimlariga oid diagnostika.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-emerald);">2. Termodinamika Loyihasi: Pipeline:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">PhET tahlilidan kodlashgacha va Antigravity monitoringigacha bo'lgan to'liq zanjir.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-purple);">3. Model Tahlili (PhET / Vascak):</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Harorat, bosim va hajm orasidagi muvozanatni vizual hamda analitik tadqiq etish.</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="color: var(--accent-amber);">4. Claude 3.5 Sonnet Stoxastik Dvigatel:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Zarrachalar kinetikasi (Brownian motion) bo'yicha stoxastik HTML5/JS simulyatsiyasini yozish.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
+    <div class="tabs-scroll-wrapper">
+      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo'limlar" onclick="scrollTabsNav(-220)">
+        ◀
+      </button>
+
+      <div class="tabs-nav" id="main-tabs-nav">
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. Diagnostika & Individual Reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Elektrodinamika va Audio Pipeline</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. PhET: Faradey Qonuni Analitikasi</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Claude Kod va TTS (Muxlisa AI)</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Induksiya va TTS Simulyatori</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Taqdimot Rubrikasi</button>
+      </div>
+
+      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo'limlar" onclick="scrollTabsNav(220)">
+        ▶
+      </button>
+    </div>
+
+    <!-- Scroll Progress Track Indicator -->
+    <div class="tabs-scroll-track-container">
+      <div class="tabs-scroll-track">
+        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: Diagnostika -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja1" class="tab-content active">
+      <div class="glass-panel">
+        <h2 class="section-title">1. Diagnostika & Individual O'quv Rejasi</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+          Elektromagnit maydonlar, Faradey qonuni, TTS (Text-to-Speech) va AI vositalarida interaktiv kod yaratish bo'yicha bilimlaringizni tekshiring.
+        </p>
+
+        <div id="diagnostic-quiz-container">
+          <div class="quiz-card" id="quiz-q1">
+            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">1-Savol: Faradeyning elektromagnit induksiya qonuni qanday ta'riflanadi?</h4>
+            <label class="quiz-option"><input type="radio" name="diag14_q1" value="A"> A) Ikkita nuqtaviy zaryad orasidagi kuch masofaning kvadratiga teskari proporsional.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q1" value="B"> B) Yopiq konturda hosil bo'lgan induksiya EYuK magnit oqimining o'zgarish tezligiga teng va qarama-qarshi ishoraga ega.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q1" value="C"> C) O'tkazgichdagi tok kuchi kuchlanishga to'g'ri, qarshilikka teskari proporsional.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q1" value="D"> D) Izotermik jarayonda gazning bosimi hajmiga teskari proporsional.</label>
+          </div>
+
+          <div class="quiz-card" id="quiz-q2">
+            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">2-Savol: Text-to-Speech (TTS) texnologiyasi ta'limda nima uchun ishlatiladi?</h4>
+            <label class="quiz-option"><input type="radio" name="diag14_q2" value="A"> A) Matnli ma'lumotlarni (jumladan, ilmiy izohlarni) tabiiy inson ovoziga aylantirib, o'quvchining audial qabul qilishini kuchaytirish uchun.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q2" value="B"> B) Faqatgina chet tillarini tarjima qilish uchun.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q2" value="C"> C) HTML kodlarini avtomatik yozib berish uchun.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q2" value="D"> D) Rasmlarni harakatlanuvchi videolarga aylantirish uchun.</label>
+          </div>
+
+          <div class="quiz-card" id="quiz-q3">
+            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">3-Savol: PhET'dagi "Faraday's Law" simulyatsiyasida magnitni g'altak (katushka) ichida harakatsiz ushlab tursak nima bo'ladi?</h4>
+            <label class="quiz-option"><input type="radio" name="diag14_q3" value="A"> A) G'altakda maksimal elektr toki hosil bo'ladi.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q3" value="B"> B) Magnit oqimi o'zgarmasligi sababli, g'altakda elektr toki (induksiya EYuK) hosil bo'lmaydi.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q3" value="C"> C) G'altak qizib, yonib ketadi.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q3" value="D"> D) Chiroq o'zgarmas doimiy yorug'lik bilan yonib turadi.</label>
+          </div>
+
+          <div class="quiz-card" id="quiz-q4">
+            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">4-Savol: Claude 3.5 Sonnet va Muxlisa AI qanday qilib birgalikda (pipeline) ishlashi mumkin?</h4>
+            <label class="quiz-option"><input type="radio" name="diag14_q4" value="A"> A) Ikkalasi ham faqat dizayn yaratadi.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q4" value="B"> B) Muxlisa AI fizika kodini yozadi, Claude esa uning ovozini chiqaradi.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q4" value="C"> C) Claude 3.5 fizik dvigatel va vizual animatsiyani dasturlaydi, Muxlisa AI (yoki ElevenLabs) esa jarayonni tushuntiruvchi sintezlangan ovozli MP3 audioni ta'minlaydi.</label>
+            <label class="quiz-option"><input type="radio" name="diag14_q4" value="D"> D) Ularni birgalikda ishlatish texnik jihatdan ilojsiz.</label>
+          </div>
+
+          <button class="btn btn-primary" onclick="generateSimPrompt()">Diagnostika Natijalarini Tahlil Qilish</button>
+        </div>
+
+        <div id="diagnostic-result" style="display: none; margin-top: 20px;">
+          <h3 style="color: var(--accent-emerald); margin-bottom: 10px;">✅ Diagnostika Yakunlandi</h3>
+          <p id="diagnostic-score" style="font-weight: bold; margin-bottom: 15px;"></p>
+          
+          <div class="prompt-card">
+            <h4 style="margin-bottom: 10px; color: var(--text-primary);">Tavsiya etiladigan AI Prompt (Claude / ChatGPT uchun):</h4>
+            <textarea id="ai-prompt-output" class="prompt-textarea" readonly></textarea>
+            <button class="btn btn-secondary btn-sm" onclick="copyPrompt('ai-prompt-output')">Promptni Nusxalash</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: To'liq Pipeline Arxitekturasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja2" class="tab-content">
+      <div class="glass-panel">
+        <h2 class="section-title">2. Elektrodinamika Loyihasi: Pipeline + Audio-Narratsiya</h2>
+        <p style="margin-bottom: 16px;">
+          Zamonaviy elektron o'quv resurslari vizual interaktivlikni va ovozli izohlarni (multi-modal learning) birlashtiradi. Ushbu yondashuv o'quvchining materialni qabul qilish ko'rsatkichini (retention rate) keskin oshiradi.
+        </p>
+
+        <div class="grid-2" style="gap: 20px; margin-top: 20px;">
+          <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">Pipeline Bosqichlari:</h4>
+            <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-secondary); line-height: 1.6;">
+              <li><strong>1. Nazariy Tahlil:</strong> PhET "Faraday's Law" orqali magnit oqimi, induksiya EYuK va g'altakdagi tok yo'nalishi (Lents qoidasi) vizual tadqiq etiladi.</li>
+              <li><strong>2. Kod Generatsiyasi:</strong> Claude 3.5 Sonnet'ga magnitning g'altak ichiga kirib-chiqishini va ampermetr strelkasining $I \propto -\frac{d\Phi}{dt}$ asosida og'ishini chizuvchi HTML5 Canvas promti beriladi.</li>
+              <li><strong>3. Audio-Narratsiya:</strong> Gemini yoki ChatGPT yordamida jarayonning ilmiy matni (ssenariysi) yozilib, <strong>Muxlisa AI</strong> (O'zbek tili) yoki <strong>ElevenLabs</strong> (Poliglot) orqali sof nutqqa (MP3/WAV) aylantiriladi va simulyatsiyaga (Web Audio API) ulanadi.</li>
+            </ul>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--accent-emerald); margin-bottom: 10px;">AI Vositalarining Integratsiyasi:</h4>
+            <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-secondary); line-height: 1.6;">
+              <li><strong>Kognitiv Yuklamani Kamaytirish:</strong> O'quvchi bir vaqtning o'zida harakatni kuzatadi va uning izohini eshitadi (matn o'qib chalg'imaydi).</li>
+              <li><strong>Inklyuzivlik:</strong> Ko'rishda nuqsoni bor yoki eshitib yaxshiroq tushunadigan (audial) o'quvchilar uchun katta qulaylik.</li>
+              <li><strong>Google Antigravity AI:</strong> Butun jarayon davomida xatolarni (audio buffering, canvas rendering) doimiy kuzatib, agentlarni muvofiqlashtiradi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: PhET va Vascak.cz Analitikasi -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja3" class="tab-content">
+      <div class="glass-panel">
+        <h2 class="section-title">3. Elektromagnit Simulyatsiya Tahlili: PhET va Vascak.cz</h2>
+        
+        <p style="margin-bottom: 15px;">
+          Kodni yozishdan avval Faradey qonuni va Lents qoidasini PhET muhitida tajriba orqali his qilishimiz kerak. Simulyatsiyamizdagi matematik modellar aynan shu qonunlarga bo'ysunadi.
+        </p>
+
+        <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); margin-bottom: 20px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px;">Faradeyning Elektromagnit Induksiya Qonuni</h4>
+          <p style="color: var(--text-secondary); margin-bottom: 10px;">
+            Yopiq zanjirda hosil bo'luvchi induksiya elektr yurituvchi kuchi (EYuK) shu zanjir bilan chegaralangan sirt orqali o'tuvchi magnit oqimining o'zgarish tezligiga teng:
+          </p>
+          <div style="text-align: center; margin: 15px 0; font-size: 1.2rem;">
+            $$ \mathcal{E} = -N \frac{d\Phi}{dt} $$
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 10px;">
+            Bunda $N$ - g'altakning o'ramlar soni, $\Phi$ - magnit oqimi, $t$ - vaqt. Lents qoidasiga ko'ra ($-$) ishorasi tizimning o'zgarishga qarshilik ko'rsatishini bildiradi. Magnit qanchalik tez harakatlansa ($v$ yuqori), ampermetr shunchalik kuchli tokni ($I = \frac{\mathcal{E}}{R}$) ko'rsatadi.
+          </p>
+        </div>
+
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">
+          Bu tahlil asosida simulyatorga <strong>harakat tezligi (v)</strong> ga qaram bo'lgan <strong>Ampermetr ko'rsatkichini</strong> dasturlaymiz.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: Claude 3.5 va Antigravity AI -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja4" class="tab-content">
+      <div class="glass-panel">
+        <h2 class="section-title">4. Interaktiv Kod va Audio Narratsiya (TTS) Generatsiyasi</h2>
+        <p style="margin-bottom: 16px;">
+          HTML5 Canvas vizual dvigateli va Web Audio API asosida tayyorlanadigan ssenariylar AI modellari hamkorligining cho'qqisi hisoblanadi.
+        </p>
+        
+        <div class="grid-2" style="gap: 20px;">
+          <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md);">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">Claude 3.5 Sonnet Prompt</h4>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 10px; font-family: monospace;">
+              "HTML5 Canvas'da Faradey qonuni simulyatsiyasini yoz. Ekranda g'altak, chiroq va ampermetr bo'lsin. Sichqoncha yordamida shtab-magnitni harakatlantirish imkoni bo'lsin. Magnitning tezligi (dx/dt) asosida ampermetr strelkasi og'sin va chiroq yonsin. Bundan tashqari, interfeysga 'Ovozli Izoh (TTS)' tugmasini qo'sh va Web Speech API orqali hodisani sharhlovchi funksiya yoz."
+            </p>
+          </div>
+          
+          <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md);">
+            <h4 style="color: var(--accent-amber); margin-bottom: 10px;">ElevenLabs / Muxlisa AI Integratsiyasi</h4>
+            <ul style="list-style-type: square; padding-left: 20px; color: var(--text-secondary); line-height: 1.6;">
+              <li><strong>Ssenariy:</strong> "Magnit g'altakka kiritilganda, magnit maydon chiziqlari soni o'zgaradi va tok hosil bo'ladi." (Gemini tomonidan yoziladi).</li>
+              <li><strong>Sintez (TTS):</strong> Matn ElevenLabs API (yoki mahalliy Muxlisa AI) orqali yuqori sifatli, hissiyotli audiyoga aylanadi.</li>
+              <li><strong>Sinxronizatsiya:</strong> Antigravity AI audioni animatsiya freymlari (FPS) bilan sinxron ishga tushishini ta'minlaydi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: Interaktiv Simulyator -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja5" class="tab-content">
+      <div class="glass-panel">
+        <h2 class="section-title">5. Interaktiv Dastgoh: Elektromagnit Induksiya va TTS Narratsiyasi</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+          Quyidagi simulyatorda shtab-magnitni **Slayder** yordamida chapga/o'ngga siljiting. Harakat tezligiga qarab Ampermetr strelkasi qanday og'ishini kuzating. **"Ovozli Izoh (TTS)"** tugmasi jarayonni ilmiy sharhlab beradi.
+        </p>
+
+        <div style="background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 20px;">
+          
+          <!-- Simulation Canvas -->
+          <div style="background: #1e293b; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); position: relative;">
+            <canvas id="lab14-electro-canvas" width="800" height="300" style="width: 100%; height: 300px; background: #000; border-radius: 4px; border: 1px solid #334155; display: block;"></canvas>
+            
+            <div style="position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 10px;">
+                <button id="tts-btn" class="btn btn-secondary" onclick="playTTSNarration()" style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                    Ovozli Izoh (AI TTS)
+                </button>
+            </div>
+            
+            <!-- TTS Visualizer Overlay -->
+            <div id="tts-visualizer" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 200px; height: 40px; display: none; align-items: flex-end; justify-content: space-between; gap: 4px;">
+                <!-- Bars will be generated by JS -->
+            </div>
+          </div>
+          
+          <!-- Controls -->
+          <div style="background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <div class="grid-2" style="gap: 20px;">
+              <div>
+                <strong style="color: var(--accent-cyan); display:block; margin-bottom: 8px;">Shtab-Magnit Joylashuvi (X):</strong>
+                <!-- Slider acts as the magnet controller. Moving it creates velocity -->
+                <input type="range" id="magnet-slider" min="50" max="650" value="100" style="width: 100%;" oninput="onMagnetMove()">
+              </div>
+              <div style="display: flex; flex-direction: column; justify-content: center;">
+                <strong style="color: var(--accent-emerald); font-family: monospace; font-size: 1.1rem;">⚡ Induksiya Toki (I): <span id="current-val">0.00</span> A</strong>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 5px;">Magnitni qanchalik tez qimirlatsangiz, tok shuncha ko'p hosil bo'ladi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
+    <!-- ========================================================================= -->
+    <section id="tab-reja6" class="tab-content">
+      <div class="glass-panel">
+        <h2 class="section-title">6. Yakuniy Taqdimot Rubrikasi va Manbalar</h2>
+        <p style="margin-bottom: 20px;">
+          Loyiha (Tahlil $\rightarrow$ Kod $\rightarrow$ TTS Narratsiya) sifati quyidagi rubrika orqali baholanadi (Jami: 100 ball).
+        </p>
+        
+        <div class="rubric-table" style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); margin-bottom: 25px;">
+          <div class="rubric-row" style="font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.1);">
+            <div>Baholash Mezoni</div>
+            <div>Maksimal Ball</div>
+            <div>Olingan Ball</div>
+          </div>
+          <div class="rubric-row">
+            <div><strong>Elektromagnit Tahlil:</strong> $I \propto -d\Phi/dt$ ga muvofiqlik, ampermetr va chiroqning mantiqiy ishlashi.</div>
+            <div>30 ball</div>
+            <div><input type="number" id="rubric14_1" class="tech-input" style="width:70px;" min="0" max="30" value="30" oninput="calcProjectScore14()"></div>
+          </div>
+          <div class="rubric-row">
+            <div><strong>Interaktiv Kod Generatsiyasi:</strong> Canvas API grafikasi va tezlikka (dt) asoslangan to'g'ri hisob-kitob.</div>
+            <div>40 ball</div>
+            <div><input type="number" id="rubric14_2" class="tech-input" style="width:70px;" min="0" max="40" value="40" oninput="calcProjectScore14()"></div>
+          </div>
+          <div class="rubric-row">
+            <div><strong>AI Audio-Narratsiya (TTS):</strong> Web Speech / ElevenLabs simulyatsiyasi integratsiyasi va vizuallashtirish.</div>
+            <div>30 ball</div>
+            <div><input type="number" id="rubric14_3" class="tech-input" style="width:70px;" min="0" max="30" value="30" oninput="calcProjectScore14()"></div>
+          </div>
+          <div class="rubric-row" style="border-bottom: none; margin-top: 10px;">
+            <div style="text-align: right; font-weight: bold; font-size: 1.1rem; color: var(--accent-cyan);">Jami Natija:</div>
+            <div id="rubric14-total" style="font-weight: bold; font-size: 1.2rem; color: var(--accent-emerald);">100 / 100 ball</div>
+            <div></div>
+          </div>
+        </div>
+
+        <h3 class="section-title">Foydalanilgan Adabiyotlar (APA 7)</h3>
+        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;">
+          <li>1. PhET Interactive Simulations. (2025). <em>Faraday's Law & Electromagnetic Induction</em>. University of Colorado Boulder.</li>
+          <li>2. ElevenLabs. (2025). <em>AI Speech Synthesis API Documentation</em>. ElevenLabs Inc.</li>
+          <li>3. W3C. (2024). <em>Web Speech API Specification (SpeechSynthesis)</em>. World Wide Web Consortium.</li>
+        </ul>
+      </div>
+    </section>
+
+    </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-icon">🪐</span>
+            <span class="footer-logo-text">Fizika & AI Portal</span>
+          </div>
+          <p class="footer-desc">
+            Fizika va astronomiya ta'limida axborot texnologiyalari fanidan virtual laboratoriyalar, interaktiv simulyatsiyalar va zamonaviy AI vositalari integratsiyasi portali.
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Tezkor Havolalar</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Bosh Sahifa</a></li>
+            <li><a href="1_Laboratoriya_AI_Fizik_Vizual_Loyiha_Web.html">1-Laboratoriya</a></li>
+            <li><a href="9_Laboratoriya_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html">9-Laboratoriya</a></li>
+            <li><a href="10_Laboratoriya_Astronomik_Traektoriyalar_Ovoz_Sintezi_Web.html">14-Laboratoriya</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Resurslar</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank">Google Drive Papka</a></li>
+            <li><a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank">NASA JPL Horizons</a></li>
+            <li><a href="https://elevenlabs.io" target="_blank">ElevenLabs AI</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fizika va astronomiya o'qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tab Scroll Helper Script & Main JS -->
+  <script>
+    function scrollTabsNav(offset) {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.scrollBy({ left: offset, behavior: 'smooth' });
+        setTimeout(updateTabsScrollProgress, 250);
+      }
+    }
+
+    function updateTabsScrollProgress() {
+      const nav = document.getElementById('main-tabs-nav');
+      const thumb = document.getElementById('tabs-scroll-thumb');
+      if (!nav || !thumb) return;
+
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      if (maxScroll <= 0) {
+        thumb.style.width = '100%';
+        thumb.style.transform = 'translateX(0)';
+        return;
+      }
+
+      const ratio = nav.clientWidth / nav.scrollWidth;
+      const thumbWidthPercent = Math.max(ratio * 100, 15);
+      thumb.style.width = thumbWidthPercent + '%';
+
+      const scrollFraction = nav.scrollLeft / maxScroll;
+      const maxTranslatePercent = (100 - thumbWidthPercent);
+      const translateVal = scrollFraction * maxTranslatePercent;
+      thumb.style.transform = `translateX(${translateVal}%)`;
+    }
+
+    window.switchTab = function(event, tabId) {
+      const allTabs = document.querySelectorAll('.tab-content');
+      allTabs.forEach(t => t.classList.remove('active'));
+
+      const allBtns = document.querySelectorAll('.tab-btn');
+      allBtns.forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      let activeBtn = null;
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        activeBtn = event.currentTarget;
+      } else {
+        const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (btn) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        }
+      }
+
+      if (activeBtn) {
+        const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+        if (tabsNav) {
+          const btnLeft = activeBtn.offsetLeft;
+          const btnWidth = activeBtn.offsetWidth;
+          const navWidth = tabsNav.clientWidth;
+          tabsNav.scrollTo({
+            left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+          });
+          setTimeout(updateTabsScrollProgress, 200);
+        }
+      }
+
+      if (window.renderMathInElement && target) {
+        window.renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+      }
+
+      if (tabId === 'tab-reja5' && window.triggerLab10CanvasRedraw) {
+        setTimeout(window.triggerLab10CanvasRedraw, 50);
+      }
+    };
+    window.openTab = window.switchTab;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('main-tabs-nav');
+      if (nav) {
+        nav.addEventListener('scroll', updateTabsScrollProgress, { passive: true });
+        window.addEventListener('resize', updateTabsScrollProgress);
+        setTimeout(updateTabsScrollProgress, 100);
+      }
+    });
+  </script>
+  <script src="js/sim-lab14-electro.js"></script>
+  <script>
+/* ==========================================
+   PHYSICS ENGINE
+   ========================================== */
+/**
+ * PHYSICS-ENGINE.JS - High Precision Computational Physics Library
+ * Includes: Vec2, Vec3, RK4 Integrator, Symplectic Euler-Cromer, Boris Pusher & Substepping
+ */
+
+class Vec2 {
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
+  set(x, y) { this.x = x; this.y = y; return this; }
+  clone() { return new Vec2(this.x, this.y); }
+  add(v) { this.x += v.x; this.y += v.y; return this; }
+  sub(v) { this.x -= v.x; this.y -= v.y; return this; }
+  scale(s) { this.x *= s; this.y *= s; return this; }
+  magSq() { return this.x * this.x + this.y * this.y; }
+  mag() { return Math.sqrt(this.magSq()); }
+  normalize() {
+    const m = this.mag();
+    if (m > 1e-8) { this.x /= m; this.y /= m; }
+    return this;
+  }
+  dot(v) { return this.x * v.x + this.y * v.y; }
+  cross(v) { return this.x * v.y - this.y * v.x; }
+  static add(a, b) { return new Vec2(a.x + b.x, a.y + b.y); }
+  static sub(a, b) { return new Vec2(a.x - b.x, a.y - b.y); }
+  static scale(v, s) { return new Vec2(v.x * s, v.y * s); }
+}
+
+class Vec3 {
+  constructor(x = 0, y = 0, z = 0) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+  set(x, y, z) { this.x = x; this.y = y; this.z = z; return this; }
+  clone() { return new Vec3(this.x, this.y, this.z); }
+  add(v) { this.x += v.x; this.y += v.y; this.z += v.z; return this; }
+  sub(v) { this.x -= v.x; this.y -= v.y; this.z -= v.z; return this; }
+  scale(s) { this.x *= s; this.y *= s; this.z *= s; return this; }
+  magSq() { return this.x * this.x + this.y * this.y + this.z * this.z; }
+  mag() { return Math.sqrt(this.magSq()); }
+  normalize() {
+    const m = this.mag();
+    if (m > 1e-8) { this.x /= m; this.y /= m; this.z /= m; }
+    return this;
+  }
+  dot(v) { return this.x * v.x + this.y * v.y + this.z * v.z; }
+  cross(v) {
+    return new Vec3(
+      this.y * v.z - this.z * v.y,
+      this.z * v.x - this.x * v.z,
+      this.x * v.y - this.y * v.x
+    );
+  }
+  static add(a, b) { return new Vec3(a.x + b.x, a.y + b.y, a.z + b.z); }
+  static sub(a, b) { return new Vec3(a.x - b.x, a.y - b.y, a.z - b.z); }
+  static scale(v, s) { return new Vec3(v.x * s, v.y * s, v.z * s); }
+  static cross(a, b) {
+    return new Vec3(
+      a.y * b.z - a.z * b.y,
+      a.z * b.x - a.x * b.z,
+      a.x * b.y - a.y * b.x
+    );
+  }
+}
+
+/**
+ * 4th Order Runge-Kutta (RK4) Vectorized Integrator
+ * @param {Array<number>} y Current state vector
+ * @param {number} t Current time
+ * @param {number} dt Time step
+ * @param {Function} f Derivative function: (t, y) => dydt array
+ * @returns {Array<number>} Next state vector
+ */
+function rk4Step(y, t, dt, f) {
+  const n = y.length;
+  const k1 = f(t, y);
+  
+  const y2 = new Array(n);
+  for (let i = 0; i < n; i++) y2[i] = y[i] + 0.5 * dt * k1[i];
+  const k2 = f(t + 0.5 * dt, y2);
+  
+  const y3 = new Array(n);
+  for (let i = 0; i < n; i++) y3[i] = y[i] + 0.5 * dt * k2[i];
+  const k3 = f(t + 0.5 * dt, y3);
+  
+  const y4 = new Array(n);
+  for (let i = 0; i < n; i++) y4[i] = y[i] + dt * k3[i];
+  const k4 = f(t + dt, y4);
+  
+  const yNext = new Array(n);
+  for (let i = 0; i < n; i++) {
+    yNext[i] = y[i] + (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i]);
+  }
+  return yNext;
+}
+
+/**
+ * Symplectic Euler-Cromer Step for 2nd order ODEs
+ * v_{n+1} = v_n + a(x_n, v_n) * dt
+ * x_{n+1} = x_n + v_{n+1} * dt
+ */
+function eulerCromerStep(x, v, dt, accelFunc) {
+  const a = accelFunc(x, v);
+  const vNext = v + a * dt;
+  const xNext = x + vNext * dt;
+  return { x: xNext, v: vNext };
+}
+
+/**
+ * Boris Particle Pusher for Electromagnetic Plasma & Lorentz Force
+ * Preserves exact cyclotron energy in arbitrary magnetic fields
+ */
+function borisPusher(pos, vel, q, m, E, B, dt) {
+  const qPrime = 0.5 * dt * (q / m);
+  
+  // 1. Half electric acceleration: v_minus = v + (q*E/m)*(dt/2)
+  const vMinus = Vec3.add(vel, Vec3.scale(E, qPrime));
+  
+  // 2. Magnetic rotation vector t = (q*B/m)*(dt/2)
+  const t = Vec3.scale(B, qPrime);
+  const tMagSq = t.magSq();
+  // s = 2*t / (1 + |t|^2)
+  const s = Vec3.scale(t, 2.0 / (1.0 + tMagSq));
+  
+  // v_prime = v_minus + v_minus x t
+  const vPrime = Vec3.add(vMinus, Vec3.cross(vMinus, t));
+  // v_plus = v_minus + v_prime x s
+  const vPlus = Vec3.add(vMinus, Vec3.cross(vPrime, s));
+  
+  // 3. Second half electric acceleration: v_next = v_plus + (q*E/m)*(dt/2)
+  const vNext = Vec3.add(vPlus, Vec3.scale(E, qPrime));
+  
+  // 4. Update position: x_next = x + v_next * dt
+  const posNext = Vec3.add(pos, Vec3.scale(vNext, dt));
+  
+  return { pos: posNext, vel: vNext };
+}
+
+/**
+ * Substep Execution Helper to eliminate time discretization errors
+ */
+function runSubsteps(stepCallback, dtTotal, numSubsteps = 8) {
+  const dt = dtTotal / numSubsteps;
+  for (let i = 0; i < numSubsteps; i++) {
+    stepCallback(dt);
+  }
+}
+
+// Utility: Wavelength to RGB approximation
+function wavelengthToRGB(wavelength) {
+  let r, g, b, alpha;
+  const wl = wavelength;
+  if (wl >= 380 && wl < 440) {
+    r = -(wl - 440) / (440 - 380);
+    g = 0.0;
+    b = 1.0;
+  } else if (wl >= 440 && wl < 490) {
+    r = 0.0;
+    g = (wl - 440) / (490 - 440);
+    b = 1.0;
+  } else if (wl >= 490 && wl < 510) {
+    r = 0.0;
+    g = 1.0;
+    b = -(wl - 510) / (510 - 490);
+  } else if (wl >= 510 && wl < 580) {
+    r = (wl - 510) / (580 - 510);
+    g = 1.0;
+    b = 0.0;
+  } else if (wl >= 580 && wl < 645) {
+    r = 1.0;
+    g = -(wl - 645) / (645 - 580);
+    b = 0.0;
+  } else if (wl >= 645 && wl <= 750) {
+    r = 1.0;
+    g = 0.0;
+    b = 0.0;
+  } else {
+    r = 0.0; g = 0.0; b = 0.0;
+  }
+
+  // Intensity falloff near limits
+  if (wl >= 380 && wl < 420) {
+    alpha = 0.3 + 0.7 * (wl - 380) / (420 - 380);
+  } else if (wl >= 420 && wl <= 700) {
+    alpha = 1.0;
+  } else if (wl > 700 && wl <= 750) {
+    alpha = 0.3 + 0.7 * (750 - wl) / (750 - 700);
+  } else {
+    alpha = 0.0;
+  }
+
+  return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${alpha})`;
+}
+
+
+/* ==========================================
+   LAB SIMULATION
+   ========================================== */
+/**
+ * 14-Laboratoriya: Elektrodinamika va AI Audio-Narratsiyasi
+ * Interaktiv Simulyator (Elektromagnit Induksiya) va Diagnostika
+ */
+
+// 1. Diagnostika
+function generateSimPrompt() {
+    let score = 0;
+    let missingConcepts = [];
+
+    const q1 = document.querySelector('input[name="diag14_q1"]:checked');
+    const q2 = document.querySelector('input[name="diag14_q2"]:checked');
+    const q3 = document.querySelector('input[name="diag14_q3"]:checked');
+    const q4 = document.querySelector('input[name="diag14_q4"]:checked');
+
+    if (!q1 || !q2 || !q3 || !q4) {
+        alert("Iltimos, barcha savollarga javob bering.");
+        return;
+    }
+
+    if (q1.value === 'B') score += 25; else missingConcepts.push("Faradey qonuni va magnit oqimi");
+    if (q2.value === 'A') score += 25; else missingConcepts.push("TTS texnologiyasining ta'limdagi ro'li");
+    if (q3.value === 'B') score += 25; else missingConcepts.push("Induksiya EYuK ning paydo bo'lish shartlari (Lents qoidasi)");
+    if (q4.value === 'C') score += 25; else missingConcepts.push("AI vositalari o'rtasidagi multi-modal integratsiya");
+
+    document.getElementById('diagnostic-result').style.display = 'block';
+    const scoreEl = document.getElementById('diagnostic-score');
+    scoreEl.innerText = `Natija: ${score}% (100% dan)`;
+    scoreEl.style.color = score >= 75 ? 'var(--accent-emerald)' : 'var(--accent-amber)';
+
+    let promptText = "";
+    if (score === 100) {
+        promptText = "Men Faradey qonuni va induksiya hodisasini to'liq o'zlashtirdim. Endi Claude 3.5 Sonnet uchun HTML5 Canvas yordamida shtab-magnit, g'altak va ampermetr vizualizatsiyasini yaratib, tok kuchini magnit tezligiga (dx/dt) proporsional tarzda hisoblaydigan va TTS tugmasiga ega bo'lgan kod generatsiya qilish uchun Prompt yozib bering.";
+    } else {
+        promptText = `Mening elektrodinamika va AI audio vositalari bo'yicha bilish darajam o'rtacha. Men quyidagi mavzularda xatoga yo'l qo'ydim: ${missingConcepts.join(', ')}. Iltimos, nima uchun magnit harakatsiz turganda tok hosil bo'lmasligini va TTS vositalari qanday qilib o'quvchilarga yordam berishini tushuntiring.`;
+    }
+
+    document.getElementById('ai-prompt-output').value = promptText;
+}
+
+// 2. Interaktiv Elektromagnit Simulyator
+let electroAnimReq;
+let isElectroRunning = false;
+
+// State variables
+let magnetX = 100;
+let lastMagnetX = 100;
+let velocityX = 0;
+let inducedCurrent = 0;
+let coilX = 400; // center of canvas
+let coilRadius = 60;
+let time = 0;
+
+// TTS State
+let isTTSPlaying = false;
+let ttsUtterance = null;
+let audioVisualizerInterval = null;
+
+function onMagnetMove() {
+    let sliderVal = parseFloat(document.getElementById('magnet-slider').value);
+    magnetX = sliderVal;
+}
+
+function drawElectroFrame() {
+    const canvas = document.getElementById('lab14-electro-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw Coil
+    ctx.strokeStyle = "#fb923c"; // copper wire color
+    ctx.lineWidth = 4;
+    for(let i=0; i<6; i++) {
+        ctx.beginPath();
+        ctx.ellipse(coilX + (i-3)*15, canvas.height/2, 20, coilRadius, 0, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    
+    // Wire connecting to Ammeter and Lightbulb
+    ctx.beginPath();
+    ctx.moveTo(coilX - 45, canvas.height/2 - coilRadius);
+    ctx.lineTo(coilX - 45, 50);
+    ctx.lineTo(coilX + 45, 50);
+    ctx.lineTo(coilX + 45, canvas.height/2 - coilRadius);
+    ctx.strokeStyle = "#94a3b8";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Lightbulb
+    let bulbGlow = Math.min(Math.abs(inducedCurrent) * 50, 255);
+    ctx.beginPath();
+    ctx.arc(coilX - 45, 50, 15, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(253, 224, 71, ${bulbGlow / 255})`;
+    ctx.fill();
+    ctx.strokeStyle = "#e2e8f0";
+    ctx.stroke();
+
+    // Ammeter
+    ctx.beginPath();
+    ctx.arc(coilX + 45, 50, 20, 0, Math.PI*2);
+    ctx.fillStyle = "#1e293b";
+    ctx.fill();
+    ctx.strokeStyle = "#e2e8f0";
+    ctx.stroke();
+    ctx.fillStyle = "#e2e8f0";
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("A", coilX + 45, 45);
+    
+    // Ammeter needle
+    let maxDeflection = Math.PI/2 - 0.2;
+    let deflection = (inducedCurrent / 10) * maxDeflection; // Assuming 10 is max theoretical current
+    if(deflection > maxDeflection) deflection = maxDeflection;
+    if(deflection < -maxDeflection) deflection = -maxDeflection;
+    
+    ctx.beginPath();
+    ctx.moveTo(coilX + 45, 60);
+    let nx = coilX + 45 + Math.sin(deflection) * 15;
+    let ny = 60 - Math.cos(deflection) * 15;
+    ctx.lineTo(nx, ny);
+    ctx.strokeStyle = "var(--accent-rose)";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Draw Magnet
+    let magnetY = canvas.height/2 - 25;
+    ctx.fillStyle = "var(--accent-rose)";
+    ctx.fillRect(magnetX - 60, magnetY, 60, 50); // N pole
+    ctx.fillStyle = "var(--accent-cyan)";
+    ctx.fillRect(magnetX, magnetY, 60, 50); // S pole
+    
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 20px sans-serif";
+    ctx.fillText("N", magnetX - 30, magnetY + 32);
+    ctx.fillText("S", magnetX + 30, magnetY + 32);
+    
+    // Magnetic Field Lines (simplified, moving with magnet)
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+    ctx.lineWidth = 1;
+    for(let i=1; i<=3; i++) {
+        ctx.beginPath();
+        ctx.arc(magnetX - 60, magnetY + 25, 40*i, Math.PI/2, Math.PI*1.5);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(magnetX + 60, magnetY + 25, 40*i, -Math.PI/2, Math.PI/2);
+        ctx.stroke();
+    }
+}
+
+function electroLoop() {
+    // Calculate velocity
+    velocityX = magnetX - lastMagnetX;
+    
+    // Faraday's Law proxy: I ~ -dPhi/dt
+    // The change in flux is greatest when the magnet is near the coil
+    let distToCoil = Math.abs(magnetX - coilX);
+    let fluxFactor = 0;
+    if(distToCoil < 150) {
+        fluxFactor = Math.cos((distToCoil / 150) * (Math.PI / 2));
+    }
+    
+    // Induced current depends on velocity and how close it is to the coil
+    let rawCurrent = -velocityX * fluxFactor * 0.5;
+    
+    // Smooth the current decay (needle inertia)
+    inducedCurrent += (rawCurrent - inducedCurrent) * 0.2;
+    
+    if(Math.abs(inducedCurrent) < 0.01) inducedCurrent = 0;
+
+    document.getElementById('current-val').innerText = inducedCurrent.toFixed(2);
+    
+    lastMagnetX = magnetX;
+    
+    drawElectroFrame();
+    
+    time += 0.05;
+    electroAnimReq = requestAnimationFrame(electroLoop);
+}
+
+// AI TTS Integration
+function playTTSNarration() {
+    if (isTTSPlaying) {
+        window.speechSynthesis.cancel();
+        stopVisualizer();
+        return;
+    }
+    
+    if (!('speechSynthesis' in window)) {
+        alert("Kechirasiz, brauzeringiz Text-to-Speech (Web Speech API) texnologiyasini qo'llab-quvvatlamaydi.");
+        return;
+    }
+
+    const text = "Faradeyning elektromagnit induksiya qonuniga ko'ra, shtab-magnit yopiq g'altak ichiga kiritilganda yoki chiqarilganda, magnit oqimining o'zgarishi natijasida elektr toki hosil bo'ladi. Magnit qanchalik tez harakatlansa, tok shuncha kuchli bo'ladi.";
+    
+    ttsUtterance = new SpeechSynthesisUtterance(text);
+    ttsUtterance.lang = 'uz-UZ';
+    ttsUtterance.rate = 0.9; // Slightly slower for scientific narration
+    
+    ttsUtterance.onstart = function() {
+        isTTSPlaying = true;
+        document.getElementById('tts-btn').innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg> To'xtatish`;
+        document.getElementById('tts-visualizer').style.display = 'flex';
+        startVisualizer();
+    };
+    
+    ttsUtterance.onend = function() {
+        stopVisualizer();
+    };
+    
+    ttsUtterance.onerror = function() {
+        stopVisualizer();
+    };
+
+    window.speechSynthesis.speak(ttsUtterance);
+}
+
+function startVisualizer() {
+    const vis = document.getElementById('tts-visualizer');
+    vis.innerHTML = '';
+    for(let i=0; i<15; i++) {
+        let bar = document.createElement('div');
+        bar.style.width = '8px';
+        bar.style.backgroundColor = 'var(--accent-cyan)';
+        bar.style.borderRadius = '4px';
+        bar.style.transition = 'height 0.1s ease';
+        vis.appendChild(bar);
+    }
+    
+    audioVisualizerInterval = setInterval(() => {
+        const bars = vis.children;
+        for(let i=0; i<bars.length; i++) {
+            bars[i].style.height = (Math.random() * 30 + 10) + 'px';
+        }
+    }, 100);
+}
+
+function stopVisualizer() {
+    isTTSPlaying = false;
+    document.getElementById('tts-btn').innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg> Ovozli Izoh (AI TTS)`;
+    document.getElementById('tts-visualizer').style.display = 'none';
+    clearInterval(audioVisualizerInterval);
+}
+
+// 3. Baholash Rubrikasi
+function calcProjectScore14() {
+    let val1 = parseInt(document.getElementById('rubric14_1').value) || 0;
+    let val2 = parseInt(document.getElementById('rubric14_2').value) || 0;
+    let val3 = parseInt(document.getElementById('rubric14_3').value) || 0;
+    
+    if (val1 > 30) { val1 = 30; document.getElementById('rubric14_1').value = 30; }
+    if (val2 > 40) { val2 = 40; document.getElementById('rubric14_2').value = 40; }
+    if (val3 > 30) { val3 = 30; document.getElementById('rubric14_3').value = 30; }
+    
+    let total = val1 + val2 + val3;
+    let totalEl = document.getElementById('rubric14-total');
+    totalEl.innerText = `${total} / 100 ball`;
+    
+    if (total >= 86) totalEl.style.color = "var(--accent-emerald)";
+    else if (total >= 70) totalEl.style.color = "var(--accent-cyan)";
+    else if (total >= 56) totalEl.style.color = "var(--accent-amber)";
+    else totalEl.style.color = "var(--accent-rose)";
+}
+
+// Start simulation immediately if canvas exists
+document.addEventListener('DOMContentLoaded', () => {
+    if(document.getElementById('lab14-electro-canvas')) {
+        electroLoop();
+    }
+});
+
+
+/* ==========================================
+   UI CONTROLLER
+   ========================================== */
+/**
+ * UI-CONTROLLER.JS - Universal UI Controller, Navigation Drawer, Tabs, Code Copying, Toasts & Quiz Engines
+ */
+
+// ==========================================
+// QUIZ 1 ENGINE (Mavzu 1: AI Paradigmasi)
+// ==========================================
+const quiz1Questions = [
+  {
+    id: 1,
+    question: "Matematik mayatnikning erkin tebranishlarida vaqt o'tishi bilan to'liq mexanik energiya sun'iy o'sib ketsa, bunga qanday sabab bo'lgan?",
+    options: [
+      { text: "A) Burchak radianda emas, gradusda hisoblangan", correct: false, note: "Gradus xatoligi davrni buzadi, lekin energiyaning eksponensial portlashiga sabab bo'lmaydi." },
+      { text: "B) Forward Euler (Klassik Eyler) usuli qo'llangan bo'lib, u simplektik emas", correct: true, note: "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun'iy oshiradi. Eyler-Kromer yoki RK4 ishlatish shart!" },
+      { text: "C) Canvas ekrani har kadrda tozalanmagan", correct: false, note: "Canvas tozalanishi faqat vizual grafikaga ta'sir qiladi, fizik hisoblarga emas." }
+    ]
+  },
+  {
+    id: 2,
+    question: "JavaScript dasturlash tilida Math.sin(30) yozilsa, nega kutilgan 0.5 qiymat chiqmaydi?",
+    options: [
+      { text: "A) Math.sin faqat butun sonlar bilan ishlaydi", correct: false, note: "Math.sin haqiqiy sonlar bilan ishlaydi." },
+      { text: "B) Argument gradusda berilgan, JS esa burchakni faqat radianda kutadi (30 * Math.PI / 180)", correct: true, note: "JavaScript trigonometrik funksiyalari (sin, cos, tan) doimo radianda hisoblaydi." },
+      { text: "C) Math kutubxonasi yuklanmagan", correct: false, note: "Math obyekti JS da global o'rnatilgan." }
+    ]
+  },
+  {
+    id: 3,
+    question: "Bir jinsli magnit maydonida (E = 0) harakatlanayotgan zaryadlangan zarrachaning kinetik energiyasi haqida qaysi fikr to'g'ri?",
+    options: [
+      { text: "A) Kinetik energiya doimiy saqlanadi (Lorents kuchi zarracha tezligiga doimo perpendikulyar va ish bajarmaydi)", correct: true, note: "To'g'ri! F = q(v x B) => F . v = 0 => dE_k/dt = 0. Magnit maydoni faqat tezlik yo'nalishini o'zgartiradi." },
+      { text: "B) Zarracha tezlashgani uchun kinetik energiya oshadi", correct: false, note: "Magnit maydonida tezlik moduli o'zgarmaydi." },
+      { text: "C) Kinetik energiya kamayib, potensial energiyaga aylanadi", correct: false, note: "Statsionar magnit maydonida potensial energiya o'zgarmaydi." }
+    ]
+  }
+];
+
+let userAnswers1 = {};
+
+window.selectQuizOption = function(qId, optIdx) {
+  userAnswers1[qId] = optIdx;
+  const container = document.getElementById(`quiz-options-${qId}`);
+  if (!container) return;
+  const items = container.querySelectorAll('.quiz-option-card');
+  items.forEach((item, idx) => {
+    const isSelected = (idx === optIdx);
+    item.classList.toggle('selected', isSelected);
+    const radio = item.querySelector('input[type="radio"]');
+    if (radio) radio.checked = isSelected;
+    const dot = item.querySelector('.quiz-dot');
+    if (dot) dot.textContent = isSelected ? '🔘' : '⚪';
+  });
+};
+
+window.checkDiagnosticQuiz = function() {
+  const feedbackEl = document.getElementById('diag-feedback');
+  if (!feedbackEl) return;
+
+  let correctCount = 0;
+  let totalCount = quiz1Questions.length;
+  let allAnswered = true;
+
+  quiz1Questions.forEach(q => {
+    if (userAnswers1[q.id] === undefined) allAnswered = false;
+  });
+
+  if (!allAnswered) {
+    feedbackEl.innerHTML = `<div style="background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
+      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
+    </div>`;
+    return;
+  }
+
+  let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
+    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 1-Modul Diagnostika Natijalari:</h4>`;
+
+  quiz1Questions.forEach(q => {
+    const userOptIdx = userAnswers1[q.id];
+    const opt = q.options[userOptIdx];
+    const isCorrect = opt.correct;
+    if (isCorrect) correctCount++;
+
+    htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
+      <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#34D399' : '#F43F5E'};">
+        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? 'To\'g\'ri!' : 'Xato!'}
+      </div>
+      <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${opt.note}</div>
+    </div>`;
+  });
+
+  let cluster = 'A Klaster (Boshlang\'ich / Remedial)';
+  let clusterColor = '#38BDF8';
+  let clusterDesc = 'Fizik modellarni bosqichma-bosqich Scaffolding va vizual yo\'riqnomalar orqali o\'zlashtirish tavsiya etiladi.';
+
+  if (correctCount === 2) {
+    cluster = 'B Klaster (O\'rta / Standart)';
+    clusterColor = '#34D399';
+    clusterDesc = '2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler-Kromer algoritmlarini qo\'llash tavsiya etiladi.';
+  } else if (correctCount === 3) {
+    cluster = 'C Klaster (Ilg\'or / Research)';
+    clusterColor = '#C084FC';
+    clusterDesc = '3D WebGL (Three.js), 4-tartibli Runge-Kutta (RK4) va Boris particle pusher integratsiyasi bo\'yicha murakkab loyihalarga yo\'naltiriladi.';
+  }
+
+  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
+    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan O\'quv Trayektoriyasi:</div>
+    <div style="font-size:1.3rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${cluster}</div>
+    <div style="font-size:0.9rem; color:#CBD5E1;">${clusterDesc}</div>
+    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Umumiy Natija: ${correctCount} / ${totalCount} ball (${((correctCount/totalCount)*100).toFixed(0)}%)</div>
+  </div></div>`;
+
+  feedbackEl.innerHTML = htmlResult;
+};
+
+
+// ==========================================
+// QUIZ 2 ENGINE (Mavzu 2: Modellashtirish)
+// ==========================================
+const quiz2Questions = [
+  {
+    id: 1,
+    question: "Kvadratik havo qarshiligida (F_drag = -k*v*v) harakatlanayotgan jism uchun x va y o'qlari bo'yicha differensial tenglamalar qanday yoziladi?",
+    options: [
+      { text: "A) dv_x/dt = -k*v_x^2,  dv_y/dt = -g - k*v_y^2", correct: false, note: "Xato! Havo qarshiligi vektor bo'lib, o'qlarga v_x/|v| va v_y/|v| nisbatda proyeksiyalanadi." },
+      { text: "B) dv_x/dt = -(k/m)*sqrt(v_x^2 + v_y^2)*v_x,  dv_y/dt = -g - (k/m)*sqrt(v_x^2 + v_y^2)*v_y", correct: true, note: "To'g'ri! F_drag = -k*|v|*v vektorini proyeksiyalash orqali to'g'ri bog'langan sistema olinadi." },
+      { text: "C) dv_x/dt = 0,  dv_y/dt = -g", correct: false, note: "Bu qarshiliksiz ideal vakuum formulasidir." }
+    ]
+  },
+  {
+    id: 2,
+    question: "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko'rinishida o'zgartirish shart?",
+    options: [
+      { text: "A) Canvasda Y o'qi pastga yo'nalgan, Dekart koordinatalarida esa yuqoriga yo'nalgan", correct: true, note: "To'g'ri! Ekran piksellarida (0,0) chap yuqori burchakda joylashgani uchun Y o'qini teskari o'girish shart." },
+      { text: "B) Gravitatsiya kuchini yo'qotish uchun", correct: false, note: "Gravitatsiya ekranga bog'liq emas, fizik qonundir." },
+      { text: "C) JavaScript faqat manfiy sonlarni qabul qilgani uchun", correct: false, note: "JavaScript barcha haqiqiy sonlar bilan ishlaydi." }
+    ]
+  },
+  {
+    id: 3,
+    question: "Jism devordan mutlaq noelastik urilganda (e = 0), to'qnashuvdan keyin uning tezligi qanday bo'ladi?",
+    options: [
+      { text: "A) v' = -v (to'liq teskari qaytadi)", correct: false, note: "Bu e = 1 (mutlaq elastik) holatidir." },
+      { text: "B) v' = 0 (jism devorga yopishib to'xtaydi, kinetik energiya issiqlikka aylanadi)", correct: true, note: "To'g'ri! e = 0 bo'lganda tiklanish sodir bo'lmaydi va barcha kinetik energiya yo'qotiladi." },
+      { text: "C) v' = 2*v", correct: false, note: "Energiya saqlanish qonuniga zid." }
+    ]
+  }
+];
+
+let userAnswers2 = {};
+
+window.selectQuiz2Option = function(qId, optIdx) {
+  userAnswers2[qId] = optIdx;
+  const container = document.getElementById(`quiz2-options-${qId}`);
+  if (!container) return;
+  const items = container.querySelectorAll('.quiz-option-card');
+  items.forEach((item, idx) => {
+    const isSelected = (idx === optIdx);
+    item.classList.toggle('selected', isSelected);
+    const radio = item.querySelector('input[type="radio"]');
+    if (radio) radio.checked = isSelected;
+    const dot = item.querySelector('.quiz-dot');
+    if (dot) dot.textContent = isSelected ? '🔘' : '⚪';
+  });
+};
+
+window.checkDiagnostic2Quiz = function() {
+  const feedbackEl = document.getElementById('diag2-feedback');
+  if (!feedbackEl) return;
+
+  let correctCount = 0;
+  let totalCount = quiz2Questions.length;
+  let allAnswered = true;
+
+  quiz2Questions.forEach(q => {
+    if (userAnswers2[q.id] === undefined) allAnswered = false;
+  });
+
+  if (!allAnswered) {
+    feedbackEl.innerHTML = `<div style="background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
+      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
+    </div>`;
+    return;
+  }
+
+  let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
+    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 2-Modul Modellashtirish Diagnostikasi Natijasi:</h4>`;
+
+  quiz2Questions.forEach(q => {
+    const userOptIdx = userAnswers2[q.id];
+    const opt = q.options[userOptIdx];
+    const isCorrect = opt.correct;
+    if (isCorrect) correctCount++;
+
+    htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
+      <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#34D399' : '#F43F5E'};">
+        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? 'To\'g\'ri!' : 'Xato!'}
+      </div>
+      <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${opt.note}</div>
+    </div>`;
+  });
+
+  let cluster = 'B Klaster (2D Modellashtirish & Simplektik Eyler-Kromer)';
+  let clusterColor = '#34D399';
+  let clusterDesc = '2D vektor harakat, gravitatsiya va simplektik Eyler-Kromer integratori bo\'yicha mustaqil laboratoriya ishlari tavsiya etiladi.';
+
+  if (correctCount === 3) {
+    cluster = 'C Klaster (No-chiziqli Tizimlar, Aerodinamik Drag & RK4 Integratori)';
+    clusterColor = '#C084FC';
+    clusterDesc = 'Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge-Kutta (RK4) integratsiyasi bo\'yicha ilmiy simulyatsiyalar tavsiya etiladi.';
+  } else if (correctCount <= 1) {
+    cluster = 'A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)';
+    clusterColor = '#38BDF8';
+    clusterDesc = 'Boshlang\'ich differensial hisob va sodda Eyler qadami bo\'yicha Scaffolding yo\'riqnomalar tavsiya etiladi.';
+  }
+
+  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
+    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>
+    <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${cluster}</div>
+    <div style="font-size:0.9rem; color:#CBD5E1;">${clusterDesc}</div>
+    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Natija: ${correctCount} / ${totalCount} ball (${((correctCount/totalCount)*100).toFixed(0)}%)</div>
+  </div></div>`;
+
+  feedbackEl.innerHTML = htmlResult;
+};
+
+
+// ==========================================
+// UNIVERSAL TAB SWITCHING ENGINE
+// ==========================================
+window.switchTab = function(evt, tabId) {
+  // If called without tabId, try to read from element
+  if (!tabId && evt && evt.currentTarget) {
+    tabId = evt.currentTarget.getAttribute('data-tab');
+  }
+  if (!tabId) return;
+
+  // Deactivate all tab contents
+  const contents = document.querySelectorAll('.tab-content, .tab-pane');
+  contents.forEach(c => c.classList.remove('active'));
+
+  // Deactivate all tab buttons
+  const buttons = document.querySelectorAll('.tab-btn, .tab-button');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  // Activate target content
+  const target = document.getElementById(tabId);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Activate clicked button or matching buttons
+  if (evt && evt.currentTarget) {
+    evt.currentTarget.classList.add('active');
+  } else {
+    buttons.forEach(b => {
+      const onclickAttr = b.getAttribute('onclick') || '';
+      const dataTabAttr = b.getAttribute('data-tab') || '';
+      if (onclickAttr.includes(tabId) || dataTabAttr === tabId) {
+        b.classList.add('active');
+      }
+    });
+  }
+
+  // Auto-scroll active button ONLY within tabs-nav container (WITHOUT shifting document window viewport)
+  const activeBtn = (evt && evt.currentTarget) ? evt.currentTarget : 
+                    (document.querySelector(`.tab-btn[data-tab="${tabId}"]`) || 
+                     document.querySelector(`.tab-btn[onclick*="${tabId}"]`));
+  if (activeBtn) {
+    const tabsNav = activeBtn.closest('.tabs-nav') || document.getElementById('main-tabs-nav');
+    if (tabsNav) {
+      const btnLeft = activeBtn.offsetLeft;
+      const btnWidth = activeBtn.offsetWidth;
+      const navWidth = tabsNav.clientWidth;
+      tabsNav.scrollTo({
+        left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+        behavior: 'smooth'
+      });
+      setTimeout(updateTabsScrollProgress, 200);
+    }
+  }
+
+  // Trigger dynamic canvas adjustments
+  if (tabId === 'tab-reja6' && window.thermodynamicsPipeline) {
+    setTimeout(() => window.thermodynamicsPipeline.initCanvasSize(), 50);
+  }
+  if (tabId === 'tab-reja6' && window.mechanicsPipeline) {
+    setTimeout(() => window.mechanicsPipeline.initCanvasSize(), 50);
+  }
+  if (tabId === 'tab-reja6' && window.astroSim) {
+    setTimeout(() => window.astroSim.initCanvasSize(), 50);
+  }
+  if (tabId === 'tab-sec6' && window.canvasArchSim) {
+    setTimeout(() => window.canvasArchSim.initCanvasSize(), 50);
+  }
+};
+window.openTab = window.switchTab;
+
+// ==========================================
+// TABS HORIZONTAL SCROLL / CAROUSEL CONTROLLER
+// ==========================================
+window.scrollTabsNav = function(delta) {
+  const tabsNav = document.getElementById('main-tabs-nav') || document.querySelector('.tabs-nav');
+  if (tabsNav) {
+    tabsNav.scrollBy({ left: delta, behavior: 'smooth' });
+    setTimeout(updateTabsScrollProgress, 150);
+  }
+};
+
+function updateTabsScrollProgress() {
+  const tabsNav = document.getElementById('main-tabs-nav') || document.querySelector('.tabs-nav');
+  const thumb = document.getElementById('tabs-scroll-thumb');
+  if (!tabsNav || !thumb) return;
+
+  const maxScroll = tabsNav.scrollWidth - tabsNav.clientWidth;
+  if (maxScroll <= 0) {
+    thumb.style.width = '100%';
+    thumb.style.left = '0%';
+    return;
+  }
+
+  const visibleRatio = tabsNav.clientWidth / tabsNav.scrollWidth;
+  const scrollRatio = tabsNav.scrollLeft / maxScroll;
+  const thumbWidth = Math.max(visibleRatio * 100, 20);
+  const thumbLeft = Math.min(scrollRatio * (100 - thumbWidth), 100 - thumbWidth);
+
+  thumb.style.width = `${thumbWidth}%`;
+  thumb.style.left = `${Math.max(thumbLeft, 0)}%`;
+}
+
+window.updateTabsScrollProgress = updateTabsScrollProgress;
+
+// ==========================================
+// COMMON UI (DRAWER, TABS, TOASTS, PROMPTS)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Tabs Horizontal Scroll Tracking
+  const tabsNav = document.getElementById('main-tabs-nav') || document.querySelector('.tabs-nav');
+  if (tabsNav) {
+    tabsNav.addEventListener('scroll', updateTabsScrollProgress);
+    window.addEventListener('resize', updateTabsScrollProgress);
+    setTimeout(updateTabsScrollProgress, 100);
+    setTimeout(updateTabsScrollProgress, 500);
+  }
+
+  // Mobile Drawer
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  const toggleDrawer = () => {
+    const isOpen = mobileDrawer.classList.toggle('open');
+    drawerOverlay.classList.toggle('open', isOpen);
+    hamburgerBtn.classList.toggle('active', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+
+  if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+  drawerLinks.forEach(link => link.addEventListener('click', toggleDrawer));
+
+  // Tab click event delegation
+  const tabButtons = document.querySelectorAll('.tab-btn, .tab-button');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const targetId = btn.getAttribute('data-tab');
+      if (targetId) {
+        window.switchTab(e, targetId);
+      }
+    });
+  });
+
+  // Toasts
+  window.showToast = (message) => {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toast-container';
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<span>✨</span><span>${message}</span>`;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(100%)';
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  };
+
+  // Copy Prompt
+  document.querySelectorAll('.copy-prompt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.getAttribute('data-prompt') || btn.parentElement.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        window.showToast("Prompt nusxalandi!");
+      });
+    });
+  });
+});
+
+// ==========================================
+// UNIVERSAL RESPONSIVE CANVAS & HIGH-DPI ADAPTER
+// ==========================================
+class ResponsiveCanvasAdapter {
+  /**
+   * Adapts any HTML5 canvas to parent width and High-DPI (Retina) screens.
+   * @param {HTMLCanvasElement|string} canvas - Canvas element or ID
+   * @param {number} aspectRatio - Width to Height ratio (e.g. 16/9, 4/3, 2/1)
+   * @param {function} renderCallback - Callback function(ctx, width, height, dpr)
+   */
+  constructor(canvas, aspectRatio = 16 / 9, renderCallback = null) {
+    this.canvas = typeof canvas === 'string' ? document.getElementById(canvas) : canvas;
+    if (!this.canvas) return;
+    this.ctx = this.canvas.getContext('2d');
+    this.aspectRatio = aspectRatio;
+    this.renderCallback = renderCallback;
+    this.dpr = window.devicePixelRatio || 1;
+
+    this.resize = this.resize.bind(this);
+    this.init();
+  }
+
+  init() {
+    this.resize();
+    window.addEventListener('resize', this.resize);
+    window.addEventListener('orientationchange', this.resize);
+
+    if (window.ResizeObserver && this.canvas.parentElement) {
+      this.observer = new ResizeObserver(() => this.resize());
+      this.observer.observe(this.canvas.parentElement);
+    }
+  }
+
+  resize() {
+    if (!this.canvas) return;
+    const parent = this.canvas.parentElement || document.body;
+    const displayWidth = parent.clientWidth || window.innerWidth;
+    const displayHeight = Math.round(displayWidth / this.aspectRatio);
+    this.dpr = window.devicePixelRatio || 1;
+
+    // Buffer dimensions (scaled by DPR for crisp rendering on Retina screens)
+    this.canvas.width = Math.round(displayWidth * this.dpr);
+    this.canvas.height = Math.round(displayHeight * this.dpr);
+
+    // CSS display dimensions
+    this.canvas.style.width = '100%';
+    this.canvas.style.maxWidth = '100%';
+    this.canvas.style.height = 'auto';
+
+    if (typeof this.renderCallback === 'function') {
+      this.renderCallback(this.ctx, displayWidth, displayHeight, this.dpr);
+    }
+  }
+
+  destroy() {
+    window.removeEventListener('resize', this.resize);
+    window.removeEventListener('orientationchange', this.resize);
+    if (this.observer) this.observer.disconnect();
+  }
+}
+
+window.ResponsiveCanvasAdapter = ResponsiveCanvasAdapter;
+
+
+/* ==========================================
+   RESPONSIVE CANVAS ADAPTER
+   ========================================== */
+
+</script>
+</body>
+</html>
