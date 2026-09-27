@@ -16,7 +16,7 @@
   const MAX_FRAME = 0.1;      // kadr vaqtining yuqori chegarasi, s
   const BALL_R = 14;
   const OSC_OMEGA = 2 * Math.PI / 1.6; // rad/s (davr 1,6 s)
-  const OSC_AMP = 140;                 // piksel
+  const OSC_AMP = 110;                 // piksel
 
   function renderMath(el) {
     if (el && typeof window.renderMathInElement === 'function') {
@@ -155,8 +155,9 @@ Iltimos:
     let trailCount = 0, trailHead = 0;
 
     let running = false;
-    let lastRendered = 0;
-    let fpsEma = 0, lastDtMs = 0;
+    let lastRendered = 0;   // FPS cheklovi uchun "rejalashtirilgan" kadr vaqti
+    let prevRenderTs = 0;   // oxirgi haqiqatda chizilgan kadr vaqti
+    let fpsEma = 0, msEma = 0, lastDtMs = 0;
     let rafId = 0;
 
     const mode = () => (selMode ? selMode.value : 'ball');
@@ -178,7 +179,7 @@ Iltimos:
       initState(ref);
       trailCount = 0; trailHead = 0;
       histCount = 0; histHead = 0;
-      fpsEma = 0; lastDtMs = 0; lastRendered = 0;
+      fpsEma = 0; msEma = 0; lastDtMs = 0; lastRendered = 0; prevRenderTs = 0;
       draw();
       updateHud();
     }
@@ -214,21 +215,33 @@ Iltimos:
       rafId = 0;
       if (!running) return;
       rafId = requestAnimationFrame(frame);
-      if (!lastRendered) { lastRendered = ts; return; }
+      if (!prevRenderTs) { lastRendered = prevRenderTs = ts; return; }
       const thr = throttle();
-      const elapsedMs = ts - lastRendered;
-      // Sun'iy FPS cheklovi: kadr oralig'i yetarli bo'lmaguncha chizmaymiz
-      // (4 ms tolerantlik — rAF vaqt belgilaridagi mayda tebranishlar uchun)
-      if (thr > 0 && elapsedMs < 1000 / thr - 4) return;
-      lastRendered = ts;
+      if (thr > 0) {
+        // Sun'iy FPS cheklovi. Monitor chastotasi maqsadga karrali bo'lmasa
+        // (masalan 75 Hz yoki notekis kadrlar), "oxirgi kadrdan beri" usuli
+        // chastotani pastga suradi (30 o'rniga 20–25 FPS). Shu sababli keyingi
+        // kadr vaqti jadval bo'yicha (lastRendered += interval) hisoblanadi —
+        // o'rtacha chastota maqsadga teng bo'ladi.
+        const interval = 1000 / thr;
+        if (ts - lastRendered < interval - 4) return;
+        lastRendered += interval;
+        if (ts - lastRendered > interval) lastRendered = ts; // uzoq to'xtashdan keyin qayta sinxronlash
+      } else {
+        lastRendered = ts;
+      }
+      const elapsedMs = ts - prevRenderTs;
+      prevRenderTs = ts;
 
       const frameTime = Math.min(elapsedMs / 1000, MAX_FRAME);
       lastDtMs = elapsedMs;
       intervals[histHead] = elapsedMs;
       histHead = (histHead + 1) % HIST;
       if (histCount < HIST) histCount++;
-      const instFps = 1000 / Math.max(elapsedMs, 1);
-      fpsEma = fpsEma ? fpsEma * 0.85 + instFps * 0.15 : instFps;
+      // FPS kadr oraliqlarining silliqlangan o'rtachasidan olinadi
+      // (alohida kadrlar FPS ini o'rtachalash natijani oshirib yuboradi)
+      msEma = msEma ? msEma * 0.9 + elapsedMs * 0.1 : elapsedMs;
+      fpsEma = 1000 / Math.max(msEma, 1);
 
       // Etalon: har doim haqiqiy o'tgan vaqt bo'yicha
       advance(ref, frameTime);
@@ -355,7 +368,7 @@ Iltimos:
 
     function drawFpsScope() {
       const w = fpsCv.width, h = fpsCv.height;
-      const padL = 40, padR = 10, padT = 16, padB = 24;
+      const padL = 40, padR = 10, padT = 22, padB = 24;
       const maxMs = 80;
       const y = ms => padT + (h - padT - padB) * (1 - Math.min(ms, maxMs) / maxMs);
       fctx.clearRect(0, 0, w, h);
@@ -386,20 +399,34 @@ Iltimos:
         return;
       }
       const bw = (w - padL - padR) / HIST;
+      // Rang maqsadli kadr oralig'iga nisbatan: yashil — me'yorda,
+      // sariq — 1,5 baravargacha kechikish, qizil — kadr tushib qolgan (Jank)
+      const thr = throttle();
+      const target = thr > 0 ? 1000 / thr : 1000 / 60;
+      let sum = 0;
       for (let i = 0; i < histCount; i++) {
         const idx = (histHead - histCount + i + HIST) % HIST;
         const ms = intervals[idx];
+        sum += ms;
         const x = padL + (HIST - histCount + i) * bw;
-        fctx.fillStyle = ms > 50 ? '#f43f5e' : ms > 20 ? '#f59e0b' : '#10b981';
+        fctx.fillStyle = ms > target * 1.5 ? '#f43f5e' : ms > target * 1.2 ? '#f59e0b' : '#10b981';
         const top = y(ms);
         fctx.fillRect(x, top, Math.max(bw - 1, 1), y(0) - top);
       }
       drawScopeLabels();
+      const avgFps = 1000 * histCount / sum;
+      const goal = thr > 0 ? `maqsad: ${thr} FPS` : 'cheklovsiz';
+      fctx.font = '12px monospace';
+      fctx.textAlign = 'left';
+      fctx.fillStyle = 'rgba(9, 13, 22, 0.85)';
+      fctx.fillRect(padL, 2, 250, 15);
+      fctx.fillStyle = '#e2e8f0';
+      fctx.fillText(`O'rtacha: ${avgFps.toFixed(1)} FPS (${goal})`, padL + 4, 13);
     }
 
     function drawScopeLabels() {
       const w = fpsCv.width;
-      const padT = 16, padB = 24, maxMs = 80, h = fpsCv.height;
+      const padT = 22, padB = 24, maxMs = 80, h = fpsCv.height;
       const y = ms => padT + (h - padT - padB) * (1 - Math.min(ms, maxMs) / maxMs);
       fctx.font = '11px monospace';
       fctx.textAlign = 'left';
@@ -446,6 +473,7 @@ Iltimos:
       if (running) return;
       running = true;
       lastRendered = 0;
+      prevRenderTs = 0;
       if (btnPlay) btnPlay.disabled = true;
       if (btnPause) btnPause.disabled = false;
       if (!rafId) rafId = requestAnimationFrame(frame);
@@ -462,7 +490,7 @@ Iltimos:
     if (btnPause) btnPause.addEventListener('click', pause);
     if (btnReset) btnReset.addEventListener('click', reset);
     if (selMode) selMode.addEventListener('change', reset);
-    if (selThr) selThr.addEventListener('change', () => { histCount = 0; histHead = 0; fpsEma = 0; draw(); });
+    if (selThr) selThr.addEventListener('change', () => { histCount = 0; histHead = 0; fpsEma = 0; msEma = 0; draw(); });
     if (slSpeed) slSpeed.addEventListener('input', () => {
       if (vSpeed) vSpeed.textContent = `${speed().toFixed(1)}x`;
       updateHud();
