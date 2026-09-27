@@ -990,6 +990,16 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .proto-table tr:nth-child(even) {
       background: rgba(255, 255, 255, 0.015);
     }
+    .footer { border-top: 1px solid var(--border-color); padding: 30px 24px; color: var(--text-secondary); font-size: 0.9rem; }
+    .footer-container { max-width: 1360px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; text-align: left; margin-bottom: 18px; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .footer-heading { color: #fff; margin-bottom: 8px; font-size: 0.95rem; }
+    .footer-links-list { list-style: none; padding: 0; margin: 0; line-height: 1.9; }
+    .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
+    .footer-links-list a:hover { color: var(--accent-cyan); }
+    .footer-bottom { text-align: center; border-top: 1px solid var(--border-color); padding-top: 14px; }
   </style>
 </head>
 <body>
@@ -1003,20 +1013,36 @@ input[type="range"]::-webkit-slider-thumb:hover {
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
-        <li><a href="Kirish_AI_Fizik_Simulyatsiyalar_Web.html" class="nav-link">1-Modul</a></li>
-        <li><a href="Fizik_Jarayonni_Modellashtirish_Web.html" class="nav-link">2-Modul</a></li>
-        <li><a href="Fizik_va_Astronomik_Malumotlarni_Vizuallashtirish_Web.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
-        <li><a href="Mexanika_Qonuniyatlarini_Modellashtirish_Web.html" class="nav-link">12-Modul</a></li>
-        <li><a href="1_Laboratoriya_AI_Fizik_Vizual_Loyiha_Web.html" class="nav-link">🧪 1-Lab</a></li>
-        <li><a href="2_Laboratoriya_LLM_Matematik_Model_Formulalar_Web.html" class="nav-link">🧪 2-Lab</a></li>
-        <li><a href="3_Laboratoriya_AI_Ekotizim_Virtual_Muhit_Web.html" class="nav-link">🧪 3-Lab</a></li>
-        <li><a href="4_Laboratoriya_WolframAlpha_AI_Hisoblash_Aniqligi_Web.html" class="nav-link">🧪 4-Lab</a></li>
-        <li><a href="5_Laboratoriya_Deterministik_Stoxastik_Modellar_Web.html" class="nav-link">🧪 5-Lab</a></li>
-        <li><a href="6_Laboratoriya_FBD_Diagramma_AI_Tasvir_Web.html" class="nav-link">🧪 6-Lab</a></li>
-        <li><a href="7_Laboratoriya_HTML5_Canvas_Delta_Time_Web.html" class="nav-link">🧪 7-Lab</a></li>
-        <li><a href="8_Laboratoriya_AI_Pair_Programming_Fizika_Dvigateli_Web.html" class="nav-link">🧪 8-Lab</a></li>
-        <li><a href="9_Laboratoriya_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html" class="nav-link">🧪 9-Lab</a></li>
-        <li><a href="10_Laboratoriya_Astronomik_Traektoriyalar_Ovoz_Sintezi_Web.html" class="nav-link active">🧪 10-Lab</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-Modul: Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul: Prompt Muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-Modul: Masofaviy Ta'lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika & Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-Modul: Termodinamika & Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
+        <li><a href="lab15.html" class="nav-link active">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
@@ -1038,23 +1064,37 @@ input[type="range"]::-webkit-slider-thumb:hover {
     </div>
     <ul class="drawer-links">
       <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
-      <li><a href="Kirish_AI_Fizik_Simulyatsiyalar_Web.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
-      <li><a href="Fizik_Jarayonni_Modellashtirish_Web.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
-      <li><a href="Fizik_Animatsiya_Arxitekturasi_Web.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
-      <li><a href="AI_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
-      <li><a href="Fizik_va_Astronomik_Malumotlarni_Vizuallashtirish_Web.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
-      <li><a href="Mexanika_Qonuniyatlarini_Modellashtirish_Web.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-Modul: Shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-Modul: Masofaviy Ta'lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="1_Laboratoriya_AI_Fizik_Vizual_Loyiha_Web.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
-      <li><a href="2_Laboratoriya_LLM_Matematik_Model_Formulalar_Web.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
-      <li><a href="3_Laboratoriya_AI_Ekotizim_Virtual_Muhit_Web.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-      <li><a href="4_Laboratoriya_WolframAlpha_AI_Hisoblash_Aniqligi_Web.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-      <li><a href="5_Laboratoriya_Deterministik_Stoxastik_Modellar_Web.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-      <li><a href="6_Laboratoriya_FBD_Diagramma_AI_Tasvir_Web.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-      <li><a href="7_Laboratoriya_HTML5_Canvas_Delta_Time_Web.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
-      <li><a href="8_Laboratoriya_AI_Pair_Programming_Fizika_Dvigateli_Web.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-      <li><a href="9_Laboratoriya_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="10_Laboratoriya_Astronomik_Traektoriyalar_Ovoz_Sintezi_Web.html" class="drawer-link active">🧪 15-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
+      <li><a href="lab15.html" class="drawer-link active">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
       <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
     </ul>
   </aside>
@@ -1118,9 +1158,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
     <!-- Scroll Progress Track Indicator -->
     <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-track">
-        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-      </div>
+      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
     </div>
 
     <!-- ========================================================================= -->
@@ -1386,9 +1424,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
           <h4 class="footer-heading">Tezkor Havolalar</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">Bosh Sahifa</a></li>
-            <li><a href="1_Laboratoriya_AI_Fizik_Vizual_Loyiha_Web.html">1-Laboratoriya</a></li>
-            <li><a href="9_Laboratoriya_Prompt_Muhandislik_Kod_Generatsiyasi_Web.html">9-Laboratoriya</a></li>
-            <li><a href="10_Laboratoriya_Astronomik_Traektoriyalar_Ovoz_Sintezi_Web.html">15-Laboratoriya</a></li>
+            <li><a href="lab1.html">1-Laboratoriya</a></li>
+            <li><a href="lab9.html">9-Laboratoriya</a></li>
+            <li><a href="lab10.html">15-Laboratoriya</a></li>
           </ul>
         </div>
         <div class="footer-links-col">
@@ -1432,10 +1470,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
       const thumbWidthPercent = Math.max(ratio * 100, 15);
       thumb.style.width = thumbWidthPercent + '%';
 
+      // translateX(%) thumbning o'z kengligiga nisbatan hisoblanadi,
+      // shuning uchun siljish pikselda beriladi
       const scrollFraction = nav.scrollLeft / maxScroll;
-      const maxTranslatePercent = (100 - thumbWidthPercent);
-      const translateVal = scrollFraction * maxTranslatePercent;
-      thumb.style.transform = `translateX(${translateVal}%)`;
+      const maxTranslate = nav.clientWidth * (1 - thumbWidthPercent / 100);
+      thumb.style.transform = `translateX(${scrollFraction * maxTranslate}px)`;
     }
 
     window.switchTab = function(event, tabId) {
@@ -1500,7 +1539,20 @@ input[type="range"]::-webkit-slider-thumb:hover {
       }
     });
   </script>
-  <script src="js/sim-lab15-nuclear.js"></script>
+  <script>
+    // "Promptni Nusxalash" tugmasi uchun (sahifada aniqlanmagan edi)
+    window.copyPrompt = function (id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.value || el.textContent;
+      const done = () => { if (typeof window.showToast === 'function') window.showToast('Nusxalandi!'); };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done).catch(() => { el.select(); document.execCommand('copy'); done(); });
+      } else {
+        el.select(); document.execCommand('copy'); done();
+      }
+    };
+  </script>
   <script>
 /* ==========================================
    PHYSICS ENGINE
@@ -1793,9 +1845,9 @@ function drawNuclei() {
         ctx.beginPath();
         ctx.arc(n.x, n.y, 6, 0, Math.PI*2);
         if (n.decayed) {
-            ctx.fillStyle = "var(--accent-emerald)"; // stable (green)
+            ctx.fillStyle = "#34D399"; // stable (green)
         } else {
-            ctx.fillStyle = "var(--accent-rose)"; // unstable (red)
+            ctx.fillStyle = "#F43F5E"; // unstable (red)
         }
         ctx.fill();
     });
@@ -1823,7 +1875,7 @@ function drawDecayGraph() {
     
     if(decayData.length < 2) return;
     
-    ctx.strokeStyle = "var(--accent-rose)";
+    ctx.strokeStyle = "#F43F5E";
     ctx.lineWidth = 2;
     ctx.beginPath();
     
