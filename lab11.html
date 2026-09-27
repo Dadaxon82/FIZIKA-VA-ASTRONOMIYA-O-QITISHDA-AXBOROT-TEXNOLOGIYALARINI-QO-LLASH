@@ -97,6 +97,37 @@
     .proto-table tr:nth-child(even) {
       background: rgba(255, 255, 255, 0.015);
     }
+    .lab-sim-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 980px) {
+      .lab-sim-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    /* Dastgoh paneli: backdrop-filter har bir canvas kadrida qayta hisoblanib,
+       kuchsizroq kompyuterlarda FPS ni keskin tushiradi (7-laboratoriyaga qarang) */
+    #tab-reja5 .glass-panel {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: rgba(15, 23, 42, 0.92);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .footer-heading { color: #fff; margin-bottom: 8px; font-size: 0.95rem; }
+    .footer-links-list { list-style: none; padding: 0; margin: 0; line-height: 1.9; }
+    .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
+    .footer-links-list a:hover { color: var(--accent-cyan); }
   </style>
 </head>
 <body>
@@ -110,20 +141,32 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-Modul</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-Modul</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-Modul: Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul: Prompt Muhandislik</a></li>
         <li><a href="lecture10.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-Modul</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-Lab</a></li>
-        <li><a href="lab2.html" class="nav-link">🧪 2-Lab</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-Lab</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-Lab</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-Lab</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-Lab</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-Lab</a></li>
-        <li><a href="lab8.html" class="nav-link">🧪 8-Lab</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-Lab</a></li>
-        <li><a href="lab10.html" class="nav-link active">🧪 10-Lab</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-Modul: Masofaviy Ta'lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika & Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-Modul: Termodinamika & Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link active">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
@@ -147,13 +190,22 @@
       <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
       <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
       <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-Modul: Shakllantirish</a></li>
       <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
       <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
       <li><a href="lecture10.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-Modul: Masofaviy Ta'lim</a></li>
       <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
       <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
       <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
       <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
       <li><a href="lab5.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
@@ -161,7 +213,8 @@
       <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
       <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link active">🧪 11-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link active">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
       <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
     </ul>
   </aside>
@@ -225,9 +278,7 @@
 
     <!-- Scroll Progress Track Indicator -->
     <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-track">
-        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-      </div>
+      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
     </div>
 
     <!-- ========================================================================= -->
@@ -258,7 +309,7 @@
           </div>
 
           <div class="quiz-card" id="quiz-q3">
-            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">3-Savol: O'quv trayektoriyasini monitoring qilishda MagicSchool AI asosan qanday usuldan foydalanadi?</h4>
+            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">3-Savol: Talabaning qobiliyati va topshiriq qiyinligini hisobga olib, keyingi topshiriqni tanlaydigan adaptiv baholash qaysi modelga asoslanadi?</h4>
             <label class="quiz-option"><input type="radio" name="diag11_q3" value="A"> A) Adaptiv baholash va IRT (Item Response Theory) modeli</label>
             <label class="quiz-option"><input type="radio" name="diag11_q3" value="B"> B) Faqatgina an'anaviy o'rtacha arifmetik baho chiqarish</label>
             <label class="quiz-option"><input type="radio" name="diag11_q3" value="C"> C) O'quvchilarni alifbo tartibida guruhlash</label>
@@ -337,7 +388,7 @@
             Transkripsiya aniqligi WER ko'rsatkichi bilan o'lchanadi. Formula quyidagicha ifodalanadi:
           </p>
           <div style="text-align: center; margin: 15px 0; font-size: 1.2rem;">
-            $$ 	ext{WER} = rac{S + D + I}{N} 	imes 100\% $$
+            $$ \text{WER} = \frac{S + D + I}{N} \times 100\% $$
           </div>
           <ul style="list-style: none; padding-left: 0; color: var(--text-secondary);">
             <li>$S$ – Substitutions (Noto'g'ri almashtirilgan so'zlar)</li>
@@ -349,8 +400,8 @@
 
         <h4 style="margin-bottom: 10px;">Akustik Model va Til Modeli</h4>
         <p style="color: var(--text-secondary); margin-bottom: 15px;">
-          Tizim dastlab audio faylni kichik vaqt oraliqlariga (freymlarga) ajratadi va ulardan Mel-spektrogramma vektorlarini ajratib oladi. Akustik model (AM) bu vektorlarning qaysi fonemaga mos kelish ehtimolini hisoblaydi: $P(	ext{Audio} | 	ext{Fonema})$. So'ngra, Til modeli (LM) so'zlarning ketma-ket kelish ehtimolligini N-gram yoki Transformer algoritmlari orqali baholaydi: $P(	ext{Matn})$. Eng katta ehtimollikka ega matn Bayes teoremasi yordamida topiladi:
-          $$ \hat{W} = rg\max_{W} P(A|W)P(W) $$
+          Tizim dastlab audio faylni kichik vaqt oraliqlariga (freymlarga) ajratadi va ulardan Mel-spektrogramma vektorlarini ajratib oladi. Akustik model (AM) bu vektorlarning qaysi fonemaga mos kelish ehtimolini hisoblaydi: $P(\text{Audio} | \text{Fonema})$. So'ngra, Til modeli (LM) so'zlarning ketma-ket kelish ehtimolligini N-gram yoki Transformer algoritmlari orqali baholaydi: $P(\text{Matn})$. Eng katta ehtimollikka ega matn Bayes teoremasi yordamida topiladi:
+          $$ \hat{W} = \arg\max_{W} P(A|W)P(W) $$
         </p>
       </div>
     </section>
@@ -369,13 +420,13 @@
           <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md);">
             <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">Item Response Theory (IRT) va Adaptiv O'qitish</h4>
             <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 10px;">
-              MagicSchool AI o'quvchining qobiliyatini ($	heta$) va topshiriqning qiyinlik darajasini ($b$) inobatga olgan holda keyingi topshiriqlarni tanlaydi. 1-parametrli logistik model (Rasch modeli):
+              MagicSchool AI o'quvchining qobiliyatini ($\theta$) va topshiriqning qiyinlik darajasini ($b$) inobatga olgan holda keyingi topshiriqlarni tanlaydi. 1-parametrli logistik model (Rasch modeli):
             </p>
             <div style="text-align: center; margin: 15px 0;">
-              $$ P(	heta) = rac{1}{1 + e^{-(	heta - b)}} $$
+              $$ P(\theta) = \frac{1}{1 + e^{-(\theta - b)}} $$
             </div>
             <p style="color: var(--text-secondary); font-size: 0.95rem;">
-              Bu erda $P(	heta)$ o'quvchining savolga to'g'ri javob berish ehtimolligi.
+              Bu erda $P(\theta)$ o'quvchining savolga to'g'ri javob berish ehtimolligi.
             </p>
           </div>
           
@@ -504,7 +555,8 @@
             <li><a href="index.html">Bosh Sahifa</a></li>
             <li><a href="lab1.html">1-Laboratoriya</a></li>
             <li><a href="lab9.html">9-Laboratoriya</a></li>
-            <li><a href="lab10.html">11-Laboratoriya</a></li>
+            <li><a href="lab10.html">10-Laboratoriya</a></li>
+            <li><a href="lab11.html">11-Laboratoriya</a></li>
           </ul>
         </div>
         <div class="footer-links-col">
@@ -548,10 +600,11 @@
       const thumbWidthPercent = Math.max(ratio * 100, 15);
       thumb.style.width = thumbWidthPercent + '%';
 
+      // translateX(%) thumbning o'z kengligiga nisbatan hisoblanadi,
+      // shuning uchun siljish pikselda beriladi
       const scrollFraction = nav.scrollLeft / maxScroll;
-      const maxTranslatePercent = (100 - thumbWidthPercent);
-      const translateVal = scrollFraction * maxTranslatePercent;
-      thumb.style.transform = `translateX(${translateVal}%)`;
+      const maxTranslate = nav.clientWidth * (1 - thumbWidthPercent / 100);
+      thumb.style.transform = `translateX(${scrollFraction * maxTranslate}px)`;
     }
 
     window.switchTab = function(event, tabId) {
@@ -601,8 +654,8 @@
         });
       }
 
-      if (tabId === 'tab-reja5' && window.triggerLab10CanvasRedraw) {
-        setTimeout(window.triggerLab10CanvasRedraw, 50);
+      if (tabId === 'tab-reja5' && window.triggerLab11CanvasRedraw) {
+        setTimeout(window.triggerLab11CanvasRedraw, 50);
       }
     };
     window.openTab = window.switchTab;
