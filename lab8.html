@@ -97,6 +97,37 @@
     .proto-table tr:nth-child(even) {
       background: rgba(255, 255, 255, 0.015);
     }
+    .lab8-sim-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 980px) {
+      .lab8-sim-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    /* Dastgoh paneli: backdrop-filter har bir canvas kadrida qayta hisoblanib,
+       kuchsizroq kompyuterlarda FPS ni keskin tushiradi (7-laboratoriyaga qarang) */
+    #tab-reja5 .glass-panel {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: rgba(15, 23, 42, 0.92);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .footer-heading { color: #fff; margin-bottom: 8px; font-size: 0.95rem; }
+    .footer-links-list { list-style: none; padding: 0; margin: 0; line-height: 1.9; }
+    .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
+    .footer-links-list a:hover { color: var(--accent-cyan); }
   </style>
 </head>
 <body>
@@ -110,20 +141,29 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-Modul</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-Modul</a></li>
-        <li><a href="lecture7.html" class="nav-link">7-Modul</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-Modul</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-Lab</a></li>
-        <li><a href="lab2.html" class="nav-link">🧪 2-Lab</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-Lab</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-Lab</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-Lab</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-Lab</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-Lab</a></li>
-        <li><a href="lab8.html" class="nav-link active">🧪 8-Lab</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-Lab</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Lab</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-Modul: Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-Modul: Prompt Muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-Modul: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-Modul: Masofaviy Ta'lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-Modul: Mexanika & Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-Modul: Termodinamika & Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-Modul: Elektrodinamika & Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+        <li><a href="lab8.html" class="nav-link active">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="btn btn-secondary btn-sm">
@@ -147,20 +187,28 @@
       <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
       <li><a href="lecture1.html" class="drawer-link">🔬 1-Modul: AI Paradigma</a></li>
       <li><a href="lecture2.html" class="drawer-link">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-Modul: Shakllantirish</a></li>
       <li><a href="lecture7.html" class="drawer-link">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
       <li><a href="lecture9.html" class="drawer-link">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-Modul: Masofaviy Ta'lim</a></li>
       <li><a href="lecture12.html" class="drawer-link">⚙️ 12-Modul: Mexanika & Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
       <li><a href="lab1.html" class="drawer-link">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Model</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
       <li><a href="lab3.html" class="drawer-link">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
       <li><a href="lab4.html" class="drawer-link">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
       <li><a href="lab5.html" class="drawer-link">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
       <li><a href="lab6.html" class="drawer-link">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
       <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link active">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
       <li><a href="https://drive.google.com/drive/folders/1A-eUurlMZKR_KNZT9KE4hbfN4yZswlma" target="_blank" class="drawer-link">☁️ Google Drive Papka</a></li>
     </ul>
   </aside>
@@ -175,7 +223,7 @@
         Sun'iy Intellekt Bilan Juftlikda Dasturlash (Pair-Programming) Orqali Elastik To'qnashuvlar va Vektor Arifmetikasiga Asoslangan Kichik Fizika Dvigateli Kodini Yozish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
-        Kompyuter simulyatsiyalari va kompyuter o'yinlarining markaziy qismi — qattiq jismlar to'qnashuvini aniq hisoblovchi fizik dvigatel (Physics Engine) hisoblanadi. Mazkur laboratoriya mashg'ulotida 6-laboratoriyada tuzilgan kuchlar va harakat tenglamalari asosida 2D Vektor arifmetikasi, doiralar to'qnashuvini aniqlash, impuls skalyari ($J$) almashinuvi hamda yopishib qolish (sticky collision) muammosini bartaraf etuvchi to'liq dvigatel yaratiladi. <strong>Claude 3.5 Sonnet</strong> bilan juftlikda dasturlash (Driver / Navigator) metodologiyasida kod xatoliklari tuzatiladi, <strong>ChatGPT Code Interpreter</strong> muhitida esa impuls va energiyaning saqlanish qonunlari matematik verifikatsiya qilinadi.
+        Kompyuter simulyatsiyalari va kompyuter o'yinlarining markaziy qismi — qattiq jismlar to'qnashuvini aniq hisoblovchi fizik dvigatel (Physics Engine) hisoblanadi. Mazkur laboratoriya mashg'ulotida 6-laboratoriyada tuzilgan kuchlar va harakat tenglamalari asosida 2D Vektor arifmetikasi, doiralar to'qnashuvini aniqlash, impuls skalyari ($J$) almashinuvi hamda yopishib qolish (sticky collision) muammosini bartaraf etuvchi to'liq dvigatel yaratiladi. <strong>Claude 3.5 Sonnet</strong> (yoki boshqa zamonaviy LLM) bilan juftlikda dasturlash (Driver / Navigator) metodologiyasida kod xatoliklari tuzatiladi, <strong>ChatGPT Code Interpreter</strong> (hozirgi nomi — ChatGPT'dagi ma'lumotlar tahlili vositasi) muhitida esa impuls va energiyaning saqlanish qonunlari sonli tekshiriladi.
       </p>
     </div>
 
@@ -193,11 +241,11 @@
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-purple);">3. Claude Bilan Juftlikda Debugging:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Driver va Navigator rollari; 4 ta kritik fizik nosozlik (vektorlarni skalyar qo'shish, sticky collision, energiya portlashi, tunneling) auditi.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Driver va Navigator rollari; 4 ta kritik fizik nosozlik (vektorlarni skalyar qo'shish, sticky collision, energiya dreyfi, tunneling) auditi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">4. Code Interpreter Tekshiruvi:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Impuls va kinetik energiya saqlanishining matematik verifikatsiyasi, Monte-Karlo 10 000 sinov simulyatsiyasi va statistik xatolik grafigi.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Impuls va kinetik energiya saqlanishining sonli tekshiruvi: 10 000 ta tasodifiy to'qnashuv (Monte-Karlo) sinovi va xatoliklar taqsimoti.</span>
         </div>
       </div>
     </div>
@@ -224,9 +272,7 @@
 
     <!-- Scroll Progress Track Indicator -->
     <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-track">
-        <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-      </div>
+      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
     </div>
 
     <!-- ========================================================================= -->
@@ -238,7 +284,7 @@
           1. Sun'iy Intellekt Uchun Kognitiv Diagnostika va Individual Ta'lim Trayektoriyasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
-          Fizika dvigatelini kodlash talabadan ham chuqur nazariy fizika (Nyutonning uchinchi qonuni, impuls va kinetik energiya saqlanishi, elastik va noelastik to'qnashuvlar dinamikasi), hamda 2D vektor arifmetikasi va obyektga yo'naltirilgan dasturlash (OOP) bilimlarini talab etadi. <strong>TPACK</strong> (Mishra & Koehler) va <strong>ZPD</strong> (Vygotskiy) konsepsiyalariga asoslangan quyidagi 4 ta diagnostik savol orqali talabaning kognitiv profili aniqlanadi va Claude 3.5 Sonnet bilan juftlikda ishlash uchun shaxsiy prompt generatsiya qilinadi.
+          Fizika dvigatelini kodlash talabadan ham chuqur nazariy fizika (Nyutonning uchinchi qonuni, impuls va kinetik energiya saqlanishi, elastik va noelastik to'qnashuvlar dinamikasi), hamda 2D vektor arifmetikasi va obyektga yo'naltirilgan dasturlash (OOP) bilimlarini talab etadi. <strong>TPACK</strong> (Mishra & Koehler, 2006) va <strong>ZPD</strong> (Vygotskiy, 1978) konsepsiyalariga asoslangan quyidagi 4 ta diagnostik savol orqali talabaning kognitiv profili aniqlanadi va Claude 3.5 Sonnet bilan juftlikda ishlash uchun shaxsiy prompt generatsiya qilinadi.
         </p>
 
         <!-- Quiz Box -->
@@ -258,7 +304,7 @@
             </label>
             <label class="quiz-option">
               <input type="radio" name="diag8_q1" value="c">
-              <span>C) Ikkala sharning markazlarini tutashtiruvchi normal vektor ($\hat{n}$) bo'ylab; urinma (tangensial) yo'nalishdagi tezlik o'zgarmaydi.</span>
+              <span>C) Ikkala sharning markazlarini tutashtiruvchi normal vektor ($\hat{n}$) bo'ylab; ishqalanishsiz (silliq) sharlarda urinma (tangensial) yo'nalishdagi tezlik o'zgarmaydi.</span>
             </label>
           </div>
 
@@ -389,10 +435,10 @@
             $$\Delta \vec{r} = \vec{r}_2 - \vec{r}_1, \quad d = |\Delta \vec{r}| \le R_1 + R_2$$
           </div>
           <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 10px;">
-            To'qnashuv chizig'i bo'ylab birlik normal vektor: $\hat{n} = \frac{\Delta \vec{r}}{d}$. Nisbiy tezlik: $\vec{v}_{rel} = \vec{v}_1 - \vec{v}_2$. Normal yo'nalishdagi tezlik proyeksiyasi: $v_n = \vec{v}_{rel} \cdot \hat{n}$. Agar $v_n > 0$ bo'lsa, jismlar yaqinlashmoqda va to'qnashuv yuz beradi.
+            To'qnashuv chizig'i bo'ylab birlik normal vektor (1-shardan 2-sharga yo'nalgan): $\hat{n} = \frac{\Delta \vec{r}}{d}$. Nisbiy tezlik: $\vec{v}_{rel} = \vec{v}_1 - \vec{v}_2$. Normal yo'nalishdagi tezlik proyeksiyasi: $v_n = \vec{v}_{rel} \cdot \hat{n}$. Agar $v_n > 0$ bo'lsa, jismlar yaqinlashmoqda va to'qnashuv yuz beradi.
           </p>
           <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 10px;">
-            Nyutonning tiklanish qonuni ($e \in [0, 1]$ tiklanish koeffitsiyenti bo'lib, $e=1$ mutlaq elastik, $e=0$ noelastik) va impuls saqlanishiga binoan, to'qnashuv impulsi skalyari $J$ quyidagi fundamental formula bo'yicha hisoblanadi (Millington, 2010):
+            Nyutonning tiklanish qonuni ($e \in [0, 1]$ tiklanish koeffitsiyenti bo'lib, $e=1$ mutlaq elastik, $e=0$ noelastik) va impuls saqlanishiga binoan, to'qnashuv impulsi skalyari $J$ quyidagi formula bo'yicha hisoblanadi (Hecker, 1997; Millington, 2010). Bu yerda $J \le 0$ chiqadi, ya'ni 1-shar $\hat{n}$ ga qarshi, 2-shar esa $\hat{n}$ bo'ylab itariladi (sharlar aylanmaydi va ishqalanish hisobga olinmaydi deb faraz qilinadi):
           </p>
           <div style="background: rgba(56, 189, 248, 0.08); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 14px; border: 1px solid rgba(56, 189, 248, 0.3);">
             $$J = \frac{-(1 + e)(\vec{v}_{rel} \cdot \hat{n})}{\frac{1}{m_1} + \frac{1}{m_2}}$$
@@ -404,7 +450,7 @@
         <div class="roadmap-node" style="border-left-color: var(--accent-amber);">
           <h4 style="color: var(--accent-amber); margin-bottom: 8px;">2.3. Yopishib Qolishni Bartaraf Etish (Penetration & Overlap Resolution)</h4>
           <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 12px;">
-            Diskret vaqt qadamli ($\Delta t$) simulyatsiyalarda to'qnashuv paytida jismlar bir-birining ichiga $\delta = (R_1 + R_2) - d$ masofaga kirib qoladi. Agar ularning pozitsiyasi to'g'rilanmasa, keyingi kadrda ham $d < R_1 + R_2$ bo'lib, impuls teskari hisoblanadi va jismlar bir-biriga "yopishib", titrab qoladi.
+            Diskret vaqt qadamli ($\Delta t$) simulyatsiyalarda to'qnashuv paytida jismlar bir-birining ichiga $\delta = (R_1 + R_2) - d$ masofaga kirib qoladi. Agar ularning pozitsiyasi to'g'rilanmasa va $v_n > 0$ (yaqinlashish) sharti tekshirilmasa, keyingi kadrda ham $d < R_1 + R_2$ bo'lib, impuls uzoqlashayotgan jismlarga qayta qo'llanadi va ular bir-biriga "yopishib", titrab qoladi.
           </p>
           <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 8px;">
             Yechim — pozitsiyani massalarga teskari proporsional ravishda siljitish:
@@ -425,7 +471,7 @@
           3. Juftlikda Dasturlash va Debugging: Claude 3.5 Sonnet Bilan Hamkorlik
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
-          Juftlikda dasturlash (Pair-Programming) — dasturiy ta'minot muhandisligida kod sifatini 40% ga oshiruvchi va xatoliklarni erta aniqlovchi samarali usuldir (Williams & Kessler, 2000). Ushbu laboratoriyada talaba <strong>Driver</strong> (amaliy kod yozuvchi va interfeysni boshqaruvchi), Claude 3.5 Sonnet esa <strong>Navigator</strong> (algoritm arxitekturasi, fizik qonunlarga muvofiqlik va nosozliklarni izlovchi mutaxassis) rolini bajaradi.
+          Juftlikda dasturlash (Pair-Programming) — ikki dasturchi bitta kod ustida ishlaydigan usul. Williams va boshq. (2000) tajribasida juftliklar yozgan dasturlar avtomatik testlardan ko'proq o'tgan, umumiy sarflangan vaqt esa biroz (taxminan 15% ga) oshgan. AI bilan juftlikda ishlash inson bilan ishlashning to'liq o'rnini bosmaydi: masalan, GitHub Copilot bo'yicha nazorat tajribasida vazifa 55,8% tezroq bajarilgan (Peng va boshq., 2023), biroq AI taklif qilgan kodni har doim o'zingiz tushunib, sinab ko'rishingiz shart. Ushbu laboratoriyada talaba <strong>Driver</strong> (amaliy kod yozuvchi va interfeysni boshqaruvchi), Claude 3.5 Sonnet esa <strong>Navigator</strong> (algoritm arxitekturasi, fizik qonunlarga muvofiqlik va nosozliklarni izlovchi mutaxassis) rolini bajaradi.
         </p>
 
         <!-- 4 Typical Physics Bugs -->
@@ -440,7 +486,7 @@
             <span class="badge badge-purple">Matematik Xato</span>
           </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
-            <strong>Alomati:</strong> Qiya to'qnashganda jismlar g'ayritabiiy 45 gradus burchak ostida sakraydi yoki tezlik moduli asossiz oshadi.<br>
+            <strong>Alomati:</strong> Qiya to'qnashuvda jismlar noto'g'ri yo'nalishda sakraydi (masalan, faqat gorizontal bo'ylab), impuls vektori saqlanmaydi.<br>
             <strong>Sababi:</strong> Talaba <code>vx1 = vx1 + J</code> deb skalyar qiymat qo'shadi, holbuki impuls faqat normal vektor $\hat{n}$ bo'yicha yo'naltirilishi lozim.
           </p>
           <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Sonnet Uchun Audit Prompti:</label>
@@ -462,29 +508,32 @@ Iltimos, Navigator sifatida ushbu xatoni ko'rsating, vektorning normal (n) va ta
           </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
             <strong>Alomati:</strong> Kam tezlikdagi to'qnashuvda ikkita shar bir-birining ichidan chiqa olmay, markazda titrab qoladi va sekin aylanadi.<br>
-            <strong>Sababi:</strong> Pozitsiya to'g'rilanmagan (overlap resolution yo'q). Keyingi kadrda ham masofa $d < R_1 + R_2$ bo'lib, dvigatel ularni yana qayta to'qnashdi deb hisoblaydi.
+            <strong>Sababi:</strong> Pozitsiya to'g'rilanmagan (overlap resolution yo'q) va $v_n > 0$ sharti tekshirilmagan. Keyingi kadrda ham masofa $d < R_1 + R_2$ bo'lib, dvigatel ularni yana qayta to'qnashdi deb hisoblaydi va uzoqlashayotgan sharlarni bir-biriga qaytarib itaradi.
           </p>
           <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Sonnet Uchun Audit Prompti:</label>
           <textarea id="prompt-bug2" class="prompt-textarea" readonly>Fizika simulyatsiyamda sharlar to'qnashgandan keyin bir-biridan ajralmay, titrab yopishib qolyapti (Sticky collision bug).
 1. Ushbu xatolik nima sababdan yuzaga kelishini diskret vaqt integratsiyasi (Euler method) nuqtai nazaridan tahlil qiling.
-2. Positional Correction (Penetration Resolution) algoritmini massalar nisbatini (m1, m2) hisobga olgan holda JavaScript kodida qanday tatbiq etishni ko'rsatib bering.</textarea>
+2. Positional Correction (Penetration Resolution) algoritmini massalar nisbatini (m1, m2) hisobga olgan holda JavaScript kodida qanday tatbiq etishni ko'rsatib bering.
+3. Impulsni faqat jismlar yaqinlashayotganda (velAlongNormal = relVel.dot(normal) > 0) qo'llash sharti nima uchun kerakligini tushuntiring.</textarea>
           <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-bug2">📋 Nusxa Olish</button>
         </div>
 
         <!-- Bug 3 -->
         <div class="prompt-card">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <h4 style="margin: 0; color: #10b981;">3-Nosozlik: Kinetik Energiya Portlashi (Energy Explosion Bug)</h4>
-            <span class="badge badge-emerald">Termodinamik Xato</span>
+            <h4 style="margin: 0; color: #10b981;">3-Nosozlik: Energiya Dreyfi va "Portlashi" (Energy Drift / Explosion)</h4>
+            <span class="badge badge-emerald">Integratsiya Xatosi</span>
           </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
-            <strong>Alomati:</strong> Bir nechta to'qnashuvdan so'ng sharlar yorug'lik tezligida ekrandan uchib ketadi va kinetik energiya eksponentsial o'sadi.<br>
-            <strong>Sababi:</strong> Nisbiy tezlikning normal proyeksiyasi tekshirilmagan ($v_n = \vec{v}_{rel} \cdot \hat{n} \le 0$ bo'lganda, ya'ni jismlar uzoqlashayotganda ham impuls berib yuborilgan).
+            <strong>Alomati:</strong> $e = 1$ bo'lsa ham, vaqt o'tishi bilan to'liq energiya sekin (yoki keskin) ortib boradi, sharlar tobora tezlashadi.<br>
+            <strong>Sababi:</strong> To'qnashuv impulsining o'zi $e = 1$ da energiyani saqlaydi, shuning uchun manba boshqa joyda: (1) og'irlik kuchi yoki prujina kuchlari oshkor Eyler usulida hisoblangan (<code>x += v*dt</code> dan keyin <code>v += a*dt</code> — energiya har qadamda ortadi, 4-laboratoriyaga qarang); (2) $J$ formulasida ishora yoki massa xatosi (masalan, $(1+e)$ o'rniga $2(1+e)$); (3) pozitsiyani to'g'rilash siljishi keyin tezlikka aylantirilgan. Yechim — Eyler-Kromer (yarim-oshkor) usuli va har bir qadamdan keyin $E_k$ ni kuzatib borish.
           </p>
           <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Sonnet Uchun Audit Prompti:</label>
-          <textarea id="prompt-bug3" class="prompt-textarea" readonly>Simulyatsiyamda sharlar to'qnashganda kinetik energiya keskin ortib ketmoqda (Energy explosion).
-Shubham bor: jismlar to'qnashuvdan keyin bir-biridan uzoqlashayotgan paytda ham impuls kodi ishga tushib, ularga qo'shimcha tezlik beryapti.
-Qanday qilib velAlongNormal = relVel.dot(normal) sharti orqali bu energiya sun'iy hosil bo'lishining oldini olish mumkin? Kod tekshiruvini yozib bering.</textarea>
+          <textarea id="prompt-bug3" class="prompt-textarea" readonly>Simulyatsiyamda e = 1 bo'lsa ham to'liq kinetik energiya vaqt o'tishi bilan ortib bormoqda (energy drift).
+Mening kodim quyida (integrator, kuchlar va to'qnashuv funksiyasi). Navigator sifatida:
+1. Energiya qayerdan paydo bo'layotganini aniqlash uchun qaysi kattaliklarni har qadamda chop etishim kerak?
+2. Integrator (oshkor Eyler / Eyler-Kromer), J formulasidagi ishora va pozitsiyani to'g'rilash qismlarini tekshiring.
+3. Tuzatilgan kod uchun energiya saqlanishini tekshiruvchi kichik test yozib bering.</textarea>
           <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-bug3">📋 Nusxa Olish</button>
         </div>
 
@@ -496,7 +545,7 @@ Qanday qilib velAlongNormal = relVel.dot(normal) sharti orqali bu energiya sun'i
           </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 10px;">
             <strong>Alomati:</strong> Katta tezlikda harakatlanayotgan kichik shar devor yoki boshqa shar bilan to'qnashmasdan, uning ichidan to'g'ridan-to'g'ri o'tib ketadi.<br>
-            <strong>Sababi:</strong> Bir kadr oralig'idagi siljish $\Delta r = v \cdot \Delta t$ to'siq qalinligidan katta bo'lgani sababli, oraliq kontakt holati hisoblanmay qoladi. Yechimi — Sub-stepping (kichik ichki qadamlarga bo'lish).
+            <strong>Sababi:</strong> Bir kadr oralig'idagi siljish $\Delta r = v \cdot \Delta t$ to'siq qalinligidan katta bo'lgani sababli, oraliq kontakt holati hisoblanmay qoladi. Yechimi — Sub-stepping (kichik ichki qadamlarga bo'lish, shart: $v \cdot \Delta t_{sub} < R$) yoki uzluksiz to'qnashuv aniqlash (Continuous Collision Detection — to'qnashuv vaqtini analitik topish).
           </p>
           <label style="font-size: 0.85rem; font-weight: 600; color: #fff;">Claude 3.5 Sonnet Uchun Audit Prompti:</label>
           <textarea id="prompt-bug4" class="prompt-textarea" readonly>Yuqori tezlikda sharlar bir-birining yoki devorning ichidan to'qnashuvsiz o'tib ketmoqda (Tunneling effect).
@@ -515,7 +564,7 @@ Kadr siklida sub-stepping (har bir kadrni N ta kichik qadam subDt = dt / N ga bo
           4. Fizik Qonunlar Algoritmi Tekshiruvi: ChatGPT Code Interpreter Muhitida Verifikatsiya
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
-          Fizika dvigatelining ilmiy ishonchliligi uning fundamental saqlanish qonunlariga (Kinetik energiya va To'liq impuls vektori) qanchalik qat'iy amal qilishiga bog'liq. <strong>ChatGPT Code Interpreter (Advanced Data Analysis)</strong> Python muhitida yozilgan fizik algoritmni 10 000 ta tasodifiy to'qnashuv (Monte-Karlo) asosida sinovdan o'tkazadi va energiya dreyfi (drift) hamda xatoliklar taqsimotini hisoblaydi.
+          Fizika dvigatelining ilmiy ishonchliligi uning fundamental saqlanish qonunlariga (Kinetik energiya va To'liq impuls vektori) qanchalik qat'iy amal qilishiga bog'liq. <strong>ChatGPT Code Interpreter</strong> (keyinchalik "Advanced Data Analysis" deb nomlangan) Python muhitida to'qnashuv formulalarini 10 000 ta tasodifiy to'qnashuv (Monte-Karlo) asosida sinovdan o'tkazish va xatoliklar taqsimotini hisoblash imkonini beradi. Quyidagi skriptni o'zingiz ham ishga tushirib, AI bergan natijalar bilan solishtiring: $e = 1$ da impuls va energiya xatoligi faqat suzuvchi nuqta yaxlitlash darajasida (~$10^{-13}$) bo'lishi kerak.
         </p>
 
         <!-- Python Verification Script Box -->
@@ -585,10 +634,11 @@ Formulalarim:
 Impuls skalyari: J = -(1 + e) * (relVel · n) / (1/m1 + 1/m2)
 Tezliklar o'zgarishi: v1' = v1 + (J*n)/m1; v2' = v2 - (J*n)/m2
 
-Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 in [1,10], m2 in [1,10], v1, v2 in [-100, 100]) orqali verifikatsiya qiling:
-1. To'liq impuls vektori (P_x, P_y) saqlanishi nolga teng aniqlikda bajariladimi?
-2. Kinetik energiya saqlanish nisbati (Ek_final / Ek_initial) e=1.0 bo'lganda qanday xatolikka ega?
-3. e = 0.7 (noelastik to'qnashuv) holati uchun issiqlikka aylangan energiya taqsimoti gistogrammasini chizib bering.</textarea>
+Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1, m2 in [0.5, 10] kg, v1, v2 komponentlari in [-50, 50] m/s, faqat yaqinlashayotgan juftliklar: relVel · n > 0) orqali tekshiring:
+1. To'liq impuls vektori (P_x, P_y) yaxlitlash xatoligi darajasida saqlanadimi?
+2. e = 1.0 bo'lganda kinetik energiya nisbati (Ek_final / Ek_initial) qanday xatolikka ega?
+3. e = 0.7 (noelastik to'qnashuv) uchun yo'qotilgan energiya ulushining gistogrammasini chizing va uni nazariy formula ΔE = ½·μ·(1 − e²)·v_n² (μ = m1·m2/(m1+m2)) bilan solishtiring.
+4. Kodni va natijalarni to'liq ko'rsating — men ularni o'zim qayta ishga tushirib tekshiraman.</textarea>
           <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-code-interpreter">
             📋 Promptdan Nusxa Olish
           </button>
@@ -605,11 +655,11 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 i
           5. Interaktiv Fizika Dvigateli Dastgohi va Saqlanish Qonunlari Telemetriyasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
-          Quyidagi laboratoriya dastgohida <code>Vector2D</code> arifmetikasi, doira-doira to'qnashuvi impulsi va kesishishni bartaraf etish (overlap resolution) algoritmlari to'liq real vaqt rejimida ishlaydi. Telemetriya oynasida to'liq kinetik energiya va impuls vektori jonli monitoring qilinadi.
+          Quyidagi laboratoriya dastgohida <code>Vector2D</code> arifmetikasi, doira-doira to'qnashuvi impulsi va kesishishni bartaraf etish (overlap resolution) algoritmlari to'liq real vaqt rejimida ishlaydi. Telemetriya oynasida to'liq kinetik energiya va impuls vektori jonli kuzatiladi. Masshtab: 100 piksel = 1 m. Devorlar mutlaq elastik, lekin ular tashqi jism bo'lgani uchun devorga urilganda sharlar tizimining impulsi o'zgaradi; energiya esa $e = 1$ da saqlanadi.
         </p>
 
         <!-- Simulation Grid: Left Arena, Right Telemetry & Controls -->
-        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-bottom: 20px;">
+        <div class="lab8-sim-grid">
           
           <!-- Canvas Column -->
           <div>
@@ -722,7 +772,7 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 i
           6. Akademik Baholash Rubrikasi (100 Ball) va Ilmiy-Metodologik Manbalar
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
-          Talabalarning 8-laboratoriya mashg'uloti bo'yicha erishgan amaliy va nazariy natijalari quyidagi 5 ta xalqaro standartlashtirilgan akademik mezon bo'yicha baholanadi.
+          Talabalarning 8-laboratoriya mashg'uloti bo'yicha erishgan amaliy va nazariy natijalari quyidagi 5 ta mezon bo'yicha baholanadi.
         </p>
 
         <!-- Rubric Calculator Card -->
@@ -791,7 +841,7 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 i
             <div>
               <strong style="color: var(--accent-amber);">4. ChatGPT Code Interpreter Verifikatsiyasi:</strong>
               <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
-                Kinetik energiya va to'liq impuls saqlanishining 10 000 Monte-Karlo sinovi orqali matematik isboti.
+                Kinetik energiya va to'liq impuls saqlanishining 10 000 ta tasodifiy to'qnashuv (Monte-Karlo) sinovi orqali sonli tekshiruvi va natijalarni mustaqil qayta ishlab chiqish.
               </div>
             </div>
             <div>
@@ -810,7 +860,7 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 i
             <div>
               <strong style="color: #38bdf8;">5. Akademik Hisobot va Metodologik Xulosalar:</strong>
               <div style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">
-                Sof o'zbek adabiy tilidagi mukammal hisobot, tebranma va to'qnashuvlar fizikasi qonunlarining ilmiy bayoni.
+                O'zbek adabiy tilidagi hisobot, to'qnashuvlar fizikasi qonunlari va AI yordamining ilmiy bayoni.
               </div>
             </div>
             <div>
@@ -839,14 +889,18 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 i
 
         <!-- Academic Bibliography (APA 7) -->
         <div class="roadmap-node">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 12px;">📚 Foydalanilgan Ilmiy-Metodologik Adabiyotlar (APA 7 Standarti):</h4>
-          <ol style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 20px;">
-            <li>Anthropic. (2024). <em>Claude 3.5 Sonnet System Card & Pair-Programming Capabilities</em>. Anthropic Research Publications. https://www.anthropic.com/research</li>
-            <li>Fiedler, G. (2004). <em>Fix Your Timestep! Physics in Game Development</em>. Gaffer On Games. https://gafferongames.com/post/fix_your_timestep/</li>
-            <li>Hecker, C. (1997). <em>Physics, Part 3: Collision Response</em>. Game Developer Magazine, February 1997, 11-18.</li>
-            <li>Millington, I. (2010). <em>Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game</em> (2nd ed.). CRC Press / Morgan Kaufmann.</li>
-            <li>OpenAI. (2023). <em>ChatGPT Code Interpreter for Scientific Computing and Dynamic Simulation Validation</em>. OpenAI Technical Whitepapers.</li>
-            <li>Williams, L., & Kessler, R. R. (2000). <em>Pair Programming Illuminated</em>. Addison-Wesley Professional.</li>
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px;">📚 Foydalanilgan Manbalar (APA 7):</h4>
+          <ol style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 20px; overflow-wrap: anywhere;">
+            <li>Anthropic. (2024, June 20). <em>Claude 3.5 Sonnet</em> [Announcement]. https://www.anthropic.com/news/claude-3-5-sonnet</li>
+            <li>Fiedler, G. (2004). <em>Fix your timestep!</em> Gaffer On Games. https://gafferongames.com/post/fix_your_timestep/</li>
+            <li>Hecker, C. (1997, February/March). Physics, part 3: Collision response. <em>Game Developer Magazine</em>, 11–18. https://chrishecker.com/Rigid_Body_Dynamics</li>
+            <li>Millington, I. (2010). <em>Game physics engine development: How to build a robust commercial-grade physics engine for your game</em> (2nd ed.). Morgan Kaufmann.</li>
+            <li>Mishra, P., & Koehler, M. J. (2006). Technological pedagogical content knowledge: A framework for teacher knowledge. <em>Teachers College Record, 108</em>(6), 1017–1054. https://doi.org/10.1111/j.1467-9620.2006.00684.x</li>
+            <li>OpenAI. (2023, March 23). <em>ChatGPT plugins</em> [Code interpreter taqdimoti]. https://openai.com/index/chatgpt-plugins/</li>
+            <li>Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). <em>The impact of AI on developer productivity: Evidence from GitHub Copilot</em>. arXiv. https://doi.org/10.48550/arXiv.2302.06590</li>
+            <li>Vygotsky, L. S. (1978). <em>Mind in society: The development of higher psychological processes</em>. Harvard University Press.</li>
+            <li>Williams, L., & Kessler, R. (2002). <em>Pair programming illuminated</em>. Addison-Wesley Professional.</li>
+            <li>Williams, L., Kessler, R. R., Cunningham, W., & Jeffries, R. (2000). Strengthening the case for pair programming. <em>IEEE Software, 17</em>(4), 19–25. https://doi.org/10.1109/52.854064</li>
           </ol>
         </div>
 
@@ -918,10 +972,11 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to'qnashuv (m1 i
       const thumbWidthPercent = Math.max(ratio * 100, 15);
       thumb.style.width = thumbWidthPercent + '%';
 
+      // translateX(%) thumbning o'z kengligiga nisbatan hisoblanadi,
+      // shuning uchun siljish pikselda beriladi
       const scrollFraction = nav.scrollLeft / maxScroll;
-      const maxTranslatePercent = (100 - thumbWidthPercent);
-      const translateVal = scrollFraction * maxTranslatePercent;
-      thumb.style.transform = `translateX(${translateVal}%)`;
+      const maxTranslate = nav.clientWidth * (1 - thumbWidthPercent / 100);
+      thumb.style.transform = `translateX(${scrollFraction * maxTranslate}px)`;
     }
 
     window.switchTab = function(event, tabId) {
