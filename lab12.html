@@ -1004,6 +1004,102 @@ input[type="range"]::-webkit-slider-thumb:hover {
     /* Uzun so'zlar/formulalar telefon ekranidan chiqib ketmasligi uchun */
     p, li, td, th, dd, figcaption { overflow-wrap: break-word; }
     .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+    /* Menyu boshqa sahifalardagidek faqat hamburger tugmasi orqali ochiladi;
+       sayt nomi siqilib, bir necha qatorga bo'linib ketmasligi uchun */
+    .nav-links { display: none; }
+    .hamburger-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .nav-logo { flex-shrink: 0; }
+    .nav-logo-text { white-space: nowrap; }
+    /* Navbar stillari (css/components.css bilan bir xil) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .nav-logo-text {
+      white-space: nowrap;
+    }
+
+    /* Hamburger tugmasi ichida to'g'ridan-to'g'ri <span> (o'rovchi
+       .hamburger-icon'siz) ishlatilgan hollar uchun */
+    .hamburger-btn > span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--text-main);
+      border-radius: 2px;
+      margin: 5px 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hamburger-btn.active > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn.active > span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.active > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 1050;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .drawer-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .drawer-close {
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 1.3rem;
+      line-height: 1;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .drawer-close:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-cyan);
+    }
+
+    /* Navigatsiya paneli ichidagi logotip va tugmalar ekran chetiga yopishmasligi uchun */
+    .navbar .nav-container { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 768px) { .navbar .nav-container { padding: 0 16px; } }
+
+    @media (max-width: 768px) { .nav-actions .btn { display: none; } }
   </style>
 </head>
 <body>
@@ -1012,8 +1108,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-icon">🪐</span>
-        <span class="nav-logo-text">Fizika & AI Portal</span>
+        <span class="nav-logo-text">FIZIKA &amp; SUN'IY INTELLEKT</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
@@ -1423,8 +1518,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <span class="footer-logo-icon">🪐</span>
-            <span class="footer-logo-text">Fizika & AI Portal</span>
+            <span class="footer-logo-text">FIZIKA &amp; SUN'IY INTELLEKT</span>
           </div>
           <p class="footer-desc">
             Fizika va astronomiya ta'limida axborot texnologiyalari fanidan virtual laboratoriyalar, interaktiv simulyatsiyalar va zamonaviy AI vositalari integratsiyasi portali.

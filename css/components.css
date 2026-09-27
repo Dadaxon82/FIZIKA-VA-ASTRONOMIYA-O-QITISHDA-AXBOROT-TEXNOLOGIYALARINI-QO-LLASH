@@ -761,3 +761,7 @@
   .card { padding: 18px; }
   .card-title { font-size: 1.2rem; }
 }
+
+/* Navigatsiya paneli ichidagi logotip va tugmalar ekran chetiga yopishmasligi uchun */
+.navbar .nav-container { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 768px) { .navbar .nav-container { padding: 0 16px; } }
