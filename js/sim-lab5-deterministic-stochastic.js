@@ -65,7 +65,7 @@
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
       color: 'var(--accent-emerald)',
-      plan: "PhET «Gravity and Orbits» da orbital tezlikni o'zgartirib aylanma, elliptik va ochiq traektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting.",
+      plan: "PhET «Gravity and Orbits» da orbital tezlikni o'zgartirib aylanma, elliptik va ochiq trayektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting.",
       focus: "Kepler orbitalari, Maksvell-Bolsman taqsimoti, bosim fluktuatsiyalari, 8 mezonli taqqoslash"
     },
     C: {
@@ -114,7 +114,7 @@
       promptEl.value =
 `Siz fizikada kompyuterli modellashtirish bo'yicha Sokratik konsultantsiz. Men 5-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
-Laboratoriya ob'yektlari: PhET «Gravity and Orbits» (deterministik) va «Gas Properties» (stoxastik tavsif).
+Laboratoriya obyektlari: PhET «Gravity and Orbits» (deterministik) va «Gas Properties» (stoxastik tavsif).
 Iltimos:
 1. Tayyor jadval yoki xulosa bermang — ikkala modelni o'zim taqqoslashim uchun bosqichma-bosqich yo'naltiruvchi savollar bering.
 2. PhET'da qaysi o'lchovlarni olishim kerakligini ayting.

@@ -13,7 +13,7 @@ class TTSNarrator {
     this.presets = {
       pendulum: "Matematik mayatnik harakatida tebranish burchagi oshgani sari noliner effektlar yuzaga keladi. Kinetik va potensial energiya o'zaro almashinib turadi.",
       lorentz: "Zaryadlangan zarracha bir jinsli magnit maydoniga kirganda, Lorents kuchi ta'sirida Larmor radiusi bo'ylab spiral harakat qiladi.",
-      drag: "Havo qarshiligi mavjud bo'lganda otilgan jismning traektoriyasi ideal paraboladan chetga chiqadi va jism chekli tezlikka erishadi.",
+      drag: "Havo qarshiligi mavjud bo'lganda otilgan jismning trayektoriyasi ideal paraboladan chetga chiqadi va jism chekli tezlikka erishadi.",
       doppler: "Manba tovush tezligidan tezroq harakatlanganda zarba to'lqinlari siqilib, Mach konusi hosil bo'ladi."
     };
 

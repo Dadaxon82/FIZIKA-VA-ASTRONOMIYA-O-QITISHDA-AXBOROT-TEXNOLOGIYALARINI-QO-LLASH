@@ -1000,6 +1000,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
     .footer-links-list a:hover { color: var(--accent-cyan); }
     .footer-bottom { text-align: center; border-top: 1px solid var(--border-color); padding-top: 14px; }
+
+    /* Uzun so'zlar/formulalar telefon ekranidan chiqib ketmasligi uchun */
+    p, li, td, th, dd, figcaption { overflow-wrap: break-word; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
   </style>
 </head>
 <body>
@@ -1037,7 +1041,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
         <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
         <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
         <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
         <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -1089,7 +1093,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
       <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
       <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
       <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
       <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -1109,7 +1113,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to'liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
-        Zamonaviy ta'limni boshqarish tizimlari (LMS - Learning Management Systems) o'quv jarayonini markazlashtirish va samaradorligini oshirish uchun keng qo'llaniladi. Ushbu laboratoriya mashg'ulotida talabalar o'zlarining laboratoriya ishini (izohlar, savol-javoblar) <strong>Otter.ai</strong> platformasi yordamida yozib oladi, nutqni matnga avtomatik o'girib (transkripsiya) raqamli konspekt generatsiya qiladi. Olingan ma'lumotlarni <strong>MagicSchool AI</strong> yordamida shaxsiy o'quv trayektoriyasiga moslashtirib monitoring qiladi hamda yaratilgan kontentni Google Classroom yoki Moodle kabi <strong>LMS</strong> platformalarida portfolioga joylashtirish ko'nikmalarini shakllantiradi.
+        Radioaktiv yemirilish qonuni ($N(t) = N_0 e^{-\lambda t}$) va yarim yemirilish davri ($T_{1/2} = \ln 2/\lambda$) stoxastik jarayon sifatida modellashtiriladi: har bir yadro har bir vaqt qadamida $p = \lambda\,\Delta t$ ehtimollik bilan yemiriladi. Semestr davomida o'rganilgan AI vositalari (PhET, WolframAlpha, Claude, Antigravity, TTS, LMS) yagona loyihaga birlashtiriladi va yakuniy loyiha himoya qilinadi.
       </p>
     </div>
 
@@ -1119,19 +1123,19 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <div class="grid-4" style="gap: 14px;">
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. Diagnostika & Individual Reja:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Ideal gaz qonuniyatlari, stoxastik jarayonlar hamda AI tizimlariga oid diagnostika.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Radioaktiv yemirilish qonuni, yarim yemirilish davri va AI ekotizimi bo'yicha diagnostik test.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-emerald);">2. Termodinamika Loyihasi: Pipeline:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">PhET tahlilidan kodlashgacha va Antigravity monitoringigacha bo'lgan to'liq zanjir.</span>
+          <strong style="color: var(--accent-emerald);">2. Yakuniy Loyiha va Himoya:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Fizik asos, kod, hisobot va taqdimotni yagona loyihaga birlashtirish hamda himoya qilish.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-purple);">3. Model Tahlili (PhET / Vascak):</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Harorat, bosim va hajm orasidagi muvozanatni vizual hamda analitik tadqiq etish.</span>
+          <strong style="color: var(--accent-purple);">3. To'liq AI Pipeline:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Tahlil (PhET, WolframAlpha) → kod (Claude, Antigravity) → ovoz (TTS) → LMS'ga joylash.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-amber);">4. Claude 3.5 Sonnet Stoxastik Dvigatel:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Zarrachalar kinetikasi (Brownian motion) bo'yicha stoxastik HTML5/JS simulyatsiyasini yozish.</span>
+          <strong style="color: var(--accent-amber);">4. Originallik va Baholash:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">AI yordamidan halol foydalanish, o'z tahlilini asoslash va og'zaki himoya.</span>
         </div>
       </div>
     </div>
@@ -1182,8 +1186,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
           <div class="quiz-card" id="quiz-q2">
             <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">2-Savol: Undetectable AI va shunga o'xshash Anti-AI vositalarining asosiy vazifasi nima?</h4>
-            <label class="quiz-option"><input type="radio" name="diag15_q2" value="A"> A) Talabaning taqdimot matni (hisoboti) sun'iy intellekt orqali yozilgan yoki yozilmaganligini (originalligini) aniqlash.</label>
-            <label class="quiz-option"><input type="radio" name="diag15_q2" value="B"> B) Xato yozilgan Python kodlarini avtomatik to'g'irlash.</label>
+            <label class="quiz-option"><input type="radio" name="diag15_q2" value="A"> A) Matn sun'iy intellekt orqali yozilgan bo'lishi ehtimolini taxminiy baholash (natija ishonchli dalil emas, xato bo'lishi mumkin).</label>
+            <label class="quiz-option"><input type="radio" name="diag15_q2" value="B"> B) Xato yozilgan Python kodlarini avtomatik to'g'rilash.</label>
             <label class="quiz-option"><input type="radio" name="diag15_q2" value="C"> C) Fizik formulalarni yechish va grafik chizish.</label>
             <label class="quiz-option"><input type="radio" name="diag15_q2" value="D"> D) Audio fayllarni matnga o'girib berish.</label>
           </div>
@@ -1227,7 +1231,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <div class="glass-panel">
         <h2 class="section-title">2. Yakuniy Loyihani Yakunlash va Himoya Qilish</h2>
         <p style="margin-bottom: 16px;">
-          Yadro fizikasi, xususan, zarrachalarning radioaktiv yemirilishi - tabiatdagi eng klassik stoxastik hodisadir. Ushbu bosqichda barcha nazariy va dasturlash ko'nikmalari birlashtirilib, mustaqil taqdimot himoya qilinadi.
+          Yadro fizikasi, xususan, zarrachalarning radioaktiv yemirilishi — tabiatdagi eng klassik stoxastik hodisadir. Ushbu bosqichda barcha nazariy va dasturlash ko'nikmalari birlashtirilib, mustaqil taqdimot himoya qilinadi.
         </p>
 
         <div class="grid-2" style="gap: 20px; margin-top: 20px;">
@@ -1276,7 +1280,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
                 <strong style="color: #fff;">3. Narratsiya va Matn (Gemini & ElevenLabs):</strong> Loyiha haqida ilmiy matn yozish va uni insonga xos sifatli ovozga (TTS) aylantirish.
             </div>
             <div style="padding: 12px; background: rgba(139, 92, 246, 0.1); border-left: 4px solid var(--accent-purple); border-radius: 4px;">
-                <strong style="color: #fff;">4. Autentifikatsiya va Hujjatlashtirish (Undetectable & Otter.ai):</strong> Matnni insoniylashtirish (originallik), himoyani avtomatik yozib olish va referat formatiga o'tkazish.
+                <strong style="color: #fff;">4. Hujjatlashtirish va Originallik (Otter.ai):</strong> Ish jarayoni dalillarini (qoralamalar, promptlar, kod tarixi) saqlash, himoyani yozib olish va referat formatiga o'tkazish. AI matnini detektorlardan yashirish uchun «insoniylashtirish» akademik halollikni buzadi.
             </div>
             <div style="padding: 12px; background: rgba(239, 68, 68, 0.1); border-left: 4px solid var(--accent-rose); border-radius: 4px;">
                 <strong style="color: #fff;">5. Yakuniy Baholash (MagicSchool AI):</strong> O'qituvchi tomonidan maxsus rubrika asosida talabaning bilim va loyihasini sun'iy intellekt orqali kompleks tekshirish.
@@ -1293,14 +1297,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <div class="glass-panel">
         <h2 class="section-title">4. Hisobot Originalligi va Baholash</h2>
         <p style="margin-bottom: 16px;">
-          Sun'iy intellektdan foydalanish - uni to'g'ridan-to'g'ri ko'chirib olish degani emas. Asosiy maqsad AI vositalarini fikrlash jarayonini kengaytirish uchun ishlatishdir.
+          Sun'iy intellektdan foydalanish — uni to'g'ridan-to'g'ri ko'chirib olish degani emas. Asosiy maqsad AI vositalarini fikrlash jarayonini kengaytirish uchun ishlatishdir.
         </p>
         
         <div class="grid-2" style="gap: 20px;">
           <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md);">
-            <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">Undetectable AI Tekshiruvi</h4>
+            <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">AI-Detektorlar va Originallik</h4>
             <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Talabaning yakuniy "Radioaktiv Yemirilish" hisoboti dastlab <strong>Undetectable AI</strong> yoki <strong>ZeroGPT</strong> tizimlaridan o'tkaziladi. Tizim matnning qanchalik qismi LLM (ChatGPT/Claude) tomonidan to'g'ridan-to'g'ri generatsiya qilinganligini (% da) ko'rsatadi. Talaba ilmiy matnni o'zining tahliliy xulosalari va o'zbek tiliga xos sintaksisi bilan boyitgan bo'lishi shart.
+              <strong>Undetectable AI</strong> yoki <strong>ZeroGPT</strong> kabi AI-detektorlar matnning LLM tomonidan yozilgan bo'lishi ehtimolini faqat taxminiy baholaydi. Tadqiqotlar ular ishonchsiz ekanini va inson yozgan matnni ham xato belgilashini ko'rsatgan (Weber-Wulff va boshq., 2023). Shuning uchun detektor natijasi yagona dalil bo'la olmaydi. Originallik ish jarayoni dalillari, o'z o'lchov natijalari va og'zaki himoya orqali baholanadi. Talaba ilmiy matnni o'zining tahliliy xulosalari bilan boyitgan bo'lishi shart.
             </p>
           </div>
           
@@ -1375,7 +1379,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
             <div>Olingan Ball</div>
           </div>
           <div class="rubric-row">
-            <div><strong>Ilmiy Mantiq va Originallik:</strong> Yemirilish qonuniyatining to'g'ri ishlashi, Hisobotning AI tomonidan yozilmaganligi (Undetectable AI tekshiruvi).</div>
+            <div><strong>Ilmiy Mantiq va Originallik:</strong> Yemirilish qonuniyatining to'g'ri ishlashi, Hisobotning mustaqilligi (ish jarayoni dalillari va og'zaki himoya; AI-detektor faqat yordamchi signal).</div>
             <div>30 ball</div>
             <div><input type="number" id="rubric15_1" class="tech-input" style="width:70px;" min="0" max="30" value="30" oninput="calcProjectScore15()"></div>
           </div>
@@ -1397,10 +1401,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
         </div>
 
         <h3 class="section-title">Foydalanilgan Adabiyotlar (APA 7)</h3>
-        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;">
-          <li>1. PhET Interactive Simulations. (2025). <em>Alpha Decay and Nuclear Physics</em>. University of Colorado Boulder.</li>
-          <li>2. Otter.ai. (2025). <em>Automated Meeting Transcription and AI Notes</em>.</li>
-          <li>3. Undetectable AI. (2024). <em>AI Detector and Humanizer</em>. Undetectable.ai.</li>
+        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;; overflow-wrap: anywhere;">
+          <li>1. Krane, K. S. (1988). <em>Introductory nuclear physics</em>. Wiley.</li>
+          <li>2. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai</li>
+          <li>3. PhET Interactive Simulations. (n.d.). <em>Alpha Decay</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/alpha-decay</li>
+          <li>4. Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023). Testing of detection tools for AI-generated text. <em>International Journal for Educational Integrity, 19</em>, Article 26. https://doi.org/10.1007/s40979-023-00146-z</li>
         </ul>
       </div>
     </section>
@@ -1778,7 +1783,7 @@ function generateSimPrompt() {
     }
 
     if (q1.value === 'B') score += 25; else missingConcepts.push("Radioaktiv yemirilishning stoxastik tabiati");
-    if (q2.value === 'A') score += 25; else missingConcepts.push("Undetectable AI va originallik tekshiruvi");
+    if (q2.value === 'A') score += 25; else missingConcepts.push("AI-detektorlarning cheklovlari va originallik");
     if (q3.value === 'B') score += 25; else missingConcepts.push("Otter.ai orqali himoyani transkripsiya qilish");
     if (q4.value === 'B') score += 25; else missingConcepts.push("AI Pipeline qismlari ketma-ketligi");
 
@@ -1791,7 +1796,7 @@ function generateSimPrompt() {
     if (score === 100) {
         promptText = "Men barcha AI vositalari (Claude, Undetectable, Otter, MagicSchool) ro'lini to'liq o'zlashtirdim va Yadro fizikasining yemirilish qonunini bilaman. Endi yakuniy loyiham uchun HTML5/JS da 400 ta nuklonning stoxastik yemirilishini va eksponensial kamayish grafigini real-time chizib beradigan murakkab kod generatsiya qilish uchun yakuniy Prompt yozib bering.";
     } else {
-        promptText = `Mening yadro fizikasi va AI vositalari integratsiyasi bo'yicha bilish darajam o'rtacha. Men quyidagi mavzularda xatoga yo'l qo'ydim: ${missingConcepts.join(', ')}. Iltimos, nega radioaktiv yemirilishni aniq oldindan aytib bo'lmasligini va Undetectable AI matnni qanday tekshirishini tushuntiring.`;
+        promptText = `Mening yadro fizikasi va AI vositalari integratsiyasi bo'yicha bilish darajam o'rtacha. Men quyidagi mavzularda xatoga yo'l qo'ydim: ${missingConcepts.join(', ')}. Iltimos, nega radioaktiv yemirilishni aniq oldindan aytib bo'lmasligini va AI-detektorlar nima uchun xato qilishi mumkinligini tushuntiring.`;
     }
 
     document.getElementById('ai-prompt-output').value = promptText;

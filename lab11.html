@@ -165,7 +165,7 @@
         <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
         <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
         <li><a href="lab11.html" class="nav-link active">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
         <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
         <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -217,7 +217,7 @@
       <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
       <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
       <li><a href="lab11.html" class="drawer-link active">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
       <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
       <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -325,7 +325,7 @@
           </div>
 
           <div class="quiz-card" id="quiz-q4">
-            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">4-Savol: Google Classroom platformasida raqamli fizika kursini tuzishda integratsiya qilinadigan asosiy ob'ektlar ketma-ketligi qanday?</h4>
+            <h4 style="margin-bottom: 12px; color: var(--accent-cyan);">4-Savol: Google Classroom platformasida raqamli fizika kursini tuzishda integratsiya qilinadigan asosiy obyektlar ketma-ketligi qanday?</h4>
             <label class="quiz-option"><input type="radio" name="diag11_q4" value="A"> A) Faqat matnli hujjatlar va jadvallar</label>
             <label class="quiz-option"><input type="radio" name="diag11_q4" value="B"> B) Mavzu (Topic), Material (Content), Topshiriq (Assignment) va Baholash (Rubric)</label>
             <label class="quiz-option"><input type="radio" name="diag11_q4" value="C"> C) Faqat test savollari va qisqa javoblar</label>
@@ -387,7 +387,7 @@
         <h2 class="section-title">3. Ovozli Qaydlar va Avtomatik Transkripsiya (ASR) Nazariyasi</h2>
         
         <p style="margin-bottom: 15px;">
-          Avtomatik nutqni aniqlash (ASR - Automatic Speech Recognition) tizimlari akustik signallarni til modellariga o'zgartiradi. Otter.ai kabi platformalar Hidden Markov Models (HMM) hamda chuqur neyron tarmoqlari (DNN, RNN) yordamida ishlaydi.
+          Avtomatik nutqni aniqlash (ASR - Automatic Speech Recognition) tizimlari akustik signallarni til modellariga o'zgartiradi. Ilgari ASR tizimlari yashirin Markov modellari (HMM) asosida qurilgan; zamonaviy tizimlar esa asosan chuqur neyron tarmoqlaridan (RNN, Transformer) foydalanadi. Otter.ai kabi tijoriy xizmatlarning aniq arxitekturasi ochiq e'lon qilinmagan (Jurafsky & Martin, n.d.).
         </p>
 
         <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); margin-bottom: 20px;">
@@ -428,13 +428,13 @@
           <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md);">
             <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">Item Response Theory (IRT) va Adaptiv O'qitish</h4>
             <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 10px;">
-              MagicSchool AI o'quvchining qobiliyatini ($\theta$) va topshiriqning qiyinlik darajasini ($b$) inobatga olgan holda keyingi topshiriqlarni tanlaydi. 1-parametrli logistik model (Rasch modeli):
+              Adaptiv baholash tizimlari o'quvchining qobiliyatini ($\theta$) va topshiriqning qiyinlik darajasini ($b$) inobatga olgan holda keyingi topshiriqni tanlaydi. Eng sodda model — 1 parametrli logistik model (Rasch, 1960). <em>Eslatma:</em> MagicSchool AI asosan o'qituvchi uchun matn, test va rubrika yaratuvchi LLM vositasi; u IRT asosida adaptiv test o'tkazadi degan ma'lumot yo'q.
             </p>
             <div style="text-align: center; margin: 15px 0;">
               $$ P(\theta) = \frac{1}{1 + e^{-(\theta - b)}} $$
             </div>
             <p style="color: var(--text-secondary); font-size: 0.95rem;">
-              Bu erda $P(\theta)$ o'quvchining savolga to'g'ri javob berish ehtimolligi.
+              Bu yerda $P(\theta)$ o'quvchining savolga to'g'ri javob berish ehtimolligi.
             </p>
           </div>
           
@@ -457,7 +457,7 @@
       <div class="glass-panel">
         <h2 class="section-title">5. Interaktiv Dastgoh: Ovozdan Matnga va LMS ga Integratsiya</h2>
         <p style="color: var(--text-secondary); margin-bottom: 20px;">
-          Ushbu simulyatorda siz Otter.ai trankripsiyasi jarayonini (simulyatsiya qilingan) ko'rishingiz, generatsiya qilingan konspektni ko'rib chiqishingiz va "MagicSchool" orqali baholash grafigini (Trayektoriya) tahlil qilishingiz mumkin.
+          Ushbu simulyatorda siz Otter.ai transkripsiyasi jarayonini (simulyatsiya qilingan) ko'rishingiz, generatsiya qilingan konspektni ko'rib chiqishingiz va "MagicSchool" orqali baholash grafigini (Trayektoriya) tahlil qilishingiz mumkin.
         </p>
 
         <div style="background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 20px;">
@@ -485,7 +485,7 @@
 
           <!-- LMS Trajectory Area -->
           <div style="background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
-            <strong style="color: #e2e8f0; display: block; margin-bottom: 10px;">📈 O'quv Trayektoriyasi (MagicSchool AI)</strong>
+            <strong style="color: #e2e8f0; display: block; margin-bottom: 10px;">📈 O'quv Trayektoriyasi (Rasch modeli asosidagi adaptiv tahlil simulyatsiyasi)</strong>
             <canvas id="lab11-lms-canvas" width="800" height="200" style="width: 100%; height: 200px; background: #000; border-radius: 4px; border: 1px solid #334155;"></canvas>
             <p id="lms-feedback" style="color: var(--accent-emerald); font-size: 0.9rem; margin-top: 10px; font-family: monospace;"></p>
           </div>
@@ -533,11 +533,14 @@
         </div>
 
         <h3 class="section-title">Foydalanilgan Adabiyotlar (APA 7)</h3>
-        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;">
-          <li>1. Otter.ai. (2025). <em>AI Transcription and Meeting Assistant Architecture</em>. Otter.ai Official Documentation.</li>
-          <li>2. MagicSchool AI. (2024). <em>Adaptive Learning and Rubric Generation for Educators</em>. MagicSchool.ai.</li>
-          <li>3. Baker, R. S., & Inventado, P. S. (2014). Educational data mining and learning analytics. In <em>Learning analytics</em> (pp. 61-75). Springer.</li>
-          <li>4. Google for Education. (2025). <em>Google Classroom API and Integration Guidelines</em>. Google Developers.</li>
+        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;; overflow-wrap: anywhere;">
+          <li>1. ADL Initiative. (n.d.). <em>SCORM</em>. https://adlnet.gov/projects/scorm/</li>
+          <li>2. Baker, R. S., & Inventado, P. S. (2014). Educational data mining and learning analytics. In J. A. Larusson & B. White (Eds.), <em>Learning analytics: From research to practice</em> (pp. 61–75). Springer. https://doi.org/10.1007/978-1-4614-3305-7_4</li>
+          <li>3. Google for Developers. (n.d.). <em>Google Classroom API</em>. https://developers.google.com/classroom</li>
+          <li>4. Jurafsky, D., & Martin, J. H. (n.d.). <em>Speech and language processing</em> (3rd ed. draft). https://web.stanford.edu/~jurafsky/slp3/</li>
+          <li>5. MagicSchool AI. (n.d.). <em>MagicSchool</em>. https://www.magicschool.ai</li>
+          <li>6. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai</li>
+          <li>7. Rasch, G. (1960). <em>Probabilistic models for some intelligence and attainment tests</em>. Danish Institute for Educational Research.</li>
         </ul>
       </div>
     </section>

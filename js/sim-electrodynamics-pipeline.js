@@ -63,8 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // (magnets-and-electromagnets) ishlatildi. Vascak.cz elektrodinamika
 // bo'limining ichki animatsiya slug'lari (lecture13'dagi termodinamika
 // slug'laridan farqli prefiks bilan) sandbox tarmoq cheklovi tufayli
-// tasdiqlanmagani sababli, bu 4 tugma vascak.cz bosh sahifasiga
-// yo'naltirilgan (aniq havolalar taqdim etilsa, darhol yangilanadi).
+// tasdiqlanmagani va bosh sahifada reklama borligi sababli, bu 4 tugma
+// reklamasiz PhET simulyatsiyalariga (Lorens kuchi uchun esa sayt ichidagi
+// sims/lorens-kuchi.html ga) yo'naltirilgan.
 const ONLINE_SIMS = {
   'phet-faraday': {
     url: 'https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_en.html',
@@ -115,51 +116,51 @@ const ONLINE_SIMS = {
     ]
   },
   'vascak-coulomb': {
-    url: 'https://www.vascak.cz/',
-    title: '⚡ Vascak.cz: Kulon Qonuni',
-    badge: 'Vascak.cz',
-    desc: "Vascak.cz bosh sahifasidan tegishli elektrostatika animatsiyasini toping (aniq ichki havola hali tasdiqlanmagan).",
+    url: 'https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_en.html',
+    title: "⚡ PhET: Coulomb's Law (Kulon Qonuni)",
+    badge: 'PhET',
+    desc: "Ikki nuqtaviy zaryad orasidagi elektrostatik kuchning zaryadlar kattaligi va masofaga bog'liqligini o'rganish (reklamasiz PhET simulyatsiyasi).",
     eqs: "$$F = k_e \\frac{q_1 q_2}{r^2}$$",
     tasks: [
-      "1. Portal bosh sahifasidan \"Elektřina\" yoki shunga o'xshash elektr bo'limini toping.",
-      "2. Ikki zaryad orasidagi masofani o'zgartirib, kuchning kvadratik bog'liqligini tekshiring.",
-      "3. Zaryad ishoralarini almashtirib, tortishish/itarishish holatlarini kuzating."
+      "1. Zaryadlar orasidagi masofani ikki marta oshirib, kuch to'rt marta kamayishini tekshiring.",
+      "2. Bitta zaryad kattaligini ikki marta oshirib, kuchning chiziqli o'zgarishini kuzating.",
+      "3. Zaryad ishoralarini almashtirib, tortishish va itarishish holatlarini solishtiring."
     ]
   },
   'vascak-faraday': {
-    url: 'https://www.vascak.cz/',
-    title: '🧲 Vascak.cz: Faradey Induksiyasi',
-    badge: 'Vascak.cz',
-    desc: "Vascak.cz bosh sahifasidan tegishli elektromagnit induksiya animatsiyasini toping (aniq ichki havola hali tasdiqlanmagan).",
+    url: 'https://phet.colorado.edu/sims/html/faradays-electromagnetic-lab/latest/faradays-electromagnetic-lab_en.html',
+    title: "🧲 PhET: Faraday's Electromagnetic Lab (Faradey Induksiyasi)",
+    badge: 'PhET',
+    desc: "Magnit, elektromagnit, g'altak, transformator va generator yordamida elektromagnit induksiyani chuqurroq o'rganish (reklamasiz PhET simulyatsiyasi).",
     eqs: "$$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}$$",
     tasks: [
-      "1. Portal bosh sahifasidan elektromagnetizm bo'limini toping.",
-      "2. Magnit tezligini oshirib, E.Yu.K.ning ortishini kuzating.",
-      "3. Lens qoidasiga ko'ra induksiyalangan tok yo'nalishini bashorat qiling."
+      "1. Magnitni g'altak ichiga turli tezlikda kiriting va induksiya EYuK ning tezlikka bog'liqligini kuzating.",
+      "2. G'altak o'ramlari sonini o'zgartirib, EYuK ning N ga proporsionalligini tekshiring.",
+      "3. Lents qoidasiga ko'ra induksion tok yo'nalishini oldindan ayting va tekshiring."
     ]
   },
   'vascak-lorentz': {
-    url: 'https://www.vascak.cz/',
-    title: '🔄 Vascak.cz: Lorens Kuchi',
-    badge: 'Vascak.cz',
-    desc: "Vascak.cz bosh sahifasidan Lorens kuchi animatsiyasini toping (aniq ichki havola hali tasdiqlanmagan).",
-    eqs: "$$\\vec{F} = q\\vec{v} \\times \\vec{B}$$",
+    url: 'sims/lorens-kuchi.html',
+    title: '🔄 Lorens Kuchi (sayt ichidagi reklamasiz simulyatsiya)',
+    badge: 'Lokal',
+    desc: "Bir jinsli magnit maydondagi zaryadli zarra harakati: aylana radiusi, aylanish davri va E × B dreyfi (Boris usuli).",
+    eqs: "$$\\vec{F} = q(\\vec{E} + \\vec{v} \\times \\vec{B}), \\quad r = \\frac{mv}{|q|B}$$",
     tasks: [
-      "1. Zaryadlangan zarracha tezligi va magnit maydon yo'nalishini o'zgartiring.",
-      "2. Kuch yo'nalishini o'ng qo'l qoidasi bilan tasdiqlang.",
-      "3. Zarracha traektoriyasining aylana shaklga ega bo'lishini kuzating."
+      "1. Tezlikni ikki marta oshirib, aylana radiusi ham ikki marta ortishini tekshiring.",
+      "2. Magnit induksiyani o'zgartirib, aylanish davri T = 2πm/(|q|B) formulasini tasdiqlang (davr tezlikka bog'liq emas).",
+      "3. Elektr maydonni qo'shib, dreyf tezligi E/B ga tengligini kuzating."
     ]
   },
   'vascak-ohm': {
-    url: 'https://www.vascak.cz/',
-    title: '📐 Vascak.cz: Om Qonuni',
-    badge: 'Vascak.cz',
-    desc: "Vascak.cz bosh sahifasidan Om qonuni animatsiyasini toping (aniq ichki havola hali tasdiqlanmagan).",
+    url: 'https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html',
+    title: "📐 PhET: Ohm's Law (Om Qonuni)",
+    badge: 'PhET',
+    desc: "Kuchlanish, qarshilik va tok kuchi orasidagi bog'lanishni oddiy zanjirda o'rganish (reklamasiz PhET simulyatsiyasi).",
     eqs: "$$I = \\frac{U}{R}$$",
     tasks: [
       "1. Qarshilikni oshirib, tok kuchining kamayishini kuzating.",
       "2. Kuchlanishni o'zgartirib, tok bilan chiziqli bog'liqlikni tasdiqlang.",
-      "3. Volt-amper xarakteristikasi grafigini o'qing."
+      "3. Bir nechta (U, I) juftligidan qarshilikni hisoblab, slayderdagi qiymat bilan solishtiring."
     ]
   }
 };

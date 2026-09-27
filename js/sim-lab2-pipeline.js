@@ -107,13 +107,13 @@
 
       const wrong = Object.keys(DIAG_KEY).map((name, i) => answers[i].value === DIAG_KEY[name] ? null : i + 1).filter(Boolean);
       const planEl = document.getElementById('diag-plan-desc');
-      planEl.innerHTML = `<strong>Tavsiya etilgan ob'yekt:</strong> ${c.object}.<br><strong>Individual reja:</strong> ${c.plan}` +
+      planEl.innerHTML = `<strong>Tavsiya etilgan obyekt:</strong> ${c.object}.<br><strong>Individual reja:</strong> ${c.plan}` +
         (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar) mavzusi. To'g'ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       document.getElementById('diag-personalized-prompt').value =
 `Siz fizika bo'yicha Sokratik ilmiy konsultantsiz. Men 2-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Mening o'rganish ob'yektim: ${c.object}.
+Mening o'rganish obyektim: ${c.object}.
 Asosiy mavzular: ${c.focus}.
 Iltimos:
 1. Tayyor javob yoki formulani to'g'ridan-to'g'ri bermang.

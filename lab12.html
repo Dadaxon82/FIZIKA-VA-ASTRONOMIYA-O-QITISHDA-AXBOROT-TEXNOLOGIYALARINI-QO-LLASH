@@ -1000,6 +1000,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
     .footer-links-list a:hover { color: var(--accent-cyan); }
     .footer-bottom { text-align: center; border-top: 1px solid var(--border-color); padding-top: 14px; }
+
+    /* Uzun so'zlar/formulalar telefon ekranidan chiqib ketmasligi uchun */
+    p, li, td, th, dd, figcaption { overflow-wrap: break-word; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
   </style>
 </head>
 <body>
@@ -1037,7 +1041,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
         <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
         <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
         <li><a href="lab12.html" class="nav-link active">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
         <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -1089,7 +1093,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
       <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
       <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
       <li><a href="lab12.html" class="drawer-link active">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
       <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -1109,7 +1113,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         Mexanika dinamikasi (Nyuton qonuniyatlari) jarayonlarini Algodoo yoki AI yozgan kodlar orqali modellashtirish va kinematik videolarni render qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
-        Zamonaviy ta'limni boshqarish tizimlari (LMS - Learning Management Systems) o'quv jarayonini markazlashtirish va samaradorligini oshirish uchun keng qo'llaniladi. Ushbu laboratoriya mashg'ulotida talabalar o'zlarining laboratoriya ishini (izohlar, savol-javoblar) <strong>Otter.ai</strong> platformasi yordamida yozib oladi, nutqni matnga avtomatik o'girib (transkripsiya) raqamli konspekt generatsiya qiladi. Olingan ma'lumotlarni <strong>MagicSchool AI</strong> yordamida shaxsiy o'quv trayektoriyasiga moslashtirib monitoring qiladi hamda yaratilgan kontentni Google Classroom yoki Moodle kabi <strong>LMS</strong> platformalarida portfolioga joylashtirish ko'nikmalarini shakllantiradi.
+        Ushbu laboratoriya mashg'ulotida talabalar Nyuton qonunlari va impulsning saqlanish qonunini PhET «Collision Lab» simulyatsiyasida tadqiq qiladi, so'ng Claude yordamida HTML5 Canvas'da elastik to'qnashuvlar dvigatelini yozadi va natijani Google Antigravity agentlari yordamida tekshiradi. <strong>Algodoo</strong> — ikki o'lchamli fizika «qum qutisi» dasturi — mexanik tizimlarni tez prototiplash va kinematik videolarni yozib olish uchun ishlatiladi. Kod natijalari impuls va kinetik energiyaning saqlanishi bo'yicha sonli tekshiriladi.
       </p>
     </div>
 
@@ -1225,9 +1229,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     <!-- ========================================================================= -->
     <section id="tab-reja2" class="tab-content">
       <div class="glass-panel">
-        <h2 class="section-title">2. Mexanika Loyihasi: To'liq Pipeline (Tahlil $
-ightarrow$ Kod $
-ightarrow$ Monitoring)</h2>
+        <h2 class="section-title">2. Mexanika Loyihasi: To'liq Pipeline (Tahlil $\rightarrow$ Kod $\rightarrow$ Monitoring)</h2>
         <p style="margin-bottom: 16px;">
           Murakkab dinamik simulyatsiyalarni ishlab chiqishda jarayonni bo'laklarga bo'lib, har bir qadamni alohida AI vositasiga ishonib topshirish (pipeline architecture) yuqori samaradorlikni ta'minlaydi.
         </p>
@@ -1236,7 +1238,7 @@ ightarrow$ Monitoring)</h2>
           <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
             <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">Pipeline Bosqichlari:</h4>
             <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-secondary); line-height: 1.6;">
-              <li><strong>1. Nazariy Tahlil:</strong> Fizik tizim modeli (massalar, ishqalanish koeffitsientlari, boshlang'ich tezliklar) PhET yoki Vascak.cz ilovalari orqali emulyatsiya qilinadi.</li>
+              <li><strong>1. Nazariy Tahlil:</strong> Fizik tizim modeli (massalar, ishqalanish koeffitsiyentlari, boshlang'ich tezliklar) PhET yoki Vascak.cz ilovalari orqali emulyatsiya qilinadi.</li>
               <li><strong>2. Kod Generatsiyasi:</strong> Tahlildan olingan xulosalar aniq texnik "prompt"ga aylantirilib, Claude 3.5 Sonnet'ga kiritiladi. Claude ushbu formula va parametrlarni HTML5 Canvas + JavaScript kodiga o'giradi.</li>
               <li><strong>3. Avtomatlashtirilgan Monitoring:</strong> Yozilgan kod Google Antigravity AI (yoki shunga o'xshash agentlik tizimlari) orqali tekshiriladi, xatolar tuzatiladi (debugging) va platformaga joylashtiriladi.</li>
             </ul>
@@ -1283,7 +1285,7 @@ ightarrow$ Monitoring)</h2>
         </div>
 
         <p style="color: var(--text-secondary); margin-bottom: 15px;">
-          Ushbu formulalar simulyatorlarda <strong>restitution</strong> (qayta tiklanish) koeffitsienti $e$ orqali boshqariladi. O'ta elastik to'qnashuvda $e=1$, qisman elastik to'qnashuvda $0 < e < 1$ bo'ladi.
+          Ushbu formulalar simulyatorlarda <strong>restitution</strong> (qayta tiklanish) koeffitsiyenti $e$ orqali boshqariladi. O'ta elastik to'qnashuvda $e=1$, qisman elastik to'qnashuvda $0 < e < 1$ bo'ladi.
         </p>
       </div>
     </section>
@@ -1371,9 +1373,7 @@ ightarrow$ Monitoring)</h2>
       <div class="glass-panel">
         <h2 class="section-title">6. Yakuniy Taqdimot Rubrikasi va Manbalar</h2>
         <p style="margin-bottom: 20px;">
-          Loyiha (Tahlil $
-ightarrow$ Kod $
-ightarrow$ Monitoring) sifati quyidagi rubrika orqali baholanadi (Jami: 100 ball).
+          Loyiha (Tahlil $\rightarrow$ Kod $\rightarrow$ Monitoring) sifati quyidagi rubrika orqali baholanadi (Jami: 100 ball).
         </p>
         
         <div class="rubric-table" style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); margin-bottom: 25px;">
@@ -1405,11 +1405,12 @@ ightarrow$ Monitoring) sifati quyidagi rubrika orqali baholanadi (Jami: 100 ball
         </div>
 
         <h3 class="section-title">Foydalanilgan Adabiyotlar (APA 7)</h3>
-        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;">
-          <li>1. PhET Interactive Simulations. (2025). <em>Collision Lab: Physics Engine</em>. University of Colorado Boulder.</li>
-          <li>2. Vascak, M. (2024). <em>Physics Animations and Mechanics Models</em>. Vascak.cz.</li>
-          <li>3. Anthropic. (2025). <em>Claude 3.5 Sonnet Technical System Card</em>. Anthropic Research.</li>
-          <li>4. Google DeepMind. (2026). <em>Antigravity AI: Autonomous Agents in Educational Orchestration</em>. DeepMind Publications.</li>
+        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;; overflow-wrap: anywhere;">
+          <li>1. Anthropic. (2024). <em>Claude 3.5 Sonnet model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</li>
+          <li>2. Google. (2025, November 18). <em>Build with Google Antigravity, our new agentic development platform</em>. Google Developers Blog. https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/</li>
+          <li>3. Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of physics</em> (11th ed.). Wiley.</li>
+          <li>4. PhET Interactive Simulations. (n.d.). <em>Collision Lab</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/collision-lab</li>
+          <li>5. Vaščák, V. (n.d.). <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)</li>
         </ul>
       </div>
     </section>

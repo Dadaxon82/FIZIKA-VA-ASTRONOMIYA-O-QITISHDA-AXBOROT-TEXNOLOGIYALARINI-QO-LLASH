@@ -1000,6 +1000,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
     .footer-links-list a:hover { color: var(--accent-cyan); }
     .footer-bottom { text-align: center; border-top: 1px solid var(--border-color); padding-top: 14px; }
+
+    /* Uzun so'zlar/formulalar telefon ekranidan chiqib ketmasligi uchun */
+    p, li, td, th, dd, figcaption { overflow-wrap: break-word; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
   </style>
 </head>
 <body>
@@ -1037,7 +1041,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
         <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
         <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
         <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
         <li><a href="lab13.html" class="nav-link active">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -1089,7 +1093,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
       <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Traektoriyalar & Ovoz Sintezi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
       <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
       <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
       <li><a href="lab13.html" class="drawer-link active">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
@@ -1109,7 +1113,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         Termodinamik jarayonlar (P-V va T-S grafiklari, ideal gaz holati) simulyatsiyasi kodini yozish va vizual holat o'zgarishini tahlil qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
-        Zamonaviy ta'limni boshqarish tizimlari (LMS - Learning Management Systems) o'quv jarayonini markazlashtirish va samaradorligini oshirish uchun keng qo'llaniladi. Ushbu laboratoriya mashg'ulotida talabalar o'zlarining laboratoriya ishini (izohlar, savol-javoblar) <strong>Otter.ai</strong> platformasi yordamida yozib oladi, nutqni matnga avtomatik o'girib (transkripsiya) raqamli konspekt generatsiya qiladi. Olingan ma'lumotlarni <strong>MagicSchool AI</strong> yordamida shaxsiy o'quv trayektoriyasiga moslashtirib monitoring qiladi hamda yaratilgan kontentni Google Classroom yoki Moodle kabi <strong>LMS</strong> platformalarida portfolioga joylashtirish ko'nikmalarini shakllantiradi.
+        Ideal gaz holat tenglamasi ($pV = \nu RT$) va molekulyar-kinetik nazariya asosida talabalar PhET «Gas Properties» simulyatsiyasini tahlil qiladi, so'ng Claude yordamida zarrachalar tizimining stoxastik simulyatsiyasini yozadi. Dastgohda hajm va harorat o'zgartirilganda bosimning o'zgarishi P-V diagrammasida nazariy izoterma bilan solishtiriladi. T-S diagrammasi dastgohda chizilmaydi: uni hisobotda $\Delta S = \nu C_V \ln(T_2/T_1) + \nu R \ln(V_2/V_1)$ formulasi bo'yicha qurish tavsiya etiladi.
       </p>
     </div>
 
@@ -1131,7 +1135,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">4. Claude 3.5 Sonnet Stoxastik Dvigatel:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Zarrachalar kinetikasi (Brownian motion) bo'yicha stoxastik HTML5/JS simulyatsiyasini yozish.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Zarrachalar kinetikasi (Broun harakati) bo'yicha stoxastik HTML5/JS simulyatsiyasini yozish.</span>
         </div>
       </div>
     </div>
@@ -1353,7 +1357,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
               </div>
             </div>
             <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-              <strong style="color: var(--accent-emerald);">📊 Real-Time Bosim (P): <span id="pressure-val">0</span> kPa</strong>
+              <strong style="color: var(--accent-emerald);">📊 Real vaqtdagi bosim (P): <span id="pressure-val">0</span> kPa</strong>
             </div>
           </div>
         </div>
@@ -1399,10 +1403,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
         </div>
 
         <h3 class="section-title">Foydalanilgan Adabiyotlar (APA 7)</h3>
-        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;">
-          <li>1. PhET Interactive Simulations. (2025). <em>Gas Properties</em>. University of Colorado Boulder.</li>
-          <li>2. Reif, F. (2009). <em>Fundamentals of Statistical and Thermal Physics</em>. Waveland Press.</li>
-          <li>3. Anthropic. (2025). <em>Claude 3.5 Sonnet System Prompting for Stochastic Models</em>.</li>
+        <ul style="list-style-type: none; padding-left: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem;; overflow-wrap: anywhere;">
+          <li>1. Anthropic. (2024). <em>Claude 3.5 Sonnet model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</li>
+          <li>2. PhET Interactive Simulations. (n.d.). <em>Gas Properties</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties</li>
+          <li>3. Reif, F. (2009). <em>Fundamentals of statistical and thermal physics</em>. Waveland Press. (Asl nashr: 1965)</li>
+          <li>4. Schroeder, D. V. (2000). <em>An introduction to thermal physics</em>. Addison Wesley Longman.</li>
         </ul>
       </div>
     </section>

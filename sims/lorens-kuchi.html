@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorens Kuchi</title>
+  <style>
+    :root {
+      --bg: #050816; --panel: #0B1120; --border: rgba(148,163,184,0.18);
+      --text: #E2E8F0; --muted: #94A3B8; --pos: #F43F5E; --neg: #38BDF8; --ok: #34D399; --warn: #FBBF24;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { display: flex; flex-direction: column; overflow: hidden; }
+    header { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+    h1 { font-size: 1rem; margin: 0; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    button { background: #1E293B; color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; font: inherit; font-size: 0.85rem; cursor: pointer; }
+    button:hover { border-color: #38BDF8; }
+    main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 320px; min-height: 0; }
+    #stage { position: relative; min-height: 0; }
+    canvas { width: 100%; height: 100%; display: block; }
+    aside { border-left: 1px solid var(--border); background: var(--panel); padding: 12px; overflow-y: auto; font-size: 0.82rem; line-height: 1.55; }
+    aside h2 { font-size: 0.8rem; margin: 12px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    aside h2:first-child { margin-top: 0; }
+    label { display: flex; justify-content: space-between; color: var(--muted); margin-top: 8px; }
+    label b { color: var(--text); font-family: ui-monospace, monospace; }
+    input[type=range] { width: 100%; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .stat { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px; text-align: center; }
+    .stat b { display: block; font-family: ui-monospace, monospace; font-size: 0.95rem; }
+    .stat span { font-size: 0.66rem; color: var(--muted); text-transform: uppercase; }
+    .note { color: var(--muted); font-size: 0.74rem; }
+    @media (max-width: 760px) {
+      body { overflow: auto; }
+      main { grid-template-columns: 1fr; }
+      #stage { height: 58vh; }
+      aside { border-left: 0; border-top: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔄 Lorens kuchi: magnit maydondagi zaryadli zarra</h1>
+    <div class="controls">
+      <button id="play">⏸ Pauza</button>
+      <button id="reset">↺ Boshidan</button>
+      <button id="flip">± Zaryad ishorasi</button>
+    </div>
+  </header>
+  <main>
+    <div id="stage"><canvas id="cv"></canvas></div>
+    <aside>
+      <h2>Parametrlar (shartli birliklar)</h2>
+      <label>Zaryad q <b id="vq">+1.0</b></label>
+      <input type="range" id="q" min="0.5" max="3" step="0.5" value="1">
+      <label>Massa m <b id="vm">1.0</b></label>
+      <input type="range" id="m" min="0.5" max="4" step="0.5" value="1">
+      <label>Boshlang'ich tezlik v₀ <b id="vv">150</b></label>
+      <input type="range" id="v" min="40" max="300" step="10" value="150">
+      <label>Magnit induksiya B (ekrandan bizga) <b id="vb">1.5</b></label>
+      <input type="range" id="b" min="0.5" max="3" step="0.1" value="1.5">
+      <label>Elektr maydon E (pastga) <b id="ve">0</b></label>
+      <input type="range" id="e" min="0" max="120" step="10" value="0">
+
+      <h2>Nazariya va o'lchov</h2>
+      <div class="stats">
+        <div class="stat"><b id="rTh">—</b><span>r nazariy = mv/|q|B</span></div>
+        <div class="stat"><b id="rMe">—</b><span>r o'lchangan</span></div>
+        <div class="stat"><b id="tTh">—</b><span>T nazariy = 2πm/|q|B</span></div>
+        <div class="stat"><b id="tMe">—</b><span>T o'lchangan</span></div>
+        <div class="stat"><b id="vD">—</b><span>dreyf E/B</span></div>
+        <div class="stat"><b id="kE">—</b><span>|v| / v₀</span></div>
+      </div>
+      <h2>Formulalar</h2>
+      <p>F = q(E + v × B). Faqat B bo'lsa, kuch tezlikka perpendikulyar: u ish bajarmaydi, tezlik moduli o'zgarmaydi va zarra aylana chizadi. E ham qo'shilsa, aylana E × B yo'nalishida v<sub>d</sub> = E/B tezlik bilan siljiydi (dreyf).</p>
+      <p class="note">Hisoblash Boris usulida bajariladi: bu usul faqat magnit maydonda tezlik modulini aniq saqlaydi. Musbat zaryad soat mili yo'nalishida, manfiy zaryad unga teskari aylanadi. Oddiy Eyler usulida aylana spirallashib kattalashib borardi.</p>
+      <p class="note">Bu simulyatsiya reklamasiz, sayt ichida ishlaydi.</p>
+    </aside>
+  </main>
+<script>
+(function () {
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const $ = id => document.getElementById(id);
+  const H = 1 / 240;           // qat'iy qadam, s
+  let W = 0, Hc = 0, dpr = 1;
+  let sign = 1, running = true, acc = 0, last = 0;
+  let p, trail, t, turns, lastAngle, angAcc, tStart, rMin, rMax, center;
+
+  function params() {
+    return { q: sign * parseFloat($('q').value), m: parseFloat($('m').value), v0: parseFloat($('v').value),
+             B: parseFloat($('b').value), E: parseFloat($('e').value) };
+  }
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    const r = cv.getBoundingClientRect();
+    W = r.width; Hc = r.height;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(Hc * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function reset() {
+    const k = params();
+    // zarra markazdan boshlanadi, tezlik o'ngga; aylana markazi yon tomonda
+    p = { x: W / 2, y: Hc / 2, vx: k.v0, vy: 0 };
+    trail = []; t = 0; turns = 0; angAcc = 0; tStart = null; rMin = Infinity; rMax = 0;
+    const r = k.m * k.v0 / (Math.abs(k.q) * k.B);
+    // ekran koordinatalarida y pastga: Bz > 0 (bizga) uchun musbat zaryad soat mili bo'yicha aylanadi
+    center = { x: p.x, y: p.y + (k.q > 0 ? r : -r) };
+    lastAngle = Math.atan2(p.y - center.y, p.x - center.x);
+    updateLabels();
+  }
+  function step(h) {
+    const k = params();
+    // Boris usuli: E yarim qadam, B aylantirish, E yarim qadam (ekranda y pastga, B ekrandan bizga)
+    const qm = k.q / k.m;
+    const ex = 0, ey = k.E;
+    let vx = p.vx + 0.5 * qm * ex * h, vy = p.vy + 0.5 * qm * ey * h;
+    const tz = -0.5 * qm * k.B * h;         // y pastga bo'lgani uchun ishora teskari
+    const sz = 2 * tz / (1 + tz * tz);
+    const vpx = vx + vy * tz, vpy = vy - vx * tz;
+    vx = vx + vpy * sz; vy = vy - vpx * sz;
+    p.vx = vx + 0.5 * qm * ex * h; p.vy = vy + 0.5 * qm * ey * h;
+    p.x += p.vx * h; p.y += p.vy * h;
+    t += h;
+    if (k.E === 0) {
+      const d = Math.hypot(p.x - center.x, p.y - center.y);
+      rMin = Math.min(rMin, d); rMax = Math.max(rMax, d);
+      const a = Math.atan2(p.y - center.y, p.x - center.x);
+      let da = a - lastAngle;
+      if (da > Math.PI) da -= 2 * Math.PI; if (da < -Math.PI) da += 2 * Math.PI;
+      angAcc += Math.abs(da); lastAngle = a;
+      if (angAcc >= 2 * Math.PI * (turns + 1)) { turns++; }
+    }
+  }
+  function frame(ts) {
+    requestAnimationFrame(frame);
+    if (!last) { last = ts; draw(); return; }
+    const dt = Math.min((ts - last) / 1000, 0.1); last = ts;
+    if (running) {
+      acc += dt;
+      while (acc >= H) { step(H); acc -= H; }
+      trail.push(p.x, p.y); if (trail.length > 3000) trail.splice(0, 2);
+      // ekrandan chiqib ketsa (dreyf), qaytadan boshlaymiz
+      if (p.x < -50 || p.x > W + 50 || p.y < -50 || p.y > Hc + 50) reset();
+    }
+    draw(); updateStats();
+  }
+  function draw() {
+    const k = params();
+    ctx.clearRect(0, 0, W, Hc);
+    // B maydon belgilari (⊙ — ekrandan bizga)
+    ctx.fillStyle = 'rgba(148,163,184,0.25)';
+    for (let x = 30; x < W; x += 50) for (let y = 30; y < Hc; y += 50) {
+      ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(148,163,184,0.25)'; ctx.stroke();
+      ctx.beginPath(); ctx.arc(x, y, 1.5, 0, Math.PI * 2); ctx.fill();
+    }
+    if (k.E > 0) {
+      ctx.strokeStyle = 'rgba(251,191,36,0.35)';
+      for (let x = 55; x < W; x += 100) { ctx.beginPath(); ctx.moveTo(x, 10); ctx.lineTo(x, Hc - 10); ctx.stroke(); }
+    }
+    // iz
+    ctx.strokeStyle = sign > 0 ? 'rgba(244,63,94,0.6)' : 'rgba(56,189,248,0.6)';
+    ctx.lineWidth = 2; ctx.beginPath();
+    for (let i = 0; i < trail.length; i += 2) { if (i === 0) ctx.moveTo(trail[i], trail[i + 1]); else ctx.lineTo(trail[i], trail[i + 1]); }
+    ctx.stroke();
+    // zarra
+    ctx.fillStyle = sign > 0 ? '#F43F5E' : '#38BDF8';
+    ctx.beginPath(); ctx.arc(p.x, p.y, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 11px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(sign > 0 ? '+' : '−', p.x, p.y + 4);
+    // tezlik va kuch vektorlari
+    const s = 0.35;
+    arrow(p.x, p.y, p.x + p.vx * s, p.y + p.vy * s, '#34D399', 'v');
+    // Ekran koordinatalarida (y pastga, B ekrandan bizga): F = q(E + v × B) → (−q·v_y·B, q·E + q·v_x·B)
+    const fx = -k.q * p.vy * k.B, fy = k.q * k.E + k.q * p.vx * k.B;
+    const fs = 0.25 / k.m;
+    arrow(p.x, p.y, p.x + fx * fs, p.y + fy * fs, '#FBBF24', 'F');
+    ctx.textAlign = 'left'; ctx.fillStyle = '#94A3B8'; ctx.font = '12px ui-monospace, monospace';
+    ctx.fillText('⊙ B — ekrandan bizga' + (k.E > 0 ? '   | E — pastga' : ''), 10, Hc - 10);
+  }
+  function arrow(x0, y0, x1, y1, color, label) {
+    const a = Math.atan2(y1 - y0, x1 - x0), L = Math.hypot(x1 - x0, y1 - y0);
+    if (L < 3) return;
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x1, y1);
+    ctx.lineTo(x1 - 8 * Math.cos(a - 0.4), y1 - 8 * Math.sin(a - 0.4));
+    ctx.lineTo(x1 - 8 * Math.cos(a + 0.4), y1 - 8 * Math.sin(a + 0.4));
+    ctx.closePath(); ctx.fill();
+    ctx.font = 'bold 12px sans-serif'; ctx.fillText(label, x1 + 6 * Math.cos(a), y1 + 6 * Math.sin(a));
+  }
+  function updateLabels() {
+    const k = params();
+    $('vq').textContent = (k.q > 0 ? '+' : '−') + Math.abs(k.q).toFixed(1);
+    $('vm').textContent = k.m.toFixed(1); $('vv').textContent = k.v0;
+    $('vb').textContent = k.B.toFixed(1); $('ve').textContent = k.E;
+  }
+  function updateStats() {
+    const k = params();
+    const r = k.m * k.v0 / (Math.abs(k.q) * k.B), T = 2 * Math.PI * k.m / (Math.abs(k.q) * k.B);
+    $('rTh').textContent = r.toFixed(1); $('tTh').textContent = T.toFixed(3) + ' s';
+    $('vD').textContent = k.E > 0 ? (k.E / k.B).toFixed(1) : '0';
+    $('kE').textContent = (Math.hypot(p.vx, p.vy) / k.v0).toFixed(4);
+    if (k.E === 0 && rMax > 0) $('rMe').textContent = ((rMin + rMax) / 2).toFixed(1); else $('rMe').textContent = '— (E ≠ 0)';
+    $('tMe').textContent = (k.E === 0 && turns > 0) ? (t / (angAcc / (2 * Math.PI))).toFixed(3) + ' s' : '—';
+  }
+  ['q', 'm', 'v', 'b', 'e'].forEach(id => $(id).addEventListener('input', reset));
+  $('play').addEventListener('click', () => { running = !running; $('play').textContent = running ? '⏸ Pauza' : '▶ Davom'; });
+  $('reset').addEventListener('click', reset);
+  $('flip').addEventListener('click', () => { sign = -sign; reset(); });
+  window.addEventListener('resize', () => { resize(); reset(); });
+  resize(); reset(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

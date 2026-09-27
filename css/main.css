@@ -216,3 +216,7 @@ p { color: var(--text-secondary); font-size: 1.05rem; }
   .katex-display { font-size: 0.8em; }
   .katex { font-size: 0.95em; }
 }
+
+/* Uzun so'zlar/formulalar telefon ekranidan chiqib ketmasligi uchun */
+p, li, td, th, dd, figcaption { overflow-wrap: break-word; }
+.katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
