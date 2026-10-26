@@ -1,3 +1,7 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 11-Laboratoriya: ovozli qaydlar → transkripsiya → LMS.
  * Sahifa tugmalari inline onclick orqali global funksiyalarni chaqiradi:
@@ -5,10 +9,10 @@
  *   sendToLmsSim, calcLmsScore.
  * 1. Diagnostik test → klaster va AI uchun shaxsiy prompt.
  * 2. Otter.ai jarayoni simulyatsiyasi (mikrofon ishlatilmaydi): sintetik nutq
- *    to'lqini, ASR natijasi va uning WER = (S + D + I) / N ko'rsatkichi so'zlar
- *    bo'yicha Levenshtein masofasi orqali haqiqatan hisoblanadi.
+ *    to‘lqini, ASR natijasi va uning WER = (S + D + I) / N ko‘rsatkichi so‘zlar
+ *    bo‘yicha Levenshtein masofasi orqali haqiqatan hisoblanadi.
  * 3. Adaptiv tahlil simulyatsiyasi: Rasch modeli P = 1 / (1 + e^−(θ − b)),
- *    har bir mashg'ulot uchun θ maksimal o'xshashlik usulida baholanadi.
+ *    har bir mashg‘ulot uchun θ maksimal o‘xshashlik usulida baholanadi.
  * 4. 100 ballik rubrika.
  */
 
@@ -43,19 +47,19 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Boshlang\'ich daraja',
+      title: 'Boshlang‘ich daraja',
       focus: "LMS tuzilmasi (mavzu, material, topshiriq, rubrika), SCORM/xAPI tushunchasi, WER formulasi",
-      plan: "Avval 2- va 3-bo'limlarni o'qing, 5-bo'limdagi simulyatorda WER qanday hisoblanishini kuzating va Google Classroom'da bitta mavzu (Topic) va bitta topshiriq (Assignment) yarating."
+      plan: "Avval 2- va 3-bo‘limlarni o‘qing, 5-bo‘limdagi simulyatorda WER qanday hisoblanishini kuzating va Google Classroom’da bitta mavzu (Topic) va bitta topshiriq (Assignment) yarating."
     },
     B: {
       title: 'Amaliyotchi daraja',
-      focus: "transkripsiya xatolarini tahrirlash, konspektni LMS topshirig'iga biriktirish, rubrika tuzish",
-      plan: "O'z laboratoriya izohingizni yozib oling, transkripsiyadagi xatolarni tuzatib WER ni hisoblang va natijani Moodle yoki Google Classroom topshirig'iga rubrika bilan joylang."
+      focus: "transkripsiya xatolarini tahrirlash, konspektni LMS topshirig‘iga biriktirish, rubrika tuzish",
+      plan: "O‘z laboratoriya izohingizni yozib oling, transkripsiyadagi xatolarni tuzatib WER ni hisoblang va natijani Moodle yoki Google Classroom topshirig‘iga rubrika bilan joylang."
     },
     C: {
-      title: 'Ilg\'or daraja',
-      focus: "adaptiv baholash (Rasch/IRT), xAPI orqali o'quv faoliyatini kuzatish, ma'lumotlar tahlili",
-      plan: "Guruh natijalari bo'yicha savollar qiyinligini ($b$) baholang, har bir talaba uchun $\\theta$ ni hisoblang va keyingi topshiriqni $b \\approx \\theta$ bo'yicha tanlash rejasini tuzing."
+      title: 'Ilg‘or daraja',
+      focus: "adaptiv baholash (Rasch/IRT), xAPI orqali o‘quv faoliyatini kuzatish, ma’lumotlar tahlili",
+      plan: "Guruh natijalari bo‘yicha savollar qiyinligini ($b$) baholang, har bir talaba uchun $\\theta$ ni hisoblang va keyingi topshiriqni $b \\approx \\theta$ bo‘yicha tanlash rejasini tuzing."
     }
   };
 
@@ -77,27 +81,27 @@
     const wrong = Object.keys(DIAG_KEY).map((n, i) => answers[i].value === DIAG_KEY[n] ? null : i + 1).filter(Boolean);
     if (scoreEl) {
       scoreEl.textContent = `Natija: ${score} / 100 (${correct}/4) — ${c.title}. ${c.plan}` +
-        (wrong.length ? ` Qayta ko'rib chiqing: ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-B, 2-C, 3-A, 4-B.` : '');
+        (wrong.length ? ` Qayta ko‘rib chiqing: ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-B.` : '');
       if (typeof window.renderMathInElement === 'function') {
         window.renderMathInElement(scoreEl, { delimiters: [{ left: '$', right: '$', display: false }] });
       }
     }
     if (out) out.value =
-`Sen oliy ta'limda raqamli kurs dizayni va LMS (Google Classroom, Moodle) bo'yicha metodist-murabbiysan.
+`Sen oliy ta’limda raqamli kurs dizayni va LMS (Google Classroom, Moodle) bo‘yicha metodist-murabbiysan.
 Men 11-laboratoriya diagnostikasidan ${score}/100 ball oldim (${c.title}).
 Asosiy mavzular: ${c.focus}.
-Vazifa: "Mexanik tebranishlar" mavzusidagi laboratoriya ishim uchun LMS'da mavzu, material, topshiriq va baholash rubrikasini tuzish.
+Vazifa: "Mexanik tebranishlar" mavzusidagi laboratoriya ishim uchun LMS’da mavzu, material, topshiriq va baholash rubrikasini tuzish.
 Iltimos:
 1. Tayyor kursni darhol bermang — avval mening rejamni savollar orqali takomillashtirishga yordam bering.
 2. Ovozli qaydimning transkripsiyasidagi fizik atamalar xatolarini qanday tekshirishni tushuntiring.
-3. Talabalar shaxsiy ma'lumotlari va AI vositalaridan foydalanishda nimalarga e'tibor berish kerakligini eslatib o'ting.`;
+3. Talabalar shaxsiy ma’lumotlari va AI vositalaridan foydalanishda nimalarga e’tibor berish kerakligini eslatib o‘ting.`;
   };
 
   // -------------------------------------------------------------------------
   // 2. OVOZLI YOZUV VA TRANSKRIPSIYA SIMULYATSIYASI
   // -------------------------------------------------------------------------
-  const REFERENCE = "matematik mayatnikning tebranish davri ip uzunligining kvadrat ildiziga to'g'ri proporsional va amplitudaga deyarli bog'liq emas biz o'n marta tebranish vaqtini o'lchab davrni hisobladik";
-  const HYPOTHESIS = "matematik mayatnikning tebranish davri ip uzunligi kvadrat ildiziga to'g'ri proporsional va amplitudaga bog'liq emas biz o'n marta tebranish vaqtini o'lchab davrini hisobladik";
+  const REFERENCE = "matematik mayatnikning tebranish davri ip uzunligining kvadrat ildiziga to‘g‘ri proporsional va amplitudaga deyarli bog‘liq emas biz o‘n marta tebranish vaqtini o‘lchab davrni hisobladik";
+  const HYPOTHESIS = "matematik mayatnikning tebranish davri ip uzunligi kvadrat ildiziga to‘g‘ri proporsional va amplitudaga bog‘liq emas biz o‘n marta tebranish vaqtini o‘lchab davrini hisobladik";
 
   function wer(ref, hyp) {
     const r = ref.split(/\s+/).filter(Boolean);
@@ -149,7 +153,7 @@ Iltimos:
       ctx.fillRect(i * bw, h / 2 - bh, Math.max(bw - 0.5, 0.5), 2 * bh);
     }
     if (!recording) {
-      const label = 'Simulyatsiya: mikrofon ishlatilmaydi, to\'lqin sintetik';
+      const label = 'Simulyatsiya: mikrofon ishlatilmaydi, to‘lqin sintetik';
       ctx.font = '12px monospace';
       ctx.fillStyle = 'rgba(0,0,0,0.75)';
       ctx.fillRect(4, 2, ctx.measureText(label).width + 12, 17);
@@ -161,7 +165,7 @@ Iltimos:
   function recLoop(ts) {
     if (!recording) return;
     const t = (ts - recStart) / 1000;
-    // Nutqqa o'xshash signal: bo'g'inlar (≈4 Hz) va so'z pauzalari (≈0,6 Hz) bilan modulyatsiya
+    // Nutqqa o‘xshash signal: bo‘g‘inlar (≈4 Hz) va so‘z pauzalari (≈0,6 Hz) bilan modulyatsiya
     for (let k = 0; k < 3; k++) {
       const tt = t + k * 0.005;
       const syll = Math.max(0, Math.sin(2 * Math.PI * 4 * tt));
@@ -210,9 +214,9 @@ Iltimos:
 
 — ASR sifat tahlili (asl matn bilan solishtirish) —
 Asl matn: ${REFERENCE}
-S (almashtirilgan) = ${r.S}, D (tushib qolgan) = ${r.D}, I (qo'shilgan) = ${r.I}, N = ${r.N}
-WER = (S + D + I) / N = ${(r.wer * 100).toFixed(1)} %
-Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib qolgan so'z fizik ma'noni o'zgartirdi (davr faqat kichik amplitudalarda amplitudaga bog'liq emas). Transkripsiyani doim tahrirlang.`;
+S (almashtirilgan) = ${r.S}, D (tushib qolgan) = ${r.D}, I (qo‘shilgan) = ${r.I}, N = ${r.N}
+WER = (S + D + I) / N = ${uzFix((r.wer * 100), 1)} %
+Eslatma: “amplitudaga deyarli bog‘liq emas” → “bog‘liq emas” — bitta tushib qolgan so‘z fizik ma’noni o‘zgartirdi (davr faqat kichik amplitudalarda amplitudaga bog‘liq emas). Transkripsiyani doim tahrirlang.`;
     const out = document.getElementById('transcription-output');
     if (!out) return;
     out.value = '';
@@ -233,7 +237,7 @@ Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib 
   // 3. ADAPTIV TAHLIL (RASCH MODELI) VA LMS TRAYEKTORIYASI
   // -------------------------------------------------------------------------
   const ITEM_B = [-1.5, -0.75, 0, 0.5, 1.0, 1.75];
-  // 6 ta mashg'ulot, har birida 6 ta savolga javoblar (1 — to'g'ri)
+  // 6 ta mashg‘ulot, har birida 6 ta savolga javoblar (1 — to‘g‘ri)
   const SESSIONS = [
     [1, 1, 0, 0, 0, 0],
     [1, 1, 1, 0, 0, 0],
@@ -247,7 +251,7 @@ Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib 
   function rasch(theta, b) { return 1 / (1 + Math.exp(-(theta - b))); }
 
   function estimateTheta(resp) {
-    // Maksimal o'xshashlik (Nyuton-Rafson); barcha javob to'g'ri/noto'g'ri bo'lmagan holat uchun
+    // Maksimal o‘xshashlik (Nyuton-Rafson); barcha javob to‘g‘ri/noto‘g‘ri bo‘lmagan holat uchun
     let th = 0;
     for (let k = 0; k < 50; k++) {
       let g = 0, info = 0;
@@ -281,7 +285,7 @@ Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib 
       ctx.strokeStyle = v === 0 ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.07)';
       ctx.beginPath(); ctx.moveTo(padL, Y(v)); ctx.lineTo(w - padR, Y(v)); ctx.stroke();
       ctx.fillStyle = '#94a3b8';
-      ctx.fillText(v.toString(), padL - 6, Y(v) + 4);
+      ctx.fillText(String(v).replace('-', '−'), padL - 6, Y(v) + 4);
     }
     ctx.save();
     ctx.translate(12, h / 2);
@@ -290,12 +294,12 @@ Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib 
     ctx.fillText('qobiliyat θ (logit)', 0, 0);
     ctx.restore();
     ctx.textAlign = 'center';
-    SESSIONS.forEach((_, i) => { ctx.fillStyle = '#94a3b8'; ctx.fillText(`${i + 1}-mashg'ulot`, X(i), h - 8); });
+    SESSIONS.forEach((_, i) => { ctx.fillStyle = '#94a3b8'; ctx.fillText(`${i + 1}-mashg‘ulot`, X(i), h - 8); });
 
     if (!lmsShown) {
       ctx.fillStyle = '#64748b';
       ctx.font = '13px sans-serif';
-      ctx.fillText("Konspektni yuborgandan so'ng trayektoriya shu yerda chiziladi", w / 2, h / 2 - 10);
+      ctx.fillText("Konspektni yuborgandan so‘ng trayektoriya shu yerda chiziladi", w / 2, h / 2 - 10);
       return;
     }
     const est = SESSIONS.map(estimateTheta);
@@ -321,16 +325,16 @@ Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib 
     const fb = document.getElementById('lms-feedback');
     if (fb) {
       const next = ITEM_B.reduce((a, b) => (Math.abs(b - last.theta) < Math.abs(a - last.theta) ? b : a));
-      fb.textContent = `Rasch baholashi: θ₁ = ${est[0].theta.toFixed(2)} → θ₆ = ${last.theta.toFixed(2)} ± ${last.se.toFixed(2)} logit. ` +
-        `Keyingi topshiriq uchun eng informativ qiyinlik b ≈ θ (P ≈ 50%): mavjud savollardan b = ${next.toFixed(2)}. ` +
-        `(Simulyatsiya: javoblar namunaviy; haqiqiy LMS'da talabaning o'z natijalari ishlatiladi.)`;
+      fb.textContent = `Rasch baholashi: θ₁ = ${uzFix(est[0].theta, 2)} → θ₆ = ${uzFix(last.theta, 2)} ± ${uzFix(last.se, 2)} logit. ` +
+        `Keyingi topshiriq uchun eng informativ qiyinlik b ≈ θ (P ≈ 50 %): mavjud savollardan b = ${uzFix(next, 2)}. ` +
+        `(Simulyatsiya: javoblar namunaviy; haqiqiy LMS’da talabaning o‘z natijalari ishlatiladi.)`;
     }
   }
 
   window.sendToLmsSim = function () {
     lmsShown = true;
     drawLms();
-    toast("Konspekt LMS topshirig'iga biriktirildi (simulyatsiya)");
+    toast("Konspekt LMS topshirig‘iga biriktirildi (simulyatsiya)");
   };
 
   window.triggerLab11CanvasRedraw = function () { drawWave(); drawLms(); };
@@ -350,7 +354,7 @@ Eslatma: "amplitudaga deyarli bog'liq emas" → "bog'liq emas" — bitta tushib 
       if (clamped !== v) el.value = clamped; // chegaradan tashqari ball kiritilsa, maydonni tuzatamiz
       total += clamped;
     });
-    const grade = total >= 86 ? "A'lo (5)" : total >= 71 ? 'Yaxshi (4)' : total >= 55 ? 'Qoniqarli (3)' : 'Qoniqarsiz (2)';
+    const grade = total >= 86 ? "A’lo (5)" : total >= 71 ? 'Yaxshi (4)' : total >= 55 ? 'Qoniqarli (3)' : 'Qoniqarsiz (2)';
     const out = document.getElementById('rubric11-total');
     if (out) {
       out.textContent = `${total} / 100 ball — ${grade}`;

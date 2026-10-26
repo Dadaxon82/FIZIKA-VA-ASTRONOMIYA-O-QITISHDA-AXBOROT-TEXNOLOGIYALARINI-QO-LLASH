@@ -1,18 +1,22 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 7-Laboratoriya: HTML5 Canvas kadr sikli, Delta-Time va garmonik tebranishlar.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
- * 2. Interaktiv dastgoh: requestAnimationFrame sikli, sun'iy FPS cheklovi,
- *    Delta-Time yoqilgan/o'chirilgan rejimlar. Fizika Fiedler akkumulyatori
- *    orqali qat'iy qadam (h = 1/240 s) bilan integratsiyalanadi (ossilyator
- *    uchun Eyler-Kromer). Punktir kontur — real vaqt bo'yicha hisoblangan
- *    etalon holat: Delta-Time o'chirilganda asosiy jism undan ortda qoladi
- *    yoki oldinga o'tib ketadi. O'ng oynada kadr oraliqlari ossillografi.
+ * 2. Interaktiv dastgoh: requestAnimationFrame sikli, sun’iy FPS cheklovi,
+ *    Delta-Time yoqilgan/o‘chirilgan rejimlar. Fizika Fiedler akkumulyatori
+ *    orqali qat’iy qadam (h = 1/240 s) bilan integratsiyalanadi (ossilyator
+ *    uchun Eyler–Kromer). Punktir kontur — real vaqt bo‘yicha hisoblangan
+ *    etalon holat: Delta-Time o‘chirilganda asosiy jism undan ortda qoladi
+ *    yoki oldinga o‘tib ketadi. O‘ng oynada kadr oraliqlari ossillografi.
  * 3. 100 ballik rubrika kalkulyatori va promptlarni nusxalash.
  */
 
 (function () {
-  const H = 1 / 240;          // qat'iy fizik qadam, s
-  const FRAME_REF = 1 / 60;   // Delta-Time o'chirilganda har kadrdagi "taxminiy" qadam, s
+  const H = 1 / 240;          // qat’iy fizik qadam, s
+  const FRAME_REF = 1 / 60;   // Delta-Time o‘chirilganda har kadrdagi "taxminiy" qadam, s
   const MAX_FRAME = 0.1;      // kadr vaqtining yuqori chegarasi, s
   const BALL_R = 14;
   const OSC_OMEGA = 2 * Math.PI / 1.6; // rad/s (davr 1,6 s)
@@ -63,18 +67,18 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
-      plan: "Avval 2-bo'limdagi kadr sikli skeletini qo'lda qayta yozing va har bir qatorini izohlang. 5-bo'limdagi dastgohda Delta-Time'ni o'chirib, FPS cheklovini 60 → 15 ga o'zgartiring va punktir etalon kontur bilan jism orasidagi farqni kuzating. So'ng $x \\mathrel{+}= v \\cdot \\Delta t$ formulasi nima uchun bu farqni yo'qotishini o'z so'zlaringiz bilan tushuntiring.",
-      focus: "requestAnimationFrame, millisekunddan sekundga o'tish, x += v·dt formulasi"
+      title: 'Klaster "A" — Boshlang‘ich daraja',
+      plan: "Avval 2-bo‘limdagi kadr sikli skeletini qo‘lda qayta yozing va har bir qatorini izohlang. 5-bo‘limdagi dastgohda Delta-Time’ni o‘chirib, FPS cheklovini 60 → 15 ga o‘zgartiring va punktir etalon kontur bilan jism orasidagi farqni kuzating. So‘ng $x \\mathrel{+}= v \\cdot \\Delta t$ formulasi nima uchun bu farqni yo‘qotishini o‘z so‘zlaringiz bilan tushuntiring.",
+      focus: "requestAnimationFrame, millisekunddan sekundga o‘tish, x += v·dt formulasi"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "Skeletga Fiedler akkumulyatorini qo'shing (2-bo'limdagi ikkinchi kod) va 4-bo'limdagi Eyler-Kromer ossilyatorini ishga tushiring. Dastgohda ossilyator rejimida energiya nisbati $E/E_0$ ni 60 va 15 FPS da solishtiring. Antigravity agentiga 3-bo'limdagi promptni yuborib, uning o'lchov natijalarini o'zingiz takrorlab tekshiring.",
-      focus: "Fiedler akkumulyatori, qat'iy fizik qadam, Eyler-Kromer sxemasi, agent natijalarini tekshirish"
+      plan: "Skeletga Fiedler akkumulyatorini qo‘shing (2-bo‘limdagi ikkinchi kod) va 4-bo‘limdagi Eyler–Kromer ossilyatorini ishga tushiring. Dastgohda ossilyator rejimida energiya nisbati $E/E_0$ ni 60 va 15 FPS da solishtiring. Antigravity agentiga 3-bo‘limdagi promptni yuborib, uning o‘lchov natijalarini o‘zingiz takrorlab tekshiring.",
+      focus: "Fiedler akkumulyatori, qat’iy fizik qadam, Eyler–Kromer sxemasi, agent natijalarini tekshirish"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
-      plan: "Oddiy Eyler, Eyler-Kromer va velocity-Verlet sxemalarini bir xil $h$ da solishtirib, 60 s davomidagi energiya dreyfini grafikda ko'rsating. Akkumulyatorga $\\alpha = \\text{accumulator}/h$ bo'yicha interpolyatsiya qo'shing va 30 FPS da harakat silliqligini baholang. Kadr sikli ichida xotira ajratilmasligini DevTools «Memory» panelida isbotlang.",
+      title: 'Klaster "C" — Ilg‘or daraja',
+      plan: "Oddiy Eyler, Eyler–Kromer va velocity-Verlet sxemalarini bir xil $h$ da solishtirib, 60 s davomidagi energiya dreyfini grafikda ko‘rsating. Akkumulyatorga $\\alpha = \\text{accumulator}/h$ bo‘yicha interpolyatsiya qo‘shing va 30 FPS da harakat silliqligini baholang. Kadr sikli ichida xotira ajratilmasligini DevTools «Memory» panelida isbotlang.",
       focus: "integratorlar barqarorligi, energiya dreyfi, holatlar interpolyatsiyasi, zero-allocation sikl"
     }
   };
@@ -108,17 +112,17 @@
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-A, 2-B, 3-C, 4-B.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-A, 2-B, 3-C, 4-B.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz JavaScript va kompyuter fizikasi bo'yicha Sokratik ustozsiz. Men 7-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Siz JavaScript va kompyuter fizikasi bo‘yicha Sokratik ustozsiz. Men 7-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
-Vazifa: HTML5 Canvas'da requestAnimationFrame va delta-time asosida prujinali garmonik tebranish animatsiyasini yozish.
+Vazifa: HTML5 Canvas’da requestAnimationFrame va delta-time asosida prujinali garmonik tebranish animatsiyasini yozish.
 Iltimos:
-1. Tayyor kodni darhol bermang — avval men yozgan kod bo'lagini tahlil qilib, yo'naltiruvchi savollar bering.
-2. Mening kodimda FPS ga bog'liq joylarni topishimga yordam bering.
-3. Natijani tekshirishim uchun bitta o'lchanadigan test taklif qiling (masalan, 60 va 15 FPS da 5 soniyadagi siljish).`;
+1. Tayyor kodni darhol bermang — avval men yozgan kod bo‘lagini tahlil qilib, yo‘naltiruvchi savollar bering.
+2. Mening kodimda FPS ga bog‘liq joylarni topishimga yordam bering.
+3. Natijani tekshirishim uchun bitta o‘lchanadigan test taklif qiling (masalan, 60 va 15 FPS da 5 soniyadagi siljish).`;
     });
   }
 
@@ -148,7 +152,7 @@ Iltimos:
     const intervals = new Float32Array(HIST); // kadr oraliqlari, ms (qayta ishlatiladigan bufer)
     let histCount = 0, histHead = 0;
 
-    // Holat: asosiy (tanlangan rejim) va etalon (doimo real vaqt bo'yicha)
+    // Holat: asosiy (tanlangan rejim) va etalon (doimo real vaqt bo‘yicha)
     const sim = { x: 0, y: 0, vx: 0, vy: 0, acc: 0, t: 0 };
     const ref = { x: 0, y: 0, vx: 0, vy: 0, acc: 0, t: 0 };
     const trail = new Float32Array(2 * 60);
@@ -195,7 +199,7 @@ Iltimos:
     }
 
     function stepOsc(s, h) {
-      // Eyler-Kromer; "tezlik masshtabi" vaqtni tezlashtiradi
+      // Eyler–Kromer; "tezlik masshtabi" vaqtni tezlashtiradi
       const hh = h * speed();
       s.vx += -OSC_OMEGA * OSC_OMEGA * s.x * hh;
       s.x += s.vx * hh;
@@ -218,15 +222,15 @@ Iltimos:
       if (!prevRenderTs) { lastRendered = prevRenderTs = ts; return; }
       const thr = throttle();
       if (thr > 0) {
-        // Sun'iy FPS cheklovi. Monitor chastotasi maqsadga karrali bo'lmasa
+        // Sun’iy FPS cheklovi. Monitor chastotasi maqsadga karrali bo‘lmasa
         // (masalan 75 Hz yoki notekis kadrlar), "oxirgi kadrdan beri" usuli
-        // chastotani pastga suradi (30 o'rniga 20–25 FPS). Shu sababli keyingi
-        // kadr vaqti jadval bo'yicha (lastRendered += interval) hisoblanadi —
-        // o'rtacha chastota maqsadga teng bo'ladi.
+        // chastotani pastga suradi (30 o‘rniga 20–25 FPS). Shu sababli keyingi
+        // kadr vaqti jadval bo‘yicha (lastRendered += interval) hisoblanadi —
+        // o‘rtacha chastota maqsadga teng bo‘ladi.
         const interval = 1000 / thr;
         if (ts - lastRendered < interval - 4) return;
         lastRendered += interval;
-        if (ts - lastRendered > interval) lastRendered = ts; // uzoq to'xtashdan keyin qayta sinxronlash
+        if (ts - lastRendered > interval) lastRendered = ts; // uzoq to‘xtashdan keyin qayta sinxronlash
       } else {
         lastRendered = ts;
       }
@@ -238,14 +242,14 @@ Iltimos:
       intervals[histHead] = elapsedMs;
       histHead = (histHead + 1) % HIST;
       if (histCount < HIST) histCount++;
-      // FPS kadr oraliqlarining silliqlangan o'rtachasidan olinadi
-      // (alohida kadrlar FPS ini o'rtachalash natijani oshirib yuboradi)
+      // FPS kadr oraliqlarining silliqlangan o‘rtachasidan olinadi
+      // (alohida kadrlar FPS ini o‘rtachalash natijani oshirib yuboradi)
       msEma = msEma ? msEma * 0.9 + elapsedMs * 0.1 : elapsedMs;
       fpsEma = 1000 / Math.max(msEma, 1);
 
-      // Etalon: har doim haqiqiy o'tgan vaqt bo'yicha
+      // Etalon: har doim haqiqiy o‘tgan vaqt bo‘yicha
       advance(ref, frameTime);
-      // Asosiy jism: Delta-Time yoqilgan → real vaqt; o'chirilgan → har kadrda qat'iy 1/60 s
+      // Asosiy jism: Delta-Time yoqilgan → real vaqt; o‘chirilgan → har kadrda qat’iy 1/60 s
       advance(sim, dtOn() ? frameTime : FRAME_REF);
 
       if (mode() === 'ball') {
@@ -277,7 +281,7 @@ Iltimos:
       mctx.arc(ref.x, ref.y, BALL_R + 3, 0, Math.PI * 2);
       mctx.stroke();
       mctx.setLineDash([]);
-      // To'p
+      // To‘p
       mctx.fillStyle = '#38bdf8';
       mctx.beginPath();
       mctx.arc(sim.x, sim.y, BALL_R, 0, Math.PI * 2);
@@ -315,7 +319,7 @@ Iltimos:
       // Devor
       mctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
       mctx.fillRect(10, cy - 40, 14, 80);
-      // Muvozanat chizig'i
+      // Muvozanat chizig‘i
       mctx.strokeStyle = 'rgba(255,255,255,0.2)';
       mctx.lineWidth = 1;
       mctx.setLineDash([4, 4]);
@@ -342,23 +346,23 @@ Iltimos:
       mctx.fillStyle = '#e2e8f0';
       mctx.font = '12px monospace';
       mctx.textAlign = 'left';
-      mctx.fillText(`E/E0 = ${(E / E0).toFixed(4)}`, 12, 20);
+      mctx.fillText(`E/E₀ = ${uzFix((E / E0), 4)}`, 12, 20);
     }
 
     function draw() {
       mctx.clearRect(0, 0, W, Hc);
       if (mode() === 'ball') drawBall(); else drawOsc();
 
-      // Pastki ma'lumot qatori
+      // Pastki ma’lumot qatori
       mctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
       mctx.fillRect(0, Hc - 26, W, 26);
       mctx.font = '12px monospace';
       mctx.textAlign = 'left';
       mctx.fillStyle = '#10b981';
-      mctx.fillText(`Real vaqt: ${ref.t.toFixed(1)} s`, 8, Hc - 9);
+      mctx.fillText(`Real vaqt: ${uzFix(ref.t, 1)} s`, 8, Hc - 9);
       const lag = ref.t > 0 ? sim.t / ref.t : 1;
       mctx.fillStyle = Math.abs(lag - 1) < 0.02 ? '#38bdf8' : '#f43f5e';
-      mctx.fillText(`Fizik vaqt: ${sim.t.toFixed(1)} s (×${lag.toFixed(2)})`, 150, Hc - 9);
+      mctx.fillText(`Fizik vaqt: ${uzFix(sim.t, 1)} s (×${uzFix(lag, 2)})`, 150, Hc - 9);
       mctx.fillStyle = 'rgba(16, 185, 129, 0.9)';
       mctx.textAlign = 'right';
       mctx.fillText('┄ etalon', W - 8, Hc - 9);
@@ -373,7 +377,7 @@ Iltimos:
       const y = ms => padT + (h - padT - padB) * (1 - Math.min(ms, maxMs) / maxMs);
       fctx.clearRect(0, 0, w, h);
 
-      // Mo'ljal chiziqlari
+      // Mo‘ljal chiziqlari
       fctx.font = '11px monospace';
       fctx.textAlign = 'right';
       [[16.67, '60 FPS'], [33.33, '30 FPS'], [66.67, '15 FPS']].forEach(([ms, label]) => {
@@ -385,11 +389,11 @@ Iltimos:
         fctx.stroke();
         fctx.setLineDash([]);
         fctx.fillStyle = '#94a3b8';
-        fctx.fillText(ms.toFixed(1), padL - 4, y(ms) + 4);
+        fctx.fillText(uzFix(ms, 1), padL - 4, y(ms) + 4);
       });
       fctx.fillStyle = '#94a3b8';
       fctx.textAlign = 'left';
-      fctx.fillText('Kadr oralig\'i, ms (oxirgi 120 kadr)', padL, h - 7);
+      fctx.fillText('Kadr oralig‘i, ms (oxirgi 120 kadr)', padL, h - 7);
 
       if (!histCount) {
         fctx.fillStyle = '#64748b';
@@ -399,7 +403,7 @@ Iltimos:
         return;
       }
       const bw = (w - padL - padR) / HIST;
-      // Rang maqsadli kadr oralig'iga nisbatan: yashil — me'yorda,
+      // Rang maqsadli kadr oralig‘iga nisbatan: yashil — me’yorda,
       // sariq — 1,5 baravargacha kechikish, qizil — kadr tushib qolgan (Jank)
       const thr = throttle();
       const target = thr > 0 ? 1000 / thr : 1000 / 60;
@@ -421,7 +425,7 @@ Iltimos:
       fctx.fillStyle = 'rgba(9, 13, 22, 0.85)';
       fctx.fillRect(padL, 2, 250, 15);
       fctx.fillStyle = '#e2e8f0';
-      fctx.fillText(`O'rtacha: ${avgFps.toFixed(1)} FPS (${goal})`, padL + 4, 13);
+      fctx.fillText(`O‘rtacha: ${uzFix(avgFps, 1)} FPS (${goal})`, padL + 4, 13);
     }
 
     function drawScopeLabels() {
@@ -441,18 +445,18 @@ Iltimos:
 
     function updateHud() {
       const setT = (id, t) => { const el = hud(id); if (el) el.textContent = t; };
-      setT('fps', fpsEma ? `${fpsEma.toFixed(1)} FPS` : '— FPS');
-      setT('dt', lastDtMs ? `${lastDtMs.toFixed(2)} ms` : '— ms');
-      setT('mode', mode() === 'ball' ? "2D Elastik To'p" : 'Garmonik Ossilyator');
-      setT('speed', `${speed().toFixed(1)}x`);
+      setT('fps', fpsEma ? `${uzFix(fpsEma, 1)} FPS` : '— FPS');
+      setT('dt', lastDtMs ? `${uzFix(lastDtMs, 2)} ms` : '— ms');
+      setT('mode', mode() === 'ball' ? "2D elastik to‘p" : 'Garmonik ossilyator');
+      setT('speed', `${uzFix(speed(), 1)}×`);
       const st = hud('status');
       if (st) {
         if (dtOn()) {
-          st.textContent = "Barqaror (FPS ga bog'liq emas)";
+          st.textContent = "Barqaror (FPS ga bog‘liq emas)";
           st.style.color = '#10b981';
         } else {
           const ratio = lastDtMs ? (FRAME_REF * 1000) / lastDtMs : 1;
-          st.textContent = `FPS ga bog'liq: fizika real vaqtdan ×${ratio.toFixed(2)} tezlikda (xato!)`;
+          st.textContent = `FPS ga bog‘liq: fizika real vaqtdan ×${uzFix(ratio, 2)} tezlikda (xato!)`;
           st.style.color = Math.abs(ratio - 1) < 0.05 ? '#f59e0b' : '#f43f5e';
         }
       }
@@ -461,10 +465,10 @@ Iltimos:
     function updateDtLabel() {
       if (!chkLabel) return;
       if (dtOn()) {
-        chkLabel.textContent = "Delta-Time Integratsiyasi YOQILGAN (To'g'ri fizika)";
+        chkLabel.textContent = "Delta-time integratsiyasi YOQILGAN (to‘g‘ri fizika)";
         chkLabel.style.color = 'var(--accent-emerald)';
       } else {
-        chkLabel.textContent = "Delta-Time Integratsiyasi O'CHIRILGAN (Kadrga bog'liq fizika)";
+        chkLabel.textContent = "Delta-time integratsiyasi O‘CHIRILGAN (kadrga bog‘liq fizika)";
         chkLabel.style.color = '#f43f5e';
       }
     }
@@ -492,12 +496,12 @@ Iltimos:
     if (selMode) selMode.addEventListener('change', reset);
     if (selThr) selThr.addEventListener('change', () => { histCount = 0; histHead = 0; fpsEma = 0; msEma = 0; draw(); });
     if (slSpeed) slSpeed.addEventListener('input', () => {
-      if (vSpeed) vSpeed.textContent = `${speed().toFixed(1)}x`;
+      if (vSpeed) vSpeed.textContent = `${uzFix(speed(), 1)}×`;
       updateHud();
       if (!running) draw();
     });
     if (chkDt) chkDt.addEventListener('change', () => {
-      // Taqqoslash toza bo'lishi uchun ikkala holatni sinxronlaymiz
+      // Taqqoslash toza bo‘lishi uchun ikkala holatni sinxronlaymiz
       initState(sim); initState(ref);
       trailCount = 0; trailHead = 0;
       updateDtLabel();
@@ -511,7 +515,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 3. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 3. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const ids = ['rubric7_c1', 'rubric7_c2', 'rubric7_c3', 'rubric7_c4', 'rubric7_c5'];
@@ -526,9 +530,9 @@ Iltimos:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A'LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko'rib chiqing." };
-      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Delta-Time va akkumulyator integratsiyasini hamda FPS o'lchovlarini kuchaytiring." };
+      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
+      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
+      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Delta-Time va akkumulyator integratsiyasini hamda FPS o‘lchovlarini kuchaytiring." };
       else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }
       if (fbEl) fbEl.textContent = g.fb;

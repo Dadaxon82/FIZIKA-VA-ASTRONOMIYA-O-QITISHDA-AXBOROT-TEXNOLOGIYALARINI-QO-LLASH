@@ -1,3 +1,7 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * SIM-PENDULUM.JS - Nonlinear Damped Mathematical Pendulum with Phase Space & Energy Tracker
  * Solves: d2theta/dt2 + gamma*dtheta/dt + (g/L)*sin(theta) = 0 using RK4 + Substepping
@@ -274,9 +278,9 @@ class PendulumSimulation {
     const epBar = document.getElementById('pendulum-bar-ep');
     const etotEl = document.getElementById('pendulum-etot');
 
-    if (degEl) degEl.textContent = (this.theta * 180 / Math.PI).toFixed(1) + '°';
-    if (omegaEl) omegaEl.textContent = this.omega.toFixed(2) + ' rad/s';
-    if (etotEl) etotEl.textContent = Etot.toFixed(2) + ' J';
+    if (degEl) degEl.textContent = uzFix((this.theta * 180 / Math.PI), 1) + '°';
+    if (omegaEl) omegaEl.textContent = uzFix(this.omega, 2) + ' rad/s';
+    if (etotEl) etotEl.textContent = uzFix(Etot, 2) + ' J';
 
     const maxE = Math.max(0.1, this.mass * this.g * this.L * 2);
     if (ekBar) ekBar.style.width = Math.min(100, (Ek / maxE) * 100) + '%';

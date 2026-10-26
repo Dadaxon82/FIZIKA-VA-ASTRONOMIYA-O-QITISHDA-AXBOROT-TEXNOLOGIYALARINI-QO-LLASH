@@ -1,10 +1,14 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 4-Laboratoriya: kompyuter modelining hisoblash aniqligi (mayatnik).
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
  * 2. Jonli dastgoh: nochiziqli mayatnik θ'' = −(g/L)·sin θ ni Eyler,
- *    Eyler-Kromer yoki RK4 bilan yechadi. Etalon — o'sha tenglamaning juda
+ *    Eyler–Kromer yoki RK4 bilan yechadi. Etalon — o‘sha tenglamaning juda
  *    kichik qadamli (10⁻⁴ s) RK4 yechimi, shuning uchun katta burchaklarda
- *    ham xatolik faqat sonli usulning o'ziga tegishli bo'ladi.
+ *    ham xatolik faqat sonli usulning o‘ziga tegishli bo‘ladi.
  * 3. t = 5 s dagi 4 xil qadam uchun qiyosiy xatoliklar jadvali.
  * 4. 100 ballik rubrika kalkulyatori va promptlarni nusxalash.
  */
@@ -95,21 +99,21 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
+      title: 'Klaster "A" — Boshlang‘ich daraja',
       color: 'var(--accent-cyan)',
-      plan: "Avval mayatnik tenglamasini ikkita 1-tartibli tenglamaga ajratishni o'rganing (2-bo'lim). So'ng dastgohda faqat Eyler va Eyler-Kromer usullarini $\\Delta t = 0.05$ va $0.01$ s da solishtiring va xatolik qadamga qanday bog'liqligini jadvalga yozing.",
-      focus: "Eyler usuli, lokal va global xatolik farqi, integratsiya qadamining ta'siri"
+      plan: "Avval mayatnik tenglamasini ikkita 1-tartibli tenglamaga ajratishni o‘rganing (2-bo‘lim). So‘ng dastgohda faqat Eyler va Eyler–Kromer usullarini $\\Delta t = 0{,}05$ va $0{,}01$ s da solishtiring va xatolik qadamga qanday bog‘liqligini jadvalga yozing.",
+      focus: "Eyler usuli, lokal va global xatolik farqi, integratsiya qadamining ta’siri"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
       color: 'var(--accent-emerald)',
-      plan: "WolframAlpha'da analitik yechim va Taylor qatorini oling, 3-bo'limdagi Python skriptini ishga tushirib, log-log grafikdan Eyler va Eyler-Kromer uchun $p \\approx 1$ ekanini tasdiqlang. Dastgohda energiya dreyfini kuzating.",
+      plan: "WolframAlpha’da analitik yechim va Taylor qatorini oling, 3-bo‘limdagi Python skriptini ishga tushirib, log-log grafikdan Eyler va Eyler–Kromer uchun $p \\approx 1$ ekanini tasdiqlang. Dastgohda energiya dreyfini kuzating.",
       focus: "xatolik tartibi p, log-log konvergentsiya grafigi, energiya dreyfi va simplektik usullar"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
+      title: 'Klaster "C" — Ilg‘or daraja',
       color: 'var(--accent-purple)',
-      plan: "RK4 uchun $p \\approx 4$ ni isbotlang va nima uchun juda kichik $\\Delta t$ da xatolik mashina aniqligi darajasida to'xtashini tushuntiring. Katta burchak ($\\theta_0 = 0.8$ rad) uchun chiziqli analitik yechim nega etalon bo'la olmasligini dastgoh orqali ko'rsating.",
+      plan: "RK4 uchun $p \\approx 4$ ni isbotlang va nima uchun juda kichik $\\Delta t$ da xatolik mashina aniqligi darajasida to‘xtashini tushuntiring. Katta burchak ($\\theta_0 = 0.8$ rad) uchun chiziqli analitik yechim nega etalon bo‘la olmasligini dastgoh orqali ko‘rsating.",
       focus: "RK4 konvergentsiyasi, yaxlitlash xatoligi, chiziqli va nochiziqli model farqi, elliptik integral orqali davr"
     }
   };
@@ -144,19 +148,19 @@
       box.style.borderColor = c.color;
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to'g'ri)`;
+      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
       planEl.innerHTML = `<strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz hisoblash fizikasi bo'yicha Sokratik konsultantsiz. Men 4-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Siz hisoblash fizikasi bo‘yicha Sokratik konsultantsiz. Men 4-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
 Model: matematik mayatnik, L = 1.0 m, g = 9.8 m/s^2, theta0 = 0.2 rad.
 Iltimos:
-1. Tayyor javob bermang — xatolik tartibini o'zim aniqlashim uchun bosqichma-bosqich yo'naltiruvchi savollar bering.
-2. Men yozgan kodni tekshirishda WolframAlpha'da qaysi natija bilan solishtirishim kerakligini ayting.
-3. Mening darajamga mos bitta qo'shimcha tajriba taklif qiling.`;
+1. Tayyor javob bermang — xatolik tartibini o‘zim aniqlashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.
+2. Men yozgan kodni tekshirishda WolframAlpha’da qaysi natija bilan solishtirishim kerakligini ayting.
+3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.`;
     });
   }
 
@@ -186,7 +190,7 @@ Iltimos:
     };
     const tableBody = document.getElementById('lab4-error-table-body');
 
-    const T_WINDOW = 10; // grafikda ko'rsatiladigan vaqt oralig'i, s
+    const T_WINDOW = 10; // grafikda ko‘rsatiladigan vaqt oralig‘i, s
     let running = false;
     let sim, ref, history, simTime, wallTime, E0;
 
@@ -205,8 +209,8 @@ Iltimos:
 
     function advance(realDt) {
       const { dt, L, method } = P();
-      // Real vaqt yig'iladi va unga yetguncha sonli qadamlar bajariladi
-      // (Δt kadr vaqtidan katta bo'lsa ham simulyatsiya real tezlikda yuradi)
+      // Real vaqt yig‘iladi va unga yetguncha sonli qadamlar bajariladi
+      // (Δt kadr vaqtidan katta bo‘lsa ham simulyatsiya real tezlikda yuradi)
       wallTime += realDt;
       while (simTime + dt <= wallTime + 1e-12) {
         sim = step(method, sim, dt, L);
@@ -222,11 +226,11 @@ Iltimos:
     function updateReadout() {
       const { L } = P();
       const E = energy(sim, L);
-      out.t.textContent = simTime.toFixed(2) + ' s';
-      out.ex.textContent = ref.th.toFixed(4) + ' rad';
-      out.num.textContent = isFinite(sim.th) ? sim.th.toFixed(4) + ' rad' : '∞';
-      out.err.textContent = Math.abs(sim.th - ref.th).toExponential(2) + ' rad';
-      out.en.textContent = `${E.toFixed(3)} J (${E0 > 0 ? ((E / E0 - 1) * 100 >= 0 ? '+' : '') + ((E / E0 - 1) * 100).toFixed(2) : '0.00'}%)`;
+      out.t.textContent = uzFix(simTime, 2) + ' s';
+      out.ex.textContent = uzFix(ref.th, 4) + ' rad';
+      out.num.textContent = isFinite(sim.th) ? uzFix(sim.th, 4) + ' rad' : '∞';
+      out.err.textContent = uzExp(Math.abs(sim.th - ref.th), 2) + ' rad';
+      out.en.textContent = `${uzFix(E, 3)} J (${E0 > 0 ? ((E / E0 - 1) * 100 >= 0 ? '+' : '') + uzFix(((E / E0 - 1) * 100), 2) : '0,00'} %)`;
     }
 
     function resize(c) {
@@ -263,7 +267,7 @@ Iltimos:
       pctx.fillStyle = '#38BDF8'; pctx.fillText('● etalon', 8, H - 22);
       pctx.fillStyle = '#F43F5E'; pctx.fillText('● sonli', 8, H - 8);
 
-      // O'ng yarmi: fazaviy portret (θ, ω)
+      // O‘ng yarmi: fazaviy portret (θ, ω)
       const ox = half + 10, ow = W - ox - 8, oy = 10, oh = H - 26;
       const cx = ox + ow / 2, cy = oy + oh / 2;
       const thMax = th0 * 1.6, omMax = th0 * Math.sqrt(G / L) * 1.6;
@@ -283,7 +287,7 @@ Iltimos:
         i ? pctx.lineTo(mapX(th), mapY(om)) : pctx.moveTo(mapX(th), mapY(om));
       }
       pctx.closePath(); pctx.stroke(); pctx.setLineDash([]);
-      // Sonli trayektoriya (so'nggi nuqtalar)
+      // Sonli trayektoriya (so‘nggi nuqtalar)
       pctx.save();
       pctx.beginPath(); pctx.rect(ox, oy, ow, oh); pctx.clip();
       pctx.strokeStyle = '#F43F5E'; pctx.lineWidth = 1.5;
@@ -348,10 +352,10 @@ Iltimos:
       ectx.fillStyle = '#FBBF24'; ectx.fillText('|Δθ| (log)', padL + 4, by + 12);
       ectx.fillStyle = '#94A3B8';
       ectx.fillText('1', 22, Y2(1) + 4);
-      ectx.fillText('1e-5', 4, Y2(1e-5) + 4);
-      ectx.fillText('1e-10', 2, Y2(1e-10));
+      ectx.fillText('10⁻⁵', 4, Y2(1e-5) + 4);
+      ectx.fillText('10⁻¹⁰', 2, Y2(1e-10));
       ectx.textAlign = 'right';
-      ectx.fillText(`t = ${t0.toFixed(1)}…${(t0 + T_WINDOW).toFixed(1)} s`, W - padR, H - 4);
+      ectx.fillText(`t = ${uzFix(t0, 1)}…${uzFix((t0 + T_WINDOW), 1)} s`, W - padR, H - 4);
       ectx.textAlign = 'left';
     }
 
@@ -367,12 +371,12 @@ Iltimos:
         if (!isFinite(v)) return '<span style="color:#F43F5E;">∞ (portlash)</span>';
         const e = Math.abs(v - refTh);
         const color = e < 1e-4 ? '#34D399' : e < 1e-2 ? '#FBBF24' : '#F43F5E';
-        return `${v.toFixed(5)}<br><span style="color:${color}; font-size:0.8rem;">|Δθ| = ${e.toExponential(2)}</span>`;
+        return `${uzFix(v, 5)}<br><span style="color:${color}; font-size:0.8rem;">|Δθ| = ${uzExp(e, 2)}</span>`;
       };
       tableBody.innerHTML = [0.2, 0.1, 0.05, 0.01].map(dt => `
         <tr>
-          <td><strong>${dt} s</strong></td>
-          <td>${refTh.toFixed(5)}</td>
+          <td><strong>${String(dt).replace('.', ',')} s</strong></td>
+          <td>${uzFix(refTh, 5)}</td>
           <td>${fmt(integrate('euler', th0, L, dt, T))}</td>
           <td>${fmt(integrate('cromer', th0, L, dt, T))}</td>
           <td>${fmt(integrate('rk4', th0, L, dt, T))}</td>
@@ -381,9 +385,9 @@ Iltimos:
 
     function updateLabels() {
       const { dt, th0, L } = P();
-      vDt.textContent = dt.toFixed(3) + ' s';
-      vTh.textContent = `${th0.toFixed(2)} rad (${(th0 * 180 / Math.PI).toFixed(1)}°)`;
-      vL.textContent = L.toFixed(2) + ' m';
+      vDt.textContent = uzFix(dt, 3) + ' s';
+      vTh.textContent = `${uzFix(th0, 2)} rad (${uzFix((th0 * 180 / Math.PI), 1)}°)`;
+      vL.textContent = uzFix(L, 2) + ' m';
     }
 
     [slDt, slTh, slL, selMethod].forEach(el => el.addEventListener('input', () => {
@@ -422,7 +426,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 4. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 4. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const selects = document.querySelectorAll('.rubric4-select');
@@ -431,7 +435,7 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A'lo — 5)", cls: 'badge-emerald' };
+      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
       if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
       if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
       return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };

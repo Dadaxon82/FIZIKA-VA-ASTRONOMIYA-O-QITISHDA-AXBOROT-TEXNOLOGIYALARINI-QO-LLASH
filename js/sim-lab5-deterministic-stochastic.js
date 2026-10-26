@@ -1,13 +1,17 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 5-Laboratoriya: deterministik va stoxastik modellarni taqqoslash.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
  * 2. Chap dastgoh (deterministik): markaziy yulduz atrofida sayyora, Nyuton
- *    gravitatsiyasi, simplektik velocity-Verlet integratori. Boshlang'ich
+ *    gravitatsiyasi, simplektik velocity-Verlet integratori. Boshlang‘ich
  *    holat har safar bir xil — orbita aynan takrorlanadi.
- * 3. O'ng dastgoh (stoxastik tavsif): 2D idishdagi elastik to'qnashuvchi
- *    molekulalar va og'ir zarraning Broun harakati. Boshlang'ich tezliklar
+ * 3. O‘ng dastgoh (stoxastik tavsif): 2D idishdagi elastik to‘qnashuvchi
+ *    molekulalar va og‘ir zarraning Broun harakati. Boshlang‘ich tezliklar
  *    tasodifiy (2D Maksvell taqsimoti); gaz dastlab idishning chap qismida
- *    joylashadi, shuning uchun aralashish entropiyasining o'sishi ko'rinadi.
+ *    joylashadi, shuning uchun aralashish entropiyasining o‘sishi ko‘rinadi.
  * 4. 100 ballik rubrika kalkulyatori va promptlarni nusxalash.
  */
 
@@ -57,21 +61,21 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
+      title: 'Klaster "A" — Boshlang‘ich daraja',
       color: 'var(--accent-cyan)',
-      plan: "Avval 5-bo'limdagi dastgohda \"Qayta o'rnatish\" tugmasini bir necha marta bosib, orbita har safar aynan takrorlanishini, gaz esa har safar boshqacha boshlanishini kuzating. So'ng 2-bo'limdagi jadvalning 1–4-mezonlarini o'z so'zlaringiz bilan to'ldiring.",
-      focus: "deterministik va stoxastik model ta'rifi, takrorlanuvchanlik, kirish va chiqish parametrlari"
+      plan: "Avval 5-bo‘limdagi dastgohda \"Qayta o‘rnatish\" tugmasini bir necha marta bosib, orbita har safar aynan takrorlanishini, gaz esa har safar boshqacha boshlanishini kuzating. So‘ng 2-bo‘limdagi jadvalning 1–4-mezonlarini o‘z so‘zlaringiz bilan to‘ldiring.",
+      focus: "deterministik va stoxastik model ta’rifi, takrorlanuvchanlik, kirish va chiqish parametrlari"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
       color: 'var(--accent-emerald)',
-      plan: "PhET «Gravity and Orbits» da orbital tezlikni o'zgartirib aylanma, elliptik va ochiq trayektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting.",
+      plan: "PhET «Gravity and Orbits» da orbital tezlikni o‘zgartirib aylanma, elliptik va ochiq trayektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting.",
       focus: "Kepler orbitalari, Maksvell-Bolsman taqsimoti, bosim fluktuatsiyalari, 8 mezonli taqqoslash"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
+      title: 'Klaster "C" — Ilg‘or daraja',
       color: 'var(--accent-purple)',
-      plan: "Gaz modeli ichki jihatdan deterministik (Nyuton + elastik to'qnashuvlar) bo'lsa-da, nima uchun uni statistik tavsiflash zarurligini tushuntiring. Dastgohda Broun zarrasining $\\langle r^2 \\rangle$ ning vaqtga chiziqli o'sishini baholang va entropiya o'sishini qaytmaslik bilan bog'lang.",
+      plan: "Gaz modeli ichki jihatdan deterministik (Nyuton + elastik to‘qnashuvlar) bo‘lsa-da, nima uchun uni statistik tavsiflash zarurligini tushuntiring. Dastgohda Broun zarrasining $\\langle r^2 \\rangle$ ning vaqtga chiziqli o‘sishini baholang va entropiya o‘sishini qaytmaslik bilan bog‘lang.",
       focus: "mikroskopik determinizm va makroskopik statistika, ergodik gipoteza, Broun harakati (<r^2> = 4Dt), entropiya va qaytmaslik"
     }
   };
@@ -106,19 +110,19 @@
       box.style.borderColor = c.color;
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to'g'ri)`;
+      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
       planEl.innerHTML = `<strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-A, 2-C, 3-B, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-A, 2-C, 3-B, 4-C.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz fizikada kompyuterli modellashtirish bo'yicha Sokratik konsultantsiz. Men 5-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Siz fizikada kompyuterli modellashtirish bo‘yicha Sokratik konsultantsiz. Men 5-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
 Laboratoriya obyektlari: PhET «Gravity and Orbits» (deterministik) va «Gas Properties» (stoxastik tavsif).
 Iltimos:
-1. Tayyor jadval yoki xulosa bermang — ikkala modelni o'zim taqqoslashim uchun bosqichma-bosqich yo'naltiruvchi savollar bering.
-2. PhET'da qaysi o'lchovlarni olishim kerakligini ayting.
-3. Mening darajamga mos bitta qo'shimcha tajriba taklif qiling.`;
+1. Tayyor jadval yoki xulosa bermang — ikkala modelni o‘zim taqqoslashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.
+2. PhET’da qaysi o‘lchovlarni olishim kerakligini ayting.
+3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.`;
     });
   }
 
@@ -147,7 +151,7 @@ Iltimos:
 
     let running = false;
 
-    // ---------------- Deterministik model (o'lchamsiz birliklar) ----------
+    // ---------------- Deterministik model (o‘lchamsiz birliklar) ----------
     // r₀ = 1, GM = 2.8² → v₀ = 2.8 da aylanma orbita; v₀ ≥ 2.8·√2 ≈ 3.96 da ochiq orbita.
     const GM = 2.8 * 2.8;
     const R0 = 1.0;
@@ -166,7 +170,7 @@ Iltimos:
     }
 
     function stepDet(dt) {
-      // velocity-Verlet (simplektik, vaqt bo'yicha qaytaruvchan)
+      // velocity-Verlet (simplektik, vaqt bo‘yicha qaytaruvchan)
       const a1 = accelG(planet.x, planet.y);
       planet.x += planet.vx * dt + 0.5 * a1.ax * dt * dt;
       planet.y += planet.vy * dt + 0.5 * a1.ay * dt * dt;
@@ -203,7 +207,7 @@ Iltimos:
       trail.forEach((p, i) => { const x = cx + p.x * scale, y = cy - p.y * scale; i ? dctx.lineTo(x, y) : dctx.moveTo(x, y); });
       dctx.stroke();
 
-      // sayyora (radiusi massaga bog'liq — faqat ko'rinish uchun)
+      // sayyora (radiusi massaga bog‘liq — faqat ko‘rinish uchun)
       const m = parseFloat(slMass.value);
       const px = cx + planet.x * scale, py = cy - planet.y * scale;
       dctx.fillStyle = '#38BDF8';
@@ -214,9 +218,9 @@ Iltimos:
       dctx.beginPath(); dctx.moveTo(px, py); dctx.lineTo(px + planet.vx * 10, py - planet.vy * 10); dctx.stroke();
 
       dctx.fillStyle = '#94A3B8'; dctx.font = '11px ui-monospace, monospace';
-      dctx.fillText(`t = ${planet.t.toFixed(2)}`, 8, 16);
+      dctx.fillText(`t = ${uzFix(planet.t, 2)}`, 8, 16);
       const info = orbitInfo();
-      dctx.fillText(info.closed ? `yopiq orbita, a = ${info.a.toFixed(2)}` : 'ochiq orbita (E ≥ 0)', 8, 30);
+      dctx.fillText(info.closed ? `yopiq orbita, a = ${uzFix(info.a, 2)}` : 'ochiq orbita (E ≥ 0)', 8, 30);
     }
 
     // ---------------- Stoxastik tavsif: 2D gaz + Broun zarrasi -------------
@@ -292,7 +296,7 @@ Iltimos:
     }
 
     function setTemperature(Tnew) {
-      // Haroratni o'zgartirish — barcha tezliklarni √(T_yangi / T_joriy) ga masshtablash
+      // Haroratni o‘zgartirish — barcha tezliklarni √(T_yangi / T_joriy) ga masshtablash
       const s2 = gas.reduce((acc, p) => acc + p.vx * p.vx + p.vy * p.vy, 0) / (2 * gas.length);
       const target = sigmaSim(Tnew) ** 2;
       const k = s2 > 0 ? Math.sqrt(target / s2) : 1;
@@ -328,7 +332,7 @@ Iltimos:
       sctx.fillStyle = '#F43F5E';
       sctx.beginPath(); sctx.arc(big.x * sx, big.y * sy, R_BIG * sx, 0, Math.PI * 2); sctx.fill();
 
-      // Tezliklar gistogrammasi va 2D Maksvell (Reley) egri chizig'i
+      // Tezliklar gistogrammasi va 2D Maksvell (Reley) egri chizig‘i
       const T = parseFloat(slTemp.value), s = sigmaSim(T);
       const hx = W - 132, hy = H - 62, hw = 124, hh = 54, bins = 12, vmax = 4 * s;
       const counts = new Array(bins).fill(0);
@@ -352,19 +356,19 @@ Iltimos:
       }
       sctx.stroke();
       sctx.fillStyle = '#94A3B8'; sctx.font = '10px ui-monospace, monospace';
-      sctx.fillText('f(v): gist. vs Maksvell', hx - 2, hy - 4);
+      sctx.textAlign = 'right'; sctx.fillText('f(v) va Maksvell taqsimoti', hx + hw + 2, hy - 4); sctx.textAlign = 'left';
 
       const r2 = (big.x - bigStart.x) ** 2 + (big.y - bigStart.y) ** 2;
-      sctx.fillText(`t = ${stoTime.toFixed(1)} s   r² = ${r2.toFixed(0)} px²`, 8, 14);
+      sctx.fillText(`t = ${uzFix(stoTime, 1)} s   r² = ${uzFix(r2, 0)} px²`, 8, 14);
     }
 
     function updateReadouts() {
       const info = orbitInfo();
-      outPeriod.textContent = info.closed ? `${info.T.toFixed(2)} (o'lch. birl.)` : '∞ (ochiq orbita)';
-      outEnergy.textContent = `${info.E.toFixed(2)} (o'lch. birl.)`;
+      outPeriod.textContent = info.closed ? `${uzFix(info.T, 2)} (shartli birlik)` : '∞ (ochiq orbita)';
+      outEnergy.textContent = `${uzFix(info.E, 2)} (shartli birlik)`;
       const mean = gas.reduce((a, p) => a + Math.hypot(p.vx, p.vy), 0) / gas.length;
-      outSpeed.textContent = `${toMs(mean).toFixed(0)} m/s (N₂, 2D)`;
-      outEntropy.textContent = `${entropy().toFixed(2)} / ${Math.log(GRID_X * GRID_Y).toFixed(2)}`;
+      outSpeed.textContent = `${uzFix(toMs(mean), 0)} m/s (N₂, 2D)`;
+      outEntropy.textContent = `${uzFix(entropy(), 2)} / ${uzFix(Math.log(GRID_X * GRID_Y), 2)}`;
     }
 
     function resizeCanvas(c) {
@@ -386,8 +390,8 @@ Iltimos:
     }
 
     function updateLabels() {
-      vMass.textContent = parseFloat(slMass.value).toFixed(1) + ' M⊕';
-      vVel.textContent = parseFloat(slVel.value).toFixed(1);
+      vMass.innerHTML = uzFix(parseFloat(slMass.value), 1) + ' M<sub style="font-size: 0.6em;">⊕</sub>';
+      vVel.textContent = uzFix(parseFloat(slVel.value), 1);
       vTemp.textContent = slTemp.value + ' K';
       vCount.textContent = slCount.value + ' ta';
     }
@@ -423,7 +427,7 @@ Iltimos:
       resizeCanvas(detCanvas); resizeCanvas(stoCanvas);
       const w = stoCanvas.clientWidth || 460, h = Math.round(w * 260 / 460);
       if (Math.abs(w - oldW) > 1 && gas) {
-        // idish o'lchami o'zgarsa, zarralarni proporsional ko'chirish
+        // idish o‘lchami o‘zgarsa, zarralarni proporsional ko‘chirish
         const kx = w / oldW, ky = h / oldH;
         for (const p of gas.concat([big])) { p.x *= kx; p.y *= ky; }
         bigTrail = bigTrail.map(p => ({ x: p.x * kx, y: p.y * ky }));
@@ -442,7 +446,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 4. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 4. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const selects = document.querySelectorAll('.rubric5-select');
@@ -451,7 +455,7 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A'lo — 5)", cls: 'badge-emerald' };
+      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
       if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
       if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
       return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };

@@ -1,11 +1,15 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 2-Laboratoriya: LLM yordamida fizik jarayonning matematik modelini tuzish.
  * 1. Diagnostik test → A/B/C kognitiv klaster va shaxsiylashtirilgan prompt.
- * 2. So'nuvchi prujinali tebranish dastgohi (tab4'dagi Eyler-Kromer
+ * 2. So‘nuvchi prujinali tebranish dastgohi (tab4'dagi Eyler–Kromer
  *    blok-sxemasi bilan bir xil algoritm: avval v, keyin yangi v bilan x).
  * 3. Formulalar validatori: talaba kiritgan ω_d, β, T joriy slayder
  *    qiymatlaridan analitik hisoblangan qiymatlar bilan solishtiriladi
- *    (hisob brauzerda bajariladi; tashqi AI xizmatiga so'rov yuborilmaydi).
+ *    (hisob brauzerda bajariladi; tashqi AI xizmatiga so‘rov yuborilmaydi).
  * 4. 100 ballik rubrika kalkulyatori va promptlarni nusxalash tugmalari.
  */
 
@@ -55,25 +59,25 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
+      title: 'Klaster "A" — Boshlang‘ich daraja',
       color: 'var(--accent-cyan)',
       object: 'PhET "Pendulum Lab" (matematik mayatnik) yoki erkin tushish',
-      plan: "Nyutonning 2-qonuni va garmonik tebranish davri $T = 2\\pi\\sqrt{l/g}$ dan boshlang. Avval ishqalanishsiz holatda energiya saqlanishini kuzating, so'ngra oddiy va Eyler-Kromer algoritmlarini solishtiring.",
-      focus: "matematik mayatnik, kichik burchak yaqinlashuvi, T = 2*pi*sqrt(l/g), Eyler va Eyler-Kromer usullarining farqi"
+      plan: "Nyutonning 2-qonuni va garmonik tebranish davri $T = 2\\pi\\sqrt{l/g}$ dan boshlang. Avval ishqalanishsiz holatda energiya saqlanishini kuzating, so‘ngra oddiy va Eyler–Kromer algoritmlarini solishtiring.",
+      focus: "matematik mayatnik, kichik burchak yaqinlashuvi, T = 2*pi*sqrt(l/g), Eyler va Eyler–Kromer usullarining farqi"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
       color: 'var(--accent-emerald)',
-      object: 'PhET "Masses and Springs" (so\'nuvchi prujinali tebranish)',
-      plan: "So'nuvchi tebranish tenglamasi $m\\ddot{x} + b\\dot{x} + kx = 0$ ni tiklang, $\\beta = b/(2m)$ va $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ ni o'lchov natijalari bilan tasdiqlang. 5-bo'limdagi dastgohda o'z qiymatlaringizni validatorda tekshiring.",
-      focus: "so'nuvchi tebranish, beta = b/(2m), omega_d, amplitudaning eksponensial so'nishi, Eyler-Kromer algoritmi"
+      object: 'PhET "Masses and Springs" (so‘nuvchi prujinali tebranish)',
+      plan: "So‘nuvchi tebranish tenglamasi $m\\ddot{x} + b\\dot{x} + kx = 0$ ni tiklang, $\\beta = b/(2m)$ va $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ ni o‘lchov natijalari bilan tasdiqlang. 5-bo‘limdagi dastgohda o‘z qiymatlaringizni validatorda tekshiring.",
+      focus: "so‘nuvchi tebranish, beta = b/(2m), omega_d, amplitudaning eksponensial so‘nishi, Eyler–Kromer algoritmi"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
+      title: 'Klaster "C" — Ilg‘or daraja',
       color: 'var(--accent-purple)',
       object: 'PhET "Charges and Fields" yoki Vascak.cz Lorens kuchi / mass-spektrometr animatsiyasi',
-      plan: "Zaryadli zarrachaning $\\vec{F} = q\\vec{v} \\times \\vec{B}$ ta'siridagi harakatini tiklang, siklotron radiusi $r = mv/(qB)$ ni tekshiring va RK4 integratorini Eyler-Kromer bilan aniqlik bo'yicha solishtiring.",
-      focus: "Lorens kuchi, siklotron chastotasi omega_c = qB/m, 2D/3D trayektoriya, RK4 va Eyler-Kromer aniqligini solishtirish"
+      plan: "Zaryadli zarrachaning $\\vec{F} = q\\vec{v} \\times \\vec{B}$ ta’siridagi harakatini tiklang, siklotron radiusi $r = mv/(qB)$ ni tekshiring va RK4 integratorini Eyler–Kromer bilan aniqlik bo‘yicha solishtiring.",
+      focus: "Lorens kuchi, siklotron chastotasi omega_c = qB/m, 2D/3D trayektoriya, RK4 va Eyler–Kromer aniqligini solishtirish"
     }
   };
 
@@ -103,27 +107,27 @@
       const titleEl = document.getElementById('diag-cluster-val');
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      document.getElementById('diag-score-val').textContent = `${score} / 100 ball (${correct}/4 to'g'ri)`;
+      document.getElementById('diag-score-val').textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
 
       const wrong = Object.keys(DIAG_KEY).map((name, i) => answers[i].value === DIAG_KEY[name] ? null : i + 1).filter(Boolean);
       const planEl = document.getElementById('diag-plan-desc');
       planEl.innerHTML = `<strong>Tavsiya etilgan obyekt:</strong> ${c.object}.<br><strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar) mavzusi. To'g'ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar) mavzusi. To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       document.getElementById('diag-personalized-prompt').value =
-`Siz fizika bo'yicha Sokratik ilmiy konsultantsiz. Men 2-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Mening o'rganish obyektim: ${c.object}.
+`Siz fizika bo‘yicha Sokratik ilmiy konsultantsiz. Men 2-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+Mening o‘rganish obyektim: ${c.object}.
 Asosiy mavzular: ${c.focus}.
 Iltimos:
-1. Tayyor javob yoki formulani to'g'ridan-to'g'ri bermang.
-2. Simulyatsiyani teskari muhandislik qilishim uchun bosqichma-bosqich 3 ta yo'naltiruvchi savol bering.
-3. Men tiklagan formulani o'lchov birliklari va limit holatlar orqali o'zim tekshirishimga yordam bering.`;
+1. Tayyor javob yoki formulani to‘g‘ridan-to‘g‘ri bermang.
+2. Simulyatsiyani teskari muhandislik qilishim uchun bosqichma-bosqich 3 ta yo‘naltiruvchi savol bering.
+3. Men tiklagan formulani o‘lchov birliklari va limit holatlar orqali o‘zim tekshirishimga yordam bering.`;
     });
   }
 
   // -------------------------------------------------------------------------
-  // 2. SO'NUVCHI TEBRANISH DASTGOHI (Eyler-Kromer)
+  // 2. SO‘NUVCHI TEBRANISH DASTGOHI (Eyler–Kromer)
   // -------------------------------------------------------------------------
   function initOscillator() {
     const canvas = document.getElementById('rev-eng-canvas');
@@ -213,7 +217,8 @@ Iltimos:
       ctx.fillStyle = '#38BDF8';
       ctx.fillRect(bx - box / 2, floorY + 10 - box, box, box);
       ctx.fillStyle = '#0b1120'; ctx.font = 'bold 12px ui-monospace, monospace';
-      ctx.fillText(`${m.toFixed(1)} kg`, bx, floorY + 10 - box / 2 + 4);
+      ctx.font = 'bold 11px ui-monospace, monospace';
+      ctx.fillText(`${uzFix(m, Number.isInteger(m) ? 0 : 1)} kg`, bx, floorY + 10 - box / 2 + 4);
 
       // Tezlik vektori
       if (Math.abs(state.v) > 0.01) {
@@ -227,11 +232,11 @@ Iltimos:
       // Parametrlar
       const beta = b / (2 * m), w0 = Math.sqrt(k / m);
       ctx.textAlign = 'left'; ctx.fillStyle = '#CBD5E1'; ctx.font = '11px ui-monospace, monospace';
-      ctx.fillText(`ω₀ = √(k/m) = ${w0.toFixed(3)} rad/s`, 12, 18);
-      ctx.fillText(`β = b/(2m) = ${beta.toFixed(3)} s⁻¹`, 12, 34);
-      ctx.fillText(beta < w0 ? 'Rejim: so\'nuvchi tebranish (β < ω₀)' : beta === w0 ? 'Rejim: kritik so\'nish' : 'Rejim: aperiodik (β > ω₀)', 12, 50);
+      ctx.fillText(`ω₀ = √(k/m) = ${uzFix(w0, 3)} rad/s`, 12, 18);
+      ctx.fillText(`β = b/(2m) = ${uzFix(beta, 3)} s⁻¹`, 12, 34);
+      ctx.fillText(beta < w0 ? 'Rejim: so‘nuvchi tebranish (β < ω₀)' : beta === w0 ? 'Rejim: kritik so‘nish' : 'Rejim: aperiodik (β > ω₀)', 12, 50);
 
-      // O'ng panel: x(t) va v(t) grafiklari
+      // O‘ng panel: x(t) va v(t) grafiklari
       const gx = leftW + 30, gw = W - gx - 14, gy = 14, gh = H - 40;
       ctx.strokeStyle = 'rgba(148,163,184,0.2)'; ctx.lineWidth = 1;
       ctx.strokeRect(gx, gy, gw, gh);
@@ -242,7 +247,7 @@ Iltimos:
       const vMax = Math.max(X0 * w0, 0.1);
       const px = t => gx + ((t - t0) / HISTORY) * gw;
 
-      // Nazariy o'rovchi ±x0·e^(−βt)
+      // Nazariy o‘rovchi ±x0·e^(−βt)
       ctx.strokeStyle = 'rgba(251,191,36,0.35)'; ctx.setLineDash([4, 4]);
       [1, -1].forEach(sgn => {
         ctx.beginPath();
@@ -271,18 +276,18 @@ Iltimos:
       ctx.fillStyle = '#34D399'; ctx.fillText('v(t), m/s', gx + 70, gy + 14);
       ctx.fillStyle = 'rgba(251,191,36,0.7)'; ctx.fillText('±x₀e^(−βt)', gx + 150, gy + 14);
       ctx.fillStyle = '#94A3B8'; ctx.textAlign = 'right';
-      ctx.fillText(`t = ${t0.toFixed(1)} … ${(t0 + HISTORY).toFixed(1)} s`, gx + gw - 6, gy + gh + 16);
+      ctx.fillText(`t = ${uzFix(t0, 1)} … ${uzFix((t0 + HISTORY), 1)} s`, gx + gw - 6, gy + gh + 16);
       ctx.textAlign = 'left';
 
       // Telemetriya
       const ek = 0.5 * m * state.v * state.v, ep = 0.5 * k * state.x * state.x;
-      const sign = v => (v >= 0 ? '+' : '') + v.toFixed(3);
-      tel.t.textContent = state.t.toFixed(2) + ' s';
+      const sign = v => (v >= 0 ? '+' : '') + uzFix(v, 3);
+      tel.t.textContent = uzFix(state.t, 2) + ' s';
       tel.x.textContent = sign(state.x) + ' m';
       tel.v.textContent = sign(state.v) + ' m/s';
-      tel.ek.textContent = ek.toFixed(3) + ' J';
-      tel.ep.textContent = ep.toFixed(3) + ' J';
-      tel.et.textContent = (ek + ep).toFixed(3) + ' J';
+      tel.ek.textContent = uzFix(ek, 3) + ' J';
+      tel.ep.textContent = uzFix(ep, 3) + ' J';
+      tel.et.textContent = uzFix((ek + ep), 3) + ' J';
     }
 
     let last = performance.now();
@@ -300,15 +305,15 @@ Iltimos:
     }
 
     function updateLabels() {
-      valM.textContent = parseFloat(slM.value).toFixed(1) + ' kg';
-      valK.textContent = parseFloat(slK.value).toFixed(1) + ' N/m';
-      valB.textContent = parseFloat(slB.value).toFixed(2) + ' kg/s';
+      valM.textContent = uzFix(parseFloat(slM.value), 1) + ' kg';
+      valK.textContent = uzFix(parseFloat(slK.value), 1) + ' N/m';
+      valB.textContent = uzFix(parseFloat(slB.value), 2) + ' kg/s';
     }
 
     [slM, slK, slB].forEach(sl => sl.addEventListener('input', () => { updateLabels(); reset(); }));
     btnPlay.addEventListener('click', () => {
       running = !running;
-      btnPlay.textContent = running ? "⏸️ To'xtatish" : '▶️ Davom Etish';
+      btnPlay.textContent = running ? "⏸️ To‘xtatish" : '▶️ Davom etish';
     });
     btnReset.addEventListener('click', reset);
 
@@ -331,12 +336,12 @@ Iltimos:
     const out = document.getElementById('claude-verify-feedback');
 
     btn.addEventListener('click', () => {
-      const m = parseFloat(document.getElementById('sim-mass').value);
-      const k = parseFloat(document.getElementById('sim-spring').value);
-      const b = parseFloat(document.getElementById('sim-damping').value);
-      const sw = parseFloat(document.getElementById('input-student-omega').value);
-      const sb = parseFloat(document.getElementById('input-student-beta').value);
-      const sT = parseFloat(document.getElementById('input-student-period').value);
+      const m = parseFloat(String(document.getElementById('sim-mass').value).replace(',', '.'));
+      const k = parseFloat(String(document.getElementById('sim-spring').value).replace(',', '.'));
+      const b = parseFloat(String(document.getElementById('sim-damping').value).replace(',', '.'));
+      const sw = parseFloat(String(document.getElementById('input-student-omega').value).replace(',', '.'));
+      const sb = parseFloat(String(document.getElementById('input-student-beta').value).replace(',', '.'));
+      const sT = parseFloat(String(document.getElementById('input-student-period').value).replace(',', '.'));
 
       const w0 = Math.sqrt(k / m), beta = b / (2 * m);
       const underdamped = beta < w0;
@@ -358,14 +363,14 @@ Iltimos:
       const eb = err(sb, beta);
       rows.push(row('β', sb, beta, 's⁻¹', eb, TOL));
       if (eb > TOL) {
-        if (Math.abs(sb - b / m) / (b / m || 1) * 100 < TOL) hints.push("β uchun $b/m$ ni topdingiz. Tenglamani $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$ ko'rinishiga keltiring: $\\dot{x}$ oldidagi koeffitsiyent $b/m$ ga teng bo'lsa, $\\beta$ nimaga teng bo'ladi?");
-        else hints.push("$\\beta$ ning o'lchov birligi s⁻¹. $b$ (kg/s) va $m$ (kg) dan qanday kombinatsiya s⁻¹ beradi? Ko'paytuvchi 2 qayerdan kelishini o'ylab ko'ring.");
+        if (Math.abs(sb - b / m) / (b / m || 1) * 100 < TOL) hints.push("β uchun $b/m$ ni topdingiz. Tenglamani $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$ ko‘rinishiga keltiring: $\\dot{x}$ oldidagi koeffitsiyent $b/m$ ga teng bo‘lsa, $\\beta$ nimaga teng bo‘ladi?");
+        else hints.push("$\\beta$ ning o‘lchov birligi s⁻¹. $b$ (kg/s) va $m$ (kg) dan qanday kombinatsiya s⁻¹ beradi? Ko‘paytuvchi 2 qayerdan kelishini o‘ylab ko‘ring.");
       }
 
       if (!underdamped) {
         out.innerHTML = box('#F59E0B',
-          `Joriy parametrlarda $\\beta = ${beta.toFixed(3)} \\ge \\omega_0 = ${w0.toFixed(3)}$ — tizim tebranmaydi (kritik yoki aperiodik so'nish), shuning uchun $\\omega_d$ va $T$ mavjud emas. ` +
-          `Nega $\\omega_0^2 - \\beta^2 < 0$ bo'lganda ildiz haqiqiy son bo'lmasligini tushuntirib bering va $b$ ni kamaytirib qayta urinib ko'ring.`);
+          `Joriy parametrlarda $\\beta = ${uzTex(beta, 3)} \\ge \\omega_0 = ${uzTex(w0, 3)}$ — tizim tebranmaydi (kritik yoki aperiodik so‘nish), shuning uchun $\\omega_d$ va $T$ mavjud emas. ` +
+          `Nega $\\omega_0^2 - \\beta^2 < 0$ bo‘lganda ildiz haqiqiy son bo‘lmasligini tushuntirib bering va $b$ ni kamaytirib qayta urinib ko‘ring.`);
         renderMath(out);
         return;
       }
@@ -374,7 +379,7 @@ Iltimos:
       const ew = err(sw, wd);
       rows.push(row('ω_d', sw, wd, 'rad/s', ew, TOL));
       if (ew > TOL) {
-        if (err(sw, w0) < 0.5 && err(w0, wd) > 0.5) hints.push("Siz $\\omega_0 = \\sqrt{k/m}$ ni kiritdingiz. So'nish tebranish chastotasiga qanday ta'sir qiladi? $b \\to 0$ limitida sizning formulangiz nimaga aylanishi kerak?");
+        if (err(sw, w0) < 0.5 && err(w0, wd) > 0.5) hints.push("Siz $\\omega_0 = \\sqrt{k/m}$ ni kiritdingiz. So‘nish tebranish chastotasiga qanday ta’sir qiladi? $b \\to 0$ limitida sizning formulangiz nimaga aylanishi kerak?");
         else hints.push("$\\omega_d$ ni $\\omega_0$ va $\\beta$ orqali ifodalang. $b$ ortganda tebranish tezlashadimi yoki sekinlashadimi — dastgohda tekshiring.");
       }
 
@@ -382,22 +387,22 @@ Iltimos:
       const eT = err(sT, T);
       rows.push(row('T', sT, T, 's', eT, TOL));
       if (eT > TOL) {
-        if (Math.abs(sT - 1 / wd) / (1 / wd) * 100 < TOL) hints.push("$T = 1/\\omega_d$ deb oldingiz. Siklik chastota (rad/s) va davr (s) orasidagi bog'liqlikda $2\\pi$ qayerdan keladi?");
-        else hints.push("Grafikda ketma-ket ikki maksimum orasidagi vaqtni o'lchang va uni $2\\pi/\\omega_d$ bilan solishtiring.");
+        if (Math.abs(sT - 1 / wd) / (1 / wd) * 100 < TOL) hints.push("$T = 1/\\omega_d$ deb oldingiz. Siklik chastota (rad/s) va davr (s) orasidagi bog‘liqlikda $2\\pi$ qayerdan keladi?");
+        else hints.push("Grafikda ketma-ket ikki maksimum orasidagi vaqtni o‘lchang va uni $2\\pi/\\omega_d$ bilan solishtiring.");
       }
 
       const allOk = rows.every(r => r.ok);
       out.innerHTML = box(allOk ? '#34D399' : '#F87171',
-        `<strong>${allOk ? "✅ Barcha formulalar tasdiqlandi!" : "🔍 Ba'zi qiymatlarni qayta ko'rib chiqing"}</strong>
-         <span style="font-size:0.8rem; color: var(--text-muted);"> (m = ${m} kg, k = ${k} N/m, b = ${b} kg/s; ruxsat etilgan xatolik ${TOL}%)</span>
+        `<strong>${allOk ? "✅ Barcha formulalar tasdiqlandi!" : "🔍 Ba’zi qiymatlarni qayta ko‘rib chiqing"}</strong>
+         <span style="font-size:0.8rem; color: var(--text-muted);"> (m = ${uzFix(m, 1)} kg, k = ${uzFix(k, 1)} N/m, b = ${uzFix(b, 2)} kg/s; ruxsat etilgan xatolik ${TOL} %)</span>
          <table style="width:100%; margin: 10px 0; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.85rem;">
            <tr style="color: var(--text-muted);"><td>Kattalik</td><td>Sizniki</td><td>Nazariy</td><td>Xatolik ε</td><td></td></tr>
            ${rows.map(r => r.html).join('')}
          </table>
          ${allOk
-          ? "Sokratik savol: agar massani 4 marta oshirsangiz, $\\beta$ va $\\omega_0$ qanday o'zgaradi? Avval bashorat qiling, so'ng slayder bilan tekshiring."
-          : '<strong>Yo\'naltiruvchi savollar:</strong><ul style="margin: 6px 0 0 18px;">' + hints.map(h => `<li>${h}</li>`).join('') + '</ul>'}
-         <div style="margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);">Eslatma: tekshiruv brauzerda analitik formulalar asosida bajariladi. Chuqurroq muhokama uchun 3-bo'limdagi promptni Claude'ga yuboring.</div>`);
+          ? "Sokratik savol: agar massani 4 marta oshirsangiz, $\\beta$ va $\\omega_0$ qanday o‘zgaradi? Avval bashorat qiling, so‘ng slayder bilan tekshiring."
+          : '<strong>Yo‘naltiruvchi savollar:</strong><ul style="margin: 6px 0 0 18px;">' + hints.map(h => `<li>${h}</li>`).join('') + '</ul>'}
+         <div style="margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);">Eslatma: tekshiruv brauzerda analitik formulalar asosida bajariladi. Chuqurroq muhokama uchun 3-bo‘limdagi promptni Claude’ga yuboring.</div>`);
       renderMath(out);
     });
 
@@ -405,7 +410,7 @@ Iltimos:
       const ok = e <= tol;
       return {
         ok,
-        html: `<tr><td>${name}</td><td>${s.toFixed(3)} ${unit}</td><td>${t.toFixed(3)} ${unit}</td><td>${e.toFixed(2)}%</td><td>${ok ? '✅' : '❌'}</td></tr>`
+        html: `<tr><td>${name}</td><td>${uzFix(s, 3)} ${unit}</td><td>${uzFix(t, 3)} ${unit}</td><td>${uzFix(e, 2)}%</td><td>${ok ? '✅' : '❌'}</td></tr>`
       };
     }
 
@@ -415,7 +420,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 4. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 4. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const selects = document.querySelectorAll('.rubric-select');
@@ -424,7 +429,7 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A'lo — 5)", cls: 'badge-emerald' };
+      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
       if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
       if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
       return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };
