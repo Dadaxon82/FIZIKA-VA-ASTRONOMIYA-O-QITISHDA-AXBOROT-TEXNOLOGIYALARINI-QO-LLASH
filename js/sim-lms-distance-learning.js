@@ -1,11 +1,15 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 11, Tab 6: Interaktiv Masofaviy LMS & Portfolio Sandbox Laboratoriyasi.
- * Ikki mavzu (so'nuvchi tebranish va Kepler orbitasi) real fizik hisob-kitob
- * bilan simulyatsiya qilinadi: birinchisi Eyler-Kromer simplektik integratori
+ * Ikki mavzu (so‘nuvchi tebranish va Kepler orbitasi) real fizik hisob-kitob
+ * bilan simulyatsiya qilinadi: birinchisi Eyler–Kromer simplektik integratori
  * (js/physics-engine.js), ikkinchisi yopiq shakldagi analitik Kepler yechimi
  * orqali (integratsion xatoliksiz). Kognitiv kompetensiyalar radari va
- * "Google Antigravity AI auditi" real o'lchangan FPS va energiya
- * ko'rsatkichlaridan foydalanadi.
+ * "Google Antigravity auditi" real o‘lchangan FPS va energiya
+ * ko‘rsatkichlaridan foydalanadi.
  */
 document.addEventListener('DOMContentLoaded', () => {
   initLmsDistanceLab();
@@ -50,58 +54,58 @@ function initLmsDistanceLab() {
   // ---------------------------------------------------------------------
   const TOPICS = {
     oscillator: {
-      simTitle: '🎮 LMS Ichki Simulyatsiya Moduli (Prujinali Tebranish):',
+      simTitle: '🎮 LMS ichidagi simulyatsiya moduli (prujinali tebranish):',
       theoryTitle: '📐 Tebranish Dinamikasi Nazariy Asosi:',
-      theoryHtml: "Harakat tenglamasi: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$, bu yerda so'nish koeffitsiyenti $\\beta = \\frac{\\gamma}{2m}$, xos burchak chastotasi $\\omega_0 = \\sqrt{\\frac{k}{m}}$, to'liq mexanik energiya $E(t) = \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2$, energiyaning kamayish tezligi $\\frac{dE}{dt} = -\\gamma v^2 \\le 0$.",
-      transcriptTitle: "🎙️ Garmonik Tebranishlar va So'nuvchi Dinamika",
-      transcript: "\"Hurmatli magistrantlar, bugungi ma'ruzamizda so'nuvchi garmonik tebranishlarning differensial tenglamasini tahlil qilamiz: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Eyler usulida energiya sun'iy ortishi sababli, biz simplektik Eyler-Kromer yoki Runge-Kutta usulini qo'llaymiz.\"",
-      summaryHtml: "1. Asosiy tenglama: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$.<br>2. So'nish koeffitsiyenti: $$\\beta = \\gamma / (2m)$$, xos chastota: $$\\omega_0 = \\sqrt{k/m}$$.<br>3. Tavsiya: Eyler o'rniga simplektik integrator qo'llash.",
+      theoryHtml: "Harakat tenglamasi: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$, bu yerda so‘nish koeffitsiyenti $\\beta = \\frac{\\gamma}{2m}$, xos burchak chastotasi $\\omega_0 = \\sqrt{\\frac{k}{m}}$, to‘liq mexanik energiya $E(t) = \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2$, energiyaning kamayish tezligi $\\frac{dE}{dt} = -\\gamma v^2 \\le 0$.",
+      transcriptTitle: "🎙️ Garmonik Tebranishlar va So‘nuvchi Dinamika",
+      transcript: "\"Hurmatli magistrantlar, bugungi ma’ruzamizda so‘nuvchi garmonik tebranishlarning differensial tenglamasini tahlil qilamiz: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Eyler usulida energiya sun’iy ortishi sababli, biz simplektik Eyler–Kromer yoki Runge–Kutta usulini qo‘llaymiz.\"",
+      summaryHtml: "1. Asosiy tenglama: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$.<br>2. So‘nish koeffitsiyenti: $$\\beta = \\gamma / (2m)$$, xos chastota: $$\\omega_0 = \\sqrt{k/m}$$.<br>3. Tavsiya: Eyler o‘rniga simplektik integrator qo‘llash.",
       actions: [
-        "1. Prujina qattiqligi $k$ va so'nish parametri $\\gamma$ ni o'zgartirib faza portretini chizish.",
+        "1. Prujina qattiqligi $k$ va so‘nish parametri $\\gamma$ ni o‘zgartirib faza portretini chizish.",
         "2. Kichik tebranishlar uchun energiyaning eksponensial kamayish grafigini tekshirish.",
         "3. Shaxsiy loyiha kodini GitHub Pages portfeliga yuklash."
       ],
       sliders: {
-        mass: { label: 'Massa ($m$):', min: 0.5, max: 3.0, step: 0.1, value: 1.0, fmt: v => v.toFixed(1) + ' kg' },
-        k:    { label: 'Qattiqlik ($k$):', min: 5.0, max: 40.0, step: 1.0, value: 15.0, fmt: v => v.toFixed(1) + ' N/m' },
-        damp: { label: "So'nish ($\\gamma$):", min: 0.0, max: 0.8, step: 0.02, value: 0.15, fmt: v => v.toFixed(2) }
+        mass: { label: 'Massa ($m$):', min: 0.5, max: 3.0, step: 0.1, value: 1.0, fmt: v => uzFix(v, 1) + ' kg' },
+        k:    { label: 'Bikrlik ($k$):', min: 5.0, max: 40.0, step: 1.0, value: 15.0, fmt: v => uzFix(v, 1) + ' N/m' },
+        damp: { label: "So‘nish ($\\gamma$):", min: 0.0, max: 0.8, step: 0.02, value: 0.15, fmt: v => uzFix(v, 2) }
       }
     },
     kepler: {
-      simTitle: '🎮 LMS Ichki Simulyatsiya Moduli (Kepler Orbitasi):',
+      simTitle: '🎮 LMS ichidagi simulyatsiya moduli (Kepler orbitasi):',
       theoryTitle: '📐 Kepler Orbital Harakati Nazariy Asosi:',
-      theoryHtml: "Vis-Viva tenglamasi: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, bu yerda katta yarim o'q $a$ ellipsning o'lchamini, ekssentrisitet $e$ shaklini belgilaydi. Kepler 3-qonuniga ko'ra aylanish davri $T^2 \\propto a^3$, maydonlar tezligi esa Kepler 2-qonuniga ko'ra doimiy: $\\frac{dA}{dt} = \\text{const}$.",
+      theoryHtml: "Vis-Viva tenglamasi: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, bu yerda katta yarim o‘q $a$ ellipsning o‘lchamini, ekssentrisitet $e$ shaklini belgilaydi. Kepler 3-qonuniga ko‘ra aylanish davri $T^2 \\propto a^3$, maydonlar tezligi esa Kepler 2-qonuniga ko‘ra doimiy: $\\frac{dA}{dt} = \\text{const}$.",
       transcriptTitle: '🎙️ Kepler Orbital Harakati va Vis-Viva Tezlik Tenglamasi',
-      transcript: "\"Bugungi mavzumiz — Kepler qonunlari asosida sayyoraning orbital harakati. Vis-Viva tenglamasi orqali istalgan masofadagi orbital tezlikni hisoblaymiz: v^2 = GM*(2/r - 1/a), bu yerda a — katta yarim o'q, e — ekssentrisitet ellipsning shaklini belgilaydi. Yopiq analitik yechim raqamli integratsiyadan farqli o'laroq energiya dreyfiga ega emas.\"",
+      transcript: "\"Bugungi mavzumiz — Kepler qonunlari asosida sayyoraning orbital harakati. Vis-Viva tenglamasi orqali istalgan masofadagi orbital tezlikni hisoblaymiz: v^2 = GM*(2/r - 1/a), bu yerda a — katta yarim o‘q, e — ekssentrisitet ellipsning shaklini belgilaydi. Yopiq analitik yechim raqamli integratsiyadan farqli o‘laroq energiya dreyfiga ega emas.\"",
       summaryHtml: "1. Vis-Viva tenglamasi: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$.<br>2. Kepler 3-qonuni: $$T^2 \\propto a^3$$.<br>3. Tavsiya: Yopiq analitik yechim numerik integratsiyadan ustun (energiya dreyfi nolga teng).",
       actions: [
         "1. Ekssentrisitet $e$ ni oshirib, perigeliy va afeliydagi tezlik farqini kuzatish.",
-        "2. Katta yarim o'q $a$ ni o'zgartirib, aylanish davri $T$ ning o'zgarishini tekshirish (Kepler 3-qonuni).",
-        "3. Orbital energiya invariantligini raqamli hisoblab, shaxsiy portfolioga qo'shish."
+        "2. Katta yarim o‘q $a$ ni o‘zgartirib, aylanish davri $T$ ning o‘zgarishini tekshirish (Kepler 3-qonuni).",
+        "3. Orbital energiya invariantligini raqamli hisoblab, shaxsiy portfolioga qo‘shish."
       ],
       sliders: {
-        mass: { label: "Katta yarim o'q ($a$):", min: 0.4, max: 2.5, step: 0.05, value: 1.0, fmt: v => v.toFixed(2) + ' AU' },
-        k:    { label: 'Ekssentrisitet ($e$):', min: 0.0, max: 0.85, step: 0.01, value: 0.15, fmt: v => v.toFixed(2) },
-        damp: { label: 'Vaqt Masshtabi:', min: 0.2, max: 3.0, step: 0.1, value: 1.0, fmt: v => v.toFixed(1) + 'x' }
+        mass: { label: "Katta yarim o‘q ($a$):", min: 0.4, max: 2.5, step: 0.05, value: 1.0, fmt: v => uzFix(v, 2) + ' AU' },
+        k:    { label: 'Ekssentrisitet ($e$):', min: 0.0, max: 0.85, step: 0.01, value: 0.15, fmt: v => uzFix(v, 2) },
+        damp: { label: 'Vaqt masshtabi:', min: 0.2, max: 3.0, step: 0.1, value: 1.0, fmt: v => uzFix(v, 1) + '×' }
       }
     }
   };
 
   const CLUSTERS = {
     'cluster-a': {
-      desc: "<strong>Klaster A (Boshlang'ich):</strong> Qadamli ko'rsatmalar (Scaffolding), sodda 1D vizual modellar va kundalik mustahkamlash mikromodullari.",
+      desc: "<strong>Klaster A (Boshlang‘ich):</strong> Qadamli ko‘rsatmalar (Scaffolding), sodda 1D vizual modellar va kundalik mustahkamlash mikromodullari.",
       radar: [45, 30, 25, 50, 20]
     },
     'cluster-b': {
-      desc: "<strong>Klaster B (Amaliyotchi):</strong> Eyler-Kromer algoritmi, so'nuvchi dinamika va interaktiv topshiriqlar banki.",
+      desc: "<strong>Klaster B (Amaliyotchi):</strong> Eyler–Kromer algoritmi, so‘nuvchi dinamika va interaktiv topshiriqlar banki.",
       radar: [70, 68, 62, 65, 55]
     },
     'cluster-c': {
-      desc: "<strong>Klaster C (Tadqiqotchi):</strong> Ko'p jismli simulyatsiyalar, 3D WebGL render va Google Antigravity avtomatlashtirilgan audit.",
+      desc: "<strong>Klaster C (Tadqiqotchi):</strong> Ko‘p jismli simulyatsiyalar, 3D WebGL render va Google Antigravity avtomatlashtirilgan audit.",
       radar: [88, 85, 90, 80, 92]
     }
   };
-  const RADAR_AXES = ['Nazariya', 'Dasturlash', 'Sonli Metod', 'Prompt', 'Portfolio'];
+  const RADAR_AXES = ['Nazariya', 'Dasturlash', 'Sonli metod', 'Prompt', 'Portfolio'];
   const MU = 4 * Math.PI * Math.PI; // AU-yil-Quyosh massasi birligida (G' = 4*pi^2)
 
   let currentTopic = 'oscillator';
@@ -229,7 +233,7 @@ function initLmsDistanceLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(`x = ${osc.x.toFixed(3)} m   v = ${osc.v.toFixed(3)} m/s`, 10, 18);
+    ctx.fillText(`x = ${uzFix(osc.x, 3)} m   v = ${uzFix(osc.v, 3)} m/s`, 10, 18);
   }
 
   function drawKepler(ctx, w, h) {
@@ -266,7 +270,7 @@ function initLmsDistanceLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(`r = ${r.toFixed(3)} AU   v = ${v.toFixed(2)} AU/yil`, 10, 18);
+    ctx.fillText(`r = ${uzFix(r, 3)} AU   v = ${uzFix(v, 2)} AU/yil`, 10, 18);
   }
 
   // ---------------------------------------------------------------------
@@ -446,7 +450,7 @@ function initLmsDistanceLab() {
       btnTranscribe.disabled = true;
       setStatus('⏳ Otter.ai orqali audio transkripsiya qilinmoqda...', '#FBBF24');
       setTimeout(() => {
-        setStatus('🧠 Claude 3.5 Sonnet konspekt va Action Items generatsiya qilmoqda...', '#38BDF8');
+        setStatus('🧠 Claude konspekt va Action Items generatsiya qilmoqda...', '#38BDF8');
         setTimeout(() => {
           applyTopic(currentTopic);
           setStatus('✅ Tayyor — LMS baholar jurnaliga sinxronlandi.', '#34D399');
@@ -464,20 +468,20 @@ function initLmsDistanceLab() {
       if (currentTopic === 'oscillator') {
         const { k, mass } = currentParams();
         const omega0 = Math.sqrt(k / mass);
-        physicsLine = `✓ <strong>Fizik Invariantlar:</strong> Simplektik Eyler-Kromer integratori bilan energiya monotonik kamaymoqda (dE/dt ≤ 0), sun'iy o'sish aniqlanmadi. ω₀ = ${omega0.toFixed(3)} rad/s.`;
+        physicsLine = `✓ <strong>Fizik Invariantlar:</strong> Simplektik Eyler–Kromer integratori bilan energiya monotonik kamaymoqda (dE/dt ≤ 0), sun’iy o‘sish aniqlanmadi. ω₀ = ${uzFix(omega0, 3)} rad/s.`;
       } else {
         const s0 = keplerStateAt(kep.a, kep.e, 0);
         const s1 = keplerStateAt(kep.a, kep.e, kep.theta);
         const e0 = 0.5 * s0.v * s0.v - MU / s0.r;
         const e1 = 0.5 * s1.v * s1.v - MU / s1.r;
         const drift = Math.abs((e1 - e0) / e0) * 100;
-        physicsLine = `✓ <strong>Fizik Invariantlar:</strong> Analitik Kepler yechimi — energiya dreyfi |ΔE/E₀| = ${drift.toExponential(2)}% (yopiq shakldagi yechim, integratsion xatolik yo'q).`;
+        physicsLine = `✓ <strong>Fizik Invariantlar:</strong> Analitik Kepler yechimi — energiya dreyfi |ΔE/E₀| = ${uzExp(drift, 2)}% (yopiq shakldagi yechim, integratsion xatolik yo‘q).`;
       }
 
       auditResultEl.style.display = 'block';
       auditResultEl.innerHTML = `
         <div style="background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7;">
-          <div style="color:#34D399; font-weight:700; margin-bottom:8px;">🔍 Google Antigravity AI Audit Natijasi:</div>
+          <div style="color:#34D399; font-weight:700; margin-bottom:8px;">🔍 Google Antigravity Audit Natijasi:</div>
           <div style="margin-bottom:6px; color:#E2E8F0;">✓ <strong>AST Statik Tahlil:</strong> eval() yoki xavfli DOM murojaati aniqlanmadi.</div>
           <div style="margin-bottom:6px; color:#E2E8F0;">${physicsLine}</div>
           <div style="color:#E2E8F0;">✓ <strong>Kadrlar Vaqt Sikli:</strong> ${lastFps} FPS, delta-time akkumulyatori barqaror ishlamoqda.</div>

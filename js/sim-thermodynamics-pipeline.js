@@ -1,18 +1,22 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 13, Tab 6: Interaktiv Termodinamika & Stoxastik Faza Laboratoriyasi.
  * 1-Rejim: haqiqiy stoxastik gaz ansambli — Box-Muller orqali Maksvell-Bolsman
  * tezlik taqsimoti (tab 3'dagi randomGaussian/createThermalGasEnsemble/
- * updateGasWallCollisions kodi bilan bir xil), harorat o'zgarishi termostat
+ * updateGasWallCollisions kodi bilan bir xil), harorat o‘zgarishi termostat
  * sifatida barcha tezliklarni sqrt(Tnew/Tcur) ga masshtablaydi (tab 2'da
  * hujjatlashtirilgan formulaga mos). 2-Rejim: Karno/Stirling/yakka izoprotsess
  * uchun P-V va T-S egri chiziqlari yopiq analitik formulalar bilan (tab 4'dagi
  * Python kodi bilan bir xil V1=1, V2=2 L, gamma=1.4 konstantalari) chiziladi.
  *
- * Shu fayl, shuningdek, sahifa boshqaruvchisi bo'lgan skroll-tab
+ * Shu fayl, shuningdek, sahifa boshqaruvchisi bo‘lgan skroll-tab
  * (scrollTabsNav/updateTabsScrollProgress) va jonli PhET/Vascak.cz
  * simulyator almashtirgichi (switchThermoOnlineSim/toggleOnlineSimFullscreen)
- * funksiyalarini ham ta'minlaydi — bular sahifada chaqirilgan, lekin hech
- * qayerda e'lon qilinmagan edi.
+ * funksiyalarini ham ta’minlaydi — bular sahifada chaqirilgan, lekin hech
+ * qayerda e’lon qilinmagan edi.
  */
 
 // ---------------------------------------------------------------------------
@@ -59,102 +63,102 @@ document.addEventListener('DOMContentLoaded', () => {
 // Eslatma: PhET havolalari rasmiy, barqaror URL sxemasiga ega
 // (https://phet.colorado.edu/sims/html/{slug}/latest/{slug}_en.html).
 // Vascak.cz havolalari uning "physicsatschool" Canvas animatsiyalariga
-// bevosita ishora qiladi (?l=uz — o'zbekcha til parametri bilan).
+// bevosita ishora qiladi (?l=uz — o‘zbekcha til parametri bilan).
 const ONLINE_SIMS = {
   'phet-gas': {
     url: 'https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_en.html',
     title: "🧪 PhET Interactive Simulations: Gas Properties (Ideal Gaz Qonunlari)",
     badge: 'PhET HTML5',
-    desc: "Ideal gaz holat tenglamasi ($PV = N k_B T$), harorat, hajm va bosimning o'zaro dinamik bog'liqligi, og'ir va yengil gaz molekulalarining to'qnashuvlari hamda Maksvell-Bolsman tezliklar gistogrammasi.",
+    desc: "Ideal gaz holat tenglamasi ($PV = N k_B T$), harorat, hajm va bosimning o‘zaro dinamik bog‘liqligi, og‘ir va yengil gaz molekulalarining to‘qnashuvlari hamda Maksvell-Bolsman tezliklar gistogrammasi.",
     eqs: "$$PV = \\nu R T = N k_B T, \\quad v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}, \\quad P = \\frac{1}{3} n m \\langle v^2 \\rangle$$",
     tasks: [
-      "1. Nasos orqali idishga 100 ta og'ir zarracha kiriting va bosim $P$ hamda harorat $T$ ko'rsatkichini qayd eting.",
+      "1. Nasos orqali idishga 100 ta og‘ir zarracha kiriting va bosim $P$ hamda harorat $T$ ko‘rsatkichini qayd eting.",
       "2. Porshenni surib hajmni $V$ kamaytiring (Izotermik siqilish) va Boyl-Mariott qonuni ($P \\propto 1/V$) bajarilishini tekshiring.",
-      "3. Pastdagi olov orqali haroratni $T$ oshiring va Maksvell tezliklar gistogrammasi o'ng tomonga qarab yassilanishini kuzating."
+      "3. Pastdagi olov orqali haroratni $T$ oshiring va Maksvell tezliklar gistogrammasi o‘ng tomonga qarab yassilanishini kuzating."
     ]
   },
   'phet-matter': {
     url: 'https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_en.html',
     title: '🧊 PhET Interactive Simulations: States of Matter (Modda Holatlari)',
     badge: 'PhET HTML5',
-    desc: "Molekulalararo Lennard-Jones o'zaro ta'sir potensiali orqali qattiq, suyuq va gaz holatlari orasidagi fazaviy o'tishlarni haroratga bog'liq ravishda kuzatish.",
+    desc: "Molekulalararo Lennard-Jones o‘zaro ta’sir potensiali orqali qattiq, suyuq va gaz holatlari orasidagi fazaviy o‘tishlarni haroratga bog‘liq ravishda kuzatish.",
     eqs: "$$U_{LJ}(r) = 4\\varepsilon\\left[\\left(\\frac{\\sigma}{r}\\right)^{12} - \\left(\\frac{\\sigma}{r}\\right)^{6}\\right]$$",
     tasks: [
-      "1. Haroratni asta-sekin oshirib, qattiq holatdan suyuqlikka, so'ngra gazga o'tishni kuzating.",
+      "1. Haroratni asta-sekin oshirib, qattiq holatdan suyuqlikka, so‘ngra gazga o‘tishni kuzating.",
       "2. Bosim-Harorat (P-T) fazaviy diagrammasida uchlik nuqtani (triple point) toping.",
-      "3. Molekulalararo masofa ortishi bilan potensial energiya qanday o'zgarishini tahlil qiling."
+      "3. Molekulalararo masofa ortishi bilan potensial energiya qanday o‘zgarishini tahlil qiling."
     ]
   },
   'phet-energy': {
     url: 'https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_en.html',
     title: '🔥 PhET Interactive Simulations: Energy Forms and Changes',
     badge: 'PhET HTML5',
-    desc: "Issiqlik energiyasining turli jismlar (temir, g'isht, suv) orasida o'tkazuvchanlik orqali uzatilishi va issiqlik sig'imi $c$ ning harorat o'zgarish tezligiga ta'siri.",
+    desc: "Issiqlik energiyasining turli jismlar (temir, g‘isht, suv) orasida o‘tkazuvchanlik orqali uzatilishi va issiqlik sig‘imi $c$ ning harorat o‘zgarish tezligiga ta’siri.",
     eqs: "$$Q = mc\\Delta T, \\qquad \\frac{\\mathrm{d}Q}{\\mathrm{d}t} = kA\\frac{\\Delta T}{L}$$",
     tasks: [
-      "1. Turli issiqlik sig'imiga ega ikkita jismni bir xil isitgichda qizdirib, harorat o'sish tezligini solishtiring.",
+      "1. Turli issiqlik sig‘imiga ega ikkita jismni bir xil isitgichda qizdirib, harorat o‘sish tezligini solishtiring.",
       "2. Issiq va sovuq jismlarni bir-biriga tekkizib, muvozanat haroratiga yetishini kuzating.",
-      "3. Energiya balansi diagrammasida issiqlik oqimi yo'nalishini kuzating."
+      "3. Energiya balansi diagrammasida issiqlik oqimi yo‘nalishini kuzating."
     ]
   },
   'phet-diffusion': {
     url: 'https://phet.colorado.edu/sims/html/diffusion/latest/diffusion_en.html',
     title: '💨 PhET Interactive Simulations: Diffusion',
     badge: 'PhET HTML5',
-    desc: "Ikki xil massali gaz zarrachalarining tasodifiy issiqlik harakati orqali aralashuvi (diffuziya) va massa farqining diffuziya tezligiga ta'siri.",
+    desc: "Ikki xil massali gaz zarrachalarining tasodifiy issiqlik harakati orqali aralashuvi (diffuziya) va massa farqining diffuziya tezligiga ta’siri.",
     eqs: "$$\\langle x^2 \\rangle = 2Dt, \\qquad D \\propto \\frac{1}{\\sqrt{m}}$$",
     tasks: [
-      "1. Devorni olib tashlab, ikki gaz turining vaqt o'tishi bilan aralashishini kuzating.",
-      "2. Og'ir va yengil zarrachalarning diffuziya tezligini solishtiring.",
-      "3. Haroratni oshirib, diffuziya tezligiga ta'sirini baholang."
+      "1. Devorni olib tashlab, ikki gaz turining vaqt o‘tishi bilan aralashishini kuzating.",
+      "2. Og‘ir va yengil zarrachalarning diffuziya tezligini solishtiring.",
+      "3. Haroratni oshirib, diffuziya tezligiga ta’sirini baholang."
     ]
   },
   'vascak-isotherm': {
     url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izotermicky_dej_Canvas.html?l=uz',
     title: '🌡️ Vascak.cz: Izotermik Jarayon (Boyl-Mariott Qonuni)',
     badge: 'Vascak.cz',
-    desc: "T=const sharoitida bosim va hajm orasidagi teskari proporsionallikni sinab ko'ring.",
+    desc: "T=const sharoitida bosim va hajm orasidagi teskari proporsionallikni sinab ko‘ring.",
     eqs: "$$PV = \\text{const} \\;\\; (T = \\text{const})$$",
     tasks: [
       "1. Porshenni surib hajmni ikki marta kamaytiring va bosimning ikki marta ortishini tasdiqlang.",
       "2. P-V grafigida giperbola shaklini kuzating.",
-      "3. Haroratni o'zgartirib, egri chiziq (izoterma) qanday siljishini kuzating."
+      "3. Haroratni o‘zgartirib, egri chiziq (izoterma) qanday siljishini kuzating."
     ]
   },
   'vascak-isobar': {
     url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izobaricky_dej_Canvas.html?l=uz',
     title: '⚖️ Vascak.cz: Izobarik Jarayon (Gey-Lyussak Qonuni)',
     badge: 'Vascak.cz',
-    desc: "P=const sharoitida hajm va haroratning to'g'ri proporsionalligini o'rganing.",
+    desc: "P=const sharoitida hajm va haroratning to‘g‘ri proporsionalligini o‘rganing.",
     eqs: "$$\\frac{V}{T} = \\text{const} \\;\\; (P = \\text{const})$$",
     tasks: [
-      "1. Haroratni oshirib, hajmning chiziqli o'sishini kuzating.",
-      "2. V-T grafigida to'g'ri chiziqni tasdiqlang.",
-      "3. Bosim qiymatini o'zgartirib, chiziq qiyaligi qanday o'zgarishini kuzating."
+      "1. Haroratni oshirib, hajmning chiziqli o‘sishini kuzating.",
+      "2. V-T grafigida to‘g‘ri chiziqni tasdiqlang.",
+      "3. Bosim qiymatini o‘zgartirib, chiziq qiyaligi qanday o‘zgarishini kuzating."
     ]
   },
   'vascak-isochore': {
     url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izochoricky_dej_Canvas.html?l=uz',
     title: '🔒 Vascak.cz: Izoxorik Jarayon (Sharl Qonuni)',
     badge: 'Vascak.cz',
-    desc: "V=const sharoitida bosim va haroratning to'g'ri proporsionalligini kuzating.",
+    desc: "V=const sharoitida bosim va haroratning to‘g‘ri proporsionalligini kuzating.",
     eqs: "$$\\frac{P}{T} = \\text{const} \\;\\; (V = \\text{const})$$",
     tasks: [
       "1. Idishni qizdirib, bosim ortishini (portlash xavfisiz) kuzating.",
-      "2. P-T grafigida to'g'ri chiziqni tasdiqlang.",
-      "3. Hajm qiymatini o'zgartirib, chiziq qiyaligi qanday o'zgarishini kuzating."
+      "2. P-T grafigida to‘g‘ri chiziqni tasdiqlang.",
+      "3. Hajm qiymatini o‘zgartirib, chiziq qiyaligi qanday o‘zgarishini kuzating."
     ]
   },
   'vascak-adiabat': {
     url: 'https://www.vascak.cz/data/android/physicsatschool/canvas/mf_adiabaticky_dej_Canvas.html?l=uz',
     title: "⚡ Vascak.cz: Adiabatik Jarayon (Puasson Tenglamasi)",
     badge: 'Vascak.cz',
-    desc: "Issiqlik almashinuvisiz ($Q=0$) tezkor siqilish/kengayish jarayonida haroratning o'zgarishini o'rganing.",
+    desc: "Issiqlik almashinuvisiz ($Q=0$) tezkor siqilish/kengayish jarayonida haroratning o‘zgarishini o‘rganing.",
     eqs: "$$PV^{\\gamma} = \\text{const}, \\qquad TV^{\\gamma-1} = \\text{const}$$",
     tasks: [
-      "1. Porshenni tez suring (adiabatik yaqinlashish) va harorat o'zgarishini kuzating.",
-      "2. Adiabata egri chizig'ini izotermaga solishtiring (adiabata tikroq).",
-      "3. $\\gamma$ qiymatini gaz turiga (bir/ikki atomli) bog'lab tushuntiring."
+      "1. Porshenni tez suring (adiabatik yaqinlashish) va harorat o‘zgarishini kuzating.",
+      "2. Adiabata egri chizig‘ini izotermaga solishtiring (adiabata tikroq).",
+      "3. $\\gamma$ qiymatini gaz turiga (bir/ikki atomli) bog‘lab tushuntiring."
     ]
   },
   'vascak-carnot': {
@@ -165,8 +169,8 @@ const ONLINE_SIMS = {
     eqs: "$$\\eta_{max} = 1 - \\frac{T_C}{T_H}$$",
     tasks: [
       "1. Karno sikli animatsiyasida 4 bosqichni ketma-ket kuzating.",
-      "2. $T_H$ va $T_C$ qiymatlarini o'zgartirib, F.I.K.ning o'zgarishini hisoblang.",
-      "3. P-V diagrammasidagi yopiq egri chiziq ichidagi maydonni foydali ish bilan bog'lang."
+      "2. $T_H$ va $T_C$ qiymatlarini o‘zgartirib, F.I.K.ning o‘zgarishini hisoblang.",
+      "3. P-V diagrammasidagi yopiq egri chiziq ichidagi maydonni foydali ish bilan bog‘lang."
     ]
   }
 };
@@ -280,16 +284,16 @@ function initThermodynamicsLab() {
   const CV = R / (GAMMA - 1);
   const CP = GAMMA * CV;
   const V1_L = 1.0, V2_L = 2.0; // sikl demo hajmlari (litr), tab4 bilan bir xil
-  // Canvas-piksel birligidagi devor impulsini kPa'ga aylantiruvchi namoyish
+  // Canvas-piksel birligidagi devor impulsini kPa’ga aylantiruvchi namoyish
   // masshtabi — standart sharoitda (T=300K, V=2.85L, N=120) tab 2'dagi
-  // hujjatlashtirilgan misol qiymati (~1.05 kPa) bilan mos bo'lishi uchun
+  // hujjatlashtirilgan misol qiymati (~1.05 kPa) bilan mos bo‘lishi uchun
   // kalibrlangan.
   const PRESSURE_SCALE = 5.0;
   // Canvas animatsiyasi uchun zarracha tezligi (piksel/kadr birligida) —
   // haqiqiy KB/M_MOL bilan bevosita hisoblansa, son tartibi (~10^4 px/kadr)
-  // canvas o'lchamiga umuman mos kelmaydi. Shu sabab vizual sigma alohida,
-  // T ga sqrt(T) qonuni bilan (Maksvell-Bolsman nazariyasiga mos) bog'liq
-  // bo'lgan, lekin canvas piksellarida "yaxshi ko'rinadigan" konstantadan
+  // canvas o‘lchamiga umuman mos kelmaydi. Shu sabab vizual sigma alohida,
+  // T ga sqrt(T) qonuni bilan (Maksvell-Bolsman nazariyasiga mos) bog‘liq
+  // bo‘lgan, lekin canvas piksellarida "yaxshi ko‘rinadigan" konstantadan
   // hisoblanadi. Haqiqiy fizik v_rms (m/s) alohida, real KB/M_MOL bilan
   // pastda hisoblanadi (updateTelemetry ichida).
   const VISUAL_SIGMA_AT_300K = 1.8;
@@ -391,8 +395,8 @@ function initThermodynamicsLab() {
     if (windowMs > 400) {
       const perimeter = (box.right - box.left) * 2 + (box.bottom - box.top) * 2;
       const rawPressure = (gasWallImpulseAccum / (perimeter * (windowMs / 1000))) * PRESSURE_SCALE;
-      // Silliqlash (EMA): kichik N (~100-tacha zarracha) tufayli oniy o'lchovda
-      // statistik shovqin katta, shuning uchun ko'rsatkich sirg'anuvchi o'rtacha bilan barqarorlashtiriladi.
+      // Silliqlash (EMA): kichik N (~100-tacha zarracha) tufayli oniy o‘lchovda
+      // statistik shovqin katta, shuning uchun ko‘rsatkich sirg‘anuvchi o‘rtacha bilan barqarorlashtiriladi.
       gasMeasuredPressureKPa = gasMeasuredPressureKPa === 0 ? rawPressure : gasMeasuredPressureKPa * 0.8 + rawPressure * 0.2;
       gasWallImpulseAccum = 0;
       gasImpulseWindowStart = now;
@@ -466,7 +470,7 @@ function initThermodynamicsLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '10px monospace';
-    ctx.fillText('Tezliklar spektri (moviy) vs Maksvell nazariyasi (qizil)', 6, 12);
+    ctx.fillText('Tezliklar gistogrammasi (moviy) va Maksvell taqsimoti (qizil)', 6, 12);
   }
 
   // ---------------------------------------------------------------------
@@ -594,8 +598,8 @@ function initThermodynamicsLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(diagram === 'ts' ? 'T-S diagrammasi' : 'P-V diagrammasi', 8, 16);
-    ctx.fillText(`${cycleMode === 'isoprocess' ? cycleParams().isoType : cycleMode}`, 8, h - 6);
+    ctx.fillText(diagram === 'ts' ? 'T–S diagrammasi' : 'P–V diagrammasi', 8, 16);
+    ctx.fillText(({ carnot: 'Karno sikli', stirling: 'Stirling sikli', isotherm: 'izotermik jarayon', isochore: 'izoxorik jarayon', isobar: 'izobarik jarayon', adiabat: 'adiabatik jarayon' })[cycleMode === 'isoprocess' ? cycleParams().isoType : cycleMode] || '', 8, h - 6);
   }
 
   function cycleNetWork() {
@@ -610,7 +614,7 @@ function initThermodynamicsLab() {
   function updateSliderLabels() {
     valTemp.textContent = slTemp.value + ' K';
     const volL = currentVolumeLiters();
-    valPiston.textContent = `${slPiston.value}% (${volL.toFixed(2)} L)`;
+    valPiston.textContent = `${slPiston.value}% (${uzFix(volL, 2)} L)`;
     valCount.textContent = slCount.value;
     valTh.textContent = slTh.value + ' K';
     valTc.textContent = slTc.value + ' K';
@@ -674,15 +678,15 @@ function initThermodynamicsLab() {
   function togglePlay() {
     running = !running;
     btnPlayInner.innerHTML = running
-      ? '<span style="font-size: 1.05rem; line-height: 1;">⏸</span> To\'xtatish'
-      : '<span style="font-size: 1.05rem; line-height: 1;">▶</span> Davom Ettirish';
+      ? '<span style="font-size: 1.05rem; line-height: 1;">⏸</span> To‘xtatish'
+      : '<span style="font-size: 1.05rem; line-height: 1;">▶</span> Davom ettirish';
   }
   btnPlayInner.addEventListener('click', togglePlay);
 
   function resetSim() {
     resetAll();
     running = true;
-    btnPlayInner.innerHTML = '<span style="font-size: 1.05rem; line-height: 1;">⏸</span> To\'xtatish';
+    btnPlayInner.innerHTML = '<span style="font-size: 1.05rem; line-height: 1;">⏸</span> To‘xtatish';
   }
   btnResetInner.addEventListener('click', resetSim);
 
@@ -695,17 +699,17 @@ function initThermodynamicsLab() {
     if (mode === 'gas') {
       const T = parseFloat(slTemp.value);
       const vRms = Math.sqrt((3 * KB * T) / M_MOL);
-      telTemp.textContent = `${T.toFixed(0)} K`;
-      telPress.textContent = `${gasMeasuredPressureKPa.toFixed(2)} kPa`;
-      telVol.textContent = `${currentVolumeLiters().toFixed(2)} L`;
-      telVrms.textContent = `${vRms.toFixed(0)} m/s`;
+      telTemp.textContent = `${uzFix(T, 0)} K`;
+      telPress.textContent = `${uzFix(gasMeasuredPressureKPa, 2)} kPa`;
+      telVol.textContent = `${uzFix(currentVolumeLiters(), 2)} L`;
+      telVrms.textContent = `${uzFix(vRms, 0)} m/s`;
     } else {
       const { Th, Tc } = cycleParams();
-      telTemp.textContent = `${Th.toFixed(0)} / ${Tc.toFixed(0)} K`;
+      telTemp.textContent = `${uzFix(Th, 0)} / ${uzFix(Tc, 0)} K`;
       telPress.textContent = '—';
       telVol.textContent = `${V1_L}–${V2_L} L`;
       const eta = (1 - Tc / Th) * 100;
-      telVrms.textContent = `η = ${eta.toFixed(1)}%`;
+      telVrms.textContent = `η = ${uzFix(eta, 1)}%`;
     }
   }
 
@@ -790,14 +794,14 @@ function initThermodynamicsLab() {
         const T = parseFloat(slTemp.value), V = currentVolumeLiters(), N = parseInt(slCount.value, 10);
         showPipelineOutput(`
           <strong>1. PhET "Gas Properties" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          T = ${T.toFixed(0)} K, V = ${V.toFixed(2)} L, N = ${N} zarracha.<br>
-          O'lchangan mikroskopik bosim: <strong>${gasMeasuredPressureKPa.toFixed(2)} kPa</strong> (devor impulslaridan).`);
+          T = ${uzFix(T, 0)} K, V = ${uzFix(V, 2)} L, N = ${N} zarracha.<br>
+          O‘lchangan mikroskopik bosim: <strong>${uzFix(gasMeasuredPressureKPa, 2)} kPa</strong> (devor impulslaridan).`);
       } else {
         const { cycleMode, Th, Tc } = cycleParams();
         showPipelineOutput(`
           <strong>1. Vascak.cz "${cycleMode === 'carnot' ? 'Carnot Cycle' : cycleMode === 'stirling' ? 'Stirling Cycle' : 'Iso-process'}" Dekonstruksiyasi:</strong><br>
           $T_H$ = ${Th} K, $T_C$ = ${Tc} K.<br>
-          Nazariy Karno F.I.K.: <strong>η = ${((1 - Tc / Th) * 100).toFixed(2)}%</strong>.`);
+          Nazariy Karno F.I.K.: <strong>η = ${uzFix(((1 - Tc / Th) * 100), 2)}%</strong>.`);
       }
     });
   }
@@ -806,7 +810,7 @@ function initThermodynamicsLab() {
     btnPipeClaude.addEventListener('click', () => {
       const code = "function randomGaussian(mean=0, stdev=1) {\n  const u1 = Math.max(1e-7, 1 - Math.random());\n  const u2 = Math.random();\n  const z0 = Math.sqrt(-2*Math.log(u1)) * Math.cos(2*Math.PI*u2);\n  return z0*stdev + mean;\n}\n// sigma = sqrt(kB*T/m) -> Maksvell-Bolsman ansambli";
       showPipelineOutput(`
-        <strong>2. Claude 3.5 Sonnet Stoxastik Dvigatel Kodi:</strong>
+        <strong>2. Claude Stoxastik Dvigatel Kodi:</strong>
         <pre style="background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;"><code>${code}</code></pre>
         <button id="btn-copy-thermo-code" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
       attachCopyHandler('btn-copy-thermo-code', code);
@@ -819,7 +823,7 @@ function initThermodynamicsLab() {
       const prompt = `ChatGPT Code Interpreter uchun: Matplotlib bilan Th=${slTh.value}K, Tc=${slTc.value}K, V1=${V1_L}L, V2=${V2_L}L parametrlarida ${selCycleMode.value} sikli uchun P-V va T-S diagrammalarini chizuvchi Python kodi yarat.`;
       showPipelineOutput(`
         <strong>3. ChatGPT Code Interpreter: P-V/T-S Sintezi:</strong><br>
-        Joriy sikl bo'yicha hisoblangan foydali ish: <strong>A ≈ ${netWork.toFixed(1)} J</strong> (ν=1 mol, R=8.314).<br>
+        Joriy sikl bo‘yicha hisoblangan foydali ish: <strong>A ≈ ${uzFix(netWork, 1)} J</strong> (ν=1 mol, R=8.314).<br>
         <em style="color:#CBD5E1;">"${prompt}"</em><br>
         <button id="btn-copy-thermo-prompt" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
       attachCopyHandler('btn-copy-thermo-prompt', prompt);
@@ -834,13 +838,13 @@ function initThermodynamicsLab() {
         const drift = Math.abs((curE - gasEnergyBaseline) / Math.max(Math.abs(gasEnergyBaseline), 1e-9)) * 100;
         const T = parseFloat(slTemp.value);
         const vRmsTheory = Math.sqrt((3 * KB * T) / M_MOL);
-        physicsLine = `Elastik devor to'qnashuvlaridan energiya dreyfi: |ΔE/E₀| = ${drift.toExponential(2)}% (so'nggi termostat sozlamasidan buyon). Nazariy $v_{rms}$ = ${vRmsTheory.toFixed(0)} m/s.`;
+        physicsLine = `Elastik devor to‘qnashuvlaridan energiya dreyfi: |ΔE/E₀| = ${uzExp(drift, 2)}% (so‘nggi termostat sozlamasidan buyon). Nazariy $v_{rms}$ = ${uzFix(vRmsTheory, 0)} m/s.`;
       } else {
         const { Th, Tc } = cycleParams();
-        physicsLine = `Analitik yopiq shakldagi sikl — entropiya bo'yicha yopiq konturning yig'indisi $\\oint dS = 0$ (raqamli tekshirildi). Karno F.I.K. = ${((1 - Tc / Th) * 100).toFixed(2)}%.`;
+        physicsLine = `Analitik yopiq shakldagi sikl — entropiya bo‘yicha yopiq konturning yig‘indisi $\\oint dS = 0$ (raqamli tekshirildi). Karno F.I.K. = ${uzFix(((1 - Tc / Th) * 100), 2)}%.`;
       }
       showPipelineOutput(`
-        <strong>4. Google Antigravity AI Audit Natijasi:</strong><br>
+        <strong>4. Google Antigravity Audit Natijasi:</strong><br>
         ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>
         ✓ Delta-Time Akkumulyatori: ${lastFps} FPS, kadrlar barqaror ishlamoqda.<br>
         ✓ Fizik Invariantlar: ${physicsLine}`);

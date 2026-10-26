@@ -1,7 +1,11 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 8-Laboratoriya: AI bilan juftlikda yozilgan kichik 2D fizika dvigateli.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
- * 2. Interaktiv to'qnashuv arenasi: Vector2D, impuls skalyari J (2-bo'limdagi
+ * 2. Interaktiv to‘qnashuv arenasi: Vector2D, impuls skalyari J (2-bo‘limdagi
  *    formula), massalarga teskari proporsional overlap resolution, faqat
  *    yaqinlashayotgan jismlarga impuls (v_n > 0) va sub-stepping. Pastki
  *    grafikda Ek/Ek0 nisbati. Masshtab: 100 px = 1 m.
@@ -10,7 +14,7 @@
 
 (function () {
   const PX_PER_M = 100;
-  const H = 1 / 120;       // qat'iy fizik qadam, s
+  const H = 1 / 120;       // qat’iy fizik qadam, s
   const SUBSTEPS = 4;      // tunnel effektiga qarshi ichki qadamlar
   const MAX_FRAME = 0.1;   // kadr vaqtining yuqori chegarasi, s
 
@@ -27,7 +31,7 @@
   }
 
   // -------------------------------------------------------------------------
-  // VECTOR2D (2-bo'limdagi klass bilan bir xil interfeys)
+  // VECTOR2D (2-bo‘limdagi klass bilan bir xil interfeys)
   // -------------------------------------------------------------------------
   class Vector2D {
     constructor(x = 0, y = 0) { this.x = x; this.y = y; }
@@ -74,19 +78,19 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
-      plan: "Avval 2.1-bo'limdagi <code>Vector2D</code> klassini qo'lda qayta yozing va har bir metodni bitta sonli misolda tekshiring. So'ng bir o'lchamli markaziy to'qnashuv uchun impuls va energiya saqlanishidan $v_1'$ va $v_2'$ ni qog'ozda chiqaring. 5-bo'limdagi «Bilyard» stsenariysida teng massali sharlar tezlik almashishini kuzating.",
-      focus: "vektor amallari, skalyar ko'paytma, bir o'lchamli elastik to'qnashuv"
+      title: 'Klaster "A" — Boshlang‘ich daraja',
+      plan: "Avval 2.1-bo‘limdagi <code>Vector2D</code> klassini qo‘lda qayta yozing va har bir metodni bitta sonli misolda tekshiring. So‘ng bir o‘lchamli markaziy to‘qnashuv uchun impuls va energiya saqlanishidan $v_1'$ va $v_2'$ ni qog‘ozda chiqaring. 5-bo‘limdagi «Bilyard» ssenariysida teng massali sharlar tezlik almashishini kuzating.",
+      focus: "vektor amallari, skalyar ko‘paytma, bir o‘lchamli elastik to‘qnashuv"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "2.2–2.3-bo'limlardagi $J$ formulasi va overlap resolution'ni JavaScript'da yozing. 3-bo'limdagi 1- va 2-nosozlik promptlarini Claude'ga yuborib, uning tavsiyalarini o'z kodingizda sinab ko'ring. Dastgohda $e$ ni 1 dan 0,5 gacha kamaytirib, $E_k/E_{k0}$ grafigining o'zgarishini tushuntiring.",
-      focus: "impuls skalyari J, pozitsiyani to'g'rilash, v_n > 0 sharti, tiklanish koeffitsiyenti"
+      plan: "2.2–2.3-bo‘limlardagi $J$ formulasi va overlap resolution’ni JavaScript’da yozing. 3-bo‘limdagi 1- va 2-nosozlik promptlarini Claude’ga yuborib, uning tavsiyalarini o‘z kodingizda sinab ko‘ring. Dastgohda $e$ ni 1 dan 0,5 gacha kamaytirib, $E_k/E_{k0}$ grafigining o‘zgarishini tushuntiring.",
+      focus: "impuls skalyari J, pozitsiyani to‘g‘rilash, v_n > 0 sharti, tiklanish koeffitsiyenti"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
-      plan: "Dvigatelga sub-stepping va uzluksiz to'qnashuv aniqlash (CCD) variantlarini qo'shib, tunnel effektini solishtiring. 4-bo'limdagi Python skriptini $e = 0.7$ uchun kengaytirib, yo'qotilgan energiyani $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$ formulasi bilan tekshiring. Keyingi qadam sifatida aylanish (inersiya momenti) va ishqalanishni qo'shishni rejalashtiring (Hecker, 1997).",
-      focus: "sub-stepping va CCD, noelastik to'qnashuvda energiya yo'qotilishi, aylanma harakat"
+      title: 'Klaster "C" — Ilg‘or daraja',
+      plan: "Dvigatelga sub-stepping va uzluksiz to‘qnashuv aniqlash (CCD) variantlarini qo‘shib, tunnel effektini solishtiring. 4-bo‘limdagi Python skriptini $e = 0.7$ uchun kengaytirib, yo‘qotilgan energiyani $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$ formulasi bilan tekshiring. Keyingi qadam sifatida aylanish (inersiya momenti) va ishqalanishni qo‘shishni rejalashtiring (Hecker, 1997).",
+      focus: "sub-stepping va CCD, noelastik to‘qnashuvda energiya yo‘qotilishi, aylanma harakat"
     }
   };
 
@@ -119,22 +123,22 @@
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Sen mening juftlikdagi dasturlash sherigimsan (Navigator), men esa Driver'man. Men 8-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Sen mening juftlikdagi dasturlash sherigimsan (Navigator), men esa Driver’man. Men 8-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
-Vazifa: JavaScript'da 2D doiralar uchun elastik to'qnashuvli kichik fizika dvigatelini yozish (Vector2D, impuls skalyari J, overlap resolution).
+Vazifa: JavaScript’da 2D doiralar uchun elastik to‘qnashuvli kichik fizika dvigatelini yozish (Vector2D, impuls skalyari J, overlap resolution).
 Qoidalar:
-1. Kodni men yozaman — sen avval men yuborgan bo'lakni tahlil qilib, xatoni o'zim topishim uchun yo'naltiruvchi savol ber.
+1. Kodni men yozaman — sen avval men yuborgan bo‘lakni tahlil qilib, xatoni o‘zim topishim uchun yo‘naltiruvchi savol ber.
 2. Har bir tavsiyangni fizik qonun (impuls yoki energiya saqlanishi) bilan asosla.
-3. Tuzatishdan keyin tekshirish uchun bitta sonli test taklif qil (masalan, to'qnashuvdan oldin va keyin to'liq impulsni solishtirish).`;
+3. Tuzatishdan keyin tekshirish uchun bitta sonli test taklif qil (masalan, to‘qnashuvdan oldin va keyin to‘liq impulsni solishtirish).`;
     });
   }
 
   // -------------------------------------------------------------------------
-  // 2. INTERAKTIV TO'QNASHUV ARENASI
+  // 2. INTERAKTIV TO‘QNASHUV ARENASI
   // -------------------------------------------------------------------------
   function initLab() {
     const cv = document.getElementById('lab8-engine-canvas');
@@ -186,7 +190,7 @@ Qoidalar:
       } else if (s === 'oblique') {
         bodies = [body(140, cy + 22, 3, 0, 1, 26, COLORS[0]), body(480, cy - 4, 0, 0, 1, 26, COLORS[1])];
       } else {
-        // 5 ta "gaz molekulasi" — takrorlanuvchan boshlang'ich shartlar
+        // 5 ta "gaz molekulasi" — takrorlanuvchan boshlang‘ich shartlar
         const init = [
           [120, 110, 2.2, 1.4, 1.0, 20], [320, 300, 2.0, 1.6, 1.5, 24], [520, 140, -1.8, 2.1, 1.0, 20],
           [660, 320, -2.4, -1.2, 2.0, 28], [420, 220, 1.1, -2.6, 0.8, 18]
@@ -219,7 +223,7 @@ Qoidalar:
       updateHud();
     }
 
-    // Ikki doira to'qnashuvi: 2.2–2.3-bo'limdagi formulalar
+    // Ikki doira to‘qnashuvi: 2.2–2.3-bo‘limdagi formulalar
     function resolvePair(a, b, e) {
       const delta = b.pos.sub(a.pos);           // piksel
       const d = delta.mag();
@@ -244,7 +248,7 @@ Qoidalar:
     }
 
     function wallBounce(b) {
-      // Devorlar mutlaq elastik (tashqi jism): energiya saqlanadi, impuls o'zgaradi
+      // Devorlar mutlaq elastik (tashqi jism): energiya saqlanadi, impuls o‘zgaradi
       if (b.pos.x - b.r < 0) { b.pos.x = b.r; b.vel.x = Math.abs(b.vel.x); }
       if (b.pos.x + b.r > W) { b.pos.x = W - b.r; b.vel.x = -Math.abs(b.vel.x); }
       if (b.pos.y - b.r < 0) { b.pos.y = b.r; b.vel.y = Math.abs(b.vel.y); }
@@ -314,7 +318,7 @@ Qoidalar:
 
     function draw() {
       ctx.clearRect(0, 0, W, Hc);
-      // 1 m to'r
+      // 1 m to‘r
       ctx.strokeStyle = 'rgba(255,255,255,0.05)';
       ctx.lineWidth = 1;
       for (let x = PX_PER_M; x < W; x += PX_PER_M) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, Hc); ctx.stroke(); }
@@ -344,7 +348,7 @@ Qoidalar:
         ctx.arc(b.pos.x, b.pos.y, b.r, 0, Math.PI * 2);
         ctx.fill();
         ctx.fillStyle = '#0b1120';
-        ctx.fillText(`${b.m} kg`, b.pos.x, b.pos.y + 4);
+        ctx.fillText(`${String(b.m).replace('.', ',')} kg`, b.pos.x, b.pos.y + 4);
         if (showVec) {
           const k = 25; // 1 m/s → 25 px strelka
           arrow(b.pos.x, b.pos.y, b.pos.x + b.vel.x * k, b.pos.y + b.vel.y * k, '#e2e8f0');
@@ -353,7 +357,7 @@ Qoidalar:
 
       ctx.textAlign = 'left';
       ctx.fillStyle = 'rgba(226,232,240,0.75)';
-      ctx.fillText(`t = ${simTime.toFixed(2)} s   |   katak = 1 m   |   ${SUBSTEPS} ta sub-step`, 10, 18);
+      ctx.fillText(`t = ${uzFix(simTime, 2)} s   |   katak = 1 m   |   ${SUBSTEPS} ta ichki qadam`, 10, 18);
       drawGraph();
     }
 
@@ -374,7 +378,7 @@ Qoidalar:
         gctx.stroke();
         gctx.setLineDash([]);
         gctx.fillStyle = '#94a3b8';
-        gctx.fillText(r.toFixed(1), padL - 6, y(r) + 4);
+        gctx.fillText(uzFix(r, 1), padL - 6, y(r) + 4);
       });
       if (histCount > 1) {
         gctx.strokeStyle = '#38bdf8';
@@ -391,28 +395,28 @@ Qoidalar:
       }
       gctx.textAlign = 'left';
       gctx.fillStyle = '#94a3b8';
-      gctx.fillText('Ek / Ek0 (vaqt bo\'yicha, har 0,05 s)', padL + 4, h - 4);
+      gctx.fillText('Ek/Ek₀ (vaqt bo‘yicha, har 0,05 s)', padL + 4, h - 4);
     }
 
     function updateHud() {
       const setT = (id, t) => { const el = hud(id); if (el) el.textContent = t; };
       const ek = kinetic();
       const p = momentum();
-      setT('ek', `${ek.toFixed(3)} J`);
-      setT('p', `(${p.x.toFixed(2)}, ${p.y.toFixed(2)}) kg·m/s`);
+      setT('ek', `${uzFix(ek, 3)} J`);
+      setT('p', `(${uzFix(p.x, 2)}; ${uzFix(p.y, 2)}) kg·m/s`);
       setT('collisions', String(collisions));
       const ratio = ek0 > 0 ? ek / ek0 : 1;
       const rEl = hud('ratio');
       if (rEl) {
-        rEl.textContent = `${(ratio * 100).toFixed(1)} %`;
+        rEl.textContent = `${uzFix((ratio * 100), 1)} %`;
         rEl.style.color = Math.abs(ratio - 1) < 0.005 ? '#10b981' : ratio < 1 ? '#f59e0b' : '#f43f5e';
       }
       const e = restitution();
       const st = hud('status');
       if (st) {
-        if (e >= 0.999) { st.textContent = 'Mutlaq Elastik (e = 1.00)'; st.style.color = '#10b981'; }
-        else if (e <= 0.001) { st.textContent = 'Mutlaq Noelastik (e = 0.00)'; st.style.color = '#f43f5e'; }
-        else { st.textContent = `Noelastik (e = ${e.toFixed(2)})`; st.style.color = '#f59e0b'; }
+        if (e >= 0.999) { st.textContent = 'Mutlaq elastik (e = 1,00)'; st.style.color = '#10b981'; }
+        else if (e <= 0.001) { st.textContent = 'Mutlaq noelastik (e = 0,00)'; st.style.color = '#f43f5e'; }
+        else { st.textContent = `Noelastik (e = ${uzFix(e, 2)})`; st.style.color = '#f59e0b'; }
       }
     }
 
@@ -437,7 +441,7 @@ Qoidalar:
     if (btnReset) btnReset.addEventListener('click', reset);
     if (selScen) selScen.addEventListener('change', reset);
     if (slE) slE.addEventListener('input', () => {
-      if (vE) vE.textContent = restitution().toFixed(2);
+      if (vE) vE.textContent = uzFix(restitution(), 2);
       updateHud();
     });
     if (chkVec) chkVec.addEventListener('change', draw);
@@ -448,7 +452,7 @@ Qoidalar:
   }
 
   // -------------------------------------------------------------------------
-  // 3. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 3. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const ids = ['rubric8_c1', 'rubric8_c2', 'rubric8_c3', 'rubric8_c4', 'rubric8_c5'];
@@ -463,8 +467,8 @@ Qoidalar:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A'LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko'rib chiqing." };
+      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
+      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
       else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Impuls formulasi, overlap resolution va saqlanish qonunlari tekshiruvini kuchaytiring." };
       else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }

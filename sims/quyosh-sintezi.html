@@ -27,7 +27,7 @@
     .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
     .stat { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px; text-align: center; }
     .stat b { display: block; font-family: ui-monospace, monospace; font-size: 1rem; }
-    .stat span { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
+    .stat span { font-size: 0.68rem; color: var(--muted); text-transform: none; }
     .step { border-left: 3px solid var(--border); padding: 4px 8px; margin-bottom: 6px; font-family: ui-monospace, monospace; font-size: 0.78rem; }
     .step.flash { border-left-color: #FBBF24; background: rgba(251,191,36,0.08); }
     .legend span { display: inline-flex; align-items: center; gap: 4px; margin: 0 10px 4px 0; }
@@ -49,7 +49,7 @@
       <label>Yadro harorati: <b id="tval">15.0</b> mln K
         <input type="range" id="temp" min="8" max="25" step="0.5" value="15">
       </label>
-      <button id="play">⏸ To'xtatish</button>
+      <button id="play">⏸ To‘xtatish</button>
       <button id="reset">↺ Qayta boshlash</button>
     </div>
   </header>
@@ -59,7 +59,7 @@
       <h2>Telemetriya</h2>
       <div class="stats">
         <div class="stat"><b id="sP">0</b><span>Protonlar ¹H</span></div>
-        <div class="stat"><b id="sHe4">0</b><span>Geliy-4 hosil bo'ldi</span></div>
+        <div class="stat"><b id="sHe4">0</b><span>Geliy-4 hosil bo‘ldi</span></div>
         <div class="stat"><b id="sE">0</b><span>Ajralgan energiya, MeV</span></div>
         <div class="stat"><b id="sNu">0</b><span>Neytrinolar</span></div>
       </div>
@@ -84,9 +84,9 @@
       <h2 style="margin-top:12px;">Reaksiyalar jurnali</h2>
       <div id="log"></div>
 
-      <p class="note">* 1-bosqich energiyasi pozitronning elektron bilan annigilyatsiyasini o'z ichiga oladi; uning bir qismini (o'rtacha ≈ 0.26 MeV) neytrino olib ketadi.
-      Haqiqiy Quyoshda 1-bosqich kuchsiz o'zaro ta'sir tufayli juda sekin (bitta proton uchun o'rtacha milliardlab yil); ko'rgazmalilik uchun
-      bu modelda barcha reaksiya tezliklari tezlashtirilgan, ammo ularning nisbiy tartibi (1-bosqich eng sekin) va haroratga kuchli bog'liqligi saqlangan.</p>
+      <p class="note">* 1-bosqich energiyasi pozitronning elektron bilan annigilyatsiyasini o‘z ichiga oladi; uning bir qismini (o‘rtacha ≈ 0.26 MeV) neytrino olib ketadi.
+      Haqiqiy Quyoshda 1-bosqich kuchsiz o‘zaro ta’sir tufayli juda sekin (bitta proton uchun o‘rtacha milliardlab yil); ko‘rgazmalilik uchun
+      bu modelda barcha reaksiya tezliklari tezlashtirilgan, ammo ularning nisbiy tartibi (1-bosqich eng sekin) va haroratga kuchli bog‘liqligi saqlangan.</p>
     </aside>
   </main>
 
@@ -128,8 +128,8 @@
       for (let i = 0; i < 90; i++) spawn('p');
     }
 
-    // Reaksiya ehtimolligi: Gamov omili tufayli haroratga kuchli bog'liq (T^n).
-    // pp (kuchsiz o'zaro ta'sir) eng sekin, pd eng tez, 3He+3He oraliq.
+    // Reaksiya ehtimolligi: Gamov omili tufayli haroratga kuchli bog‘liq (T^n).
+    // pp (kuchsiz o‘zaro ta'sir) eng sekin, pd eng tez, 3He+3He oraliq.
     function prob(kind) {
       const t = parseFloat(tempEl.value) / 15;
       const base = { pp: 0.12, pd: 0.8, hh: 1.0 }[kind];
@@ -195,7 +195,7 @@
           if (dx * dx + dy * dy < r * r) {
             react(a, b);
             if (!a.dead) {
-              // Kulon itarishi: reaksiya bo'lmasa, zarralar elastik qaytadi
+              // Kulon itarishi: reaksiya bo‘lmasa, zarralar elastik qaytadi
               const d = Math.hypot(dx, dy) || 1, nx = dx / d, ny = dy / d;
               const rel = (a.vx - b.vx) * nx + (a.vy - b.vy) * ny;
               if (rel > 0) { a.vx -= rel * nx; a.vy -= rel * ny; b.vx += rel * nx; b.vy += rel * ny; }
@@ -205,7 +205,7 @@
         }
       }
       particles = particles.filter(p => !p.dead);
-      // ⁴He "kul" sifatida yig'ilib qoladi; protonlar kamaysa yangi yoqilg'i qo'shiladi
+      // ⁴He "kul" sifatida yig‘ilib qoladi; protonlar kamaysa yangi yoqilg‘i qo‘shiladi
       while (particles.filter(p => p.type === 'p').length < 40) spawn('p');
       const he4 = particles.filter(p => p.type === 'he4');
       if (he4.length > 25) particles.splice(particles.indexOf(he4[0]), 1);
@@ -244,7 +244,7 @@
 
       document.getElementById('sP').textContent = particles.filter(p => p.type === 'p').length;
       document.getElementById('sHe4').textContent = stats.he4;
-      document.getElementById('sE').textContent = stats.energy.toFixed(2);
+      document.getElementById('sE').textContent = stats.energy.toFixed(2).replace('.', ',');
       document.getElementById('sNu').textContent = stats.nu;
     }
 
@@ -257,7 +257,7 @@
     }
 
     tempEl.addEventListener('input', () => {
-      tval.textContent = parseFloat(tempEl.value).toFixed(1);
+      tval.textContent = parseFloat(tempEl.value).toFixed(1).replace('.', ',');
       const k = speed() / 80;
       for (const p of particles) {
         const s = Math.hypot(p.vx, p.vy) || 1;
@@ -265,7 +265,7 @@
         p.vx *= target / s; p.vy *= target / s;
       }
     });
-    playBtn.addEventListener('click', () => { running = !running; playBtn.textContent = running ? "⏸ To'xtatish" : '▶ Davom etish'; });
+    playBtn.addEventListener('click', () => { running = !running; playBtn.textContent = running ? "⏸ To‘xtatish" : '▶ Davom etish'; });
     document.getElementById('reset').addEventListener('click', reset);
     window.addEventListener('resize', resize);
 

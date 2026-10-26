@@ -1,37 +1,41 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 10-Laboratoriya: orbital elementlar asosida trayektoriya va sinxron ovozli tushuntirish.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
  * 2. Dastgoh: Kepler tenglamasi M = E − e·sin E (Nyuton-Rafson), teng vaqtlarda
  *    chiziladigan yuzalar (2-qonun), vis-viva tezligi. 30 s lik ssenariy 4 ta
- *    segmentga bo'lingan; animatsiya soati segmentlar bilan bir xil vaqt
+ *    segmentga bo‘lingan; animatsiya soati segmentlar bilan bir xil vaqt
  *    shkalasidan olinadi. Ovoz brauzerning Web Speech API sintezatori orqali
- *    (o'zbek ovozi bo'lmasa — subtitr rejimi).
+ *    (o‘zbek ovozi bo‘lmasa — subtitr rejimi).
  * 3. 100 ballik rubrika kalkulyatori va promptlarni nusxalash.
  */
 
 (function () {
-  const DURATION = 30;        // ssenariy davomiyligi, s (bir to'liq aylanish)
-  const PERI_AT = 7;          // perigeliy o'tishi — 2-segment o'rtasida
+  const DURATION = 30;        // ssenariy davomiyligi, s (bir to‘liq aylanish)
+  const PERI_AT = 7;          // perigeliy o‘tishi — 2-segment o‘rtasida
   const V_EARTH = 29.78;      // km/s, √(GM☉/1 AU)
   const MAX_FRAME = 0.1;
 
-  // Orbital elementlar (J2000, yaxlitlangan): NASA JPL SSD ma'lumotlari
+  // Orbital elementlar (J2000, yaxlitlangan): NASA JPL SSD ma’lumotlari
   const BODIES = {
-    halley: { name: 'Galley Kometasi (1P/Halley)', a: 17.83, e: 0.967, T: 75.3, color: '#38bdf8',
-      desc: "O'ta cho'ziq elliptik orbita: perigeliy ≈ 0,59 AU (Merkuriy va Venera orbitalari orasida), afeliy ≈ 35 AU (Neptundan narida). Tezlik perigeliyda ≈ 54,5 km/s, afeliyda ≈ 0,9 km/s." },
+    halley: { name: 'Galley kometasi (1P/Halley)', a: 17.83, e: 0.967, T: 75.3, color: '#38bdf8',
+      desc: "O‘ta cho‘ziq elliptik orbita: perigeliy ≈ 0,59 AU (Merkuriy va Venera orbitalari orasida), afeliy ≈ 35 AU (Neptundan narida). Tezlik perigeliyda ≈ 54,5 km/s, afeliyda ≈ 0,9 km/s." },
     mars: { name: 'Mars', a: 1.524, e: 0.0934, T: 1.881, color: '#f97316',
-      desc: "Sezilarli ekssentrisitet: Quyoshgacha masofa 1,38 dan 1,67 AU gacha o'zgaradi. Tezlik perigeliyda ≈ 26,5 km/s, afeliyda ≈ 22,0 km/s." },
+      desc: "Sezilarli ekssentrisitet: Quyoshgacha masofa 1,38 dan 1,67 AU gacha o‘zgaradi. Tezlik perigeliyda ≈ 26,5 km/s, afeliyda ≈ 22,0 km/s." },
     earth: { name: 'Yer', a: 1.000, e: 0.0167, T: 1.000, color: '#10b981',
-      desc: "Deyarli aylanma orbita: perigeliy ≈ 0,983 AU (yanvar boshi), afeliy ≈ 1,017 AU (iyul boshi). Tezlik 29,3–30,3 km/s oralig'ida." },
+      desc: "Deyarli aylanma orbita: perigeliy ≈ 0,983 AU (yanvar boshi), afeliy ≈ 1,017 AU (iyul boshi). Tezlik 29,3–30,3 km/s oralig‘ida." },
     jupiter: { name: 'Yupiter', a: 5.203, e: 0.0484, T: 11.86, color: '#eab308',
-      desc: "Gigant sayyora: masofa 4,95 dan 5,46 AU gacha o'zgaradi, bir aylanish ≈ 11,9 yil. Tezlik ≈ 12,4–13,7 km/s." }
+      desc: "Gigant sayyora: masofa 4,95 dan 5,46 AU gacha o‘zgaradi, bir aylanish ≈ 11,9 yil. Tezlik ≈ 12,4–13,7 km/s." }
   };
 
   const SEGMENTS = [
-    { from: 0, to: 6, text: "Barcha sayyoralar va kometalar ellips bo'ylab harakatlanadi, Quyosh esa shu ellipsning fokuslaridan birida joylashgan. Bu — Keplerning birinchi qonuni." },
-    { from: 6, to: 14, text: "Jism perigeliyga, ya'ni Quyoshga eng yaqin nuqtaga yaqinlashgan sari tortishish kuchi ortadi va uning tezligi keskin oshadi." },
-    { from: 14, to: 22, text: "Afeliy tomon uzoqlashganda tortishish zaiflashadi, jism sekinlashadi va orbitaning uzoq qismida ko'p vaqt o'tkazadi." },
-    { from: 22, to: 30, text: "Keplerning ikkinchi qonuniga ko'ra, Quyosh va jismni tutashtiruvchi radius-vektor teng vaqtlarda teng yuzalarni chizadi." }
+    { from: 0, to: 6, text: "Barcha sayyoralar va kometalar ellips bo‘ylab harakatlanadi, Quyosh esa shu ellipsning fokuslaridan birida joylashgan. Bu — Keplerning birinchi qonuni." },
+    { from: 6, to: 14, text: "Jism perigeliyga, ya’ni Quyoshga eng yaqin nuqtaga yaqinlashgan sari tortishish kuchi ortadi va uning tezligi keskin oshadi." },
+    { from: 14, to: 22, text: "Afeliy tomon uzoqlashganda tortishish zaiflashadi, jism sekinlashadi va orbitaning uzoq qismida ko‘p vaqt o‘tkazadi." },
+    { from: 22, to: 30, text: "Keplerning ikkinchi qonuniga ko‘ra, Quyosh va jismni tutashtiruvchi radius-vektor teng vaqtlarda teng yuzalarni chizadi." }
   ];
 
   function renderMath(el) {
@@ -79,18 +83,18 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
-      plan: "Avval 2.1-bo'limdagi Kepler qonunlarini takrorlang va dastgohda Yer hamda Galley kometasi orbitalarini solishtiring: nima uchun kometa perigeliy yaqinida juda tez o'tadi? So'ng 4-bo'limdagi ssenariy promptini Gemini'ga yuborib, 30 soniyalik matn oling.",
+      title: 'Klaster "A" — Boshlang‘ich daraja',
+      plan: "Avval 2.1-bo‘limdagi Kepler qonunlarini takrorlang va dastgohda Yer hamda Galley kometasi orbitalarini solishtiring: nima uchun kometa perigeliy yaqinida juda tez o‘tadi? So‘ng 4-bo‘limdagi ssenariy promptini Gemini’ga yuborib, 30 soniyalik matn oling.",
       focus: "Kepler qonunlari, perigeliy va afeliy, ekssentrisitet"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "NASA JPL Horizons'dan tanlagan jismingiz uchun $a$, $e$ va $T$ ni oling va dastgohdagi qiymatlar bilan solishtiring. Ssenariyni SSML bilan belgilab (4-bo'lim), TTS vositasida ovozga aylantiring va segment chegaralarini audio vaqtiga moslang.",
+      plan: "NASA JPL Horizons’dan tanlagan jismingiz uchun $a$, $e$ va $T$ ni oling va dastgohdagi qiymatlar bilan solishtiring. Ssenariyni SSML bilan belgilab (4-bo‘lim), TTS vositasida ovozga aylantiring va segment chegaralarini audio vaqtiga moslang.",
       focus: "orbital elementlar, SSML, ssenariy segmentlari va vaqt belgilari"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
-      plan: "Kepler tenglamasi $M = E - e\\sin E$ ni Nyuton-Rafson usulida o'zingiz yechib, $e = 0.967$ da nechta iteratsiya kerakligini aniqlang. Tayyor audio faylning <code>currentTime</code> qiymatidan $M(t)$ ni hisoblaydigan sinxronizatsiya kodini yozing va dastgohdagi yondashuv bilan solishtiring.",
+      title: 'Klaster "C" — Ilg‘or daraja',
+      plan: "Kepler tenglamasi $M = E - e\\sin E$ ni Nyuton-Rafson usulida o‘zingiz yechib, $e = 0.967$ da nechta iteratsiya kerakligini aniqlang. Tayyor audio faylning <code>currentTime</code> qiymatidan $M(t)$ ni hisoblaydigan sinxronizatsiya kodini yozing va dastgohdagi yondashuv bilan solishtiring.",
       focus: "Kepler tenglamasining sonli yechimi, audio-animatsiya sinxronizatsiyasi"
     }
   };
@@ -124,17 +128,17 @@
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Sen astronomiya va ilmiy-ommabop kontent bo'yicha Sokratik ustozsan. Men 10-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Sen astronomiya va ilmiy-ommabop kontent bo‘yicha Sokratik ustozsan. Men 10-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
-Vazifa: NASA JPL Horizons orbital elementlari asosida bitta jism (sayyora yoki kometa) orbitasining animatsiyasi va unga 30 soniyalik o'zbekcha ovozli tushuntirish tayyorlash.
+Vazifa: NASA JPL Horizons orbital elementlari asosida bitta jism (sayyora yoki kometa) orbitasining animatsiyasi va unga 30 soniyalik o‘zbekcha ovozli tushuntirish tayyorlash.
 Iltimos:
 1. Tayyor matnni darhol bermang — avval men yozgan ssenariy qoralamasidagi fizik xatolarni topishimga savollar bilan yordam bering.
-2. Perigeliy va afeliy tezliklarini vis-viva formulasi bilan o'zim hisoblashim uchun yo'l ko'rsating.
-3. Ssenariy segmentlarini animatsiya voqealariga (perigeliydan o'tish va h.k.) moslash bo'yicha tavsiya bering.`;
+2. Perigeliy va afeliy tezliklarini vis-viva formulasi bilan o‘zim hisoblashim uchun yo‘l ko‘rsating.
+3. Ssenariy segmentlarini animatsiya voqealariga (perigeliydan o‘tish va h.k.) moslash bo‘yicha tavsiya bering.`;
     });
   }
 
@@ -208,9 +212,9 @@ Iltimos:
     function updateInfo() {
       const b = body();
       const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-      set('lab10-val-a', `${b.a < 2 ? b.a.toFixed(3) : b.a.toFixed(2)} AU`);
-      set('lab10-val-e', b.e.toFixed(4));
-      set('lab10-val-t', `${b.T < 2 ? b.T.toFixed(3) : b.T.toFixed(1)} yil`);
+      set('lab10-val-a', `${b.a < 2 ? uzFix(b.a, 3) : uzFix(b.a, 2)} AU`);
+      set('lab10-val-e', uzFix(b.e, 4));
+      set('lab10-val-t', `${b.T < 2 ? uzFix(b.T, 3) : uzFix(b.T, 1)} yil`);
       set('lab10-body-desc', b.desc);
       if (titleEl) titleEl.textContent = b.name;
     }
@@ -303,9 +307,9 @@ Iltimos:
       ctx.font = '12px monospace';
       ctx.fillStyle = '#e2e8f0';
       const years = ((((t - PERI_AT) / DURATION) % 1 + 1) % 1) * b.T;
-      ctx.fillText(`r = ${s.r.toFixed(3)} AU   v = ${s.v.toFixed(2)} km/s   perigeliydan: ${years.toFixed(b.T < 2 ? 3 : 1)} yil`, 12, 20);
+      ctx.fillText(`r = ${uzFix(s.r, 3)} AU   v = ${uzFix(s.v, 2)} km/s   perigeliydan: ${uzFix(years, b.T < 2 ? 3 : 1)} yil`, 12, 20);
       ctx.fillStyle = '#94a3b8';
-      ctx.fillText(`Masshtab: 30 s ssenariy = 1 aylanish (T = ${b.T} yil)`, 12, Hc - 10);
+      ctx.fillText(`Masshtab: 30 s ssenariy = 1 aylanish (T = ${String(b.T).replace('.', ',')} yil)`, 12, Hc - 10);
 
       drawTimeline();
     }
@@ -322,13 +326,13 @@ Iltimos:
         tctx.fillRect(x(s.from) + 1, barY, x(s.to) - x(s.from) - 2, barH);
         tctx.fillStyle = '#e2e8f0';
         tctx.textAlign = 'left';
-        tctx.fillText(`[${String(s.from).padStart(2, '0')}–${s.to}s] ${i + 1}-segment`, x(s.from) + 6, barY + 18);
+        tctx.fillText(`[${s.from}–${s.to} s] ${i + 1}-segment`, x(s.from) + 6, barY + 18);
       });
       tctx.fillStyle = '#94a3b8';
       tctx.textAlign = 'left';
-      tctx.fillText('Ssenariy vaqt shkalasi — bosib kerakli joyga o\'ting', padL, 18);
+      tctx.fillText('Ssenariy vaqt shkalasi — bosib kerakli joyga o‘ting', padL, 18);
       tctx.textAlign = 'right';
-      tctx.fillText(`${t.toFixed(1)} / ${DURATION} s`, w - padR, 18);
+      tctx.fillText(`${uzFix(t, 1)} / ${DURATION} s`, w - padR, 18);
       // perigeliy belgisi
       tctx.fillStyle = '#facc15';
       tctx.fillRect(x(PERI_AT) - 1, barY - 6, 2, barH + 12);
@@ -341,7 +345,7 @@ Iltimos:
 
     function showSubtitle(i) {
       if (!subEl) return;
-      subEl.textContent = i >= 0 ? `"${SEGMENTS[i].text}"` : '"Animatsiya va ovoz ijrosini boshlash uchun tugmani bosing."';
+      subEl.textContent = i >= 0 ? `“${SEGMENTS[i].text}”` : '“Animatsiya va ovoz ijrosini boshlash uchun tugmani bosing.”';
     }
 
     function pickVoice() {
@@ -353,7 +357,7 @@ Iltimos:
     function speakSegment(i) {
       if (!narrate || !synth || i < 0) return;
       const voice = pickVoice();
-      if (!voice) return; // o'zbek ovozi yo'q — faqat subtitr
+      if (!voice) return; // o‘zbek ovozi yo‘q — faqat subtitr
       synth.cancel();
       const u = new SpeechSynthesisUtterance(SEGMENTS[i].text);
       u.voice = voice;
@@ -375,7 +379,7 @@ Iltimos:
           t = DURATION - 1e-6;
           narrate = false;
           pause();
-          if (btnTts) btnTts.textContent = '🎙️ Ovozli Tushuntirishni Qayta Boshlash';
+          if (btnTts) btnTts.textContent = '🎙️ Ovozli tushuntirishni qayta boshlash';
         } else {
           t %= DURATION;
         }
@@ -408,7 +412,7 @@ Iltimos:
       t = 0;
       lastSeg = -1;
       showSubtitle(-1);
-      if (btnTts) btnTts.textContent = '🎙️ Ovozli Tushuntirishni Boshlash';
+      if (btnTts) btnTts.textContent = '🎙️ Ovozli tushuntirishni boshlash';
       draw();
     }
 
@@ -419,7 +423,7 @@ Iltimos:
       narrate = true;
       btnTts.textContent = '🎙️ Ijro etilmoqda…';
       if (!pickVoice()) {
-        toast("Brauzeringizda o'zbek ovozi topilmadi — subtitr rejimi. Haqiqiy ovoz uchun Muxlisa AI yoki ElevenLabs faylidan foydalaning.");
+        toast("Brauzeringizda o‘zbek ovozi topilmadi — subtitr rejimi. Haqiqiy ovoz uchun Muxlisa AI yoki ElevenLabs faylidan foydalaning.");
       }
       play();
     });
@@ -427,7 +431,7 @@ Iltimos:
     if (btnPause) btnPause.addEventListener('click', pause);
     if (btnReset) btnReset.addEventListener('click', reset);
     if (sel) sel.addEventListener('change', () => { updateInfo(); draw(); });
-    if (slSpeed) slSpeed.addEventListener('input', () => { if (vSpeed) vSpeed.textContent = `${speed().toFixed(2)}x`; });
+    if (slSpeed) slSpeed.addEventListener('input', () => { if (vSpeed) vSpeed.textContent = `${uzFix(speed(), 2)}×`; });
     if (chkSweep) chkSweep.addEventListener('change', draw);
     if (chkVec) chkVec.addEventListener('change', draw);
     tcv.addEventListener('click', ev => {
@@ -450,7 +454,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 3. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 3. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const ids = ['rubric10_c1', 'rubric10_c2', 'rubric10_c3', 'rubric10_c4', 'rubric10_c5'];
@@ -465,9 +469,9 @@ Iltimos:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A'LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko'rib chiqing." };
-      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Orbital ma'lumotlar tahlili va ovoz-animatsiya sinxronizatsiyasini kuchaytiring." };
+      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
+      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
+      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Orbital ma’lumotlar tahlili va ovoz-animatsiya sinxronizatsiyasini kuchaytiring." };
       else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }
       if (fbEl) fbEl.textContent = g.fb;

@@ -195,19 +195,19 @@ function wavelengthToRGB(wavelength) {
 }
 
 /**
- * Canvasni ota konteyner (parent) o'lchamiga moslab qayta o'lchaydi va
- * Retina/DPR ekranlarda xira ko'rinmasligi uchun devicePixelRatio'ni
- * hisobga oladi. `ctx.scale()` o'rniga `ctx.setTransform()` ishlatiladi,
+ * Canvasni ota konteyner (parent) o‘lchamiga moslab qayta o‘lchaydi va
+ * Retina/DPR ekranlarda xira ko‘rinmasligi uchun devicePixelRatio‘ni
+ * hisobga oladi. `ctx.scale()` o‘rniga `ctx.setTransform()` ishlatiladi,
  * shunda resize bir necha marta chaqirilganda (ekran aylantirilganda,
- * oyna o'lchami o'zgarganda) masshtab hech qachon kumulyativ (jamlanib)
+ * oyna o‘lchami o‘zgarganda) masshtab hech qachon kumulyativ (jamlanib)
  * oshib ketmaydi.
  *
  * @param {HTMLCanvasElement} canvas
  * @param {number} [aspectRatio] - balandlik/kenglik nisbati (masalan 0.6).
  *   Berilmasa, konteynerning haqiqiy balandligi ishlatiladi.
  * @param {(width:number, height:number) => void} [onResize] - har bir
- *   qayta o'lchashdan keyin chaqiriladi (CSS piksellardagi yangi o'lcham bilan).
- * @returns {() => void} resize funksiyasining o'zi (darhol chaqirish uchun)
+ *   qayta o‘lchashdan keyin chaqiriladi (CSS piksellardagi yangi o‘lcham bilan).
+ * @returns {() => void} resize funksiyasining o‘zi (darhol chaqirish uchun)
  */
 function setupResponsiveCanvas(canvas, aspectRatio, onResize) {
   const ctx = canvas.getContext('2d');

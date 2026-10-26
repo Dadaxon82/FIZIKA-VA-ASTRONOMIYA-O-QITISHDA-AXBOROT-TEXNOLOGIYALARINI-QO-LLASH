@@ -1,10 +1,14 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 9-Laboratoriya: kod generatsiyasi uchun promptlar va shaxsiy prompt-kutubxona.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
  * 2. Prompt sandboksi: 4 darajadagi promptlardan odatda olinadigan mayatnik
  *    kodlari (tipik natija namunalari) bir xil parametrlarda ishga tushiriladi
  *    va RK4 (kichik qadam) etalon yechimi bilan solishtiriladi. Fazaviy portret
- *    va E/E0 grafigi, energiya xatoligi jonli o'lchanadi.
+ *    va E/E0 grafigi, energiya xatoligi jonli o‘lchanadi.
  * 3. Shaxsiy prompt-kutubxona (brauzer localStorage, JSON eksport).
  * 4. 100 ballik rubrika kalkulyatori va promptlarni nusxalash.
  */
@@ -69,18 +73,18 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
-      plan: "Avval 2.1-bo'limdagi promptning 5 ta ustunini (Rol, Kontekst, Ko'rsatma, Cheklovlar, Chiqish formati) o'z so'zlaringiz bilan yozing. 3-bo'limdagi 1- va 2-sinov promptlarini yuborib, natijalarni 5-bo'limdagi sandboksdagi 1- va 2-daraja bilan solishtiring: energiya grafigi nima uchun o'sib borishini tushuntiring.",
+      title: 'Klaster "A" — Boshlang‘ich daraja',
+      plan: "Avval 2.1-bo‘limdagi promptning 5 ta ustunini (Rol, Kontekst, Ko‘rsatma, Cheklovlar, Chiqish formati) o‘z so‘zlaringiz bilan yozing. 3-bo‘limdagi 1- va 2-sinov promptlarini yuborib, natijalarni 5-bo‘limdagi sandboksdagi 1- va 2-daraja bilan solishtiring: energiya grafigi nima uchun o‘sib borishini tushuntiring.",
       focus: "prompt tuzilmasi, fizik cheklovlarni aniq yozish, oddiy Eyler usulining kamchiligi"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "3-sinov (Role + CoT) promptini o'z masalangizga moslang va modeldan avval tenglamani, keyin integratsiya usulini asoslashni talab qiling. Olingan kodni sandboksdagi 3-daraja bilan solishtirib, energiya xatoligini o'lchang. Eng yaxshi promptni kutubxonaga saqlang.",
-      focus: "Chain-of-Thought, Eyler-Kromer usuli, natijani sonli tekshirish"
+      plan: "3-sinov (Role + CoT) promptini o‘z masalangizga moslang va modeldan avval tenglamani, keyin integratsiya usulini asoslashni talab qiling. Olingan kodni sandboksdagi 3-daraja bilan solishtirib, energiya xatoligini o‘lchang. Eng yaxshi promptni kutubxonaga saqlang.",
+      focus: "Chain-of-Thought, Eyler–Kromer usuli, natijani sonli tekshirish"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
-      plan: "4-sinovdagi XML master promptni boshqa fizik tizim (masalan, ikki jismli orbita yoki prujinali mayatnik) uchun qayta yozing. Promptga avtomatik test talabini qo'shing: kod analitik yoki RK4 etalon yechim bilan solishtirilsin. Kutubxonangizni JSON ko'rinishida eksport qilib, guruhdoshlaringiz bilan almashing.",
+      title: 'Klaster "C" — Ilg‘or daraja',
+      plan: "4-sinovdagi XML master promptni boshqa fizik tizim (masalan, ikki jismli orbita yoki prujinali mayatnik) uchun qayta yozing. Promptga avtomatik test talabini qo‘shing: kod analitik yoki RK4 etalon yechim bilan solishtirilsin. Kutubxonangizni JSON ko‘rinishida eksport qilib, guruhdoshlaringiz bilan almashing.",
       focus: "XML teglari, test talablari, velocity-Verlet va RK4, prompt-kutubxona"
     }
   };
@@ -114,19 +118,19 @@
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       promptEl.value =
 `<system_role>
-Sen fizika o'qituvchilari uchun prompt-muhandislik bo'yicha Sokratik murabbiysan.
+Sen fizika o‘qituvchilari uchun prompt-muhandislik bo‘yicha Sokratik murabbiysan.
 </system_role>
 <student_profile>
 9-laboratoriya diagnostik testi: ${score}/100, "${key}" klaster. Asosiy mavzular: ${c.focus}.
 </student_profile>
 <task>
 Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Tayyor promptni bermang:
-1. Mening promptimni Rol, Kontekst, Ko'rsatma, Cheklovlar va Chiqish formati bo'yicha baholang.
+1. Mening promptimni Rol, Kontekst, Ko‘rsatma, Cheklovlar va Chiqish formati bo‘yicha baholang.
 2. Qaysi fizik cheklov (masalan, sin θ ≈ θ farazi, integratsiya usuli, qadam) yetishmayotganini savol orqali topishimga yordam bering.
 3. Olingan kodni tekshirish uchun bitta sonli test taklif qiling (masalan, energiya saqlanishi).
 </task>`;
@@ -136,35 +140,35 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
   // -------------------------------------------------------------------------
   // 2. PROMPT SANDBOKSI: 4 daraja mayatnik kodlari
   // -------------------------------------------------------------------------
-  // Har bir daraja — shu turdagi promptga modellar ko'pincha beradigan kodning
+  // Har bir daraja — shu turdagi promptga modellar ko‘pincha beradigan kodning
   // tipik xususiyatlari (namuna), aniq modelning kafolatlangan natijasi emas.
   const LEVELS = {
     level1: {
-      title: "1-Daraja: Sodda Zero-shot Prompt",
-      method: "Oshkor Eyler, sin θ ≈ θ, qadam kadrga bog'liq",
+      title: "1-daraja: sodda zero-shot prompt",
+      method: "Oshkor Eyler, sin θ ≈ θ, qadam kadrga bog‘liq",
       quality: 35,
-      features: "Kichik burchak farazi (sin θ ≈ θ), qarshilik e'tiborga olinmagan, har kadrda qat'iy 1/60 s qadam, oshkor Eyler — energiya o'sib boradi.",
+      features: "Kichik burchak farazi (sin θ ≈ θ), qarshilik e’tiborga olinmagan, har kadrda qat’iy 1/60 s qadam, oshkor Eyler — energiya o‘sib boradi.",
       linear: true, damping: false, integrator: 'euler', h: 1 / 60, promptId: 'prompt-test1'
     },
     level2: {
-      title: "2-Daraja: Fizik Chegaralari Ko'rsatilgan Prompt",
-      method: "Oshkor Eyler, to'liq sin θ, h = 1/60 s",
+      title: "2-daraja: fizik chegaralari ko‘rsatilgan prompt",
+      method: "Oshkor Eyler, to‘liq sin θ, h = 1/60 s",
       quality: 68,
-      features: "Nochiziqli tenglama va qarshilik bor, lekin oshkor Eyler usuli: tebranish so'nishi o'rniga energiya sun'iy ortadi.",
+      features: "Nochiziqli tenglama va qarshilik bor, lekin oshkor Eyler usuli: tebranish so‘nishi o‘rniga energiya sun’iy ortadi.",
       linear: false, damping: true, integrator: 'euler', h: 1 / 60, promptId: 'prompt-test2'
     },
     level3: {
-      title: "3-Daraja: Role + Chain-of-Thought Prompt",
-      method: "Eyler-Kromer (yarim-oshkor), h = 1/120 s",
+      title: "3-daraja: rol + fikrlash zanjiri",
+      method: "Eyler–Kromer (yarim-oshkor), h = 1/120 s",
       quality: 88,
-      features: "Model tenglamani va usulni bosqichma-bosqich asoslaydi: Eyler-Kromer — energiya kichik amplitudada tebranadi, sun'iy o'sish yo'q.",
+      features: "Model tenglamani va usulni bosqichma-bosqich asoslaydi: Eyler–Kromer — energiya kichik amplitudada tebranadi, sun’iy o‘sish yo‘q.",
       linear: false, damping: true, integrator: 'cromer', h: 1 / 120, promptId: 'prompt-test3'
     },
     level4: {
-      title: "4-Daraja: To'liq XML Master Prompt",
+      title: "4-daraja: XML master-so‘rov",
       method: "Velocity Verlet, h = 1/240 s",
       quality: 98,
-      features: "To'liq tenglama, qarshilik, velocity-Verlet, qat'iy qadamli akkumulyator, fazaviy portret va energiya telemetriyasi.",
+      features: "To‘liq tenglama, qarshilik, velocity-Verlet, qat’iy qadamli akkumulyator, fazaviy portret va energiya telemetriyasi.",
       linear: false, damping: true, integrator: 'verlet', h: 1 / 240, promptId: 'prompt-test4'
     }
   };
@@ -271,13 +275,13 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
       const errPct = errN ? 100 * Math.sqrt(errSum / errN) : 0;
       const acc = el('accuracy');
       if (acc) {
-        acc.textContent = errN ? `${Math.max(0, 100 - errPct).toFixed(1)} %` : '— %';
+        acc.textContent = errN ? `${uzFix(Math.max(0, 100 - errPct), 1)} %` : '— %';
         acc.style.color = errPct < 1 ? '#10b981' : errPct < 10 ? '#f59e0b' : '#f43f5e';
       }
       const risk = el('risk');
       if (risk) {
         const cur = e0 > 0 ? 100 * Math.abs(energy(sim) - energy(ref)) / e0 : 0;
-        risk.textContent = errN ? `Energiya xatoligi: ${cur.toFixed(2)} %` : 'Energiya xatoligi: —';
+        risk.textContent = errN ? `Energiya xatoligi: ${uzFix(cur, 2)} %` : 'Energiya xatoligi: —';
         risk.style.color = cur < 1 ? '#10b981' : cur < 10 ? '#f59e0b' : '#f43f5e';
       }
     }
@@ -294,7 +298,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
 
     function advance(frameTime) {
       const lv = level();
-      // 1-daraja kodi kadr vaqtini hisobga olmaydi: har kadrda qat'iy 1/60 s
+      // 1-daraja kodi kadr vaqtini hisobga olmaydi: har kadrda qat’iy 1/60 s
       if (lv.h === 1 / 60 && lv.linear) {
         stepLevel(sim, lv, 1 / 60);
       } else {
@@ -352,7 +356,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
       ctx.font = '12px monospace';
       ctx.textAlign = 'left';
       ctx.fillStyle = '#e2e8f0';
-      ctx.fillText(`t = ${t.toFixed(1)} s   θ = ${(sim.th * 180 / Math.PI).toFixed(1)}°   θ₀ = ${(THETA0 * 180 / Math.PI).toFixed(0)}°`, 12, 20);
+      ctx.fillText(`t = ${uzFix(t, 1)} s   θ = ${uzFix((sim.th * 180 / Math.PI), 1)}°   θ₀ = ${uzFix((THETA0 * 180 / Math.PI), 0)}°`, 12, 20);
       ctx.fillStyle = 'rgba(16,185,129,0.9)';
       ctx.textAlign = 'right';
       ctx.fillText('┄ RK4 etalon (h = 1 ms)', W - 12, 20);
@@ -390,7 +394,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
         pctx.stroke();
       }
 
-      // O'ng: E/E0
+      // O‘ng: E/E0
       const x0 = half + 36, x1 = w - 8, yTop = 8, yBot = h - 16;
       const eMax = 2.0;
       const ey = r => yBot - (Math.min(Math.max(r, 0), eMax) / eMax) * (yBot - yTop);
@@ -399,7 +403,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
         pctx.strokeStyle = r === 1 ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.08)';
         pctx.beginPath(); pctx.moveTo(x0, ey(r)); pctx.lineTo(x1, ey(r)); pctx.stroke();
         pctx.fillStyle = '#94a3b8';
-        pctx.fillText(r.toFixed(1), x0 - 4, ey(r) + 4);
+        pctx.fillText(uzFix(r, 1), x0 - 4, ey(r) + 4);
       });
       const series = (arr, color, dash) => {
         if (histCount < 2) return;
@@ -420,7 +424,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
       series(eSim, '#38bdf8', []);
       pctx.textAlign = 'left';
       pctx.fillStyle = '#94a3b8';
-      pctx.fillText('E/E₀ (ko\'k — kod, yashil — etalon)', x0, h - 3);
+      pctx.fillText('E/E₀ (ko‘k — kod, yashil — etalon)', x0, h - 3);
     }
 
     function play() {
@@ -443,8 +447,8 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
     if (btnPause) btnPause.addEventListener('click', pause);
     if (btnReset) btnReset.addEventListener('click', reset);
     if (sel) sel.addEventListener('change', reset);
-    if (slL) slL.addEventListener('input', () => { if (vL) vL.textContent = `${L().toFixed(2)} m`; reset(); });
-    if (slB) slB.addEventListener('input', () => { if (vB) vB.textContent = beta().toFixed(3); reset(); });
+    if (slL) slL.addEventListener('input', () => { if (vL) vL.textContent = `${uzFix(L(), 2)} m`; reset(); });
+    if (slB) slB.addEventListener('input', () => { if (vB) vB.textContent = uzFix(beta(), 3); reset(); });
 
     window.triggerLab9CanvasRedraw = draw;
     reset();
@@ -471,7 +475,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
     if (!Array.isArray(items)) items = [];
 
     function save() {
-      try { localStorage.setItem(LIB_KEY, JSON.stringify(items)); } catch (e) { /* saqlab bo'lmasa ham ro'yxat ishlaydi */ }
+      try { localStorage.setItem(LIB_KEY, JSON.stringify(items)); } catch (e) { /* saqlab bo‘lmasa ham ro‘yxat ishlaydi */ }
     }
 
     function render() {
@@ -479,7 +483,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
       if (!items.length) {
         const p = document.createElement('p');
         p.style.cssText = 'color: var(--text-secondary); font-size: 0.88rem;';
-        p.textContent = "Hozircha saqlangan prompt yo'q. Yuqoridagi forma orqali birinchi promptingizni qo'shing (ro'yxat faqat shu brauzerda saqlanadi — muhimlarini JSON qilib eksport qiling).";
+        p.textContent = "Hozircha saqlangan prompt yo‘q. Yuqoridagi forma orqali birinchi promptingizni qo‘shing (ro‘yxat faqat shu brauzerda saqlanadi — muhimlarini JSON qilib eksport qiling).";
         list.appendChild(p);
         return;
       }
@@ -506,7 +510,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
         cp.addEventListener('click', () => copyText(it.content, cp));
         const del = document.createElement('button');
         del.className = 'btn btn-secondary btn-sm';
-        del.textContent = "🗑 O'chirish";
+        del.textContent = "🗑 O‘chirish";
         del.addEventListener('click', () => { items.splice(i, 1); save(); render(); });
         row.append(cp, del);
         card.append(head, pre, row);
@@ -541,7 +545,7 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
   }
 
   // -------------------------------------------------------------------------
-  // 4. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 4. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const ids = ['rubric9_c1', 'rubric9_c2', 'rubric9_c3', 'rubric9_c4', 'rubric9_c5'];
@@ -556,8 +560,8 @@ Men matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Ta
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A'LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko'rib chiqing." };
+      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
+      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
       else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Prompt tuzilmasi, fizik cheklovlar va natijani sonli tekshirishni kuchaytiring." };
       else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }

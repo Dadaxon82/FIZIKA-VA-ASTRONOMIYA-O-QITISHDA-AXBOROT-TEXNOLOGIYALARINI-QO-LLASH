@@ -1,6 +1,6 @@
 /**
  * sim-error-analysis.js
- * 4-Mavzu: Zamonaviy kompyuter modeliga qo'yiladigan talablar va hisoblash aniqligi
+ * 4-Mavzu: Zamonaviy kompyuter modeliga qo‘yiladigan talablar va hisoblash aniqligi
  * Sonli integratsiya usullari (Euler, Euler-Cromer, RK2/Heun, RK4) va xatolik tahlili simulyatori.
  */
 
@@ -31,11 +31,11 @@ class ErrorAnalysisEngine {
 
     // Active Methods
     this.methods = {
-      exact: { name: 'Aniq Yechim', color: '#94A3B8', active: true, theta: 0, omega: 0, history: [], energy: [] },
-      euler: { name: 'Forward Euler', color: '#F43F5E', active: true, theta: 0, omega: 0, history: [], energy: [] },
-      ec:    { name: 'Euler-Cromer', color: '#34D399', active: true, theta: 0, omega: 0, history: [], energy: [] },
+      exact: { name: 'Aniq yechim', color: '#94A3B8', active: true, theta: 0, omega: 0, history: [], energy: [] },
+      euler: { name: 'Oshkor Eyler', color: '#F43F5E', active: true, theta: 0, omega: 0, history: [], energy: [] },
+      ec:    { name: 'Eyler–Kromer', color: '#34D399', active: true, theta: 0, omega: 0, history: [], energy: [] },
       heun:  { name: 'Heun (RK2)', color: '#FBBF24', active: true, theta: 0, omega: 0, history: [], energy: [] },
-      rk4:   { name: 'Runge-Kutta 4', color: '#38BDF8', active: true, theta: 0, omega: 0, history: [], energy: [] }
+      rk4:   { name: 'Runge–Kutta 4', color: '#38BDF8', active: true, theta: 0, omega: 0, history: [], energy: [] }
     };
 
     this.reset();
@@ -316,9 +316,9 @@ class ErrorAnalysisEngine {
     // Title label
     ctx.fillStyle = '#94A3B8';
     ctx.font = '10px monospace';
-    ctx.fillText('Siljish theta(t) [rad] vaqt bo`yicha', 10, 16);
-    ctx.fillText(`+${(this.theta0).toFixed(2)} rad`, 10, midY - this.theta0 * scaleY + 12);
-    ctx.fillText(`-${(this.theta0).toFixed(2)} rad`, 10, midY + this.theta0 * scaleY - 4);
+    ctx.fillText('θ(t), rad — vaqt bo‘yicha', 10, 16);
+    ctx.fillText(`+${(this.theta0).toFixed(2).replace('.', ',')} rad`, 10, midY - this.theta0 * scaleY + 12);
+    ctx.fillText(`−${(this.theta0).toFixed(2).replace('.', ',')} rad`, 10, midY + this.theta0 * scaleY - 4);
   }
 
   renderPhasePortrait() {
@@ -363,7 +363,7 @@ class ErrorAnalysisEngine {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '10px monospace';
-    ctx.fillText('Fazaviy Portret (omega vs theta)', 10, 16);
+    ctx.fillText('Faza portreti ω(θ)', 10, 16);
   }
 
   renderEnergyDrift() {
@@ -387,7 +387,7 @@ class ErrorAnalysisEngine {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '10px monospace';
-    ctx.fillText('E(t)/E0 = 1.00 (Saqlanish qonuni)', 10, baseLineY - 6);
+    ctx.fillText('E(t)/E₀ = 1 (saqlanish qonuni)', 10, baseLineY - 6);
 
     const scaleE = h * 0.25; // Height for E/E0 = 2.0
     const historyLen = this.maxHistory;
@@ -420,10 +420,10 @@ class ErrorAnalysisEngine {
     let html = '';
 
     const methodKeys = [
-      { key: 'euler', order: 'O(dt)', name: 'Forward Euler' },
-      { key: 'ec',    order: 'O(dt) Simplektik', name: 'Euler-Cromer' },
-      { key: 'heun',  order: 'O(dt^2)', name: 'Heun / RK2' },
-      { key: 'rk4',   order: 'O(dt^4)', name: 'Runge-Kutta 4' }
+      { key: 'euler', order: 'O(Δt)', name: 'Oshkor Eyler' },
+      { key: 'ec',    order: 'O(Δt), simplektik', name: 'Eyler–Kromer' },
+      { key: 'heun',  order: 'O(Δt²)', name: 'Heun (RK2)' },
+      { key: 'rk4',   order: 'O(Δt⁴)', name: 'Runge–Kutta 4' }
     ];
 
     for (let item of methodKeys) {
@@ -435,11 +435,11 @@ class ErrorAnalysisEngine {
 
       html += `<tr>
         <td style="color:${m.color}; font-weight:700;">${item.name}</td>
-        <td><span class="badge badge-purple" style="font-size:0.75rem;">${item.order}</span></td>
-        <td style="font-family:var(--font-mono);">${m.theta.toFixed(4)} rad</td>
-        <td style="font-family:var(--font-mono); color:${absErr > 0.5 ? '#F43F5E' : '#38BDF8'};">${absErr.toExponential(3)}</td>
+        <td><span class="badge badge-purple" style="font-size:0.75rem; text-transform:none;">${item.order}</span></td>
+        <td style="font-family:var(--font-mono);">${m.theta.toFixed(4).replace('.', ',').replace('-', '−')} rad</td>
+        <td style="font-family:var(--font-mono); color:${absErr > 0.5 ? '#F43F5E' : '#38BDF8'};">${(() => { const [mm, ee] = absErr.toExponential(3).split('e'); const sup = {'-':'⁻','0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'}; const ex = String(parseInt(ee)).split('').map(c => sup[c]).join(''); return mm.replace('.', ',') + '·10' + ex; })()}</td>
         <td style="font-family:var(--font-mono); color:${isDiverging ? '#F43F5E' : (driftPercent == '0.00' ? '#34D399' : '#FBBF24')};">
-          ${driftPercent > 0 ? '+' : ''}${driftPercent}% ${isDiverging ? '⚠️ (Portlash)' : ''}
+          ${driftPercent > 0 ? '+' : ''}${Math.abs(driftPercent) >= 1e6 ? (() => { const [mm, ee] = Number(driftPercent).toExponential(2).split('e'); const sup = {'-':'⁻','0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'}; return mm.replace('.', ',') + '·10' + String(parseInt(ee)).split('').map(c => sup[c]).join(''); })() : String(driftPercent).replace('.', ',').replace('-', '−')} % ${isDiverging ? '⚠️ (portlash)' : ''}
         </td>
       </tr>`;
     }
@@ -447,10 +447,10 @@ class ErrorAnalysisEngine {
     tableBody.innerHTML = html;
 
     const timeEl = document.getElementById('telemetry-time');
-    if (timeEl) timeEl.textContent = `${this.time.toFixed(2)} s`;
+    if (timeEl) timeEl.textContent = `${this.time.toFixed(2).replace('.', ',')} s`;
 
     const stepEl = document.getElementById('telemetry-step');
-    if (stepEl) stepEl.textContent = `${this.methods.rk4.history.length}`;
+    if (stepEl) stepEl.textContent = `${Math.max(0, this.methods.rk4.history.length - 1)}`;
   }
 
   initEventListeners() {
@@ -460,7 +460,7 @@ class ErrorAnalysisEngine {
     if (dtSlider && dtVal) {
       dtSlider.addEventListener('input', (e) => {
         this.dt = parseFloat(e.target.value);
-        dtVal.textContent = `${this.dt.toFixed(3)} s`;
+        dtVal.textContent = `${this.dt.toFixed(3).replace('.', ',')} s`;
         this.reset();
       });
     }
@@ -472,7 +472,7 @@ class ErrorAnalysisEngine {
       lSlider.addEventListener('input', (e) => {
         this.L = parseFloat(e.target.value);
         this.omega0 = Math.sqrt(this.g / this.L);
-        lVal.textContent = `${this.L.toFixed(2)} m`;
+        lVal.textContent = `${this.L.toFixed(2).replace('.', ',')} m`;
         this.reset();
       });
     }
@@ -484,7 +484,7 @@ class ErrorAnalysisEngine {
       ampSlider.addEventListener('input', (e) => {
         this.theta0 = parseFloat(e.target.value);
         const deg = (this.theta0 * 180 / Math.PI).toFixed(1);
-        ampVal.textContent = `${this.theta0.toFixed(2)} rad (${deg}°)`;
+        ampVal.textContent = `${this.theta0.toFixed(2).replace('.', ',')} rad (${String(deg).replace('.', ',')}°)`;
         this.reset();
       });
     }
@@ -505,7 +505,7 @@ class ErrorAnalysisEngine {
     if (playBtn) {
       playBtn.addEventListener('click', () => {
         this.isRunning = !this.isRunning;
-        playBtn.textContent = this.isRunning ? '⏸️ To`xtatish' : '▶️ Boshlash';
+        playBtn.textContent = this.isRunning ? '⏸️ To‘xtatish' : '▶️ Boshlash';
         playBtn.classList.toggle('btn-primary', !this.isRunning);
         playBtn.classList.toggle('btn-secondary', this.isRunning);
       });

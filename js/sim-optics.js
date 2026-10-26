@@ -1,5 +1,5 @@
 /**
- * SIM-OPTICS.JS - Young's Double Slit Wave Interference & Single Slit Diffraction Envelope
+ * SIM-OPTICS.JS - Young‘s Double Slit Wave Interference & Single Slit Diffraction Envelope
  */
 
 class OpticsSimulation {

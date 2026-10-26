@@ -1,19 +1,23 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 14, Tab 6: Interaktiv Elektrodinamika & Audio-Narratsiya
  * Laboratoriyasi. 1-Rejim: Kulon maydoni superpozitsiyasi (tab3'dagi
  * hujjatlashtirilgan calculateElectricField kodi bilan bir xil) + sinov
  * zaryadining maydon kuchi ostidagi haqiqiy harakati. 2-Rejim: Faradey
  * induksiyasi (tab3'dagi calculateFaradayInduction kodi bilan bir xil,
- * harakatlanuvchi magnit + g'altak). 3-Rejim: RLC zanjiri majburiy
+ * harakatlanuvchi magnit + g‘altak). 3-Rejim: RLC zanjiri majburiy
  * tebranishlari (tab3'dagi calculateRlcOscillation kodi bilan bir xil).
  * Audio-narratsiya tab4'dagi hujjatlashtirilgan Web Speech API kodi bilan
  * bir xil (haqiqiy nutq sintezi, simulyatsiya emas).
  *
- * Shu fayl, shuningdek, sahifa boshqaruvchisi bo'lgan skroll-tab
+ * Shu fayl, shuningdek, sahifa boshqaruvchisi bo‘lgan skroll-tab
  * (scrollTabsNav/updateTabsScrollProgress) va jonli PhET/Vascak.cz
  * simulyator almashtirgichi (switchElectroOnlineSim/toggleOnlineSimFullscreen)
- * funksiyalarini ham ta'minlaydi — bular sahifada chaqirilgan, lekin hech
- * qayerda e'lon qilinmagan edi.
+ * funksiyalarini ham ta’minlaydi — bular sahifada chaqirilgan, lekin hech
+ * qayerda e’lon qilinmagan edi.
  */
 
 // ---------------------------------------------------------------------------
@@ -61,82 +65,82 @@ document.addEventListener('DOMContentLoaded', () => {
 // (https://phet.colorado.edu/sims/html/{slug}/latest/{slug}_en.html); "Magnet
 // & Compass" uchun aniq HTML5 slug tasdiqlanmagani sababli eng yaqin mos
 // (magnets-and-electromagnets) ishlatildi. Vascak.cz elektrodinamika
-// bo'limining ichki animatsiya slug'lari (lecture13'dagi termodinamika
-// slug'laridan farqli prefiks bilan) sandbox tarmoq cheklovi tufayli
+// bo‘limining ichki animatsiya slug‘lari (lecture13'dagi termodinamika
+// slug‘laridan farqli prefiks bilan) sandbox tarmoq cheklovi tufayli
 // tasdiqlanmagani va bosh sahifada reklama borligi sababli, bu 4 tugma
 // reklamasiz PhET simulyatsiyalariga (Lorens kuchi uchun esa sayt ichidagi
-// sims/lorens-kuchi.html ga) yo'naltirilgan.
+// sims/lorens-kuchi.html ga) yo‘naltirilgan.
 const ONLINE_SIMS = {
   'phet-faraday': {
     url: 'https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_en.html',
-    title: "🧲 PhET Interactive Simulations: Faraday's Law (Elektromagnit Induksiya)",
+    title: "🧲 PhET Interactive Simulations: Faraday’s Law (Elektromagnit Induksiya)",
     badge: 'PhET HTML5',
-    desc: "Faradeyning elektromagnit induksiya qonuni, doimiy magnitning g'altak ichidagi harakati, magnit oqimi o'zgarishi va induksiyalangan elektr yurituvchi kuch (E.Yu.K.) dinamikasi.",
+    desc: "Faradeyning elektromagnit induksiya qonuni, doimiy magnitning g‘altak ichidagi harakati, magnit oqimi o‘zgarishi va induksiyalangan elektr yurituvchi kuch (E.Yu.K.) dinamikasi.",
     eqs: "$$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad \\Phi_B = \\int \\vec{B} \\cdot \\mathrm{d}\\vec{A} = B A \\cos\\theta, \\quad I = \\frac{\\mathcal{E}}{R}$$",
     tasks: [
-      "1. Magnitning N qutbini g'altak ichiga kiriting va voltmetr ko'rsatkichining qaysi tomonga og'ishini qayd eting.",
-      "2. Magnitni g'altak ichida harakatsiz ushlab turing va nega E.Yu.K. nolga teng bo'lishini tushuntiring.",
-      "3. G'altak o'ramlari sonini 2 tadan 4 taga oshirib, hosil bo'layotgan kuchlanish 2 barobar ortishini tekshiring."
+      "1. Magnitning N qutbini g‘altak ichiga kiriting va voltmetr ko‘rsatkichining qaysi tomonga og‘ishini qayd eting.",
+      "2. Magnitni g‘altak ichida harakatsiz ushlab turing va nega E.Yu.K. nolga teng bo‘lishini tushuntiring.",
+      "3. G‘altak o‘ramlari sonini 2 tadan 4 taga oshirib, hosil bo‘layotgan kuchlanish 2 barobar ortishini tekshiring."
     ]
   },
   'phet-charges': {
     url: 'https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_en.html',
     title: '⚡ PhET Interactive Simulations: Charges and Fields',
     badge: 'PhET HTML5',
-    desc: "Nuqtaviy zaryadlarning superpozitsiya maydoni, ekvipotensial chiziqlar va maydon sensori orqali kuchlanganlikni o'lchash.",
+    desc: "Nuqtaviy zaryadlarning superpozitsiya maydoni, ekvipotensial chiziqlar va maydon sensori orqali kuchlanganlikni o‘lchash.",
     eqs: "$$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i^2}\\hat{r}_i, \\qquad \\Phi(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i}$$",
     tasks: [
       "1. Ikkita musbat zaryadni yaqin joylashtirib, maydon kuch chiziqlarining bir-birini itarishini kuzating.",
       "2. Ekvipotensial chiziqlar asbobini ishlatib, potensial=const egri chiziqlarni chizing.",
-      "3. Sensor bilan turli nuqtalarda maydon kuchlanganligini o'lchang va masofa kvadratiga bog'liqligini tasdiqlang."
+      "3. Sensor bilan turli nuqtalarda maydon kuchlanganligini o‘lchang va masofa kvadratiga bog‘liqligini tasdiqlang."
     ]
   },
   'phet-circuit': {
     url: 'https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html',
     title: '🔌 PhET Interactive Simulations: Circuit Construction Kit: DC',
     badge: 'PhET HTML5',
-    desc: "Elektr zanjirini erkin qurish, rezistor/batareya/lampochka ulash va tok/kuchlanishni virtual asboblar bilan o'lchash.",
+    desc: "Elektr zanjirini erkin qurish, rezistor/batareya/lampochka ulash va tok/kuchlanishni virtual asboblar bilan o‘lchash.",
     eqs: "$$U = IR, \\qquad P = UI = I^2 R$$",
     tasks: [
       "1. Bitta batareya va ikkita rezistorni ketma-ket ulab, umumiy qarshilikni hisoblang.",
       "2. Xuddi shu rezistorlarni parallel ulab, tok taqsimotini solishtiring.",
-      "3. Ampermetr va voltmetrni zanjirga to'g'ri ulab, Om qonunini tasdiqlang."
+      "3. Ampermetr va voltmetrni zanjirga to‘g‘ri ulab, Om qonunini tasdiqlang."
     ]
   },
   'phet-magnet': {
     url: 'https://phet.colorado.edu/sims/html/magnets-and-electromagnets/latest/magnets-and-electromagnets_en.html',
     title: '🧭 PhET Interactive Simulations: Magnets and Electromagnets',
     badge: 'PhET HTML5',
-    desc: "Doimiy magnit va elektromagnitning magnit maydon chiziqlari, kompas igna og'ishi va tok kuchining magnit maydoniga ta'siri.",
+    desc: "Doimiy magnit va elektromagnitning magnit maydon chiziqlari, kompas igna og‘ishi va tok kuchining magnit maydoniga ta’siri.",
     eqs: "$$B = \\mu_0 n I \\;\\; (\\text{solenoid ichida})$$",
     tasks: [
-      "1. Kompasni magnit atrofida aylantirib, maydon chiziqlari yo'nalishini xaritalang.",
+      "1. Kompasni magnit atrofida aylantirib, maydon chiziqlari yo‘nalishini xaritalang.",
       "2. Elektromagnitdagi tokni oshirib, maydon kuchi ortishini kuzating.",
-      "3. Tok yo'nalishini teskari qilib, qutblarning almashishini tekshiring."
+      "3. Tok yo‘nalishini teskari qilib, qutblarning almashishini tekshiring."
     ]
   },
   'vascak-coulomb': {
     url: 'https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_en.html',
-    title: "⚡ PhET: Coulomb's Law (Kulon Qonuni)",
+    title: "⚡ PhET: Coulomb’s Law (Kulon Qonuni)",
     badge: 'PhET',
-    desc: "Ikki nuqtaviy zaryad orasidagi elektrostatik kuchning zaryadlar kattaligi va masofaga bog'liqligini o'rganish (reklamasiz PhET simulyatsiyasi).",
+    desc: "Ikki nuqtaviy zaryad orasidagi elektrostatik kuchning zaryadlar kattaligi va masofaga bog‘liqligini o‘rganish (reklamasiz PhET simulyatsiyasi).",
     eqs: "$$F = k_e \\frac{q_1 q_2}{r^2}$$",
     tasks: [
-      "1. Zaryadlar orasidagi masofani ikki marta oshirib, kuch to'rt marta kamayishini tekshiring.",
-      "2. Bitta zaryad kattaligini ikki marta oshirib, kuchning chiziqli o'zgarishini kuzating.",
+      "1. Zaryadlar orasidagi masofani ikki marta oshirib, kuch to‘rt marta kamayishini tekshiring.",
+      "2. Bitta zaryad kattaligini ikki marta oshirib, kuchning chiziqli o‘zgarishini kuzating.",
       "3. Zaryad ishoralarini almashtirib, tortishish va itarishish holatlarini solishtiring."
     ]
   },
   'vascak-faraday': {
     url: 'https://phet.colorado.edu/sims/html/faradays-electromagnetic-lab/latest/faradays-electromagnetic-lab_en.html',
-    title: "🧲 PhET: Faraday's Electromagnetic Lab (Faradey Induksiyasi)",
+    title: "🧲 PhET: Faraday’s Electromagnetic Lab (Faradey Induksiyasi)",
     badge: 'PhET',
-    desc: "Magnit, elektromagnit, g'altak, transformator va generator yordamida elektromagnit induksiyani chuqurroq o'rganish (reklamasiz PhET simulyatsiyasi).",
+    desc: "Magnit, elektromagnit, g‘altak, transformator va generator yordamida elektromagnit induksiyani chuqurroq o‘rganish (reklamasiz PhET simulyatsiyasi).",
     eqs: "$$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}$$",
     tasks: [
-      "1. Magnitni g'altak ichiga turli tezlikda kiriting va induksiya EYuK ning tezlikka bog'liqligini kuzating.",
-      "2. G'altak o'ramlari sonini o'zgartirib, EYuK ning N ga proporsionalligini tekshiring.",
-      "3. Lents qoidasiga ko'ra induksion tok yo'nalishini oldindan ayting va tekshiring."
+      "1. Magnitni g‘altak ichiga turli tezlikda kiriting va induksiya EYuK ning tezlikka bog‘liqligini kuzating.",
+      "2. G‘altak o‘ramlari sonini o‘zgartirib, EYuK ning N ga proporsionalligini tekshiring.",
+      "3. Lents qoidasiga ko‘ra induksion tok yo‘nalishini oldindan ayting va tekshiring."
     ]
   },
   'vascak-lorentz': {
@@ -147,19 +151,19 @@ const ONLINE_SIMS = {
     eqs: "$$\\vec{F} = q(\\vec{E} + \\vec{v} \\times \\vec{B}), \\quad r = \\frac{mv}{|q|B}$$",
     tasks: [
       "1. Tezlikni ikki marta oshirib, aylana radiusi ham ikki marta ortishini tekshiring.",
-      "2. Magnit induksiyani o'zgartirib, aylanish davri T = 2πm/(|q|B) formulasini tasdiqlang (davr tezlikka bog'liq emas).",
-      "3. Elektr maydonni qo'shib, dreyf tezligi E/B ga tengligini kuzating."
+      "2. Magnit induksiyani o‘zgartirib, aylanish davri T = 2πm/(|q|B) formulasini tasdiqlang (davr tezlikka bog‘liq emas).",
+      "3. Elektr maydonni qo‘shib, dreyf tezligi E/B ga tengligini kuzating."
     ]
   },
   'vascak-ohm': {
     url: 'https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_en.html',
-    title: "📐 PhET: Ohm's Law (Om Qonuni)",
+    title: "📐 PhET: Ohm’s Law (Om Qonuni)",
     badge: 'PhET',
-    desc: "Kuchlanish, qarshilik va tok kuchi orasidagi bog'lanishni oddiy zanjirda o'rganish (reklamasiz PhET simulyatsiyasi).",
+    desc: "Kuchlanish, qarshilik va tok kuchi orasidagi bog‘lanishni oddiy zanjirda o‘rganish (reklamasiz PhET simulyatsiyasi).",
     eqs: "$$I = \\frac{U}{R}$$",
     tasks: [
       "1. Qarshilikni oshirib, tok kuchining kamayishini kuzating.",
-      "2. Kuchlanishni o'zgartirib, tok bilan chiziqli bog'liqlikni tasdiqlang.",
+      "2. Kuchlanishni o‘zgartirib, tok bilan chiziqli bog‘liqlikni tasdiqlang.",
       "3. Bir nechta (U, I) juftligidan qarshilikni hisoblab, slayderdagi qiymat bilan solishtiring."
     ]
   }
@@ -224,7 +228,7 @@ window.toggleOnlineSimFullscreen = function () {
 function speakScientificNarration(topic = 'coulomb') {
   if (!('speechSynthesis' in window)) {
     if (typeof window.showToast === 'function') {
-      window.showToast("Brauzeringizda ovoz sintezi qo'llab-quvvatlanmaydi.");
+      window.showToast("Brauzeringizda ovoz sintezi qo‘llab-quvvatlanmaydi.");
     }
     return;
   }
@@ -232,9 +236,9 @@ function speakScientificNarration(topic = 'coulomb') {
   window.speechSynthesis.cancel();
 
   const narrationScript = {
-    faraday: "Faradey elektromagnit induksiya qonuniga ko'ra, konturdan o'tayotgan magnit oqimi vaqt bo'yicha o'zgarganda, konturda elektr yurituvchi kuch hosil bo'ladi. Lens qoidasiga binoan, induksiyalangan tok o'zining magnit maydoni bilan uni yuzaga keltirgan oqim o'zgarishiga qarshilik ko'rsatadi.",
-    coulomb: "Kulon qonuni ikki nuqtaviy zaryad orasidagi o'zaro ta'sir kuchini ifodalaydi. Bir xil ishorali zaryadlar itarishadi, qarama-qarshi ishorali zaryadlar esa tortishadi. Maydon kuchlanganligi masofa kvadratiga teskari proporsional kamayadi.",
-    rlc: "RLC zanjirida o'zgaruvchan tok manbai ulanganda induktivlik va sig'im qarshiliklari o'zaro tenglashganda rezonans hodisasi yuz beradi va tok amplitudasi maksimal qiymatga erishadi."
+    faraday: "Faradey elektromagnit induksiya qonuniga ko‘ra, konturdan o‘tayotgan magnit oqimi vaqt bo‘yicha o‘zgarganda, konturda elektr yurituvchi kuch hosil bo‘ladi. Lens qoidasiga binoan, induksiyalangan tok o‘zining magnit maydoni bilan uni yuzaga keltirgan oqim o‘zgarishiga qarshilik ko‘rsatadi.",
+    coulomb: "Kulon qonuni ikki nuqtaviy zaryad orasidagi o‘zaro ta’sir kuchini ifodalaydi. Bir xil ishorali zaryadlar itarishadi, qarama-qarshi ishorali zaryadlar esa tortishadi. Maydon kuchlanganligi masofa kvadratiga teskari proporsional kamayadi.",
+    rlc: "RLC zanjirida o‘zgaruvchan tok manbai ulanganda induktivlik va sig‘im qarshiliklari o‘zaro tenglashganda rezonans hodisasi yuz beradi va tok amplitudasi maksimal qiymatga erishadi."
   };
 
   const utterance = new SpeechSynthesisUtterance(narrationScript[topic] || narrationScript.coulomb);
@@ -341,13 +345,13 @@ function initElectrodynamicsLab() {
     charges[1].q = parseFloat(slQ2.value);
 
     const field = calculateElectricField(testCharge.x, testCharge.y, charges);
-    // Sinov zaryadi kuchi ostidagi harakati: a = qE/m (Eyler-Kromer)
+    // Sinov zaryadi kuchi ostidagi harakati: a = qE/m (Eyler–Kromer)
     const scale = 0.02; // canvas-piksel demo masshtabi
     const ax = (testCharge.q * field.Ex) * scale / testCharge.m;
     const ay = (testCharge.q * field.Ey) * scale / testCharge.m;
     testCharge.vx += ax * dt;
     testCharge.vy += ay * dt;
-    // Yumshoq so'nish (test zaryad cheksiz tezlanmasligi uchun)
+    // Yumshoq so‘nish (test zaryad cheksiz tezlanmasligi uchun)
     testCharge.vx *= 0.999;
     testCharge.vy *= 0.999;
     testCharge.x += testCharge.vx * dt;
@@ -363,7 +367,7 @@ function initElectrodynamicsLab() {
   function drawField(ctx, w, h) {
     ctx.clearRect(0, 0, w, h);
 
-    // Maydon vektorlari to'ri
+    // Maydon vektorlari to‘ri
     const step = 40;
     ctx.strokeStyle = 'rgba(148,163,184,0.35)';
     ctx.lineWidth = 1;
@@ -403,7 +407,7 @@ function initElectrodynamicsLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(`q1=${charges[0].q.toFixed(1)} nKl  q2=${charges[1].q.toFixed(1)} nKl`, 10, h - 8);
+    ctx.fillText(`q₁ = ${uzFix(charges[0].q, 1)} nKl   q₂ = ${uzFix(charges[1].q, 1)} nKl`, 10, h - 8);
   }
 
   canvas.addEventListener('mousedown', (e) => {
@@ -471,7 +475,7 @@ function initElectrodynamicsLab() {
 
     const { flux, inducedEmf } = calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, coilRadius, 1 / 60);
 
-    // G'altak (bir nechta ellips, o'ramlar soniga mos)
+    // G‘altak (bir nechta ellips, o‘ramlar soniga mos)
     ctx.strokeStyle = '#FBBF24';
     ctx.lineWidth = 2.5;
     for (let i = 0; i < turns; i++) {
@@ -492,7 +496,7 @@ function initElectrodynamicsLab() {
     ctx.fillText('N', magnetX - magW / 2 + magW / 4 - 4, midY + 4);
     ctx.fillText('S', magnetX + magW / 4 - 4, midY + 4);
 
-    // Lampochka (EMF kattaligiga qarab yorug'lik)
+    // Lampochka (EMF kattaligiga qarab yorug‘lik)
     const bulbX = coilX + 110, bulbY = midY - 90;
     const brightness = Math.min(1, Math.abs(inducedEmf) / 3);
     ctx.fillStyle = `rgba(251, 191, 36, ${0.15 + brightness * 0.85})`;
@@ -508,7 +512,7 @@ function initElectrodynamicsLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(`Φ = ${flux.toFixed(2)}  ε = ${inducedEmf.toFixed(2)} V`, 10, h - 8);
+    ctx.fillText(`Φ = ${uzFix(flux, 2)}  ε = ${uzFix(inducedEmf, 2)} V`, 10, h - 8);
   }
 
   // -----------------------------------------------------------------------
@@ -536,7 +540,7 @@ function initElectrodynamicsLab() {
     rlcTrail.length = 0;
   }
 
-  const VISUAL_RLC_HZ = 1.2; // Grafik va sxema animatsiyasi uchun sun'iy chastota: 60fps kanvasda 10-150 Hz haqiqiy chastotani to'g'ridan-to'g'ri chizish alias (notekis zigzag) beradi, shu sabab vaqt o'qi chastotaga teskari proporsional siljitiladi — bu faqat vizual tekislik, Z/I0/phi/f0 kabi barcha telemetriya haqiqiy `freq` bilan hisoblanadi va o'zgarmaydi.
+  const VISUAL_RLC_HZ = 1.2; // Grafik va sxema animatsiyasi uchun sun’iy chastota: 60fps kanvasda 10-150 Hz haqiqiy chastotani to‘g‘ridan-to‘g‘ri chizish alias (notekis zigzag) beradi, shu sabab vaqt o‘qi chastotaga teskari proporsional siljitiladi — bu faqat vizual tekislik, Z/I0/phi/f0 kabi barcha telemetriya haqiqiy `freq` bilan hisoblanadi va o‘zgarmaydi.
   function stepRlc(dt) {
     const R = parseFloat(slR.value), L = parseFloat(slL.value), C = parseFloat(slC.value), freq = parseFloat(slFreq.value);
     rlcTime += dt * (VISUAL_RLC_HZ / freq);
@@ -587,7 +591,7 @@ function initElectrodynamicsLab() {
     ctx.stroke();
     ctx.lineWidth = 2;
 
-    // Tok yo'nalishi indikatori (oqim ishorasiga qarab yo'nalgan strelka)
+    // Tok yo‘nalishi indikatori (oqim ishorasiga qarab yo‘nalgan strelka)
     const iDir = state.i_t >= 0 ? 1 : -1;
     const arrowX = w * 0.5, arrowY = midY + 45;
     ctx.strokeStyle = '#38BDF8';
@@ -602,7 +606,7 @@ function initElectrodynamicsLab() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(`I(t) = ${state.i_t.toFixed(3)} A   U(t) = ${state.u_t.toFixed(2)} V`, 10, h - 8);
+    ctx.fillText(`I(t) = ${uzFix(state.i_t, 3)} A   U(t) = ${uzFix(state.u_t, 2)} V`, 10, h - 8);
   }
 
   // -----------------------------------------------------------------------
@@ -647,7 +651,7 @@ function initElectrodynamicsLab() {
     } else if (mode === 'faraday') {
       telLabel1.textContent = 'Magnit Oqimi (Φ)';
       telLabel2.textContent = 'Induksiyalangan EYuK (ε)';
-      telLabel3.textContent = "G'altak O'ramlari (N)";
+      telLabel3.textContent = "G‘altak O‘ramlari (N)";
       telLabel4.textContent = 'Magnit Tezligi';
     } else {
       telLabel1.textContent = 'Impedans (Z)';
@@ -658,10 +662,10 @@ function initElectrodynamicsLab() {
   }
 
   function updateSliderLabels() {
-    valQ1.textContent = (parseFloat(slQ1.value) >= 0 ? '+' : '') + parseFloat(slQ1.value).toFixed(1) + ' nKl';
-    valQ2.textContent = (parseFloat(slQ2.value) >= 0 ? '+' : '') + parseFloat(slQ2.value).toFixed(1) + ' nKl';
+    valQ1.textContent = (parseFloat(slQ1.value) >= 0 ? '+' : '') + uzFix(parseFloat(slQ1.value), 1) + ' nKl';
+    valQ2.textContent = (parseFloat(slQ2.value) >= 0 ? '+' : '') + uzFix(parseFloat(slQ2.value), 1) + ' nKl';
     valCoilTurns.textContent = slCoilTurns.value + ' ta';
-    valMagnetSpeed.textContent = parseFloat(slMagnetSpeed.value).toFixed(1) + 'x';
+    valMagnetSpeed.textContent = uzFix(parseFloat(slMagnetSpeed.value), 1) + 'x';
     valR.textContent = slR.value + ' Ω';
     valL.textContent = Math.round(parseFloat(slL.value) * 1000) + ' mH';
     valC.textContent = slC.value + ' µF';
@@ -695,15 +699,15 @@ function initElectrodynamicsLab() {
   function togglePlay() {
     running = !running;
     btnPlay.innerHTML = running
-      ? '<span style="font-size: 1.1rem; line-height: 1;">⏸</span> To\'xtatish'
-      : '<span style="font-size: 1.1rem; line-height: 1;">▶</span> Davom Ettirish';
+      ? '<span style="font-size: 1.1rem; line-height: 1;">⏸</span> To‘xtatish'
+      : '<span style="font-size: 1.1rem; line-height: 1;">▶</span> Davom ettirish';
   }
   btnPlay.addEventListener('click', togglePlay);
 
   function resetSim() {
     resetAll();
     running = true;
-    btnPlay.innerHTML = '<span style="font-size: 1.1rem; line-height: 1;">⏸</span> To\'xtatish';
+    btnPlay.innerHTML = '<span style="font-size: 1.1rem; line-height: 1;">⏸</span> To‘xtatish';
   }
   btnReset.addEventListener('click', resetSim);
 
@@ -722,25 +726,25 @@ function initElectrodynamicsLab() {
   function updateTelemetryValues(rlcState) {
     if (mode === 'field') {
       const f = calculateElectricField(testCharge.x, testCharge.y, charges);
-      telParam1.textContent = f.magnitude.toFixed(2) + ' N/Kl';
-      telParam2.textContent = f.potential.toFixed(2) + ' V';
-      telParam3.textContent = (testCharge.q >= 0 ? '+' : '') + testCharge.q.toFixed(2) + ' nKl';
-      telParam4.textContent = Math.hypot(testCharge.vx, testCharge.vy).toFixed(1) + ' m/s';
+      telParam1.textContent = uzFix(f.magnitude, 2) + ' N/Kl';
+      telParam2.textContent = uzFix(f.potential, 2) + ' V';
+      telParam3.textContent = (testCharge.q >= 0 ? '+' : '') + uzFix(testCharge.q, 2) + ' nKl';
+      telParam4.textContent = uzFix(Math.hypot(testCharge.vx, testCharge.vy), 1) + ' m/s';
     } else if (mode === 'faraday') {
       const turns = parseInt(slCoilTurns.value, 10);
       const { flux, inducedEmf } = calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, 45, 1 / 60);
-      telParam1.textContent = flux.toFixed(2) + ' mWb';
-      telParam2.textContent = inducedEmf.toFixed(2) + ' V';
+      telParam1.textContent = uzFix(flux, 2) + ' mWb';
+      telParam2.textContent = uzFix(inducedEmf, 2) + ' V';
       telParam3.textContent = turns + ' ta';
-      telParam4.textContent = parseFloat(slMagnetSpeed.value).toFixed(1) + 'x';
+      telParam4.textContent = uzFix(parseFloat(slMagnetSpeed.value), 1) + 'x';
     } else {
       const R = parseFloat(slR.value), L = parseFloat(slL.value), C = parseFloat(slC.value);
       const omega0 = 1 / Math.sqrt(L * (C * 1e-6));
       const f0 = omega0 / (2 * Math.PI);
-      telParam1.textContent = rlcState.Z.toFixed(1) + ' Ω';
-      telParam2.textContent = rlcState.I0.toFixed(3) + ' A';
-      telParam3.textContent = (rlcState.phi * 180 / Math.PI).toFixed(1) + '°';
-      telParam4.textContent = f0.toFixed(1) + ' Hz';
+      telParam1.textContent = uzFix(rlcState.Z, 1) + ' Ω';
+      telParam2.textContent = uzFix(rlcState.I0, 3) + ' A';
+      telParam3.textContent = uzFix((rlcState.phi * 180 / Math.PI), 1) + '°';
+      telParam4.textContent = uzFix(f0, 1) + ' Hz';
     }
   }
 
@@ -839,22 +843,22 @@ function initElectrodynamicsLab() {
         const f = calculateElectricField(testCharge.x, testCharge.y, charges);
         showPipelineOutput(`
           <strong>1. PhET "Charges and Fields" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          q1 = ${charges[0].q.toFixed(1)} nKl, q2 = ${charges[1].q.toFixed(1)} nKl.<br>
-          Sinov zaryadi nuqtasidagi maydon: <strong>E = ${f.magnitude.toFixed(2)} N/Kl</strong>, Φ = ${f.potential.toFixed(2)} V.`);
+          q1 = ${uzFix(charges[0].q, 1)} nKl, q2 = ${uzFix(charges[1].q, 1)} nKl.<br>
+          Sinov zaryadi nuqtasidagi maydon: <strong>E = ${uzFix(f.magnitude, 2)} N/Kl</strong>, Φ = ${uzFix(f.potential, 2)} V.`);
       } else if (mode === 'faraday') {
         const turns = parseInt(slCoilTurns.value, 10);
         const { inducedEmf } = calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, 45, 1 / 60);
         showPipelineOutput(`
-          <strong>1. PhET "Faraday's Law" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          N = ${turns} o'ram, magnit tezligi = ${slMagnetSpeed.value}x.<br>
-          Hisoblangan induksiyalangan E.Yu.K.: <strong>ε = ${inducedEmf.toFixed(2)} V</strong>.`);
+          <strong>1. PhET "Faraday’s Law" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
+          N = ${turns} o‘ram, magnit tezligi = ${slMagnetSpeed.value}x.<br>
+          Hisoblangan induksiyalangan E.Yu.K.: <strong>ε = ${uzFix(inducedEmf, 2)} V</strong>.`);
       } else {
         const R = parseFloat(slR.value), L = parseFloat(slL.value), C = parseFloat(slC.value), freq = parseFloat(slFreq.value);
         const state = calculateRlcOscillation(R, L, C, 10, freq, rlcTime);
         showPipelineOutput(`
           <strong>1. Vascak.cz "RLC Circuit" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
           R = ${R} Ω, L = ${Math.round(L * 1000)} mH, C = ${C} µF, f = ${freq} Hz.<br>
-          Hisoblangan impedans: <strong>Z = ${state.Z.toFixed(1)} Ω</strong>, I₀ = ${state.I0.toFixed(3)} A.`);
+          Hisoblangan impedans: <strong>Z = ${uzFix(state.Z, 1)} Ω</strong>, I₀ = ${uzFix(state.I0, 3)} A.`);
       }
     });
   }
@@ -868,7 +872,7 @@ function initElectrodynamicsLab() {
       };
       const code = codeByMode[mode];
       showPipelineOutput(`
-        <strong>2. Claude 3.5 Sonnet Maydon & Zanjir Kodi:</strong>
+        <strong>2. Claude Maydon & Zanjir Kodi:</strong>
         <pre style="background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;"><code>${code}</code></pre>
         <button id="btn-copy-electro-code" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
       attachCopyHandler('btn-copy-electro-code', code);
@@ -893,22 +897,22 @@ function initElectrodynamicsLab() {
       let physicsLine;
       if (mode === 'field') {
         const f = calculateElectricField(testCharge.x, testCharge.y, charges);
-        physicsLine = `Sinov zaryadi maydon ta'sirida uzluksiz harakatlanmoqda, hozirgi tezlik ${Math.hypot(testCharge.vx, testCharge.vy).toFixed(1)} m/s. Maydon superpozitsiyasi ${charges.length} ta manba zaryaddan to'g'ri hisoblanmoqda.`;
+        physicsLine = `Sinov zaryadi maydon ta’sirida uzluksiz harakatlanmoqda, hozirgi tezlik ${uzFix(Math.hypot(testCharge.vx, testCharge.vy), 1)} m/s. Maydon superpozitsiyasi ${charges.length} ta manba zaryaddan to‘g‘ri hisoblanmoqda.`;
       } else if (mode === 'faraday') {
         const turns = parseInt(slCoilTurns.value, 10);
         const { inducedEmf } = calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, 45, 1 / 60);
         const lenzOk = (magnetX > prevMagnetX && inducedEmf < 0) || (magnetX < prevMagnetX && inducedEmf > 0) || Math.abs(inducedEmf) < 0.01;
-        physicsLine = `Lens qoidasi ${lenzOk ? 'tasdiqlandi' : 'tekshirilmoqda'}: magnit harakat yo'nalishi va E.Yu.K. ishorasi mos. Joriy ε = ${inducedEmf.toFixed(3)} V.`;
+        physicsLine = `Lens qoidasi ${lenzOk ? 'tasdiqlandi' : 'tekshirilmoqda'}: magnit harakat yo‘nalishi va E.Yu.K. ishorasi mos. Joriy ε = ${uzFix(inducedEmf, 3)} V.`;
       } else {
         const R = parseFloat(slR.value), L = parseFloat(slL.value), C = parseFloat(slC.value), freq = parseFloat(slFreq.value);
         const state = calculateRlcOscillation(R, L, C, 10, freq, rlcTime);
         const omega0 = 1 / Math.sqrt(L * (C * 1e-6));
         const f0 = omega0 / (2 * Math.PI);
         const nearResonance = Math.abs(freq - f0) / f0 < 0.05;
-        physicsLine = `Rezonans chastotasi f₀ = ${f0.toFixed(1)} Hz, joriy f = ${freq} Hz ${nearResonance ? '(rezonansga yaqin — Z minimal)' : ''}. Fazaviy siljish φ = ${(state.phi * 180 / Math.PI).toFixed(1)}°.`;
+        physicsLine = `Rezonans chastotasi f₀ = ${uzFix(f0, 1)} Hz, joriy f = ${freq} Hz ${nearResonance ? '(rezonansga yaqin — Z minimal)' : ''}. Fazaviy siljish φ = ${uzFix((state.phi * 180 / Math.PI), 1)}°.`;
       }
       showPipelineOutput(`
-        <strong>4. Google Antigravity AI Audit Natijasi:</strong><br>
+        <strong>4. Google Antigravity Audit Natijasi:</strong><br>
         ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>
         ✓ Delta-Time Akkumulyatori: ${lastFps} FPS, kadrlar barqaror ishlamoqda.<br>
         ✓ Fizik Invariantlar: ${physicsLine}`);

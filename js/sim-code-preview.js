@@ -15,7 +15,7 @@ function stepKepler(planet, GM, dt) {
     const ax = a * planet.x;
     const ay = a * planet.y;
 
-    // Simplektik Eyler-Kromer (v yangilanib, keyin x topiladi)
+    // Simplektik Eyler–Kromer (v yangilanib, keyin x topiladi)
     planet.vx += ax * dt;
     planet.vy += ay * dt;
 
@@ -98,7 +98,7 @@ function initKeplerCodePreview() {
 }
 
 // =============================================================================
-// Same function as in the "Stoxastik 2D Gaz To'qnashuvi Kodi" listing
+// Same function as in the "Stoxastik 2D Gaz To‘qnashuvi Kodi" listing
 // =============================================================================
 function resolveParticleCollision(p1, p2) {
     const dx = p2.x - p1.x;

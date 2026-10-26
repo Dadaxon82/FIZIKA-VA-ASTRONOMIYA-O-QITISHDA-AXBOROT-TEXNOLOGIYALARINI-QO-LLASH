@@ -25,6 +25,12 @@
       }
     });
   </script>
+  <script>
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
+  </script>
 </head>
 <body>
 
@@ -36,7 +42,7 @@
           <circle cx="12" cy="12" r="9"></circle>
           <path d="M12 3v18M3 12h18"></path>
         </svg>
-        <span>FIZIKA &amp; SUN'IY INTELLEKT</span>
+        <span>FIZIKA va SUN’IY INTELLEKT</span>
       </a>
 
                               <ul class="nav-links">
@@ -44,33 +50,34 @@
         <li><a href="lecture1.html" class="nav-link active">1-Modul: Paradigma</a></li>
         <li><a href="lecture2.html" class="nav-link ">2-Modul: Modellashtirish</a></li>
         <li><a href="lecture3.html" class="nav-link ">3-Modul: AI Ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik va Barqarorlik</a></li>
         <li><a href="lecture5.html" class="nav-link ">5-Modul: Model Turlari</a></li>
         <li><a href="lecture6.html" class="nav-link ">6-Modul: Modellarni Shakllantirish</a></li>
         <li><a href="lecture7.html" class="nav-link ">7-Modul: Canvas Arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar va To‘qnashuv</a></li>
         <li><a href="lecture9.html" class="nav-link ">9-Modul: Prompt Muhandislik</a></li>
         <li><a href="lecture10.html" class="nav-link ">10-Modul: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta'lim</a></li>
-        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika & AI Pipeline</a></li>
-        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika & Stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika & Audio Sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika va AI Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika va Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika va Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi va Capstone</a></li>
         <li><a href="lab1.html" class="nav-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
         <li><a href="lab2.html" class="nav-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
-        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -98,34 +105,35 @@
       <li><a href="lecture1.html" class="drawer-link active">🔬 1-Modul: AI Paradigma</a></li>
       <li><a href="lecture2.html" class="drawer-link ">🧪 2-Modul: Modellashtirish</a></li>
       <li><a href="lecture3.html" class="drawer-link ">🤖 3-Modul: AI Ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik va Barqarorlik</a></li>
       <li><a href="lecture5.html" class="drawer-link ">🌌 5-Modul: Model Turlari</a></li>
       <li><a href="lecture6.html" class="drawer-link ">📐 6-Modul: Modellarni Shakllantirish</a></li>
       <li><a href="lecture7.html" class="drawer-link ">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar va To‘qnashuv</a></li>
       <li><a href="lecture9.html" class="drawer-link ">🧠 9-Modul: Prompt Muhandislik</a></li>
       <li><a href="lecture10.html" class="drawer-link ">🪐 10-Modul: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta'lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika & AI Pipeline</a></li>
-      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
+      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika va AI Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika va Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika va Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi va Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
       <li><a href="lab1.html" class="drawer-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
       <li><a href="lab2.html" class="drawer-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
-      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
       <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
     </ul>
   </nav>
@@ -136,44 +144,44 @@
     <div class="section-header" style="text-align: left; margin-bottom: 40px;">
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
         <span class="badge badge-emerald">1-Mavzu</span>
-        <span class="badge badge-cyan">Oliy Ta'lim & Magistratura</span>
-        <span class="badge badge-purple">AI-Native Ta'lim Paradigmasi</span>
+        <span class="badge badge-cyan">Oliy Ta’lim va Magistratura</span>
+        <span class="badge badge-purple">AI-Native Ta’lim Paradigmasi</span>
       </div>
       <h1 style="margin-bottom: 16px;">
-        Kirish. Raqamli Texnologiyalar Davrida Sun'iy Intellekt Foydalanib <br>
+        Kirish. Raqamli Texnologiyalar Davrida Sun’iy Intellekt Foydalanib <br>
         <span class="text-gradient">Fizik Simulyatsion Animatsiya Yaratish Paradigmasi</span>
       </h1>
       <p style="font-size: 1.15rem; color: #CBD5E1; max-width: 1050px; line-height: 1.7;">
-        Ushbu ma'ruzada an'anaviy <em>"dasturni sintaktik o'rganish"</em> yondashuvidan farqli o'laroq, talabani <strong>"Fizik-Muhandis va Dasturiy Arxitektor"</strong> sifatida shakllantirish, generativ sun'iy intellekt vositalari (MagicSchool AI, Gemini/GPT-4, Midjourney, Runway, Claude 3.5 Sonnet) sinergiyasida interaktiv Web-simulyatsiyalar yaratishning to'liq 5 bosqichli yo'l xaritasi va Capstone portfolio talablari o'rganiladi.
+        Ushbu ma’ruzada an’anaviy <em>"dasturni sintaktik o‘rganish"</em> yondashuvidan farqli o‘laroq, talabani <strong>"Fizik-Muhandis va Dasturiy Arxitektor"</strong> sifatida shakllantirish, generativ sun’iy intellekt vositalari (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude) sinergiyasida interaktiv Web-simulyatsiyalar yaratishning to‘liq 5 bosqichli yo‘l xaritasi va Capstone portfolio talablari o‘rganiladi.
       </p>
     </div>
 
     <!-- 6-Stage Reja Banner -->
     <div class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma'ruza Rejasi:</h3>
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma’ruza Rejasi:</h3>
       <div class="grid-3" style="gap: 16px;">
         <div style="background: rgba(255,255,255,0.02); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-cyan);">1-2. AI Diagnostika & Individual Reja:</strong><br>
+          <strong style="color: var(--accent-cyan);">1-2. AI Diagnostika va Individual Reja:</strong><br>
           <span style="font-size: 0.9rem; color: var(--text-secondary);">MagicSchool AI va Vygotskiy ZPD adaptiv trayektoriyalari.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-emerald);">3. Nazariya va Dars Ssenariysi:</strong><br>
-          <span style="font-size: 0.9rem; color: var(--text-secondary);">Gemini / GPT-4 orqali 4 bosqichli ssenariy injiniringi.</span>
+          <span style="font-size: 0.9rem; color: var(--text-secondary);">Gemini / ChatGPT orqali 4 bosqichli ssenariy injiniringi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">4. Tasvir va Illyustratsiya:</strong><br>
-          <span style="font-size: 0.9rem; color: var(--text-secondary);">Midjourney v6 va DALL-E 3 ilmiy laboratoriya aktivlari.</span>
+          <span style="font-size: 0.9rem; color: var(--text-secondary);">Midjourney va DALL-E ilmiy laboratoriya aktivlari.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-rose);">5. Animatsiya va Video:</strong><br>
-          <span style="font-size: 0.9rem; color: var(--text-secondary);">Runway Gen-2, Sora, Pika Labs va harakat dinamikasi.</span>
+          <span style="font-size: 0.9rem; color: var(--text-secondary);">Runway, Sora, Pika Labs va harakat dinamikasi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-purple);">6. Interaktiv Simulyatsiya & Kod:</strong><br>
-          <span style="font-size: 0.9rem; color: var(--text-secondary);">Claude 3.5 Sonnet, HTML5 Canvas va RK4 dvigateli.</span>
+          <strong style="color: var(--accent-purple);">6. Interaktiv Simulyatsiya va Kod:</strong><br>
+          <span style="font-size: 0.9rem; color: var(--text-secondary);">Claude, HTML5 Canvas va RK4 dvigateli.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: #38BDF8);">🎯 Fanning Maqsadi & Capstone:</strong><br>
+          <strong style="color: #38BDF8);">🎯 Fanning Maqsadi va Capstone:</strong><br>
           <span style="font-size: 0.9rem; color: var(--text-secondary);">Mustaqil Web simulyatsiyalar yaratish va portfolio himoyasi.</span>
         </div>
       </div>
@@ -186,23 +194,23 @@
         <span class="badge badge-emerald">Kutilayotgan Natija</span>
       </div>
       <p style="margin-bottom: 20px;">
-        Fanning asosiy maqsadi — har bir talabada <strong>istalgan fizik hodisa yoki qonuniyatning matematik modelini tuzish, uning kompyuter algoritmini ishlab chiqish hamda Sun'iy intellekt yordamida interaktiv Web-sahifa ko'rinishida to'liq mustaqil simulyatsiyasini yarata olish</strong> mahoratini shakllantirishdir.
+        Fanning asosiy maqsadi — har bir talabada <strong>istalgan fizik hodisa yoki qonuniyatning matematik modelini tuzish, uning kompyuter algoritmini ishlab chiqish hamda Sun’iy intellekt yordamida interaktiv Web-sahifa ko‘rinishida to‘liq mustaqil simulyatsiyasini yarata olish</strong> mahoratini shakllantirishdir.
       </p>
 
       <div class="grid-3">
         <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.06);">
           <div style="font-size:1.8rem; margin-bottom:8px;">📐</div>
           <h4 style="margin-bottom:8px; color:var(--accent-cyan);">1. Nazariy-Matematik Kompetensiya</h4>
-          <p style="font-size:0.9rem;">Fizik jarayonning erkinlik darajalarini ajratish, differensial tenglamalar sistemasini tuzish, chegaraviy va boshlang'ich shartlarni to'g'ri qo'yish.</p>
+          <p style="font-size:0.9rem;">Fizik jarayonning erkinlik darajalarini ajratish, differensial tenglamalar sistemasini tuzish, chegaraviy va boshlang‘ich shartlarni to‘g‘ri qo‘yish.</p>
         </div>
         <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.06);">
           <div style="font-size:1.8rem; margin-bottom:8px;">🤖</div>
           <h4 style="margin-bottom:8px; color:var(--accent-emerald);">2. AI Prompt Injiniringi Madaniyati</h4>
-          <p style="font-size:0.9rem;">Claude 3.5, Gemini va ChatGPT ga ilmiy jihatdan qat'iy ko'rsatmalar berish, gallyutsinatsiyalarni filtrlash, toza kod olish.</p>
+          <p style="font-size:0.9rem;">Claude, Gemini va ChatGPT ga ilmiy jihatdan qat’iy ko‘rsatmalar berish, gallyutsinatsiyalarni filtrlash, toza kod olish.</p>
         </div>
         <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.06);">
           <div style="font-size:1.8rem; margin-bottom:8px;">🚀</div>
-          <h4 style="margin-bottom:8px; color:var(--accent-purple);">3. Capstone Web Portfolio & Nashr</h4>
+          <h4 style="margin-bottom:8px; color:var(--accent-purple);">3. Capstone Web Portfolio va Nashr</h4>
           <p style="font-size:0.9rem;">Ishlab chiqilgan simulyatsiyani GitHub Pages orqali ochiq tarmoqqa joylash, ilmiy pasportini tuzish va himoya qilish.</p>
         </div>
       </div>
@@ -211,17 +219,17 @@
     <!-- 5-Stage Semester Roadmap Flowchart -->
     <div class="glass-panel" style="margin-bottom: 40px; text-align: center;">
       <span class="badge badge-amber" style="margin-bottom: 12px;">Semestr Trayektoriyasi</span>
-      <h2 style="margin-bottom: 14px;">5 Bosqichli Semestr Yo'l Xaritasi (Roadmap)</h2>
+      <h2 style="margin-bottom: 14px;">5 Bosqichli Semestr Yo‘l Xaritasi (Roadmap)</h2>
       <p style="max-width: 800px; margin: 0 auto 30px;">
-        Talabaning 1-haftadagi nazariyadan 16-haftadagi Capstone himoyasigacha bo'lgan to'liq o'quv oqimi:
+        Talabaning 1-haftadagi nazariyadan 16-haftadagi Capstone himoyasigacha bo‘lgan to‘liq o‘quv oqimi:
       </p>
 
       <div class="grid-4" style="text-align: left;">
         <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-md); padding: 20px;">
           <span class="badge badge-cyan" style="margin-bottom: 10px;">1-Bosqich (Hafta 1-3)</span>
-          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Nazariya & Ssenariy</h3>
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Nazariya va Ssenariy</h3>
           <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            Differensial tenglamalarni tuzish, Gemini/GPT-4 orqali dars ssenariysi va noto'g'ri tushunchalarni (misconceptions) aniqlash.
+            Differensial tenglamalarni tuzish, Gemini/ChatGPT orqali dars ssenariysi va noto‘g‘ri tushunchalarni (misconceptions) aniqlash.
           </p>
         </div>
 
@@ -237,15 +245,15 @@
           <span class="badge badge-purple" style="margin-bottom: 10px;">3-Bosqich (Hafta 7-10)</span>
           <h3 style="font-size: 1.15rem; margin-bottom: 8px;">AI Bilan Kodlash</h3>
           <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            Claude 3.5 Sonnet bilan HTML5 Canvas fizik dvigatelini (RK4, Eyler-Kromer) va faza fazosi koordinata tizimini qurish.
+            Claude bilan HTML5 Canvas fizik dvigatelini (RK4, Eyler–Kromer) va faza fazosi koordinata tizimini qurish.
           </p>
         </div>
 
         <div style="background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: var(--radius-md); padding: 20px;">
           <span class="badge badge-rose" style="margin-bottom: 10px;">4-5 Bosqich (Hafta 11-16)</span>
-          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Ovoz & Capstone</h3>
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Ovoz va Capstone</h3>
           <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            Midjourney teksturalari, ElevenLabs ovozlashtirish, GitHub Pages da loyihani e'lon qilish va ilmiy pasport himoyasi.
+            Midjourney teksturalari, ElevenLabs ovozlashtirish, GitHub Pages da loyihani e’lon qilish va ilmiy pasport himoyasi.
           </p>
         </div>
       </div>
@@ -254,45 +262,45 @@
     <!-- Tabs Container: 6 Main Modules -->
     <div class="tabs-container" style="margin-bottom: 40px;">
       <div class="tabs-nav">
-        <button class="tab-btn active" data-tab="tab-magicschool">1. MagicSchool AI & Diagnostika</button>
-        <button class="tab-btn" data-tab="tab-gemini">2. Gemini / GPT-4 Ssenariy</button>
-        <button class="tab-btn" data-tab="tab-midjourney">3. Midjourney & Runway</button>
-        <button class="tab-btn" data-tab="tab-simulators">4. Claude 3.5 Jonli Simulyatorlar</button>
-        <button class="tab-btn" data-tab="tab-rubrics">5. Baholash & Capstone Rubrikasi</button>
+        <button class="tab-btn active" data-tab="tab-magicschool">1. MagicSchool AI va Diagnostika</button>
+        <button class="tab-btn" data-tab="tab-gemini">2. Gemini / ChatGPT Ssenariy</button>
+        <button class="tab-btn" data-tab="tab-midjourney">3. Midjourney va Runway</button>
+        <button class="tab-btn" data-tab="tab-simulators">4. Claude Jonli Simulyatorlar</button>
+        <button class="tab-btn" data-tab="tab-rubrics">5. Baholash va Capstone Rubrikasi</button>
       </div>
 
       <!-- Tab 1: MagicSchool AI -->
       <div id="tab-magicschool" class="tab-content active">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">🧠 MagicSchool AI: Boshlang'ich Diagnostika va 3 Klasterli Adaptiv Trayektoriya</h2>
+            <h2 style="font-size: 1.4rem;">🧠 MagicSchool AI: Boshlang‘ich Diagnostika va 3 Klasterli Adaptiv Trayektoriya</h2>
             <span class="badge badge-cyan">Vygotskiy ZPD Modeli</span>
           </div>
 
           <p style="margin-bottom: 20px;">
-            Auditoriyadagi talabalarning dasturlash va fizikadan tayyorgarligi har xil (geterogen) bo'ladi. MagicSchool AI platformasi orqali semestr boshida 10 savoldan iborat diagnostik test o'tkaziladi va talabalar 3 ta kognitiv klasterga ajratiladi:
+            Auditoriyadagi talabalarning dasturlash va fizikadan tayyorgarligi har xil (geterogen) bo‘ladi. MagicSchool AI platformasi orqali semestr boshida 10 savoldan iborat diagnostik test o‘tkaziladi va talabalar 3 ta kognitiv klasterga ajratiladi:
           </p>
 
           <div class="grid-3" style="margin-bottom: 24px;">
             <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
-              <span class="badge badge-cyan" style="margin-bottom: 8px;">A Klaster: Boshlang'ich (Remedial)</span>
-              <h4 style="margin-bottom: 6px;">Scaffolding & Qadamli Yordam</h4>
+              <span class="badge badge-cyan" style="margin-bottom: 8px;">A Klaster: Boshlang‘ich (Remedial)</span>
+              <h4 style="margin-bottom: 6px;">Scaffolding va Qadamli Yordam</h4>
               <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                Fizikadan kuchli, ammo kodlashni bilmaydiganlar uchun tayyor kod bloklari, qadamma-qadam video yo'riqnomalar va vizual shablonlar.
+                Fizikadan kuchli, ammo kodlashni bilmaydiganlar uchun tayyor kod bloklari, qadamma-qadam video yo‘riqnomalar va vizual shablonlar.
               </p>
             </div>
 
             <div style="background: rgba(52, 211, 153, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
-              <span class="badge badge-emerald" style="margin-bottom: 8px;">B Klaster: O'rta (Standart)</span>
+              <span class="badge badge-emerald" style="margin-bottom: 8px;">B Klaster: O‘rta (Standart)</span>
               <h4 style="margin-bottom: 6px;">2D Canvas Modellashtirish</h4>
               <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                Nazariya va JS asoslarini biladigan talabalar: Eyler-Kromer algoritmi, havo qarshiligi va faza fazosi grafiklarini mustaqil qurish.
+                Nazariya va JS asoslarini biladigan talabalar: Eyler–Kromer algoritmi, havo qarshiligi va faza fazosi grafiklarini mustaqil qurish.
               </p>
             </div>
 
             <div style="background: rgba(192, 132, 252, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
-              <span class="badge badge-purple" style="margin-bottom: 8px;">C Klaster: Ilg'or (Research)</span>
-              <h4 style="margin-bottom: 6px;">3D WebGL & RK4 Integrator</h4>
+              <span class="badge badge-purple" style="margin-bottom: 8px;">C Klaster: Ilg‘or (Research)</span>
+              <h4 style="margin-bottom: 6px;">3D WebGL va RK4 Integrator</h4>
               <p style="font-size: 0.85rem; color: var(--text-secondary);">
                 Yuqori matematik va dasturlash apparatiga ega talabalar: 3D Lorents spirali, N-jism gravitatsiyasi, Boris va RK4 integratsiyasi.
               </p>
@@ -302,17 +310,17 @@
           <!-- Interactive Diagnostic Quiz Simulator -->
           <div style="background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; margin-top: 20px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
-              <h4 style="font-size: 1.15rem; color: var(--accent-cyan);">🧪 MagicSchool AI: Interaktiv Boshlang'ich Diagnostika Testi</h4>
+              <h4 style="font-size: 1.15rem; color: var(--accent-cyan);">🧪 MagicSchool AI: Interaktiv Boshlang‘ich Diagnostika Testi</h4>
               <span class="badge badge-emerald">3 ta Savol</span>
             </div>
             <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 20px;">
-              Quyidagi savollarga javob bering. Tizim javoblaringiz asosida sizga mos <strong>individual o'quv trayektoriyasini (Klaster A, B yoki C)</strong> tavsiya qiladi:
+              Quyidagi savollarga javob bering. Tizim javoblaringiz asosida sizga mos <strong>individual o‘quv trayektoriyasini (Klaster A, B yoki C)</strong> tavsiya qiladi:
             </p>
 
             <!-- 1-Savol -->
             <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06);">
               <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 12px; color: #F8FAFC;">
-                1. Matematik mayatnikning erkin tebranishlarida vaqt o'tishi bilan to'liq mexanik energiya sun'iy o'sib ketsa, bunga qanday sabab bo'lgan?
+                1. Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?
               </p>
               <div id="quiz-options-1" style="display:flex; flex-direction:column; gap:10px;">
                 <div class="quiz-option-card" onclick="selectQuizOption(1, 0)">
@@ -321,7 +329,7 @@
                 </div>
                 <div class="quiz-option-card" onclick="selectQuizOption(1, 1)">
                   <span>⚪</span>
-                  <span>B) Forward Euler (Klassik Eyler) usuli qo'llangan bo'lib, u simplektik emas</span>
+                  <span>B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuizOption(1, 2)">
                   <span>⚪</span>
@@ -354,7 +362,7 @@
             <!-- 3-Savol -->
             <div style="margin-bottom: 24px;">
               <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 12px; color: #F8FAFC;">
-                3. Bir jinsli magnit maydonida ($\vec{E} = 0$) harakatlanayotgan zaryadlangan zarrachaning kinetik energiyasi haqida qaysi fikr to'g'ri?
+                3. Bir jinsli magnit maydonida ($\vec{E} = 0$) harakatlanayotgan zaryadlangan zarrachaning kinetik energiyasi haqida qaysi fikr to‘g‘ri?
               </p>
               <div id="quiz-options-3" style="display:flex; flex-direction:column; gap:10px;">
                 <div class="quiz-option-card" onclick="selectQuizOption(3, 0)">
@@ -381,14 +389,14 @@
 
         <!-- Academic Bibliography Section -->
         <div class="glass-panel" style="background: rgba(15, 23, 42, 0.75); border-left: 4px solid var(--accent-amber);">
-          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 1-Modul Bo'yicha Ilmiy-Uslubiy Adabiyotlar Ro'yxati:</h3>
+          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 1-Modul Bo‘yicha Ilmiy-Uslubiy Adabiyotlar Ro‘yxati:</h3>
           <ol style="padding-left: 20px; font-size: 0.88rem; line-height: 1.8; color: var(--text-secondary);">
-            <li><strong>Russell, S., & Norvig, P. (2021).</strong> <em>Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson.</li>
-            <li><strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.</li>
+            <li><strong>Russell, S., va Norvig, P. (2021).</strong> <em>Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson.</li>
+            <li><strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.</li>
             <li><strong>Chollet, F. (2021).</strong> <em>Deep Learning with Python</em> (2nd ed.). Manning Publications.</li>
             <li><strong>OpenAI. (2024).</strong> <em>GPT-4 Technical Report</em>. OpenAI Research.</li>
-            <li><strong>Mishra, P., & Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>.</li>
-            <li><strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
+            <li><strong>Mishra, P., va Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>.</li>
+            <li><strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
             <li><strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.</li>
             <li><strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Web Animations API</em>. MDN Web Docs.</li>
           </ol>
@@ -399,21 +407,21 @@
       <div id="tab-gemini" class="tab-content">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">📖 Gemini & GPT-4: 4 Bosqichli Dars Ssenariysi Injiniringi</h2>
-            <span class="badge badge-emerald">Nazariya & Pedagogika</span>
+            <h2 style="font-size: 1.4rem;">📖 Gemini va ChatGPT: 4 Bosqichli Dars Ssenariysi Injiniringi</h2>
+            <span class="badge badge-emerald">Nazariya va Pedagogika</span>
           </div>
           <p style="margin-bottom: 20px;">
-            AI modeliga oddiy "dars rejasi tuz" deb emas, balki 4 ta qat'iy pedagogik modul asosida prompt beriladi:
+            AI modeliga oddiy "dars rejasi tuz" deb emas, balki 4 ta qat’iy pedagogik modul asosida prompt beriladi:
           </p>
 
           <div class="grid-2" style="margin-bottom: 24px;">
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
-              <span class="badge badge-cyan" style="margin-bottom:8px;">1. The Hook (Qiziqish uyg'otuvchi keys)</span>
-              <p style="font-size:0.88rem;">"Qutb yog'dusi nega faqat qutblarda paydo bo'ladi?" — real hayotiy fizik paradoks.</p>
+              <span class="badge badge-cyan" style="margin-bottom:8px;">1. The Hook (Qiziqish uyg‘otuvchi keys)</span>
+              <p style="font-size:0.88rem;">"Qutb yog‘dusi nega faqat qutblarda paydo bo‘ladi?" — real hayotiy fizik paradoks.</p>
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <span class="badge badge-emerald" style="margin-bottom:8px;">2. Core Physics (Fundamental Tenglama)</span>
-              <p style="font-size:0.88rem;">$\vec{F} = q(\vec{E} + \vec{v}\times\vec{B})$ vektor ko'paytmasi va differensial harakat tenglamalari.</p>
+              <p style="font-size:0.88rem;">$\vec{F} = q(\vec{E} + \vec{v}\times\vec{B})$ vektor ko‘paytmasi va differensial harakat tenglamalari.</p>
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <span class="badge badge-amber" style="margin-bottom:8px;">3. Misconception Alert (Tipik Xatolar)</span>
@@ -421,20 +429,20 @@
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <span class="badge badge-purple" style="margin-bottom:8px;">4. Simulation Spec (Texnik Vazifa)</span>
-              <p style="font-size:0.88rem;">Canvas o'lchamlari, parametr slayderlari ($B, v_\perp, v_\parallel$) va telemetriya talablari.</p>
+              <p style="font-size:0.88rem;">Canvas o‘lchamlari, parametr slayderlari ($B, v_\perp, v_\parallel$) va telemetriya talablari.</p>
             </div>
           </div>
 
           <div class="code-block">
             <div class="code-header">
-              <span>Gemini 1.5 Pro uchun Dars Ssenariysi Prompt Shablon</span>
+              <span>Gemini uchun Dars Ssenariysi Prompt Shablon</span>
               <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuchi va zarrachaning spiral harakati mavzusi bo'yicha 4 bosqichli dars ssenariysini ishlab chiq: 1) Hook (Qutb yog'dusi paradoksi), 2) Fundamental differensial tenglamalar, 3) Talabalar yo'l qo'yadigan 3 ta tipik xato, 4) Web simulyatsiya yaratish uchun texnik arxitektura talablari.">Nusxalash</button>
             </div>
             <div class="code-content">
-Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuchi va zarrachaning spiral harakati mavzusi bo'yicha 4 bosqichli dars ssenariysini ishlab chiq:
-1) Hook (Qutb yog'dusi paradoksi),
+Sen Oliy ta’lim fizika professori va metodistisan. Magnit maydonida Lorents kuchi va zarrachaning spiral harakati mavzusi bo‘yicha 4 bosqichli dars ssenariysini ishlab chiq:
+1) Hook (Qutb yog‘dusi paradoksi),
 2) Fundamental differensial tenglamalar,
-3) Talabalar yo'l qo'yadigan 3 ta tipik xato,
+3) Talabalar yo‘l qo‘yadigan 3 ta tipik xato,
 4) Web simulyatsiya yaratish uchun texnik arxitektura talablari.
             </div>
           </div>
@@ -445,17 +453,17 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
       <div id="tab-midjourney" class="tab-content">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">🎨 Midjourney v6 & Runway Gen-2: Multimodal Ilmiy Aktivlar</h2>
-            <span class="badge badge-amber">Grafika & Video</span>
+            <h2 style="font-size: 1.4rem;">🎨 Midjourney va Runway: Multimodal Ilmiy Aktivlar</h2>
+            <span class="badge badge-amber">Grafika va Video</span>
           </div>
           <p style="margin-bottom: 20px;">
-            Simulyatsiya interfeysiga professional laboratoriya ko'rinishini berish uchun Midjourney da fotorealistik asboblar generatsiya qilinadi, Runway Gen-2 da esa fizik intro-videolar tayyorlanadi:
+            Simulyatsiya interfeysiga professional laboratoriya ko‘rinishini berish uchun Midjourney da fotorealistik asboblar generatsiya qilinadi, Runway da esa fizik intro-videolar tayyorlanadi:
           </p>
 
           <div class="grid-2" style="margin-bottom: 24px;">
             <div class="code-block">
               <div class="code-header">
-                <span>Midjourney v6 Prompt: Optika Laboratoriyasi</span>
+                <span>Midjourney Prompt: Optika Laboratoriyasi</span>
                 <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="/imagine prompt: Modern university optics laboratory bench, green laser beam 532nm passing through precision double slit apparatus, interference pattern glowing on screen, cinematic lighting, 8k resolution, photorealistic, scientific equipment --ar 16:9 --v 6.0">Nusxalash</button>
               </div>
               <div class="code-content">
@@ -465,7 +473,7 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
 
             <div class="code-block">
               <div class="code-header">
-                <span>Runway Gen-2 Prompt: Zarracha Trayektoriyasi</span>
+                <span>Runway Prompt: Zarracha Trayektoriyasi</span>
                 <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="3D glowing neon electron spiraling smoothly along magnetic field lines inside a tokamak fusion reactor, high frame rate, scientific visualization, accurate helical pitch">Nusxalash</button>
               </div>
               <div class="code-content">
@@ -481,10 +489,10 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
         
         <!-- Simulators sub-nav -->
         <div class="tabs-nav" style="border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 20px;">
-          <button class="tab-btn active" data-tab="subtab-pendulum">1. So'nuvchi Mayatnik (RK4)</button>
-          <button class="tab-btn" data-tab="subtab-lorentz">2. Lorents Kuchi (3D Boris)</button>
-          <button class="tab-btn" data-tab="subtab-doppler">3. Doppler & Mach Konusi</button>
-          <button class="tab-btn" data-tab="subtab-optics">4. Yung Interferensiyasi</button>
+          <button class="tab-btn active" data-tab="subtab-pendulum">1. So‘nuvchi mayatnik (RK4)</button>
+          <button class="tab-btn" data-tab="subtab-lorentz">2. Lorens kuchi (3D, Boris usuli)</button>
+          <button class="tab-btn" data-tab="subtab-doppler">3. Doppler effekti va Max konusi</button>
+          <button class="tab-btn" data-tab="subtab-optics">4. Yung interferensiyasi</button>
         </div>
 
         <!-- Subtab 1: Pendulum -->
@@ -494,44 +502,44 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
               <canvas id="pendulum-canvas" class="sim-canvas"></canvas>
               
               <div class="sim-hud">
-                <div class="hud-pill">Burchak θ: <span id="pendulum-deg" class="hud-pill-val">45.0°</span></div>
-                <div class="hud-pill">Tezlik ω: <span id="pendulum-omega" class="hud-pill-val">0.00 rad/s</span></div>
-                <div class="hud-pill">To'liq Energiya: <span id="pendulum-etot" class="hud-pill-val">0.00 J</span></div>
+                <div class="hud-pill">Burchak θ: <span id="pendulum-deg" class="hud-pill-val">45,0°</span></div>
+                <div class="hud-pill">Tezlik ω: <span id="pendulum-omega" class="hud-pill-val">0,00 rad/s</span></div>
+                <div class="hud-pill">To‘liq energiya: <span id="pendulum-etot" class="hud-pill-val">0,00 J</span></div>
               </div>
 
               <div class="energy-hud">
-                <span style="color:#38BDF8;">Ek (Kinetik)</span>
+                <span style="color:#38BDF8;">Ek (kinetik)</span>
                 <div class="energy-bar-wrap">
                   <div id="pendulum-bar-ek" class="bar-kinetic" style="width: 50%;"></div>
                   <div id="pendulum-bar-ep" class="bar-potential" style="width: 50%;"></div>
                 </div>
-                <span style="color:#F43F5E;">Ep (Potensial)</span>
+                <span style="color:#F43F5E;">Ep (potensial)</span>
               </div>
             </div>
 
             <div class="sim-controls">
-              <h3 style="font-size:1.15rem; margin-bottom:6px;">Parametrlarni Boshqarish (RK4)</h3>
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">Parametrlarni boshqarish (RK4)</h3>
               
               <div class="control-group">
-                <label class="control-label">Ip Uzunligi L: <span id="val-pendulum-l" class="control-val">2.0 m</span></label>
+                <label class="control-label">Ip uzunligi L: <span id="val-pendulum-l" class="control-val">2,0 m</span></label>
                 <input type="range" id="slider-pendulum-l" class="slider-input" min="0.5" max="4.0" step="0.1" value="2.0">
               </div>
 
               <div class="control-group">
-                <label class="control-label">So'nish Koeffitsiyenti γ: <span id="val-pendulum-gamma" class="control-val">0.15</span></label>
+                <label class="control-label">So‘nish koeffitsiyenti γ: <span id="val-pendulum-gamma" class="control-val">0,15</span></label>
                 <input type="range" id="slider-pendulum-gamma" class="slider-input" min="0.0" max="0.8" step="0.02" value="0.15">
               </div>
 
               <div class="control-group">
-                <label class="control-label">Gravitatsiya g: <span id="val-pendulum-g" class="control-val">9.81 m/s²</span></label>
+                <label class="control-label">Erkin tushish tezlanishi g: <span id="val-pendulum-g" class="control-val">9,81 m/s²</span></label>
                 <input type="range" id="slider-pendulum-g" class="slider-input" min="1.6" max="25.0" step="0.1" value="9.81">
               </div>
 
-              <h4 style="font-size:0.9rem; margin-top:8px;">Faza Fazosi Attraktori (θ vs ω):</h4>
+              <h4 style="font-size:0.9rem; margin-top:8px;">Faza fazosi attraktori (θ va ω):</h4>
               <canvas id="pendulum-phase-canvas" class="phase-space-canvas"></canvas>
 
               <div class="control-actions">
-                <button id="btn-pendulum-reset" class="btn btn-secondary btn-sm" style="flex:1;">Qayta Boshlash</button>
+                <button id="btn-pendulum-reset" class="btn btn-secondary btn-sm" style="flex:1;">Qayta boshlash</button>
               </div>
             </div>
           </div>
@@ -543,34 +551,34 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
             <div class="canvas-viewport-wrapper">
               <canvas id="lorentz-canvas" class="sim-canvas"></canvas>
               <div class="sim-hud">
-                <div class="hud-pill">Larmor Radiusi R_L: <span id="lorentz-radius" class="hud-pill-val">2.00 m</span></div>
-                <div class="hud-pill">Siklotron ω_c: <span id="lorentz-omega" class="hud-pill-val">1.50 rad/s</span></div>
+                <div class="hud-pill"><span>Larmor radiusi R<sub>L</sub>:</span> <span id="lorentz-radius" class="hud-pill-val">2,00 m</span></div>
+                <div class="hud-pill"><span>Siklotron chastotasi ω<sub>c</sub>:</span> <span id="lorentz-omega" class="hud-pill-val">1,50 rad/s</span></div>
               </div>
             </div>
 
             <div class="sim-controls">
-              <h3 style="font-size:1.15rem; margin-bottom:6px;">Magnit Maydoni (3D Boris)</h3>
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">Magnit maydoni (3D, Boris usuli)</h3>
               <div class="sim-info-box">
                 Sichqoncha yoki barmoq bilan sudrab 3D koordinatalarni fazoda 360° aylantirishingiz mumkin!
               </div>
 
               <div class="control-group">
-                <label class="control-label">B_z Maydon (Tesla): <span id="val-lorentz-b" class="control-val">1.5 T</span></label>
+                <label class="control-label"><span>Maydon induksiyasi B<sub>z</sub>:</span> <span id="val-lorentz-b" class="control-val">1,5 Tl</span></label>
                 <input type="range" id="slider-lorentz-b" class="slider-input" min="0.2" max="4.0" step="0.1" value="1.5">
               </div>
 
               <div class="control-group">
-                <label class="control-label">Tangensial Tezlik v_perp: <span id="val-lorentz-vperp" class="control-val">3.0 m/s</span></label>
+                <label class="control-label"><span>Ko‘ndalang tezlik v<sub>⊥</sub>:</span> <span id="val-lorentz-vperp" class="control-val">3,0 m/s</span></label>
                 <input type="range" id="slider-lorentz-vperp" class="slider-input" min="0.5" max="6.0" step="0.1" value="3.0">
               </div>
 
               <div class="control-group">
-                <label class="control-label">Parallel Tezlik v_parallel: <span id="val-lorentz-vpar" class="control-val">1.2 m/s</span></label>
+                <label class="control-label"><span>Bo‘ylama tezlik v<sub>∥</sub>:</span> <span id="val-lorentz-vpar" class="control-val">1,2 m/s</span></label>
                 <input type="range" id="slider-lorentz-vpar" class="slider-input" min="0.0" max="4.0" step="0.1" value="1.2">
               </div>
 
               <div class="control-actions">
-                <button id="btn-lorentz-reset" class="btn btn-secondary btn-sm" style="flex:1;">Trayektoriyani Tozalash</button>
+                <button id="btn-lorentz-reset" class="btn btn-secondary btn-sm" style="flex:1;">Trayektoriyani tozalash</button>
               </div>
             </div>
           </div>
@@ -584,14 +592,14 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
             </div>
 
             <div class="sim-controls">
-              <h3 style="font-size:1.15rem; margin-bottom:6px;">Doppler & Mach Konusi</h3>
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">Doppler effekti va Max konusi</h3>
               <div class="control-group">
-                <label class="control-label">Max Soni M (v/c): <span id="val-doppler-mach" class="control-val">0.70 M</span></label>
+                <label class="control-label">Max soni M (v/c): <span id="val-doppler-mach" class="control-val">0,70</span></label>
                 <input type="range" id="slider-doppler-mach" class="slider-input" min="0.0" max="1.5" step="0.05" value="0.7">
               </div>
               <div class="sim-info-box">
-                $M &lt; 1$: Tovush osti to'lqin frontlari siqilishi.<br>
-                $M &gt; 1$: Tovushdan tez harakat va Mach zarba konusi (qizil).
+                $M &lt; 1$: tovushdan sekin harakat — to‘lqin frontlari manba oldida siqiladi.<br>
+                $M &gt; 1$: tovushdan tez harakat va Max zarba konusi (qizil).
               </div>
             </div>
           </div>
@@ -605,14 +613,14 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
             </div>
 
             <div class="sim-controls">
-              <h3 style="font-size:1.15rem; margin-bottom:6px;">Yung Interferensiyasi</h3>
+              <h3 style="font-size:1.15rem; margin-bottom:6px;">Yung interferensiyasi</h3>
               <div class="control-group">
-                <label class="control-label">To'lqin Uzunligi λ: <span id="val-optics-wl" class="control-val">532 nm (Yashil)</span></label>
+                <label class="control-label">To‘lqin uzunligi λ: <span id="val-optics-wl" class="control-val">532 nm (yashil)</span></label>
                 <input type="range" id="slider-optics-wl" class="slider-input" min="380" max="750" step="5" value="532">
               </div>
 
               <div class="control-group">
-                <label class="control-label">Tirqishlar Orasi d: <span id="val-optics-d" class="control-val">0.25 mm</span></label>
+                <label class="control-label">Tirqishlar orasidagi masofa d: <span id="val-optics-d" class="control-val">0,25 mm</span></label>
                 <input type="range" id="slider-optics-d" class="slider-input" min="0.1" max="0.8" step="0.02" value="0.25">
               </div>
             </div>
@@ -625,7 +633,7 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
       <div id="tab-rubrics" class="tab-content">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">📊 5 Mezonli Baholash Standarti va Capstone Portfolioga Qo'yiladigan Talablar</h2>
+            <h2 style="font-size: 1.4rem;">📊 5 Mezonli Baholash Standarti va Capstone Portfolioga Qo‘yiladigan Talablar</h2>
             <span class="badge badge-purple">Baholash Matritsasi</span>
           </div>
 
@@ -640,9 +648,9 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--text-secondary);">
                 <li>🔹 <strong>1. Mavzu nomi:</strong> Fizik jarayonning aniq tavsifi.</li>
                 <li>🔹 <strong>2. Matematik apparat:</strong> Differensial tenglamalar va chegaraviy shartlar.</li>
-                <li>🔹 <strong>3. AI Promptlar jurnali:</strong> Claude, Gemini, Midjourney ga berilgan so'rovlar.</li>
-                <li>🔹 <strong>4. JavaScript kodi:</strong> RK4 / Eyler-Kromer fizik dvigateli va Canvas render.</li>
-                <li>🔹 <strong>5. Ochiq havola:</strong> GitHub Pages da e'lon qilingan ishchi web ilova.</li>
+                <li>🔹 <strong>3. AI Promptlar jurnali:</strong> Claude, Gemini, Midjourney ga berilgan so‘rovlar.</li>
+                <li>🔹 <strong>4. JavaScript kodi:</strong> RK4 / Eyler–Kromer fizik dvigateli va Canvas render.</li>
+                <li>🔹 <strong>5. Ochiq havola:</strong> GitHub Pages da e’lon qilingan ishchi web ilova.</li>
               </ul>
             </div>
 
@@ -660,7 +668,7 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
                   <input type="number" id="calc-k2" min="0" max="25" value="24" style="width:60px; background:#0B1120; color:#38BDF8; border:1px solid #334155; border-radius:4px; padding:2px 6px;">
                 </div>
                 <div style="display:flex; justify-content:space-between;">
-                  <span>3. UI/UX & Canvas (20 ball):</span>
+                  <span>3. UI/UX va Canvas (20 ball):</span>
                   <input type="number" id="calc-k3" min="0" max="20" value="19" style="width:60px; background:#0B1120; color:#38BDF8; border:1px solid #334155; border-radius:4px; padding:2px 6px;">
                 </div>
                 <div style="display:flex; justify-content:space-between;">
@@ -701,9 +709,9 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
         return;
       }
       if (selected.value === 'B') {
-        feedback.innerHTML = '<span class="hud-pill text-emerald">✅ A\'lo! Aynan Forward Euler usuli simplektik bo\'lmagani uchun energiya sun\'iy o\'sib ketadi. Eyler-Kromer yoki RK4 ishlatish lozim. (Klaster: B/C)</span>';
+        feedback.innerHTML = '<span class="hud-pill text-emerald">✅ A’lo! Aynan Forward Euler usuli simplektik bo‘lmagani uchun energiya sun’iy o‘sib ketadi. Eyler–Kromer yoki RK4 ishlatish lozim. (Klaster: B/C)</span>';
       } else {
-        feedback.innerHTML = '<span class="hud-pill text-rose">❌ Noto\'g\'ri. To\'g\'ri javob B: Klassik Forward Euler faza fazosi maydonini kengaytiradi va beqarorlik keltiradi. (Klaster: A)</span>';
+        feedback.innerHTML = '<span class="hud-pill text-rose">❌ Noto‘g‘ri. To‘g‘ri javob B: Klassik Forward Euler faza fazosi maydonini kengaytiradi va beqarorlik keltiradi. (Klaster: A)</span>';
       }
     }
 
@@ -717,7 +725,7 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
           inputs.forEach(k => {
             sum += parseFloat(document.getElementById(k).value) || 0;
           });
-          document.getElementById('calc-total').textContent = `${sum.toFixed(0)} / 100`;
+          document.getElementById('calc-total').textContent = `${uzFix(sum, 0)} / 100`;
         });
       }
     });
@@ -732,19 +740,19 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
       const sL = document.getElementById('slider-pendulum-l');
       if (sL) sL.addEventListener('input', (e) => {
         pSim.L = parseFloat(e.target.value);
-        document.getElementById('val-pendulum-l').textContent = pSim.L.toFixed(1) + ' m';
+        document.getElementById('val-pendulum-l').textContent = uzFix(pSim.L, 1) + ' m';
       });
 
       const sG = document.getElementById('slider-pendulum-gamma');
       if (sG) sG.addEventListener('input', (e) => {
         pSim.gamma = parseFloat(e.target.value);
-        document.getElementById('val-pendulum-gamma').textContent = pSim.gamma.toFixed(2);
+        document.getElementById('val-pendulum-gamma').textContent = uzFix(pSim.gamma, 2);
       });
 
       const sGrav = document.getElementById('slider-pendulum-g');
       if (sGrav) sGrav.addEventListener('input', (e) => {
         pSim.g = parseFloat(e.target.value);
-        document.getElementById('val-pendulum-g').textContent = pSim.g.toFixed(2) + ' m/s²';
+        document.getElementById('val-pendulum-g').textContent = uzFix(pSim.g, 2) + ' m/s²';
       });
 
       const btnPReset = document.getElementById('btn-pendulum-reset');
@@ -758,19 +766,19 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
       const sLB = document.getElementById('slider-lorentz-b');
       if (sLB) sLB.addEventListener('input', (e) => {
         lSim.B.z = parseFloat(e.target.value);
-        document.getElementById('val-lorentz-b').textContent = lSim.B.z.toFixed(1) + ' T';
+        document.getElementById('val-lorentz-b').textContent = uzFix(lSim.B.z, 1) + ' Tl';
       });
 
       const sLVperp = document.getElementById('slider-lorentz-vperp');
       if (sLVperp) sLVperp.addEventListener('input', (e) => {
         lSim.vel.x = parseFloat(e.target.value);
-        document.getElementById('val-lorentz-vperp').textContent = lSim.vel.x.toFixed(1) + ' m/s';
+        document.getElementById('val-lorentz-vperp').textContent = uzFix(lSim.vel.x, 1) + ' m/s';
       });
 
       const sLVpar = document.getElementById('slider-lorentz-vpar');
       if (sLVpar) sLVpar.addEventListener('input', (e) => {
         lSim.vel.z = parseFloat(e.target.value);
-        document.getElementById('val-lorentz-vpar').textContent = lSim.vel.z.toFixed(1) + ' m/s';
+        document.getElementById('val-lorentz-vpar').textContent = uzFix(lSim.vel.z, 1) + ' m/s';
       });
 
       const btnLReset = document.getElementById('btn-lorentz-reset');
@@ -780,7 +788,7 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
       const sDMach = document.getElementById('slider-doppler-mach');
       if (sDMach) sDMach.addEventListener('input', (e) => {
         dSim.mach = parseFloat(e.target.value);
-        document.getElementById('val-doppler-mach').textContent = dSim.mach.toFixed(2) + ' M';
+        document.getElementById('val-doppler-mach').textContent = uzFix(dSim.mach, 2);
       });
 
       // Optics Sliders
@@ -794,7 +802,7 @@ Sen Oliy ta'lim fizika professori va metodistisan. Magnit maydonida Lorents kuch
       const sOD = document.getElementById('slider-optics-d');
       if (sOD) sOD.addEventListener('input', (e) => {
         oSim.slitDist = parseFloat(e.target.value);
-        document.getElementById('val-optics-d').textContent = oSim.slitDist.toFixed(2) + ' mm';
+        document.getElementById('val-optics-d').textContent = uzFix(oSim.slitDist, 2) + ' mm';
         oSim.render();
       });
     });

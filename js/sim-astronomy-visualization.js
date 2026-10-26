@@ -1,11 +1,15 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 10, Tab 6: Interaktiv Astronomiya & Fizika Simulyatori Laboratoriyasi.
- * Sahifaning 4-bo'limida keltirilgan KeplerianEngine pseudokodiga mos ravishda
+ * Sahifaning 4-bo‘limida keltirilgan KeplerianEngine pseudokodiga mos ravishda
  * yopiq Kepler yechimi (analitik r(theta), Vis-Viva tezlik) ishlatiladi —
  * bu integratsion xatosiz, har doim energiya va impuls momentini aniq
  * saqlaydigan yopiq shakldagi orbita hisoblanadi. Uzunlik/vaqt/massa
  * birliklari AU-yil-Quyosh massasi tizimida (G' = 4pi^2), bu haqiqiy
- * km/s va yil qiymatlarini to'g'ridan-to'g'ri beradi.
+ * km/s va yil qiymatlarini to‘g‘ridan-to‘g‘ri beradi.
  *
  * Vizuallashtirish uchun Three.js orqali haqiqiy 3D sahna ishlatiladi
  * (OrbitControls bilan sichqoncha/barmoq orqali aylantirish/kattalashtirish).
@@ -44,7 +48,7 @@ function initAstronomyVisualizationLab() {
   const BASE_YEARS_PER_SEC = 0.12; // animatsiya tezligi (bir yil taxminan ~8s da, x1.0 tezlikda)
   const TRAIL_LEN = 220;
 
-  // ---- Fizika: Kepler yopiq yechimi (o'zgarishsiz) ----
+  // ---- Fizika: Kepler yopiq yechimi (o‘zgarishsiz) ----
   class KeplerBody {
     constructor(a, e, opts = {}) {
       this.a = a;
@@ -201,14 +205,14 @@ function initAstronomyVisualizationLab() {
     return mesh;
   }
 
-  // Har bir jism uchun: mesh, orbita chizig'i, iz (trail)
+  // Har bir jism uchun: mesh, orbita chizig‘i, iz (trail)
   const bodyViews = new Map();
 
   function makeOrbitLine(body, color, mirror) {
     // "mirror" — binary tizimda ikkinchi yulduzning orbitasi, teng massalar
     // taxminida barysentr (koordinata boshi) atrofida nuqtaviy simmetrik
-    // bo'ladi (r_A = -r_B), shu sababli oddiy 180° burilish emas, aynan
-    // nuqtaviy aks (x,z) -> (-x,-z) qo'llaniladi.
+    // bo‘ladi (r_A = -r_B), shu sababli oddiy 180° burilish emas, aynan
+    // nuqtaviy aks (x,z) -> (-x,-z) qo‘llaniladi.
     const points = [];
     const N = 128;
     for (let i = 0; i <= N; i++) {
@@ -233,7 +237,7 @@ function initAstronomyVisualizationLab() {
   }
 
   function rebuildBodyViews() {
-    // eski ko'rinishlarni tozalash
+    // eski ko‘rinishlarni tozalash
     for (const view of bodyViews.values()) {
       scene.remove(view.mesh, view.orbit, view.trail, view.velocityArrow, view.gravityArrow);
       view.mesh.geometry.dispose(); view.mesh.material.dispose();
@@ -280,9 +284,9 @@ function initAstronomyVisualizationLab() {
   }
 
   function updateSliderLabels() {
-    valE.textContent = parseFloat(sliderE.value).toFixed(2);
-    valA.textContent = parseFloat(sliderA.value).toFixed(2) + ' AU';
-    valSpeed.textContent = parseFloat(sliderSpeed.value).toFixed(1) + 'x';
+    valE.textContent = uzFix(parseFloat(sliderE.value), 2);
+    valA.textContent = uzFix(parseFloat(sliderA.value), 2) + ' AU';
+    valSpeed.textContent = uzFix(parseFloat(sliderSpeed.value), 1) + '×';
   }
 
   // ---- Boshqaruvlar ----
@@ -397,12 +401,12 @@ function initAstronomyVisualizationLab() {
     const velKms = primary.speed * AU_YR_TO_KMS;
     const periodYears = primary.period();
 
-    if (statDist) statDist.textContent = `${distAU.toFixed(3)} AU (${(distAU * KM_PER_AU / 1e6).toFixed(1)} mln km)`;
-    if (statVel) statVel.textContent = `${velKms.toFixed(2)} km/s`;
+    if (statDist) statDist.textContent = `${uzFix(distAU, 3)} AU (${uzFix((distAU * KM_PER_AU / 1e6), 1)} mln km)`;
+    if (statVel) statVel.textContent = `${uzFix(velKms, 2)} km/s`;
     if (statPeriod) statPeriod.textContent = periodYears >= 1
-      ? `${periodYears.toFixed(2)} yil`
-      : `${(periodYears * 365.25).toFixed(1)} kun`;
-    if (statEnergy) statEnergy.textContent = '● BARQAROR (KEPLER INVARIANT)';
+      ? `${uzFix(periodYears, 2)} yil`
+      : `${uzFix((periodYears * 365.25), 1)} kun`;
+    if (statEnergy) statEnergy.textContent = '● barqaror (Kepler invarianti)';
     if (statFps) statFps.textContent = Math.round(measuredFps) + ' FPS';
   }
 
@@ -466,9 +470,9 @@ function initTtsNarrativeDemo() {
   const wctx = waveCanvas.getContext('2d');
 
   const NARRATIVES = [
-    "Kepler ikkinchi qonuniga ko'ra, sayyorani Quyosh bilan tutashtiruvchi radius-vektor teng vaqt oralig'ida teng maydonlarni chizadi.",
+    "Kepler ikkinchi qonuniga ko‘ra, sayyorani Quyosh bilan tutashtiruvchi radius-vektor teng vaqt oralig‘ida teng maydonlarni chizadi.",
     "Bu shuni anglatadiki, sayyora Quyoshga yaqinlashganda — perigeliyda — tezroq, uzoqlashganda — afeliyda — sekinroq harakatlanadi.",
-    "Vis-Viva tenglamasi orbitaning istalgan nuqtasidagi tezlikni radius va katta yarim o'q orqali aniqlashga imkon beradi."
+    "Vis-Viva tenglamasi orbitaning istalgan nuqtasidagi tezlikni radius va katta yarim o‘q orqali aniqlashga imkon beradi."
   ];
 
   let waveAnimId = null;
@@ -575,7 +579,7 @@ function initTtsNarrativeDemo() {
 
   btnPlay.addEventListener('click', () => {
     if (!('speechSynthesis' in window)) {
-      narrativeText.textContent = "⚠️ Brauzeringiz nutq sintezini (Web Speech API) qo'llab-quvvatlamaydi.";
+      narrativeText.textContent = "⚠️ Brauzeringiz nutq sintezini (Web Speech API) qo‘llab-quvvatlamaydi.";
       return;
     }
 

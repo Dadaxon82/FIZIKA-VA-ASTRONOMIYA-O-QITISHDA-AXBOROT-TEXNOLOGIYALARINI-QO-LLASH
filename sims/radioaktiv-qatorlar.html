@@ -28,7 +28,7 @@
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
     .stat { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px; text-align: center; }
     .stat b { display: block; font-family: ui-monospace, monospace; font-size: 1rem; }
-    .stat span { font-size: 0.66rem; color: var(--muted); text-transform: uppercase; }
+    .stat span { font-size: 0.66rem; color: var(--muted); text-transform: none; }
     table { width: 100%; border-collapse: collapse; font-family: ui-monospace, monospace; font-size: 0.74rem; }
     td { padding: 3px 4px; border-bottom: 1px solid var(--border); }
     tr.done td { color: var(--muted); }
@@ -78,9 +78,9 @@
       <table><tbody id="chain"></tbody></table>
 
       <p class="note">α-yemirilish: A → A−4, Z → Z−2 (diagrammada chapga-pastga).
-      β⁻-yemirilish: A o'zgarmaydi, Z → Z+1, N → N−1 (o'ngga emas, yuqoriga-chapga).
-      Yarim yemirilish davrlari: NUBASE2020 ma'lumotlari (yaxlitlangan). Qatorlardagi kichik tarmoqlanishlar ko'rsatilmagan;
-      toriy qatorida Bi-212 ning asosiy (64%) β⁻ tarmog'i berilgan.</p>
+      β⁻-yemirilish: A o‘zgarmaydi, Z → Z+1, N → N−1 (o‘ngga emas, yuqoriga-chapga).
+      Yarim yemirilish davrlari: NUBASE2020 ma’lumotlari (yaxlitlangan). Qatorlardagi kichik tarmoqlanishlar ko‘rsatilmagan;
+      toriy qatorida Bi-212 ning asosiy (64%) β⁻ tarmog‘i berilgan.</p>
     </aside>
   </main>
 
@@ -155,7 +155,7 @@
       const X = N => ox + (N - b.nMin + 0.5) * cell;
       const Y = Z => oy + (b.zMax - Z + 0.5) * cell;
 
-      // Panjara va o'qlar
+      // Panjara va o‘qlar
       ctx.strokeStyle = 'rgba(148,163,184,0.08)'; ctx.lineWidth = 1;
       for (let N = b.nMin; N <= b.nMax + 1; N++) { const x = ox + (N - b.nMin) * cell; ctx.beginPath(); ctx.moveTo(x, oy); ctx.lineTo(x, oy + cell * (b.zMax - b.zMin + 1)); ctx.stroke(); }
       for (let Z = b.zMin; Z <= b.zMax + 1; Z++) { const y = oy + (Z - b.zMin) * cell; ctx.beginPath(); ctx.moveTo(ox, y); ctx.lineTo(ox + cell * (b.nMax - b.nMin + 1), y); ctx.stroke(); }
@@ -166,10 +166,10 @@
       for (let Z = b.zMin; Z <= b.zMax; Z++) ctx.fillText(Z, ox - 6, Y(Z) + 4);
       ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText('Zaryad soni Z', 0, 0); ctx.restore();
 
-      // O'tilgan yo'l (strelkalar)
+      // O‘tilgan yo‘l (strelkalar)
       for (let i = 0; i < chain.length - 1; i++) {
         if (i >= idx) {
-          // hali o'tilmagan yemirilishlar xira ko'rsatiladi
+          // hali o‘tilmagan yemirilishlar xira ko‘rsatiladi
           arrow(chain[i], chain[i + 1], 'rgba(148,163,184,0.18)', 1);
           continue;
         }

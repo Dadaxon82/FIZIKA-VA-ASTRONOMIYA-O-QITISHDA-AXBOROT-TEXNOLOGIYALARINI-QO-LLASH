@@ -1,9 +1,13 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 15, Tab 7: Interaktiv Yadro Fizikasi & Capstone Laboratoriyasi.
  * 1-Rejim: Radioaktiv yemirilish — 4x4x4 kristall panjaradagi 64 ta yadro
  * (tab3'dagi simulateRadioactiveDecay bilan bir xil Monte-Karlo qoidasi:
- * P = 1 - e^{-λΔt}). 2-Rejim: U-235 zanjirli bo'linishi (tab3'dagi
- * updateFissionChainReaction mantig'i, 3D fazoda: har bo'linishda 200 MeV va
+ * P = 1 - e^{-λΔt}). 2-Rejim: U-235 zanjirli bo‘linishi (tab3'dagi
+ * updateFissionChainReaction mantig‘i, 3D fazoda: har bo‘linishda 200 MeV va
  * 3 ta yangi neytron, kadmiy sterjenlari neytronlarni yutadi). 3-Rejim: D-T
  * termoyadroviy sintez (Tokamak torusi, har reaksiyada 17.6 MeV).
  * 4-Rejim: Capstone monitoring konsoli (A, Z saqlanishi va Q = Δmc²).
@@ -12,7 +16,7 @@
  * Shu fayl, shuningdek, sahifada chaqirilgan skroll-tab
  * (scrollTabsNav/updateTabsScrollProgress) va jonli PhET/Vascak.cz
  * simulyator almashtirgichi (switchNuclearOnlineSim/
- * toggleNuclearOnlineSimFullscreen) funksiyalarini ta'minlaydi.
+ * toggleNuclearOnlineSimFullscreen) funksiyalarini ta’minlaydi.
  */
 
 // ---------------------------------------------------------------------------
@@ -56,36 +60,36 @@ document.addEventListener('DOMContentLoaded', () => {
 // ---------------------------------------------------------------------------
 // PHET / VASCAK.CZ JONLI SIMULYATOR ALMASHTIRGICHI
 // ---------------------------------------------------------------------------
-// Eslatma: Vascak.cz tugmalari template.php (reklamali qobiq) o'rniga
-// to'g'ridan-to'g'ri reklamasiz canvas animatsiyasini ochadi — lecture13'da
+// Eslatma: Vascak.cz tugmalari template.php (reklamali qobiq) o‘rniga
+// to‘g‘ridan-to‘g‘ri reklamasiz canvas animatsiyasini ochadi — lecture13'da
 // foydalanuvchi tasdiqlagan .../canvas/{slug}_Canvas.html?l=uz formati.
-// Slug'lar: jadro_rozpad, jadro_reakce, jadro_zareni.
-// "Quyosh sintezi" va "Radioaktiv qatorlar" uchun Vascak.cz'dagi aniq
-// animatsiya havolasini tasdiqlab bo'lmagani sababli, ular repozitoriyadagi
-// o'z reklamasiz HTML5 simulyatsiyalarimizni ochadi (sims/ papkasi).
+// Slug‘lar: jadro_rozpad, jadro_reakce, jadro_zareni.
+// "Quyosh sintezi" va "Radioaktiv qatorlar" uchun Vascak.cz’dagi aniq
+// animatsiya havolasini tasdiqlab bo‘lmagani sababli, ular repozitoriyadagi
+// o‘z reklamasiz HTML5 simulyatsiyalarimizni ochadi (sims/ papkasi).
 const vascakCanvas = slug => `https://www.vascak.cz/data/android/physicsatschool/canvas/${slug}_Canvas.html?l=uz`;
 
 const NUCLEAR_ONLINE_SIMS = {
   'phet-fission': {
     url: 'https://phet.colorado.edu/sims/html/build-a-nucleus/latest/build-a-nucleus_all.html',
-    title: "☢️ PhET Interactive Simulations: Build a Nucleus (Atom Yadrosi Tuzilishi & Bog'lanish)",
-    desc: "Atom yadrosining proton va neytronlardan tuzilishi, nuklidlar xaritasidagi barqarorlik yo'lagi (Band of Stability), bog'lanish energiyasi va radioaktiv yemirilish turlarini o'rganish.",
+    title: "☢️ PhET Interactive Simulations: Build a Nucleus (Atom Yadrosi Tuzilishi & Bog‘lanish)",
+    desc: "Atom yadrosining proton va neytronlardan tuzilishi, nuklidlar xaritasidagi barqarorlik yo‘lagi (Band of Stability), bog‘lanish energiyasi va radioaktiv yemirilish turlarini o‘rganish.",
     eqs: "$$E_b = [Z m_p + (A-Z) m_n - M(A,Z)] c^2 = \\Delta m c^2$$",
     tasks: [
-      "1. Proton va neytronlarni qo'shib, barqaror va radioaktiv beqaror izotoplar hosil bo'lishini kuzating.",
-      "2. Neytronlar soni ortiqcha bo'lganda $\\beta^-$, yetishmaganda $\\beta^+$ yemirilish yuz berishini tekshiring.",
-      "3. Nuklidlar xaritasida og'ir yadrolar uchun barqarorlik yo'lagi $N > Z$ tomonga siljishini tushuntiring."
+      "1. Proton va neytronlarni qo‘shib, barqaror va radioaktiv beqaror izotoplar hosil bo‘lishini kuzating.",
+      "2. Neytronlar soni ortiqcha bo‘lganda $\\beta^-$, yetishmaganda $\\beta^+$ yemirilish yuz berishini tekshiring.",
+      "3. Nuklidlar xaritasida og‘ir yadrolar uchun barqarorlik yo‘lagi $N > Z$ tomonga siljishini tushuntiring."
     ]
   },
   'phet-decay': {
     url: 'https://phet.colorado.edu/sims/html/isotopes-and-atomic-mass/latest/isotopes-and-atomic-mass_all.html',
     title: '⏳ PhET Interactive Simulations: Isotopes and Atomic Mass',
-    desc: "Izotoplar tushunchasi, neytronlar sonining yadro barqarorligiga ta'siri va tabiiy izotop tarkibi asosida o'rtacha atom massasini hisoblash.",
+    desc: "Izotoplar tushunchasi, neytronlar sonining yadro barqarorligiga ta’siri va tabiiy izotop tarkibi asosida o‘rtacha atom massasini hisoblash.",
     eqs: "$$\\bar{M} = \\sum_i w_i M_i, \\qquad \\sum_i w_i = 1$$",
     tasks: [
-      "1. Uglerod atomiga neytron qo'shib, C-12, C-13 va beqaror C-14 izotoplarini hosil qiling.",
-      "2. Tabiiy izotop tarkibi asosida o'rtacha atom massasini hisoblang.",
-      "3. C-14 ning yarim yemirilish davri ($\\approx 5730$ yil) radiouglerod usulida qanday qo'llanishini tushuntiring."
+      "1. Uglerod atomiga neytron qo‘shib, C-12, C-13 va beqaror C-14 izotoplarini hosil qiling.",
+      "2. Tabiiy izotop tarkibi asosida o‘rtacha atom massasini hisoblang.",
+      "3. C-14 ning yarim yemirilish davri ($\\approx 5730$ yil) radiouglerod usulida qanday qo‘llanishini tushuntiring."
     ]
   },
   'phet-rutherford': {
@@ -94,26 +98,26 @@ const NUCLEAR_ONLINE_SIMS = {
     desc: "Alfa-zarrachalarning oltin folgadagi sochilishi: Tomson (\"mayizli puding\") modeli va Rezerford yadroviy modelini taqqoslash.",
     eqs: "$$\\frac{d\\sigma}{d\\Omega} = \\left(\\frac{Z_1 Z_2 e^2}{16\\pi\\varepsilon_0 E_k}\\right)^2 \\frac{1}{\\sin^4(\\theta/2)}$$",
     tasks: [
-      "1. Tomson modelida alfa-zarrachalar deyarli og'masligini kuzating.",
-      "2. Rezerford modelida katta burchakli sochilishlar paydo bo'lishini qayd eting.",
+      "1. Tomson modelida alfa-zarrachalar deyarli og‘masligini kuzating.",
+      "2. Rezerford modelida katta burchakli sochilishlar paydo bo‘lishini qayd eting.",
       "3. Alfa-zarracha energiyasini oshirib, sochilish burchagi kamayishini tushuntiring."
     ]
   },
   'vascak-decay': {
     url: vascakCanvas('jadro_rozpad'),
     title: '☢️ Vascak.cz: Radioaktiv Yemirilish Qonuni',
-    desc: "Radioaktiv yadrolar sonining vaqt bo'yicha eksponensial kamayishi va yarim yemirilish davrining vizual modeli.",
+    desc: "Radioaktiv yadrolar sonining vaqt bo‘yicha eksponensial kamayishi va yarim yemirilish davrining vizual modeli.",
     eqs: "$$N(t) = N_0 \\, 2^{-t/T_{1/2}}, \\qquad \\lambda = \\frac{\\ln 2}{T_{1/2}}$$",
     tasks: [
-      "1. Har bir $T_{1/2}$ oralig'ida yadrolar soni taxminan ikki marta kamayishini tekshiring.",
-      "2. Kichik $N_0$ da stoxastik tebranishlar kuchliroq bo'lishini kuzating.",
+      "1. Har bir $T_{1/2}$ oralig‘ida yadrolar soni taxminan ikki marta kamayishini tekshiring.",
+      "2. Kichik $N_0$ da stoxastik tebranishlar kuchliroq bo‘lishini kuzating.",
       "3. Grafikdan $\\lambda$ ni aniqlab, $T_{1/2}$ bilan solishtiring."
     ]
   },
   'vascak-reactions': {
     url: vascakCanvas('jadro_reakce'),
     title: '💥 Vascak.cz: Yadro Reaksiyasi',
-    desc: "Neytron ta'sirida og'ir yadroning bo'linishi, bo'linish mahsulotlari va yangi neytronlarning ajralishi.",
+    desc: "Neytron ta’sirida og‘ir yadroning bo‘linishi, bo‘linish mahsulotlari va yangi neytronlarning ajralishi.",
     eqs: "$$^{235}_{92}\\text{U} + ^{1}_{0}n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3\\,^{1}_{0}n$$",
     tasks: [
       "1. Reaksiyadan oldin va keyin massa soni $A$ saqlanishini tekshiring.",
@@ -124,32 +128,32 @@ const NUCLEAR_ONLINE_SIMS = {
   'vascak-radiation': {
     url: vascakCanvas('jadro_zareni'),
     title: '🛡️ Vascak.cz: Radioaktiv Nurlanish',
-    desc: "$\\alpha$, $\\beta$ va $\\gamma$ nurlanishlarning magnit maydonda og'ishi va turli materiallardan o'tish qobiliyati.",
+    desc: "$\\alpha$, $\\beta$ va $\\gamma$ nurlanishlarning magnit maydonda og‘ishi va turli materiallardan o‘tish qobiliyati.",
     eqs: "$$\\alpha = {}^{4}_{2}\\text{He}^{2+}, \\quad \\beta^- = e^-, \\quad \\gamma = \\text{foton}$$",
     tasks: [
-      "1. Magnit maydonda $\\alpha$ va $\\beta$ nurlarining qarama-qarshi tomonga og'ishini kuzating.",
-      "2. $\\gamma$ nurlar nega og'maydi — tushuntiring.",
-      "3. Qog'oz, alyuminiy va qo'rg'oshin to'siqlarning himoya qobiliyatini solishtiring."
+      "1. Magnit maydonda $\\alpha$ va $\\beta$ nurlarining qarama-qarshi tomonga og‘ishini kuzating.",
+      "2. $\\gamma$ nurlar nega og‘maydi — tushuntiring.",
+      "3. Qog‘oz, alyuminiy va qo‘rg‘oshin to‘siqlarning himoya qobiliyatini solishtiring."
     ]
   },
   'vascak-fusion': {
     url: 'sims/quyosh-sintezi.html',
     title: "🌌 Quyosh Sintezi: Proton-Proton (pp-I) Zanjiri",
-    desc: "Quyosh yadrosida vodorodning geliyga aylanishi: uch bosqichli pp-I zanjiri, pozitron, neytrino va gamma-kvant ajralishi hamda reaksiya tezligining haroratga kuchli bog'liqligi (portalning o'z reklamasiz HTML5 simulyatsiyasi).",
+    desc: "Quyosh yadrosida vodorodning geliyga aylanishi: uch bosqichli pp-I zanjiri, pozitron, neytrino va gamma-kvant ajralishi hamda reaksiya tezligining haroratga kuchli bog‘liqligi (portalning o‘z reklamasiz HTML5 simulyatsiyasi).",
     eqs: "$$4\\,^{1}_{1}\\text{H} \\rightarrow ^{4}_{2}\\text{He} + 2e^+ + 2\\nu_e + 26.7\\text{ MeV}$$",
     tasks: [
-      "1. Uch bosqichdan qaysi biri eng sekin kechishini kuzating va sababini (kuchsiz o'zaro ta'sir) tushuntiring.",
-      "2. Haroratni 10 dan 20 mln K gacha oshirib, ⁴He hosil bo'lish tezligi qanday o'zgarishini qayd eting.",
+      "1. Uch bosqichdan qaysi biri eng sekin kechishini kuzating va sababini (kuchsiz o‘zaro ta’sir) tushuntiring.",
+      "2. Haroratni 10 dan 20 mln K gacha oshirib, ⁴He hosil bo‘lish tezligi qanday o‘zgarishini qayd eting.",
       "3. Bitta ⁴He yadrosi uchun ajralgan energiyani 26.7 MeV bilan solishtiring (neytrinolar olib ketgan qismni hisobga oling)."
     ]
   },
   'vascak-series': {
     url: 'sims/radioaktiv-qatorlar.html',
     title: '📜 Radioaktiv Qatorlar: Uran (U-238) va Toriy (Th-232) Zanjirlari',
-    desc: "Og'ir radioaktiv yadrolarning ketma-ket $\\alpha$- va $\\beta^-$-yemirilishlar orqali barqaror qo'rg'oshin izotopiga aylanish zanjiri N–Z diagrammasida, har bir bosqichda A va Z balansi bilan (portalning o'z reklamasiz HTML5 simulyatsiyasi).",
+    desc: "Og‘ir radioaktiv yadrolarning ketma-ket $\\alpha$- va $\\beta^-$-yemirilishlar orqali barqaror qo‘rg‘oshin izotopiga aylanish zanjiri N–Z diagrammasida, har bir bosqichda A va Z balansi bilan (portalning o‘z reklamasiz HTML5 simulyatsiyasi).",
     eqs: "$$^{238}_{92}\\text{U} \\rightarrow \\dots \\rightarrow ^{206}_{82}\\text{Pb} \\quad (8\\alpha,\\ 6\\beta^-)$$",
     tasks: [
-      "1. Qatorning boshlang'ich va oxirgi izotopini aniqlang.",
+      "1. Qatorning boshlang‘ich va oxirgi izotopini aniqlang.",
       "2. U-238 qatorida nechta $\\alpha$ va $\\beta^-$ yemirilish borligini $A$ va $Z$ balansidan hisoblang.",
       "3. Har bir $\\alpha$-yemirilishda $A$ 4 ga, $Z$ 2 ga kamayishini tekshiring."
     ]
@@ -210,7 +214,7 @@ window.toggleNuclearOnlineSimFullscreen = function () {
 function speakNuclearNarration(topic) {
   if (!('speechSynthesis' in window)) {
     if (typeof window.showToast === 'function') {
-      window.showToast("Brauzeringizda ovoz sintezi qo'llab-quvvatlanmaydi.");
+      window.showToast("Brauzeringizda ovoz sintezi qo‘llab-quvvatlanmaydi.");
     }
     return;
   }
@@ -218,10 +222,10 @@ function speakNuclearNarration(topic) {
   window.speechSynthesis.cancel();
 
   const narrationScript = {
-    decay: "Radioaktiv yemirilish stoxastik jarayondir. Har bir yadroning qachon yemirilishini oldindan aytib bo'lmaydi, lekin ko'p yadrolar uchun ularning soni eksponensial qonun bo'yicha kamayadi. Har bir yarim yemirilish davrida qolgan yadrolar soni ikki marta kamayadi.",
-    fission: "Uran-235 yadrosi sekin neytronni yutib, ikki bo'lakka bo'linadi va o'rtacha ikki-uchta yangi neytron hamda taxminan ikki yuz megaelektronvolt energiya ajraladi. Kadmiy yoki bor sterjenlari ortiqcha neytronlarni yutib, ko'payish koeffitsiyentini birga teng ushlab turadi.",
-    fusion: "Termoyadroviy sintezda deyteriy va tritiy yadrolari qo'shilib, geliy-to'rt yadrosi va neytron hosil bo'ladi hamda o'n yetti yarim megaelektronvolt energiya ajraladi. Tokamak qurilmasida yuz million darajadan yuqori haroratli plazma magnit maydon yordamida ushlab turiladi.",
-    capstone: "Yakuniy mustaqil loyihada talaba yetti bosqichli sun'iy intellekt konveyeridan foydalanadi: diagnostika, teskari muhandislik, kod generatsiyasi, monitoring, audio-narratsiya, himoya transkripsiyasi va akademik halollik nazorati. Har bir bosqich natijasi talabaning o'z tahlili bilan boyitilishi shart."
+    decay: "Radioaktiv yemirilish stoxastik jarayondir. Har bir yadroning qachon yemirilishini oldindan aytib bo‘lmaydi, lekin ko‘p yadrolar uchun ularning soni eksponensial qonun bo‘yicha kamayadi. Har bir yarim yemirilish davrida qolgan yadrolar soni ikki marta kamayadi.",
+    fission: "Uran-235 yadrosi sekin neytronni yutib, ikki bo‘lakka bo‘linadi va o‘rtacha ikki-uchta yangi neytron hamda taxminan ikki yuz megaelektronvolt energiya ajraladi. Kadmiy yoki bor sterjenlari ortiqcha neytronlarni yutib, ko‘payish koeffitsiyentini birga teng ushlab turadi.",
+    fusion: "Termoyadroviy sintezda deyteriy va tritiy yadrolari qo‘shilib, geliy-to‘rt yadrosi va neytron hosil bo‘ladi hamda o‘n yetti yarim megaelektronvolt energiya ajraladi. Tokamak qurilmasida yuz million darajadan yuqori haroratli plazma magnit maydon yordamida ushlab turiladi.",
+    capstone: "Yakuniy mustaqil loyihada talaba yetti bosqichli sun’iy intellekt konveyeridan foydalanadi: diagnostika, teskari muhandislik, kod generatsiyasi, monitoring, audio-narratsiya, himoya transkripsiyasi va akademik halollik nazorati. Har bir bosqich natijasi talabaning o‘z tahlili bilan boyitilishi shart."
   };
 
   const utterance = new SpeechSynthesisUtterance(narrationScript[topic] || narrationScript.fission);
@@ -351,9 +355,9 @@ function initNuclearLab() {
   function countActive() { return decay.nuclei.filter(n => n.state === 'active').length; }
 
   // -----------------------------------------------------------------------
-  // 2. U-235 ZANJIRLI BO'LINISHI (tab3'dagi updateFissionChainReaction, 3D)
+  // 2. U-235 ZANJIRLI BO‘LINISHI (tab3'dagi updateFissionChainReaction, 3D)
   // -----------------------------------------------------------------------
-  const BOX = 0.9;               // reaktor faol zonasi yarim-o'lchami
+  const BOX = 0.9;               // reaktor faol zonasi yarim-o‘lchami
   const ROD_X = [-0.45, 0, 0.45]; // boshqaruv sterjenlari tekisliklari
   const NEUTRON_SPEED = 0.7;
   const MAX_NEUTRONS = 400;
@@ -405,7 +409,7 @@ function initNuclearLab() {
       // Boshqaruv sterjeni yutishi (Kadmiy / Bor)
       if (depth > 0 && n.y > rodBottom && ROD_X.some(rx => Math.abs(n.x - rx) < 0.04)) n.life = 0;
 
-      // Uran-235 yadrosi bilan to'qnashuv
+      // Uran-235 yadrosi bilan to‘qnashuv
       if (n.life > 0) {
         for (const nucl of fission.nuclei) {
           if (nucl.state === 'stable' && Math.hypot(n.x - nucl.x, n.y - nucl.y, n.z - nucl.z) < nucl.r + 0.05) {
@@ -422,7 +426,7 @@ function initNuclearLab() {
                 life: 8.0
               });
             }
-            // Bo'linish parchalari: Ba-141 va Kr-92 qarama-qarshi yo'nalishda
+            // Bo‘linish parchalari: Ba-141 va Kr-92 qarama-qarshi yo‘nalishda
             const a = Math.random() * Math.PI * 2;
             fission.fragments.push({ x: nucl.x, y: nucl.y, z: nucl.z, vx: Math.cos(a) * 0.25, vy: 0.05, vz: Math.sin(a) * 0.25, life: 1.5, color: '#FBBF24' });
             fission.fragments.push({ x: nucl.x, y: nucl.y, z: nucl.z, vx: -Math.cos(a) * 0.25, vy: -0.05, vz: -Math.sin(a) * 0.25, life: 1.5, color: '#A78BFA' });
@@ -441,7 +445,7 @@ function initNuclearLab() {
       if (f.life <= 0) fission.fragments.splice(i, 1);
     }
 
-    // Ko'payish koeffitsiyenti: oxirgi 2 s dagi (tug'ilgan neytronlar) / (yo'qolgan neytronlar)
+    // Ko‘payish koeffitsiyenti: oxirgi 2 s dagi (tug‘ilgan neytronlar) / (yo‘qolgan neytronlar)
     fission.events.push({ t: fission.t, born: fissionsNow * 3, lost: lossesNow });
     while (fission.events.length && fission.t - fission.events[0].t > 2) fission.events.shift();
     const born = fission.events.reduce((s, e) => s + e.born, 0);
@@ -508,7 +512,7 @@ function initNuclearLab() {
     if (used.size) {
       fusion.ions = fusion.ions.filter((_, idx) => !used.has(idx));
     }
-    // Yoqilg'i quyish: D va T ionlari soni tiklanadi
+    // Yoqilg‘i quyish: D va T ionlari soni tiklanadi
     while (fusion.ions.filter(x => x.type === 'D').length < 30) fusion.ions.push(newIon('D'));
     while (fusion.ions.filter(x => x.type === 'T').length < 30) fusion.ions.push(newIon('T'));
     for (const ion of fusion.ions) if (!ion.pos) ion.pos = ionPos(ion);
@@ -537,7 +541,7 @@ function initNuclearLab() {
   // Atom massalari (u): AME2020 jadvali qiymatlari
   const MASS = { U235: 235.0439299, n: 1.00866492, Ba141: 140.914411, Kr92: 91.926156 };
   const U_TO_MEV = 931.494;
-  const CAP_STAGES = ['MagicSchool', 'PhET/Vascak', 'Claude', 'Antigravity', 'Muxlisa/11Labs', 'Otter.ai', 'Undetectable'];
+  const CAP_STAGES = ['MagicSchool', 'PhET/Vascak', 'Claude', 'Antigravity', 'Muxlisa/ElevenLabs', 'Otter.ai', 'Undetectable'];
   const capstone = { t: 0 };
 
   function capstoneAudit() {
@@ -594,7 +598,7 @@ function initNuclearLab() {
     }));
     for (const p of decay.particles) items.push({ p, r: 0.025, color: '#F43F5E', glow: 10 });
     drawDepthSorted(items, w, h);
-    label(`N = ${countActive()} / ${decay.N0}   t = ${decay.t.toFixed(1)} s`, 12, 20, '#E2E8F0');
+    label(`N = ${countActive()} / ${decay.N0}   t = ${uzFix(decay.t, 1)} s`, 12, 20, '#E2E8F0');
     label('● faol yadro   ● yemirilgan   ● nurlanish zarrasi', 12, h - 12);
   }
 
@@ -622,7 +626,7 @@ function initNuclearLab() {
     for (const f of fission.fragments) items.push({ p: f, r: 0.04, color: f.color, glow: 8 });
     for (const n of fission.neutrons) items.push({ p: n, r: 0.018, color: '#38BDF8', glow: 8 });
     drawDepthSorted(items, w, h);
-    label(`Kadmiy sterjenlari: ${Math.round(depth * 100)}%   k ≈ ${fission.k.toFixed(2)}`, 12, 20, '#E2E8F0');
+    label(`Kadmiy sterjenlari: ${Math.round(depth * 100)} %   k ≈ ${uzFix(fission.k, 2)}`, 12, 20, '#E2E8F0');
     label('● U-235   ● neytron   ● Ba-141 / Kr-92 parchalari', 12, h - 12);
   }
 
@@ -643,7 +647,7 @@ function initNuclearLab() {
     for (const p of fusion.products) items.push({ p, r: p.kind === 'He' ? 0.035 : 0.018, color: p.kind === 'He' ? '#FDE68A' : '#E2E8F0', glow: 14 });
     drawDepthSorted(items, w, h);
     label(`D-T sintez reaksiyalari: ${fusion.reactions}`, 12, 20, '#E2E8F0');
-    label('● D   ● T   ● He-4 (3.5 MeV)   ● n (14.1 MeV)', 12, h - 12);
+    label('● D   ● T   ● He-4 (3,5 MeV)   ● n (14,1 MeV)', 12, h - 12);
   }
 
   function drawCapstoneScene(w, h) {
@@ -665,7 +669,7 @@ function initNuclearLab() {
     ctx.textAlign = 'left';
     const au = capstoneAudit();
     label(`A: ${au.A0} → ${au.A1}  ✓   Z: ${au.Z0} → ${au.Z1}  ✓`, 12, 20, '#E2E8F0');
-    label(`Δm = ${au.dm.toFixed(4)} u  →  Q = ${au.Q.toFixed(1)} MeV (tezkor energiya)`, 12, 38, '#FBBF24');
+    label(`Δm = ${uzFix(au.dm, 4)} u  →  Q = ${uzFix(au.Q, 1)} MeV (tezkor energiya)`, 12, 38, '#FBBF24');
   }
 
   function drawGraph() {
@@ -732,7 +736,7 @@ function initNuclearLab() {
         gctx.fillText(`${k}T½`, x - 8, padT + ph + 12);
       }
       legend([{ color: '#34D399', text: 'N(t) Monte-Karlo' }, { color: '#FBBF24', text: 'N₀·2^(−t/T½)' }]);
-      axisLabels(`t, s (max ${xMax.toFixed(0)})`, decay.N0, '');
+      axisLabels(`t, s (max ${uzFix(xMax, 0)})`, decay.N0, '');
     } else if (mode === 'fission') {
       const hist = fission.history;
       const t0 = hist.length ? hist[0].t : 0;
@@ -741,7 +745,7 @@ function initNuclearLab() {
       const eMax = Math.max(200, ...hist.map(p => p.e));
       series(hist.map(p => ({ x: p.t - t0, y: p.n })), xMax, nMax, '#38BDF8', false);
       series(hist.map(p => ({ x: p.t - t0, y: (p.e / eMax) * nMax })), xMax, nMax, '#F43F5E', true);
-      legend([{ color: '#38BDF8', text: 'Neytronlar soni' }, { color: '#F43F5E', text: `E (max ${Math.round(eMax)} MeV)` }]);
+      legend([{ color: '#38BDF8', text: 'Neytronlar soni' }, { color: '#F43F5E', text: `E (maks. ${Math.round(eMax)} MeV)` }]);
       axisLabels('t, s', nMax, ' n');
     } else if (mode === 'fusion') {
       const hist = fusion.history;
@@ -755,12 +759,12 @@ function initNuclearLab() {
       const au = capstoneAudit();
       gctx.font = '13px ui-monospace, monospace';
       const rows = [
-        ['[AUDIT] Massa soni A', `${au.A0} = ${au.A1}`, '#34D399'],
-        ['[AUDIT] Zaryad soni Z', `${au.Z0} = ${au.Z1}`, '#34D399'],
-        ['[ENERGY] Δm', `${au.dm.toFixed(4)} u`, '#FBBF24'],
-        ['[ENERGY] Q = Δm·c²', `${au.Q.toFixed(1)} MeV`, '#FBBF24'],
-        ['[NOTE] β/γ bilan jami', '≈ 200 MeV', '#94A3B8'],
-        ['[PIPELINE] Bosqich', `${Math.floor(capstone.t / 1.2) % 7 + 1} / 7`, '#F43F5E']
+        ['[TEKSHIRUV] Massa soni A', `${au.A0} = ${au.A1}`, '#34D399'],
+        ['[TEKSHIRUV] Zaryad soni Z', `${au.Z0} = ${au.Z1}`, '#34D399'],
+        ['[ENERGIYA] Δm', `${uzFix(au.dm, 4)} u`, '#FBBF24'],
+        ['[ENERGIYA] Q = Δm·c²', `${uzFix(au.Q, 1)} MeV`, '#FBBF24'],
+        ['[IZOH] β/γ bilan jami', '≈ 200 MeV', '#94A3B8'],
+        ['[KONVEYER] Bosqich', `${Math.floor(capstone.t / 1.2) % 7 + 1} / 7`, '#F43F5E']
       ];
       rows.forEach((r, i) => {
         gctx.fillStyle = '#CBD5E1'; gctx.fillText(r[0], 14, 40 + i * 30);
@@ -782,25 +786,25 @@ function initNuclearLab() {
       const T = parseFloat(slHalf.value);
       const N = countActive();
       setTel(0, 'Faol Yadrolar N(t)', `${N} ta`);
-      setTel(1, 'Nazariy N₀·2^(−t/T)', (decay.N0 * Math.pow(2, -decay.t / T)).toFixed(1));
-      setTel(2, 'Aktivlik A = λN', `${((Math.LN2 / T) * N).toFixed(2)} Bq`);
-      setTel(3, 'Vaqt t', `${decay.t.toFixed(1)} s`);
+      setTel(1, 'Nazariy N₀·2^(−t/T)', uzFix((decay.N0 * Math.pow(2, -decay.t / T)), 1));
+      setTel(2, 'Aktivlik A = λN', `${uzFix(((Math.LN2 / T) * N), 2)} Bq`);
+      setTel(3, 'Vaqt t', `${uzFix(decay.t, 1)} s`);
     } else if (mode === 'fission') {
       setTel(0, 'Ajralgan Energiya', `${fission.energy} MeV`);
-      setTel(1, 'Koeffitsiyent (k)', fission.k.toFixed(2));
+      setTel(1, 'Koeffitsiyent (k)', uzFix(fission.k, 2));
       setTel(2, 'U-235 Yadrolari', `${fission.nuclei.filter(n => n.state === 'stable').length} ta`);
       setTel(3, 'Erkin Neytronlar', `${fission.neutrons.length} ta`);
     } else if (mode === 'fusion') {
-      setTel(0, 'Ajralgan Energiya', `${fusion.energy.toFixed(1)} MeV`);
-      setTel(1, 'Reaksiyalar Soni', `${fusion.reactions} ta`);
-      setTel(2, 'Sintez Tezligi', `${fusionRate().toFixed(1)} 1/s`);
+      setTel(0, 'Ajralgan Energiya', `${uzFix(fusion.energy, 1)} MeV`);
+      setTel(1, 'Reaksiyalar soni', `${fusion.reactions} ta`);
+      setTel(2, 'Sintez Tezligi', `${uzFix(fusionRate(), 1)} 1/s`);
       setTel(3, 'D + T Ionlari', `${fusion.ions.length} ta`);
     } else {
       const au = capstoneAudit();
       setTel(0, 'Massa Soni A', `${au.A0} = ${au.A1}`);
       setTel(1, 'Zaryad Soni Z', `${au.Z0} = ${au.Z1}`);
-      setTel(2, 'Q = Δm·c²', `${au.Q.toFixed(1)} MeV`);
-      setTel(3, 'Pipeline Bosqichi', `${Math.floor(capstone.t / 1.2) % 7 + 1} / 7`);
+      setTel(2, 'Q = Δm·c²', `${uzFix(au.Q, 1)} MeV`);
+      setTel(3, 'Konveyer bosqichi', `${Math.floor(capstone.t / 1.2) % 7 + 1} / 7`);
     }
   }
 
@@ -835,14 +839,14 @@ function initNuclearLab() {
   if (btnPlay) btnPlay.addEventListener('click', () => {
     running = !running;
     btnPlay.innerHTML = running
-      ? '<span style="font-size: 1.1rem; line-height: 1;">⏸</span> To\'xtatish'
-      : '<span style="font-size: 1.1rem; line-height: 1;">▶</span> Davom Etish';
+      ? '<span style="font-size: 1.1rem; line-height: 1;">⏸</span> To‘xtatish'
+      : '<span style="font-size: 1.1rem; line-height: 1;">▶</span> Davom etish';
   });
   if (btnReset) btnReset.addEventListener('click', resetMode);
   if (btnInject) btnInject.addEventListener('click', () => { if (mode === 'fission') injectNeutron(); });
 
   if (slRods) slRods.addEventListener('input', () => { valRods.textContent = Math.round(parseFloat(slRods.value) * 100) + '%'; });
-  if (slHalf) slHalf.addEventListener('input', () => { valHalf.textContent = parseFloat(slHalf.value).toFixed(1) + ' s'; });
+  if (slHalf) slHalf.addEventListener('input', () => { valHalf.textContent = uzFix(parseFloat(slHalf.value), 1) + ' s'; });
 
   // -----------------------------------------------------------------------
   // ASOSIY TSIKL

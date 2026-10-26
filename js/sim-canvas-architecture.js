@@ -1,9 +1,13 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 7, Tab 6: Interaktiv Canvas Fizik Animatsiya Arxitekturasi
- * Laboratoriyasi. Sahifaning o'zida (3-bo'lim) ko'rsatilgan Glenn Fiedler
+ * Laboratoriyasi. Sahifaning o‘zida (3-bo‘lim) ko‘rsatilgan Glenn Fiedler
  * "Fix Your Timestep" akkumulyator algoritmining jonli demonstratsiyasi:
  * uchta rejim — Fixed dt + Alpha interpolyatsiya, Fixed dt akkumulyator
- * (interpolyatsiyasiz) va O'zgaruvchan dt — bitta zarracha to'qnashuv
+ * (interpolyatsiyasiz) va O‘zgaruvchan dt — bitta zarracha to‘qnashuv
  * simulyatsiyasida taqqoslanadi.
  */
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,7 +42,7 @@ function initCanvasArchitecture() {
   const GRAVITY = 480; // px/s^2
   const RESTITUTION = 0.82;
   const FIXED_DELTA = 1 / 60;
-  const MAX_FRAME_TIME = 0.25; // "O'lim spirali" himoyasi
+  const MAX_FRAME_TIME = 0.25; // "O‘lim spirali" himoyasi
 
   let isRunning = true;
   let accumulator = 0;
@@ -75,8 +79,8 @@ function initCanvasArchitecture() {
       while (particles.length < n) particles.push(createParticle());
       particles.length = n;
     } else {
-      // Pooling o'chirilganda: har safar butunlay yangi massiv va
-      // obyektlar yaratiladi (haqiqiy GC bosimini ko'rsatish uchun).
+      // Pooling o‘chirilganda: har safar butunlay yangi massiv va
+      // obyektlar yaratiladi (haqiqiy GC bosimini ko‘rsatish uchun).
       const fresh = [];
       for (let i = 0; i < n; i++) {
         fresh.push(i < particles.length ? Object.assign({}, particles[i]) : createParticle());
@@ -105,7 +109,7 @@ function initCanvasArchitecture() {
   }
   if (cpuLoadSlider) {
     cpuLoadSlider.addEventListener('input', () => {
-      cpuLoadVal.textContent = parseFloat(cpuLoadSlider.value).toFixed(1) + ' ms';
+      cpuLoadVal.textContent = uzFix(parseFloat(cpuLoadSlider.value), 1) + ' ms';
     });
   }
   if (countSlider) {
@@ -118,7 +122,7 @@ function initCanvasArchitecture() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? "⏸ To'xtatish" : "▶ Davom ettirish";
+      btnPlay.textContent = isRunning ? "⏸ To‘xtatish" : "▶ Davom ettirish";
       lastTime = null; // pauzadan keyin katta dt sakramasligi uchun
     });
   }
@@ -177,7 +181,7 @@ function initCanvasArchitecture() {
         rx = p.prevX * (1 - alpha) + p.x * alpha;
         ry = p.prevY * (1 - alpha) + p.y * alpha;
       }
-      // "Butun sonli koordinatalar" optimizatsiyasi (4-bo'limda tavsiflangan)
+      // "Butun sonli koordinatalar" optimizatsiyasi (4-bo‘limda tavsiflangan)
       rx = Math.round(rx);
       ry = Math.round(ry);
       ctx.beginPath();
@@ -194,9 +198,9 @@ function initCanvasArchitecture() {
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px sans-serif';
     const modeLabels = {
-      'fixed-interp': 'Fixed dt + Interpolyatsiya',
-      'fixed': 'Fixed dt Akkumulyator',
-      'variable': "O'zgaruvchan dt"
+      'fixed-interp': 'qat’iy Δt + interpolyatsiya',
+      'fixed': 'qat’iy Δt akkumulyatori',
+      'variable': "o‘zgaruvchan Δt"
     };
     ctx.fillText('Rejim: ' + (modeLabels[modeSelect.value] || ''), 20, 27);
   }
@@ -216,7 +220,7 @@ function initCanvasArchitecture() {
       gctx.fillRect(x, y, Math.max(1, barW - 1), barH);
     }
 
-    // 60fps chegara chizig'i (~16.6ms)
+    // 60fps chegara chizig‘i (~16.6ms)
     const refY = h - (16.6 / 33) * h;
     gctx.strokeStyle = 'rgba(148,163,184,0.4)';
     gctx.setLineDash([4, 3]);
@@ -252,11 +256,11 @@ function initCanvasArchitecture() {
     }
     lastProcessedTime = currentTime;
 
-    // Sun'iy CPU yuklamasi (band-tsikl orqali lag simulyatsiyasi)
+    // Sun’iy CPU yuklamasi (band-tsikl orqali lag simulyatsiyasi)
     const cpuLoadMs = cpuLoadSlider ? parseFloat(cpuLoadSlider.value) : 0;
     if (cpuLoadMs > 0) {
       const busyUntil = performance.now() + cpuLoadMs;
-      while (performance.now() < busyUntil) { /* sun'iy CPU band qilish */ }
+      while (performance.now() < busyUntil) { /* sun’iy CPU band qilish */ }
     }
 
     let frameTime = (currentTime - lastTime) / 1000;
@@ -317,8 +321,8 @@ function initCanvasArchitecture() {
     }
     drawPacingGraph();
 
-    hudDt.textContent = frameMs.toFixed(1) + ' ms';
-    hudAcc.textContent = (accumulator * 1000).toFixed(1) + ' ms';
+    hudDt.textContent = uzFix(frameMs, 1) + ' ms';
+    hudAcc.textContent = uzFix((accumulator * 1000), 1) + ' ms';
     hudSteps.textContent = String(steps);
     updateHUD();
 
@@ -327,7 +331,7 @@ function initCanvasArchitecture() {
 
   countVal.textContent = countSlider.value + ' ta';
   fpsVal.textContent = parseInt(fpsSlider.value, 10) >= 120 ? "Cheklovsiz (V-Sync)" : fpsSlider.value + ' FPS';
-  cpuLoadVal.textContent = parseFloat(cpuLoadSlider.value).toFixed(1) + ' ms';
+  cpuLoadVal.textContent = uzFix(parseFloat(cpuLoadSlider.value), 1) + ' ms';
 
   resetSimulation();
   setupResponsiveCanvas(canvas, 420 / 800);

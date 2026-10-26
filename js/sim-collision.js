@@ -24,7 +24,7 @@ class CollisionSimulation {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const rect = this.canvas.parentElement.getBoundingClientRect();
     this.canvas.width = (rect.width * dpr) || 600;
-    this.canvas.height = (rect.width * 0.4 * dpr) || 240;
+    this.canvas.height = ((rect.height || rect.width * 0.4) * dpr) || 240;
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
@@ -94,8 +94,8 @@ class CollisionSimulation {
 
     const pEl = document.getElementById('collision-p');
     const eEl = document.getElementById('collision-e');
-    if (pEl) pEl.textContent = P.toFixed(2) + ' kg·m/s';
-    if (eEl) eEl.textContent = Ek.toFixed(2) + ' J';
+    if (pEl) pEl.textContent = P.toFixed(2).replace('.', ',').replace('-', '−') + ' kg·m/s';
+    if (eEl) eEl.textContent = Ek.toFixed(2).replace('.', ',') + ' J';
   }
 
   loop() {
