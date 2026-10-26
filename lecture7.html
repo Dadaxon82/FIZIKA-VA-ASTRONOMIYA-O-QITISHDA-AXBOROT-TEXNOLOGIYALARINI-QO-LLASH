@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7-Ma'ruza: Fizik Animatsiya Arxitekturasi: HTML5 Canvas Asoslari</title>
+  <title>7-Ma’ruza: Fizik Animatsiya Arxitekturasi: HTML5 Canvas Asoslari</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/simulators.css">
@@ -11,6 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
           onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <script>
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
+  </script>
 </head>
 <body>
 
@@ -18,40 +24,41 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-text">FIZIKA &amp; SUN'IY INTELLEKT</span>
+        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
       </a>
             <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
         <li><a href="lecture1.html" class="nav-link ">1-Modul: Paradigma</a></li>
         <li><a href="lecture2.html" class="nav-link ">2-Modul: Modellashtirish</a></li>
         <li><a href="lecture3.html" class="nav-link ">3-Modul: AI Ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik va Barqarorlik</a></li>
         <li><a href="lecture5.html" class="nav-link ">5-Modul: Model Turlari</a></li>
         <li><a href="lecture6.html" class="nav-link ">6-Modul: Shakllantirish</a></li>
         <li><a href="lecture7.html" class="nav-link active">7-Modul: Canvas Arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar va To‘qnashuv</a></li>
         <li><a href="lecture9.html" class="nav-link ">9-Modul: Prompt Muhandislik</a></li>
         <li><a href="lecture10.html" class="nav-link ">10-Modul: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta'lim</a></li>
-        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika & AI Pipeline</a></li>
-        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika & Stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika & Audio Sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika va AI Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika va Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika va Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi va Capstone</a></li>
         <li><a href="lab1.html" class="nav-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
         <li><a href="lab2.html" class="nav-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
-        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
@@ -74,34 +81,35 @@
       <li><a href="lecture1.html" class="drawer-link ">🔬 1-Modul: AI Paradigma</a></li>
       <li><a href="lecture2.html" class="drawer-link ">🧪 2-Modul: Modellashtirish</a></li>
       <li><a href="lecture3.html" class="drawer-link ">🤖 3-Modul: AI Ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik va Barqarorlik</a></li>
       <li><a href="lecture5.html" class="drawer-link ">🌌 5-Modul: Model Turlari</a></li>
       <li><a href="lecture6.html" class="drawer-link ">📐 6-Modul: Shakllantirish</a></li>
       <li><a href="lecture7.html" class="drawer-link active">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar va To‘qnashuv</a></li>
       <li><a href="lecture9.html" class="drawer-link ">🧠 9-Modul: Prompt Muhandislik</a></li>
       <li><a href="lecture10.html" class="drawer-link ">🪐 10-Modul: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta'lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika & AI Pipeline</a></li>
-      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
+      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika va AI Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika va Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika va Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi va Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
       <li><a href="lab1.html" class="drawer-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
       <li><a href="lab2.html" class="drawer-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
-      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
       <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
     </ul>
   </aside>
@@ -111,41 +119,41 @@
 
     <!-- Hero Header -->
     <div class="hero-panel" style="margin-bottom: 30px;">
-      <span class="badge badge-cyan">7-Modul: Dasturiy Arxitektura & Dvigatel</span>
+      <span class="badge badge-cyan">7-Modul: Dasturiy Arxitektura va Dvigatel</span>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
         Fizik Animatsiya Arxitekturasi: HTML5 Canvas Asoslari
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
-        HTML5 Canvas 2D konteksti, Glenn Fiedlerning <em>"Fix Your Timestep"</em> akkumulyatorli fizik tsikli, <code>requestAnimationFrame</code> apparat sinxronizatsiyasi, Google Antigravity AI monitoringi, ChatGPT kadr optimizatsiyasi (Dirty Rects, Multi-layer Canvas, Object Pooling) va Claude 3.5 Sonnet (Artifacts) vizual sinovlari.
+        HTML5 Canvas 2D konteksti, Glenn Fiedlerning <em>"Fix Your Timestep"</em> akkumulyatorli fizik tsikli, <code>requestAnimationFrame</code> apparat sinxronizatsiyasi, Google Antigravity monitoringi, ChatGPT kadr optimizatsiyasi (Dirty Rects, Multi-layer Canvas, Object Pooling) va Claude (Artifacts) vizual sinovlari.
       </p>
     </div>
 
     <!-- 6-Stage Reja Grid -->
     <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 7-Ma'ruza Rejasi va AI Texnologik Konveyeri:</h3>
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 7-Ma’ruza Rejasi va AI Texnologik Konveyeri:</h3>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-cyan);">1. AI Diagnostika & Reja:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI: ZPD va Bloom taksonomiyasi bo'yicha 3 klasterli adaptiv grafik o'quv rejasi.</span>
+          <strong style="color: var(--accent-cyan);">1. AI Diagnostika va Reja:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI: ZPD va Bloom taksonomiyasi bo‘yicha 3 klasterli adaptiv grafik o‘quv rejasi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-emerald);">2. Kod Yozish & Monitoring:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Google Antigravity AI: Modulli dasturiy arxitektura, xotira (Heap) va kadr pacing monitoringi.</span>
+          <strong style="color: var(--accent-emerald);">2. Kod Yozish va Monitoring:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Google Antigravity: Modulli dasturiy arxitektura, xotira (Heap) va kadr pacing monitoringi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-amber);">3. Kadr Tsikli & Delta-Time:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet: Glenn Fiedler akkumulyatori, qat'iy qadam (Fixed dt) va alpha interpolyatsiyasi.</span>
+          <strong style="color: var(--accent-amber);">3. Kadr Tsikli va Delta-Time:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude: Glenn Fiedler akkumulyatori, qat’iy qadam (Fixed dt) va alpha interpolyatsiyasi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-purple);">4. Kadr Optimizatsiyasi:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">ChatGPT Code Interpreter: Dirty Rectangles, ko'p qatlamli Canvas va Object Pooling (Zero-GC).</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">ChatGPT Code Interpreter: Dirty Rectangles, ko‘p qatlamli Canvas va Object Pooling (Zero-GC).</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-rose);">5. Vizual Sinov & Artifacts:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet (Artifacts): Retina High-DPI dpr masshtablash, real vaqtli FPS va jank telemetriyasi.</span>
+          <strong style="color: var(--accent-rose);">5. Vizual Sinov va Artifacts:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude (Artifacts): Retina High-DPI dpr masshtablash, real vaqtli FPS va jank telemetriyasi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: #38BDF8;">6. Simulyatsiya & Test:</strong><br>
+          <strong style="color: #38BDF8;">6. Simulyatsiya va Test:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">HTML5 Canvas jonli arxitektura dvigateli, lag-simulyator, diagnostik test va adabiyotlar.</span>
         </div>
       </div>
@@ -156,18 +164,18 @@
       <div class="tabs-nav">
         <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')">1. AI Diagnostika</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')">2. Google Antigravity</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')">3. Kadr Tsikli & Delta-Time</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')">4. Optimizatsiya & Xotira</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')">3. Kadr Tsikli va Delta-Time</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')">4. Optimizatsiya va Xotira</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')">5. Vizual Sinov (Artifacts)</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')">6. Interaktiv Dvigatel</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')">7. Test & Manbalar</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')">7. Test va Manbalar</button>
       </div>
 
       <!-- TAB 1: AI Diagnostika & Individual Reja -->
       <div id="tab-sec1" class="tab-content active">
         <div class="glass-panel">
           <span class="badge badge-cyan">1-Bosqich: Kognitiv Diagnostika</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: Kognitiv Diagnostika va 3 Klasterli Adaptiv O'quv Rejasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: Kognitiv Diagnostika va 3 Klasterli Adaptiv O‘quv Rejasi</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -175,7 +183,7 @@
               📚 Nazariy-Metodologik Asos:
             </div>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-              Grafik va kompyuter fizikasi ta'limida talabalarning animatsiya mexanikasini o'zlashtirishi <strong>Lev Vygotskiyning "Eng Yaqin Rivojlanish Zonasi" (ZPD, 1978)</strong> hamda <strong>Bloomning taksonomiyasi (Anderson & Krathwohl, 2001)</strong> prinsiplari asosida tashkil etiladi. Dasturiy grafik apparat bilan ishlash tajribasi turli darajadagi talabalarni MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratadi.
+              Grafik va kompyuter fizikasi ta’limida talabalarning animatsiya mexanikasini o‘zlashtirishi <strong>Lev Vygotskiyning "Eng Yaqin Rivojlanish Zonasi" (ZPD, 1978)</strong> hamda <strong>Bloomning taksonomiyasi (Anderson va Krathwohl, 2001)</strong> prinsiplari asosida tashkil etiladi. Dasturiy grafik apparat bilan ishlash tajribasi turli darajadagi talabalarni MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratadi.
             </p>
           </div>
 
@@ -186,89 +194,89 @@
           <div class="grid-3" style="margin-bottom: 24px;">
             <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-cyan);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <h4 style="color: var(--accent-cyan);">Klaster A (Boshlang'ich)</h4>
+                <h4 style="color: var(--accent-cyan);">Klaster A (Boshlang‘ich)</h4>
                 <span class="badge badge-cyan" style="font-size:0.75rem;">Scaffolding</span>
               </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
-                HTML5 Canvas 2D kontekstini biladi (`ctx.fillRect`, `ctx.arc`), biroq `requestAnimationFrame` va `setInterval` o'rtasidagi fundamental farqni tushunmaydi. O'zgaruvchan delta-time xatolariga yo'l qo'yadi.
+                HTML5 Canvas 2D kontekstini biladi (`ctx.fillRect`, `ctx.arc`), biroq `requestAnimationFrame` va `setInterval` o‘rtasidagi fundamental farqni tushunmaydi. O‘zgaruvchan delta-time xatolariga yo‘l qo‘yadi.
               </p>
               <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
-                <strong>O'quv Trayektoriyasi:</strong> Qo'llab-quvvatlovchi andozalar (Scaffolding), oddiy 1D to'g'ri chiziqli harakat kadr tsikli, Canvas tozalash va to'qnashuvlar.
+                <strong>O‘quv Trayektoriyasi:</strong> Qo‘llab-quvvatlovchi andozalar (Scaffolding), oddiy 1D to‘g‘ri chiziqli harakat kadr tsikli, Canvas tozalash va to‘qnashuvlar.
               </div>
             </div>
 
             <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-emerald);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <h4 style="color: var(--accent-emerald);">Klaster B (O'rta / Standart)</h4>
+                <h4 style="color: var(--accent-emerald);">Klaster B (O‘rta / Standart)</h4>
                 <span class="badge badge-emerald" style="font-size:0.75rem;">Dvigatel Quruvchi</span>
               </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
-                Delta-Time ($\Delta t$) tushunchasini to'liq tushunadi. JavaScript ES6+ sintaksisiga ega. Monitor chastotasining (60Hz / 144Hz) fizik tezlikka ta'sirini anglaydi.
+                Delta-Time ($\Delta t$) tushunchasini to‘liq tushunadi. JavaScript ES6+ sintaksisiga ega. Monitor chastotasining (60Hz / 144Hz) fizik tezlikka ta’sirini anglaydi.
               </p>
               <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
-                <strong>O'quv Trayektoriyasi:</strong> Glenn Fiedler akkumulyatorli tsiklini kodlash, Alpha holat interpolyatsiyasi va Retina High-DPI Canvas moslashuvi.
+                <strong>O‘quv Trayektoriyasi:</strong> Glenn Fiedler akkumulyatorli tsiklini kodlash, Alpha holat interpolyatsiyasi va Retina High-DPI Canvas moslashuvi.
               </div>
             </div>
 
             <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid var(--accent-purple);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <h4 style="color: var(--accent-purple);">Klaster C (Ilg'or / Research)</h4>
+                <h4 style="color: var(--accent-purple);">Klaster C (Ilg‘or / Research)</h4>
                 <span class="badge badge-purple" style="font-size:0.75rem;">Tadqiqotchi</span>
               </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
-                Xotira boshqaruvi, Garbage Collection (GC) pauzalari, Web Workers va OffscreenCanvas ko'p oqimli arxitekturasi bilan tanish.
+                Xotira boshqaruvi, Garbage Collection (GC) pauzalari, Web Workers va OffscreenCanvas ko‘p oqimli arxitekturasi bilan tanish.
               </p>
               <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
-                <strong>O'quv Trayektoriyasi:</strong> Dirty Rectangles, Multi-layer Canvas, Object Pooling (Zero-GC dvigateli) va Web Workers rendering tadqiqoti.
+                <strong>O‘quv Trayektoriyasi:</strong> Dirty Rectangles, Multi-layer Canvas, Object Pooling (Zero-GC dvigateli) va Web Workers rendering tadqiqoti.
               </div>
             </div>
           </div>
 
           <!-- 4-Week Roadmap Table -->
-          <h3 style="color:var(--accent-amber); margin:24px 0 14px 0; font-size:1.15rem;">🗺️ 4 Haftalik Adaptiv Canvas Arxitekturasi Yo'l Xaritasi:</h3>
+          <h3 style="color:var(--accent-amber); margin:24px 0 14px 0; font-size:1.15rem;">🗺️ 4 Haftalik Adaptiv Canvas Arxitekturasi Yo‘l Xaritasi:</h3>
           <div style="overflow-x:auto; margin-bottom:24px;">
             <table class="styled-table" style="width:100%;">
               <thead>
                 <tr>
                   <th>Bosqich</th>
                   <th>Hafta</th>
-                  <th>Klaster A (Boshlang'ich)</th>
+                  <th>Klaster A (Boshlang‘ich)</th>
                   <th>Klaster B (Standart)</th>
-                  <th>Klaster C (Ilg'or)</th>
+                  <th>Klaster C (Ilg‘or)</th>
                   <th>Baholash Mezonlari</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><strong>1-Hafta</strong></td>
-                  <td>Canvas Asoslari & rAF</td>
+                  <td>Canvas Asoslari va rAF</td>
                   <td>Canvas 2D primitivlari va oddiy `requestAnimationFrame` tsikli</td>
-                  <td>Delta-Time hisobi va fizik tezlikni vaqtga bog'lash</td>
+                  <td>Delta-Time hisobi va fizik tezlikni vaqtga bog‘lash</td>
                   <td>Retina High-DPI masshtablash va sub-pixel tekislash</td>
                   <td>Kadrlar silliqligi (60 FPS)</td>
                 </tr>
                 <tr>
                   <td><strong>2-Hafta</strong></td>
-                  <td>Akkumulyator & Barqarorlik</td>
-                  <td>O'zgaruvchan dt muammolarini (Tunneling) kuzatish</td>
+                  <td>Akkumulyator va Barqarorlik</td>
+                  <td>O‘zgaruvchan dt muammolarini (Tunneling) kuzatish</td>
                   <td>Glenn Fiedler "Fix Your Timestep" akkumulyatorini joriy etish</td>
                   <td>Spiral of Death himoyasi va Alpha interpolyatsiyasi</td>
                   <td>Fizik determinizm (100%)</td>
                 </tr>
                 <tr>
                   <td><strong>3-Hafta</strong></td>
-                  <td>Optimizatsiya & Xotira</td>
-                  <td>Kadrni tozalash va to'qnashuvlar chegarasi</td>
-                  <td>Object Pooling joriy etib, GC mikro-pauzalarini yo'qotish</td>
+                  <td>Optimizatsiya va Xotira</td>
+                  <td>Kadrni tozalash va to‘qnashuvlar chegarasi</td>
+                  <td>Object Pooling joriy etib, GC mikro-pauzalarini yo‘qotish</td>
                   <td>Dirty Rectangles va Multi-layer Canvas arxitekturasi</td>
                   <td>Jank kadrlar soni (&lt; 1%)</td>
                 </tr>
                 <tr>
                   <td><strong>4-Hafta</strong></td>
-                  <td>Capstone & Telemetriya</td>
-                  <td>50 ta elastik to'p simulyatsiyasini yig'ish</td>
+                  <td>Capstone va Telemetriya</td>
+                  <td>50 ta elastik to‘p simulyatsiyasini yig‘ish</td>
                   <td>Real vaqtli FPS/Frame Pacing HUD telemetriyasini qurish</td>
-                  <td>OffscreenCanvas Web Worker ko'p oqimli dvigatelini himoya qilish</td>
+                  <td>OffscreenCanvas Web Worker ko‘p oqimli dvigatelini himoya qilish</td>
                   <td>Akademik loyiha himoyasi</td>
                 </tr>
               </tbody>
@@ -281,36 +289,36 @@
               <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen Oliy ta'lim hisoblash fizikasi va kompyuter grafikasi metodistisan. Talabalarning 'HTML5 Canvas Fizik Animatsiya Arxitekturasi' bo'yicha tayyorgarligini aniqlash uchun 5 ta kognitiv test savoli ishlab chiq: 1) requestAnimationFrame va setInterval o'rtasidagi apparat darajasidagi farq, 2) O'zgaruvchan delta-time da nima uchun tebranishlar va devordan o'tib ketish (tunneling) yuz beradi, 3) Glenn Fiedler akkumulyatori fizik hisoblarni qanday barqarorlashtiradi, 4) Alpha interpolyatsiyasi qanday vazifani bajaradi, 5) JavaScript Garbage Collector pauzalarini yo'qotish uchun Object Pooling qanday qo'llaniladi. Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.">Nusxalash</button>
             </div>
             <div class="code-content">
-Sen Oliy ta'lim hisoblash fizikasi va kompyuter grafikasi metodistisan. Talabalarning "HTML5 Canvas Fizik Animatsiya Arxitekturasi" bo'yicha tayyorgarligini aniqlash uchun 5 ta kognitiv test savoli ishlab chiq:
-1) requestAnimationFrame va setInterval o'rtasidagi apparat darajasidagi farq,
-2) O'zgaruvchan delta-time da nima uchun tebranishlar va devordan o'tib ketish (tunneling) yuz beradi,
+Sen Oliy ta’lim hisoblash fizikasi va kompyuter grafikasi metodistisan. Talabalarning "HTML5 Canvas Fizik Animatsiya Arxitekturasi" bo‘yicha tayyorgarligini aniqlash uchun 5 ta kognitiv test savoli ishlab chiq:
+1) requestAnimationFrame va setInterval o‘rtasidagi apparat darajasidagi farq,
+2) O‘zgaruvchan delta-time da nima uchun tebranishlar va devordan o‘tib ketish (tunneling) yuz beradi,
 3) Glenn Fiedler akkumulyatori fizik hisoblarni qanday barqarorlashtiradi,
 4) Alpha interpolyatsiyasi qanday vazifani bajaradi,
-5) JavaScript Garbage Collector pauzalarini yo'qotish uchun Object Pooling qanday qo'llaniladi.
+5) JavaScript Garbage Collector pauzalarini yo‘qotish uchun Object Pooling qanday qo‘llaniladi.
 Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             </div>
           </div>
         </div>
       </div>
 
-      <!-- TAB 2: Google Antigravity AI Monitoring -->
+      <!-- TAB 2: Google Antigravity Monitoring -->
       <div id="tab-sec2" class="tab-content">
         <div class="glass-panel">
-          <span class="badge badge-emerald">2-Bosqich: Monitoring & Arxitektura</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Google Antigravity AI: Dastur Arxitekturasi va Resurs Monitoringi</h2>
+          <span class="badge badge-emerald">2-Bosqich: Monitoring va Arxitektura</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">Google Antigravity: Dastur Arxitekturasi va Resurs Monitoringi</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(52, 211, 153, 0.05); border-left: 4px solid var(--accent-emerald); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
             <div style="font-weight: 700; color: var(--accent-emerald); font-size: 0.95rem; margin-bottom: 6px;">
-              📚 Dasturiy Muhandislik va O'yin Dvigatellari Arxitekturasi:
+              📚 Dasturiy Muhandislik va O‘yin Dvigatellari Arxitekturasi:
             </div>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-              Zamonaviy kompyuter grafikasi va interaktiv tizimlar arxitekturasi qat'iy komponentli modullashuvni talab etadi (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). <strong>Google Antigravity AI</strong> agentik tizimi loyiha kodining modulliligini, xotira sarfini (Heap Profiling) va kadrlar barqarorligini avtomatlashtirilgan tarzda kuzatib boradi.
+              Zamonaviy kompyuter grafikasi va interaktiv tizimlar arxitekturasi qat’iy komponentli modullashuvni talab etadi (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). <strong>Google Antigravity</strong> agentik tizimi loyiha kodining modulliligini, xotira sarfini (Heap Profiling) va kadrlar barqarorligini avtomatlashtirilgan tarzda kuzatib boradi.
             </p>
           </div>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
-            Fizik modellashtirish kodida fizik hisoblar va vizual renderlash qat'iy ajratilishi (Decoupling) zarur. Google Antigravity AI quyidagi 4 ta asosiy quyi tizimni shakllantiradi:
+            Fizik modellashtirish kodida fizik hisoblar va vizual renderlash qat’iy ajratilishi (Decoupling) zarur. Google Antigravity quyidagi 4 ta asosiy quyi tizimni shakllantiradi:
           </p>
 
           <div class="grid-2" style="margin-bottom:24px;">
@@ -318,7 +326,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               <h4 style="color:#38BDF8; margin-bottom:12px;">🏗️ Modulli Dasturiy Quyi Tizimlar:</h4>
               <ul style="padding-left:18px; font-size:0.88rem; line-height:1.7; color:var(--text-secondary);">
                 <li><strong>1. CoreEngine (Bosh Boshqaruvchi):</strong> Kadrlar tsikli (`loop`), vaqt hisobi (`performance.now()`) va holatlar mashinasi (Play, Pause, Reset, Step).</li>
-                <li><strong>2. PhysicsSubsystem (Fizik Quyi Tizim):</strong> Qat'iy qadamli integrator ($\Delta t_{\text{fixed}} = 1/60\text{ s}$), kuchlar yig'indisi, Nyuton mexanikasi va to'qnashuvlar.</li>
+                <li><strong>2. PhysicsSubsystem (Fizik Quyi Tizim):</strong> Qat’iy qadamli integrator ($\Delta t_{\text{fixed}} = 1/60\text{ s}$), kuchlar yig‘indisi, Nyuton mexanikasi va to‘qnashuvlar.</li>
                 <li><strong>3. RenderSubsystem (Grafik Tizim):</strong> Canvas 2D kontekstida alpha-interpolyatsiya bilan chizish, Retina High-DPI masshtablash.</li>
                 <li><strong>4. TelemetryHUD (Monitoring):</strong> Real vaqtli FPS, Frame Time, Jank kadrlari va xotira monitoringi.</li>
               </ul>
@@ -331,7 +339,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
           </div>
 
           <div class="glass-panel" style="background:rgba(52,211,153,0.04); border:1px solid rgba(52,211,153,0.3); margin-bottom:24px;">
-            <h4 style="color:#34D399; margin-bottom:10px;">🛡️ Antigravity AI Resurs va Xotira Monitoringi Qoidalari:</h4>
+            <h4 style="color:#34D399; margin-bottom:10px;">🛡️ Antigravity Resurs va Xotira Monitoringi Qoidalari:</h4>
             <div class="grid-3" style="gap:12px; font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
               <div style="background:rgba(15,23,42,0.6); padding:10px 12px; border-radius:6px;">
                 <strong style="color:#38BDF8;">1. Kadr Byudjeti (16.66 ms):</strong><br>
@@ -339,11 +347,11 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               </div>
               <div style="background:rgba(15,23,42,0.6); padding:10px 12px; border-radius:6px;">
                 <strong style="color:#FBBF24;">2. Heap Memory Chiziqliligi:</strong><br>
-                Animatsiya tsikli ichida yangi massivlar yoki obyektlar yaratilmasligi, xotira sarfi gorizontal to'g'ri chiziq bo'lishi lozim.
+                Animatsiya tsikli ichida yangi massivlar yoki obyektlar yaratilmasligi, xotira sarfi gorizontal to‘g‘ri chiziq bo‘lishi lozim.
               </div>
               <div style="background:rgba(15,23,42,0.6); padding:10px 12px; border-radius:6px;">
                 <strong style="color:#F43F5E;">3. Jank (Qotish) Indikatori:</strong><br>
-                Agar kadr vaqti $33.3\text{ ms}$ dan oshsa, Antigravity AI monitoringi avtomatik qizil ogohlantirish qayd etadi.
+                Agar kadr vaqti $33.3\text{ ms}$ dan oshsa, Antigravity monitoringi avtomatik qizil ogohlantirish qayd etadi.
               </div>
             </div>
           </div>
@@ -353,7 +361,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
       <!-- TAB 3: Canvas Kadr Tsikli & Delta-Time -->
       <div id="tab-sec3" class="tab-content">
         <div class="glass-panel">
-          <span class="badge badge-amber">3-Bosqich: Matematik & Algoritmik Mantiq</span>
+          <span class="badge badge-amber">3-Bosqich: Matematik va Algoritmik Mantiq</span>
           <h2 style="margin-top: 12px; margin-bottom: 16px;">Glenn Fiedler "Fix Your Timestep" Akkumulyatori va Delta-Time Integratsiyasi</h2>
 
           <!-- Scientific Citation Box -->
@@ -362,28 +370,28 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               📚 Ilmiy Nashr va Standart:
             </div>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-              Interaktiv fizik tizimlarda vaqtni qat'iy diskretlash konsepsiyasi <strong>Glenn Fiedler (2004, <em>"Fix Your Timestep!"</em>, Gaffer on Games)</strong> tomonidan asoslab berilgan. Ushbu algoritm fizik dvigatel hisob-kitoblarini apparat monitorining yangilanish chastotasidan to'liq ajratadi va simulyatsiyaning deterministik barqarorligini ta'minlaydi.
+              Interaktiv fizik tizimlarda vaqtni qat’iy diskretlash konsepsiyasi <strong>Glenn Fiedler (2004, <em>"Fix Your Timestep!"</em>, Gaffer on Games)</strong> tomonidan asoslab berilgan. Ushbu algoritm fizik dvigatel hisob-kitoblarini apparat monitorining yangilanish chastotasidan to‘liq ajratadi va simulyatsiyaning deterministik barqarorligini ta’minlaydi.
             </p>
           </div>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
-            Oddiy o'zgaruvchan vaqt qadami (`x += v * dt`) qo'llanilganda, kompyuterdagi tasodifiy kechikish (lag) vaqtida $dt$ kattalashib, jismlar devor ichidan o'tib ketadi (Tunneling effekti) yoki tizim energiyasi portlaydi. <strong>Glenn Fiedler akkumulyatori</strong> bu muammoni to'liq hal qiladi:
+            Oddiy o‘zgaruvchan vaqt qadami (`x += v * dt`) qo‘llanilganda, kompyuterdagi tasodifiy kechikish (lag) vaqtida $dt$ kattalashib, jismlar devor ichidan o‘tib ketadi (Tunneling effekti) yoki tizim energiyasi portlaydi. <strong>Glenn Fiedler akkumulyatori</strong> bu muammoni to‘liq hal qiladi:
           </p>
 
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="assets/fig_fixed_vs_variable_dt.svg" alt="Fixed vs Variable Timestep" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+            <img src="assets/fig_fixed_vs_variable_dt.svg" alt="Fixed va Variable Timestep" style="max-width:880px; width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
           </div>
 
           <div class="grid-2" style="margin-bottom:24px;">
             <div class="glass-panel" style="background:rgba(15,23,42,0.7);">
               <h4 style="color:#38BDF8; margin-bottom:10px;">📐 Matematik Apparat va Algoritm:</h4>
               <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary); margin-bottom:10px;">
-                <strong>1. Vaqt to'plash (Accumulator):</strong>
+                <strong>1. Vaqt to‘plash (Accumulator):</strong>
                 $$\text{accumulator} \mathrel{+}= \min(\Delta t_{\text{frame}}, 0.25)$$
-                <em>(0.25 s chegarasi "O'lim spirali" — Spiral of Death ning oldini oladi).</em>
+                <em>(0.25 s chegarasi "O‘lim spirali" — Spiral of Death ning oldini oladi).</em>
               </p>
               <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary); margin-bottom:10px;">
-                <strong>2. Qat'iy qadamlar bilan yutish (Consumption):</strong>
+                <strong>2. Qat’iy qadamlar bilan yutish (Consumption):</strong>
                 $$\text{while } (\text{accumulator} \ge \Delta t_{\text{fixed}}) \implies \begin{cases} \text{updatePhysics}(\Delta t_{\text{fixed}}) \\ \text{accumulator} \mathrel{-}= \Delta t_{\text{fixed}} \end{cases}$$
               </p>
               <p style="font-size:0.88rem; line-height:1.7; color:var(--text-secondary);">
@@ -393,7 +401,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             </div>
 
             <div class="glass-panel" style="background:rgba(15,23,42,0.7);">
-              <h4 style="color:#34D399; margin-bottom:10px;">🛡️ Claude 3.5 Sonnet tomonidan Ishlab Chiqilgan Tsikl:</h4>
+              <h4 style="color:#34D399; margin-bottom:10px;">🛡️ Claude tomonidan Ishlab Chiqilgan Tsikl:</h4>
               <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.82rem; color:#38BDF8; line-height:1.6;">
                 let lastTime = performance.now();<br>
                 let accumulator = 0;<br>
@@ -420,7 +428,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
       <!-- TAB 4: Kadr Chastotasi Optimizatsiyasi -->
       <div id="tab-sec4" class="tab-content">
         <div class="glass-panel">
-          <span class="badge badge-purple">4-Bosqich: Ishlash Tezligi & Xotira</span>
+          <span class="badge badge-purple">4-Bosqich: Ishlash Tezligi va Xotira</span>
           <h2 style="margin-top: 12px; margin-bottom: 16px;">Kadr Chastotasi Optimizatsiyasi: ChatGPT Code Interpreter Tahlili</h2>
 
           <!-- Scientific Citation Box -->
@@ -429,7 +437,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               📚 Veb Grafikasi Standarti va MDN Spetsifikatsiyasi:
             </div>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-              <strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> hamda <strong>W3C HTML5 2D Canvas Context</strong> standartlariga muvofiq, yuqori zichlikdagi zarrachalar simulyatsiyasida kadr tushib ketishi (Frame Drop) CPU va GPU o'rtasidagi ma'lumotlar o'tkazuvchanligi va Garbage Collection (GC) to'xtalishlari tufayli sodir bo'ladi.
+              <strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> hamda <strong>W3C HTML5 2D Canvas Context</strong> standartlariga muvofiq, yuqori zichlikdagi zarrachalar simulyatsiyasida kadr tushib ketishi (Frame Drop) CPU va GPU o‘rtasidagi ma’lumotlar o‘tkazuvchanligi va Garbage Collection (GC) to‘xtalishlari tufayli sodir bo‘ladi.
             </p>
           </div>
 
@@ -441,7 +449,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             <div class="glass-panel" style="background:rgba(15,23,42,0.7); border-left:3px solid #38BDF8;">
               <h4 style="color:#38BDF8; font-size:0.95rem; margin-bottom:8px;">1. Object Pooling (Zero-GC)</h4>
               <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
-                Animatsiya tsikli ichida har bir kadrda <code>new Vector()</code> yoki yangi zarracha yaratish qat'iyan man etiladi. Obyektlar massivdan olinadi va qaytariladi, bu GC mikro-pauzalarini 0 ga tushiradi.
+                Animatsiya tsikli ichida har bir kadrda <code>new Vector()</code> yoki yangi zarracha yaratish qat’iyan man etiladi. Obyektlar massivdan olinadi va qaytariladi, bu GC mikro-pauzalarini 0 ga tushiradi.
               </p>
             </div>
 
@@ -465,16 +473,16 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
       <!-- TAB 5: Vizual Sinov & Claude Artifacts -->
       <div id="tab-sec5" class="tab-content">
         <div class="glass-panel">
-          <span class="badge badge-rose">5-Bosqich: Vizual Sinov & Retina</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude 3.5 Sonnet (Artifacts): Retina High-DPI Masshtablash va Vizual Sinov</h2>
+          <span class="badge badge-rose">5-Bosqich: Vizual Sinov va Retina</span>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude (Artifacts): Retina High-DPI Masshtablash va Vizual Sinov</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(244, 63, 94, 0.05); border-left: 4px solid var(--accent-rose); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
             <div style="font-weight: 700; color: var(--accent-rose); font-size: 0.95rem; margin-bottom: 6px;">
-              📚 Retina & HiDPI Displey Standartlari:
+              📚 Retina va HiDPI Displey Standartlari:
             </div>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-              Zamonaviy mobil va noutbuk ekranlarida piksellar zichligi koeffitsiyenti <strong>Device Pixel Ratio ($DPR \ge 2$)</strong> ga teng. Standart Canvas piksel buferi o'lchami CSS o'lchamiga teng bo'lsa, tasvir 4 barobar xiralashadi. <strong>Claude 3.5 Sonnet Artifacts</strong> muhitida ushbu muammo dinamik piksellar adapteri orqali bartaraf etiladi.
+              Zamonaviy mobil va noutbuk ekranlarida piksellar zichligi koeffitsiyenti <strong>Device Pixel Ratio ($DPR \ge 2$)</strong> ga teng. Standart Canvas piksel buferi o‘lchami CSS o‘lchamiga teng bo‘lsa, tasvir 4 barobar xiralashadi. <strong>Claude Artifacts</strong> muhitida ushbu muammo dinamik piksellar adapteri orqali bartaraf etiladi.
             </p>
           </div>
 
@@ -490,7 +498,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
                 &nbsp;&nbsp;canvas.height = rect.height * dpr;<br><br>
                 &nbsp;&nbsp;// 2. Grafik kontekstni masshtablash:<br>
                 &nbsp;&nbsp;ctx.scale(dpr, dpr);<br><br>
-                &nbsp;&nbsp;// 3. CSS o'lchamini mustahkamlash:<br>
+                &nbsp;&nbsp;// 3. CSS o‘lchamini mustahkamlash:<br>
                 &nbsp;&nbsp;canvas.style.width = `${rect.width}px`;<br>
                 &nbsp;&nbsp;canvas.style.height = `${rect.height}px`;<br>
                 }
@@ -498,7 +506,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             </div>
 
             <div class="glass-panel" style="background:rgba(15,23,42,0.7); text-align:center;">
-              <h4 style="color:#34D399; margin-bottom:10px;">🔍 Standart vs Retina High-DPI Sifat</h4>
+              <h4 style="color:#34D399; margin-bottom:10px;">🔍 Standart va Retina High-DPI Sifat</h4>
               <img src="assets/fig_retina_hidpi_scaling.svg" alt="Retina High DPI Canvas Scaling" style="width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
             </div>
           </div>
@@ -510,12 +518,12 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
         <div class="glass-panel" style="margin-bottom: 30px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
             <div>
-              <span class="badge badge-cyan">Jonli Laboratoriya</span>
-              <h2 style="margin-top: 6px;">Interaktiv Canvas Fizik Animatsiya Arxitekturasi Laboratoriyasi</h2>
+              <span class="badge badge-cyan">Jonli laboratoriya</span>
+              <h2 style="margin-top: 6px;">Canvas fizik animatsiyasi arxitekturasining interaktiv laboratoriyasi</h2>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
-              <button id="arch-play-btn" class="btn btn-primary">⏸ To'xtatish</button>
-              <button id="arch-reset-btn" class="btn btn-secondary">↺ Qayta o'rnatish</button>
+              <button id="arch-play-btn" class="btn btn-primary">⏸ To‘xtatish</button>
+              <button id="arch-reset-btn" class="btn btn-secondary">↺ Qayta o‘rnatish</button>
             </div>
           </div>
 
@@ -527,8 +535,8 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
           <!-- Frame Pacing Graph Canvas -->
           <div class="glass-panel" style="background:rgba(15,23,42,0.9); padding:12px; margin-bottom:20px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-              <span style="font-size:0.85rem; font-weight:700; color:#38BDF8;">📈 Kadr Vaqti Pacing Grafigi (Frame Time History — ms):</span>
-              <span style="font-size:0.75rem; color:#94A3B8;">Yashil: &lt;18ms (60FPS) | Sariq: 18-25ms | Qizil: &gt;25ms (Jank)</span>
+              <span style="font-size:0.85rem; font-weight:700; color:#38BDF8;">📈 Kadr vaqtlari grafigi (oxirgi kadrlar, ms):</span>
+              <span style="font-size:0.75rem; color:#94A3B8;">Yashil: &lt;18 ms (60 FPS) | Sariq: 18–25 ms | Qizil: &gt;25 ms (qotish)</span>
             </div>
             <canvas id="arch-graph-canvas" width="800" height="90" style="width:100%; aspect-ratio:800/90; display:block; border-radius:6px; background:#0B0F19;"></canvas>
           </div>
@@ -538,20 +546,20 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             
             <!-- Sliders Panel -->
             <div class="glass-panel" style="background:rgba(15,23,42,0.8);">
-              <h4 style="color:#38BDF8; margin-bottom:14px;">🎛️ Dvigatel Rejimlari va Parametrlar:</h4>
+              <h4 style="color:#38BDF8; margin-bottom:14px;">🎛️ Dvigatel rejimlari va parametrlari:</h4>
               
               <div class="slider-group" style="margin-bottom:14px;">
-                <label style="font-size:0.88rem; display:block; margin-bottom:6px; color:#F8FAFC;">Fizik Integratsiya Rejimi:</label>
+                <label style="font-size:0.88rem; display:block; margin-bottom:6px; color:#F8FAFC;">Fizik integratsiya rejimi:</label>
                 <select id="arch-mode" style="width:100%; padding:8px 12px; background:#1E293B; border:1px solid #334155; color:#F8FAFC; border-radius:6px;">
-                  <option value="fixed-interp">1. Fixed dt + Alpha Interpolyatsiya (Glenn Fiedler — Tavsiya etiladi)</option>
-                  <option value="fixed">2. Fixed dt Akkumulyator (Interpolyatsiyasiz)</option>
-                  <option value="variable">3. Variable Time-Step (O'zgaruvchan dt — Lagda tebranadi)</option>
+                  <option value="fixed-interp">1. Qat’iy Δt + alfa-interpolyatsiya (G. Fiedler; tavsiya etiladi)</option>
+                  <option value="fixed">2. Qat’iy Δt akkumulyatori (interpolyatsiyasiz)</option>
+                  <option value="variable">3. O‘zgaruvchan Δt (kechikishda tebranadi)</option>
                 </select>
               </div>
 
               <div class="slider-group" style="margin-bottom:12px;">
                 <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
-                  <span>Kadr Tezligi Cheklovi (FPS Throttle):</span>
+                  <span>Kadr tezligi cheklovi (FPS):</span>
                   <strong id="arch-fps-val" style="color:#FBBF24;">Cheklovsiz (V-Sync)</strong>
                 </div>
                 <input type="range" id="arch-fps" min="15" max="120" step="15" value="120" style="width:100%;">
@@ -559,15 +567,15 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
               <div class="slider-group" style="margin-bottom:12px;">
                 <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
-                  <span>Sun'iy CPU Yuklamasi (Lag Simulyatsiyasi):</span>
-                  <strong id="arch-cpu-load-val" style="color:#F43F5E;">0.0 ms</strong>
+                  <span>Sun’iy protsessor yuklamasi (kechikish):</span>
+                  <strong id="arch-cpu-load-val" style="color:#F43F5E;">0,0 ms</strong>
                 </div>
                 <input type="range" id="arch-cpu-load" min="0" max="30" step="1" value="0" style="width:100%;">
               </div>
 
               <div class="slider-group" style="margin-bottom:12px;">
                 <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
-                  <span>Zarrachalar Soni:</span>
+                  <span>Zarrachalar soni:</span>
                   <strong id="arch-count-val" style="color:#34D399;">50 ta</strong>
                 </div>
                 <input type="range" id="arch-count" min="5" max="200" step="5" value="50" style="width:100%;">
@@ -575,38 +583,38 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
               <div style="margin-top:14px;">
                 <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.88rem;">
-                  <input type="checkbox" id="arch-pool-toggle" checked> Object Pooling (Xotirani qayta ishlatish)
+                  <input type="checkbox" id="arch-pool-toggle" checked> Obyektlar puli (xotirani qayta ishlatish)
                 </label>
               </div>
             </div>
 
             <!-- HUD Telemetry -->
             <div class="glass-panel" style="background:rgba(15,23,42,0.8);">
-              <h4 style="color:#34D399; margin-bottom:14px;">📊 Real Vaqtli Telemetriya (HUD):</h4>
+              <h4 style="color:#34D399; margin-bottom:14px;">📊 Real vaqtdagi telemetriya:</h4>
               
               <div class="grid-2" style="gap:10px; font-size:0.88rem;">
                 <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                  <span style="color:var(--text-muted);">Render FPS:</span><br>
+                  <span style="color:var(--text-muted);">Renderlash chastotasi:</span><br>
                   <strong id="arch-hud-fps" style="color:#38BDF8; font-size:1.2rem;">60 FPS</strong>
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                  <span style="color:var(--text-muted);">Fizika Chastotasi:</span><br>
+                  <span style="color:var(--text-muted);">Fizika chastotasi:</span><br>
                   <strong id="arch-hud-phys-fps" style="color:#34D399; font-size:1.2rem;">60 Hz</strong>
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                  <span style="color:var(--text-muted);">Kadr Vaqti ($\Delta t$):</span><br>
-                  <strong id="arch-hud-dt" style="color:#FBBF24;">16.6 ms</strong>
+                  <span style="color:var(--text-muted);">Kadr vaqti ($\Delta t$):</span><br>
+                  <strong id="arch-hud-dt" style="color:#FBBF24;">16,6 ms</strong>
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
                   <span style="color:var(--text-muted);">Akkumulyator:</span><br>
-                  <strong id="arch-hud-acc" style="color:#C084FC;">0.0 ms</strong>
+                  <strong id="arch-hud-acc" style="color:#C084FC;">0,0 ms</strong>
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                  <span style="color:var(--text-muted);">Fizik Qadamlar / Kadr:</span><br>
+                  <span style="color:var(--text-muted);">Fizik qadamlar / kadr:</span><br>
                   <strong id="arch-hud-steps" style="color:#38BDF8;">1</strong>
                 </div>
                 <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                  <span style="color:var(--text-muted);">Jank (Qotishlar Soni):</span><br>
+                  <span style="color:var(--text-muted);">Qotishlar soni:</span><br>
                   <strong id="arch-hud-jank" style="color:#F43F5E;">0</strong>
                 </div>
               </div>
@@ -619,10 +627,10 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
       <!-- TAB 7: Diagnostik Test & Adabiyotlar -->
       <div id="tab-sec7" class="tab-content">
         <div class="glass-panel" style="margin-bottom:30px;">
-          <span class="badge badge-cyan">O'z-o'zini Baholash</span>
+          <span class="badge badge-cyan">O‘z-o‘zini Baholash</span>
           <h2 style="margin-top: 12px; margin-bottom: 12px;">7-Modul Diagnostika Testi (3 ta Ilmiy Savol)</h2>
           <p style="color:var(--text-secondary); margin-bottom:24px;">
-            HTML5 Canvas fizik animatsiya arxitekturasi, delta-time va kadrlar optimizatsiyasi bo'yicha bilimlaringizni sinab ko'ring:
+            HTML5 Canvas fizik animatsiya arxitekturasi, delta-time va kadrlar optimizatsiyasi bo‘yicha bilimlaringizni sinab ko‘ring:
           </p>
 
           <div id="quiz7-container">
@@ -630,7 +638,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             <!-- Question 1 -->
             <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-cyan);">
               <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
-                1-Savol: Glenn Fiedlerning "Fix Your Timestep" akkumulyatorli arxitekturasida nima sababdan fizik qadam $\Delta t_{\text{fixed}} = 1/60\text{ s}$ qat'iy saqlanadi?
+                1-Savol: Glenn Fiedlerning "Fix Your Timestep" akkumulyatorli arxitekturasida nima sababdan fizik qadam $\Delta t_{\text{fixed}} = 1/60\text{ s}$ qat’iy saqlanadi?
               </h4>
               <div class="quiz-options" id="quiz7-options-1">
                 <div class="quiz-option-card" onclick="selectQuiz7Option(1, 0)">
@@ -641,7 +649,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
                 <div class="quiz-option-card" onclick="selectQuiz7Option(1, 1)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q7-1" style="display:none;">
-                  <span>B) Fizik hisoblarni renderlash kadr chastotasidan (FPS) to'liq mustaqil qilib, lag vaqtida devordan o'tib ketish (tunneling) va energiya portlashining oldini olish uchun</span>
+                  <span>B) Fizik hisoblarni renderlash kadr chastotasidan (FPS) to‘liq mustaqil qilib, lag vaqtida devordan o‘tib ketish (tunneling) va energiya portlashining oldini olish uchun</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz7Option(1, 2)">
                   <span class="quiz-dot">⚪</span>
@@ -654,13 +662,13 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             <!-- Question 2 -->
             <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-emerald);">
               <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
-                2-Savol: Yuqori yuklamali HTML5 Canvas animatsiyalarida Object Pooling (Obyektlar Havzasi) qo'llashning asosiy maqsadi nima?
+                2-Savol: Yuqori yuklamali HTML5 Canvas animatsiyalarida Object Pooling (Obyektlar Havzasi) qo‘llashning asosiy maqsadi nima?
               </h4>
               <div class="quiz-options" id="quiz7-options-2">
                 <div class="quiz-option-card" onclick="selectQuiz7Option(2, 0)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q7-2" style="display:none;">
-                  <span>A) Har bir kadrda yangi obyektlar yaratishni to'xtatib, Garbage Collector (GC) keltirib chiqaradigan mikro-qotishlarni (Jank) 0 ga tushirish</span>
+                  <span>A) Har bir kadrda yangi obyektlar yaratishni to‘xtatib, Garbage Collector (GC) keltirib chiqaradigan mikro-qotishlarni (Jank) 0 ga tushirish</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz7Option(2, 1)">
                   <span class="quiz-dot">⚪</span>
@@ -678,18 +686,18 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
             <!-- Question 3 -->
             <div class="glass-panel" style="background:rgba(15,23,42,0.8); margin-bottom:20px; border-left:4px solid var(--accent-purple);">
               <h4 style="font-size:1.05rem; margin-bottom:12px; color:#F8FAFC;">
-                3-Savol: Retina va HiDPI ekranlarda (Device Pixel Ratio $DPR \ge 2$) Canvas elementining xiralashib qolmasligi uchun qanday chora ko'riladi?
+                3-Savol: Retina va HiDPI ekranlarda (Device Pixel Ratio $DPR \ge 2$) Canvas elementining xiralashib qolmasligi uchun qanday chora ko‘riladi?
               </h4>
               <div class="quiz-options" id="quiz7-options-3">
                 <div class="quiz-option-card" onclick="selectQuiz7Option(3, 0)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q7-3" style="display:none;">
-                  <span>A) `canvas.width` va `height` piksellar buferi $DPR$ ga ko'paytiriladi va `ctx.scale(dpr, dpr)` orqali masshtablanadi</span>
+                  <span>A) `canvas.width` va `height` piksellar buferi $DPR$ ga ko‘paytiriladi va `ctx.scale(dpr, dpr)` orqali masshtablanadi</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz7Option(3, 1)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q7-3" style="display:none;">
-                  <span>B) Ekran yorug'ligi oshiriladi</span>
+                  <span>B) Ekran yorug‘ligi oshiriladi</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz7Option(3, 2)">
                   <span class="quiz-dot">⚪</span>
@@ -706,16 +714,16 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
         <!-- Academic Bibliography Section -->
         <div class="glass-panel" style="background: rgba(15, 23, 42, 0.75); border-left: 4px solid var(--accent-amber);">
-          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 7-Modul Bo'yicha Ilmiy-Uslubiy Adabiyotlar Ro'yxati:</h3>
+          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 7-Modul Bo‘yicha Ilmiy-Uslubiy Adabiyotlar Ro‘yxati:</h3>
           <ol style="padding-left: 20px; font-size: 0.88rem; line-height: 1.8; color: var(--text-secondary);">
             <li><strong>Fiedler, G. (2004).</strong> Fix your timestep! <em>Gaffer on Games</em>. (Physics loop decoupling and accumulator algorithms).</li>
-            <li><strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed vs variable timesteps).</li>
+            <li><strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed va variable timesteps).</li>
             <li><strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Optimizing Canvas Performance</em>. MDN Web Docs.</li>
             <li><strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium.</li>
-            <li><strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
+            <li><strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
             <li><strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.</li>
-            <li><strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer.</li>
-            <li><strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.</li>
+            <li><strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer.</li>
+            <li><strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.</li>
           </ol>
         </div>
 
@@ -768,9 +776,9 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
       const answers = [1, 0, 0]; // Correct indices for Q1, Q2, Q3
       const explanations = [
-        "Glenn Fiedler akkumulyatori fizik hisoblarni qat'iy qadamlar (dt = 1/60s) bilan amalga oshiradi, bu esa render FPS ga bog'liq bo'lmagan to'liq barqarorlik va determinizmni beradi.",
-        "Object Pooling yangi xotira ajratish va tozalashni bartaraf etadi, natijada Garbage Collection pauzalari sodir bo'lmaydi va animatsiya qotmaydi.",
-        "Canvas ichki piksel buferini DPR ga ko'paytirib, kontekstni scale qilish orqali Retina displeylarda kristal aniq chizish ta'minlanadi."
+        "Glenn Fiedler akkumulyatori fizik hisoblarni qat’iy qadamlar (dt = 1/60s) bilan amalga oshiradi, bu esa render FPS ga bog‘liq bo‘lmagan to‘liq barqarorlik va determinizmni beradi.",
+        "Object Pooling yangi xotira ajratish va tozalashni bartaraf etadi, natijada Garbage Collection pauzalari sodir bo‘lmaydi va animatsiya qotmaydi.",
+        "Canvas ichki piksel buferini DPR ga ko‘paytirib, kontekstni scale qilish orqali Retina displeylarda kristal aniq chizish ta’minlanadi."
       ];
 
       let correctCount = 0;
@@ -796,23 +804,23 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
 
         htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
           <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#34D399' : '#F43F5E'};">
-            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To'g'ri!" : "Xato!"}
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To‘g‘ri!" : "Xato!"}
           </div>
           <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${explanations[i - 1]}</div>
         </div>`;
       }
 
-      let badgeName = "Fizik Grafika Dvigatellari Arxitektori (To'liq O'zlashtirildi)";
+      let badgeName = "Fizik Grafika Dvigatellari Arxitektori (To‘liq O‘zlashtirildi)";
       let badgeColor = '#34D399';
       if (correctCount < 3) {
-        badgeName = "Canvas va Animatsiya Tadqiqotchisi (Qisman O'zlashtirildi)";
+        badgeName = "Canvas va Animatsiya Tadqiqotchisi (Qisman O‘zlashtirildi)";
         badgeColor = '#38BDF8';
       }
 
       htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${badgeColor}; text-align:center;">
         <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Canvas Modellashtirish Kompetensiyangiz:</div>
         <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${badgeName}</div>
-        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${uzFix(((correctCount/3)*100), 0)}%)</div>
       </div></div>`;
 
       feedbackEl.innerHTML = htmlResult;

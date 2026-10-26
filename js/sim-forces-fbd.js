@@ -1,7 +1,11 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 6, Tab 6: Interaktiv Erkin Jism Diagrammasi (FBD) Simulyatori.
- * Qiyalikdagi jism: og'irlik (mg), normal reaksiya (N), tashqi tortish
- * kuchi (F, qiyalik bo'ylab yuqoriga) va ishqalanish (statik/kinetik).
+ * Qiyalikdagi jism: og‘irlik (mg), normal reaksiya (N), tashqi tortish
+ * kuchi (F, qiyalik bo‘ylab yuqoriga) va ishqalanish (statik/kinetik).
  */
 document.addEventListener('DOMContentLoaded', () => {
   initFBD();
@@ -39,11 +43,11 @@ function initFBD() {
   const hudV = document.getElementById('fbd-hud-v');
 
   const G = 9.8;
-  const STOP_SPEED = 0.05; // m/s — shundan pastda "to'xtadi" deb hisoblanadi
-  const MAX_S = 3; // m — qiyalik bo'ylab siljish chegarasi (ikkala tomon)
+  const STOP_SPEED = 0.05; // m/s — shundan pastda "to‘xtadi" deb hisoblanadi
+  const MAX_S = 3; // m — qiyalik bo‘ylab siljish chegarasi (ikkala tomon)
 
   let isRunning = false;
-  let s = 0;   // qiyalik bo'ylab siljish (m), + = yuqoriga
+  let s = 0;   // qiyalik bo‘ylab siljish (m), + = yuqoriga
   let v = 0;   // tezlik (m/s)
   let lastTime = null;
 
@@ -59,11 +63,11 @@ function initFBD() {
 
   function updateLabels() {
     const p = readParams();
-    angleVal.textContent = p.angleDeg.toFixed(0) + '°';
-    massVal.textContent = p.mass.toFixed(1) + ' kg';
-    forceVal.textContent = p.force.toFixed(0) + ' N';
-    musVal.textContent = p.mus.toFixed(2);
-    mukVal.textContent = p.muk.toFixed(2);
+    angleVal.textContent = uzFix(p.angleDeg, 0) + '°';
+    massVal.textContent = uzFix(p.mass, 1) + ' kg';
+    forceVal.textContent = uzFix(p.force, 0) + ' N';
+    musVal.textContent = uzFix(p.mus, 2);
+    mukVal.textContent = uzFix(p.muk, 2);
   }
 
   [angleSlider, massSlider, forceSlider, musSlider, mukSlider].forEach(el => {
@@ -73,7 +77,7 @@ function initFBD() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? '⏸ To\'xtatish' : '▶ Boshlash';
+      btnPlay.textContent = isRunning ? '⏸ To‘xtatish' : '▶ Boshlash';
     });
   }
 
@@ -92,7 +96,7 @@ function initFBD() {
     const alpha = angleDeg * Math.PI / 180;
 
     const mg = mass * G;
-    const mgPar = mg * Math.sin(alpha);   // pastga qarab (qiyalik bo'ylab)
+    const mgPar = mg * Math.sin(alpha);   // pastga qarab (qiyalik bo‘ylab)
     const mgPerp = mg * Math.cos(alpha);  // sirtga perpendikulyar
     const N = mgPerp;
     const Fsmax = mus * N;
@@ -106,13 +110,13 @@ function initFBD() {
       friction = -appliedNet;
       netForce = 0;
       accel = 0;
-      state = 'Muvozanatda (Statik)';
+      state = 'Muvozanatda (statik)';
     } else {
       const dir = moving ? Math.sign(v) : Math.sign(appliedNet || 1);
       friction = -dir * muk * N;
       netForce = appliedNet + friction;
       accel = netForce / mass;
-      state = dir > 0 ? 'Sirpanmoqda (Yuqoriga) ↑' : 'Sirpanmoqda (Pastga) ↓';
+      state = dir > 0 ? 'Sirpanmoqda (yuqoriga) ↑' : 'Sirpanmoqda (pastga) ↓';
     }
 
     return { alpha, angleDeg, mass, force, mg, mgPar, mgPerp, N, Fsmax, friction, netForce, accel, state };
@@ -124,7 +128,7 @@ function initFBD() {
     v += p.accel * dt;
 
     // Statik yopishish: agar tashqi kuch statik ishqalanish chegarasidan
-    // oshmasa va tezlik juda kichik bo'lsa, jismni to'xtatamiz (drift'ni oldini olish).
+    // oshmasa va tezlik juda kichik bo‘lsa, jismni to‘xtatamiz (drift’ni oldini olish).
     const appliedNet = p.force - p.mgPar;
     if (Math.abs(appliedNet) <= p.Fsmax && Math.abs(v) < STOP_SPEED) {
       v = 0;
@@ -137,15 +141,15 @@ function initFBD() {
   }
 
   function updateHUD(p) {
-    hudState.textContent = p.accel === 0 && p.netForce === 0 ? 'Muvozanatda (Statik)' : p.state;
-    hudN.textContent = p.N.toFixed(2) + ' N';
-    hudMg.textContent = p.mg.toFixed(2) + ' N';
-    hudMgPar.textContent = p.mgPar.toFixed(2) + ' N';
-    hudFfr.textContent = p.friction.toFixed(2) + ' N';
-    hudFsMax.textContent = p.Fsmax.toFixed(2) + ' N';
-    hudFnet.textContent = p.netForce.toFixed(2) + ' N';
-    hudA.textContent = p.accel.toFixed(2) + ' m/s²';
-    hudV.textContent = v.toFixed(2) + ' m/s';
+    hudState.textContent = p.accel === 0 && p.netForce === 0 ? 'Muvozanatda (statik)' : p.state;
+    hudN.textContent = uzFix(p.N, 2) + ' N';
+    hudMg.textContent = uzFix(p.mg, 2) + ' N';
+    hudMgPar.textContent = uzFix(p.mgPar, 2) + ' N';
+    hudFfr.textContent = uzFix(p.friction, 2) + ' N';
+    hudFsMax.textContent = uzFix(p.Fsmax, 2) + ' N';
+    hudFnet.textContent = uzFix(p.netForce, 2) + ' N';
+    hudA.textContent = uzFix(p.accel, 2) + ' m/s²';
+    hudV.textContent = uzFix(v, 2) + ' m/s';
   }
 
   function drawArrow(x0, y0, dx, dy, color, label) {
@@ -194,13 +198,13 @@ function initFBD() {
     const originX = w * 0.14;
     const originY = h * 0.86;
     const inclineLen = Math.min(w * 0.62, h * 1.5);
-    const upX = Math.cos(alpha), upY = -Math.sin(alpha);   // qiyalik bo'ylab yuqoriga (dunyo koordinatasida)
+    const upX = Math.cos(alpha), upY = -Math.sin(alpha);   // qiyalik bo‘ylab yuqoriga (dunyo koordinatasida)
     const normX = -Math.sin(alpha), normY = -Math.cos(alpha); // sirtdan tashqariga (normal)
 
     const topX = originX + inclineLen * upX;
     const topY = originY + inclineLen * upY;
 
-    // Yer chizig'i
+    // Yer chizig‘i
     ctx.strokeStyle = '#334155';
     ctx.lineWidth = 2;
     ctx.beginPath();
@@ -220,7 +224,7 @@ function initFBD() {
     ctx.fill();
     ctx.stroke();
 
-    // Burchak yoyi va yorlig'i
+    // Burchak yoyi va yorlig‘i
     ctx.strokeStyle = '#94A3B8';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
@@ -228,9 +232,9 @@ function initFBD() {
     ctx.stroke();
     ctx.fillStyle = '#CBD5E1';
     ctx.font = '13px sans-serif';
-    ctx.fillText('α = ' + p.angleDeg.toFixed(0) + '°', originX + 42, originY - 10);
+    ctx.fillText('α = ' + uzFix(p.angleDeg, 0) + '°', originX + 42, originY - 10);
 
-    // Jismning qiyalik bo'ylab holati (m -> px)
+    // Jismning qiyalik bo‘ylab holati (m -> px)
     const pxPerMeter = 45;
     const margin = 34;
     const rawDist = inclineLen * 0.5 + s * pxPerMeter;
@@ -269,13 +273,13 @@ function initFBD() {
       dashedArrow(cx, cy, -normX * p.mgPerp * fScale, -normY * p.mgPerp * fScale, '#FCA5A5', 'mg⊥');
     }
 
-    // Og'irlik mg (dunyoda doim pastga)
+    // Og‘irlik mg (dunyoda doim pastga)
     drawArrow(cx, cy, 0, p.mg * fScale, '#F43F5E', 'mg');
 
     // Normal reaksiya N
     drawArrow(cx, cy, normX * p.N * fScale, normY * p.N * fScale, '#38BDF8', 'N');
 
-    // Tashqi tortish kuchi F (qiyalik bo'ylab yuqoriga)
+    // Tashqi tortish kuchi F (qiyalik bo‘ylab yuqoriga)
     if (p.force > 0.5) {
       drawArrow(cx, cy, upX * p.force * fScale, upY * p.force * fScale, '#C084FC', 'F');
     }

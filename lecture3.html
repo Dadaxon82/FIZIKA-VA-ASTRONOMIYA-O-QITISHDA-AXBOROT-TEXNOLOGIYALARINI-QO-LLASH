@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3-Mavzu: Zamonaviy Sun'iy Intellekt Vositalari Ekotizimi | Oliy Ta'lim Veb Laboratoriyasi</title>
+  <title>3-Mavzu: Zamonaviy Sun’iy Intellekt Vositalari Ekotizimi | Oliy Ta’lim Veb Laboratoriyasi</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/simulators.css">
@@ -25,6 +25,12 @@
       }
     });
   </script>
+  <script>
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
+  </script>
 </head>
 <body>
 
@@ -36,7 +42,7 @@
           <circle cx="12" cy="12" r="9"></circle>
           <path d="M12 3v18M3 12h18"></path>
         </svg>
-        <span>FIZIKA &amp; SUN'IY INTELLEKT</span>
+        <span>FIZIKA va SUN’IY INTELLEKT</span>
       </a>
 
                               <ul class="nav-links">
@@ -44,33 +50,34 @@
         <li><a href="lecture1.html" class="nav-link ">1-Modul: Paradigma</a></li>
         <li><a href="lecture2.html" class="nav-link ">2-Modul: Modellashtirish</a></li>
         <li><a href="lecture3.html" class="nav-link active">3-Modul: AI Ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik & Barqarorlik</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik va Barqarorlik</a></li>
         <li><a href="lecture5.html" class="nav-link ">5-Modul: Model Turlari</a></li>
         <li><a href="lecture6.html" class="nav-link ">6-Modul: Modellarni Shakllantirish</a></li>
         <li><a href="lecture7.html" class="nav-link ">7-Modul: Canvas Arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar & To'qnashuv</a></li>
+        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar va To‘qnashuv</a></li>
         <li><a href="lecture9.html" class="nav-link ">9-Modul: Prompt Muhandislik</a></li>
         <li><a href="lecture10.html" class="nav-link ">10-Modul: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta'lim</a></li>
-        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika & AI Pipeline</a></li>
-        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika & Stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika & Audio Sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi & Capstone</a></li>
+        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika va AI Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika va Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika va Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi va Capstone</a></li>
         <li><a href="lab1.html" class="nav-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
         <li><a href="lab2.html" class="nav-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
-        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
         <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -98,34 +105,35 @@
       <li><a href="lecture1.html" class="drawer-link ">🔬 1-Modul: AI Paradigma</a></li>
       <li><a href="lecture2.html" class="drawer-link ">🧪 2-Modul: Modellashtirish</a></li>
       <li><a href="lecture3.html" class="drawer-link active">🤖 3-Modul: AI Ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik & Barqarorlik</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik va Barqarorlik</a></li>
       <li><a href="lecture5.html" class="drawer-link ">🌌 5-Modul: Model Turlari</a></li>
       <li><a href="lecture6.html" class="drawer-link ">📐 6-Modul: Modellarni Shakllantirish</a></li>
       <li><a href="lecture7.html" class="drawer-link ">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar & To'qnashuv</a></li>
+      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar va To‘qnashuv</a></li>
       <li><a href="lecture9.html" class="drawer-link ">🧠 9-Modul: Prompt Muhandislik</a></li>
       <li><a href="lecture10.html" class="drawer-link ">🪐 10-Modul: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta'lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika & AI Pipeline</a></li>
-      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika & Stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika & Audio Sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi & Capstone</a></li>
+      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika va AI Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika va Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika va Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi va Capstone</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
       <li><a href="lab1.html" class="drawer-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
       <li><a href="lab2.html" class="drawer-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
-      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim & Ish Muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha & Hisoblash Aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik & Stoxastik Modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma & AI Tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas & Delta-Time</a></li>
+      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
       <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik & Kod Generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar & Ovoz Sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS & AI Raqamli Fizika Kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi & AI Dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika & P-V Grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika & AI Audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi & Yakuniy Loyiha</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
       <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
     </ul>
   </nav>
@@ -136,33 +144,33 @@
     <div class="section-header" style="text-align: left; margin-bottom: 40px;">
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
         <span class="badge badge-cyan">3-Mavzu</span>
-        <span class="badge badge-emerald">Sun'iy Intellekt Ekotizimi</span>
-        <span class="badge badge-purple">AI-Pipeline & Monitoring</span>
+        <span class="badge badge-emerald">Sun’iy Intellekt Ekotizimi</span>
+        <span class="badge badge-purple">AI-Pipeline va Monitoring</span>
       </div>
       <h1 style="margin-bottom: 16px;">
         Raqamli Texnologiyalar Davrida <br>
-        <span class="text-gradient">Zamonaviy Sun'iy Intellekt Vositalari Ekotizimi</span>
+        <span class="text-gradient">Zamonaviy Sun’iy Intellekt Vositalari Ekotizimi</span>
       </h1>
       <p style="font-size: 1.15rem; color: #CBD5E1; max-width: 1050px; line-height: 1.7;">
-        Fizika va astronomiya ta'limida qo'llaniladigan barcha generativ AI vositalari (<strong>Google Antigravity AI, MagicSchool AI, PhET/Vascak.cz, Gemini/GPT-4, Claude 3.5 Sonnet, Muxlisa AI / ElevenLabs, Otter.ai, Undetectable AI</strong>) tarqoq holda emas, balki yagona integratsiyalashgan <strong>"AI-Pipeline"</strong> ekotizimi sifatida o'rganiladi.
+        Fizika va astronomiya ta’limida qo‘llaniladigan barcha generativ AI vositalari (<strong>Google Antigravity, MagicSchool AI, PhET/Vascak.cz, Gemini/ChatGPT, Claude, Muxlisa AI / ElevenLabs, Otter.ai, Undetectable AI</strong>) tarqoq holda emas, balki yagona integratsiyalashgan <strong>"AI-Pipeline"</strong> ekotizimi sifatida o‘rganiladi.
       </p>
     </div>
 
     <!-- 8-Stage Reja Grid -->
     <div class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma'ruza Rejasi va AI Ekotizim Zanjiri:</h3>
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma’ruza Rejasi va AI Ekotizim Zanjiri:</h3>
       <div class="grid-4" style="gap: 14px;">
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI Diagnostika:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI: 3 klasterli adaptiv o'quv trayektoriyasi.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">MagicSchool AI: 3 klasterli adaptiv o‘quv trayektoriyasi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-indigo);">2. Loyiha Jurnali:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Google Antigravity AI: 15 ta laboratoriya monitoringi.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Google Antigravity: 15 ta laboratoriya monitoringi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <strong style="color: var(--accent-emerald);">3. Pipeline & Integratsiya:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Gemini 1.5 Pro / GPT-4: Nazariya va dars ssenariysi.</span>
+          <strong style="color: var(--accent-emerald);">3. Pipeline va Integratsiya:</strong><br>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Gemini / ChatGPT: Nazariya va dars ssenariysi.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">4. Tahlil Bazasi:</strong><br>
@@ -170,11 +178,11 @@
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-purple);">5. Kod Generatsiyasi:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude 3.5 Sonnet: Canvas & RK4 dvigatelini yozish.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Claude: Canvas va RK4 dvigatelini yozish.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-rose);">6. Audio Sintez:</strong><br>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Muxlisa AI / ElevenLabs / Google TTS: O'zbekcha narratsiya.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Muxlisa AI / ElevenLabs / Google TTS: O‘zbekcha narratsiya.</span>
         </div>
         <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: #FB923C;">7. Dars Qaydlari:</strong><br>
@@ -185,6 +193,11 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Undetectable AI: Akademik halollik va plagiat tekshiruvi.</span>
         </div>
       </div>
+    </div>
+
+    <div class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-amber);">
+      <h3 style="margin-bottom: 8px; font-size: 1.15rem;">🧰 SI vositalarining joriy ro‘yxati</h3>
+      <p style="margin: 0;">Vositalarning imkoniyatlari va tariflari tez o‘zgaradi. Ularning joriy ro‘yxati — kursdagi vazifasi, kirish modeli va rasmiy havolalari bilan — <a href="si-vositalari.html" style="color: var(--accent-cyan);">“SI vositalari” sahifasida</a> muntazam yangilab boriladi.</p>
     </div>
 
     <!-- AI Pipeline Architecture Scheme -->
@@ -198,23 +211,23 @@
       <div class="grid-4" style="text-align: left; margin-bottom: 16px;">
         <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-md); padding: 16px;">
           <div style="font-size:1.5rem; margin-bottom:6px;">🎯</div>
-          <h4 style="color:var(--accent-cyan); margin-bottom:4px;">1. Boshlang'ich Bosqich</h4>
-          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>MagicSchool AI & Antigravity:</strong> Diagnostika, ZPD trayektoriyasi va 15 ta lab jurnali monitoringi.</p>
+          <h4 style="color:var(--accent-cyan); margin-bottom:4px;">1. Boshlang‘ich Bosqich</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>MagicSchool AI va Antigravity:</strong> Diagnostika, ZPD trayektoriyasi va 15 ta lab jurnali monitoringi.</p>
         </div>
         <div style="background: rgba(52, 211, 153, 0.05); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: var(--radius-md); padding: 16px;">
           <div style="font-size:1.5rem; margin-bottom:6px;">📐</div>
-          <h4 style="color:var(--accent-emerald); margin-bottom:4px;">2. Nazariya & Model</h4>
-          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>Gemini & PhET:</strong> Ssenariy tuzish, differensial tenglamalar va teskari muhandislik dekonstruksiyasi.</p>
+          <h4 style="color:var(--accent-emerald); margin-bottom:4px;">2. Nazariya va Model</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>Gemini va PhET:</strong> Ssenariy tuzish, differensial tenglamalar va teskari muhandislik dekonstruksiyasi.</p>
         </div>
         <div style="background: rgba(192, 132, 252, 0.05); border: 1px solid rgba(192, 132, 252, 0.25); border-radius: var(--radius-md); padding: 16px;">
           <div style="font-size:1.5rem; margin-bottom:6px;">💻</div>
-          <h4 style="color:var(--accent-purple); margin-bottom:4px;">3. Kod & Ovozlashtirish</h4>
-          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>Claude 3.5 & Muxlisa AI:</strong> HTML5 Canvas fizik dvigateli, RK4 va tabiiy o'zbekcha audio-narratsiya.</p>
+          <h4 style="color:var(--accent-purple); margin-bottom:4px;">3. Kod va Ovozlashtirish</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>Claude va Muxlisa AI:</strong> HTML5 Canvas fizik dvigateli, RK4 va tabiiy o‘zbekcha audio-narratsiya.</p>
         </div>
         <div style="background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: var(--radius-md); padding: 16px;">
           <div style="font-size:1.5rem; margin-bottom:6px;">🛡️</div>
-          <h4 style="color:var(--accent-rose); margin-bottom:4px;">4. Qaydlar & Nazorat</h4>
-          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>Otter.ai & Undetectable:</strong> Laboratoriya hisobotini transkripsiya qilish va akademik originallikni tekshirish.</p>
+          <h4 style="color:var(--accent-rose); margin-bottom:4px;">4. Qaydlar va Nazorat</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary);"><strong>Otter.ai va Undetectable:</strong> Laboratoriya hisobotini transkripsiya qilish va akademik originallikni tekshirish.</p>
         </div>
       </div>
     </div>
@@ -223,7 +236,7 @@
     <div class="tabs-container" style="margin-bottom: 40px;">
       <div class="tabs-nav">
         <button class="tab-btn active" data-tab="tab-antigravity">1. Google Antigravity (Loyiha Jurnali)</button>
-        <button class="tab-btn" data-tab="tab-pipeline">2. Gemini / GPT-4 Pipeline</button>
+        <button class="tab-btn" data-tab="tab-pipeline">2. Gemini / ChatGPT Pipeline</button>
         <button class="tab-btn" data-tab="tab-tts">3. Muxlisa AI (Nutq Sintezi)</button>
         <button class="tab-btn" data-tab="tab-otter">4. Otter.ai (Transkripsiya)</button>
         <button class="tab-btn" data-tab="tab-undetectable">5. Undetectable AI (Originallik)</button>
@@ -235,7 +248,7 @@
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
             <div>
-              <h2 style="font-size: 1.4rem;">🪐 Google Antigravity AI: 15 Ta Laboratoriya Bosqichi Loyiha Jurnali (Project Log)</h2>
+              <h2 style="font-size: 1.4rem;">🪐 Google Antigravity: 15 Ta Laboratoriya Bosqichi Loyiha Jurnali (Project Log)</h2>
               <p style="font-size:0.92rem; color:var(--text-secondary); margin-top:4px;">
                 Ushbu jurnal semestr oxirigacha har bir laboratoriya bosqichini avtomatik kuzatib boradi va real vaqtda progress hisobotini beradi.
               </p>
@@ -270,11 +283,11 @@
       <div id="tab-pipeline" class="tab-content">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">⚡ Gemini 1.5 Pro & GPT-4: Pipeline Integratsiyasi</h2>
+            <h2 style="font-size: 1.4rem;">⚡ Gemini va ChatGPT: Pipeline Integratsiyasi</h2>
             <span class="badge badge-emerald">Orkestratsiya</span>
           </div>
           <p style="margin-bottom: 20px;">
-            Zamonaviy AI-pipelineda Gemini va GPT-4 markaziy <strong>"Orkestrator"</strong> rolini bajaradi: talaba g'oyasini qabul qilib, uni matematik model, Claude uchun dasturiy spetsifikatsiya, Midjourney uchun vizual prompt va Muxlisa AI uchun audio matnga ajratadi:
+            Zamonaviy AI-pipelineda Gemini va ChatGPT markaziy <strong>"Orkestrator"</strong> rolini bajaradi: talaba g‘oyasini qabul qilib, uni matematik model, Claude uchun dasturiy spetsifikatsiya, Midjourney uchun vizual prompt va Muxlisa AI uchun audio matnga ajratadi:
           </p>
 
           <div class="grid-3" style="margin-bottom: 24px;">
@@ -285,26 +298,26 @@
             </div>
             <div style="background: rgba(15, 23, 42, 0.6); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
               <span class="badge badge-emerald" style="margin-bottom:8px;">2. JSON Sxema Formatlash</span>
-              <h4 style="margin-bottom:6px;">Tizimli Ma'lumot</h4>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">Fizik o'zgaruvchilar (massa, uzunlik, maydon, integratsiya qadami) qat'iy JSON tuzilishida uzatiladi.</p>
+              <h4 style="margin-bottom:6px;">Tizimli Ma’lumot</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Fizik o‘zgaruvchilar (massa, uzunlik, maydon, integratsiya qadami) qat’iy JSON tuzilishida uzatiladi.</p>
             </div>
             <div style="background: rgba(15, 23, 42, 0.6); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
               <span class="badge badge-purple" style="margin-bottom:8px;">3. Gallyutsinatsiya Filtri</span>
               <h4 style="margin-bottom:6px;">Ilmiy Verifikatsiya</h4>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">Formulalar va o'lchov birliklari WolframAlpha bazasi bilan tekshirilib, xatolar elakdan o'tkaziladi.</p>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Formulalar va o‘lchov birliklari WolframAlpha bazasi bilan tekshirilib, xatolar elakdan o‘tkaziladi.</p>
             </div>
           </div>
 
           <div class="code-block">
             <div class="code-header">
-              <span>Gemini 1.5 Pro uchun To'liq AI-Pipeline Orkestratsiya Prompti</span>
-              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. 'Optikada Yung interferensiyasi va difraksiya' mavzusi bo'yicha butun AI-pipeline uchun tayyor texnik topshiriq ishlab chiq: 1) Differensial to'lqin tenglamalari, 2) Claude 3.5 Sonnet uchun HTML5 Canvas render spetsifikatsiyasi, 3) Midjourney v6 uchun laboratoriya apparati prompti, 4) Muxlisa AI uchun 45 soniyalik ilmiy audio-narratsiya matni.">Nusxalash</button>
+              <span>Gemini uchun To‘liq AI-Pipeline Orkestratsiya Prompti</span>
+              <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. 'Optikada Yung interferensiyasi va difraksiya' mavzusi bo'yicha butun AI-pipeline uchun tayyor texnik topshiriq ishlab chiq: 1) Differensial to'lqin tenglamalari, 2) Claude uchun HTML5 Canvas render spetsifikatsiyasi, 3) Midjourney uchun laboratoriya apparati prompti, 4) Muxlisa AI uchun 45 soniyalik ilmiy audio-narratsiya matni.">Nusxalash</button>
             </div>
             <div class="code-content">
-Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung interferensiyasi va difraksiya" mavzusi bo'yicha butun AI-pipeline uchun tayyor texnik topshiriq ishlab chiq:
-1) Differensial to'lqin tenglamalari,
-2) Claude 3.5 Sonnet uchun HTML5 Canvas render spetsifikatsiyasi,
-3) Midjourney v6 uchun laboratoriya apparati prompti,
+Sen Oliy ta’lim hisoblash fizikasi bo‘yicha AI-arxitektorsan. "Optikada Yung interferensiyasi va difraksiya" mavzusi bo‘yicha butun AI-pipeline uchun tayyor texnik topshiriq ishlab chiq:
+1) Differensial to‘lqin tenglamalari,
+2) Claude uchun HTML5 Canvas render spetsifikatsiyasi,
+3) Midjourney uchun laboratoriya apparati prompti,
 4) Muxlisa AI uchun 45 soniyalik ilmiy audio-narratsiya matni.
             </div>
           </div>
@@ -316,40 +329,40 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
             <div>
-              <h2 style="font-size: 1.4rem;">🎙️ Nutq Sintezi va Audio-Narratsiya: Muxlisa AI, ElevenLabs & Google TTS</h2>
+              <h2 style="font-size: 1.4rem;">🎙️ Nutq sintezi va audio-narratsiya: Muxlisa AI, ElevenLabs va Google TTS</h2>
               <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:4px;">
-                Simulyatsiyalarni jonli ovozli sharh (voiceover) bilan ta'minlash va inklyuziv ta'limni (ko'rishida nuqsoni bor talabalar uchun) ta'minlash.
+                Simulyatsiyalarni jonli ovozli sharh (voiceover) bilan ta’minlash va inklyuziv ta’limni (ko‘rishida nuqsoni bor talabalar uchun) ta’minlash.
               </p>
             </div>
-            <span class="badge badge-rose">O'zbekcha TTS</span>
+            <span class="badge badge-rose">O‘zbekcha TTS</span>
           </div>
 
           <div class="grid-3" style="margin-bottom: 24px;">
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <h4 style="color:var(--accent-rose); margin-bottom:6px;">1. Muxlisa AI / Aisha AI</h4>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">O'zbek tili fonetikasi va urg'ulariga to'liq moslashgan neyron nutq sintezi. Milliy ta'lim kontentini professional ovozlashtiradi.</p>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">O‘zbek tili fonetikasi va urg‘ulariga to‘liq moslashgan neyron nutq sintezi. Milliy ta’lim kontentini professional ovozlashtiradi.</p>
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
-              <h4 style="color:var(--accent-purple); margin-bottom:6px;">2. ElevenLabs Voice AI</h4>
+              <h4 style="color:var(--accent-purple); margin-bottom:6px;">2. ElevenLabs</h4>
               <p style="font-size:0.85rem; color:var(--text-secondary);">Emotsional ohang, ilmiy leksika intonatsiyasi va klonlangan akademik ovozlar orqali 4K video-izohlar yaratish.</p>
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <h4 style="color:var(--accent-cyan); margin-bottom:6px;">3. Google Cloud Text-to-Speech</h4>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">DeepMind WaveNet va Neural2 modellari asosida real vaqtda Web ilovalar ichiga API orqali nutq oqimini uzatish.</p>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">DeepMind WaveNet va Neural2 modellari asosida real vaqtda veb-ilovalar ichiga API orqali nutq oqimini uzatish.</p>
             </div>
           </div>
 
           <!-- Interactive TTS Narrator Simulator -->
           <div style="background:#0B1120; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:24px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
-              <h4 style="font-size:1.15rem; color:var(--accent-cyan);">🔊 Jonli Audio-Narratsiya Sinov Maydoni</h4>
+              <h4 style="font-size:1.15rem; color:var(--accent-cyan);">🔊 Jonli audio-narratsiya sinov maydoni</h4>
               <div style="display:flex; gap:10px; align-items:center;">
-                <label style="font-size:0.85rem; color:var(--text-secondary);">Mavzu Shablonlari:</label>
+                <label style="font-size:0.85rem; color:var(--text-secondary);">Mavzu shablonlari:</label>
                 <select id="select-tts-preset" style="background:#0F172A; color:#38BDF8; border:1px solid #334155; border-radius:6px; padding:4px 10px; font-size:0.85rem;">
-                  <option value="pendulum">Matematik Mayatnik</option>
-                  <option value="lorentz">Lorents Kuchi</option>
-                  <option value="drag">Aerodinamik Drag</option>
-                  <option value="doppler">Doppler Effekti</option>
+                  <option value="pendulum">Matematik mayatnik</option>
+                  <option value="lorentz">Lorens kuchi</option>
+                  <option value="drag">Aerodinamik qarshilik</option>
+                  <option value="doppler">Doppler effekti</option>
                 </select>
               </div>
             </div>
@@ -359,7 +372,7 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
               <canvas id="tts-wave-canvas" style="width:100%; height:80px; display:block;"></canvas>
             </div>
 
-            <textarea id="tts-input-text" style="width:100%; height:80px; background:#0F172A; color:#F8FAFC; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:12px; font-size:0.92rem; font-family:var(--font-sans); margin-bottom:16px;">Matematik mayatnik harakatida tebranish burchagi oshgani sari noliner effektlar yuzaga keladi. Kinetik va potensial energiya o'zaro almashinib turadi.</textarea>
+            <textarea id="tts-input-text" style="width:100%; height:80px; background:#0F172A; color:#F8FAFC; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:12px; font-size:0.92rem; font-family:var(--font-sans); margin-bottom:16px;">Matematik mayatnik harakatida tebranish burchagi oshgani sari noliner effektlar yuzaga keladi. Kinetik va potensial energiya o‘zaro almashinib turadi.</textarea>
 
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
               <div style="display:flex; gap:16px; align-items:center;">
@@ -372,8 +385,8 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
               </div>
 
               <div style="display:flex; gap:10px;">
-                <button id="btn-tts-speak" class="btn btn-primary btn-sm">▶️ Ovozlashtirish (Play)</button>
-                <button id="btn-tts-stop" class="btn btn-secondary btn-sm">⏹ To'xtatish</button>
+                <button id="btn-tts-speak" class="btn btn-primary btn-sm">▶️ Ovozlashtirish</button>
+                <button id="btn-tts-stop" class="btn btn-secondary btn-sm">⏹ To‘xtatish</button>
               </div>
             </div>
           </div>
@@ -387,7 +400,7 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
             <div>
               <h2 style="font-size: 1.4rem;">📝 Dars Qaydlari va Transkripsiya: Otter.ai</h2>
               <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:4px;">
-                O'qituvchining ma'ruzasi va talabalarning laboratoriya muhokamalarini real vaqtda matnga aylantirish va qidiruv indeksini qurish.
+                O‘qituvchining ma’ruzasi va talabalarning laboratoriya muhokamalarini real vaqtda matnga aylantirish va qidiruv indeksini qurish.
               </p>
             </div>
             <span class="badge badge-amber">Ovozdan matnga (Audio-to-Text)</span>
@@ -397,18 +410,18 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
             <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
               <h4 style="color:var(--accent-amber); margin-bottom:10px;">⚡ Otter.ai Asosiy Imkoniyatlari:</h4>
               <ul style="font-size: 0.9rem; color: var(--text-secondary); display:flex; flex-direction:column; gap:8px;">
-                <li>🔹 <strong>Avtomatik Transkripsiya:</strong> 95%+ aniqlikdagi nutqni matnga o'girish.</li>
-                <li>🔹 <strong>Speaker Diarization:</strong> O'qituvchi va turli talabalar ovozini ajratib yozish.</li>
-                <li>🔹 <strong>Automated Summary:</strong> 80 daqiqalik ma'ruzadan 5 ta eng muhim fizik xulosani chiqarish.</li>
-                <li>🔹 <strong>Kalit So'zlar Bo'yicha Qidiruv:</strong> "Lorents kuchi" yoki "RK4 xatoligi" aytilgan aniq sekundni topish.</li>
+                <li>🔹 <strong>Avtomatik Transkripsiya:</strong> 95%+ aniqlikdagi nutqni matnga o‘girish.</li>
+                <li>🔹 <strong>Speaker Diarization:</strong> O‘qituvchi va turli talabalar ovozini ajratib yozish.</li>
+                <li>🔹 <strong>Automated Summary:</strong> 80 daqiqalik ma’ruzadan 5 ta eng muhim fizik xulosani chiqarish.</li>
+                <li>🔹 <strong>Kalit So‘zlar Bo‘yicha Qidiruv:</strong> "Lorents kuchi" yoki "RK4 xatoligi" aytilgan aniq sekundni topish.</li>
               </ul>
             </div>
 
             <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
               <h4 style="color:var(--accent-cyan); margin-bottom:10px;">📋 Otter.ai Transkripsiya Namunasi:</h4>
               <div style="background:#0B1120; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.85rem; color:#CBD5E1; line-height:1.5;">
-                <span style="color:#38BDF8;">[00:14:22] Professor:</span> "Diqqat qiling, agar dt qadamini 0.01 dan 0.1 ga oshirsak, oddiy Eyler usulida mayatnik tebranish amplitudasi sun'iy o'sib ketadi..."<br><br>
-                <span style="color:#34D399;">[00:14:45] Talaba:</span> "Buning oldini olish uchun Eyler-Kromer simplektik usulini qo'llashimiz kerakmi?"<br><br>
+                <span style="color:#38BDF8;">[00:14:22] Professor:</span> "Diqqat qiling, agar dt qadamini 0.01 dan 0.1 ga oshirsak, oddiy Eyler usulida mayatnik tebranish amplitudasi sun’iy o‘sib ketadi..."<br><br>
+                <span style="color:#34D399;">[00:14:45] Talaba:</span> "Buning oldini olish uchun Eyler–Kromer simplektik usulini qo‘llashimiz kerakmi?"<br><br>
                 <span style="color:#38BDF8;">[00:14:52] Professor:</span> "Aynan shunday, chunki u faza fazosi maydonini saqlaydi."
               </div>
             </div>
@@ -421,9 +434,9 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
             <div>
-              <h2 style="font-size: 1.4rem;">🛡️ Originallik va Mustaqil Ish Nazorati: Undetectable AI & Turnitin</h2>
+              <h2 style="font-size: 1.4rem;">🛡️ Originallik va Mustaqil Ish Nazorati: Undetectable AI va Turnitin</h2>
               <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:4px;">
-                Talabalarning mustaqil ishlari va Capstone hisobotlarida Sun'iy intellektdan axloqiy va mas'uliyatli foydalanishni ta'minlash.
+                Talabalarning mustaqil ishlari va Capstone hisobotlarida Sun’iy intellektdan axloqiy va mas’uliyatli foydalanishni ta’minlash.
               </p>
             </div>
             <span class="badge badge-emerald">Akademik Halollik</span>
@@ -432,22 +445,22 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
           <div class="grid-3" style="margin-bottom: 24px;">
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <span class="badge badge-rose" style="margin-bottom:8px;">1. AI Gallyutsinatsiyasi Nazorati</span>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">Generativ modellar to'qib chiqargan soxta ilmiy maqolalar yoki xato fizik doimiylarni aniqlash va tekshirish.</p>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Generativ modellar to‘qib chiqargan soxta ilmiy maqolalar yoki xato fizik doimiylarni aniqlash va tekshirish.</p>
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
-              <span class="badge badge-amber" style="margin-bottom:8px;">2. AI Watermarking & Deteksiya</span>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">Matndagi sun'iy sintaktik takrorlanishlar (Perplexity & Burstiness) orqali to'liq nusxa ko'chirishni cheklash.</p>
+              <span class="badge badge-amber" style="margin-bottom:8px;">2. AI Watermarking va Deteksiya</span>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Matndagi sun’iy sintaktik takrorlanishlar (Perplexity va Burstiness) orqali to‘liq nusxa ko‘chirishni cheklash.</p>
             </div>
             <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
               <span class="badge badge-emerald" style="margin-bottom:8px;">3. Mualliflik va Shaxsiy Hissa</span>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">Talaba o'z simulyatsiyasidagi har bir kod qatorini, matematik integratsiya usulini shaxsan himoya qilib berishi shart.</p>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Talaba o‘z simulyatsiyasidagi har bir kod qatorini, matematik integratsiya usulini shaxsan himoya qilib berishi shart.</p>
             </div>
           </div>
 
           <div style="background:#0B1120; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:18px;">
-            <h4 style="color:var(--accent-cyan); margin-bottom:8px;">📌 Oliy Ta'limda AI Dan Foydalanishning Oltin Qoidasi:</h4>
+            <h4 style="color:var(--accent-cyan); margin-bottom:8px;">📌 Oliy Ta’limda AI Dan Foydalanishning Oltin Qoidasi:</h4>
             <p style="font-size:0.9rem; color:#CBD5E1; line-height:1.6;">
-              "Sun'iy intellekt talaba o'rniga fikrlovchi emas, balki talabaning g'oyalarini yuqori sifatli kod va simulyatsiyaga aylantiruvchi <strong>multiplikator (kuchaytirgich)</strong> vositadir. Har bir talaba topshirgan loyihasining matematik apparatini va fizik mohiyatini to'liq bilishi shart."
+              "Sun’iy intellekt talaba o‘rniga fikrlovchi emas, balki talabaning g‘oyalarini yuqori sifatli kod va simulyatsiyaga aylantiruvchi <strong>multiplikator (kuchaytirgich)</strong> vositadir. Har bir talaba topshirgan loyihasining matematik apparatini va fizik mohiyatini to‘liq bilishi shart."
             </p>
           </div>
         </div>
@@ -467,7 +480,7 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
             <!-- Q1 -->
             <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
               <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; color: #F8FAFC;">
-                1. Google Antigravity AI platformasining semestr davomidagi asosiy vazifasi nima?
+                1. Google Antigravity platformasining semestr davomidagi asosiy vazifasi nima?
               </p>
               <div id="quiz3-options-1" style="display:flex; flex-direction:column; gap:8px;">
                 <div class="quiz-option-card" onclick="selectQuiz3Option(1, 0)">
@@ -483,7 +496,7 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
                 <div class="quiz-option-card" onclick="selectQuiz3Option(1, 2)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q3-1" style="display:none;">
-                  <span>C) Internet tezligini o'lchash</span>
+                  <span>C) Internet tezligini o‘lchash</span>
                 </div>
               </div>
             </div>
@@ -491,23 +504,23 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
             <!-- Q2 -->
             <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
               <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; color: #F8FAFC;">
-                2. Nima uchun fizik simulyatsiya yaratishda Muxlisa AI yoki ElevenLabs kabi TTS vositalari qo'llaniladi?
+                2. Nima uchun fizik simulyatsiya yaratishda Muxlisa AI yoki ElevenLabs kabi TTS vositalari qo‘llaniladi?
               </p>
               <div id="quiz3-options-2" style="display:flex; flex-direction:column; gap:8px;">
                 <div class="quiz-option-card" onclick="selectQuiz3Option(2, 0)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q3-2" style="display:none;">
-                  <span>A) Simulyatsiyani tabiiy o'zbek tilidagi ovozli tushuntirish (narratsiya) bilan boyitish va inklyuzivlikni oshirish uchun</span>
+                  <span>A) Simulyatsiyani tabiiy o‘zbek tilidagi ovozli tushuntirish (narratsiya) bilan boyitish va inklyuzivlikni oshirish uchun</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz3Option(2, 1)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q3-2" style="display:none;">
-                  <span>B) Kompyuter xotirasini bo'shatish uchun</span>
+                  <span>B) Kompyuter xotirasini bo‘shatish uchun</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz3Option(2, 2)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q3-2" style="display:none;">
-                  <span>C) HTML Canvas ranglarini o'zgartirish uchun</span>
+                  <span>C) HTML Canvas ranglarini o‘zgartirish uchun</span>
                 </div>
               </div>
             </div>
@@ -521,7 +534,7 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
                 <div class="quiz-option-card" onclick="selectQuiz3Option(3, 0)">
                   <span class="quiz-dot">⚪</span>
                   <input type="radio" name="q3-3" style="display:none;">
-                  <span>A) Darsdagi jonli nutq va munozaralarni matnga transkripsiya qilib, aqlli xulosalar va kalit so'zlar bo'yicha qidiruvni ta'minlaydi</span>
+                  <span>A) Darsdagi jonli nutq va munozaralarni matnga transkripsiya qilib, aqlli xulosalar va kalit so‘zlar bo‘yicha qidiruvni ta’minlaydi</span>
                 </div>
                 <div class="quiz-option-card" onclick="selectQuiz3Option(3, 1)">
                   <span class="quiz-dot">⚪</span>
@@ -543,16 +556,16 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
 
         <!-- Academic Bibliography Section -->
         <div class="glass-panel" style="background: rgba(15, 23, 42, 0.75); border-left: 4px solid var(--accent-amber);">
-          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 3-Modul Bo'yicha Ilmiy-Uslubiy Adabiyotlar Ro'yxati:</h3>
+          <h3 style="color: var(--accent-amber); margin-bottom: 16px;">📚 3-Modul Bo‘yicha Ilmiy-Uslubiy Adabiyotlar Ro‘yxati:</h3>
           <ol style="padding-left: 20px; font-size: 0.88rem; line-height: 1.8; color: var(--text-secondary);">
-            <li><strong>Russell, S., & Norvig, P. (2021).</strong> <em>Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson.</li>
+            <li><strong>Russell, S., va Norvig, P. (2021).</strong> <em>Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson.</li>
             <li><strong>Vaswani, A., et al. (2017).</strong> Attention Is All You Need. <em>Advances in Neural Information Processing Systems (NeurIPS)</em>.</li>
             <li><strong>OpenAI. (2024).</strong> <em>GPT-4 Technical Report</em>. OpenAI Research.</li>
             <li><strong>Anthropic. (2024).</strong> <em>Claude Model Card and Evaluations</em>. Anthropic Research.</li>
             <li><strong>Google DeepMind. (2023).</strong> <em>Gemini: A Family of Highly Capable Multimodal Models</em>. Google Research.</li>
-            <li><strong>Mishra, P., & Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>.</li>
+            <li><strong>Mishra, P., va Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>.</li>
             <li><strong>W3C. (2023).</strong> <em>Web Content Accessibility Guidelines (WCAG) 2.2</em>. World Wide Web Consortium.</li>
-            <li><strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
+            <li><strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
           </ol>
         </div>
       </div>
@@ -589,8 +602,8 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
 
       const answers = [1, 0, 0]; // Correct indices for Q1, Q2, Q3
       const explanations = [
-        "Google Antigravity AI barcha 15 ta laboratoriya bosqichini yagona tizimli monitoring qiladi va talabaning shaxsiy loyiha jurnalini yuritadi.",
-        "Muxlisa AI va ElevenLabs neyron nutq modellari orqali talabaning simulyatsiyasi tabiiy audio-narratsiya bilan ta'minlanadi.",
+        "Google Antigravity barcha 15 ta laboratoriya bosqichini yagona tizimli monitoring qiladi va talabaning shaxsiy loyiha jurnalini yuritadi.",
+        "Muxlisa AI va ElevenLabs neyron nutq modellari orqali talabaning simulyatsiyasi tabiiy audio-narratsiya bilan ta’minlanadi.",
         "Otter.ai dars audio yozuvlarini real vaqtda matnga aylantirib, seminar va laboratoriya xulosalarini tayyorlaydi."
       ];
 
@@ -617,23 +630,23 @@ Sen Oliy ta'lim hisoblash fizikasi bo'yicha AI-arxitektorsan. "Optikada Yung int
 
         htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
           <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#34D399' : '#F43F5E'};">
-            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To'g'ri!" : "Xato!"}
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To‘g‘ri!" : "Xato!"}
           </div>
           <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${explanations[i - 1]}</div>
         </div>`;
       }
 
-      let badgeName = "AI Ekotizim Arxitektori (To'liq O'zlashtirildi)";
+      let badgeName = "AI Ekotizim Arxitektori (To‘liq O‘zlashtirildi)";
       let badgeColor = '#34D399';
       if (correctCount < 3) {
-        badgeName = "AI Pipeline Tadqiqotchisi (Qisman O'zlashtirildi)";
+        badgeName = "AI Pipeline Tadqiqotchisi (Qisman O‘zlashtirildi)";
         badgeColor = '#38BDF8';
       }
 
       htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${badgeColor}; text-align:center;">
         <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Ekotizim Kompetensiyangiz:</div>
         <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${badgeName}</div>
-        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${uzFix(((correctCount/3)*100), 0)}%)</div>
       </div></div>`;
 
       feedbackEl.innerHTML = htmlResult;

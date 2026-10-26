@@ -1,12 +1,16 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
- * Lecture 12, Tab 6: Interaktiv Klassik Mexanika & To'liq AI Pipeline
+ * Lecture 12, Tab 6: Interaktiv Klassik Mexanika & To‘liq AI Pipeline
  * Laboratoriyasi. Ikki rejim: (1) qiya tekislikdagi Nyuton dinamikasi +
- * Kulon-Amonton ishqalanishi (simplektik Eyler-Kromer bilan integrallanadi),
- * (2) devor va o'zaro to'qnashuvlarga ega 2D zarrachalar, qo'shimcha yumshoq
+ * Kulon-Amonton ishqalanishi (simplektik Eyler–Kromer bilan integrallanadi),
+ * (2) devor va o‘zaro to‘qnashuvlarga ega 2D zarrachalar, qo‘shimcha yumshoq
  * markaziy "confinement" kuchi ostida — bu kuch integrator tanloviga
- * (simplektik Eyler-Kromer vs oddiy Eyler) haqiqiy sezilarli energiya
+ * (simplektik Eyler–Kromer vs oddiy Eyler) haqiqiy sezilarli energiya
  * dreyfi farqini beradi, chunki qiya tekislikning doimiy tezlanishidan
- * farqli o'laroq bu tiklovchi kuch integrator xatosini kuchaytiradi.
+ * farqli o‘laroq bu tiklovchi kuch integrator xatosini kuchaytiradi.
  */
 document.addEventListener('DOMContentLoaded', () => {
   initMechanicsPipeline();
@@ -54,7 +58,7 @@ function initMechanicsPipeline() {
   const RAMP_LENGTH = 4.2; // metr
   let ramp = { s: 0, v: 0 };
   const rampEnergyTrail = [];
-  let rampPassStartEnergy = 0; // joriy pastga sirg'anish bosqichi boshidagi energiya (audit uchun)
+  let rampPassStartEnergy = 0; // joriy pastga sirg‘anish bosqichi boshidagi energiya (audit uchun)
 
   function rampParams() {
     return {
@@ -74,7 +78,7 @@ function initMechanicsPipeline() {
     const { angleDeg, mu } = rampParams();
     const rad = angleDeg * Math.PI / 180;
     const a = Math.tan(rad) > mu ? G * (Math.sin(rad) - mu * Math.cos(rad)) : 0;
-    // Simplektik Eyler-Kromer: avval tezlik, keyin koordinata
+    // Simplektik Eyler–Kromer: avval tezlik, keyin koordinata
     ramp.v += a * dt;
     ramp.s += ramp.v * dt;
     if (ramp.s >= RAMP_LENGTH) { ramp.s = 0; ramp.v = 0; rampPassStartEnergy = rampEnergy(); } // pastga yetganda tepaga qaytadi (uzluksiz namoyish)
@@ -144,11 +148,11 @@ function initMechanicsPipeline() {
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
-    ctx.fillText(`s = ${ramp.s.toFixed(2)} m   v = ${ramp.v.toFixed(2)} m/s`, 10, 18);
+    ctx.fillText(`s = ${uzFix(ramp.s, 2)} m   v = ${uzFix(ramp.v, 2)} m/s`, 10, 18);
   }
 
   // -----------------------------------------------------------------------
-  // COLLISION MODE: 2D zarrachalar + devor to'qnashuvi + yumshoq markaziy
+  // COLLISION MODE: 2D zarrachalar + devor to‘qnashuvi + yumshoq markaziy
   // "confinement" kuchi (integrator taqqoslash uchun haqiqiy tiklovchi kuch)
   // -----------------------------------------------------------------------
   const K_TRAP = 6.0; // yumshoq markaziy kuch konstantasi (sim birliklarida)
@@ -253,7 +257,7 @@ function initMechanicsPipeline() {
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
     const E = collisionEnergy(w, h);
-    ctx.fillText(`E = ${E.toFixed(1)}   integrator: ${selIntegrator.value}`, 10, 18);
+    ctx.fillText(`E = ${uzFix(E, 1)}   integrator: ${selIntegrator.value === 'euler' ? 'oddiy Eyler' : 'simplektik'}`, 10, 18);
   }
 
   function drawArrow(ctx, x0, y0, x1, y1, color) {
@@ -326,24 +330,24 @@ function initMechanicsPipeline() {
   modeBtns.forEach(btn => btn.addEventListener('click', () => setMode(btn.dataset.mode)));
 
   slRampAngle.addEventListener('input', () => { valRampAngle.textContent = slRampAngle.value + '°'; });
-  slRampMu.addEventListener('input', () => { valRampMu.textContent = parseFloat(slRampMu.value).toFixed(2); });
-  slMechMass.addEventListener('input', () => { valMechMass.textContent = parseFloat(slMechMass.value).toFixed(1) + ' kg'; });
-  slRestitution.addEventListener('input', () => { valRestitution.textContent = parseFloat(slRestitution.value).toFixed(2); });
+  slRampMu.addEventListener('input', () => { valRampMu.textContent = uzFix(parseFloat(slRampMu.value), 2); });
+  slMechMass.addEventListener('input', () => { valMechMass.textContent = uzFix(parseFloat(slMechMass.value), 1) + ' kg'; });
+  slRestitution.addEventListener('input', () => { valRestitution.textContent = uzFix(parseFloat(slRestitution.value), 2); });
   slBallMass.addEventListener('input', () => {
-    valBallMass.textContent = parseFloat(slBallMass.value).toFixed(1) + ' kg';
+    valBallMass.textContent = uzFix(parseFloat(slBallMass.value), 1) + ' kg';
     if (p1) p1.m = parseFloat(slBallMass.value);
   });
 
   function togglePlay() {
     running = !running;
-    btnPlayInner.textContent = running ? '⏸️ To\'xtatish' : '▶️ Davom Ettirish';
+    btnPlayInner.textContent = running ? '⏸️ To‘xtatish' : '▶️ Davom ettirish';
   }
   btnPlayInner.addEventListener('click', togglePlay);
 
   function resetSim() {
     resetAll();
     running = true;
-    btnPlayInner.textContent = "⏸️ To'xtatish";
+    btnPlayInner.textContent = "⏸️ To‘xtatish";
   }
   btnResetInner.addEventListener('click', resetSim);
 
@@ -449,15 +453,15 @@ function initMechanicsPipeline() {
         const a = willMove ? G * (Math.sin(rad) - mu * Math.cos(rad)) : 0;
         showPipelineOutput(`
           <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          Burchak α = ${angleDeg}°, ishqalanish μ = ${mu.toFixed(2)}, massa m = ${mass.toFixed(1)} kg.<br>
-          Harakat sharti: tan(α) = ${tanA.toFixed(3)} ${willMove ? '&gt;' : '&le;'} μ = ${mu.toFixed(2)} &rArr; jism ${willMove ? 'sirpanadi' : 'tinch turadi'}.<br>
-          Hisoblangan tezlanish: <strong>a = ${a.toFixed(3)} m/s²</strong>.`);
+          Burchak α = ${angleDeg}°, ishqalanish μ = ${uzFix(mu, 2)}, massa m = ${uzFix(mass, 1)} kg.<br>
+          Harakat sharti: tan(α) = ${uzFix(tanA, 3)} ${willMove ? '&gt;' : '&le;'} μ = ${uzFix(mu, 2)} &rArr; jism ${willMove ? 'sirpanadi' : 'tinch turadi'}.<br>
+          Hisoblangan tezlanish: <strong>a = ${uzFix(a, 3)} m/s²</strong>.`);
       } else {
         const e = parseFloat(slRestitution.value);
         showPipelineOutput(`
           <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          Tiklanish koeffitsiyenti e = ${e.toFixed(2)} &rArr; to'qnashuv turi: <strong>${e === 1 ? 'mutlaq elastik' : (e === 0 ? 'mutlaq noelastik' : 'qisman elastik')}</strong>.<br>
-          Yo'qotiladigan energiya ulushi (1 - e²) = ${(1 - e * e).toFixed(3)}.`);
+          Tiklanish koeffitsiyenti e = ${uzFix(e, 2)} &rArr; to‘qnashuv turi: <strong>${e === 1 ? 'mutlaq elastik' : (e === 0 ? 'mutlaq noelastik' : 'qisman elastik')}</strong>.<br>
+          Yo‘qotiladigan energiya ulushi (1 - e²) = ${uzFix((1 - e * e), 3)}.`);
       }
     });
   }
@@ -468,7 +472,7 @@ function initMechanicsPipeline() {
         ? "const rad = angle * Math.PI / 180;\nconst a = Math.tan(rad) > mu ? g*(Math.sin(rad) - mu*Math.cos(rad)) : 0;\nv += a * dt;  // simplektik: avval tezlik\ns += v * dt;  // keyin koordinata"
         : "const j = -((1+e) * velAlongNormal) / (1/m1 + 1/m2);\na.vel = a.vel.add(normal.scale(j / m1));\nb.vel = b.vel.sub(normal.scale(j / m2));";
       showPipelineOutput(`
-        <strong>2. Claude 3.5 Sonnet Dvigatel Kodi:</strong>
+        <strong>2. Claude Dvigatel Kodi:</strong>
         <pre style="background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;"><code>${code}</code></pre>
         <button id="btn-copy-claude-code" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
       attachCopyHandler('btn-copy-claude-code', code);
@@ -481,7 +485,7 @@ function initMechanicsPipeline() {
       if (mode === 'ramp') {
         if (rampEnergyTrail.length > 2) {
           const dropPct = ((rampPassStartEnergy - rampEnergy()) / Math.max(Math.abs(rampPassStartEnergy), 1e-6)) * 100;
-          energyLine = `Ishqalanish tufayli energiya joriy bosqichda monotonik kamaymoqda: ${dropPct.toFixed(2)}% (fizik dissipatsiya, integratsion xatolik emas).`;
+          energyLine = `Ishqalanish tufayli energiya joriy bosqichda monotonik kamaymoqda: ${uzFix(dropPct, 2)}% (fizik dissipatsiya, integratsion xatolik emas).`;
         } else {
           energyLine = 'Simulyatsiya hali boshlanmadi.';
         }
@@ -490,15 +494,15 @@ function initMechanicsPipeline() {
         if (trail.length > 2) {
           const drift = Math.abs((trail[trail.length - 1] - trail[0]) / Math.max(Math.abs(trail[0]), 1e-6)) * 100;
           const verdict = selIntegrator.value === 'symplectic'
-            ? `chegaralangan holatda (|ΔE/E₀| = ${drift.toFixed(3)}% — barqaror)`
-            : `sun'iy o'sib bormoqda (|ΔE/E₀| = ${drift.toFixed(3)}% — dreyf aniqlandi)`;
+            ? `chegaralangan holatda (|ΔE/E₀| = ${uzFix(drift, 3)}% — barqaror)`
+            : `sun’iy o‘sib bormoqda (|ΔE/E₀| = ${uzFix(drift, 3)}% — dreyf aniqlandi)`;
           energyLine = `Markaziy tiklovchi kuch ostida energiya ${verdict}.`;
         } else {
           energyLine = 'Simulyatsiya hali boshlanmadi.';
         }
       }
       showPipelineOutput(`
-        <strong>3. Google Antigravity AI Audit Natijasi:</strong><br>
+        <strong>3. Google Antigravity Audit Natijasi:</strong><br>
         ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>
         ✓ Delta-Time Akkumulyatori: ${lastFps} FPS, kadrlar barqaror ishlamoqda.<br>
         ✓ Fizik Invariantlar: ${energyLine}`);
@@ -510,13 +514,13 @@ function initMechanicsPipeline() {
       let prompt;
       if (mode === 'ramp') {
         const { angleDeg, mu, mass } = rampParams();
-        prompt = `Slow-motion 120fps kinematik video: ${mass.toFixed(1)} kg og'irlikdagi metall blok ${angleDeg}° burchakli qiya tekislikda pastga sirpanmoqda, ishqalanish koeffitsiyenti ${mu.toFixed(2)}, sirtdan mayda uchqunlar chiqmoqda, yon tomondan yumshoq studiya yorug'ligi, fizik jihatdan real tezlanish bilan.`;
+        prompt = `Slow-motion 120fps kinematik video: ${uzFix(mass, 1)} kg og‘irlikdagi metall blok ${angleDeg}° burchakli qiya tekislikda pastga sirpanmoqda, ishqalanish koeffitsiyenti ${uzFix(mu, 2)}, sirtdan mayda uchqunlar chiqmoqda, yon tomondan yumshoq studiya yorug‘ligi, fizik jihatdan real tezlanish bilan.`;
       } else {
         const e = parseFloat(slRestitution.value);
-        prompt = `Slow-motion 120fps kinematik video: ikkita rangli sharcha (ko'k va sariq) laboratoriya maydonida to'qnashmoqda, tiklanish koeffitsiyenti ${e.toFixed(2)}, to'qnashuv paytida kontakt normali bo'yicha impuls uzatilishi aniq ko'rinadi, yuqoridan tekis yoritilgan, fizik jihatdan real trayektoriya bilan.`;
+        prompt = `Slow-motion 120fps kinematik video: ikkita rangli sharcha (ko‘k va sariq) laboratoriya maydonida to‘qnashmoqda, tiklanish koeffitsiyenti ${uzFix(e, 2)}, to‘qnashuv paytida kontakt normali bo‘yicha impuls uzatilishi aniq ko‘rinadi, yuqoridan tekis yoritilgan, fizik jihatdan real trayektoriya bilan.`;
       }
       showPipelineOutput(`
-        <strong>4. Runway Gen-2 Video Prompt:</strong><br>
+        <strong>4. Runway Video Prompt:</strong><br>
         <em style="color:#CBD5E1;">"${prompt}"</em><br>
         <button id="btn-copy-runway-prompt" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
       attachCopyHandler('btn-copy-runway-prompt', prompt);

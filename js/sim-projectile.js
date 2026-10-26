@@ -38,7 +38,7 @@ class ProjectileSimulation {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const rect = this.canvas.parentElement.getBoundingClientRect();
     this.canvas.width = (rect.width * dpr) || 600;
-    this.canvas.height = (rect.width * 0.5 * dpr) || 350;
+    this.canvas.height = ((rect.height || rect.width * 0.5) * dpr) || 350;
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
@@ -52,6 +52,8 @@ class ProjectileSimulation {
     this.vacTrail = [];
     this.time = 0;
     this.isFinished = false;
+    this.dragLanded = false;
+    this.vacLanded = false;
   }
 
   update(dt) {
@@ -59,7 +61,7 @@ class ProjectileSimulation {
 
     runSubsteps((subDt) => {
       // 1. Drag integration via RK4
-      if (this.dragPos.y >= 0 || this.time === 0) {
+      if (!this.dragLanded) {
         const deriv = (t, state) => {
           const vx = state[2], vy = state[3];
           const speed = Math.hypot(vx, vy);
@@ -71,24 +73,34 @@ class ProjectileSimulation {
           [this.dragPos.x, this.dragPos.y, this.dragVel.x, this.dragVel.y],
           this.time, subDt, deriv
         );
-        this.dragPos.set(next[0], Math.max(0, next[1]));
-        this.dragVel.set(next[2], next[3]);
+        if (next[1] < 0 && this.time > 0) {
+          // qo‘nish nuqtasi: chiziqli interpolyatsiya, integrallash to‘xtatiladi
+          const f = this.dragPos.y / (this.dragPos.y - next[1]);
+          this.dragPos.set(this.dragPos.x + f * (next[0] - this.dragPos.x), 0);
+          this.dragVel.set(0, 0);
+          this.dragLanded = true;
+        } else {
+          this.dragPos.set(next[0], next[1]);
+          this.dragVel.set(next[2], next[3]);
+        }
         this.dragTrail.push(this.dragPos.clone());
       }
 
       // 2. Vacuum analytic step
-      if (this.vacPos.y >= 0 || this.time === 0) {
-        this.vacPos.set(
-          this.v0 * Math.cos(this.angleDeg * Math.PI / 180) * this.time,
-          Math.max(0, this.v0 * Math.sin(this.angleDeg * Math.PI / 180) * this.time - 0.5 * this.g * this.time * this.time)
-        );
+      if (!this.vacLanded) {
+        const rad = this.angleDeg * Math.PI / 180;
+        const tFlight = 2 * this.v0 * Math.sin(rad) / this.g;
+        const tt = Math.min(this.time, tFlight);
+        this.vacPos.set(this.v0 * Math.cos(rad) * tt,
+                        Math.max(0, this.v0 * Math.sin(rad) * tt - 0.5 * this.g * tt * tt));
         this.vacTrail.push(this.vacPos.clone());
+        if (this.time >= tFlight) this.vacLanded = true;
       }
 
       this.time += subDt;
     }, dt, 10);
 
-    if (this.dragPos.y <= 0 && this.vacPos.y <= 0 && this.time > 0.5) {
+    if (this.dragLanded && this.vacLanded) {
       this.isFinished = true;
     }
   }
@@ -121,7 +133,7 @@ class ProjectileSimulation {
       ctx.moveTo(gx, originY);
       ctx.lineTo(gx, originY + 5);
       ctx.stroke();
-      ctx.fillText(`${d}m`, gx - 10, originY + 18);
+      ctx.fillText(`${d} m`, gx - 12, originY + 18);
     }
 
     // 1. Vacuum Ghost Parabola (Dashed, Amber)
@@ -174,9 +186,10 @@ class ProjectileSimulation {
     for (let p of this.dragTrail) if (p.y > maxH) maxH = p.y;
     const vTerm = Math.sqrt(this.g / Math.max(1e-4, this.kDrag));
 
-    if (rangeEl) rangeEl.textContent = this.dragPos.x.toFixed(1) + ' m';
-    if (apexEl) apexEl.textContent = maxH.toFixed(1) + ' m';
-    if (vtermEl) vtermEl.textContent = vTerm.toFixed(1) + ' m/s';
+    const c1 = (v) => v.toFixed(1).replace('.', ',');
+    if (rangeEl) rangeEl.textContent = c1(this.dragPos.x) + ' m';
+    if (apexEl) apexEl.textContent = c1(maxH) + ' m';
+    if (vtermEl) vtermEl.textContent = c1(vTerm) + ' m/s';
   }
 
   loop() {

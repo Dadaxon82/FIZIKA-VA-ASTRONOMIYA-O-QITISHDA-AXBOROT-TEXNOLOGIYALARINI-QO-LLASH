@@ -52,21 +52,21 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
+      title: 'Klaster "A" — Boshlang‘ich daraja',
       color: 'var(--accent-cyan)',
-      plan: "Avval ro'yxatdan o'tishni talab qilmaydigan vositalardan boshlang: PhET/Vascak.cz (4-topshiriq) va Claude (1-topshiriq). Har bir vositaning vazifasini bir jumlada yozib boring, so'ng qolgan 5 ta vositaga o'ting. Xavfsizlik: har bir xizmatga alohida kuchli parol qo'ying va shaxsiy ma'lumotlarni kiritmang.",
-      focus: "har bir AI vositaning vazifasi, ro'yxatdan o'tish va xavfsiz foydalanish, oddiy prompt yozish"
+      plan: "Avval ro‘yxatdan o‘tishni talab qilmaydigan vositalardan boshlang: PhET/Vascak.cz (4-topshiriq) va Claude (1-topshiriq). Har bir vositaning vazifasini bir jumlada yozib boring, so‘ng qolgan 5 ta vositaga o‘ting. Xavfsizlik: har bir xizmatga alohida kuchli parol qo‘ying va shaxsiy ma’lumotlarni kiritmang.",
+      focus: "har bir AI vositaning vazifasi, ro‘yxatdan o‘tish va xavfsiz foydalanish, oddiy prompt yozish"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
       color: 'var(--accent-emerald)',
-      plan: "Barcha 7 ta mini-topshiriqni ketma-ket bajaring va har bir vosita natijasini keyingisiga kirish sifatida ulang (masalan, Claude kodi → Antigravity auditi → Otter hisobot). 5-bo'limdagi trekerda jarayonni belgilab boring.",
-      focus: "vositalar orasidagi ma'lumot oqimi, Eyler-Kromer kodi auditi, ASR va TTS ning didaktik roli"
+      plan: "Barcha 7 ta mini-topshiriqni ketma-ket bajaring va har bir vosita natijasini keyingisiga kirish sifatida ulang (masalan, Claude kodi → Antigravity auditi → Otter hisobot). 5-bo‘limdagi trekerda jarayonni belgilab boring.",
+      focus: "vositalar orasidagi ma’lumot oqimi, Eyler–Kromer kodi auditi, ASR va TTS ning didaktik roli"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
+      title: 'Klaster "C" — Ilg‘or daraja',
       color: 'var(--accent-purple)',
-      plan: "Pipeline'ni tanqidiy baholang: har bir vositaning cheklovlarini (xatolar, bepul tarif limitlari, maxfiylik, AI-detektorlar ishonchsizligi) jadvalga kiriting va vositalarni almashtirish variantlarini taklif qiling. Infografikada ma'lumot oqimi va nazorat nuqtalarini aniq ko'rsating.",
+      plan: "Pipeline’ni tanqidiy baholang: har bir vositaning cheklovlarini (xatolar, bepul tarif limitlari, maxfiylik, AI-detektorlar ishonchsizligi) jadvalga kiriting va vositalarni almashtirish variantlarini taklif qiling. Infografikada ma’lumot oqimi va nazorat nuqtalarini aniq ko‘rsating.",
       focus: "AI vositalarning cheklovlari, agentik IDE (Antigravity) bilan kod auditi, akademik halollik va AI-detektorlarning ishonchliligi"
     }
   };
@@ -101,34 +101,34 @@
       box.style.borderColor = c.color;
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to'g'ri)`;
+      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
       planEl.innerHTML = `<strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz fizika o'qitishda AI vositalaridan foydalanish bo'yicha tyutorsiz. Men 3-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Siz fizika o‘qitishda AI vositalaridan foydalanish bo‘yicha tyutorsiz. Men 3-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
 Laboratoriyada 7 ta vosita bor: PhET/Vascak.cz, Claude, Google Antigravity, MagicSchool AI, ElevenLabs/Muxlisa, Otter.ai, Undetectable AI (faqat AI-detektor).
 Iltimos:
-1. Mening darajamga mos ravishda vositalarni o'rganish tartibini taklif qiling.
+1. Mening darajamga mos ravishda vositalarni o‘rganish tartibini taklif qiling.
 2. Har bir vosita uchun fizika darsiga oid bitta qisqa amaliy mashq bering.
-3. Tayyor javob bermang — natijani o'zim tekshirishim uchun yo'naltiruvchi savollar bering.`;
+3. Tayyor javob bermang — natijani o‘zim tekshirishim uchun yo‘naltiruvchi savollar bering.`;
     });
   }
 
   // -------------------------------------------------------------------------
   // 2. EKOTIZIM TREKERI VA JONLI PIPELINE DIAGRAMMASI
   // -------------------------------------------------------------------------
-  // Tartib 4.1-bo'limdagi axborot oqimi bosqichlariga mos keladi.
+  // Tartib 4.1-bo‘limdagi axborot oqimi bosqichlariga mos keladi.
   const NODES = [
     { tool: 't4_phet', label: 'PhET / Vascak', sub: 'Tajriba', color: '#38BDF8' },
-    { tool: 't1_claude', label: 'Claude', sub: 'Model & kod', color: '#C084FC' },
+    { tool: 't1_claude', label: 'Claude', sub: 'Model va kod', color: '#C084FC' },
     { tool: 't2_antigravity', label: 'Antigravity', sub: 'Agentik audit', color: '#34D399' },
     { tool: 't3_magicschool', label: 'MagicSchool', sub: 'Rubrika', color: '#FBBF24' },
     { tool: 't6_otter', label: 'Otter.ai', sub: 'Transkripsiya', color: '#38BDF8' },
     { tool: 't5_elevenlabs', label: 'ElevenLabs', sub: 'Audio', color: '#F43F5E' },
-    { tool: 't7_undetectable', label: 'Undetectable', sub: 'AI-detektor', color: '#C084FC' }
+    { tool: 't7_undetectable', label: 'Undetectable', sub: 'SI-detektor', color: '#C084FC' }
   ];
   const STORAGE_KEY = 'lab3-ecosystem-tools';
 
@@ -152,7 +152,7 @@ Iltimos:
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify(done)); } catch (e) { /* saqlash ixtiyoriy */ }
       const n = done.length, pct = Math.round((n / boxes.length) * 100);
       if (badge) {
-        badge.textContent = `${n} / ${boxes.length} Vosita Sozlandi (${pct}%)`;
+        badge.textContent = `${n} / ${boxes.length} vosita sozlandi (${pct} %)`;
         badge.className = 'badge ' + (n === boxes.length ? 'badge-emerald' : n > 0 ? 'badge-cyan' : 'badge-amber');
       }
       if (bar) bar.style.width = pct + '%';
@@ -199,7 +199,7 @@ Iltimos:
       const pts = layout(W, H);
       const r = Math.max(20, Math.min(30, W / 28));
 
-      // Bog'lanishlar va ma'lumot impulslari
+      // Bog‘lanishlar va ma’lumot impulslari
       for (let i = 0; i < pts.length - 1; i++) {
         const a = pts[i], b = pts[i + 1];
         const live = isDone(NODES[i].tool) && isDone(NODES[i + 1].tool);
@@ -254,7 +254,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 3. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 3. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const selects = document.querySelectorAll('.rubric3-select');
@@ -263,7 +263,7 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A'lo — 5)", cls: 'badge-emerald' };
+      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
       if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
       if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
       return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };

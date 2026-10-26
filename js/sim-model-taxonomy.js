@@ -1,3 +1,7 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * Lecture 5: Dual-Engine Model Taxonomy Simulator
  * Engine 1: Deterministic Dynamic (Kepler Planetary Orbit)
@@ -66,7 +70,7 @@ function initKeplerDeterministic() {
 
     if (speedSlider) {
         speedSlider.addEventListener('input', (e) => {
-            if (speedVal) speedVal.textContent = parseFloat(e.target.value).toFixed(2) + 'x';
+            if (speedVal) speedVal.textContent = uzFix(parseFloat(e.target.value), 2) + '×';
             resetSimulation();
         });
     }
@@ -81,14 +85,14 @@ function initKeplerDeterministic() {
     if (dtSlider) {
         dtSlider.addEventListener('input', (e) => {
             dt = parseFloat(e.target.value);
-            if (dtVal) dtVal.textContent = dt.toFixed(3) + ' s';
+            if (dtVal) dtVal.textContent = uzFix(dt, 3) + ' s';
         });
     }
 
     if (btnPlay) {
         btnPlay.addEventListener('click', () => {
             isRunning = !isRunning;
-            btnPlay.textContent = isRunning ? '⏸ To\'xtatish' : '▶ Davom ettirish';
+            btnPlay.textContent = isRunning ? '⏸ To‘xtatish' : '▶ Davom ettirish';
             btnPlay.className = isRunning ? 'btn btn-amber' : 'btn btn-emerald';
         });
     }
@@ -153,12 +157,12 @@ function initKeplerDeterministic() {
         const Etot = Ek + Ep;
         const L = planet.x * planet.vy - planet.y * planet.vx;
 
-        if (elR) elR.textContent = (r / 100).toFixed(2) + ' a.b.';
-        if (elV) elV.textContent = v.toFixed(1) + ' km/s';
-        if (elEk) elEk.textContent = Ek.toFixed(1) + ' J/kg';
-        if (elEp) elEp.textContent = Ep.toFixed(1) + ' J/kg';
-        if (elEtot) elEtot.textContent = Etot.toFixed(1) + ' J/kg';
-        if (elL) elL.textContent = L.toFixed(0) + ' birlik';
+        if (elR) elR.textContent = uzFix((r / 100), 2) + ' a.b.';
+        if (elV) elV.textContent = uzFix(v, 1) + ' km/s';
+        if (elEk) elEk.textContent = uzFix(Ek, 1) + ' J/kg';
+        if (elEp) elEp.textContent = uzFix(Ep, 1) + ' J/kg';
+        if (elEtot) elEtot.textContent = uzFix(Etot, 1) + ' J/kg';
+        if (elL) elL.textContent = uzFix(L, 0) + ' birlik';
     }
 
     function draw() {
@@ -262,7 +266,7 @@ function initKeplerDeterministic() {
         ctx.fillText('DETERMINISTIK DINAMIK MODEL', 25, 33);
         ctx.fillStyle = '#94A3B8';
         ctx.font = '11px sans-serif';
-        ctx.fillText('100% Oldindan Aniq Yopiq Orbita (Kepler)', 25, 49);
+        ctx.fillText('100 % oldindan aniq yopiq orbita (Kepler)', 25, 49);
     }
 
     function loop() {
@@ -388,7 +392,7 @@ function initGasStochastic() {
     if (btnPlay) {
         btnPlay.addEventListener('click', () => {
             isRunning = !isRunning;
-            btnPlay.textContent = isRunning ? '⏸ To\'xtatish' : '▶ Davom ettirish';
+            btnPlay.textContent = isRunning ? '⏸ To‘xtatish' : '▶ Davom ettirish';
             btnPlay.className = isRunning ? 'btn btn-amber' : 'btn btn-emerald';
         });
     }
@@ -527,10 +531,10 @@ function initGasStochastic() {
         const vp = avgV * 0.886; // Theoretical 2D peak
 
         if (elTemp) elTemp.textContent = Math.round(actualT) + ' K';
-        if (elPressure) elPressure.textContent = currentPressure.toFixed(2) + ' kPa';
-        if (elVavg) elVavg.textContent = (avgV * 120).toFixed(0) + ' m/s';
-        if (elVp) elVp.textContent = (vp * 120).toFixed(0) + ' m/s';
-        if (elVrms) elVrms.textContent = (vrms * 120).toFixed(0) + ' m/s';
+        if (elPressure) elPressure.textContent = uzFix(currentPressure, 2) + ' kPa';
+        if (elVavg) elVavg.textContent = uzFix((avgV * 120), 0) + ' m/s';
+        if (elVp) elVp.textContent = uzFix((vp * 120), 0) + ' m/s';
+        if (elVrms) elVrms.textContent = uzFix((vrms * 120), 0) + ' m/s';
     }
 
     function draw() {
@@ -569,7 +573,7 @@ function initGasStochastic() {
                 // Tracer label
                 ctx.fillStyle = '#FB7185';
                 ctx.font = 'bold 9px sans-serif';
-                ctx.fillText('Broun Zarrasi', p.x + 8, p.y - 4);
+                ctx.fillText('Broun zarrasi', p.x + 8, p.y - 4);
             } else {
                 // Color by speed (Cold blue to hot orange)
                 const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
@@ -596,7 +600,7 @@ function initGasStochastic() {
         ctx.fillText('STOXASTIK DINAMIK MODEL', 25, 33);
         ctx.fillStyle = '#94A3B8';
         ctx.font = '11px sans-serif';
-        ctx.fillText('N ta Molekula Tasodifiy To\'qnashuvi (MKT)', 25, 49);
+        ctx.fillText('N ta molekulaning tasodifiy to‘qnashuvi (MKT)', 25, 49);
 
         // Draw Live Maxwell-Boltzmann Histogram
         drawMaxwellHistogram();
@@ -674,7 +678,7 @@ function initGasStochastic() {
 
         // Legend
         hctx.fillStyle = '#FBBF24';
-        hctx.fillText('— Nazariy Maksvell Egri Chizig\'i', paddingLeft + 10, 20);
+        hctx.fillText('— Maksvell nazariy egri chizig‘i', paddingLeft + 10, 20);
     }
 
     function loop() {

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fizika va astronomiya o‘qitishda qo‘llanadigan SI vositalarining joriy ro‘yxati: kursdagi vazifasi, kirish modeli va rasmiy havolalari.">
+  <title>SI vositalari: joriy ro‘yxat | FIZIKA va SUN’IY INTELLEKT</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .tools-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md); }
+    table.tools { width: 100%; min-width: 860px; border-collapse: collapse; font-size: 0.92rem; color: var(--text-secondary); }
+    table.tools th, table.tools td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    table.tools thead th { position: sticky; top: 0; background: #111a2e; color: var(--text-main); font-size: 0.85rem; }
+    table.tools tr.grp th { background: rgba(56, 189, 248, 0.08); color: var(--accent-cyan); font-size: 0.9rem; letter-spacing: 0.02em; }
+    table.tools td strong { color: var(--text-main); }
+    table.tools .muted { color: var(--text-muted); font-size: 0.85rem; }
+    table.tools td.refs { white-space: nowrap; font-size: 0.85rem; }
+    table.tools td.lnk a { color: var(--accent-cyan); word-break: break-all; }
+    .note-list { margin: 10px 0 0 20px; color: var(--text-secondary); line-height: 1.7; }
+    .note-list li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3v18M3 12h18"></path>
+        </svg>
+        <span>FIZIKA va SUN’IY INTELLEKT</span>
+      </a>
+
+                              <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+        <li><a href="lecture1.html" class="nav-link ">1-Modul: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link ">2-Modul: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link ">3-Modul: AI Ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link ">4-Modul: Aniqlik va Barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link ">5-Modul: Model Turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link ">6-Modul: Modellarni Shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link ">7-Modul: Canvas Arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link ">8-Modul: Vektorlar va To‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link ">9-Modul: Prompt Muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link ">10-Modul: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link ">11-Modul: Masofaviy Ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link ">12-Modul: Mexanika va AI Pipeline</a></li>
+        <li><a href="lecture13.html" class="nav-link ">13-Modul: Termodinamika va Stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link ">14-Modul: Elektrodinamika va Audio Sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link ">15-Modul: Yadro Fizikasi va Capstone</a></li>
+        <li><a href="lab1.html" class="nav-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
+        <li><a href="lab3.html" class="nav-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+        <li><a href="lab6.html" class="nav-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+        <li><a href="si-vositalari.html" class="nav-link active">🧰 SI vositalari</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div id="drawer-overlay" class="mobile-drawer-overlay"></div>
+  <nav id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="badge badge-cyan">Navigatsiya</span>
+      <button onclick="document.getElementById('hamburger-btn').click()" style="background:none;border:none;color:#94A3B8;font-size:1.4rem;cursor:pointer;">✕</button>
+    </div>
+                    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh Sahifa</a></li>
+      <li><a href="lecture1.html" class="drawer-link ">🔬 1-Modul: AI Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link ">🧪 2-Modul: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link ">🤖 3-Modul: AI Ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link ">🎯 4-Modul: Aniqlik va Barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link ">🌌 5-Modul: Model Turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link ">📐 6-Modul: Modellarni Shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link ">⚡ 7-Modul: Canvas Arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link ">💥 8-Modul: Vektorlar va To‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link ">🧠 9-Modul: Prompt Muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link ">🪐 10-Modul: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link ">🎓 11-Modul: Masofaviy Ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link ">⚙️ 12-Modul: Mexanika va AI Pipeline</a></li>
+      <li><a href="lecture13.html" class="drawer-link ">🔥 13-Modul: Termodinamika va Stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link ">⚡ 14-Modul: Elektrodinamika va Audio Sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link ">☢️ 15-Modul: Yadro Fizikasi va Capstone</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link ">🧪 1-Laboratoriya: AI Vizual Loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link ">🧪 2-Laboratoriya: LLM Matematik Model</a></li>
+      <li><a href="lab3.html" class="drawer-link ">🧪 3-Laboratoriya: AI Ekotizim va Ish Muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link ">🧪 4-Laboratoriya: WolframAlpha va Hisoblash Aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link ">🧪 5-Laboratoriya: Deterministik va Stoxastik Modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link ">🧪 6-Laboratoriya: FBD Diagramma va AI Tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-Laboratoriya: HTML5 Canvas va Delta-Time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-Laboratoriya: AI Pair-Programming Fizika Dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-Laboratoriya: Prompt Muhandislik va Kod Generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-Laboratoriya: Astronomik Trayektoriyalar va Ovoz Sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-Laboratoriya: LMS va AI Raqamli Fizika Kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-Laboratoriya: Mexanika Dinamikasi va AI Dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-Laboratoriya: Termodinamika va P-V Grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-Laboratoriya: Elektrodinamika va AI Audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-Laboratoriya: Yadro Fizikasi va Yakuniy Loyiha</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link active">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+    </ul>
+  </nav>
+
+  <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
+    <div class="section-header" style="text-align: left; margin-bottom: 32px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+        <span class="badge badge-cyan">Darslikka ilova</span>
+        <span class="badge badge-emerald">Muntazam yangilanadi</span>
+      </div>
+      <h1 style="margin-bottom: 16px;">SI vositalari: <span class="text-gradient">joriy ro‘yxat</span></h1>
+      <p style="font-size: 1.1rem; color: #CBD5E1; max-width: 1050px; line-height: 1.7;">
+        “Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash” darsligida va kurs saytida ishlatiladigan
+        sun’iy intellekt (SI) vositalari, ularning kursdagi vazifasi, kirish modeli va rasmiy sahifalari. SI vositalarining
+        imkoniyatlari va tariflari tez o‘zgaradi, shuning uchun bu ro‘yxat darslik matnidan alohida, shu sahifada yangilab boriladi.
+        Darslikdagi QR-kodlar shu sahifaga olib keladi.
+      </p>
+    </div>
+
+    <div class="glass-panel" style="margin-bottom: 28px; border-left: 4px solid var(--accent-amber);">
+      <p style="margin: 0; color: var(--text-main);"><strong>Oxirgi yangilanish:</strong> <time datetime="2026-10-26">2026-yil 26-oktyabr</time></p>
+      <ul class="note-list">
+        <li>“Kirish modeli” ustunida tarif turi umumiy holda ko‘rsatilgan. Narx, limit va mintaqaviy cheklovlar tez-tez o‘zgaradi —
+          vositadan foydalanishdan oldin ularni rasmiy sahifada tekshiring.</li>
+        <li>Model nomlari versiya raqamisiz berilgan: o‘qish paytida mavjud bo‘lgan eng so‘nggi versiyadan foydalaning.</li>
+        <li>O‘quvchilarning shaxsiy ma’lumotlari (ism, baho) tashqi xizmatlarga yuklanmaydi; kerak bo‘lsa anonimlashtiriladi.</li>
+        <li>Ro‘yxat reklama emas: vositalar darslikdagi vazifasi bo‘yicha namuna sifatida keltirilgan (darslikning 3.2 va 3.9-bo‘limlari).</li>
+      </ul>
+    </div>
+
+    <div class="tools-wrap" style="margin-bottom: 28px;">
+      <table class="tools">
+        <thead><tr><th scope="col">Vosita</th><th scope="col">Kursdagi vazifasi</th><th scope="col">Kirish modeli</th><th scope="col">Darslikda</th><th scope="col">Rasmiy sahifa</th></tr></thead>
+        <tbody>
+        <tr class="grp"><th colspan="5" scope="colgroup">Katta til modellari (KTM)</th></tr>
+        <tr><td><strong>ChatGPT</strong><br><span class="muted">OpenAI</span></td><td>Dars ssenariysi, tushuntirish, kod, masala yechimini tekshirish</td><td>Bepul tarif (limitli) va pullik obunalar</td><td class="refs">Bob: 1–3, 7–9, 13, 15<br>Lab.: 1, 2, 4, 8, 9, 14</td><td class="lnk"><a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a></td></tr>
+        <tr><td><strong>Gemini</strong><br><span class="muted">Google</span></td><td>Orkestrator: nazariya, ssenariy, diktor matni, boshqa vositalar uchun topshiriq</td><td>Bepul tarif va Google AI pullik obunalari</td><td class="refs">Bob: 1–3, 9<br>Lab.: 1, 2, 5, 10, 14, 15</td><td class="lnk"><a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a></td></tr>
+        <tr><td><strong>Claude</strong><br><span class="muted">Anthropic</span></td><td>Kod generatsiyasi (Canvas, RK4), kodni va formulalarni tekshirish</td><td>Bepul tarif va pullik obunalar (Pro, Max)</td><td class="refs">Bob: 1–3, 6, 11, 15<br>Lab.: 1–9, 12–15</td><td class="lnk"><a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Agentli dasturlash muhitlari</th></tr>
+        <tr><td><strong>Google Antigravity</strong><br><span class="muted">Google</span></td><td>Ko‘p faylli loyihani SI agent bilan yozish, ishga tushirib sinash va tuzatish</td><td>Bepul foydalanish (haftalik limitlar bilan); Google AI obunalarida limitlar yuqoriroq</td><td class="refs">Bob: 3, 7, 9–15<br>Lab.: 3, 7, 9, 12–15</td><td class="lnk"><a href="https://antigravity.google" target="_blank" rel="noopener">antigravity.google</a></td></tr>
+        <tr><td><strong>Cursor</strong><br><span class="muted">Anysphere</span></td><td>SI yordamchisi o‘rnatilgan kod muharriri</td><td>Bepul Hobby tarifi va pullik tariflar</td><td class="refs">Bob: 3</td><td class="lnk"><a href="https://cursor.com" target="_blank" rel="noopener">cursor.com</a></td></tr>
+        <tr><td><strong>VS Code va GitHub Copilot</strong><br><span class="muted">Microsoft, GitHub</span></td><td>Kod muharriri va SI yordamchisi (juftlikda dasturlash)</td><td>VS Code bepul; Copilot — bepul limitli tarif va pullik obunalar</td><td class="refs">Bob: 3<br>Lab.: 8</td><td class="lnk"><a href="https://code.visualstudio.com" target="_blank" rel="noopener">code.visualstudio.com</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Hisoblash vositalari</th></tr>
+        <tr><td><strong>WolframAlpha</strong><br><span class="muted">Wolfram Research</span></td><td>Analitik yechim, grafik, sonli tekshiruv (etalon)</td><td>Asosiy imkoniyatlar bepul; Pro obunasi pullik</td><td class="refs">Bob: 2–4, 6, 8<br>Lab.: 4, 15</td><td class="lnk"><a href="https://www.wolframalpha.com" target="_blank" rel="noopener">wolframalpha.com</a></td></tr>
+        <tr><td><strong>ChatGPT ma’lumotlar tahlili (Code Interpreter)</strong><br><span class="muted">OpenAI</span></td><td>Python hisoblari, xatolik grafiklari, log–log tahlil</td><td>ChatGPT tarkibida; bepul tarifda limitli</td><td class="refs">Bob: 2–4, 7, 8, 13<br>Lab.: 4, 8, 13</td><td class="lnk"><a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a></td></tr>
+        <tr><td><strong>Google Colab</strong><br><span class="muted">Google</span></td><td>Brauzerdagi Python daftari: grafiklar va sonli tajribalar</td><td>Bepul; kuchliroq resurslar pullik (Colab Pro)</td><td class="refs">Bob: 11<br>Lab.: 4, 8</td><td class="lnk"><a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Simulyatsiya va ma’lumot bazalari</th></tr>
+        <tr><td><strong>PhET Interactive Simulations</strong><br><span class="muted">Kolorado universiteti</span></td><td>Tayyor simulyatsiyalarni kuzatish va teskari muhandislik</td><td>Bepul (ochiq ta’lim resursi)</td><td class="refs">Bob: 1–3, 5, 6, 8–15<br>Lab.: 2, 3, 5, 12–15</td><td class="lnk"><a href="https://phet.colorado.edu" target="_blank" rel="noopener">phet.colorado.edu</a></td></tr>
+        <tr><td><strong>Vascak.cz</strong><br><span class="muted">V. Vašák</span></td><td>Fizika bo‘limlari bo‘yicha veb-simulyatsiyalar</td><td>Bepul veb-simulyatsiyalar</td><td class="refs">Bob: 1–3, 5, 12–15<br>Lab.: 2, 3, 12–14</td><td class="lnk"><a href="https://www.vascak.cz" target="_blank" rel="noopener">vascak.cz</a></td></tr>
+        <tr><td><strong>Algodoo</strong><br><span class="muted">Algoryx</span></td><td>Mexanik tizimni tez prototiplash (2D fizik “qum quti”)</td><td>Bepul</td><td class="refs">Bob: 3, 12<br>Lab.: 12</td><td class="lnk"><a href="https://www.algodoo.com" target="_blank" rel="noopener">algodoo.com</a></td></tr>
+        <tr><td><strong>Stellarium</strong><br><span class="muted">Stellarium jamoasi</span></td><td>Osmon xaritasi va astronomik kuzatuvlarni modellashtirish</td><td>Kompyuter versiyasi bepul va ochiq manbali</td><td class="refs">Bob: 3</td><td class="lnk"><a href="https://stellarium.org" target="_blank" rel="noopener">stellarium.org</a></td></tr>
+        <tr><td><strong>GeoGebra</strong><br><span class="muted">GeoGebra</span></td><td>Vektorlar, kuchlar diagrammasi va grafiklar</td><td>Notijorat ta’lim maqsadida bepul</td><td class="refs">Bob: 6<br>Lab.: 6</td><td class="lnk"><a href="https://www.geogebra.org" target="_blank" rel="noopener">geogebra.org</a></td></tr>
+        <tr><td><strong>NASA JPL Horizons</strong><br><span class="muted">NASA JPL</span></td><td>Sayyora va kometalarning orbital elementlari (efemeridalar)</td><td>Bepul (ochiq ilmiy ma’lumotlar)</td><td class="refs">Lab.: 10</td><td class="lnk"><a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank" rel="noopener">ssd.jpl.nasa.gov/horizons</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Tasvir va video generatorlari</th></tr>
+        <tr><td><strong>Midjourney</strong><br><span class="muted">Midjourney</span></td><td>Laboratoriya jihozlari va ilmiy illyustratsiyalar</td><td>Faqat pullik obuna (veb-saytda bepul sinov yo‘q)</td><td class="refs">Bob: 1, 3<br>Lab.: 1, 3, 6</td><td class="lnk"><a href="https://www.midjourney.com" target="_blank" rel="noopener">midjourney.com</a></td></tr>
+        <tr><td><strong>ChatGPT tasvir generatsiyasi (DALL-E)</strong><br><span class="muted">OpenAI</span></td><td>Sxema va illyustratsiyalar, EJD chizmasi</td><td>ChatGPT tarkibida; bepul tarifda limitli</td><td class="refs">Bob: 1, 3<br>Lab.: 1, 6</td><td class="lnk"><a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a></td></tr>
+        <tr><td><strong>Runway</strong><br><span class="muted">Runway</span></td><td>Qisqa kirish videolari (prototip)</td><td>Bepul boshlang‘ich kreditlar va pullik obunalar</td><td class="refs">Bob: 1, 3, 12<br>Lab.: 1</td><td class="lnk"><a href="https://runwayml.com" target="_blank" rel="noopener">runwayml.com</a></td></tr>
+        <tr><td><strong>Sora</strong><br><span class="muted">OpenAI</span></td><td>Qisqa kirish videolari (prototip)</td><td>OpenAI hisobi orqali; mavjudligi va limitlari mamlakat va tarifga bog‘liq</td><td class="refs">Bob: 1, 3<br>Lab.: 1</td><td class="lnk"><a href="https://sora.com" target="_blank" rel="noopener">sora.com</a></td></tr>
+        <tr><td><strong>Pika</strong><br><span class="muted">Pika Labs</span></td><td>Qisqa animatsion videolar</td><td>Bepul tarif (limitli) va pullik obunalar</td><td class="refs">Bob: 1, 3, 12<br>Lab.: 1</td><td class="lnk"><a href="https://pika.art" target="_blank" rel="noopener">pika.art</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Nutq sintezi (TTS)</th></tr>
+        <tr><td><strong>Muxlisa AI</strong><br><span class="muted">UZINFOCOM</span></td><td>O‘zbek tilida nutq sintezi va nutqni tanish</td><td>Bulutli xizmat yoki muassasa serverida o‘rnatish; shartlari rasmiy saytda</td><td class="refs">Bob: 3, 10, 14, 15<br>Lab.: 3, 10, 14, 15</td><td class="lnk"><a href="https://muxlisa.uz" target="_blank" rel="noopener">muxlisa.uz</a></td></tr>
+        <tr><td><strong>Aisha AI</strong><br><span class="muted">Aisha</span></td><td>O‘zbek tilida nutq sintezi va transkripsiya</td><td>Tijoriy xizmat; shartlari rasmiy saytda</td><td class="refs">Bob: 3, 10<br>Lab.: 10</td><td class="lnk"><a href="https://aisha.group" target="_blank" rel="noopener">aisha.group</a></td></tr>
+        <tr><td><strong>ElevenLabs</strong><br><span class="muted">ElevenLabs</span></td><td>Ifodali ovozli izoh (diktor)</td><td>Bepul tarif (oylik kredit limiti) va pullik obunalar</td><td class="refs">Bob: 3, 10, 14, 15<br>Lab.: 3, 10, 14, 15</td><td class="lnk"><a href="https://elevenlabs.io" target="_blank" rel="noopener">elevenlabs.io</a></td></tr>
+        <tr><td><strong>Google Cloud Text-to-Speech</strong><br><span class="muted">Google</span></td><td>Veb-ilovaga API orqali ulanadigan nutq sintezi</td><td>Hajmga qarab to‘lov, har oy bepul kvota; Google Cloud hisobi kerak</td><td class="refs">Bob: 3, 10, 14<br>Lab.: 10</td><td class="lnk"><a href="https://cloud.google.com/text-to-speech" target="_blank" rel="noopener">cloud.google.com</a></td></tr>
+        <tr><td><strong>Web Speech API (speechSynthesis)</strong><br><span class="muted">Brauzer standarti (W3C)</span></td><td>Simulyatsiya ichidagi ovozli izoh (saytdagi sinov maydoni)</td><td>Bepul, brauzerga o‘rnatilgan; ovozlar to‘plami brauzer va OTga bog‘liq</td><td class="refs">Bob: 3, 10, 14, 15<br>Lab.: 14</td><td class="lnk"><a href="https://developer.mozilla.org/docs/Web/API/Web_Speech_API" target="_blank" rel="noopener">developer.mozilla.org</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Transkripsiya</th></tr>
+        <tr><td><strong>Otter.ai</strong><br><span class="muted">Otter.ai</span></td><td>Ma’ruza yozuvidan konspekt va xulosa (ingliz tilida)</td><td>Bepul Basic tarifi (oylik daqiqa limiti) va pullik tariflar; o‘zbek tilini qo‘llamaydi</td><td class="refs">Bob: 3, 11, 15<br>Lab.: 3, 11, 15</td><td class="lnk"><a href="https://otter.ai" target="_blank" rel="noopener">otter.ai</a></td></tr>
+        <tr><td><strong>Whisper</strong><br><span class="muted">OpenAI</span></td><td>O‘zbekcha nutqni matnga aylantirish (natija qo‘lda tekshiriladi)</td><td>Ochiq manbali model (MIT litsenziyasi): o‘z kompyuterida bepul; API orqali pullik</td><td class="refs">Bob: 3, 11, 15<br>Lab.: 3, 11</td><td class="lnk"><a href="https://github.com/openai/whisper" target="_blank" rel="noopener">github.com/openai/whisper</a></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Ta’lim platformalari</th></tr>
+        <tr><td><strong>MagicSchool AI</strong><br><span class="muted">MagicSchool</span></td><td>Diagnostika, topshiriq va rubrika tayyorlash</td><td>O‘qituvchilar uchun bepul tarif; kengaytirilgan va muassasa tariflari pullik</td><td class="refs">Bob: 1–3, 10, 11, 15<br>Lab.: 1, 3, 11, 15</td><td class="lnk"><a href="https://www.magicschool.ai" target="_blank" rel="noopener">magicschool.ai</a></td></tr>
+        <tr><td><strong>Google Classroom</strong><br><span class="muted">Google</span></td><td>Topshiriqlar va kursni boshqarish</td><td>Google Workspace for Education Fundamentals doirasida bepul</td><td class="refs">Bob: 3, 11<br>Lab.: 11</td><td class="lnk"><a href="https://classroom.google.com" target="_blank" rel="noopener">classroom.google.com</a></td></tr>
+        <tr><td><strong>Moodle</strong><br><span class="muted">Moodle HQ</span></td><td>Universitet LMS: kurs, test, H5P modullari</td><td>Bepul, ochiq manbali (muassasa serverida)</td><td class="refs">Bob: 3, 11<br>Lab.: 11</td><td class="lnk"><a href="https://moodle.org" target="_blank" rel="noopener">moodle.org</a></td></tr>
+        <tr><td><strong>HEMIS</strong><br><span class="muted">OTM axborot tizimi</span></td><td>Kurs boshqaruvi va nazorat natijalari</td><td>Oliy ta’lim muassasasi beradi</td><td class="refs">Bob: 3</td><td class="lnk"><span class="muted">universitet portali</span></td></tr>
+        <tr class="grp"><th colspan="5" scope="colgroup">Originallik nazorati va nashr</th></tr>
+        <tr><td><strong>Antiplagiat tizimi (masalan, Turnitin yoki milliy tizim)</strong><br><span class="muted">Turnitin va boshqalar</span></td><td>Matnli qismlarning originalligini tekshirish</td><td>Muassasa litsenziyasi orqali</td><td class="refs">Bob: 3, 11, 15<br>Lab.: 3, 15</td><td class="lnk"><a href="https://www.turnitin.com" target="_blank" rel="noopener">turnitin.com</a></td></tr>
+        <tr><td><strong>GitHub va GitHub Pages</strong><br><span class="muted">GitHub</span></td><td>Loyiha kodi, versiyalar tarixi va simulyatsiyani nashr qilish</td><td>Ochiq repozitoriylar va Pages bepul; kengaytirilgan tariflar pullik</td><td class="refs">Bob: 1, 3, 6, 9, 11, 15<br>Lab.: 8, 9, 15</td><td class="lnk"><a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size: 0.9rem; margin-bottom: 28px;">“Darslikda” ustuni: <strong>Bob</strong> — vosita tilga olingan boblar, <strong>Lab.</strong> — laboratoriya ishlari.</p>
+
+    <div class="grid-2" style="margin-bottom: 28px;">
+      <div class="glass-panel" style="border-left: 4px solid var(--accent-rose);">
+        <h3 style="margin-bottom: 10px;">Ro‘yxatga kiritilmagan vositalar</h3>
+        <p>SI matnini detektorlardan “yashirish” (humanizer) uchun mo‘ljallangan xizmatlar, jumladan Undetectable AI, akademik halollik
+          vositasi sifatida tavsiya etilmaydi: bunday vositadan o‘tkazilgan ish qoidabuzarlik hisoblanadi. SI-detektorlarning natijasi
+          ehtimoliy va yagona dalil bo‘la olmaydi. Originallik antiplagiat tizimi, SI promptlar jurnali va og‘zaki himoya bilan tasdiqlanadi
+          (darslikning 3.8 va 15-boblari).</p>
+      </div>
+      <div class="glass-panel" style="border-left: 4px solid var(--accent-emerald);">
+        <h3 style="margin-bottom: 10px;">Ro‘yxat qanday yangilanadi</h3>
+        <ul class="note-list" style="margin-top: 0;">
+          <li>Ro‘yxat kamida har semestr boshida, shuningdek vositaning nomi, tarifi yoki mavjudligi o‘zgarganda ko‘rib chiqiladi.</li>
+          <li>Har bir o‘zgarish sanasi bilan quyidagi jurnalga yoziladi.</li>
+          <li>O‘zgarishni sezgan talaba yoki o‘qituvchi bu haqda kurs o‘qituvchisiga xabar beradi.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="glass-panel" style="margin-bottom: 28px;">
+      <h3 style="margin-bottom: 10px;">Yangilanishlar jurnali</h3>
+      <ul class="note-list">
+        <li><strong>2026-yil 26-oktyabr.</strong> Sahifa yaratildi. Ro‘yxat darslikning 3.2-bo‘limidagi jadval asosida tuzildi va darslikda tilga olingan
+          hisoblash, ma’lumot va nashr vositalari bilan to‘ldirildi. Kirish modellari rasmiy sahifalar bo‘yicha tekshirildi:
+          Midjourney’da veb-saytda bepul sinov yo‘q; Otter.ai’ning bepul Basic tarifi oylik daqiqa limiti bilan ishlaydi va
+          o‘zbek tilini qo‘llamaydi; Google Antigravity bepul foydalanishda haftalik limitlar bilan ishlaydi.</li>
+      </ul>
+    </div>
+
+    <p><a href="lecture3.html" class="btn btn-secondary btn-sm">← 3-modul: SI ekotizimi</a>
+       <a href="index.html" class="btn btn-secondary btn-sm" style="margin-left: 8px;">Bosh sahifa</a></p>
+  </main>
+
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>

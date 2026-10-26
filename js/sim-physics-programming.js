@@ -1,9 +1,9 @@
 /**
- * Lecture 8, Tab 6: 2D Vektorlar va To'qnashuvlar Interaktiv Laboratoriyasi.
- * Sahifaning 4-bo'limida keltirilgan Vector2D / RigidBody2D / resolveCollision
- * pseudokodiga mos ravishda: impuls asosidagi 2D elastik/noelastik to'qnashuv
+ * Lecture 8, Tab 6: 2D Vektorlar va To‘qnashuvlar Interaktiv Laboratoriyasi.
+ * Sahifaning 4-bo‘limida keltirilgan Vector2D / RigidBody2D / resolveCollision
+ * pseudokodiga mos ravishda: impuls asosidagi 2D elastik/noelastik to‘qnashuv
  * yechimi (v_norm shartli tekshiruv) va MTV positional correction (penetratsiyani
- * massalarga mutanosib yo'qotish) amalga oshirilgan.
+ * massalarga mutanosib yo‘qotish) amalga oshirilgan.
  */
 document.addEventListener('DOMContentLoaded', () => {
   initPhysicsProgrammingLab();
@@ -89,7 +89,7 @@ function initPhysicsProgrammingLab() {
         new RigidBody2D(w * 0.82, h * 0.75, -110, -50, m2, radiusForMass(m2), '#FBBF24')
       ];
     }
-    // multi: ko'p zarrachali gaz/bilyard modeli
+    // multi: ko‘p zarrachali gaz/bilyard modeli
     const colors = ['#38BDF8', '#FBBF24', '#34D399', '#F43F5E', '#C084FC', '#F97316'];
     const list = [];
     const n = 9;
@@ -121,19 +121,19 @@ function initPhysicsProgrammingLab() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? "⏸ To'xtatish" : "▶ Davom ettirish";
+      btnPlay.textContent = isRunning ? "⏸ To‘xtatish" : "▶ Davom ettirish";
       lastTime = null;
     });
   }
   if (restitutionSlider) {
     restitutionSlider.addEventListener('input', () => {
-      restitutionVal.textContent = parseFloat(restitutionSlider.value).toFixed(2);
+      restitutionVal.textContent = parseFloat(restitutionSlider.value).toFixed(2).replace('.', ',');
     });
   }
   if (m1Slider) {
     m1Slider.addEventListener('input', () => {
       const m = parseFloat(m1Slider.value);
-      m1Val.textContent = m.toFixed(1) + ' kg';
+      m1Val.textContent = m.toFixed(1).replace('.', ',') + ' kg';
       if (bodies[0] && presetSelect.value !== 'multi') {
         bodies[0].m = m; bodies[0].invM = 1 / m; bodies[0].r = radiusForMass(m);
       }
@@ -142,14 +142,14 @@ function initPhysicsProgrammingLab() {
   if (m2Slider) {
     m2Slider.addEventListener('input', () => {
       const m = parseFloat(m2Slider.value);
-      m2Val.textContent = m.toFixed(1) + ' kg';
+      m2Val.textContent = m.toFixed(1).replace('.', ',') + ' kg';
       if (bodies[1] && presetSelect.value !== 'multi') {
         bodies[1].m = m; bodies[1].invM = 1 / m; bodies[1].r = radiusForMass(m);
       }
     });
   }
 
-  // ---- Fizika: sahifaning 4-bo'limidagi resolveCollision pseudokodi ----
+  // ---- Fizika: sahifaning 4-bo‘limidagi resolveCollision pseudokodi ----
   function resolveCollision(b1, b2, restitution) {
     const dx = b1.pos.x - b2.pos.x;
     const dy = b1.pos.y - b2.pos.y;
@@ -274,11 +274,12 @@ function initPhysicsProgrammingLab() {
       px += b.m * b.vel.x;
       py += b.m * b.vel.y;
     }
-    if (hudEnergy) hudEnergy.textContent = (totalEnergy / 1000).toFixed(2) + ' kJ';
-    if (hudMom) hudMom.textContent = `(${px.toFixed(0)}, ${py.toFixed(0)})`;
+    const cm = (v, n) => v.toFixed(n).replace('.', ',').replace('-', '−');
+    if (hudEnergy) hudEnergy.textContent = cm(totalEnergy / 10000, 2) + ' J';
+    if (hudMom) hudMom.textContent = `(${cm(Math.abs(px / 100) < 0.005 ? 0 : px / 100, 2)}; ${cm(Math.abs(py / 100) < 0.005 ? 0 : py / 100, 2)}) kg·m/s`;
     if (hudColl) hudColl.textContent = collisionCount + ' marta';
-    if (hudV1 && bodies[0]) hudV1.textContent = bodies[0].vel.mag().toFixed(1) + ' px/s';
-    if (hudV2 && bodies[1]) hudV2.textContent = bodies[1].vel.mag().toFixed(1) + ' px/s';
+    if (hudV1 && bodies[0]) hudV1.textContent = cm(bodies[0].vel.mag() / 100, 2) + ' m/s';
+    if (hudV2 && bodies[1]) hudV2.textContent = cm(bodies[1].vel.mag() / 100, 2) + ' m/s';
   }
 
   function loop(currentTime) {
@@ -298,9 +299,9 @@ function initPhysicsProgrammingLab() {
     requestAnimationFrame(loop);
   }
 
-  restitutionVal.textContent = parseFloat(restitutionSlider.value).toFixed(2);
-  m1Val.textContent = parseFloat(m1Slider.value).toFixed(1) + ' kg';
-  m2Val.textContent = parseFloat(m2Slider.value).toFixed(1) + ' kg';
+  restitutionVal.textContent = parseFloat(restitutionSlider.value).toFixed(2).replace('.', ',');
+  m1Val.textContent = parseFloat(m1Slider.value).toFixed(1).replace('.', ',') + ' kg';
+  m2Val.textContent = parseFloat(m2Slider.value).toFixed(1).replace('.', ',') + ' kg';
 
   const resizeFn = setupResponsiveCanvas(canvas, 450 / 900, resetSimulation);
   requestAnimationFrame(loop);

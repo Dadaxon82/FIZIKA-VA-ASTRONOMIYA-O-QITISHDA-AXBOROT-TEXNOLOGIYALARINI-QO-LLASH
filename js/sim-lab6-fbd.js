@@ -1,10 +1,14 @@
+/* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
+function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
  * 6-Laboratoriya: qiya tekislikdagi jismning erkin jism diagrammasi (FBD).
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
- * 2. Interaktiv dastgoh: qiya tekislik, stick-slip mantiqi va Eyler-Kromer
- *    qadami (4-bo'limdagi psevdokod bilan bir xil; soddalik uchun μs = μk = μ).
- *    Chap oynada jism va kuch vektorlari, o'ng oynada izolyatsiya qilingan
- *    FBD burilgan (X', Y') o'qlarda.
+ * 2. Interaktiv dastgoh: qiya tekislik, stick-slip mantiqi va Eyler–Kromer
+ *    qadami (4-bo‘limdagi psevdokod bilan bir xil; soddalik uchun μs = μk = μ).
+ *    Chap oynada jism va kuch vektorlari, o‘ng oynada izolyatsiya qilingan
+ *    FBD burilgan (X', Y') o‘qlarda.
  * 3. 100 ballik rubrika kalkulyatori va promptlarni nusxalash.
  */
 
@@ -57,19 +61,19 @@
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang\'ich daraja',
-      plan: "Avval 2-bo'limdagi FBD qoidalarini o'rganing va qog'ozda gorizontal sirtdagi, so'ng qiya tekislikdagi jism uchun FBD chizing. 5-bo'limdagi dastgohda ishqalanishni nolga tushirib, faqat $m\\vec{g}$ va $\\vec{N}$ qolganda tezlanish $g\\sin\\alpha$ ga teng ekanini tekshiring.",
-      focus: "FBD qoidalari, og'irlik va normal reaksiya kuchlari, qiya tekislikda og'irlik kuchining proyeksiyalari"
+      title: 'Klaster "A" — Boshlang‘ich daraja',
+      plan: "Avval 2-bo‘limdagi FBD qoidalarini o‘rganing va qog‘ozda gorizontal sirtdagi, so‘ng qiya tekislikdagi jism uchun FBD chizing. 5-bo‘limdagi dastgohda ishqalanishni nolga tushirib, faqat $m\\vec{g}$ va $\\vec{N}$ qolganda tezlanish $g\\sin\\alpha$ ga teng ekanini tekshiring.",
+      focus: "FBD qoidalari, og‘irlik va normal reaksiya kuchlari, qiya tekislikda og‘irlik kuchining proyeksiyalari"
     },
     B: {
       title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "Midjourney yoki DALL-E'da FBD yarating, uni 2-bo'limdagi qoidalar bo'yicha tekshirib xatolarini belgilang, so'ng Claude'ga 1-promptni yuboring. Dastgohda $\\tan\\alpha = \\mu$ chegarasini topib, stick va slip holatlarini tenglamalar bilan solishtiring.",
+      plan: "Midjourney yoki DALL-E’da FBD yarating, uni 2-bo‘limdagi qoidalar bo‘yicha tekshirib xatolarini belgilang, so‘ng Claude’ga 1-promptni yuboring. Dastgohda $\\tan\\alpha = \\mu$ chegarasini topib, stick va slip holatlarini tenglamalar bilan solishtiring.",
       focus: "Kulon-Amonton ishqalanishi, stick-slip sharti, AI yaratgan diagrammadagi xatolarni aniqlash"
     },
     C: {
-      title: 'Klaster "C" — Ilg\'or daraja',
-      plan: "Tizimga burchak ostida tortuvchi tashqi kuch qo'shilgan holat uchun FBD va tenglamalarni tuzing ($N$ o'zgarishiga e'tibor bering). 4-bo'limdagi psevdokod asosida kod yozdirib, uni analitik yechim $x(t) = \\tfrac{1}{2} a t^2$ bilan test qiling va $\\mu_s \\neq \\mu_k$ holatiga kengaytiring.",
-      focus: "tashqi kuch qo'shilgan FBD, μs va μk farqi, psevdokoddan kodga o'tish va analitik test"
+      title: 'Klaster "C" — Ilg‘or daraja',
+      plan: "Tizimga burchak ostida tortuvchi tashqi kuch qo‘shilgan holat uchun FBD va tenglamalarni tuzing ($N$ o‘zgarishiga e’tibor bering). 4-bo‘limdagi psevdokod asosida kod yozdirib, uni analitik yechim $x(t) = \\tfrac{1}{2} a t^2$ bilan test qiling va $\\mu_s \\neq \\mu_k$ holatiga kengaytiring.",
+      focus: "tashqi kuch qo‘shilgan FBD, μs va μk farqi, psevdokoddan kodga o‘tish va analitik test"
     }
   };
 
@@ -102,17 +106,17 @@
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko'rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To'g'ri javoblar: 1-B, 2-A, 3-C, 4-B.` : '');
+        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-A, 3-C, 4-B.` : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz fizika bo'yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
+`Siz fizika bo‘yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
 Asosiy mavzular: ${c.focus}.
-Masala: massasi m bo'lgan jism alpha burchakli qiya tekislikda, ishqalanish koeffitsiyenti mu.
+Masala: massasi m bo‘lgan jism alpha burchakli qiya tekislikda, ishqalanish koeffitsiyenti mu.
 Iltimos:
-1. FBD'ni men o'zim chizishim uchun tayyor javob bermasdan yo'naltiruvchi savollar bering.
-2. Men yuklagan diagrammadagi xatolarni topishimga yordam bering, lekin to'g'ri variantni darhol aytmang.
-3. Mening darajamga mos bitta qo'shimcha masala taklif qiling.`;
+1. FBD’ni men o‘zim chizishim uchun tayyor javob bermasdan yo‘naltiruvchi savollar bering.
+2. Men yuklagan diagrammadagi xatolarni topishimga yordam bering, lekin to‘g‘ri variantni darhol aytmang.
+3. Mening darajamga mos bitta qo‘shimcha masala taklif qiling.`;
     });
   }
 
@@ -147,7 +151,7 @@ Iltimos:
       m: parseFloat(slMass.value)
     });
 
-    // 4-bo'limdagi psevdokod bilan bir xil kuchlar hisobi
+    // 4-bo‘limdagi psevdokod bilan bir xil kuchlar hisobi
     function forces() {
       const { alpha, mu, m } = P();
       const Fg = m * G;
@@ -157,7 +161,7 @@ Iltimos:
       const atBottom = x >= RAMP_LEN - 1e-9;
       let Ffr, a, state;
       if (atBottom) {
-        // Qiya oxirida jism to'xtatilgan: kuchlar muvozanatda deb ko'rsatiladi
+        // Qiya oxirida jism to‘xtatilgan: kuchlar muvozanatda deb ko‘rsatiladi
         Ffr = Fpar; a = 0; state = 'bottom';
       } else if (Math.abs(v) < 1e-9 && Fpar <= FsMax + 1e-12) {
         Ffr = Fpar; a = 0; state = 'stick';
@@ -173,8 +177,8 @@ Iltimos:
     function step(dt) {
       const f = forces();
       if (f.state !== 'slip') return;
-      v += f.a * dt;          // Eyler-Kromer: avval tezlik,
-      x += v * dt;            // so'ng yangi tezlik bilan koordinata
+      v += f.a * dt;          // Eyler–Kromer: avval tezlik,
+      x += v * dt;            // so‘ng yangi tezlik bilan koordinata
       t += dt;
       if (x >= RAMP_LEN) { x = RAMP_LEN; v = 0; running = false; syncButtons(); }
     }
@@ -195,21 +199,21 @@ Iltimos:
     function updateHud() {
       const f = forces();
       const { alpha, mu } = P();
-      hud('fg').textContent = f.Fg.toFixed(1) + ' N';
-      hud('n').textContent = f.N.toFixed(1) + ' N';
-      hud('fpar').textContent = f.Fpar.toFixed(1) + ' N';
-      hud('ffr').textContent = Math.abs(f.Ffr).toFixed(2) + ' N';
-      hud('fnet').textContent = f.Fnet.toFixed(2) + ' N';
-      // Hali boshlanmagan bo'lsa, sirpanish sharti bajarilganda kutilayotgan tezlanishni ko'rsatamiz
+      hud('fg').textContent = uzFix(f.Fg, 1) + ' N';
+      hud('n').textContent = uzFix(f.N, 1) + ' N';
+      hud('fpar').textContent = uzFix(f.Fpar, 1) + ' N';
+      hud('ffr').textContent = uzFix(Math.abs(f.Ffr), 2) + ' N';
+      hud('fnet').textContent = uzFix(f.Fnet, 2) + ' N';
+      // Hali boshlanmagan bo‘lsa, sirpanish sharti bajarilganda kutilayotgan tezlanishni ko‘rsatamiz
       const willSlip = Math.tan(alpha) > mu;
       const aShow = f.state === 'slip' ? f.a : (f.state === 'stick' && willSlip ? G * (Math.sin(alpha) - mu * Math.cos(alpha)) : 0);
-      hud('acc').textContent = aShow.toFixed(2) + ' m/s²';
-      hud('vel').textContent = v.toFixed(2) + ' m/s';
+      hud('acc').textContent = uzFix(aShow, 2) + ' m/s²';
+      hud('vel').textContent = uzFix(v, 2) + ' m/s';
       const st = hud('status');
-      if (f.state === 'bottom') { st.textContent = `Qiya pastiga yetdi (t = ${t.toFixed(2)} s)`; st.style.color = '#38bdf8'; }
-      else if (!willSlip) { st.textContent = `Tinch: tan α = ${Math.tan(alpha).toFixed(2)} ≤ μ (statik ishqalanish)`; st.style.color = '#fbbf24'; }
+      if (f.state === 'bottom') { st.textContent = `Qiya pastiga yetdi (t = ${uzFix(t, 2)} s)`; st.style.color = '#38bdf8'; }
+      else if (!willSlip) { st.textContent = `Tinch: tan α = ${uzFix(Math.tan(alpha), 2)} ≤ μ (statik ishqalanish)`; st.style.color = '#fbbf24'; }
       else if (running || v > 0) { st.textContent = 'Sirpanmoqda (kinetik ishqalanish)'; st.style.color = '#10b981'; }
-      else { st.textContent = `Sirpanishga tayyor: tan α = ${Math.tan(alpha).toFixed(2)} > μ`; st.style.color = '#10b981'; }
+      else { st.textContent = `Sirpanishga tayyor: tan α = ${uzFix(Math.tan(alpha), 2)} > μ`; st.style.color = '#10b981'; }
     }
 
     function resize(c) {
@@ -243,7 +247,7 @@ Iltimos:
       const f = forces();
       ictx.fillStyle = '#0b1120'; ictx.fillRect(0, 0, W, H);
 
-      // Qiya tekislik uchburchagi: pastki o'ng burchak asos
+      // Qiya tekislik uchburchagi: pastki o‘ng burchak asos
       const baseY = H - 30, rightX = W - 24;
       const maxLenPx = Math.min((W - 60) / Math.max(Math.cos(alpha), 0.3), (H - 70) / Math.max(Math.sin(alpha), 0.01), W * 1.2);
       const Lpx = Math.min(maxLenPx, W - 48);
@@ -257,8 +261,8 @@ Iltimos:
       ictx.fillStyle = '#fbbf24'; ictx.font = '12px ui-monospace, monospace';
       ictx.fillText(`α = ${slAngle.value}°`, rightX - 92, baseY - 8);
 
-      // Jism: qiya bo'ylab (tepadan pastga) x/RAMP_LEN ulushda
-      const ux = Math.cos(alpha), uy = Math.sin(alpha); // pastga-o'ngga birlik vektor (ekranda y pastga)
+      // Jism: qiya bo‘ylab (tepadan pastga) x/RAMP_LEN ulushda
+      const ux = Math.cos(alpha), uy = Math.sin(alpha); // pastga-o‘ngga birlik vektor (ekranda y pastga)
       const nx = Math.sin(alpha), ny = -Math.cos(alpha); // sirtga tik, yuqoriga
       const s = 0.12 + 0.76 * (x / RAMP_LEN);
       const bw = 34, bh = 22;
@@ -266,20 +270,20 @@ Iltimos:
       ictx.save(); ictx.translate(cx, cy); ictx.rotate(alpha);
       ictx.fillStyle = '#38bdf8'; ictx.fillRect(-bw / 2, -bh / 2, bw, bh);
       ictx.fillStyle = '#0b1120'; ictx.font = 'bold 10px ui-monospace, monospace';
-      ictx.fillText(`${slMass.value}kg`, -14, 4);
+      ictx.textAlign = 'center'; ictx.fillText(`${String(slMass.value).replace('.', ',')} kg`, 0, 4); ictx.textAlign = 'left';
       ictx.restore();
 
       // Kuch vektorlari (masshtab: eng katta kuch ≈ 70 px)
       const k = 70 / Math.max(f.Fg, 1e-6);
       arrow(ictx, cx, cy, cx, cy + f.Fg * k, '#f43f5e', 'mg');
       arrow(ictx, cx, cy, cx + nx * f.N * k, cy + ny * f.N * k, '#38bdf8', 'N');
-      if (Math.abs(f.Ffr) > 1e-6) arrow(ictx, cx, cy, cx - ux * f.Ffr * k, cy - uy * f.Ffr * k, '#eab308', 'F_fr');
+      if (Math.abs(f.Ffr) > 1e-6) arrow(ictx, cx, cy, cx - ux * f.Ffr * k, cy - uy * f.Ffr * k, '#eab308', 'F_ishq');
       if (chkComp.checked) {
         arrow(ictx, cx, cy, cx + ux * f.Fpar * k, cy + uy * f.Fpar * k, '#a855f7', 'mg sinα', true);
         arrow(ictx, cx, cy, cx - nx * f.Fperp * k, cy - ny * f.Fperp * k, '#a855f7', 'mg cosα', true);
       }
       ictx.fillStyle = '#94A3B8'; ictx.font = '11px ui-monospace, monospace';
-      ictx.fillText(`x = ${x.toFixed(2)} m   t = ${t.toFixed(2)} s`, 10, 18);
+      ictx.fillText(`x = ${uzFix(x, 2)} m   t = ${uzFix(t, 2)} s`, 10, 18);
     }
 
     function drawFBD() {
@@ -289,7 +293,7 @@ Iltimos:
       fctx.fillStyle = '#0b1120'; fctx.fillRect(0, 0, W, H);
       const cx = W / 2, cy = H / 2;
 
-      // Burilgan o'qlar: X' qiya bo'ylab pastga, Y' sirtga tik yuqoriga
+      // Burilgan o‘qlar: X' qiya bo‘ylab pastga, Y' sirtga tik yuqoriga
       const ux = Math.cos(alpha), uy = Math.sin(alpha);
       const nx = Math.sin(alpha), ny = -Math.cos(alpha);
       const A = Math.min(W, H) * 0.44;
@@ -298,16 +302,16 @@ Iltimos:
       fctx.beginPath(); fctx.moveTo(cx - nx * A, cy - ny * A); fctx.lineTo(cx + nx * A, cy + ny * A); fctx.stroke();
       fctx.setLineDash([]);
       fctx.fillStyle = '#94A3B8'; fctx.font = '12px ui-monospace, monospace';
-      fctx.fillText("X'", cx + ux * A + 4, cy + uy * A);
-      fctx.fillText("Y'", cx + nx * A + 4, cy + ny * A);
+      fctx.fillText("X′", cx + ux * A + 4, cy + uy * A);
+      fctx.fillText("Y′", cx + nx * A + 4, cy + ny * A);
 
       // Nuqtaviy jism
       fctx.fillStyle = '#e2e8f0'; fctx.beginPath(); fctx.arc(cx, cy, 6, 0, Math.PI * 2); fctx.fill();
 
       const k = (Math.min(W, H) * 0.38) / Math.max(f.Fg, 1e-6);
-      arrow(fctx, cx, cy, cx, cy + f.Fg * k, '#f43f5e', `mg = ${f.Fg.toFixed(1)} N`);
-      arrow(fctx, cx, cy, cx + nx * f.N * k, cy + ny * f.N * k, '#38bdf8', `N = ${f.N.toFixed(1)} N`);
-      if (Math.abs(f.Ffr) > 1e-6) arrow(fctx, cx, cy, cx - ux * f.Ffr * k, cy - uy * f.Ffr * k, '#eab308', `F_fr = ${Math.abs(f.Ffr).toFixed(1)} N`);
+      arrow(fctx, cx, cy, cx, cy + f.Fg * k, '#f43f5e', `mg = ${uzFix(f.Fg, 1)} N`);
+      arrow(fctx, cx, cy, cx + nx * f.N * k, cy + ny * f.N * k, '#38bdf8', `N = ${uzFix(f.N, 1)} N`);
+      if (Math.abs(f.Ffr) > 1e-6) arrow(fctx, cx, cy, cx - ux * f.Ffr * k, cy - uy * f.Ffr * k, '#eab308', `F_ishq = ${uzFix(Math.abs(f.Ffr), 1)} N`);
       if (chkComp.checked) {
         arrow(fctx, cx, cy, cx + ux * f.Fpar * k, cy + uy * f.Fpar * k, '#a855f7', 'mg sinα', true);
         arrow(fctx, cx, cy, cx - nx * f.Fperp * k, cy - ny * f.Fperp * k, '#a855f7', 'mg cosα', true);
@@ -320,16 +324,16 @@ Iltimos:
       }
 
       fctx.fillStyle = '#94A3B8'; fctx.font = '11px ui-monospace, monospace';
-      fctx.fillText(`ΣF_y' = N − mg cosα = ${(f.N - f.Fperp).toFixed(2)} N`, 10, H - 26);
-      fctx.fillText(`ΣF_x' = mg sinα − F_fr = ${f.Fnet.toFixed(2)} N`, 10, H - 10);
+      fctx.fillText(`ΣF_y′ = N − mg cosα = ${uzFix((f.N - f.Fperp), 2)} N`, 10, H - 26);
+      fctx.fillText(`ΣF_x′ = mg sinα − F_ishq = ${uzFix(f.Fnet, 2)} N`, 10, H - 10);
     }
 
     function draw() { drawIncline(); drawFBD(); }
 
     function updateLabels() {
       vAngle.textContent = slAngle.value + '°';
-      vMu.textContent = parseFloat(slMu.value).toFixed(2);
-      vMass.textContent = parseFloat(slMass.value).toFixed(1) + ' kg';
+      vMu.textContent = uzFix(parseFloat(slMu.value), 2);
+      vMass.textContent = uzFix(parseFloat(slMass.value), 1) + ' kg';
     }
 
     [slAngle, slMu, slMass].forEach(sl => sl.addEventListener('input', () => { updateLabels(); reset(); }));
@@ -362,7 +366,7 @@ Iltimos:
   }
 
   // -------------------------------------------------------------------------
-  // 3. RUBRIKA KALKULYATORI (O'zbekiston OTM 5 ballik shkalasi)
+  // 3. RUBRIKA KALKULYATORI (O‘zbekiston OTM 5 ballik shkalasi)
   // -------------------------------------------------------------------------
   function initRubric() {
     const ids = ['rubric6_c1', 'rubric6_c2', 'rubric6_c3', 'rubric6_c4', 'rubric6_c5'];
@@ -377,8 +381,8 @@ Iltimos:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A'LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko'rib chiqing." };
+      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
+      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
       else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "FBD qoidalari va AI yaratgan diagrammadagi xatolarni tahlil qilishni kuchaytiring." };
       else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }
