@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qo‘shimcha astronomiya ma’ruzasi: Plank, Vin va Stefan–Bolsman qonunlari, spektral chiziqlar, Doppler siljishi; interaktiv spektr modeli va SDSS ma’lumotlari bilan laboratoriya ishi.">
+  <title>A2. Spektral tahlil: qora jism nurlanishi, spektral chiziqlar va Doppler siljishi | FIZIKA va SUN’IY INTELLEKT</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], ignoredTags: ['script','noscript','style','textarea','pre','code','option']});"></script>
+  <style>
+    .data-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin: 14px 0 20px; }
+    table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: var(--text-secondary); }
+    table.data th, table.data td { padding: 9px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    table.data thead th { background: #111a2e; color: var(--text-main); font-size: 0.86rem; }
+    table.data td strong { color: var(--text-main); }
+    .lead-p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; }
+    .formula-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-md); padding: 12px 16px; margin: 12px 0 18px; overflow-x: auto; }
+    .note-box { background: rgba(251,191,36,0.06); border-left: 4px solid var(--accent-amber); border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 0.93rem; }
+    .sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .sim-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-secondary); }
+    .sim-controls output { color: var(--accent-cyan); font-weight: 600; }
+    .sim-controls input[type=range] { width: 100%; }
+    .sim-controls select, .sim-controls input[type=text] { background: #0F172A; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 10px; font-size: 0.95rem; }
+    .sim-canvas { width: 100%; display: block; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #0B1120; }
+    .sim-readout { font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary); margin-top: 12px; }
+    .sim-readout strong { color: var(--text-main); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+    .quiz-q { background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 14px; }
+    .quiz-q > strong { display: block; color: var(--text-main); margin-bottom: 8px; }
+    .quiz-q label { display: block; margin: 6px 0; font-size: 0.92rem; cursor: pointer; }
+    .quiz-fb { margin-top: 8px; font-size: 0.88rem; }
+    .refs li { margin-bottom: 8px; }
+    pre.code { background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.55; color: #E2E8F0; white-space: pre; }
+    .flow3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 14px 0; }
+    .flow3 > div { padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); }
+    .flow3 ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link active">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs mundarijasi</span>
+      <button id="drawer-close" class="drawer-close" aria-label="Yopish">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link active">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-container">
+
+    <div class="hero-panel" style="margin-bottom: 26px;">
+      <span class="badge badge-amber">Qo‘shimcha ma’ruza A2 · Astronomiya</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;">Spektral tahlil: <span class="text-gradient">qora jism nurlanishi, spektral chiziqlar va Doppler siljishi</span></h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">Kirxgof qonunlari, Plank, Vin va Stefan–Bolsman qonunlari, vodorodning Balmer seriyasi va kimyoviy tarkibni aniqlash, Doppler siljishi orqali radial tezlik va Koinot kengayishini o‘lchash. Interaktiv spektr modeli, uyda yasaladigan CD spektroskop va SDSS ma’lumotlari bilan laboratoriya ishi.</p>
+    </div>
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab(event, 'tab-1')">1. Nazariya</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-2')">2. Interaktiv spektr modeli</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-3')">3. Laboratoriya ishi: spektroskop va SDSS</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-4')">4. Nazorat va adabiyotlar</button>
+    </div>
+
+    <section id="tab-1" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Nazariya</h2>
+        </div>
+
+        <p class="lead-p">Yulduzgacha borib bo‘lmaydi, lekin uning nurini parchalab, <strong>harorati, kimyoviy tarkibi, tezligi va hatto atrofidagi sayyoralar</strong> haqida bilish mumkin. Spektral tahlil — astrofizikaning asosiy kuzatuv usuli. Bu ma’ruzada qora jism nurlanishi, spektral chiziqlarning kelib chiqishi va Doppler siljishi o‘rganiladi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">2.1. Kirxgof qonunlari: spektr turlari</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Uzluksiz spektr</strong> — qizdirilgan zich jism (qattiq jism, suyuqlik, zich gaz) barcha to‘lqin uzunliklarida nurlanadi.</li>
+          <li><strong>Nurlanish (emission) spektri</strong> — siyrak qaynoq gaz faqat ma’lum to‘lqin uzunliklarida yorug‘ chiziqlar beradi (masalan, gaz tumanliklari).</li>
+          <li><strong>Yutilish (absorbsiya) spektri</strong> — uzluksiz nur sovuqroq siyrak gaz orqali o‘tsa, aynan shu gaz chiqaradigan to‘lqin uzunliklarida qora chiziqlar paydo bo‘ladi. Yulduzlar spektri shu turga kiradi: issiq fotosfera nuri sovuqroq atmosfera qatlamida yutiladi.</li>
+        </ol>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">2.2. Qora jism nurlanishi</h3>
+        <p>Absolyut qora jismning spektral energetik yorqinligi Plank qonuni bilan ifodalanadi:</p>
+        <div class="formula-box">$$B_\lambda(T) = \frac{2hc^2}{\lambda^5}\,\frac{1}{e^{hc/(\lambda k T)} - 1}$$</div>
+        <p>Bu yerda $h = 6{,}626 \cdot 10^{-34}$ J·s — Plank doimiysi, $k = 1{,}381 \cdot 10^{-23}$ J/K — Bolsman doimiysi, $c$ — yorug‘lik tezligi. Plank egri chizig‘idan ikkita muhim natija kelib chiqadi:</p>
+        <div class="formula-box">$$\lambda_{\max} = \frac{b}{T}, \quad b = 2{,}898 \cdot 10^{-3}\ \text{m}\cdot\text{K} \qquad (\text{Vinning siljish qonuni})$$
+        $$F = \sigma T^4 \qquad (\text{Stefan–Bolsman qonuni})$$</div>
+        <p><strong>Misol.</strong> Quyosh uchun $T = 5772$ K: $\lambda_{\max} = 2{,}898\cdot10^{-3}/5772 \approx 502$ nm — spektrning yashil-moviy qismi. Betelgeyze ($T \approx 3600$ K) uchun $\lambda_{\max} \approx 805$ nm — infraqizil sohaga yaqin, shuning uchun yulduz qizil ko‘rinadi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">2.3. Spektral chiziqlar va kimyoviy tarkib</h3>
+        <p>Har bir kimyoviy element atomi faqat o‘z energetik sathlari orasidagi o‘tishlarga mos fotonlarni yutadi yoki chiqaradi. Vodorod atomining ko‘rinadigan sohadagi chiziqlari (Balmer seriyasi) uchun:</p>
+        <div class="formula-box">$$\frac{1}{\lambda} = R_H\left(\frac{1}{2^2} - \frac{1}{n^2}\right), \qquad R_H \approx 1{,}0968 \cdot 10^{7}\ \text{m}^{-1}, \quad n = 3, 4, 5, \dots$$</div>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Chiziq</th><th>Element, o‘tish</th><th>λ (havoda), nm</th><th>Izoh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hα</strong></td><td>H, n = 3 → 2</td><td>656,28</td><td>Qizil; tumanliklar rangini beradi</td></tr>
+            <tr><td><strong>Hβ</strong></td><td>H, n = 4 → 2</td><td>486,13</td><td>Moviy-yashil</td></tr>
+            <tr><td><strong>Hγ</strong></td><td>H, n = 5 → 2</td><td>434,05</td><td>Ko‘k</td></tr>
+            <tr><td><strong>Hδ</strong></td><td>H, n = 6 → 2</td><td>410,17</td><td>Binafsha</td></tr>
+            <tr><td><strong>Na D</strong></td><td>Natriy (dublet)</td><td>589,00 va 589,59</td><td>Modelda o‘rtacha 589,29 nm</td></tr>
+            <tr><td><strong>Mg b</strong></td><td>Magniy</td><td>518,36</td><td>Quyoshsimon yulduzlarda kuchli</td></tr>
+            <tr><td><strong>Ca II H va K</strong></td><td>Ionlashgan kalsiy</td><td>396,85 va 393,37</td><td>G va K sinf yulduzlarida eng kuchli</td></tr>
+          </tbody>
+        </table></div>
+        <p>Chiziqlar kuchi faqat element miqdoriga emas, haroratga ham bog‘liq: vodorodning Balmer chiziqlari ~10 000 K da (A sinf) eng kuchli bo‘ladi. Issiqroq yulduzlarda vodorod ionlashib ketadi, sovuqroqlarida esa atomlarning ko‘pi asosiy sathda qoladi. Spektral sinflar (O, B, A, F, G, K, M) aynan shu effekt asosida tuzilgan.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">2.4. Doppler siljishi</h3>
+        <p>Manba kuzatuvchidan uzoqlashsa, chiziqlar qizil tomonga, yaqinlashsa binafsha tomonga siljiydi. Qizil siljish $z$ va radial tezlik $v_r$ ($v_r \ll c$ bo‘lganda):</p>
+        <div class="formula-box">$$z = \frac{\lambda_{\text{kuz}} - \lambda_0}{\lambda_0} \approx \frac{v_r}{c}; \qquad \text{relyativistik holda: } 1 + z = \sqrt{\frac{1+\beta}{1-\beta}}, \ \beta = \frac{v_r}{c}$$</div>
+        <p><strong>Qo‘llanilishi:</strong></p>
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Qo‘shaloq yulduzlar va ekzosayyoralar.</strong> Yulduz chiziqlarining davriy tebranishi ko‘rinmas yo‘ldoshni ochib beradi. 1995-yilda Quyoshsimon yulduz atrofidagi birinchi ekzosayyora (51 Pegas b) shu usulda topilgan.</li>
+          <li><strong>Galaktikalarning aylanishi</strong> — aylanish egri chizig‘idan qorong‘i materiya haqida xulosa chiqariladi.</li>
+          <li><strong>Koinotning kengayishi.</strong> Habbl qonuni: $v = H_0 d$. Hozirgi o‘lchashlar $H_0 \approx 67$–$73$ km/(s·Mpk) oralig‘ini beradi; usullar orasidagi bu farq “Habbl ziddiyati” deb ataladi va faol tadqiq qilinmoqda.</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="tab-2" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2. Interaktiv spektr modeli</h2>
+        </div>
+
+        <p class="lead-p">Harorat va radial tezlikni o‘zgartiring. Yuqori grafik — Plank egri chizig‘i (rangli fon — ko‘rinadigan diapazon), pastda — yutilish chiziqlari bilan ko‘rinadigan spektr. Kichik qora chiziqchalar chiziqlarning laboratoriyadagi (siljimagan) o‘rnini ko‘rsatadi.</p>
+        <div class="sim-controls">
+          <label>Fotosfera harorati: <output id="spec-T-val">5772 K</output>
+            <input id="spec-T" type="range" min="2500" max="30000" step="1" value="5772">
+          </label>
+          <label>Radial tezlik (+ uzoqlashish): <output id="spec-v-val">0 km/s</output>
+            <input id="spec-v" type="range" min="-3000" max="30000" step="10" value="0">
+          </label>
+          <label style="flex-direction: row; align-items: center; gap: 8px;"><input id="spec-lines" type="checkbox" checked> Yutilish chiziqlarini ko‘rsatish</label>
+        </div>
+        <canvas id="spec-canvas" class="sim-canvas" aria-label="Qora jism spektri va yutilish chiziqlari"></canvas>
+        <div id="spec-info" class="sim-readout"></div>
+        <div class="glass-panel" style="margin-top: 18px;">
+          <h3 style="font-size: 1.05rem; margin-bottom: 8px;">Mashq: noma’lum obyektning tezligi</h3>
+          <p style="font-size: 0.93rem;">Tugmani bosing: model tasodifiy harorat va tezlikli obyekt spektrini ko‘rsatadi. Hα chizig‘ining siljishidan radial tezlikni hisoblang ($v \approx c\,\Delta\lambda/\lambda_0$, katta tezliklarda relyativistik formuladan foydalaning) va javobingizni tekshiring.</p>
+          <div class="btn-row" style="align-items: center;">
+            <button id="spec-mystery" class="btn btn-primary">🔭 Noma’lum obyekt</button>
+            <input id="spec-answer" type="text" inputmode="decimal" placeholder="v, km/s" style="background:#0F172A;color:#F8FAFC;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px 10px;width:140px;">
+            <button id="spec-check" class="btn btn-secondary">Tekshirish</button>
+          </div>
+          <div id="spec-check-out" style="font-size: 0.92rem; font-weight: 600;"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="tab-3" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3. Laboratoriya ishi: spektroskop va SDSS</h2>
+        </div>
+
+        <p class="lead-p"><strong>Ishning maqsadi:</strong> uyda yasalgan spektroskop bilan nurlanish spektrlarini kuzatish, to‘lqin uzunligi shkalasini kalibrlash va Sloan raqamli osmon tadqiqoti (SDSS) ochiq ma’lumotlari bo‘yicha galaktikaning qizil siljishi va masofasini aniqlash.</p>
+        <p><strong>Kerakli vositalar (hammasi bepul yoki uy sharoitida topiladi):</strong> eski CD/DVD disk, karton quti, smartfon kamerasi; <a class="citation-link" href="https://skyserver.sdss.org" target="_blank" rel="noopener">SDSS SkyServer</a>; <a class="citation-link" href="https://physics.nist.gov/asd" target="_blank" rel="noopener">NIST atom spektrlari bazasi</a>; Google Colab; Gemini, ChatGPT yoki Claude’ning bepul tarifi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">A qism. CD spektroskop</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Quti bir uchiga ingichka (≈1 mm) tirqish, qarama-qarshi tomoniga ~45° burchak ostida CD bo‘lagini o‘rnating. CD ustidagi zich izlar difraksion panjara vazifasini bajaradi (CD da izlar oralig‘i ≈ 1,6 mkm, DVD da ≈ 0,74 mkm).</li>
+          <li>Kompakt lyuminessent (energiya tejovchi) lampa spektrini telefon bilan suratga oling. Simob chiziqlari — 404,7; 435,8; 546,1; 577,0 va 579,1 nm — kalibrlash uchun etalon bo‘ladi.</li>
+          <li>Rasmda chiziqlar holatini (piksellarda) o‘lchang va “piksel → nm” chiziqli kalibrlash tenglamasini tuzing.</li>
+          <li>Xuddi shu sozlamada cho‘g‘lanma lampa (uzluksiz spektr) va bulutli osmon (Quyosh spektri, Fraunhofer chiziqlari) spektrlarini oling. <em>Diqqat: Quyoshga to‘g‘ridan to‘g‘ri qaramang!</em></li>
+        </ol>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">B qism. Galaktikaning qizil siljishi (SDSS)</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>SkyServer’da “Explore” vositasi orqali spektri bor biror spiral galaktikani tanlang va spektrini yuklab oling (CSV yoki FITS).</li>
+          <li>Hα (havoda 656,28 nm) va [O III] (havoda 500,68 nm) nurlanish chiziqlarining kuzatilgan to‘lqin uzunligini aniqlang. SDSS spektrlarida to‘lqin uzunliklari vakuum uchun berilishini hisobga oling (vakuumda Hα — 656,46 nm, [O III] — 500,82 nm).</li>
+          <li>$z$ ni hisoblang, natijani SDSS katalogidagi qiymat bilan solishtiring.</li>
+          <li>Habbl qonuni bo‘yicha masofani baholang ($v \approx cz$, $H_0 = 70$ km/(s·Mpk)). $H_0$ ning 67 va 73 qiymatlari uchun masofa qanchaga farq qiladi?</li>
+        </ol>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">C qism. SI bilan ishlash</h3>
+        <p>Quyidagi promptni SI ga bering, olingan kodni Colab’da sinang va natijani Vin qonuni bilan tekshiring:</p>
+        <pre class="code">Menda spektr fayli bor: birinchi ustun — to‘lqin uzunligi (nm), ikkinchisi — oqim.
+1) Plank funksiyasini B_λ(T) = 2hc²/λ⁵ · 1/(exp(hc/λkT) − 1) ko‘rinishida yoz
+   (SI birliklarida, h, c, k doimiylari bilan).
+2) scipy.optimize.curve_fit yordamida harorat T va masshtab koeffitsiyentini top.
+3) Topilgan T bo‘yicha Vin qonunidan λ_max ni hisobla va grafikda ko‘rsat.
+4) Yutilish chiziqlari sohalarini (Hα, Hβ, Na D) moslashtirishdan chiqarib tashla
+   va nima uchun bunday qilish kerakligini tushuntir.</pre>
+        <div class="note-box">SI ko‘pincha to‘lqin uzunligini nanometrdan metrga o‘tkazishni unutadi yoki eksponenta argumentida birliklarni aralashtiradi. Har bir formulani o‘lchamlilik bo‘yicha tekshiring va topilgan xatolarni SI jurnaliga yozing.</div>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">Baholash mezonlari (100 ball)</h3>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Mezon</th><th>Ball</th><th>Talab</th></tr></thead>
+          <tbody>
+            <tr><td>Spektroskop va kalibrlash</td><td>25</td><td>Kalibrlash tenglamasi, uning xatoligi va spektr rasmlari</td></tr>
+            <tr><td>Qizil siljish va masofa</td><td>30</td><td>$z$, $v$, $d$ to‘g‘ri hisoblangan; vakuum/havo farqi hisobga olingan</td></tr>
+            <tr><td>Kod va grafiklar</td><td>20</td><td>Plank funksiyasini moslashtirish ishlaydi, grafiklar to‘liq</td></tr>
+            <tr><td>SI dan foydalanish jurnali</td><td>15</td><td>Promptlar, SI javoblari va tuzatilgan xatolar</td></tr>
+            <tr><td>Xulosa</td><td>10</td><td>Natijalar adabiyot qiymatlari bilan solishtirilgan</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size: 0.9rem;">Baho: 86–100 ball — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3), 55 dan kam — qoniqarsiz (2).</p>
+
+      </div>
+    </section>
+
+    <section id="tab-4" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4. Nazorat va adabiyotlar</h2>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-bottom: 14px;">Nazorat savollari</h3>
+        <div class="quiz-q">
+          <strong>1-savol. Yulduzning nurlanish maksimumi 290 nm da. Uning sirt harorati taxminan qancha?</strong>
+          <label><input type="radio" name="q1" value="A"> A) 1000 K</label>
+          <label><input type="radio" name="q1" value="B"> B) 5800 K</label>
+          <label><input type="radio" name="q1" value="C"> C) 10 000 K</label>
+          <label><input type="radio" name="q1" value="D"> D) 29 000 K</label>
+          <div class="quiz-fb" id="fb-q1"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>2-savol. Yulduz spektrida qora (yutilish) chiziqlar nima sababdan hosil bo‘ladi?</strong>
+          <label><input type="radio" name="q2" value="A"> A) Fotosfera nuri sovuqroq atmosfera qatlamida yutiladi</label>
+          <label><input type="radio" name="q2" value="B"> B) Yulduz ichida neytrino hosil bo‘ladi</label>
+          <label><input type="radio" name="q2" value="C"> C) Teleskop linzasi nurni yutadi</label>
+          <label><input type="radio" name="q2" value="D"> D) Yulduz magnit maydoni nurni buradi</label>
+          <div class="quiz-fb" id="fb-q2"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>3-savol. Galaktika spektrida Hα chizig‘i 656,3 nm o‘rniga 669,4 nm da kuzatildi. Galaktika tezligi taxminan qancha?</strong>
+          <label><input type="radio" name="q3" value="A"> A) 600 km/s, yaqinlashmoqda</label>
+          <label><input type="radio" name="q3" value="B"> B) 6000 km/s, uzoqlashmoqda</label>
+          <label><input type="radio" name="q3" value="C"> C) 60 000 km/s, uzoqlashmoqda</label>
+          <label><input type="radio" name="q3" value="D"> D) 6000 km/s, yaqinlashmoqda</label>
+          <div class="quiz-fb" id="fb-q3"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>4-savol. Nima uchun vodorodning Balmer chiziqlari O sinf yulduzlarida A sinfdagiga qaraganda kuchsiz?</strong>
+          <label><input type="radio" name="q4" value="A"> A) O sinf yulduzlarida vodorod yo‘q</label>
+          <label><input type="radio" name="q4" value="B"> B) Juda yuqori haroratda vodorod asosan ionlashgan</label>
+          <label><input type="radio" name="q4" value="C"> C) O sinf yulduzlari bizdan juda uzoq</label>
+          <label><input type="radio" name="q4" value="D"> D) Balmer chiziqlari faqat infraqizil sohada</label>
+          <div class="quiz-fb" id="fb-q4"></div>
+        </div>
+        <button class="btn btn-primary" onclick='checkQuiz({"q1": "C", "q2": "A", "q3": "B", "q4": "B"}, {"q1": "Vin qonuni: T = b / λ_max = 2,898·10⁻³ / 2,9·10⁻⁷ ≈ 10 000 K.", "q2": "Kirxgofning uchinchi qonuni: uzluksiz nur sovuqroq siyrak gaz orqali o‘tganda yutilish spektri hosil bo‘ladi.", "q3": "z = 13,1 / 656,3 ≈ 0,02; v ≈ cz ≈ 6000 km/s; to‘lqin uzunligi ortgan — uzoqlashmoqda.", "q4": "Balmer chiziqlarini n = 2 sathdagi neytral atomlar hosil qiladi; 30 000 K dan yuqorida vodorod deyarli to‘liq ionlashgan."})'>✅ Natijani tekshirish</button>
+        <div id="quiz-result" style="margin-top: 12px; font-weight: bold; display: none;"></div>
+        <h3 style="color: var(--accent-cyan); margin: 28px 0 10px;">Mustaqil ish uchun savollar</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Radial tezlik usuli bilan ekzosayyoraning qaysi parametrini aniqlab bo‘lmaydi va nima uchun?</li>
+          <li>Nima uchun yulduz rangi (masalan, B−V ko‘rsatkichi) uning harorati haqida ma’lumot beradi?</li>
+          <li>Galaktikaning aylanish egri chizig‘i qanday qilib qorong‘i materiya mavjudligiga ishora qiladi?</li>
+        </ol>
+        <h3 style="color: var(--accent-emerald); margin: 28px 0 10px;">Adabiyotlar</h3>
+        <ol class="refs" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
+          <li>Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class="citation-link" href="https://doi.org/10.1017/9781108380980" target="_blank" rel="noopener">https://doi.org/10.1017/9781108380980</a></li>
+          <li>Rybicki, G. B., &amp; Lightman, A. P. (1979). <em>Radiative Processes in Astrophysics</em>. Wiley. <a class="citation-link" href="https://doi.org/10.1002/9783527618170" target="_blank" rel="noopener">https://doi.org/10.1002/9783527618170</a></li>
+          <li>Gray, D. F. (2005). <em>The Observation and Analysis of Stellar Photospheres</em> (3rd ed.). Cambridge University Press.</li>
+          <li>Kramida, A., Ralchenko, Yu., Reader, J., &amp; NIST ASD Team. <em>NIST Atomic Spectra Database</em>. National Institute of Standards and Technology. <a class="citation-link" href="https://physics.nist.gov/asd" target="_blank" rel="noopener">https://physics.nist.gov/asd</a></li>
+          <li>Mayor, M., &amp; Queloz, D. (1995). A Jupiter-mass companion to a solar-type star. <em>Nature, 378</em>(6555), 355–359. <a class="citation-link" href="https://doi.org/10.1038/378355a0" target="_blank" rel="noopener">https://doi.org/10.1038/378355a0</a></li>
+          <li>Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. <em>Proceedings of the National Academy of Sciences, 15</em>(3), 168–173. <a class="citation-link" href="https://doi.org/10.1073/pnas.15.3.168" target="_blank" rel="noopener">https://doi.org/10.1073/pnas.15.3.168</a></li>
+          <li>Planck Collaboration, Aghanim, N., et al. (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astronomy &amp; Astrophysics, 641</em>, A6. <a class="citation-link" href="https://doi.org/10.1051/0004-6361/201833910" target="_blank" rel="noopener">https://doi.org/10.1051/0004-6361/201833910</a></li>
+          <li>Riess, A. G., et al. (2022). A comprehensive measurement of the local value of the Hubble constant with 1 km s⁻¹ Mpc⁻¹ uncertainty from the Hubble Space Telescope and the SH0ES team. <em>The Astrophysical Journal Letters, 934</em>(1), L7. <a class="citation-link" href="https://doi.org/10.3847/2041-8213/ac5c5b" target="_blank" rel="noopener">https://doi.org/10.3847/2041-8213/ac5c5b</a></li>
+          <li>Abdurro’uf, et al. (2022). The seventeenth data release of the Sloan Digital Sky Surveys. <em>The Astrophysical Journal Supplement Series, 259</em>(2), 35. <a class="citation-link" href="https://doi.org/10.3847/1538-4365/ac4414" target="_blank" rel="noopener">https://doi.org/10.3847/1538-4365/ac4414</a></li>
+        </ol>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Qo‘shimcha ma’ruza A2: Spektral tahlil &bull; Plank qonuni, Balmer seriyasi, Doppler siljishi, SDSS.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.switchTab = function (evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      const t = document.getElementById(tabId);
+      if (t) t.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+      if (window.astroLcRedraw) setTimeout(window.astroLcRedraw, 30);
+    };
+    window.checkQuiz = function (key, explain) {
+      let score = 0;
+      const total = Object.keys(key).length;
+      Object.keys(key).forEach(q => {
+        const sel = document.querySelector('input[name="' + q + '"]:checked');
+        const fb = document.getElementById('fb-' + q);
+        if (!sel) { fb.style.color = '#FBBF24'; fb.textContent = 'Javob tanlanmagan.'; return; }
+        if (sel.value === key[q]) { score++; fb.style.color = '#34D399'; fb.textContent = 'To‘g‘ri. ' + explain[q]; }
+        else { fb.style.color = '#F87171'; fb.textContent = 'Noto‘g‘ri. ' + explain[q]; }
+      });
+      const res = document.getElementById('quiz-result');
+      const pct = Math.round(score / total * 100);
+      res.style.display = 'block';
+      res.style.color = pct >= 86 ? '#34D399' : pct >= 55 ? '#FBBF24' : '#F87171';
+      res.textContent = 'Natija: ' + score + '/' + total + ' (' + pct + ' %).';
+    };
+  </script>
+  <script src="js/sim-astro-extra.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>

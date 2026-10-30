@@ -72,7 +72,7 @@ window.checkDiagnosticQuiz = function() {
   }
 
   let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 1-Modul Diagnostika Natijalari:</h4>`;
+    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 1-ma’ruza diagnostika natijalari:</h4>`;
 
   quiz1Questions.forEach(q => {
     const userOptIdx = userAnswers1[q.id];
@@ -183,7 +183,7 @@ window.checkDiagnostic2Quiz = function() {
   }
 
   let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 2-Modul Modellashtirish Diagnostikasi Natijasi:</h4>`;
+    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>`;
 
   quiz2Questions.forEach(q => {
     const userOptIdx = userAnswers2[q.id];

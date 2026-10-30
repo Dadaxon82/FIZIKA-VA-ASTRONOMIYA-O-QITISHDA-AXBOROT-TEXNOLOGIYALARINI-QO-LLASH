@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fizika va astronomiya o‘qitishda axborot texnologiyalari kursining o‘zbekcha–inglizcha atamalar lug‘ati: modellashtirish, dasturlash, sun’iy intellekt, pedagogika, fizika va astronomiya.">
+  <title>Atamalar lug‘ati (o‘zbekcha–inglizcha) | FIZIKA va SUN’IY INTELLEKT</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .data-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin: 14px 0 20px; }
+    table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: var(--text-secondary); }
+    table.data th, table.data td { padding: 9px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    table.data thead th { background: #111a2e; color: var(--text-main); font-size: 0.86rem; }
+    table.data td strong { color: var(--text-main); }
+    .lead-p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; }
+    .formula-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-md); padding: 12px 16px; margin: 12px 0 18px; overflow-x: auto; }
+    .note-box { background: rgba(251,191,36,0.06); border-left: 4px solid var(--accent-amber); border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 0.93rem; }
+    .sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .sim-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-secondary); }
+    .sim-controls output { color: var(--accent-cyan); font-weight: 600; }
+    .sim-controls input[type=range] { width: 100%; }
+    .sim-controls select, .sim-controls input[type=text] { background: #0F172A; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 10px; font-size: 0.95rem; }
+    .sim-canvas { width: 100%; display: block; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #0B1120; }
+    .sim-readout { font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary); margin-top: 12px; }
+    .sim-readout strong { color: var(--text-main); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+    .quiz-q { background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 14px; }
+    .quiz-q > strong { display: block; color: var(--text-main); margin-bottom: 8px; }
+    .quiz-q label { display: block; margin: 6px 0; font-size: 0.92rem; cursor: pointer; }
+    .quiz-fb { margin-top: 8px; font-size: 0.88rem; }
+    .refs li { margin-bottom: 8px; }
+    pre.code { background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.55; color: #E2E8F0; white-space: pre; }
+    .flow3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 14px 0; }
+    .flow3 > div { padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); }
+    .flow3 ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link active">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs mundarijasi</span>
+      <button id="drawer-close" class="drawer-close" aria-label="Yopish">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="glossariy.html" class="drawer-link active">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-container">
+
+    <div class="hero-panel" style="margin-bottom: 26px;">
+      <span class="badge badge-amber">Darslikka ilova · Glossariy</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;">Atamalar lug‘ati: <span class="text-gradient">o‘zbekcha–inglizcha</span></h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">Barcha ma’ruza va laboratoriya ishlarida uchraydigan 127 ta asosiy atama: o‘zbekcha nomi, inglizcha muqobili, qisqa ta’rifi va qaysi mavzuda o‘rganilishi. Qidiruv maydoniga o‘zbekcha yoki inglizcha so‘zni yozing.</p>
+    </div>
+
+    <div class="glass-panel" style="margin-bottom: 20px;">
+      <label for="gloss-q" style="display:block; font-weight:600; margin-bottom:8px;">Atamani qidirish (o‘zbekcha yoki inglizcha)</label>
+      <input id="gloss-q" type="search" placeholder="Masalan: impuls, prompt, redshift" autocomplete="off"
+             style="width:100%; max-width:520px; background:#0F172A; color:#F8FAFC; border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:10px 14px; font-size:1rem;">
+      <p id="gloss-count" style="margin-top:8px; font-size:0.9rem;">Lug‘atda 127 ta atama.</p>
+    </div>
+    <div class="data-wrap gloss-wrap">
+      <table class="data" id="gloss">
+        <thead><tr><th scope="col" style="width:20%">O‘zbekcha atama</th><th scope="col" style="width:20%">Inglizcha</th><th scope="col">Ta’rifi</th><th scope="col" style="width:9%">Qayerda</th></tr></thead>
+        <tbody>
+            <tr class="grp"><th colspan="4" scope="colgroup">Fizik modellashtirish va sonli usullar</th></tr>
+            <tr><td><strong>Barqarorlik (sonli)</strong></td><td lang="en"><em>numerical stability</em></td><td>Sonli usulning xatoliklarni kuchaytirmaslik xossasi.</td><td class="refs">M4</td></tr>
+            <tr><td><strong>Boshlang‘ich shart</strong></td><td lang="en"><em>initial condition</em></td><td>Differensial tenglama yechimini yagona qiluvchi, t = 0 dagi holat qiymatlari.</td><td class="refs">M2, M4</td></tr>
+            <tr><td><strong>Deterministik model</strong></td><td lang="en"><em>deterministic model</em></td><td>Bir xil boshlang‘ich shartlarda har doim bir xil natija beradigan model.</td><td class="refs">M5, L5</td></tr>
+            <tr><td><strong>Energiya dreyfi</strong></td><td lang="en"><em>energy drift</em></td><td>Sonli xatoliklar tufayli yopiq tizim to‘liq energiyasining asta-sekin o‘zgarishi.</td><td class="refs">M4, M10</td></tr>
+            <tr><td><strong>Erkinlik darajasi</strong></td><td lang="en"><em>degree of freedom</em></td><td>Tizim holatini to‘liq aniqlaydigan mustaqil koordinatalar soni.</td><td class="refs">M2</td></tr>
+            <tr><td><strong>Eyler usuli</strong></td><td lang="en"><em>Euler method</em></td><td>Hosilani chekli ayirma bilan almashtiruvchi eng sodda birinchi tartibli sonli usul; energiyani saqlamaydi.</td><td class="refs">M4, L4</td></tr>
+            <tr><td><strong>Eyler–Kromer usuli</strong></td><td lang="en"><em>Euler–Cromer method</em></td><td>Avval tezlikni, keyin yangi tezlik bilan koordinatani yangilaydigan simplektik usul; tebranishlarda energiya barqaror.</td><td class="refs">M4, M6, L4</td></tr>
+            <tr><td><strong>Faza fazosi</strong></td><td lang="en"><em>phase space</em></td><td>Tizim holati koordinata va impuls (yoki tezlik) o‘qlarida tasvirlanadigan fazo.</td><td class="refs">M1, L9</td></tr>
+            <tr><td><strong>Integratsiya qadami</strong></td><td lang="en"><em>time step (Δt)</em></td><td>Sonli integrallashda vaqtning diskret bo‘lagi; uning kattaligi aniqlik va barqarorlikni belgilaydi.</td><td class="refs">M4, L4, L7</td></tr>
+            <tr><td><strong>Kompyuter modeli</strong></td><td lang="en"><em>computer model</em></td><td>Matematik modelning algoritm va dastur ko‘rinishidagi amalga oshirilishi.</td><td class="refs">M4, M5</td></tr>
+            <tr><td><strong>Konvergensiya</strong></td><td lang="en"><em>convergence</em></td><td>Qadam kichraygan sari sonli yechimning aniq yechimga yaqinlashishi.</td><td class="refs">M4, L4</td></tr>
+            <tr><td><strong>Lokal va global xatolik</strong></td><td lang="en"><em>local / global error</em></td><td>Bitta qadamdagi va butun integrallash davomida to‘plangan sonli xatolik.</td><td class="refs">M4, L4</td></tr>
+            <tr><td><strong>Matematik model</strong></td><td lang="en"><em>mathematical model</em></td><td>Fizik jarayonni tenglamalar (ko‘pincha differensial tenglamalar), boshlang‘ich va chegaraviy shartlar orqali ifodalash.</td><td class="refs">M2, L2</td></tr>
+            <tr><td><strong>Model</strong></td><td lang="en"><em>model</em></td><td>Obyekt yoki jarayonning o‘rganish maqsadida soddalashtirilgan, uning muhim xossalarini saqlaydigan tasviri.</td><td class="refs">M2, M5</td></tr>
+            <tr><td><strong>Monte-Karlo usuli</strong></td><td lang="en"><em>Monte Carlo method</em></td><td>Ko‘p sonli tasodifiy sinovlar orqali kattalikni statistik baholash usuli.</td><td class="refs">M5, L8</td></tr>
+            <tr><td><strong>Psevdokod</strong></td><td lang="en"><em>pseudocode</em></td><td>Algoritmni muayyan dasturlash tiliga bog‘lanmagan holda tabiiy tilga yaqin yozish.</td><td class="refs">M6, L6</td></tr>
+            <tr><td><strong>Runge–Kutta usuli (RK4)</strong></td><td lang="en"><em>fourth-order Runge–Kutta</em></td><td>Har qadamda to‘rtta oraliq hisob bilan to‘rtinchi tartibli aniqlik beruvchi usul.</td><td class="refs">M1, M4, L4</td></tr>
+            <tr><td><strong>Simplektik integrator</strong></td><td lang="en"><em>symplectic integrator</em></td><td>Gamilton tizimlarining faza fazosi hajmini saqlovchi, uzoq vaqt energiya dreyfi bermaydigan sonli usul.</td><td class="refs">M4</td></tr>
+            <tr><td><strong>Simulyatsiya</strong></td><td lang="en"><em>simulation</em></td><td>Kompyuter modelini vaqt bo‘yicha ishga tushirib, jarayon rivojini kuzatish.</td><td class="refs">M1, M5</td></tr>
+            <tr><td><strong>Stoxastik model</strong></td><td lang="en"><em>stochastic model</em></td><td>Tasodifiy kattaliklarni o‘z ichiga olgan, natijasi ehtimoliy taqsimot bilan tavsiflanadigan model.</td><td class="refs">M5, M13, L5</td></tr>
+            <tr><td><strong>Teskari muhandislik</strong></td><td lang="en"><em>reverse engineering</em></td><td>Tayyor simulyatsiyani kuzatib, uning ichki modeli va algoritmini tiklash.</td><td class="refs">M2, L2</td></tr>
+            <tr><td><strong>Verlet usuli</strong></td><td lang="en"><em>Verlet integration</em></td><td>Molekulyar dinamika va o‘yin dvigatellarida keng qo‘llaniladigan ikkinchi tartibli simplektik usul.</td><td class="refs">M4, M10</td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">Kompyuter grafikasi va dasturlash</th></tr>
+            <tr><td><strong>Canvas (HTML5)</strong></td><td lang="en"><em>HTML5 Canvas</em></td><td>Brauzerda JavaScript yordamida piksel darajasida 2D grafika chizish uchun element.</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Debugging</strong></td><td lang="en"><em>debugging</em></td><td>Dasturdagi xatolarni topish va tuzatish jarayoni.</td><td class="refs">M2, L8</td></tr>
+            <tr><td><strong>Delta-time</strong></td><td lang="en"><em>delta time</em></td><td>Ikki kadr orasida o‘tgan haqiqiy vaqt; fizikani kadr chastotasidan mustaqil qiladi.</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Fizika dvigateli</strong></td><td lang="en"><em>physics engine</em></td><td>Jismlar harakati, kuchlar va to‘qnashuvlarni hisoblovchi dastur moduli.</td><td class="refs">M8, L8</td></tr>
+            <tr><td><strong>GitHub Pages</strong></td><td lang="en"><em>GitHub Pages</em></td><td>Repozitoriydagi statik saytni bepul nashr qilish xizmati.</td><td class="refs">M1, L15</td></tr>
+            <tr><td><strong>Juftlikda dasturlash</strong></td><td lang="en"><em>pair programming</em></td><td>Ikki ishtirokchi (bu yerda talaba va SI) birgalikda kod yozishi: biri yozadi, ikkinchisi tekshiradi.</td><td class="refs">M8, L8</td></tr>
+            <tr><td><strong>Kadr sikli</strong></td><td lang="en"><em>animation loop</em></td><td>Har kadrda holatni yangilash va qayta chizishdan iborat takrorlanuvchi jarayon.</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Kadrlar chastotasi</strong></td><td lang="en"><em>frame rate (FPS)</em></td><td>Bir sekunddagi chizilgan kadrlar soni.</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Kirib ketishni bartaraf etish</strong></td><td lang="en"><em>penetration resolution</em></td><td>To‘qnashgan jismlarni bir-biridan ajratib, ustma-ust tushishni yo‘qotish.</td><td class="refs">M8, L8</td></tr>
+            <tr><td><strong>Koordinatalar transformatsiyasi</strong></td><td lang="en"><em>world-to-screen transform</em></td><td>Fizik koordinatalarni (metr, AU) ekran piksellariga o‘tkazish.</td><td class="refs">M10</td></tr>
+            <tr><td><strong>Qat’iy fizik qadam</strong></td><td lang="en"><em>fixed timestep</em></td><td>Fizikani o‘zgarmas Δt bilan, grafikani esa ekran chastotasida yangilash (akkumulyator usuli).</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Repozitoriy</strong></td><td lang="en"><em>repository</em></td><td>Loyiha fayllari va o‘zgarishlar tarixi saqlanadigan joy (masalan, GitHub).</td><td class="refs">M1, L15</td></tr>
+            <tr><td><strong>requestAnimationFrame</strong></td><td lang="en"><em>requestAnimationFrame</em></td><td>Brauzerning keyingi ekran yangilanishiga moslashtirilgan animatsiya chaqiruvi.</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Retina masshtablash</strong></td><td lang="en"><em>high-DPI scaling</em></td><td>Canvas o‘lchamini devicePixelRatio ga ko‘paytirib, yuqori zichlikli ekranlarda aniq tasvir olish.</td><td class="refs">M7</td></tr>
+            <tr><td><strong>Skalyar ko‘paytma</strong></td><td lang="en"><em>dot product</em></td><td>Ikki vektor komponentlari ko‘paytmalarining yig‘indisi: a·b = |a||b|cos α.</td><td class="refs">M8</td></tr>
+            <tr><td><strong>To‘qnashuvni aniqlash</strong></td><td lang="en"><em>collision detection</em></td><td>Jismlar kesishganini (masalan, markazlar orasidagi masofa radiuslar yig‘indisidan kichikligini) tekshirish.</td><td class="refs">M8, L8</td></tr>
+            <tr><td><strong>Vektor</strong></td><td lang="en"><em>vector</em></td><td>Kattaligi va yo‘nalishi bo‘lgan kattalik; dasturda (x, y) komponentlar bilan beriladi.</td><td class="refs">M8, L8</td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">Sun’iy intellekt va prompt-muhandislik</th></tr>
+            <tr><td><strong>Akademik halollik</strong></td><td lang="en"><em>academic integrity</em></td><td>O‘z ishini mustaqil bajarish, manbalar va SI dan foydalanishni ochiq ko‘rsatish tamoyili.</td><td class="refs">M3, M15</td></tr>
+            <tr><td><strong>Few-shot so‘rov</strong></td><td lang="en"><em>few-shot prompting</em></td><td>Topshiriq bilan birga bir nechta namuna keltirish.</td><td class="refs">M9, L9</td></tr>
+            <tr><td><strong>Fikrlash zanjiri</strong></td><td lang="en"><em>chain-of-thought</em></td><td>Modeldan yechimni bosqichma-bosqich asoslashni so‘rash usuli.</td><td class="refs">M9, L9</td></tr>
+            <tr><td><strong>Gallyutsinatsiya</strong></td><td lang="en"><em>hallucination</em></td><td>SI ning ishonchli ko‘rinadigan, lekin noto‘g‘ri yoki to‘qima ma’lumot berishi.</td><td class="refs">M1, M9</td></tr>
+            <tr><td><strong>Generativ SI</strong></td><td lang="en"><em>generative AI</em></td><td>Yangi matn, tasvir, ovoz yoki video yaratuvchi SI tizimlari.</td><td class="refs">M1, M3</td></tr>
+            <tr><td><strong>Katta til modeli (KTM)</strong></td><td lang="en"><em>large language model (LLM)</em></td><td>Katta hajmdagi matnlarda o‘qitilgan, matn va kod yaratuvchi neyron tarmoq modeli.</td><td class="refs">M3, L2</td></tr>
+            <tr><td><strong>Kontekst oynasi</strong></td><td lang="en"><em>context window</em></td><td>Model bir vaqtda hisobga oladigan matnning maksimal hajmi (tokenlarda).</td><td class="refs">M3, M9</td></tr>
+            <tr><td><strong>Multimodal model</strong></td><td lang="en"><em>multimodal model</em></td><td>Matn, tasvir, ovoz kabi bir necha turdagi ma’lumot bilan ishlovchi model.</td><td class="refs">M3, L6</td></tr>
+            <tr><td><strong>Nutq sintezi</strong></td><td lang="en"><em>text-to-speech (TTS)</em></td><td>Matnni sun’iy ovozga aylantirish.</td><td class="refs">M10, M14, L14</td></tr>
+            <tr><td><strong>Nutqni tanish</strong></td><td lang="en"><em>speech recognition (ASR)</em></td><td>Og‘zaki nutqni matnga aylantirish.</td><td class="refs">M11, L11</td></tr>
+            <tr><td><strong>Prompt</strong></td><td lang="en"><em>prompt</em></td><td>SI modeliga beriladigan topshiriq yoki so‘rov matni.</td><td class="refs">M9, L9</td></tr>
+            <tr><td><strong>Prompt-muhandislik</strong></td><td lang="en"><em>prompt engineering</em></td><td>SI dan aniq va ishonchli natija olish uchun so‘rovlarni tizimli tuzish san’ati.</td><td class="refs">M9, L9</td></tr>
+            <tr><td><strong>Rol berish</strong></td><td lang="en"><em>role prompting</em></td><td>Modelga muayyan mutaxassis rolini (masalan, “fizika o‘qituvchisi”) belgilash.</td><td class="refs">M9, L9</td></tr>
+            <tr><td><strong>SI agenti</strong></td><td lang="en"><em>AI agent</em></td><td>Vazifani mustaqil rejalashtirib, vositalardan foydalangan holda bir necha qadamda bajaruvchi SI tizimi.</td><td class="refs">M3, M7</td></tr>
+            <tr><td><strong>SI promptlar jurnali</strong></td><td lang="en"><em>AI usage log</em></td><td>Talaba SI ga bergan so‘rovlar, olingan javoblar va ularni tekshirish natijalari qaydnomasi.</td><td class="refs">M15, L15</td></tr>
+            <tr><td><strong>So‘z xatolik darajasi</strong></td><td lang="en"><em>word error rate (WER)</em></td><td>Transkripsiyadagi almashtirilgan, tushib qolgan va ortiqcha so‘zlar ulushi.</td><td class="refs">M11, L11</td></tr>
+            <tr><td><strong>SSML</strong></td><td lang="en"><em>Speech Synthesis Markup Language</em></td><td>Nutq sintezida pauza, urg‘u, tezlikni boshqaruvchi belgilash tili.</td><td class="refs">M10, L10</td></tr>
+            <tr><td><strong>Sun’iy intellekt (SI)</strong></td><td lang="en"><em>artificial intelligence (AI)</em></td><td>Odatda inson tafakkurini talab qiladigan vazifalarni bajaruvchi kompyuter tizimlari.</td><td class="refs">M1, M3</td></tr>
+            <tr><td><strong>Token</strong></td><td lang="en"><em>token</em></td><td>Til modeli matnni bo‘ladigan eng kichik birlik (so‘z yoki uning bo‘lagi).</td><td class="refs">M3</td></tr>
+            <tr><td><strong>Zero-shot so‘rov</strong></td><td lang="en"><em>zero-shot prompting</em></td><td>Namuna keltirmasdan faqat topshiriqni berish.</td><td class="refs">M9, L9</td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">Ta’lim texnologiyalari va pedagogika</th></tr>
+            <tr><td><strong>Adaptiv ta’lim</strong></td><td lang="en"><em>adaptive learning</em></td><td>Talaba natijalariga qarab topshiriqlar murakkabligini avtomatik moslashtirish.</td><td class="refs">M11</td></tr>
+            <tr><td><strong>Blum taksonomiyasi</strong></td><td lang="en"><em>Bloom’s taxonomy</em></td><td>O‘quv maqsadlarini eslash, tushunish, qo‘llash, tahlil, baholash va yaratish darajalariga ajratish.</td><td class="refs">M10</td></tr>
+            <tr><td><strong>Diagnostika</strong></td><td lang="en"><em>diagnostic assessment</em></td><td>O‘qishdan oldin talabaning bilim darajasi va ehtiyojlarini aniqlash.</td><td class="refs">M1, L1</td></tr>
+            <tr><td><strong>Individual ta’lim trayektoriyasi</strong></td><td lang="en"><em>individual learning path</em></td><td>Talaba ehtiyojiga moslashtirilgan o‘quv yo‘li.</td><td class="refs">M1, M11</td></tr>
+            <tr><td><strong>Kognitiv yuklama</strong></td><td lang="en"><em>cognitive load</em></td><td>O‘quv materialini o‘zlashtirishda ishchi xotiraga tushadigan zo‘riqish (Sweller nazariyasi).</td><td class="refs">M11</td></tr>
+            <tr><td><strong>LMS</strong></td><td lang="en"><em>learning management system</em></td><td>Kurs, topshiriq va baholashni boshqarish tizimi (Moodle, Google Classroom).</td><td class="refs">M11, L11</td></tr>
+            <tr><td><strong>Noto‘g‘ri tasavvur</strong></td><td lang="en"><em>misconception</em></td><td>Talabada shakllangan, ilmiy tushunchaga zid barqaror fikr.</td><td class="refs">M1, M2</td></tr>
+            <tr><td><strong>Portfolio</strong></td><td lang="en"><em>portfolio</em></td><td>Talaba ishlari, loyihalari va ularning tavsiflari to‘plami.</td><td class="refs">M1, M11</td></tr>
+            <tr><td><strong>Rasch modeli</strong></td><td lang="en"><em>Rasch model</em></td><td>Topshiriq qiyinligi va talaba qobiliyatini bir shkalada baholovchi test nazariyasi modeli.</td><td class="refs">M11, L11</td></tr>
+            <tr><td><strong>Rubrika</strong></td><td lang="en"><em>rubric</em></td><td>Baholash mezonlari va ularning darajalari tavsiflangan jadval.</td><td class="refs">M1, L1–L15</td></tr>
+            <tr><td><strong>Skaffolding</strong></td><td lang="en"><em>scaffolding</em></td><td>Talabaga bosqichma-bosqich beriladigan va asta-sekin kamaytiriladigan yordam.</td><td class="refs">M1, M11</td></tr>
+            <tr><td><strong>Ssenariy (dars)</strong></td><td lang="en"><em>lesson script / storyboard</em></td><td>Dars yoki video bosqichlarining ketma-ket tavsifi.</td><td class="refs">M1, L1</td></tr>
+            <tr><td><strong>Yakuniy loyiha</strong></td><td lang="en"><em>capstone project</em></td><td>Kurs davomida egallangan bilim va ko‘nikmalarni birlashtiruvchi mustaqil loyiha.</td><td class="refs">M15, L15</td></tr>
+            <tr><td><strong>Yaqin rivojlanish zonasi</strong></td><td lang="en"><em>zone of proximal development (ZPD)</em></td><td>Vygotskiy bo‘yicha: talaba mustaqil emas, lekin yordam bilan bajara oladigan vazifalar sohasi.</td><td class="refs">M1, M10</td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">Fizika bo‘limlari</th></tr>
+            <tr><td><strong>Doppler effekti</strong></td><td lang="en"><em>Doppler effect</em></td><td>Manba va kuzatuvchining nisbiy harakati tufayli to‘lqin chastotasining o‘zgarishi.</td><td class="refs">M1, A2</td></tr>
+            <tr><td><strong>Elektr maydon kuchlanganligi</strong></td><td lang="en"><em>electric field strength</em></td><td>Musbat sinov zaryadiga ta’sir etuvchi kuchning shu zaryadga nisbati.</td><td class="refs">M14, L14</td></tr>
+            <tr><td><strong>Elektromagnit induksiya</strong></td><td lang="en"><em>electromagnetic induction</em></td><td>Magnit oqimi o‘zgarganda konturda EYuK hosil bo‘lishi (Faradey qonuni).</td><td class="refs">M14, L14</td></tr>
+            <tr><td><strong>Entropiya</strong></td><td lang="en"><em>entropy</em></td><td>Tizim holatining tartibsizlik o‘lchovi; yopiq tizimda kamaymaydi.</td><td class="refs">M13, L13</td></tr>
+            <tr><td><strong>Erkin jism diagrammasi</strong></td><td lang="en"><em>free-body diagram</em></td><td>Jismga ta’sir etuvchi barcha kuchlar vektorlar bilan tasvirlangan chizma.</td><td class="refs">M6, L6</td></tr>
+            <tr><td><strong>Garmonik tebranish</strong></td><td lang="en"><em>harmonic oscillation</em></td><td>Kattalik vaqt bo‘yicha sinus qonuni bilan o‘zgaradigan tebranish.</td><td class="refs">M7, L7</td></tr>
+            <tr><td><strong>Ideal gaz holat tenglamasi</strong></td><td lang="en"><em>ideal gas law</em></td><td>pV = nRT — ideal gaz bosimi, hajmi va harorati orasidagi bog‘lanish.</td><td class="refs">M13, L13</td></tr>
+            <tr><td><strong>Impuls</strong></td><td lang="en"><em>momentum</em></td><td>Jism massasi va tezligining ko‘paytmasi: p = mv.</td><td class="refs">M8, M12</td></tr>
+            <tr><td><strong>Interferensiya</strong></td><td lang="en"><em>interference</em></td><td>Kogerent to‘lqinlar qo‘shilganda intensivlikning kuchayishi va susayishi.</td><td class="refs">M1</td></tr>
+            <tr><td><strong>Ishqalanish koeffitsiyenti</strong></td><td lang="en"><em>friction coefficient</em></td><td>Ishqalanish kuchining normal bosim kuchiga nisbati.</td><td class="refs">M6, L6</td></tr>
+            <tr><td><strong>Karno sikli</strong></td><td lang="en"><em>Carnot cycle</em></td><td>Ikki izoterma va ikki adiabatadan iborat ideal issiqlik mashinasi sikli; FIK η = 1 − T_C/T_H.</td><td class="refs">M13</td></tr>
+            <tr><td><strong>Kuch impulsi</strong></td><td lang="en"><em>impulse</em></td><td>Kuchning ta’sir vaqti bo‘yicha integrali; impuls o‘zgarishiga teng.</td><td class="refs">M8, L8</td></tr>
+            <tr><td><strong>Lorens kuchi</strong></td><td lang="en"><em>Lorentz force</em></td><td>Elektromagnit maydonda harakatlanuvchi zaryadga ta’sir etuvchi kuch: F = q(E + v × B).</td><td class="refs">M1, M14</td></tr>
+            <tr><td><strong>Maksvell–Bolsman taqsimoti</strong></td><td lang="en"><em>Maxwell–Boltzmann distribution</em></td><td>Ideal gaz molekulalarining tezliklar bo‘yicha taqsimoti.</td><td class="refs">M13</td></tr>
+            <tr><td><strong>Radioaktiv yemirilish</strong></td><td lang="en"><em>radioactive decay</em></td><td>Beqaror yadrolarning o‘z-o‘zidan boshqa yadroga aylanishi: N(t) = N₀e^(−λt).</td><td class="refs">M15, L15</td></tr>
+            <tr><td><strong>So‘nuvchi tebranish</strong></td><td lang="en"><em>damped oscillation</em></td><td>Ishqalanish yoki qarshilik tufayli amplitudasi kamayib boruvchi tebranish.</td><td class="refs">M1, L7</td></tr>
+            <tr><td><strong>Tiklanish koeffitsiyenti</strong></td><td lang="en"><em>coefficient of restitution</em></td><td>To‘qnashuvdan keyingi va oldingi nisbiy tezliklar nisbati (0 — noelastik, 1 — elastik).</td><td class="refs">M8, L8</td></tr>
+            <tr><td><strong>Yarim yemirilish davri</strong></td><td lang="en"><em>half-life</em></td><td>Radioaktiv yadrolarning yarmi yemiriladigan vaqt: T½ = ln 2 / λ.</td><td class="refs">M15, L15</td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">Astronomiya</th></tr>
+            <tr><td><strong>Absolyut kattalik</strong></td><td lang="en"><em>absolute magnitude</em></td><td>Yulduzning 10 pk masofadan ko‘rinadigan kattaligi.</td><td class="refs">A1, A3</td></tr>
+            <tr><td><strong>Absolyut qora jism</strong></td><td lang="en"><em>black body</em></td><td>Unga tushgan barcha nurlanishni yutuvchi va spektri faqat haroratga bog‘liq bo‘lgan ideal jism.</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Ajrata olish qobiliyati</strong></td><td lang="en"><em>angular resolution</em></td><td>Teleskop alohida ko‘ra oladigan ikki nuqta orasidagi eng kichik burchak: θ ≈ 1,22λ/D.</td><td class="refs">A3</td></tr>
+            <tr><td><strong>Asosiy ketma-ketlik</strong></td><td lang="en"><em>main sequence</em></td><td>Yadrosida vodorod yonayotgan yulduzlar joylashgan G–R diagrammasi sohasi.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Astronomik birlik</strong></td><td lang="en"><em>astronomical unit (AU)</em></td><td>Yerdan Quyoshgacha o‘rtacha masofa: 1 AU = 1,496·10¹¹ m.</td><td class="refs">M10, L10</td></tr>
+            <tr><td><strong>Balmer seriyasi</strong></td><td lang="en"><em>Balmer series</em></td><td>Vodorod atomining n = 2 sathiga o‘tishlariga mos ko‘rinadigan chiziqlari (Hα, Hβ, …).</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Chandrasekar chegarasi</strong></td><td lang="en"><em>Chandrasekhar limit</em></td><td>Oq mittining maksimal massasi (≈ 1,4 M☉).</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Efemerida</strong></td><td lang="en"><em>ephemeris</em></td><td>Osmon jismlarining vaqt bo‘yicha hisoblangan holatlari jadvali.</td><td class="refs">L10</td></tr>
+            <tr><td><strong>Effektiv harorat</strong></td><td lang="en"><em>effective temperature</em></td><td>Yulduz bilan bir xil yorqinlik va radiusga ega absolyut qora jism harorati.</td><td class="refs">A1, A2</td></tr>
+            <tr><td><strong>Ekzosayyora</strong></td><td lang="en"><em>exoplanet</em></td><td>Quyoshdan boshqa yulduz atrofida aylanuvchi sayyora.</td><td class="refs">M10, A2, A3</td></tr>
+            <tr><td><strong>Fazaga yig‘ish</strong></td><td lang="en"><em>phase folding</em></td><td>Kuzatuv vaqtlarini sinov davriga bo‘lib, barcha nuqtalarni bitta davrga joylashtirish.</td><td class="refs">A3</td></tr>
+            <tr><td><strong>Fotometriya</strong></td><td lang="en"><em>photometry</em></td><td>Osmon jismlari yorug‘lik oqimini o‘lchash.</td><td class="refs">A3</td></tr>
+            <tr><td><strong>Gertsshprung–Rassel diagrammasi</strong></td><td lang="en"><em>Hertzsprung–Russell diagram</em></td><td>Yulduzlarning harorat (rang) va yorqinlik bo‘yicha diagrammasi.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Habbl qonuni</strong></td><td lang="en"><em>Hubble’s law</em></td><td>Galaktikalarning uzoqlashish tezligi masofaga proporsional: v = H₀d.</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Kepler qonunlari</strong></td><td lang="en"><em>Kepler’s laws</em></td><td>Sayyoralar ellips bo‘ylab harakatlanadi; radius-vektor teng vaqtda teng yuza chizadi; T² ∝ a³.</td><td class="refs">M10, L10</td></tr>
+            <tr><td><strong>Ko‘rinma kattalik</strong></td><td lang="en"><em>apparent magnitude</em></td><td>Yulduzning Yerdan ko‘rinadigan yorqinligi (logarifmik shkala, kichik son — yorug‘roq).</td><td class="refs">A1, A3</td></tr>
+            <tr><td><strong>Masofa moduli</strong></td><td lang="en"><em>distance modulus</em></td><td>m − M = 5 lg d − 5 (d — parsekda).</td><td class="refs">A1, A3</td></tr>
+            <tr><td><strong>Neytron yulduz</strong></td><td lang="en"><em>neutron star</em></td><td>O‘ta yangi yulduz portlashidan qolgan, asosan neytronlardan iborat o‘ta zich obyekt.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Oq mitti</strong></td><td lang="en"><em>white dwarf</em></td><td>O‘rta massali yulduzning termoyadro reaksiyalarisiz qolgan zich qoldig‘i.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>O‘ta yangi yulduz</strong></td><td lang="en"><em>supernova</em></td><td>Yulduzning portlashi; II tur — massiv yulduz yadrosining kollapsi.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Parallaks</strong></td><td lang="en"><em>parallax</em></td><td>Yer orbitasi bo‘ylab harakati tufayli yaqin yulduz holatining yillik siljishi; masofani o‘lchashning asosiy usuli.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Parsek</strong></td><td lang="en"><em>parsec (pc)</em></td><td>Yillik parallaksi 1″ bo‘lgan masofa: 1 pk ≈ 3,26 yorug‘lik yili ≈ 3,086·10¹⁶ m.</td><td class="refs">A1, A3</td></tr>
+            <tr><td><strong>Plank qonuni</strong></td><td lang="en"><em>Planck’s law</em></td><td>Absolyut qora jism nurlanishining to‘lqin uzunligi bo‘yicha taqsimoti.</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Qizil gigant</strong></td><td lang="en"><em>red giant</em></td><td>Yadroda vodorod tugagach kengaygan, sovuq, lekin juda yorqin yulduz.</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Qizil siljish</strong></td><td lang="en"><em>redshift</em></td><td>Spektral chiziqlarning uzun to‘lqinlar tomonga siljishi: z = Δλ/λ₀.</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Radial tezlik</strong></td><td lang="en"><em>radial velocity</em></td><td>Obyekt tezligining kuzatish chizig‘i bo‘ylab tashkil etuvchisi.</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Sefeid</strong></td><td lang="en"><em>Cepheid variable</em></td><td>Davri yorqinligiga bog‘liq bo‘lgan pulsatsiyalanuvchi gigant yulduz; masofa o‘lchovi.</td><td class="refs">A3</td></tr>
+            <tr><td><strong>Signal/shovqin nisbati</strong></td><td lang="en"><em>signal-to-noise ratio (S/N)</em></td><td>Foydali signalning o‘lchash xatoligiga nisbati; fotometriya aniqligini belgilaydi.</td><td class="refs">A3</td></tr>
+            <tr><td><strong>Spektral sinf</strong></td><td lang="en"><em>spectral class</em></td><td>Yulduzlarning spektridagi chiziqlar (va harorat) bo‘yicha tasnifi: O, B, A, F, G, K, M.</td><td class="refs">A1, A2</td></tr>
+            <tr><td><strong>Stefan–Bolsman qonuni</strong></td><td lang="en"><em>Stefan–Boltzmann law</em></td><td>Sirt birligidan nurlanish oqimi T⁴ ga proporsional: F = σT⁴.</td><td class="refs">A1, A2</td></tr>
+            <tr><td><strong>Tranzit</strong></td><td lang="en"><em>transit</em></td><td>Sayyoraning yulduz diski oldidan o‘tishi va yulduz yorug‘ligining biroz pasayishi.</td><td class="refs">M10, A3</td></tr>
+            <tr><td><strong>Vin qonuni</strong></td><td lang="en"><em>Wien’s displacement law</em></td><td>Nurlanish maksimumi to‘lqin uzunligi haroratga teskari proporsional: λ_max = b/T.</td><td class="refs">A2</td></tr>
+            <tr><td><strong>Vis-viva tenglamasi</strong></td><td lang="en"><em>vis-viva equation</em></td><td>Orbitadagi jism tezligi: v² = GM(2/r − 1/a).</td><td class="refs">M10, L10</td></tr>
+            <tr><td><strong>Yorqinlik</strong></td><td lang="en"><em>luminosity</em></td><td>Yulduzning bir sekundda chiqaradigan to‘liq energiyasi (Vt yoki L☉).</td><td class="refs">A1</td></tr>
+            <tr><td><strong>Yorug‘lik egri chizig‘i</strong></td><td lang="en"><em>light curve</em></td><td>Obyekt yorqinligining (kattaligining) vaqtga bog‘liqligi grafigi.</td><td class="refs">M10, A3</td></tr>
+            <tr><td><strong>Yutilish spektri</strong></td><td lang="en"><em>absorption spectrum</em></td><td>Uzluksiz spektr fonidagi qora chiziqlar to‘plami.</td><td class="refs">A2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size: 0.9rem; margin-bottom: 28px;">“Qayerda” ustuni: <strong>M</strong> — ma’ruza, <strong>L</strong> — laboratoriya ishi, <strong>A</strong> — qo‘shimcha astronomiya ma’ruzasi (masalan, M7 — 7-ma’ruza).</p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Darslikka ilova: atamalar lug‘ati.</p>
+    </div>
+  </footer>
+
+  <style>
+    table.data tr.grp th { background: rgba(56, 189, 248, 0.08); color: var(--accent-cyan); font-size: 0.92rem; }
+    table.data td.refs { white-space: nowrap; font-size: 0.85rem; }
+    .gloss-wrap table { min-width: 760px; }
+  </style>
+  <script>
+    (function () {
+      const q = document.getElementById('gloss-q');
+      const rows = Array.from(document.querySelectorAll('#gloss tbody tr'));
+      const count = document.getElementById('gloss-count');
+      const total = rows.filter(r => !r.classList.contains('grp')).length;
+      const norm = s => s.toLowerCase().replace(/[‘’ʻʼ`']/g, '');
+      q.addEventListener('input', () => {
+        const v = norm(q.value.trim());
+        let shown = 0, grp = null, grpHas = false;
+        const flush = () => { if (grp) grp.style.display = grpHas || !v ? '' : 'none'; };
+        rows.forEach(r => {
+          if (r.classList.contains('grp')) { flush(); grp = r; grpHas = false; return; }
+          const ok = !v || norm(r.textContent).includes(v);
+          r.style.display = ok ? '' : 'none';
+          if (ok) { shown++; grpHas = true; }
+        });
+        flush();
+        count.textContent = v ? ('Topildi: ' + shown + ' ta atama (jami ' + total + ').') : ('Lug‘atda ' + total + ' ta atama.');
+      });
+    })();
+  </script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>

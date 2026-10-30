@@ -220,3 +220,14 @@ p { color: var(--text-secondary); font-size: 1.05rem; }
 /* Uzun so'zlar/formulalar telefon ekranidan chiqib ketmasligi uchun */
 p, li, td, th, dd, figcaption { overflow-wrap: break-word; }
 .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+/* Bosma (chop etish va PDF) ko‘rinishi: navigatsiya yashiriladi, barcha tab bo‘limlari ochiladi */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .navbar, .site-header, .mobile-drawer, .drawer-overlay, .hamburger-btn, .tabs-nav, .tabs-scroll-wrapper, .no-print { display: none !important; }
+  .tab-content { display: block !important; }
+  .glass-panel, .card, .hero-panel { background: #fff !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border: 1px solid #bbb !important; }
+  h1, h2, h3, h4, h5, p, li, td, th, strong, em, span, label, a { color: #000 !important; }
+  .text-gradient { background: none !important; -webkit-text-fill-color: #000 !important; color: #000 !important; }
+  pre, code { background: #f4f4f4 !important; color: #000 !important; }
+  canvas, video { max-width: 100% !important; }
+}

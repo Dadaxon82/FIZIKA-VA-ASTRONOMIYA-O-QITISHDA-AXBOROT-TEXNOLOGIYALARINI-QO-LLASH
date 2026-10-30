@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qo‘shimcha astronomiya ma’ruzasi: yulduzlarning spektral tasnifi, Gertsshprung–Rassel diagrammasi, yulduz evolyutsiyasi va Gaia ma’lumotlari bilan laboratoriya ishi.">
+  <title>A1. Yulduzlar evolyutsiyasi va Gertsshprung–Rassel diagrammasi | FIZIKA va SUN’IY INTELLEKT</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], ignoredTags: ['script','noscript','style','textarea','pre','code','option']});"></script>
+  <style>
+    .data-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin: 14px 0 20px; }
+    table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: var(--text-secondary); }
+    table.data th, table.data td { padding: 9px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    table.data thead th { background: #111a2e; color: var(--text-main); font-size: 0.86rem; }
+    table.data td strong { color: var(--text-main); }
+    .lead-p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; }
+    .formula-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-md); padding: 12px 16px; margin: 12px 0 18px; overflow-x: auto; }
+    .note-box { background: rgba(251,191,36,0.06); border-left: 4px solid var(--accent-amber); border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 0.93rem; }
+    .sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .sim-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-secondary); }
+    .sim-controls output { color: var(--accent-cyan); font-weight: 600; }
+    .sim-controls input[type=range] { width: 100%; }
+    .sim-controls select, .sim-controls input[type=text] { background: #0F172A; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 10px; font-size: 0.95rem; }
+    .sim-canvas { width: 100%; display: block; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #0B1120; }
+    .sim-readout { font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary); margin-top: 12px; }
+    .sim-readout strong { color: var(--text-main); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+    .quiz-q { background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 14px; }
+    .quiz-q > strong { display: block; color: var(--text-main); margin-bottom: 8px; }
+    .quiz-q label { display: block; margin: 6px 0; font-size: 0.92rem; cursor: pointer; }
+    .quiz-fb { margin-top: 8px; font-size: 0.88rem; }
+    .refs li { margin-bottom: 8px; }
+    pre.code { background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.55; color: #E2E8F0; white-space: pre; }
+    .flow3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 14px 0; }
+    .flow3 > div { padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); }
+    .flow3 ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link active">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs mundarijasi</span>
+      <button id="drawer-close" class="drawer-close" aria-label="Yopish">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="astro1.html" class="drawer-link active">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-container">
+
+    <div class="hero-panel" style="margin-bottom: 26px;">
+      <span class="badge badge-amber">Qo‘shimcha ma’ruza A1 · Astronomiya</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;">Yulduzlar evolyutsiyasi va <span class="text-gradient">Gertsshprung–Rassel diagrammasi</span></h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">Yulduzlarning spektral sinflari, yorqinlik va harorat orasidagi bog‘lanish, massa–yorqinlik munosabati hamda turli massali yulduzlarning hayot yo‘li. Interaktiv G–R diagrammasi va Gaia kosmik teleskopining ochiq ma’lumotlari bilan laboratoriya ishi.</p>
+    </div>
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab(event, 'tab-1')">1. Nazariya</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-2')">2. Interaktiv G–R diagrammasi</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-3')">3. Laboratoriya ishi: Gaia ma’lumotlari</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-4')">4. Nazorat va adabiyotlar</button>
+    </div>
+
+    <section id="tab-1" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Nazariya</h2>
+        </div>
+
+        <p class="lead-p">Yulduz — o‘z og‘irlik kuchi ta’sirida siqilgan va markazida termoyadro reaksiyalari kechadigan gaz shar. Uning butun hayot yo‘li asosan bitta kattalik — <strong>boshlang‘ich massa</strong> bilan belgilanadi. Ushbu ma’ruzada yulduzlarni tasniflash, Gertsshprung–Rassel (G–R) diagrammasi va turli massali yulduzlar evolyutsiyasi o‘rganiladi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">1.1. Yulduzning asosiy parametrlari</h3>
+        <p>Yulduz sirtini absolyut qora jism deb olsak, uning yorqinligi (bir sekundda chiqaradigan to‘liq energiyasi) radius va effektiv harorat orqali ifodalanadi (Stefan–Bolsman qonuni):</p>
+        <div class="formula-box">$$L = 4\pi R^2 \sigma T_{\text{eff}}^4, \qquad \sigma = 5{,}670 \cdot 10^{-8}\ \text{Vt}/(\text{m}^2 \cdot \text{K}^4)$$</div>
+        <p>Quyosh uchun nominal qiymatlar (XAI, 2015): $L_\odot = 3{,}828 \cdot 10^{26}$ Vt, $R_\odot = 6{,}957 \cdot 10^{8}$ m, $T_\odot = 5772$ K. Shu sababli yulduz parametrlarini Quyosh birliklarida yozish qulay:</p>
+        <div class="formula-box">$$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$</div>
+        <p>Yulduzning ko‘rinma kattaligi $m$ va absolyut kattaligi $M$ (10 pk masofadan ko‘rinadigan kattalik) masofa moduli orqali bog‘langan:</p>
+        <div class="formula-box">$$m - M = 5\lg d - 5 \quad (d \text{ — parsekda}), \qquad d = \frac{1}{\varpi} \quad (\varpi \text{ — yillik parallaks, yoy sekundida})$$</div>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">1.2. Spektral sinflar</h3>
+        <p>Yulduzlar spektridagi chiziqlar asosan sirt haroratiga bog‘liq. Garvard tasnifi bo‘yicha sinflar haroratning kamayishi tartibida joylashadi: <strong>O, B, A, F, G, K, M</strong>. Har bir sinf 0 dan 9 gacha qismlarga bo‘linadi (masalan, Quyosh — G2). Yorqinlik sinfi rim raqami bilan beriladi: I — supergigantlar, III — gigantlar, V — asosiy ketma-ketlik (mitti) yulduzlar.</p>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Sinf</th><th>Harorat, K</th><th>Rangi</th><th>Spektrdagi asosiy chiziqlar</th><th>Namuna</th></tr></thead>
+          <tbody>
+            <tr><td><strong>O</strong></td><td>&gt; 30 000</td><td>havorang</td><td>ionlashgan geliy (He II)</td><td>Mintaka (δ Orion), O9.5</td></tr>
+            <tr><td><strong>B</strong></td><td>10 000–30 000</td><td>ko‘kimtir-oq</td><td>neytral geliy (He I), vodorod</td><td>Rigel, B8 Ia</td></tr>
+            <tr><td><strong>A</strong></td><td>7500–10 000</td><td>oq</td><td>Balmer seriyasi eng kuchli</td><td>Vega, A0 V; Sirius A</td></tr>
+            <tr><td><strong>F</strong></td><td>6000–7500</td><td>sarg‘ish-oq</td><td>Ca II, metall chiziqlari kuchayadi</td><td>Prosion A, F5 IV–V</td></tr>
+            <tr><td><strong>G</strong></td><td>5200–6000</td><td>sariq</td><td>Ca II H va K, neytral metallar</td><td>Quyosh, G2 V</td></tr>
+            <tr><td><strong>K</strong></td><td>3700–5200</td><td>to‘q sariq</td><td>neytral metallar kuchli</td><td>Arktur, K1.5 III</td></tr>
+            <tr><td><strong>M</strong></td><td>2400–3700</td><td>qizil</td><td>TiO molekulyar polosalari</td><td>Betelgeyze, M1–M2 Ia; Proksima Sentavra, M5.5 V</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">1.3. Gertsshprung–Rassel diagrammasi</h3>
+        <p>G–R diagrammasida gorizontal o‘q bo‘ylab harorat (yoki spektral sinf, rang ko‘rsatkichi), vertikal o‘q bo‘ylab yorqinlik (yoki absolyut kattalik) qo‘yiladi. An’anaga ko‘ra harorat <em>chapdan o‘ngga kamayadi</em>. Yulduzlar diagrammada tasodifiy joylashmaydi:</p>
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Asosiy ketma-ketlik</strong> — yadrosida vodorod yonayotgan yulduzlar (yulduzlarning taxminan 90 %). Ketma-ketlik bo‘ylab yuqoriga ko‘tarilgan sari massa ortadi.</li>
+          <li><strong>Gigantlar va supergigantlar</strong> — yadroda vodorod tugagan, kengayib sovigan yulduzlar (yuqori o‘ng burchak).</li>
+          <li><strong>Oq mittilar</strong> — termoyadro reaksiyalari to‘xtagan, Yer o‘lchamidagi issiq, ammo xira qoldiqlar (pastki chap burchak).</li>
+        </ul>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">1.4. Energiya manbai va yulduz umri</h3>
+        <p>Asosiy ketma-ketlikdagi yulduz energiyani vodorodni geliyga aylantirib oladi. Quyoshga o‘xshash yulduzlarda proton-proton zanjiri, 1,3 M☉ dan og‘irroq yulduzlarda esa CNO sikli ustun bo‘ladi:</p>
+        <div class="formula-box">$$4\,{}^{1}\text{H} \;\rightarrow\; {}^{4}\text{He} + 2e^{+} + 2\nu_e, \qquad \Delta E \approx 26{,}7\ \text{MeV} \;(\text{massaning} \approx 0{,}7\,\%)$$</div>
+        <p>Massa–yorqinlik munosabati (taxminan, $0{,}5\,M_\odot \lesssim M \lesssim 20\,M_\odot$ uchun) va undan kelib chiqadigan asosiy ketma-ketlikdagi umr:</p>
+        <div class="formula-box">$$\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3{,}5}, \qquad t_{\text{AK}} \approx 10^{10}\ \text{yil} \cdot \frac{M/M_\odot}{L/L_\odot} \approx 10^{10}\ \text{yil} \cdot \left(\frac{M}{M_\odot}\right)^{-2{,}5}$$</div>
+        <p>Demak, massasi 10 M☉ bo‘lgan yulduz Quyoshdan ~3000 marta yorqin, lekin atigi ~30 million yil yashaydi. Massasi 0,2 M☉ bo‘lgan qizil mitti esa yuzlab milliard yil yashaydi — bu Koinot yoshidan (13,8 mlrd yil) ancha ko‘p.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">1.5. Evolyutsiya yo‘llari</h3>
+        <div class="flow3">
+          <div style="border-top: 3px solid var(--accent-rose);">
+            <strong style="color: var(--accent-rose);">Kichik massa: M &lt; 0,5 M☉</strong>
+            <ol>
+              <li>Qizil mitti, to‘liq konvektiv.</li>
+              <li>Vodorodni juda sekin sarflaydi (10¹¹–10¹³ yil).</li>
+              <li>Nazariy yakun — geliyli oq mitti; bunday yulduzlar hali paydo bo‘lishga ulgurmagan.</li>
+            </ol>
+          </div>
+          <div style="border-top: 3px solid var(--accent-amber);">
+            <strong style="color: var(--accent-amber);">O‘rta massa: 0,5–8 M☉ (Quyosh ham)</strong>
+            <ol>
+              <li>Asosiy ketma-ketlik.</li>
+              <li>Subgigant va qizil gigant (qobiqda vodorod yonadi).</li>
+              <li>Yadroda geliy yonishi (uglerod va kislorod hosil bo‘ladi).</li>
+              <li>Asimptotik gigantlar tarmog‘i, tashqi qobiq tashlanadi — planetar tumanlik.</li>
+              <li>Oq mitti; massasi Chandrasekar chegarasidan (≈1,4 M☉) kichik.</li>
+            </ol>
+          </div>
+          <div style="border-top: 3px solid var(--accent-purple);">
+            <strong style="color: var(--accent-purple);">Katta massa: M &gt; 8 M☉</strong>
+            <ol>
+              <li>Asosiy ketma-ketlik (CNO sikli).</li>
+              <li>Qizil (yoki ko‘k) supergigant: temirgacha elementlar sintezi.</li>
+              <li>Temir yadroning kollapsi — II tur o‘ta yangi yulduz.</li>
+              <li>Qoldiq: neytron yulduz yoki (taxminan 20–25 M☉ dan og‘ir yulduzlarda) qora tuynuk.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="note-box">Oq mitti massasini boshlang‘ich massa bo‘yicha baholashning empirik formulasi: $M_{\text{oq mitti}} \approx 0{,}109\,M_{\text{bosh}} + 0{,}394\,M_\odot$ (Kalirai va b., 2008). Masalan, Quyosh oq mitti bo‘lganda massasi ≈ 0,5 M☉ bo‘ladi — qolgan qismini planetar tumanlik sifatida yo‘qotadi.</div>
+
+      </div>
+    </section>
+
+    <section id="tab-2" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2. Interaktiv G–R diagrammasi</h2>
+        </div>
+
+        <p class="lead-p">Massani tanlang va “Evolyutsiyani boshlash” tugmasini bosing. Model asosiy ketma-ketlikdagi parametrlarni yuqoridagi munosabatlar bo‘yicha hisoblaydi, keyingi bosqichlarni esa <strong>sxematik trek</strong> ko‘rinishida ko‘rsatadi. Bu yulduz tuzilishini hisoblovchi dastur emas — treklar ta’lim maqsadida soddalashtirilgan.</p>
+        <div class="sim-controls">
+          <label>Boshlang‘ich massa: <output id="hr-mass-val">1 M☉</output>
+            <input id="hr-mass" type="range" min="0.1" max="40" step="0.05" value="1">
+          </label>
+          <div>
+            <div class="btn-row">
+              <button id="hr-play" class="btn btn-primary">▶ Evolyutsiyani boshlash</button>
+              <button id="hr-reset" class="btn btn-secondary">Qaytadan</button>
+            </div>
+            <div id="hr-stage" style="font-size: 0.9rem; color: var(--accent-amber);"></div>
+          </div>
+        </div>
+        <canvas id="hr-canvas" class="sim-canvas" aria-label="Gertsshprung–Rassel diagrammasi"></canvas>
+        <div id="hr-info" class="sim-readout"></div>
+        <div class="note-box"><strong>Kuzatish vazifalari:</strong>
+          <ol style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7;">
+            <li>Massani 1 M☉ dan 10 M☉ ga oshiring. Yorqinlik va umr necha marta o‘zgaradi? Natijani $L \propto M^{3,5}$ formulasi bilan solishtiring.</li>
+            <li>Qaysi massadan boshlab yulduz o‘ta yangi yulduz bo‘lib portlaydi? Nega aynan temir yadro kollapsga uchraydi?</li>
+            <li>Diagrammadagi Betelgeyze va Sirius B uchun $L = 4\pi R^2 \sigma T^4$ dan radiusni hisoblang. Ular Quyoshdan necha marta katta yoki kichik?</li>
+            <li>0,2 M☉ massali yulduz uchun model nega evolyutsiyani ko‘rsatmaydi?</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="tab-3" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3. Laboratoriya ishi: Gaia ma’lumotlari</h2>
+        </div>
+
+        <p class="lead-p"><strong>Ishning maqsadi:</strong> Gaia kosmik teleskopining ochiq ma’lumotlari asosida Quyosh atrofidagi yulduzlarning rang–kattalik (kuzatuv G–R) diagrammasini qurish, unda asosiy ketma-ketlik, gigantlar va oq mittilarni ajratish hamda SI yordamida yozilgan kodni fizik jihatdan tekshirish.</p>
+        <p><strong>Kerakli vositalar (hammasi bepul):</strong> <a class="citation-link" href="https://gea.esac.esa.int/archive/" target="_blank" rel="noopener">Gaia arxivi</a> (ro‘yxatdan o‘tmasdan so‘rov yuborish mumkin), <a class="citation-link" href="https://colab.research.google.com" target="_blank" rel="noopener">Google Colab</a>, Gemini, ChatGPT yoki Claude’ning bepul tarifi, ma’lumot tekshirish uchun <a class="citation-link" href="https://simbad.cds.unistra.fr/simbad/" target="_blank" rel="noopener">SIMBAD</a>.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">Ishni bajarish tartibi</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Ma’lumot olish.</strong> Gaia arxivining “Search → Advanced (ADQL)” bo‘limida quyidagi so‘rovni bajaring va natijani CSV ko‘rinishida yuklab oling. So‘rov 100 pk ichidagi, parallaksi aniq o‘lchangan yulduzlarni tanlaydi.</li>
+        </ol>
+        <pre class="code">SELECT TOP 5000 source_id, parallax, phot_g_mean_mag, bp_rp
+FROM gaiadr3.gaia_source
+WHERE parallax &gt; 10
+  AND parallax_over_error &gt; 10
+  AND bp_rp IS NOT NULL</pre>
+        <ol start="2" style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Absolyut kattalikni hisoblash.</strong> Parallaks milliyoy sekundlarda (mas) berilgani uchun $M_G = G + 5\lg \varpi_{\text{mas}} - 10$ formulasidan foydalaning. Bu formulani masofa modulidan o‘zingiz keltirib chiqaring va hisobotga yozing.</li>
+          <li><strong>Diagrammani qurish.</strong> Colab’da quyidagi kodni ishga tushiring (fayl nomini o‘zingiznikiga almashtiring):</li>
+        </ol>
+        <pre class="code">import pandas as pd, numpy as np, matplotlib.pyplot as plt
+df = pd.read_csv("gaia_100pc.csv")
+df["M_G"] = df["phot_g_mean_mag"] + 5*np.log10(df["parallax"]) - 10
+plt.figure(figsize=(6, 7))
+plt.scatter(df["bp_rp"], df["M_G"], s=1, c=df["bp_rp"], cmap="RdYlBu_r")
+plt.gca().invert_yaxis()          # yorug‘ yulduzlar yuqorida
+plt.xlabel("Rang ko‘rsatkichi BP − RP")
+plt.ylabel("Absolyut kattalik M_G")
+plt.title("Gaia DR3: 100 pk ichidagi yulduzlar")
+plt.show()</pre>
+        <ol start="4" style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>SI bilan ishlash.</strong> Quyidagi promptni Gemini, ChatGPT yoki Claude’ga bering. Javobdagi kodni ishga tushiring va undagi har bir formulani 1-bo‘limdagi nazariya bilan tekshiring. SI xato qilgan joylarni hisobotda alohida ko‘rsating.</li>
+        </ol>
+        <pre class="code">Sen astrofizika o‘qituvchisisan. Menda Gaia DR3 dan olingan CSV fayl bor:
+ustunlar — parallax (mas), phot_g_mean_mag, bp_rp.
+1) Absolyut kattalik M_G ni hisoblovchi Python kod yoz va formulani izohla.
+2) Rang–kattalik diagrammasida asosiy ketma-ketlik, qizil gigantlar va oq
+   mittilarni taxminiy chegaralar bilan ajratib, har birini alohida rangda chiz.
+3) Har bir guruhdagi yulduzlar sonini chiqar.
+Faqat numpy, pandas va matplotlib dan foydalan. Taxminiy chegaralarni
+qanday tanlaganingni alohida tushuntir.</pre>
+        <ol start="5" style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Tahlil.</strong> Diagrammada asosiy ketma-ketlik, gigantlar va oq mittilarni belgilang. Nima uchun 100 pk ichida gigantlar juda kam? (Ko‘rsatma: hajm cheklangan namunani yorqinlik cheklangan namuna bilan solishtiring.)</li>
+          <li><strong>Tekshiruv.</strong> Diagrammadan uchta yulduzni tanlab, ularning <code>source_id</code> si bo‘yicha SIMBAD’dan spektral sinfini toping. Sinf diagrammadagi joyiga mos keladimi?</li>
+        </ol>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">Baholash mezonlari (100 ball)</h3>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Mezon</th><th>Ball</th><th>Talab</th></tr></thead>
+          <tbody>
+            <tr><td>Ilmiy aniqlik</td><td>30</td><td>Formulalar to‘g‘ri keltirilgan, birliklar ko‘rsatilgan, hududlar to‘g‘ri belgilangan</td></tr>
+            <tr><td>Ma’lumot bilan ishlash</td><td>25</td><td>ADQL so‘rovi, tanlash shartlari va namunaning cheklovlari tushuntirilgan</td></tr>
+            <tr><td>Kod va grafik</td><td>20</td><td>Diagramma o‘qlari, birliklari va sarlavhasi to‘liq; kod ishlaydi</td></tr>
+            <tr><td>SI dan foydalanish jurnali</td><td>15</td><td>Promptlar, SI javoblari va topilgan xatolar qayd etilgan</td></tr>
+            <tr><td>Xulosa</td><td>10</td><td>Tahlil savollariga asosli javob berilgan</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size: 0.9rem;">Baho: 86–100 ball — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3), 55 dan kam — qoniqarsiz (2).</p>
+
+      </div>
+    </section>
+
+    <section id="tab-4" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4. Nazorat va adabiyotlar</h2>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-bottom: 14px;">Nazorat savollari</h3>
+        <div class="quiz-q">
+          <strong>1-savol. G–R diagrammasining qaysi qismida oq mittilar joylashadi?</strong>
+          <label><input type="radio" name="q1" value="A"> A) Yuqori o‘ng burchakda</label>
+          <label><input type="radio" name="q1" value="B"> B) Pastki chap burchakda</label>
+          <label><input type="radio" name="q1" value="C"> C) Asosiy ketma-ketlikning o‘rtasida</label>
+          <label><input type="radio" name="q1" value="D"> D) Pastki o‘ng burchakda</label>
+          <div class="quiz-fb" id="fb-q1"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>2-savol. Massasi Quyoshnikidan 4 marta katta yulduz asosiy ketma-ketlikda taxminan qancha yashaydi?</strong>
+          <label><input type="radio" name="q2" value="A"> A) 40 mlrd yil</label>
+          <label><input type="radio" name="q2" value="B"> B) 2,5 mlrd yil</label>
+          <label><input type="radio" name="q2" value="C"> C) 310 mln yil</label>
+          <label><input type="radio" name="q2" value="D"> D) 10 mln yil</label>
+          <div class="quiz-fb" id="fb-q2"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>3-savol. Ikki yulduzning harorati bir xil, birinchisining radiusi 10 marta katta. Yorqinliklar nisbati qancha?</strong>
+          <label><input type="radio" name="q3" value="A"> A) 10</label>
+          <label><input type="radio" name="q3" value="B"> B) 100</label>
+          <label><input type="radio" name="q3" value="C"> C) 1000</label>
+          <label><input type="radio" name="q3" value="D"> D) 10 000</label>
+          <div class="quiz-fb" id="fb-q3"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>4-savol. Massasi 15 M☉ bo‘lgan yulduz evolyutsiyasi qanday yakunlanadi?</strong>
+          <label><input type="radio" name="q4" value="A"> A) Oq mitti va planetar tumanlik</label>
+          <label><input type="radio" name="q4" value="B"> B) II tur o‘ta yangi yulduz, qoldiq — neytron yulduz</label>
+          <label><input type="radio" name="q4" value="C"> C) Qizil mitti bo‘lib qoladi</label>
+          <label><input type="radio" name="q4" value="D"> D) Ia tur o‘ta yangi yulduz</label>
+          <div class="quiz-fb" id="fb-q4"></div>
+        </div>
+        <button class="btn btn-primary" onclick='checkQuiz({"q1": "B", "q2": "C", "q3": "B", "q4": "B"}, {"q1": "Oq mittilar issiq (chapda), lekin radiusi juda kichik bo‘lgani uchun xira (pastda).", "q2": "t ≈ 10¹⁰ · 4^(−2,5) = 10¹⁰ / 32 ≈ 3,1·10⁸ yil.", "q3": "L ∝ R²T⁴: harorat bir xil bo‘lsa, L₁/L₂ = 10² = 100.", "q4": "8 M☉ dan og‘ir yulduzlarda temir yadro kollapsga uchraydi; 15 M☉ uchun odatdagi qoldiq — neytron yulduz."})'>✅ Natijani tekshirish</button>
+        <div id="quiz-result" style="margin-top: 12px; font-weight: bold; display: none;"></div>
+        <h3 style="color: var(--accent-cyan); margin: 28px 0 10px;">Mustaqil ish uchun savollar</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Nima uchun asosiy ketma-ketlikda massa ortgan sari yulduz umri qisqaradi?</li>
+          <li>Chandrasekar chegarasi nima va u qaysi fizik bosim bilan bog‘liq?</li>
+          <li>Ochiq yulduz to‘dalari G–R diagrammasidagi “burilish nuqtasi” orqali to‘da yoshini qanday aniqlash mumkin?</li>
+        </ol>
+        <h3 style="color: var(--accent-emerald); margin: 28px 0 10px;">Adabiyotlar</h3>
+        <ol class="refs" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
+          <li>Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class="citation-link" href="https://doi.org/10.1017/9781108380980" target="_blank" rel="noopener">https://doi.org/10.1017/9781108380980</a></li>
+          <li>Kippenhahn, R., Weigert, A., &amp; Weiss, A. (2012). <em>Stellar Structure and Evolution</em> (2nd ed.). Springer. <a class="citation-link" href="https://doi.org/10.1007/978-3-642-30304-3" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-642-30304-3</a></li>
+          <li>Prialnik, D. (2009). <em>An Introduction to the Theory of Stellar Structure and Evolution</em> (2nd ed.). Cambridge University Press.</li>
+          <li>Kalirai, J. S., Hansen, B. M. S., Kelson, D. D., Reitzel, D. B., Rich, R. M., &amp; Richer, H. B. (2008). The initial-final mass relation: Direct constraints at the low-mass end. <em>The Astrophysical Journal, 676</em>(1), 594–609. <a class="citation-link" href="https://doi.org/10.1086/527028" target="_blank" rel="noopener">https://doi.org/10.1086/527028</a></li>
+          <li>Gaia Collaboration, Babusiaux, C., et al. (2018). Gaia Data Release 2: Observational Hertzsprung–Russell diagrams. <em>Astronomy &amp; Astrophysics, 616</em>, A10. <a class="citation-link" href="https://doi.org/10.1051/0004-6361/201832843" target="_blank" rel="noopener">https://doi.org/10.1051/0004-6361/201832843</a></li>
+          <li>Gaia Collaboration, Vallenari, A., et al. (2023). Gaia Data Release 3: Summary of the content and survey properties. <em>Astronomy &amp; Astrophysics, 674</em>, A1. <a class="citation-link" href="https://doi.org/10.1051/0004-6361/202243940" target="_blank" rel="noopener">https://doi.org/10.1051/0004-6361/202243940</a></li>
+          <li>Prša, A., et al. (2016). Nominal values for selected solar and planetary quantities: IAU 2015 Resolution B3. <em>The Astronomical Journal, 152</em>(2), 41. <a class="citation-link" href="https://doi.org/10.3847/0004-6256/152/2/41" target="_blank" rel="noopener">https://doi.org/10.3847/0004-6256/152/2/41</a></li>
+          <li>Wenger, M., et al. (2000). The SIMBAD astronomical database. <em>Astronomy and Astrophysics Supplement Series, 143</em>, 9–22. <a class="citation-link" href="https://doi.org/10.1051/aas:2000332" target="_blank" rel="noopener">https://doi.org/10.1051/aas:2000332</a></li>
+        </ol>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Qo‘shimcha ma’ruza A1: Yulduzlar evolyutsiyasi &bull; G–R diagrammasi, Gaia DR3, SIMBAD.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.switchTab = function (evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      const t = document.getElementById(tabId);
+      if (t) t.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+      if (window.astroLcRedraw) setTimeout(window.astroLcRedraw, 30);
+    };
+    window.checkQuiz = function (key, explain) {
+      let score = 0;
+      const total = Object.keys(key).length;
+      Object.keys(key).forEach(q => {
+        const sel = document.querySelector('input[name="' + q + '"]:checked');
+        const fb = document.getElementById('fb-' + q);
+        if (!sel) { fb.style.color = '#FBBF24'; fb.textContent = 'Javob tanlanmagan.'; return; }
+        if (sel.value === key[q]) { score++; fb.style.color = '#34D399'; fb.textContent = 'To‘g‘ri. ' + explain[q]; }
+        else { fb.style.color = '#F87171'; fb.textContent = 'Noto‘g‘ri. ' + explain[q]; }
+      });
+      const res = document.getElementById('quiz-result');
+      const pct = Math.round(score / total * 100);
+      res.style.display = 'block';
+      res.style.color = pct >= 86 ? '#34D399' : pct >= 55 ? '#FBBF24' : '#F87171';
+      res.textContent = 'Natija: ' + score + '/' + total + ' (' + pct + ' %).';
+    };
+  </script>
+  <script src="js/sim-astro-extra.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>

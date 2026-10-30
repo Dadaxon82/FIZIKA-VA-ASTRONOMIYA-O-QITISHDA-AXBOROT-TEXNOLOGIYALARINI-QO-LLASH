@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash elektron darsligining annotatsiyasi (o‘zbek, rus, ingliz tillarida), so‘z boshi va to‘liq mundarijasi.">
+  <title>Annotatsiya, so‘z boshi va mundarija | FIZIKA va SUN’IY INTELLEKT</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .data-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin: 14px 0 20px; }
+    table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: var(--text-secondary); }
+    table.data th, table.data td { padding: 9px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    table.data thead th { background: #111a2e; color: var(--text-main); font-size: 0.86rem; }
+    table.data td strong { color: var(--text-main); }
+    .lead-p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; }
+    .formula-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-md); padding: 12px 16px; margin: 12px 0 18px; overflow-x: auto; }
+    .note-box { background: rgba(251,191,36,0.06); border-left: 4px solid var(--accent-amber); border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 0.93rem; }
+    .sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .sim-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-secondary); }
+    .sim-controls output { color: var(--accent-cyan); font-weight: 600; }
+    .sim-controls input[type=range] { width: 100%; }
+    .sim-controls select, .sim-controls input[type=text] { background: #0F172A; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 10px; font-size: 0.95rem; }
+    .sim-canvas { width: 100%; display: block; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #0B1120; }
+    .sim-readout { font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary); margin-top: 12px; }
+    .sim-readout strong { color: var(--text-main); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+    .quiz-q { background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 14px; }
+    .quiz-q > strong { display: block; color: var(--text-main); margin-bottom: 8px; }
+    .quiz-q label { display: block; margin: 6px 0; font-size: 0.92rem; cursor: pointer; }
+    .quiz-fb { margin-top: 8px; font-size: 0.88rem; }
+    .refs li { margin-bottom: 8px; }
+    pre.code { background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.55; color: #E2E8F0; white-space: pre; }
+    .flow3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 14px 0; }
+    .flow3 > div { padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); }
+    .flow3 ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link active">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs mundarijasi</span>
+      <button id="drawer-close" class="drawer-close" aria-label="Yopish">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link active">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-container">
+
+    <div class="hero-panel" style="margin-bottom: 26px;">
+      <span class="badge badge-amber">Darslik haqida</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;">Annotatsiya, so‘z boshi <span class="text-gradient">va mundarija</span></h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash: elektron darslik. Bibliografik ma’lumot, annotatsiya (o‘zbek, rus va ingliz tillarida), so‘z boshi, foydalanish bo‘yicha tavsiyalar va to‘liq mundarija.</p>
+    </div>
+
+    <div class="btn-row no-print" style="margin-bottom: 18px;">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Chop etish yoki PDF sifatida saqlash</button>
+      <a class="btn btn-secondary" href="#mundarija">Mundarijaga o‘tish</a>
+    </div>
+
+    <section class="card print-block" id="bibliografiya">
+      <div class="card-header"><h2 class="card-title">Bibliografik ma’lumot</h2></div>
+      <p><strong>Meliqo‘ziyev D.J.</strong> Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash: elektron darslik. — Qo‘qon: Qo‘qon davlat universiteti, Fizika va astronomiya kafedrasi, 2026. — 15 ma’ruza, 15 laboratoriya ishi, 3 qo‘shimcha mavzu, ilovalar.</p>
+      <p><strong>Muallif:</strong> D.J. Meliqo‘ziyev — Qo‘qon davlat universiteti Fizika va astronomiya kafedrasi, pedagogika fanlari bo‘yicha falsafa doktori (PhD).</p>
+      <p><strong>Elektron manzil:</strong> <a class="citation-link" href="https://dadaxon82.github.io/FIZIKA-VA-ASTRONOMIYA-O-QITISHDA-AXBOROT-TEXNOLOGIYALARINI-QO-LLASH/">dadaxon82.github.io/FIZIKA-VA-ASTRONOMIYA-O-QITISHDA-AXBOROT-TEXNOLOGIYALARINI-QO-LLASH</a></p>
+    </section>
+
+    <section class="card print-block" id="annotatsiya">
+      <div class="card-header"><h2 class="card-title">Annotatsiya</h2></div>
+      <p>Elektron darslik bo‘lajak fizika va astronomiya o‘qituvchilarini sun’iy intellekt (SI) vositalari va veb-texnologiyalar yordamida fizik jarayonlarning interaktiv modellarini yaratishga tayyorlaydi. Darslik 15 ta ma’ruza, ularga mos 15 ta laboratoriya ishi, astronomiya bo‘yicha 3 ta qo‘shimcha mavzu hamda ilovalardan iborat.</p>
+      <p>Unda fizik jarayonni modellashtirish metodologiyasi, sonli integrallash usullari va hisoblash aniqligi, HTML5 Canvas asosida animatsiya va fizika dvigatelini yaratish, prompt-muhandislik, astronomik ma’lumotlarni vizuallashtirish, masofaviy ta’lim platformalarida kurs loyihalash, mexanika, termodinamika, elektrodinamika, yadro fizikasi va astronomiya jarayonlarini modellashtirish yoritilgan. Har bir mavzu boshlang‘ich diagnostika, nazariya, SI bilan amaliy ish, interaktiv tajriba dastgohi, baholash mezonlari va adabiyotlar ro‘yxatini o‘z ichiga oladi.</p>
+      <p>Darslik oliy ta’lim muassasalarining “Fizika va astronomiya” ta’lim yo‘nalishi talabalari, magistrantlar hamda fizika o‘qituvchilarining malakasini oshirish kurslari tinglovchilari uchun mo‘ljallangan.</p>
+
+      <h3 style="margin: 20px 0 8px; font-size: 1.05rem;">Аннотация</h3>
+      <p lang="ru">Электронный учебник готовит будущих учителей физики и астрономии к созданию интерактивных моделей физических процессов с помощью инструментов искусственного интеллекта (ИИ) и веб-технологий. Учебник включает 15 лекций, 15 соответствующих лабораторных работ, 3 дополнительные темы по астрономии и приложения. Рассматриваются методология моделирования, численные методы и точность вычислений, анимация на HTML5 Canvas, промпт-инжиниринг, визуализация астрономических данных, проектирование курсов на платформах дистанционного обучения, моделирование процессов механики, термодинамики, электродинамики, ядерной физики и астрономии. Предназначен для студентов направления «Физика и астрономия», магистрантов и слушателей курсов повышения квалификации учителей физики.</p>
+
+      <h3 style="margin: 20px 0 8px; font-size: 1.05rem;">Annotation</h3>
+      <p lang="en">This e-textbook prepares future physics and astronomy teachers to build interactive models of physical processes with artificial intelligence (AI) tools and web technologies. It contains 15 lectures, 15 matching laboratory works, 3 supplementary astronomy topics and appendices. It covers modelling methodology, numerical integration and computational accuracy, HTML5 Canvas animation and physics engines, prompt engineering, visualisation of astronomical data, course design on distance-learning platforms, and modelling in mechanics, thermodynamics, electrodynamics, nuclear physics and astronomy. It is intended for undergraduate students in Physics and Astronomy, master’s students and in-service physics teachers.</p>
+    </section>
+
+    <section class="card print-block" id="soz-boshi">
+      <div class="card-header"><h2 class="card-title">So‘z boshi</h2></div>
+      <p>Fizika va astronomiyada ko‘plab hodisalarni auditoriyada bevosita kuzatib bo‘lmaydi: yulduzlar milliardlab yil yashaydi, radioaktiv yadro yemirilishi ko‘zga ko‘rinmaydi, sayyoralar orbitasini kuzatish uchun oylar kerak. Kompyuter modeli va animatsiya bu hodisalarni talabaga ko‘rinadigan, boshqariladigan va o‘lchanadigan qiladi.</p>
+      <p>Bugungi sun’iy intellekt vositalari fizika o‘qituvchisiga murakkab dasturlash tajribasisiz ham simulyatsiya yaratish imkonini beradi. Ammo SI xato qilishi, “ishonchli ko‘rinadigan” noto‘g‘ri formulalar yozishi mumkin. Shu sababli darslikning asosiy g‘oyasi: <strong>SI — javob beruvchi emas, tekshirilishi shart bo‘lgan hamkor</strong>. Har bir laboratoriya ishida talaba SI yozgan kodni analitik yechim, saqlanish qonunlari yoki aniq sonli usul bilan solishtirib tekshiradi va buni SI promptlar jurnalida qayd etadi.</p>
+      <p>Darslik uch bosqichda tuzilgan. Birinchi bobda modellashtirish metodologiyasi, SI vositalari ekotizimi va hisoblash aniqligi o‘rganiladi. Ikkinchi bobda Canvas animatsiyasi, fizika dvigateli, prompt-muhandislik, ma’lumotlarni vizuallashtirish va masofaviy ta’lim texnologiyalari egallanadi. Uchinchi bobda olingan ko‘nikmalar mexanika, termodinamika, elektrodinamika va yadro fizikasiga tatbiq etiladi hamda yakuniy loyiha himoya qilinadi. To‘rtinchi bob astronomiyaga bag‘ishlangan: yulduzlar evolyutsiyasi, spektral tahlil va teleskop kuzatuv ma’lumotlari bilan ishlash.</p>
+      <p>Darslikdagi barcha topshiriqlarni bepul vositalar bilan bajarish mumkin. Pullik yoki hududiy cheklangan xizmatlar yonida ularning bepul muqobillari ko‘rsatilgan. Ochiq ilmiy arxivlar (Gaia, SDSS, Kepler/TESS, NASA JPL) esa talabaga haqiqiy tadqiqot ma’lumotlari bilan ishlash tajribasini beradi.</p>
+      <p>Muallif darslikni takomillashtirish bo‘yicha fikr va takliflarni mamnuniyat bilan qabul qiladi.</p>
+      <p style="text-align: right;"><em>Muallif</em></p>
+    </section>
+
+    <section class="card print-block" id="foydalanish">
+      <div class="card-header"><h2 class="card-title">Darslikdan foydalanish bo‘yicha tavsiyalar</h2></div>
+      <ol style="padding-left: 20px; line-height: 1.8;">
+        <li>Har bir mavzuni ma’ruzadan boshlang, so‘ng shu raqamli laboratoriya ishini bajaring.</li>
+        <li>Ma’ruza boshidagi diagnostika testini topshiring: u sizga mos murakkablik darajasini (klasterni) ko‘rsatadi.</li>
+        <li>SI bilan ishlaganda barcha promptlar va javoblarni jurnalga yozing; SI natijasini har doim fizik qonunlar bilan tekshiring.</li>
+        <li>Notanish atamalarni <a class="citation-link" href="glossariy.html">atamalar lug‘ati</a>dan, vositalar va ularning bepul muqobillarini <a class="citation-link" href="si-vositalari.html">SI vositalari</a> sahifasidan toping.</li>
+        <li>Laboratoriya ishlari 100 ballik reyting bo‘yicha baholanadi: 86–100 — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3).</li>
+      </ol>
+    </section>
+
+    <section class="card print-block" id="mundarija">
+      <div class="card-header"><h2 class="card-title">Mundarija</h2></div>
+        <p><a href="#annotatsiya">Annotatsiya</a> · <a href="#soz-boshi">So‘z boshi</a> · <a href="#foydalanish">Darslikdan foydalanish bo‘yicha tavsiyalar</a></p>
+        <h3 class="toc-h">I bob. Nazariy-metodologik asoslar</h3>
+        <ol class="toc" start="1">
+          <li><a href="lecture1.html"><span class="toc-n">1-ma’ruza.</span> Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib fizik simulyatsion animatsiya yaratish paradigmasi</a><br><a class="toc-lab" href="lab1.html"><span class="toc-n">1-laboratoriya ishi.</span> Sun’iy intellekt vositalari yordamida fizik simulyatsion animatsiyalarning dastlabki vizual loyihasini yaratish</a></li>
+          <li><a href="lecture2.html"><span class="toc-n">2-ma’ruza.</span> Fizik jarayonni modellashtirish metodologiyasi</a><br><a class="toc-lab" href="lab2.html"><span class="toc-n">2-laboratoriya ishi.</span> LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish</a></li>
+          <li><a href="lecture3.html"><span class="toc-n">3-ma’ruza.</span> Zamonaviy sun’iy intellekt vositalari ekotizimi</a><br><a class="toc-lab" href="lab3.html"><span class="toc-n">3-laboratoriya ishi.</span> Zamonaviy AI ekotizimida ro‘yxatdan o‘tish hamda fizika darsi uchun integratsiyalashgan virtual ish muhitini sozlash</a></li>
+          <li><a href="lecture4.html"><span class="toc-n">4-ma’ruza.</span> Zamonaviy kompyuter modeliga qo‘yiladigan talablar va hisoblash aniqligi</a><br><a class="toc-lab" href="lab4.html"><span class="toc-n">4-laboratoriya ishi.</span> WolframAlpha va AI (Code Interpreter) muhitida kompyuter modellarining hisoblash aniqligini (integratsiya qadamini) sinab ko‘rish va xatolik grafiklarini qurish</a></li>
+          <li><a href="lecture5.html"><span class="toc-n">5-ma’ruza.</span> Fizik jarayonlarni modellashtirish — bilish metodi sifatida. Model turlari</a><br><a class="toc-lab" href="lab5.html"><span class="toc-n">5-laboratoriya ishi.</span> Deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash va ularning o‘ziga xos xususiyatlarini vizual tahlil qilish</a></li>
+        </ol>
+        <h3 class="toc-h">II bob. Raqamli vositalar va dasturlash</h3>
+        <ol class="toc" start="6">
+          <li><a href="lecture6.html"><span class="toc-n">6-ma’ruza.</span> Raqamli texnologiya yordamida fizik modellarni shakllantirish</a><br><a class="toc-lab" href="lab6.html"><span class="toc-n">6-laboratoriya ishi.</span> Jismlarning erkin harakat diagrammasini (vektor kuchlar tizimini) tuzish va uni AI tasvir generatorlari orqali chizish</a></li>
+          <li><a href="lecture7.html"><span class="toc-n">7-ma’ruza.</span> Fizik animatsiya arxitekturasi: HTML5 Canvas asoslari</a><br><a class="toc-lab" href="lab7.html"><span class="toc-n">7-laboratoriya ishi.</span> HTML5 Canvas va JavaScript asosida kadrlar chastotasini (delta-time) hisobga olgan holda oddiy fizik tebranishlar animatsiyasini kodlash</a></li>
+          <li><a href="lecture8.html"><span class="toc-n">8-ma’ruza.</span> AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar</a><br><a class="toc-lab" href="lab8.html"><span class="toc-n">8-laboratoriya ishi.</span> Sun’iy intellekt bilan juftlikda dasturlash orqali fizika dvigateli kodini yozish</a></li>
+          <li><a href="lecture9.html"><span class="toc-n">9-ma’ruza.</span> Sun’iy intellekt (AI) bilan kod generatsiyasi va prompt-muhandislik</a><br><a class="toc-lab" href="lab9.html"><span class="toc-n">9-laboratoriya ishi.</span> Kod generatsiyasi uchun maqsadli so‘rovlar (promptlar) tuzish, ularni taqqoslash va fizika fani uchun shaxsiy prompt-kutubxona shakllantirish</a></li>
+          <li><a href="lecture10.html"><span class="toc-n">10-ma’ruza.</span> Fizik va astronomik ma’lumotlarni vizuallashtirish: grafik va interaktiv model qurish</a><br><a class="toc-lab" href="lab10.html"><span class="toc-n">10-laboratoriya ishi.</span> Fizik va astronomik ma’lumotlar bazasidan olingan ko‘rsatkichlar asosida jismlar harakati trayektoriyasining interaktiv grafiklarini vizuallashtirish</a></li>
+          <li><a href="lecture11.html"><span class="toc-n">11-ma’ruza.</span> Masofaviy ta’lim platformalarida fizika kursini loyihalashtirish</a><br><a class="toc-lab" href="lab11.html"><span class="toc-n">11-laboratoriya ishi.</span> LMS (Google Classroom, Moodle) platformalarida AI orqali ishlangan raqamli fizika kursini tuzish va kontentni joylashtirish</a></li>
+        </ol>
+        <h3 class="toc-h">III bob. Fizika bo‘limlarini modellashtirish</h3>
+        <ol class="toc" start="12">
+          <li><a href="lecture12.html"><span class="toc-n">12-ma’ruza.</span> Mexanika qonuniyatlarini modellashtirish va animatsiya qilish</a><br><a class="toc-lab" href="lab12.html"><span class="toc-n">12-laboratoriya ishi.</span> Mexanika dinamikasi (Nyuton qonuniyatlari) jarayonlarini Algodoo yoki AI yozgan kodlar orqali modellashtirish va kinematik videolarni render qilish</a></li>
+          <li><a href="lecture13.html"><span class="toc-n">13-ma’ruza.</span> Termodinamika qonuniyatlarini modellashtirish va animatsiya qilish</a><br><a class="toc-lab" href="lab13.html"><span class="toc-n">13-laboratoriya ishi.</span> Termodinamik jarayonlar (P-V va T-S grafiklari, ideal gaz holati) simulyatsiyasi kodini yozish va vizual holat o‘zgarishini tahlil qilish</a></li>
+          <li><a href="lecture14.html"><span class="toc-n">14-ma’ruza.</span> Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish</a><br><a class="toc-lab" href="lab14.html"><span class="toc-n">14-laboratoriya ishi.</span> Elektromagnit maydonlar va elektr zanjirlari harakatini modellashtiruvchi interaktiv kodlarni yaratish hamda jarayonni AI orqali audio-ovozlashtirish</a></li>
+          <li><a href="lecture15.html"><span class="toc-n">15-ma’ruza.</span> Yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi</a><br><a class="toc-lab" href="lab15.html"><span class="toc-n">15-laboratoriya ishi.</span> Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to‘liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish</a></li>
+        </ol>
+        <h3 class="toc-h">IV bob. Qo‘shimcha mavzular: astronomiya</h3>
+        <ol class="toc toc-plain">
+          <li><a href="astro1.html"><span class="toc-n">A1.</span> Yulduzlar evolyutsiyasi va Gertsshprung–Rassel diagrammasi (ma’ruza va laboratoriya ishi)</a></li>
+          <li><a href="astro2.html"><span class="toc-n">A2.</span> Spektral tahlil: qora jism nurlanishi, spektral chiziqlar va Doppler siljishi (ma’ruza va laboratoriya ishi)</a></li>
+          <li><a href="astro3.html"><span class="toc-n">A3.</span> Teleskop kuzatuv ma’lumotlari: fotometriya, yorug‘lik egri chizig‘i va masofani aniqlash (ma’ruza va laboratoriya ishi)</a></li>
+        </ol>
+        <h3 class="toc-h">Ilovalar</h3>
+        <ol class="toc toc-plain">
+          <li><a href="glossariy.html"><span class="toc-n">1-ilova.</span> Atamalar lug‘ati (o‘zbekcha–inglizcha)</a></li>
+          <li><a href="si-vositalari.html"><span class="toc-n">2-ilova.</span> SI vositalarining joriy ro‘yxati va bepul muqobillari</a></li>
+          <li><a href="index.html#simulyatorlar"><span class="toc-n">3-ilova.</span> Interaktiv simulyatorlar (mayatnik, Lorens kuchi, Doppler effekti, Yung tajribasi)</a></li>
+          <li><a href="index.html#baholash"><span class="toc-n">4-ilova.</span> Yakuniy loyihani baholash kalkulyatori</a></li>
+        </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Darslik haqida: annotatsiya, so‘z boshi va mundarija.</p>
+    </div>
+  </footer>
+
+  <style>
+    .toc-h { font-size: 1.05rem; color: var(--accent-cyan); margin: 22px 0 8px; }
+    ol.toc { padding-left: 0; list-style: none; margin: 0; }
+    ol.toc li { padding: 10px 0; border-bottom: 1px solid var(--border-color); line-height: 1.6; }
+    ol.toc a { color: var(--text-main); text-decoration: none; }
+    ol.toc a:hover { color: var(--accent-cyan); }
+    ol.toc a.toc-lab { color: var(--text-secondary); font-size: 0.93rem; }
+    .toc-n { color: var(--accent-amber); font-weight: 600; }
+    #bibliografiya p, #annotatsiya p, #soz-boshi p { margin-bottom: 12px; line-height: 1.75; }
+    @media print {
+      .no-print { display: none !important; }
+      .print-block { break-inside: auto; }
+      #mundarija { break-before: page; }
+    }
+  </style>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>
