@@ -765,3 +765,9 @@
 /* Navigatsiya paneli ichidagi logotip va tugmalar ekran chetiga yopishmasligi uchun */
 .navbar .nav-container { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
 @media (max-width: 768px) { .navbar .nav-container { padding: 0 16px; } }
+
+/* Tor ekranda (≤ 420 px) logotip matni menyu tugmasini ekrandan chiqarib yubormasligi uchun */
+@media (max-width: 420px) {
+  .brand-logo { font-size: 1rem; gap: 8px; }
+  .brand-logo svg { width: 26px; height: 26px; }
+}

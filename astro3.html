@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qo‘shimcha astronomiya ma’ruzasi: teleskop parametrlari, fotometriya, yorug‘lik egri chizig‘i, davrni topish, Sefeidlar orqali masofa; Kepler ochiq ma’lumotlari bilan laboratoriya ishi.">
+  <title>A3. Teleskop kuzatuv ma’lumotlari: fotometriya, yorug‘lik egri chizig‘i va masofani aniqlash | FIZIKA va SUN’IY INTELLEKT</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], ignoredTags: ['script','noscript','style','textarea','pre','code','option']});"></script>
+  <style>
+    .data-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin: 14px 0 20px; }
+    table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; color: var(--text-secondary); }
+    table.data th, table.data td { padding: 9px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    table.data thead th { background: #111a2e; color: var(--text-main); font-size: 0.86rem; }
+    table.data td strong { color: var(--text-main); }
+    .lead-p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; }
+    .formula-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-md); padding: 12px 16px; margin: 12px 0 18px; overflow-x: auto; }
+    .note-box { background: rgba(251,191,36,0.06); border-left: 4px solid var(--accent-amber); border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 0.93rem; }
+    .sim-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .sim-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-secondary); }
+    .sim-controls output { color: var(--accent-cyan); font-weight: 600; }
+    .sim-controls input[type=range] { width: 100%; }
+    .sim-controls select, .sim-controls input[type=text] { background: #0F172A; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 10px; font-size: 0.95rem; }
+    .sim-canvas { width: 100%; display: block; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #0B1120; }
+    .sim-readout { font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary); margin-top: 12px; }
+    .sim-readout strong { color: var(--text-main); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+    .quiz-q { background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 14px; }
+    .quiz-q > strong { display: block; color: var(--text-main); margin-bottom: 8px; }
+    .quiz-q label { display: block; margin: 6px 0; font-size: 0.92rem; cursor: pointer; }
+    .quiz-fb { margin-top: 8px; font-size: 0.88rem; }
+    .refs li { margin-bottom: 8px; }
+    pre.code { background: #0B1120; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.55; color: #E2E8F0; white-space: pre; }
+    .flow3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 14px 0; }
+    .flow3 > div { padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); }
+    .flow3 ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link active">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Kurs mundarijasi</span>
+      <button id="drawer-close" class="drawer-close" aria-label="Yopish">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link active">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
+      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-container">
+
+    <div class="hero-panel" style="margin-bottom: 26px;">
+      <span class="badge badge-amber">Qo‘shimcha ma’ruza A3 · Astronomiya</span>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;">Teleskop kuzatuv ma’lumotlari: <span class="text-gradient">fotometriya, yorug‘lik egri chizig‘i va masofani aniqlash</span></h1>
+      <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">Teleskopning yorug‘lik yig‘ish va ajrata olish qobiliyati, Pogson shkalasi va CCD fotometriya, yorug‘lik egri chizig‘idan davrni topish, Sefeidlar yordamida masofani o‘lchash va tranzit fotometriya. Interaktiv kuzatuv modeli hamda Kepler kosmik teleskopining ochiq ma’lumotlari bilan laboratoriya ishi.</p>
+    </div>
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab(event, 'tab-1')">1. Nazariya</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-2')">2. Interaktiv kuzatuv modeli</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-3')">3. Laboratoriya ishi: Kepler ma’lumotlari</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-4')">4. Nazorat va adabiyotlar</button>
+    </div>
+
+    <section id="tab-1" class="tab-content active">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1. Nazariya</h2>
+        </div>
+
+        <p class="lead-p">Zamonaviy astronomiya — ma’lumotlar fani. Teleskoplar millionlab yulduzning yorqinligini vaqt bo‘yicha o‘lchaydi va bu ma’lumotlar ochiq arxivlarda hamma uchun bepul. Ushbu ma’ruzada teleskopning asosiy parametrlari, fotometriya, yorug‘lik egri chizig‘idan davrni topish va <strong>Sefeidlar yordamida masofani o‘lchash</strong> o‘rganiladi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">3.1. Teleskopning asosiy parametrlari</h3>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Parametr</th><th>Formula</th><th>Ma’nosi</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Yorug‘lik yig‘ish qobiliyati</strong></td><td>$\propto D^2$</td><td>Diametri 2 marta katta teleskop 4 marta ko‘p foton yig‘adi</td></tr>
+            <tr><td><strong>Ajrata olish chegarasi</strong></td><td>$\theta \approx 1{,}22\,\lambda / D$</td><td>Ikki yaqin nuqtani alohida ko‘rish mumkin bo‘lgan eng kichik burchak (Reley mezoni)</td></tr>
+            <tr><td><strong>Kattalashtirish</strong></td><td>$\Gamma = F_{\text{ob}} / f_{\text{ok}}$</td><td>Obyektiv va okulyar fokus masofalari nisbati; fotometriyada asosiy emas</td></tr>
+            <tr><td><strong>Ko‘rish sharoiti (seeing)</strong></td><td>odatda 0,5″–2″</td><td>Atmosfera turbulentligi tufayli Yerdagi teleskoplarning haqiqiy ajrata olishi</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">3.2. Fotometriya va yulduz kattaliklari</h3>
+        <p>Yulduz kattaliklari logarifmik shkalada o‘lchanadi (Pogson formulasi). 5 kattalik farqi oqimning roppa-rosa 100 marta farqiga teng, kattalik qancha kichik bo‘lsa, yulduz shuncha yorug‘:</p>
+        <div class="formula-box">$$m_1 - m_2 = -2{,}5\,\lg\frac{F_1}{F_2}$$</div>
+        <p>CCD kamerada yulduz atrofidagi doiraviy apertura ichidagi signal yig‘iladi, osmon foni ayiriladi. O‘lchash aniqligini signal/shovqin nisbati (S/N) belgilaydi:</p>
+        <div class="formula-box">$$\frac{S}{N} = \frac{N_*}{\sqrt{N_* + n_{\text{pix}}\left(N_{\text{fon}} + N_{\text{qorong‘i}} + R^2\right)}}, \qquad \sigma_m \approx \frac{1{,}0857}{S/N}$$</div>
+        <p>Bu yerda $N_*$ — yulduzdan kelgan elektronlar soni, $n_{\text{pix}}$ — aperturadagi piksellar soni, $R$ — o‘qish shovqini. Yorug‘ yulduz uchun $S/N \approx \sqrt{N_*}$, ya’ni ekspozitsiya vaqtini 4 marta oshirsak, xatolik 2 marta kamayadi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">3.3. Yorug‘lik egri chizig‘i va davrni topish</h3>
+        <p>Yorug‘lik egri chizig‘i — yulduz kattaligining vaqtga bog‘liqligi. Kuzatuvlar notekis vaqtlarda olinadi (kunduzi, bulutli kunlarda kuzatib bo‘lmaydi), shuning uchun davr <strong>fazaga yig‘ish</strong> usuli bilan topiladi:</p>
+        <div class="formula-box">$$\varphi = \frac{t - t_0}{P} - \left\lfloor \frac{t - t_0}{P} \right\rfloor$$</div>
+        <p>Agar sinov davri $P$ to‘g‘ri bo‘lsa, barcha nuqtalar fazada yagona silliq egri chiziq hosil qiladi; noto‘g‘ri bo‘lsa — tartibsiz bulut. Bu g‘oya <em>faza dispersiyasini minimallashtirish</em> (PDM, Stellingwerf, 1978) usulining asosidir. Boshqa usullar: Lomb–Scargle periodogrammasi (sinusoidal o‘zgarishlar uchun) va BLS (tranzitlar uchun “quti” shaklidagi signal).</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">3.4. Sefeidlar — “standart sham”</h3>
+        <p>Sefeidlar — radial pulsatsiyalanuvchi gigant yulduzlar. 1912-yilda Henrietta Livitt (Leavitt) Kichik Magellan bulutidagi Sefeidlar qanchalik yorqin bo‘lsa, davri shunchalik uzun ekanini aniqladi. Zamonaviy kalibrovka (Benedict va b., 2007):</p>
+        <div class="formula-box">$$M_V = -2{,}43\,(\lg P - 1) - 4{,}05 \qquad (P \text{ — sutkalarda})$$</div>
+        <p>Davrni yorug‘lik egri chizig‘idan, o‘rtacha ko‘rinma kattalik $m$ ni kuzatuvdan topib, masofa moduli orqali masofani hisoblaymiz:</p>
+        <div class="formula-box">$$d = 10^{(m - M + 5)/5}\ \text{pk} \qquad (\text{yulduzlararo yutilish } A_V \text{ bo‘lsa: } m - M - A_V)$$</div>
+        <p>Sefeidlar Habbl Andromeda tumanligining galaktika ekanini isbotlashida (1925) va bugungi Habbl doimiysini o‘lchashda asosiy “masofa zinapoyasi” pog‘onasi bo‘lib xizmat qiladi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">3.5. Tranzit fotometriya</h3>
+        <p>Sayyora yulduz diski oldidan o‘tganda yorug‘lik biroz pasayadi: $\Delta F / F \approx (R_p / R_*)^2$. Yupiter o‘lchamidagi sayyora Quyoshsimon yulduz yorug‘ligini ~1 %, Yer o‘lchamidagisi esa atigi ~0,008 % ga kamaytiradi. Kepler (2009–2018) va TESS (2018-yildan) kosmik teleskoplari minglab ekzosayyorani shu usulda topgan. Batafsil — <a class="citation-link" href="lecture10.html">10-ma’ruza</a>.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">3.6. Ochiq kuzatuv arxivlari</h3>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Arxiv</th><th>Nimani beradi</th><th>Manzil</th></tr></thead>
+          <tbody>
+            <tr><td><strong>MAST</strong> (STScI)</td><td>Kepler, TESS, Habbl va JWST ma’lumotlari</td><td><a class="citation-link" href="https://archive.stsci.edu" target="_blank" rel="noopener">archive.stsci.edu</a></td></tr>
+            <tr><td><strong>AAVSO</strong></td><td>O‘zgaruvchan yulduzlarning havaskor va professional kuzatuvlari (100 yildan ortiq)</td><td><a class="citation-link" href="https://www.aavso.org/data-download" target="_blank" rel="noopener">aavso.org</a></td></tr>
+            <tr><td><strong>Gaia arxivi</strong> (ESA)</td><td>~1,8 mlrd yulduz: parallaks, fotometriya, o‘zgaruvchanlik</td><td><a class="citation-link" href="https://gea.esac.esa.int/archive/" target="_blank" rel="noopener">gea.esac.esa.int</a></td></tr>
+            <tr><td><strong>NASA Exoplanet Archive</strong></td><td>Tasdiqlangan ekzosayyoralar va ularning parametrlari</td><td><a class="citation-link" href="https://exoplanetarchive.ipac.caltech.edu" target="_blank" rel="noopener">exoplanetarchive.ipac.caltech.edu</a></td></tr>
+          </tbody>
+        </table></div>
+
+      </div>
+    </section>
+
+    <section id="tab-2" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2. Interaktiv kuzatuv modeli</h2>
+        </div>
+
+        <p class="lead-p">Model sun’iy kuzatuvlar seriyasini yaratadi: tasodifiy vaqtlarda olingan, shovqinli o‘lchashlar. Vazifangiz — <strong>sinov davri</strong> slayderini surib, fazaga yig‘ilgan grafikda nuqtalar silliq egri chiziqqa tushadigan davrni topish. Shovqin teleskop diametri va ekspozitsiya vaqtiga bog‘liq (soddalashtirilgan model).</p>
+        <div class="sim-controls">
+          <label>Obyekt turi
+            <select id="lc-type">
+              <option value="cepheid">Sefeid (pulsatsiyalanuvchi yulduz)</option>
+              <option value="transit">Tranzitli ekzosayyora</option>
+            </select>
+          </label>
+          <label>Teleskop diametri D: <output id="lc-D-val">100 mm</output>
+            <input id="lc-D" type="range" min="50" max="1000" step="10" value="100">
+          </label>
+          <label>Ekspozitsiya vaqti: <output id="lc-exp-val">60 s</output>
+            <input id="lc-exp" type="range" min="5" max="600" step="5" value="60">
+          </label>
+        </div>
+        <div id="lc-tel" class="sim-readout" style="margin-top: 0; margin-bottom: 12px;"></div>
+        <canvas id="lc-canvas" class="sim-canvas" aria-label="Kuzatuvlar seriyasi: kattalikning vaqtga bog‘liqligi"></canvas>
+        <div class="sim-controls" style="margin-top: 14px;">
+          <label>Sinov davri P: <output id="lc-P-val"></output>
+            <input id="lc-P" type="range" min="2" max="45" step="0.001" value="10">
+          </label>
+          <div class="btn-row">
+            <button id="lc-search" class="btn btn-secondary">🔎 Avtomatik izlash (PDM / BLS)</button>
+            <button id="lc-new" class="btn btn-secondary">🎲 Yangi obyekt</button>
+            <button id="lc-answer" class="btn btn-secondary">Javobni ko‘rsatish</button>
+          </div>
+        </div>
+        <canvas id="fold-canvas" class="sim-canvas" aria-label="Fazaga yig‘ilgan yorug‘lik egri chizig‘i"></canvas>
+        <div id="lc-info" class="sim-readout"></div>
+        <div id="lc-answer-out" style="font-size: 0.92rem; color: var(--accent-amber); margin-top: 6px;"></div>
+        <div class="note-box"><strong>Kuzatish vazifalari:</strong>
+          <ol style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7;">
+            <li>Davrni qo‘lda toping, so‘ng “Avtomatik izlash” natijasi bilan solishtiring. Θ qiymati qanday o‘zgaradi?</li>
+            <li>Sinov davrini haqiqiy davrdan ikki marta katta qilib qo‘ying. Fazaga yig‘ilgan grafikda nima ko‘rinadi va nima uchun PDM bunday davrlarda ham minimum beradi?</li>
+            <li>Teleskop diametrini 50 mm dan 500 mm gacha oshiring. Bitta o‘lchash xatoligi necha marta kamayadi?</li>
+            <li>Topilgan davr bo‘yicha Sefeid masofasini hisoblang va “Javobni ko‘rsatish” bilan tekshiring. Xatolik qayerdan kelib chiqadi?</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="tab-3" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3. Laboratoriya ishi: Kepler ma’lumotlari</h2>
+        </div>
+
+        <p class="lead-p"><strong>Ishning maqsadi:</strong> Kepler kosmik teleskopining ochiq fotometrik ma’lumotlari bo‘yicha (1) ekzosayyora tranziti davri va sayyora radiusini, (2) Sefeid davri va masofasini aniqlash; SI yozgan tahlil kodini mustaqil tekshirish.</p>
+        <p><strong>Kerakli vositalar (hammasi bepul):</strong> Google Colab, ochiq manbali <a class="citation-link" href="https://lightkurve.github.io/lightkurve/" target="_blank" rel="noopener">Lightkurve</a> Python kutubxonasi (ma’lumotlarni MAST arxividan avtomatik yuklaydi), Gemini, ChatGPT yoki Claude’ning bepul tarifi.</p>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">A qism. Kepler-10 b ekzosayyorasi</h3>
+        <pre class="code">!pip install -q lightkurve
+import numpy as np
+import lightkurve as lk
+
+lc = lk.search_lightcurve("Kepler-10", author="Kepler", cadence="long").download_all().stitch()
+lc = lc.flatten(window_length=901).remove_outliers(sigma=5)
+
+pg = lc.to_periodogram(method="bls", period=np.arange(0.3, 10, 0.0005), duration=0.08)
+P = pg.period_at_max_power
+t0 = pg.transit_time_at_max_power
+print("Davr:", P, "  chuqurlik:", pg.depth_at_max_power)
+
+lc.fold(period=P, epoch_time=t0).scatter(alpha=0.2)</pre>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Topilgan davrni NASA Exoplanet Archive’dagi qiymat bilan solishtiring (Kepler-10 b uchun ≈ 0,837 sutka).</li>
+          <li>Chuqurlikdan $R_p/R_*$ ni toping. Yulduz radiusi $R_* \approx 1{,}07\,R_\odot$ deb olib, sayyora radiusini Yer radiuslarida hisoblang ($R_\odot \approx 109\,R_\oplus$).</li>
+          <li>Periodogrammada P/2 va 2P davrlardagi cho‘qqilarga e’tibor bering: ular nima uchun paydo bo‘ladi? Tizimdagi ikkinchi sayyora Kepler-10 c (P ≈ 45,3 sutka) nima uchun bu periodogrammada ko‘rinmaydi?</li>
+        </ol>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">B qism. V1154 Cyg Sefeidi</h3>
+        <pre class="code">lc = lk.search_lightcurve("V1154 Cyg", author="Kepler", cadence="long").download_all().stitch()
+lc = lc.remove_nans().remove_outliers(sigma=5)
+pg = lc.to_periodogram(method="lombscargle", minimum_period=1, maximum_period=20)
+print("Davr:", pg.period_at_max_power)
+lc.fold(period=pg.period_at_max_power).scatter(alpha=0.3)</pre>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Topilgan davr (≈ 4,9 sutka) bo‘yicha Livitt qonunidan $M_V$ ni hisoblang.</li>
+          <li>Yulduzning o‘rtacha ko‘rinma kattaligini SIMBAD yoki AAVSO dan oling ($V \approx 9{,}2^m$) va masofani yutilishsiz baholang.</li>
+          <li>Natijani Gaia parallaksi bo‘yicha masofa bilan solishtiring. Farq qaysi omillar (yulduzlararo yutilish, Leavitt qonunining sochilishi) bilan bog‘liq?</li>
+        </ol>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">C qism. SI bilan ishlash</h3>
+        <pre class="code">Men Lightkurve yordamida Kepler ma’lumotlaridan yorug‘lik egri chizig‘ini oldim.
+1) BLS periodogrammasi qanday ishlashini talabaga tushunarli qilib izohla.
+2) Fazaga yig‘ilgan egri chiziqdan tranzit chuqurligi va davomiyligini o‘lchovchi
+   kod yoz; xatolikni bootstrap usulida bahola.
+3) Davr karraliligi (P/2, 2P) xatosini qanday aniqlash mumkinligini ko‘rsat.
+Har bir qadamda fizik birliklarni yoz.</pre>
+        <div class="note-box">SI kutubxona funksiyalarining nomlari va argumentlarini ba’zan “o‘ylab topadi”. Kodni ishga tushirib tekshiring, xato bergan qatorlarni rasmiy hujjatlar bilan solishtiring va SI jurnaliga yozing.</div>
+
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">Baholash mezonlari (100 ball)</h3>
+        <div class="data-wrap"><table class="data">
+          <thead><tr><th>Mezon</th><th>Ball</th><th>Talab</th></tr></thead>
+          <tbody>
+            <tr><td>Tranzit tahlili</td><td>25</td><td>Davr, chuqurlik, sayyora radiusi va ularning xatoligi</td></tr>
+            <tr><td>Sefeid va masofa</td><td>25</td><td>Davr, $M_V$, masofa; Gaia bilan solishtirish</td></tr>
+            <tr><td>Kod va grafiklar</td><td>20</td><td>Kod ishlaydi, grafiklar o‘qlari va birliklari bilan</td></tr>
+            <tr><td>SI dan foydalanish jurnali</td><td>15</td><td>Promptlar, SI javoblari va tuzatilgan xatolar</td></tr>
+            <tr><td>Xulosa</td><td>15</td><td>Usullarning cheklovlari va xatolik manbalari tahlil qilingan</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size: 0.9rem;">Baho: 86–100 ball — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3), 55 dan kam — qoniqarsiz (2).</p>
+
+      </div>
+    </section>
+
+    <section id="tab-4" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4. Nazorat va adabiyotlar</h2>
+        </div>
+
+        <h3 style="color: var(--accent-cyan); margin-bottom: 14px;">Nazorat savollari</h3>
+        <div class="quiz-q">
+          <strong>1-savol. Ikki yulduz kattaliklari farqi 5ᵐ. Ularning yorug‘lik oqimlari nisbati qancha?</strong>
+          <label><input type="radio" name="q1" value="A"> A) 5</label>
+          <label><input type="radio" name="q1" value="B"> B) 12,5</label>
+          <label><input type="radio" name="q1" value="C"> C) 100</label>
+          <label><input type="radio" name="q1" value="D"> D) 1000</label>
+          <div class="quiz-fb" id="fb-q1"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>2-savol. Teleskop diametri 2 marta oshirildi. Ajrata olish chegarasi qanday o‘zgaradi?</strong>
+          <label><input type="radio" name="q2" value="A"> A) 2 marta yomonlashadi</label>
+          <label><input type="radio" name="q2" value="B"> B) 2 marta yaxshilanadi (θ kichrayadi)</label>
+          <label><input type="radio" name="q2" value="C"> C) 4 marta yaxshilanadi</label>
+          <label><input type="radio" name="q2" value="D"> D) O‘zgarmaydi</label>
+          <div class="quiz-fb" id="fb-q2"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>3-savol. Sefeidning davri 10 sutka, o‘rtacha ko‘rinma kattaligi 10ᵐ. Yutilishni hisobga olmasdan masofa qancha?</strong>
+          <label><input type="radio" name="q3" value="A"> A) ≈ 640 pk</label>
+          <label><input type="radio" name="q3" value="B"> B) ≈ 6,4 kpk</label>
+          <label><input type="radio" name="q3" value="C"> C) ≈ 64 kpk</label>
+          <label><input type="radio" name="q3" value="D"> D) ≈ 100 pk</label>
+          <div class="quiz-fb" id="fb-q3"></div>
+        </div>
+        <div class="quiz-q">
+          <strong>4-savol. Nima uchun davrni topishda fazaga yig‘ish usuli qo‘llaniladi?</strong>
+          <label><input type="radio" name="q4" value="A"> A) Kuzatuvlar notekis vaqtlarda olinadi va bir davr ichida kam nuqta bo‘ladi</label>
+          <label><input type="radio" name="q4" value="B"> B) Teleskop faqat bitta tunda ishlaydi</label>
+          <label><input type="radio" name="q4" value="C"> C) Faza yulduz haroratini beradi</label>
+          <label><input type="radio" name="q4" value="D"> D) Fazaga yig‘ish shovqinni butunlay yo‘qotadi</label>
+          <div class="quiz-fb" id="fb-q4"></div>
+        </div>
+        <button class="btn btn-primary" onclick='checkQuiz({"q1": "C", "q2": "B", "q3": "B", "q4": "A"}, {"q1": "Pogson formulasi: F₁/F₂ = 10^(0,4·5) = 100.", "q2": "θ ≈ 1,22 λ / D: D ikki marta ortsa, θ ikki marta kichrayadi.", "q3": "M = −4,05; d = 10^((10 + 4,05 + 5)/5) = 10^3,81 ≈ 6,4·10³ pk.", "q4": "Ko‘p davrlardagi nuqtalarni bitta davrga “yig‘ib”, siyrak va notekis kuzatuvlardan ham to‘liq egri chiziq olinadi."})'>✅ Natijani tekshirish</button>
+        <div id="quiz-result" style="margin-top: 12px; font-weight: bold; display: none;"></div>
+        <h3 style="color: var(--accent-cyan); margin: 28px 0 10px;">Mustaqil ish uchun savollar</h3>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Nima uchun kosmik teleskoplar (Kepler, TESS) Yerdagi teleskoplarga qaraganda aniqroq fotometriya beradi?</li>
+          <li>“Masofa zinapoyasi” nima? Parallaks, Sefeidlar va Ia tur o‘ta yangi yulduzlar bu zinapoyada qanday bog‘langan?</li>
+          <li>Tutiluvchi qo‘shaloq yulduz yorug‘lik egri chizig‘i tranzitdan qanday farq qiladi?</li>
+        </ol>
+        <h3 style="color: var(--accent-emerald); margin: 28px 0 10px;">Adabiyotlar</h3>
+        <ol class="refs" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
+          <li>Howell, S. B. (2006). <em>Handbook of CCD Astronomy</em> (2nd ed.). Cambridge University Press.</li>
+          <li>Stellingwerf, R. F. (1978). Period determination using phase dispersion minimization. <em>The Astrophysical Journal, 224</em>, 953–960. <a class="citation-link" href="https://doi.org/10.1086/156444" target="_blank" rel="noopener">https://doi.org/10.1086/156444</a></li>
+          <li>VanderPlas, J. T. (2018). Understanding the Lomb–Scargle periodogram. <em>The Astrophysical Journal Supplement Series, 236</em>(1), 16. <a class="citation-link" href="https://doi.org/10.3847/1538-4365/aab766" target="_blank" rel="noopener">https://doi.org/10.3847/1538-4365/aab766</a></li>
+          <li>Kovács, G., Zucker, S., &amp; Mazeh, T. (2002). A box-fitting algorithm in the search for periodic transits. <em>Astronomy &amp; Astrophysics, 391</em>, 369–377. <a class="citation-link" href="https://doi.org/10.1051/0004-6361:20020802" target="_blank" rel="noopener">https://doi.org/10.1051/0004-6361:20020802</a></li>
+          <li>Leavitt, H. S., &amp; Pickering, E. C. (1912). Periods of 25 variable stars in the Small Magellanic Cloud. <em>Harvard College Observatory Circular, 173</em>, 1–3.</li>
+          <li>Benedict, G. F., et al. (2007). Hubble Space Telescope Fine Guidance Sensor parallaxes of Galactic Cepheid variable stars: Period-luminosity relations. <em>The Astronomical Journal, 133</em>(4), 1810–1827. <a class="citation-link" href="https://doi.org/10.1086/511980" target="_blank" rel="noopener">https://doi.org/10.1086/511980</a></li>
+          <li>Borucki, W. J., et al. (2010). Kepler planet-detection mission: Introduction and first results. <em>Science, 327</em>(5968), 977–980. <a class="citation-link" href="https://doi.org/10.1126/science.1185402" target="_blank" rel="noopener">https://doi.org/10.1126/science.1185402</a></li>
+          <li>Ricker, G. R., et al. (2015). The Transiting Exoplanet Survey Satellite. <em>Journal of Astronomical Telescopes, Instruments, and Systems, 1</em>(1), 014003. <a class="citation-link" href="https://doi.org/10.1117/1.JATIS.1.1.014003" target="_blank" rel="noopener">https://doi.org/10.1117/1.JATIS.1.1.014003</a></li>
+          <li>Lightkurve Collaboration (2018). <em>Lightkurve: Kepler and TESS time series analysis in Python</em>. Astrophysics Source Code Library, ascl:1812.013.</li>
+        </ol>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Qo‘shimcha ma’ruza A3: Teleskop kuzatuv ma’lumotlari &bull; fotometriya, PDM, Sefeidlar, Kepler va TESS.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.switchTab = function (evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      const t = document.getElementById(tabId);
+      if (t) t.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+      if (window.astroLcRedraw) setTimeout(window.astroLcRedraw, 30);
+    };
+    window.checkQuiz = function (key, explain) {
+      let score = 0;
+      const total = Object.keys(key).length;
+      Object.keys(key).forEach(q => {
+        const sel = document.querySelector('input[name="' + q + '"]:checked');
+        const fb = document.getElementById('fb-' + q);
+        if (!sel) { fb.style.color = '#FBBF24'; fb.textContent = 'Javob tanlanmagan.'; return; }
+        if (sel.value === key[q]) { score++; fb.style.color = '#34D399'; fb.textContent = 'To‘g‘ri. ' + explain[q]; }
+        else { fb.style.color = '#F87171'; fb.textContent = 'Noto‘g‘ri. ' + explain[q]; }
+      });
+      const res = document.getElementById('quiz-result');
+      const pct = Math.round(score / total * 100);
+      res.style.display = 'block';
+      res.style.color = pct >= 86 ? '#34D399' : pct >= 55 ? '#FBBF24' : '#F87171';
+      res.textContent = 'Natija: ' + score + '/' + total + ' (' + pct + ' %).';
+    };
+  </script>
+  <script src="js/sim-astro-extra.js"></script>
+  <script src="js/ui-controller.js"></script>
+</body>
+</html>
