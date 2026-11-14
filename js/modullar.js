@@ -5,7 +5,7 @@ const sources=[
 ["Nazariy ma’ruzalar","Ma’ruza 1–15: AI, modellashtirish, mexanika, termodinamika, elektromagnit, yadro","index.html#maruzalar","fizika kuch nyuton elektromagnit mexanika induksiya yadro termodinamika ai"],
 ["Matematik modellashtirish","Mayatnik, sonli usullar va xatoliklar","lecture4.html","mayatnik tebranish rk4 eyler hisoblash xatolik"],
 ["Elektr zanjirlari","Elektrodinamika va magnit maydon","lecture14.html","elektr magnit faradey induksiya tok zanjir"],
-["Aстрономия","Orbital harakat va astronomik ma’lumotlar","astro1.html","astronomiya astronomik orbita sayyora gravitatsiya"],
+["Astronomiya","Orbital harakat va astronomik ma’lumotlar","astro1.html","astronomiya astronomik orbita sayyora gravitatsiya"],
 ["Ma’lumotlar vizuallashtirish","Astronomik grafiklar va jism trayektoriyasi","lecture10.html","ma’lumot grafik vizual astronomiya"],
 ["HTML5 Canvas","Fizik animatsiya va JavaScript","lecture7.html","canvas javascript dasturlash animatsiya fps"],
 ["Erkin jism diagrammasi","Kuchlar va vektorlar","lecture6.html","kuch vektor erkin jism nyuton"],
