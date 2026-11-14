@@ -15,7 +15,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: JavaScript syntax
-        run: node --check js/kabinet.js
-      - name: Functional smoke tests
-        run: node --test tests/kabinet.test.cjs
+      - name: JavaScript syntax checks
+        run: |
+          node --check js/kabinet.js
+          node --check js/diagnostika-data.js
+          node --check js/diagnostika-ui.js
+          node --check tests/diagnostika.test.cjs
+      - name: Functional tests
+        run: node --test tests/*.test.cjs

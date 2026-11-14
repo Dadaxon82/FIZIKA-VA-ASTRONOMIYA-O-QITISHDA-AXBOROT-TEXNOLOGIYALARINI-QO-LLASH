@@ -1,0 +1,20 @@
+.question { min-width:0; border:1px solid #ceddec; border-radius:12px; padding:18px; margin:18px 0; background:white; }
+.question legend {font-size:1.09rem;font-weight:700; padding:0 6px;}
+.meta {color:#496179;font-size:.91rem;}
+.choice {display:block;border:1px solid #d9e4ee;border-radius:8px;padding:11px 12px;margin-top:9px;cursor:pointer;}
+.choice:hover {background:#eef6ff;}
+.choice input {margin-right:8px; accent-color:#126792;}
+.creative {background:white;border:1px solid #cbdcea;border-radius:12px;margin-top:24px;padding:20px;}
+.creative textarea {width:100%;resize:vertical;display:block;border:1px solid #99afc1;border-radius:8px;padding:10px;font:inherit;margin-top:8px;}
+#results {border-top:2px solid #bbcfdf;padding-top:18px;margin-top:32px;}
+#results[hidden] {display:none;}
+.score {font-size:2rem;font-weight:750;color:#155b87;margin:10px 0;}
+.feedback {background:white;border:1px solid #d5e0ea;border-left:5px solid #476f96;border-radius:8px;padding:14px 16px;margin:12px 0;}
+.feedback.right {border-left-color:#227451;}
+.feedback.wrong {border-left-color:#9b5b21;}
+.feedback h4 {margin:0 0 8px;}
+.feedback p {margin:6px 0;}
+#results li {margin:10px 0;}
+#status {min-height:1.7em;font-weight:600;}
+button:disabled {opacity:.55;cursor:not-allowed;}
+@media (max-width:650px){.question{padding:14px}.creative{padding:14px}}

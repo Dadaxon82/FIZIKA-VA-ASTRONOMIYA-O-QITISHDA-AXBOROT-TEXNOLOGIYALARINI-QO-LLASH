@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ILIMZIYO 2.0: fizika, SI birliklari, matematik modellar va Canvas bo‘yicha boshlang‘ich diagnostika">
+  <title>Diagnostik test — ILIMZIYO 2.0</title>
+  <link rel="stylesheet" href="css/kabinet.css">
+  <link rel="stylesheet" href="css/diagnostika.css">
+  <script src="js/diagnostika-data.js" defer></script>
+  <script src="js/diagnostika-ui.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Asosiy mazmunga o‘tish</a>
+  <header class="site-header">
+    <div class="wrap header-content">
+      <a href="index.html">← ILIMZIYO bosh sahifasi</a>
+      <a href="kabinet.html">Mening kabinetim</a>
+      <strong>ILIMZIYO 2.0 · Boshlang‘ich diagnostika</strong>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <h1>Bilim va ko‘nikmalar diagnostikasi</h1>
+    <p class="muted">10 ta avtomatik tekshiriladigan savol: 4 ta fizikadan, 2 ta SI birliklaridan, 2 ta matematik modeldan, 2 ta JavaScript/Canvas bo‘yicha. Maqsad — baho qo‘yish emas, o‘quv yo‘nalishini aniqlash.</p>
+    <p class="notice">Bu dastlabki diagnostika namunasidir. Savollar pedagog tomonidan ko‘rib chiqilishi va haqiqiy guruh uchun moslashtirilishi lozim. Test rasmiy attestatsiya hisoblanmaydi. Natija serverga yuborilmaydi.</p>
+    <form id="diagnostic-form">
+      <div id="questions"></div>
+      <section class="creative" aria-labelledby="creative-title">
+        <h2 id="creative-title">Yaratish — ijodiy mini-loyiha (ixtiyoriy)</h2>
+        <p>Matematik mayatnikning uzunligi boshqariladigan Canvas simulyatsiyasi uchun 3–5 bosqichli algoritm yoki pseudokod yozing. Fizik formula, vaqt qadami va tekshirish usulini ko‘rsating.</p>
+        <label for="creative-response">Sizning rejangiz (avtomatik baholanmaydi va saqlanmaydi)</label>
+        <textarea id="creative-response" rows="4" placeholder="1. ... 2. ..."></textarea>
+        <p class="muted">Ijodiy ishning mazmuni va to‘g‘riligi o‘qituvchi tomonidan ko‘rib chiqilishi kerak.</p>
+      </section>
+      <div class="actions">
+        <button type="submit">Natijamni hisoblash</button>
+        <button type="button" id="new-attempt">Yangi urinish</button>
+        <button type="button" id="export-results" disabled>Natijani JSON sifatida eksport qilish</button>
+      </div>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="results" aria-live="polite" hidden></section>
+    <p class="notice">Natijalar shu qurilmaning brauzerida saqlanadi. Boshqa qurilmada avtomatik ko‘rinmaydi. O‘qituvchi uchun to‘liq 30–45 daqiqalik diagnostika qo‘shimcha amaliy va kod tahlili vazifalari bilan kengaytirilishi kerak.</p>
+  </main>
+</body>
+</html>

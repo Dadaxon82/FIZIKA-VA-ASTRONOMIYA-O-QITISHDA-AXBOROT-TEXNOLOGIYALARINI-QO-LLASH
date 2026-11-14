@@ -31,3 +31,20 @@ Ushbu o‘zgarish mavjud statik darslikni saqlagan holda **shaxsiy progress kabi
 ## Keyingi bosqich
 
 Diagnostik testlar, Bloom taksonomiyasi bo‘yicha topshiriqlar, laboratoriya natijalarini tahlil qilish, analitika va AI Tutor alohida pull requestlarda rejalashtiriladi. Pull requestni ko‘rib chiqmasdan `main` ga birlashtirmang.
+
+## 2-bosqich — Diagnostika va individual tavsiyalar
+
+- `diagnostika.html` — REJA #1 bo‘yicha 10 ta avtomatik test va alohida, avtomatik baholanmaydigan ijodiy topshiriq.
+- Savollar: 4 ta fizika, 2 ta SI birliklari, 2 ta matematik modellashtirish, 2 ta JavaScript/Canvas.
+- `js/diagnostika-data.js` — javoblarni hisoblash, tipik xatolarni ko‘rsatish, zaif sohani topish, boshlang‘ich/o‘rta/ilg‘or 4 haftalik tavsiyalar.
+- `js/diagnostika-ui.js` — brauzerda test interfeysi, natijalarni lokal saqlash va JSON eksport.
+- `css/diagnostika.css` — diagnostika sahifasining mobil dizayni.
+- `tests/diagnostika.test.cjs` — savollar taqsimoti, hisoblash chegaralari, kirish ma’lumotlarini tekshirish, materiallar va 4 haftalik reja testlari.
+- `index.html` va `kabinet.html` — yangi sahifaga havolalar.
+- GitHub Actions endi barcha *.test.cjs testlarini ishga tushiradi.
+
+**Ma’lumotlar:** talabaning ismi, telefon raqami yoki identifikatori talab qilinmaydi; javoblar brauzerda saqlanadi, ixtiyoriy JSON faylga eksport qilinadi. Ijodiy javob saqlanmaydi va avtomatik baholanmaydi.
+
+**Cheklov:** diagnostika va 4 haftalik tavsiya qoidalar asosida ishlaydi; hali LLM/AI modeliga ulanmagan. Bu rasmiy baholash emas. To‘liq diagnostika uchun o‘qituvchi kod tahlili va amaliy mini-loyiha topshiriqlarini qo‘shimcha baholaydi.
+
+**Tekshirish:** `node --test tests/*.test.cjs` va `node --check js/diagnostika-data.js`; brauzerda 10 ta javob, xatolar izohi, zaif soha, JSON eksport va yangi urinishni tekshiring.
