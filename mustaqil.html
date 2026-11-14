@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ILIMZIYO 2.0: fan dasturiga asoslangan 15 ta mustaqil ta’lim topshirig‘i va namunaviy yo‘riqnomalar">
+<title>Mustaqil ta’lim — ILIMZIYO 2.0</title>
+<link rel="stylesheet" href="css/kabinet.css">
+<link rel="stylesheet" href="css/mustaqil.css">
+<script defer src="js/mustaqil-data.js"></script>
+<script defer src="js/mustaqil-core.js"></script>
+<script defer src="js/mustaqil-ui.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Asosiy mazmunga o‘tish</a>
+<header class="site-header"><div class="wrap header-content">
+<a href="index.html">← Bosh sahifa</a><a href="kabinet.html">Mening kabinetim</a>
+<strong>ILIMZIYO 2.0 · Mustaqil ta’lim</strong>
+</div></header>
+<main id="main" class="wrap">
+<h1>Mustaqil ta’lim topshiriqlari</h1>
+<p class="muted">2026/2027-o‘quv yili, 7-semestr. Fan dasturining 6-bo‘limiga mos <strong>15 ta topshiriq × 4 soat = 60 soat</strong>. Har birida yo‘riqnoma, namunaviy bajarish usuli, natija va o‘zini tekshirish mezonlari mavjud.</p>
+<p class="notice"><strong>Muhim:</strong> ushbu sahifa ishni tayyorlash, qayd qilish va eksport qilish uchun. Bajarildi belgisi va avtomatik progress rasmiy baho emas. Tayyor ishni o‘qituvchi ko‘rsatgan rasmiy tizimga yoki belgilangan tartibda topshiring. Baholash dasturdagi JN: 20 ball laboratoriya, 5 ball loyiha/taqdimot, 5 ball keys-stadi mezonlari asosida amalga oshiriladi.</p>
+<div class="mt-overview" aria-label="Umumiy holat">
+  <div class="stat"><span>Topshiriqlar</span><strong>15 ta</strong></div>
+  <div class="stat"><span>Jami mustaqil ta’lim</span><strong>60 soat</strong></div>
+  <div class="stat"><span>Belgilangan ishlar</span><strong id="mt-count">0 / 15</strong></div>
+</div>
+<label for="mt-progress" class="progress-label">O‘zingiz belgilagan bajarilish holati</label>
+<progress id="mt-progress" value="0" max="15">0/15</progress>
+<div class="mt-controls">
+  <label for="mt-search">Mavzu bo‘yicha qidirish <input id="mt-search" type="search" placeholder="Masalan: astronomiya, Canvas, modellashtirish"></label>
+  <label for="mt-filter">Filtr <select id="mt-filter"><option value="all">Barcha topshiriqlar</option><option value="todo">Hali tugallanmagan</option><option value="done">Bajarildi deb belgilangan</option></select></label>
+</div>
+<div class="mt-actions">
+<button id="mt-backup" type="button">Jami progressni JSON sifatida saqlash</button>
+<label class="mt-import-label">JSON zaxirani tiklash <input id="mt-import" type="file" accept=".json,application/json"></label>
+<button type="button" id="mt-reset" class="mt-danger">Barcha qaydlarni tozalash</button>
+</div>
+<p id="mt-status" role="status" aria-live="polite"></p>
+<div id="mt-list" class="mt-list"></div>
+<p class="notice">Ma’lumotlar shu brauzerda saqlanadi; boshqa qurilmaga avtomatik uzatilmaydi. Faylni eksport qilish <em>topshirish</em> degani emas. Talabaning Word, Excel, PowerPoint, HTML yoki boshqa dalil fayllari rasmiy tartibda o‘qituvchiga alohida taqdim etiladi.</p>
+</main>
+</body>
+</html>
