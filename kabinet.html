@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ILIMZIYO 2.0: ma’ruzalar va laboratoriyalarning shaxsiy bajarilish jurnali">
+  <title>Mening kabinetim — ILIMZIYO 2.0</title>
+  <link rel="stylesheet" href="css/kabinet.css">
+  <script src="js/kabinet.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Asosiy mazmunga o‘tish</a>
+  <header class="site-header">
+    <div class="wrap header-content">
+      <a href="index.html">← ILIMZIYO bosh sahifasi</a>
+      <strong>ILIMZIYO 2.0 · Mening kabinetim</strong>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <h1>Shaxsiy o‘quv kabineti</h1>
+    <p class="muted">Ma’ruza yoki laboratoriyani tugatganingizdan so‘ng <strong>“Bajarildi”</strong> katagiga belgi qo‘ying. Belgilar faqat ushbu brauzerda saqlanadi; ro‘yxatdan o‘tish va pullik server talab etilmaydi.</p>
+
+    <section class="stats" aria-label="O‘quv ko‘rsatkichlari">
+      <article class="stat"><span>Ma’ruzalar</span><strong id="lecture-count">0 / 15</strong></article>
+      <article class="stat"><span>Laboratoriyalar</span><strong id="lab-count">0 / 15</strong></article>
+      <article class="stat"><span>Umumiy progress</span><strong id="total-count">0%</strong></article>
+    </section>
+
+    <label class="progress-label" for="progress">Umumiy bajarilish darajasi</label>
+    <progress id="progress" max="30" value="0">0 / 30</progress>
+
+    <div class="actions" aria-label="Natijalarni boshqarish">
+      <button type="button" id="export">Natijalarni JSON sifatida saqlash</button>
+      <label class="import-action" for="import">JSON natijalarni tiklash
+        <input type="file" id="import" accept="application/json,.json">
+      </label>
+      <button type="button" class="danger" id="reset">Barcha belgilarni tozalash</button>
+    </div>
+    <p id="message" class="status" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="lecture-title">
+      <h2 id="lecture-title">Ma’ruzalar</h2>
+      <div id="lectures" class="items"></div>
+    </section>
+    <section aria-labelledby="lab-title">
+      <h2 id="lab-title">Laboratoriyalar</h2>
+      <div id="labs" class="items"></div>
+    </section>
+
+    <p class="notice">Eslatma: bu kabinet <strong>rasmiy baholash tizimi emas</strong>. Brauzer ma’lumotlari o‘chirilsa yoki boshqa qurilmadan kirsangiz, belgilar avtomatik sinxronlashmaydi. Natijalarni JSON sifatida eksport qilib, o‘zingizda saqlang.</p>
+  </main>
+</body>
+</html>

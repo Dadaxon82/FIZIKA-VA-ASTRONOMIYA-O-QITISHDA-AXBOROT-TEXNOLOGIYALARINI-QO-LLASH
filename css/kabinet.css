@@ -1,0 +1,43 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17283b;
+  background: #f4f8fc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.55; }
+.wrap { width: min(100% - 32px, 1080px); margin: 0 auto; }
+.site-header { background: #12395d; color: white; }
+.header-content { min-height: 68px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.site-header a { color: white; }
+h1 { margin: 32px 0 8px; }
+h2 { margin: 32px 0 16px; }
+.muted { color: #506174; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.stat, .item { border: 1px solid #d8e3ef; border-radius: 12px; background: #fff; padding: 16px; }
+.stat span { display: block; color: #506174; }
+.stat strong { display: block; color: #11517d; font-size: 1.7rem; }
+.progress-label { display: block; font-weight: 650; }
+progress { display: block; width: 100%; height: 22px; margin: 8px 0 22px; accent-color: #14765c; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+button, .import-action { font: inherit; border: 0; border-radius: 8px; background: #155b87; color: white; padding: 10px 14px; cursor: pointer; }
+button:hover, .import-action:hover { background: #0c466b; }
+.import-action { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; cursor: default; }
+.import-action input { max-width: 220px; font: inherit; font-size: .82rem; }
+.danger { background: #8b3040; }
+.danger:hover { background: #702533; }
+.status { min-height: 1.5em; color: #144f75; }
+.items { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.item { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.item a { color: #10598b; font-weight: 650; }
+.item label { white-space: nowrap; }
+.item input { width: 18px; height: 18px; vertical-align: middle; }
+.notice { margin: 32px 0; padding: 14px 16px; border-left: 4px solid #40789f; background: #eaf2f9; }
+.skip-link { position: absolute; top: -80px; left: 10px; z-index: 10; padding: 12px; background: white; }
+.skip-link:focus { top: 8px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #e58b0a; outline-offset: 3px; }
+@media (max-width: 650px) {
+  .stats { grid-template-columns: 1fr; }
+  .item { align-items: flex-start; }
+  .header-content { padding-block: 12px; }
+}
