@@ -1,0 +1,25 @@
+name: ILIMZIYO public textbook checks
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - ilimziyo-2.0-ochiq-darslik
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: JavaScript syntax
+        run: |
+          node --check app.js
+          node --check js/mustaqil-public.js
+      - name: Curriculum and HEMIS separation
+        run: node --test tests/public-site.test.cjs
+      - name: Internal references
+        run: python3 tests/check_local_links.py
