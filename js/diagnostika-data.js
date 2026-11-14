@@ -109,7 +109,7 @@
       "m/s²"
     ],
     "correct": 0,
-    "explanation": "F = ma; N = kg·m/s².",
+    "explanation": "F = ma formulaga ko‘ra kuch massaning tezlanishga ko‘paytmasi: 1 N = 1 kg·m/s².",
     "misconception": "m/s² faqat tezlanish birligi, kuch uchun massa ham kerak.",
     "next": "Impuls va ish birliklarini ham asosiy SI birliklarida yozing.",
     "href": "lecture4.html"
