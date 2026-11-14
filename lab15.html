@@ -1107,6 +1107,7 @@ function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) 
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
   </script>
+  <link rel="stylesheet" href="css/experiment-journal.css">
 </head>
 <body>
 
@@ -2588,5 +2589,7 @@ window.ResponsiveCanvasAdapter = ResponsiveCanvasAdapter;
    ========================================== */
 
 </script>
+  <script src="js/experiment-journal-core.js"></script>
+  <script src="js/experiment-journal.js"></script>
 </body>
 </html>
