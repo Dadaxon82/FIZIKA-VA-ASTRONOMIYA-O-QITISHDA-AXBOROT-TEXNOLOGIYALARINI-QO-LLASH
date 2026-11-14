@@ -24,5 +24,9 @@ jobs:
           node --check js/experiment-journal-core.js
           node --check js/experiment-journal.js
           node --check tests/experiment-journal.test.cjs
+          node --check js/mustaqil-data.js
+          node --check js/mustaqil-core.js
+          node --check js/mustaqil-ui.js
+          node --check tests/mustaqil.test.cjs
       - name: Functional tests
         run: node --test tests/*.test.cjs
