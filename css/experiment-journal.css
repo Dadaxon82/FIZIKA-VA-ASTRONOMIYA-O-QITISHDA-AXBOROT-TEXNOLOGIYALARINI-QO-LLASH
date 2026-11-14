@@ -1,0 +1,33 @@
+/* Isolated ILIMZIYO 2.0 laboratory journal styles. */
+#ilimziyo-journal{color:#edf6ff;font:15px/1.55 system-ui,sans-serif;margin:30px auto;max-width:1100px;padding:18px;background:#101e32;border:1px solid #55738b;border-radius:16px;text-align:left}
+#ilimziyo-journal *{box-sizing:border-box}
+#ilimziyo-journal summary{cursor:pointer;font-weight:750;font-size:1.15rem;color:#8ae6ff;padding:8px}
+#ilimziyo-journal p,#ilimziyo-journal label{color:#e0edf8}
+#ilimziyo-journal .ilj-hint{font-size:.92rem;color:#bbcfdf;margin:10px 0 16px}
+#ilimziyo-journal form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin:16px 0}
+#ilimziyo-journal label{display:flex;flex-direction:column;gap:5px;min-width:0}
+#ilimziyo-journal input:not([type=file]){display:block;width:100%;background:#fff;color:#102237;border:1px solid #728da7;border-radius:7px;padding:10px;font:inherit}
+#ilimziyo-journal .ilj-wide{grid-column:1/-1}
+#ilimziyo-journal button{font:inherit;color:white;background:#1370a0;border:0;padding:10px 12px;border-radius:8px;cursor:pointer}
+#ilimziyo-journal button:hover{background:#0f5c85}
+#ilimziyo-journal button:disabled{opacity:.45;cursor:not-allowed}
+#ilimziyo-journal button.ilj-danger{background:#9c4050}
+#ilimziyo-journal .ilj-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:14px 0}
+#ilimziyo-journal .ilj-actions input[type=file]{max-width:240px;padding:4px;background:transparent;color:white}
+#ilimziyo-journal .ilj-state{min-height:1.6em;font-weight:700;color:#9af5d2}
+#ilimziyo-journal .ilj-summary{margin:14px 0;padding:12px;background:#19324b;border-radius:9px}
+#ilimziyo-journal .ilj-chart{border:1px solid #57758b;border-radius:10px;background:#102236;padding:10px}
+#ilimziyo-journal canvas{display:block;width:100%;height:270px}
+#ilimziyo-journal .ilj-legend{font-size:12px;color:#c1d4e2;display:flex;gap:16px;flex-wrap:wrap}
+#ilimziyo-journal .ilj-measure::before{content:"● ";color:#38bdf8}
+#ilimziyo-journal .ilj-reference::before{content:"● ";color:#fbbf24}
+#ilimziyo-journal .ilj-table-wrap{overflow-x:auto;margin:12px 0}
+#ilimziyo-journal table{width:100%;border-collapse:collapse;min-width:680px;color:#eaf2fb}
+#ilimziyo-journal th,#ilimziyo-journal td{padding:8px;border-bottom:1px solid #4b677f;text-align:left;vertical-align:top}
+#ilimziyo-journal th{background:#1a354e;font-weight:700}
+#ilimziyo-journal td button{padding:5px 8px;font-size:.85rem}
+#ilimziyo-journal :is(button,input,summary):focus-visible{outline:3px solid #ffd27a;outline-offset:3px}
+.ilj-jump{position:fixed;z-index:50;right:14px;bottom:14px;display:block;background:#075d89;color:white!important;border:2px solid white;border-radius:999px;padding:10px 16px;font:700 14px system-ui,sans-serif;text-decoration:none;box-shadow:0 6px 16px #0006}
+.ilj-jump:focus-visible{outline:3px solid #fbbf24;outline-offset:3px}
+@media(max-width:640px){#ilimziyo-journal{margin:18px 10px;padding:12px}#ilimziyo-journal canvas{height:200px}.ilj-jump{bottom:10px;right:10px}}
+@media print{#ilimziyo-journal,.ilj-jump{display:none!important}}
