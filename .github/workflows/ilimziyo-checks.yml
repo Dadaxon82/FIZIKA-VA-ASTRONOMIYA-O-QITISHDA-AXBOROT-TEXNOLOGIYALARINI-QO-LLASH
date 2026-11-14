@@ -21,5 +21,8 @@ jobs:
           node --check js/diagnostika-data.js
           node --check js/diagnostika-ui.js
           node --check tests/diagnostika.test.cjs
+          node --check js/experiment-journal-core.js
+          node --check js/experiment-journal.js
+          node --check tests/experiment-journal.test.cjs
       - name: Functional tests
         run: node --test tests/*.test.cjs
