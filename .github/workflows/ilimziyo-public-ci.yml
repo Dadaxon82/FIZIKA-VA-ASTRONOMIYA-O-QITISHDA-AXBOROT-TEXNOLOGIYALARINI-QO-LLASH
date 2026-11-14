@@ -20,6 +20,6 @@ jobs:
           node --check app.js
           node --check js/mustaqil-public.js
       - name: Curriculum and HEMIS separation
-        run: node --test tests/public-site.test.cjs
+        run: node --test tests/*.test.cjs
       - name: Internal references
         run: python3 tests/check_local_links.py

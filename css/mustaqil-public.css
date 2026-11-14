@@ -7,3 +7,37 @@
 .directory{padding-top:45px;padding-bottom:60px}.section-title{display:flex;justify-content:space-between;gap:20px;align-items:end}.section-title h2{font-size:2rem;margin:9px 0}.section-title p{color:#607386;font-size:.92rem}.search-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:28px 0 20px}.search-row label{font-weight:700}.search-row input{flex:1;min-width:200px;padding:13px 16px;border-radius:10px;border:1px solid #bad0dd;background:#fff;font:inherit}.search-row span{color:#5b7181;font-size:.85rem}.task-list{display:grid;gap:13px}.task-card{background:#fff;border:1px solid #d5e5ef;border-radius:13px;box-shadow:0 5px 18px #0d314708;overflow:hidden}.task-card summary{list-style:none;display:flex;gap:20px;align-items:center;padding:17px 21px;cursor:pointer}.task-card summary::-webkit-details-marker{display:none}.task-card summary:focus-visible{outline:3px solid #28a6bb;outline-offset:-4px}.task-card summary:hover{background:#f2f9fb}.task-no{width:49px;height:49px;border-radius:10px;background:#e2f4f7;color:#08798d;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.12rem;flex-shrink:0}.task-name{flex:1}.task-name strong{display:block;font-size:1.06rem;line-height:1.35;color:#152f43}.task-name small{display:block;color:#688094;margin-top:4px}.chev{color:#3f8da7;font-weight:700;font-size:1.7rem;transition:transform .2s}.task-card[open] .chev{transform:rotate(45deg)}.task-content{border-top:1px solid #e5eef2;padding:14px 28px 22px 90px}.info-line{background:#f1f7fb;border-radius:9px;padding:13px 16px;font-size:.94rem}.task-content h3{color:#0c5776;font-size:1rem;margin:23px 0 8px}.task-content li{margin-bottom:8px;padding-left:3px}.task-content ol{padding-left:23px}.task-content .example{border-left:3px solid #1a92a7;padding:11px 17px;background:#eff9fa}.task-footer{border-top:1px solid #e5eef2;margin-top:20px;padding-top:14px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center}.read-links{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:.87rem}.read-links a{background:#f0f6f9;border-radius:7px;padding:5px 10px;text-decoration:none}.download-guide{background:#145f7d;color:#fff;text-decoration:none;border-radius:8px;padding:9px 13px;font-weight:650;font-size:.87rem}.download-guide:hover{background:#0b445e;color:#fff}.bottom-note{background:#e8f5f9;border-radius:16px;margin-bottom:55px;padding-top:24px;padding-bottom:25px}.bottom-note h2{font-size:1.35rem;margin-top:0}.bottom-note p{max-width:900px}.footer{text-align:center;font-size:.85rem;padding:25px 16px;color:#6a7885;border-top:1px solid #d7e4ec}.skip{position:absolute;left:5px;top:-50px;background:#fff;padding:8px;z-index:50}.skip:focus{top:5px}[hidden]{display:none!important}
 @media(max-width:720px){.topbar-content{align-items:flex-start;flex-direction:column;padding-top:16px;padding-bottom:15px}.topbar nav{gap:10px}.topbar nav a{font-size:.81rem}.hero{padding:44px 0}.task-content{padding:14px 15px 22px}.task-card summary{padding:13px;gap:12px}.section-title{display:block}.task-no{width:38px;height:38px}.numbers{gap:13px}.numbers b{font-size:1.75rem}}
 @media print{.topbar,.search-row,.footer,.download-guide,.bottom-note{display:none!important}.hero{background:#fff;color:#111;padding:0}.hero h1,.hero h1 em{color:#000}.hero p,.hero .eyebrow{color:#333}.task-card{break-inside:avoid;box-shadow:none}.task-content{display:block}.disclaimer{box-shadow:none}}
+
+/* ILIMZIYO asosiy sahifasi bilan yagona vizual tizim (mustaqil ta'lim).
+   Asosiy darslikdagi .card, .badge, grid va tungi ranglarga moslashtirilgan. */
+:root{color-scheme:dark;--bg:#060b16;--panel:#0d1628;--line:#22304a;--muted:#94a3b8;--text:#e5eefc;--cyan:#22d3ee;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
+body{background:radial-gradient(circle at 50% -10%,#18345c 0,#060b16 38rem);color:var(--text)}
+a{color:#93c5fd}a:hover{color:#67e8f9}
+.topbar{background:rgba(6,11,22,.88);border-bottom-color:rgba(148,163,184,.16);box-shadow:0 10px 35px #0003;backdrop-filter:blur(18px)}
+.brand{color:#e5eefc}.brand small{color:var(--cyan)}.topbar nav a{color:#cbd5e1}.topbar nav a.active{color:#67e8f9}
+.hero{background:radial-gradient(circle at 80% 20%,#0ea5e92a,transparent 52%),linear-gradient(115deg,#0a1730,#0d243d)}
+.hero .eyebrow,.eyebrow{color:var(--cyan)}.hero h1 em{color:#67e8f9}.hero p,.numbers span{color:#bac7da}
+.disclaimer{background:#111d33;border:1px solid #2f5175;border-left:5px solid #22d3ee;box-shadow:0 15px 45px #0003}
+.disclaimer .mark{background:#14334a;color:#67e8f9}.disclaimer p{color:#cbd5e1}
+.section-title p,.search-row span{color:#94a3b8}
+.search-row input{background:#101b30;border-color:#314665;color:#e5eefc}
+.search-row input::placeholder{color:#94a3b8}
+.task-card{background:linear-gradient(145deg,rgba(17,29,51,.92),rgba(10,18,34,.96));border:1px solid var(--line);border-radius:20px;box-shadow:0 15px 45px #00000025;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.task-card:hover{transform:translateY(-3px);border-color:#3970ab;box-shadow:0 20px 55px #0005}
+.task-card summary:hover{background:#17243b}
+.task-card summary:focus-visible{outline-color:var(--cyan)}
+.task-no{background:#1d4ed81a;color:#93c5fd;border:1px solid #2563eb66}
+.task-name strong{color:#e5eefc}.task-name small{color:#94a3b8}.chev{color:#67e8f9}
+.task-content{border-top-color:#22304a;color:#dbeafe}
+.info-line{background:#15243b;color:#dbeafe}
+.task-content h3{color:#67e8f9}
+.task-content .example{background:#102e3c;border-left-color:#22d3ee}
+.task-footer{border-top-color:#22304a}
+.read-links a{background:#162b43;color:#93c5fd}
+.download-guide{background:#1d4ed8;color:white}.download-guide:hover{background:#1e40af;color:white}
+.bottom-note{background:#101f34;border:1px solid #29415f}
+.footer{color:#94a3b8;border-top-color:#22304a}
+.skip{background:#101b30;color:#e5eefc}
+@media(max-width:720px){.task-card{border-radius:14px}}
+@media print{body{background:#fff;color:#111}.task-card,.disclaimer,.bottom-note{background:#fff;color:#111;border-color:#bbb}.task-name strong,.task-content,.disclaimer p,.info-line,.task-content h3{color:#111}.task-content .example{background:#eee;color:#111}}
