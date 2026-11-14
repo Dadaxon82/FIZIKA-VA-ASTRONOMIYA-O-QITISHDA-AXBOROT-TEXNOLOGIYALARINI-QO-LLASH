@@ -19,6 +19,7 @@ jobs:
         run: |
           node --check app.js
           node --check js/mustaqil-public.js
+          node --check js/modullar.js
       - name: Curriculum and HEMIS separation
         run: node --test tests/*.test.cjs
       - name: Internal references

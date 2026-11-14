@@ -1,0 +1,64 @@
+<!doctype html><html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ILIMZIYO 2.0 ning yetti modulli ochiq o‘quv arxitekturasi">
+<title>7 ta modul — ILIMZIYO 2.0</title><link rel="stylesheet" href="css/modullar.css">
+<script src="js/modullar.js" defer></script></head><body>
+<a class="skip" href="#main">Asosiy mazmunga o‘tish</a>
+<header><div class="wrap top"><a class="brand" href="index.html">◈ ILIMZIYO <small>Ochiq elektron darslik</small></a>
+<nav aria-label="Modullar navigatsiyasi"><a href="index.html">Bosh sahifa</a><a href="#textbook">Darslik</a><a href="#tutor">O‘quv yordamchisi</a><a href="#datalab">Ma’lumotlar</a><a href="#hemis">HEMIS</a></nav></div></header>
+<main id="main" class="wrap">
+<section class="intro"><div class="eyebrow">ILIMZIYO 2.0 · Ochiq ta’lim ekotizimi</div><h1>7 ta funksional modul</h1>
+<p>Fan dasturidagi 15 ta ma’ruza, 15 ta laboratoriya va 15 ta mustaqil topshiriq yagona arxitekturada. Hech qanday ro‘yxatdan o‘tish yoki pullik server talab etilmaydi.</p>
+<div class="summary"><span><strong>15</strong> ma’ruza</span><span><strong>15</strong> laboratoriya</span><span><strong>15</strong> mustaqil ish</span><span><strong>60 soat</strong> mustaqil ta’lim</span></div></section>
+<nav class="module-nav" aria-label="Yetti modul">
+<a href="#textbook">01 · Elektron darslik</a><a href="#tutor">02 · O‘quv yordamchisi</a><a href="#lab">03 · Virtual laboratoriya</a>
+<a href="#datalab">04 · Scientific Data Lab</a><a href="#analytics">05 · O‘quv analitikasi</a>
+<a href="#practice">06 · Mustaqil mashqlar</a><a href="#portfolio">07 · Portfolio</a></nav>
+<section class="panel" id="textbook"><div class="module-id">01 · Digital Textbook</div><h2>Elektron darslik</h2>
+<p>15 ta ma’ruza va 15 ta laboratoriya amaldagi sahifalarida saqlangan. Mustaqil ta’lim yo‘riqnomalari ham ochiq.</p>
+<div class="three"><a class="tile" href="index.html#maruzalar"><strong>15 ta ma’ruza</strong><span>Nazariya va formulalar</span></a>
+<a class="tile" href="index.html#laboratoriyalar"><strong>15 ta laboratoriya</strong><span>Virtual tajribalar</span></a>
+<a class="tile" href="mustaqil.html"><strong>15 ta mustaqil ish</strong><span>4 soatdan · 60 soat</span></a></div></section>
+<section class="panel" id="tutor"><div class="module-id">02 · AI Tutor yo‘nalishi</div><h2>Manbali o‘quv yordamchisi</h2>
+<p>Hozircha <strong>mahalliy manbalar katalogi bo‘yicha qidiruv</strong> ishlaydi: bu generativ AI suhbat emas. Savolingizdagi mavzuga mos tasdiqlangan darslik sahifalarini ko‘rsatadi, javoblarni uydirmaydi.</p>
+<label for="topic">Mavzuni kiriting (masalan, mayatnik, astronomiya, elektromagnit)</label>
+<input id="topic" type="search" placeholder="Fizik mavzuni izlang" autocomplete="off">
+<div id="search-results" class="result-list" aria-live="polite"></div>
+<p class="footnote">AI modelga xavfsiz ulanish va kamida 100 ta ekspert tekshiruvi bajarilmaguncha tizim «AI Tutor tayyor» deb ko‘rsatilmaydi.</p></section>
+<section class="panel" id="lab"><div class="module-id">03 · Virtual Physics Lab</div><h2>Virtual fizika laboratoriyasi</h2><p>Amaldagi interaktiv laboratoriyalar va simulyatorlar bilan ishlash uchun katalog. Fizik modelning ilmiy aniqligini mustaqil tekshirish kerak.</p>
+<div class="three"><a class="tile" href="index.html#laboratoriyalar"><strong>Laboratoriyalar</strong><span>15 ta mavjud mashg‘ulot</span></a>
+<a class="tile" href="index.html#simulyatorlar"><strong>Interaktiv simulyatorlar</strong><span>Bosh sahifadagi fizik dastgohlar</span></a>
+<a class="tile" href="index.html#astronomiya"><strong>Astronomiya</strong><span>Ochiq qo‘shimcha mavzular</span></a></div></section>
+<section class="panel" id="datalab"><div class="module-id">04 · Scientific Data Lab</div><h2>Ilmiy ma’lumotlar laboratoriyasi</h2>
+<p>O‘zingizdagi ikki ustunli sonli CSV faylni yoki quyidagi namuna ma’lumotlarni tanlang. Grafik brauzerning o‘zida quriladi; ma’lumotlar serverga yuborilmaydi.</p>
+<div class="toolbar"><label>CSV fayl (maksimal 256 KB)<input type="file" accept=".csv,text/csv" id="csv-file"></label>
+<button type="button" id="csv-sample">Namuna: mayatnik davri</button>
+<button type="button" id="csv-export" disabled>Ma’lumotni CSV saqlash</button></div>
+<p class="footnote">Format: birinchi qatorda ustun nomlari, keyingi qatorlarda X,Y sonlari; nuqta yoki vergul o‘nlik ajratgich (CSV uchun nuqta tavsiya etiladi). Namuna hisoblashlar nazariy qiymat, real kuzatish emas.</p>
+<p id="csv-status" role="status" aria-live="polite"></p><div class="chart"><canvas id="chart" height="340" role="img" aria-label="Ilmiy ma’lumotlar ikki ustunli chiziqli grafigi"></canvas></div>
+<div class="metrics" id="stats" aria-live="polite"></div>
+<div class="table-wrap"><table><caption>Ilmiy ma’lumotlar jadvali</caption><thead><tr><th id="xh">X</th><th id="yh">Y</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="footnote">Ochiq ma’lumot manbalari: <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener noreferrer">NASA Exoplanet Archive</a>,
+<a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank" rel="noopener noreferrer">JPL Horizons</a>,
+<a href="https://gea.esac.esa.int/archive/" target="_blank" rel="noopener noreferrer">Gaia Archive</a>. Tashqi manbalarga avtomatik API ulanmagan.</p></section>
+<section class="panel" id="analytics"><div class="module-id">05 · Learning Analytics</div><h2>Ochiq kontent ko‘rsatkichlari</h2>
+<p>Platforma tarkibining yig‘ma ko‘rinishi. Bu yerda individual talaba ma’lumotlari, faollik kuzatuvi yoki rasmiy reyting saqlanmaydi.</p>
+<div class="three"><div class="tile"><strong>15 / 15</strong><span>Ma’ruzalar katalogi</span></div><div class="tile"><strong>15 / 15</strong><span>Laboratoriyalar katalogi</span></div><div class="tile"><strong>15 / 15</strong><span>Mustaqil ta’lim yo‘riqnomalari</span></div></div>
+<p class="footnote">Shaxsiy va guruh o‘zlashtirish ko‘rsatkichlari faqat HEMISda yuritiladi.</p></section>
+<section class="panel" id="practice"><div class="module-id">06 · Bloom Learning Practice</div><h2>Blum taksonomiyasi bo‘yicha mashqlar</h2>
+<p>Quyidagi olti darajali <strong>o‘z-o‘zini tekshirish</strong> namunasi rasmiy test yoki baholash emas. Savollar darslikdagi o‘rganilgan bilimni mustahkamlashga xizmat qiladi.</p>
+<ol class="blooms"><li><strong>Eslab qolish:</strong> Nyutonning ikkinchi qonunini yozing.</li>
+<li><strong>Tushunish:</strong> Massa ortganda bir xil kuch ta’siridagi tezlanish qanday o‘zgarishini izohlang.</li>
+<li><strong>Qo‘llash:</strong> m = 2 kg, a = 3 m/s² bo‘lsa, F ni hisoblang.</li>
+<li><strong>Tahlil:</strong> F–a grafigi qiyaligi nima uchun massaga teng?</li>
+<li><strong>Baholash:</strong> Birliklar noto‘g‘ri qo‘llangan yechimni topib, tuzating.</li>
+<li><strong>Yaratish:</strong> F = ma asosida kichik HTML5 Canvas simulyatsiyasi ssenariysini tuzing.</li></ol>
+<details><summary>Namunaviy yechimni ko‘rish</summary><p>1) F = ma; 2) a = F/m ga ko‘ra massa ortsa tezlanish kamayadi; 3) F = 6 N; 4) F = ma chiziq qiyaligi m; 5) 1 N = 1 kg·m/s², faqat m/s² kuch birligi emas; 6) massa va kuchni boshqarib, tezlanishning o‘zgarishini vizuallashtirish.</p></details>
+<a class="inline-link" href="mustaqil.html">Mustaqil ta’lim topshiriqlarini o‘rganish</a></section>
+<section class="panel" id="portfolio"><div class="module-id">07 · Portfolio & Certificates</div><h2>Portfolio uchun ochiq namunalar</h2>
+<p>Mustaqil topshiriq bo‘yicha tadqiqot maqsadi, nazariy asos, fizik formula, kod/rasm, natijalar, xulosa va manbalarni jamlash uchun <strong>namuna shablon</strong>. Sertifikat bu saytda yaratilmaydi.</p>
+<div class="toolbar"><button type="button" id="template">Portfolio shablonini yuklab olish (.md)</button>
+<a class="inline-link" href="mustaqil.html">15 ta ish yo‘riqnomalari</a></div></section>
+<section class="panel emphasis" id="hemis"><div class="module-id">Rasmiy ta’lim jarayonlari</div><h2>Baholash va topshiriqlarni topshirish — HEMISda</h2>
+<p>ILIMZIYO’da login, shaxsiy kabinet, rasmiy baho, guruhlar natijasi, diplom yoki sertifikat berish tizimi yo‘q. Talabalarning rasmiy topshirishi, joriy, oraliq va yakuniy nazorat HEMIS va universitet tartiblariga muvofiq amalga oshiriladi.</p></section>
+</main><footer>ILIMZIYO 2.0 · Bepul ochiq elektron darslik · <a href="index.html">Bosh sahifa</a></footer>
+</body></html>
