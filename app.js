@@ -231,9 +231,6 @@
   $('#generate-prompt')?.addEventListener('click', () => { const topic = $('#topic').value.trim() || 'Garmonik tebranishlar'; const level = $('#level').value; $('#prompt-output').textContent = `Siz fizika o‘qituvchisiz.\nMavzu: ${topic}\nDaraja: ${level}\n\n10 ta diagnostik savol tuzing. Har bir savolda to‘g‘ri javob, qisqa izoh va tipik xatoni ko‘rsating. Yakunda natijaga qarab 3 ta individual o‘quv yo‘lini tavsiya qiling.`; });
   async function copyScenario() { const value = 'Hook → Core Concept → Misconception → Simulation Task\n\nFizik hodisani tushuntiring, formulani SI birliklarda yozing va HTML Canvas simulyatsiyasi uchun tekshiriladigan topshiriq bering.'; try { await navigator.clipboard.writeText(value); text('#copy-status', 'Nusxa olindi ✓'); setTimeout(() => text('#copy-status', 'Nusxa olish'), 1500); } catch { alert('Nusxa olish uchun brauzer ruxsati berilmadi.'); } }
   $('#copy-scenario')?.addEventListener('click', copyScenario);
-  const weights = [.3, .25, .2, .15, .1];
-  function calculateScore() { let total = 0; weights.forEach((weight, i) => { const input = $(`#score-${i + 1}`); const value = Number(input.value); total += value * weight; text(`#score-${i + 1}-value`, `${value} ball`); }); text('#total-score', `Umumiy: ${total.toFixed(1)} / 100`); }
-  $$('.score').forEach(el => el.addEventListener('input', calculateScore));
 
   function frame(now) {
     const elapsed = Math.min(.1, (now - pendulum.last) / 1000 || 0); pendulum.last = now;
@@ -241,5 +238,5 @@
     drawPendulum(); drawLorentz(); drawDoppler(); drawYoung(); requestAnimationFrame(frame);
   }
   window.addEventListener('resize', () => { drawPendulum(); drawLorentz(); drawDoppler(); drawYoung(); });
-  resetPendulum(); updateLorentz(); updateDoppler(); updateYoung(); calculateScore(); requestAnimationFrame(frame);
+  resetPendulum(); updateLorentz(); updateDoppler(); updateYoung(); requestAnimationFrame(frame);
 })();
