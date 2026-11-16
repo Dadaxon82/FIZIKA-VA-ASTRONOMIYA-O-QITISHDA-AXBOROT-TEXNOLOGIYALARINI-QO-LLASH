@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>15-laboratoriya: Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to‘liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish</title>
+  <meta name="description" content="15-laboratoriya: yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi simulyator yaratish.">
   <style>
 /* MAIN.CSS */
 /* ==========================================================================
@@ -1108,6 +1109,23 @@ function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) 
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
   </script>
 <link rel="stylesheet" href="css/translate.css">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://ilimziyo.uz/lab15.html">
+<meta property="og:site_name" content="Fizika va sun’iy intellekt">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ilimziyo.uz/lab15.html">
+<meta property="og:title" content="15-laboratoriya: Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to‘liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish">
+<meta property="og:description" content="15-laboratoriya: yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi simulyator yaratish.">
+<meta property="og:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="15-laboratoriya: Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to‘liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish">
+<meta name="twitter:description" content="15-laboratoriya: yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi simulyator yaratish.">
+<meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
 </head>
 <body>
 
@@ -1561,8 +1579,8 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           <h4 class="footer-heading">Resurslar</h4>
           <ul class="footer-links-list">
             <li><a href="index.html#muallif">Muallif</a></li>
-            <li><a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank">NASA JPL Horizons</a></li>
-            <li><a href="https://elevenlabs.io" target="_blank">ElevenLabs AI</a></li>
+            <li><a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank" rel="noopener noreferrer">NASA JPL Horizons</a></li>
+            <li><a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">ElevenLabs AI</a></li>
           </ul>
         </div>
       </div>

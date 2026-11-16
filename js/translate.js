@@ -161,10 +161,44 @@
     }, 'google_translate_element');
   };
 
+  /* Cookie/maxfiylik bildirishnomasi: Google Translate uchquncha tomon
+     skripti va "googtrans" cookie'sidan foydalanishi haqida bir martalik,
+     yopib qo'yiladigan (keyin qaytib chiqmaydigan) kichik eslatma. */
+  var COOKIE_NOTICE_KEY = 'cookie_notice_dismissed';
+
+  function mountCookieNotice() {
+    if (localStorage.getItem(COOKIE_NOTICE_KEY) === '1') return;
+    if (document.getElementById('cookie-notice')) return;
+
+    var bar = document.createElement('div');
+    bar.id = 'cookie-notice';
+    bar.className = 'cookie-notice notranslate';
+    bar.setAttribute('translate', 'no');
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Cookie haqida eslatma');
+
+    var text = document.createElement('span');
+    text.textContent = 'Ushbu sayt til tarjimasi (UZ/RU/EN) uchun Google Translate xizmatidan foydalanadi va shu maqsadda brauzeringizda cookie/localStorage saqlaydi. ILIMZIYO shaxsiy ma’lumot yig‘madi va hisob yaratmaydi.';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cookie-notice-btn';
+    btn.textContent = 'Tushunarli';
+    btn.addEventListener('click', function () {
+      localStorage.setItem(COOKIE_NOTICE_KEY, '1');
+      bar.remove();
+    });
+
+    bar.appendChild(text);
+    bar.appendChild(btn);
+    document.body.appendChild(bar);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     applyNotranslate();
     mountSwitcher();
     ensureWidgetContainer();
     loadGoogleTranslateScript();
+    mountCookieNotice();
   });
 })();

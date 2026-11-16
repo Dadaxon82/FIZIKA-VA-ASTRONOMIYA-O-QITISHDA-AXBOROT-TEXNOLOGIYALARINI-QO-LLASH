@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>8-ma’ruza: AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar</title>
+  <meta name="description" content="8-ma'ruza: AI yordamida fizika dasturlash — vektorlar, kuchlar va 2D elastik to'qnashuvlar modellashtirilishi.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/simulators.css">
@@ -12,6 +13,23 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
           onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 <link rel="stylesheet" href="css/translate.css">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://ilimziyo.uz/lecture8.html">
+<meta property="og:site_name" content="Fizika va sun’iy intellekt">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ilimziyo.uz/lecture8.html">
+<meta property="og:title" content="8-ma’ruza: AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar">
+<meta property="og:description" content="8-ma'ruza: AI yordamida fizika dasturlash — vektorlar, kuchlar va 2D elastik to'qnashuvlar modellashtirilishi.">
+<meta property="og:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="8-ma’ruza: AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar">
+<meta name="twitter:description" content="8-ma'ruza: AI yordamida fizika dasturlash — vektorlar, kuchlar va 2D elastik to'qnashuvlar modellashtirilishi.">
+<meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
 </head>
 <body>
 
@@ -193,7 +211,7 @@
               Fizika dasturlashda vektorli tafakkur va to‘qnashuvlar mexanikasini o‘zlashtirish <strong>Lev Vygotskiyning "Eng Yaqin Rivojlanish Zonasi" (ZPD, 1978)</strong> hamda <strong>Bloomning taksonomiyasi (Anderson va Krathwohl, 2001)</strong> prinsiplariga tayanadi. Talabalarning boshlang‘ich vektor-fizik va dasturlash bilimlari MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratiladi.
             </p>
             <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(56, 189, 248, 0.2); padding-top: 6px;">
-              🔗 <em>Asosiy manbalar:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson va Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; MagicSchool AI Research (2024). <a href="https://www.magicschool.ai" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">magicschool.ai</a>.
+              🔗 <em>Asosiy manbalar:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson va Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; MagicSchool AI Research (2024). <a href="https://www.magicschool.ai" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">magicschool.ai</a>.
             </div>
           </div>
 
@@ -328,7 +346,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               Dasturiy injiniring va fizika ta’limida <strong>Driver-Navigator modeli (Williams va Kessler, 2002, <em>Pair Programming Illuminated</em>)</strong> talabalarning dasturlashdagi konseptual va mantiqiy xatolarini 40% dan ko‘proqqa qisqartirishi ilmiy isbotlangan (Begel va Nagappan, IEEE 2008). <strong>Claude</strong> bilan tashkil etilgan juftlikda dasturlash sessiyasida talaba kod yozadi (Driver), AI esa navigatorda fizik qonuniyatlarning buzilishini (energiya saqlanmasligi, massalar teskariligi, penetratsiya) Sokratik dialog uslubida real vaqtda aniqlaydi va tuzatish taklif etadi.
             </p>
             <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(52, 211, 153, 0.2); padding-top: 6px;">
-              🔗 <em>Asosiy manbalar:</em> Williams, L., va Kessler, R. (2002). <em>Pair Programming Illuminated</em>. Addison-Wesley (ISBN: 978-0201745764); Begel, A., va Nagappan, N. (2008). <em>Pair programming: what’s in it for me?</em> IEEE ESEM, DOI: <a href="https://doi.org/10.1145/1414004.1414026" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">10.1145/1414004.1414026</a>; Anthropic Research (2024). <em>Claude System Capabilities</em>. <a href="https://www.anthropic.com" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">anthropic.com</a>.
+              🔗 <em>Asosiy manbalar:</em> Williams, L., va Kessler, R. (2002). <em>Pair Programming Illuminated</em>. Addison-Wesley (ISBN: 978-0201745764); Begel, A., va Nagappan, N. (2008). <em>Pair programming: what’s in it for me?</em> IEEE ESEM, DOI: <a href="https://doi.org/10.1145/1414004.1414026" target="_blank" rel="noopener noreferrer" style="color: var(--accent-emerald); text-decoration: underline;">10.1145/1414004.1414026</a>; Anthropic Research (2024). <em>Claude System Capabilities</em>. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-emerald); text-decoration: underline;">anthropic.com</a>.
             </div>
           </div>
 
@@ -428,7 +446,7 @@ Sen:
               2D qattiq jismlar to‘qnashuvi <strong>David Baraff (1997, <em>Physically Based Modeling: Rigid Body Simulation</em>, SIGGRAPH)</strong>, <strong>Halliday, Resnick va Walker (2018, <em>Fundamentals of Physics</em>, 11th ed., Ch. 9)</strong> hamda <strong>Christer Ericson (2004, <em>Real-Time Collision Detection</em>)</strong> darsliklari asosida impuls dinamikasi orqali modellashtiriladi. WolframAlpha yordamida nochiziqli vektorli tenglamalar tizimi va kinetik energiya yo‘qotilishi analitik tarzda tekshiriladi.
             </p>
             <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(251, 191, 36, 0.2); padding-top: 6px;">
-              🔗 <em>Asosiy manbalar:</em> Baraff, D. (1997). <a href="https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf" target="_blank" style="color: var(--accent-amber); text-decoration: underline;">SIGGRAPH Course Notes</a>; Halliday, Resnick, va Walker (2018). <em>Fundamentals of Physics</em>, Wiley (ISBN: 978-1119286240); Ericson, C. (2004). <em>Real-Time Collision Detection</em>, CRC Press (ISBN: 978-1558607323); Wolfram|Alpha Dynamics Solver: <a href="https://www.wolframalpha.com" target="_blank" style="color: var(--accent-amber); text-decoration: underline;">wolframalpha.com</a>.
+              🔗 <em>Asosiy manbalar:</em> Baraff, D. (1997). <a href="https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: underline;">SIGGRAPH Course Notes</a>; Halliday, Resnick, va Walker (2018). <em>Fundamentals of Physics</em>, Wiley (ISBN: 978-1119286240); Ericson, C. (2004). <em>Real-Time Collision Detection</em>, CRC Press (ISBN: 978-1558607323); Wolfram|Alpha Dynamics Solver: <a href="https://www.wolframalpha.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: underline;">wolframalpha.com</a>.
             </div>
           </div>
 
@@ -548,7 +566,7 @@ Sen:
               Fizik dvigatel arxitekturasi <strong>Jason Gregory (2018, <em>Game Engine Architecture</em>, 3rd ed., CRC Press)</strong> hamda <strong>Glenn Fiedler (2004, <em>Collision Response</em>)</strong> prinsiplari asosida modulli ECMAScript 6 (ES6) formatida ishlab chiqilgan. Xotira ajratilishini (Memory Allocation) minimallashtirish, zarrachalar to‘qnashuvini diskret vaqt qadamlarida deterministik integratsiyalash ta’minlangan.
             </p>
             <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(168, 85, 247, 0.2); padding-top: 6px;">
-              🔗 <em>Asosiy manbalar:</em> Gregory, J. (2018). <em>Game Engine Architecture</em>, CRC Press (ISBN: 978-1138035485); Fiedler, G. (2004). <a href="https://gafferongames.com/post/collision_response_and_coulomb_friction/" target="_blank" style="color: var(--accent-purple); text-decoration: underline;">Gaffer on Games: Collision Response</a>; Millington, I. (2010). <em>Game Physics Engine Development</em>, Morgan Kaufmann (ISBN: 978-0123819765); Mozilla Developer Network (MDN) 2D Physics: <a href="https://developer.mozilla.org" target="_blank" style="color: var(--accent-purple); text-decoration: underline;">developer.mozilla.org</a>.
+              🔗 <em>Asosiy manbalar:</em> Gregory, J. (2018). <em>Game Engine Architecture</em>, CRC Press (ISBN: 978-1138035485); Fiedler, G. (2004). <a href="https://gafferongames.com/post/collision_response_and_coulomb_friction/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-purple); text-decoration: underline;">Gaffer on Games: Collision Response</a>; Millington, I. (2010). <em>Game Physics Engine Development</em>, Morgan Kaufmann (ISBN: 978-0123819765); Mozilla Developer Network (MDN) 2D Physics: <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer" style="color: var(--accent-purple); text-decoration: underline;">developer.mozilla.org</a>.
             </div>
           </div>
 
@@ -720,7 +738,7 @@ function resolveCollision(b1, b2, restitution = 1.0) {
               Fizika simulyatsiyasining ilmiy haqiqiyligi <strong>umumiy impuls ($\vec{P} = \text{const}$)</strong> va <strong>kinetik energiya ($E_k$)</strong> saqlanish qonunlari orqali tekshiriladi (Marion va Thornton, 1995, <em>Classical Dynamics of Particles and Systems</em>; Hairer et al., 2006, <em>Geometric Numerical Integration</em>). <strong>ChatGPT Code Interpreter</strong> simulyatsiyadan olingan telemetriya ma’lumotlarini qayta ishlab, faza fazosi va energiya dissipatsiyasini Matplotlib orqali tahlil qiladi.
             </p>
             <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(244, 63, 94, 0.2); padding-top: 6px;">
-              🔗 <em>Asosiy manbalar:</em> Marion, J. B., va Thornton, S. T. (1995). <em>Classical Dynamics</em>, Saunders College Pub.; Hairer, E., et al. (2006). <em>Geometric Numerical Integration</em>, Springer, DOI: <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" style="color: var(--accent-rose); text-decoration: underline;">10.1007/3-540-30666-8</a>; Hunter, J. D. (2007). <em>Matplotlib: A 2D Graphics Environment</em>, Computing in Science va Eng., DOI: <a href="https://doi.org/10.1109/MCSE.2007.55" target="_blank" style="color: var(--accent-rose); text-decoration: underline;">10.1109/MCSE.2007.55</a>; OpenAI (2024). <a href="https://openai.com" target="_blank" style="color: var(--accent-rose); text-decoration: underline;">openai.com</a>.
+              🔗 <em>Asosiy manbalar:</em> Marion, J. B., va Thornton, S. T. (1995). <em>Classical Dynamics</em>, Saunders College Pub.; Hairer, E., et al. (2006). <em>Geometric Numerical Integration</em>, Springer, DOI: <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" rel="noopener noreferrer" style="color: var(--accent-rose); text-decoration: underline;">10.1007/3-540-30666-8</a>; Hunter, J. D. (2007). <em>Matplotlib: A 2D Graphics Environment</em>, Computing in Science va Eng., DOI: <a href="https://doi.org/10.1109/MCSE.2007.55" target="_blank" rel="noopener noreferrer" style="color: var(--accent-rose); text-decoration: underline;">10.1109/MCSE.2007.55</a>; OpenAI (2024). <a href="https://openai.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-rose); text-decoration: underline;">openai.com</a>.
             </div>
           </div>
 
@@ -842,7 +860,7 @@ Python Matplotlib orqali:
               Interaktiv fizika simulyatsiyalari talabalarning mexanik hodisalarni chuqur tushunishida <strong>Nobel mukofoti laureati Carl Wieman (PhET Interactive Simulations, 2008, <em>Science</em>)</strong> tamoyillariga muvofiq intellektual vosita bo‘lib xizmat qiladi. Dinamik vektor o‘qlari, trayektoriya izlari va real vaqtli telemetriya nazariy bilimlarni to‘g‘ridan-to‘g‘ri eksperimental tadqiqotga aylantiradi.
             </p>
             <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed rgba(56, 189, 248, 0.2); padding-top: 6px;">
-              🔗 <em>Asosiy manbalar:</em> Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>, Science, DOI: <a href="https://doi.org/10.1126/science.1161948" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">10.1126/science.1161948</a>; PhET Interactive Simulations, University of Colorado Boulder: <a href="https://phet.colorado.edu" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">phet.colorado.edu</a>.
+              🔗 <em>Asosiy manbalar:</em> Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>, Science, DOI: <a href="https://doi.org/10.1126/science.1161948" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">10.1126/science.1161948</a>; PhET Interactive Simulations, University of Colorado Boulder: <a href="https://phet.colorado.edu" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">phet.colorado.edu</a>.
             </div>
           </div>
 
@@ -1069,14 +1087,14 @@ Python Matplotlib orqali:
           <ol style="padding-left: 20px; font-size: 0.88rem; line-height: 1.8; color: var(--text-secondary);">
             <li><strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). John Wiley va Sons. (Chapter 9: Center of Mass and Linear Momentum — 2D Collisions va Energy Dissipation, pp. 215–248). ISBN: 978-1119286240.</li>
             <li><strong>Serway, R. A., va Jewett, J. W. (2018).</strong> <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning. (Chapter 9: Linear Momentum and Collisions). ISBN: 978-1337553292.</li>
-            <li><strong>Baraff, D. (1997).</strong> <em>Physically Based Modeling: Rigid Body Simulation</em>. SIGGRAPH Course Notes, Robotics Institute, Carnegie Mellon University. URL: <a href="https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf" target="_blank" style="color: var(--accent-amber);">cs.cmu.edu/~baraff/sigcourse/notesd1.pdf</a>.</li>
+            <li><strong>Baraff, D. (1997).</strong> <em>Physically Based Modeling: Rigid Body Simulation</em>. SIGGRAPH Course Notes, Robotics Institute, Carnegie Mellon University. URL: <a href="https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber);">cs.cmu.edu/~baraff/sigcourse/notesd1.pdf</a>.</li>
             <li><strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press / Taylor va Francis Group. (Chapter 12: The Physics Engine va Rigid Body Dynamics, pp. 680–745). ISBN: 978-1138035485.</li>
             <li><strong>Williams, L., va Kessler, R. (2002).</strong> <em>Pair Programming Illuminated</em>. Addison-Wesley Professional. (ISBN: 978-0201745764).</li>
-            <li><strong>Begel, A., va Nagappan, N. (2008).</strong> <em>Pair programming: what’s in it for me?</em> In <em>Proceedings of the 2008 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '08)</em>, pp. 120–128. DOI: <a href="https://doi.org/10.1145/1414004.1414026" target="_blank" style="color: var(--accent-amber);">10.1145/1414004.1414026</a>.</li>
-            <li><strong>Fiedler, G. (2004).</strong> Collision response and numerical physics integration. <em>Gaffer on Games</em>. URL: <a href="https://gafferongames.com/post/collision_response_and_coulomb_friction/" target="_blank" style="color: var(--accent-amber);">gafferongames.com</a>.</li>
+            <li><strong>Begel, A., va Nagappan, N. (2008).</strong> <em>Pair programming: what’s in it for me?</em> In <em>Proceedings of the 2008 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '08)</em>, pp. 120–128. DOI: <a href="https://doi.org/10.1145/1414004.1414026" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber);">10.1145/1414004.1414026</a>.</li>
+            <li><strong>Fiedler, G. (2004).</strong> Collision response and numerical physics integration. <em>Gaffer on Games</em>. URL: <a href="https://gafferongames.com/post/collision_response_and_coulomb_friction/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber);">gafferongames.com</a>.</li>
             <li><strong>Marion, J. B., va Thornton, S. T. (1995).</strong> <em>Classical Dynamics of Particles and Systems</em> (4th ed.). Saunders College Publishing. (ISBN: 978-0030973024).</li>
-            <li><strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. DOI: <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" style="color: var(--accent-amber);">10.1007/3-540-30666-8</a>.</li>
-            <li><strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. <em>Science</em>, 322(5902), 682–683. DOI: <a href="https://doi.org/10.1126/science.1161948" target="_blank" style="color: var(--accent-amber);">10.1126/science.1161948</a>.</li>
+            <li><strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. DOI: <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber);">10.1007/3-540-30666-8</a>.</li>
+            <li><strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. <em>Science</em>, 322(5902), 682–683. DOI: <a href="https://doi.org/10.1126/science.1161948" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber);">10.1126/science.1161948</a>.</li>
             <li><strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman. ISBN: 978-0801319037.</li>
             <li><strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press. ISBN: 978-0674576292.</li>
           </ol>
