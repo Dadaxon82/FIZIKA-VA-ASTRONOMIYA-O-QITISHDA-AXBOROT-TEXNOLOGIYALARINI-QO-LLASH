@@ -6,6 +6,127 @@
    topshiriq accordion-kartalari (<details>) uchun qo'shimcha uslublar bor.
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   TOPMENU - index.html bosh sahifasidagi gorizontal menyuning aynan o'zi.
+   Ataylab ".topmenu" bilan skoplangan: components.css'dagi .site-header/
+   .nav-links/.navbar/.container sinflari bilan nom to'qnashuvining oldini
+   oladi, shu bilan birga sahifaning qolgan qismi (glass-panel/badge/btn)
+   o'zgarishsiz qoladi.
+   -------------------------------------------------------------------------- */
+.topmenu {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  background: rgba(6, 11, 22, 0.78);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.topmenu-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.topmenu-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.topmenu-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--gradient-brand);
+  color: #090D16;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 28px rgba(14, 165, 233, 0.33);
+  flex-shrink: 0;
+}
+
+.topmenu-brand small {
+  display: block;
+  color: var(--accent-cyan);
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.topmenu-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.topmenu-links a {
+  padding: 0.55rem 0.55rem;
+  border-radius: 9px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.topmenu-links a:hover,
+.topmenu-links a:focus-visible {
+  color: var(--text-main);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+.topmenu-links a.active {
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.topmenu-toggle {
+  display: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 1240px) {
+  .topmenu-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 1rem;
+    right: 1rem;
+    padding: 0.65rem;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+  }
+  .topmenu-links.open { display: flex; }
+  .topmenu-toggle { display: block; }
+}
+
+@media (max-width: 700px) {
+  .topmenu-brand small { display: none; }
+  .topmenu-brand { font-size: 0.82rem; }
+}
+
 .task-list {
   display: grid;
   gap: 16px;
