@@ -768,6 +768,18 @@
 
 /* Tor ekranda (≤ 420 px) logotip matni menyu tugmasini ekrandan chiqarib yubormasligi uchun */
 @media (max-width: 420px) {
-  .brand-logo { font-size: 1rem; gap: 8px; }
+  .brand-logo, .nav-logo { font-size: 1rem; gap: 8px; }
   .brand-logo svg { width: 26px; height: 26px; }
+  .nav-logo-icon { font-size: 1.2rem; }
+}
+
+/* Til almashtirgich (UZ/RU/EN) logotip oldiga qo'shilgandan so'ng, juda tor
+   ekranlarda (≤480px) .brand-logo'ning qattiq "flex-shrink:0" xususiyati
+   (odatda logotip matni hech qachon qisqarmasligi uchun ataylab qo'yilgan)
+   sahifadan tashqariga chiqib ketishga sabab bo'ladi — shu kenglikda uni
+   boshqa elementlar kabi qisqarishga (va matnini 2 qatorga tushirishga)
+   ruxsat beramiz. */
+@media (max-width: 480px) {
+  .brand-logo, .nav-logo { flex-shrink: 1; min-width: 0; white-space: normal; }
+  .nav-logo-text { white-space: normal; }
 }

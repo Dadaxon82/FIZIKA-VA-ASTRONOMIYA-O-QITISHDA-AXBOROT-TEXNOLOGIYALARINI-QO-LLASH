@@ -8,6 +8,10 @@ body::before { content:""; position:fixed; z-index:-1; inset:0; opacity:.18; poi
 a { color:inherit; text-decoration:none; } button,input,select,textarea { font:inherit; } button { cursor:pointer; }
 .container { width:min(1180px,calc(100% - 2rem)); margin:auto; }
 .site-header { position:sticky; top:0; z-index:20; background:rgba(6,11,22,.78); border-bottom:1px solid rgba(148,163,184,.16); backdrop-filter:blur(18px); box-shadow:0 10px 35px #0003; }
+/* Til almashtirgich (UZ/RU/EN) logotip oldiga qo'shilgani uchun sarlavhadagi
+   .container asosiy 1180px'dan kengroq bo'lishi kerak, aks holda 11 ta menyu
+   havolasi logotip bilan tiqilib/ustma-ust tushib qolardi. */
+.site-header .container { width:min(1500px,calc(100% - 2rem)); }
 .navbar { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .brand { display:flex; align-items:center; gap:.75rem; font-weight:800; letter-spacing:.02em; }
 .brand-mark { display:grid; place-items:center; width:42px; height:42px; border-radius:14px; background:linear-gradient(135deg,#2563eb,#06b6d4); box-shadow:0 8px 28px #0ea5e955; animation:float 5s ease-in-out infinite; }
@@ -46,7 +50,7 @@ input[type=range] { width:100%; accent-color:var(--cyan); } select,input[type=te
 .footer { padding:2.5rem 0; color:var(--muted); text-align:center; font-size:.8rem; }
 :focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} } @keyframes drift { from{transform:translate(0,0) scale(1)} to{transform:translate(-4rem,2rem) scale(1.15)} } @keyframes rise { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} } @keyframes gradient { to{background-position:220% center} }
-@media(max-width:1240px) { .nav-links { display:none; position:absolute; top:68px; left:1rem; right:1rem; padding:.65rem; flex-direction:column; align-items:stretch; background:#0b1426; border:1px solid var(--line); border-radius:14px; box-shadow:0 20px 50px #0008; } .nav-links.open { display:flex; } .menu-toggle { display:block; } }
+@media(max-width:1520px) { .nav-links { display:none; position:absolute; top:68px; left:1rem; right:1rem; padding:.65rem; flex-direction:column; align-items:stretch; background:#0b1426; border:1px solid var(--line); border-radius:14px; box-shadow:0 20px 50px #0008; } .nav-links.open { display:flex; } .menu-toggle { display:block; } }
 @media(max-width:980px) { .grid-4 { grid-template-columns:repeat(2,1fr); } .grid-3 { grid-template-columns:repeat(2,1fr); } }
 @media(max-width:700px) { .container { width:min(100% - 1.1rem,1180px); } .hero { padding:4rem 0 3.5rem; } .section { padding:3.5rem 0; } .grid-4,.grid-3,.grid-2,.sim-layout { grid-template-columns:1fr; } .brand small { display:none; } .brand { font-size:.82rem; } .canvas-card canvas { min-height:220px; } .toolbar { align-items:flex-start; flex-direction:column; } }
 @media(max-width:480px) { .card { padding:1rem; border-radius:14px; } .section { padding:2.5rem 0; } .hero { padding:3rem 0 2.5rem; } .lead { font-size:.95rem; } .canvas-card canvas { min-height:170px; aspect-ratio:16/10; } .sim-tab,.primary,.secondary { padding:.6rem .7rem; font-size:.72rem; } .badge { font-size:.65rem; padding:.3rem .5rem; } }

@@ -1,0 +1,88 @@
+/* ==========================================================================
+   TRANSLATE.CSS - 3 tilli (UZ/RU/EN) til almashtirgich va Google Translate
+   vidjetining standart ko'rinishini yashirish uchun uslublar.
+   Barcha sahifalarda (index.html'ning .navbar tizimi, ma'ruza/laboratoriya
+   sahifalarining .nav-container tizimi, mustaqil.html'ning .topmenu tizimi)
+   bir xil ishlashi uchun rang qiymatlari CSS o'zgaruvchilariga emas, balki
+   uchala tizimga ham mos keladigan neytral to'q (dark) palitraga qattiq
+   yozilgan.
+   ========================================================================== */
+
+.header-left-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  line-height: 1.2;
+}
+
+.lang-btn:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lang-btn.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.16);
+}
+
+@media (max-width: 480px) {
+  .lang-switcher { gap: 2px; padding: 2px; }
+  .lang-btn { padding: 4px 6px; font-size: 0.62rem; }
+  .header-left-group { gap: 6px; }
+}
+
+/* --------------------------------------------------------------------------
+   Google Translate'ning standart yuqori banner'i, highlight va tooltip'lari
+   butunlay yashiriladi — o'rniga yuqoridagi .lang-switcher ishlatiladi.
+   -------------------------------------------------------------------------- */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+.goog-te-gadget-icon {
+  display: none !important;
+}
