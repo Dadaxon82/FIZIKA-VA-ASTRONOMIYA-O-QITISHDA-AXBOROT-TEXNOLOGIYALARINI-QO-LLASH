@@ -79,7 +79,13 @@
   }
 }
 
+/* Canvas asbob paneli ataylab to'q saqlanadi ("ilmiy asbob ekrani" sifatida
+   och sahifa ichida); shu qamrovdagi HUD'lar asl to'q-fon ranglariga
+   qaytariladi, shunda sim-*.js'dagi barcha chizish ranglari o'zgarishsiz
+   qoladi. */
 .canvas-viewport-wrapper {
+  --text-main: #F8FAFC;
+  --accent-cyan: #38BDF8;
   position: relative;
   width: 100%;
   min-height: 420px;
@@ -166,10 +172,10 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  background: rgba(15, 23, 42, 0.5);
+  background: var(--bg-primary);
   padding: 20px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
 }
 
 .control-group {
@@ -196,7 +202,7 @@
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(17, 24, 43, 0.12);
   outline: none;
   transition: background 0.2s ease;
 }
@@ -208,7 +214,7 @@
   border-radius: 50%;
   background: var(--accent-cyan);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 10px rgba(28, 78, 158, 0.5);
   transition: transform 0.1s ease;
 }
 
@@ -223,8 +229,8 @@
 }
 
 .sim-info-box {
-  background: rgba(56, 189, 248, 0.05);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(28, 78, 158, 0.06);
+  border: 1px solid rgba(28, 78, 158, 0.2);
   border-radius: var(--radius-sm);
   padding: 12px;
   font-size: 0.85rem;

@@ -821,7 +821,7 @@ function initElectrodynamicsLab() {
     if (!pipelineOutput) return;
     pipelineOutput.style.display = 'block';
     pipelineOutput.innerHTML = `
-      <div style="background: rgba(192,132,252,0.06); border: 1px solid rgba(192,132,252,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7; color: #E2E8F0;">
+      <div style="background: rgba(192,132,252,0.06); border: 1px solid rgba(192,132,252,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7; color:#11182B;">
         ${html}
       </div>`;
     renderMath(pipelineOutput);

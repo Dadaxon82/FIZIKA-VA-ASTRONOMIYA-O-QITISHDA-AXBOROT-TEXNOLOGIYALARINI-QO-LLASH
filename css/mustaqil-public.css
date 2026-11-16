@@ -17,11 +17,11 @@
   position: sticky;
   top: 0;
   z-index: 1200;
-  background: rgba(6, 11, 22, 0.78);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(246, 247, 249, 0.92);
+  border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(17, 24, 43, 0.04);
 }
 
 .topmenu-inner {
@@ -49,9 +49,8 @@
   height: 42px;
   border-radius: 14px;
   background: var(--gradient-brand);
-  color: #090D16;
+  color: #FFFFFF;
   font-size: 1.1rem;
-  box-shadow: 0 8px 28px rgba(14, 165, 233, 0.33);
   flex-shrink: 0;
 }
 
@@ -90,7 +89,7 @@
 
 .topmenu-links a.active {
   color: var(--accent-cyan);
-  background: rgba(56, 189, 248, 0.12);
+  background: rgba(28, 78, 158, 0.1);
 }
 
 .topmenu-toggle {
@@ -162,9 +161,9 @@
   width: 46px;
   height: 46px;
   border-radius: var(--radius-sm);
-  background: rgba(56, 189, 248, 0.12);
+  background: rgba(28, 78, 158, 0.1);
   color: var(--accent-cyan);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(28, 78, 158, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +241,7 @@
 
 .download-guide {
   background: var(--gradient-brand);
-  color: #090D16;
+  color: #FFFFFF;
   text-decoration: none;
   border-radius: var(--radius-sm);
   padding: 9px 16px;
@@ -252,7 +251,7 @@
 }
 .download-guide:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 4px 14px rgba(28, 78, 158, 0.3);
 }
 
 /* Qidiruv qatori */

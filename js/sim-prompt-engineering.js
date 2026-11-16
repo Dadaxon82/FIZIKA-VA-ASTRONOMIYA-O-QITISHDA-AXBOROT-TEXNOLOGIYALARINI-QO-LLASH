@@ -346,7 +346,7 @@ function initPromptEngineeringLab() {
 
     promptTextEl.textContent = entry.prompt;
     commentBoxEl.textContent = entry.comment;
-    commentBoxEl.style.borderColor = mode === 'structured' ? '#34D399' : '#F43F5E';
+    commentBoxEl.style.borderColor = mode === 'structured' ? '#047857' : '#E11D48';
     commentBoxEl.style.color = mode === 'structured' ? '#34D399' : '#FCA5A5';
     commentBoxEl.style.background = mode === 'structured' ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)';
 
@@ -424,7 +424,7 @@ function initPromptEngineeringLab() {
       if (statVel) statVel.textContent = tel.vel.toFixed(2).replace('.', ',') + ' m/s';
       if (statStatus) {
         statStatus.textContent = tel.stable ? '● barqaror' : '● beqaror';
-        statStatus.style.color = tel.stable ? '#34D399' : '#F43F5E';
+        statStatus.style.color = tel.stable ? '#047857' : '#E11D48';
       }
     }
     if (statFps) statFps.textContent = Math.round(measuredFps) + ' FPS';

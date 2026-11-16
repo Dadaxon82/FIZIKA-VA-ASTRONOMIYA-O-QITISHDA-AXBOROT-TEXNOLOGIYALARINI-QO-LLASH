@@ -58,8 +58,8 @@ window.renderProjectLog = function() {
       <div style="display:flex; align-items:center; gap:12px;">
         <span style="font-size:1.2rem;">${isDone ? '✅' : '⚪'}</span>
         <div>
-          <div style="font-weight:600; font-size:0.92rem; color:${isDone ? '#34D399' : '#F8FAFC'}; text-decoration:${isDone ? 'line-through' : 'none'};">${lab.title}</div>
-          <div style="font-size:0.8rem; color:#94A3B8;">Asosiy AI Vosita: <strong style="color:#38BDF8;">${lab.tool}</strong></div>
+          <div style="font-weight:600; font-size:0.92rem; color:${isDone ? '#047857' : '#11182B'}; text-decoration:${isDone ? 'line-through' : 'none'};">${lab.title}</div>
+          <div style="font-size:0.8rem; color:#66708A;">Asosiy AI Vosita: <strong style="color:#1C4E9E;">${lab.tool}</strong></div>
         </div>
       </div>
       <div style="display:flex; align-items:center; gap:10px;">

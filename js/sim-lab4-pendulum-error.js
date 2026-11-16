@@ -368,7 +368,7 @@ Iltimos:
       const T = 5.0;
       const refTh = integrate('rk4', th0, L, REF_DT, T);
       const fmt = (v) => {
-        if (!isFinite(v)) return '<span style="color:#F43F5E;">∞ (portlash)</span>';
+        if (!isFinite(v)) return '<span style="color:#E11D48;">∞ (portlash)</span>';
         const e = Math.abs(v - refTh);
         const color = e < 1e-4 ? '#34D399' : e < 1e-2 ? '#FBBF24' : '#F43F5E';
         return `${uzFix(v, 5)}<br><span style="color:${color}; font-size:0.8rem;">|Δθ| = ${uzExp(e, 2)}</span>`;

@@ -272,7 +272,7 @@
         `<div>Effektiv harorat: <strong>${Math.round(T).toLocaleString('uz-UZ').replace(/,/g, ' ')} K</strong></div>` +
         `<div>Radius: <strong>${fmt(R, 2)} R☉</strong></div>` +
         `<div>Asosiy ketma-ketlikdagi umri: <strong>${fmtExp(t)} yil</strong></div>` +
-        `<div style="margin-top:6px;color:#FBBF24">${track.end}</div>`;
+        `<div style="margin-top:6px;color:#A16207">${track.end}</div>`;
     }
 
     function rebuild() {
@@ -583,7 +583,7 @@
         const minMag = valid.length ? valid[valid.length - 1] : meanM;
         const depth = 1 - Math.pow(10, -0.4 * (minMag - base));
         html += `<div>Tranzit chuqurligining taxminiy bahosi ΔF/F ≈ <strong>${fmt(Math.max(0, depth) * 100, 2)} %</strong> → R<sub>p</sub>/R<sub>*</sub> ≈ √(ΔF/F) = <strong>${fmt(Math.sqrt(Math.max(0, depth)), 3)}</strong></div>`;
-        html += '<div style="color:#94A3B8">Baho fazaga yig‘ilgan egri chiziqning eng xira qismi (faza bo‘yicha 1/50 bin) bo‘yicha olinadi, shuning uchun u faqat to‘g‘ri davrda ma’noli.</div>';
+        html += '<div style="color:#66708A">Baho fazaga yig‘ilgan egri chiziqning eng xira qismi (faza bo‘yicha 1/50 bin) bo‘yicha olinadi, shuning uchun u faqat to‘g‘ri davrda ma’noli.</div>';
       }
       info.innerHTML = html;
     }

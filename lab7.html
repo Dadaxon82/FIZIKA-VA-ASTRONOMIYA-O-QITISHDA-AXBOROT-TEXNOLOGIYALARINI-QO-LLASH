@@ -28,7 +28,7 @@
       margin-bottom: 8px;
     }
     .prompt-card {
-      background: rgba(255,255,255,0.02);
+      background: rgba(17, 24, 43, 0.02);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 18px;
@@ -41,7 +41,7 @@
     .roadmap-node {
       position: relative;
       padding: 16px;
-      background: rgba(255,255,255,0.02);
+      background: rgba(17, 24, 43, 0.02);
       border-left: 4px solid var(--accent-cyan);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       margin-bottom: 14px;
@@ -68,7 +68,7 @@
       align-items: center;
       gap: 10px;
       padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(17, 24, 43, 0.02);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
       margin-bottom: 8px;
@@ -96,7 +96,7 @@
       font-weight: 600;
     }
     .proto-table tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(17, 24, 43, 0.015);
     }
     /* Dastgoh paneli: backdrop-filter (blur) har bir canvas kadrida qayta
        hisoblanib, kuchsizroq kompyuterlarda FPS ni 60 dan 10–20 gacha
@@ -252,19 +252,19 @@
     <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-emerald);">
       <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 7-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</h3>
       <div class="grid-4" style="gap: 14px;">
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. Diagnostika va shaxsiy reja:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">TPACK va ZPD asosida brauzer Event Loop, V-Sync va delta-time bo‘yicha diagnostik test hamda shaxsiy o‘quv trayektoriyasi.</span>
         </div>
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-emerald);">2. Canvas: birinchi kadr sikli:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Canvas 2D konteksti, requestAnimationFrame, timestamp vaqt qadami, Fiedler akkumulyatori (qat’iy fizik qadam) va harakat qonunlari.</span>
         </div>
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-purple);">3. Google Antigravity monitoring:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">AI agent yozgan o‘lchov skripti, kadr vaqti tebranishi (Jank/FPS drop) tahlili va natijalarni talaba tomonidan tekshirish.</span>
         </div>
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">4. Claude (Artifacts):</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Mustaqil interaktiv Canvas shablonini generatsiya qilish, garmonik tebranishlar differensial tenglamasi va Sokratik audit.</span>
         </div>
@@ -309,8 +309,8 @@
         </p>
 
         <!-- Quiz Box -->
-        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
-          <h4 style="margin-bottom: 16px; color: #fff;">🧠 Boshlang‘ich kognitiv diagnostika testi (4 ta savol):</h4>
+        <div style="background:#F3F5F8; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <h4 style="margin-bottom: 16px; color:#11182B;">🧠 Boshlang‘ich kognitiv diagnostika testi (4 ta savol):</h4>
 
           <!-- Savol 1 -->
           <div style="margin-bottom: 18px;">
@@ -394,7 +394,7 @@
           <p><strong>Aniqlangan ta’lim klasteri:</strong> <span id="diag7-cluster-val" style="color: var(--accent-emerald); font-weight: 600;">-</span></p>
           <p id="diag7-plan-desc" style="color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6;">-</p>
 
-          <h5 style="color: #fff; margin-bottom: 8px;">🤖 Claude va Google Antigravity uchun boshlang‘ich prompt:</h5>
+          <h5 style="color:#11182B; margin-bottom: 8px;">🤖 Claude va Google Antigravity uchun boshlang‘ich prompt:</h5>
           <textarea id="diag7-personalized-prompt" class="prompt-textarea" readonly></textarea>
           <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag7-personalized-prompt">
             📋 Promptdan nusxa olish
@@ -441,7 +441,7 @@
         </div>
 
         <!-- Delta Time Mathematics & Fiedler Formula -->
-        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
           <h4 style="color: var(--accent-cyan); margin-bottom: 14px;">⏱ Delta-time matematik modeli va Glenn Fiedler qoidasi:</h4>
           <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
             <code>requestAnimationFrame(callback)</code> funksiyasi o‘zining argumenti sifatida millisekundlarda o‘lchanadigan yuqori aniqlikdagi <strong>DOMHighResTimeStamp</strong> qiymatini uzatadi.
@@ -491,7 +491,7 @@
         </div>
 
         <!-- Skeleton Code Snippet -->
-        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+        <div style="background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
           <h4 style="color: var(--accent-amber); margin-bottom: 12px;">💻 Etalon HTML5 Canvas kadr sikli skeleti (JavaScript):</h4>
           <pre style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); color: #38bdf8; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.55; overflow-x: auto;">
 const canvas = document.getElementById("simCanvas");
@@ -539,7 +539,7 @@ function gameLoop(timestamp) {
 requestAnimationFrame(gameLoop);</pre>
         </div>
 
-        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-top: 20px;">
+        <div style="background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-top: 20px;">
           <h4 style="color: var(--accent-purple); margin-bottom: 12px;">🧮 Fiedler akkumulyatori: qat’iy fizik qadam (Fixed Timestep):</h4>
           <pre style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); color: #a5b4fc; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.55; overflow-x: auto;">
 const h = 1 / 60;        // qat’iy fizik qadam (s)
@@ -583,28 +583,28 @@ requestAnimationFrame(loop);</pre>
 
         <!-- Antigravity Architecture Cards -->
         <div class="grid-2" style="gap: 16px; margin-bottom: 25px;">
-          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="background: rgba(17, 24, 43, 0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
             <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">📊 1. Jank (kadr tushishi) monitoringi:</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
               60 Hz ekranda kadr vaqti 16,67 ms dan sezilarli oshsa, kadr tushib qolgan (Jank) hisoblanadi. O‘lchov skripti har bir kadr oralig‘ini yozib boradi va bunday kadrlarni sanaydi. Natijalarni Chrome DevTools «Performance» panelidagi yozuv bilan solishtirish tavsiya etiladi.
             </p>
           </div>
 
-          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="background: rgba(17, 24, 43, 0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
             <h4 style="color: var(--accent-purple); margin-bottom: 10px;">🛡 2. Object Pooling va xotira auditi:</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
               Kadr sikli ichida har safar <code>new Object()</code> yoki yangi massiv yaratish axlat yig‘uvchi (Garbage Collector — GC) yuklamasini oshiradi va vaqti-vaqti bilan GC pauzalari tufayli kadr tushishiga sabab bo‘lishi mumkin. Agentdan kodni ko‘rib chiqib, sikl ichida ortiqcha obyekt yaratilmasligini (<strong>Zero-Allocation Loop</strong>) tekshirishni so‘rash mumkin.
             </p>
           </div>
 
-          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="background: rgba(17, 24, 43, 0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
             <h4 style="color: var(--accent-emerald); margin-bottom: 10px;">⚡ 3. Terminalda avtonom sinov:</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
               Agent Playwright yoki Puppeteer yordamida sahifani ochib, 1000 ta kadr davomida delta-time ning o‘rtacha qiymati va standart chetlanishini ($\sigma$) hisoblovchi test yozishi mumkin. Diqqat: headless brauzerda kadr chastotasi haqiqiy ekrandagidan farq qilishi mumkin, shuning uchun yakuniy o‘lchovlarni oddiy brauzer oynasida takrorlang.
             </p>
           </div>
 
-          <div style="background: rgba(255,255,255,0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="background: rgba(17, 24, 43, 0.02); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
             <h4 style="color: var(--accent-amber); margin-bottom: 10px;">📝 4. Avtomatlashtirilgan hisobot:</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
               Agent kadrlar chastotasi, integratsiya xatoligi va ossilyatorning energiya saqlanish darajasi bo‘yicha hisobot qoralamasini tayyorlaydi. AI agentlar xato qilishi mumkin: raqamlarni o‘zingiz qayta o‘lchab tekshiring, yakuniy xulosani o‘zingiz yozing.
@@ -613,7 +613,7 @@ requestAnimationFrame(loop);</pre>
         </div>
 
         <!-- Antigravity Prompt Studio -->
-        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <h4 style="color: var(--accent-cyan); margin-bottom: 14px;">🤖 Google Antigravity agenti uchun monitoring yo‘riqnomasi prompti:</h4>
 
           <div class="prompt-card">
@@ -650,7 +650,7 @@ Iltimos, mening loyiham bo‘yicha quyidagi monitoring va audit choralarini amal
         </p>
 
         <!-- Differential Equation & Simulation Code -->
-        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 25px;">
+        <div style="background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 25px;">
           <h4 style="color: var(--accent-cyan); margin-bottom: 10px;">📐 Garmonik ossilyator matematik modeli:</h4>
           <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
             Guk qonuni va Nyutonning 2-qonuni bo‘yicha erkin prujinali tebranishlar differensial tenglamasi:
@@ -666,7 +666,7 @@ Iltimos, mening loyiham bo‘yicha quyidagi monitoring va audit choralarini amal
             $$v_{n+1} = v_n - \omega_0^2 x_n \, h, \qquad x_{n+1} = x_n + v_{n+1} \, h$$
           </div>
 
-          <h5 style="color: #fff; margin-bottom: 8px;">Claude Artifacts uchun to‘liq ishlovchi komponent:</h5>
+          <h5 style="color:#11182B; margin-bottom: 8px;">Claude Artifacts uchun to‘liq ishlovchi komponent:</h5>
           <pre style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); color: #38bdf8; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.55; overflow-x: auto;">
 class HarmonicOscillator {
   constructor(canvas) {
@@ -771,7 +771,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
         </p>
 
         <!-- Controls Bar -->
-        <div style="background: rgba(15, 23, 42, 0.7); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
+        <div style="background:#F3F5F8; padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
           <div class="grid-3" style="gap: 16px; margin-bottom: 14px;">
             <div>
               <label style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
@@ -808,7 +808,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
             <button id="lab7-play-btn" class="btn btn-primary btn-sm">▶ Animatsiyani boshlash</button>
             <button id="lab7-pause-btn" class="btn btn-secondary btn-sm" disabled>⏸ To‘xtatib turish</button>
             <button id="lab7-reset-btn" class="btn btn-secondary btn-sm">🔄 Dastlabki holat</button>
-            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-left: 14px; cursor: pointer; color: #fff; font-weight: 600;">
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-left: 14px; cursor: pointer; color:#11182B; font-weight: 600;">
               <input type="checkbox" id="lab7-dt-check" checked>
               <span style="color: var(--accent-emerald);">Delta-time integratsiyasi YOQILGAN (to‘g‘ri fizika)</span>
             </label>
@@ -818,7 +818,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
         <!-- Dual Canvas Area -->
         <div class="grid-2" style="gap: 18px; margin-bottom: 20px;">
           <!-- Canvas 1: Main Sandbox -->
-          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+          <div style="background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-cyan);">🖥 HTML5 Canvas fizik maydoni</span>
               <span style="font-size: 0.78rem; color: var(--text-muted);">requestAnimationFrame</span>
@@ -827,7 +827,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
           </div>
 
           <!-- Canvas 2: FPS / Delta-time Monitor -->
-          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+          <div style="background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-purple);">📈 Δt telemetriyasi va ossillograf</span>
               <span style="font-size: 0.78rem; color: var(--text-muted);">kadr vaqti tahlili</span>
@@ -837,22 +837,22 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
         </div>
 
         <!-- Telemetry Panel -->
-        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
-          <h4 style="margin-bottom: 12px; color: #fff; font-size: 0.95rem;">📊 Jonli datchiklar va kadr telemetriyasi:</h4>
+        <div style="background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+          <h4 style="margin-bottom: 12px; color:#11182B; font-size: 0.95rem;">📊 Jonli datchiklar va kadr telemetriyasi:</h4>
           <div class="grid-4" style="gap: 12px; font-family: var(--font-mono); font-size: 0.85rem;">
-            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+            <div style="background: rgba(17, 24, 43, 0.02); padding: 10px; border-radius: var(--radius-sm);">
               <span style="color: var(--text-secondary);">Kadrlar chastotasi:</span><br>
               <strong id="hud-lab7-fps" style="font-size: 1.15rem; color: #10b981;">60,0 FPS</strong>
             </div>
-            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+            <div style="background: rgba(17, 24, 43, 0.02); padding: 10px; border-radius: var(--radius-sm);">
               <span style="color: var(--text-secondary);">Kadr oralig‘i ($\Delta t$):</span><br>
-              <strong id="hud-lab7-dt" style="font-size: 1.15rem; color: #38bdf8;">16,67 ms</strong>
+              <strong id="hud-lab7-dt" style="font-size: 1.15rem; color:#1C4E9E;">16,67 ms</strong>
             </div>
-            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+            <div style="background: rgba(17, 24, 43, 0.02); padding: 10px; border-radius: var(--radius-sm);">
               <span style="color: var(--text-secondary);">Fizik rejim:</span><br>
-              <strong id="hud-lab7-mode" style="font-size: 0.95rem; color: #fff;">2D elastik to‘p</strong>
+              <strong id="hud-lab7-mode" style="font-size: 0.95rem; color:#11182B;">2D elastik to‘p</strong>
             </div>
-            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: var(--radius-sm);">
+            <div style="background: rgba(17, 24, 43, 0.02); padding: 10px; border-radius: var(--radius-sm);">
               <span style="color: var(--text-secondary);">Tezlik ko‘rsatkichi:</span><br>
               <strong id="hud-lab7-speed" style="font-size: 1.15rem; color: #f59e0b;">1,0×</strong>
             </div>
@@ -875,8 +875,8 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
         </h2>
 
         <!-- Interactive Rubric Calculator -->
-        <div style="background: rgba(15, 23, 42, 0.7); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
-          <h4 style="margin-bottom: 14px; color: #fff;">🧮 Laboratoriya ishini baholash mezonlari kalkulyatori:</h4>
+        <div style="background:#F3F5F8; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 25px;">
+          <h4 style="margin-bottom: 14px; color:#11182B;">🧮 Laboratoriya ishini baholash mezonlari kalkulyatori:</h4>
 
           <div class="rubric-row">
             <div>
@@ -981,7 +981,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
         </div>
 
         <!-- Academic Bibliography (APA 7) -->
-        <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <h4 style="margin-bottom: 14px; color: var(--accent-cyan);">📚 Foydalanilgan manbalar (APA 7):</h4>
           <ol style="padding-left: 20px; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; overflow-wrap: anywhere;">
             <li>

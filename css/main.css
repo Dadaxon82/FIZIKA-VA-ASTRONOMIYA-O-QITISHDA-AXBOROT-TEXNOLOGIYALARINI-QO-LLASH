@@ -1,47 +1,52 @@
 /* ==========================================================================
-   MAIN.CSS - Core Design System, Variables, Dark Glassmorphism & Layout
+   MAIN.CSS - Core Design System, Variables, Academic Light Theme & Layout
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
-  --bg-primary: #090D16;
-  --bg-secondary: #0F172A;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(30, 41, 59, 0.85);
-  --bg-glass: rgba(255, 255, 255, 0.03);
-  
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(56, 189, 248, 0.4);
-  --border-active: rgba(129, 140, 248, 0.6);
-  
-  --text-main: #F8FAFC;
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #71809B; /* WCAG AA (4.5:1) --bg-primary fonida o'qilishi uchun #64748B'dan ochroq qilindi */
-  
-  --accent-cyan: #38BDF8;
-  --accent-indigo: #818CF8;
-  --accent-emerald: #34D399;
-  --accent-amber: #FBBF24;
-  --accent-rose: #F43F5E;
-  --accent-purple: #C084FC;
-  
-  --gradient-brand: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+  --bg-primary: #F6F7F9;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #EEF1F5;
+  --bg-glass: rgba(17, 24, 43, 0.035);
+
+  --border-color: rgba(17, 24, 43, 0.1);
+  --border-hover: rgba(28, 78, 158, 0.45);
+  --border-active: rgba(28, 78, 158, 0.6);
+
+  --text-main: #11182B;
+  --text-primary: #11182B;
+  --text-secondary: #4B5464;
+  --text-muted: #66708A; /* WCAG AA (4.5:1) --bg-card (#FFFFFF) fonida o'qilishi uchun tekshirilgan */
+
+  --accent-cyan: #1C4E9E; /* saytning yagona akademik brend rangi (avvalgi yorqin siyanitdan o'rniga) */
+  /* Raqamlangan bosqich/bo'lim nishonlari (1=cyan,2=emerald,3=amber,4=purple...) uchun
+     avvalgi ranglar faqat to'q fonda WCAG AA'ga javob berardi; och fonda o'qilishi
+     uchun xuddi shu rang oilasining to'qroq (600-700 tonna) varianti ishlatiladi. */
+  --accent-indigo: #4F46E5;
+  --accent-emerald: #047857;
+  --accent-amber: #A16207;
+  --accent-rose: #E11D48;
+  --accent-purple: #7C3AED;
+
+  --gradient-brand: #1C4E9E; /* gradient matn/fon effekti o'rniga yagona tekis brend rang */
   --gradient-emerald: linear-gradient(135deg, #10B981 0%, #34D399 100%);
   --gradient-amber: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
   --gradient-rose: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
   --gradient-dark: linear-gradient(180deg, #090D16 0%, #0F172A 100%);
-  
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.2);
-  
+
+  --shadow-sm: 0 2px 8px rgba(17, 24, 43, 0.06);
+  --shadow-md: 0 8px 24px rgba(17, 24, 43, 0.08);
+  --shadow-lg: 0 16px 40px rgba(17, 24, 43, 0.12);
+  --shadow-glow: 0 0 30px rgba(28, 78, 158, 0.16);
+
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 9999px;
-  
+
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
 }
 
@@ -53,7 +58,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -61,11 +66,6 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-main);
   line-height: 1.6;
-  background-image: 
-    radial-gradient(at 10% 15%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
-    radial-gradient(at 90% 85%, rgba(129, 140, 248, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(192, 132, 252, 0.04) 0px, transparent 60%);
-  background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -114,8 +114,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.02em; }
+h1 { font-family: var(--font-serif); font-weight: 600; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.015em; }
+h2 { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.01em; }
 h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 p { color: var(--text-secondary); font-size: 1.05rem; }
 

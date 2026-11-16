@@ -4,8 +4,8 @@
    Barcha sahifalarda (index.html'ning .navbar tizimi, ma'ruza/laboratoriya
    sahifalarining .nav-container tizimi, mustaqil.html'ning .topmenu tizimi)
    bir xil ishlashi uchun rang qiymatlari CSS o'zgaruvchilariga emas, balki
-   uchala tizimga ham mos keladigan neytral to'q (dark) palitraga qattiq
-   yozilgan.
+   uchala tizimga ham mos keladigan neytral och (light) palitraga qattiq
+   yozilgan — butun sayt akademik och dizaynga o'tkazilgandan so'ng.
    ========================================================================== */
 
 .header-left-group {
@@ -21,8 +21,8 @@
   gap: 4px;
   padding: 3px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(28, 78, 158, 0.08);
+  border: 1px solid rgba(17, 24, 43, 0.1);
   flex-shrink: 0;
 }
 
@@ -30,7 +30,7 @@
   appearance: none;
   border: none;
   background: transparent;
-  color: #94a3b8;
+  color: #5B6472;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -42,13 +42,13 @@
 }
 
 .lang-btn:hover {
-  color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.08);
+  color: #11182B;
+  background: rgba(17, 24, 43, 0.06);
 }
 
 .lang-btn.active {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.16);
+  color: #1C4E9E;
+  background: #FFFFFF;
 }
 
 @media (max-width: 480px) {
@@ -104,11 +104,11 @@ body {
   margin: 0 auto;
   padding: 14px 18px;
   border-radius: 14px;
-  background: rgba(10, 15, 28, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  background: #FFFFFF;
+  border: 1px solid rgba(17, 24, 43, 0.1);
+  box-shadow: 0 16px 40px rgba(17, 24, 43, 0.14);
   backdrop-filter: blur(12px);
-  color: #cbd5e1;
+  color: #4B5464;
   font-size: 0.85rem;
   line-height: 1.5;
 }
@@ -118,8 +118,8 @@ body {
   border: none;
   flex-shrink: 0;
   margin-left: auto;
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-  color: #090d16;
+  background: #1C4E9E;
+  color: #FFFFFF;
   font-weight: 700;
   font-size: 0.85rem;
   padding: 8px 18px;

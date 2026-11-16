@@ -374,7 +374,7 @@ function initLmsDistanceLab() {
     if (transcriptTextEl) transcriptTextEl.textContent = t.transcript;
     if (summaryTextEl) { summaryTextEl.innerHTML = t.summaryHtml; renderMath(summaryTextEl); }
     if (actionsListEl) {
-      actionsListEl.innerHTML = t.actions.map(a => `<li style="margin-bottom:6px; color:#E2E8F0;">• ${a}</li>`).join('');
+      actionsListEl.innerHTML = t.actions.map(a => `<li style="margin-bottom:6px; color:#11182B;">• ${a}</li>`).join('');
       renderMath(actionsListEl);
     }
     if (statusEl) statusEl.style.display = 'none';
@@ -481,10 +481,10 @@ function initLmsDistanceLab() {
       auditResultEl.style.display = 'block';
       auditResultEl.innerHTML = `
         <div style="background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7;">
-          <div style="color:#34D399; font-weight:700; margin-bottom:8px;">🔍 Google Antigravity Audit Natijasi:</div>
-          <div style="margin-bottom:6px; color:#E2E8F0;">✓ <strong>AST Statik Tahlil:</strong> eval() yoki xavfli DOM murojaati aniqlanmadi.</div>
-          <div style="margin-bottom:6px; color:#E2E8F0;">${physicsLine}</div>
-          <div style="color:#E2E8F0;">✓ <strong>Kadrlar Vaqt Sikli:</strong> ${lastFps} FPS, delta-time akkumulyatori barqaror ishlamoqda.</div>
+          <div style="color:#047857; font-weight:700; margin-bottom:8px;">🔍 Google Antigravity Audit Natijasi:</div>
+          <div style="margin-bottom:6px; color:#11182B;">✓ <strong>AST Statik Tahlil:</strong> eval() yoki xavfli DOM murojaati aniqlanmadi.</div>
+          <div style="margin-bottom:6px; color:#11182B;">${physicsLine}</div>
+          <div style="color:#11182B;">✓ <strong>Kadrlar Vaqt Sikli:</strong> ${lastFps} FPS, delta-time akkumulyatori barqaror ishlamoqda.</div>
         </div>`;
       renderMath(auditResultEl);
     });

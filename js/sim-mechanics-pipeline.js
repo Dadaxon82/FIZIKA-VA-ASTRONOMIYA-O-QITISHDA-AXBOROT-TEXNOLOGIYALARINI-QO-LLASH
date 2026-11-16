@@ -428,7 +428,7 @@ function initMechanicsPipeline() {
     if (!pipelineOutput) return;
     pipelineOutput.style.display = 'block';
     pipelineOutput.innerHTML = `
-      <div style="background: rgba(192,132,252,0.06); border: 1px solid rgba(192,132,252,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7; color: #E2E8F0;">
+      <div style="background: rgba(192,132,252,0.06); border: 1px solid rgba(192,132,252,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7; color:#11182B;">
         ${html}
       </div>`;
   }
@@ -521,7 +521,7 @@ function initMechanicsPipeline() {
       }
       showPipelineOutput(`
         <strong>4. Runway Video Prompt:</strong><br>
-        <em style="color:#CBD5E1;">"${prompt}"</em><br>
+        <em style="color:#4B5464;">"${prompt}"</em><br>
         <button id="btn-copy-runway-prompt" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
       attachCopyHandler('btn-copy-runway-prompt', prompt);
     });

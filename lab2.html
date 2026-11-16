@@ -28,7 +28,7 @@
       margin-bottom: 8px;
     }
     .prompt-card {
-      background: rgba(255,255,255,0.02);
+      background: rgba(17, 24, 43, 0.02);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 18px;
@@ -41,7 +41,7 @@
     .roadmap-node {
       position: relative;
       padding: 16px;
-      background: rgba(255,255,255,0.02);
+      background: rgba(17, 24, 43, 0.02);
       border-left: 4px solid var(--accent-cyan);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       margin-bottom: 14px;
@@ -80,14 +80,14 @@
       font-weight: 600;
     }
     .proto-table tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(17, 24, 43, 0.015);
     }
     .quiz-option {
       display: flex;
       align-items: center;
       gap: 10px;
       padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(17, 24, 43, 0.02);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
       margin-bottom: 8px;
@@ -247,19 +247,19 @@
     <div class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-purple);">
       <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 2-laboratoriya mashg‘uloti rejasi va AI integratsiya arxitekturasi:</h3>
       <div class="grid-4" style="gap: 14px;">
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika va individual reja:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Talabaning bilim darajasini test orqali baholash va Vygotskiy ZPD asosida individual topshiriq klasterini (A, B, C) belgilash.</span>
         </div>
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-emerald);">2. Simulyatsiya tahlil bazasi:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Vascak.cz yoki PhET simulyatsiyalarini tanlash, slayder va grafiklarni kuzatish orqali formulalarni teskari tiklash (Reverse Engineering).</span>
         </div>
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-purple);">3. Formulalarni tekshirish (Claude):</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Tiklagan formulalarni o‘lchov birligi, limit holatlar va Eyler–Kromer simplektik algoritmi bo‘yicha Claude orqali tekshirish.</span>
         </div>
-        <div style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">4. Hisobot tuzilmasi (Gemini / ChatGPT):</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">IMRaD va IEEE standarti bo‘yicha to‘liq akademik hisobot shablonini, parametrlar xaritasini va xatoliklar tahlilini shakllantirish.</span>
         </div>
@@ -713,16 +713,16 @@ Vazifangiz:
         <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">4.2. Eyler–Kromer simplektik algoritmining mantiqiy blok-sxemasi:</h3>
         <div class="glass-panel" style="background: rgba(15, 23, 42, 0.7); font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.6; padding: 18px; margin-bottom: 25px; border-left: 3px solid var(--accent-cyan);">
           <span style="color: #64748b;">// Boshlang‘ich shartlar va parametrlar</span><br>
-          <span style="color: #38bdf8;">INPUT</span>: m, k, b, x0, v0, dt, totalTime<br>
+          <span style="color:#1C4E9E;">INPUT</span>: m, k, b, x0, v0, dt, totalTime<br>
           x = x0;  v = v0;  t = 0;<br>
           <br>
-          <span style="color: #38bdf8;">WHILE</span> (t &lt; totalTime):<br>
-          &nbsp;&nbsp;1. Tezlanishni hisoblash: <span style="color: #fbbf24;">a = -(k * x + b * v) / m;</span><br>
-          &nbsp;&nbsp;2. Tezlikni yangilash: <span style="color: #34d399;">v = v + a * dt;</span> <span style="color: #64748b;">// Yangi tezlik hisoblandi</span><br>
-          &nbsp;&nbsp;3. Koordinatani yangilash (Simplektik qadam): <span style="color: #c084fc;">x = x + v * dt;</span> <span style="color: #64748b;">// Yangilangan v ishlatiladi</span><br>
-          &nbsp;&nbsp;4. Telemetriya va energiya: <span style="color: #e2e8f0;">Ek = 0.5 * m * v^2; Ep = 0.5 * k * x^2;</span><br>
-          &nbsp;&nbsp;5. Vaqt hisoblagichi: <span style="color: #38bdf8;">t = t + dt;</span><br>
-          <span style="color: #38bdf8;">END WHILE</span>
+          <span style="color:#1C4E9E;">WHILE</span> (t &lt; totalTime):<br>
+          &nbsp;&nbsp;1. Tezlanishni hisoblash: <span style="color:#A16207;">a = -(k * x + b * v) / m;</span><br>
+          &nbsp;&nbsp;2. Tezlikni yangilash: <span style="color:#047857;">v = v + a * dt;</span> <span style="color: #64748b;">// Yangi tezlik hisoblandi</span><br>
+          &nbsp;&nbsp;3. Koordinatani yangilash (Simplektik qadam): <span style="color:#7C3AED;">x = x + v * dt;</span> <span style="color: #64748b;">// Yangilangan v ishlatiladi</span><br>
+          &nbsp;&nbsp;4. Telemetriya va energiya: <span style="color:#11182B;">Ek = 0.5 * m * v^2; Ep = 0.5 * k * x^2;</span><br>
+          &nbsp;&nbsp;5. Vaqt hisoblagichi: <span style="color:#1C4E9E;">t = t + dt;</span><br>
+          <span style="color:#1C4E9E;">END WHILE</span>
         </div>
 
         <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 14px;">4.3. Gemini / ChatGPT uchun hisobot yaratuvchi tizimli prompt:</h3>
@@ -780,8 +780,8 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <span>Vaqt: <strong id="tel-time" style="color: var(--accent-cyan);">0,00 s</strong></span>
               <span>x: <strong id="tel-x" style="color: var(--accent-amber);">+1,200 m</strong></span>
               <span>v: <strong id="tel-v" style="color: var(--accent-emerald);">+0,000 m/s</strong></span>
-              <span>Ek: <strong id="tel-ek" style="color: #38bdf8;">0,000 J</strong></span>
-              <span>Ep: <strong id="tel-ep" style="color: #fbbf24;">14,400 J</strong></span>
+              <span>Ek: <strong id="tel-ek" style="color:#1C4E9E;">0,000 J</strong></span>
+              <span>Ep: <strong id="tel-ep" style="color:#A16207;">14,400 J</strong></span>
               <span>E: <strong id="tel-etot" style="color: #a855f7;">14,400 J</strong></span>
             </div>
           </div>
@@ -832,21 +832,21 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <label style="font-size: 0.85rem; color: var(--text-main); display: block; margin-bottom: 6px;">
                 Siklik chastota $\omega_d$ (rad/s):
               </label>
-              <input type="text" inputmode="decimal" id="input-student-omega" placeholder="Masalan: 4,469" style="width: 100%; padding: 9px 12px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: #fff;">
+              <input type="text" inputmode="decimal" id="input-student-omega" placeholder="Masalan: 4,469" style="width: 100%; padding: 9px 12px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-sm); color:#11182B;">
             </div>
 
             <div>
               <label style="font-size: 0.85rem; color: var(--text-main); display: block; margin-bottom: 6px;">
                 So‘nish koeffitsiyenti $\beta$ (s⁻¹):
               </label>
-              <input type="text" inputmode="decimal" id="input-student-beta" placeholder="Masalan: 0,175" style="width: 100%; padding: 9px 12px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: #fff;">
+              <input type="text" inputmode="decimal" id="input-student-beta" placeholder="Masalan: 0,175" style="width: 100%; padding: 9px 12px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-sm); color:#11182B;">
             </div>
 
             <div>
               <label style="font-size: 0.85rem; color: var(--text-main); display: block; margin-bottom: 6px;">
                 Tebranish davri $T$ (sekund):
               </label>
-              <input type="text" inputmode="decimal" id="input-student-period" placeholder="Masalan: 1,406" style="width: 100%; padding: 9px 12px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: #fff;">
+              <input type="text" inputmode="decimal" id="input-student-period" placeholder="Masalan: 1,406" style="width: 100%; padding: 9px 12px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: var(--radius-sm); color:#11182B;">
             </div>
           </div>
 
@@ -885,7 +885,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <span style="font-size: 0.85rem; color: var(--text-secondary);">Diagnostik testni to‘liq topshirish, individual kognitiv klaster (A, B yoki C) vazifasini aniqlash va qabul qilish.</span>
             </div>
             <div>
-              <select class="rubric-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+              <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
                 <option value="15">A’lo (15 ball)</option>
                 <option value="12">Yaxshi (12 ball)</option>
                 <option value="8">Qoniqarli (8 ball)</option>
@@ -901,7 +901,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <span style="font-size: 0.85rem; color: var(--text-secondary);">PhET yoki Vascak.cz platformasidan model tanlash, kirish slayderlari, chiqish grafiklarini dekonstruksiya qilish va kuzatuv jadvalini to‘ldirish.</span>
             </div>
             <div>
-              <select class="rubric-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+              <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
                 <option value="30">A’lo (30 ball)</option>
                 <option value="24">Yaxshi (24 ball)</option>
                 <option value="16">Qoniqarli (16 ball)</option>
@@ -917,7 +917,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <span style="font-size: 0.85rem; color: var(--text-secondary);">Differensial tenglamalarni tiklash, o‘lchov birliklari tahlili, limit holatlar va Simplektik Eyler–Kromer algoritmini asoslash.</span>
             </div>
             <div>
-              <select class="rubric-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+              <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
                 <option value="25">A’lo (25 ball)</option>
                 <option value="20">Yaxshi (20 ball)</option>
                 <option value="13">Qoniqarli (13 ball)</option>
@@ -933,7 +933,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <span style="font-size: 0.85rem; color: var(--text-secondary);">IMRaD standarti, LaTeX formulalar, xatoliklar tahlili ($\Delta x, \varepsilon\%$) va AI taqrizi asosida takomillashtirilgan hisobot.</span>
             </div>
             <div>
-              <select class="rubric-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+              <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
                 <option value="20">A’lo (20 ball)</option>
                 <option value="16">Yaxshi (16 ball)</option>
                 <option value="10">Qoniqarli (10 ball)</option>
@@ -949,7 +949,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <span style="font-size: 0.85rem; color: var(--text-secondary);">O‘qituvchi va AI savollariga fizik-matematik asoslangan javob berish, model chegaralarini tushunish.</span>
             </div>
             <div>
-              <select class="rubric-select" style="width: 100%; padding: 8px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #fff;">
+              <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
                 <option value="10">A’lo (10 ball)</option>
                 <option value="8">Yaxshi (8 ball)</option>
                 <option value="5">Qoniqarli (5 ball)</option>

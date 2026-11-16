@@ -72,7 +72,7 @@ window.checkDiagnosticQuiz = function() {
   }
 
   let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 1-ma’ruza diagnostika natijalari:</h4>`;
+    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 1-ma’ruza diagnostika natijalari:</h4>`;
 
   quiz1Questions.forEach(q => {
     const userOptIdx = userAnswers1[q.id];
@@ -81,10 +81,10 @@ window.checkDiagnosticQuiz = function() {
     if (isCorrect) correctCount++;
 
     htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
-      <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#34D399' : '#F43F5E'};">
+      <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#047857' : '#E11D48'};">
         ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? 'To‘g‘ri!' : 'Xato!'}
       </div>
-      <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${opt.note}</div>
+      <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${opt.note}</div>
     </div>`;
   });
 
@@ -104,8 +104,8 @@ window.checkDiagnosticQuiz = function() {
 
   htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
     <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>
-    <div style="font-size:1.3rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#CBD5E1;">${clusterDesc}</div>
+    <div style="font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
+    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
     <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Umumiy Natija: ${correctCount} / ${totalCount} ball (${((correctCount/totalCount)*100).toFixed(0)}%)</div>
   </div></div>`;
 
@@ -183,7 +183,7 @@ window.checkDiagnostic2Quiz = function() {
   }
 
   let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#38BDF8;">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>`;
+    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>`;
 
   quiz2Questions.forEach(q => {
     const userOptIdx = userAnswers2[q.id];
@@ -192,10 +192,10 @@ window.checkDiagnostic2Quiz = function() {
     if (isCorrect) correctCount++;
 
     htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
-      <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#34D399' : '#F43F5E'};">
+      <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#047857' : '#E11D48'};">
         ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? 'To‘g‘ri!' : 'Xato!'}
       </div>
-      <div style="font-size:0.85rem; color:#94A3B8; margin-top:4px;">${opt.note}</div>
+      <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${opt.note}</div>
     </div>`;
   });
 
@@ -215,8 +215,8 @@ window.checkDiagnostic2Quiz = function() {
 
   htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
     <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>
-    <div style="font-size:1.25rem; font-weight:800; color:#F8FAFC; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#CBD5E1;">${clusterDesc}</div>
+    <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
+    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
     <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Natija: ${correctCount} / ${totalCount} ball (${((correctCount/totalCount)*100).toFixed(0)}%)</div>
   </div></div>`;
 
