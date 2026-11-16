@@ -326,7 +326,10 @@
         </p>
 
         <div class="code-block" style="margin: 20px 0;">
-<pre><code>// Claude tomonidan optimallashtirilgan astronomik delta-time va sub-stepping tsikli
+<div class="code-block">
+  <div class="code-header"><span>Kod</span></div>
+  <div class="code-content">
+    <code>// Claude tomonidan optimallashtirilgan astronomik delta-time va sub-stepping tsikli
 function astronomyAnimationLoop(timestamp) {
   const rawDelta = (timestamp - lastTimestamp) / 1000;
   lastTimestamp = timestamp;
@@ -348,7 +351,9 @@ function astronomyAnimationLoop(timestamp) {
   renderScene(ctx);
 
   requestAnimationFrame(astronomyAnimationLoop);
-}</code></pre>
+}</code>
+  </div>
+</div>
         </div>
 
         <div class="citation-box">
@@ -394,7 +399,10 @@ function astronomyAnimationLoop(timestamp) {
         $$v_p = \sqrt{\frac{GM}{a}\frac{1+e}{1-e}}, \quad v_a = \sqrt{\frac{GM}{a}\frac{1-e}{1+e}}, \quad v_p r_p = v_a r_a = h$$
 
         <div class="code-block" style="margin: 20px 0;">
-<pre><code>// ============================================================================
+<div class="code-block">
+  <div class="code-header"><span>Kod</span></div>
+  <div class="code-content">
+    <code>// ============================================================================
 // ASTRONOMIK MODELLASHTIRISH VA KEPLER ORBITAL DVIGATELI KODI (ES6 CLASS)
 // ============================================================================
 class KeplerianEngine {
@@ -432,7 +440,9 @@ class KeplerianEngine {
 
     return { r, x, y, vx, vy, speed, theta: this.theta };
   }
-}</code></pre>
+}</code>
+  </div>
+</div>
         </div>
 
         <div class="citation-box">

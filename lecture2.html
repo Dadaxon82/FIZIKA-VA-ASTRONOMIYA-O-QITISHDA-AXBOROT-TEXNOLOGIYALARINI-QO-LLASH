@@ -153,13 +153,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
     
     <!-- Hero / Title Section -->
-    <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+    <div class="section-header">
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
         <span class="badge badge-purple">2-ma’ruza</span>
         <span class="badge badge-cyan">Hisoblash fizikasi va metodologiya</span>
         <span class="badge badge-emerald">Teskari muhandislik (Reverse Engineering)</span>
       </div>
-      <h1 style="margin-bottom: 16px;">
+      <h1 >
         Fizik jarayonni modellashtirish metodologiyasi: <br>
         <span class="text-gradient">kuzatishdan vizual kod va debugginggacha</span>
       </h1>
@@ -719,14 +719,16 @@ var F = (G * M * m) / (r * r);</textarea>
           <h2 style="font-size:1.4rem; margin-bottom:16px;">Teskari muhandislik va modellashtirish promptlari</h2>
           
           <div class="code-block">
-            <div class="code-header">
-              <span>Claude uchun Kvadratik Drag Simulyatsiya Prompti</span>
+  <div class="code-header">
+    <span><span>Claude uchun Kvadratik Drag Simulyatsiya Prompti</span>
               <button class="btn btn-secondary btn-sm copy-prompt-btn" data-prompt="Sen hisoblash fizikasi bo'yicha mutaxassissan. Gorizontal otilgan jism harakatini kvadratik havo qarshiligi (F = -0.5*Cd*rho*A*v*v) bilan bitta HTML5 faylida Canvas va Vanilla JS yordamida yozib ber. 4-tartibli Runge–Kutta (RK4) usulidan foydalan. Real vaqtda ham vakuumdagi parabolani (sariq uzuq-chiziq), ham havo qarshiligidagi real egri chiziqni (moviy) chizsin. Telemetriya panelida uchish masofasi, maksimal balandlik va chekli tezlikni (terminal velocity) chiqar.">Nusxalash</button>
-            </div>
-            <div class="code-content">
-Sen hisoblash fizikasi bo‘yicha mutaxassissan. Gorizontal otilgan jism harakatini kvadratik havo qarshiligi (F = -0.5*Cd*rho*A*v*v) bilan bitta HTML5 faylida Canvas va Vanilla JS yordamida yozib ber. 4-tartibli Runge–Kutta (RK4) usulidan foydalan. Real vaqtda ham vakuumdagi parabolani (sariq uzuq-chiziq), ham havo qarshiligidagi real egri chiziqni (moviy) chizsin. Telemetriya panelida uchish masofasi, maksimal balandlik va chekli tezlikni (terminal velocity) chiqar.
-            </div>
-          </div>
+            </span>
+    <button class="btn btn-secondary btn-sm">Nusxalash</button>
+  </div>
+  <div class="code-content">
+    Sen hisoblash fizikasi bo‘yicha mutaxassissan. Gorizontal otilgan jism harakatini kvadratik havo qarshiligi (F = -0.5*Cd*rho*A*v*v) bilan bitta HTML5 faylida Canvas va Vanilla JS yordamida yozib ber. 4-tartibli Runge–Kutta (RK4) usulidan foydalan. Real vaqtda ham vakuumdagi parabolani (sariq uzuq-chiziq), ham havo qarshiligidagi real egri chiziqni (moviy) chizsin. Telemetriya panelida uchish masofasi, maksimal balandlik va chekli tezlikni (terminal velocity) chiqar.
+  </div>
+</div>
 
         </div>
       </div>

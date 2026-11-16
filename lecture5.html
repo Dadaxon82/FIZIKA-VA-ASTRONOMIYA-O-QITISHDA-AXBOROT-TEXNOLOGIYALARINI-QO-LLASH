@@ -153,13 +153,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
     
     <!-- Hero / Title Section -->
-    <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+    <div class="section-header">
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
         <span class="badge badge-cyan">5-ma’ruza</span>
         <span class="badge badge-emerald">Modellar taksonomiyasi</span>
         <span class="badge badge-purple">Deterministik va stoxastik dinamika</span>
       </div>
-      <h1 style="margin-bottom: 16px;">
+      <h1 >
         Fizik jarayonlarni modellashtirish — bilish metodi sifatida. <br>
         <span class="text-gradient">Model turlari va AI-integratsiyasi</span>
       </h1>
@@ -529,7 +529,10 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
             <div>
               <h3 style="color:var(--accent-cyan); margin-bottom:8px;">1. Deterministik Kepler harakati kodi (JavaScript)</h3>
               <div style="background:#0F172A; padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); font-family:var(--font-mono); font-size:0.82rem; color:#CBD5E1; max-height:400px; overflow-y:auto;">
-<pre><code>// Deterministik Kepler: simplektik integrator
+<div class="code-block">
+  <div class="code-header"><span>Kod</span></div>
+  <div class="code-content">
+    <code>// Deterministik Kepler: simplektik integrator
 function stepKepler(planet, GM, dt) {
     const r2 = planet.x * planet.x + planet.y * planet.y;
     const r = Math.sqrt(r2);
@@ -552,7 +555,9 @@ function stepKepler(planet, GM, dt) {
     const Etot = Ek + Ep;
     const L = planet.x * planet.vy - planet.y * planet.vx;
     return { Etot, L };
-}</code></pre>
+}</code>
+  </div>
+</div>
               </div>
 
               <div style="margin-top:14px;">
@@ -569,7 +574,10 @@ function stepKepler(planet, GM, dt) {
             <div>
               <h3 style="color:var(--accent-rose); margin-bottom:8px;">2. Stoxastik 2D gaz to‘qnashuvi kodi (JavaScript)</h3>
               <div style="background:#0F172A; padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); font-family:var(--font-mono); font-size:0.82rem; color:#CBD5E1; max-height:400px; overflow-y:auto;">
-<pre><code>// Stoxastik 2D elastik to‘qnashuvlar
+<div class="code-block">
+  <div class="code-header"><span>Kod</span></div>
+  <div class="code-content">
+    <code>// Stoxastik 2D elastik to‘qnashuvlar
 function resolveParticleCollision(p1, p2) {
     const dx = p2.x - p1.x;
     const dy = p2.y - p1.y;
@@ -594,7 +602,9 @@ function resolveParticleCollision(p1, p2) {
             p2.vy += impulse * p1.m * ny;
         }
     }
-}</code></pre>
+}</code>
+  </div>
+</div>
               </div>
 
               <div style="margin-top:14px;">
