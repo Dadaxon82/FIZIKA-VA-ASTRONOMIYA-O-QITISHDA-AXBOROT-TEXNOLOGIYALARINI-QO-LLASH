@@ -105,10 +105,7 @@ pre, code { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 #muallif .grid-3 .author-card { grid-template-columns:96px minmax(0,1fr); gap:1.1rem; align-items:start; }
 #muallif .grid-3 .author-photo { border-radius:12px; }
 #muallif .grid-3 h2 { font-size:1.25rem; }
-.cert-qr { background:#fff; border-radius:12px; padding:.4rem; display:grid; place-items:center; box-shadow:0 12px 30px rgba(0,0,0,.35); }
-.cert-qr img { display:block; width:100%; height:auto; }
-#muallif .cert-card .muted a { color:var(--dark-link); font-weight:700; }
-.cert-inline-qr { display:inline-flex; vertical-align:middle; background:#fff; border-radius:6px; padding:3px; margin-left:.3rem; }
-.cert-inline-qr img { display:block; width:34px; height:auto; }
+.cert-card { display:flex; flex-direction:column; gap:.8rem; }
+.cert-doc { width:100%; height:auto; border-radius:10px; border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 30px rgba(0,0,0,.35); }
 .footer a { color:var(--footer-heading); font-weight:600; text-decoration:none; } .footer a:hover { text-decoration:underline; }
-@media(max-width:640px) { .author-card { grid-template-columns:1fr; text-align:center; } .author-photo { max-width:220px; margin:0 auto; } #muallif .grid-3 .author-card { grid-template-columns:1fr; } #muallif .grid-3 .cert-qr { max-width:148px; margin:0 auto; } }
+@media(max-width:640px) { .author-card { grid-template-columns:1fr; text-align:center; } .author-photo { max-width:220px; margin:0 auto; } #muallif .grid-3 .author-card { grid-template-columns:1fr; } }
