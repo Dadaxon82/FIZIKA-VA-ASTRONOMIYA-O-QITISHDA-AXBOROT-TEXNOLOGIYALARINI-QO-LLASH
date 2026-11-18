@@ -52,6 +52,11 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  --footer-bg: #0B1E3A;
+  --footer-text: #A9B8CE;
+  --footer-heading: #FFFFFF;
+  --footer-line: rgba(255, 255, 255, 0.12);
 }
 
 /* Global Reset & Responsive Protection */
@@ -990,12 +995,28 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .proto-table tr:nth-child(even) {
       background: rgba(17, 24, 43, 0.025);
     }
-    .footer { border-top: 1px solid var(--border-color); padding: 30px 24px; color: var(--text-secondary); font-size: 0.9rem; }
+    .footer {
+      --text-secondary: var(--footer-text);
+      --text-muted: var(--footer-text);
+      --accent-cyan: #6FA8E8;
+      background: var(--footer-bg);
+      border-top: 1px solid var(--footer-line);
+      padding: 40px 24px 28px;
+      color: var(--footer-text);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .footer p { color: var(--footer-text); }
+    .footer a { color: var(--footer-heading); }
+    .footer h4, .footer-heading { color: var(--footer-heading); }
+    .footer-logo, .footer-logo-text { color: var(--footer-heading); }
+    .footer-grid { text-align: left; }
+    .footer-bottom { border-top: 1px solid var(--footer-line); margin-top: 20px; padding-top: 16px; text-align: center; font-size: 0.85rem; }
     .footer-container { max-width: 1360px; margin: 0 auto; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; text-align: left; margin-bottom: 18px; }
     @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
-    .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #11182B; margin-bottom: 8px; }
-    .footer-heading { color: #11182B; margin-bottom: 8px; font-size: 0.95rem; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px; }
+    .footer-heading { color: #FFFFFF; margin-bottom: 8px; font-size: 0.95rem; }
     .footer-links-list { list-style: none; padding: 0; margin: 0; line-height: 1.9; }
     .footer-links-list a { color: var(--text-secondary); text-decoration: none; }
     .footer-links-list a:hover { color: var(--accent-cyan); }

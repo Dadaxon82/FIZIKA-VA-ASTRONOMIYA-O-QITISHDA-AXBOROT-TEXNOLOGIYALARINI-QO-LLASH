@@ -748,18 +748,42 @@
   }
 }
 
+/* CAMS uslubidagi to'q-navy footer tasmasi. Ichidagi matn --text-secondary/
+   --text-muted'ga tayangani uchun, shu o'zgaruvchilar shu qamrovda footer'ga
+   mos och ranglarga qayta belgilanadi — pastki matnlarni alohida tahrirlash
+   shart emas. */
 .footer {
-  border-top: 1px solid var(--border-color);
-  padding: 30px 24px;
+  --text-secondary: var(--footer-text);
+  --text-muted: var(--footer-text);
+  --accent-cyan: #6FA8E8;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--footer-line);
+  padding: 40px 24px 28px;
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--footer-text);
   font-size: 0.9rem;
 }
+.footer p { color: var(--footer-text); }
+.footer a { color: var(--footer-heading); }
+.footer a:hover { text-decoration: underline; }
+.footer h4, .footer-heading { color: var(--footer-heading); }
+.footer-logo, .footer-logo-text { color: var(--footer-heading); }
 
 .footer-container,
 .footer-content {
   max-width: 1360px;
   margin: 0 auto;
+}
+
+.footer-grid { text-align: left; }
+.footer-desc { color: var(--footer-text); }
+.footer-links-list a:hover { color: var(--footer-heading) !important; }
+.footer-bottom {
+  border-top: 1px solid var(--footer-line);
+  margin-top: 20px;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
