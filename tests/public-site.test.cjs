@@ -24,7 +24,7 @@ test("15 ta to'rt soatli topshiriq va alohida yo'riqnoma",()=>{
 test("Baholash faqat HEMISda",()=>{
  const index=load("index.html"),guide=load("mustaqil.html");
  assert.match(index,/id="hemis"/);
- assert.match(index,/Baholash va topshiriqlarni topshirish — HEMISda/);
+ assert.match(index,/O‘quv topshiriqlarini bajarish hamda bilimlarni raqamli baholash — HEMIS platformasi orqali amalga oshiriladi/);
  assert.match(guide,/HEMIS platformasida/);
  assert.doesNotMatch(index,/id="total-score"|class="score-row"|id="baholash"/);
  assert.doesNotMatch(load("app.js"),/calculateScore/);
