@@ -93,7 +93,7 @@ pre, code { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 
 /* Muallif bo'limi */
 .author-card { display:flex; flex-direction:column; gap:1.1rem; }
-.author-photo { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:14px; border:1px solid var(--line); box-shadow:0 10px 24px rgba(17,24,43,.1); }
+.author-photo { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; object-position:center top; border-radius:14px; border:1px solid var(--line); box-shadow:0 10px 24px rgba(17,24,43,.1); }
 .author-info h2 { margin:.35rem 0 .5rem; }
 .author-role { color:var(--heading); font-weight:700; margin:0 0 .35rem; }
 #muallif .grid-3 h2 { font-size:1.25rem; }
