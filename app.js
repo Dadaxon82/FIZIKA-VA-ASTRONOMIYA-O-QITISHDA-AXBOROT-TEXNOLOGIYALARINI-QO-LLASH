@@ -111,7 +111,7 @@
     ctx.lineTo(bobX, bobY);
     ctx.stroke();
 
-    ctx.fillStyle = '#e0f2fe';
+    ctx.fillStyle = '#2563eb';
     ctx.beginPath();
     ctx.arc(pivotX, pivotY, 5, 0, TAU);
     ctx.fill();
@@ -188,8 +188,8 @@
     }
     ctx.stroke();
     const endAngle = wc * lorentz.t; const ex = w * .88; const ey = h / 2 + Math.sin(endAngle) * radius * scale;
-    ctx.fillStyle = '#f0fdfa'; ctx.shadowColor = '#22d3ee'; ctx.shadowBlur = 18; ctx.beginPath(); ctx.arc(ex, ey, 8, 0, TAU); ctx.fill(); ctx.shadowBlur = 0;
-    ctx.fillStyle = '#94a3b8'; ctx.font = '12px JetBrains Mono'; ctx.fillText('z →', w * .87, h - 16);
+    ctx.fillStyle = '#0e7490'; ctx.shadowColor = '#22d3ee'; ctx.shadowBlur = 18; ctx.beginPath(); ctx.arc(ex, ey, 8, 0, TAU); ctx.fill(); ctx.shadowBlur = 0;
+    ctx.fillStyle = '#475569'; ctx.font = '12px JetBrains Mono'; ctx.fillText('z →', w * .87, h - 16);
   }
 
   // ---------- Doppler wavefronts ----------
@@ -222,9 +222,9 @@
   function drawYoung() {
     const a = canvasContext(yCanvas); if (!a) return; const { ctx, width: w, height: h } = a; ctx.clearRect(0, 0, w, h);
     const beta = fringeSpacingMm(); const visibleWidthMm = Math.max(beta * 5, 18);
-    for (let x = 0; x < w; x++) { const positionMm = (x - w / 2) / w * visibleWidthMm; const intensity = .06 + .94 * Math.cos(Math.PI * positionMm / beta) ** 2; ctx.fillStyle = `rgba(52,211,153,${intensity})`; ctx.fillRect(x, 0, 1, h); }
-    ctx.fillStyle = '#d1fae5'; ctx.font = '12px JetBrains Mono'; ctx.fillText(`I(x) = I₀ cos²(πx/β),  β = ${beta.toFixed(2)} mm`, 16, 24);
-    ctx.strokeStyle = '#fff'; ctx.globalAlpha = .7; ctx.beginPath(); ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h); ctx.stroke(); ctx.globalAlpha = 1;
+    for (let x = 0; x < w; x++) { const positionMm = (x - w / 2) / w * visibleWidthMm; const intensity = .06 + .94 * Math.cos(Math.PI * positionMm / beta) ** 2; ctx.fillStyle = `rgba(37,99,235,${intensity})`; ctx.fillRect(x, 0, 1, h); }
+    ctx.fillStyle = '#1e293b'; ctx.font = '12px JetBrains Mono'; ctx.fillText(`I(x) = I₀ cos²(πx/β),  β = ${beta.toFixed(2)} mm`, 16, 24);
+    ctx.strokeStyle = '#1e293b'; ctx.globalAlpha = .7; ctx.beginPath(); ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h); ctx.stroke(); ctx.globalAlpha = 1;
   }
 
   // ---------- Prompt, scoring and animation ----------
