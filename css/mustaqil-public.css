@@ -24,6 +24,10 @@
   box-shadow: 0 1px 2px rgba(17, 24, 43, 0.04);
 }
 
+.topmenu .container {
+  max-width: 1548px;
+}
+
 .topmenu-inner {
   min-height: 68px;
   display: flex;
@@ -48,7 +52,7 @@
   width: 42px;
   height: 42px;
   border-radius: 14px;
-  background: var(--gradient-brand);
+  background: var(--text-main);
   color: #FFFFFF;
   font-size: 1.1rem;
   flex-shrink: 0;
@@ -56,7 +60,7 @@
 
 .topmenu-brand small {
   display: block;
-  color: var(--accent-cyan);
+  color: var(--text-muted);
   font-size: 0.7rem;
   margin-top: 0.25rem;
   font-weight: 500;
@@ -72,7 +76,7 @@
 .topmenu-links a {
   padding: 0.55rem 0.55rem;
   border-radius: 9px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-size: 0.78rem;
   font-weight: 600;
   text-decoration: none;
@@ -84,12 +88,6 @@
 .topmenu-links a:focus-visible {
   color: var(--text-main);
   background: var(--bg-card-hover);
-  transform: translateY(-1px);
-}
-
-.topmenu-links a.active {
-  color: var(--accent-cyan);
-  background: rgba(28, 78, 158, 0.1);
 }
 
 .topmenu-toggle {
@@ -102,7 +100,7 @@
   font-size: 1rem;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1520px) {
   .topmenu-links {
     display: none;
     position: absolute;
