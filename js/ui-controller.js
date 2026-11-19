@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text = targetEl ? (targetEl.value !== undefined ? targetEl.value : targetEl.innerText) : btn.parentElement.innerText;
       }
       navigator.clipboard.writeText(text).then(() => {
-        window.showToast("Prompt nusxalandi!");
+        window.showToast(window.I18N ? window.I18N.t('ui.promptCopied', null, 'Prompt nusxalandi!') : 'Prompt nusxalandi!');
       });
     });
   });

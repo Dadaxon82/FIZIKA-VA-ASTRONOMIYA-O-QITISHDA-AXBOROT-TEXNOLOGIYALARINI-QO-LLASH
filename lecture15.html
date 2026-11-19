@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/i18n-boot.js"></script>
   <title>15-ma’ruza: Yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi</title>
   <meta name="description" content="15-ma'ruza: yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi, radioaktiv yemirilish modeli.">
   <link rel="stylesheet" href="css/main.css">
@@ -12,7 +13,6 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
           onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
-<link rel="stylesheet" href="css/translate.css">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -30,6 +30,13 @@
 <meta name="twitter:title" content="15-ma’ruza: Yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi">
 <meta name="twitter:description" content="15-ma'ruza: yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi, radioaktiv yemirilish modeli.">
 <meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta name="i18n-page" content="lecture15">
+<link rel="stylesheet" href="css/i18n.css">
+<script src="js/i18n.js" defer></script>
+<link rel="alternate" hreflang="uz" href="https://ilimziyo.uz/lecture15.html">
+<link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/lecture15.html?lang=ru">
+<link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture15.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture15.html">
 </head>
 <body>
 
@@ -37,50 +44,50 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+        <span class="nav-logo-text" data-i18n="brand.full">FIZIKA va SUN’IY INTELLEKT</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
-        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
-        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
-        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
-        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
-        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
-        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
-        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link active">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
-        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
-        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
-        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link" data-i18n="nav.lectureShort.l1">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link" data-i18n="nav.lectureShort.l2">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link" data-i18n="nav.lectureShort.l3">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link" data-i18n="nav.lectureShort.l4">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link" data-i18n="nav.lectureShort.l5">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link" data-i18n="nav.lectureShort.l6">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link" data-i18n="nav.lectureShort.l7">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link" data-i18n="nav.lectureShort.l8">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link" data-i18n="nav.lectureShort.l9">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link" data-i18n="nav.lectureShort.l10">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link" data-i18n="nav.lectureShort.l11">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link" data-i18n="nav.lectureShort.l12">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link" data-i18n="nav.lectureShort.l13">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link" data-i18n="nav.lectureShort.l14">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link active" data-i18n="nav.lectureShort.l15">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -91,51 +98,51 @@
   <div id="drawer-overlay" class="drawer-overlay"></div>
   <aside id="mobile-drawer" class="mobile-drawer">
     <div class="drawer-header">
-      <span class="drawer-title">Kurs mundarijasi</span>
+      <span class="drawer-title" data-i18n="nav.courseToc">Kurs mundarijasi</span>
       <button id="drawer-close" class="drawer-close">&times;</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
-      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
-      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
-      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
-      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
-      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
-      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
-      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
-      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
-      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link active">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="index.html" class="drawer-link" data-i18n="nav.home">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link" data-i18n="nav.lectureShort.l1">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link" data-i18n="nav.lectureShort.l2">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link" data-i18n="nav.lectureShort.l3">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link" data-i18n="nav.lectureShort.l4">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link" data-i18n="nav.lectureShort.l5">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link" data-i18n="nav.lectureShort.l6">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link" data-i18n="nav.lectureShort.l7">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link" data-i18n="nav.lectureShort.l8">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link" data-i18n="nav.lectureShort.l9">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link" data-i18n="nav.lectureShort.l10">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link" data-i18n="nav.lectureShort.l11">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link" data-i18n="nav.lectureShort.l12">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link" data-i18n="nav.lectureShort.l13">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link" data-i18n="nav.lectureShort.l14">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link active" data-i18n="nav.lectureShort.l15">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="lab1.html" class="drawer-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
-      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li><a href="astro1.html" class="drawer-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
-      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
-      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+      <li><a href="glossariy.html" class="drawer-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link" data-i18n="nav.author">👤 Muallif</a></li>
     </ul>
   </aside>
 
@@ -145,7 +152,7 @@
     <!-- Hero Header -->
     <div class="hero-panel" style="margin-bottom: 30px;">
       <span class="badge badge-rose">15-ma’ruza: Yadro fizikasi, Capstone yakuniy loyiha va 7 AI pipeline</span>
-      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card15.title">
         Yadro fizikasi qonuniyatlari va yakuniy mustaqil loyiha (Capstone) metodologiyasi
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
@@ -185,13 +192,13 @@
     </div>
     <!-- Bepul muqobillar -->
     <div class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;">💡 Pullik vositalarning bepul muqobillari</h3>
-      <p style="margin-bottom: 8px; font-size: 0.95rem;">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
+      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+      <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
-        <li><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
-        <li><strong>Otter.ai</strong> o‘rniga: Whisper — ochiq manbali, o‘zbek tilini qo‘llaydi, Google Colab’da bepul ishlaydi.</li>
+        <li data-i18n="freeAlt.alt5"><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
+        <li data-i18n="freeAlt.alt8"><strong>Otter.ai</strong> o‘rniga: Whisper — ochiq manbali, o‘zbek tilini qo‘llaydi, Google Colab’da bepul ishlaydi.</li>
       </ul>
-      <p style="margin-top: 8px; font-size: 0.85rem;">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link">SI vositalari sahifasi</a>.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
     </div>
 
 
@@ -201,13 +208,13 @@
         ◀
       </button>
       <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. AI diagnostika va reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Teskari muhandislik tahlili</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. To‘liq simulyator kodi</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Jarayon monitoringi (Antigravity)</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Baholash rubrikalari</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Capstone va Undetectable AI</button>
-        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')">7. Interaktiv sandbox va manbalar</button>
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture15.tab2">2. Teskari muhandislik tahlili</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture15.tab3">3. To‘liq simulyator kodi</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="tabs.4_jarayon_monitoringi_antigravity">4. Jarayon monitoringi (Antigravity)</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture15.tab5">5. Baholash rubrikalari</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="pages.lecture15.tab6">6. Capstone va Undetectable AI</button>
+        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')" data-i18n="pages.lecture15.tab7">7. Interaktiv sandbox va manbalar</button>
       </div>
 
       <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
@@ -231,39 +238,39 @@
         </div>
 
         <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
-          Yadro fizikasi mikrodunyosi ko‘zga ko‘rinmas kvant-yadro kuchlari ($10^{-15}\text{ m}$), stoxastik radioaktiv yemirilish, zanjirli yadro bo‘linishi va yuqori energiyali termoyadroviy sintez jarayonlaridan iborat. <strong>MagicSchool AI</strong> yordamida <em>Vygotskiy Yaqin Rivojlanish Zonasi (ZPD)</em> asosida talabalar 3 ta kognitiv klasterga ajratilib, shaxsiylashtirilgan o‘quv trayektoriyasi shakllantiriladi:
+          Yadro fizikasi mikrodunyosi ko‘zga ko‘rinmas kvant-yadro kuchlari ($10^{-15}\text{ m}$), stoxastik radioaktiv yemirilish, zanjirli yadro bo‘linishi va yuqori energiyali termoyadroviy sintez jarayonlaridan iborat. <strong>MagicSchool AI</strong> yordamida <em data-i18n="common.zpdVygotsky">Vygotskiy Yaqin Rivojlanish Zonasi (ZPD)</em> asosida talabalar 3 ta kognitiv klasterga ajratilib, shaxsiylashtirilgan o‘quv trayektoriyasi shakllantiriladi:
         </p>
 
         <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 14px;">3 Kognitiv klaster bo‘yicha individual yadro fizikasi va Capstone trayektoriyasi:</h3>
         <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
           <div style="background: rgba(244, 63, 94, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-rose);">
-            <h4 style="color: var(--accent-rose); margin-bottom: 8px;">Klaster A: boshlang‘ich (Foundational)</h4>
+            <h4 style="color: var(--accent-rose); margin-bottom: 8px;" data-i18n="cluster.aFoundational">Klaster A: boshlang‘ich (Foundational)</h4>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              <strong>Tavsif:</strong> Radioaktiv yemirilish qonuni ($N(t) = N_0 2^{-t/T_{1/2}}$), $\alpha, \beta, \gamma$ nurlanish turlari va yadro bog‘lanish energiyasi tushunchasini o‘zlashtiruvchi daraja.<br>
-              <strong>AI strategiyasi:</strong> PhET Radioactive Dating Game orqali stoxastik yemirilish egri chiziqlarini ko‘rish va hisoblash.
+              <strong data-i18n="common.description">Tavsif:</strong> Radioaktiv yemirilish qonuni ($N(t) = N_0 2^{-t/T_{1/2}}$), $\alpha, \beta, \gamma$ nurlanish turlari va yadro bog‘lanish energiyasi tushunchasini o‘zlashtiruvchi daraja.<br>
+              <strong data-i18n="common.aiStrategy">AI strategiyasi:</strong> PhET Radioactive Dating Game orqali stoxastik yemirilish egri chiziqlarini ko‘rish va hisoblash.
             </p>
           </div>
           <div style="background: rgba(251, 191, 36, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-amber);">
-            <h4 style="color: var(--accent-amber); margin-bottom: 8px;">Klaster B: amaliyotchi (Core)</h4>
+            <h4 style="color: var(--accent-amber); margin-bottom: 8px;" data-i18n="cluster.bCore">Klaster B: amaliyotchi (Core)</h4>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              <strong>Tavsif:</strong> Uran-235 zanjirli bo‘linishi ($^{235}\text{U} + n \rightarrow \text{Ba} + \text{Kr} + 3n + 200\text{ MeV}$), ko‘payish koeffitsiyenti $k$ va reaktor boshqaruvi.<br>
-              <strong>AI strategiyasi:</strong> Claude orqali neytronlar kinetikasi va mass-defekt energiyasini hisoblovchi kod yaratish.
+              <strong data-i18n="common.description">Tavsif:</strong> Uran-235 zanjirli bo‘linishi ($^{235}\text{U} + n \rightarrow \text{Ba} + \text{Kr} + 3n + 200\text{ MeV}$), ko‘payish koeffitsiyenti $k$ va reaktor boshqaruvi.<br>
+              <strong data-i18n="common.aiStrategy">AI strategiyasi:</strong> Claude orqali neytronlar kinetikasi va mass-defekt energiyasini hisoblovchi kod yaratish.
             </p>
           </div>
           <div style="background: rgba(52, 211, 153, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-emerald);">
             <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">Klaster C: tadqiqotchi / Capstone</h4>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              <strong>Tavsif:</strong> Termoyadroviy sintez (D-T Tokamak plazmasi), mustaqil tanlangan murakkab fizik jarayonni noldan simulyatsiya qilish va uni to‘liq ilmiy himoya qilish.<br>
-              <strong>AI strategiyasi:</strong> Barcha 7 ta AI vositani yaxlit pipeline konveyeriga birlashtirish va Undetectable AI bilan hisobot originalligini kafolatlash.
+              <strong data-i18n="common.description">Tavsif:</strong> Termoyadroviy sintez (D-T Tokamak plazmasi), mustaqil tanlangan murakkab fizik jarayonni noldan simulyatsiya qilish va uni to‘liq ilmiy himoya qilish.<br>
+              <strong data-i18n="common.aiStrategy">AI strategiyasi:</strong> Barcha 7 ta AI vositani yaxlit pipeline konveyeriga birlashtirish va Undetectable AI bilan hisobot originalligini kafolatlash.
             </p>
           </div>
         </div>
 
         <div class="citation-box">
-          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba va Ta’limiy Diagnostika Asosi (1-Bo‘lim):</div>
+          <div class="citation-title" data-i18n="common.wwwSource1">🌐 WWW Ilmiy-Uslubiy Manba va Ta’limiy Diagnostika Asosi (1-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Krane, K. S. (1988).</strong> <em>Introductory Nuclear Physics</em>. John Wiley va Sons.<br>
-            <em>Manba mazmuni:</em> Yadro fizikasining asosiy universitet darsligi: radioaktiv yemirilish qonuni (6-bob), $\alpha$-, $\beta$- va $\gamma$-yemirilish (8–10-boblar), yadro bo‘linishi (13-bob) va termoyadroviy sintez (14-bob). Ushbu bo‘limdagi klaster trayektoriyalarining fizik mazmuni shu darslikka tayanadi.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Yadro fizikasining asosiy universitet darsligi: radioaktiv yemirilish qonuni (6-bob), $\alpha$-, $\beta$- va $\gamma$-yemirilish (8–10-boblar), yadro bo‘linishi (13-bob) va termoyadroviy sintez (14-bob). Ushbu bo‘limdagi klaster trayektoriyalarining fizik mazmuni shu darslikka tayanadi.
           </p>
         </div>
       </div>
@@ -314,7 +321,7 @@
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Teskari Muhandislik Asosi (2-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1126/science.1161948</a><br>
-            <em>Manba mazmuni:</em> PhET simulyatsiyalarini loyihalash tamoyillari: ko‘zga ko‘rinmas jarayonlarni vizuallashtirish, darhol qayta aloqa beruvchi interaktiv boshqaruv va talabaning mustaqil tadqiqotini rag‘batlantirish orqali konseptual tushunishni chuqurlashtirish.<br>
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> PhET simulyatsiyalarini loyihalash tamoyillari: ko‘zga ko‘rinmas jarayonlarni vizuallashtirish, darhol qayta aloqa beruvchi interaktiv boshqaruv va talabaning mustaqil tadqiqotini rag‘batlantirish orqali konseptual tushunishni chuqurlashtirish.<br>
             <em>Eslatma:</em> PhET’ning <em>Nuclear Fission</em>, <em>Radioactive Dating Game</em> va <em>Alpha Decay</em> simulyatsiyalari eski Java versiyada mavjud; brauzerda (HTML5) ishlaydigan eng yaqin muqobil — <em>Build a Nucleus</em> (7-bo‘limdagi jonli laboratoriya).
           </p>
         </div>
@@ -415,7 +422,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Yadroviy Modellashtirish Asosi (3-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Metropolis, N., va Ulam, S. (1949).</strong> <em>The Monte Carlo Method</em>. Journal of the American Statistical Association, 44(247), 335–341. <a href="https://doi.org/10.1080/01621459.1949.10483310" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1080/01621459.1949.10483310</a><br>
-            <em>Manba mazmuni:</em> Monte-Karlo usulining asos soluvchi maqolasi: tasodifiy sonlar yordamida neytronlar ko‘payishi kabi stoxastik jarayonlarni statistik modellashtirish. Yuqoridagi <code>simulateRadioactiveDecay</code> va <code>updateFissionChainReaction</code> funksiyalari aynan shu yondashuvga asoslangan.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Monte-Karlo usulining asos soluvchi maqolasi: tasodifiy sonlar yordamida neytronlar ko‘payishi kabi stoxastik jarayonlarni statistik modellashtirish. Yuqoridagi <code>simulateRadioactiveDecay</code> va <code>updateFissionChainReaction</code> funksiyalari aynan shu yondashuvga asoslangan.
           </p>
         </div>
       </div>
@@ -470,7 +477,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Loyiha Monitoringi Asosi (4-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley. <br>
-            <em>Manba mazmuni:</em> 42-bob (<em>Nuclear Physics</em>) va 43-bob (<em>Energy from the Nucleus</em>): yadro reaksiyalarida massa soni $A$ va zaryad soni $Z$ saqlanishi, $Q = \Delta m c^2$ energiya balansi hamda reaktorning ko‘payish koeffitsiyenti $k$ — telemetriya auditidagi tekshiruvlarning nazariy asosi.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> 42-bob (<em>Nuclear Physics</em>) va 43-bob (<em>Energy from the Nucleus</em>): yadro reaksiyalarida massa soni $A$ va zaryad soni $Z$ saqlanishi, $Q = \Delta m c^2$ energiya balansi hamda reaktorning ko‘payish koeffitsiyenti $k$ — telemetriya auditidagi tekshiruvlarning nazariy asosi.
           </p>
         </div>
       </div>
@@ -505,35 +512,35 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
             <tbody>
               <tr style="border-bottom: 1px solid var(--border-color);">
                 <td style="padding: 10px; font-weight: bold; color: var(--accent-cyan);">1. Fizik Adekvatlik va Matematik Aniqlik</td>
-                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">25 ball</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);" data-i18n="rubric.pointsN.p25">25 ball</td>
                 <td style="padding: 10px;">Differensial tenglamalar, saqlanish qonunlari va mass-defekt formulalari xatosiz modellashtirilgan.</td>
                 <td style="padding: 10px;">Formulalarda kichik noaniqlik bor, lekin asosiy dinamika to‘g‘ri.</td>
                 <td style="padding: 10px;">Statik formulalar kiritilgan, differensial hisob yo‘q.</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--border-color);">
                 <td style="padding: 10px; font-weight: bold; color: var(--accent-emerald);">2. Kod Arxitekturasi va Interaktivlik</td>
-                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">20 ball</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);" data-i18n="rubric.pointsN.p20">20 ball</td>
                 <td style="padding: 10px;">Modulli sof JavaScript kodi, 60 FPS, to‘liq interaktiv slayderlar va sichqoncha bilan boshqaruv.</td>
                 <td style="padding: 10px;">Kod barqaror ishlaydi, biroq ayrim boshqaruv tugmalarida kechikish bor.</td>
                 <td style="padding: 10px;">Slayderlar cheklangan, interaktivlik past.</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--border-color);">
                 <td style="padding: 10px; font-weight: bold; color: var(--accent-purple);">3. Multimodal Ovoz va Vizual Dizayn</td>
-                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">20 ball</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);" data-i18n="rubric.pointsN.p20">20 ball</td>
                 <td style="padding: 10px;">Muxlisa AI / ElevenLabs audio-narratsiyasi, spektrogramma va qorong‘u rejimli zamonaviy UI.</td>
                 <td style="padding: 10px;">Ovoz mavjud, lekin animatsiya bilan to‘liq sinxronlashmagan.</td>
                 <td style="padding: 10px;">Faqat matnli izohlar bor, audio sintez yo‘q.</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--border-color);">
                 <td style="padding: 10px; font-weight: bold; color: var(--accent-rose);">4. Telemetriya va Saqlanish Qonunlari Auditi</td>
-                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">15 ball</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);" data-i18n="rubric.pointsN.p15">15 ball</td>
                 <td style="padding: 10px;">Google Antigravity monitoringi: barion soni, energiya dreyfi doimiy auditda.</td>
                 <td style="padding: 10px;">Telemetriya ko‘rsatkichlari bor, lekin saqlanish balansi to‘liq emas.</td>
                 <td style="padding: 10px;">Telemetriya mavjud emas.</td>
               </tr>
               <tr>
                 <td style="padding: 10px; font-weight: bold; color:#1C4E9E;">5. Ilmiy Himoya va Raqamli Portfolio</td>
-                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);">20 ball</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: var(--accent-amber);" data-i18n="rubric.pointsN.p20">20 ball</td>
                 <td style="padding: 10px;">Otter.ai transkripsiyasi, to‘liq portfolio pasporti va Undetectable AI originallik sertifikati.</td>
                 <td style="padding: 10px;">Portfolio tayyorlangan, ammo ilmiy atamalar izohi yetarli emas.</td>
                 <td style="padding: 10px;">Qisqa hisobot bilan cheklangan.</td>
@@ -546,7 +553,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Baholash Rubrikasi Asosi (5-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Black, P., va Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href="https://doi.org/10.1007/s11092-008-9068-5" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1007/s11092-008-9068-5</a><br>
-            <em>Manba mazmuni:</em> Shakllantiruvchi baholashning besh asosiy strategiyasi, jumladan o‘quv maqsadlari va muvaffaqiyat mezonlarini talabaga oldindan aniq tushuntirish — Capstone rubrikasini himoyadan oldin e’lon qilishning nazariy asosi.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Shakllantiruvchi baholashning besh asosiy strategiyasi, jumladan o‘quv maqsadlari va muvaffaqiyat mezonlarini talabaga oldindan aniq tushuntirish — Capstone rubrikasini himoyadan oldin e’lon qilishning nazariy asosi.
           </p>
         </div>
       </div>
@@ -596,9 +603,9 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Akademik Halollik Asosi (6-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., va Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href="https://doi.org/10.1007/s40979-023-00146-z" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1007/s40979-023-00146-z</a><br>
-            <em>Manba mazmuni:</em> 14 ta AI-detektor (jumladan Turnitin) sinovdan o‘tkazilgan: vositalar na aniq, na ishonchli ekani, matnni qayta ifodalash (obfuscation) esa aniqlikni keskin pasaytirishi ko‘rsatilgan. Shu sababli detektor foizi akademik halollikning yagona dalili sifatida qabul qilinmaydi.<br><br>
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> 14 ta AI-detektor (jumladan Turnitin) sinovdan o‘tkazilgan: vositalar na aniq, na ishonchli ekani, matnni qayta ifodalash (obfuscation) esa aniqlikni keskin pasaytirishi ko‘rsatilgan. Shu sababli detektor foizi akademik halollikning yagona dalili sifatida qabul qilinmaydi.<br><br>
             <strong>Cotton, D. R. E., Cotton, P. A., va Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href="https://doi.org/10.1080/14703297.2023.2190148" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1080/14703297.2023.2190148</a><br>
-            <em>Manba mazmuni:</em> Generativ AI davrida akademik halollikni ta’minlash strategiyalari: aniq qoidalar, jarayonga yo‘naltirilgan topshiriqlar va og‘zaki himoya.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Generativ AI davrida akademik halollikni ta’minlash strategiyalari: aniq qoidalar, jarayonga yo‘naltirilgan topshiriqlar va og‘zaki himoya.
           </p>
         </div>
       </div>
@@ -721,7 +728,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
         <div class="glass-panel" style="margin-top: 28px; border-left: 4px solid var(--accent-rose); padding: 22px;">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
             <div>
-              <span class="badge badge-rose">🌐 Jonli virtual laboratoriyalar</span>
+              <span class="badge badge-rose" data-i18n="common.liveLabs">🌐 Jonli virtual laboratoriyalar</span>
               <h3 style="margin-top: 6px; font-size: 1.3rem; color:#11182B;">
                 PhET va Vascak.cz yadro fizikasi xabi
               </h3>
@@ -738,7 +745,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
 
           <!-- Buttons -->
           <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; background: #F3F5F8; padding: 10px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div style="width: 100%; font-size: 0.78rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px;">🧪 PhET Interactive Simulations (HTML5):</div>
+            <div style="width: 100%; font-size: 0.78rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px;" data-i18n="common.phetHtml5">🧪 PhET Interactive Simulations (HTML5):</div>
             <button class="btn btn-sm btn-primary nuclear-online-sim-btn active" data-sim="phet-fission" onclick="switchNuclearOnlineSim('phet-fission')">
               ☢️ PhET: Build a Nucleus (yadro tuzilishi)
             </button>
@@ -865,8 +872,8 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
-      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+      <p data-i18n="footer.copyright">&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;" data-i18n="pages.lecture15.footer2">
         15-ma’ruza: Yadro fizikasi qonuniyatlari va yakuniy mustaqil loyiha metodologiyasi &bull; 7 AI pipeline (MagicSchool, PhET, Claude, Antigravity, Muxlisa, Otter.ai, Undetectable AI).
       </p>
     </div>
@@ -982,5 +989,5 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
   <script src="js/physics-engine.js"></script>
   <script src="js/sim-nuclear-capstone.js"></script>
   <script src="js/ui-controller.js"></script>
-<script src="js/translate.js"></script></body>
+</body>
 </html>

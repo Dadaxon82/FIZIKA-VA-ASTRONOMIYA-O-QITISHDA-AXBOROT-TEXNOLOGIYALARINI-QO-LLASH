@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/i18n-boot.js"></script>
   <title>2-laboratoriya: LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish</title>
   <meta name="description" content="2-laboratoriya: LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini tuzish.">
   <link rel="stylesheet" href="css/main.css">
@@ -102,7 +103,6 @@
       cursor: pointer;
     }
   </style>
-<link rel="stylesheet" href="css/translate.css">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -120,6 +120,13 @@
 <meta name="twitter:title" content="2-laboratoriya: LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish">
 <meta name="twitter:description" content="2-laboratoriya: LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini tuzish.">
 <meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta name="i18n-page" content="lab2">
+<link rel="stylesheet" href="css/i18n.css">
+<script src="js/i18n.js" defer></script>
+<link rel="alternate" hreflang="uz" href="https://ilimziyo.uz/lab2.html">
+<link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/lab2.html?lang=ru">
+<link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lab2.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lab2.html">
 </head>
 <body>
 
@@ -127,50 +134,50 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+        <span class="nav-logo-text" data-i18n="brand.full">FIZIKA va SUN’IY INTELLEKT</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
-        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
-        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
-        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
-        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
-        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
-        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
-        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-        <li><a href="lab2.html" class="nav-link active">🧪 2-laboratoriya: LLM matematik model</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
-        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
-        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
-        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link" data-i18n="nav.lectureShort.l1">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link" data-i18n="nav.lectureShort.l2">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link" data-i18n="nav.lectureShort.l3">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link" data-i18n="nav.lectureShort.l4">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link" data-i18n="nav.lectureShort.l5">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link" data-i18n="nav.lectureShort.l6">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link" data-i18n="nav.lectureShort.l7">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link" data-i18n="nav.lectureShort.l8">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link" data-i18n="nav.lectureShort.l9">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link" data-i18n="nav.lectureShort.l10">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link" data-i18n="nav.lectureShort.l11">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link" data-i18n="nav.lectureShort.l12">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link" data-i18n="nav.lectureShort.l13">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link" data-i18n="nav.lectureShort.l14">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link" data-i18n="nav.lectureShort.l15">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link active" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -181,51 +188,51 @@
   <div id="drawer-overlay" class="drawer-overlay"></div>
   <aside id="mobile-drawer" class="mobile-drawer">
     <div class="drawer-header">
-      <span class="drawer-title">Kurs mundarijasi</span>
+      <span class="drawer-title" data-i18n="nav.courseToc">Kurs mundarijasi</span>
       <button id="drawer-close" class="drawer-close">&times;</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
-      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
-      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
-      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
-      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
-      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
-      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
-      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
-      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
-      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="index.html" class="drawer-link" data-i18n="nav.home">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link" data-i18n="nav.lectureShort.l1">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link" data-i18n="nav.lectureShort.l2">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link" data-i18n="nav.lectureShort.l3">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link" data-i18n="nav.lectureShort.l4">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link" data-i18n="nav.lectureShort.l5">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link" data-i18n="nav.lectureShort.l6">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link" data-i18n="nav.lectureShort.l7">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link" data-i18n="nav.lectureShort.l8">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link" data-i18n="nav.lectureShort.l9">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link" data-i18n="nav.lectureShort.l10">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link" data-i18n="nav.lectureShort.l11">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link" data-i18n="nav.lectureShort.l12">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link" data-i18n="nav.lectureShort.l13">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link" data-i18n="nav.lectureShort.l14">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link" data-i18n="nav.lectureShort.l15">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link active">🧪 2-laboratoriya: LLM matematik model</a></li>
-      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="lab1.html" class="drawer-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link active" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
-      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li><a href="astro1.html" class="drawer-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
-      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
-      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+      <li><a href="glossariy.html" class="drawer-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link" data-i18n="nav.author">👤 Muallif</a></li>
     </ul>
   </aside>
 
@@ -235,7 +242,7 @@
     <!-- Hero Header -->
     <div class="hero-panel" style="margin-bottom: 30px;">
       <span class="badge badge-purple">2-laboratoriya mashg‘uloti: katta til modellari (LLM) va teskari muhandislik</span>
-      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="pages.lab2.h1">
         LLM (ChatGPT yoki Claude) yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
@@ -273,12 +280,12 @@
       </button>
 
       <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. Diagnostika va individual reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Simulyatsiya bazasi: Vascak / PhET</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Formulalarni tasdiqlash: Claude</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Hisobot tuzilmasi: Gemini / ChatGPT</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Interaktiv dastgoh va validator</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Baholash rubrikasi va manbalar</button>
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_diagnostika_va_individual_reja">1. Diagnostika va individual reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lab2.tab2">2. Simulyatsiya bazasi: Vascak / PhET</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lab2.tab3">3. Formulalarni tasdiqlash: Claude</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lab2.tab4">4. Hisobot tuzilmasi: Gemini / ChatGPT</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lab2.tab5">5. Interaktiv dastgoh va validator</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">6. Baholash rubrikasi va manbalar</button>
       </div>
 
       <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
@@ -305,7 +312,7 @@
           Fizika ta’limida raqamli modellashtirish murakkab matematik apparat (differensial hisob, vektor algebrasi, sonli integrallash) hamda kognitiv abstraksiyani talab qiladi. An’anaviy bir xil (unifikatsiyalashgan) topshiriqlar talabaning individual tayyorgarlik darajasini hisobga olmaydi. Shu sababli, 2-laboratoriya mashg‘uloti <strong>Sun’iy Intellekt asosidagi boshlang‘ich diagnostika</strong> va Lev Vygotskiyning <em>"Yaqin Rivojlanish Zonasi" (ZPD)</em> tamoyiliga asoslangan <strong>Individual Ta’lim Rejasi (Individual Learning Plan - ILP)</strong> bilan boshlanadi.
         </p>
 
-        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;">1.1. Laboratoriyaning maqsadi va kutiladigan natijalar (Learning Outcomes):</h3>
+        <h3 style="color: var(--accent-cyan); margin-top: 25px; margin-bottom: 14px;" data-i18n="common.learningOutcomes">1.1. Laboratoriyaning maqsadi va kutiladigan natijalar (Learning Outcomes):</h3>
         <div class="glass-panel" style="border-left: 4px solid var(--accent-cyan); margin-bottom: 25px; padding: 20px;">
           <ul style="margin: 0; padding-left: 20px; line-height: 1.75; font-size: 0.95rem; color: var(--text-secondary);">
             <li><strong>Teskari muhandislik (Reverse Engineering) ko‘nikmasi:</strong> PhET yoki Vascak.cz platformalaridagi istalgan tayyor simulyatsiyani kuzatib, uning boshqaruv elementlari (input) va grafik natijalari (output) orasidagi qonuniyatlarni ajrata olish;</li>
@@ -448,7 +455,7 @@
               📋 Claude uchun Shaxsiylashtirilgan Tizimli Prompt:
             </label>
             <textarea id="diag-personalized-prompt" class="prompt-textarea" readonly style="min-height: 90px;"></textarea>
-            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag-personalized-prompt">📋 Promptni nusxalash</button>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="diag-personalized-prompt" data-i18n="common.copyPrompt">📋 Promptni nusxalash</button>
           </div>
         </div>
 
@@ -457,7 +464,7 @@
           <p class="citation-text">
             <strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.<br>
             <strong>Anderson, L. W., va Krathwohl, D. R. (Eds.). (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman.<br>
-            <em>Manba mazmuni:</em> Vygotskiy ZPD tushunchasini — talaba mustaqil bajara oladigan va yordam bilan bajara oladigan vazifalar orasidagi zonani — kiritgan. Anderson va Krathwohl esa Blum taksonomiyasining qayta ko‘rib chiqilgan (eslash → yaratish) versiyasini taklif qilgan. Diagnostik test va A/B/C klasterlari shu ikki nazariy asosga tayanadi.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Vygotskiy ZPD tushunchasini — talaba mustaqil bajara oladigan va yordam bilan bajara oladigan vazifalar orasidagi zonani — kiritgan. Anderson va Krathwohl esa Blum taksonomiyasining qayta ko‘rib chiqilgan (eslash → yaratish) versiyasini taklif qilgan. Diagnostik test va A/B/C klasterlari shu ikki nazariy asosga tayanadi.
           </p>
         </div>
       </div>
@@ -474,7 +481,7 @@
         </div>
 
         <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
-          <strong>Teskari muhandislik (Reverse Engineering)</strong> — bu tayyor tizimning tashqi xatti-harakati, kirish boshqaruvlari va chiqish ma’lumotlarini o‘rganish orqali uning ichki arxitekturasi va fundamental qonuniyatlarini mustaqil tiklash jarayonidir. Fizika ta’limida ushbu metod talabani dasturiy ta’minotning passiv tomoshabinidan tizimning matematik yadrosini kashf etuvchi tadqiqotchiga aylantiradi.
+          <strong data-i18n="pages.lecture2.badge3">Teskari muhandislik (Reverse Engineering)</strong> — bu tayyor tizimning tashqi xatti-harakati, kirish boshqaruvlari va chiqish ma’lumotlarini o‘rganish orqali uning ichki arxitekturasi va fundamental qonuniyatlarini mustaqil tiklash jarayonidir. Fizika ta’limida ushbu metod talabani dasturiy ta’minotning passiv tomoshabinidan tizimning matematik yadrosini kashf etuvchi tadqiqotchiga aylantiradi.
         </p>
 
         <h3 style="color: var(--accent-emerald); margin-top: 25px; margin-bottom: 14px;">2.1. Tahlil platformalarining qiyosiy xarakteristikasi:</h3>
@@ -498,7 +505,7 @@
               <span class="badge badge-amber" title="Tashqi saytda reklama ko‘rsatiladi">havola berilmagan (reklama)</span>
             </div>
             <ul style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin: 0; padding-left: 18px;">
-              <li><strong>Muallif:</strong> RNDr. Vladimír Vaščák (Chexiya ta’lim portali);</li>
+              <li><strong data-i18n="pages.annotatsiya.strong_5">Muallif:</strong> RNDr. Vladimír Vaščák (Chexiya ta’lim portali);</li>
               <li><strong>Texnologiya:</strong> Sof yengil HTML5 Canvas animatsiyalari, ko‘p tilli qo‘llab-quvvatlash;</li>
               <li><strong>Afzalligi:</strong> Har bir fizik hodisaning lakonik va o‘ta aniq 2D/3D ko‘rinishi, mexanizmlar va elektrodinamika sxemalarining ravshanligi;</li>
               <li><strong>Tavsiya etilgan modellar:</strong> <em>Qiya tekislikdagi ishqalanish, Mass-spektrometr, Damped harmonic oscillator, Kulon maydoni</em>.</li>
@@ -585,7 +592,7 @@
           <p class="citation-text">
             <strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1126/science.1161948</a><br>
             <strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)<br>
-            <em>Manba mazmuni:</em> PhET simulyatsiyalari ko‘rinmas jarayonlarni vizuallashtirish, darhol qayta aloqa beruvchi interaktiv boshqaruv va talabaning mustaqil tadqiqotini rag‘batlantirish tamoyillari asosida loyihalangan. Bu aynan teskari muhandislik — kirish parametrlarini o‘zgartirib, chiqishdagi qonuniyatni kashf etish — uchun qulay muhit yaratadi.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> PhET simulyatsiyalari ko‘rinmas jarayonlarni vizuallashtirish, darhol qayta aloqa beruvchi interaktiv boshqaruv va talabaning mustaqil tadqiqotini rag‘batlantirish tamoyillari asosida loyihalangan. Bu aynan teskari muhandislik — kirish parametrlarini o‘zgartirib, chiqishdagi qonuniyatni kashf etish — uchun qulay muhit yaratadi.
           </p>
         </div>
       </div>
@@ -645,7 +652,7 @@
         <div class="prompt-card">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <span class="badge badge-purple">Tizimli prompt (System Prompt: Claude Validator)</span>
-            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-claude-validator">📋 Nusxalash</button>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-claude-validator" data-i18n="common.copyShort">📋 Nusxalash</button>
           </div>
           <textarea id="prompt-claude-validator" class="prompt-textarea" readonly style="min-height: 140px;">Siz Oliy ta’lim fizika-matematika kafedrasi ilmiy konsultantisiz (Sokratik metod bo‘yicha).
 Men [PhET yoki Vascak.cz] simulyatsiyasini teskari muhandislik qilib, quyidagi matematik modelni tikladim:
@@ -666,7 +673,7 @@ Vazifangiz:
             <strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href="https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf" target="_blank" rel="noopener noreferrer" class="citation-link">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a><br>
             <strong>Cromer, A. (1981).</strong> <em>Stable Solutions Using the Euler Approximation</em>. American Journal of Physics, 49(5), 455–459. <a href="https://doi.org/10.1119/1.12478" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1119/1.12478</a><br>
             <strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. <a href="https://doi.org/10.1007/3-540-30666-8" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1007/3-540-30666-8</a><br>
-            <em>Manba mazmuni:</em> Cromer (1981) oddiy Eyler usulidagi kichik o‘zgartirish — koordinatani yangilashda <em>yangi</em> tezlikdan foydalanish — tebranma masalalarda barqaror yechim berishini ko‘rsatgan. Hairer va hammualliflar bu usulning simplektik ekanini va energiya xatosi nima uchun chegaralangan qolishini nazariy asoslaydi. Model kartasi Claude imkoniyatlari va cheklovlarini tavsiflaydi: model xato qilishi mumkin, shu sababli uning javoblari o‘lchov birliklari va limit holatlar bilan mustaqil tekshirilishi shart.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Cromer (1981) oddiy Eyler usulidagi kichik o‘zgartirish — koordinatani yangilashda <em>yangi</em> tezlikdan foydalanish — tebranma masalalarda barqaror yechim berishini ko‘rsatgan. Hairer va hammualliflar bu usulning simplektik ekanini va energiya xatosi nima uchun chegaralangan qolishini nazariy asoslaydi. Model kartasi Claude imkoniyatlari va cheklovlarini tavsiflaydi: model xato qilishi mumkin, shu sababli uning javoblari o‘lchov birliklari va limit holatlar bilan mustaqil tekshirilishi shart.
           </p>
         </div>
       </div>
@@ -729,7 +736,7 @@ Vazifangiz:
         <div class="prompt-card">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <span class="badge badge-amber">Tizimli prompt (academic report generator: Gemini / ChatGPT)</span>
-            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-gemini-report">📋 Nusxalash</button>
+            <button class="btn btn-secondary btn-sm copy-prompt-btn" data-target="prompt-gemini-report" data-i18n="common.copyShort">📋 Nusxalash</button>
           </div>
           <textarea id="prompt-gemini-report" class="prompt-textarea" readonly style="min-height: 140px;">Siz xalqaro fizika ta’limi jurnallari taqrizchisi va akademik yozuv bo‘yicha ekspertsiz.
 Talaba [Ismi Familiyasi] tomonidan [PhET / Vascak.cz] simulyatsiyasini teskari muhandislik qilish orqali bajarilgan 2-laboratoriya ishi ma’lumotlari:
@@ -749,7 +756,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
             <strong>Gemini Team, Google. (2024).</strong> <em>Gemini 1.5: Unlocking Multimodal Understanding Across Millions of Tokens of Context</em> (arXiv:2403.05530). arXiv. <a href="https://doi.org/10.48550/arXiv.2403.05530" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.48550/arXiv.2403.05530</a><br>
             <strong>OpenAI. (2024).</strong> <em>ChatGPT System Card</em> (arXiv:2410.21276). arXiv. <a href="https://doi.org/10.48550/arXiv.2410.21276" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.48550/arXiv.2410.21276</a><br>
             <strong>Sollaci, L. B., va Pereira, M. G. (2004).</strong> <em>The Introduction, Methods, Results, and Discussion (IMRAD) Structure: A Fifty-Year Survey</em>. Journal of the Medical Library Association, 92(3), 364–367.<br>
-            <em>Manba mazmuni:</em> Sollaci va Pereira IMRAD tuzilmasining ilmiy maqolalarda standartga aylanish tarixini tahlil qilgan. Gemini 1.5 va ChatGPT hujjatlari esa hisobot tuzilmasini yaratishda ishlatiladigan modellarning imkoniyatlari va cheklovlarini tavsiflaydi. Model yaratgan matn talabaning o‘z o‘lchov natijalari bilan to‘ldiriladi va tekshiriladi.
+            <em data-i18n="common.sourceContent">Manba mazmuni:</em> Sollaci va Pereira IMRAD tuzilmasining ilmiy maqolalarda standartga aylanish tarixini tahlil qilgan. Gemini 1.5 va ChatGPT hujjatlari esa hisobot tuzilmasini yaratishda ishlatiladigan modellarning imkoniyatlari va cheklovlarini tavsiflaydi. Model yaratgan matn talabaning o‘z o‘lchov natijalari bilan to‘ldiriladi va tekshiriladi.
           </p>
         </div>
       </div>
@@ -777,7 +784,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
               <button id="sim-reset" class="btn btn-secondary btn-sm">🔄 Qayta o‘rnatish</button>
             </div>
             <div style="display: flex; gap: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); flex-wrap: wrap;">
-              <span>Vaqt: <strong id="tel-time" style="color: var(--accent-cyan);">0,00 s</strong></span>
+              <span data-i18n="common.time">Vaqt: <strong id="tel-time" style="color: var(--accent-cyan);">0,00 s</strong></span>
               <span>x: <strong id="tel-x" style="color: var(--accent-amber);">+1,200 m</strong></span>
               <span>v: <strong id="tel-v" style="color: var(--accent-emerald);">+0,000 m/s</strong></span>
               <span>Ek: <strong id="tel-ek" style="color:#1C4E9E;">0,000 J</strong></span>
@@ -866,7 +873,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">6. Baholash rubrikasi (100 ball) va ilmiy manbalar (APA 7)</h2>
-          <span class="badge badge-emerald">Akademik baholash va bibliografiya</span>
+          <span class="badge badge-emerald" data-i18n="common.academicAssessment">Akademik baholash va bibliografiya</span>
         </div>
 
         <p style="font-size: 1.02rem; line-height: 1.65; margin-bottom: 20px;">
@@ -886,13 +893,13 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
             </div>
             <div>
               <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
-                <option value="15">A’lo (15 ball)</option>
-                <option value="12">Yaxshi (12 ball)</option>
-                <option value="8">Qoniqarli (8 ball)</option>
-                <option value="0">Bajarilmadi (0 ball)</option>
+                <option value="15" data-i18n="rubric.level.excellent15">A’lo (15 ball)</option>
+                <option value="12" data-i18n="rubric.level.good12">Yaxshi (12 ball)</option>
+                <option value="8" data-i18n="rubric.level.satisfactory8">Qoniqarli (8 ball)</option>
+                <option value="0" data-i18n="rubric.level.notDone0">Bajarilmadi (0 ball)</option>
               </select>
             </div>
-            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 15b</div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);" data-i18n="rubric.max.15b">Max: 15b</div>
           </div>
 
           <div class="rubric-row">
@@ -902,13 +909,13 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
             </div>
             <div>
               <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
-                <option value="30">A’lo (30 ball)</option>
-                <option value="24">Yaxshi (24 ball)</option>
-                <option value="16">Qoniqarli (16 ball)</option>
-                <option value="0">Bajarilmadi (0 ball)</option>
+                <option value="30" data-i18n="rubric.level.excellent30">A’lo (30 ball)</option>
+                <option value="24" data-i18n="rubric.level.good24">Yaxshi (24 ball)</option>
+                <option value="16" data-i18n="rubric.level.satisfactory16">Qoniqarli (16 ball)</option>
+                <option value="0" data-i18n="rubric.level.notDone0">Bajarilmadi (0 ball)</option>
               </select>
             </div>
-            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 30b</div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);" data-i18n="rubric.max.30b">Max: 30b</div>
           </div>
 
           <div class="rubric-row">
@@ -918,13 +925,13 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
             </div>
             <div>
               <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
-                <option value="25">A’lo (25 ball)</option>
-                <option value="20">Yaxshi (20 ball)</option>
-                <option value="13">Qoniqarli (13 ball)</option>
-                <option value="0">Bajarilmadi (0 ball)</option>
+                <option value="25" data-i18n="rubric.level.excellent25">A’lo (25 ball)</option>
+                <option value="20" data-i18n="rubric.level.good20">Yaxshi (20 ball)</option>
+                <option value="13" data-i18n="rubric.level.satisfactory13">Qoniqarli (13 ball)</option>
+                <option value="0" data-i18n="rubric.level.notDone0">Bajarilmadi (0 ball)</option>
               </select>
             </div>
-            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 25b</div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);" data-i18n="rubric.max.25b">Max: 25b</div>
           </div>
 
           <div class="rubric-row">
@@ -934,13 +941,13 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
             </div>
             <div>
               <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
-                <option value="20">A’lo (20 ball)</option>
-                <option value="16">Yaxshi (16 ball)</option>
-                <option value="10">Qoniqarli (10 ball)</option>
-                <option value="0">Bajarilmadi (0 ball)</option>
+                <option value="20" data-i18n="rubric.level.excellent20">A’lo (20 ball)</option>
+                <option value="16" data-i18n="rubric.level.good16">Yaxshi (16 ball)</option>
+                <option value="10" data-i18n="rubric.level.satisfactory10">Qoniqarli (10 ball)</option>
+                <option value="0" data-i18n="rubric.level.notDone0">Bajarilmadi (0 ball)</option>
               </select>
             </div>
-            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 20b</div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);" data-i18n="rubric.max.20b">Max: 20b</div>
           </div>
 
           <div class="rubric-row">
@@ -950,19 +957,19 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
             </div>
             <div>
               <select class="rubric-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B;">
-                <option value="10">A’lo (10 ball)</option>
-                <option value="8">Yaxshi (8 ball)</option>
-                <option value="5">Qoniqarli (5 ball)</option>
-                <option value="0">Bajarilmadi (0 ball)</option>
+                <option value="10" data-i18n="rubric.level.excellent10">A’lo (10 ball)</option>
+                <option value="8" data-i18n="rubric.level.good8">Yaxshi (8 ball)</option>
+                <option value="5" data-i18n="rubric.level.satisfactory5">Qoniqarli (5 ball)</option>
+                <option value="0" data-i18n="rubric.level.notDone0">Bajarilmadi (0 ball)</option>
               </select>
             </div>
-            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);">Max: 10b</div>
+            <div style="text-align: right; font-family: var(--font-mono); color: var(--accent-cyan);" data-i18n="rubric.max.10b">Max: 10b</div>
           </div>
 
           <!-- Umumiy Ball Natijasi -->
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 10px;">
             <div>
-              <span style="font-size: 1.05rem; color: var(--text-main); font-weight: 600;">Jami To‘plangan Ball:</span>
+              <span style="font-size: 1.05rem; color: var(--text-main); font-weight: 600;" data-i18n="rubric.totalAccumulated">Jami To‘plangan Ball:</span>
               <span id="rubric-total-score" style="font-family: var(--font-mono); font-size: 1.35rem; color: var(--accent-emerald); font-weight: bold; margin-left: 10px;">100 / 100 ball</span>
             </div>
             <div>
@@ -971,7 +978,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
           </div>
         </div>
 
-        <h3 style="color: var(--accent-cyan); margin-top: 30px; margin-bottom: 14px;">📚 Foydalanilgan ilmiy-metodik adabiyotlar (APA 7 standarti):</h3>
+        <h3 style="color: var(--accent-cyan); margin-top: 30px; margin-bottom: 14px;" data-i18n="common.referencesApaFull">📚 Foydalanilgan ilmiy-metodik adabiyotlar (APA 7 standarti):</h3>
         <div class="glass-panel" style="padding: 20px; line-height: 1.8; font-size: 0.92rem; color: var(--text-secondary);">
           <ul style="margin: 0; padding-left: 20px;">
             <li>
@@ -1017,10 +1024,10 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p class="footer-copy">
+      <p class="footer-copy" data-i18n="footer.copyright">
         &copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.
       </p>
-      <p class="footer-sub">
+      <p class="footer-sub" data-i18n="footer.courseTagline">
         Fizika va astronomiya o‘qitishda zamonaviy axborot texnologiyalari va sun’iy intellekt integratsiyasi kursi.
       </p>
     </div>
@@ -1118,5 +1125,5 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
   <script src="js/physics-engine.js"></script>
   <script src="js/sim-lab2-pipeline.js"></script>
   <script src="js/ui-controller.js"></script>
-<script src="js/translate.js"></script></body>
+</body>
 </html>
