@@ -1,0 +1,1355 @@
+{
+  "_meta": {
+    "language": "en",
+    "name": "English",
+    "note": "ILIMZIYO — \"Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash\" elektron darsligi lug‘ati. Kalitlar tools/i18n_mark.py va js/i18n.js bilan mos; yangi kalit qo‘shilsa uchala faylga ham qo‘shing."
+  },
+  "brand": {
+    "full": "PHYSICS & AI",
+    "short": "PHYSICS & AI",
+    "tagline": "Interactive web simulations"
+  },
+  "nav": {
+    "home": "Home",
+    "homeTitleCase": "Home",
+    "annotation": "Abstract",
+    "annotationToc": "Abstract and contents",
+    "glossary": "Glossary",
+    "glossaryFull": "Glossary of terms",
+    "aiTools": "AI tools",
+    "aiToolsShort": "AI",
+    "author": "Author",
+    "labsRange": "Labs 1–15",
+    "astroRange": "Astro 1–3",
+    "navigation": "Navigation",
+    "courseToc": "Course contents",
+    "quickLinks": "Quick links",
+    "resources": "Resources",
+    "textbook": "About the textbook",
+    "lectures": "Lectures",
+    "labs": "Labs",
+    "independent": "Independent study",
+    "astronomy": "Astronomy",
+    "simulators": "Simulators",
+    "aiLab": "AI lab",
+    "hemis": "About HEMIS",
+    "mainNavigation": "Main navigation",
+    "openMenu": "Open menu",
+    "menu": "Menu",
+    "phetSims": "PhET simulations",
+    "lectureShort": {
+      "l1": "Lecture 1: Paradigm",
+      "l2": "Lecture 2: Modelling",
+      "l3": "Lecture 3: AI ecosystem",
+      "l4": "Lecture 4: Accuracy and stability",
+      "l5": "Lecture 5: Types of models",
+      "l6": "Lecture 6: Building models",
+      "l7": "Lecture 7: Canvas architecture",
+      "l8": "Lecture 8: Vectors and collisions",
+      "l9": "Lecture 9: Prompt engineering",
+      "l10": "Lecture 10: Visualisation",
+      "l11": "Lecture 11: Distance learning",
+      "l12": "Lecture 12: Mechanics and the AI pipeline",
+      "l13": "Lecture 13: Thermodynamics and stochastics",
+      "l14": "Lecture 14: Electrodynamics and speech synthesis",
+      "l15": "Lecture 15: Nuclear physics and capstone project"
+    },
+    "labShort": {
+      "l1": "Lab 1: AI visual project",
+      "l2": "Lab 2: Mathematical model with an LLM",
+      "l3": "Lab 3: AI ecosystem and workspace",
+      "l4": "Lab 4: WolframAlpha and computational accuracy",
+      "l5": "Lab 5: Deterministic and stochastic models",
+      "l6": "Lab 6: Force diagrams and AI imaging",
+      "l7": "Lab 7: HTML5 Canvas and delta-time",
+      "l8": "Lab 8: Physics engine via AI pair programming",
+      "l9": "Lab 9: Prompt engineering and code generation",
+      "l10": "Lab 10: Astronomical trajectories and speech synthesis",
+      "l11": "Lab 11: LMS and a digital physics course",
+      "l12": "Lab 12: Mechanical dynamics and an AI engine",
+      "l13": "Lab 13: Thermodynamics and P–V diagrams",
+      "l14": "Lab 14: Electrodynamics and AI narration",
+      "l15": "Lab 15: Nuclear physics and capstone project"
+    },
+    "astroShort": {
+      "a1": "A1. Stellar evolution",
+      "a2": "A2. Spectral analysis",
+      "a3": "A3. Telescope observation data"
+    }
+  },
+  "common": {
+    "lectureNo": {
+      "l1": "Lecture 1",
+      "l2": "Lecture 2",
+      "l3": "Lecture 3",
+      "l4": "Lecture 4",
+      "l5": "Lecture 5",
+      "l6": "Lecture 6",
+      "l7": "Lecture 7",
+      "l8": "Lecture 8",
+      "l9": "Lecture 9",
+      "l10": "Lecture 10",
+      "l11": "Lecture 11",
+      "l12": "Lecture 12",
+      "l13": "Lecture 13",
+      "l14": "Lecture 14",
+      "l15": "Lecture 15"
+    },
+    "labNo": {
+      "l1": "Lab 1",
+      "l2": "Lab 2",
+      "l3": "Lab 3",
+      "l4": "Lab 4",
+      "l5": "Lab 5",
+      "l6": "Lab 6",
+      "l7": "Lab 7",
+      "l8": "Lab 8",
+      "l9": "Lab 9",
+      "l10": "Lab 10",
+      "l11": "Lab 11",
+      "l12": "Lab 12",
+      "l13": "Lab 13",
+      "l14": "Lab 14",
+      "l15": "Lab 15"
+    },
+    "copy": "Copy",
+    "copyShort": "Copy",
+    "copyPrompt": "Copy prompt",
+    "copyFromPrompt": "Copy the prompt",
+    "checkResult": "Check result",
+    "checkCompetence": "Check the result and get a competence summary",
+    "analyzeDiagnostics": "Analyse diagnostic results",
+    "diagnosticsDone": "Diagnostics complete",
+    "cognitiveProfile": "Your cognitive profile:",
+    "startDiagnostic": "Entry cognitive diagnostic test (4 questions):",
+    "recommendedPrompt": "Recommended AI prompt (for Claude / ChatGPT):",
+    "aiStrategy": "AI strategy:",
+    "pipelineStages": "Pipeline stages:",
+    "aiPipeline": "AI pipeline",
+    "liveLabs": "Live virtual laboratories",
+    "phetHtml5": "PhET Interactive Simulations (HTML5):",
+    "reset": "Reset",
+    "time": "Time:",
+    "week": "Week",
+    "week1": "Week 1",
+    "week2": "Week 2",
+    "week3": "Week 3",
+    "week4": "Week 4",
+    "stage": "Stage",
+    "description": "Description:",
+    "sourceContent": "Source summary:",
+    "quoteContent": "Quotation summary:",
+    "conclusion": "Conclusion",
+    "objective": "Objective:",
+    "controlQuestions": "Review questions",
+    "selfStudyQuestions": "Questions for independent study",
+    "references": "References",
+    "referencesApa": "References (APA 7)",
+    "referencesApaFull": "Scientific and methodological references (APA 7 style):",
+    "aiLog": "AI usage log",
+    "assessAndBib": "Knowledge assessment and APA 7 bibliography",
+    "academicAssessment": "Academic assessment and bibliography",
+    "learningOutcomes": "1.1. Lab objective and expected learning outcomes:",
+    "aiCompetenceTest": "1.2. Entry diagnostic test of AI competences:",
+    "reverseEngineering": "Reverse engineering",
+    "uiComponent": "UI component",
+    "physicalQuantity": "Physical quantity",
+    "mathModel": "Mathematical model and formulas",
+    "codeVariable": "Code variable and step",
+    "livePipelineTest": "Try every stage of the AI pipeline live:",
+    "theoryAnalysis": "1. Theoretical analysis:",
+    "codeGeneration": "2. Code generation:",
+    "zpdVygotsky": "Vygotsky’s zone of proximal development (ZPD)",
+    "zpdLev": "L. S. Vygotsky’s “zone of proximal development” (ZPD, 1978)",
+    "bloomTaxonomy": "Bloom’s taxonomy (Anderson & Krathwohl, 2001)",
+    "stage1Cognitive": "Stage 1: Cognitive diagnostics",
+    "engineBuilder": "Engine builder",
+    "researcher": "Researcher",
+    "answerUnchanged": "D) Remains unchanged",
+    "wwwSource1": "WWW: scientific-methodological source and foundations of educational diagnostics (section 1):",
+    "wwwSource1Plan": "WWW: scientific-methodological source and pedagogical diagnostics (plan 1):",
+    "wwwSource2": "WWW: scientific-methodological sources and foundations of simulation analysis (section 2):",
+    "wwwSource6": "WWW: scientific-methodological sources and virtual laboratory research (section 6):",
+    "wwwSource7": "WWW: scientific-methodological sources and formative assessment methodology (section 7):"
+  },
+  "footer": {
+    "copyright": "2026 Information Technologies in Teaching Physics and Astronomy. All rights reserved.",
+    "courseTagline": "A course on integrating modern information technologies and artificial intelligence into physics and astronomy teaching.",
+    "portalTagline": "A portal of virtual laboratories, interactive simulations and modern AI tools for the course on information technologies in physics and astronomy education.",
+    "computationalTagline": "A course on modern information technologies and computational physics in physics and astronomy teaching.",
+    "modelingTagline": "A course on information technologies and computer modelling in physics and astronomy teaching.",
+    "higherEdPortal": "Information Technologies in Teaching Physics and Astronomy — a higher-education portal",
+    "registry": "Registered in the State Register of Software Products of the Republic of Uzbekistan on 18 November 2026, No. DGU 70647",
+    "lab": "Information Technologies in Teaching Physics and Astronomy — Digital Learning Laboratory · 2026"
+  },
+  "freeAlt": {
+    "title": "Free alternatives to paid tools",
+    "intro": "Some tools mentioned on this page are paid, rate-limited or restricted in Uzbekistan. All assignments can be completed in full with the following free tools:",
+    "fullList": "Full list:",
+    "toolsPage": "AI tools page",
+    "alt1": "— instead use: Microsoft Designer (Bing Image Creator), image generation in the free tiers of Gemini or ChatGPT, Stable Diffusion; for precise scientific drawings — Inkscape, diagrams.net, GeoGebra.",
+    "alt2": "— instead use: screen-record your own Canvas simulation with OBS Studio, animate in Manim (Python) or Blender, edit in Shotcut/Kdenlive.",
+    "alt3": "— instead use: Manim, Blender, or record the simulation with OBS Studio — this yields a physically accurate video.",
+    "alt4": "— instead use: Manim, Blender, OBS Studio.",
+    "alt5": "— instead use: the browser Web Speech API, the Uzbek voices of Microsoft Edge “Read aloud”, or record your own voice with Audacity.",
+    "alt6": "— instead use: Web Speech API, Microsoft Edge Uzbek voices; Whisper for transcription.",
+    "alt7": "— instead use: Web Speech API (no account or payment card required).",
+    "alt8": "— instead use: Whisper — open source, supports Uzbek, runs free of charge in Google Colab."
+  },
+  "rubric": {
+    "criterion": "Criterion",
+    "criterionTitle": "Assessment criterion",
+    "criteria": "Assessment criteria",
+    "criteria100": "Assessment criteria (100 points)",
+    "points": "Points",
+    "requirement": "Requirement",
+    "maxPoints": "Maximum points",
+    "earnedPoints": "Points earned",
+    "total": "Total result:",
+    "totalAccumulated": "Total points accumulated:",
+    "overall": "Overall result:",
+    "calculator100": "100-point assessment criteria calculator:",
+    "gradeScale": "Grade: 86–100 points — excellent (5), 71–85 — good (4), 55–70 — satisfactory (3), below 55 — unsatisfactory (2).",
+    "level": {
+      "excellent10": "Excellent (10 points)",
+      "excellent15": "Excellent (15 points)",
+      "excellent20": "Excellent (20 points)",
+      "excellent25": "Excellent (25 points)",
+      "excellent30": "Excellent (30 points)",
+      "notDone0": "Not completed (0 points)",
+      "satisfactory5": "Satisfactory (5 points)",
+      "satisfactory6": "Satisfactory (6 points)",
+      "satisfactory8": "Satisfactory (8 points)",
+      "satisfactory10": "Satisfactory (10 points)",
+      "satisfactory12": "Satisfactory (12 points)",
+      "satisfactory13": "Satisfactory (13 points)",
+      "satisfactory14": "Satisfactory (14 points)",
+      "satisfactory15": "Satisfactory (15 points)",
+      "satisfactory16": "Satisfactory (16 points)",
+      "unsatisfactory3": "Unsatisfactory (3 points)",
+      "unsatisfactory5": "Unsatisfactory (5 points)",
+      "unsatisfactory8": "Unsatisfactory (8 points)",
+      "good8": "Good (8 points)",
+      "good12": "Good (12 points)",
+      "good16": "Good (16 points)",
+      "good20": "Good (20 points)",
+      "good24": "Good (24 points)"
+    },
+    "max": {
+      "10": "Max: 10",
+      "10b": "Max: 10 pts",
+      "15b": "Max: 15 pts",
+      "20": "Max: 20",
+      "20b": "Max: 20 pts",
+      "25": "Max: 25",
+      "25b": "Max: 25 pts",
+      "30b": "Max: 30 pts"
+    },
+    "pointsN": {
+      "p15": "15 points",
+      "p20": "20 points",
+      "p25": "25 points",
+      "p30": "30 points",
+      "p40": "40 points"
+    }
+  },
+  "cluster": {
+    "aBeginner": "Cluster A (beginner)",
+    "aFoundational": "Cluster A: foundational",
+    "bStandard": "Cluster B (standard)",
+    "bMiddle": "Cluster B (intermediate / standard)",
+    "bCore": "Cluster B: practitioner (core)",
+    "cAdvanced": "Cluster C (advanced)",
+    "cResearch": "Cluster C (advanced / research)",
+    "cResearcher": "Cluster C: researcher (advanced)"
+  },
+  "home": {
+    "hero": {
+      "badge": "OPEN EDUCATIONAL RESOURCE · KOKAND STATE UNIVERSITY",
+      "title": "E-textbook for the course “Application of Information Technologies in Teaching Physics and Astronomy”",
+      "lead": "An open e-textbook of 15 lectures, 15 interactive laboratory works and 15 independent-study assignments. Every topic combines theory, hands-on practice with AI tools and an interactive web simulation.",
+      "ctaProgram": "View the syllabus",
+      "ctaAuthor": "About the authors",
+      "trustLicense": "CC BY-SA 4.0 — open licence",
+      "trustHemis": "Official assessment via HEMIS",
+      "trustLanguages": "In Uzbek · Russian · English",
+      "syllabusTitle": "SYLLABUS AT A GLANCE",
+      "syllabusL1": "The paradigm of building physics simulations with AI",
+      "syllabusL7": "Architecture of physics animation: HTML5 Canvas fundamentals",
+      "syllabusL12": "Modelling and animating the laws of mechanics",
+      "syllabusL15": "Nuclear physics and capstone project defence",
+      "syllabusTotal": "45 topics in total",
+      "syllabusMeta": "Semester 7 · 4 ECTS"
+    },
+    "stats": {
+      "lectures": "Lectures",
+      "labs": "Labs",
+      "independent": "Independent tasks",
+      "languages": "Languages (UZ/RU/EN)"
+    },
+    "textbook": {
+      "title": "Abstract, contents and appendices",
+      "lead": "The textbook comprises 15 lectures, 15 laboratory works, 3 supplementary astronomy topics and appendices.",
+      "card1": {
+        "badge": "Introduction",
+        "title": "Abstract, preface and contents",
+        "text": "Bibliographic details, abstracts in Uzbek, Russian and English, and guidance on use. Can be printed or saved as PDF."
+      },
+      "card2": {
+        "badge": "Appendix 1",
+        "text": "An Uzbek–English glossary of the course’s key terms: a short definition and the topic in which each term is studied, with search."
+      },
+      "card3": {
+        "badge": "Appendix 2",
+        "title": "AI tools and their free alternatives",
+        "text": "The AI tools used in the course, their access model and a free substitute for every paid tool."
+      }
+    },
+    "plan": {
+      "eyebrow": "Curriculum",
+      "title": "An AI-native pedagogical paradigm",
+      "lead": "Unite theory, imagery, animation and coding in a single project workflow.",
+      "card1": {
+        "badge": "PLAN #1",
+        "title": "Diagnostics",
+        "text": "Identifying prior knowledge and individual needs with MagicSchool AI."
+      },
+      "card2": {
+        "badge": "PLAN #2",
+        "title": "Lesson script",
+        "text": "Hook, Core, Misconception and Task stages with Gemini or GPT."
+      },
+      "card3": {
+        "badge": "PLAN #3",
+        "title": "Simulation",
+        "text": "Building a physics engine with Canvas, WebGL and JavaScript."
+      },
+      "card4": {
+        "badge": "PLAN #4",
+        "title": "Visualisation",
+        "text": "Scientific plots, optical diagrams and astrophysical renders."
+      },
+      "card5": {
+        "badge": "PLAN #5",
+        "title": "Video",
+        "text": "Explaining dynamic processes through animation and video."
+      },
+      "card6": {
+        "badge": "PLAN #6",
+        "title": "Capstone",
+        "text": "Defence with an open-source web portfolio and a scientific project passport."
+      }
+    },
+    "lectures": {
+      "eyebrow": "Lecture notes",
+      "title": "15 lectures",
+      "lead": "Every lecture includes theory, worked examples and AI integration.",
+      "card1": {
+        "title": "The paradigm of creating physics simulation animations with AI",
+        "text": "An approach to working with artificial intelligence in the digital era."
+      },
+      "card2": {
+        "title": "Methodology of modelling a physical process",
+        "text": "Stages of modelling and the foundations of scientific methodology."
+      },
+      "card3": {
+        "title": "The ecosystem of modern artificial intelligence tools",
+        "text": "The role and potential of AI tools in the learning process."
+      },
+      "card4": {
+        "title": "Requirements for a computer model and computational accuracy",
+        "text": "Numerical methods and criteria for assessing model accuracy."
+      },
+      "card5": {
+        "title": "Modelling physical processes as a method of cognition",
+        "text": "Types of models and their place in the theory of knowledge."
+      },
+      "card6": {
+        "title": "Building physical models with digital technologies",
+        "text": "Free-body diagrams, force vectors and algorithmic flowcharts."
+      },
+      "card7": {
+        "text": "The frame loop, delta-time integration and Retina high-DPI scaling."
+      },
+      "card8": {
+        "title": "Programming physics with AI: vectors, forces, collisions",
+        "text": "Vector arithmetic, Newton’s laws and the impulse of 2D elastic collisions."
+      },
+      "card9": {
+        "title": "Code generation with artificial intelligence and prompt engineering",
+        "text": "Zero-shot, few-shot and chain-of-thought strategies and professional prompt architecture."
+      },
+      "card10": {
+        "title": "Visualising physical and astronomical data",
+        "text": "Keplerian orbital mechanics, coordinate transformations and audio-visual synchronisation."
+      },
+      "card11": {
+        "title": "Designing a physics course on distance-learning platforms",
+        "text": "LMS architecture, Otter.ai transcription, adaptive pathways in MagicSchool AI and portfolio audit in Google Antigravity."
+      },
+      "card12": {
+        "title": "Modelling and animating the laws of mechanics",
+        "text": "Newtonian dynamics, the impulse of 2D elastic collisions and the PhET→Claude→Antigravity→Runway AI pipeline."
+      },
+      "card13": {
+        "title": "Modelling and animating the laws of thermodynamics",
+        "text": "The Maxwell–Boltzmann speed distribution, Carnot/Stirling cycles and P–V/T–S phase diagrams."
+      },
+      "card14": {
+        "title": "Modelling and simulating the laws of electrodynamics",
+        "text": "Coulomb fields, Faraday induction, RLC circuits and audio-narration synthesis with Muxlisa AI/ElevenLabs."
+      },
+      "card15": {
+        "title": "Laws of nuclear physics and the methodology of the independent capstone project",
+        "text": "Radioactive decay, the U-235 fission chain reaction, D–T fusion and a capstone project built on a 7-stage AI pipeline."
+      }
+    },
+    "independent": {
+      "eyebrow": "Syllabus · Independent study",
+      "title": "15 independent-study assignments — 60 hours",
+      "lead": "Cards in the same format as lectures and labs: open any topic to see model guidelines, a worked example and study materials. Official submission and grading take place in HEMIS.",
+      "card1": {
+        "badge": "Independent task 1 · 4 h",
+        "title": "AI and the paradigm of physics education",
+        "text": "Write a scientific-analytical article on the impact of generative AI tools on physics education and the changes ahead."
+      },
+      "card2": {
+        "badge": "Independent task 2 · 4 h",
+        "text": "Develop a step-by-step methodology and flowchart for modelling a chosen complex physical process with an LLM."
+      },
+      "card3": {
+        "badge": "Independent task 3 · 4 h",
+        "title": "Comparative analysis of the AI ecosystem",
+        "text": "A comparative analysis of three AI tools’ ability to write code and build physics simulations."
+      },
+      "card4": {
+        "badge": "Independent task 4 · 4 h",
+        "title": "Numerical integration and computational errors",
+        "text": "Study the errors of numerical integration methods such as Euler and Runge–Kutta in physics simulations and prepare a presentation on computational stability."
+      },
+      "card5": {
+        "badge": "Independent task 5 · 4 h",
+        "title": "A portfolio of deterministic and stochastic models",
+        "text": "Find real-life examples of deterministic and stochastic models and write a report on the algorithms that represent them on a computer."
+      },
+      "card6": {
+        "badge": "Independent task 6 · 4 h",
+        "title": "Digitising a free-body diagram",
+        "text": "Construct the force-vector system of a complex mechanical system and render it schematically with AI image generators."
+      },
+      "card7": {
+        "badge": "Independent task 7 · 4 h",
+        "title": "Free-fall animation with HTML5 Canvas",
+        "text": "Analyse the code of a free-fall animation in JavaScript and HTML5 Canvas and explain the frame-update logic."
+      },
+      "card8": {
+        "badge": "Independent task 8 · 4 h",
+        "title": "A computational module for elastic collisions",
+        "text": "Create, with AI assistance, a small Python or JavaScript module that computes elastic collisions, and write out the physical equations."
+      },
+      "card9": {
+        "badge": "Independent task 9 · 4 h",
+        "title": "A prompt-engineering guide for physics",
+        "text": "Compile a library of purpose-built prompts that let physics teachers obtain code and lesson scripts from AI."
+      },
+      "card10": {
+        "badge": "Independent task 10 · 4 h",
+        "title": "Visualisation of astronomical data",
+        "text": "Build an interactive chart from an open astronomical database and draw conclusions."
+      },
+      "card11": {
+        "badge": "Independent task 11 · 4 h",
+        "title": "A four-week distance physics course",
+        "text": "Design the structure, materials and assessment criteria of a four-week online physics module for Google Classroom or Moodle LMS."
+      },
+      "card12": {
+        "badge": "Independent task 12 · 4 h",
+        "title": "A set of tasks based on a mechanics simulation",
+        "text": "Analyse ready-made simulation code that demonstrates the laws of kinematics or dynamics and create a set of practical tasks for school pupils."
+      },
+      "card13": {
+        "badge": "Independent task 13 · 4 h",
+        "title": "A methodological guide to thermodynamic modelling",
+        "text": "Prepare a fragment of a teaching guide on algorithms for the numerical modelling of Brownian motion or the ideal-gas state."
+      },
+      "card14": {
+        "badge": "Independent task 14 · 4 h",
+        "title": "A lesson plan in electrodynamics",
+        "text": "Prepare a comprehensive lesson plan explaining Faraday’s law or magnetic field lines using the PhET or Vascak visual laboratories."
+      },
+      "card15": {
+        "badge": "Independent task 15 · 4 h",
+        "title": "Concept of a nuclear physics model",
+        "text": "Develop and defend, as a script or business plan, a computer-model project for teaching a nuclear phenomenon such as radioactive decay interactively."
+      },
+      "ctaAll": "View all 15 guidelines"
+    },
+    "labs": {
+      "eyebrow": "Laboratory sessions",
+      "title": "15 laboratory works",
+      "lead": "Every laboratory work includes theory, worked examples and AI integration.",
+      "card1": {
+        "title": "Creating an initial visual design of physics simulation animations with artificial intelligence tools",
+        "text": "A 6-stage MagicSchool → Gemini/ChatGPT → Midjourney → Runway/Sora → Claude AI pipeline and a capstone rubric."
+      },
+      "card2": {
+        "title": "Building the mathematical model, formulas and algorithm of a chosen physical process in logical order with an LLM",
+        "text": "Reverse engineering of PhET/Vascak.cz → formula checking in Claude → an IMRaD report in Gemini/ChatGPT, an Euler–Cromer test bench and a 100-point rubric."
+      },
+      "card3": {
+        "title": "Registering in the modern AI ecosystem and setting up an integrated virtual workspace for a physics lesson",
+        "text": "Practical mini-tasks on 7 AI tools, a Canva AI / Midjourney pipeline infographic, a live ecosystem tracker and a 100-point rubric."
+      },
+      "card4": {
+        "title": "Testing the computational accuracy of computer models in WolframAlpha and AI (Code Interpreter) and plotting error graphs",
+        "text": "Euler, Euler–Cromer and RK4 methods on a pendulum, the integration step and error convergence, a live test bench and a 100-point rubric."
+      },
+      "card5": {
+        "title": "Comparing and visually analysing deterministic and stochastic models through computer simulations",
+        "text": "PhET “Gravity and Orbits” and “Gas Properties”, an 8-criterion comparison table, a parallel orbit/gas bench and a 100-point rubric."
+      },
+      "card6": {
+        "title": "Constructing a free-body diagram (a system of force vectors) and drawing it with AI image generators (Midjourney/DALL-E)",
+        "text": "An inclined-plane FBD, Coulomb–Amontons friction, Claude Vision analysis, Euler–Cromer pseudocode, an interactive FBD bench and a 100-point rubric."
+      },
+      "card7": {
+        "title": "Coding an animation of simple physical oscillations with HTML5 Canvas and JavaScript, accounting for frame rate (delta-time)",
+        "text": "requestAnimationFrame, the Fiedler accumulator, an Euler–Cromer oscillator, Google Antigravity monitoring, an FPS/delta-time bench and a 100-point rubric."
+      },
+      "card8": {
+        "title": "Writing a small physics engine based on elastic collisions and vector arithmetic through pair programming with AI",
+        "text": "Vector2D, the impulse scalar J and overlap resolution, Driver/Navigator debugging with Claude, a Monte Carlo check in Code Interpreter, a collision arena and a 100-point rubric."
+      },
+      "card9": {
+        "title": "Writing targeted prompts for code generation, comparing them and building a personal prompt library for physics",
+        "text": "Zero-shot → constrained → Role + CoT → XML master prompt, a 4-level pendulum sandbox, a phase portrait, a personal prompt library and a 100-point rubric."
+      },
+      "card10": {
+        "title": "Visualising interactive plots of body trajectories from physical and astronomical databases",
+        "text": "NASA JPL orbital elements, Kepler’s laws and equation, TTS (Muxlisa, ElevenLabs, Google Cloud) and SSML, an audio–animation synchronisation bench and a rubric."
+      },
+      "card11": {
+        "title": "Creating an AI-assisted digital physics course and publishing its content on LMS platforms (Google Classroom, Moodle)",
+        "text": "Otter.ai transcription and WER, adaptive assessment (the Rasch model), MagicSchool AI, an LMS integration simulator and a 100-point rubric."
+      },
+      "card12": {
+        "title": "Modelling mechanical dynamics (Newton’s laws) in Algodoo or with AI-written code and rendering kinematic videos",
+        "text": "Newton’s laws and momentum conservation, Vascak.cz/PhET analysis, a physics engine built with Claude and Antigravity, a 3D elastic-collision bench and a presentation rubric."
+      },
+      "card13": {
+        "title": "Writing a simulation of thermodynamic processes (P–V and T–S diagrams, ideal-gas state) and analysing the visual change of state",
+        "text": "The ideal-gas equation of state, P–V and T–S diagrams, a particle-based stochastic gas simulation, a live P–V bench and a rubric."
+      },
+      "card14": {
+        "title": "Creating interactive code that models electromagnetic fields and electric circuits and narrating the process with AI",
+        "text": "Electromagnetic induction and electric circuits, an interactive model that responds to magnet motion, AI narration (TTS) and a rubric."
+      },
+      "card15": {
+        "title": "Building a complete simulator of nuclear phenomena (radioactive decay) and the final defence of integrating all AI tools",
+        "text": "The law of radioactive decay, half-life, a stochastic nuclei simulator and the decay curve, and the final defence of integrating all AI tools."
+      }
+    },
+    "astronomy": {
+      "eyebrow": "Supplementary topics",
+      "title": "Astronomy: lectures and laboratory work",
+      "lead": "Every topic includes theory, an interactive model, a laboratory work with data from open scientific archives and a quiz.",
+      "card1": {
+        "badge": "A1",
+        "title": "Stellar evolution and the Hertzsprung–Russell diagram",
+        "text": "Spectral classes, the mass–luminosity relation, stellar life cycles, an interactive H–R diagram and Gaia DR3 data."
+      },
+      "card2": {
+        "badge": "A2",
+        "title": "Spectral analysis",
+        "text": "Planck’s, Wien’s and the Stefan–Boltzmann laws, the Balmer series, the Doppler shift and Hubble’s law; a CD spectroscope and SDSS spectra."
+      },
+      "card3": {
+        "badge": "A3",
+        "title": "Telescope observation data",
+        "text": "Photometry, light curves, period finding, Cepheid distances and transits; open Kepler and TESS data."
+      }
+    },
+    "simulators": {
+      "eyebrow": "Interactive laboratory",
+      "title": "Turn physics from formula into motion",
+      "lead": "Change the controls. Every model uses fixed-step computation and responsive Canvas rendering.",
+      "sim_tab": "Pendulum",
+      "sim_tab2": "Lorentz helix",
+      "sim_tab3": "Doppler",
+      "sim_tab4": "Young’s interference",
+      "subtitle": "Simple pendulum",
+      "control": "Length",
+      "control2": "Initial angle",
+      "control3": "Damping γ",
+      "control4": "Gravity",
+      "option": "Earth",
+      "option2": "Moon",
+      "option3": "Mars",
+      "option4": "Jupiter",
+      "option5": "Space (weightless)",
+      "card1": {
+        "span": "Animation"
+      },
+      "card2": {
+        "span": "Phase space"
+      },
+      "subtitle2": "Lorentz force",
+      "control5": "Field B",
+      "control6": "Charge q",
+      "span": "Helix in a uniform magnetic field",
+      "subtitle3": "Doppler effect",
+      "control9": "Source speed",
+      "control10": "Emission period",
+      "span2": "Wavefronts",
+      "subtitle4": "Young’s experiment",
+      "control11": "Wavelength λ",
+      "control12": "Slit separation d",
+      "control13": "Screen distance D",
+      "span3": "Interference intensity"
+    },
+    "aiLab": {
+      "eyebrow": "AI integration",
+      "title": "Prompt engineering laboratory",
+      "card1": {
+        "title": "MagicSchool prompt generator",
+        "label": "Topic",
+        "label2": "Level",
+        "option": "Beginner",
+        "option2": "Intermediate",
+        "option3": "Advanced"
+      },
+      "card2": {
+        "title": "Gemini / GPT lesson script",
+        "text": "Hook → Core Concept → Misconception → Simulation Task",
+        "title2": "Scientific prompts",
+        "text2": "Young’s double-slit interference, dark laboratory, scientific visualization, 16:9."
+      },
+      "subtitle": "Current list of AI tools",
+      "lead": "Tool capabilities and pricing change quickly. The tools used in the course, their access model and official links are kept up to date on a separate page; the textbook’s QR codes lead there too.",
+      "ctaList": "Open the list"
+    },
+    "hemis": {
+      "eyebrow": "Official procedures",
+      "title": "Coursework submission and digital assessment of knowledge take place on the HEMIS platform",
+      "lead": "ILIMZIYO is an open e-textbook and a collection of interactive learning materials. Official submissions, grades and the results of continuous, midterm and final assessment are recorded only on the university’s HEMIS platform, as prescribed. This site creates no accounts and awards no grades."
+    },
+    "authors": {
+      "card1": {
+        "title": "I. M. Eshboltayev",
+        "p": "PhD in Physical and Mathematical Sciences",
+        "text": "Professor, Department of Physics and Astronomy, Kokand State University"
+      },
+      "card2": {
+        "title": "D. J. Meliqo‘ziyev",
+        "p": "PhD in Pedagogical Sciences",
+        "text": "Department of Physics and Astronomy, Kokand State University"
+      }
+    },
+    "attr": {
+      "pendulumCanvas": "Simple pendulum animation",
+      "phaseCanvas": "Pendulum phase-space plot",
+      "lorentzCanvas": "Helical motion of a charged particle",
+      "dopplerCanvas": "Doppler wavefronts",
+      "youngCanvas": "Young’s interference pattern",
+      "topicValue": "Harmonic oscillations and resonance",
+      "authorPhoto1": "I. M. Eshboltayev — author photo",
+      "authorPhoto2": "D. J. Meliqo‘ziyev — author photo",
+      "certificate": "DGU 70647 — official state certificate of the Ministry of Justice of the Republic of Uzbekistan for the programme “Application of Information Technologies in Teaching Physics and Astronomy”"
+    }
+  },
+  "tabs": {
+    "1_diagnostika_va_individual_reja": "1. Diagnostics and individual plan",
+    "6_baholash_rubrikasi_va_manbalar": "6. Assessment rubric and sources",
+    "7_test_va_manbalar": "7. Quiz and sources",
+    "1_ai_diagnostika_va_reja": "1. AI diagnostics and plan",
+    "1_ai_diagnostika": "1. AI diagnostics",
+    "1_nazariya": "1. Theory",
+    "4_nazorat_va_adabiyotlar": "4. Assessment and references",
+    "6_interaktiv_laboratoriya": "6. Interactive laboratory",
+    "6_taqdimot_rubrikasi": "6. Presentation rubric",
+    "4_jarayon_monitoringi_antigravity": "4. Process monitoring (Antigravity)"
+  },
+  "meta": {
+    "annotatsiya": {
+      "title": "Abstract, preface and contents | Physics & Artificial Intelligence",
+      "description": "Abstract (in Uzbek, Russian and English), preface and full table of contents of the e-textbook “Application of Information Technologies in Teaching Physics and Astronomy”."
+    },
+    "astro1": {
+      "title": "A1. Stellar evolution and the Hertzsprung–Russell diagram | Physics & Artificial Intelligence",
+      "description": "Supplementary astronomy lecture: spectral classification of stars, the Hertzsprung–Russell diagram, stellar evolution and a laboratory work with Gaia data."
+    },
+    "astro2": {
+      "title": "A2. Spectral analysis: black-body radiation, spectral lines and the Doppler shift | Physics & Artificial Intelligence",
+      "description": "Supplementary astronomy lecture: Planck’s, Wien’s and the Stefan–Boltzmann laws, spectral lines and the Doppler shift; an interactive spectrum model and a laboratory work with SDSS data."
+    },
+    "astro3": {
+      "title": "A3. Telescope observation data: photometry, light curves and distance determination | Physics & Artificial Intelligence",
+      "description": "Supplementary astronomy lecture: telescope parameters, photometry, light curves, period finding and Cepheid distances; a laboratory work with open Kepler data."
+    },
+    "glossariy": {
+      "title": "Glossary of terms (Uzbek–English) | Physics & Artificial Intelligence",
+      "description": "Uzbek–English glossary of the course “Information Technologies in Teaching Physics and Astronomy”: modelling, programming, artificial intelligence, pedagogy, physics and astronomy."
+    },
+    "index": {
+      "title": "Physics & Artificial Intelligence — an interactive laboratory",
+      "description": "A laboratory of AI and interactive physics simulations for teaching physics and astronomy"
+    },
+    "lab1": {
+      "title": "Lab 1: Creating an initial visual design of physics simulation animations with artificial intelligence tools",
+      "description": "Lab 1: creating an initial visual design of a physics simulation animation with artificial intelligence tools."
+    },
+    "lab10": {
+      "title": "Lab 10: Visualising interactive plots of body trajectories from physical and astronomical databases",
+      "description": "Lab 10: interactive plots of body trajectories from physical and astronomical data."
+    },
+    "lab11": {
+      "title": "Lab 11: Creating an AI-assisted digital physics course and publishing its content on LMS platforms (Google Classroom, Moodle)",
+      "description": "Lab 11: building an AI-assisted digital physics course and publishing it on LMS platforms."
+    },
+    "lab12": {
+      "title": "Lab 12: Modelling mechanical dynamics (Newton’s laws) in Algodoo or with AI-written code and rendering kinematic videos",
+      "description": "Lab 12: modelling mechanical dynamics (Newton’s laws) with AI-written code."
+    },
+    "lab13": {
+      "title": "Lab 13: Writing a simulation of thermodynamic processes (P–V and T–S diagrams, ideal-gas state) and analysing the visual change of state",
+      "description": "Lab 13: writing and analysing the code of a thermodynamic process simulation (P–V and T–S diagrams)."
+    },
+    "lab14": {
+      "title": "Lab 14: Creating interactive code that models electromagnetic fields and electric circuits and narrating the process with AI",
+      "description": "Lab 14: creating interactive code that models electromagnetic fields and electric circuits."
+    },
+    "lab15": {
+      "title": "Lab 15: Building a complete simulator of nuclear phenomena (radioactive decay) and the final defence of integrating all AI tools",
+      "description": "Lab 15: building a simulator that explains nuclear phenomena (radioactive decay)."
+    },
+    "lab2": {
+      "title": "Lab 2: Building the mathematical model, formulas and algorithm of a chosen physical process in logical order with an LLM",
+      "description": "Lab 2: building the mathematical model, formulas and algorithm of a chosen physical process with an LLM."
+    },
+    "lab3": {
+      "title": "Lab 3: Registering in the modern AI ecosystem and setting up an integrated virtual workspace for a physics lesson",
+      "description": "Lab 3: registering in the modern AI ecosystem and setting up a virtual workspace for a physics lesson."
+    },
+    "lab4": {
+      "title": "Lab 4: Testing the computational accuracy (integration step) of computer models in WolframAlpha and AI (Code Interpreter) and plotting error graphs",
+      "description": "Lab 4: testing the computational accuracy of computer models in WolframAlpha and AI."
+    },
+    "lab5": {
+      "title": "Lab 5: Comparing deterministic and stochastic models through computer simulations and visually analysing their characteristics",
+      "description": "Lab 5: comparing deterministic and stochastic models through computer simulations."
+    },
+    "lab6": {
+      "title": "Lab 6: Constructing a free-body diagram (a system of force vectors) and drawing it with AI image generators",
+      "description": "Lab 6: constructing a free-body diagram (a system of force vectors) with AI."
+    },
+    "lab7": {
+      "title": "Lab 7: Coding an animation of simple physical oscillations with HTML5 Canvas and JavaScript, accounting for frame rate (delta-time)",
+      "description": "Lab 7: a delta-time-aware animation of physical oscillations with HTML5 Canvas and JavaScript."
+    },
+    "lab8": {
+      "title": "Lab 8: Writing a physics engine through pair programming with artificial intelligence",
+      "description": "Lab 8: writing a physics engine through pair programming with artificial intelligence."
+    },
+    "lab9": {
+      "title": "Lab 9: Writing targeted prompts for code generation, comparing them and building a personal prompt library for physics",
+      "description": "Lab 9: writing targeted prompts for code generation and building a personal prompt library."
+    },
+    "lecture1": {
+      "title": "Lecture 1: The paradigm of creating physics simulation animations with artificial intelligence in the digital era",
+      "description": "Lecture 1: the paradigm of creating physics simulation animations with artificial intelligence in the digital era."
+    },
+    "lecture10": {
+      "title": "Lecture 10: Visualising physical and astronomical data: building plots and interactive models",
+      "description": "Lecture 10: visualising physical and astronomical data — methods for building plots and interactive models."
+    },
+    "lecture11": {
+      "title": "Lecture 11: Designing a physics course on distance-learning platforms",
+      "description": "Lecture 11: designing a physics course on distance-learning platforms and LMS architecture."
+    },
+    "lecture12": {
+      "title": "Lecture 12: Modelling and animating the laws of mechanics",
+      "description": "Lecture 12: modelling and animating the laws of mechanics, Newtonian dynamics and the AI pipeline."
+    },
+    "lecture13": {
+      "title": "Lecture 13: Modelling and animating the laws of thermodynamics",
+      "description": "Lecture 13: modelling and animating the laws of thermodynamics, the Maxwell–Boltzmann distribution."
+    },
+    "lecture14": {
+      "title": "Lecture 14: Modelling and simulating the laws of electrodynamics",
+      "description": "Lecture 14: modelling and simulating the laws of electrodynamics — Coulomb’s and Faraday’s laws."
+    },
+    "lecture15": {
+      "title": "Lecture 15: Laws of nuclear physics and capstone project methodology",
+      "description": "Lecture 15: laws of nuclear physics, capstone project methodology and a radioactive decay model."
+    },
+    "lecture2": {
+      "title": "Lecture 2: Methodology of modelling a physical process",
+      "description": "Lecture 2: methodology of modelling a physical process — stages from observation to visual code and debugging."
+    },
+    "lecture3": {
+      "title": "Lecture 3: The ecosystem of modern artificial intelligence tools",
+      "description": "Lecture 3: the ecosystem of modern artificial intelligence tools and their role in physics education."
+    },
+    "lecture4": {
+      "title": "Lecture 4: Requirements for a modern computer model and computational accuracy",
+      "description": "Lecture 4: requirements for a modern computer model and criteria for assessing computational accuracy."
+    },
+    "lecture5": {
+      "title": "Lecture 5: Modelling physical processes as a method of cognition. Types of models",
+      "description": "Lecture 5: modelling physical processes as a method of cognition. Types of models and their classification."
+    },
+    "lecture6": {
+      "title": "Lecture 6: Building physical models with digital technologies",
+      "description": "Lecture 6: building physical models with digital technologies, free-body diagrams and flowcharts."
+    },
+    "lecture7": {
+      "title": "Lecture 7: Architecture of physics animation: HTML5 Canvas fundamentals",
+      "description": "Lecture 7: architecture of physics animation — HTML5 Canvas fundamentals, the frame loop and delta-time integration."
+    },
+    "lecture8": {
+      "title": "Lecture 8: Programming physics with AI: vectors, forces, collisions",
+      "description": "Lecture 8: programming physics with AI — modelling vectors, forces and 2D elastic collisions."
+    },
+    "lecture9": {
+      "title": "Lecture 9: Code generation with artificial intelligence (AI) and prompt engineering",
+      "description": "Lecture 9: code generation with artificial intelligence (AI) and professional prompt-engineering strategies."
+    },
+    "mustaqil": {
+      "title": "Independent study | Physics & Artificial Intelligence",
+      "description": "15 independent-study assignments and model guidelines for the course “Application of Information Technologies in Teaching Physics and Astronomy”"
+    },
+    "si-vositalari": {
+      "title": "AI tools: current list | Physics & Artificial Intelligence",
+      "description": "An up-to-date list of AI tools used in teaching physics and astronomy: their role in the course, access model and official links."
+    },
+    "sims_lorens_kuchi": {
+      "title": "Lorentz force"
+    },
+    "sims_quyosh_sintezi": {
+      "title": "Solar fusion: the proton–proton chain"
+    },
+    "sims_radioaktiv_qatorlar": {
+      "title": "Radioactive series"
+    }
+  },
+  "pages": {
+    "annotatsiya": {
+      "h1": "Abstract, preface",
+      "h1Accent": "and contents",
+      "footer2": "About the textbook: abstract, preface and contents.",
+      "button_1": "Print or save as PDF",
+      "a_2": "Go to contents",
+      "h2_3": "Bibliographic information",
+      "strong_5": "Author:",
+      "strong_6": "Web address:",
+      "h2_10": "Preface",
+      "strong_11": "AI is not an oracle but a partner whose output must always be verified",
+      "h2_13": "Recommendations for using the textbook",
+      "li_14": "Start each topic with the lecture, then complete the laboratory work with the same number.",
+      "li_15": "Take the diagnostic test at the start of the lecture: it shows the level of difficulty (cluster) that suits you.",
+      "li_16": "When working with AI, log every prompt and response; always check AI output against the laws of physics.",
+      "li_17": "Laboratory works are graded on a 100-point scale: 86–100 — excellent (5), 71–85 — good (4), 55–70 — satisfactory (3).",
+      "h2_18": "Contents",
+      "h3_19": "Chapter I. Theoretical and methodological foundations",
+      "a_20": "The paradigm of creating physics simulation animations with artificial intelligence in the digital era",
+      "span_21": "Lecture 1.",
+      "span_23": "Lab 1.",
+      "span_25": "Lecture 2.",
+      "span_27": "Lab 2.",
+      "span_29": "Lecture 3.",
+      "a_30": "Registering in the modern AI ecosystem and setting up an integrated virtual workspace for a physics lesson",
+      "span_31": "Lab 3.",
+      "a_32": "Requirements for a modern computer model and computational accuracy",
+      "span_33": "Lecture 4.",
+      "span_35": "Lab 4.",
+      "a_36": "Modelling physical processes as a method of cognition. Types of models",
+      "span_37": "Lecture 5.",
+      "span_39": "Lab 5.",
+      "h3_40": "Chapter II. Digital tools and programming",
+      "span_42": "Lecture 6.",
+      "a_43": "Constructing a free-body diagram (a system of force vectors) and drawing it with AI image generators",
+      "span_44": "Lab 6.",
+      "span_46": "Lecture 7.",
+      "span_48": "Lab 7.",
+      "span_50": "Lecture 8.",
+      "a_51": "Writing a physics engine through pair programming with artificial intelligence",
+      "span_52": "Lab 8.",
+      "span_54": "Lecture 9.",
+      "span_56": "Lab 9.",
+      "span_58": "Lecture 10.",
+      "span_60": "Lab 10.",
+      "span_62": "Lecture 11.",
+      "span_64": "Lab 11.",
+      "h3_65": "Chapter III. Modelling the branches of physics",
+      "span_67": "Lecture 12.",
+      "span_69": "Lab 12.",
+      "span_71": "Lecture 13.",
+      "span_73": "Lab 13.",
+      "span_75": "Lecture 14.",
+      "span_77": "Lab 14.",
+      "a_78": "Laws of nuclear physics and capstone project methodology",
+      "span_79": "Lecture 15.",
+      "span_81": "Lab 15.",
+      "h3_82": "Chapter IV. Supplementary topics: astronomy",
+      "a_83": "Stellar evolution and the Hertzsprung–Russell diagram (lecture and laboratory work)",
+      "span_84": "A1.",
+      "a_85": "Spectral analysis: black-body radiation, spectral lines and the Doppler shift (lecture and laboratory work)",
+      "span_86": "A2.",
+      "a_87": "Telescope observation data: photometry, light curves and distance determination (lecture and laboratory work)",
+      "span_88": "A3.",
+      "h3_89": "Appendices",
+      "a_90": "Glossary of terms (Uzbek–English)",
+      "span_91": "Appendix 1.",
+      "a_92": "Current list of AI tools and their free alternatives",
+      "span_93": "Appendix 2.",
+      "a_94": "Interactive simulators (pendulum, Lorentz force, Doppler effect, Young’s experiment)",
+      "span_95": "Appendix 3.",
+      "a_96": "Capstone project assessment calculator",
+      "span_97": "Appendix 4."
+    },
+    "astro1": {
+      "h1": "Stellar evolution and",
+      "h1Accent": "the Hertzsprung–Russell diagram",
+      "tab2": "2. Interactive H–R diagram",
+      "tab3": "3. Laboratory work: Gaia data",
+      "footer2": "Supplementary lecture A1: Stellar evolution • H–R diagram, Gaia DR3, SIMBAD."
+    },
+    "astro2": {
+      "h1": "Spectral analysis:",
+      "h1Accent": "black-body radiation, spectral lines and the Doppler shift",
+      "tab2": "2. Interactive spectrum model",
+      "tab3": "3. Laboratory work: spectroscope and SDSS",
+      "footer2": "Supplementary lecture A2: Spectral analysis • Planck’s law, the Balmer series, the Doppler shift, SDSS."
+    },
+    "astro3": {
+      "h1": "Telescope observation data:",
+      "h1Accent": "photometry, light curves and distance determination",
+      "tab2": "2. Interactive observation model",
+      "tab3": "3. Laboratory work: Kepler data",
+      "footer2": "Supplementary lecture A3: Telescope observation data • photometry, PDM, Cepheids, Kepler and TESS."
+    },
+    "glossariy": {
+      "h1": "Glossary of terms:",
+      "h1Accent": "Uzbek–English",
+      "footer2": "Textbook appendix: glossary of terms.",
+      "label_1": "Search for a term (in Uzbek or English)",
+      "th_2": "Uzbek term",
+      "th_3": "English",
+      "th_4": "Definition",
+      "th_5": "Where studied",
+      "th_6": "Physical modelling and numerical methods",
+      "th_7": "Computer graphics and programming",
+      "th_8": "Artificial intelligence and prompt engineering",
+      "th_9": "Educational technology and pedagogy",
+      "th_10": "Branches of physics"
+    },
+    "lab1": {
+      "tab1": "1. AI diagnostics and goals",
+      "tab2": "2. MagicSchool and roadmap",
+      "tab3": "3. Lesson script (Gemini / ChatGPT)",
+      "tab4": "4. Images and graphics (Midjourney)",
+      "tab5": "5. Animation (Runway / Sora)",
+      "tab6": "6. Interactive code (Claude)",
+      "tab7": "7. Lab bench and quiz"
+    },
+    "lab10": {
+      "tab2": "2. Astronomical trajectories and sound theory",
+      "tab3": "3. TTS: Muxlisa AI, Aisha and ElevenLabs",
+      "tab4": "4. Gemini script and synchronisation",
+      "tab5": "5. Interactive bench and audio player"
+    },
+    "lab11": {
+      "tab2": "2. Documenting the learning process",
+      "tab3": "3. Otter.ai and transcription theory",
+      "tab4": "4. Monitoring with MagicSchool AI",
+      "tab5": "5. Interactive LMS and Otter.ai simulator",
+      "tab6": "6. Portfolio and conclusions"
+    },
+    "lab12": {
+      "tab2": "2. Full pipeline architecture",
+      "tab3": "3. Vascak.cz and PhET analytics",
+      "tab4": "4. Claude and Antigravity",
+      "tab5": "5. Interactive collision engine"
+    },
+    "lab13": {
+      "tab2": "2. Thermodynamics pipeline",
+      "tab3": "3. PhET and ideal-gas analytics",
+      "tab4": "4. Stochastic code and Antigravity",
+      "tab5": "5. P–V diagram and gas simulator"
+    },
+    "lab14": {
+      "tab2": "2. Electrodynamics and the audio pipeline",
+      "tab3": "3. PhET: analysing Faraday’s law",
+      "tab4": "4. Claude code and TTS (Muxlisa AI)",
+      "tab5": "5. Induction and TTS simulator"
+    },
+    "lab15": {
+      "tab2": "2. Capstone project and defence",
+      "tab3": "3. Full AI pipeline diagram",
+      "tab4": "4. Originality and assessment (AI)",
+      "tab5": "5. Radioactive decay simulator",
+      "tab6": "6. Final presentation rubric"
+    },
+    "lab2": {
+      "h1": "Building the mathematical model, formulas and algorithm of a chosen physical process in logical order with an LLM (ChatGPT or Claude)",
+      "tab2": "2. Simulation base: Vascak / PhET",
+      "tab3": "3. Formula validation: Claude",
+      "tab4": "4. Report structure: Gemini / ChatGPT",
+      "tab5": "5. Interactive bench and validator"
+    },
+    "lab3": {
+      "h1": "Registering in the modern AI ecosystem (PhET, Vascak and generative AI tools) and setting up an integrated virtual workspace for a physics lesson",
+      "tab2": "2. Integrating all 7 tools",
+      "tab3": "3. Mini-tasks for the 7 tools",
+      "tab4": "4. Pipeline diagram (Canva / Midjourney)",
+      "tab5": "5. Interactive bench and ecosystem tracker"
+    },
+    "lab4": {
+      "h1": "Testing the computational accuracy (integration step) of computer models in WolframAlpha and AI (Code Interpreter) and plotting error graphs",
+      "tab1": "0. Diagnostics and individual plan",
+      "tab2": "1. AI integration (Claude and WolframAlpha)",
+      "tab3": "2. Numerical integration algorithms",
+      "tab4": "3. Analytical computation and Code Interpreter",
+      "tab5": "4. Applied investigation and interactive bench",
+      "tab6": "5. Assessment rubric and sources"
+    },
+    "lab5": {
+      "h1": "Comparing deterministic and stochastic models through computer simulations and visually analysing their characteristics",
+      "tab2": "2. Theory of model types",
+      "tab3": "3. Virtual base: PhET simulations",
+      "tab4": "4. Analysis and comparative report (AI)",
+      "tab5": "5. Interactive dual bench"
+    },
+    "lab6": {
+      "tab2": "2. FBD and equations theory",
+      "tab3": "3. Claude Vision analysis",
+      "tab4": "4. Pseudocode and simulation algorithm",
+      "tab5": "5. Interactive FBD bench"
+    },
+    "lab7": {
+      "h1": "Coding an animation of simple physical oscillations with HTML5 Canvas and JavaScript, accounting for frame rate (delta-time)",
+      "tab2": "2. Canvas frame-loop theory",
+      "tab3": "3. Google Antigravity monitoring",
+      "tab4": "4. Claude Artifacts template",
+      "tab5": "5. Interactive frame and oscillation bench"
+    },
+    "lab8": {
+      "tab2": "2. Physics engine theory",
+      "tab3": "3. Pair debugging with Claude",
+      "tab4": "4. Verification in Code Interpreter",
+      "tab5": "5. Interactive engine bench"
+    },
+    "lab9": {
+      "tab2": "2. Prompt engineering theory",
+      "tab3": "3. Claude trials and code",
+      "tab4": "4. Antigravity and ChatGPT audit",
+      "tab5": "5. Interactive sandbox and library"
+    },
+    "lecture1": {
+      "h1": "Introduction. Using artificial intelligence in the digital era:",
+      "h1Accent": "the paradigm of creating physics simulation animations",
+      "badge2": "Higher education and master’s level",
+      "badge3": "AI-native educational paradigm",
+      "tab1": "1. MagicSchool AI and diagnostics",
+      "tab2": "2. Gemini / ChatGPT script",
+      "tab3": "3. Midjourney and Runway",
+      "tab4": "4. Live Claude simulators",
+      "tab5": "5. Assessment and capstone rubric",
+      "tab6": "1. Damped pendulum (RK4)",
+      "tab7": "2. Lorentz force (3D, Boris method)",
+      "tab8": "3. Doppler effect and the Mach cone",
+      "tab9": "4. Young’s interference"
+    },
+    "lecture10": {
+      "h1": "Visualising physical and astronomical data: building plots and interactive models",
+      "tab2": "2. Code and Antigravity monitoring",
+      "tab3": "3. The Canvas loop and delta-time",
+      "tab4": "4. Physics engine code",
+      "tab5": "5. Trajectory and audio sync",
+      "footer2": "Lecture 10: Visualising physical and astronomical data • HTML5 Canvas, Kepler orbits, audio-visual synchronisation and a comparison of TTS tools."
+    },
+    "lecture11": {
+      "tab2": "2. LMS platform architecture",
+      "tab3": "3. Individual pathway (MagicSchool)",
+      "tab4": "4. Notes and assignments (Otter.ai/Claude)",
+      "tab5": "5. Portfolio organisation (Antigravity)",
+      "tab6": "6. Interactive LMS laboratory",
+      "footer2": "Lecture 11: Designing a physics course on distance-learning platforms • LMS, Otter.ai, MagicSchool AI and Google Antigravity."
+    },
+    "lecture12": {
+      "tab2": "2. Analysis of mechanics simulations",
+      "tab3": "3. Mechanical dynamics and code",
+      "tab5": "5. Kinematic video illustration",
+      "tab6": "6. Interactive mechanics sandbox",
+      "footer2": "Lecture 12: Modelling and animating the laws of mechanics • PhET, Vascak.cz, Claude, Google Antigravity and Runway."
+    },
+    "lecture13": {
+      "tab2": "2. Analysis of thermodynamics simulations",
+      "tab3": "3. Stochastic simulation code",
+      "tab4": "4. Pressure–volume (P–V) and temperature–entropy (T–S) diagrams",
+      "tab5": "5. Process monitoring (Antigravity)",
+      "tab6": "6. Interactive thermodynamics sandbox",
+      "footer2": "Lecture 13: Modelling and animating the laws of thermodynamics • PhET, Vascak.cz, Claude, ChatGPT Code Interpreter and Google Antigravity."
+    },
+    "lecture14": {
+      "tab2": "2. Analysis of electromagnetic models",
+      "tab3": "3. Field and circuit animation code",
+      "tab4": "4. Synthesising the audio-narration voice",
+      "tab5": "5. Project monitoring (Antigravity)",
+      "tab6": "6. Interactive electrodynamics sandbox",
+      "footer2": "Lecture 14: Modelling and simulating the laws of electrodynamics • PhET, Vascak.cz, Claude, Muxlisa AI / ElevenLabs and Google Antigravity."
+    },
+    "lecture15": {
+      "tab2": "2. Reverse-engineering analysis",
+      "tab3": "3. Complete simulator code",
+      "tab5": "5. Assessment rubrics",
+      "tab6": "6. Capstone and Undetectable AI",
+      "tab7": "7. Interactive sandbox and sources",
+      "footer2": "Lecture 15: Laws of nuclear physics and the methodology of the independent capstone project • a 7-stage AI pipeline (MagicSchool, PhET, Claude, Antigravity, Muxlisa, Otter.ai, Undetectable AI)."
+    },
+    "lecture2": {
+      "h1": "Methodology of modelling a physical process:",
+      "h1Accent": "from observation to visual code and debugging",
+      "badge2": "Computational physics and methodology",
+      "badge3": "Reverse engineering",
+      "tab1": "1. AI diagnostics (MagicSchool)",
+      "tab2": "2. Reverse engineering (PhET and Vascak)",
+      "tab3": "3. Mathematical model (differential equations)",
+      "tab4": "4. Live simulators (drag, integrators, momentum)",
+      "tab5": "5. 4 debugging sandboxes",
+      "tab6": "6. System prompt archive",
+      "tab7": "1. Aerodynamic drag (RK4)",
+      "tab8": "2. Integrator error (Euler and RK4)",
+      "tab9": "3. Collisions (impulse and restitution)"
+    },
+    "lecture3": {
+      "h1": "In the digital era:",
+      "h1Accent": "the ecosystem of modern artificial intelligence tools",
+      "badge2": "Artificial intelligence ecosystem",
+      "badge3": "AI pipeline and monitoring",
+      "tab1": "1. Google Antigravity (project log)",
+      "tab2": "2. Gemini / ChatGPT pipeline",
+      "tab3": "3. Muxlisa AI (speech synthesis)",
+      "tab4": "4. Otter.ai (transcription)",
+      "tab5": "5. Undetectable AI (originality)",
+      "tab6": "6. Diagnostic test"
+    },
+    "lecture4": {
+      "h1": "Requirements for a modern",
+      "h1Accent": "computer model and computational accuracy",
+      "badge2": "Computational accuracy",
+      "badge3": "Numerical stability and symplectic systems",
+      "tab1": "1. Diagnostics and plan",
+      "tab2": "2. Numerical integration",
+      "tab3": "3. Comparison with WolframAlpha",
+      "tab4": "4. Log-log error",
+      "tab5": "5. Interactive sandbox",
+      "tab6": "6. Stability theory",
+      "tab7": "Diagnostic test"
+    },
+    "lecture5": {
+      "h1": "Modelling physical processes as a method of cognition.",
+      "h1Accent": "Types of models and AI integration",
+      "badge2": "Taxonomy of models",
+      "badge3": "Deterministic and stochastic dynamics",
+      "tab1": "1. Epistemology of modelling",
+      "tab2": "2. Reverse engineering of PhET and Vascak",
+      "tab3": "3. Classification of models (Gemini/ChatGPT)",
+      "tab4": "4. Deterministic and stochastic code (Claude)",
+      "tab5": "5. Dual-engine test ground",
+      "tab6": "6. Comparison matrix and diagnostics"
+    },
+    "lecture6": {
+      "tab2": "2. Claude Vision (FBD)",
+      "tab3": "3. Vector equations",
+      "tab4": "4. Algorithm and pseudocode",
+      "tab5": "5. Socratic dialogue",
+      "tab6": "6. Interactive FBD and PhET",
+      "tab7": "7. Diagnostic test"
+    },
+    "lecture7": {
+      "tab2": "2. Google Antigravity",
+      "tab3": "3. Frame loop and delta-time",
+      "tab4": "4. Optimisation and memory",
+      "tab5": "5. Visual testing (Artifacts)",
+      "tab6": "6. Interactive engine"
+    },
+    "lecture8": {
+      "tab2": "2. Pair programming",
+      "tab3": "3. Vector arithmetic",
+      "tab4": "4. Engine code",
+      "tab5": "5. Trajectory plots"
+    },
+    "lecture9": {
+      "h1": "Code generation with artificial intelligence (AI) and prompt engineering",
+      "tab2": "2. Prompt trials",
+      "tab3": "3. AI monitoring",
+      "tab4": "4. Prompt structure",
+      "tab5": "5. Prompt library",
+      "footer2": "Lecture 9: Code generation with artificial intelligence (AI) and prompt engineering"
+    },
+    "mustaqil": {
+      "h1": "15 syllabus-based",
+      "h1Accent": "independent-study assignments and guidelines",
+      "div_1": "assignments",
+      "div_2": "hours each",
+      "div_3": "hours in total",
+      "strong_5": "ILIMZIYO is solely an open teaching and methodological resource.",
+      "span_6": "Syllabus · section 6",
+      "h2_7": "15 independent-study assignments",
+      "label_8": "Search by topic:",
+      "small_10": "Syllabus independent-study assignment · 4 hours",
+      "b_11": "Syllabus assignment:",
+      "h3_12": "Step-by-step guidance for students",
+      "h3_13": "Worked example",
+      "h3_14": "Deliverable",
+      "h3_15": "Self-check",
+      "span_16": "Materials:",
+      "a_17": "Lecture 1",
+      "a_18": "Lab 1",
+      "a_19": "Save the guidelines",
+      "a_28": "Lecture 2",
+      "a_29": "Lab 2",
+      "a_39": "Lecture 3",
+      "a_40": "Lab 3",
+      "a_50": "Lecture 4",
+      "a_51": "Lab 4",
+      "a_61": "Lecture 5",
+      "a_62": "Lab 5",
+      "a_72": "Lecture 6",
+      "a_73": "Lab 6",
+      "a_83": "Lecture 7",
+      "a_84": "Lab 7",
+      "a_94": "Lecture 8",
+      "a_95": "Lab 8",
+      "a_105": "Lecture 9",
+      "a_106": "Lab 9",
+      "a_116": "Lecture 10",
+      "a_117": "Lab 10",
+      "a_128": "Lecture 11",
+      "a_129": "Lab 11",
+      "a_139": "Lecture 12",
+      "a_140": "Lab 12",
+      "a_150": "Lecture 13",
+      "a_151": "Lab 13",
+      "a_161": "Lecture 14",
+      "a_162": "Lab 14",
+      "a_172": "Lecture 15",
+      "a_173": "Lab 15",
+      "h2_175": "How do students submit their work?"
+    },
+    "si-vositalari": {
+      "h1": "AI tools:",
+      "h1Accent": "current list",
+      "badge1": "Textbook appendix",
+      "badge2": "Updated regularly"
+    },
+    "sims_lorens_kuchi": {
+      "h1": "Lorentz force: a charged particle in a magnetic field",
+      "h2_1": "Parameters (arbitrary units)",
+      "label_3": "Mass m",
+      "label_4": "Initial velocity v₀",
+      "label_5": "Magnetic induction B (out of the screen)",
+      "label_6": "Electric field E (downward)",
+      "h2_7": "Theory and measurement",
+      "span_8": "r measured",
+      "span_9": "T measured",
+      "span_10": "drift E/B",
+      "h2_11": "Formulas",
+      "p_12": "This simulation runs ad-free, right on the site."
+    },
+    "sims_quyosh_sintezi": {
+      "h1": "Thermonuclear fusion in the Sun’s core: the proton–proton (pp-I) chain",
+      "h2_1": "Telemetry",
+      "span_2": "Protons ¹H",
+      "span_3": "Helium-4 produced",
+      "span_4": "Energy released, MeV",
+      "span_5": "Neutrinos",
+      "h2_6": "Stages of the pp-I chain",
+      "h2_7": "Legend",
+      "span_8": "¹H proton",
+      "span_9": "²H deuterium",
+      "h2_13": "Reaction log"
+    },
+    "sims_radioaktiv_qatorlar": {
+      "h1": "Radioactive series: the decay chain on the N–Z chart",
+      "h2_1": "Current nucleus",
+      "h2_2": "Conservation balance",
+      "span_3": "α decay",
+      "span_4": "β⁻ decay",
+      "h2_6": "Chain"
+    },
+    "si_vositalari": {
+      "strong_3": "Last updated:",
+      "strong_4": "Free alternative",
+      "th_5": "Tool",
+      "th_6": "Role in the course",
+      "th_7": "Access model",
+      "th_8": "In the textbook",
+      "th_9": "Official site",
+      "th_11": "Large language models (LLMs)",
+      "th_12": "Agentic coding environments",
+      "span_13": "Free in itself",
+      "th_15": "Computational tools",
+      "th_18": "Simulations and databases",
+      "th_25": "Image and video generators",
+      "th_26": "Speech synthesis (TTS)",
+      "th_28": "Transcription",
+      "th_30": "Learning platforms",
+      "th_34": "Originality checking and publishing",
+      "strong_36": "Chapter",
+      "strong_37": "Lab",
+      "h3_38": "Tools not included in the list",
+      "h3_39": "How the list is updated",
+      "h3_40": "Change log",
+      "strong_41": "30 October 2026.",
+      "strong_42": "26 October 2026."
+    }
+  },
+  "switcher": {
+    "groupLabel": "Site language",
+    "heading": "Site language"
+  },
+  "mtNotice": {
+    "text": "Headings, menus and scientific terms are translated by hand; the rest of the lecture text is machine-translated by Google Translate. Formulas and code are kept in their original form.",
+    "showOriginal": "Original (Uzbek)",
+    "dismiss": "Got it"
+  },
+  "app": {
+    "pause": "Pause",
+    "play": "Play",
+    "reset": "Reset",
+    "closeMenu": "Close menu",
+    "framesUnit": "frames",
+    "dopplerSubsonic": "Subsonic · c = 1",
+    "dopplerTransonic": "Transonic",
+    "dopplerSupersonic": "Supersonic · Mach cone",
+    "generatePrompt": "Generate prompt",
+    "promptPlaceholder": "Your prompt will appear here...",
+    "defaultTopic": "Harmonic oscillations",
+    "promptTemplate": "You are a physics teacher.\nTopic: {topic}\nLevel: {level}\n\nWrite 10 diagnostic questions. For each question give the correct answer, a short explanation and a typical mistake. Finally, based on the results, recommend 3 individual learning pathways.",
+    "copyScenario": "Copy the script",
+    "scenarioText": "Hook → Core Concept → Misconception → Simulation Task\n\nExplain the physical phenomenon, write the formula in SI units and set a verifiable task for an HTML Canvas simulation.",
+    "copyIdle": "Copy",
+    "copyDone": "Copied ✓",
+    "copyDenied": "The browser did not grant clipboard permission."
+  },
+  "ui": {
+    "promptCopied": "Prompt copied!",
+    "menu": "Menu"
+  },
+  "independent": {
+    "searchLabel": "Search by topic:",
+    "searchPlaceholder": "For example: astronomy, Canvas, electromagnetic...",
+    "count": {
+      "one": "{count} topic",
+      "other": "{count} topics"
+    },
+    "empty": "No topics match this search."
+  },
+  "glossaryUi": {
+    "searchPlaceholder": "For example: momentum, prompt, redshift",
+    "total": "The glossary contains {total} terms.",
+    "found": "Found: {shown} terms (of {total})."
+  }
+}

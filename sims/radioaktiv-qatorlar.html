@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/i18n-boot.js"></script>
   <title>Radioaktiv Qatorlar</title>
   <style>
     :root {
@@ -42,10 +43,13 @@
       aside { border-left: 0; border-top: 1px solid var(--border); }
     }
   </style>
+<meta name="i18n-page" content="sims_radioaktiv_qatorlar">
+<link rel="stylesheet" href="../css/i18n.css">
+<script src="../js/i18n.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>📜 Radioaktiv qatorlar: N–Z diagrammasida yemirilish zanjiri</h1>
+    <h1 data-i18n="pages.sims_radioaktiv_qatorlar.h1">📜 Radioaktiv qatorlar: N–Z diagrammasida yemirilish zanjiri</h1>
     <div class="controls">
       <select id="series">
         <option value="u238">Uran qatori (U-238 → Pb-206)</option>
@@ -60,21 +64,21 @@
   <main>
     <div id="stage"><canvas id="c"></canvas></div>
     <aside>
-      <h2>Joriy yadro</h2>
+      <h2 data-i18n="pages.sims_radioaktiv_qatorlar.h2_1">Joriy yadro</h2>
       <div class="cur">
         <div class="name" id="curName">²³⁸U</div>
         <div id="curInfo"></div>
       </div>
 
-      <h2>Saqlanish balansi</h2>
+      <h2 data-i18n="pages.sims_radioaktiv_qatorlar.h2_2">Saqlanish balansi</h2>
       <div class="stats">
-        <div class="stat"><b id="nA" class="a">0</b><span>α-yemirilish</span></div>
-        <div class="stat"><b id="nB" class="b">0</b><span>β⁻-yemirilish</span></div>
+        <div class="stat"><b id="nA" class="a">0</b><span data-i18n="pages.sims_radioaktiv_qatorlar.span_3">α-yemirilish</span></div>
+        <div class="stat"><b id="nB" class="b">0</b><span data-i18n="pages.sims_radioaktiv_qatorlar.span_4">β⁻-yemirilish</span></div>
         <div class="stat"><b id="dA">0</b><span>ΔA</span></div>
       </div>
       <p class="note" id="balance"></p>
 
-      <h2>Zanjir</h2>
+      <h2 data-i18n="pages.sims_radioaktiv_qatorlar.h2_6">Zanjir</h2>
       <table><tbody id="chain"></tbody></table>
 
       <p class="note">α-yemirilish: A → A−4, Z → Z−2 (diagrammada chapga-pastga).

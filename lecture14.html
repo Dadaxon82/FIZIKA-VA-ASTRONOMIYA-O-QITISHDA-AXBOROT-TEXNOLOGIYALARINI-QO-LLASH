@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/i18n-boot.js"></script>
   <title>14-ma’ruza: Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish</title>
   <meta name="description" content="14-ma'ruza: elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish — Kulon va Faradey qonunlari.">
   <link rel="stylesheet" href="css/main.css">
@@ -12,7 +13,6 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
           onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
-<link rel="stylesheet" href="css/translate.css">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -30,6 +30,13 @@
 <meta name="twitter:title" content="14-ma’ruza: Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish">
 <meta name="twitter:description" content="14-ma'ruza: elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish — Kulon va Faradey qonunlari.">
 <meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta name="i18n-page" content="lecture14">
+<link rel="stylesheet" href="css/i18n.css">
+<script src="js/i18n.js" defer></script>
+<link rel="alternate" hreflang="uz" href="https://ilimziyo.uz/lecture14.html">
+<link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/lecture14.html?lang=ru">
+<link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture14.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture14.html">
 </head>
 <body>
 
@@ -37,50 +44,50 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+        <span class="nav-logo-text" data-i18n="brand.full">FIZIKA va SUN’IY INTELLEKT</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
-        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
-        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
-        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
-        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
-        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
-        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
-        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link active">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
-        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
-        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
-        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link" data-i18n="nav.lectureShort.l1">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link" data-i18n="nav.lectureShort.l2">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link" data-i18n="nav.lectureShort.l3">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link" data-i18n="nav.lectureShort.l4">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link" data-i18n="nav.lectureShort.l5">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link" data-i18n="nav.lectureShort.l6">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link" data-i18n="nav.lectureShort.l7">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link" data-i18n="nav.lectureShort.l8">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link" data-i18n="nav.lectureShort.l9">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link" data-i18n="nav.lectureShort.l10">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link" data-i18n="nav.lectureShort.l11">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link" data-i18n="nav.lectureShort.l12">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link" data-i18n="nav.lectureShort.l13">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link active" data-i18n="nav.lectureShort.l14">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link" data-i18n="nav.lectureShort.l15">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -91,51 +98,51 @@
   <div id="drawer-overlay" class="drawer-overlay"></div>
   <aside id="mobile-drawer" class="mobile-drawer">
     <div class="drawer-header">
-      <span class="drawer-title">Kurs mundarijasi</span>
+      <span class="drawer-title" data-i18n="nav.courseToc">Kurs mundarijasi</span>
       <button id="drawer-close" class="drawer-close">&times;</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
-      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
-      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
-      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
-      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
-      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
-      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
-      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
-      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
-      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link active">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="index.html" class="drawer-link" data-i18n="nav.home">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link" data-i18n="nav.lectureShort.l1">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link" data-i18n="nav.lectureShort.l2">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link" data-i18n="nav.lectureShort.l3">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link" data-i18n="nav.lectureShort.l4">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link" data-i18n="nav.lectureShort.l5">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link" data-i18n="nav.lectureShort.l6">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link" data-i18n="nav.lectureShort.l7">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link" data-i18n="nav.lectureShort.l8">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link" data-i18n="nav.lectureShort.l9">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link" data-i18n="nav.lectureShort.l10">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link" data-i18n="nav.lectureShort.l11">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link" data-i18n="nav.lectureShort.l12">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link" data-i18n="nav.lectureShort.l13">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link active" data-i18n="nav.lectureShort.l14">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link" data-i18n="nav.lectureShort.l15">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="lab1.html" class="drawer-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
-      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li><a href="astro1.html" class="drawer-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
-      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
-      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+      <li><a href="glossariy.html" class="drawer-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link" data-i18n="nav.author">👤 Muallif</a></li>
     </ul>
   </aside>
 
@@ -145,11 +152,11 @@
     <!-- Hero Header -->
     <div class="hero-panel" style="margin-bottom: 30px;">
       <span class="badge badge-cyan">14-ma’ruza: Elektrodinamika, maydonlar va audio-narratsiya sintezi</span>
-      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card14.title">
         Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
-        Kulon qonuni, elektrostatik maydon kuch chiziqlari, Om va Kirxgof qoidalari, Faradey elektromagnit induksiya hodisasi hamda RLC zanjirlarini 5 bosqichli to‘liq <strong>AI-Pipeline konveyeri</strong> (PhET/Vascak.cz dekonstruksiyasi &rarr; Claude dvigateli &rarr; Muxlisa AI / ElevenLabs audio-narratsiyasi &rarr; Google Antigravity monitoringi) orqali yaxlit modellashtirish va ovozli sintezlash.
+        Kulon qonuni, elektrostatik maydon kuch chiziqlari, Om va Kirxgof qoidalari, Faradey elektromagnit induksiya hodisasi hamda RLC zanjirlarini 5 bosqichli to‘liq <strong data-i18n="common.aiPipeline">AI-Pipeline konveyeri</strong> (PhET/Vascak.cz dekonstruksiyasi &rarr; Claude dvigateli &rarr; Muxlisa AI / ElevenLabs audio-narratsiyasi &rarr; Google Antigravity monitoringi) orqali yaxlit modellashtirish va ovozli sintezlash.
       </p>
     </div>
 
@@ -185,12 +192,12 @@
     </div>
     <!-- Bepul muqobillar -->
     <div class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;">💡 Pullik vositalarning bepul muqobillari</h3>
-      <p style="margin-bottom: 8px; font-size: 0.95rem;">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
+      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+      <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
-        <li><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
+        <li data-i18n="freeAlt.alt5"><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
       </ul>
-      <p style="margin-top: 8px; font-size: 0.85rem;">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link">SI vositalari sahifasi</a>.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
     </div>
 
 
@@ -200,13 +207,13 @@
         ◀
       </button>
       <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')">1. AI diagnostika va reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')">2. Elektromagnit modellar tahlili</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')">3. Maydon va zanjir animatsiyasi kodi</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')">4. Audio-narratsiya ovozini sintez qilish</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')">5. Loyiha monitoringi (Antigravity)</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')">6. Interaktiv elektrodinamika sandbox</button>
-        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')">7. Test va manbalar</button>
+        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
+        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture14.tab2">2. Elektromagnit modellar tahlili</button>
+        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture14.tab3">3. Maydon va zanjir animatsiyasi kodi</button>
+        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lecture14.tab4">4. Audio-narratsiya ovozini sintez qilish</button>
+        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture14.tab5">5. Loyiha monitoringi (Antigravity)</button>
+        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="pages.lecture14.tab6">6. Interaktiv elektrodinamika sandbox</button>
+        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
       </div>
 
       <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
@@ -230,39 +237,39 @@
         </div>
 
         <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
-          Elektrodinamika va elektromagnit maydon qonuniyatlarini o‘rganishda talabalar ko‘zga ko‘rinmas maydon vektorlari ($\vec{E}, \vec{B}$), fazaviy siljishlar ($\varphi$), differensial oqimlar ($\mathrm{d}\Phi/\mathrm{d}t$) va energiya oqimlarini tasavvur qilishda jiddiy abstrakt to‘siqlarga duch keladilar. <strong>MagicSchool AI</strong> diagnostikasi orqali <em>Vygotskiy Yaqin Rivojlanish Zonasi (ZPD)</em> asosida 3 ta ta’limiy klaster bo‘yicha individual trayektoriya shakllantiriladi:
+          Elektrodinamika va elektromagnit maydon qonuniyatlarini o‘rganishda talabalar ko‘zga ko‘rinmas maydon vektorlari ($\vec{E}, \vec{B}$), fazaviy siljishlar ($\varphi$), differensial oqimlar ($\mathrm{d}\Phi/\mathrm{d}t$) va energiya oqimlarini tasavvur qilishda jiddiy abstrakt to‘siqlarga duch keladilar. <strong>MagicSchool AI</strong> diagnostikasi orqali <em data-i18n="common.zpdVygotsky">Vygotskiy Yaqin Rivojlanish Zonasi (ZPD)</em> asosida 3 ta ta’limiy klaster bo‘yicha individual trayektoriya shakllantiriladi:
         </p>
 
         <h3 style="color: var(--accent-amber); margin-top: 25px; margin-bottom: 14px;">3 Kognitiv klaster bo‘yicha individual elektrodinamika trayektoriyasi:</h3>
         <div class="grid-3" style="gap: 16px; margin-bottom: 25px;">
           <div style="background: rgba(244, 63, 94, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-rose);">
-            <h4 style="color: var(--accent-rose); margin-bottom: 8px;">Klaster A: boshlang‘ich (Foundational)</h4>
+            <h4 style="color: var(--accent-rose); margin-bottom: 8px;" data-i18n="cluster.aFoundational">Klaster A: boshlang‘ich (Foundational)</h4>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              <strong>Tavsif:</strong> Kulon qonuni ($F = k q_1 q_2 / r^2$), nuqtaviy zaryad maydoni va zanjir qismi uchun Om qonunini ($I = U/R$) o‘zlashtiruvchi daraja.<br>
-              <strong>AI strategiyasi:</strong> PhET Charges and Fields orqali maydon kuch chiziqlari vektorlarini ko‘rish va to‘g‘ridan-to‘g‘ri datchiklar bilan o‘lchash.
+              <strong data-i18n="common.description">Tavsif:</strong> Kulon qonuni ($F = k q_1 q_2 / r^2$), nuqtaviy zaryad maydoni va zanjir qismi uchun Om qonunini ($I = U/R$) o‘zlashtiruvchi daraja.<br>
+              <strong data-i18n="common.aiStrategy">AI strategiyasi:</strong> PhET Charges and Fields orqali maydon kuch chiziqlari vektorlarini ko‘rish va to‘g‘ridan-to‘g‘ri datchiklar bilan o‘lchash.
             </p>
           </div>
           <div style="background: rgba(251, 191, 36, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-amber);">
-            <h4 style="color: var(--accent-amber); margin-bottom: 8px;">Klaster B: amaliyotchi (Core)</h4>
+            <h4 style="color: var(--accent-amber); margin-bottom: 8px;" data-i18n="cluster.bCore">Klaster B: amaliyotchi (Core)</h4>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              <strong>Tavsif:</strong> Faradey elektromagnit induksiya qonuni ($\mathcal{E} = -N \frac{\mathrm{d}\Phi}{\mathrm{d}t}$), Lens qoidasi va RLC zanjirlarida tebranishlarni hisoblovchi daraja.<br>
-              <strong>AI strategiyasi:</strong> Claude orqali RLC differensial tenglamasini integrallash, Muxlisa AI orqali jarayonni ilmiy audio-tushuntirish bilan boyitish.
+              <strong data-i18n="common.description">Tavsif:</strong> Faradey elektromagnit induksiya qonuni ($\mathcal{E} = -N \frac{\mathrm{d}\Phi}{\mathrm{d}t}$), Lens qoidasi va RLC zanjirlarida tebranishlarni hisoblovchi daraja.<br>
+              <strong data-i18n="common.aiStrategy">AI strategiyasi:</strong> Claude orqali RLC differensial tenglamasini integrallash, Muxlisa AI orqali jarayonni ilmiy audio-tushuntirish bilan boyitish.
             </p>
           </div>
           <div style="background: rgba(52, 211, 153, 0.05); padding: 18px; border-radius: var(--radius-md); border-top: 3px solid var(--accent-emerald);">
-            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">Klaster C: tadqiqotchi (Advanced)</h4>
+            <h4 style="color: var(--accent-emerald); margin-bottom: 8px;" data-i18n="cluster.cResearcher">Klaster C: tadqiqotchi (Advanced)</h4>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              <strong>Tavsif:</strong> Maksvell tenglamalari tizimi, elektromagnit to‘lqinlar tarqalishi, Poynting vektori ($\vec{S} = \frac{1}{\mu_0}\vec{E}\times\vec{B}$) va faza fazosi.<br>
-              <strong>AI strategiyasi:</strong> ChatGPT Code Interpreter faza osillogrammasi va Google Antigravity orqali energiya oqimi balansi auditi.
+              <strong data-i18n="common.description">Tavsif:</strong> Maksvell tenglamalari tizimi, elektromagnit to‘lqinlar tarqalishi, Poynting vektori ($\vec{S} = \frac{1}{\mu_0}\vec{E}\times\vec{B}$) va faza fazosi.<br>
+              <strong data-i18n="common.aiStrategy">AI strategiyasi:</strong> ChatGPT Code Interpreter faza osillogrammasi va Google Antigravity orqali energiya oqimi balansi auditi.
             </p>
           </div>
         </div>
 
         <div class="citation-box">
-          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manba va Ta’limiy Diagnostika Asosi (1-Bo‘lim):</div>
+          <div class="citation-title" data-i18n="common.wwwSource1">🌐 WWW Ilmiy-Uslubiy Manba va Ta’limiy Diagnostika Asosi (1-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Garrison, D. R., Anderson, T., va Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href="https://doi.org/10.1016/S1096-7516(00)00016-6" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1016/S1096-7516(00)00016-6</a><br>
-            <em>Iqtibos mazmuni:</em> Murakkab elektrodinamik tushunchalarni o‘zlashtirishda sun’iy intellekt orqali shaxsiylashtirilgan diagnostika va ko‘p modal ta’lim trayektoriyasi talabalarning kognitiv yukini 40% ga kamaytiradi.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Murakkab elektrodinamik tushunchalarni o‘zlashtirishda sun’iy intellekt orqali shaxsiylashtirilgan diagnostika va ko‘p modal ta’lim trayektoriyasi talabalarning kognitiv yukini 40% ga kamaytiradi.
           </p>
         </div>
       </div>
@@ -279,7 +286,7 @@
         </div>
 
         <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
-          Simulyatsiya kodini yaratishdan oldin xalqaro miqyosda e’tirof etilgan professional laboratoriyalar (<strong>PhET Interactive Simulations</strong> — <em>Faraday’s Law</em>, <em>Charges and Fields</em>, <em>Circuit Construction Kit</em> hamda <strong>Vascak.cz Physics Animations</strong> — <em>Coulomb’s Law</em>, <em>Lorentz Force</em>) <em>Teskari Muhandislik (Reverse Engineering)</em> metodologiyasi bilan dekonstruksiya qilinadi:
+          Simulyatsiya kodini yaratishdan oldin xalqaro miqyosda e’tirof etilgan professional laboratoriyalar (<strong>PhET Interactive Simulations</strong> — <em>Faraday’s Law</em>, <em>Charges and Fields</em>, <em>Circuit Construction Kit</em> hamda <strong>Vascak.cz Physics Animations</strong> — <em>Coulomb’s Law</em>, <em>Lorentz Force</em>) <em data-i18n="common.reverseEngineering">Teskari Muhandislik (Reverse Engineering)</em> metodologiyasi bilan dekonstruksiya qilinadi:
         </p>
 
         <!-- 2 Case Studies of Electrodynamics Reverse Engineering -->
@@ -313,10 +320,10 @@
           <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: var(--text-secondary);">
             <thead>
               <tr style="background: rgba(17, 24, 43, 0.05); color: var(--text-primary); border-bottom: 2px solid var(--border-color);">
-                <th style="padding: 10px; text-align: left;">UI komponenti</th>
-                <th style="padding: 10px; text-align: left;">Fizik kattalik</th>
-                <th style="padding: 10px; text-align: left;">Matematik model va formulalar</th>
-                <th style="padding: 10px; text-align: left;">Kod o‘zgaruvchisi va qadam</th>
+                <th style="padding: 10px; text-align: left;" data-i18n="common.uiComponent">UI komponenti</th>
+                <th style="padding: 10px; text-align: left;" data-i18n="common.physicalQuantity">Fizik kattalik</th>
+                <th style="padding: 10px; text-align: left;" data-i18n="common.mathModel">Matematik model va formulalar</th>
+                <th style="padding: 10px; text-align: left;" data-i18n="common.codeVariable">Kod o‘zgaruvchisi va qadam</th>
               </tr>
             </thead>
             <tbody>
@@ -349,10 +356,10 @@
         </div>
 
         <div class="citation-box">
-          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Simulyatsiya Tahlili Asosi (2-Bo‘lim):</div>
+          <div class="citation-title" data-i18n="common.wwwSource2">🌐 WWW Ilmiy-Uslubiy Manbalar va Simulyatsiya Tahlili Asosi (2-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href="https://doi.org/10.1126/science.1161948" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1126/science.1161948</a><br>
-            <em>Iqtibos mazmuni:</em> Elektrodinamik hodisalarni virtual simulyatsiyalar orqali interaktiv boshqarish talabalarda elektromagnit maydonning moddiy realligi va energiya o‘zgarishi haqidagi ilmiy dunyoqarashni mustahkam shakllantiradi.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Elektrodinamik hodisalarni virtual simulyatsiyalar orqali interaktiv boshqarish talabalarda elektromagnit maydonning moddiy realligi va energiya o‘zgarishi haqidagi ilmiy dunyoqarashni mustahkam shakllantiradi.
           </p>
         </div>
       </div>
@@ -463,7 +470,7 @@ function calculateRlcOscillation(R, L, C_micro, U0, freq, time) {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Elektrodinamika Nazariy Asosi (3-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Griffiths, D. J. (2017).</strong> <em>Introduction to Electrodynamics</em> (4th ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781108420419" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1017/9781108420419</a><br>
-            <em>Iqtibos mazmuni:</em> Maksvell elektrodinamikasi va Faradey qonuni zaryadlar hamda maydonlarning uzluksiz o‘zaro ta’sirini relyativistik invariantlik darajasida ifodalovchi universal qonundir.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Maksvell elektrodinamikasi va Faradey qonuni zaryadlar hamda maydonlarning uzluksiz o‘zaro ta’sirini relyativistik invariantlik darajasida ifodalovchi universal qonundir.
           </p>
         </div>
       </div>
@@ -542,7 +549,7 @@ function speakScientificNarration(topic = 'faraday') {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Multimodal O‘qitish Asosi (4-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781316941355" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1017/9781316941355</a><br>
-            <em>Iqtibos mazmuni:</em> Ko‘p modal ta’lim tamoyili (Modality Principle) bo‘yicha murakkab fizik animatsiyalarni bir vaqtda audio-narratsiya (ovozli tushuntirish) bilan birgalikda taqdim etish o‘quvchilarning vizual kanalini yengillashtiradi va materialni eslab qolishni 38% ga oshiradi.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Ko‘p modal ta’lim tamoyili (Modality Principle) bo‘yicha murakkab fizik animatsiyalarni bir vaqtda audio-narratsiya (ovozli tushuntirish) bilan birgalikda taqdim etish o‘quvchilarning vizual kanalini yengillashtiradi va materialni eslab qolishni 38% ga oshiradi.
           </p>
         </div>
       </div>
@@ -603,7 +610,7 @@ function speakScientificNarration(topic = 'faraday') {
           <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Loyiha Monitoringi Asosi (5-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Jackson, J. D. (1999).</strong> <em>Classical Electrodynamics</em> (3rd ed.). John Wiley va Sons. <br>
-            <em>Iqtibos mazmuni:</em> Klassik elektrodinamika tenglamalarini raqamli modellashtirishda energiya va impuls saqlanish qonunlarining qat’iy tekshiruvi simulyatsiyaning fizik adekvatligini kafolatlaydi.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Klassik elektrodinamika tenglamalarini raqamli modellashtirishda energiya va impuls saqlanish qonunlarining qat’iy tekshiruvi simulyatsiyaning fizik adekvatligini kafolatlaydi.
           </p>
         </div>
       </div>
@@ -755,7 +762,7 @@ function speakScientificNarration(topic = 'faraday') {
         <div class="glass-panel" style="margin-top: 28px; border-left: 4px solid var(--accent-cyan); padding: 22px;">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
             <div>
-              <span class="badge badge-cyan">🌐 Jonli virtual laboratoriyalar</span>
+              <span class="badge badge-cyan" data-i18n="common.liveLabs">🌐 Jonli virtual laboratoriyalar</span>
               <h3 style="margin-top: 6px; font-size: 1.3rem; color:#11182B;">
                 PhET Interactive Simulations va Vascak.cz elektrodinamika xabi
               </h3>
@@ -776,7 +783,7 @@ function speakScientificNarration(topic = 'faraday') {
 
           <!-- Online Simulation Switcher Tabs -->
           <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; background: #F3F5F8; padding: 10px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div style="width: 100%; font-size: 0.78rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px;">🧪 PhET Interactive Simulations (HTML5):</div>
+            <div style="width: 100%; font-size: 0.78rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px;" data-i18n="common.phetHtml5">🧪 PhET Interactive Simulations (HTML5):</div>
             <button class="btn btn-sm btn-primary online-sim-btn active" data-sim="phet-faraday" onclick="switchElectroOnlineSim('phet-faraday')">
               🧲 PhET: Faraday’s law
             </button>
@@ -840,7 +847,7 @@ function speakScientificNarration(topic = 'faraday') {
 
         <!-- Full AI-Pipeline Interactive Panel -->
         <div class="glass-panel" style="margin-top: 20px; border-left: 4px solid var(--accent-purple);">
-          <h4 style="color: var(--accent-purple); margin-bottom: 12px;">🚀 To‘liq AI-pipeline bosqichlarini jonli sinash:</h4>
+          <h4 style="color: var(--accent-purple); margin-bottom: 12px;" data-i18n="common.livePipelineTest">🚀 To‘liq AI-pipeline bosqichlarini jonli sinash:</h4>
           <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;">
             <button id="btn-pipe-phet" class="btn btn-secondary btn-sm">1. PhET dekonstruksiyasi</button>
             <button id="btn-pipe-claude" class="btn btn-secondary btn-sm">2. Claude maydon va zanjir kodi</button>
@@ -851,10 +858,10 @@ function speakScientificNarration(topic = 'faraday') {
         </div>
 
         <div class="citation-box" style="margin-top: 25px;">
-          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Virtual Laboratoriya Tadqiqoti (6-Bo‘lim):</div>
+          <div class="citation-title" data-i18n="common.wwwSource6">🌐 WWW Ilmiy-Uslubiy Manbalar va Virtual Laboratoriya Tadqiqoti (6-Bo‘lim):</div>
           <p class="citation-text">
             <strong>de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href="https://doi.org/10.1126/science.1230579" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1126/science.1230579</a><br>
-            <em>Iqtibos mazmuni:</em> Virtual elektrodinamika laboratoriyalari va ovozli izohlar talabalarda zanjir topologiyasi va maydon qonuniyatlarini tushunish tezligini 33% ga oshiradi.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Virtual elektrodinamika laboratoriyalari va ovozli izohlar talabalarda zanjir topologiyasi va maydon qonuniyatlarini tushunish tezligini 33% ga oshiradi.
           </p>
         </div>
       </div>
@@ -867,7 +874,7 @@ function speakScientificNarration(topic = 'faraday') {
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">7. Diagnostik test va ilmiy-metodik manbalar</h2>
-          <span class="badge badge-cyan">Bilimni baholash va APA 7th bibliography</span>
+          <span class="badge badge-cyan" data-i18n="common.assessAndBib">Bilimni baholash va APA 7th bibliography</span>
         </div>
 
         <!-- 3-Question Diagnostic Test -->
@@ -879,7 +886,7 @@ function speakScientificNarration(topic = 'faraday') {
             <label><input type="radio" name="q1" value="A"> A) 3 marta ortadi</label>
             <label><input type="radio" name="q1" value="B"> B) 9 marta ortadi</label>
             <label><input type="radio" name="q1" value="C"> C) 3 marta kamayadi</label>
-            <label><input type="radio" name="q1" value="D"> D) O‘zgarmaydi</label>
+            <label data-i18n="common.answerUnchanged"><input type="radio" name="q1" value="D"> D) O‘zgarmaydi</label>
           </div>
         </div>
 
@@ -907,10 +914,10 @@ function speakScientificNarration(topic = 'faraday') {
         <div id="quiz-result" style="margin-top: 14px; font-weight: bold; font-size: 1rem; display: none;"></div>
 
         <div class="citation-box" style="margin-top: 25px;">
-          <div class="citation-title">🌐 WWW Ilmiy-Uslubiy Manbalar va Formatik Baholash Metodikasi (7-Bo‘lim):</div>
+          <div class="citation-title" data-i18n="common.wwwSource7">🌐 WWW Ilmiy-Uslubiy Manbalar va Formatik Baholash Metodikasi (7-Bo‘lim):</div>
           <p class="citation-text">
             <strong>Black, P., va Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href="https://doi.org/10.1007/s11092-008-9068-5" target="_blank" rel="noopener noreferrer" class="citation-link">https://doi.org/10.1007/s11092-008-9068-5</a><br>
-            <em>Iqtibos mazmuni:</em> Shakllantiruvchi baholash va tezkor qayta aloqa talabaning elektrodinamik tushunchalardagi xatolarini o‘z vaqtida tuzatishga imkon yaratadi.
+            <em data-i18n="common.quoteContent">Iqtibos mazmuni:</em> Shakllantiruvchi baholash va tezkor qayta aloqa talabaning elektrodinamik tushunchalardagi xatolarini o‘z vaqtida tuzatishga imkon yaratadi.
           </p>
         </div>
 
@@ -944,8 +951,8 @@ function speakScientificNarration(topic = 'faraday') {
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
-      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">
+      <p data-i18n="footer.copyright">&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;" data-i18n="pages.lecture14.footer2">
         14-ma’ruza: Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish &bull; PhET, Vascak.cz, Claude, Muxlisa AI / ElevenLabs va Google Antigravity.
       </p>
     </div>
@@ -1061,5 +1068,5 @@ function speakScientificNarration(topic = 'faraday') {
   <script src="js/physics-engine.js"></script>
   <script src="js/sim-electrodynamics-pipeline.js"></script>
   <script src="js/ui-controller.js"></script>
-<script src="js/translate.js"></script></body>
+</body>
 </html>

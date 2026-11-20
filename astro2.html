@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/i18n-boot.js"></script>
   <meta name="description" content="Qo‘shimcha astronomiya ma’ruzasi: Plank, Vin va Stefan–Bolsman qonunlari, spektral chiziqlar, Doppler siljishi; interaktiv spektr modeli va SDSS ma’lumotlari bilan laboratoriya ishi.">
   <title>A2. Spektral tahlil: qora jism nurlanishi, spektral chiziqlar va Doppler siljishi | FIZIKA va SUN’IY INTELLEKT</title>
   <link rel="stylesheet" href="css/main.css">
@@ -39,7 +40,6 @@
     .flow3 > div { padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: rgba(17, 24, 43, 0.02); }
     .flow3 ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.7; }
   </style>
-<link rel="stylesheet" href="css/translate.css">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -57,56 +57,63 @@
 <meta name="twitter:title" content="A2. Spektral tahlil: qora jism nurlanishi, spektral chiziqlar va Doppler siljishi | FIZIKA va SUN’IY INTELLEKT">
 <meta name="twitter:description" content="Qo‘shimcha astronomiya ma’ruzasi: Plank, Vin va Stefan–Bolsman qonunlari, spektral chiziqlar, Doppler siljishi; interaktiv spektr modeli va SDSS ma’lumotlari bilan laboratoriya ishi.">
 <meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta name="i18n-page" content="astro2">
+<link rel="stylesheet" href="css/i18n.css">
+<script src="js/i18n.js" defer></script>
+<link rel="alternate" hreflang="uz" href="https://ilimziyo.uz/astro2.html">
+<link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/astro2.html?lang=ru">
+<link rel="alternate" hreflang="en" href="https://ilimziyo.uz/astro2.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/astro2.html">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+        <span class="nav-logo-text" data-i18n="brand.full">FIZIKA va SUN’IY INTELLEKT</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
-        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
-        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
-        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
-        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
-        <li><a href="lecture7.html" class="nav-link">7-ma’ruza: Canvas arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
-        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
-        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-        <li><a href="astro2.html" class="nav-link active">⭐ A2. Spektral tahlil</a></li>
-        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
-        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
-        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link" data-i18n="nav.lectureShort.l1">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link" data-i18n="nav.lectureShort.l2">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link" data-i18n="nav.lectureShort.l3">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link" data-i18n="nav.lectureShort.l4">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link" data-i18n="nav.lectureShort.l5">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link" data-i18n="nav.lectureShort.l6">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link" data-i18n="nav.lectureShort.l7">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link" data-i18n="nav.lectureShort.l8">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link" data-i18n="nav.lectureShort.l9">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link" data-i18n="nav.lectureShort.l10">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link" data-i18n="nav.lectureShort.l11">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link" data-i18n="nav.lectureShort.l12">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link" data-i18n="nav.lectureShort.l13">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link" data-i18n="nav.lectureShort.l14">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link" data-i18n="nav.lectureShort.l15">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link active" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -116,51 +123,51 @@
   <div id="drawer-overlay" class="drawer-overlay"></div>
   <aside id="mobile-drawer" class="mobile-drawer">
     <div class="drawer-header">
-      <span class="drawer-title">Kurs mundarijasi</span>
+      <span class="drawer-title" data-i18n="nav.courseToc">Kurs mundarijasi</span>
       <button id="drawer-close" class="drawer-close" aria-label="Yopish">&times;</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
-      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
-      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
-      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
-      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
-      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
-      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
-      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
-      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
-      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="index.html" class="drawer-link" data-i18n="nav.home">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link" data-i18n="nav.lectureShort.l1">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link" data-i18n="nav.lectureShort.l2">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link" data-i18n="nav.lectureShort.l3">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link" data-i18n="nav.lectureShort.l4">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link" data-i18n="nav.lectureShort.l5">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link" data-i18n="nav.lectureShort.l6">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link" data-i18n="nav.lectureShort.l7">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link" data-i18n="nav.lectureShort.l8">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link" data-i18n="nav.lectureShort.l9">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link" data-i18n="nav.lectureShort.l10">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link" data-i18n="nav.lectureShort.l11">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link" data-i18n="nav.lectureShort.l12">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link" data-i18n="nav.lectureShort.l13">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link" data-i18n="nav.lectureShort.l14">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link" data-i18n="nav.lectureShort.l15">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="lab1.html" class="drawer-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-      <li><a href="astro2.html" class="drawer-link active">⭐ A2. Spektral tahlil</a></li>
-      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li><a href="astro1.html" class="drawer-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link active" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
-      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
-      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+      <li><a href="glossariy.html" class="drawer-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link" data-i18n="nav.author">👤 Muallif</a></li>
     </ul>
   </aside>
 
@@ -168,20 +175,20 @@
 
     <div class="hero-panel" style="margin-bottom: 26px;">
       <span class="badge badge-amber">Qo‘shimcha ma’ruza A2 · Astronomiya</span>
-      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;">Spektral tahlil: <span class="text-gradient">qora jism nurlanishi, spektral chiziqlar va Doppler siljishi</span></h1>
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.05rem; line-height: 1.3;" data-i18n="pages.astro2.h1">Spektral tahlil: <span class="text-gradient" data-i18n="pages.astro2.h1Accent">qora jism nurlanishi, spektral chiziqlar va Doppler siljishi</span></h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">Kirxgof qonunlari, Plank, Vin va Stefan–Bolsman qonunlari, vodorodning Balmer seriyasi va kimyoviy tarkibni aniqlash, Doppler siljishi orqali radial tezlik va Koinot kengayishini o‘lchash. Interaktiv spektr modeli, uyda yasaladigan CD spektroskop va SDSS ma’lumotlari bilan laboratoriya ishi.</p>
     </div>
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab(event, 'tab-1')">1. Nazariya</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-2')">2. Interaktiv spektr modeli</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-3')">3. Laboratoriya ishi: spektroskop va SDSS</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-4')">4. Nazorat va adabiyotlar</button>
+      <button class="tab-btn active" onclick="switchTab(event, 'tab-1')" data-i18n="tabs.1_nazariya">1. Nazariya</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-2')" data-i18n="pages.astro2.tab2">2. Interaktiv spektr modeli</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-3')" data-i18n="pages.astro2.tab3">3. Laboratoriya ishi: spektroskop va SDSS</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-4')" data-i18n="tabs.4_nazorat_va_adabiyotlar">4. Nazorat va adabiyotlar</button>
     </div>
 
     <section id="tab-1" class="tab-content active">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Nazariya</h2>
+          <h2 class="card-title" data-i18n="tabs.1_nazariya">1. Nazariya</h2>
         </div>
 
         <p class="lead-p">Yulduzgacha borib bo‘lmaydi, lekin uning nurini parchalab, <strong>harorati, kimyoviy tarkibi, tezligi va hatto atrofidagi sayyoralar</strong> haqida bilish mumkin. Spektral tahlil — astrofizikaning asosiy kuzatuv usuli. Bu ma’ruzada qora jism nurlanishi, spektral chiziqlarning kelib chiqishi va Doppler siljishi o‘rganiladi.</p>
@@ -234,7 +241,7 @@
     <section id="tab-2" class="tab-content">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Interaktiv spektr modeli</h2>
+          <h2 class="card-title" data-i18n="pages.astro2.tab2">2. Interaktiv spektr modeli</h2>
         </div>
 
         <p class="lead-p">Harorat va radial tezlikni o‘zgartiring. Yuqori grafik — Plank egri chizig‘i (rangli fon — ko‘rinadigan diapazon), pastda — yutilish chiziqlari bilan ko‘rinadigan spektr. Kichik qora chiziqchalar chiziqlarning laboratoriyadagi (siljimagan) o‘rnini ko‘rsatadi.</p>
@@ -266,10 +273,10 @@
     <section id="tab-3" class="tab-content">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. Laboratoriya ishi: spektroskop va SDSS</h2>
+          <h2 class="card-title" data-i18n="pages.astro2.tab3">3. Laboratoriya ishi: spektroskop va SDSS</h2>
         </div>
 
-        <p class="lead-p"><strong>Ishning maqsadi:</strong> uyda yasalgan spektroskop bilan nurlanish spektrlarini kuzatish, to‘lqin uzunligi shkalasini kalibrlash va Sloan raqamli osmon tadqiqoti (SDSS) ochiq ma’lumotlari bo‘yicha galaktikaning qizil siljishi va masofasini aniqlash.</p>
+        <p class="lead-p"><strong data-i18n="common.objective">Ishning maqsadi:</strong> uyda yasalgan spektroskop bilan nurlanish spektrlarini kuzatish, to‘lqin uzunligi shkalasini kalibrlash va Sloan raqamli osmon tadqiqoti (SDSS) ochiq ma’lumotlari bo‘yicha galaktikaning qizil siljishi va masofasini aniqlash.</p>
         <p><strong>Kerakli vositalar (hammasi bepul yoki uy sharoitida topiladi):</strong> eski CD/DVD disk, karton quti, smartfon kamerasi; <a class="citation-link" href="https://skyserver.sdss.org" target="_blank" rel="noopener">SDSS SkyServer</a>; <a class="citation-link" href="https://physics.nist.gov/asd" target="_blank" rel="noopener">NIST atom spektrlari bazasi</a>; Google Colab; Gemini, ChatGPT yoki Claude’ning bepul tarifi.</p>
 
         <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">A qism. CD spektroskop</h3>
@@ -299,18 +306,18 @@
    va nima uchun bunday qilish kerakligini tushuntir.</pre>
         <div class="note-box">SI ko‘pincha to‘lqin uzunligini nanometrdan metrga o‘tkazishni unutadi yoki eksponenta argumentida birliklarni aralashtiradi. Har bir formulani o‘lchamlilik bo‘yicha tekshiring va topilgan xatolarni SI jurnaliga yozing.</div>
 
-        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;">Baholash mezonlari (100 ball)</h3>
+        <h3 style="color: var(--accent-cyan); margin: 18px 0 8px;" data-i18n="rubric.criteria100">Baholash mezonlari (100 ball)</h3>
         <div class="data-wrap"><table class="data">
-          <thead><tr><th>Mezon</th><th>Ball</th><th>Talab</th></tr></thead>
+          <thead><tr><th data-i18n="rubric.criterion">Mezon</th><th data-i18n="rubric.points">Ball</th><th data-i18n="rubric.requirement">Talab</th></tr></thead>
           <tbody>
             <tr><td>Spektroskop va kalibrlash</td><td>25</td><td>Kalibrlash tenglamasi, uning xatoligi va spektr rasmlari</td></tr>
             <tr><td>Qizil siljish va masofa</td><td>30</td><td>$z$, $v$, $d$ to‘g‘ri hisoblangan; vakuum/havo farqi hisobga olingan</td></tr>
             <tr><td>Kod va grafiklar</td><td>20</td><td>Plank funksiyasini moslashtirish ishlaydi, grafiklar to‘liq</td></tr>
-            <tr><td>SI dan foydalanish jurnali</td><td>15</td><td>Promptlar, SI javoblari va tuzatilgan xatolar</td></tr>
-            <tr><td>Xulosa</td><td>10</td><td>Natijalar adabiyot qiymatlari bilan solishtirilgan</td></tr>
+            <tr><td data-i18n="common.aiLog">SI dan foydalanish jurnali</td><td>15</td><td>Promptlar, SI javoblari va tuzatilgan xatolar</td></tr>
+            <tr><td data-i18n="common.conclusion">Xulosa</td><td>10</td><td>Natijalar adabiyot qiymatlari bilan solishtirilgan</td></tr>
           </tbody>
         </table></div>
-        <p style="font-size: 0.9rem;">Baho: 86–100 ball — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3), 55 dan kam — qoniqarsiz (2).</p>
+        <p style="font-size: 0.9rem;" data-i18n="rubric.gradeScale">Baho: 86–100 ball — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3), 55 dan kam — qoniqarsiz (2).</p>
 
       </div>
     </section>
@@ -318,10 +325,10 @@
     <section id="tab-4" class="tab-content">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Nazorat va adabiyotlar</h2>
+          <h2 class="card-title" data-i18n="tabs.4_nazorat_va_adabiyotlar">4. Nazorat va adabiyotlar</h2>
         </div>
 
-        <h3 style="color: var(--accent-cyan); margin-bottom: 14px;">Nazorat savollari</h3>
+        <h3 style="color: var(--accent-cyan); margin-bottom: 14px;" data-i18n="common.controlQuestions">Nazorat savollari</h3>
         <div class="quiz-q">
           <strong>1-savol. Yulduzning nurlanish maksimumi 290 nm da. Uning sirt harorati taxminan qancha?</strong>
           <label><input type="radio" name="q1" value="A"> A) 1000 K</label>
@@ -354,15 +361,15 @@
           <label><input type="radio" name="q4" value="D"> D) Balmer chiziqlari faqat infraqizil sohada</label>
           <div class="quiz-fb" id="fb-q4"></div>
         </div>
-        <button class="btn btn-primary" onclick='checkQuiz({"q1": "C", "q2": "A", "q3": "B", "q4": "B"}, {"q1": "Vin qonuni: T = b / λ_max = 2,898·10⁻³ / 2,9·10⁻⁷ ≈ 10 000 K.", "q2": "Kirxgofning uchinchi qonuni: uzluksiz nur sovuqroq siyrak gaz orqali o‘tganda yutilish spektri hosil bo‘ladi.", "q3": "z = 13,1 / 656,3 ≈ 0,02; v ≈ cz ≈ 6000 km/s; to‘lqin uzunligi ortgan — uzoqlashmoqda.", "q4": "Balmer chiziqlarini n = 2 sathdagi neytral atomlar hosil qiladi; 30 000 K dan yuqorida vodorod deyarli to‘liq ionlashgan."})'>✅ Natijani tekshirish</button>
+        <button class="btn btn-primary" onclick='checkQuiz({"q1": "C", "q2": "A", "q3": "B", "q4": "B"}, {"q1": "Vin qonuni: T = b / λ_max = 2,898·10⁻³ / 2,9·10⁻⁷ ≈ 10 000 K.", "q2": "Kirxgofning uchinchi qonuni: uzluksiz nur sovuqroq siyrak gaz orqali o‘tganda yutilish spektri hosil bo‘ladi.", "q3": "z = 13,1 / 656,3 ≈ 0,02; v ≈ cz ≈ 6000 km/s; to‘lqin uzunligi ortgan — uzoqlashmoqda.", "q4": "Balmer chiziqlarini n = 2 sathdagi neytral atomlar hosil qiladi; 30 000 K dan yuqorida vodorod deyarli to‘liq ionlashgan."})' data-i18n="common.checkResult">✅ Natijani tekshirish</button>
         <div id="quiz-result" style="margin-top: 12px; font-weight: bold; display: none;"></div>
-        <h3 style="color: var(--accent-cyan); margin: 28px 0 10px;">Mustaqil ish uchun savollar</h3>
+        <h3 style="color: var(--accent-cyan); margin: 28px 0 10px;" data-i18n="common.selfStudyQuestions">Mustaqil ish uchun savollar</h3>
         <ol style="padding-left: 20px; line-height: 1.8;">
           <li>Radial tezlik usuli bilan ekzosayyoraning qaysi parametrini aniqlab bo‘lmaydi va nima uchun?</li>
           <li>Nima uchun yulduz rangi (masalan, B−V ko‘rsatkichi) uning harorati haqida ma’lumot beradi?</li>
           <li>Galaktikaning aylanish egri chizig‘i qanday qilib qorong‘i materiya mavjudligiga ishora qiladi?</li>
         </ol>
-        <h3 style="color: var(--accent-emerald); margin: 28px 0 10px;">Adabiyotlar</h3>
+        <h3 style="color: var(--accent-emerald); margin: 28px 0 10px;" data-i18n="common.references">Adabiyotlar</h3>
         <ol class="refs" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
           <li>Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class="citation-link" href="https://doi.org/10.1017/9781108380980" target="_blank" rel="noopener">https://doi.org/10.1017/9781108380980</a></li>
           <li>Rybicki, G. B., &amp; Lightman, A. P. (1979). <em>Radiative Processes in Astrophysics</em>. Wiley. <a class="citation-link" href="https://doi.org/10.1002/9783527618170" target="_blank" rel="noopener">https://doi.org/10.1002/9783527618170</a></li>
@@ -381,8 +388,8 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
-      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Qo‘shimcha ma’ruza A2: Spektral tahlil &bull; Plank qonuni, Balmer seriyasi, Doppler siljishi, SDSS.</p>
+      <p data-i18n="footer.copyright">&copy; 2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.</p>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;" data-i18n="pages.astro2.footer2">Qo‘shimcha ma’ruza A2: Spektral tahlil &bull; Plank qonuni, Balmer seriyasi, Doppler siljishi, SDSS.</p>
     </div>
   </footer>
 
@@ -414,5 +421,5 @@
   </script>
   <script src="js/sim-astro-extra.js"></script>
   <script src="js/ui-controller.js"></script>
-<script src="js/translate.js"></script></body>
+</body>
 </html>

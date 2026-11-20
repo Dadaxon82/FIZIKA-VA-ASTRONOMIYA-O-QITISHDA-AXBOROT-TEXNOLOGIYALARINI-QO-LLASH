@@ -1,0 +1,303 @@
+/* ==========================================================================
+   I18N.CSS — 3 tilli (UZ / RU / EN) til almashtirgich, mashina tarjimasi
+   haqidagi bildirishnoma va Google Website Translator'ning standart
+   elementlarini yashirish uchun uslublar.
+
+   Sayt uchta sarlavha tizimiga ega: index.html (.site-header .navbar),
+   ma'ruza/laboratoriya sahifalari (.nav-actions + #mobile-drawer) va
+   mustaqil.html (.topmenu). Almashtirgich ikki ko'rinishda chiqariladi:
+     • --compact : sarlavhada "🌐 UZ | RU | EN" segmentli tugma;
+     • --menu    : mobil menyu/drawer ichida to'liq til nomlari bilan.
+   Rang qiymatlari sayt palitrasiga (#1C4E9E, #11182B, #5B6472) mos.
+   ========================================================================== */
+
+:root {
+  --i18n-accent: #1C4E9E;
+  --i18n-text: #11182B;
+  --i18n-muted: #5B6472;
+  --i18n-surface: #FFFFFF;
+  --i18n-track: rgba(28, 78, 158, 0.08);
+  --i18n-border: rgba(17, 24, 43, 0.12);
+  --i18n-focus: 0 0 0 3px rgba(28, 78, 158, 0.28);
+}
+
+/* Til yuklanayotganda o'zbekcha matnning "miltillashi" ko'rinmasin. */
+html.i18n-pending body {
+  opacity: 0;
+}
+
+html body {
+  transition: opacity 0.18s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Umumiy almashtirgich
+   -------------------------------------------------------------------------- */
+.i18n-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.i18n-switcher__icon {
+  flex-shrink: 0;
+  color: var(--i18n-accent);
+}
+
+.i18n-switcher__options {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--i18n-track);
+  border: 1px solid var(--i18n-border);
+}
+
+.i18n-switcher__btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--i18n-muted);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 10px;
+  min-width: 34px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.i18n-switcher__btn:hover {
+  color: var(--i18n-text);
+  background: rgba(17, 24, 43, 0.06);
+}
+
+.i18n-switcher__btn:focus-visible {
+  outline: none;
+  box-shadow: var(--i18n-focus);
+}
+
+.i18n-switcher__btn.is-active {
+  color: var(--i18n-accent);
+  background: var(--i18n-surface);
+  box-shadow: 0 1px 3px rgba(17, 24, 43, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   Sarlavhadagi ixcham ko'rinish
+   -------------------------------------------------------------------------- */
+.i18n-switcher--compact {
+  flex-shrink: 0;
+  margin-inline-end: 4px;
+}
+
+.site-header .navbar .i18n-switcher--compact,
+.topmenu-inner .i18n-switcher--compact {
+  margin-inline-start: auto;
+  margin-inline-end: 10px;
+}
+
+.i18n-switcher--floating {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 2100;
+  padding: 4px 6px 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(17, 24, 43, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+/* --------------------------------------------------------------------------
+   Menyu / drawer ichidagi to'liq ko'rinish
+   -------------------------------------------------------------------------- */
+.i18n-switcher--menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  margin: 0 0 14px;
+  border-radius: 14px;
+  background: #F6F8FB;
+  border: 1px solid var(--i18n-border);
+  box-sizing: border-box;
+}
+
+.i18n-switcher__heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--i18n-muted);
+}
+
+.i18n-switcher--menu .i18n-switcher__options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.i18n-switcher--menu .i18n-switcher__btn {
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  padding: 10px 4px;
+  border-radius: 9px;
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+/* Ruscha menyu yozuvlari uzunroq: keng ekranda bitta qatorga sig'ishi uchun biroz zichlashtiriladi. */
+@media (min-width: 1521px) {
+  html[lang="ru"] .site-header .nav-links a,
+  html[lang="ru"] .topmenu-links a {
+    padding-left: 0.42rem;
+    padding-right: 0.42rem;
+  }
+}
+
+/* index.html: menyu ichidagi variant faqat menyu yig'ilganda ko'rinadi. */
+.site-header .nav-links > .i18n-switcher--menu,
+.topmenu-links > .i18n-switcher--menu {
+  display: none;
+}
+
+@media (max-width: 1520px) {
+  .site-header .nav-links > .i18n-switcher--menu,
+  .topmenu-links > .i18n-switcher--menu {
+    display: flex;
+  }
+}
+
+/* Telefonlarda sarlavha siqilib qolmasligi uchun ixcham variant yashiriladi —
+   til tanlash menyu/drawer ichida (to'liq nomlar bilan) qoladi. */
+@media (max-width: 560px) {
+  html.i18n-has-switcher .i18n-switcher--compact:not(.i18n-switcher--floating) {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mashina tarjimasi haqida bildirishnoma
+   -------------------------------------------------------------------------- */
+.i18n-mt-notice {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  /* Mobil drawer (z-index 1050+) ochilganda uning ostida qolsin. */
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--i18n-surface);
+  border: 1px solid var(--i18n-border);
+  border-left: 4px solid var(--i18n-accent);
+  box-shadow: 0 16px 40px rgba(17, 24, 43, 0.14);
+  color: #4B5464;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.i18n-mt-notice__text {
+  flex: 1 1 360px;
+}
+
+.i18n-mt-notice__actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.i18n-mt-notice__btn {
+  appearance: none;
+  border: 1px solid var(--i18n-accent);
+  background: var(--i18n-accent);
+  color: #FFFFFF;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.i18n-mt-notice__btn--ghost {
+  background: transparent;
+  color: var(--i18n-accent);
+}
+
+.i18n-mt-notice__btn:focus-visible {
+  outline: none;
+  box-shadow: var(--i18n-focus);
+}
+
+@media (max-width: 600px) {
+  .i18n-mt-notice { left: 10px; right: 10px; bottom: 10px; padding: 12px 14px; font-size: 0.8rem; }
+  .i18n-mt-notice__actions { width: 100%; }
+  .i18n-mt-notice__btn { flex: 1; }
+}
+
+/* Tuzatish rejimi (?i18n-debug=1): tarjimasi yo'q kalitlarni ajratib ko'rsatish. */
+[data-i18n-missing] {
+  outline: 2px dashed #DC2626 !important;
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Google Website Translator'ning standart paneli, ajratishlari va maslahat
+   oynalari yashiriladi — o'rniga yuqoridagi .i18n-switcher ishlatiladi.
+   -------------------------------------------------------------------------- */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.skiptranslate,
+body > .skiptranslate,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+#google_translate_element,
+.goog-te-gadget-icon {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+@media print {
+  .i18n-switcher,
+  .i18n-mt-notice {
+    display: none !important;
+  }
+}

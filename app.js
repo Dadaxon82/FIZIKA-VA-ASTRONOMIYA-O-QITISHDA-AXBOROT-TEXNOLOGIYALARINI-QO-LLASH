@@ -6,6 +6,16 @@
   const text = (selector, value) => { const el = $(selector); if (el) el.textContent = value; };
   const TAU = Math.PI * 2;
 
+  // ---------- I18N (js/i18n.js) ----------
+  // Matnlar locales/*.json lug'atlaridan olinadi; i18n.js yuklanmagan
+  // holatda ham sahifa ishlashi uchun o'zbekcha zaxira matn beriladi.
+  const tr = (key, fallback, params) => {
+    if (window.I18N && typeof window.I18N.t === 'function') return window.I18N.t(key, params, fallback);
+    return params ? fallback.replace(/\{(\w+)\}/g, (m, name) => (name in params ? params[name] : m)) : fallback;
+  };
+
+  const playLabel = running => (running ? tr('app.pause', 'To‘xtatish') : tr('app.play', 'Boshlash'));
+
   // ---------- Navigation ----------
   const menuButton = $('.menu-toggle');
   const nav = $('.nav-links');
@@ -13,11 +23,15 @@
     const open = nav.classList.toggle('open');
     menuButton.setAttribute('aria-expanded', String(open));
     menuButton.textContent = open ? '✕' : '☰';
+    menuButton.setAttribute('aria-label', open ? tr('app.closeMenu', 'Menyuni yopish') : tr('nav.openMenu', 'Menyuni ochish'));
   });
   $$('.nav-links a').forEach(link => link.addEventListener('click', () => {
     nav.classList.remove('open');
     menuButton?.setAttribute('aria-expanded', 'false');
-    if (menuButton) menuButton.textContent = '☰';
+    if (menuButton) {
+      menuButton.textContent = '☰';
+      menuButton.setAttribute('aria-label', tr('nav.openMenu', 'Menyuni ochish'));
+    }
   }));
 
   // Render at device-pixel resolution without distorting the CSS layout.
@@ -85,7 +99,7 @@
 
   function togglePendulum() {
     pendulum.running = !pendulum.running;
-    if (p.play) p.play.textContent = pendulum.running ? 'To‘xtatish' : 'Boshlash';
+    if (p.play) p.play.textContent = playLabel(pendulum.running);
   }
 
   [p.L, p.theta, p.gamma, p.g].forEach(el => el?.addEventListener('input', resetPendulum));
@@ -173,7 +187,7 @@
     text('#lorentz-stat', `ωc ${wc.toFixed(2)} rad/s · R ${(lorentz.vp / Math.max(Math.abs(wc), .01)).toFixed(2)} m`);
   }
   function resetLorentz() { lorentz.t = 0; updateLorentz(); }
-  function toggleLorentz() { lorentz.running = !lorentz.running; l.play.textContent = lorentz.running ? 'To‘xtatish' : 'Boshlash'; }
+  function toggleLorentz() { lorentz.running = !lorentz.running; l.play.textContent = playLabel(lorentz.running); }
   [l.B, l.q, l.vp, l.vz].forEach(el => el?.addEventListener('input', updateLorentz)); l.play?.addEventListener('click', toggleLorentz); l.reset?.addEventListener('click', resetLorentz);
   function drawLorentz() {
     const a = canvasContext(lCanvas); if (!a) return; const { ctx, width: w, height: h } = a;
@@ -195,8 +209,8 @@
   // ---------- Doppler wavefronts ----------
   const doppler = { running: true, mach: .6, period: 12, t: 0, emissions: [] };
   const dCanvas = $('#canvas-doppler'); const d = { mach: $('#doppler-mach'), period: $('#doppler-period'), play: $('#doppler-play'), reset: $('#doppler-reset') };
-  function updateDoppler() { doppler.mach = Number(d.mach.value); doppler.period = Number(d.period.value); text('#doppler-mach-value', `${doppler.mach.toFixed(2)} M`); text('#doppler-period-value', `${doppler.period} kadr`); text('#doppler-stat', doppler.mach < 1 ? 'Subsonik · c = 1' : doppler.mach < 1.2 ? 'Transonik' : 'Supersonik · Mach cone'); }
-  function toggleDoppler() { doppler.running = !doppler.running; d.play.textContent = doppler.running ? 'To‘xtatish' : 'Boshlash'; }
+  function updateDoppler() { doppler.mach = Number(d.mach.value); doppler.period = Number(d.period.value); text('#doppler-mach-value', `${doppler.mach.toFixed(2)} M`); text('#doppler-period-value', `${doppler.period} ${tr('app.framesUnit', 'kadr')}`); text('#doppler-stat', doppler.mach < 1 ? tr('app.dopplerSubsonic', 'Subsonik · c = 1') : doppler.mach < 1.2 ? tr('app.dopplerTransonic', 'Transonik') : tr('app.dopplerSupersonic', 'Supersonik · Mach cone')); }
+  function toggleDoppler() { doppler.running = !doppler.running; d.play.textContent = playLabel(doppler.running); }
   function resetDoppler() { doppler.t = 0; doppler.emissions = []; updateDoppler(); }
   [d.mach, d.period].forEach(el => el?.addEventListener('input', updateDoppler)); d.play?.addEventListener('click', toggleDoppler); d.reset?.addEventListener('click', resetDoppler);
   function drawDoppler() {
@@ -228,9 +242,46 @@
   }
 
   // ---------- Prompt, scoring and animation ----------
-  $('#generate-prompt')?.addEventListener('click', () => { const topic = $('#topic').value.trim() || 'Garmonik tebranishlar'; const level = $('#level').value; $('#prompt-output').textContent = `Siz fizika o‘qituvchisiz.\nMavzu: ${topic}\nDaraja: ${level}\n\n10 ta diagnostik savol tuzing. Har bir savolda to‘g‘ri javob, qisqa izoh va tipik xatoni ko‘rsating. Yakunda natijaga qarab 3 ta individual o‘quv yo‘lini tavsiya qiling.`; });
-  async function copyScenario() { const value = 'Hook → Core Concept → Misconception → Simulation Task\n\nFizik hodisani tushuntiring, formulani SI birliklarda yozing va HTML Canvas simulyatsiyasi uchun tekshiriladigan topshiriq bering.'; try { await navigator.clipboard.writeText(value); text('#copy-status', 'Nusxa olindi ✓'); setTimeout(() => text('#copy-status', 'Nusxa olish'), 1500); } catch { alert('Nusxa olish uchun brauzer ruxsati berilmadi.'); } }
+  let promptGenerated = false;
+  function renderPrompt() {
+    const topic = $('#topic').value.trim() || tr('app.defaultTopic', 'Garmonik tebranishlar');
+    const level = $('#level').value;
+    $('#prompt-output').textContent = tr('app.promptTemplate',
+      'Siz fizika o‘qituvchisiz.\nMavzu: {topic}\nDaraja: {level}\n\n10 ta diagnostik savol tuzing. Har bir savolda to‘g‘ri javob, qisqa izoh va tipik xatoni ko‘rsating. Yakunda natijaga qarab 3 ta individual o‘quv yo‘lini tavsiya qiling.',
+      { topic, level });
+    promptGenerated = true;
+  }
+  $('#generate-prompt')?.addEventListener('click', renderPrompt);
+  async function copyScenario() {
+    const value = tr('app.scenarioText', 'Hook → Core Concept → Misconception → Simulation Task\n\nFizik hodisani tushuntiring, formulani SI birliklarda yozing va HTML Canvas simulyatsiyasi uchun tekshiriladigan topshiriq bering.');
+    try {
+      await navigator.clipboard.writeText(value);
+      text('#copy-status', tr('app.copyDone', 'Nusxa olindi ✓'));
+      setTimeout(() => text('#copy-status', tr('app.copyIdle', 'Nusxa olish')), 1500);
+    } catch {
+      alert(tr('app.copyDenied', 'Nusxa olish uchun brauzer ruxsati berilmadi.'));
+    }
+  }
   $('#copy-scenario')?.addEventListener('click', copyScenario);
+
+  // Til almashganda JS boshqaradigan barcha matnlarni yangilash.
+  function refreshLocalizedLabels() {
+    if (p.play) p.play.textContent = playLabel(pendulum.running);
+    if (l.play) l.play.textContent = playLabel(lorentz.running);
+    if (d.play) d.play.textContent = playLabel(doppler.running);
+    [p.reset, l.reset, d.reset].forEach(btn => { if (btn) btn.textContent = tr('app.reset', 'Reset'); });
+    text('#generate-prompt', tr('app.generatePrompt', 'Prompt yaratish'));
+    text('#copy-scenario', tr('app.copyScenario', 'Ssenariydan nusxa olish'));
+    text('#copy-status', tr('app.copyIdle', 'Nusxa olish'));
+    if (promptGenerated) renderPrompt();
+    else text('#prompt-output', tr('app.promptPlaceholder', 'Prompt shu yerda ko‘rinadi...'));
+    if (menuButton) {
+      const open = nav?.classList.contains('open');
+      menuButton.setAttribute('aria-label', open ? tr('app.closeMenu', 'Menyuni yopish') : tr('nav.openMenu', 'Menyuni ochish'));
+    }
+    if (d.mach) updateDoppler();
+  }
+  document.addEventListener('i18n:change', refreshLocalizedLabels);
 
   function frame(now) {
     const elapsed = Math.min(.1, (now - pendulum.last) / 1000 || 0); pendulum.last = now;

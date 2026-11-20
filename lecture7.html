@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/i18n-boot.js"></script>
   <title>7-ma’ruza: Fizik animatsiya arxitekturasi: HTML5 Canvas asoslari</title>
   <meta name="description" content="7-ma'ruza: fizik animatsiya arxitekturasi — HTML5 Canvas asoslari, kadr tsikli va delta-time integratsiyasi.">
   <link rel="stylesheet" href="css/main.css">
@@ -18,7 +19,6 @@ function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) 
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
   </script>
-<link rel="stylesheet" href="css/translate.css">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -36,6 +36,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 <meta name="twitter:title" content="7-ma’ruza: Fizik animatsiya arxitekturasi: HTML5 Canvas asoslari">
 <meta name="twitter:description" content="7-ma'ruza: fizik animatsiya arxitekturasi — HTML5 Canvas asoslari, kadr tsikli va delta-time integratsiyasi.">
 <meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta name="i18n-page" content="lecture7">
+<link rel="stylesheet" href="css/i18n.css">
+<script src="js/i18n.js" defer></script>
+<link rel="alternate" hreflang="uz" href="https://ilimziyo.uz/lecture7.html">
+<link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/lecture7.html?lang=ru">
+<link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture7.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture7.html">
 </head>
 <body>
 
@@ -43,50 +50,50 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-text">FIZIKA va SUN’IY INTELLEKT</span>
+        <span class="nav-logo-text" data-i18n="brand.full">FIZIKA va SUN’IY INTELLEKT</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
-        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya va mundarija</a></li>
-        <li><a href="lecture1.html" class="nav-link">1-ma’ruza: Paradigma</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-ma’ruza: Modellashtirish</a></li>
-        <li><a href="lecture3.html" class="nav-link">3-ma’ruza: AI ekotizimi</a></li>
-        <li><a href="lecture4.html" class="nav-link">4-ma’ruza: Aniqlik va barqarorlik</a></li>
-        <li><a href="lecture5.html" class="nav-link">5-ma’ruza: Model turlari</a></li>
-        <li><a href="lecture6.html" class="nav-link">6-ma’ruza: Modellarni shakllantirish</a></li>
-        <li><a href="lecture7.html" class="nav-link active">7-ma’ruza: Canvas arxitekturasi</a></li>
-        <li><a href="lecture8.html" class="nav-link">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-        <li><a href="lecture9.html" class="nav-link">9-ma’ruza: Prompt-muhandislik</a></li>
-        <li><a href="lecture10.html" class="nav-link">10-ma’ruza: Vizuallashtirish</a></li>
-        <li><a href="lecture11.html" class="nav-link">11-ma’ruza: Masofaviy ta’lim</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-ma’ruza: Mexanika va AI-konveyer</a></li>
-        <li><a href="lecture13.html" class="nav-link">13-ma’ruza: Termodinamika va stoxastika</a></li>
-        <li><a href="lecture14.html" class="nav-link">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-        <li><a href="lecture15.html" class="nav-link">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-        <li><a href="lab2.html" class="nav-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-        <li><a href="lab3.html" class="nav-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-        <li><a href="lab4.html" class="nav-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-        <li><a href="lab5.html" class="nav-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-        <li><a href="lab6.html" class="nav-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-        <li><a href="lab7.html" class="nav-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-        <li><a href="lab8.html" class="nav-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-        <li><a href="lab9.html" class="nav-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-        <li><a href="lab10.html" class="nav-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-        <li><a href="lab11.html" class="nav-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-        <li><a href="lab12.html" class="nav-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-        <li><a href="lab13.html" class="nav-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-        <li><a href="lab14.html" class="nav-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-        <li><a href="lab15.html" class="nav-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
-        <li><a href="astro1.html" class="nav-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-        <li><a href="astro2.html" class="nav-link">⭐ A2. Spektral tahlil</a></li>
-        <li><a href="astro3.html" class="nav-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
-        <li><a href="glossariy.html" class="nav-link">📚 Atamalar lug‘ati</a></li>
-        <li><a href="si-vositalari.html" class="nav-link">🧰 SI vositalari</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+        <li><a href="lecture1.html" class="nav-link" data-i18n="nav.lectureShort.l1">1-ma’ruza: Paradigma</a></li>
+        <li><a href="lecture2.html" class="nav-link" data-i18n="nav.lectureShort.l2">2-ma’ruza: Modellashtirish</a></li>
+        <li><a href="lecture3.html" class="nav-link" data-i18n="nav.lectureShort.l3">3-ma’ruza: AI ekotizimi</a></li>
+        <li><a href="lecture4.html" class="nav-link" data-i18n="nav.lectureShort.l4">4-ma’ruza: Aniqlik va barqarorlik</a></li>
+        <li><a href="lecture5.html" class="nav-link" data-i18n="nav.lectureShort.l5">5-ma’ruza: Model turlari</a></li>
+        <li><a href="lecture6.html" class="nav-link" data-i18n="nav.lectureShort.l6">6-ma’ruza: Modellarni shakllantirish</a></li>
+        <li><a href="lecture7.html" class="nav-link active" data-i18n="nav.lectureShort.l7">7-ma’ruza: Canvas arxitekturasi</a></li>
+        <li><a href="lecture8.html" class="nav-link" data-i18n="nav.lectureShort.l8">8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+        <li><a href="lecture9.html" class="nav-link" data-i18n="nav.lectureShort.l9">9-ma’ruza: Prompt-muhandislik</a></li>
+        <li><a href="lecture10.html" class="nav-link" data-i18n="nav.lectureShort.l10">10-ma’ruza: Vizuallashtirish</a></li>
+        <li><a href="lecture11.html" class="nav-link" data-i18n="nav.lectureShort.l11">11-ma’ruza: Masofaviy ta’lim</a></li>
+        <li><a href="lecture12.html" class="nav-link" data-i18n="nav.lectureShort.l12">12-ma’ruza: Mexanika va AI-konveyer</a></li>
+        <li><a href="lecture13.html" class="nav-link" data-i18n="nav.lectureShort.l13">13-ma’ruza: Termodinamika va stoxastika</a></li>
+        <li><a href="lecture14.html" class="nav-link" data-i18n="nav.lectureShort.l14">14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+        <li><a href="lecture15.html" class="nav-link" data-i18n="nav.lectureShort.l15">15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="lab1.html" class="nav-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+        <li><a href="lab2.html" class="nav-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+        <li><a href="lab3.html" class="nav-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+        <li><a href="lab4.html" class="nav-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+        <li><a href="lab5.html" class="nav-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+        <li><a href="lab6.html" class="nav-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+        <li><a href="lab7.html" class="nav-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+        <li><a href="lab8.html" class="nav-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+        <li><a href="lab9.html" class="nav-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+        <li><a href="lab10.html" class="nav-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+        <li><a href="lab11.html" class="nav-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+        <li><a href="lab12.html" class="nav-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+        <li><a href="lab13.html" class="nav-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+        <li><a href="lab14.html" class="nav-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+        <li><a href="lab15.html" class="nav-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+        <li><a href="astro1.html" class="nav-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+        <li><a href="astro2.html" class="nav-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+        <li><a href="astro3.html" class="nav-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+        <li><a href="glossariy.html" class="nav-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+        <li><a href="si-vositalari.html" class="nav-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -97,51 +104,51 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   <div id="drawer-overlay" class="drawer-overlay"></div>
   <aside id="mobile-drawer" class="mobile-drawer">
     <div class="drawer-header">
-      <span class="drawer-title">Kurs mundarijasi</span>
+      <span class="drawer-title" data-i18n="nav.courseToc">Kurs mundarijasi</span>
       <button id="drawer-close" class="drawer-close">&times;</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
-      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya va mundarija</a></li>
-      <li><a href="lecture1.html" class="drawer-link">🔬 1-ma’ruza: Paradigma</a></li>
-      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
-      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
-      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
-      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
-      <li><a href="lecture7.html" class="drawer-link active">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
-      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
-      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="index.html" class="drawer-link" data-i18n="nav.home">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link" data-i18n="nav.annotationToc">📖 Annotatsiya va mundarija</a></li>
+      <li><a href="lecture1.html" class="drawer-link" data-i18n="nav.lectureShort.l1">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link" data-i18n="nav.lectureShort.l2">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link" data-i18n="nav.lectureShort.l3">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link" data-i18n="nav.lectureShort.l4">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link" data-i18n="nav.lectureShort.l5">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link" data-i18n="nav.lectureShort.l6">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link active" data-i18n="nav.lectureShort.l7">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link" data-i18n="nav.lectureShort.l8">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link" data-i18n="nav.lectureShort.l9">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link" data-i18n="nav.lectureShort.l10">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link" data-i18n="nav.lectureShort.l11">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link" data-i18n="nav.lectureShort.l12">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link" data-i18n="nav.lectureShort.l13">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link" data-i18n="nav.lectureShort.l14">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link" data-i18n="nav.lectureShort.l15">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="lab1.html" class="drawer-link">🧪 1-laboratoriya: AI vizual loyiha</a></li>
-      <li><a href="lab2.html" class="drawer-link">🧪 2-laboratoriya: LLM matematik model</a></li>
-      <li><a href="lab3.html" class="drawer-link">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
-      <li><a href="lab4.html" class="drawer-link">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
-      <li><a href="lab5.html" class="drawer-link">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
-      <li><a href="lab6.html" class="drawer-link">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
-      <li><a href="lab7.html" class="drawer-link">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
-      <li><a href="lab8.html" class="drawer-link">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
-      <li><a href="lab9.html" class="drawer-link">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
-      <li><a href="lab10.html" class="drawer-link">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
-      <li><a href="lab11.html" class="drawer-link">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
-      <li><a href="lab12.html" class="drawer-link">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
-      <li><a href="lab13.html" class="drawer-link">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
-      <li><a href="lab14.html" class="drawer-link">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
-      <li><a href="lab15.html" class="drawer-link">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="lab1.html" class="drawer-link" data-i18n="nav.labShort.l1">🧪 1-laboratoriya: AI vizual loyiha</a></li>
+      <li><a href="lab2.html" class="drawer-link" data-i18n="nav.labShort.l2">🧪 2-laboratoriya: LLM matematik model</a></li>
+      <li><a href="lab3.html" class="drawer-link" data-i18n="nav.labShort.l3">🧪 3-laboratoriya: AI ekotizim va ish muhiti</a></li>
+      <li><a href="lab4.html" class="drawer-link" data-i18n="nav.labShort.l4">🧪 4-laboratoriya: WolframAlpha va hisoblash aniqligi</a></li>
+      <li><a href="lab5.html" class="drawer-link" data-i18n="nav.labShort.l5">🧪 5-laboratoriya: Deterministik va stoxastik modellar</a></li>
+      <li><a href="lab6.html" class="drawer-link" data-i18n="nav.labShort.l6">🧪 6-laboratoriya: Kuchlar diagrammasi va AI tasvir</a></li>
+      <li><a href="lab7.html" class="drawer-link" data-i18n="nav.labShort.l7">🧪 7-laboratoriya: HTML5 Canvas va delta-time</a></li>
+      <li><a href="lab8.html" class="drawer-link" data-i18n="nav.labShort.l8">🧪 8-laboratoriya: AI bilan juftlikda fizika dvigateli</a></li>
+      <li><a href="lab9.html" class="drawer-link" data-i18n="nav.labShort.l9">🧪 9-laboratoriya: Prompt-muhandislik va kod generatsiyasi</a></li>
+      <li><a href="lab10.html" class="drawer-link" data-i18n="nav.labShort.l10">🧪 10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi</a></li>
+      <li><a href="lab11.html" class="drawer-link" data-i18n="nav.labShort.l11">🧪 11-laboratoriya: LMS va raqamli fizika kursi</a></li>
+      <li><a href="lab12.html" class="drawer-link" data-i18n="nav.labShort.l12">🧪 12-laboratoriya: Mexanika dinamikasi va AI dvigatel</a></li>
+      <li><a href="lab13.html" class="drawer-link" data-i18n="nav.labShort.l13">🧪 13-laboratoriya: Termodinamika va P-V grafiklar</a></li>
+      <li><a href="lab14.html" class="drawer-link" data-i18n="nav.labShort.l14">🧪 14-laboratoriya: Elektrodinamika va AI audio</a></li>
+      <li><a href="lab15.html" class="drawer-link" data-i18n="nav.labShort.l15">🧪 15-laboratoriya: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="astro1.html" class="drawer-link">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
-      <li><a href="astro2.html" class="drawer-link">⭐ A2. Spektral tahlil</a></li>
-      <li><a href="astro3.html" class="drawer-link">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
+      <li><a href="astro1.html" class="drawer-link" data-i18n="nav.astroShort.a1">⭐ A1. Yulduzlar evolyutsiyasi</a></li>
+      <li><a href="astro2.html" class="drawer-link" data-i18n="nav.astroShort.a2">⭐ A2. Spektral tahlil</a></li>
+      <li><a href="astro3.html" class="drawer-link" data-i18n="nav.astroShort.a3">⭐ A3. Teleskop kuzatuv ma’lumotlari</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
-      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
-      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+      <li><a href="glossariy.html" class="drawer-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link" data-i18n="nav.author">👤 Muallif</a></li>
     </ul>
   </aside>
 
@@ -151,7 +158,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
     <!-- Hero Header -->
     <div class="hero-panel" style="margin-bottom: 30px;">
       <span class="badge badge-cyan">7-ma’ruza: Dasturiy arxitektura va dvigatel</span>
-      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;">
+      <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.hero.syllabusL7">
         Fizik animatsiya arxitekturasi: HTML5 Canvas asoslari
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
@@ -193,19 +200,19 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
     <!-- Tabs Container: 7 Main Stages -->
     <div class="tabs-container" style="margin-bottom: 40px;">
       <div class="tabs-nav">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')">1. AI diagnostika</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')">2. Google Antigravity</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')">3. Kadr tsikli va delta-time</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')">4. Optimizatsiya va xotira</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')">5. Vizual sinov (Artifacts)</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')">6. Interaktiv dvigatel</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')">7. Test va manbalar</button>
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')" data-i18n="tabs.1_ai_diagnostika">1. AI diagnostika</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')" data-i18n="pages.lecture7.tab2">2. Google Antigravity</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')" data-i18n="pages.lecture7.tab3">3. Kadr tsikli va delta-time</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')" data-i18n="pages.lecture7.tab4">4. Optimizatsiya va xotira</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')" data-i18n="pages.lecture7.tab5">5. Vizual sinov (Artifacts)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')" data-i18n="pages.lecture7.tab6">6. Interaktiv dvigatel</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
       </div>
 
       <!-- TAB 1: AI Diagnostika & Individual Reja -->
       <div id="tab-sec1" class="tab-content active">
         <div class="glass-panel">
-          <span class="badge badge-cyan">1-bosqich: Kognitiv diagnostika</span>
+          <span class="badge badge-cyan" data-i18n="common.stage1Cognitive">1-bosqich: Kognitiv diagnostika</span>
           <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: kognitiv diagnostika va 3 klasterli adaptiv o‘quv rejasi</h2>
 
           <!-- Scientific Citation Box -->
@@ -214,7 +221,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
               📚 Nazariy-Metodologik Asos:
             </div>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-              Grafik va kompyuter fizikasi ta’limida talabalarning animatsiya mexanikasini o‘zlashtirishi <strong>Lev Vygotskiyning "Eng Yaqin Rivojlanish Zonasi" (ZPD, 1978)</strong> hamda <strong>Bloomning taksonomiyasi (Anderson va Krathwohl, 2001)</strong> prinsiplari asosida tashkil etiladi. Dasturiy grafik apparat bilan ishlash tajribasi turli darajadagi talabalarni MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratadi.
+              Grafik va kompyuter fizikasi ta’limida talabalarning animatsiya mexanikasini o‘zlashtirishi <strong data-i18n="common.zpdLev">Lev Vygotskiyning "Eng Yaqin Rivojlanish Zonasi" (ZPD, 1978)</strong> hamda <strong data-i18n="common.bloomTaxonomy">Bloomning taksonomiyasi (Anderson va Krathwohl, 2001)</strong> prinsiplari asosida tashkil etiladi. Dasturiy grafik apparat bilan ishlash tajribasi turli darajadagi talabalarni MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratadi.
             </p>
           </div>
 
@@ -225,7 +232,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           <div class="grid-3" style="margin-bottom: 24px;">
             <div class="glass-panel" style="background:#F3F5F8; border-left: 4px solid var(--accent-cyan);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <h4 style="color: var(--accent-cyan);">Klaster A (boshlang‘ich)</h4>
+                <h4 style="color: var(--accent-cyan);" data-i18n="cluster.aBeginner">Klaster A (boshlang‘ich)</h4>
                 <span class="badge badge-cyan" style="font-size:0.75rem;">Scaffolding</span>
               </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
@@ -238,8 +245,8 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
             <div class="glass-panel" style="background:#F3F5F8; border-left: 4px solid var(--accent-emerald);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <h4 style="color: var(--accent-emerald);">Klaster B (o‘rta / standart)</h4>
-                <span class="badge badge-emerald" style="font-size:0.75rem;">Dvigatel quruvchi</span>
+                <h4 style="color: var(--accent-emerald);" data-i18n="cluster.bMiddle">Klaster B (o‘rta / standart)</h4>
+                <span class="badge badge-emerald" style="font-size:0.75rem;" data-i18n="common.engineBuilder">Dvigatel quruvchi</span>
               </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
                 Delta-Time ($\Delta t$) tushunchasini to‘liq tushunadi. JavaScript ES6+ sintaksisiga ega. Monitor chastotasining (60Hz / 144Hz) fizik tezlikka ta’sirini anglaydi.
@@ -251,8 +258,8 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
             <div class="glass-panel" style="background:#F3F5F8; border-left: 4px solid var(--accent-purple);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <h4 style="color: var(--accent-purple);">Klaster C (Ilg‘or / Research)</h4>
-                <span class="badge badge-purple" style="font-size:0.75rem;">Tadqiqotchi</span>
+                <h4 style="color: var(--accent-purple);" data-i18n="cluster.cResearch">Klaster C (Ilg‘or / Research)</h4>
+                <span class="badge badge-purple" style="font-size:0.75rem;" data-i18n="common.researcher">Tadqiqotchi</span>
               </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:10px;">
                 Xotira boshqaruvi, Garbage Collection (GC) pauzalari, Web Workers va OffscreenCanvas ko‘p oqimli arxitekturasi bilan tanish.
@@ -269,17 +276,17 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
             <table class="styled-table" style="width:100%;">
               <thead>
                 <tr>
-                  <th>Bosqich</th>
-                  <th>Hafta</th>
-                  <th>Klaster A (boshlang‘ich)</th>
-                  <th>Klaster B (standart)</th>
-                  <th>Klaster C (ilg‘or)</th>
-                  <th>Baholash mezonlari</th>
+                  <th data-i18n="common.stage">Bosqich</th>
+                  <th data-i18n="common.week">Hafta</th>
+                  <th data-i18n="cluster.aBeginner">Klaster A (boshlang‘ich)</th>
+                  <th data-i18n="cluster.bStandard">Klaster B (standart)</th>
+                  <th data-i18n="cluster.cAdvanced">Klaster C (ilg‘or)</th>
+                  <th data-i18n="rubric.criteria">Baholash mezonlari</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>1-Hafta</strong></td>
+                  <td><strong data-i18n="common.week1">1-Hafta</strong></td>
                   <td>Canvas Asoslari va rAF</td>
                   <td>Canvas 2D primitivlari va oddiy `requestAnimationFrame` tsikli</td>
                   <td>Delta-Time hisobi va fizik tezlikni vaqtga bog‘lash</td>
@@ -287,7 +294,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
                   <td>Kadrlar silliqligi (60 FPS)</td>
                 </tr>
                 <tr>
-                  <td><strong>2-Hafta</strong></td>
+                  <td><strong data-i18n="common.week2">2-Hafta</strong></td>
                   <td>Akkumulyator va Barqarorlik</td>
                   <td>O‘zgaruvchan dt muammolarini (Tunneling) kuzatish</td>
                   <td>Glenn Fiedler "Fix Your Timestep" akkumulyatorini joriy etish</td>
@@ -295,7 +302,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
                   <td>Fizik determinizm (100%)</td>
                 </tr>
                 <tr>
-                  <td><strong>3-Hafta</strong></td>
+                  <td><strong data-i18n="common.week3">3-Hafta</strong></td>
                   <td>Optimizatsiya va Xotira</td>
                   <td>Kadrni tozalash va to‘qnashuvlar chegarasi</td>
                   <td>Object Pooling joriy etib, GC mikro-pauzalarini yo‘qotish</td>
@@ -303,7 +310,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
                   <td>Jank kadrlar soni (&lt; 1%)</td>
                 </tr>
                 <tr>
-                  <td><strong>4-Hafta</strong></td>
+                  <td><strong data-i18n="common.week4">4-Hafta</strong></td>
                   <td>Capstone va Telemetriya</td>
                   <td>50 ta elastik to‘p simulyatsiyasini yig‘ish</td>
                   <td>Real vaqtli FPS/Frame Pacing HUD telemetriyasini qurish</td>
@@ -740,7 +747,7 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
               </div>
             </div>
 
-            <button onclick="checkDiagnostic7Quiz()" class="btn btn-primary">Natijani tekshirish va kompetensiya xulosasini olish →</button>
+            <button onclick="checkDiagnostic7Quiz()" class="btn btn-primary" data-i18n="common.checkCompetence">Natijani tekshirish va kompetensiya xulosasini olish →</button>
             <div id="diag7-feedback"></div>
           </div>
         </div>
@@ -859,5 +866,5 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
       feedbackEl.innerHTML = htmlResult;
     };
   </script>
-<script src="js/translate.js"></script></body>
+</body>
 </html>

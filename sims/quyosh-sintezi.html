@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/i18n-boot.js"></script>
   <title>Quyosh Sintezi: Proton-Proton Zanjiri</title>
   <style>
     :root {
@@ -41,10 +42,13 @@
       aside { border-left: 0; border-top: 1px solid var(--border); }
     }
   </style>
+<meta name="i18n-page" content="sims_quyosh_sintezi">
+<link rel="stylesheet" href="../css/i18n.css">
+<script src="../js/i18n.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>🌌 Quyosh yadrosida termoyadroviy sintez: proton-proton (pp-I) zanjiri</h1>
+    <h1 data-i18n="pages.sims_quyosh_sintezi.h1">🌌 Quyosh yadrosida termoyadroviy sintez: proton-proton (pp-I) zanjiri</h1>
     <div class="controls">
       <label>Yadro harorati: <b id="tval">15.0</b> mln K
         <input type="range" id="temp" min="8" max="25" step="0.5" value="15">
@@ -56,24 +60,24 @@
   <main>
     <div id="stage"><canvas id="c"></canvas></div>
     <aside>
-      <h2>Telemetriya</h2>
+      <h2 data-i18n="pages.sims_quyosh_sintezi.h2_1">Telemetriya</h2>
       <div class="stats">
-        <div class="stat"><b id="sP">0</b><span>Protonlar ¹H</span></div>
-        <div class="stat"><b id="sHe4">0</b><span>Geliy-4 hosil bo‘ldi</span></div>
-        <div class="stat"><b id="sE">0</b><span>Ajralgan energiya, MeV</span></div>
-        <div class="stat"><b id="sNu">0</b><span>Neytrinolar</span></div>
+        <div class="stat"><b id="sP">0</b><span data-i18n="pages.sims_quyosh_sintezi.span_2">Protonlar ¹H</span></div>
+        <div class="stat"><b id="sHe4">0</b><span data-i18n="pages.sims_quyosh_sintezi.span_3">Geliy-4 hosil bo‘ldi</span></div>
+        <div class="stat"><b id="sE">0</b><span data-i18n="pages.sims_quyosh_sintezi.span_4">Ajralgan energiya, MeV</span></div>
+        <div class="stat"><b id="sNu">0</b><span data-i18n="pages.sims_quyosh_sintezi.span_5">Neytrinolar</span></div>
       </div>
 
-      <h2>pp-I zanjiri bosqichlari</h2>
+      <h2 data-i18n="pages.sims_quyosh_sintezi.h2_6">pp-I zanjiri bosqichlari</h2>
       <div class="step" id="st1">1) ¹H + ¹H → ²H + e⁺ + νₑ &nbsp;(+1.44 MeV*)</div>
       <div class="step" id="st2">2) ²H + ¹H → ³He + γ &nbsp;(+5.49 MeV)</div>
       <div class="step" id="st3">3) ³He + ³He → ⁴He + 2 ¹H &nbsp;(+12.86 MeV)</div>
       <div class="step">Jami: 4 ¹H → ⁴He + 2e⁺ + 2νₑ &nbsp;(≈ 26.7 MeV)</div>
 
-      <h2 style="margin-top:12px;">Belgilar</h2>
+      <h2 style="margin-top:12px;" data-i18n="pages.sims_quyosh_sintezi.h2_7">Belgilar</h2>
       <div class="legend">
-        <span><i class="dot" style="background:var(--p)"></i>¹H proton</span>
-        <span><i class="dot" style="background:var(--d)"></i>²H deyteriy</span>
+        <span data-i18n="pages.sims_quyosh_sintezi.span_8"><i class="dot" style="background:var(--p)"></i>¹H proton</span>
+        <span data-i18n="pages.sims_quyosh_sintezi.span_9"><i class="dot" style="background:var(--d)"></i>²H deyteriy</span>
         <span><i class="dot" style="background:var(--he3)"></i>³He</span>
         <span><i class="dot" style="background:var(--he4)"></i>⁴He</span>
         <span><i class="dot" style="background:var(--pos)"></i>e⁺</span>
@@ -81,7 +85,7 @@
         <span><i class="dot" style="background:var(--gamma)"></i>γ</span>
       </div>
 
-      <h2 style="margin-top:12px;">Reaksiyalar jurnali</h2>
+      <h2 style="margin-top:12px;" data-i18n="pages.sims_quyosh_sintezi.h2_13">Reaksiyalar jurnali</h2>
       <div id="log"></div>
 
       <p class="note">* 1-bosqich energiyasi pozitronning elektron bilan annigilyatsiyasini o‘z ichiga oladi; uning bir qismini (o‘rtacha ≈ 0.26 MeV) neytrino olib ketadi.

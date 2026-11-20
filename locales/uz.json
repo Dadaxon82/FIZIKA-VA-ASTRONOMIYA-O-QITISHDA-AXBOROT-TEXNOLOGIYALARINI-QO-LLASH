@@ -1,0 +1,1355 @@
+{
+  "_meta": {
+    "language": "uz",
+    "name": "O‘zbekcha",
+    "note": "ILIMZIYO — \"Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash\" elektron darsligi lug‘ati. Kalitlar tools/i18n_mark.py va js/i18n.js bilan mos; yangi kalit qo‘shilsa uchala faylga ham qo‘shing."
+  },
+  "brand": {
+    "full": "FIZIKA va SUN’IY INTELLEKT",
+    "short": "FIZIKA va AI",
+    "tagline": "Interaktiv web-simulyatsiyalar"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "homeTitleCase": "Bosh Sahifa",
+    "annotation": "Annotatsiya",
+    "annotationToc": "Annotatsiya va mundarija",
+    "glossary": "Lug‘at",
+    "glossaryFull": "Atamalar lug‘ati",
+    "aiTools": "SI vositalari",
+    "aiToolsShort": "SI",
+    "author": "Muallif",
+    "labsRange": "Lab 1-15",
+    "astroRange": "Astro 1-3",
+    "navigation": "Navigatsiya",
+    "courseToc": "Kurs mundarijasi",
+    "quickLinks": "Tezkor havolalar",
+    "resources": "Resurslar",
+    "textbook": "Darslik haqida",
+    "lectures": "Ma’ruzalar",
+    "labs": "Laboratoriyalar",
+    "independent": "Mustaqil ta’lim",
+    "astronomy": "Astronomiya",
+    "simulators": "Simulyatorlar",
+    "aiLab": "AI laboratoriya",
+    "hemis": "HEMIS haqida",
+    "mainNavigation": "Asosiy navigatsiya",
+    "openMenu": "Menyuni ochish",
+    "menu": "Menyu",
+    "phetSims": "PhET Simulyatsiyalar",
+    "lectureShort": {
+      "l1": "1-ma’ruza: Paradigma",
+      "l2": "2-ma’ruza: Modellashtirish",
+      "l3": "3-ma’ruza: AI ekotizimi",
+      "l4": "4-ma’ruza: Aniqlik va barqarorlik",
+      "l5": "5-ma’ruza: Model turlari",
+      "l6": "6-ma’ruza: Modellarni shakllantirish",
+      "l7": "7-ma’ruza: Canvas arxitekturasi",
+      "l8": "8-ma’ruza: Vektorlar va to‘qnashuv",
+      "l9": "9-ma’ruza: Prompt-muhandislik",
+      "l10": "10-ma’ruza: Vizuallashtirish",
+      "l11": "11-ma’ruza: Masofaviy ta’lim",
+      "l12": "12-ma’ruza: Mexanika va AI-konveyer",
+      "l13": "13-ma’ruza: Termodinamika va stoxastika",
+      "l14": "14-ma’ruza: Elektrodinamika va audio sintez",
+      "l15": "15-ma’ruza: Yadro fizikasi va yakuniy loyiha"
+    },
+    "labShort": {
+      "l1": "1-laboratoriya: AI vizual loyiha",
+      "l2": "2-laboratoriya: LLM matematik model",
+      "l3": "3-laboratoriya: AI ekotizim va ish muhiti",
+      "l4": "4-laboratoriya: WolframAlpha va hisoblash aniqligi",
+      "l5": "5-laboratoriya: Deterministik va stoxastik modellar",
+      "l6": "6-laboratoriya: Kuchlar diagrammasi va AI tasvir",
+      "l7": "7-laboratoriya: HTML5 Canvas va delta-time",
+      "l8": "8-laboratoriya: AI bilan juftlikda fizika dvigateli",
+      "l9": "9-laboratoriya: Prompt-muhandislik va kod generatsiyasi",
+      "l10": "10-laboratoriya: Astronomik trayektoriyalar va ovoz sintezi",
+      "l11": "11-laboratoriya: LMS va raqamli fizika kursi",
+      "l12": "12-laboratoriya: Mexanika dinamikasi va AI dvigatel",
+      "l13": "13-laboratoriya: Termodinamika va P-V grafiklar",
+      "l14": "14-laboratoriya: Elektrodinamika va AI audio",
+      "l15": "15-laboratoriya: Yadro fizikasi va yakuniy loyiha"
+    },
+    "astroShort": {
+      "a1": "A1. Yulduzlar evolyutsiyasi",
+      "a2": "A2. Spektral tahlil",
+      "a3": "A3. Teleskop kuzatuv ma’lumotlari"
+    }
+  },
+  "common": {
+    "lectureNo": {
+      "l1": "1-ma’ruza",
+      "l2": "2-ma’ruza",
+      "l3": "3-ma’ruza",
+      "l4": "4-ma’ruza",
+      "l5": "5-ma’ruza",
+      "l6": "6-ma’ruza",
+      "l7": "7-ma’ruza",
+      "l8": "8-ma’ruza",
+      "l9": "9-ma’ruza",
+      "l10": "10-ma’ruza",
+      "l11": "11-ma’ruza",
+      "l12": "12-ma’ruza",
+      "l13": "13-ma’ruza",
+      "l14": "14-ma’ruza",
+      "l15": "15-ma’ruza"
+    },
+    "labNo": {
+      "l1": "1-laboratoriya",
+      "l2": "2-laboratoriya",
+      "l3": "3-laboratoriya",
+      "l4": "4-laboratoriya",
+      "l5": "5-laboratoriya",
+      "l6": "6-laboratoriya",
+      "l7": "7-laboratoriya",
+      "l8": "8-laboratoriya",
+      "l9": "9-laboratoriya",
+      "l10": "10-laboratoriya",
+      "l11": "11-laboratoriya",
+      "l12": "12-laboratoriya",
+      "l13": "13-laboratoriya",
+      "l14": "14-laboratoriya",
+      "l15": "15-laboratoriya"
+    },
+    "copy": "Nusxa olish",
+    "copyShort": "Nusxalash",
+    "copyPrompt": "Promptni nusxalash",
+    "copyFromPrompt": "Promptdan nusxa olish",
+    "checkResult": "Natijani tekshirish",
+    "checkCompetence": "Natijani tekshirish va kompetensiya xulosasini olish",
+    "analyzeDiagnostics": "Diagnostika natijalarini tahlil qilish",
+    "diagnosticsDone": "Diagnostika yakunlandi",
+    "cognitiveProfile": "Sizning kognitiv profilingiz:",
+    "startDiagnostic": "Boshlang‘ich kognitiv diagnostika testi (4 ta savol):",
+    "recommendedPrompt": "Tavsiya etiladigan AI prompt (Claude / ChatGPT uchun):",
+    "aiStrategy": "AI strategiyasi:",
+    "pipelineStages": "Pipeline bosqichlari:",
+    "aiPipeline": "AI-Pipeline konveyeri",
+    "liveLabs": "Jonli virtual laboratoriyalar",
+    "phetHtml5": "PhET Interactive Simulations (HTML5):",
+    "reset": "Qayta o‘rnatish",
+    "time": "Vaqt:",
+    "week": "Hafta",
+    "week1": "1-Hafta",
+    "week2": "2-Hafta",
+    "week3": "3-Hafta",
+    "week4": "4-Hafta",
+    "stage": "Bosqich",
+    "description": "Tavsif:",
+    "sourceContent": "Manba mazmuni:",
+    "quoteContent": "Iqtibos mazmuni:",
+    "conclusion": "Xulosa",
+    "objective": "Ishning maqsadi:",
+    "controlQuestions": "Nazorat savollari",
+    "selfStudyQuestions": "Mustaqil ish uchun savollar",
+    "references": "Adabiyotlar",
+    "referencesApa": "Foydalanilgan adabiyotlar (APA 7)",
+    "referencesApaFull": "Foydalanilgan ilmiy-metodik adabiyotlar (APA 7 standarti):",
+    "aiLog": "SI dan foydalanish jurnali",
+    "assessAndBib": "Bilimni baholash va APA 7th bibliography",
+    "academicAssessment": "Akademik baholash va bibliografiya",
+    "learningOutcomes": "1.1. Laboratoriyaning maqsadi va kutiladigan natijalar (Learning Outcomes):",
+    "aiCompetenceTest": "1.2. Boshlang‘ich SI-kompetensiyalar diagnostika testi:",
+    "reverseEngineering": "Teskari Muhandislik (Reverse Engineering)",
+    "uiComponent": "UI komponenti",
+    "physicalQuantity": "Fizik kattalik",
+    "mathModel": "Matematik model va formulalar",
+    "codeVariable": "Kod o‘zgaruvchisi va qadam",
+    "livePipelineTest": "To‘liq AI-pipeline bosqichlarini jonli sinash:",
+    "theoryAnalysis": "1. Nazariy tahlil:",
+    "codeGeneration": "2. Kod generatsiyasi:",
+    "zpdVygotsky": "Vygotskiy Yaqin Rivojlanish Zonasi (ZPD)",
+    "zpdLev": "Lev Vygotskiyning \"Eng Yaqin Rivojlanish Zonasi\" (ZPD, 1978)",
+    "bloomTaxonomy": "Bloomning taksonomiyasi (Anderson va Krathwohl, 2001)",
+    "stage1Cognitive": "1-bosqich: Kognitiv diagnostika",
+    "engineBuilder": "Dvigatel quruvchi",
+    "researcher": "Tadqiqotchi",
+    "answerUnchanged": "D) O‘zgarmaydi",
+    "wwwSource1": "WWW Ilmiy-Uslubiy Manba va Ta’limiy Diagnostika Asosi (1-Bo‘lim):",
+    "wwwSource1Plan": "WWW Ilmiy-Uslubiy Manba va Pedagogik Diagnostika (1-Reja):",
+    "wwwSource2": "WWW Ilmiy-Uslubiy Manbalar va Simulyatsiya Tahlili Asosi (2-Bo‘lim):",
+    "wwwSource6": "WWW Ilmiy-Uslubiy Manbalar va Virtual Laboratoriya Tadqiqoti (6-Bo‘lim):",
+    "wwwSource7": "WWW Ilmiy-Uslubiy Manbalar va Formatik Baholash Metodikasi (7-Bo‘lim):"
+  },
+  "footer": {
+    "copyright": "2026 Fizika va astronomiya o‘qitishda axborot texnologiyalari. Barcha huquqlar himoyalangan.",
+    "courseTagline": "Fizika va astronomiya o‘qitishda zamonaviy axborot texnologiyalari va sun’iy intellekt integratsiyasi kursi.",
+    "portalTagline": "Fizika va astronomiya ta’limida axborot texnologiyalari fanidan virtual laboratoriyalar, interaktiv simulyatsiyalar va zamonaviy AI vositalari integratsiyasi portali.",
+    "computationalTagline": "Fizika va astronomiya o‘qitishda zamonaviy axborot texnologiyalari va hisoblash fizikasi kursi.",
+    "modelingTagline": "Fizika va astronomiya o‘qitishda axborot texnologiyalari va kompyuterli modellashtirish kursi.",
+    "higherEdPortal": "Fizika va astronomiya o‘qitishda axborot texnologiyalari — oliy ta’lim portali",
+    "registry": "O‘zbekiston Respublikasining Dasturiy mahsulotlar davlat reyestrida 18.11.2026 y. ro‘yxatdan o‘tkazildi № DGU 70647",
+    "lab": "Fizika va astronomiya o‘qitishda axborot texnologiyalari — Raqamli ta’lim laboratoriyasi · 2026"
+  },
+  "freeAlt": {
+    "title": "Pullik vositalarning bepul muqobillari",
+    "intro": "Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:",
+    "fullList": "To‘liq ro‘yxat:",
+    "toolsPage": "SI vositalari sahifasi",
+    "alt1": "o‘rniga: Microsoft Designer (Bing Image Creator), Gemini yoki ChatGPT bepul tarifidagi tasvir generatsiyasi, Stable Diffusion; aniq ilmiy chizmalar uchun Inkscape, diagrams.net, GeoGebra.",
+    "alt2": "o‘rniga: o‘z Canvas simulyatsiyangizni OBS Studio bilan ekrandan yozib olish, Manim (Python) yoki Blender bilan animatsiya, Shotcut/Kdenlive bilan montaj.",
+    "alt3": "o‘rniga: Manim, Blender yoki simulyatsiyani OBS Studio bilan yozib olish — fizik jihatdan aniq video beradi.",
+    "alt4": "o‘rniga: Manim, Blender, OBS Studio.",
+    "alt5": "o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.",
+    "alt6": "o‘rniga: Web Speech API, Microsoft Edge o‘zbekcha ovozlari; transkripsiya uchun Whisper.",
+    "alt7": "o‘rniga: Web Speech API (hisob va to‘lov kartasi talab qilinmaydi).",
+    "alt8": "o‘rniga: Whisper — ochiq manbali, o‘zbek tilini qo‘llaydi, Google Colab’da bepul ishlaydi."
+  },
+  "rubric": {
+    "criterion": "Mezon",
+    "criterionTitle": "Baholash Mezoni",
+    "criteria": "Baholash mezonlari",
+    "criteria100": "Baholash mezonlari (100 ball)",
+    "points": "Ball",
+    "requirement": "Talab",
+    "maxPoints": "Maksimal Ball",
+    "earnedPoints": "Olingan Ball",
+    "total": "Jami Natija:",
+    "totalAccumulated": "Jami To‘plangan Ball:",
+    "overall": "Umumiy Natija:",
+    "calculator100": "100 Ballik baholash mezonlari kalkulyatori:",
+    "gradeScale": "Baho: 86–100 ball — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3), 55 dan kam — qoniqarsiz (2).",
+    "level": {
+      "excellent10": "A’lo (10 ball)",
+      "excellent15": "A’lo (15 ball)",
+      "excellent20": "A’lo (20 ball)",
+      "excellent25": "A’lo (25 ball)",
+      "excellent30": "A’lo (30 ball)",
+      "notDone0": "Bajarilmadi (0 ball)",
+      "satisfactory5": "Qoniqarli (5 ball)",
+      "satisfactory6": "Qoniqarli (6 ball)",
+      "satisfactory8": "Qoniqarli (8 ball)",
+      "satisfactory10": "Qoniqarli (10 ball)",
+      "satisfactory12": "Qoniqarli (12 ball)",
+      "satisfactory13": "Qoniqarli (13 ball)",
+      "satisfactory14": "Qoniqarli (14 ball)",
+      "satisfactory15": "Qoniqarli (15 ball)",
+      "satisfactory16": "Qoniqarli (16 ball)",
+      "unsatisfactory3": "Qoniqarsiz (3 ball)",
+      "unsatisfactory5": "Qoniqarsiz (5 ball)",
+      "unsatisfactory8": "Qoniqarsiz (8 ball)",
+      "good8": "Yaxshi (8 ball)",
+      "good12": "Yaxshi (12 ball)",
+      "good16": "Yaxshi (16 ball)",
+      "good20": "Yaxshi (20 ball)",
+      "good24": "Yaxshi (24 ball)"
+    },
+    "max": {
+      "10": "Max: 10",
+      "10b": "Max: 10b",
+      "15b": "Max: 15b",
+      "20": "Max: 20",
+      "20b": "Max: 20b",
+      "25": "Max: 25",
+      "25b": "Max: 25b",
+      "30b": "Max: 30b"
+    },
+    "pointsN": {
+      "p15": "15 ball",
+      "p20": "20 ball",
+      "p25": "25 ball",
+      "p30": "30 ball",
+      "p40": "40 ball"
+    }
+  },
+  "cluster": {
+    "aBeginner": "Klaster A (boshlang‘ich)",
+    "aFoundational": "Klaster A: boshlang‘ich (Foundational)",
+    "bStandard": "Klaster B (standart)",
+    "bMiddle": "Klaster B (o‘rta / standart)",
+    "bCore": "Klaster B: amaliyotchi (Core)",
+    "cAdvanced": "Klaster C (ilg‘or)",
+    "cResearch": "Klaster C (Ilg‘or / Research)",
+    "cResearcher": "Klaster C: tadqiqotchi (Advanced)"
+  },
+  "home": {
+    "hero": {
+      "badge": "OCHIQ TA’LIM RESURSI · QO‘QON DAVLAT UNIVERSITETI",
+      "title": "“Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash” fanidan elektron darslik",
+      "lead": "15 ta ma’ruza, 15 ta interaktiv laboratoriya va 15 ta mustaqil ta’lim topshirig‘idan iborat ochiq elektron darslik. Har bir mavzu nazariya, AI-vositalar bilan ishlash amaliyoti va interaktiv Web-simulyatsiyani birlashtiradi.",
+      "ctaProgram": "Kurs dasturini ko‘rish",
+      "ctaAuthor": "Muallif haqida",
+      "trustLicense": "CC BY-SA 4.0 — ochiq litsenziya",
+      "trustHemis": "HEMIS orqali rasmiy baholash",
+      "trustLanguages": "O‘zbek · Rus · Ingliz tillarida",
+      "syllabusTitle": "FAN DASTURI — QISQACHA",
+      "syllabusL1": "AI yordamida fizik simulyatsiya yaratish paradigmasi",
+      "syllabusL7": "Fizik animatsiya arxitekturasi: HTML5 Canvas asoslari",
+      "syllabusL12": "Mexanika qonuniyatlarini modellashtirish va animatsiya",
+      "syllabusL15": "Yadro fizikasi va yakuniy loyiha himoyasi",
+      "syllabusTotal": "Jami 45 ta mavzu",
+      "syllabusMeta": "7-semestr · 4 ECTS"
+    },
+    "stats": {
+      "lectures": "Ma’ruza",
+      "labs": "Laboratoriya",
+      "independent": "Mustaqil ish",
+      "languages": "Til (UZ/RU/EN)"
+    },
+    "textbook": {
+      "title": "Annotatsiya, mundarija va ilovalar",
+      "lead": "Darslik 15 ta ma’ruza, 15 ta laboratoriya ishi, astronomiya bo‘yicha 3 ta qo‘shimcha mavzu va ilovalardan iborat.",
+      "card1": {
+        "badge": "Kirish",
+        "title": "Annotatsiya, so‘z boshi va mundarija",
+        "text": "Bibliografik ma’lumot, o‘zbek, rus va ingliz tillaridagi annotatsiya, foydalanish bo‘yicha tavsiyalar. Chop etish yoki PDF sifatida saqlash mumkin."
+      },
+      "card2": {
+        "badge": "1-ilova",
+        "text": "Kursdagi asosiy atamalarning o‘zbekcha–inglizcha lug‘ati: qisqa ta’rif va qaysi mavzuda o‘rganilishi, qidiruv bilan."
+      },
+      "card3": {
+        "badge": "2-ilova",
+        "title": "SI vositalari va bepul muqobillari",
+        "text": "Kursda ishlatiladigan SI vositalari, ularning kirish modeli va har bir pullik vosita uchun bepul o‘rinbosar."
+      }
+    },
+    "plan": {
+      "eyebrow": "O‘quv dasturi",
+      "title": "AI-native pedagogik paradigma",
+      "lead": "Nazariya, tasvir, animatsiya va kodlashni yagona loyiha jarayoniga birlashtiring.",
+      "card1": {
+        "badge": "REJA #1",
+        "title": "Diagnostika",
+        "text": "MagicSchool AI orqali boshlang‘ich bilim va individual ehtiyojni aniqlash."
+      },
+      "card2": {
+        "badge": "REJA #2",
+        "title": "Ssenariy",
+        "text": "Gemini yoki GPT yordamida Hook, Core, Misconception va Task bosqichlari."
+      },
+      "card3": {
+        "badge": "REJA #3",
+        "title": "Simulyatsiya",
+        "text": "Canvas, WebGL va JavaScript yordamida fizik dvigatel yaratish."
+      },
+      "card4": {
+        "badge": "REJA #4",
+        "title": "Vizualizatsiya",
+        "text": "Ilmiy grafiklar, optik sxemalar va astrofizik renderlar."
+      },
+      "card5": {
+        "badge": "REJA #5",
+        "title": "Video",
+        "text": "Dinamik jarayonlarni animatsiya va video orqali tushuntirish."
+      },
+      "card6": {
+        "badge": "REJA #6",
+        "title": "Capstone",
+        "text": "Ochiq manbali web-portfolio va ilmiy pasport bilan himoya."
+      }
+    },
+    "lectures": {
+      "eyebrow": "Ma’ruza matnlari",
+      "title": "15 ta ma’ruza",
+      "lead": "Har bir ma’ruza nazariya, misollar va AI integratsiyasini o‘z ichiga oladi.",
+      "card1": {
+        "title": "AI yordamida fizik simulyatsion animatsiya yaratish paradigmasi",
+        "text": "Raqamli texnologiyalar davrida sun’iy intellekt bilan ishlash yondashuvi."
+      },
+      "card2": {
+        "title": "Fizik jarayonni modellashtirish metodologiyasi",
+        "text": "Modellashtirish bosqichlari va ilmiy metodologiya asoslari."
+      },
+      "card3": {
+        "title": "Zamonaviy sun’iy intellekt vositalari ekotizimi",
+        "text": "AI vositalarining o‘quv jarayonidagi o‘rni va imkoniyatlari."
+      },
+      "card4": {
+        "title": "Kompyuter modeliga qo‘yiladigan talablar va hisoblash aniqligi",
+        "text": "Sonli usullar va model aniqligini baholash mezonlari."
+      },
+      "card5": {
+        "title": "Fizik jarayonlarni modellashtirish — bilish metodi sifatida",
+        "text": "Model turlari va ularning bilish nazariyasidagi o‘rni."
+      },
+      "card6": {
+        "title": "Raqamli texnologiya yordamida fizik modellarni shakllantirish",
+        "text": "Erkin jism diagrammasi, vektor kuchlar va algoritmik blok-sxemalar."
+      },
+      "card7": {
+        "text": "Kadr tsikli, delta-time integratsiyasi va Retina High-DPI masshtablash."
+      },
+      "card8": {
+        "title": "AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar",
+        "text": "Vektor arifmetikasi, Nyuton qonunlari va 2D elastik to‘qnashuv impulsi."
+      },
+      "card9": {
+        "title": "Sun’iy intellekt bilan kod generatsiyasi va prompt-muhandislik",
+        "text": "Zero-Shot, Few-Shot, Chain-of-Thought strategiyalari va professional prompt arxitekturasi."
+      },
+      "card10": {
+        "title": "Fizik va astronomik ma’lumotlarni vizuallashtirish",
+        "text": "Kepler orbital mexanikasi, koordinatalar transformatsiyasi va audio-vizual sinxronizatsiya."
+      },
+      "card11": {
+        "title": "Masofaviy ta’lim platformalarida fizika kursini loyihalashtirish",
+        "text": "LMS arxitekturasi, Otter.ai transkripsiya, MagicSchool AI adaptiv trayektoriya va Google Antigravity portfolio auditi."
+      },
+      "card12": {
+        "title": "Mexanika qonuniyatlarini modellashtirish va animatsiya qilish",
+        "text": "Nyuton dinamikasi, 2D elastik to‘qnashuv impulsi va PhET→Claude→Antigravity→Runway AI-Pipeline konveyeri."
+      },
+      "card13": {
+        "title": "Termodinamika qonuniyatlarini modellashtirish va animatsiya qilish",
+        "text": "Maksvell-Bolsman tezliklar taqsimoti, Karno/Stirling sikllari va P-V/T-S faza diagrammalari."
+      },
+      "card14": {
+        "title": "Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish",
+        "text": "Kulon maydoni, Faradey induksiyasi, RLC zanjirlari va Muxlisa AI/ElevenLabs audio-narratsiya sintezi."
+      },
+      "card15": {
+        "title": "Yadro fizikasi qonuniyatlari va yakuniy mustaqil loyiha (Capstone) metodologiyasi",
+        "text": "Radioaktiv yemirilish, U-235 zanjirli bo‘linishi, D-T termoyadroviy sintez va 7 bosqichli AI-Pipeline asosidagi Capstone loyiha."
+      }
+    },
+    "independent": {
+      "eyebrow": "Fan dasturi · Mustaqil ta’lim",
+      "title": "15 ta mustaqil ta’lim topshirig‘i — 60 soat",
+      "lead": "Ma’ruza va laboratoriyalar bilan bir xil kartochkalar: har bir mavzuni ochib, namunaviy yo‘riqnoma, bajarish misoli va o‘quv materiallarini ko‘ring. Rasmiy topshirish va baholash — HEMISda.",
+      "card1": {
+        "badge": "1-mustaqil ish · 4 soat",
+        "title": "AI va fizika ta’lim paradigmasi",
+        "text": "Generativ sun’iy intellekt vositalarining fizika ta’limiga ta’siri hamda kelajakdagi o‘zgarishlar bo‘yicha ilmiy-tahliliy maqola yozish."
+      },
+      "card2": {
+        "badge": "2-mustaqil ish · 4 soat",
+        "text": "Tanlangan murakkab fizik jarayonni LLM yordamida modellashtirishning qadam-baqadam metodologiyasini va blok-sxemasini ishlab chiqish."
+      },
+      "card3": {
+        "badge": "3-mustaqil ish · 4 soat",
+        "title": "AI ekotizimini qiyosiy tahlil qilish",
+        "text": "Uch xil sun’iy intellekt vositasining kod yozish va fizik simulyatsiya yaratish imkoniyatlarini qiyosiy tahlil qilish."
+      },
+      "card4": {
+        "badge": "4-mustaqil ish · 4 soat",
+        "title": "Sonli integrallash va hisoblash xatoliklari",
+        "text": "Fizik simulyatsiyalarda Eyler va Runge–Kutta kabi sonli integrallash usullari xatoliklarini o‘rganish va hisoblash barqarorligi bo‘yicha taqdimot tayyorlash."
+      },
+      "card5": {
+        "badge": "5-mustaqil ish · 4 soat",
+        "title": "Deterministik va stoxastik modellarning portfeli",
+        "text": "Deterministik va stoxastik modellarga hayotiy misollar topib, kompyuterda ular qanday algoritm bilan ifodalanishi haqida referat yozish."
+      },
+      "card6": {
+        "badge": "6-mustaqil ish · 4 soat",
+        "title": "Erkin jism diagrammasini raqamlashtirish",
+        "text": "Murakkab mexanik tizim uchun vektor kuchlar tizimini tuzib, AI tasvir generatorlari yordamida sxematik ko‘rinishga keltirish."
+      },
+      "card7": {
+        "badge": "7-mustaqil ish · 4 soat",
+        "title": "HTML5 Canvas orqali erkin tushish animatsiyasi",
+        "text": "JavaScript va HTML5 Canvas yordamida erkin tushish animatsiyasi kodini tahlil qilish va kadrlar yangilanishi mantiqini izohlash."
+      },
+      "card8": {
+        "badge": "8-mustaqil ish · 4 soat",
+        "title": "Elastik to‘qnashuvlar hisoblash moduli",
+        "text": "AI yordamida elastik to‘qnashuvlarni hisoblovchi kichik Python yoki JavaScript moduli yaratish va fizik tenglamalarni yozish."
+      },
+      "card9": {
+        "badge": "9-mustaqil ish · 4 soat",
+        "title": "Fizika uchun prompt-muhandislik qo‘llanmasi",
+        "text": "Fizika o‘qituvchilari uchun AI dan kod va dars ssenariylarini olishga mo‘ljallangan maxsus promptlar kutubxonasi tuzish."
+      },
+      "card10": {
+        "badge": "10-mustaqil ish · 4 soat",
+        "title": "Astronomik ma’lumotlar vizualizatsiyasi",
+        "text": "Ochiq astronomik ma’lumotlar bazasidan foydalanib interaktiv grafik yaratish va xulosalash."
+      },
+      "card11": {
+        "badge": "11-mustaqil ish · 4 soat",
+        "title": "To‘rt haftalik masofaviy fizika kursi",
+        "text": "Google Classroom yoki Moodle LMS uchun fizika bo‘limiga oid 4 haftalik onlayn modulning tuzilmasi, materiallari va baholash mezonlarini loyihalash."
+      },
+      "card12": {
+        "badge": "12-mustaqil ish · 4 soat",
+        "title": "Mexanika simulyatsiyasidan topshiriqlar to‘plami",
+        "text": "Kinematika yoki dinamika qonunlarini namoyish etuvchi tayyor simulyatsiya kodlarini tahlil qilish va maktab o‘quvchilari uchun amaliy topshiriqlar to‘plami yaratish."
+      },
+      "card13": {
+        "badge": "13-mustaqil ish · 4 soat",
+        "title": "Termodinamik modellashtirish uslubiy qo‘llanmasi",
+        "text": "Broun harakati yoki ideal gaz holatini raqamli modellashtirish algoritmlari haqida o‘quv-uslubiy qo‘llanma fragmentini tayyorlash."
+      },
+      "card14": {
+        "badge": "14-mustaqil ish · 4 soat",
+        "title": "Elektrodinamika uchun dars ishlanmasi",
+        "text": "Faradey qonuni yoki magnit maydon kuch chiziqlarini tushuntirish uchun PhET yoki Vascak vizual laboratoriyalaridan foydalanib kompleks dars ishlanmasi tayyorlash."
+      },
+      "card15": {
+        "badge": "15-mustaqil ish · 4 soat",
+        "title": "Yadro fizikasi modeli konsepsiyasi",
+        "text": "Radioaktiv yemirilish kabi yadro hodisasini interaktiv o‘qitishga yo‘naltirilgan kompyuter modeli loyihasini ssenariy yoki biznes-reja shaklida ishlab chiqish va himoya qilish."
+      },
+      "ctaAll": "Barcha 15 ta yo‘riqnomani ko‘rish"
+    },
+    "labs": {
+      "eyebrow": "Laboratoriya mashg‘ulotlari",
+      "title": "15 ta laboratoriya ishi",
+      "lead": "Har bir laboratoriya nazariya, misollar va AI integratsiyasini o‘z ichiga oladi.",
+      "card1": {
+        "title": "Sun’iy intellekt vositalari yordamida fizik simulyatsion animatsiyalarning dastlabki vizual loyihasini yaratish",
+        "text": "MagicSchool → Gemini/ChatGPT → Midjourney → Runway/Sora → Claude 6 bosqichli AI-Pipeline konveyeri va Capstone rubrikasi."
+      },
+      "card2": {
+        "title": "LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish",
+        "text": "PhET/Vascak.cz teskari muhandisligi → Claude formulalar tekshiruvi → Gemini/ChatGPT IMRaD hisoboti, Eyler-Kromer dastgohi va 100 ballik rubrika."
+      },
+      "card3": {
+        "title": "Zamonaviy AI ekotizimida ro‘yxatdan o‘tish va fizika darsi uchun integratsiyalashgan virtual ish muhitini sozlash",
+        "text": "7 ta AI vosita bo‘yicha amaliy mini-topshiriqlar, Canva AI / Midjourney pipeline infografikasi, jonli ekotizim trekeri va 100 ballik rubrika."
+      },
+      "card4": {
+        "title": "WolframAlpha va AI (Code Interpreter) muhitida kompyuter modellarining hisoblash aniqligini sinab ko‘rish va xatolik grafiklarini qurish",
+        "text": "Mayatnik misolida Eyler, Eyler-Kromer va RK4 usullari, integratsiya qadami va xatolik konvergentsiyasi, jonli dastgoh va 100 ballik rubrika."
+      },
+      "card5": {
+        "title": "Deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash va vizual tahlil qilish",
+        "text": "PhET «Gravity and Orbits» va «Gas Properties», 8 mezonli qiyosiy jadval, parallel orbita/gaz dastgohi va 100 ballik rubrika."
+      },
+      "card6": {
+        "title": "Jismlarning erkin harakat diagrammasini (vektor kuchlar tizimini) tuzish va uni AI tasvir generatorlari (Midjourney/DALL-E) orqali chizish",
+        "text": "Qiya tekislik FBD, Kulon-Amonton ishqalanishi, Claude Vision tahlili, Eyler-Kromer psevdokodi, interaktiv FBD dastgohi va 100 ballik rubrika."
+      },
+      "card7": {
+        "title": "HTML5 Canvas va JavaScript asosida kadrlar chastotasini (Delta-Time) hisobga olgan holda oddiy fizik tebranishlar animatsiyasini kodlash",
+        "text": "requestAnimationFrame, Fiedler akkumulyatori, Eyler-Kromer ossilyatori, Google Antigravity monitoringi, FPS/Delta-Time dastgohi va 100 ballik rubrika."
+      },
+      "card8": {
+        "title": "Sun’iy intellekt bilan juftlikda dasturlash (Pair-Programming) orqali elastik to‘qnashuvlar va vektor arifmetikasiga asoslangan kichik fizika dvigateli kodini yozish",
+        "text": "Vector2D, impuls skalyari J va overlap resolution, Claude bilan Driver/Navigator debugging, Code Interpreter Monte-Karlo tekshiruvi, to‘qnashuv arenasi va 100 ballik rubrika."
+      },
+      "card9": {
+        "title": "Kod generatsiyasi uchun maqsadli so‘rovlar (promptlar) tuzish, ularni taqqoslash va fizika fani uchun shaxsiy prompt-kutubxona shakllantirish",
+        "text": "Zero-shot → chegaralangan → Role + CoT → XML master prompt, 4 darajali mayatnik sandboksi, fazaviy portret, shaxsiy prompt-kutubxona va 100 ballik rubrika."
+      },
+      "card10": {
+        "title": "Fizik va astronomik ma’lumotlar bazasidan olingan ko‘rsatkichlar asosida jismlar harakati trayektoriyasining interaktiv grafiklarini vizuallashtirish",
+        "text": "NASA JPL orbital elementlari, Kepler qonunlari va tenglamasi, TTS (Muxlisa, ElevenLabs, Google Cloud) va SSML, ovoz-animatsiya sinxron dastgohi va rubrika."
+      },
+      "card11": {
+        "title": "LMS (Google Classroom, Moodle) platformalarida AI orqali ishlangan raqamli fizika kursini tuzish va kontentni joylashtirish",
+        "text": "Otter.ai transkripsiyasi va WER, adaptiv baholash (Rasch modeli), MagicSchool AI, LMS integratsiyasi simulyatori va 100 ballik rubrika."
+      },
+      "card12": {
+        "title": "Mexanika dinamikasi (Nyuton qonuniyatlari) jarayonlarini Algodoo yoki AI yozgan kodlar orqali modellashtirish va kinematik videolarni render qilish",
+        "text": "Nyuton qonunlari va impuls saqlanishi, Vascak.cz/PhET tahlili, Claude va Antigravity bilan fizika dvigateli, 3D elastik to‘qnashuv dastgohi va taqdimot rubrikasi."
+      },
+      "card13": {
+        "title": "Termodinamik jarayonlar (P-V va T-S grafiklari, ideal gaz holati) simulyatsiyasi kodini yozish va vizual holat o‘zgarishini tahlil qilish",
+        "text": "Ideal gaz holat tenglamasi, P-V va T-S grafiklari, zarrachalar asosidagi stoxastik gaz simulyatsiyasi, jonli P-V dastgohi va rubrika."
+      },
+      "card14": {
+        "title": "Elektromagnit maydonlar va elektr zanjirlari harakatini modellashtiruvchi interaktiv kodlarni yaratish hamda jarayonni AI orqali audio-ovozlashtirish",
+        "text": "Elektromagnit induksiya va elektr zanjirlari, magnit harakatiga javob beruvchi interaktiv model, AI audio-ovozlashtirish (TTS) va rubrika."
+      },
+      "card15": {
+        "title": "Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to‘liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish",
+        "text": "Radioaktiv yemirilish qonuni, yarim yemirilish davri, stoxastik yadrolar simulyatori va yemirilish grafigi, barcha AI vositalari integratsiyasining yakuniy himoyasi."
+      }
+    },
+    "astronomy": {
+      "eyebrow": "Qo‘shimcha mavzular",
+      "title": "Astronomiya: ma’ruza va laboratoriya ishlari",
+      "lead": "Har bir mavzu nazariya, interaktiv model, ochiq ilmiy arxivlar ma’lumotlari bilan laboratoriya ishi va nazorat testini o‘z ichiga oladi.",
+      "card1": {
+        "badge": "A1",
+        "title": "Yulduzlar evolyutsiyasi va Gertsshprung–Rassel diagrammasi",
+        "text": "Spektral sinflar, massa–yorqinlik munosabati, yulduzlar hayot yo‘li, interaktiv G–R diagrammasi va Gaia DR3 ma’lumotlari."
+      },
+      "card2": {
+        "badge": "A2",
+        "title": "Spektral tahlil",
+        "text": "Plank, Vin va Stefan–Bolsman qonunlari, Balmer seriyasi, Doppler siljishi va Habbl qonuni; CD spektroskop va SDSS spektrlari."
+      },
+      "card3": {
+        "badge": "A3",
+        "title": "Teleskop kuzatuv ma’lumotlari",
+        "text": "Fotometriya, yorug‘lik egri chizig‘i, davrni topish, Sefeidlar orqali masofa va tranzitlar; Kepler va TESS ochiq ma’lumotlari."
+      }
+    },
+    "simulators": {
+      "eyebrow": "Interaktiv laboratoriya",
+      "title": "Fizikani formuladan harakatga aylantiring",
+      "lead": "Boshqaruvlarni o‘zgartiring. Har bir model fixed-step hisoblash va responsiv Canvas renderidan foydalanadi.",
+      "sim_tab": "Mayatnik",
+      "sim_tab2": "Lorents spirali",
+      "sim_tab3": "Doppler",
+      "sim_tab4": "Yung interferensiyasi",
+      "subtitle": "Matematik mayatnik",
+      "control": "Uzunlik",
+      "control2": "Boshlang‘ich burchak",
+      "control3": "So‘nish γ",
+      "control4": "Gravitatsiya",
+      "option": "Yer",
+      "option2": "Oy",
+      "option3": "Mars",
+      "option4": "Yupiter",
+      "option5": "Kosmos",
+      "card1": {
+        "span": "Animatsiya"
+      },
+      "card2": {
+        "span": "Faza fazosi"
+      },
+      "subtitle2": "Lorents kuchi",
+      "control5": "B maydon",
+      "control6": "Zaryad q",
+      "span": "Uniform magnit maydondagi heliks",
+      "subtitle3": "Doppler effekti",
+      "control9": "Manba tezligi",
+      "control10": "Chiqarish davri",
+      "span2": "To‘lqin frontlari",
+      "subtitle4": "Yung tajribasi",
+      "control11": "λ to‘lqin uzunligi",
+      "control12": "Tirqish oralig‘i d",
+      "control13": "Ekran masofasi D",
+      "span3": "Interferensiya intensivligi"
+    },
+    "aiLab": {
+      "eyebrow": "AI integratsiyasi",
+      "title": "Prompt engineering laboratoriyasi",
+      "card1": {
+        "title": "MagicSchool prompt generator",
+        "label": "Mavzu",
+        "label2": "Daraja",
+        "option": "Boshlang‘ich",
+        "option2": "O‘rta",
+        "option3": "Ilg‘or"
+      },
+      "card2": {
+        "title": "Gemini / GPT dars ssenariysi",
+        "text": "Hook → Core Concept → Misconception → Simulation Task",
+        "title2": "Ilmiy promptlar",
+        "text2": "Young‘s double-slit interference, dark laboratory, scientific visualization, 16:9."
+      },
+      "subtitle": "SI vositalarining joriy ro‘yxati",
+      "lead": "Vositalarning imkoniyatlari va tariflari tez o‘zgaradi. Kursda ishlatiladigan vositalar, ularning kirish modeli va rasmiy havolalari alohida sahifada muntazam yangilab boriladi; darslikdagi QR-kodlar ham shu sahifaga olib keladi.",
+      "ctaList": "Ro‘yxatni ochish"
+    },
+    "hemis": {
+      "eyebrow": "Rasmiy jarayonlar",
+      "title": "O‘quv topshiriqlarini bajarish hamda bilimlarni raqamli baholash — HEMIS platformasi orqali amalga oshiriladi",
+      "lead": "ILIMZIYO ochiq elektron darslik va interaktiv o‘quv materiallari to‘plamidir. Talabalarning rasmiy topshiriq yuborishi, baholari, joriy/oraliq/yakuniy nazorat natijalari faqat universitetning HEMIS platformasida, belgilangan tartibda yuritiladi. Ushbu sayt hisob yaratmaydi va baho qo‘ymaydi."
+    },
+    "authors": {
+      "card1": {
+        "title": "I.M. Eshboltayev",
+        "p": "Fizika-matematika fanlari bo‘yicha falsafa doktori (PhD)",
+        "text": "Qo‘qon davlat universiteti “Fizika va astronomiya” kafedrasi professori"
+      },
+      "card2": {
+        "title": "D.J. Meliqo‘ziyev",
+        "p": "Pedagogika fanlari bo‘yicha falsafa doktori (PhD)",
+        "text": "Qo‘qon davlat universiteti Fizika va astronomiya kafedrasi"
+      }
+    },
+    "attr": {
+      "pendulumCanvas": "Matematik mayatnik animatsiyasi",
+      "phaseCanvas": "Mayatnik faza fazosi grafigi",
+      "lorentzCanvas": "Zaryadlangan zarrachaning spiral harakati",
+      "dopplerCanvas": "Doppler to‘lqin frontlari",
+      "youngCanvas": "Yung interferensiya manzarasi",
+      "topicValue": "Garmonik tebranishlar va rezonans",
+      "authorPhoto1": "I.M. Eshboltayev — muallif surati",
+      "authorPhoto2": "D.J. Meliqo‘ziyev — muallif surati",
+      "certificate": "DGU 70647 — «Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash» dasturi uchun O‘zbekiston Respublikasi Adliya vazirligining rasmiy davlat guvohnomasi"
+    }
+  },
+  "tabs": {
+    "1_diagnostika_va_individual_reja": "1. Diagnostika va individual reja",
+    "6_baholash_rubrikasi_va_manbalar": "6. Baholash rubrikasi va manbalar",
+    "7_test_va_manbalar": "7. Test va manbalar",
+    "1_ai_diagnostika_va_reja": "1. AI diagnostika va reja",
+    "1_ai_diagnostika": "1. AI diagnostika",
+    "1_nazariya": "1. Nazariya",
+    "4_nazorat_va_adabiyotlar": "4. Nazorat va adabiyotlar",
+    "6_interaktiv_laboratoriya": "6. Interaktiv laboratoriya",
+    "6_taqdimot_rubrikasi": "6. Taqdimot rubrikasi",
+    "4_jarayon_monitoringi_antigravity": "4. Jarayon monitoringi (Antigravity)"
+  },
+  "meta": {
+    "annotatsiya": {
+      "title": "Annotatsiya, so‘z boshi va mundarija | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash elektron darsligining annotatsiyasi (o‘zbek, rus, ingliz tillarida), so‘z boshi va to‘liq mundarijasi."
+    },
+    "astro1": {
+      "title": "A1. Yulduzlar evolyutsiyasi va Gertsshprung–Rassel diagrammasi | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Qo‘shimcha astronomiya ma’ruzasi: yulduzlarning spektral tasnifi, Gertsshprung–Rassel diagrammasi, yulduz evolyutsiyasi va Gaia ma’lumotlari bilan laboratoriya ishi."
+    },
+    "astro2": {
+      "title": "A2. Spektral tahlil: qora jism nurlanishi, spektral chiziqlar va Doppler siljishi | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Qo‘shimcha astronomiya ma’ruzasi: Plank, Vin va Stefan–Bolsman qonunlari, spektral chiziqlar, Doppler siljishi; interaktiv spektr modeli va SDSS ma’lumotlari bilan laboratoriya ishi."
+    },
+    "astro3": {
+      "title": "A3. Teleskop kuzatuv ma’lumotlari: fotometriya, yorug‘lik egri chizig‘i va masofani aniqlash | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Qo‘shimcha astronomiya ma’ruzasi: teleskop parametrlari, fotometriya, yorug‘lik egri chizig‘i, davrni topish, Sefeidlar orqali masofa; Kepler ochiq ma’lumotlari bilan laboratoriya ishi."
+    },
+    "glossariy": {
+      "title": "Atamalar lug‘ati (o‘zbekcha–inglizcha) | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Fizika va astronomiya o‘qitishda axborot texnologiyalari kursining o‘zbekcha–inglizcha atamalar lug‘ati: modellashtirish, dasturlash, sun’iy intellekt, pedagogika, fizika va astronomiya."
+    },
+    "index": {
+      "title": "Fizika va sun’iy intellekt — interaktiv laboratoriya",
+      "description": "Fizika va astronomiya o‘qitishda AI va interaktiv fizik simulyatsiyalar laboratoriyasi"
+    },
+    "lab1": {
+      "title": "1-laboratoriya: Sun’iy intellekt vositalari yordamida fizik simulyatsion animatsiyalarning dastlabki vizual loyihasini yaratish",
+      "description": "1-laboratoriya: sun'iy intellekt vositalari yordamida fizik simulyatsion animatsiyaning dastlabki vizual loyihasini yaratish."
+    },
+    "lab10": {
+      "title": "10-laboratoriya: Fizik va astronomik ma’lumotlar bazasidan olingan ko‘rsatkichlar asosida jismlar harakati trayektoriyasining interaktiv grafiklarini vizuallashtirish",
+      "description": "10-laboratoriya: fizik va astronomik ma'lumotlar asosida jismlar trayektoriyasining interaktiv grafiklari."
+    },
+    "lab11": {
+      "title": "11-laboratoriya: LMS (Google Classroom, Moodle) platformalarida AI orqali ishlangan raqamli fizika kursini tuzish va kontentni joylashtirish",
+      "description": "11-laboratoriya: LMS platformalarida AI orqali ishlangan raqamli fizika kursini tuzish va joylashtirish."
+    },
+    "lab12": {
+      "title": "12-laboratoriya: Mexanika dinamikasi (Nyuton qonuniyatlari) jarayonlarini Algodoo yoki AI yozgan kodlar orqali modellashtirish va kinematik videolarni render qilish",
+      "description": "12-laboratoriya: mexanika dinamikasi (Nyuton qonuniyatlari) jarayonlarini AI yozgan kodlar orqali modellashtirish."
+    },
+    "lab13": {
+      "title": "13-laboratoriya: Termodinamik jarayonlar (P-V va T-S grafiklari, ideal gaz holati) simulyatsiyasi kodini yozish va vizual holat o‘zgarishini tahlil qilish",
+      "description": "13-laboratoriya: termodinamik jarayonlar (P-V va T-S grafiklari) simulyatsiyasi kodini yozish va tahlil qilish."
+    },
+    "lab14": {
+      "title": "14-laboratoriya: Elektromagnit maydonlar va elektr zanjirlari harakatini modellashtiruvchi interaktiv kodlarni yaratish hamda jarayonni AI orqali audio-ovozlashtirish",
+      "description": "14-laboratoriya: elektromagnit maydonlar va elektr zanjirlarini modellashtiruvchi interaktiv kodlar yaratish."
+    },
+    "lab15": {
+      "title": "15-laboratoriya: Yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi to‘liq simulyatorni yaratish va barcha AI vositalari integratsiyasini yakuniy himoya qilish",
+      "description": "15-laboratoriya: yadro fizikasi hodisalarini (radioaktiv yemirilish) tushuntiruvchi simulyator yaratish."
+    },
+    "lab2": {
+      "title": "2-laboratoriya: LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish",
+      "description": "2-laboratoriya: LLM yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini tuzish."
+    },
+    "lab3": {
+      "title": "3-laboratoriya: Zamonaviy AI ekotizimida ro‘yxatdan o‘tish hamda fizika darsi uchun integratsiyalashgan virtual ish muhitini sozlash",
+      "description": "3-laboratoriya: zamonaviy AI ekotizimida ro'yxatdan o'tish va fizika darsi uchun virtual ish muhitini sozlash."
+    },
+    "lab4": {
+      "title": "4-laboratoriya: WolframAlpha va AI (Code Interpreter) muhitida kompyuter modellarining hisoblash aniqligini (integratsiya qadamini) sinab ko‘rish va xatolik grafiklarini qurish",
+      "description": "4-laboratoriya: WolframAlpha va AI muhitida kompyuter modellarining hisoblash aniqligini sinab ko'rish."
+    },
+    "lab5": {
+      "title": "5-laboratoriya: Deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash va ularning o‘ziga xos xususiyatlarini vizual tahlil qilish",
+      "description": "5-laboratoriya: deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash."
+    },
+    "lab6": {
+      "title": "6-laboratoriya: Jismlarning erkin harakat diagrammasini (vektor kuchlar tizimini) tuzish va uni AI tasvir generatorlari orqali chizish",
+      "description": "6-laboratoriya: jismlarning erkin harakat diagrammasini (vektor kuchlar tizimini) AI yordamida tuzish."
+    },
+    "lab7": {
+      "title": "7-laboratoriya: HTML5 Canvas va JavaScript asosida kadrlar chastotasini (delta-time) hisobga olgan holda oddiy fizik tebranishlar animatsiyasini kodlash",
+      "description": "7-laboratoriya: HTML5 Canvas va JavaScript asosida delta-time hisobga olingan fizik tebranish animatsiyasi."
+    },
+    "lab8": {
+      "title": "8-laboratoriya: Sun’iy intellekt bilan juftlikda dasturlash orqali fizika dvigateli kodini yozish",
+      "description": "8-laboratoriya: sun'iy intellekt bilan juftlikda dasturlash orqali fizika dvigateli kodini yozish."
+    },
+    "lab9": {
+      "title": "9-laboratoriya: Kod generatsiyasi uchun maqsadli so‘rovlar (promptlar) tuzish, ularni taqqoslash va fizika fani uchun shaxsiy prompt-kutubxona shakllantirish",
+      "description": "9-laboratoriya: kod generatsiyasi uchun maqsadli promptlar tuzish va shaxsiy prompt-kutubxona shakllantirish."
+    },
+    "lecture1": {
+      "title": "1-ma’ruza: Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib fizik simulyatsion animatsiya yaratish paradigmasi",
+      "description": "1-ma'ruza: raqamli texnologiyalar davrida sun'iy intellekt yordamida fizik simulyatsion animatsiya yaratish paradigmasi haqida."
+    },
+    "lecture10": {
+      "title": "10-ma’ruza: Fizik va astronomik ma’lumotlarni vizuallashtirish: grafik va interaktiv model qurish",
+      "description": "10-ma'ruza: fizik va astronomik ma'lumotlarni vizuallashtirish — grafik va interaktiv model qurish usullari."
+    },
+    "lecture11": {
+      "title": "11-ma’ruza: Masofaviy ta’lim platformalarida fizika kursini loyihalashtirish",
+      "description": "11-ma'ruza: masofaviy ta'lim platformalarida fizika kursini loyihalashtirish va LMS arxitekturasi."
+    },
+    "lecture12": {
+      "title": "12-ma’ruza: Mexanika qonuniyatlarini modellashtirish va animatsiya qilish",
+      "description": "12-ma'ruza: mexanika qonuniyatlarini modellashtirish va animatsiya qilish, Nyuton dinamikasi va AI-pipeline."
+    },
+    "lecture13": {
+      "title": "13-ma’ruza: Termodinamika qonuniyatlarini modellashtirish va animatsiya qilish",
+      "description": "13-ma'ruza: termodinamika qonuniyatlarini modellashtirish va animatsiya qilish, Maksvell-Bolsman taqsimoti."
+    },
+    "lecture14": {
+      "title": "14-ma’ruza: Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish",
+      "description": "14-ma'ruza: elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish — Kulon va Faradey qonunlari."
+    },
+    "lecture15": {
+      "title": "15-ma’ruza: Yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi",
+      "description": "15-ma'ruza: yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi, radioaktiv yemirilish modeli."
+    },
+    "lecture2": {
+      "title": "2-ma’ruza: Fizik jarayonni modellashtirish metodologiyasi",
+      "description": "2-ma'ruza: fizik jarayonni modellashtirish metodologiyasi — kuzatishdan vizual kod va debugginggacha bo'lgan bosqichlar."
+    },
+    "lecture3": {
+      "title": "3-ma’ruza: Zamonaviy sun’iy intellekt vositalari ekotizimi",
+      "description": "3-ma'ruza: zamonaviy sun'iy intellekt vositalari ekotizimi va ularning fizika ta'limidagi o'rni."
+    },
+    "lecture4": {
+      "title": "4-ma’ruza: Zamonaviy kompyuter modeliga qo‘yiladigan talablar va hisoblash aniqligi",
+      "description": "4-ma'ruza: zamonaviy kompyuter modeliga qo'yiladigan talablar va hisoblash aniqligini baholash mezonlari."
+    },
+    "lecture5": {
+      "title": "5-ma’ruza: Fizik jarayonlarni modellashtirish — bilish metodi sifatida. Model turlari",
+      "description": "5-ma'ruza: fizik jarayonlarni modellashtirish — bilish metodi sifatida. Model turlari va ularning tasnifi."
+    },
+    "lecture6": {
+      "title": "6-ma’ruza: Raqamli texnologiya yordamida fizik modellarni shakllantirish",
+      "description": "6-ma'ruza: raqamli texnologiya yordamida fizik modellarni shakllantirish, erkin jism diagrammasi va blok-sxemalar."
+    },
+    "lecture7": {
+      "title": "7-ma’ruza: Fizik animatsiya arxitekturasi: HTML5 Canvas asoslari",
+      "description": "7-ma'ruza: fizik animatsiya arxitekturasi — HTML5 Canvas asoslari, kadr tsikli va delta-time integratsiyasi."
+    },
+    "lecture8": {
+      "title": "8-ma’ruza: AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar",
+      "description": "8-ma'ruza: AI yordamida fizika dasturlash — vektorlar, kuchlar va 2D elastik to'qnashuvlar modellashtirilishi."
+    },
+    "lecture9": {
+      "title": "9-ma’ruza: Sun’iy intellekt (AI) bilan kod generatsiyasi va prompt-muhandislik",
+      "description": "9-ma'ruza: sun'iy intellekt (AI) bilan kod generatsiyasi va professional prompt-muhandislik strategiyalari."
+    },
+    "mustaqil": {
+      "title": "Mustaqil ta’lim | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Fizika va astronomiya o‘qitishda axborot texnologiyalarini qo‘llash fanidan 15 ta mustaqil ta’lim topshirig‘i va namunaviy yo‘riqnomalar"
+    },
+    "si-vositalari": {
+      "title": "SI vositalari: joriy ro‘yxat | FIZIKA va SUN’IY INTELLEKT",
+      "description": "Fizika va astronomiya o‘qitishda qo‘llanadigan SI vositalarining joriy ro‘yxati: kursdagi vazifasi, kirish modeli va rasmiy havolalari."
+    },
+    "sims_lorens_kuchi": {
+      "title": "Lorens Kuchi"
+    },
+    "sims_quyosh_sintezi": {
+      "title": "Quyosh Sintezi: Proton-Proton Zanjiri"
+    },
+    "sims_radioaktiv_qatorlar": {
+      "title": "Radioaktiv Qatorlar"
+    }
+  },
+  "pages": {
+    "annotatsiya": {
+      "h1": "Annotatsiya, so‘z boshi",
+      "h1Accent": "va mundarija",
+      "footer2": "Darslik haqida: annotatsiya, so‘z boshi va mundarija.",
+      "button_1": "Chop etish yoki PDF sifatida saqlash",
+      "a_2": "Mundarijaga o‘tish",
+      "h2_3": "Bibliografik ma’lumot",
+      "strong_5": "Muallif:",
+      "strong_6": "Elektron manzil:",
+      "h2_10": "So‘z boshi",
+      "strong_11": "SI — javob beruvchi emas, tekshirilishi shart bo‘lgan hamkor",
+      "h2_13": "Darslikdan foydalanish bo‘yicha tavsiyalar",
+      "li_14": "Har bir mavzuni ma’ruzadan boshlang, so‘ng shu raqamli laboratoriya ishini bajaring.",
+      "li_15": "Ma’ruza boshidagi diagnostika testini topshiring: u sizga mos murakkablik darajasini (klasterni) ko‘rsatadi.",
+      "li_16": "SI bilan ishlaganda barcha promptlar va javoblarni jurnalga yozing; SI natijasini har doim fizik qonunlar bilan tekshiring.",
+      "li_17": "Laboratoriya ishlari 100 ballik reyting bo‘yicha baholanadi: 86–100 — a’lo (5), 71–85 — yaxshi (4), 55–70 — qoniqarli (3).",
+      "h2_18": "Mundarija",
+      "h3_19": "I bob. Nazariy-metodologik asoslar",
+      "a_20": "Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib fizik simulyatsion animatsiya yaratish paradigmasi",
+      "span_21": "1-ma’ruza.",
+      "span_23": "1-laboratoriya ishi.",
+      "span_25": "2-ma’ruza.",
+      "span_27": "2-laboratoriya ishi.",
+      "span_29": "3-ma’ruza.",
+      "a_30": "Zamonaviy AI ekotizimida ro‘yxatdan o‘tish hamda fizika darsi uchun integratsiyalashgan virtual ish muhitini sozlash",
+      "span_31": "3-laboratoriya ishi.",
+      "a_32": "Zamonaviy kompyuter modeliga qo‘yiladigan talablar va hisoblash aniqligi",
+      "span_33": "4-ma’ruza.",
+      "span_35": "4-laboratoriya ishi.",
+      "a_36": "Fizik jarayonlarni modellashtirish — bilish metodi sifatida. Model turlari",
+      "span_37": "5-ma’ruza.",
+      "span_39": "5-laboratoriya ishi.",
+      "h3_40": "II bob. Raqamli vositalar va dasturlash",
+      "span_42": "6-ma’ruza.",
+      "a_43": "Jismlarning erkin harakat diagrammasini (vektor kuchlar tizimini) tuzish va uni AI tasvir generatorlari orqali chizish",
+      "span_44": "6-laboratoriya ishi.",
+      "span_46": "7-ma’ruza.",
+      "span_48": "7-laboratoriya ishi.",
+      "span_50": "8-ma’ruza.",
+      "a_51": "Sun’iy intellekt bilan juftlikda dasturlash orqali fizika dvigateli kodini yozish",
+      "span_52": "8-laboratoriya ishi.",
+      "span_54": "9-ma’ruza.",
+      "span_56": "9-laboratoriya ishi.",
+      "span_58": "10-ma’ruza.",
+      "span_60": "10-laboratoriya ishi.",
+      "span_62": "11-ma’ruza.",
+      "span_64": "11-laboratoriya ishi.",
+      "h3_65": "III bob. Fizika bo‘limlarini modellashtirish",
+      "span_67": "12-ma’ruza.",
+      "span_69": "12-laboratoriya ishi.",
+      "span_71": "13-ma’ruza.",
+      "span_73": "13-laboratoriya ishi.",
+      "span_75": "14-ma’ruza.",
+      "span_77": "14-laboratoriya ishi.",
+      "a_78": "Yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi",
+      "span_79": "15-ma’ruza.",
+      "span_81": "15-laboratoriya ishi.",
+      "h3_82": "IV bob. Qo‘shimcha mavzular: astronomiya",
+      "a_83": "Yulduzlar evolyutsiyasi va Gertsshprung–Rassel diagrammasi (ma’ruza va laboratoriya ishi)",
+      "span_84": "A1.",
+      "a_85": "Spektral tahlil: qora jism nurlanishi, spektral chiziqlar va Doppler siljishi (ma’ruza va laboratoriya ishi)",
+      "span_86": "A2.",
+      "a_87": "Teleskop kuzatuv ma’lumotlari: fotometriya, yorug‘lik egri chizig‘i va masofani aniqlash (ma’ruza va laboratoriya ishi)",
+      "span_88": "A3.",
+      "h3_89": "Ilovalar",
+      "a_90": "Atamalar lug‘ati (o‘zbekcha–inglizcha)",
+      "span_91": "1-ilova.",
+      "a_92": "SI vositalarining joriy ro‘yxati va bepul muqobillari",
+      "span_93": "2-ilova.",
+      "a_94": "Interaktiv simulyatorlar (mayatnik, Lorens kuchi, Doppler effekti, Yung tajribasi)",
+      "span_95": "3-ilova.",
+      "a_96": "Yakuniy loyihani baholash kalkulyatori",
+      "span_97": "4-ilova."
+    },
+    "astro1": {
+      "h1": "Yulduzlar evolyutsiyasi va",
+      "h1Accent": "Gertsshprung–Rassel diagrammasi",
+      "tab2": "2. Interaktiv G–R diagrammasi",
+      "tab3": "3. Laboratoriya ishi: Gaia ma’lumotlari",
+      "footer2": "Qo‘shimcha ma’ruza A1: Yulduzlar evolyutsiyasi • G–R diagrammasi, Gaia DR3, SIMBAD."
+    },
+    "astro2": {
+      "h1": "Spektral tahlil:",
+      "h1Accent": "qora jism nurlanishi, spektral chiziqlar va Doppler siljishi",
+      "tab2": "2. Interaktiv spektr modeli",
+      "tab3": "3. Laboratoriya ishi: spektroskop va SDSS",
+      "footer2": "Qo‘shimcha ma’ruza A2: Spektral tahlil • Plank qonuni, Balmer seriyasi, Doppler siljishi, SDSS."
+    },
+    "astro3": {
+      "h1": "Teleskop kuzatuv ma’lumotlari:",
+      "h1Accent": "fotometriya, yorug‘lik egri chizig‘i va masofani aniqlash",
+      "tab2": "2. Interaktiv kuzatuv modeli",
+      "tab3": "3. Laboratoriya ishi: Kepler ma’lumotlari",
+      "footer2": "Qo‘shimcha ma’ruza A3: Teleskop kuzatuv ma’lumotlari • fotometriya, PDM, Sefeidlar, Kepler va TESS."
+    },
+    "glossariy": {
+      "h1": "Atamalar lug‘ati:",
+      "h1Accent": "o‘zbekcha–inglizcha",
+      "footer2": "Darslikka ilova: atamalar lug‘ati.",
+      "label_1": "Atamani qidirish (o‘zbekcha yoki inglizcha)",
+      "th_2": "O‘zbekcha atama",
+      "th_3": "Inglizcha",
+      "th_4": "Ta’rifi",
+      "th_5": "Qayerda",
+      "th_6": "Fizik modellashtirish va sonli usullar",
+      "th_7": "Kompyuter grafikasi va dasturlash",
+      "th_8": "Sun’iy intellekt va prompt-muhandislik",
+      "th_9": "Ta’lim texnologiyalari va pedagogika",
+      "th_10": "Fizika bo‘limlari"
+    },
+    "lab1": {
+      "tab1": "1. AI diagnostika va maqsadlar",
+      "tab2": "2. MagicSchool va yo‘l xaritasi",
+      "tab3": "3. Dars ssenariysi (Gemini / ChatGPT)",
+      "tab4": "4. Tasvir va grafik (Midjourney)",
+      "tab5": "5. Animatsiya (Runway / Sora)",
+      "tab6": "6. Interaktiv kod (Claude)",
+      "tab7": "7. Laboratoriya dastgohi va test"
+    },
+    "lab10": {
+      "tab2": "2. Astronomik trayektoriyalar va ovoz nazariyasi",
+      "tab3": "3. Muxlisa AI, Aisha va ElevenLabs TTS",
+      "tab4": "4. Gemini ssenariy va sinxronizatsiya",
+      "tab5": "5. Interaktiv dastgoh va audio pleer"
+    },
+    "lab11": {
+      "tab2": "2. O‘quv jarayonini hujjatlashtirish",
+      "tab3": "3. Otter.ai va transkripsiya nazariyasi",
+      "tab4": "4. MagicSchool AI bilan monitoring",
+      "tab5": "5. Interaktiv LMS va Otter.ai simulyatori",
+      "tab6": "6. Portfolio va xulosa"
+    },
+    "lab12": {
+      "tab2": "2. To‘liq pipeline arxitekturasi",
+      "tab3": "3. Vascak.cz va PhET analitikasi",
+      "tab4": "4. Claude va Antigravity",
+      "tab5": "5. Interaktiv to‘qnashuv dvigateli"
+    },
+    "lab13": {
+      "tab2": "2. Termodinamika pipeline",
+      "tab3": "3. PhET va ideal gaz analitikasi",
+      "tab4": "4. Stoxastik kod va Antigravity",
+      "tab5": "5. P-V grafik va gaz simulyatori"
+    },
+    "lab14": {
+      "tab2": "2. Elektrodinamika va audio pipeline",
+      "tab3": "3. PhET: Faradey qonuni analitikasi",
+      "tab4": "4. Claude kod va TTS (Muxlisa AI)",
+      "tab5": "5. Induksiya va TTS simulyatori"
+    },
+    "lab15": {
+      "tab2": "2. Yakuniy loyiha va himoya",
+      "tab3": "3. To‘liq AI pipeline sxemasi",
+      "tab4": "4. Originallik va baholash (AI)",
+      "tab5": "5. Radioaktiv yemirilish simulyatori",
+      "tab6": "6. Yakuniy taqdimot rubrikasi"
+    },
+    "lab2": {
+      "h1": "LLM (ChatGPT yoki Claude) yordamida tanlangan fizik jarayonning matematik modeli, formulalari va algoritmini mantiqiy ketma-ketlikda tuzish",
+      "tab2": "2. Simulyatsiya bazasi: Vascak / PhET",
+      "tab3": "3. Formulalarni tasdiqlash: Claude",
+      "tab4": "4. Hisobot tuzilmasi: Gemini / ChatGPT",
+      "tab5": "5. Interaktiv dastgoh va validator"
+    },
+    "lab3": {
+      "h1": "Zamonaviy AI ekotizimida (PhET, Vascak va AI generativ vositalari) ro‘yxatdan o‘tish hamda fizika darsi uchun integratsiyalashgan virtual ish muhitini sozlash",
+      "tab2": "2. Barcha 7 vosita integratsiyasi",
+      "tab3": "3. 7 Vosita mini-topshiriqlari",
+      "tab4": "4. Pipeline grafik sxemasi (Canva / Midjourney)",
+      "tab5": "5. Interaktiv dastgoh va ekotizim trekeri"
+    },
+    "lab4": {
+      "h1": "WolframAlpha va AI (Code Interpreter) muhitida kompyuter modellarining hisoblash aniqligini (integratsiya qadamini) sinab ko‘rish va xatolik grafiklarini qurish",
+      "tab1": "0. Diagnostika va individual reja",
+      "tab2": "1. AI integratsiyasi (Claude va WolframAlpha)",
+      "tab3": "2. Sonli integratsiya algoritmlari",
+      "tab4": "3. Analitik hisoblash va Code Interpreter",
+      "tab5": "4. Amaliy tadqiqot va interaktiv dastgoh",
+      "tab6": "5. Baholash rubrikasi va manbalar"
+    },
+    "lab5": {
+      "h1": "Deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash va ularning o‘ziga xos xususiyatlarini vizual tahlil qilish",
+      "tab2": "2. Model turlari nazariyasi",
+      "tab3": "3. Virtual baza: PhET simulations",
+      "tab4": "4. Tahlil va qiyosiy hisobot (AI)",
+      "tab5": "5. Interaktiv dual dastgoh (stend)"
+    },
+    "lab6": {
+      "tab2": "2. FBD va tenglamalar nazariyasi",
+      "tab3": "3. Claude Vision tahlili",
+      "tab4": "4. Psevdokod va simulyatsiya algoritmi",
+      "tab5": "5. Interaktiv FBD dastgohi (stend)"
+    },
+    "lab7": {
+      "h1": "HTML5 Canvas va JavaScript asosida kadrlar chastotasini (delta-time) hisobga olgan holda oddiy fizik tebranishlar animatsiyasini kodlash",
+      "tab2": "2. Canvas kadr sikli nazariyasi",
+      "tab3": "3. Google Antigravity monitoring",
+      "tab4": "4. Claude Artifacts shabloni",
+      "tab5": "5. Interaktiv kadr va tebranish dastgohi"
+    },
+    "lab8": {
+      "tab2": "2. Fizika dvigateli nazariyasi",
+      "tab3": "3. Claude juftlikda debugging",
+      "tab4": "4. Code Interpreter verifikatsiyasi",
+      "tab5": "5. Interaktiv dvigatel dastgohi"
+    },
+    "lab9": {
+      "tab2": "2. Prompt muhandisligi nazariyasi",
+      "tab3": "3. Claude sinovlari va kod",
+      "tab4": "4. Antigravity va ChatGPT auditi",
+      "tab5": "5. Interaktiv sandboks va kutubxona"
+    },
+    "lecture1": {
+      "h1": "Kirish. Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib",
+      "h1Accent": "fizik simulyatsion animatsiya yaratish paradigmasi",
+      "badge2": "Oliy ta’lim va magistratura",
+      "badge3": "AI-native ta’lim paradigmasi",
+      "tab1": "1. MagicSchool AI va diagnostika",
+      "tab2": "2. Gemini / ChatGPT ssenariy",
+      "tab3": "3. Midjourney va Runway",
+      "tab4": "4. Claude jonli simulyatorlar",
+      "tab5": "5. Baholash va Capstone rubrikasi",
+      "tab6": "1. So‘nuvchi mayatnik (RK4)",
+      "tab7": "2. Lorens kuchi (3D, Boris usuli)",
+      "tab8": "3. Doppler effekti va Max konusi",
+      "tab9": "4. Yung interferensiyasi"
+    },
+    "lecture10": {
+      "h1": "Fizik va astronomik ma’lumotlarni vizuallashtirish: grafik va interaktiv model qurish",
+      "tab2": "2. Kod va Antigravity monitoring",
+      "tab3": "3. Canvas tsikli va delta-time",
+      "tab4": "4. Fizika dvigateli kodi",
+      "tab5": "5. Trayektoriya va audio-sinxron",
+      "footer2": "10-ma’ruza: Fizik va astronomik ma’lumotlarni vizuallashtirish • HTML5 Canvas, Kepler orbitalari, audio-vizual sinxronlash va TTS vositalari qiyosi."
+    },
+    "lecture11": {
+      "tab2": "2. LMS platformalar arxitekturasi",
+      "tab3": "3. Individual trayektoriya (MagicSchool)",
+      "tab4": "4. Konspekt va topshiriqlar (Otter.ai/Claude)",
+      "tab5": "5. Portfolio tizimlashtirish (Antigravity)",
+      "tab6": "6. Interaktiv LMS laboratoriyasi",
+      "footer2": "11-ma’ruza: Masofaviy ta’lim platformalarida fizika kursini loyihalashtirish • LMS, Otter.ai, MagicSchool AI va Google Antigravity."
+    },
+    "lecture12": {
+      "tab2": "2. Mexanika simulyatsiyalari tahlili",
+      "tab3": "3. Mexanika dinamikasi va kod",
+      "tab5": "5. Kinematik video illyustratsiya",
+      "tab6": "6. Interaktiv mexanika sandbox",
+      "footer2": "12-ma’ruza: Mexanika qonuniyatlarini modellashtirish va animatsiya qilish • PhET, Vascak.cz, Claude, Google Antigravity va Runway."
+    },
+    "lecture13": {
+      "tab2": "2. Termodinamika simulyatsiyalari tahlili",
+      "tab3": "3. Stoxastik simulyatsiya kodi",
+      "tab4": "4. Bosim-hajm (P-V) va harorat-entropiya (T-S) grafiklari",
+      "tab5": "5. Jarayon monitoringi (Antigravity)",
+      "tab6": "6. Interaktiv termodinamika sandbox",
+      "footer2": "13-ma’ruza: Termodinamika qonuniyatlarini modellashtirish va animatsiya qilish • PhET, Vascak.cz, Claude, ChatGPT Code Interpreter va Google Antigravity."
+    },
+    "lecture14": {
+      "tab2": "2. Elektromagnit modellar tahlili",
+      "tab3": "3. Maydon va zanjir animatsiyasi kodi",
+      "tab4": "4. Audio-narratsiya ovozini sintez qilish",
+      "tab5": "5. Loyiha monitoringi (Antigravity)",
+      "tab6": "6. Interaktiv elektrodinamika sandbox",
+      "footer2": "14-ma’ruza: Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish • PhET, Vascak.cz, Claude, Muxlisa AI / ElevenLabs va Google Antigravity."
+    },
+    "lecture15": {
+      "tab2": "2. Teskari muhandislik tahlili",
+      "tab3": "3. To‘liq simulyator kodi",
+      "tab5": "5. Baholash rubrikalari",
+      "tab6": "6. Capstone va Undetectable AI",
+      "tab7": "7. Interaktiv sandbox va manbalar",
+      "footer2": "15-ma’ruza: Yadro fizikasi qonuniyatlari va yakuniy mustaqil loyiha metodologiyasi • 7 AI pipeline (MagicSchool, PhET, Claude, Antigravity, Muxlisa, Otter.ai, Undetectable AI)."
+    },
+    "lecture2": {
+      "h1": "Fizik jarayonni modellashtirish metodologiyasi:",
+      "h1Accent": "kuzatishdan vizual kod va debugginggacha",
+      "badge2": "Hisoblash fizikasi va metodologiya",
+      "badge3": "Teskari muhandislik (Reverse Engineering)",
+      "tab1": "1. AI diagnostika (MagicSchool)",
+      "tab2": "2. Teskari muhandislik (PhET va Vascak)",
+      "tab3": "3. Matematik model (differensial tenglamalar)",
+      "tab4": "4. Jonli simulyatorlar (Drag, Integratorlar, Impuls)",
+      "tab5": "5. 4 ta debugging sandboxes",
+      "tab6": "6. Tizimli promptlar arxivi",
+      "tab7": "1. Aerodinamik drag (RK4)",
+      "tab8": "2. Integratorlar xatosi (Eyler va RK4)",
+      "tab9": "3. To‘qnashuvlar (Impuls va Restitution)"
+    },
+    "lecture3": {
+      "h1": "Raqamli texnologiyalar davrida",
+      "h1Accent": "zamonaviy sun’iy intellekt vositalari ekotizimi",
+      "badge2": "Sun’iy intellekt ekotizimi",
+      "badge3": "AI-pipeline va monitoring",
+      "tab1": "1. Google Antigravity (loyiha jurnali)",
+      "tab2": "2. Gemini / ChatGPT pipeline",
+      "tab3": "3. Muxlisa AI (nutq sintezi)",
+      "tab4": "4. Otter.ai (transkripsiya)",
+      "tab5": "5. Undetectable AI (originallik)",
+      "tab6": "6. Diagnostika testi"
+    },
+    "lecture4": {
+      "h1": "Zamonaviy kompyuter modeliga",
+      "h1Accent": "qo‘yiladigan talablar va hisoblash aniqligi",
+      "badge2": "Hisoblash aniqligi",
+      "badge3": "Sonli barqarorlik va simplektik tizimlar",
+      "tab1": "1. Diagnostika va reja",
+      "tab2": "2. Sonli integrallash",
+      "tab3": "3. WolframAlpha qiyos",
+      "tab4": "4. Log-log xatolik",
+      "tab5": "5. Interaktiv sandbox",
+      "tab6": "6. Barqarorlik nazariyasi",
+      "tab7": "Diagnostik test"
+    },
+    "lecture5": {
+      "h1": "Fizik jarayonlarni modellashtirish — bilish metodi sifatida.",
+      "h1Accent": "Model turlari va AI-integratsiyasi",
+      "badge2": "Modellar taksonomiyasi",
+      "badge3": "Deterministik va stoxastik dinamika",
+      "tab1": "1. Modellashtirish epistemologiyasi",
+      "tab2": "2. PhET va Vascak teskari muhandislik",
+      "tab3": "3. Modellar tasnifi (Gemini/ChatGPT)",
+      "tab4": "4. Deterministik va stoxastik kod (Claude)",
+      "tab5": "5. Ikki motorli sinov maydoni",
+      "tab6": "6. Taqqoslash matritsasi va diagnostika"
+    },
+    "lecture6": {
+      "tab2": "2. Claude Vision (FBD)",
+      "tab3": "3. Vektor tenglamalar",
+      "tab4": "4. Algoritm va psevdokod",
+      "tab5": "5. Sokratik dialog",
+      "tab6": "6. Interaktiv EJD va PhET",
+      "tab7": "7. Diagnostik test"
+    },
+    "lecture7": {
+      "tab2": "2. Google Antigravity",
+      "tab3": "3. Kadr tsikli va delta-time",
+      "tab4": "4. Optimizatsiya va xotira",
+      "tab5": "5. Vizual sinov (Artifacts)",
+      "tab6": "6. Interaktiv dvigatel"
+    },
+    "lecture8": {
+      "tab2": "2. Juftlikda dasturlash",
+      "tab3": "3. Vektor arifmetikasi",
+      "tab4": "4. Dvigatel kodi",
+      "tab5": "5. Trayektoriya grafiklari"
+    },
+    "lecture9": {
+      "h1": "Sun’iy intellekt (AI) bilan kod generatsiyasi va prompt-muhandislik",
+      "tab2": "2. Prompt sinovlari",
+      "tab3": "3. AI monitoring",
+      "tab4": "4. Prompt strukturasi",
+      "tab5": "5. Prompt-kutubxona",
+      "footer2": "9-ma’ruza: Sun’iy intellekt (AI) bilan kod generatsiyasi va prompt-muhandislik"
+    },
+    "mustaqil": {
+      "h1": "Fan dasturi asosidagi 15 ta",
+      "h1Accent": "mustaqil ta’lim topshirig‘i va yo‘riqnomasi",
+      "div_1": "ta topshiriq",
+      "div_2": "soat har biriga",
+      "div_3": "soat jami",
+      "strong_5": "ILIMZIYO — faqat ochiq o‘quv va metodik manba.",
+      "span_6": "Fan dasturi · 6-bo‘lim",
+      "h2_7": "15 ta mustaqil topshiriq",
+      "label_8": "Mavzu bo‘yicha qidirish:",
+      "small_10": "Fan dasturidagi mustaqil topshiriq · 4 soat",
+      "b_11": "Fan dasturidagi topshiriq:",
+      "h3_12": "Talaba uchun bosqichma-bosqich yo‘riqnoma",
+      "h3_13": "Bajarish namunasi",
+      "h3_14": "Tayyorlanadigan mahsulot",
+      "h3_15": "O‘zini tekshirish",
+      "span_16": "Materiallar:",
+      "a_17": "Ma’ruza 1",
+      "a_18": "Laboratoriya 1",
+      "a_19": "Yo‘riqnomani saqlash",
+      "a_28": "Ma’ruza 2",
+      "a_29": "Laboratoriya 2",
+      "a_39": "Ma’ruza 3",
+      "a_40": "Laboratoriya 3",
+      "a_50": "Ma’ruza 4",
+      "a_51": "Laboratoriya 4",
+      "a_61": "Ma’ruza 5",
+      "a_62": "Laboratoriya 5",
+      "a_72": "Ma’ruza 6",
+      "a_73": "Laboratoriya 6",
+      "a_83": "Ma’ruza 7",
+      "a_84": "Laboratoriya 7",
+      "a_94": "Ma’ruza 8",
+      "a_95": "Laboratoriya 8",
+      "a_105": "Ma’ruza 9",
+      "a_106": "Laboratoriya 9",
+      "a_116": "Ma’ruza 10",
+      "a_117": "Laboratoriya 10",
+      "a_128": "Ma’ruza 11",
+      "a_129": "Laboratoriya 11",
+      "a_139": "Ma’ruza 12",
+      "a_140": "Laboratoriya 12",
+      "a_150": "Ma’ruza 13",
+      "a_151": "Laboratoriya 13",
+      "a_161": "Ma’ruza 14",
+      "a_162": "Laboratoriya 14",
+      "a_172": "Ma’ruza 15",
+      "a_173": "Laboratoriya 15",
+      "h2_175": "Talaba ishni qanday topshiradi?"
+    },
+    "si-vositalari": {
+      "h1": "SI vositalari:",
+      "h1Accent": "joriy ro‘yxat",
+      "badge1": "Darslikka ilova",
+      "badge2": "Muntazam yangilanadi"
+    },
+    "sims_lorens_kuchi": {
+      "h1": "Lorens kuchi: magnit maydondagi zaryadli zarra",
+      "h2_1": "Parametrlar (shartli birliklar)",
+      "label_3": "Massa m",
+      "label_4": "Boshlang‘ich tezlik v₀",
+      "label_5": "Magnit induksiya B (ekrandan bizga)",
+      "label_6": "Elektr maydon E (pastga)",
+      "h2_7": "Nazariya va o‘lchov",
+      "span_8": "r o‘lchangan",
+      "span_9": "T o‘lchangan",
+      "span_10": "dreyf E/B",
+      "h2_11": "Formulalar",
+      "p_12": "Bu simulyatsiya reklamasiz, sayt ichida ishlaydi."
+    },
+    "sims_quyosh_sintezi": {
+      "h1": "Quyosh yadrosida termoyadroviy sintez: proton-proton (pp-I) zanjiri",
+      "h2_1": "Telemetriya",
+      "span_2": "Protonlar ¹H",
+      "span_3": "Geliy-4 hosil bo‘ldi",
+      "span_4": "Ajralgan energiya, MeV",
+      "span_5": "Neytrinolar",
+      "h2_6": "pp-I zanjiri bosqichlari",
+      "h2_7": "Belgilar",
+      "span_8": "¹H proton",
+      "span_9": "²H deyteriy",
+      "h2_13": "Reaksiyalar jurnali"
+    },
+    "sims_radioaktiv_qatorlar": {
+      "h1": "Radioaktiv qatorlar: N–Z diagrammasida yemirilish zanjiri",
+      "h2_1": "Joriy yadro",
+      "h2_2": "Saqlanish balansi",
+      "span_3": "α-yemirilish",
+      "span_4": "β⁻-yemirilish",
+      "h2_6": "Zanjir"
+    },
+    "si_vositalari": {
+      "strong_3": "Oxirgi yangilanish:",
+      "strong_4": "Bepul muqobili",
+      "th_5": "Vosita",
+      "th_6": "Kursdagi vazifasi",
+      "th_7": "Kirish modeli",
+      "th_8": "Darslikda",
+      "th_9": "Rasmiy sahifa",
+      "th_11": "Katta til modellari (KTM)",
+      "th_12": "Agentli dasturlash muhitlari",
+      "span_13": "O‘zi bepul",
+      "th_15": "Hisoblash vositalari",
+      "th_18": "Simulyatsiya va ma’lumot bazalari",
+      "th_25": "Tasvir va video generatorlari",
+      "th_26": "Nutq sintezi (TTS)",
+      "th_28": "Transkripsiya",
+      "th_30": "Ta’lim platformalari",
+      "th_34": "Originallik nazorati va nashr",
+      "strong_36": "Bob",
+      "strong_37": "Lab.",
+      "h3_38": "Ro‘yxatga kiritilmagan vositalar",
+      "h3_39": "Ro‘yxat qanday yangilanadi",
+      "h3_40": "Yangilanishlar jurnali",
+      "strong_41": "2026-yil 30-oktyabr.",
+      "strong_42": "2026-yil 26-oktyabr."
+    }
+  },
+  "switcher": {
+    "groupLabel": "Sayt tili",
+    "heading": "Sayt tili"
+  },
+  "mtNotice": {
+    "text": "Sarlavhalar, menyu va ilmiy atamalar qo‘lda tarjima qilingan; ma’ruza matnining qolgan qismi Google Translate orqali avtomatik tarjima qilinmoqda. Formulalar va kodlar asl holida saqlanadi.",
+    "showOriginal": "Asl matn (o‘zbekcha)",
+    "dismiss": "Tushunarli"
+  },
+  "app": {
+    "pause": "To‘xtatish",
+    "play": "Boshlash",
+    "reset": "Reset",
+    "closeMenu": "Menyuni yopish",
+    "framesUnit": "kadr",
+    "dopplerSubsonic": "Subsonik · c = 1",
+    "dopplerTransonic": "Transonik",
+    "dopplerSupersonic": "Supersonik · Mach cone",
+    "generatePrompt": "Prompt yaratish",
+    "promptPlaceholder": "Prompt shu yerda ko‘rinadi...",
+    "defaultTopic": "Garmonik tebranishlar",
+    "promptTemplate": "Siz fizika o‘qituvchisiz.\nMavzu: {topic}\nDaraja: {level}\n\n10 ta diagnostik savol tuzing. Har bir savolda to‘g‘ri javob, qisqa izoh va tipik xatoni ko‘rsating. Yakunda natijaga qarab 3 ta individual o‘quv yo‘lini tavsiya qiling.",
+    "copyScenario": "Ssenariydan nusxa olish",
+    "scenarioText": "Hook → Core Concept → Misconception → Simulation Task\n\nFizik hodisani tushuntiring, formulani SI birliklarda yozing va HTML Canvas simulyatsiyasi uchun tekshiriladigan topshiriq bering.",
+    "copyIdle": "Nusxa olish",
+    "copyDone": "Nusxa olindi ✓",
+    "copyDenied": "Nusxa olish uchun brauzer ruxsati berilmadi."
+  },
+  "ui": {
+    "promptCopied": "Prompt nusxalandi!",
+    "menu": "Menyu"
+  },
+  "independent": {
+    "searchLabel": "Mavzu bo‘yicha qidirish:",
+    "searchPlaceholder": "Masalan: astronomiya, Canvas, elektromagnit...",
+    "count": {
+      "one": "{count} ta mavzu",
+      "other": "{count} ta mavzu"
+    },
+    "empty": "Ushbu so‘rov bo‘yicha mavzu topilmadi."
+  },
+  "glossaryUi": {
+    "searchPlaceholder": "Masalan: impuls, prompt, redshift",
+    "total": "Lug‘atda {total} ta atama.",
+    "found": "Topildi: {shown} ta atama (jami {total})."
+  }
+}

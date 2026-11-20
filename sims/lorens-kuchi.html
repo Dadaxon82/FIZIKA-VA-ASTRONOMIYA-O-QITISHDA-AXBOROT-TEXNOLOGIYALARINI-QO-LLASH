@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/i18n-boot.js"></script>
   <title>Lorens Kuchi</title>
   <style>
     :root {
@@ -38,10 +39,13 @@
       aside { border-left: 0; border-top: 1px solid var(--border); }
     }
   </style>
+<meta name="i18n-page" content="sims_lorens_kuchi">
+<link rel="stylesheet" href="../css/i18n.css">
+<script src="../js/i18n.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>🔄 Lorens kuchi: magnit maydondagi zaryadli zarra</h1>
+    <h1 data-i18n="pages.sims_lorens_kuchi.h1">🔄 Lorens kuchi: magnit maydondagi zaryadli zarra</h1>
     <div class="controls">
       <button id="play">⏸ Pauza</button>
       <button id="reset">↺ Boshidan</button>
@@ -51,31 +55,31 @@
   <main>
     <div id="stage"><canvas id="cv"></canvas></div>
     <aside>
-      <h2>Parametrlar (shartli birliklar)</h2>
-      <label>Zaryad q <b id="vq">+1.0</b></label>
+      <h2 data-i18n="pages.sims_lorens_kuchi.h2_1">Parametrlar (shartli birliklar)</h2>
+      <label data-i18n="home.simulators.control6">Zaryad q <b id="vq">+1.0</b></label>
       <input type="range" id="q" min="0.5" max="3" step="0.5" value="1">
-      <label>Massa m <b id="vm">1.0</b></label>
+      <label data-i18n="pages.sims_lorens_kuchi.label_3">Massa m <b id="vm">1.0</b></label>
       <input type="range" id="m" min="0.5" max="4" step="0.5" value="1">
-      <label>Boshlang‘ich tezlik v₀ <b id="vv">150</b></label>
+      <label data-i18n="pages.sims_lorens_kuchi.label_4">Boshlang‘ich tezlik v₀ <b id="vv">150</b></label>
       <input type="range" id="v" min="40" max="300" step="10" value="150">
-      <label>Magnit induksiya B (ekrandan bizga) <b id="vb">1.5</b></label>
+      <label data-i18n="pages.sims_lorens_kuchi.label_5">Magnit induksiya B (ekrandan bizga) <b id="vb">1.5</b></label>
       <input type="range" id="b" min="0.5" max="3" step="0.1" value="1.5">
-      <label>Elektr maydon E (pastga) <b id="ve">0</b></label>
+      <label data-i18n="pages.sims_lorens_kuchi.label_6">Elektr maydon E (pastga) <b id="ve">0</b></label>
       <input type="range" id="e" min="0" max="120" step="10" value="0">
 
-      <h2>Nazariya va o‘lchov</h2>
+      <h2 data-i18n="pages.sims_lorens_kuchi.h2_7">Nazariya va o‘lchov</h2>
       <div class="stats">
         <div class="stat"><b id="rTh">—</b><span>r nazariy = mv/|q|B</span></div>
-        <div class="stat"><b id="rMe">—</b><span>r o‘lchangan</span></div>
+        <div class="stat"><b id="rMe">—</b><span data-i18n="pages.sims_lorens_kuchi.span_8">r o‘lchangan</span></div>
         <div class="stat"><b id="tTh">—</b><span>T nazariy = 2πm/|q|B</span></div>
-        <div class="stat"><b id="tMe">—</b><span>T o‘lchangan</span></div>
-        <div class="stat"><b id="vD">—</b><span>dreyf E/B</span></div>
+        <div class="stat"><b id="tMe">—</b><span data-i18n="pages.sims_lorens_kuchi.span_9">T o‘lchangan</span></div>
+        <div class="stat"><b id="vD">—</b><span data-i18n="pages.sims_lorens_kuchi.span_10">dreyf E/B</span></div>
         <div class="stat"><b id="kE">—</b><span>|v| / v₀</span></div>
       </div>
-      <h2>Formulalar</h2>
+      <h2 data-i18n="pages.sims_lorens_kuchi.h2_11">Formulalar</h2>
       <p>F = q(E + v × B). Faqat B bo‘lsa, kuch tezlikka perpendikulyar: u ish bajarmaydi, tezlik moduli o‘zgarmaydi va zarra aylana chizadi. E ham qo‘shilsa, aylana E × B yo‘nalishida v<sub>d</sub> = E/B tezlik bilan siljiydi (dreyf).</p>
       <p class="note">Hisoblash Boris usulida bajariladi: bu usul faqat magnit maydonda tezlik modulini aniq saqlaydi. Musbat zaryad soat mili yo‘nalishida, manfiy zaryad unga teskari aylanadi. Oddiy Eyler usulida aylana spirallashib kattalashib borardi.</p>
-      <p class="note">Bu simulyatsiya reklamasiz, sayt ichida ishlaydi.</p>
+      <p class="note" data-i18n="pages.sims_lorens_kuchi.p_12">Bu simulyatsiya reklamasiz, sayt ichida ishlaydi.</p>
     </aside>
   </main>
 <script>

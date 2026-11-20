@@ -5,15 +5,33 @@
  const count = document.getElementById('count');
  const empty = document.getElementById('empty');
  if (!input || !count) return;
- input.addEventListener('input', () => {
-   const query = input.value.toLocaleLowerCase('uz-UZ').trim();
+
+ // I18N (js/i18n.js) mavjud bo'lsa — joriy tildagi matn, aks holda o'zbekcha zaxira.
+ const tr = (key, fallback, params) => {
+   if (window.I18N && typeof window.I18N.t === 'function') return window.I18N.t(key, params, fallback);
+   return fallback.replace(/\{(\w+)\}/g, (m, name) => (params && name in params ? params[name] : m));
+ };
+ const locale = () => (window.I18N && window.I18N.locale ? window.I18N.locale() : 'uz-UZ');
+
+ // Qidiruv o'zbekcha kalit so'zlar (data-search) bilan bir qatorda kartaning
+ // joriy tilda ko'rinib turgan matni bo'yicha ham ishlaydi.
+ function filter() {
+   const query = input.value.toLocaleLowerCase(locale()).trim();
    let matches = 0;
    for (const card of cards) {
-     const found = !query || card.dataset.search.toLocaleLowerCase('uz-UZ').includes(query);
+     const haystack = (card.dataset.search + ' ' + card.textContent).toLocaleLowerCase(locale());
+     const found = !query || haystack.includes(query);
      card.hidden = !found;
      if (found) matches++;
    }
-   count.textContent = matches + ' ta mavzu';
+   count.textContent = tr('independent.count', matches + ' ta mavzu', { count: matches });
+   empty.textContent = tr('independent.empty', 'Ushbu so‘rov bo‘yicha mavzu topilmadi.');
    empty.hidden = matches > 0;
+ }
+
+ input.addEventListener('input', filter);
+ document.addEventListener('i18n:change', () => {
+   input.setAttribute('placeholder', tr('independent.searchPlaceholder', 'Masalan: astronomiya, Canvas, elektromagnit...'));
+   filter();
  });
 })();

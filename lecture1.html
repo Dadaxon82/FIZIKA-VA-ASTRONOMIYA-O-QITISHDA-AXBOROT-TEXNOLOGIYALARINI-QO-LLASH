@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/i18n-boot.js"></script>
   <title>1-ma’ruza: Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib fizik simulyatsion animatsiya yaratish paradigmasi</title>
   <meta name="description" content="1-ma'ruza: raqamli texnologiyalar davrida sun'iy intellekt yordamida fizik simulyatsion animatsiya yaratish paradigmasi haqida.">
   <link rel="stylesheet" href="css/main.css">
@@ -32,7 +33,6 @@
   function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
   function uzExp(x, d) { if (!isFinite(x)) return '∞'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '−').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '⁻').replace(/\d/g, function (c) { return '⁰¹²³⁴⁵⁶⁷⁸⁹'[c]; }); return m + '·10' + sup; }
   </script>
-<link rel="stylesheet" href="css/translate.css">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -50,6 +50,13 @@
 <meta name="twitter:title" content="1-ma’ruza: Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib fizik simulyatsion animatsiya yaratish paradigmasi">
 <meta name="twitter:description" content="1-ma'ruza: raqamli texnologiyalar davrida sun'iy intellekt yordamida fizik simulyatsion animatsiya yaratish paradigmasi haqida.">
 <meta name="twitter:image" content="https://ilimziyo.uz/assets/og-image.png">
+<meta name="i18n-page" content="lecture1">
+<link rel="stylesheet" href="css/i18n.css">
+<script src="js/i18n.js" defer></script>
+<link rel="alternate" hreflang="uz" href="https://ilimziyo.uz/lecture1.html">
+<link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/lecture1.html?lang=ru">
+<link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture1.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture1.html">
 </head>
 <body>
 
@@ -60,36 +67,36 @@
           <circle cx="12" cy="12" r="9"></circle>
           <path d="M12 3v18M3 12h18"></path>
         </svg>
-        <span class="nav-logo-text">FIZIKA va AI</span>
+        <span class="nav-logo-text" data-i18n="brand.short">FIZIKA va AI</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
-        <li><a href="annotatsiya.html" class="nav-link">📖 Annotatsiya</a></li>
-        <li><a href="lecture1.html" class="nav-link active">1-ma’ruza</a></li>
-        <li><a href="lecture2.html" class="nav-link">2-ma’ruza</a></li>
-        <li><a href="lecture3.html" class="nav-link">3-ma’ruza</a></li>
-        <li><a href="lecture4.html" class="nav-link">4-ma’ruza</a></li>
-        <li><a href="lecture5.html" class="nav-link">5-ma’ruza</a></li>
-        <li><a href="lecture6.html" class="nav-link">6-ma’ruza</a></li>
-        <li><a href="lecture7.html" class="nav-link">7-ma’ruza</a></li>
-        <li><a href="lecture8.html" class="nav-link">8-ma’ruza</a></li>
-        <li><a href="lecture9.html" class="nav-link">9-ma’ruza</a></li>
-        <li><a href="lecture10.html" class="nav-link">10-ma’ruza</a></li>
-        <li><a href="lecture11.html" class="nav-link">11-ma’ruza</a></li>
-        <li><a href="lecture12.html" class="nav-link">12-ma’ruza</a></li>
-        <li><a href="lecture13.html" class="nav-link">13-ma’ruza</a></li>
-        <li><a href="lecture14.html" class="nav-link">14-ma’ruza</a></li>
-        <li><a href="lecture15.html" class="nav-link">15-ma’ruza</a></li>
-        <li><a href="lab1.html" class="nav-link">🧪 Lab 1-15</a></li>
-        <li><a href="astro1.html" class="nav-link">⭐ Astro 1-3</a></li>
-        <li><a href="glossariy.html" class="nav-link">📚 Lug‘at</a></li>
-        <li><a href="si-vositalari.html" class="nav-link">🧰 SI</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Bosh sahifa</a></li>
+        <li><a href="annotatsiya.html" class="nav-link" data-i18n="nav.annotation">📖 Annotatsiya</a></li>
+        <li><a href="lecture1.html" class="nav-link active" data-i18n="common.lectureNo.l1">1-ma’ruza</a></li>
+        <li><a href="lecture2.html" class="nav-link" data-i18n="common.lectureNo.l2">2-ma’ruza</a></li>
+        <li><a href="lecture3.html" class="nav-link" data-i18n="common.lectureNo.l3">3-ma’ruza</a></li>
+        <li><a href="lecture4.html" class="nav-link" data-i18n="common.lectureNo.l4">4-ma’ruza</a></li>
+        <li><a href="lecture5.html" class="nav-link" data-i18n="common.lectureNo.l5">5-ma’ruza</a></li>
+        <li><a href="lecture6.html" class="nav-link" data-i18n="common.lectureNo.l6">6-ma’ruza</a></li>
+        <li><a href="lecture7.html" class="nav-link" data-i18n="common.lectureNo.l7">7-ma’ruza</a></li>
+        <li><a href="lecture8.html" class="nav-link" data-i18n="common.lectureNo.l8">8-ma’ruza</a></li>
+        <li><a href="lecture9.html" class="nav-link" data-i18n="common.lectureNo.l9">9-ma’ruza</a></li>
+        <li><a href="lecture10.html" class="nav-link" data-i18n="common.lectureNo.l10">10-ma’ruza</a></li>
+        <li><a href="lecture11.html" class="nav-link" data-i18n="common.lectureNo.l11">11-ma’ruza</a></li>
+        <li><a href="lecture12.html" class="nav-link" data-i18n="common.lectureNo.l12">12-ma’ruza</a></li>
+        <li><a href="lecture13.html" class="nav-link" data-i18n="common.lectureNo.l13">13-ma’ruza</a></li>
+        <li><a href="lecture14.html" class="nav-link" data-i18n="common.lectureNo.l14">14-ma’ruza</a></li>
+        <li><a href="lecture15.html" class="nav-link" data-i18n="common.lectureNo.l15">15-ma’ruza</a></li>
+        <li><a href="lab1.html" class="nav-link" data-i18n="nav.labsRange">🧪 Lab 1-15</a></li>
+        <li><a href="astro1.html" class="nav-link" data-i18n="nav.astroRange">⭐ Astro 1-3</a></li>
+        <li><a href="glossariy.html" class="nav-link" data-i18n="nav.glossary">📚 Lug‘at</a></li>
+        <li><a href="si-vositalari.html" class="nav-link" data-i18n="nav.aiToolsShort">🧰 SI</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="index.html#muallif" class="btn btn-secondary btn-sm">Muallif</a>
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu">
+        <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <div class="hamburger-icon">
             <span></span>
             <span></span>
@@ -103,35 +110,35 @@
   <div id="drawer-overlay" class="mobile-drawer-overlay"></div>
   <nav id="mobile-drawer" class="mobile-drawer">
     <div class="drawer-header">
-      <span class="badge badge-cyan">Navigatsiya</span>
+      <span class="badge badge-cyan" data-i18n="nav.navigation">Navigatsiya</span>
       <button onclick="document.getElementById('hamburger-btn').click()" style="background:none;border:none;color:#66708A;font-size:1.4rem;cursor:pointer;">✕</button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">🏠 Bosh sahifa</a></li>
-      <li><a href="annotatsiya.html" class="drawer-link">📖 Annotatsiya</a></li>
-      <li><a href="lecture1.html" class="drawer-link active">🔬 1-ma’ruza: Paradigma</a></li>
-      <li><a href="lecture2.html" class="drawer-link">🧪 2-ma’ruza: Modellashtirish</a></li>
-      <li><a href="lecture3.html" class="drawer-link">🤖 3-ma’ruza: AI ekotizimi</a></li>
-      <li><a href="lecture4.html" class="drawer-link">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
-      <li><a href="lecture5.html" class="drawer-link">🌌 5-ma’ruza: Model turlari</a></li>
-      <li><a href="lecture6.html" class="drawer-link">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
-      <li><a href="lecture7.html" class="drawer-link">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
-      <li><a href="lecture8.html" class="drawer-link">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
-      <li><a href="lecture9.html" class="drawer-link">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
-      <li><a href="lecture10.html" class="drawer-link">🪐 10-ma’ruza: Vizuallashtirish</a></li>
-      <li><a href="lecture11.html" class="drawer-link">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
-      <li><a href="lecture12.html" class="drawer-link">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
-      <li><a href="lecture13.html" class="drawer-link">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
-      <li><a href="lecture14.html" class="drawer-link">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
-      <li><a href="lecture15.html" class="drawer-link">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
+      <li><a href="index.html" class="drawer-link" data-i18n="nav.home">🏠 Bosh sahifa</a></li>
+      <li><a href="annotatsiya.html" class="drawer-link" data-i18n="nav.annotation">📖 Annotatsiya</a></li>
+      <li><a href="lecture1.html" class="drawer-link active" data-i18n="nav.lectureShort.l1">🔬 1-ma’ruza: Paradigma</a></li>
+      <li><a href="lecture2.html" class="drawer-link" data-i18n="nav.lectureShort.l2">🧪 2-ma’ruza: Modellashtirish</a></li>
+      <li><a href="lecture3.html" class="drawer-link" data-i18n="nav.lectureShort.l3">🤖 3-ma’ruza: AI ekotizimi</a></li>
+      <li><a href="lecture4.html" class="drawer-link" data-i18n="nav.lectureShort.l4">🎯 4-ma’ruza: Aniqlik va barqarorlik</a></li>
+      <li><a href="lecture5.html" class="drawer-link" data-i18n="nav.lectureShort.l5">🌌 5-ma’ruza: Model turlari</a></li>
+      <li><a href="lecture6.html" class="drawer-link" data-i18n="nav.lectureShort.l6">📐 6-ma’ruza: Modellarni shakllantirish</a></li>
+      <li><a href="lecture7.html" class="drawer-link" data-i18n="nav.lectureShort.l7">⚡ 7-ma’ruza: Canvas arxitekturasi</a></li>
+      <li><a href="lecture8.html" class="drawer-link" data-i18n="nav.lectureShort.l8">💥 8-ma’ruza: Vektorlar va to‘qnashuv</a></li>
+      <li><a href="lecture9.html" class="drawer-link" data-i18n="nav.lectureShort.l9">🧠 9-ma’ruza: Prompt-muhandislik</a></li>
+      <li><a href="lecture10.html" class="drawer-link" data-i18n="nav.lectureShort.l10">🪐 10-ma’ruza: Vizuallashtirish</a></li>
+      <li><a href="lecture11.html" class="drawer-link" data-i18n="nav.lectureShort.l11">🎓 11-ma’ruza: Masofaviy ta’lim</a></li>
+      <li><a href="lecture12.html" class="drawer-link" data-i18n="nav.lectureShort.l12">⚙️ 12-ma’ruza: Mexanika va AI-konveyer</a></li>
+      <li><a href="lecture13.html" class="drawer-link" data-i18n="nav.lectureShort.l13">🔥 13-ma’ruza: Termodinamika va stoxastika</a></li>
+      <li><a href="lecture14.html" class="drawer-link" data-i18n="nav.lectureShort.l14">🧲 14-ma’ruza: Elektrodinamika va audio sintez</a></li>
+      <li><a href="lecture15.html" class="drawer-link" data-i18n="nav.lectureShort.l15">☢️ 15-ma’ruza: Yadro fizikasi va yakuniy loyiha</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="lab1.html" class="drawer-link">🧪 Lab 1-15</a></li>
+      <li><a href="lab1.html" class="drawer-link" data-i18n="nav.labsRange">🧪 Lab 1-15</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="astro1.html" class="drawer-link">⭐ Astro 1-3</a></li>
+      <li><a href="astro1.html" class="drawer-link" data-i18n="nav.astroRange">⭐ Astro 1-3</a></li>
       <li style="border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0;"></li>
-      <li><a href="glossariy.html" class="drawer-link">📚 Atamalar lug‘ati</a></li>
-      <li><a href="si-vositalari.html" class="drawer-link">🧰 SI vositalari</a></li>
-      <li><a href="index.html#muallif" class="drawer-link">👤 Muallif</a></li>
+      <li><a href="glossariy.html" class="drawer-link" data-i18n="nav.glossaryFull">📚 Atamalar lug‘ati</a></li>
+      <li><a href="si-vositalari.html" class="drawer-link" data-i18n="nav.aiTools">🧰 SI vositalari</a></li>
+      <li><a href="index.html#muallif" class="drawer-link" data-i18n="nav.author">👤 Muallif</a></li>
     </ul>
   </nav>
 
@@ -140,13 +147,13 @@
     <!-- Hero / Title Section -->
     <div class="section-header">
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
-        <span class="badge badge-emerald">1-ma’ruza</span>
-        <span class="badge badge-cyan">Oliy ta’lim va magistratura</span>
-        <span class="badge badge-purple">AI-native ta’lim paradigmasi</span>
+        <span class="badge badge-emerald" data-i18n="common.lectureNo.l1">1-ma’ruza</span>
+        <span class="badge badge-cyan" data-i18n="pages.lecture1.badge2">Oliy ta’lim va magistratura</span>
+        <span class="badge badge-purple" data-i18n="pages.lecture1.badge3">AI-native ta’lim paradigmasi</span>
       </div>
-      <h1 >
+      <h1  data-i18n="pages.lecture1.h1">
         Kirish. Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib <br>
-        <span class="text-gradient">fizik simulyatsion animatsiya yaratish paradigmasi</span>
+        <span class="text-gradient" data-i18n="pages.lecture1.h1Accent">fizik simulyatsion animatsiya yaratish paradigmasi</span>
       </h1>
       <p style="font-size: 1.15rem; color:#4B5464; max-width: 1050px; line-height: 1.7;">
         Ushbu ma’ruzada an’anaviy <em style="color: var(--text-main);">"dasturni sintaktik o‘rganish"</em> yondashuvidan farqli o‘laroq, talabani <strong style="color: var(--text-main);">"Fizik-Muhandis va Dasturiy Arxitektor"</strong> sifatida shakllantirish, generativ sun’iy intellekt vositalari (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude) sinergiyasida interaktiv Web-simulyatsiyalar yaratishning to‘liq 5 bosqichli yo‘l xaritasi va Capstone portfolio talablari o‘rganiladi.
@@ -286,26 +293,26 @@
 
     <!-- Bepul muqobillar -->
     <div class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;">💡 Pullik vositalarning bepul muqobillari</h3>
-      <p style="margin-bottom: 8px; font-size: 0.95rem;">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
+      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+      <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
-        <li><strong style="color: var(--text-main);">Midjourney</strong> o‘rniga: Microsoft Designer (Bing Image Creator), Gemini yoki ChatGPT bepul tarifidagi tasvir generatsiyasi, Stable Diffusion; aniq ilmiy chizmalar uchun Inkscape, diagrams.net, GeoGebra.</li>
-        <li><strong style="color: var(--text-main);">Runway</strong> o‘rniga: o‘z Canvas simulyatsiyangizni OBS Studio bilan ekrandan yozib olish, Manim (Python) yoki Blender bilan animatsiya, Shotcut/Kdenlive bilan montaj.</li>
-        <li><strong style="color: var(--text-main);">Sora</strong> o‘rniga: Manim, Blender yoki simulyatsiyani OBS Studio bilan yozib olish — fizik jihatdan aniq video beradi.</li>
-        <li><strong style="color: var(--text-main);">Pika</strong> o‘rniga: Manim, Blender, OBS Studio.</li>
-        <li><strong style="color: var(--text-main);">ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
+        <li data-i18n="freeAlt.alt1"><strong style="color: var(--text-main);">Midjourney</strong> o‘rniga: Microsoft Designer (Bing Image Creator), Gemini yoki ChatGPT bepul tarifidagi tasvir generatsiyasi, Stable Diffusion; aniq ilmiy chizmalar uchun Inkscape, diagrams.net, GeoGebra.</li>
+        <li data-i18n="freeAlt.alt2"><strong style="color: var(--text-main);">Runway</strong> o‘rniga: o‘z Canvas simulyatsiyangizni OBS Studio bilan ekrandan yozib olish, Manim (Python) yoki Blender bilan animatsiya, Shotcut/Kdenlive bilan montaj.</li>
+        <li data-i18n="freeAlt.alt3"><strong style="color: var(--text-main);">Sora</strong> o‘rniga: Manim, Blender yoki simulyatsiyani OBS Studio bilan yozib olish — fizik jihatdan aniq video beradi.</li>
+        <li data-i18n="freeAlt.alt4"><strong style="color: var(--text-main);">Pika</strong> o‘rniga: Manim, Blender, OBS Studio.</li>
+        <li data-i18n="freeAlt.alt5"><strong style="color: var(--text-main);">ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
       </ul>
-      <p style="margin-top: 8px; font-size: 0.85rem;">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link">SI vositalari sahifasi</a>.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
     </div>
 
     <!-- Tabs Container: 6 Main Modules -->
     <div class="tabs-container" style="margin-bottom: 40px;">
       <div class="tabs-nav">
-        <button class="tab-btn active" data-tab="tab-magicschool">1. MagicSchool AI va diagnostika</button>
-        <button class="tab-btn" data-tab="tab-gemini">2. Gemini / ChatGPT ssenariy</button>
-        <button class="tab-btn" data-tab="tab-midjourney">3. Midjourney va Runway</button>
-        <button class="tab-btn" data-tab="tab-simulators">4. Claude jonli simulyatorlar</button>
-        <button class="tab-btn" data-tab="tab-rubrics">5. Baholash va Capstone rubrikasi</button>
+        <button class="tab-btn active" data-tab="tab-magicschool" data-i18n="pages.lecture1.tab1">1. MagicSchool AI va diagnostika</button>
+        <button class="tab-btn" data-tab="tab-gemini" data-i18n="pages.lecture1.tab2">2. Gemini / ChatGPT ssenariy</button>
+        <button class="tab-btn" data-tab="tab-midjourney" data-i18n="pages.lecture1.tab3">3. Midjourney va Runway</button>
+        <button class="tab-btn" data-tab="tab-simulators" data-i18n="pages.lecture1.tab4">4. Claude jonli simulyatorlar</button>
+        <button class="tab-btn" data-tab="tab-rubrics" data-i18n="pages.lecture1.tab5">5. Baholash va Capstone rubrikasi</button>
       </div>
 
       <!-- Tab 1: MagicSchool AI -->
@@ -420,7 +427,7 @@
             </div>
 
             <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-              <button onclick="checkDiagnosticQuiz()" class="btn btn-primary">Natijani tekshirish va kompetensiya xulosasini olish →</button>
+              <button onclick="checkDiagnosticQuiz()" class="btn btn-primary" data-i18n="common.checkCompetence">Natijani tekshirish va kompetensiya xulosasini olish →</button>
             </div>
             <div id="diag-feedback"></div>
           </div>
@@ -536,10 +543,10 @@
 
         <!-- Simulators sub-nav -->
         <div class="tabs-nav" style="border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 20px;">
-          <button class="tab-btn active" data-tab="subtab-pendulum">1. So‘nuvchi mayatnik (RK4)</button>
-          <button class="tab-btn" data-tab="subtab-lorentz">2. Lorens kuchi (3D, Boris usuli)</button>
-          <button class="tab-btn" data-tab="subtab-doppler">3. Doppler effekti va Max konusi</button>
-          <button class="tab-btn" data-tab="subtab-optics">4. Yung interferensiyasi</button>
+          <button class="tab-btn active" data-tab="subtab-pendulum" data-i18n="pages.lecture1.tab6">1. So‘nuvchi mayatnik (RK4)</button>
+          <button class="tab-btn" data-tab="subtab-lorentz" data-i18n="pages.lecture1.tab7">2. Lorens kuchi (3D, Boris usuli)</button>
+          <button class="tab-btn" data-tab="subtab-doppler" data-i18n="pages.lecture1.tab8">3. Doppler effekti va Max konusi</button>
+          <button class="tab-btn" data-tab="subtab-optics" data-i18n="pages.lecture1.tab9">4. Yung interferensiyasi</button>
         </div>
 
         <!-- Subtab 1: Pendulum -->
@@ -660,7 +667,7 @@
             </div>
 
             <div class="sim-controls">
-              <h3 style="font-size:1.15rem; margin-bottom:6px;">Yung interferensiyasi</h3>
+              <h3 style="font-size:1.15rem; margin-bottom:6px;" data-i18n="home.simulators.sim_tab4">Yung interferensiyasi</h3>
               <div class="control-group">
                 <label class="control-label">To‘lqin uzunligi λ: <span id="val-optics-wl" class="control-val">532 nm (yashil)</span></label>
                 <input type="range" id="slider-optics-wl" class="slider-input" min="380" max="750" step="5" value="532">
@@ -853,5 +860,5 @@
       });
     });
   </script>
-<script src="js/translate.js"></script></body>
+</body>
 </html>
