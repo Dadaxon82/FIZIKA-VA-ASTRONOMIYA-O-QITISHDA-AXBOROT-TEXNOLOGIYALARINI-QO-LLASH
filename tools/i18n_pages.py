@@ -84,7 +84,7 @@ def main():
                     if tr and tr != src:
                         s[src] = tr
             img = {}
-            for src in set(re.findall(r'<img[^>]+src="((?:\.\./)?assets/([\w.-]+\.svg))"', html)):
+            for src in set(re.findall(r'<img[^>]+src="((?:\.\./)?assets/([\w.-]+\.(?:svg|png)))"', html)):
                 full, name = src
                 if os.path.exists(os.path.join(ROOT, 'assets', 'i18n', lang, name)):
                     img[full] = full.replace('assets/', 'assets/i18n/' + lang + '/', 1)

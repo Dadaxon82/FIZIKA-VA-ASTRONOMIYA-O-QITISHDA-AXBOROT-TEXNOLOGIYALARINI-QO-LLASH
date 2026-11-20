@@ -1,13 +1,16 @@
-"""svgtm.json → <repo>/assets/i18n/<til>/<fayl>.svg ; SVG lug'ati: <repo>/locales/content/_svg.json"""
+"""SVG lug'ati (locales/content/_svg.json) → assets/i18n/<til>/<fayl>.svg
+
+Ishlatish:  python3 tools/i18n_svg.py [REPO] [qo'shimcha_tm.json]
+Qo'shimcha TM (ixtiyoriy) {uz: [ru, en]} ko'rinishida _svg.json ga qo'shiladi.
+"""
 import glob, json, os, re, sys
-sys.path.insert(0, '/home/claude/work')
-from tmtool import SVG_TEXT
-REPO = sys.argv[1]
-tm = json.load(open('/home/claude/work/svgtm.json', encoding='utf-8'))
+SVG_TEXT = re.compile(r'(<text\b[^>]*>)(.*?)(</text>)', re.S)
+REPO = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 path = REPO + '/locales/content/_svg.json'
 store = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
-store.update(tm)
-json.dump(store, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1, sort_keys=True)
+if len(sys.argv) > 2:
+    store.update(json.load(open(sys.argv[2], encoding='utf-8')))
+    json.dump(store, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1, sort_keys=True)
 made = 0
 for f in sorted(glob.glob(REPO + '/assets/*.svg')):
     src = open(f, encoding='utf-8').read()
