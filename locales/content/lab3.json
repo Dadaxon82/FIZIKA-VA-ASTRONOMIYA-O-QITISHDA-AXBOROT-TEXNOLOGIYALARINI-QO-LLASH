@@ -1,0 +1,1004 @@
+[
+ {
+  "k": "d3ae8c5a",
+  "s": "3-laboratoriya mashg‘uloti: raqamli sun’iy intellekt ekotizimi va virtual ish muhiti",
+  "ru": "Лабораторное занятие 3: цифровая экосистема искусственного интеллекта и виртуальная рабочая среда",
+  "en": "Lab 3: The Digital AI Ecosystem and a Virtual Workspace"
+ },
+ {
+  "k": "3b823071",
+  "s": "Zamonaviy fizika ta’limida yakka, tarqoq dasturiy vositalardan foydalanish cheklangan samaradorlik beradi. Mazkur laboratoriya mashg‘ulotida talabalar ta’limiy jarayonni to‘liq qamrab oluvchi <strong>7 ta asosiy sun’iy intellekt platformasini</strong> (<em>Claude, Google Antigravity, MagicSchool AI, PhET/Vascak.cz, ElevenLabs/TTS, Otter.ai, Undetectable AI</em>) yagona sinergik axborot konveyeriga (<strong>AI-Pipeline</strong>) birlashtiradi. Har bir vositada amaliy mini-topshiriq bajariladi hamda <strong>Canva AI / Midjourney</strong> yordamida shaxsiy tizimli infografika chiziladi.",
+  "ru": "В современном физическом образовании использование отдельных разрозненных программных средств даёт ограниченную эффективность. На этом лабораторном занятии студенты объединяют <strong>7 основных платформ искусственного интеллекта</strong> (<em>Claude, Google Antigravity, MagicSchool AI, PhET/Vascak.cz, ElevenLabs/TTS, Otter.ai, Undetectable AI</em>), полностью охватывающих учебный процесс, в единый синергетический информационный конвейер (<strong>AI-Pipeline</strong>). В каждом инструменте выполняется практическое мини-задание, а с помощью <strong>Canva AI / Midjourney</strong> рисуется личная системная инфографика.",
+  "en": "In modern physics education, using isolated, scattered software tools has limited effect. In this lab, students combine <strong>7 core artificial intelligence platforms</strong> (<em>Claude, Google Antigravity, MagicSchool AI, PhET/Vascak.cz, ElevenLabs/TTS, Otter.ai, Undetectable AI</em>) that together cover the whole learning process into a single synergistic information pipeline (<strong>AI-Pipeline</strong>). A practical mini-task is done in each tool, and a personal system infographic is drawn with <strong>Canva AI / Midjourney</strong>."
+ },
+ {
+  "k": "6c535287",
+  "s": "📋 3-laboratoriya mashg‘uloti rejasi va didaktik konveyeri:",
+  "ru": "📋 План лабораторного занятия 3 и дидактический конвейер:",
+  "en": "📋 Lab 3 plan and didactic pipeline:"
+ },
+ {
+  "k": "a9a2d2f4",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va shaxsiy reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Talabaning axborot texnologiyalari va SI bo‘yicha boshlang‘ich bilimini test orqali aniqlash hamda ZPD mezonida klasterlash.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и личный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Определение тестом исходных знаний студента в области ИТ и ИИ и кластеризация по критерию ЗБР.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and a personal plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Testing the student’s starting knowledge of IT and AI and clustering by the ZPD criterion.</span>"
+ },
+ {
+  "k": "b1fda3d0",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Barcha 7 vosita integratsiyasi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Platformalarning didaktik roli, ro‘yxatdan o‘tish yoki bepul sinov rejimlarini yaxlit virtual muhitga sozlash.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Интеграция всех 7 инструментов:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Дидактическая роль платформ, настройка регистрации или бесплатных пробных режимов в единую виртуальную среду.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Integrating all 7 tools:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The didactic role of each platform and setting up sign-ups or free trial modes as one virtual environment.</span>"
+ },
+ {
+  "k": "f56e946b",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. 7 Ta amaliy mini-topshiriq:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude, Antigravity, MagicSchool, PhET, ElevenLabs, Otter, Undetectable AI da qadamma-qadam tajribalar.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. 7 практических мини-заданий:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Пошаговые опыты в Claude, Antigravity, MagicSchool, PhET, ElevenLabs, Otter и Undetectable AI.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. 7 practical mini-tasks:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Step-by-step experiments in Claude, Antigravity, MagicSchool, PhET, ElevenLabs, Otter and Undetectable AI.</span>"
+ },
+ {
+  "k": "e5648421",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Pipeline sxemasini grafik chizish:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Canva AI va Midjourney yordamida ma’lumotlar oqimining professional vizual arxitekturasini yaratish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Графическое построение схемы конвейера:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Создание профессиональной визуальной архитектуры потока данных с помощью Canva AI и Midjourney.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Drawing the pipeline diagram:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Creating a professional visual architecture of the data flow with Canva AI and Midjourney.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "435fa5da",
+  "s": "Kognitiv diagnostika va TPACK modeli",
+  "ru": "Когнитивная диагностика и модель TPACK",
+  "en": "Cognitive diagnostics and the TPACK model"
+ },
+ {
+  "k": "f2dea06a",
+  "s": "Fizika ta’limida raqamli sun’iy intellekt vositalarini o‘zlashtirish har bir talabaning shaxsiy kompyuter savodxonligi, axborot xavfsizligi madaniyati hamda matematik tafakkuriga bog‘liqdir. Shu bois, ta’lim jarayoni Lev Vygotskiyning <em>\"Yaqin Rivojlanish Zonasi\" (ZPD)</em> tamoyili hamda Mishra va Koehler tomonidan asoslangan <strong>TPACK (Technological Pedagogical Content Knowledge)</strong> modeliga muvofiq tashkil etiladi.",
+  "ru": "Освоение цифровых инструментов искусственного интеллекта в физическом образовании зависит от личной компьютерной грамотности каждого студента, культуры информационной безопасности и математического мышления. Поэтому учебный процесс организуется в соответствии с принципом <em>«Зоны ближайшего развития» (ЗБР)</em> Льва Выготского и моделью <strong>TPACK (Technological Pedagogical Content Knowledge)</strong>, обоснованной Мишрой и Кёлером.",
+  "en": "Mastering digital AI tools in physics education depends on each student’s computer literacy, information security habits and mathematical thinking. The learning process is therefore organised around Lev Vygotsky’s <em>\"Zone of Proximal Development\" (ZPD)</em> principle and the <strong>TPACK (Technological Pedagogical Content Knowledge)</strong> model set out by Mishra and Koehler."
+ },
+ {
+  "k": "65256e19",
+  "s": "<strong>Yagona virtual muhitni sozlash:</strong> 7 ta asosiy ta’limiy platformada (PhET/Vascak, Claude, Antigravity, MagicSchool, ElevenLabs, Otter.ai, Undetectable AI) shaxsiy hisoblarni ochish va bepul ta’limiy kvotalardan xavfsiz foydalanishni yo‘lga qo‘yish;",
+  "ru": "<strong>Настройка единой виртуальной среды:</strong> открытие личных аккаунтов на 7 основных образовательных платформах (PhET/Vascak, Claude, Antigravity, MagicSchool, ElevenLabs, Otter.ai, Undetectable AI) и налаживание безопасного использования бесплатных учебных квот;",
+  "en": "<strong>Setting up a single virtual environment:</strong> opening personal accounts on the 7 core educational platforms (PhET/Vascak, Claude, Antigravity, MagicSchool, ElevenLabs, Otter.ai, Undetectable AI) and using the free educational quotas safely;"
+ },
+ {
+  "k": "c31527c5",
+  "s": "<strong>Amaliy ko‘p vositali tajriba:</strong> Har bir vositaga moslashtirilgan fizik mini-topshiriqni (differensial tenglama tahlili, nutqni yozib olish va transkripsiyalash, audio-narratsiya sintezi, akademik halollik tekshiruvi) mustaqil bajarish;",
+  "ru": "<strong>Практический многоинструментальный опыт:</strong> самостоятельное выполнение физического мини-задания, адаптированного к каждому инструменту (анализ дифференциального уравнения, запись и транскрипция речи, синтез аудионаррации, проверка академической честности);",
+  "en": "<strong>Hands-on multi-tool practice:</strong> independently completing a physics mini-task tailored to each tool (differential equation analysis, recording and transcribing speech, synthesising audio narration, checking academic integrity);"
+ },
+ {
+  "k": "a65e7c18",
+  "s": "<strong>Axborot konveyeri arxitekturasini chizish:</strong> Barcha vositalar orasidagi o‘zaro bog‘liqlikni <strong>Canva AI</strong> yoki <strong>Midjourney</strong> yordamida yuqori sifatli infografika sifatida loyihalash;",
+  "ru": "<strong>Построение архитектуры информационного конвейера:</strong> проектирование взаимосвязей между всеми инструментами в виде высококачественной инфографики с помощью <strong>Canva AI</strong> или <strong>Midjourney</strong>;",
+  "en": "<strong>Drawing the information pipeline architecture:</strong> designing the links between all the tools as a high-quality infographic with <strong>Canva AI</strong> or <strong>Midjourney</strong>;"
+ },
+ {
+  "k": "1caec689",
+  "s": "<strong>Raqamli portfolio shakllantirish:</strong> Olingan natijalar va skrinshotlarni talabaning shaxsiy semestrlik hisobotlar to‘plamiga kiritish.",
+  "ru": "<strong>Формирование цифрового портфолио:</strong> включение полученных результатов и скриншотов в личный набор семестровых отчётов студента.",
+  "en": "<strong>Building a digital portfolio:</strong> adding the results and screenshots to the student’s personal set of semester reports."
+ },
+ {
+  "k": "d57f6818",
+  "s": "1-Savol: Nima sababdan zamonaviy fizika darsida faqat bitta universal SI modelidan (masalan, faqat oddiy matnli chatbotdan) foydalanish yetarli emas?",
+  "ru": "Вопрос 1: Почему на современном уроке физики недостаточно использовать только одну универсальную ИИ-модель (например, только обычный текстовый чат-бот)?",
+  "en": "Question 1: Why is a single universal AI model (for example, just an ordinary text chatbot) not enough in a modern physics lesson?"
+ },
+ {
+  "k": "165ce114",
+  "s": "A) Bitta vosita internet qidiruvini umuman amalga oshirolmasligi sababli",
+  "ru": "A) Потому что один инструмент вообще не может выполнять поиск в интернете",
+  "en": "A) Because a single tool cannot search the internet at all"
+ },
+ {
+  "k": "15e8f37f",
+  "s": "B) Har bir vosita tor ixtisoslashgan: PhET simulyatsiya beradi, Claude ramziy matematikani tekshiradi, ElevenLabs nutq sintezlaydi, Otter ovozni yozib oladi (sinergik konveyer zarur)",
+  "ru": "B) Каждый инструмент узкоспециализирован: PhET даёт симуляцию, Claude проверяет символьную математику, ElevenLabs синтезирует речь, Otter записывает голос (нужен синергетический конвейер)",
+  "en": "B) Each tool is narrowly specialised: PhET provides simulation, Claude checks symbolic maths, ElevenLabs synthesises speech, Otter records voice (a synergistic pipeline is needed)"
+ },
+ {
+  "k": "e2b2ed1b",
+  "s": "C) Barcha sun’iy intellekt tizimlari bir oydan so‘ng pullik rejimga o‘tishi sababli",
+  "ru": "C) Потому что все системы искусственного интеллекта через месяц переходят в платный режим",
+  "en": "C) Because all AI systems switch to paid plans after a month"
+ },
+ {
+  "k": "326a54c8",
+  "s": "2-Savol: Otter.ai platformasidagi ASR (Automatic Speech Recognition — Avtomatik Nutqni Tanish) texnologiyasining fizika laboratoriyasidagi bosh maqsadi nima?",
+  "ru": "Вопрос 2: Какова главная цель технологии ASR (Automatic Speech Recognition — автоматическое распознавание речи) платформы Otter.ai в физической лаборатории?",
+  "en": "Question 2: What is the main purpose of the ASR (Automatic Speech Recognition) technology of Otter.ai in a physics lab?"
+ },
+ {
+  "k": "1c1500cc",
+  "s": "A) Test savollarining to‘g‘ri javoblarini yodlab olish",
+  "ru": "A) Запоминать правильные ответы на вопросы теста",
+  "en": "A) Memorising the correct answers to test questions"
+ },
+ {
+  "k": "598a2304",
+  "s": "B) Kompyuter monitoridagi ekranni video formatida yozib olish",
+  "ru": "B) Записывать экран монитора компьютера в видеоформате",
+  "en": "B) Recording the computer screen as video"
+ },
+ {
+  "k": "35d81374",
+  "s": "C) O‘qituvchi tushuntirishi va talabaning og‘zaki laboratoriya hisobotini real vaqtda qidiruv imkoniyatiga ega matnga, tayanch iboralarga va xulosalarga aylantirish",
+  "ru": "C) Превращать объяснения преподавателя и устный лабораторный отчёт студента в реальном времени в текст с возможностью поиска, ключевые фразы и выводы",
+  "en": "C) Turning the teacher’s explanations and the student’s spoken lab report, in real time, into searchable text, key phrases and conclusions"
+ },
+ {
+  "k": "874442ea",
+  "s": "3-Savol: Undetectable AI kabi platformalar matnlarning tabiiyligini qaysi 2 ta muhim statistik ko‘rsatkich orqali baholaydi?",
+  "ru": "Вопрос 3: По каким 2 важным статистическим показателям такие платформы, как Undetectable AI, оценивают естественность текстов?",
+  "en": "Question 3: Which 2 important statistical measures do platforms such as Undetectable AI use to judge how natural a text is?"
+ },
+ {
+  "k": "a3df815f",
+  "s": "A) Perplexity (matnning kutilmaganlik darajasi) va Burstiness (jumlalar uzunligi hamda uslubiy xilma-xilligi)",
+  "ru": "A) Perplexity (степень непредсказуемости текста) и Burstiness (длина предложений и стилистическое разнообразие)",
+  "en": "A) Perplexity (how unpredictable the text is) and Burstiness (sentence length and stylistic variety)"
+ },
+ {
+  "k": "8350c42c",
+  "s": "B) Matndagi shrift o‘lchami va sahifa chetidagi bo‘shliqlar",
+  "ru": "B) Размер шрифта в тексте и поля на странице",
+  "en": "B) The font size and the page margins"
+ },
+ {
+  "k": "7b111eb8",
+  "s": "C) Qidiruv tizimlaridagi tashqi havolalar soni",
+  "ru": "C) Количество внешних ссылок в поисковых системах",
+  "en": "C) The number of external links in search engines"
+ },
+ {
+  "k": "c62a7bd8",
+  "s": "4-Savol: Google Antigravity va agentik tizimlarning passiv chatbotlardan ustunligi nimada namoyon bo‘ladi?",
+  "ru": "Вопрос 4: В чём проявляется преимущество Google Antigravity и агентных систем над пассивными чат-ботами?",
+  "en": "Question 4: How do Google Antigravity and agentic systems outperform passive chatbots?"
+ },
+ {
+  "k": "6c1674c5",
+  "s": "A) Faqat tayyor rasmlarni yuklab berish imkoniyatida",
+  "ru": "A) Только в возможности скачивать готовые изображения",
+  "en": "A) Only in being able to download ready images"
+ },
+ {
+  "k": "6bc83751",
+  "s": "B) Kompyuterni tarmoqdan mustaqil uzib qo‘yishida",
+  "ru": "B) В самостоятельном отключении компьютера от сети",
+  "en": "B) In disconnecting the computer from the network on their own"
+ },
+ {
+  "k": "74f5c92e",
+  "s": "C) Avtonom agentlarning ko‘p bosqichli vazifalarni rejalashtirishi, kod sintezlashi, simulyatsiya xatolarini audit qilishi va telemetriyani kuzatishi",
+  "ru": "C) Автономные агенты планируют многоэтапные задачи, синтезируют код, проводят аудит ошибок симуляции и отслеживают телеметрию",
+  "en": "C) Autonomous agents plan multi-step tasks, synthesise code, audit simulation errors and monitor telemetry"
+ },
+ {
+  "k": "1968ae18",
+  "s": "🎯 Diagnostika natijasini aniqlash va individual reja tuzish",
+  "ru": "🎯 Определить результат диагностики и составить индивидуальный план",
+  "en": "🎯 Get the diagnostic result and build an individual plan"
+ },
+ {
+  "k": "7321a8ff",
+  "s": "📋 Shaxsiy SI-Tyutor Uchun Tayyor Yo‘riqnoma (Prompt):",
+  "ru": "📋 Готовая инструкция (промпт) для личного ИИ-тьютора:",
+  "en": "📋 A ready instruction (prompt) for your personal AI tutor:"
+ },
+ {
+  "k": "53333116",
+  "s": "Mishra, P., va Koehler, M. J. (2006).",
+  "ru": "Mishra, P., & Koehler, M. J. (2006).",
+  "en": "Mishra, P., & Koehler, M. J. (2006)."
+ },
+ {
+  "k": "5e08db2a",
+  "s": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge",
+  "ru": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge",
+  "en": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge"
+ },
+ {
+  "k": "27de804e",
+  "s": ". Teachers College Record, 108(6), 1017–1054.",
+  "ru": ". Teachers College Record, 108(6), 1017–1054.",
+  "en": ". Teachers College Record, 108(6), 1017–1054."
+ },
+ {
+  "k": "7fa24f2d",
+  "s": "https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "ru": "https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "en": "https://doi.org/10.1111/j.1467-9620.2006.00684.x"
+ },
+ {
+  "k": "1b985dc4",
+  "s": "Vygotsky, L. S. (1978).",
+  "ru": "Vygotsky, L. S. (1978).",
+  "en": "Vygotsky, L. S. (1978)."
+ },
+ {
+  "k": "bdd7953c",
+  "s": "Mind in Society: The Development of Higher Psychological Processes",
+  "ru": "Mind in Society: The Development of Higher Psychological Processes",
+  "en": "Mind in Society: The Development of Higher Psychological Processes"
+ },
+ {
+  "k": "7ff844f2",
+  "s": ". Harvard University Press.",
+  "ru": ". Harvard University Press.",
+  "en": ". Harvard University Press."
+ },
+ {
+  "k": "8b4b239e",
+  "s": "Mishra va Koehler TPACK modelini taklif qilgan: texnologiyani samarali qo‘llash uchun texnologik, pedagogik va fan mazmuni bilimlari birgalikda kerak. Vygotskiyning ZPD tushunchasi esa talabaga uning mustaqil imkoniyatidan biroz yuqori, lekin yordam bilan bajariladigan vazifa berishni asoslaydi. Diagnostik test va klasterlash shu ikki nazariyaga tayanadi.",
+  "ru": "Мишра и Кёлер предложили модель TPACK: для эффективного применения технологии нужны вместе технологические, педагогические и предметные знания. Понятие ЗБР Выготского обосновывает выдачу студенту задания чуть выше его самостоятельных возможностей, но выполнимого с помощью. Диагностический тест и кластеризация опираются на эти две теории.",
+  "en": "Mishra and Koehler proposed the TPACK model: using technology effectively requires technological, pedagogical and subject-content knowledge together. Vygotsky’s ZPD concept justifies giving students tasks slightly beyond what they can do alone but achievable with help. The diagnostic test and clustering rest on these two theories."
+ },
+ {
+  "k": "25abbd46",
+  "s": "2. AI integratsiyasi: barcha 7 vosita — tanishuv va sinov rejimida",
+  "ru": "2. Интеграция ИИ: все 7 инструментов — знакомство и пробный режим",
+  "en": "2. AI integration: all 7 tools — getting acquainted in trial mode"
+ },
+ {
+  "k": "45946d62",
+  "s": "Yaxlit ekotizim va konveyer arxitekturasi",
+  "ru": "Целостная экосистема и архитектура конвейера",
+  "en": "An integrated ecosystem and pipeline architecture"
+ },
+ {
+  "k": "e01f9597",
+  "s": "Fizika darsi uchun virtual ish muhiti o‘zaro bog‘langan 7 ta mustaqil platformadan tashkil topadi. Har bir platforma o‘ziga xos vazifani bajaradi. Talabalar har bir vositada shaxsiy hisob ochadi yoki taqdim etilgan bepul sinov (trial) imkoniyatlaridan foydalanadi:",
+  "ru": "Виртуальная рабочая среда для урока физики состоит из 7 взаимосвязанных самостоятельных платформ. Каждая платформа выполняет свою особую задачу. Студенты открывают личный аккаунт в каждом инструменте или используют предоставленные бесплатные пробные (trial) возможности:",
+  "en": "The virtual workspace for a physics lesson consists of 7 interlinked independent platforms, each with its own task. Students open a personal account in each tool or use the free trial options available:"
+ },
+ {
+  "k": "97d17379",
+  "s": "<span class=\"badge badge-purple\">1. Mantiq va dasturlash</span> <a href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">claude.ai ↗</a>",
+  "ru": "<span class=\"badge badge-purple\">1. Логика и программирование</span> <a href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">claude.ai ↗</a>",
+  "en": "<span class=\"badge badge-purple\">1. Logic and programming</span> <a href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">claude.ai ↗</a>"
+ },
+ {
+  "k": "d85189f0",
+  "s": "Claude (Anthropic)",
+  "ru": "Claude (Anthropic)",
+  "en": "Claude (Anthropic)"
+ },
+ {
+  "k": "fdac2281",
+  "s": "Fizik qonuniyatlarning differensial tenglamalarini tahlil qilish, o‘lchov birliklarini tekshirish va deterministik HTML5 Canvas / JavaScript kodlarini generatsiya qilish bo‘yicha eng ilg‘or model.",
+  "ru": "Самая передовая модель для анализа дифференциальных уравнений физических закономерностей, проверки единиц измерения и генерации детерминированного кода HTML5 Canvas / JavaScript.",
+  "en": "The most advanced model for analysing the differential equations of physical laws, checking units and generating deterministic HTML5 Canvas / JavaScript code."
+ },
+ {
+  "k": "3ac096e4",
+  "s": "💡 <em>Sinov rejimi: Bepul akkaunt orqali kundalik bepul so‘rovlar mavjud.</em>",
+  "ru": "💡 <em>Пробный режим: в бесплатном аккаунте доступны ежедневные бесплатные запросы.</em>",
+  "en": "💡 <em>Trial mode: a free account includes daily free requests.</em>"
+ },
+ {
+  "k": "19de3ad5",
+  "s": "<span class=\"badge badge-emerald\">2. Avtonom agent va audit</span> <a href=\"https://antigravity.google/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">antigravity.google ↗</a>",
+  "ru": "<span class=\"badge badge-emerald\">2. Avtonom agent & audit</span> <a href=\"https://antigravity.google/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">antigravity.google ↗</a>",
+  "en": "<span class=\"badge badge-emerald\">2. Avtonom agent & audit</span> <a href=\"https://antigravity.google/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">antigravity.google ↗</a>"
+ },
+ {
+  "k": "dfcce8a4",
+  "s": "Google Antigravity",
+  "ru": "Google Antigravity",
+  "en": "Google Antigravity"
+ },
+ {
+  "k": "b7ce7da2",
+  "s": "Google’ning agentlarga asoslangan dasturlash muhiti (IDE, 2025-yil noyabr). Avtonom agentlar muharrir, terminal va brauzerda ko‘p bosqichli vazifalarni rejalashtiradi va bajaradi — fizik simulyatsiya kodini yozish, ishga tushirish va energiya dreyfini ($\\Delta E / E_0$) tekshirish uchun qo‘llaniladi.",
+  "ru": "Среда программирования Google на основе агентов (IDE, ноябрь 2025 г.). Автономные агенты планируют и выполняют многоэтапные задачи в редакторе, терминале и браузере — применяется для написания, запуска кода физической симуляции и проверки дрейфа энергии ($\\Delta E / E_0$).",
+  "en": "Google’s agent-based development environment (IDE, November 2025). Autonomous agents plan and carry out multi-step tasks in the editor, terminal and browser — used to write and run physics simulation code and check energy drift ($\\Delta E / E_0$)."
+ },
+ {
+  "k": "07152c89",
+  "s": "💡 <em>Sinov rejimi: Bepul ommaviy sinov (public preview); kompyuterga o‘rnatiladi (Windows, macOS, Linux).</em>",
+  "ru": "💡 <em>Пробный режим: бесплатный публичный предварительный доступ (public preview); устанавливается на компьютер (Windows, macOS, Linux).</em>",
+  "en": "💡 <em>Trial mode: a free public preview; installed on your computer (Windows, macOS, Linux).</em>"
+ },
+ {
+  "k": "60cb1f27",
+  "s": "<span class=\"badge badge-amber\">3. Pedagogik dizayn</span> <a href=\"https://www.magicschool.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">magicschool.ai ↗</a>",
+  "ru": "<span class=\"badge badge-amber\">3. Педагогический дизайн</span> <a href=\"https://www.magicschool.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">magicschool.ai ↗</a>",
+  "en": "<span class=\"badge badge-amber\">3. Instructional design</span> <a href=\"https://www.magicschool.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">magicschool.ai ↗</a>"
+ },
+ {
+  "k": "1537b4ce",
+  "s": "MagicSchool AI",
+  "ru": "MagicSchool AI",
+  "en": "MagicSchool AI"
+ },
+ {
+  "k": "4073245a",
+  "s": "O‘qituvchi va talabalar uchun 60 dan ortiq pedagogik generatorlar: Tabaqalashtirilgan dars rejalari, Bloom taksonomiyasiga asoslangan baholash rubrikalari va laboratoriya yo‘riqnomalari.",
+  "ru": "Более 60 педагогических генераторов для преподавателей и студентов: дифференцированные планы уроков, рубрики оценивания на основе таксономии Блума и лабораторные инструкции.",
+  "en": "More than 60 instructional generators for teachers and students: differentiated lesson plans, Bloom-based assessment rubrics and lab instructions."
+ },
+ {
+  "k": "ac8c478e",
+  "s": "💡 <em>Sinov rejimi: Ta’lim oluvchilar uchun bepul asosiy tarif mavjud.</em>",
+  "ru": "💡 <em>Пробный режим: для обучающихся есть бесплатный базовый тариф.</em>",
+  "en": "💡 <em>Trial mode: a free basic plan is available for learners.</em>"
+ },
+ {
+  "k": "27868634",
+  "s": "<span class=\"badge badge-cyan\">4. Tajriba bazasi</span> <a href=\"https://phet.colorado.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">phet.colorado.edu ↗</a>",
+  "ru": "<span class=\"badge badge-cyan\">4. База экспериментов</span> <a href=\"https://phet.colorado.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">phet.colorado.edu ↗</a>",
+  "en": "<span class=\"badge badge-cyan\">4. Experiment base</span> <a href=\"https://phet.colorado.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">phet.colorado.edu ↗</a>"
+ },
+ {
+  "k": "9fe74cb3",
+  "s": "PhET / Vascak.cz",
+  "ru": "PhET / Vascak.cz",
+  "en": "PhET / Vascak.cz"
+ },
+ {
+  "k": "03431ee3",
+  "s": "Fizik qonuniyatlarni tadqiq qilishning virtual tajriba maydoni. Slayderlar, asboblar va chiqish grafiklari orqali teskari muhandislik qilishning asosiy obyekti.",
+  "ru": "Виртуальная экспериментальная площадка для исследования физических закономерностей. Основной объект обратной разработки через ползунки, приборы и выходные графики.",
+  "en": "A virtual experimental space for investigating physical laws — the main object of reverse engineering through sliders, instruments and output plots."
+ },
+ {
+  "k": "2ecabbb9",
+  "s": "💡 <em>Sinov rejimi: Ikkalasi ham bepul va ro‘yxatdan o‘tmasdan ishlaydi (PhET — ochiq manbali loyiha).</em>",
+  "ru": "💡 <em>Пробный режим: оба бесплатны и работают без регистрации (PhET — проект с открытым кодом).</em>",
+  "en": "💡 <em>Trial mode: both are free and work without signing up (PhET is an open-source project).</em>"
+ },
+ {
+  "k": "3dd29df8",
+  "s": "<span class=\"badge badge-rose\">5. Ovoz va audio sintez</span> <a href=\"https://elevenlabs.io/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">elevenlabs.io ↗</a>",
+  "ru": "<span class=\"badge badge-rose\">5. Голос и аудиосинтез</span> <a href=\"https://elevenlabs.io/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">elevenlabs.io ↗</a>",
+  "en": "<span class=\"badge badge-rose\">5. Voice and audio synthesis</span> <a href=\"https://elevenlabs.io/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">elevenlabs.io ↗</a>"
+ },
+ {
+  "k": "67baca06",
+  "s": "ElevenLabs / Muxlisa AI",
+  "ru": "ElevenLabs / Muxlisa AI",
+  "en": "ElevenLabs / Muxlisa AI"
+ },
+ {
+  "k": "494b11f8",
+  "s": "Fizik tushuntirishlar va laboratoriya tajribalarini tabiiy insoniy his-tuyg‘ular bilan ovozlashtiruvchi zamonaviy nutq sintezi (Text-to-Speech) dvigateli.",
+  "ru": "Современный движок синтеза речи (Text-to-Speech), озвучивающий физические объяснения и лабораторные опыты с естественными человеческими эмоциями.",
+  "en": "A modern text-to-speech engine that voices physics explanations and lab experiments with natural human emotion."
+ },
+ {
+  "k": "dd8ad3a4",
+  "s": "💡 <em>Sinov rejimi: Bepul tarifda oyiga 10 000 kredit (taxminan 10 daqiqa nutq); tijoriy foydalanish va ovoz klonlash kiritilmagan.</em>",
+  "ru": "💡 <em>Пробный режим: на бесплатном тарифе 10 000 кредитов в месяц (около 10 минут речи); коммерческое использование и клонирование голоса не включены.</em>",
+  "en": "💡 <em>Trial mode: the free plan gives 10,000 credits a month (about 10 minutes of speech); commercial use and voice cloning are not included.</em>"
+ },
+ {
+  "k": "f209493e",
+  "s": "<span class=\"badge badge-cyan\">6. ASR va ovozli konspekt</span> <a href=\"https://otter.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">otter.ai ↗</a>",
+  "ru": "<span class=\"badge badge-cyan\">6. ASR и голосовой конспект</span> <a href=\"https://otter.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">otter.ai ↗</a>",
+  "en": "<span class=\"badge badge-cyan\">6. ASR and voice notes</span> <a href=\"https://otter.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">otter.ai ↗</a>"
+ },
+ {
+  "k": "245a937f",
+  "s": "Otter.ai",
+  "ru": "Otter.ai",
+  "en": "Otter.ai"
+ },
+ {
+  "k": "9ca9ad5a",
+  "s": "O‘qituvchi va talabalar laboratoriya himoyalari hamda ma’ruzalarini real vaqtda matnga aylantirish (Speech-to-Text), avtomatik rezyume va topshiriqlarni ajratish platformasi.",
+  "ru": "Платформа для преобразования в реальном времени в текст (Speech-to-Text) защит лабораторных работ и лекций преподавателей и студентов, автоматического резюме и выделения задач.",
+  "en": "A platform that turns lab defences and lectures by teachers and students into text in real time (speech-to-text), with automatic summaries and action items."
+ },
+ {
+  "k": "d899730f",
+  "s": "💡 <em>Sinov rejimi: Bepul Basic tarifda oyiga 300 daqiqa transkripsiya (har bir suhbat 30 daqiqagacha).</em>",
+  "ru": "💡 <em>Пробный режим: на бесплатном тарифе Basic 300 минут транскрипции в месяц (каждая беседа до 30 минут).</em>",
+  "en": "💡 <em>Trial mode: the free Basic plan gives 300 transcription minutes a month (up to 30 minutes per conversation).</em>"
+ },
+ {
+  "k": "6fad3d66",
+  "s": "<span class=\"badge badge-purple\">7. Akademik etika va matn tahlili</span> <a href=\"https://undetectable.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">undetectable.ai ↗</a>",
+  "ru": "<span class=\"badge badge-purple\">7. Академическая этика и анализ текста</span> <a href=\"https://undetectable.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">undetectable.ai ↗</a>",
+  "en": "<span class=\"badge badge-purple\">7. Academic ethics and text analysis</span> <a href=\"https://undetectable.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">undetectable.ai ↗</a>"
+ },
+ {
+  "k": "40f21ee1",
+  "s": "Undetectable AI",
+  "ru": "Undetectable AI",
+  "en": "Undetectable AI"
+ },
+ {
+  "k": "7ea6db42",
+  "s": "SI yordamida yozilgan matnlarni aniqlash (AI-detektor) moduli: matnning Perplexity va Burstiness ko‘rsatkichlarini tahlil qiladi. <strong>Diqqat:</strong> xizmatning asosiy mahsuloti AI-matnni detektorlardan yashirish uchun qayta yozuvchi \"humanizer\"dir — undan hisobot matnini qayta yozdirish akademik halollikni buzish hisoblanadi; laboratoriyada faqat detektor moduli ishlatiladi.",
+  "ru": "Модуль обнаружения текстов, написанных с помощью ИИ (ИИ-детектор): анализирует показатели Perplexity и Burstiness текста. <strong>Внимание:</strong> основной продукт сервиса — «humanizer», переписывающий ИИ-текст, чтобы скрыть его от детекторов; переписывание с его помощью текста отчёта считается нарушением академической честности; в лаборатории используется только модуль детектора.",
+  "en": "An AI-written text detection module (AI detector) that analyses a text’s Perplexity and Burstiness. <strong>Caution:</strong> the service’s main product is a \"humanizer\" that rewrites AI text to hide it from detectors — using it to rewrite a report counts as a breach of academic integrity; only the detector module is used in the lab."
+ },
+ {
+  "k": "4c709d7f",
+  "s": "💡 <em>Sinov rejimi: Matnlarning insoniylik parametrlarini bepul tahlil qilish va baholash.</em>",
+  "ru": "💡 <em>Пробный режим: бесплатный анализ и оценка параметров «человечности» текстов.</em>",
+  "en": "💡 <em>Trial mode: free analysis and scoring of how human a text reads.</em>"
+ },
+ {
+  "k": "b1ce494a",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Integratsiyalashgan Ekotizim (2-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и интегрированная экосистема (пункт 2):",
+  "en": "🌐 WWW scholarly sources and the integrated ecosystem (Part 2):"
+ },
+ {
+  "k": "9bed0e54",
+  "s": "Zawacki-Richter, O., Marín, V. I., Bond, M., va Gouverneur, F. (2019).",
+  "ru": "Zawacki-Richter, O., Marín, V. I., Bond, M., & Gouverneur, F. (2019).",
+  "en": "Zawacki-Richter, O., Marín, V. I., Bond, M., & Gouverneur, F. (2019)."
+ },
+ {
+  "k": "0b48d7d6",
+  "s": "Systematic Review of Research on Artificial Intelligence Applications in Higher Education – Where Are the Educators?",
+  "ru": "Systematic Review of Research on Artificial Intelligence Applications in Higher Education – Where Are the Educators?",
+  "en": "Systematic Review of Research on Artificial Intelligence Applications in Higher Education – Where Are the Educators?"
+ },
+ {
+  "k": "71c60909",
+  "s": "International Journal of Educational Technology in Higher Education, 16, Article 39.",
+  "ru": "International Journal of Educational Technology in Higher Education, 16, Article 39.",
+  "en": "International Journal of Educational Technology in Higher Education, 16, Article 39."
+ },
+ {
+  "k": "d870b5e3",
+  "s": "https://doi.org/10.1186/s41239-019-0171-0",
+  "ru": "https://doi.org/10.1186/s41239-019-0171-0",
+  "en": "https://doi.org/10.1186/s41239-019-0171-0"
+ },
+ {
+  "k": "02c2168d",
+  "s": "2007–2018-yillardagi 146 ta tadqiqot tahlili asosida oliy ta’limda SI qo‘llanishining to‘rt yo‘nalishi (profillash va bashorat, baholash, adaptiv tizimlar, intellektual tyutorlar) ajratilgan hamda pedagogik asoslash va axloqiy masalalar yetarli o‘rganilmagani ta’kidlangan. Shu sababli har bir vositaning didaktik roli aniq belgilanishi kerak.",
+  "ru": "На основе анализа 146 исследований 2007–2018 гг. выделены четыре направления применения ИИ в высшем образовании (профилирование и прогнозирование, оценивание, адаптивные системы, интеллектуальные тьюторы) и подчёркнуто, что педагогическое обоснование и этические вопросы изучены недостаточно. Поэтому дидактическая роль каждого инструмента должна быть чётко определена.",
+  "en": "An analysis of 146 studies from 2007–2018 identified four areas of AI use in higher education (profiling and prediction, assessment, adaptive systems and intelligent tutors) and stressed that pedagogical grounding and ethical issues are under-studied. The didactic role of each tool must therefore be clearly defined."
+ },
+ {
+  "k": "6188149b",
+  "s": "3. Platformalarni sinovdan o‘tkazish: 7 ta amaliy mini-topshiriq",
+  "ru": "3. Испытание платформ: 7 практических мини-заданий",
+  "en": "3. Testing the platforms: 7 practical mini-tasks"
+ },
+ {
+  "k": "dbba7f24",
+  "s": "Amaliy mashg‘ulotlar va yo‘riqnomalar",
+  "ru": "Практические занятия и инструкции",
+  "en": "Practical exercises and instructions"
+ },
+ {
+  "k": "89bd2d79",
+  "s": "Talaba quyidagi 7 ta platformaga kirib, berilgan aniq fizik mini-topshiriqlarni ketma-ket bajaradi va olingan natijalarni o‘zining shaxsiy laboratoriya daftariga qayd etadi:",
+  "ru": "Студент заходит на следующие 7 платформ, последовательно выполняет заданные конкретные физические мини-задания и записывает полученные результаты в свою личную лабораторную тетрадь:",
+  "en": "The student visits the following 7 platforms, completes the given physics mini-tasks in order and records the results in their personal lab notebook:"
+ },
+ {
+  "k": "6bbc5982",
+  "s": "1-Topshiriq: Claude — Havoning Qarshiligidagi Jism Harakati",
+  "ru": "Задание 1: Claude — движение тела при сопротивлении воздуха",
+  "en": "Task 1: Claude — motion of a body with air resistance"
+ },
+ {
+  "k": "7a0890f1",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">claude.ai</a> sahifasiga kiring va yangi suhbat (chat) oching.<br> 2-qadam: Quyidagi tayyor yo‘riqnomani nusxalab, Claude oynasiga yuboring.<br> 3-qadam: Claude bergan javobdagi $v_{\\text{chegara}} = \\sqrt{\\frac{2mg}{\\rho C_d A}}$ formulasi va Simplektik Eyler–Kromer JavaScript kodini daftaringizga ko‘chiring.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: зайдите на страницу <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">claude.ai</a> и откройте новую беседу (чат).<br> Шаг 2: скопируйте готовую инструкцию ниже и отправьте её в окно Claude.<br> Шаг 3: перепишите в тетрадь формулу $v_{\\text{chegara}} = \\sqrt{\\frac{2mg}{\\rho C_d A}}$ и JavaScript-код симплектического метода Эйлера–Кромера из ответа Claude.",
+  "en": "<strong>Steps:</strong><br> Step 1: Go to <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">claude.ai</a> and open a new chat.<br> Step 2: Copy the ready instruction below and send it to Claude.<br> Step 3: Copy the $v_{\\text{chegara}} = \\sqrt{\\frac{2mg}{\\rho C_d A}}$ formula and the symplectic Euler–Cromer JavaScript code from Claude’s answer into your notebook."
+ },
+ {
+  "k": "9c3f55bb",
+  "s": "2-Topshiriq: Google Antigravity — Telemetriya va Energiya Saqlanishi Auditi",
+  "ru": "Задание 2: Google Antigravity — аудит телеметрии и сохранения энергии",
+  "en": "Task 2: Google Antigravity — telemetry and energy conservation audit"
+ },
+ {
+  "k": "a2f813a4",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://antigravity.google/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald);\">antigravity.google</a> dan Antigravity IDE ni o‘rnating va yangi loyiha (workspace) oching.<br> 2-qadam: Quyidagi yo‘riqnoma orqali simulyatsiyadagi vaqt qadami $\\Delta t$ ning energiya barqarorligiga ta’sirini tekshirishni so‘rang.<br> 3-qadam: Agent taqdim etgan audit xulosasi va telemetrik jadvalni qayd qiling.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: установите Antigravity IDE с <a href=\"https://antigravity.google/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald);\">antigravity.google</a> и откройте новый проект (workspace).<br> Шаг 2: с помощью инструкции ниже попросите проверить влияние временного шага симуляции $\\Delta t$ на устойчивость энергии.<br> Шаг 3: запишите заключение аудита и телеметрическую таблицу, предоставленные агентом.",
+  "en": "<strong>Steps:</strong><br> Step 1: Install the Antigravity IDE from <a href=\"https://antigravity.google/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald);\">antigravity.google</a> and open a new workspace.<br> Step 2: Use the instruction below to ask it to check how the simulation time step $\\Delta t$ affects energy stability.<br> Step 3: Record the agent’s audit conclusion and telemetry table."
+ },
+ {
+  "k": "699f70ab",
+  "s": "3-Topshiriq: MagicSchool AI — 100 Ballik Baholash Rubrikasi",
+  "ru": "Задание 3: MagicSchool AI — 100-балльная рубрика оценивания",
+  "en": "Task 3: MagicSchool AI — a 100-point assessment rubric"
+ },
+ {
+  "k": "728b5403",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">magicschool.ai</a> ga kiring va \"Rubric Generator\" bo‘limini tanlang.<br> 2-qadam: Quyidagi topshiriq matnini kiriting va 4 darajali rubrika yarating.<br> 3-qadam: Yaratilgan 100 ballik baholash jadvalini laboratoriya hisobotingizga ilova qiling.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: зайдите на <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">magicschool.ai</a> и выберите раздел «Rubric Generator».<br> Шаг 2: введите текст задания ниже и создайте 4-уровневую рубрику.<br> Шаг 3: приложите созданную 100-балльную таблицу оценивания к своему лабораторному отчёту.",
+  "en": "<strong>Steps:</strong><br> Step 1: Go to <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">magicschool.ai</a> and choose \"Rubric Generator\".<br> Step 2: Enter the task text below and create a 4-level rubric.<br> Step 3: Attach the resulting 100-point assessment table to your lab report."
+ },
+ {
+  "k": "1fac575c",
+  "s": "<strong style=\"color: var(--accent-cyan);\">4-Topshiriq: PhET / Vascak.cz — Parametrlarni Dekonstruksiya Qilish</strong>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">Задание 4: PhET / Vascak.cz — деконструкция параметров</strong>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">Task 4: PhET / Vascak.cz — deconstructing parameters</strong>"
+ },
+ {
+  "k": "a2060799",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://phet.colorado.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">PhET (Masses va Springs)</a> yoki Vascak.cz (Damped Oscillations — saytda reklama bor, havola berilmagan) sahifasini oching.<br> 2-qadam: Boshqaruv slayderlarini o‘rganing: massani $m = 1.0\\text{ kg}$ ga o‘rnating va sekundomer yordamida 10 ta to‘liq tebranish vaqti $t_{10}$ ni o‘lchang.<br> 3-qadam: Tebranish davri $T = t_{10} / 10$ ni hisoblab, $k = \\frac{4\\pi^2 m}{T^2}$ formula orqali prujina bikrligini aniqlang va simulyatsiyadagi ko‘rsatkich bilan solishtiring.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: откройте страницу <a href=\"https://phet.colorado.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">PhET (Masses and Springs)</a> или Vascak.cz (Damped Oscillations — на сайте есть реклама, ссылка не приводится).<br> Шаг 2: изучите ползунки управления: установите массу $m = 1.0\\text{ kg}$ и с помощью секундомера измерьте время 10 полных колебаний $t_{10}$.<br> Шаг 3: рассчитайте период колебаний $T = t_{10} / 10$, определите жёсткость пружины по формуле $k = \\frac{4\\pi^2 m}{T^2}$ и сравните с показателем симуляции.",
+  "en": "<strong>Steps:</strong><br> Step 1: Open <a href=\"https://phet.colorado.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">PhET (Masses and Springs)</a> or Vascak.cz (Damped Oscillations — the site carries ads, so no link is given).<br> Step 2: Explore the control sliders: set the mass to $m = 1.0\\text{ kg}$ and use the stopwatch to time 10 full oscillations $t_{10}$.<br> Step 3: Calculate the period $T = t_{10} / 10$, find the spring stiffness with the formula $k = \\frac{4\\pi^2 m}{T^2}$ and compare it with the simulation’s value."
+ },
+ {
+  "k": "f23df298",
+  "s": "5-Topshiriq: ElevenLabs — Ilmiy Audio-Narratsiya Sintezi",
+  "ru": "Задание 5: ElevenLabs — синтез научной аудионаррации",
+  "en": "Task 5: ElevenLabs — scientific audio narration synthesis"
+ },
+ {
+  "k": "c52c66ce",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose);\">elevenlabs.io</a> (yoki Muxlisa AI) xizmatiga kiring.<br> 2-qadam: Quyidagi ilmiy matnni kiritib, professional ovoz (masalan: Adam yoki Rachel) bilan audio fayl sintezlang.<br> 3-qadam: Yaratilgan MP3 audio faylni yuklab olib, o‘z raqamli portfoliongizga joylang.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: зайдите в сервис <a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose);\">elevenlabs.io</a> (или Muxlisa AI).<br> Шаг 2: введите научный текст ниже и синтезируйте аудиофайл профессиональным голосом (например, Adam или Rachel).<br> Шаг 3: скачайте созданный MP3-файл и разместите его в своём цифровом портфолио.",
+  "en": "<strong>Steps:</strong><br> Step 1: Go to <a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose);\">elevenlabs.io</a> (or Muxlisa AI).<br> Step 2: Enter the scientific text below and synthesise an audio file with a professional voice (for example, Adam or Rachel).<br> Step 3: Download the MP3 file and add it to your digital portfolio."
+ },
+ {
+  "k": "c984ab27",
+  "s": "<strong style=\"color: var(--accent-cyan);\">6-Topshiriq: Otter.ai — Ovozli Laboratoriya Hisoboti Transkripsiyasi</strong>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">Задание 6: Otter.ai — транскрипция устного лабораторного отчёта</strong>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">Task 6: Otter.ai — transcribing a spoken lab report</strong>"
+ },
+ {
+  "k": "821b38da",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://otter.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">otter.ai</a> xizmatiga kiring va «Record» (Yozib olish) tugmasini bosing.<br> 2-qadam: 2 daqiqa davomida mikrofonga laboratoriyada bajargan tajribangizni, kuzatilgan formulalar va xulosalarni erkin so‘zlab bering.<br> 3-qadam: Otter.ai real vaqtda generatsiya qilgan transkripsiya matnini hamda avtomatik tuzilgan «Summary» (Qisqacha mazmun) qismini nusxalab oling.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: зайдите в сервис <a href=\"https://otter.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">otter.ai</a> и нажмите кнопку «Record» (запись).<br> Шаг 2: в течение 2 минут свободно расскажите в микрофон о проведённом в лаборатории опыте, наблюдаемых формулах и выводах.<br> Шаг 3: скопируйте текст транскрипции, созданный Otter.ai в реальном времени, и автоматически составленный раздел «Summary» (краткое содержание).",
+  "en": "<strong>Steps:</strong><br> Step 1: Go to <a href=\"https://otter.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">otter.ai</a> and press \"Record\".<br> Step 2: For 2 minutes, talk freely into the microphone about your lab experiment, the formulas you observed and your conclusions.<br> Step 3: Copy the transcript Otter.ai generated in real time and its automatic \"Summary\" section."
+ },
+ {
+  "k": "1ca4d4fc",
+  "s": "7-Topshiriq: Undetectable AI — Akademik Etika va Matn Auditi",
+  "ru": "Задание 7: Undetectable AI — академическая этика и аудит текста",
+  "en": "Task 7: Undetectable AI — academic ethics and a text audit"
+ },
+ {
+  "k": "9aed4cfe",
+  "s": "<strong>Harakatlar ketma-ketligi:</strong><br> 1-qadam: <a href=\"https://undetectable.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple);\">undetectable.ai</a> sahifasini oching.<br> 2-qadam: Quyidagi ilmiy xulosa matnini kiritib, uning insoniylik (Perplexity va Burstiness) darajasini audit qiling.<br> 3-qadam: Natijani tanqidiy tahlil qiling: AI-detektorlar ishonchli emas (Weber-Wulff va b., 2023), shuning uchun detektor foizi yagona dalil bo‘la olmaydi. Matnni \"humanizer\" orqali qayta yozdirmang — uni o‘z o‘lchov natijalaringiz va tahlilingiz bilan boyiting.",
+  "ru": "<strong>Последовательность действий:</strong><br> Шаг 1: откройте страницу <a href=\"https://undetectable.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple);\">undetectable.ai</a>.<br> Шаг 2: введите текст научного вывода ниже и проведите аудит его «человечности» (Perplexity и Burstiness).<br> Шаг 3: критически проанализируйте результат: ИИ-детекторы ненадёжны (Weber-Wulff и др., 2023), поэтому процент детектора не может быть единственным доказательством. Не переписывайте текст через «humanizer» — обогатите его своими результатами измерений и анализом.",
+  "en": "<strong>Steps:</strong><br> Step 1: Open <a href=\"https://undetectable.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple);\">undetectable.ai</a>.<br> Step 2: Enter the scientific conclusion text below and audit how human it reads (Perplexity and Burstiness).<br> Step 3: Analyse the result critically: AI detectors are unreliable (Weber-Wulff et al., 2023), so a detector percentage cannot be the only evidence. Do not rewrite the text through a \"humanizer\" — enrich it with your own measurements and analysis."
+ },
+ {
+  "k": "5e452ae6",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Akademik Halollik (3-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и академическая честность (пункт 3):",
+  "en": "🌐 WWW scholarly sources and academic integrity (Part 3):"
+ },
+ {
+  "k": "d149b160",
+  "s": "Cotton, D. R. E., Cotton, P. A., va Shipway, J. R. (2024).",
+  "ru": "Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).",
+  "en": "Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024)."
+ },
+ {
+  "k": "b2116788",
+  "s": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT",
+  "ru": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT",
+  "en": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT"
+ },
+ {
+  "k": "3ea007d1",
+  "s": ". Innovations in Education and Teaching International, 61(2), 228–239.",
+  "ru": ". Innovations in Education and Teaching International, 61(2), 228–239.",
+  "en": ". Innovations in Education and Teaching International, 61(2), 228–239."
+ },
+ {
+  "k": "35de07d9",
+  "s": "https://doi.org/10.1080/14703297.2023.2190148",
+  "ru": "https://doi.org/10.1080/14703297.2023.2190148",
+  "en": "https://doi.org/10.1080/14703297.2023.2190148"
+ },
+ {
+  "k": "a87e9c3b",
+  "s": "Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., va Waddington, L. (2023).",
+  "ru": "Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).",
+  "en": "Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023)."
+ },
+ {
+  "k": "e13dfb1a",
+  "s": "Testing of Detection Tools for AI-Generated Text",
+  "ru": "Testing of Detection Tools for AI-Generated Text",
+  "en": "Testing of Detection Tools for AI-Generated Text"
+ },
+ {
+  "k": "c04a8725",
+  "s": ". International Journal for Educational Integrity, 19, Article 26.",
+  "ru": ". International Journal for Educational Integrity, 19, Article 26.",
+  "en": ". International Journal for Educational Integrity, 19, Article 26."
+ },
+ {
+  "k": "ecfecfd4",
+  "s": "https://doi.org/10.1007/s40979-023-00146-z",
+  "ru": "https://doi.org/10.1007/s40979-023-00146-z",
+  "en": "https://doi.org/10.1007/s40979-023-00146-z"
+ },
+ {
+  "k": "946d0616",
+  "s": "Cotton va hammualliflar generativ AI davrida akademik halollikni ta’minlash strategiyalarini (aniq qoidalar, jarayonga yo‘naltirilgan topshiriqlar, og‘zaki himoya) tavsiya qiladi. Weber-Wulff va hammualliflar 14 ta AI-detektorni sinab, ular na aniq, na ishonchli ekanini, matnni qayta ifodalash esa aniqlikni keskin pasaytirishini ko‘rsatgan — shuning uchun 7-topshiriqda detektor natijasi tanqidiy baholanadi.",
+  "ru": "Коттон и соавторы рекомендуют стратегии обеспечения академической честности в эпоху генеративного ИИ (чёткие правила, задания, ориентированные на процесс, устная защита). Вебер-Вульф и соавторы протестировали 14 ИИ-детекторов и показали, что они ни точны, ни надёжны, а перефразирование текста резко снижает точность — поэтому в задании 7 результат детектора оценивается критически.",
+  "en": "Cotton and co-authors recommend strategies for academic integrity in the era of generative AI (clear rules, process-oriented tasks, oral defence). Weber-Wulff and co-authors tested 14 AI detectors and showed they are neither accurate nor reliable, and that paraphrasing sharply reduces accuracy — so in Task 7 the detector result is judged critically."
+ },
+ {
+  "k": "3fcc7ff3",
+  "s": "4. Pipeline sxemasini grafik chizish: Midjourney yoki Canva AI",
+  "ru": "4. Графическое построение схемы конвейера: Midjourney или Canva AI",
+  "en": "4. Drawing the pipeline diagram: Midjourney or Canva AI"
+ },
+ {
+  "k": "88455e19",
+  "s": "Vizual tizim arxitekturasi va infografika",
+  "ru": "Визуальная архитектура системы и инфографика",
+  "en": "Visual system architecture and infographics"
+ },
+ {
+  "k": "83a72818",
+  "s": "Barcha 7 ta platforma bilan tanishib, mini-topshiriqlar bajarilgach, talaba ushbu vositalar o‘rtasidagi ma’lumotlar almashinuvi zanjirini yaxlit grafik arxitektura (<strong>AI-Pipeline sxemasi</strong>) ko‘rinishida tasvirlashi shart. Buning uchun <strong>Canva AI</strong> yoki <strong>Midjourney</strong> platformalaridan foydalaniladi:",
+  "ru": "После знакомства со всеми 7 платформами и выполнения мини-заданий студент должен изобразить цепочку обмена данными между этими инструментами в виде целостной графической архитектуры (<strong>схемы AI-Pipeline</strong>). Для этого используются платформы <strong>Canva AI</strong> или <strong>Midjourney</strong>:",
+  "en": "After getting to know all 7 platforms and completing the mini-tasks, the student must depict the chain of data exchange between these tools as an integrated graphic architecture (an <strong>AI-Pipeline diagram</strong>). <strong>Canva AI</strong> or <strong>Midjourney</strong> is used for this:"
+ },
+ {
+  "k": "3d0c10f3",
+  "s": "4.1. Axborot oqimining mantiqiy zanjiri (pipeline bosqichlari):",
+  "ru": "4.1. Логическая цепочка информационного потока (этапы конвейера):",
+  "en": "4.1. The logical chain of the information flow (pipeline stages):"
+ },
+ {
+  "k": "679441ed",
+  "s": "1-Bosqich: Birlamchi Tajriba va Parametrlar (PhET / Vascak.cz)",
+  "ru": "Этап 1: первичный опыт и параметры (PhET / Vascak.cz)",
+  "en": "Stage 1: Initial experiment and parameters (PhET / Vascak.cz)"
+ },
+ {
+  "k": "935c05c4",
+  "s": "Simulyatsiyadan olingan kirish parametrlari ($m, k, b$) va boshlang‘ich shartlar ($x_0, v_0$).",
+  "ru": "Входные параметры ($m, k, b$) и начальные условия ($x_0, v_0$), полученные из симуляции.",
+  "en": "Input parameters ($m, k, b$) and initial conditions ($x_0, v_0$) taken from the simulation."
+ },
+ {
+  "k": "c5c4ae85",
+  "s": "2-Bosqich: Matematik Model va Kod Sintezi (Claude)",
+  "ru": "Этап 2: математическая модель и синтез кода (Claude)",
+  "en": "Stage 2: Mathematical model and code synthesis (Claude)"
+ },
+ {
+  "k": "00f03989",
+  "s": "Differensial tenglamalar tahlili va HTML5 Canvas uchun Simplektik Eyler–Kromer algoritmi.",
+  "ru": "Анализ дифференциальных уравнений и симплектический алгоритм Эйлера–Кромера для HTML5 Canvas.",
+  "en": "Differential equation analysis and the symplectic Euler–Cromer algorithm for HTML5 Canvas."
+ },
+ {
+  "k": "6c46b9a2",
+  "s": "3-Bosqich: Monitoring va Telemetriya (Google Antigravity)",
+  "ru": "Этап 3: мониторинг и телеметрия (Google Antigravity)",
+  "en": "Stage 3: Monitoring and telemetry (Google Antigravity)"
+ },
+ {
+  "k": "772a78a7",
+  "s": "Energiya dissipatsiyasini nazorat qilish, ko‘p agentli reja auditi va log fayllar tahlili.",
+  "ru": "Контроль диссипации энергии, аудит многоагентного плана и анализ лог-файлов.",
+  "en": "Monitoring energy dissipation, auditing the multi-agent plan and analysing log files."
+ },
+ {
+  "k": "1a72639e",
+  "s": "4-Bosqich: Pedagogik Baholash (MagicSchool AI)",
+  "ru": "Этап 4: педагогическое оценивание (MagicSchool AI)",
+  "en": "Stage 4: Pedagogical assessment (MagicSchool AI)"
+ },
+ {
+  "k": "c009d09c",
+  "s": "Talaba uchun 100 ballik baholash rubrikasi va darsning tabaqalashtirilgan rejasi.",
+  "ru": "100-балльная рубрика оценивания для студента и дифференцированный план урока.",
+  "en": "A 100-point assessment rubric for the student and a differentiated lesson plan."
+ },
+ {
+  "k": "3972ea4e",
+  "s": "5-Bosqich: Audio Sintez va Ovozli Hisobot (ElevenLabs + Otter.ai)",
+  "ru": "Этап 5: аудиосинтез и устный отчёт (ElevenLabs + Otter.ai)",
+  "en": "Stage 5: Audio synthesis and spoken report (ElevenLabs + Otter.ai)"
+ },
+ {
+  "k": "05a1160a",
+  "s": "Ilmiy audio-narratsiya ovozlashtirish va og‘zaki laboratoriya hisobotini avtomatik matnga aylantirish.",
+  "ru": "Озвучивание научной аудионаррации и автоматическое преобразование устного лабораторного отчёта в текст.",
+  "en": "Voicing the scientific audio narration and automatically converting the spoken lab report to text."
+ },
+ {
+  "k": "faaa9eb7",
+  "s": "6-Bosqich: Akademik Etika va Capstone Portfolio (Undetectable AI)",
+  "ru": "Этап 6: академическая этика и портфолио Capstone (Undetectable AI)",
+  "en": "Stage 6: Academic ethics and the Capstone portfolio (Undetectable AI)"
+ },
+ {
+  "k": "21f54581",
+  "s": "Matnlarning insoniylik auditi va shaxsiy raqamli portfolioda muvaffaqiyatli himoya qilish.",
+  "ru": "Аудит «человечности» текстов и успешная защита в личном цифровом портфолио.",
+  "en": "Auditing how human the texts read and defending successfully in the personal digital portfolio."
+ },
+ {
+  "k": "55c4a746",
+  "s": "4.2. Canva AI va Midjourney uchun vizual infografika promptlari:",
+  "ru": "4.2. Промпты визуальной инфографики для Canva AI и Midjourney:",
+  "en": "4.2. Visual infographic prompts for Canva AI and Midjourney:"
+ },
+ {
+  "k": "0f772157",
+  "s": "Canva AI (Magic Design) Uchun Prompt",
+  "ru": "Промпт для Canva AI (Magic Design)",
+  "en": "Prompt for Canva AI (Magic Design)"
+ },
+ {
+  "k": "a3f858ae",
+  "s": "Midjourney Uchun Prompt",
+  "ru": "Промпт для Midjourney",
+  "en": "Prompt for Midjourney"
+ },
+ {
+  "k": "94ea9d42",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Tizimli Arxitektura (4-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и системная архитектура (пункт 4):",
+  "en": "🌐 WWW scholarly sources and system architecture (Part 4):"
+ },
+ {
+  "k": "8ce6166a",
+  "s": "Tufte, E. R. (2001).",
+  "ru": "Tufte, E. R. (2001).",
+  "en": "Tufte, E. R. (2001)."
+ },
+ {
+  "k": "76a92c04",
+  "s": "The Visual Display of Quantitative Information",
+  "ru": "The Visual Display of Quantitative Information",
+  "en": "The Visual Display of Quantitative Information"
+ },
+ {
+  "k": "e924bdbb",
+  "s": "(2nd ed.). Graphics Press.",
+  "ru": "(2nd ed.). Graphics Press.",
+  "en": "(2nd ed.). Graphics Press."
+ },
+ {
+  "k": "e3eb5d7a",
+  "s": "Tufte ma’lumotlarni vizual taqdim etishning klassik tamoyillarini — \"ma’lumot-siyoh nisbati\"ni oshirish, ortiqcha bezaklardan (\"chartjunk\") qochish va aniqlikni saqlashni asoslagan. Pipeline infografikasini chizishda neon effektlar emas, bosqichlar va ma’lumot oqimining aniqligi birinchi o‘rinda turishi kerak.",
+  "ru": "Тафти обосновал классические принципы визуального представления данных — повышение «отношения данных к чернилам», отказ от лишних украшений («chartjunk») и сохранение точности. При построении инфографики конвейера на первом месте должна стоять не неоновые эффекты, а точность этапов и потока данных.",
+  "en": "Tufte set out the classic principles of visual data display — raising the \"data-ink ratio\", avoiding unnecessary decoration (\"chartjunk\") and preserving accuracy. When drawing the pipeline infographic, clarity of the stages and data flow must come first, not neon effects."
+ },
+ {
+  "k": "80606b44",
+  "s": "5. Interaktiv dastgoh: 7 ta vosita ekotizimi sinovi va jonli konveyer arxitekturasi",
+  "ru": "5. Интерактивный стенд: испытание экосистемы 7 инструментов и живая архитектура конвейера",
+  "en": "5. Interactive bench: testing the 7-tool ecosystem and a live pipeline architecture"
+ },
+ {
+  "k": "9b18f510",
+  "s": "Interaktiv nazorat varaqasi va jonli chizma",
+  "ru": "Интерактивный контрольный лист и живая схема",
+  "en": "Interactive checklist and a live diagram"
+ },
+ {
+  "k": "ec367f87",
+  "s": "Quyidagi interaktiv dastgohda siz 7 ta sun’iy intellekt platformasini sozlash jarayonini belgilab borishingiz mumkin. Har bir vosita bo‘yicha mini-topshiriqni bajargach, tegishli katakchani belgilang. Pastdagi Canvas diagrammasida sizning shaxsiy <strong>SI-konveyeringiz</strong> (AI-pipeline) real vaqtda jonlanadi:",
+  "ru": "На интерактивном стенде ниже вы можете отмечать процесс настройки 7 платформ искусственного интеллекта. Выполнив мини-задание по каждому инструменту, отметьте соответствующий флажок. На Canvas-диаграмме внизу в реальном времени оживает ваш личный <strong>ИИ-конвейер</strong> (AI-pipeline):",
+  "en": "On the interactive bench below you can track how you set up the 7 AI platforms. After completing the mini-task for each tool, tick its box. Your personal <strong>AI pipeline</strong> comes to life in real time on the Canvas diagram below:"
+ },
+ {
+  "k": "2a16503a",
+  "s": "Ekotizim integratsiyasi jarayoni:",
+  "ru": "Процесс интеграции экосистемы:",
+  "en": "Ecosystem integration progress:"
+ },
+ {
+  "k": "bc3e5521",
+  "s": "0 / 7 vosita sozlandi (0 %)",
+  "ru": "Настроено 0 / 7 инструментов (0 %)",
+  "en": "0 / 7 tools set up (0 %)"
+ },
+ {
+  "k": "4766890b",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. PhET / Vascak.cz</strong> — simulyatsiya tanlandi va parametrlari dekonstruksiya qilindi",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. PhET / Vascak.cz</strong> — симуляция выбрана, её параметры деконструированы",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. PhET / Vascak.cz</strong> — simulation chosen and its parameters deconstructed"
+ },
+ {
+  "k": "8b39799f",
+  "s": "<strong style=\"color: var(--accent-purple);\">2. Claude</strong> — matematik model va Eyler–Kromer algoritmi olindi",
+  "ru": "<strong style=\"color: var(--accent-purple);\">2. Claude</strong> — получены математическая модель и алгоритм Эйлера–Кромера",
+  "en": "<strong style=\"color: var(--accent-purple);\">2. Claude</strong> — mathematical model and Euler–Cromer algorithm obtained"
+ },
+ {
+  "k": "39ef7cfa",
+  "s": "<strong style=\"color: var(--accent-emerald);\">3. Google Antigravity</strong> — energiya dreyfi va agentik audit o‘tkazildi",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">3. Google Antigravity</strong> — проведены аудит дрейфа энергии и агентный аудит",
+  "en": "<strong style=\"color: var(--accent-emerald);\">3. Google Antigravity</strong> — energy drift and agentic audit carried out"
+ },
+ {
+  "k": "9313457c",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. MagicSchool AI</strong> — 100 ballik baholash rubrikasi shakllantirildi",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. MagicSchool AI</strong> — сформирована 100-балльная рубрика оценивания",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. MagicSchool AI</strong> — 100-point assessment rubric created"
+ },
+ {
+  "k": "b95c2913",
+  "s": "<strong style=\"color: var(--accent-cyan);\">5. Otter.ai</strong> — 2 daqiqalik og‘zaki laboratoriya hisoboti matnga aylantirildi",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">5. Otter.ai</strong> — 2-минутный устный лабораторный отчёт преобразован в текст",
+  "en": "<strong style=\"color: var(--accent-cyan);\">5. Otter.ai</strong> — 2-minute spoken lab report converted to text"
+ },
+ {
+  "k": "bd6efaa0",
+  "s": "<strong style=\"color: var(--accent-rose);\">6. ElevenLabs / TTS</strong> — 30 soniyalik fizik audio-narratsiya sintezlandi",
+  "ru": "<strong style=\"color: var(--accent-rose);\">6. ElevenLabs / TTS</strong> — синтезирована 30-секундная физическая аудионаррация",
+  "en": "<strong style=\"color: var(--accent-rose);\">6. ElevenLabs / TTS</strong> — 30-second physics audio narration synthesised"
+ },
+ {
+  "k": "798a5098",
+  "s": "<strong style=\"color:#7C3AED;\">7. Undetectable AI</strong> — ilmiy xulosa SI-detektor (perplexity va burstiness ko‘rsatkichlari) bilan tekshirildi va natija tanqidiy tahlil qilindi",
+  "ru": "<strong style=\"color:#7C3AED;\">7. Undetectable AI</strong> — научный вывод проверен ИИ-детектором (показатели perplexity и burstiness), результат критически проанализирован",
+  "en": "<strong style=\"color:#7C3AED;\">7. Undetectable AI</strong> — scientific conclusion checked with an AI detector (perplexity and burstiness) and the result analysed critically"
+ },
+ {
+  "k": "aed0a63b",
+  "s": "📊 Shaxsiy SI-konveyer sxemasi (jonli holat monitori):",
+  "ru": "📊 Схема личного ИИ-конвейера (монитор живого состояния):",
+  "en": "📊 Personal AI pipeline diagram (live status monitor):"
+ },
+ {
+  "k": "fb014a36",
+  "s": "🎉 Tabriklaymiz! Barcha 7 ta SI vositasi sozlandi va sizning yagona SI-konveyeringiz to‘liq faollashdi. Endi grafik sxemani Midjourney yoki Canva AI da eksport qilishingiz mumkin!",
+  "ru": "🎉 Поздравляем! Все 7 ИИ-инструментов настроены, и ваш единый ИИ-конвейер полностью активирован. Теперь вы можете экспортировать графическую схему в Midjourney или Canva AI!",
+  "en": "🎉 Congratulations! All 7 AI tools are set up and your single AI pipeline is fully active. You can now export the diagram in Midjourney or Canva AI!"
+ },
+ {
+  "k": "2cb557c3",
+  "s": "6. Baholash rubrikasi (100 ball) va ilmiy manbalar (APA 7)",
+  "ru": "6. Рубрика оценивания (100 баллов) и научные источники (APA 7)",
+  "en": "6. Assessment rubric (100 points) and scholarly sources (APA 7)"
+ },
+ {
+  "k": "f9e91009",
+  "s": "3-laboratoriya mashg‘uloti talabaning 7 ta platformani sozlash sifatini, mini-topshiriqlar to‘liqligini hamda yaxlit AI-Pipeline arxitekturasi dizaynini 100 ballik shkalada baholaydi:",
+  "ru": "Лабораторное занятие 3 оценивает по 100-балльной шкале качество настройки студентом 7 платформ, полноту мини-заданий и дизайн целостной архитектуры AI-Pipeline:",
+  "en": "Lab 3 assesses, on a 100-point scale, how well the student set up the 7 platforms, how complete the mini-tasks are and the design of the integrated AI-Pipeline architecture:"
+ },
+ {
+  "k": "7ade3cdb",
+  "s": "📊 Interaktiv rubrika kalkulyatori (3-laboratoriya):",
+  "ru": "📊 Интерактивный калькулятор рубрики (лабораторная 3):",
+  "en": "📊 Interactive rubric calculator (Lab 3):"
+ },
+ {
+  "k": "75b1842f",
+  "s": "<strong style=\"color: var(--text-main);\">1. SI Diagnostika va Individual Harakat Rejasi</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Diagnostika testini topshirish va o‘z klasteri bo‘yicha 7 ta vositani o‘rganish rejasini shakllantirish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">1. ИИ-диагностика и индивидуальный план действий</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Прохождение диагностического теста и формирование плана изучения 7 инструментов по своему кластеру.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">1. AI diagnostics and an individual action plan</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Taking the diagnostic test and building a plan to learn the 7 tools for your cluster.</span>"
+ },
+ {
+  "k": "e7683bc9",
+  "s": "<strong style=\"color: var(--text-main);\">2. 7 Ta SI Platformasida Hisob Ochish va Ish Muhitini Sozlash</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Barcha 7 ta vositada talaba hisoblarini ochish yoki trial rejimlarini sozlab, brauzer profiliga biriktirish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">2. Открытие аккаунтов на 7 ИИ-платформах и настройка рабочей среды</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Открытие студенческих аккаунтов во всех 7 инструментах или настройка пробных режимов с привязкой к профилю браузера.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">2. Opening accounts on 7 AI platforms and setting up the workspace</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Opening student accounts in all 7 tools or setting up trial modes, linked to a browser profile.</span>"
+ },
+ {
+  "k": "8da8705f",
+  "s": "<strong style=\"color: var(--text-main);\">3. 7 Ta Fizik Mini-Topshiriqni To‘liq Bajarish</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude, Antigravity, MagicSchool, PhET, ElevenLabs, Otter.ai, Undetectable AI da amaliy natijalarni olish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">3. Полное выполнение 7 физических мини-заданий</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Получение практических результатов в Claude, Antigravity, MagicSchool, PhET, ElevenLabs, Otter.ai и Undetectable AI.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">3. Completing all 7 physics mini-tasks</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Getting practical results in Claude, Antigravity, MagicSchool, PhET, ElevenLabs, Otter.ai and Undetectable AI.</span>"
+ },
+ {
+  "k": "6026449c",
+  "s": "<strong style=\"color: var(--text-main);\">4. AI-Pipeline Grafik Sxemasi (Canva AI / Midjourney)</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Ma’lumotlar oqimi infografikasini professional grafik uslubda chizish va portfolioga kiritish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">4. Графическая схема AI-Pipeline (Canva AI / Midjourney)</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Построение инфографики потока данных в профессиональном графическом стиле и включение её в портфолио.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">4. AI-Pipeline diagram (Canva AI / Midjourney)</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Drawing a data-flow infographic in a professional graphic style and adding it to the portfolio.</span>"
+ },
+ {
+  "k": "aa448ce0",
+  "s": "<strong style=\"color: var(--text-main);\">5. Xulosa va Akademik Etika Auditi</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">SI natijalarini tanqidiy tahlil qilish, shaxsiy fikrni asoslash va og‘zaki himoya.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">5. Вывод и аудит академической этики</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Критический анализ результатов ИИ, обоснование собственного мнения и устная защита.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">5. Conclusion and academic ethics audit</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Critically analysing the AI results, justifying your own view and an oral defence.</span>"
+ },
+ {
+  "k": "f2191d93",
+  "s": "100 / 100 ball",
+  "ru": "100 / 100 баллов",
+  "en": "100 / 100 points"
+ },
+ {
+  "k": "751c583f",
+  "s": "A (A’lo — 5)",
+  "ru": "A (отлично — 5)",
+  "en": "A (excellent — 5)"
+ },
+ {
+  "k": "9bbfef6a",
+  "s": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>",
+  "ru": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>",
+  "en": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>"
+ },
+ {
+  "k": "aef8baac",
+  "s": "<strong>Cotton, D. R. E., Cotton, P. A., va Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href=\"https://doi.org/10.1080/14703297.2023.2190148\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/14703297.2023.2190148</a>",
+  "ru": "<strong>Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href=\"https://doi.org/10.1080/14703297.2023.2190148\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/14703297.2023.2190148</a>",
+  "en": "<strong>Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href=\"https://doi.org/10.1080/14703297.2023.2190148\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/14703297.2023.2190148</a>"
+ },
+ {
+  "k": "bc538f64",
+  "s": "<strong>Eaton, S. E. (2021).</strong> <em>Plagiarism in Higher Education: Tackling Tough Topics in Academic Integrity</em>. Libraries Unlimited.",
+  "ru": "<strong>Eaton, S. E. (2021).</strong> <em>Plagiarism in Higher Education: Tackling Tough Topics in Academic Integrity</em>. Libraries Unlimited.",
+  "en": "<strong>Eaton, S. E. (2021).</strong> <em>Plagiarism in Higher Education: Tackling Tough Topics in Academic Integrity</em>. Libraries Unlimited."
+ },
+ {
+  "k": "d7d6da17",
+  "s": "<strong>Google. (2025).</strong> <em>Build with Google Antigravity, Our New Agentic Development Platform</em>. Google Developers Blog. <a href=\"https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/</a>",
+  "ru": "<strong>Google. (2025).</strong> <em>Build with Google Antigravity, Our New Agentic Development Platform</em>. Google Developers Blog. <a href=\"https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/</a>",
+  "en": "<strong>Google. (2025).</strong> <em>Build with Google Antigravity, Our New Agentic Development Platform</em>. Google Developers Blog. <a href=\"https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/</a>"
+ },
+ {
+  "k": "e2c0caa1",
+  "s": "<strong>Mishra, P., va Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>",
+  "ru": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>",
+  "en": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>"
+ },
+ {
+  "k": "0d749e5f",
+  "s": "<strong>Tufte, E. R. (2001).</strong> <em>The Visual Display of Quantitative Information</em> (2nd ed.). Graphics Press.",
+  "ru": "<strong>Tufte, E. R. (2001).</strong> <em>The Visual Display of Quantitative Information</em> (2nd ed.). Graphics Press.",
+  "en": "<strong>Tufte, E. R. (2001).</strong> <em>The Visual Display of Quantitative Information</em> (2nd ed.). Graphics Press."
+ },
+ {
+  "k": "6eaa9d4f",
+  "s": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "0e99e766",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, va E. Souberman, Eds.). Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press."
+ },
+ {
+  "k": "fd2863a3",
+  "s": "<strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., va Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href=\"https://doi.org/10.1007/s40979-023-00146-z\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s40979-023-00146-z</a>",
+  "ru": "<strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href=\"https://doi.org/10.1007/s40979-023-00146-z\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s40979-023-00146-z</a>",
+  "en": "<strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href=\"https://doi.org/10.1007/s40979-023-00146-z\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s40979-023-00146-z</a>"
+ },
+ {
+  "k": "412b2901",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>"
+ },
+ {
+  "k": "93ad6f84",
+  "s": "<strong>Zawacki-Richter, O., Marín, V. I., Bond, M., va Gouverneur, F. (2019).</strong> <em>Systematic Review of Research on Artificial Intelligence Applications in Higher Education – Where Are the Educators?</em> International Journal of Educational Technology in Higher Education, 16, Article 39. <a href=\"https://doi.org/10.1186/s41239-019-0171-0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1186/s41239-019-0171-0</a>",
+  "ru": "<strong>Zawacki-Richter, O., Marín, V. I., Bond, M., & Gouverneur, F. (2019).</strong> <em>Systematic Review of Research on Artificial Intelligence Applications in Higher Education – Where Are the Educators?</em> International Journal of Educational Technology in Higher Education, 16, Article 39. <a href=\"https://doi.org/10.1186/s41239-019-0171-0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1186/s41239-019-0171-0</a>",
+  "en": "<strong>Zawacki-Richter, O., Marín, V. I., Bond, M., & Gouverneur, F. (2019).</strong> <em>Systematic Review of Research on Artificial Intelligence Applications in Higher Education – Where Are the Educators?</em> International Journal of Educational Technology in Higher Education, 16, Article 39. <a href=\"https://doi.org/10.1186/s41239-019-0171-0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1186/s41239-019-0171-0</a>"
+ }
+]

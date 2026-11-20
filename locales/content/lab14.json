@@ -1,0 +1,464 @@
+[
+ {
+  "k": "ec02ea7e",
+  "s": "14-laboratoriya mashg‘uloti: elektromagnit maydonlar va AI ovozli simulyatsiyasi",
+  "ru": "Лабораторное занятие 14: электромагнитные поля и голосовая ИИ-симуляция",
+  "en": "Lab 14: Electromagnetic Fields and an AI Voice Simulation"
+ },
+ {
+  "k": "5397deb9",
+  "s": "Faradeyning elektromagnit induksiya qonuni ($\\mathcal{E} = -N\\,d\\Phi/dt$) va Lents qoidasi PhET «Faraday’s Law» simulyatsiyasida o‘rganiladi, so‘ng Claude yordamida magnit va g‘altakdan iborat interaktiv HTML5 Canvas modeli yoziladi. Jarayon brauzerning nutq sintezatori (Web Speech API) yoki ElevenLabs kabi TTS vositalari yordamida ovozli izoh bilan boyitiladi.",
+  "ru": "Закон электромагнитной индукции Фарадея ($\\mathcal{E} = -N\\,d\\Phi/dt$) и правило Ленца изучаются в симуляции PhET «Faraday’s Law», затем с помощью Claude пишется интерактивная модель HTML5 Canvas из магнита и катушки. Процесс дополняется голосовым пояснением с помощью встроенного в браузер синтезатора речи (Web Speech API) или TTS-инструментов, таких как ElevenLabs.",
+  "en": "Faraday’s law of electromagnetic induction ($\\mathcal{E} = -N\\,d\\Phi/dt$) and Lenz’s rule are studied in the PhET \"Faraday’s Law\" simulation, then an interactive HTML5 Canvas model of a magnet and a coil is written with Claude. The process is enriched with spoken commentary using the browser’s speech synthesiser (Web Speech API) or TTS tools such as ElevenLabs."
+ },
+ {
+  "k": "79c8cc63",
+  "s": "📋 14-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 14 и этапы анализа:",
+  "en": "📋 Lab 14 plan and analysis stages:"
+ },
+ {
+  "k": "ebfa5fd0",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Faradey qonuni, Lents qoidasi, induksiya EYuK va TTS vositalari bo‘yicha diagnostik test hamda shaxsiy reja.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Диагностический тест по закону Фарадея, правилу Ленца, ЭДС индукции и TTS-инструментам и личный план.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A diagnostic test on Faraday’s law, Lenz’s rule, induced EMF and TTS tools, plus a personal plan.</span>"
+ },
+ {
+  "k": "8795d3eb",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Elektrodinamika loyihasi: pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">PhET tahlili → Claude bilan kod → ovozli izoh (TTS) zanjiri.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Проект по электродинамике: конвейер:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Цепочка «анализ PhET → код с Claude → голосовое пояснение (TTS)».</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Electrodynamics project: the pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The chain PhET analysis → code with Claude → spoken commentary (TTS).</span>"
+ },
+ {
+  "k": "5731cc8d",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Model tahlili (PhET):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Magnit oqimi, uning o‘zgarish tezligi va induksion tok yo‘nalishini vizual hamda analitik tadqiq etish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Анализ модели (PhET):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Визуальное и аналитическое исследование магнитного потока, скорости его изменения и направления индукционного тока.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Model analysis (PhET):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Visual and analytic study of the magnetic flux, its rate of change and the direction of the induced current.</span>"
+ },
+ {
+  "k": "1454bfbf",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Kod va audio-narratsiya:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas induksiya modeli va Web Speech API / ElevenLabs yordamida ovozli tushuntirish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Код и аудионаррация:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Модель индукции на HTML5 Canvas и голосовое объяснение с помощью Web Speech API / ElevenLabs.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Code and audio narration:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">An HTML5 Canvas induction model and a spoken explanation with the Web Speech API / ElevenLabs.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "9cb5013b",
+  "s": "1. Diagnostika va individual o‘quv rejasi",
+  "ru": "1. Диагностика и индивидуальный учебный план",
+  "en": "1. Diagnostics and an individual learning plan"
+ },
+ {
+  "k": "e2fcd855",
+  "s": "Elektromagnit maydonlar, Faradey qonuni, TTS (Text-to-Speech) va AI vositalarida interaktiv kod yaratish bo‘yicha bilimlaringizni tekshiring.",
+  "ru": "Проверьте свои знания по электромагнитным полям, закону Фарадея, TTS (Text-to-Speech) и созданию интерактивного кода в ИИ-инструментах.",
+  "en": "Test your knowledge of electromagnetic fields, Faraday’s law, TTS (text-to-speech) and building interactive code with AI tools."
+ },
+ {
+  "k": "59b8ddd2",
+  "s": "1-savol: Faradeyning elektromagnit induksiya qonuni qanday ta’riflanadi?",
+  "ru": "Вопрос 1: Как формулируется закон электромагнитной индукции Фарадея?",
+  "en": "Question 1: How is Faraday’s law of electromagnetic induction stated?"
+ },
+ {
+  "k": "bf814d36",
+  "s": "A) Ikkita nuqtaviy zaryad orasidagi kuch masofaning kvadratiga teskari proporsional.",
+  "ru": "A) Сила между двумя точечными зарядами обратно пропорциональна квадрату расстояния.",
+  "en": "A) The force between two point charges is inversely proportional to the square of the distance."
+ },
+ {
+  "k": "1cf75bf3",
+  "s": "B) Yopiq konturda hosil bo‘lgan induksiya EYuK magnit oqimining o‘zgarish tezligiga teng va qarama-qarshi ishoraga ega.",
+  "ru": "B) ЭДС индукции, возникающая в замкнутом контуре, равна скорости изменения магнитного потока и имеет противоположный знак.",
+  "en": "B) The EMF induced in a closed loop equals the rate of change of the magnetic flux, with the opposite sign."
+ },
+ {
+  "k": "6915c056",
+  "s": "C) O‘tkazgichdagi tok kuchi kuchlanishga to‘g‘ri, qarshilikka teskari proporsional.",
+  "ru": "C) Сила тока в проводнике прямо пропорциональна напряжению и обратно пропорциональна сопротивлению.",
+  "en": "C) The current in a conductor is directly proportional to the voltage and inversely proportional to the resistance."
+ },
+ {
+  "k": "ac3e0cc8",
+  "s": "D) Izotermik jarayonda gazning bosimi hajmiga teskari proporsional.",
+  "ru": "D) В изотермическом процессе давление газа обратно пропорционально его объёму.",
+  "en": "D) In an isothermal process a gas’s pressure is inversely proportional to its volume."
+ },
+ {
+  "k": "ad5bb688",
+  "s": "2-savol: Text-to-speech (TTS) texnologiyasi ta’limda nima uchun ishlatiladi?",
+  "ru": "Вопрос 2: Для чего в образовании используется технология Text-to-speech (TTS)?",
+  "en": "Question 2: Why is text-to-speech (TTS) used in education?"
+ },
+ {
+  "k": "e27ce06d",
+  "s": "A) Matnli ma’lumotlarni (jumladan, ilmiy izohlarni) tabiiy inson ovoziga aylantirib, o‘quvchining audial qabul qilishini kuchaytirish uchun.",
+  "ru": "A) Чтобы превращать текстовую информацию (в том числе научные пояснения) в естественный человеческий голос и усиливать слуховое восприятие учащегося.",
+  "en": "A) To turn text (including scientific explanations) into a natural human voice and strengthen the learner’s auditory perception."
+ },
+ {
+  "k": "7404d0dd",
+  "s": "B) Faqatgina chet tillarini tarjima qilish uchun.",
+  "ru": "B) Только для перевода иностранных языков.",
+  "en": "B) Only to translate foreign languages."
+ },
+ {
+  "k": "83563f84",
+  "s": "C) HTML kodlarini avtomatik yozib berish uchun.",
+  "ru": "C) Для автоматического написания HTML-кода.",
+  "en": "C) To write HTML code automatically."
+ },
+ {
+  "k": "2360672a",
+  "s": "D) Rasmlarni harakatlanuvchi videolarga aylantirish uchun.",
+  "ru": "D) Для превращения изображений в движущиеся видео.",
+  "en": "D) To turn images into moving videos."
+ },
+ {
+  "k": "b0c2f218",
+  "s": "3-savol: PhET’dagi \"Faraday’s Law\" simulyatsiyasida magnitni g‘altak (katushka) ichida harakatsiz ushlab tursak nima bo‘ladi?",
+  "ru": "Вопрос 3: Что произойдёт в симуляции PhET «Faraday’s Law», если неподвижно держать магнит внутри катушки?",
+  "en": "Question 3: In the PhET \"Faraday’s Law\" simulation, what happens if you hold the magnet still inside the coil?"
+ },
+ {
+  "k": "959bf733",
+  "s": "A) G‘altakda maksimal elektr toki hosil bo‘ladi.",
+  "ru": "A) В катушке возникнет максимальный электрический ток.",
+  "en": "A) A maximum electric current is produced in the coil."
+ },
+ {
+  "k": "8fd9d841",
+  "s": "B) Magnit oqimi o‘zgarmasligi sababli, g‘altakda elektr toki (induksiya EYuK) hosil bo‘lmaydi.",
+  "ru": "B) Поскольку магнитный поток не меняется, в катушке не возникает электрический ток (ЭДС индукции).",
+  "en": "B) Because the magnetic flux does not change, no current (induced EMF) is produced in the coil."
+ },
+ {
+  "k": "ca8389d7",
+  "s": "C) G‘altak qizib, yonib ketadi.",
+  "ru": "C) Катушка нагреется и сгорит.",
+  "en": "C) The coil heats up and burns out."
+ },
+ {
+  "k": "7507e6fb",
+  "s": "D) Chiroq o‘zgarmas doimiy yorug‘lik bilan yonib turadi.",
+  "ru": "D) Лампа будет гореть неизменным постоянным светом.",
+  "en": "D) The lamp glows with a steady, constant light."
+ },
+ {
+  "k": "c0fc082a",
+  "s": "4-savol: Claude va Muxlisa AI qanday qilib birgalikda (pipeline) ishlashi mumkin?",
+  "ru": "Вопрос 4: Как Claude и Muxlisa AI могут работать вместе (конвейер)?",
+  "en": "Question 4: How can Claude and Muxlisa AI work together (in a pipeline)?"
+ },
+ {
+  "k": "e15f6f21",
+  "s": "A) Ikkalasi ham faqat dizayn yaratadi.",
+  "ru": "A) Оба создают только дизайн.",
+  "en": "A) Both only create designs."
+ },
+ {
+  "k": "5b9d8d31",
+  "s": "B) Muxlisa AI fizika kodini yozadi, Claude esa uning ovozini chiqaradi.",
+  "ru": "B) Muxlisa AI пишет физический код, а Claude озвучивает его.",
+  "en": "B) Muxlisa AI writes the physics code and Claude voices it."
+ },
+ {
+  "k": "e7b47c06",
+  "s": "C) Claude fizik dvigatel va vizual animatsiyani dasturlaydi, Muxlisa AI (yoki ElevenLabs) esa jarayonni tushuntiruvchi sintezlangan ovozli MP3 audioni ta’minlaydi.",
+  "ru": "C) Claude программирует физический движок и визуальную анимацию, а Muxlisa AI (или ElevenLabs) обеспечивает синтезированное голосовое MP3-аудио, объясняющее процесс.",
+  "en": "C) Claude programs the physics engine and visual animation, while Muxlisa AI (or ElevenLabs) provides synthesised MP3 audio explaining the process."
+ },
+ {
+  "k": "872c9c86",
+  "s": "D) Ularni birgalikda ishlatish texnik jihatdan ilojsiz.",
+  "ru": "D) Совместно использовать их технически невозможно.",
+  "en": "D) They cannot technically be used together."
+ },
+ {
+  "k": "84419f69",
+  "s": "2. Elektrodinamika loyihasi: pipeline + audio-narratsiya",
+  "ru": "2. Проект по электродинамике: конвейер + аудионаррация",
+  "en": "2. Electrodynamics project: pipeline + audio narration"
+ },
+ {
+  "k": "1cdb5c2d",
+  "s": "Zamonaviy elektron o‘quv resurslari vizual interaktivlikni va ovozli izohlarni (multi-modal learning) birlashtiradi. Multimedia ta’lim tadqiqotlariga ko‘ra, so‘z va tasvirni to‘g‘ri birlashtirish ko‘pincha o‘zlashtirishni yaxshilaydi (Mayer, 2009), biroq ortiqcha ma’lumot o‘quvchini chalg‘itishi ham mumkin.",
+  "ru": "Современные электронные учебные ресурсы объединяют визуальную интерактивность и голосовые пояснения (multi-modal learning). Согласно исследованиям мультимедийного обучения, правильное сочетание слова и изображения часто улучшает усвоение (Mayer, 2009), однако избыточная информация может и отвлекать учащегося.",
+  "en": "Modern e-learning resources combine visual interactivity with spoken commentary (multimodal learning). Multimedia learning research shows that combining words and pictures well often improves learning (Mayer, 2009), but too much information can also distract the learner."
+ },
+ {
+  "k": "16a211fa",
+  "s": "PhET \"Faraday’s Law\" orqali magnit oqimi, induksiya EYuK va g‘altakdagi tok yo‘nalishi (Lents qoidasi) vizual tadqiq etiladi.",
+  "ru": "Через PhET «Faraday’s Law» визуально исследуются магнитный поток, ЭДС индукции и направление тока в катушке (правило Ленца).",
+  "en": "PhET \"Faraday’s Law\" is used to explore the magnetic flux, induced EMF and the direction of current in the coil (Lenz’s rule) visually."
+ },
+ {
+  "k": "4ab425a5",
+  "s": "Claude’ga magnitning g‘altak ichiga kirib-chiqishini va ampermetr strelkasining $I \\propto -\\frac{d\\Phi}{dt}$ asosida og‘ishini chizuvchi HTML5 Canvas promti beriladi.",
+  "ru": "Claude получает промпт HTML5 Canvas, рисующий вход и выход магнита в катушку и отклонение стрелки амперметра на основе $I \\propto -\\frac{d\\Phi}{dt}$.",
+  "en": "Claude is given an HTML5 Canvas prompt that draws the magnet moving into and out of the coil and the ammeter needle deflecting according to $I \\propto -\\frac{d\\Phi}{dt}$."
+ },
+ {
+  "k": "46cf2d40",
+  "s": "<strong>3. Audio-narratsiya:</strong> Gemini yoki ChatGPT yordamida jarayonning ilmiy matni (ssenariysi) yozilib, <strong>Muxlisa AI</strong> (O‘zbek tili) yoki <strong>ElevenLabs</strong> (Poliglot) orqali sof nutqqa (MP3/WAV) aylantiriladi va simulyatsiyaga (Web Audio API) ulanadi.",
+  "ru": "<strong>3. Аудионаррация:</strong> с помощью Gemini или ChatGPT пишется научный текст (сценарий) процесса, который через <strong>Muxlisa AI</strong> (узбекский язык) или <strong>ElevenLabs</strong> (полиглот) превращается в чистую речь (MP3/WAV) и подключается к симуляции (Web Audio API).",
+  "en": "<strong>3. Audio narration:</strong> a scientific text (script) for the process is written with Gemini or ChatGPT, turned into clean speech (MP3/WAV) with <strong>Muxlisa AI</strong> (Uzbek) or <strong>ElevenLabs</strong> (multilingual) and connected to the simulation (Web Audio API)."
+ },
+ {
+  "k": "62491831",
+  "s": "AI vositalarining integratsiyasi:",
+  "ru": "Интеграция ИИ-инструментов:",
+  "en": "Integrating the AI tools:"
+ },
+ {
+  "k": "e581ae38",
+  "s": "<strong>Kognitiv yuklamani kamaytirish:</strong> O‘quvchi bir vaqtning o‘zida harakatni kuzatadi va uning izohini eshitadi (matn o‘qib chalg‘imaydi).",
+  "ru": "<strong>Снижение когнитивной нагрузки:</strong> учащийся одновременно наблюдает движение и слышит его пояснение (не отвлекается на чтение текста).",
+  "en": "<strong>Lower cognitive load:</strong> the learner watches the motion and hears its explanation at the same time (without being distracted by reading)."
+ },
+ {
+  "k": "c7b1e0bc",
+  "s": "<strong>Inklyuzivlik:</strong> Ko‘rishda nuqsoni bor yoki eshitib yaxshiroq tushunadigan (audial) o‘quvchilar uchun katta qulaylik.",
+  "ru": "<strong>Инклюзивность:</strong> большое удобство для учащихся с нарушениями зрения или лучше понимающих на слух (аудиалов).",
+  "en": "<strong>Inclusion:</strong> a big help for learners with visual impairments or who understand better by listening."
+ },
+ {
+  "k": "2d33dbb3",
+  "s": "<strong>Google Antigravity:</strong> Butun jarayon davomida xatolarni (audio buffering, canvas rendering) doimiy kuzatib, agentlarni muvofiqlashtiradi.",
+  "ru": "<strong>Google Antigravity:</strong> на протяжении всего процесса постоянно отслеживает ошибки (audio buffering, canvas rendering) и координирует агентов.",
+  "en": "<strong>Google Antigravity:</strong> continuously tracks errors (audio buffering, canvas rendering) throughout and coordinates the agents."
+ },
+ {
+  "k": "ed9b582d",
+  "s": "3. Elektromagnit simulyatsiya tahlili: PhET va Vascak.cz",
+  "ru": "3. Анализ электромагнитной симуляции: PhET и Vascak.cz",
+  "en": "3. Analysing the electromagnetic simulation: PhET and Vascak.cz"
+ },
+ {
+  "k": "28fc6108",
+  "s": "Kodni yozishdan avval Faradey qonuni va Lents qoidasini PhET muhitida tajriba orqali his qilishimiz kerak. Simulyatsiyamizdagi matematik modellar aynan shu qonunlarga bo‘ysunadi.",
+  "ru": "Прежде чем писать код, мы должны прочувствовать закон Фарадея и правило Ленца на опыте в среде PhET. Математические модели нашей симуляции подчиняются именно этим законам.",
+  "en": "Before writing code, we should get a feel for Faraday’s law and Lenz’s rule by experimenting in PhET. The mathematical models in our simulation obey exactly these laws."
+ },
+ {
+  "k": "b334daaa",
+  "s": "Faradeyning elektromagnit induksiya qonuni",
+  "ru": "Закон электромагнитной индукции Фарадея",
+  "en": "Faraday’s law of electromagnetic induction"
+ },
+ {
+  "k": "e89d13ec",
+  "s": "Yopiq zanjirda hosil bo‘luvchi induksiya elektr yurituvchi kuchi (EYuK) shu zanjir bilan chegaralangan sirt orqali o‘tuvchi magnit oqimining o‘zgarish tezligiga teng:",
+  "ru": "Электродвижущая сила индукции (ЭДС), возникающая в замкнутой цепи, равна скорости изменения магнитного потока через поверхность, ограниченную этой цепью:",
+  "en": "The induced electromotive force (EMF) in a closed circuit equals the rate of change of the magnetic flux through the surface bounded by the circuit:"
+ },
+ {
+  "k": "336aade3",
+  "s": "$$ \\mathcal{E} = -N \\frac{d\\Phi}{dt} $$",
+  "ru": "$$ \\mathcal{E} = -N \\frac{d\\Phi}{dt} $$",
+  "en": "$$ \\mathcal{E} = -N \\frac{d\\Phi}{dt} $$"
+ },
+ {
+  "k": "68782618",
+  "s": "Bunda $N$ - g‘altakning o‘ramlar soni, $\\Phi$ - magnit oqimi, $t$ - vaqt. Lents qoidasiga ko‘ra ($-$) ishorasi tizimning o‘zgarishga qarshilik ko‘rsatishini bildiradi. Magnit qanchalik tez harakatlansa ($v$ yuqori), ampermetr shunchalik kuchli tokni ($I = \\frac{\\mathcal{E}}{R}$) ko‘rsatadi.",
+  "ru": "Здесь $N$ — число витков катушки, $\\Phi$ — магнитный поток, $t$ — время. Согласно правилу Ленца, знак ($-$) означает, что система противодействует изменению. Чем быстрее движется магнит ($v$ больше), тем сильнее ток ($I = \\frac{\\mathcal{E}}{R}$) показывает амперметр.",
+  "en": "Here $N$ is the number of turns in the coil, $\\Phi$ the magnetic flux and $t$ the time. By Lenz’s rule, the ($-$) sign means the system opposes the change. The faster the magnet moves (larger $v$), the stronger the current ($I = \\frac{\\mathcal{E}}{R}$) the ammeter shows."
+ },
+ {
+  "k": "c5495de6",
+  "s": "Bu tahlil asosida simulyatorga <strong>harakat tezligi (v)</strong> ga qaram bo‘lgan <strong>Ampermetr ko‘rsatkichini</strong> dasturlaymiz.",
+  "ru": "На основе этого анализа мы программируем в симуляторе <strong>показания амперметра</strong>, зависящие от <strong>скорости движения (v)</strong>.",
+  "en": "Based on this analysis, we program the <strong>ammeter reading</strong> in the simulator to depend on the <strong>speed of motion (v)</strong>."
+ },
+ {
+  "k": "b3953a7f",
+  "s": "4. Interaktiv kod va audio narratsiya (TTS) generatsiyasi",
+  "ru": "4. Генерация интерактивного кода и аудионаррации (TTS)",
+  "en": "4. Generating interactive code and audio narration (TTS)"
+ },
+ {
+  "k": "ce5d07c5",
+  "s": "HTML5 Canvas vizual dvigateli va Web Audio API asosida tayyorlanadigan ssenariylar AI modellari hamkorligining cho‘qqisi hisoblanadi.",
+  "ru": "Сценарии на основе визуального движка HTML5 Canvas и Web Audio API — вершина сотрудничества моделей ИИ.",
+  "en": "Scenarios built on an HTML5 Canvas visual engine and the Web Audio API are the high point of collaboration between AI models."
+ },
+ {
+  "k": "2b6aa1ab",
+  "s": "Claude prompt",
+  "ru": "Промпт Claude",
+  "en": "Claude prompt"
+ },
+ {
+  "k": "f8e84172",
+  "s": "\"HTML5 Canvas’da Faradey qonuni simulyatsiyasini yoz. Ekranda g‘altak, chiroq va ampermetr bo‘lsin. Sichqoncha yordamida shtab-magnitni harakatlantirish imkoni bo‘lsin. Magnitning tezligi (dx/dt) asosida ampermetr strelkasi og‘sin va chiroq yonsin. Bundan tashqari, interfeysga 'Ovozli Izoh (TTS)' tugmasini qo‘sh va Web Speech API orqali hodisani sharhlovchi funksiya yoz.\"",
+  "ru": "«Напиши на HTML5 Canvas симуляцию закона Фарадея. На экране должны быть катушка, лампа и амперметр. Должна быть возможность перемещать полосовой магнит мышью. На основе скорости магнита (dx/dt) стрелка амперметра должна отклоняться, а лампа загораться. Кроме того, добавь в интерфейс кнопку «Голосовое пояснение (TTS)» и напиши функцию, комментирующую явление через Web Speech API.»",
+  "en": "\"Write a Faraday’s law simulation in HTML5 Canvas. Show a coil, a lamp and an ammeter on screen. Let the user move a bar magnet with the mouse. Make the ammeter needle deflect and the lamp light up according to the magnet’s speed (dx/dt). Also add a 'Spoken commentary (TTS)' button to the interface and write a function that narrates the phenomenon with the Web Speech API.\""
+ },
+ {
+  "k": "91d002c4",
+  "s": "ElevenLabs / Muxlisa AI integratsiyasi",
+  "ru": "Интеграция ElevenLabs / Muxlisa AI",
+  "en": "ElevenLabs / Muxlisa AI integration"
+ },
+ {
+  "k": "0cc17854",
+  "s": "<strong>Ssenariy:</strong> \"Magnit g‘altakka kiritilganda, magnit maydon chiziqlari soni o‘zgaradi va tok hosil bo‘ladi.\" (Gemini tomonidan yoziladi).",
+  "ru": "<strong>Сценарий:</strong> «Когда магнит вводят в катушку, число линий магнитного поля меняется и возникает ток.» (пишет Gemini).",
+  "en": "<strong>Script:</strong> \"When the magnet is pushed into the coil, the number of magnetic field lines changes and a current is produced.\" (written by Gemini)."
+ },
+ {
+  "k": "056ba97b",
+  "s": "<strong>Sintez (TTS):</strong> Matn ElevenLabs API (yoki mahalliy Muxlisa AI) orqali yuqori sifatli, hissiyotli audiyoga aylanadi.",
+  "ru": "<strong>Синтез (TTS):</strong> текст через ElevenLabs API (или местный Muxlisa AI) превращается в качественное эмоциональное аудио.",
+  "en": "<strong>Synthesis (TTS):</strong> the text is turned into high-quality, expressive audio with the ElevenLabs API (or the local Muxlisa AI)."
+ },
+ {
+  "k": "a3279f8b",
+  "s": "<strong>Sinxronizatsiya:</strong> Antigravity audioni animatsiya freymlari (FPS) bilan sinxron ishga tushishini ta’minlaydi.",
+  "ru": "<strong>Синхронизация:</strong> Antigravity обеспечивает синхронный запуск аудио с кадрами анимации (FPS).",
+  "en": "<strong>Synchronisation:</strong> Antigravity makes sure the audio starts in sync with the animation frames (FPS)."
+ },
+ {
+  "k": "9dda844c",
+  "s": "5. Interaktiv dastgoh: elektromagnit induksiya va TTS ovozli izohi",
+  "ru": "5. Интерактивный стенд: электромагнитная индукция и голосовое TTS-пояснение",
+  "en": "5. Interactive bench: electromagnetic induction and a spoken TTS commentary"
+ },
+ {
+  "k": "7aab7450",
+  "s": "Quyidagi simulyatorda shtab-magnitni <strong>slayder</strong> yordamida chapga/o‘ngga siljiting. Harakat tezligiga qarab ampermetr strelkasi qanday og‘ishini kuzating. <strong>“Ovozli izoh (SI TTS)”</strong> tugmasi jarayonni ilmiy sharhlab beradi.",
+  "ru": "В симуляторе ниже сдвигайте полосовой магнит влево/вправо с помощью <strong>ползунка</strong>. Наблюдайте, как стрелка амперметра отклоняется в зависимости от скорости движения. Кнопка <strong>«Голосовое пояснение (ИИ TTS)»</strong> научно комментирует процесс.",
+  "en": "In the simulator below, move the bar magnet left/right with the <strong>slider</strong>. Watch how the ammeter needle deflects depending on the speed of motion. The <strong>\"Spoken commentary (AI TTS)\"</strong> button gives a scientific commentary on the process."
+ },
+ {
+  "k": "884fe2c2",
+  "s": "Ovozli izoh (SI TTS)",
+  "ru": "Голосовое пояснение (ИИ TTS)",
+  "en": "Spoken commentary (AI TTS)"
+ },
+ {
+  "k": "b0df9549",
+  "s": "Shtab-magnit joylashuvi (X):",
+  "ru": "Положение полосового магнита (X):",
+  "en": "Bar magnet position (X):"
+ },
+ {
+  "k": "e53aac7a",
+  "s": "⚡ Induksion tok (I):",
+  "ru": "⚡ Индукционный ток (I):",
+  "en": "⚡ Induced current (I):"
+ },
+ {
+  "k": "302acf74",
+  "s": "Magnitni qanchalik tez qimirlatsangiz, tok shuncha ko‘p hosil bo‘ladi.",
+  "ru": "Чем быстрее вы двигаете магнит, тем больше возникает ток.",
+  "en": "The faster you move the magnet, the larger the current."
+ },
+ {
+  "k": "eb807bd1",
+  "s": "6. Yakuniy taqdimot rubrikasi va manbalar",
+  "ru": "6. Рубрика итоговой презентации и источники",
+  "en": "6. Final presentation rubric and sources"
+ },
+ {
+  "k": "74bfc063",
+  "s": "Loyiha (Tahlil $\\rightarrow$ Kod $\\rightarrow$ TTS Narratsiya) sifati quyidagi rubrika orqali baholanadi (Jami: 100 ball).",
+  "ru": "Качество проекта (анализ $\\rightarrow$ код $\\rightarrow$ TTS-наррация) оценивается по следующей рубрике (всего: 100 баллов).",
+  "en": "Project quality (analysis $\\rightarrow$ code $\\rightarrow$ TTS narration) is assessed with the following rubric (total: 100 points)."
+ },
+ {
+  "k": "a57a7ede",
+  "s": "<strong>Elektromagnit tahlil:</strong> $I \\propto -d\\Phi/dt$ ga muvofiqlik, ampermetr va chiroqning mantiqiy ishlashi.",
+  "ru": "<strong>Электромагнитный анализ:</strong> соответствие $I \\propto -d\\Phi/dt$, логичная работа амперметра и лампы.",
+  "en": "<strong>Electromagnetic analysis:</strong> agreement with $I \\propto -d\\Phi/dt$ and logical behaviour of the ammeter and lamp."
+ },
+ {
+  "k": "09bf83f6",
+  "s": "<strong>Interaktiv kod generatsiyasi:</strong> Canvas API grafikasi va tezlikka (dt) asoslangan to‘g‘ri hisob-kitob.",
+  "ru": "<strong>Генерация интерактивного кода:</strong> графика Canvas API и правильный расчёт на основе скорости (dt).",
+  "en": "<strong>Interactive code generation:</strong> Canvas API graphics and a correct speed-based (dt) calculation."
+ },
+ {
+  "k": "21727cd6",
+  "s": "<strong>AI audio-narratsiya (TTS):</strong> Web Speech / ElevenLabs simulyatsiyasi integratsiyasi va vizuallashtirish.",
+  "ru": "<strong>ИИ-аудионаррация (TTS):</strong> интеграция Web Speech / ElevenLabs в симуляцию и визуализация.",
+  "en": "<strong>AI audio narration (TTS):</strong> integrating Web Speech / ElevenLabs into the simulation and the visualisation."
+ },
+ {
+  "k": "f2191d93",
+  "s": "100 / 100 ball",
+  "ru": "100 / 100 баллов",
+  "en": "100 / 100 points"
+ },
+ {
+  "k": "7ebf3ed9",
+  "s": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "ru": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "en": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+ },
+ {
+  "k": "3ffc5563",
+  "s": "2. ElevenLabs. (n.d.). <em>ElevenLabs documentation</em>. https://elevenlabs.io/docs",
+  "ru": "2. ElevenLabs. (n.d.). <em>ElevenLabs documentation</em>. https://elevenlabs.io/docs",
+  "en": "2. ElevenLabs. (n.d.). <em>ElevenLabs documentation</em>. https://elevenlabs.io/docs"
+ },
+ {
+  "k": "600b06aa",
+  "s": "3. Griffiths, D. J. (2017). <em>Introduction to electrodynamics</em> (4th ed.). Cambridge University Press.",
+  "ru": "3. Griffiths, D. J. (2017). <em>Introduction to electrodynamics</em> (4th ed.). Cambridge University Press.",
+  "en": "3. Griffiths, D. J. (2017). <em>Introduction to electrodynamics</em> (4th ed.). Cambridge University Press."
+ },
+ {
+  "k": "8994a263",
+  "s": "4. Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). Cambridge University Press.",
+  "ru": "4. Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). Cambridge University Press.",
+  "en": "4. Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). Cambridge University Press."
+ },
+ {
+  "k": "6c61b147",
+  "s": "5. PhET Interactive Simulations. (n.d.). <em>Faraday’s Law</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/faradays-law",
+  "ru": "5. PhET Interactive Simulations. (n.d.). <em>Faraday’s Law</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/faradays-law",
+  "en": "5. PhET Interactive Simulations. (n.d.). <em>Faraday’s Law</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/faradays-law"
+ },
+ {
+  "k": "87fd2382",
+  "s": "6. W3C Audio Community Group. (n.d.). <em>Web Speech API</em> (Draft Community Group Report). https://webaudio.github.io/web-speech-api/",
+  "ru": "6. W3C Audio Community Group. (n.d.). <em>Web Speech API</em> (Draft Community Group Report). https://webaudio.github.io/web-speech-api/",
+  "en": "6. W3C Audio Community Group. (n.d.). <em>Web Speech API</em> (Draft Community Group Report). https://webaudio.github.io/web-speech-api/"
+ },
+ {
+  "k": "031a1724",
+  "s": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "ru": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "en": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>"
+ },
+ {
+  "k": "543abd6e",
+  "s": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "ru": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "en": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>"
+ }
+]

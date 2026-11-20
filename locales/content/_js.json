@@ -1,4 +1,14 @@
 {
+ "app.js": {
+  "Boshlash": [
+   "Старт",
+   "Start"
+  ],
+  "To‘xtatish": [
+   "Остановить",
+   "Stop"
+  ]
+ },
  "js/debugging-lab.js": {
   " (Kutilayotgan: 0.7071)": [
    " (ожидалось: 0.7071)",
@@ -640,6 +650,130 @@
   ]
  },
  "js/sim-lab1-pipeline.js": {
+  "<div style=\"margin-bottom:10px;\">Natija: {0} / 3 to‘g‘ri javob</div>": [
+   "<div style=\"margin-bottom:10px;\">Результат: {0} / 3 правильных ответа</div>",
+   "<div style=\"margin-bottom:10px;\">Result: {0} / 3 correct answers</div>"
+  ],
+  "A (a’lo / mukammal portfolio)": [
+   "A (отлично / совершенное портфолио)",
+   "A (excellent / outstanding portfolio)"
+  ],
+  "Ajoyib! Barcha savollarga to‘g‘ri javob berdingiz!": [
+   "Отлично! Вы правильно ответили на все вопросы!",
+   "Excellent! You answered every question correctly!"
+  ],
+  "B (Yaxshi)": [
+   "B (хорошо)",
+   "B (good)"
+  ],
+  "Burchak xatoligi: <strong style=\"color:{0}\">{1}°</strong>": [
+   "Ошибка угла: <strong style=\"color:{0}\">{1}°</strong>",
+   "Angle error: <strong style=\"color:{0}\">{1}°</strong>"
+  ],
+  "C (Qoniqarli)": [
+   "C (удовлетворительно)",
+   "C (satisfactory)"
+  ],
+  "D (qayta ishlash talab etiladi)": [
+   "D (требуется доработка)",
+   "D (needs revision)"
+  ],
+  "Deterministik (Claude kodi)": [
+   "Детерминированный (код Claude)",
+   "Deterministic (Claude code)"
+  ],
+  "Fizik jarayon: {0}.\nMotion Brush: harakatlanadigan asosiy jismni bo‘yang va unga fizik jihatdan to‘g‘ri vektor tezlik yo‘nalishini bering.\nCamera Control: sekin zoom-in va parametrlarning eng nozik daqiqasida slow-motion 60fps qo‘llang.\nEslatma: bu bosqich faqat vizual prototip uchun — yakuniy aniqlik Claude kod bosqichida ta’minlanadi.": [
+   "Физический процесс: {0}.\nMotion Brush: закрасьте основное движущееся тело и задайте ему физически правильное векторное направление скорости.\nCamera Control: примените медленный zoom-in и slow-motion 60fps в самый тонкий момент параметров.\nПримечание: этот этап только для визуального прототипа — итоговая точность обеспечивается на этапе кода Claude.",
+   "Physical process: {0}.\nMotion Brush: paint the main moving body and give it a physically correct velocity vector direction.\nCamera Control: apply a slow zoom-in and slow-motion 60fps at the subtlest moment of the parameters.\nNote: this stage is only a visual prototype — final accuracy comes from the Claude code stage."
+  ],
+  "Generativ SI-video (dreyf)": [
+   "Генеративное ИИ-видео (дрейф)",
+   "Generative AI video (drift)"
+  ],
+  "Masofa xatoligi: <strong style=\"color:{0}\">{1} m</strong>": [
+   "Ошибка расстояния: <strong style=\"color:{0}\">{1} м</strong>",
+   "Distance error: <strong style=\"color:{0}\">{1} m</strong>"
+  ],
+  "Matematik mayatnikning garmonik tebranishlari": [
+   "Гармонические колебания математического маятника",
+   "Harmonic oscillations of a simple pendulum"
+  ],
+  "Sen Oliy ta’lim fizika professori va pedagogik dizaynersiz.\nMavzu: {0}\nVazifa: Ushbu mavzuni 1-kurs talabalariga raqamli simulyatsiya orqali tushuntirish uchun 30 soniyalik ssenariy (Storyboard) va JSON formatidagi parametrlar xaritasini tuzib bering.\nTalablar:\n1. Ssenariy 4 ta sahnadan iborat bo‘lsin: Muammo, Nazariya, Dinamik tahlil, Xulosa.\n2. Formula: {1}\n3. Boshqariladigan parametrlar ({2}) uchun slayder chegaralarini (min, max, default) JSON formatida bering.": [
+   "Вы — профессор физики высшей школы и педагогический дизайнер.\nТема: {0}\nЗадача: составьте 30-секундный сценарий (Storyboard) и карту параметров в формате JSON, чтобы объяснить эту тему студентам 1-го курса с помощью цифровой симуляции.\nТребования:\n1. Сценарий должен состоять из 4 сцен: Проблема, Теория, Динамический анализ, Вывод.\n2. Формула: {1}\n3. Для управляемых параметров ({2}) дайте границы ползунков (min, max, default) в формате JSON.",
+   "You are a university physics professor and instructional designer.\nTopic: {0}\nTask: write a 30-second scenario (storyboard) and a JSON parameter map to explain this topic to first-year students through a digital simulation.\nRequirements:\n1. The scenario must have 4 scenes: Problem, Theory, Dynamic analysis, Conclusion.\n2. Formula: {1}\n3. Give slider limits (min, max, default) in JSON for the controlled parameters ({2})."
+  ],
+  "Sen ta’limiy diagnostika sun’iy intellektisan (MagicSchool AI uslubida).\nVazifa: \"{0}\" mavzusi bo‘yicha talabaning boshlang‘ich matematik va dasturlash tayyorgarligini aniqlaydigan 5 ta savoldan iborat qisqa diagnostik so‘rovnoma tuz.\nNatijada talabani 3 ta klasterdan biriga ajrat: Bazaviy, Standart yoki Ilg‘or (Vygotskiy ZPD modeli asosida) va har biriga mos individual o‘quv trayektoriyasini taklif qil.": [
+   "Ты — образовательный диагностический искусственный интеллект (в стиле MagicSchool AI).\nЗадача: составь короткий диагностический опрос из 5 вопросов, определяющий исходную математическую и программистскую подготовку студента по теме «{0}».\nПо результатам отнеси студента к одному из 3 кластеров: Базовый, Стандартный или Продвинутый (на основе модели ЗБР Выготского) и предложи каждому подходящую индивидуальную учебную траекторию.",
+   "You are an educational diagnostic AI (in the style of MagicSchool AI).\nTask: write a short 5-question diagnostic survey that identifies a student’s initial maths and programming preparation for the topic \"{0}\".\nFrom the results, place the student in one of 3 clusters — Foundational, Core or Advanced (based on Vygotsky’s ZPD model) — and suggest a suitable individual learning pathway for each."
+  ],
+  "Siz tajribali Computational Physics (Hisoblash fizikasi) dasturchisisiz.\nVazifa: \"{0}\" mavzusi bo‘yicha sof JavaScript va HTML5 Canvas orqali interaktiv simulyatsiya yozing.\nDifferensial tenglama: {1}\nBoshqariladigan parametrlar: {2}\nQoidalar:\n1. Hech qanday tashqi kutubxonalarsiz (Pure Vanilla JS & Canvas 2D Context).\n2. Sonli integrallash usuli: Euler-Cromer yoki RK4. Energiyaning saqlanish qonuni kafolatlansin.\n3. Interfeys: Dark theme, slayderlar (Range inputs), Reset/Play tugmalari va real vaqtli telemetriya grafigi bo‘lsin.": [
+   "Вы — опытный программист в области Computational Physics (вычислительной физики).\nЗадача: напишите интерактивную симуляцию на чистом JavaScript и HTML5 Canvas по теме «{0}».\nДифференциальное уравнение: {1}\nУправляемые параметры: {2}\nПравила:\n1. Без каких-либо внешних библиотек (Pure Vanilla JS & Canvas 2D Context).\n2. Метод численного интегрирования: Эйлер–Кромер или RK4. Должен гарантироваться закон сохранения энергии.\n3. Интерфейс: тёмная тема, ползунки (Range inputs), кнопки Reset/Play и график телеметрии в реальном времени.",
+   "You are an experienced Computational Physics programmer.\nTask: write an interactive simulation in pure JavaScript and HTML5 Canvas on the topic \"{0}\".\nDifferential equation: {1}\nControlled parameters: {2}\nRules:\n1. No external libraries at all (Pure Vanilla JS & Canvas 2D Context).\n2. Numerical integration method: Euler–Cromer or RK4. Energy conservation must be guaranteed.\n3. Interface: dark theme, sliders (range inputs), Reset/Play buttons and a real-time telemetry plot."
+  ],
+  "Tekis aylanma harakat va markazga intilma kuch": [
+   "Равномерное движение по окружности и центростремительная сила",
+   "Uniform circular motion and centripetal force"
+  ],
+  "Test yakunlandi, tushuntirishlarni ko‘rib chiqing.": [
+   "Тест завершён, ознакомьтесь с пояснениями.",
+   "Test finished — review the explanations."
+  ],
+  "To‘g‘ri javob: B — Generativ video ehtimoliy piksellardan iborat bo‘lib, qat’iy matematik aniqlik va slayderlar orqali interaktivlikni ta’minlay olmaydi, shu sababli Claude kod bosqichi zarur.": [
+   "Правильный ответ: B — генеративное видео состоит из вероятностных пикселей и не может обеспечить строгую математическую точность и интерактивность через ползунки, поэтому необходим этап кода Claude.",
+   "Correct answer: B — generative video consists of probabilistic pixels and cannot provide strict mathematical accuracy or slider interactivity, so the Claude code stage is needed."
+  ],
+  "To‘g‘ri javob: C — MagicSchool AI talabaning boshlang‘ich bilim darajasini aniqlab, Vygotskiy ZPD modeli asosida individual o‘quv trayektoriyasini shakllantiradi.": [
+   "Правильный ответ: C — MagicSchool AI определяет исходный уровень знаний студента и формирует индивидуальную учебную траекторию на основе модели ЗБР Выготского.",
+   "Correct answer: C — MagicSchool AI identifies the student’s starting level and builds an individual learning pathway based on Vygotsky’s ZPD model."
+  ],
+  "To‘g‘ri javob: D — Nazariya → Tayyor namunani tahlil → Kod yozish → Ovozlashtirish → Yakuniy loyiha (Capstone) himoyasi.": [
+   "Правильный ответ: D — Теория → Анализ готового образца → Написание кода → Озвучивание → Защита итогового проекта (Capstone).",
+   "Correct answer: D — Theory → Analysing an existing model → Coding → Voice-over → Final (Capstone) project defence."
+  ],
+  "Vakuumda va muhitda jismning erkin tushishi": [
+   "Свободное падение тела в вакууме и в среде",
+   "Free fall of a body in a vacuum and in a medium"
+  ],
+  "Yorug‘likning sinishi va Snellius qonuni": [
+   "Преломление света и закон Снеллиуса",
+   "Refraction of light and Snell’s law"
+  ],
+  "boshlang‘ich tezlik v0, gravitatsiya g, qarshilik koeffitsiyenti k": [
+   "начальная скорость v0, гравитация g, коэффициент сопротивления k",
+   "initial velocity v0, gravity g, drag coefficient k"
+  ],
+  "ip uzunligi l, boshlang‘ich burchak theta0, so‘nish koeffitsiyenti gamma": [
+   "длина нити l, начальный угол theta0, коэффициент затухания gamma",
+   "string length l, initial angle theta0, damping coefficient gamma"
+  ],
+  "jismning erkin tushishi (vakuum va havo qarshiligida)": [
+   "свободное падение тела (в вакууме и при сопротивлении воздуха)",
+   "free fall of a body (in a vacuum and with air resistance)"
+  ],
+  "n1*sin(alpha) = n2*sin(beta), to‘la ichki qaytish: alpha >= asin(n2/n1)": [
+   "n1*sin(alpha) = n2*sin(beta), полное внутреннее отражение: alpha >= asin(n2/n1)",
+   "n1*sin(alpha) = n2*sin(beta), total internal reflection: alpha >= asin(n2/n1)"
+  ],
+  "radius R, burchak tezlik omega, massa m": [
+   "радиус R, угловая скорость omega, масса m",
+   "radius R, angular velocity omega, mass m"
+  ],
+  "sindirish ko‘rsatkichlari n1 va n2, tushish burchagi alpha": [
+   "показатели преломления n1 и n2, угол падения alpha",
+   "refractive indices n1 and n2, angle of incidence alpha"
+  ],
+  "tekis aylanma harakatdagi markazga intilma kuch": [
+   "центростремительная сила при равномерном движении по окружности",
+   "centripetal force in uniform circular motion"
+  ],
+  "y = v0*t + 0.5*g*t^2, F_drag = -k*v yoki -0.5*rho*Cd*A*v^2": [
+   "y = v0*t + 0.5*g*t^2, F_drag = -k*v или -0.5*rho*Cd*A*v^2",
+   "y = v0*t + 0.5*g*t^2, F_drag = -k*v or -0.5*rho*Cd*A*v^2"
+  ],
+  "yorug‘likning ikki muhit chegarasida sinishi": [
+   "преломление света на границе двух сред",
+   "refraction of light at the boundary of two media"
+  ],
   "⏸ To‘xtatish": [
    "⏸ Остановить",
    "⏸ Stop"
@@ -650,13 +784,129 @@
   ]
  },
  "js/sim-lab10-astro-audio.js": {
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-B, 2-C, 3-A, 4-C.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-B, 2-C, 3-A, 4-C."
+  ],
+  "Afeliy tomon uzoqlashganda tortishish zaiflashadi, jism sekinlashadi va orbitaning uzoq qismida ko‘p vaqt o‘tkazadi.": [
+   "При удалении к афелию притяжение ослабевает, тело замедляется и проводит много времени на дальней части орбиты.",
+   "As it moves out towards aphelion, the pull weakens, the body slows down and spends a long time on the far part of its orbit."
+  ],
+  "Avval 2.1-bo‘limdagi Kepler qonunlarini takrorlang va dastgohda Yer hamda Galley kometasi orbitalarini solishtiring: nima uchun kometa perigeliy yaqinida juda tez o‘tadi? So‘ng 4-bo‘limdagi ssenariy promptini Gemini’ga yuborib, 30 soniyalik matn oling.": [
+   "Сначала повторите законы Кеплера из раздела 2.1 и сравните на стенде орбиты Земли и кометы Галлея: почему комета так быстро проходит вблизи перигелия? Затем отправьте Gemini промпт сценария из раздела 4 и получите 30-секундный текст.",
+   "First review Kepler’s laws in Section 2.1 and compare the orbits of Earth and Halley’s Comet on the bench: why does the comet pass perihelion so quickly? Then send the Section 4 script prompt to Gemini and get a 30-second text."
+  ],
+  "A’LO (5)": [
+   "ОТЛИЧНО (5)",
+   "EXCELLENT (5)"
+  ],
+  "Barcha mezonlar yuqori darajada bajarilgan.": [
+   "Все критерии выполнены на высоком уровне.",
+   "All criteria met at a high level."
+  ],
+  "Barcha sayyoralar va kometalar ellips bo‘ylab harakatlanadi, Quyosh esa shu ellipsning fokuslaridan birida joylashgan. Bu — Keplerning birinchi qonuni.": [
+   "Все планеты и кометы движутся по эллипсам, а Солнце находится в одном из фокусов этого эллипса. Это — первый закон Кеплера.",
+   "All planets and comets move along ellipses, with the Sun at one focus of the ellipse. This is Kepler’s first law."
+  ],
+  "Brauzeringizda o‘zbek ovozi topilmadi — subtitr rejimi. Haqiqiy ovoz uchun Muxlisa AI yoki ElevenLabs faylidan foydalaning.": [
+   "В вашем браузере не найден голос для этого языка — режим субтитров. Для настоящего голоса используйте файл из Muxlisa AI или ElevenLabs.",
+   "No voice for this language was found in your browser — subtitles only. For a real voice, use a Muxlisa AI or ElevenLabs file."
+  ],
+  "Deyarli aylanma orbita: perigeliy ≈ 0,983 AU (yanvar boshi), afeliy ≈ 1,017 AU (iyul boshi). Tezlik 29,3–30,3 km/s oralig‘ida.": [
+   "Почти круговая орбита: перигелий ≈ 0,983 а. е. (начало января), афелий ≈ 1,017 а. е. (начало июля). Скорость в пределах 29,3–30,3 км/с.",
+   "An almost circular orbit: perihelion ≈ 0.983 AU (early January), aphelion ≈ 1.017 AU (early July). Speed between 29.3 and 30.3 km/s."
+  ],
+  "Galley kometasi (1P/Halley)": [
+   "Комета Галлея (1P/Halley)",
+   "Halley’s Comet (1P/Halley)"
+  ],
+  "Gigant sayyora: masofa 4,95 dan 5,46 AU gacha o‘zgaradi, bir aylanish ≈ 11,9 yil. Tezlik ≈ 12,4–13,7 km/s.": [
+   "Планета-гигант: расстояние меняется от 4,95 до 5,46 а. е., один оборот ≈ 11,9 года. Скорость ≈ 12,4–13,7 км/с.",
+   "A giant planet: the distance varies from 4.95 to 5.46 AU and one orbit takes ≈ 11.9 years. Speed ≈ 12.4–13.7 km/s."
+  ],
+  "Jism perigeliyga, ya’ni Quyoshga eng yaqin nuqtaga yaqinlashgan sari tortishish kuchi ortadi va uning tezligi keskin oshadi.": [
+   "По мере приближения тела к перигелию, то есть к ближайшей к Солнцу точке, сила притяжения растёт, и его скорость резко увеличивается.",
+   "As the body approaches perihelion, the point closest to the Sun, the gravitational pull grows and its speed rises sharply."
+  ],
+  "Kepler qonunlari, perigeliy va afeliy, ekssentrisitet": [
+   "законы Кеплера, перигелий и афелий, эксцентриситет",
+   "Kepler’s laws, perihelion and aphelion, eccentricity"
+  ],
+  "Kepler tenglamasi $M = E - e\\sin E$ ni Nyuton-Rafson usulida o‘zingiz yechib, $e = 0.967$ da nechta iteratsiya kerakligini aniqlang. Tayyor audio faylning <code>currentTime</code> qiymatidan $M(t)$ ni hisoblaydigan sinxronizatsiya kodini yozing va dastgohdagi yondashuv bilan solishtiring.": [
+   "Самостоятельно решите уравнение Кеплера $M = E - e\\sin E$ методом Ньютона–Рафсона и определите, сколько итераций нужно при $e = 0.967$. Напишите код синхронизации, вычисляющий $M(t)$ по значению <code>currentTime</code> готового аудиофайла, и сравните с подходом стенда.",
+   "Solve Kepler’s equation $M = E - e\\sin E$ yourself with the Newton–Raphson method and find how many iterations are needed at $e = 0.967$. Write synchronisation code that computes $M(t)$ from the <code>currentTime</code> of a finished audio file, and compare it with the bench’s approach."
+  ],
+  "Kepler tenglamasining sonli yechimi, audio-animatsiya sinxronizatsiyasi": [
+   "численное решение уравнения Кеплера, синхронизация аудио и анимации",
+   "the numerical solution of Kepler’s equation, audio–animation synchronisation"
+  ],
+  "Keplerning ikkinchi qonuniga ko‘ra, Quyosh va jismni tutashtiruvchi radius-vektor teng vaqtlarda teng yuzalarni chizadi.": [
+   "Согласно второму закону Кеплера, радиус-вектор, соединяющий Солнце и тело, за равные промежутки времени описывает равные площади.",
+   "According to Kepler’s second law, the radius vector joining the Sun and the body sweeps out equal areas in equal times."
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Laboratoriya ishini qayta bajarish tavsiya etiladi.": [
+   "Рекомендуется выполнить лабораторную работу заново.",
+   "Redoing the lab is recommended."
+  ],
   "Mars": [
    "Марс",
    "Mars"
   ],
+  "NASA JPL Horizons’dan tanlagan jismingiz uchun $a$, $e$ va $T$ ni oling va dastgohdagi qiymatlar bilan solishtiring. Ssenariyni SSML bilan belgilab (4-bo‘lim), TTS vositasida ovozga aylantiring va segment chegaralarini audio vaqtiga moslang.": [
+   "Получите из NASA JPL Horizons для выбранного тела $a$, $e$ и $T$ и сравните со значениями стенда. Разметьте сценарий SSML (раздел 4), озвучьте его в TTS-инструменте и подгоните границы сегментов под время аудио.",
+   "Get $a$, $e$ and $T$ for your chosen body from NASA JPL Horizons and compare them with the bench values. Mark up the script with SSML (Section 4), voice it in a TTS tool and align the segment boundaries with the audio timing."
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "Orbital ma’lumotlar tahlili va ovoz-animatsiya sinxronizatsiyasini kuchaytiring.": [
+   "Усильте анализ орбитальных данных и синхронизацию голоса и анимации.",
+   "Strengthen the orbital data analysis and the voice–animation synchronisation."
+  ],
+  "O‘ta cho‘ziq elliptik orbita: perigeliy ≈ 0,59 AU (Merkuriy va Venera orbitalari orasida), afeliy ≈ 35 AU (Neptundan narida). Tezlik perigeliyda ≈ 54,5 km/s, afeliyda ≈ 0,9 km/s.": [
+   "Сильно вытянутая эллиптическая орбита: перигелий ≈ 0,59 а. е. (между орбитами Меркурия и Венеры), афелий ≈ 35 а. е. (за Нептуном). Скорость в перигелии ≈ 54,5 км/с, в афелии ≈ 0,9 км/с.",
+   "A highly elongated elliptical orbit: perihelion ≈ 0.59 AU (between the orbits of Mercury and Venus), aphelion ≈ 35 AU (beyond Neptune). Speed ≈ 54.5 km/s at perihelion and ≈ 0.9 km/s at aphelion."
+  ],
+  "QONIQARLI (3)": [
+   "УДОВЛЕТВОРИТЕЛЬНО (3)",
+   "SATISFACTORY (3)"
+  ],
+  "QONIQARSIZ (2)": [
+   "НЕУДОВЛЕТВОРИТЕЛЬНО (2)",
+   "UNSATISFACTORY (2)"
+  ],
+  "Sen astronomiya va ilmiy-ommabop kontent bo‘yicha Sokratik ustozsan. Men 10-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nVazifa: NASA JPL Horizons orbital elementlari asosida bitta jism (sayyora yoki kometa) orbitasining animatsiyasi va unga 30 soniyalik o‘zbekcha ovozli tushuntirish tayyorlash.\nIltimos:\n1. Tayyor matnni darhol bermang — avval men yozgan ssenariy qoralamasidagi fizik xatolarni topishimga savollar bilan yordam bering.\n2. Perigeliy va afeliy tezliklarini vis-viva formulasi bilan o‘zim hisoblashim uchun yo‘l ko‘rsating.\n3. Ssenariy segmentlarini animatsiya voqealariga (perigeliydan o‘tish va h.k.) moslash bo‘yicha tavsiya bering.": [
+   "Ты — сократический наставник по астрономии и научно-популярному контенту. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 10 и попал в кластер «{1}».\nОсновные темы: {2}.\nЗадача: на основе орбитальных элементов NASA JPL Horizons подготовить анимацию орбиты одного тела (планеты или кометы) и 30-секундное голосовое объяснение к ней.\nПожалуйста:\n1. Не давайте сразу готовый текст — сначала помогите мне вопросами найти физические ошибки в черновике моего сценария.\n2. Покажите путь, чтобы я сам рассчитал скорости в перигелии и афелии по формуле vis-viva.\n3. Дайте рекомендации по привязке сегментов сценария к событиям анимации (прохождение перигелия и т. д.).",
+   "You are a Socratic mentor in astronomy and popular-science content. I scored {0}/100 on the Lab 10 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nTask: using NASA JPL Horizons orbital elements, prepare an orbit animation for one body (a planet or comet) and a 30-second spoken explanation for it.\nPlease:\n1. Do not give me ready text straight away — first help me find the physics errors in my draft script through questions.\n2. Show me the way to calculate the perihelion and aphelion speeds myself with the vis-viva formula.\n3. Advise me on linking the script segments to animation events (perihelion passage and so on)."
+  ],
+  "Sezilarli ekssentrisitet: Quyoshgacha masofa 1,38 dan 1,67 AU gacha o‘zgaradi. Tezlik perigeliyda ≈ 26,5 km/s, afeliyda ≈ 22,0 km/s.": [
+   "Заметный эксцентриситет: расстояние до Солнца меняется от 1,38 до 1,67 а. е. Скорость в перигелии ≈ 26,5 км/с, в афелии ≈ 22,0 км/с.",
+   "A noticeable eccentricity: the distance from the Sun varies from 1.38 to 1.67 AU. Speed ≈ 26.5 km/s at perihelion and ≈ 22.0 km/s at aphelion."
+  ],
+  "Ssenariy vaqt shkalasi — bosib kerakli joyga o‘ting": [
+   "Временная шкала сценария — нажмите, чтобы перейти в нужное место",
+   "Script timeline — click to jump to any point"
+  ],
+  "YAXSHI (4)": [
+   "ХОРОШО (4)",
+   "GOOD (4)"
+  ],
+  "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.": [
+   "Хороший результат. Пересмотрите критерий с самым низким баллом.",
+   "A good result. Review the criterion with the lowest score."
   ],
   "Yer": [
    "Земля",
@@ -665,64 +915,1156 @@
   "Yupiter": [
    "Юпитер",
    "Jupiter"
+  ],
+  "orbital elementlar, SSML, ssenariy segmentlari va vaqt belgilari": [
+   "орбитальные элементы, SSML, сегменты сценария и временные метки",
+   "orbital elements, SSML, script segments and timestamps"
+  ],
+  "“Animatsiya va ovoz ijrosini boshlash uchun tugmani bosing.”": [
+   "«Нажмите кнопку, чтобы начать воспроизведение анимации и голоса.»",
+   "\"Press the button to start the animation and narration.\""
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
+  ],
+  "🎙️ Ijro etilmoqda…": [
+   "🎙️ Воспроизводится…",
+   "🎙️ Playing…"
+  ],
+  "🎙️ Ovozli tushuntirishni boshlash": [
+   "🎙️ Начать голосовое объяснение",
+   "🎙️ Start narration"
+  ],
+  "🎙️ Ovozli tushuntirishni qayta boshlash": [
+   "🎙️ Перезапустить голосовое объяснение",
+   "🎙️ Restart narration"
   ]
  },
  "js/sim-lab11-lms-otter.js": {
+  " Qayta ko‘rib chiqing: {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-B.": [
+   " Повторите: вопрос(ы) {0}. Правильные ответы: 1-B, 2-C, 3-A, 4-B.",
+   " Review: question(s) {0}. Correct answers: 1-B, 2-C, 3-A, 4-B."
+  ],
+  "(Simulyatsiya: javoblar namunaviy; haqiqiy LMS’da talabaning o‘z natijalari ishlatiladi.)": [
+   "(Симуляция: ответы образцовые; в реальной LMS используются собственные результаты студента.)",
+   "(Simulation: the answers are sample data; a real LMS uses the student’s own results.)"
+  ],
+  "Amaliyotchi daraja": [
+   "Уровень практика",
+   "Practitioner level"
+  ],
+  "Avval 2- va 3-bo‘limlarni o‘qing, 5-bo‘limdagi simulyatorda WER qanday hisoblanishini kuzating va Google Classroom’da bitta mavzu (Topic) va bitta topshiriq (Assignment) yarating.": [
+   "Сначала прочитайте разделы 2 и 3, понаблюдайте в симуляторе раздела 5, как рассчитывается WER, и создайте в Google Classroom одну тему (Topic) и одно задание (Assignment).",
+   "First read Sections 2 and 3, watch how WER is calculated in the Section 5 simulator, and create one topic and one assignment in Google Classroom."
+  ],
+  "A’lo (5)": [
+   "Отлично (5)",
+   "Excellent (5)"
+  ],
+  "Boshlang‘ich daraja": [
+   "Начальный уровень",
+   "Beginner level"
+  ],
+  "Guruh natijalari bo‘yicha savollar qiyinligini ($b$) baholang, har bir talaba uchun $\\theta$ ni hisoblang va keyingi topshiriqni $b \\approx \\theta$ bo‘yicha tanlash rejasini tuzing.": [
+   "Оцените трудность вопросов ($b$) по результатам группы, рассчитайте $\\theta$ для каждого студента и составьте план выбора следующего задания по $b \\approx \\theta$.",
+   "Estimate the question difficulty ($b$) from the group’s results, calculate $\\theta$ for each student and plan how to choose the next task by $b \\approx \\theta$."
+  ],
+  "Ilg‘or daraja": [
+   "Продвинутый уровень",
+   "Advanced level"
+  ],
+  "Keyingi topshiriq uchun eng informativ qiyinlik b ≈ θ (P ≈ 50 %): mavjud savollardan b = {0}. ": [
+   "Наиболее информативная трудность для следующего задания b ≈ θ (P ≈ 50 %): из имеющихся вопросов b = {0}. ",
+   "The most informative difficulty for the next task is b ≈ θ (P ≈ 50 %): from the available questions, b = {0}. "
+  ],
+  "Konspekt LMS topshirig‘iga biriktirildi (simulyatsiya)": [
+   "Конспект прикреплён к заданию LMS (симуляция)",
+   "Notes attached to the LMS assignment (simulation)"
+  ],
+  "Konspektni yuborgandan so‘ng trayektoriya shu yerda chiziladi": [
+   "После отправки конспекта здесь будет построена траектория",
+   "The pathway will be drawn here after you send the notes"
+  ],
+  "LMS tuzilmasi (mavzu, material, topshiriq, rubrika), SCORM/xAPI tushunchasi, WER formulasi": [
+   "структура LMS (тема, материал, задание, рубрика), понятие SCORM/xAPI, формула WER",
+   "LMS structure (topic, material, assignment, rubric), the SCORM/xAPI concept, the WER formula"
+  ],
+  "Natija: {0} / 100 ({1}/4) — {2}. {3}": [
+   "Результат: {0} / 100 ({1}/4) — {2}. {3}",
+   "Result: {0} / 100 ({1}/4) — {2}. {3}"
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "O‘z laboratoriya izohingizni yozib oling, transkripsiyadagi xatolarni tuzatib WER ni hisoblang va natijani Moodle yoki Google Classroom topshirig‘iga rubrika bilan joylang.": [
+   "Запишите своё лабораторное пояснение, исправьте ошибки в транскрипции, рассчитайте WER и разместите результат в задании Moodle или Google Classroom с рубрикой.",
+   "Record your own lab explanation, correct the transcription errors, calculate WER and post the result to a Moodle or Google Classroom assignment with a rubric."
+  ],
+  "Qoniqarli (3)": [
+   "Удовлетворительно (3)",
+   "Satisfactory (3)"
+  ],
+  "Qoniqarsiz (2)": [
+   "Неудовлетворительно (2)",
+   "Unsatisfactory (2)"
+  ],
+  "Rasch baholashi: θ₁ = {0} → θ₆ = {1} ± {2} logit. ": [
+   "Оценка Раша: θ₁ = {0} → θ₆ = {1} ± {2} логит. ",
+   "Rasch estimate: θ₁ = {0} → θ₆ = {1} ± {2} logit. "
+  ],
+  "Sen oliy ta’limda raqamli kurs dizayni va LMS (Google Classroom, Moodle) bo‘yicha metodist-murabbiysan.\nMen 11-laboratoriya diagnostikasidan {0}/100 ball oldim ({1}).\nAsosiy mavzular: {2}.\nVazifa: \"Mexanik tebranishlar\" mavzusidagi laboratoriya ishim uchun LMS’da mavzu, material, topshiriq va baholash rubrikasini tuzish.\nIltimos:\n1. Tayyor kursni darhol bermang — avval mening rejamni savollar orqali takomillashtirishga yordam bering.\n2. Ovozli qaydimning transkripsiyasidagi fizik atamalar xatolarini qanday tekshirishni tushuntiring.\n3. Talabalar shaxsiy ma’lumotlari va AI vositalaridan foydalanishda nimalarga e’tibor berish kerakligini eslatib o‘ting.": [
+   "Ты — методист-наставник по дизайну цифровых курсов и LMS (Google Classroom, Moodle) в высшей школе.\nЯ набрал {0}/100 баллов в диагностике лабораторной работы 11 ({1}).\nОсновные темы: {2}.\nЗадача: составить в LMS тему, материал, задание и рубрику оценивания для моей лабораторной работы по теме «Механические колебания».\nПожалуйста:\n1. Не давайте сразу готовый курс — сначала помогите мне вопросами улучшить мой план.\n2. Объясните, как проверить ошибки в физических терминах в транскрипции моей голосовой заметки.\n3. Напомните, на что обратить внимание при работе с личными данными студентов и ИИ-инструментами.",
+   "You are a methodologist-mentor in university digital course design and LMSs (Google Classroom, Moodle).\nI scored {0}/100 on the Lab 11 diagnostic ({1}).\nMain topics: {2}.\nTask: build a topic, material, assignment and assessment rubric in the LMS for my lab on \"Mechanical oscillations\".\nPlease:\n1. Do not give me a ready course straight away — first help me improve my plan through questions.\n2. Explain how to check for physics-term errors in the transcript of my voice note.\n3. Remind me what to watch out for when working with students’ personal data and AI tools."
+  ],
+  "Simulyatsiya: mikrofon ishlatilmaydi, to‘lqin sintetik": [
+   "Симуляция: микрофон не используется, волна синтетическая",
+   "Simulation: no microphone is used; the waveform is synthetic"
+  ],
+  "Yaxshi (4)": [
+   "Хорошо (4)",
+   "Good (4)"
+  ],
+  "[Talaba 1, 00:00] {0}\n\n— ASR sifat tahlili (asl matn bilan solishtirish) —\nAsl matn: {1}\nS (almashtirilgan) = {2}, D (tushib qolgan) = {3}, I (qo‘shilgan) = {4}, N = {5}\nWER = (S + D + I) / N = {6} %\nEslatma: “amplitudaga deyarli bog‘liq emas” → “bog‘liq emas” — bitta tushib qolgan so‘z fizik ma’noni o‘zgartirdi (davr faqat kichik amplitudalarda amplitudaga bog‘liq emas). Transkripsiyani doim tahrirlang.": [
+   "[Студент 1, 00:00] {0}\n\n— Анализ качества ASR (сравнение с исходным текстом) —\nИсходный текст: {1}\nS (заменено) = {2}, D (пропущено) = {3}, I (вставлено) = {4}, N = {5}\nWER = (S + D + I) / N = {6} %\nПримечание: «почти не зависит от амплитуды» → «не зависит от амплитуды» — одно пропущенное слово изменило физический смысл (период не зависит от амплитуды только при малых амплитудах). Всегда редактируйте транскрипцию.",
+   "[Student 1, 00:00] {0}\n\n— ASR quality analysis (compared with the original text) —\nOriginal text: {1}\nS (substituted) = {2}, D (deleted) = {3}, I (inserted) = {4}, N = {5}\nWER = (S + D + I) / N = {6} %\nNote: \"almost independent of the amplitude\" → \"independent of the amplitude\" — a single missing word changed the physical meaning (the period is independent of amplitude only for small amplitudes). Always edit the transcript."
+  ],
+  "adaptiv baholash (Rasch/IRT), xAPI orqali o‘quv faoliyatini kuzatish, ma’lumotlar tahlili": [
+   "адаптивное оценивание (Rasch/IRT), отслеживание учебной деятельности через xAPI, анализ данных",
+   "adaptive assessment (Rasch/IRT), tracking learning activity with xAPI, data analysis"
+  ],
+  "matematik mayatnikning tebranish davri ip uzunligi kvadrat ildiziga to‘g‘ri proporsional va amplitudaga bog‘liq emas biz o‘n marta tebranish vaqtini o‘lchab davrini hisobladik": [
+   "период колебаний математического маятника прямо пропорционально квадратному корню из длины нити и не зависит от амплитуды мы измерили время десяти колебаний и вычислили периоды",
+   "the period of a simple pendulum is directly proportional to the square root of the strings length and independent of the amplitude we timed ten oscillations and calculated the periods"
+  ],
+  "matematik mayatnikning tebranish davri ip uzunligining kvadrat ildiziga to‘g‘ri proporsional va amplitudaga deyarli bog‘liq emas biz o‘n marta tebranish vaqtini o‘lchab davrni hisobladik": [
+   "период колебаний математического маятника прямо пропорционален квадратному корню из длины нити и почти не зависит от амплитуды мы измерили время десяти колебаний и вычислили период",
+   "the period of a simple pendulum is directly proportional to the square root of the string length and almost independent of the amplitude we timed ten oscillations and calculated the period"
+  ],
+  "qobiliyat θ (logit)": [
+   "способность θ (логит)",
+   "ability θ (logit)"
+  ],
+  "transkripsiya xatolarini tahrirlash, konspektni LMS topshirig‘iga biriktirish, rubrika tuzish": [
+   "редактирование ошибок транскрипции, прикрепление конспекта к заданию LMS, составление рубрики",
+   "editing transcription errors, attaching the notes to an LMS assignment, building a rubric"
+  ],
+  "{0}-mashg‘ulot": [
+   "Занятие {0}",
+   "Session {0}"
+  ],
+  "⚠️ Iltimos, barcha 4 ta savolga javob bering.": [
+   "⚠️ Пожалуйста, ответьте на все 4 вопроса.",
+   "⚠️ Please answer all 4 questions."
   ]
  },
  "js/sim-lab2-pipeline.js": {
+  "$T = 1/\\omega_d$ deb oldingiz. Siklik chastota (rad/s) va davr (s) orasidagi bog‘liqlikda $2\\pi$ qayerdan keladi?": [
+   "Вы взяли $T = 1/\\omega_d$. Откуда берётся $2\\pi$ в связи между циклической частотой (рад/с) и периодом (с)?",
+   "You used $T = 1/\\omega_d$. Where does $2\\pi$ come from in the relation between angular frequency (rad/s) and period (s)?"
+  ],
+  "$\\beta$ ning o‘lchov birligi s⁻¹. $b$ (kg/s) va $m$ (kg) dan qanday kombinatsiya s⁻¹ beradi? Ko‘paytuvchi 2 qayerdan kelishini o‘ylab ko‘ring.": [
+   "Единица измерения $\\beta$ — с⁻¹. Какая комбинация $b$ (кг/с) и $m$ (кг) даёт с⁻¹? Подумайте, откуда берётся множитель 2.",
+   "The unit of $\\beta$ is s⁻¹. Which combination of $b$ (kg/s) and $m$ (kg) gives s⁻¹? Think about where the factor of 2 comes from."
+  ],
+  "$\\omega_d$ ni $\\omega_0$ va $\\beta$ orqali ifodalang. $b$ ortganda tebranish tezlashadimi yoki sekinlashadimi — dastgohda tekshiring.": [
+   "Выразите $\\omega_d$ через $\\omega_0$ и $\\beta$. Ускоряются или замедляются колебания при увеличении $b$ — проверьте на стенде.",
+   "Express $\\omega_d$ in terms of $\\omega_0$ and $\\beta$. Does the oscillation speed up or slow down as $b$ increases? Check on the bench."
+  ],
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar) mavzusi. To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.": [
+   "<br><strong>Повторите:</strong> тему вопроса(ов) {0}. Правильные ответы: 1-C, 2-B, 3-A, 4-C.",
+   "<br><strong>Review:</strong> the topic of question(s) {0}. Correct answers: 1-C, 2-B, 3-A, 4-C."
+  ],
+  "<strong>Tavsiya etilgan obyekt:</strong> {0}.<br><strong>Individual reja:</strong> {1}": [
+   "<strong>Рекомендуемый объект:</strong> {0}.<br><strong>Индивидуальный план:</strong> {1}",
+   "<strong>Recommended object:</strong> {0}.<br><strong>Individual plan:</strong> {1}"
+  ],
+  "<strong>Yo‘naltiruvchi savollar:</strong><ul style=\"margin: 6px 0 0 18px;\">": [
+   "<strong>Наводящие вопросы:</strong><ul style=\"margin: 6px 0 0 18px;\">",
+   "<strong>Guiding questions:</strong><ul style=\"margin: 6px 0 0 18px;\">"
+  ],
+  "<strong>{0}</strong>\n         <span style=\"font-size:0.8rem; color: var(--text-muted);\"> (m = {1} kg, k = {2} N/m, b = {3} kg/s; ruxsat etilgan xatolik {4} %)</span>\n         <table style=\"width:100%; margin: 10px 0; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.85rem;\">\n           <tr style=\"color: var(--text-muted);\"><td>Kattalik</td><td>Sizniki</td><td>Nazariy</td><td>Xatolik ε</td><td></td></tr>\n           {5}\n         </table>\n         {6}\n         <div style=\"margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);\">Eslatma: tekshiruv brauzerda analitik formulalar asosida bajariladi. Chuqurroq muhokama uchun 3-bo‘limdagi promptni Claude’ga yuboring.</div>": [
+   "<strong>{0}</strong>\n         <span style=\"font-size:0.8rem; color: var(--text-muted);\"> (m = {1} кг, k = {2} Н/м, b = {3} кг/с; допустимая погрешность {4} %)</span>\n         <table style=\"width:100%; margin: 10px 0; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.85rem;\">\n           <tr style=\"color: var(--text-muted);\"><td>Величина</td><td>Ваше</td><td>Теоретическое</td><td>Погрешность ε</td><td></td></tr>\n           {5}\n         </table>\n         {6}\n         <div style=\"margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);\">Примечание: проверка выполняется в браузере по аналитическим формулам. Для более глубокого обсуждения отправьте промпт из раздела 3 в Claude.</div>",
+   "<strong>{0}</strong>\n         <span style=\"font-size:0.8rem; color: var(--text-muted);\"> (m = {1} kg, k = {2} N/m, b = {3} kg/s; allowed error {4} %)</span>\n         <table style=\"width:100%; margin: 10px 0; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.85rem;\">\n           <tr style=\"color: var(--text-muted);\"><td>Quantity</td><td>Yours</td><td>Theoretical</td><td>Error ε</td><td></td></tr>\n           {5}\n         </table>\n         {6}\n         <div style=\"margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);\">Note: the check runs in the browser using analytic formulas. For a deeper discussion, send the prompt from Section 3 to Claude.</div>"
+  ],
+  "A (A’lo — 5)": [
+   "A (отлично — 5)",
+   "A (excellent — 5)"
+  ],
+  "B (Yaxshi — 4)": [
+   "B (хорошо — 4)",
+   "B (good — 4)"
+  ],
+  "C (Qoniqarli — 3)": [
+   "C (удовлетворительно — 3)",
+   "C (satisfactory — 3)"
+  ],
+  "D (Qoniqarsiz — 2)": [
+   "D (неудовлетворительно — 2)",
+   "D (unsatisfactory — 2)"
+  ],
+  "Grafikda ketma-ket ikki maksimum orasidagi vaqtni o‘lchang va uni $2\\pi/\\omega_d$ bilan solishtiring.": [
+   "Измерьте на графике время между двумя соседними максимумами и сравните его с $2\\pi/\\omega_d$.",
+   "Measure the time between two successive maxima on the plot and compare it with $2\\pi/\\omega_d$."
+  ],
+  "Iltimos, barcha 4 ta savolga javob bering!": [
+   "Пожалуйста, ответьте на все 4 вопроса!",
+   "Please answer all 4 questions!"
+  ],
+  "Joriy parametrlarda $\\beta = {0} \\ge \\omega_0 = {1}$ — tizim tebranmaydi (kritik yoki aperiodik so‘nish), shuning uchun $\\omega_d$ va $T$ mavjud emas. ": [
+   "При текущих параметрах $\\beta = {0} \\ge \\omega_0 = {1}$ — система не колеблется (критическое или апериодическое затухание), поэтому $\\omega_d$ и $T$ не существуют. ",
+   "With the current parameters $\\beta = {0} \\ge \\omega_0 = {1}$ — the system does not oscillate (critical or overdamped), so $\\omega_d$ and $T$ do not exist. "
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Lorens kuchi, siklotron chastotasi omega_c = qB/m, 2D/3D trayektoriya, RK4 va Eyler–Kromer aniqligini solishtirish": [
+   "сила Лоренца, циклотронная частота omega_c = qB/m, 2D/3D-траектория, сравнение точности RK4 и Эйлера–Кромера",
+   "the Lorentz force, cyclotron frequency omega_c = qB/m, 2D/3D trajectories, comparing RK4 and Euler–Cromer accuracy"
+  ],
+  "Nega $\\omega_0^2 - \\beta^2 < 0$ bo‘lganda ildiz haqiqiy son bo‘lmasligini tushuntirib bering va $b$ ni kamaytirib qayta urinib ko‘ring.": [
+   "Объясните, почему при $\\omega_0^2 - \\beta^2 < 0$ корень не является действительным числом, и попробуйте снова, уменьшив $b$.",
+   "Explain why the root is not a real number when $\\omega_0^2 - \\beta^2 < 0$, then reduce $b$ and try again."
+  ],
+  "Nyutonning 2-qonuni va garmonik tebranish davri $T = 2\\pi\\sqrt{l/g}$ dan boshlang. Avval ishqalanishsiz holatda energiya saqlanishini kuzating, so‘ngra oddiy va Eyler–Kromer algoritmlarini solishtiring.": [
+   "Начните со 2-го закона Ньютона и периода гармонических колебаний $T = 2\\pi\\sqrt{l/g}$. Сначала понаблюдайте сохранение энергии без трения, затем сравните простой алгоритм и алгоритм Эйлера–Кромера.",
+   "Start with Newton’s 2nd law and the harmonic oscillation period $T = 2\\pi\\sqrt{l/g}$. First watch energy conservation without friction, then compare the simple and Euler–Cromer algorithms."
+  ],
+  "PhET \"Charges and Fields\" yoki Vascak.cz Lorens kuchi / mass-spektrometr animatsiyasi": [
+   "PhET «Charges and Fields» или анимация силы Лоренца / масс-спектрометра Vascak.cz",
+   "PhET \"Charges and Fields\" or the Vascak.cz Lorentz force / mass spectrometer animation"
+  ],
+  "PhET \"Masses and Springs\" (so‘nuvchi prujinali tebranish)": [
+   "PhET «Masses and Springs» (затухающие пружинные колебания)",
+   "PhET \"Masses and Springs\" (damped spring oscillation)"
+  ],
+  "PhET \"Pendulum Lab\" (matematik mayatnik) yoki erkin tushish": [
+   "PhET «Pendulum Lab» (математический маятник) или свободное падение",
+   "PhET \"Pendulum Lab\" (simple pendulum) or free fall"
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
   ],
+  "Rejim: aperiodik (β > ω₀)": [
+   "Режим: апериодический (β > ω₀)",
+   "Mode: overdamped (β > ω₀)"
+  ],
+  "Rejim: kritik so‘nish": [
+   "Режим: критическое затухание",
+   "Mode: critical damping"
+  ],
+  "Rejim: so‘nuvchi tebranish (β < ω₀)": [
+   "Режим: затухающие колебания (β < ω₀)",
+   "Mode: damped oscillation (β < ω₀)"
+  ],
+  "Siz $\\omega_0 = \\sqrt{k/m}$ ni kiritdingiz. So‘nish tebranish chastotasiga qanday ta’sir qiladi? $b \\to 0$ limitida sizning formulangiz nimaga aylanishi kerak?": [
+   "Вы ввели $\\omega_0 = \\sqrt{k/m}$. Как затухание влияет на частоту колебаний? Во что должна превратиться ваша формула в пределе $b \\to 0$?",
+   "You entered $\\omega_0 = \\sqrt{k/m}$. How does damping affect the oscillation frequency? What should your formula become in the limit $b \\to 0$?"
+  ],
+  "Siz fizika bo‘yicha Sokratik ilmiy konsultantsiz. Men 2-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nMening o‘rganish obyektim: {2}.\nAsosiy mavzular: {3}.\nIltimos:\n1. Tayyor javob yoki formulani to‘g‘ridan-to‘g‘ri bermang.\n2. Simulyatsiyani teskari muhandislik qilishim uchun bosqichma-bosqich 3 ta yo‘naltiruvchi savol bering.\n3. Men tiklagan formulani o‘lchov birliklari va limit holatlar orqali o‘zim tekshirishimga yordam bering.": [
+   "Вы — сократический научный консультант по физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 2 и попал в кластер «{1}».\nМой объект изучения: {2}.\nОсновные темы: {3}.\nПожалуйста:\n1. Не давайте готовый ответ или формулу напрямую.\n2. Задайте 3 пошаговых наводящих вопроса, чтобы я мог выполнить обратную разработку симуляции.\n3. Помогите мне самостоятельно проверить восстановленную формулу через единицы измерения и предельные случаи.",
+   "You are a Socratic scientific consultant in physics. I scored {0}/100 on the Lab 2 diagnostic test and was placed in cluster \"{1}\".\nMy object of study: {2}.\nMain topics: {3}.\nPlease:\n1. Do not give me a ready answer or formula directly.\n2. Ask 3 step-by-step guiding questions so I can reverse-engineer the simulation.\n3. Help me check the formula I reconstruct myself using units and limiting cases."
+  ],
+  "Sokratik savol: agar massani 4 marta oshirsangiz, $\\beta$ va $\\omega_0$ qanday o‘zgaradi? Avval bashorat qiling, so‘ng slayder bilan tekshiring.": [
+   "Сократический вопрос: если увеличить массу в 4 раза, как изменятся $\\beta$ и $\\omega_0$? Сначала спрогнозируйте, затем проверьте ползунком.",
+   "Socratic question: if you increase the mass 4 times, how will $\\beta$ and $\\omega_0$ change? Predict first, then check with the slider."
+  ],
+  "So‘nuvchi tebranish tenglamasi $m\\ddot{x} + b\\dot{x} + kx = 0$ ni tiklang, $\\beta = b/(2m)$ va $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ ni o‘lchov natijalari bilan tasdiqlang. 5-bo‘limdagi dastgohda o‘z qiymatlaringizni validatorda tekshiring.": [
+   "Восстановите уравнение затухающих колебаний $m\\ddot{x} + b\\dot{x} + kx = 0$, подтвердите $\\beta = b/(2m)$ и $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ результатами измерений. Проверьте свои значения в валидаторе на стенде раздела 5.",
+   "Reconstruct the damped oscillation equation $m\\ddot{x} + b\\dot{x} + kx = 0$ and confirm $\\beta = b/(2m)$ and $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ with your measurements. Check your values in the validator on the Section 5 bench."
+  ],
+  "Zaryadli zarrachaning $\\vec{F} = q\\vec{v} \\times \\vec{B}$ ta’siridagi harakatini tiklang, siklotron radiusi $r = mv/(qB)$ ni tekshiring va RK4 integratorini Eyler–Kromer bilan aniqlik bo‘yicha solishtiring.": [
+   "Восстановите движение заряженной частицы под действием $\\vec{F} = q\\vec{v} \\times \\vec{B}$, проверьте радиус циклотрона $r = mv/(qB)$ и сравните по точности интегратор RK4 с методом Эйлера–Кромера.",
+   "Reconstruct the motion of a charged particle under $\\vec{F} = q\\vec{v} \\times \\vec{B}$, check the cyclotron radius $r = mv/(qB)$ and compare the RK4 integrator with Euler–Cromer for accuracy."
+  ],
+  "matematik mayatnik, kichik burchak yaqinlashuvi, T = 2*pi*sqrt(l/g), Eyler va Eyler–Kromer usullarining farqi": [
+   "математический маятник, приближение малых углов, T = 2*pi*sqrt(l/g), разница методов Эйлера и Эйлера–Кромера",
+   "simple pendulum, small-angle approximation, T = 2*pi*sqrt(l/g), the difference between the Euler and Euler–Cromer methods"
+  ],
+  "so‘nuvchi tebranish, beta = b/(2m), omega_d, amplitudaning eksponensial so‘nishi, Eyler–Kromer algoritmi": [
+   "затухающие колебания, beta = b/(2m), omega_d, экспоненциальное затухание амплитуды, алгоритм Эйлера–Кромера",
+   "damped oscillation, beta = b/(2m), omega_d, exponential amplitude decay, the Euler–Cromer algorithm"
+  ],
+  "{0} / 100 ball ({1}/4 to‘g‘ri)": [
+   "{0} / 100 баллов ({1}/4 верно)",
+   "{0} / 100 points ({1}/4 correct)"
+  ],
+  "β uchun $b/m$ ni topdingiz. Tenglamani $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$ ko‘rinishiga keltiring: $\\dot{x}$ oldidagi koeffitsiyent $b/m$ ga teng bo‘lsa, $\\beta$ nimaga teng bo‘ladi?": [
+   "Для β вы нашли $b/m$. Приведите уравнение к виду $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$: если коэффициент перед $\\dot{x}$ равен $b/m$, чему равно $\\beta$?",
+   "For β you found $b/m$. Rewrite the equation in the form $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$: if the coefficient of $\\dot{x}$ equals $b/m$, what does $\\beta$ equal?"
+  ],
   "⏸️ To‘xtatish": [
    "⏸️ Остановить",
    "⏸️ Stop"
+  ],
+  "▶️ Davom etish": [
+   "▶️ Продолжить",
+   "▶️ Resume"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "⚠️ Iltimos, uchala qiymatni ham kiriting: $\\omega_d$, $\\beta$ va $T$.": [
+   "⚠️ Пожалуйста, введите все три значения: $\\omega_d$, $\\beta$ и $T$.",
+   "⚠️ Please enter all three values: $\\omega_d$, $\\beta$ and $T$."
+  ],
+  "✅ Barcha formulalar tasdiqlandi!": [
+   "✅ Все формулы подтверждены!",
+   "✅ All formulas confirmed!"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
+  ],
+  "🔍 Ba’zi qiymatlarni qayta ko‘rib chiqing": [
+   "🔍 Пересмотрите некоторые значения",
+   "🔍 Review some of the values"
   ]
  },
  "js/sim-lab3-pipeline.js": {
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-B, 2-C, 3-A, 4-C.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-B, 2-C, 3-A, 4-C."
+  ],
+  "<strong>Individual reja:</strong> {0}": [
+   "<strong>Индивидуальный план:</strong> {0}",
+   "<strong>Individual plan:</strong> {0}"
+  ],
+  "A (A’lo — 5)": [
+   "A (отлично — 5)",
+   "A (excellent — 5)"
+  ],
+  "AI vositalarning cheklovlari, agentik IDE (Antigravity) bilan kod auditi, akademik halollik va AI-detektorlarning ishonchliligi": [
+   "ограничения ИИ-инструментов, аудит кода в агентной IDE (Antigravity), академическая честность и надёжность ИИ-детекторов",
+   "the limits of AI tools, code auditing with an agentic IDE (Antigravity), academic integrity and the reliability of AI detectors"
+  ],
+  "Agentik audit": [
+   "Агентный аудит",
+   "Agentic audit"
+  ],
+  "Audio": [
+   "Аудио",
+   "Audio"
+  ],
+  "Avval ro‘yxatdan o‘tishni talab qilmaydigan vositalardan boshlang: PhET/Vascak.cz (4-topshiriq) va Claude (1-topshiriq). Har bir vositaning vazifasini bir jumlada yozib boring, so‘ng qolgan 5 ta vositaga o‘ting. Xavfsizlik: har bir xizmatga alohida kuchli parol qo‘ying va shaxsiy ma’lumotlarni kiritmang.": [
+   "Начните с инструментов, не требующих регистрации: PhET/Vascak.cz (задание 4) и Claude (задание 1). Записывайте задачу каждого инструмента одним предложением, затем переходите к остальным 5 инструментам. Безопасность: задайте для каждого сервиса отдельный надёжный пароль и не вводите личные данные.",
+   "Start with the tools that need no sign-up: PhET/Vascak.cz (Task 4) and Claude (Task 1). Write down each tool’s job in one sentence, then move on to the other 5 tools. Security: use a separate strong password for each service and do not enter personal data."
+  ],
+  "B (Yaxshi — 4)": [
+   "B (хорошо — 4)",
+   "B (good — 4)"
+  ],
+  "Barcha 7 ta mini-topshiriqni ketma-ket bajaring va har bir vosita natijasini keyingisiga kirish sifatida ulang (masalan, Claude kodi → Antigravity auditi → Otter hisobot). 5-bo‘limdagi trekerda jarayonni belgilab boring.": [
+   "Выполните все 7 мини-заданий по порядку и подключайте результат каждого инструмента как вход для следующего (например, код Claude → аудит Antigravity → отчёт Otter). Отмечайте процесс в трекере раздела 5.",
+   "Complete all 7 mini-tasks in order and feed each tool’s result into the next (for example, Claude code → Antigravity audit → Otter report). Track your progress in the Section 5 tracker."
+  ],
+  "C (Qoniqarli — 3)": [
+   "C (удовлетворительно — 3)",
+   "C (satisfactory — 3)"
+  ],
+  "D (Qoniqarsiz — 2)": [
+   "D (неудовлетворительно — 2)",
+   "D (unsatisfactory — 2)"
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Model va kod": [
+   "Модель и код",
+   "Model & code"
+  ],
+  "Pipeline’ni tanqidiy baholang: har bir vositaning cheklovlarini (xatolar, bepul tarif limitlari, maxfiylik, AI-detektorlar ishonchsizligi) jadvalga kiriting va vositalarni almashtirish variantlarini taklif qiling. Infografikada ma’lumot oqimi va nazorat nuqtalarini aniq ko‘rsating.": [
+   "Критически оцените конвейер: внесите в таблицу ограничения каждого инструмента (ошибки, лимиты бесплатных тарифов, конфиденциальность, ненадёжность ИИ-детекторов) и предложите варианты замены инструментов. На инфографике чётко покажите поток данных и контрольные точки.",
+   "Evaluate the pipeline critically: list each tool’s limits in a table (errors, free-plan limits, privacy, AI-detector unreliability) and suggest alternative tools. Show the data flow and checkpoints clearly on the infographic."
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
+  ],
+  "Rubrika": [
+   "Рубрика",
+   "Rubric"
+  ],
+  "Siz fizika o‘qitishda AI vositalaridan foydalanish bo‘yicha tyutorsiz. Men 3-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nLaboratoriyada 7 ta vosita bor: PhET/Vascak.cz, Claude, Google Antigravity, MagicSchool AI, ElevenLabs/Muxlisa, Otter.ai, Undetectable AI (faqat AI-detektor).\nIltimos:\n1. Mening darajamga mos ravishda vositalarni o‘rganish tartibini taklif qiling.\n2. Har bir vosita uchun fizika darsiga oid bitta qisqa amaliy mashq bering.\n3. Tayyor javob bermang — natijani o‘zim tekshirishim uchun yo‘naltiruvchi savollar bering.": [
+   "Вы — тьютор по использованию ИИ-инструментов в преподавании физики. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 3 и попал в кластер «{1}».\nОсновные темы: {2}.\nВ лаборатории 7 инструментов: PhET/Vascak.cz, Claude, Google Antigravity, MagicSchool AI, ElevenLabs/Muxlisa, Otter.ai, Undetectable AI (только ИИ-детектор).\nПожалуйста:\n1. Предложите порядок изучения инструментов, подходящий моему уровню.\n2. Для каждого инструмента дайте одно короткое практическое упражнение по уроку физики.\n3. Не давайте готовых ответов — задайте наводящие вопросы, чтобы я сам проверил результат.",
+   "You are a tutor on using AI tools in physics teaching. I scored {0}/100 on the Lab 3 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nThe lab has 7 tools: PhET/Vascak.cz, Claude, Google Antigravity, MagicSchool AI, ElevenLabs/Muxlisa, Otter.ai, Undetectable AI (AI detector only).\nPlease:\n1. Suggest an order for learning the tools that suits my level.\n2. Give one short practical physics-lesson exercise for each tool.\n3. Do not give ready answers — ask guiding questions so I can check the result myself."
+  ],
+  "Tajriba": [
+   "Опыт",
+   "Experiment"
+  ],
+  "Transkripsiya": [
+   "Транскрипция",
+   "Transcript"
+  ],
+  "har bir AI vositaning vazifasi, ro‘yxatdan o‘tish va xavfsiz foydalanish, oddiy prompt yozish": [
+   "задача каждого ИИ-инструмента, регистрация и безопасное использование, написание простого промпта",
+   "the job of each AI tool, signing up and safe use, writing a simple prompt"
+  ],
+  "vositalar orasidagi ma’lumot oqimi, Eyler–Kromer kodi auditi, ASR va TTS ning didaktik roli": [
+   "поток данных между инструментами, аудит кода Эйлера–Кромера, дидактическая роль ASR и TTS",
+   "the data flow between tools, auditing the Euler–Cromer code, the didactic role of ASR and TTS"
+  ],
+  "{0} / 100 ball ({1}/4 to‘g‘ri)": [
+   "{0} / 100 баллов ({1}/4 верно)",
+   "{0} / 100 points ({1}/4 correct)"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
   ]
  },
  "js/sim-lab4-pendulum-error.js": {
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-B, 2-C, 3-A, 4-C.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-B, 2-C, 3-A, 4-C."
+  ],
+  "<span style=\"color:#E11D48;\">∞ (portlash)</span>": [
+   "<span style=\"color:#E11D48;\">∞ (взрыв)</span>",
+   "<span style=\"color:#E11D48;\">∞ (blow-up)</span>"
+  ],
+  "<strong>Individual reja:</strong> {0}": [
+   "<strong>Индивидуальный план:</strong> {0}",
+   "<strong>Individual plan:</strong> {0}"
+  ],
+  "A (A’lo — 5)": [
+   "A (отлично — 5)",
+   "A (excellent — 5)"
+  ],
+  "Avval mayatnik tenglamasini ikkita 1-tartibli tenglamaga ajratishni o‘rganing (2-bo‘lim). So‘ng dastgohda faqat Eyler va Eyler–Kromer usullarini $\\Delta t = 0{,}05$ va $0{,}01$ s da solishtiring va xatolik qadamga qanday bog‘liqligini jadvalga yozing.": [
+   "Сначала научитесь разделять уравнение маятника на два уравнения 1-го порядка (раздел 2). Затем на стенде сравните только методы Эйлера и Эйлера–Кромера при $\\Delta t = 0{,}05$ и $0{,}01$ с и запишите в таблицу, как ошибка зависит от шага.",
+   "First learn to split the pendulum equation into two first-order equations (Section 2). Then, on the bench, compare only the Euler and Euler–Cromer methods at $\\Delta t = 0{,}05$ and $0{,}01$ s and record in a table how the error depends on the step."
+  ],
+  "B (Yaxshi — 4)": [
+   "B (хорошо — 4)",
+   "B (good — 4)"
+  ],
+  "C (Qoniqarli — 3)": [
+   "C (удовлетворительно — 3)",
+   "C (satisfactory — 3)"
+  ],
+  "D (Qoniqarsiz — 2)": [
+   "D (неудовлетворительно — 2)",
+   "D (unsatisfactory — 2)"
+  ],
+  "Eyler usuli, lokal va global xatolik farqi, integratsiya qadamining ta’siri": [
+   "метод Эйлера, разница локальной и глобальной ошибки, влияние шага интегрирования",
+   "the Euler method, the difference between local and global error, the effect of the integration step"
+  ],
+  "Fazaviy portret": [
+   "Фазовый портрет",
+   "Phase portrait"
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "RK4 konvergentsiyasi, yaxlitlash xatoligi, chiziqli va nochiziqli model farqi, elliptik integral orqali davr": [
+   "сходимость RK4, ошибка округления, разница линейной и нелинейной модели, период через эллиптический интеграл",
+   "RK4 convergence, rounding error, the difference between linear and nonlinear models, the period via an elliptic integral"
+  ],
+  "RK4 uchun $p \\approx 4$ ni isbotlang va nima uchun juda kichik $\\Delta t$ da xatolik mashina aniqligi darajasida to‘xtashini tushuntiring. Katta burchak ($\\theta_0 = 0.8$ rad) uchun chiziqli analitik yechim nega etalon bo‘la olmasligini dastgoh orqali ko‘rsating.": [
+   "Докажите $p \\approx 4$ для RK4 и объясните, почему при очень малом $\\Delta t$ ошибка останавливается на уровне машинной точности. С помощью стенда покажите, почему линейное аналитическое решение не может быть эталоном для большого угла ($\\theta_0 = 0.8$ рад).",
+   "Prove $p \\approx 4$ for RK4 and explain why, at very small $\\Delta t$, the error stops at machine-precision level. Use the bench to show why the linear analytic solution cannot be the reference for a large angle ($\\theta_0 = 0.8$ rad)."
+  ],
+  "Siz hisoblash fizikasi bo‘yicha Sokratik konsultantsiz. Men 4-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nModel: matematik mayatnik, L = 1.0 m, g = 9.8 m/s^2, theta0 = 0.2 rad.\nIltimos:\n1. Tayyor javob bermang — xatolik tartibini o‘zim aniqlashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.\n2. Men yozgan kodni tekshirishda WolframAlpha’da qaysi natija bilan solishtirishim kerakligini ayting.\n3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.": [
+   "Вы — сократический консультант по вычислительной физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 4 и попал в кластер «{1}».\nОсновные темы: {2}.\nМодель: математический маятник, L = 1.0 м, g = 9.8 м/с^2, theta0 = 0.2 рад.\nПожалуйста:\n1. Не давайте готовых ответов — задайте пошаговые наводящие вопросы, чтобы я сам определил порядок ошибки.\n2. Скажите, с каким результатом в WolframAlpha мне сравнить написанный мной код.\n3. Предложите один дополнительный опыт, подходящий моему уровню.",
+   "You are a Socratic consultant in computational physics. I scored {0}/100 on the Lab 4 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nModel: simple pendulum, L = 1.0 m, g = 9.8 m/s^2, theta0 = 0.2 rad.\nPlease:\n1. Do not give ready answers — ask step-by-step guiding questions so I can find the error order myself.\n2. Tell me which WolframAlpha result I should compare my code against.\n3. Suggest one extra experiment suited to my level."
+  ],
+  "WolframAlpha’da analitik yechim va Taylor qatorini oling, 3-bo‘limdagi Python skriptini ishga tushirib, log-log grafikdan Eyler va Eyler–Kromer uchun $p \\approx 1$ ekanini tasdiqlang. Dastgohda energiya dreyfini kuzating.": [
+   "Получите в WolframAlpha аналитическое решение и ряд Тейлора, запустите Python-скрипт из раздела 3 и по log-log графику подтвердите, что для Эйлера и Эйлера–Кромера $p \\approx 1$. Понаблюдайте дрейф энергии на стенде.",
+   "Get the analytic solution and Taylor series in WolframAlpha, run the Python script from Section 3 and confirm from the log-log plot that $p \\approx 1$ for Euler and Euler–Cromer. Watch the energy drift on the bench."
+  ],
+  "xatolik tartibi p, log-log konvergentsiya grafigi, energiya dreyfi va simplektik usullar": [
+   "порядок ошибки p, log-log график сходимости, дрейф энергии и симплектические методы",
+   "error order p, the log-log convergence plot, energy drift and symplectic methods"
+  ],
+  "{0} / 100 ball ({1}/4 to‘g‘ri)": [
+   "{0} / 100 баллов ({1}/4 верно)",
+   "{0} / 100 points ({1}/4 correct)"
+  ],
+  "θ etalon": [
+   "θ эталон",
+   "θ reference"
+  ],
+  "θ sonli": [
+   "θ численное",
+   "θ numerical"
+  ],
+  "● etalon": [
+   "● эталон",
+   "● reference"
+  ],
+  "● sonli": [
+   "● численное",
+   "● numerical"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
   ]
  },
  "js/sim-lab5-deterministic-stochastic.js": {
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-A, 2-C, 3-B, 4-C.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-A, 2-C, 3-B, 4-C.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-A, 2-C, 3-B, 4-C."
+  ],
+  "<strong>Individual reja:</strong> {0}": [
+   "<strong>Индивидуальный план:</strong> {0}",
+   "<strong>Individual plan:</strong> {0}"
+  ],
+  "A (A’lo — 5)": [
+   "A (отлично — 5)",
+   "A (excellent — 5)"
+  ],
+  "Avval 5-bo‘limdagi dastgohda \"Qayta o‘rnatish\" tugmasini bir necha marta bosib, orbita har safar aynan takrorlanishini, gaz esa har safar boshqacha boshlanishini kuzating. So‘ng 2-bo‘limdagi jadvalning 1–4-mezonlarini o‘z so‘zlaringiz bilan to‘ldiring.": [
+   "Сначала на стенде раздела 5 несколько раз нажмите кнопку «Сброс» и понаблюдайте, что орбита каждый раз точно повторяется, а газ каждый раз начинается по-разному. Затем своими словами заполните критерии 1–4 таблицы раздела 2.",
+   "First press \"Reset\" a few times on the Section 5 bench and observe that the orbit repeats exactly each time while the gas starts differently each time. Then fill in criteria 1–4 of the Section 2 table in your own words."
+  ],
+  "B (Yaxshi — 4)": [
+   "B (хорошо — 4)",
+   "B (good — 4)"
+  ],
+  "C (Qoniqarli — 3)": [
+   "C (удовлетворительно — 3)",
+   "C (satisfactory — 3)"
+  ],
+  "D (Qoniqarsiz — 2)": [
+   "D (неудовлетворительно — 2)",
+   "D (unsatisfactory — 2)"
+  ],
+  "Gaz modeli ichki jihatdan deterministik (Nyuton + elastik to‘qnashuvlar) bo‘lsa-da, nima uchun uni statistik tavsiflash zarurligini tushuntiring. Dastgohda Broun zarrasining $\\langle r^2 \\rangle$ ning vaqtga chiziqli o‘sishini baholang va entropiya o‘sishini qaytmaslik bilan bog‘lang.": [
+   "Объясните, почему газовую модель необходимо описывать статистически, хотя внутренне она детерминирована (Ньютон + упругие столкновения). Оцените на стенде линейный рост $\\langle r^2 \\rangle$ броуновской частицы со временем и свяжите рост энтропии с необратимостью.",
+   "Explain why the gas model must be described statistically even though it is internally deterministic (Newton + elastic collisions). On the bench, estimate the linear growth of the Brownian particle’s $\\langle r^2 \\rangle$ with time and link the growth of entropy to irreversibility."
+  ],
+  "Kepler orbitalari, Maksvell-Bolsman taqsimoti, bosim fluktuatsiyalari, 8 mezonli taqqoslash": [
+   "орбиты Кеплера, распределение Максвелла–Больцмана, флуктуации давления, сравнение по 8 критериям",
+   "Kepler orbits, the Maxwell–Boltzmann distribution, pressure fluctuations, the 8-criterion comparison"
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "PhET «Gravity and Orbits» da orbital tezlikni o‘zgartirib aylanma, elliptik va ochiq trayektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting.": [
+   "В PhET «Gravity and Orbits», меняя орбитальную скорость, получите круговую, эллиптическую и открытую траектории; в «Gas Properties», повышая температуру, зафиксируйте гистограмму скоростей и флуктуации давления. Внесите результаты в таблицу по 8 критериям.",
+   "In PhET \"Gravity and Orbits\", change the orbital speed to get circular, elliptical and open trajectories; in \"Gas Properties\", raise the temperature and record the speed histogram and pressure fluctuations. Enter the results in the 8-criterion table."
+  ],
+  "Siz fizikada kompyuterli modellashtirish bo‘yicha Sokratik konsultantsiz. Men 5-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nLaboratoriya obyektlari: PhET «Gravity and Orbits» (deterministik) va «Gas Properties» (stoxastik tavsif).\nIltimos:\n1. Tayyor jadval yoki xulosa bermang — ikkala modelni o‘zim taqqoslashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.\n2. PhET’da qaysi o‘lchovlarni olishim kerakligini ayting.\n3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.": [
+   "Вы — сократический консультант по компьютерному моделированию в физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 5 и попал в кластер «{1}».\nОсновные темы: {2}.\nОбъекты лаборатории: PhET «Gravity and Orbits» (детерминированная) и «Gas Properties» (стохастическое описание).\nПожалуйста:\n1. Не давайте готовую таблицу или вывод — задайте пошаговые наводящие вопросы, чтобы я сам сравнил обе модели.\n2. Скажите, какие измерения мне нужно снять в PhET.\n3. Предложите один дополнительный опыт, подходящий моему уровню.",
+   "You are a Socratic consultant in computer modelling for physics. I scored {0}/100 on the Lab 5 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nLab objects: PhET \"Gravity and Orbits\" (deterministic) and \"Gas Properties\" (stochastic description).\nPlease:\n1. Do not give a ready table or conclusion — ask step-by-step guiding questions so I can compare the two models myself.\n2. Tell me which measurements I should take in PhET.\n3. Suggest one extra experiment suited to my level."
+  ],
+  "deterministik va stoxastik model ta’rifi, takrorlanuvchanlik, kirish va chiqish parametrlari": [
+   "определение детерминированной и стохастической модели, воспроизводимость, входные и выходные параметры",
+   "definitions of deterministic and stochastic models, reproducibility, input and output parameters"
+  ],
+  "f(v) va Maksvell taqsimoti": [
+   "f(v) и распределение Максвелла",
+   "f(v) and the Maxwell distribution"
+  ],
+  "mikroskopik determinizm va makroskopik statistika, ergodik gipoteza, Broun harakati (<r^2> = 4Dt), entropiya va qaytmaslik": [
+   "микроскопический детерминизм и макроскопическая статистика, эргодическая гипотеза, броуновское движение (<r^2> = 4Dt), энтропия и необратимость",
+   "microscopic determinism and macroscopic statistics, the ergodic hypothesis, Brownian motion (<r^2> = 4Dt), entropy and irreversibility"
+  ],
+  "ochiq orbita (E ≥ 0)": [
+   "открытая орбита (E ≥ 0)",
+   "open orbit (E ≥ 0)"
+  ],
+  "{0} / 100 ball ({1}/4 to‘g‘ri)": [
+   "{0} / 100 баллов ({1}/4 верно)",
+   "{0} / 100 points ({1}/4 correct)"
+  ],
+  "∞ (ochiq orbita)": [
+   "∞ (открытая орбита)",
+   "∞ (open orbit)"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
   ]
  },
  "js/sim-lab6-fbd.js": {
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-A, 3-C, 4-B.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-B, 2-A, 3-C, 4-B.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-B, 2-A, 3-C, 4-B."
+  ],
+  "Avval 2-bo‘limdagi FBD qoidalarini o‘rganing va qog‘ozda gorizontal sirtdagi, so‘ng qiya tekislikdagi jism uchun FBD chizing. 5-bo‘limdagi dastgohda ishqalanishni nolga tushirib, faqat $m\\vec{g}$ va $\\vec{N}$ qolganda tezlanish $g\\sin\\alpha$ ga teng ekanini tekshiring.": [
+   "Сначала изучите правила FBD из раздела 2 и нарисуйте на бумаге FBD для тела на горизонтальной поверхности, затем на наклонной плоскости. На стенде раздела 5 уменьшите трение до нуля и проверьте, что когда остаются только $m\\vec{g}$ и $\\vec{N}$, ускорение равно $g\\sin\\alpha$.",
+   "First study the FBD rules in Section 2 and draw on paper an FBD for a body on a horizontal surface, then on an incline. On the Section 5 bench, set friction to zero and check that when only $m\\vec{g}$ and $\\vec{N}$ remain, the acceleration equals $g\\sin\\alpha$."
+  ],
+  "A’LO (5)": [
+   "ОТЛИЧНО (5)",
+   "EXCELLENT (5)"
+  ],
+  "Barcha mezonlar yuqori darajada bajarilgan.": [
+   "Все критерии выполнены на высоком уровне.",
+   "All criteria met at a high level."
+  ],
+  "FBD qoidalari va AI yaratgan diagrammadagi xatolarni tahlil qilishni kuchaytiring.": [
+   "Усильте анализ правил FBD и ошибок в диаграмме, созданной ИИ.",
+   "Strengthen your analysis of the FBD rules and the errors in the AI-made diagram."
+  ],
+  "FBD qoidalari, og‘irlik va normal reaksiya kuchlari, qiya tekislikda og‘irlik kuchining proyeksiyalari": [
+   "правила FBD, сила тяжести и нормальная реакция, проекции силы тяжести на наклонной плоскости",
+   "FBD rules, weight and normal reaction, the projections of weight on an incline"
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Kulon-Amonton ishqalanishi, stick-slip sharti, AI yaratgan diagrammadagi xatolarni aniqlash": [
+   "трение Кулона–Амонтона, условие stick-slip, выявление ошибок в диаграмме, созданной ИИ",
+   "Coulomb–Amontons friction, the stick–slip condition, finding errors in an AI-made diagram"
+  ],
+  "Laboratoriya ishini qayta bajarish tavsiya etiladi.": [
+   "Рекомендуется выполнить лабораторную работу заново.",
+   "Redoing the lab is recommended."
+  ],
+  "Midjourney yoki DALL-E’da FBD yarating, uni 2-bo‘limdagi qoidalar bo‘yicha tekshirib xatolarini belgilang, so‘ng Claude’ga 1-promptni yuboring. Dastgohda $\\tan\\alpha = \\mu$ chegarasini topib, stick va slip holatlarini tenglamalar bilan solishtiring.": [
+   "Создайте FBD в Midjourney или DALL-E, проверьте её по правилам раздела 2 и отметьте ошибки, затем отправьте Claude промпт 1. На стенде найдите границу $\\tan\\alpha = \\mu$ и сравните состояния stick и slip с уравнениями.",
+   "Create an FBD in Midjourney or DALL-E, check it against the Section 2 rules and mark its errors, then send Prompt 1 to Claude. On the bench, find the $\\tan\\alpha = \\mu$ threshold and compare the stick and slip states with the equations."
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "QONIQARLI (3)": [
+   "УДОВЛЕТВОРИТЕЛЬНО (3)",
+   "SATISFACTORY (3)"
+  ],
+  "QONIQARSIZ (2)": [
+   "НЕУДОВЛЕТВОРИТЕЛЬНО (2)",
+   "UNSATISFACTORY (2)"
+  ],
+  "Qiya pastiga yetdi (t = {0} s)": [
+   "Достигло низа наклона (t = {0} с)",
+   "Reached the bottom of the incline (t = {0} s)"
+  ],
+  "Sirpanishga tayyor: tan α = {0} > μ": [
+   "Готово к скольжению: tan α = {0} > μ",
+   "Ready to slide: tan α = {0} > μ"
+  ],
+  "Sirpanmoqda (kinetik ishqalanish)": [
+   "Скользит (кинетическое трение)",
+   "Sliding (kinetic friction)"
+  ],
+  "Siz fizika bo‘yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nMasala: massasi m bo‘lgan jism alpha burchakli qiya tekislikda, ishqalanish koeffitsiyenti mu.\nIltimos:\n1. FBD’ni men o‘zim chizishim uchun tayyor javob bermasdan yo‘naltiruvchi savollar bering.\n2. Men yuklagan diagrammadagi xatolarni topishimga yordam bering, lekin to‘g‘ri variantni darhol aytmang.\n3. Mening darajamga mos bitta qo‘shimcha masala taklif qiling.": [
+   "Вы — сократический консультант по физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 6 и попал в кластер «{1}».\nОсновные темы: {2}.\nЗадача: тело массой m на наклонной плоскости с углом alpha, коэффициент трения mu.\nПожалуйста:\n1. Не давайте готового ответа — задайте наводящие вопросы, чтобы я сам нарисовал FBD.\n2. Помогите мне найти ошибки в загруженной мной диаграмме, но не называйте сразу правильный вариант.\n3. Предложите одну дополнительную задачу, подходящую моему уровню.",
+   "You are a Socratic physics consultant. I scored {0}/100 on the Lab 6 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nProblem: a body of mass m on an incline at angle alpha, friction coefficient mu.\nPlease:\n1. Do not give a ready answer — ask guiding questions so I can draw the FBD myself.\n2. Help me find the errors in the diagram I upload, but do not tell me the correct version straight away.\n3. Suggest one extra problem suited to my level."
+  ],
+  "Tizimga burchak ostida tortuvchi tashqi kuch qo‘shilgan holat uchun FBD va tenglamalarni tuzing ($N$ o‘zgarishiga e’tibor bering). 4-bo‘limdagi psevdokod asosida kod yozdirib, uni analitik yechim $x(t) = \\tfrac{1}{2} a t^2$ bilan test qiling va $\\mu_s \\neq \\mu_k$ holatiga kengaytiring.": [
+   "Составьте FBD и уравнения для случая, когда к системе добавлена внешняя сила, тянущая под углом (обратите внимание на изменение $N$). По псевдокоду раздела 4 попросите написать код, протестируйте его аналитическим решением $x(t) = \\tfrac{1}{2} a t^2$ и расширьте на случай $\\mu_s \\neq \\mu_k$.",
+   "Write the FBD and equations for the case where an external force pulling at an angle is added (watch how $N$ changes). Have code written from the Section 4 pseudocode, test it against the analytic solution $x(t) = \\tfrac{1}{2} a t^2$ and extend it to the $\\mu_s \\neq \\mu_k$ case."
+  ],
+  "YAXSHI (4)": [
+   "ХОРОШО (4)",
+   "GOOD (4)"
+  ],
+  "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.": [
+   "Хороший результат. Пересмотрите критерий с самым низким баллом.",
+   "A good result. Review the criterion with the lowest score."
+  ],
+  "tashqi kuch qo‘shilgan FBD, μs va μk farqi, psevdokoddan kodga o‘tish va analitik test": [
+   "FBD с внешней силой, разница μs и μk, переход от псевдокода к коду и аналитический тест",
+   "an FBD with an external force, the difference between μs and μk, going from pseudocode to code and an analytic test"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
   ]
  },
  "js/sim-lab7-canvas-fps.js": {
+  "2D elastik to‘p": [
+   "Упругий 2D-мяч",
+   "2D elastic ball"
+  ],
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-A, 2-B, 3-C, 4-B.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-A, 2-B, 3-C, 4-B.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-A, 2-B, 3-C, 4-B."
+  ],
+  "Avval 2-bo‘limdagi kadr sikli skeletini qo‘lda qayta yozing va har bir qatorini izohlang. 5-bo‘limdagi dastgohda Delta-Time’ni o‘chirib, FPS cheklovini 60 → 15 ga o‘zgartiring va punktir etalon kontur bilan jism orasidagi farqni kuzating. So‘ng $x \\mathrel{+}= v \\cdot \\Delta t$ formulasi nima uchun bu farqni yo‘qotishini o‘z so‘zlaringiz bilan tushuntiring.": [
+   "Сначала вручную перепишите скелет цикла кадров из раздела 2 и прокомментируйте каждую строку. На стенде раздела 5 выключите Delta-Time, измените ограничение FPS с 60 на 15 и понаблюдайте разницу между пунктирным эталонным контуром и телом. Затем своими словами объясните, почему формула $x \\mathrel{+}= v \\cdot \\Delta t$ устраняет эту разницу.",
+   "First rewrite the Section 2 frame loop skeleton by hand and comment every line. On the Section 5 bench, switch Delta-Time off, change the FPS limit from 60 to 15 and watch the gap between the dashed reference outline and the body. Then explain in your own words why the formula $x \\mathrel{+}= v \\cdot \\Delta t$ removes that gap."
+  ],
+  "A’LO (5)": [
+   "ОТЛИЧНО (5)",
+   "EXCELLENT (5)"
+  ],
+  "Barcha mezonlar yuqori darajada bajarilgan.": [
+   "Все критерии выполнены на высоком уровне.",
+   "All criteria met at a high level."
+  ],
+  "Barqaror (FPS ga bog‘liq emas)": [
+   "Стабильно (не зависит от FPS)",
+   "Stable (independent of FPS)"
+  ],
+  "Delta-Time va akkumulyator integratsiyasini hamda FPS o‘lchovlarini kuchaytiring.": [
+   "Усильте интеграцию delta-time и аккумулятора, а также измерения FPS.",
+   "Strengthen your delta-time and accumulator integration and your FPS measurements."
+  ],
+  "Delta-time integratsiyasi O‘CHIRILGAN (kadrga bog‘liq fizika)": [
+   "Интегрирование delta-time ВЫКЛЮЧЕНО (физика зависит от кадров)",
+   "Delta-time integration OFF (frame-dependent physics)"
+  ],
+  "Delta-time integratsiyasi YOQILGAN (to‘g‘ri fizika)": [
+   "Интегрирование delta-time ВКЛЮЧЕНО (правильная физика)",
+   "Delta-time integration ON (correct physics)"
+  ],
+  "FPS ga bog‘liq: fizika real vaqtdan ×{0} tezlikda (xato!)": [
+   "Зависит от FPS: физика идёт в ×{0} от реального времени (ошибка!)",
+   "FPS-dependent: physics runs at ×{0} real time (error!)"
+  ],
+  "Fiedler akkumulyatori, qat’iy fizik qadam, Eyler–Kromer sxemasi, agent natijalarini tekshirish": [
+   "аккумулятор Фидлера, фиксированный физический шаг, схема Эйлера–Кромера, проверка результатов агента",
+   "the Fiedler accumulator, a fixed physics step, the Euler–Cromer scheme, checking the agent’s results"
+  ],
+  "Fizik vaqt: {0} s (×{1})": [
+   "Физическое время: {0} с (×{1})",
+   "Physics time: {0} s (×{1})"
+  ],
+  "Garmonik ossilyator": [
+   "Гармонический осциллятор",
+   "Harmonic oscillator"
+  ],
+  "Kadr oralig‘i, ms (oxirgi 120 kadr)": [
+   "Интервал кадров, мс (последние 120 кадров)",
+   "Frame interval, ms (last 120 frames)"
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Laboratoriya ishini qayta bajarish tavsiya etiladi.": [
+   "Рекомендуется выполнить лабораторную работу заново.",
+   "Redoing the lab is recommended."
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "Oddiy Eyler, Eyler–Kromer va velocity-Verlet sxemalarini bir xil $h$ da solishtirib, 60 s davomidagi energiya dreyfini grafikda ko‘rsating. Akkumulyatorga $\\alpha = \\text{accumulator}/h$ bo‘yicha interpolyatsiya qo‘shing va 30 FPS da harakat silliqligini baholang. Kadr sikli ichida xotira ajratilmasligini DevTools «Memory» panelida isbotlang.": [
+   "Сравните схемы простого Эйлера, Эйлера–Кромера и velocity-Verlet при одинаковом $h$ и покажите на графике дрейф энергии за 60 с. Добавьте в аккумулятор интерполяцию по $\\alpha = \\text{accumulator}/h$ и оцените плавность движения при 30 FPS. Докажите на панели «Memory» в DevTools, что в цикле кадров не выделяется память.",
+   "Compare the simple Euler, Euler–Cromer and velocity-Verlet schemes at the same $h$ and plot the energy drift over 60 s. Add interpolation by $\\alpha = \\text{accumulator}/h$ to the accumulator and judge how smooth the motion is at 30 FPS. Use the DevTools \"Memory\" panel to prove that the frame loop allocates no memory."
+  ],
+  "O‘rtacha: {0} FPS ({1})": [
+   "Среднее: {0} FPS ({1})",
+   "Average: {0} FPS ({1})"
+  ],
+  "QONIQARLI (3)": [
+   "УДОВЛЕТВОРИТЕЛЬНО (3)",
+   "SATISFACTORY (3)"
+  ],
+  "QONIQARSIZ (2)": [
+   "НЕУДОВЛЕТВОРИТЕЛЬНО (2)",
+   "UNSATISFACTORY (2)"
+  ],
+  "Real vaqt: {0} s": [
+   "Реальное время: {0} с",
+   "Real time: {0} s"
+  ],
+  "Siz JavaScript va kompyuter fizikasi bo‘yicha Sokratik ustozsiz. Men 7-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nVazifa: HTML5 Canvas’da requestAnimationFrame va delta-time asosida prujinali garmonik tebranish animatsiyasini yozish.\nIltimos:\n1. Tayyor kodni darhol bermang — avval men yozgan kod bo‘lagini tahlil qilib, yo‘naltiruvchi savollar bering.\n2. Mening kodimda FPS ga bog‘liq joylarni topishimga yordam bering.\n3. Natijani tekshirishim uchun bitta o‘lchanadigan test taklif qiling (masalan, 60 va 15 FPS da 5 soniyadagi siljish).": [
+   "Вы — сократический наставник по JavaScript и компьютерной физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 7 и попал в кластер «{1}».\nОсновные темы: {2}.\nЗадача: написать в HTML5 Canvas анимацию пружинных гармонических колебаний на основе requestAnimationFrame и delta-time.\nПожалуйста:\n1. Не давайте сразу готовый код — сначала проанализируйте написанный мной фрагмент и задайте наводящие вопросы.\n2. Помогите мне найти в коде места, зависящие от FPS.\n3. Предложите один измеримый тест для проверки результата (например, смещение за 5 секунд при 60 и 15 FPS).",
+   "You are a Socratic mentor in JavaScript and computer physics. I scored {0}/100 on the Lab 7 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nTask: write an HTML5 Canvas animation of a spring harmonic oscillator using requestAnimationFrame and delta-time.\nPlease:\n1. Do not give me ready code straight away — first analyse a code fragment I wrote and ask guiding questions.\n2. Help me find the FPS-dependent parts of my code.\n3. Suggest one measurable test to check the result (for example, the displacement after 5 seconds at 60 and 15 FPS)."
+  ],
+  "Skeletga Fiedler akkumulyatorini qo‘shing (2-bo‘limdagi ikkinchi kod) va 4-bo‘limdagi Eyler–Kromer ossilyatorini ishga tushiring. Dastgohda ossilyator rejimida energiya nisbati $E/E_0$ ni 60 va 15 FPS da solishtiring. Antigravity agentiga 3-bo‘limdagi promptni yuborib, uning o‘lchov natijalarini o‘zingiz takrorlab tekshiring.": [
+   "Добавьте в скелет аккумулятор Фидлера (второй код раздела 2) и запустите осциллятор Эйлера–Кромера из раздела 4. На стенде в режиме осциллятора сравните отношение энергий $E/E_0$ при 60 и 15 FPS. Отправьте агенту Antigravity промпт из раздела 3 и сами повторите его измерения для проверки.",
+   "Add the Fiedler accumulator (the second code in Section 2) to the skeleton and run the Euler–Cromer oscillator from Section 4. On the bench in oscillator mode, compare the energy ratio $E/E_0$ at 60 and 15 FPS. Send the Section 3 prompt to the Antigravity agent and repeat its measurements yourself to check them."
+  ],
+  "YAXSHI (4)": [
+   "ХОРОШО (4)",
+   "GOOD (4)"
+  ],
+  "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.": [
+   "Хороший результат. Пересмотрите критерий с самым низким баллом.",
+   "A good result. Review the criterion with the lowest score."
+  ],
+  "integratorlar barqarorligi, energiya dreyfi, holatlar interpolyatsiyasi, zero-allocation sikl": [
+   "устойчивость интеграторов, дрейф энергии, интерполяция состояний, цикл zero-allocation",
+   "integrator stability, energy drift, state interpolation, a zero-allocation loop"
+  ],
+  "requestAnimationFrame, millisekunddan sekundga o‘tish, x += v·dt formulasi": [
+   "requestAnimationFrame, переход от миллисекунд к секундам, формула x += v·dt",
+   "requestAnimationFrame, converting milliseconds to seconds, the formula x += v·dt"
+  ],
+  "— ms": [
+   "— мс",
+   "— ms"
+  ],
+  "┄ etalon": [
+   "┄ эталон",
+   "┄ reference"
+  ],
+  "▶ tugmasini bosing": [
+   "Нажмите кнопку ▶",
+   "Press ▶"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
   ]
  },
  "js/sim-lab8-physics-engine.js": {
+  "2.2–2.3-bo‘limlardagi $J$ formulasi va overlap resolution’ni JavaScript’da yozing. 3-bo‘limdagi 1- va 2-nosozlik promptlarini Claude’ga yuborib, uning tavsiyalarini o‘z kodingizda sinab ko‘ring. Dastgohda $e$ ni 1 dan 0,5 gacha kamaytirib, $E_k/E_{k0}$ grafigining o‘zgarishini tushuntiring.": [
+   "Напишите на JavaScript формулу $J$ и overlap resolution из разделов 2.2–2.3. Отправьте Claude промпты неисправностей 1 и 2 из раздела 3 и проверьте его рекомендации в своём коде. На стенде уменьшите $e$ с 1 до 0,5 и объясните изменение графика $E_k/E_{k0}$.",
+   "Write the $J$ formula and overlap resolution from Sections 2.2–2.3 in JavaScript. Send Claude the Bug 1 and Bug 2 prompts from Section 3 and test its suggestions in your own code. On the bench, lower $e$ from 1 to 0.5 and explain how the $E_k/E_{k0}$ plot changes."
+  ],
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-C, 2-B, 3-A, 4-C.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-C, 2-B, 3-A, 4-C."
+  ],
+  "Avval 2.1-bo‘limdagi <code>Vector2D</code> klassini qo‘lda qayta yozing va har bir metodni bitta sonli misolda tekshiring. So‘ng bir o‘lchamli markaziy to‘qnashuv uchun impuls va energiya saqlanishidan $v_1'$ va $v_2'$ ni qog‘ozda chiqaring. 5-bo‘limdagi «Bilyard» ssenariysida teng massali sharlar tezlik almashishini kuzating.": [
+   "Сначала вручную перепишите класс <code>Vector2D</code> из раздела 2.1 и проверьте каждый метод на одном числовом примере. Затем на бумаге выведите $v_1'$ и $v_2'$ из сохранения импульса и энергии для одномерного центрального столкновения. В сценарии «Бильярд» раздела 5 понаблюдайте, как шары равной массы обмениваются скоростями.",
+   "First rewrite the <code>Vector2D</code> class from Section 2.1 by hand and test each method on one numerical example. Then derive $v_1'$ and $v_2'$ on paper from momentum and energy conservation for a one-dimensional head-on collision. In the Section 5 \"Billiards\" scenario, watch equal-mass balls swap velocities."
+  ],
+  "A’LO (5)": [
+   "ОТЛИЧНО (5)",
+   "EXCELLENT (5)"
+  ],
+  "Barcha mezonlar yuqori darajada bajarilgan.": [
+   "Все критерии выполнены на высоком уровне.",
+   "All criteria met at a high level."
+  ],
+  "Dvigatelga sub-stepping va uzluksiz to‘qnashuv aniqlash (CCD) variantlarini qo‘shib, tunnel effektini solishtiring. 4-bo‘limdagi Python skriptini $e = 0.7$ uchun kengaytirib, yo‘qotilgan energiyani $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$ formulasi bilan tekshiring. Keyingi qadam sifatida aylanish (inersiya momenti) va ishqalanishni qo‘shishni rejalashtiring (Hecker, 1997).": [
+   "Добавьте в движок варианты sub-stepping и непрерывного обнаружения столкновений (CCD) и сравните туннельный эффект. Расширьте Python-скрипт из раздела 4 для $e = 0.7$ и проверьте потерянную энергию по формуле $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$. В качестве следующего шага запланируйте добавление вращения (момента инерции) и трения (Hecker, 1997).",
+   "Add sub-stepping and continuous collision detection (CCD) options to the engine and compare tunnelling. Extend the Section 4 Python script to $e = 0.7$ and check the lost energy with the formula $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$. As a next step, plan to add rotation (moment of inertia) and friction (Hecker, 1997)."
+  ],
+  "Ek/Ek₀ (vaqt bo‘yicha, har 0,05 s)": [
+   "Ek/Ek₀ (по времени, каждые 0,05 с)",
+   "Ek/Ek₀ (over time, every 0.05 s)"
+  ],
+  "Impuls formulasi, overlap resolution va saqlanish qonunlari tekshiruvini kuchaytiring.": [
+   "Усильте проверку формулы импульса, overlap resolution и законов сохранения.",
+   "Strengthen your check of the impulse formula, overlap resolution and the conservation laws."
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Laboratoriya ishini qayta bajarish tavsiya etiladi.": [
+   "Рекомендуется выполнить лабораторную работу заново.",
+   "Redoing the lab is recommended."
+  ],
+  "Mutlaq elastik (e = 1,00)": [
+   "Абсолютно упругое (e = 1,00)",
+   "Perfectly elastic (e = 1.00)"
+  ],
+  "Mutlaq noelastik (e = 0,00)": [
+   "Абсолютно неупругое (e = 0,00)",
+   "Perfectly inelastic (e = 0.00)"
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "QONIQARLI (3)": [
+   "УДОВЛЕТВОРИТЕЛЬНО (3)",
+   "SATISFACTORY (3)"
+  ],
+  "QONIQARSIZ (2)": [
+   "НЕУДОВЛЕТВОРИТЕЛЬНО (2)",
+   "UNSATISFACTORY (2)"
+  ],
+  "Sen mening juftlikdagi dasturlash sherigimsan (Navigator), men esa Driver’man. Men 8-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nVazifa: JavaScript’da 2D doiralar uchun elastik to‘qnashuvli kichik fizika dvigatelini yozish (Vector2D, impuls skalyari J, overlap resolution).\nQoidalar:\n1. Kodni men yozaman — sen avval men yuborgan bo‘lakni tahlil qilib, xatoni o‘zim topishim uchun yo‘naltiruvchi savol ber.\n2. Har bir tavsiyangni fizik qonun (impuls yoki energiya saqlanishi) bilan asosla.\n3. Tuzatishdan keyin tekshirish uchun bitta sonli test taklif qil (masalan, to‘qnashuvdan oldin va keyin to‘liq impulsni solishtirish).": [
+   "Ты — мой напарник по парному программированию (Navigator), а я — Driver. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 8 и попал в кластер «{1}».\nОсновные темы: {2}.\nЗадача: написать на JavaScript небольшой физический движок с упругими столкновениями для 2D-окружностей (Vector2D, скаляр импульса J, overlap resolution).\nПравила:\n1. Код пишу я — сначала проанализируй отправленный мной фрагмент и задай наводящий вопрос, чтобы я сам нашёл ошибку.\n2. Обосновывай каждую рекомендацию физическим законом (сохранение импульса или энергии).\n3. После исправления предложи один численный тест для проверки (например, сравнение полного импульса до и после столкновения).",
+   "You are my pair-programming partner (Navigator) and I am the Driver. I scored {0}/100 on the Lab 8 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nTask: write a small JavaScript physics engine with elastic collisions for 2D circles (Vector2D, impulse scalar J, overlap resolution).\nRules:\n1. I write the code — first analyse the fragment I send and ask a guiding question so I can find the bug myself.\n2. Justify every suggestion with a physical law (momentum or energy conservation).\n3. After a fix, suggest one numerical test to check it (for example, comparing the total momentum before and after the collision)."
+  ],
+  "YAXSHI (4)": [
+   "ХОРОШО (4)",
+   "GOOD (4)"
+  ],
+  "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.": [
+   "Хороший результат. Пересмотрите критерий с самым низким баллом.",
+   "A good result. Review the criterion with the lowest score."
+  ],
+  "impuls skalyari J, pozitsiyani to‘g‘rilash, v_n > 0 sharti, tiklanish koeffitsiyenti": [
+   "скаляр импульса J, коррекция положения, условие v_n > 0, коэффициент восстановления",
+   "the impulse scalar J, position correction, the v_n > 0 condition, the coefficient of restitution"
+  ],
+  "sub-stepping va CCD, noelastik to‘qnashuvda energiya yo‘qotilishi, aylanma harakat": [
+   "sub-stepping и CCD, потеря энергии при неупругом столкновении, вращательное движение",
+   "sub-stepping and CCD, energy loss in inelastic collisions, rotational motion"
+  ],
+  "t = {0} s   |   katak = 1 m   |   {1} ta ichki qadam": [
+   "t = {0} с   |   клетка = 1 м   |   внутренних шагов: {1}",
+   "t = {0} s   |   cell = 1 m   |   {1} internal steps"
+  ],
+  "vektor amallari, skalyar ko‘paytma, bir o‘lchamli elastik to‘qnashuv": [
+   "операции с векторами, скалярное произведение, одномерное упругое столкновение",
+   "vector operations, the dot product, a one-dimensional elastic collision"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
   ]
  },
  "js/sim-lab9-prompt-library.js": {
+  "1-daraja: sodda zero-shot prompt": [
+   "Уровень 1: простой zero-shot-промпт",
+   "Level 1: plain zero-shot prompt"
+  ],
+  "2-daraja: fizik chegaralari ko‘rsatilgan prompt": [
+   "Уровень 2: промпт с указанными физическими границами",
+   "Level 2: prompt with physical bounds"
+  ],
+  "3-daraja: rol + fikrlash zanjiri": [
+   "Уровень 3: роль + цепочка рассуждений",
+   "Level 3: role + chain of thought"
+  ],
+  "3-sinov (Role + CoT) promptini o‘z masalangizga moslang va modeldan avval tenglamani, keyin integratsiya usulini asoslashni talab qiling. Olingan kodni sandboksdagi 3-daraja bilan solishtirib, energiya xatoligini o‘lchang. Eng yaxshi promptni kutubxonaga saqlang.": [
+   "Адаптируйте промпт испытания 3 (Role + CoT) к своей задаче и потребуйте от модели сначала обосновать уравнение, а затем метод интегрирования. Сравните полученный код с уровнем 3 в песочнице и измерьте ошибку энергии. Сохраните лучший промпт в библиотеку.",
+   "Adapt the Test 3 (Role + CoT) prompt to your own problem and require the model to justify the equation first and then the integration method. Compare the code with level 3 in the sandbox and measure the energy error. Save your best prompt to the library."
+  ],
+  "4-daraja: XML master-so‘rov": [
+   "Уровень 4: XML мастер-запрос",
+   "Level 4: XML master request"
+  ],
+  "4-sinovdagi XML master promptni boshqa fizik tizim (masalan, ikki jismli orbita yoki prujinali mayatnik) uchun qayta yozing. Promptga avtomatik test talabini qo‘shing: kod analitik yoki RK4 etalon yechim bilan solishtirilsin. Kutubxonangizni JSON ko‘rinishida eksport qilib, guruhdoshlaringiz bilan almashing.": [
+   "Перепишите XML мастер-промпт испытания 4 для другой физической системы (например, двухтельной орбиты или пружинного маятника). Добавьте в промпт требование автоматического теста: код должен сравниваться с аналитическим или эталонным решением RK4. Экспортируйте библиотеку в JSON и обменяйтесь с одногруппниками.",
+   "Rewrite the Test 4 XML master prompt for another physical system (for example, a two-body orbit or a spring pendulum). Add an automatic test requirement: the code must be compared with an analytic or RK4 reference solution. Export your library as JSON and swap with classmates."
+  ],
+  "<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.": [
+   "<br><strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-C, 2-B, 3-A, 4-C.",
+   "<br><strong>Review:</strong> question(s) {0}. Correct answers: 1-C, 2-B, 3-A, 4-C."
+  ],
+  "<system_role>\nSen fizika o‘qituvchilari uchun prompt-muhandislik bo‘yicha Sokratik murabbiysan.\n</system_role>\n<student_profile>\n9-laboratoriya diagnostik testi: {0}/100, \"{1}\" klaster. Asosiy mavzular: {2}.\n</student_profile>\n<task>\nMen matematik mayatnik simulyatsiyasi kodini olish uchun prompt yozmoqchiman. Tayyor promptni bermang:\n1. Mening promptimni Rol, Kontekst, Ko‘rsatma, Cheklovlar va Chiqish formati bo‘yicha baholang.\n2. Qaysi fizik cheklov (masalan, sin θ ≈ θ farazi, integratsiya usuli, qadam) yetishmayotganini savol orqali topishimga yordam bering.\n3. Olingan kodni tekshirish uchun bitta sonli test taklif qiling (masalan, energiya saqlanishi).\n</task>": [
+   "<system_role>\nТы — сократический наставник по промпт-инжинирингу для преподавателей физики.\n</system_role>\n<student_profile>\nДиагностический тест лабораторной работы 9: {0}/100, кластер «{1}». Основные темы: {2}.\n</student_profile>\n<task>\nЯ хочу написать промпт, чтобы получить код симуляции математического маятника. Не давайте готовый промпт:\n1. Оцените мой промпт по Роли, Контексту, Указанию, Ограничениям и Формату вывода.\n2. Помогите мне через вопросы найти, какое физическое ограничение отсутствует (например, допущение sin θ ≈ θ, метод интегрирования, шаг).\n3. Предложите один численный тест для проверки полученного кода (например, сохранение энергии).\n</task>",
+   "<system_role>\nYou are a Socratic prompt-engineering mentor for physics teachers.\n</system_role>\n<student_profile>\nLab 9 diagnostic test: {0}/100, cluster \"{1}\". Main topics: {2}.\n</student_profile>\n<task>\nI want to write a prompt to get code for a simple pendulum simulation. Do not give me a ready prompt:\n1. Assess my prompt for Role, Context, Instruction, Constraints and Output format.\n2. Help me find, through questions, which physical constraint is missing (for example, the sin θ ≈ θ assumption, the integration method, the step size).\n3. Suggest one numerical test to check the resulting code (for example, energy conservation).\n</task>"
+  ],
+  "Avval 2.1-bo‘limdagi promptning 5 ta ustunini (Rol, Kontekst, Ko‘rsatma, Cheklovlar, Chiqish formati) o‘z so‘zlaringiz bilan yozing. 3-bo‘limdagi 1- va 2-sinov promptlarini yuborib, natijalarni 5-bo‘limdagi sandboksdagi 1- va 2-daraja bilan solishtiring: energiya grafigi nima uchun o‘sib borishini tushuntiring.": [
+   "Сначала своими словами запишите 5 столпов промпта из раздела 2.1 (Роль, Контекст, Указание, Ограничения, Формат вывода). Отправьте промпты испытаний 1 и 2 из раздела 3 и сравните результаты с уровнями 1 и 2 в песочнице раздела 5: объясните, почему растёт график энергии.",
+   "First write down the 5 prompt pillars from Section 2.1 (Role, Context, Instruction, Constraints, Output format) in your own words. Send the Test 1 and Test 2 prompts from Section 3 and compare the results with levels 1 and 2 in the Section 5 sandbox: explain why the energy plot keeps rising."
+  ],
+  "A’LO (5)": [
+   "ОТЛИЧНО (5)",
+   "EXCELLENT (5)"
+  ],
+  "Barcha mezonlar yuqori darajada bajarilgan.": [
+   "Все критерии выполнены на высоком уровне.",
+   "All criteria met at a high level."
+  ],
+  "Chain-of-Thought, Eyler–Kromer usuli, natijani sonli tekshirish": [
+   "Chain-of-Thought, метод Эйлера–Кромера, численная проверка результата",
+   "Chain-of-Thought, the Euler–Cromer method, checking the result numerically"
+  ],
+  "E/E₀ (ko‘k — kod, yashil — etalon)": [
+   "E/E₀ (синий — код, зелёный — эталон)",
+   "E/E₀ (blue — code, green — reference)"
+  ],
+  "Energiya xatoligi: {0} %": [
+   "Ошибка энергии: {0} %",
+   "Energy error: {0} %"
+  ],
+  "Energiya xatoligi: —": [
+   "Ошибка энергии: —",
+   "Energy error: —"
+  ],
+  "Eyler–Kromer (yarim-oshkor), h = 1/120 s": [
+   "Эйлер–Кромер (полуявный), h = 1/120 с",
+   "Euler–Cromer (semi-implicit), h = 1/120 s"
+  ],
+  "Hozircha saqlangan prompt yo‘q. Yuqoridagi forma orqali birinchi promptingizni qo‘shing (ro‘yxat faqat shu brauzerda saqlanadi — muhimlarini JSON qilib eksport qiling).": [
+   "Сохранённых промптов пока нет. Добавьте первый промпт через форму выше (список сохраняется только в этом браузере — важные экспортируйте в JSON).",
+   "No saved prompts yet. Add your first prompt with the form above (the list is stored only in this browser — export important ones as JSON)."
+  ],
+  "Kichik burchak farazi (sin θ ≈ θ), qarshilik e’tiborga olinmagan, har kadrda qat’iy 1/60 s qadam, oshkor Eyler — energiya o‘sib boradi.": [
+   "Допущение малых углов (sin θ ≈ θ), сопротивление не учтено, на каждом кадре фиксированный шаг 1/60 с, явный Эйлер — энергия растёт.",
+   "Small-angle assumption (sin θ ≈ θ), no drag, a fixed 1/60 s step every frame, explicit Euler — energy keeps growing."
+  ],
+  "Klaster \"A\" — Boshlang‘ich daraja": [
+   "Кластер «A» — начальный уровень",
+   "Cluster \"A\" — beginner level"
+  ],
+  "Klaster \"B\" — Amaliyotchi daraja": [
+   "Кластер «B» — уровень практика",
+   "Cluster \"B\" — practitioner level"
+  ],
+  "Klaster \"C\" — Ilg‘or daraja": [
+   "Кластер «C» — продвинутый уровень",
+   "Cluster \"C\" — advanced level"
+  ],
+  "Laboratoriya ishini qayta bajarish tavsiya etiladi.": [
+   "Рекомендуется выполнить лабораторную работу заново.",
+   "Redoing the lab is recommended."
+  ],
+  "Model tenglamani va usulni bosqichma-bosqich asoslaydi: Eyler–Kromer — energiya kichik amplitudada tebranadi, sun’iy o‘sish yo‘q.": [
+   "Модель пошагово обосновывает уравнение и метод: Эйлер–Кромер — энергия колеблется с малой амплитудой, искусственного роста нет.",
+   "The model justifies the equation and method step by step: Euler–Cromer — the energy oscillates slightly, with no artificial growth."
+  ],
+  "Nochiziqli tenglama va qarshilik bor, lekin oshkor Eyler usuli: tebranish so‘nishi o‘rniga energiya sun’iy ortadi.": [
+   "Есть нелинейное уравнение и сопротивление, но метод явного Эйлера: вместо затухания колебаний энергия искусственно растёт.",
+   "The nonlinear equation and drag are there, but with explicit Euler the energy grows artificially instead of the oscillation dying away."
+  ],
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "Oshkor Eyler, sin θ ≈ θ, qadam kadrga bog‘liq": [
+   "Явный Эйлер, sin θ ≈ θ, шаг зависит от кадров",
+   "Explicit Euler, sin θ ≈ θ, frame-dependent step"
+  ],
+  "Oshkor Eyler, to‘liq sin θ, h = 1/60 s": [
+   "Явный Эйлер, полный sin θ, h = 1/60 с",
+   "Explicit Euler, full sin θ, h = 1/60 s"
+  ],
+  "Prompt kutubxonaga saqlandi": [
+   "Промпт сохранён в библиотеку",
+   "Prompt saved to the library"
+  ],
+  "Prompt tuzilmasi, fizik cheklovlar va natijani sonli tekshirishni kuchaytiring.": [
+   "Усильте структуру промпта, физические ограничения и численную проверку результата.",
+   "Strengthen the prompt structure, the physical constraints and the numerical check of the result."
+  ],
+  "QONIQARLI (3)": [
+   "УДОВЛЕТВОРИТЕЛЬНО (3)",
+   "SATISFACTORY (3)"
+  ],
+  "QONIQARSIZ (2)": [
+   "НЕУДОВЛЕТВОРИТЕЛЬНО (2)",
+   "UNSATISFACTORY (2)"
+  ],
+  "Sarlavha va prompt matnini kiriting": [
+   "Введите заголовок и текст промпта",
+   "Enter a title and prompt text"
+  ],
+  "To‘liq tenglama, qarshilik, velocity-Verlet, qat’iy qadamli akkumulyator, fazaviy portret va energiya telemetriyasi.": [
+   "Полное уравнение, сопротивление, velocity-Verlet, аккумулятор с фиксированным шагом, фазовый портрет и телеметрия энергии.",
+   "The full equation, drag, velocity Verlet, a fixed-step accumulator, a phase portrait and energy telemetry."
+  ],
+  "Velocity Verlet, h = 1/240 s": [
+   "Velocity Verlet, h = 1/240 с",
+   "Velocity Verlet, h = 1/240 s"
+  ],
+  "XML teglari, test talablari, velocity-Verlet va RK4, prompt-kutubxona": [
+   "XML-теги, требования к тестам, velocity-Verlet и RK4, библиотека промптов",
+   "XML tags, test requirements, velocity Verlet and RK4, a prompt library"
+  ],
+  "YAXSHI (4)": [
+   "ХОРОШО (4)",
+   "GOOD (4)"
+  ],
+  "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.": [
+   "Хороший результат. Пересмотрите критерий с самым низким баллом.",
+   "A good result. Review the criterion with the lowest score."
+  ],
+  "prompt tuzilmasi, fizik cheklovlarni aniq yozish, oddiy Eyler usulining kamchiligi": [
+   "структура промпта, чёткая запись физических ограничений, недостаток простого метода Эйлера",
+   "prompt structure, writing physical constraints precisely, the weakness of the simple Euler method"
+  ],
+  "┄ RK4 etalon (h = 1 ms)": [
+   "┄ эталон RK4 (h = 1 мс)",
+   "┄ RK4 reference (h = 1 ms)"
+  ],
+  "⚠️ Barcha 4 ta savolga javob bering": [
+   "⚠️ Ответьте на все 4 вопроса",
+   "⚠️ Answer all 4 questions"
+  ],
+  "✅ Nusxalandi!": [
+   "✅ Скопировано!",
+   "✅ Copied!"
+  ],
+  "📋 Nusxa olish": [
+   "📋 Копировать",
+   "📋 Copy"
+  ],
+  "🗑 O‘chirish": [
+   "🗑 Удалить",
+   "🗑 Delete"
   ]
  },
  "js/sim-lms-distance-learning.js": {
@@ -1980,6 +3322,42 @@
   ]
  },
  "lab12.html": {
+  "\n        [ANTIGRAVITY: 3D MONITORING]<br>\n        > Tizimdagi topshiriq: 3D to‘qnashuvlar<br>\n        <strong style=\"color: var(--accent-cyan);\">> Umumiy impuls vektori moduli: {0} kg·m/s | Umumiy kinetik energiya: {1} J</strong><br>\n        <span style=\"color: var(--text-secondary); font-size: 0.85rem;\">* 3D vizualizatsiya HTML5 Canvas API yordamida perspektiv proyeksiya bilan chizilgan.</span>\n    ": [
+   "\n        [ANTIGRAVITY: 3D-МОНИТОРИНГ]<br>\n        > Задача в системе: 3D-столкновения<br>\n        <strong style=\"color: var(--accent-cyan);\">> Модуль вектора полного импульса: {0} кг·м/с | Полная кинетическая энергия: {1} Дж</strong><br>\n        <span style=\"color: var(--text-secondary); font-size: 0.85rem;\">* 3D-визуализация нарисована с помощью HTML5 Canvas API с перспективной проекцией.</span>\n    ",
+   "\n        [ANTIGRAVITY: 3D MONITORING]<br>\n        > System task: 3D collisions<br>\n        <strong style=\"color: var(--accent-cyan);\">> Total momentum vector magnitude: {0} kg·m/s | Total kinetic energy: {1} J</strong><br>\n        <span style=\"color: var(--text-secondary); font-size: 0.85rem;\">* The 3D view is drawn with the HTML5 Canvas API using perspective projection.</span>\n    "
+  ],
+  "2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.": [
+   "Рекомендуется самостоятельное проектирование 2D-движков Canvas и применение симплектических алгоритмов Эйлера–Кромера.",
+   "Designing your own 2D Canvas engines and using symplectic Euler–Cromer algorithms is recommended."
+  ],
+  "2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.": [
+   "Рекомендуются самостоятельные лабораторные работы по 2D-векторному движению, гравитации и симплектическому интегратору Эйлера–Кромера.",
+   "Independent lab work on 2D vector motion, gravity and the symplectic Euler–Cromer integrator is recommended."
+  ],
+  "3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.": [
+   "Направляется на сложные проекты по 3D WebGL (Three.js), методу Рунге–Кутты 4-го порядка (RK4) и интеграции Boris particle pusher.",
+   "You are pointed towards advanced projects on 3D WebGL (Three.js), the 4th-order Runge–Kutta (RK4) method and Boris particle pusher integration."
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>": [
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, отметьте ответы на все 3 вопроса!</span>\n    </div>",
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Please mark answers to all 3 questions!</span>\n    </div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результаты диагностики лекции 1:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 1 diagnostic results:</h4>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результат диагностики моделирования лекции 2:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 2 modelling diagnostic result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая траектория моделирования:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended modelling pathway:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая учебная траектория:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Общий результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended learning pathway:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Overall result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
   "A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)": [
    "Кластер A (1D-движение и основы скалярных уравнений)",
    "Cluster A (1D Motion & Scalar Equation Basics)"
@@ -2011,6 +3389,18 @@
   "A) v' = -v (to‘liq teskari qaytadi)": [
    "A) v' = -v (полностью отражается назад)",
    "A) v' = -v (fully bounces back)"
+  ],
+  "Antigravity ning multi-agent sifatidagi ro‘li": [
+   "Роль Antigravity как мультиагентной системы",
+   "Antigravity’s role as a multi-agent system"
+  ],
+  "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!": [
+   "Именно классический Эйлер расширяет площадь фазового пространства и на каждом шаге искусственно увеличивает энергию. Обязательно используйте Эйлера–Кромера или RK4!",
+   "It is precisely classical Euler that expands phase-space area and artificially raises the energy at every step. You must use Euler–Cromer or RK4!"
+  ],
+  "B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)": [
+   "Кластер B (2D-моделирование и симплектический Эйлер–Кромер)",
+   "Cluster B (2D modelling and symplectic Euler–Cromer)"
   ],
   "B Klaster (O‘rta / Standart)": [
    "Кластер B (средний / Standard)",
@@ -2076,6 +3466,14 @@
    "C) Не загружена библиотека Math",
    "C) The Math library is not loaded"
   ],
+  "Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas.": [
+   "Очистка Canvas влияет только на визуальную графику, а не на физические расчёты.",
+   "Clearing the Canvas only affects the visual graphics, not the physics calculations."
+  ],
+  "Claude uchun samarali Prompt strukturasi": [
+   "Эффективная структура промпта для Claude",
+   "An effective prompt structure for Claude"
+  ],
   "Energiya saqlanish qonuniga zid.": [
    "Противоречит закону сохранения энергии.",
    "Contradicts the law of conservation of energy."
@@ -2091,6 +3489,14 @@
   "Gravitatsiya ekranga bog‘liq emas, fizik qonundir.": [
    "Гравитация не зависит от экрана — это физический закон.",
    "Gravity does not depend on the screen — it is a physical law."
+  ],
+  "Iltimos, barcha savollarga javob bering.": [
+   "Пожалуйста, ответьте на все вопросы.",
+   "Please answer all the questions."
+  ],
+  "Impulsning saqlanish qonuni qo‘llanilish shartlari": [
+   "Условия применимости закона сохранения импульса",
+   "When the law of conservation of momentum applies"
   ],
   "JavaScript barcha haqiqiy sonlar bilan ishlaydi.": [
    "JavaScript работает со всеми вещественными числами.",
@@ -2112,9 +3518,17 @@
    "Как записываются дифференциальные уравнения по осям x и y для тела, движущегося при квадратичном сопротивлении воздуха (F_drag = -k*v*v)?",
    "How are the differential equations along the x and y axes written for a body moving under quadratic air drag (F_drag = -k*v*v)?"
   ],
+  "Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.": [
+   "Рекомендуются научные симуляции по квадратичной силе сопротивления, системам дифференциальных уравнений и интегрированию Рунге–Кутты 4-го порядка (RK4).",
+   "Scientific simulations on quadratic drag, systems of differential equations and 4th-order Runge–Kutta (RK4) integration are recommended."
+  ],
   "Magnit maydonida tezlik moduli o‘zgarmaydi.": [
    "В магнитном поле модуль скорости не изменяется.",
    "In a magnetic field the speed does not change."
+  ],
+  "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?": [
+   "Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, что стало причиной?",
+   "If the total mechanical energy of a freely oscillating simple pendulum grows artificially over time, what caused it?"
   ],
   "Math obyekti JS da global o‘rnatilgan.": [
    "Объект Math встроен в JS глобально.",
@@ -2124,6 +3538,18 @@
    "Math.sin работает с вещественными числами.",
    "Math.sin works with real numbers."
   ],
+  "Men Nyuton qonunlari, elastik to‘qnashuvlar va PhET/Vascak tahlilini to‘liq tushundim. Endi Claude uchun HTML5 Canvas va JavaScript (requestAnimationFrame) dan foydalangan holda, ishqalanish va yer tortishish kuchlarini hisobga oluvchi yanada murakkab 3D mexanik tizim dvigateli kodini generatsiya qiluvchi Prompt yozib bering.": [
+   "Я полностью понял законы Ньютона, упругие столкновения и анализ PhET/Vascak. Теперь напишите для Claude промпт, генерирующий код более сложного движка 3D-механической системы с учётом сил трения и тяжести, с использованием HTML5 Canvas и JavaScript (requestAnimationFrame).",
+   "I fully understand Newton’s laws, elastic collisions and the PhET/Vascak analysis. Now write me a prompt for Claude that generates code for a more complex 3D mechanical system engine, taking friction and gravity into account, using HTML5 Canvas and JavaScript (requestAnimationFrame)."
+  ],
+  "Mening mexanika modellashtirish va AI dvigatellari bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: {0}. Iltimos, Vascak.cz da to‘qnashuvlar qanday tahlil qilinishini va Google Antigravity kod xatolarini qanday ushlab qolishini sodda misollar bilan tushuntiring.": [
+   "Мой уровень знаний по моделированию механики и ИИ-движкам средний. Я допустил ошибки в следующих темах: {0}. Пожалуйста, на простых примерах объясните, как анализируются столкновения на Vascak.cz и как Google Antigravity перехватывает ошибки кода.",
+   "My knowledge of mechanics modelling and AI engines is intermediate. I made mistakes on these topics: {0}. Please explain with simple examples how collisions are analysed on Vascak.cz and how Google Antigravity catches code errors."
+  ],
+  "Natija: {0}% (100% dan)": [
+   "Результат: {0}% (из 100%)",
+   "Result: {0}% (out of 100%)"
+  ],
   "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?": [
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
@@ -2131,6 +3557,10 @@
   "Nusxalandi!": [
    "Скопировано!",
    "Copied!"
+  ],
+  "PhET/Vascak simulyatorlarining maqsadi": [
+   "Назначение симуляторов PhET/Vascak",
+   "The purpose of PhET/Vascak simulators"
   ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
@@ -2170,6 +3600,38 @@
   ]
  },
  "lab13.html": {
+  "2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.": [
+   "Рекомендуется самостоятельное проектирование 2D-движков Canvas и применение симплектических алгоритмов Эйлера–Кромера.",
+   "Designing your own 2D Canvas engines and using symplectic Euler–Cromer algorithms is recommended."
+  ],
+  "2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.": [
+   "Рекомендуются самостоятельные лабораторные работы по 2D-векторному движению, гравитации и симплектическому интегратору Эйлера–Кромера.",
+   "Independent lab work on 2D vector motion, gravity and the symplectic Euler–Cromer integrator is recommended."
+  ],
+  "3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.": [
+   "Направляется на сложные проекты по 3D WebGL (Three.js), методу Рунге–Кутты 4-го порядка (RK4) и интеграции Boris particle pusher.",
+   "You are pointed towards advanced projects on 3D WebGL (Three.js), the 4th-order Runge–Kutta (RK4) method and Boris particle pusher integration."
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>": [
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, отметьте ответы на все 3 вопроса!</span>\n    </div>",
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Please mark answers to all 3 questions!</span>\n    </div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результаты диагностики лекции 1:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 1 diagnostic results:</h4>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результат диагностики моделирования лекции 2:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 2 modelling diagnostic result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая траектория моделирования:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended modelling pathway:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая учебная траектория:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Общий результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended learning pathway:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Overall result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
   "A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)": [
    "Кластер A (1D-движение и основы скалярных уравнений)",
    "Cluster A (1D Motion & Scalar Equation Basics)"
@@ -2201,6 +3663,18 @@
   "A) v' = -v (to‘liq teskari qaytadi)": [
    "A) v' = -v (полностью отражается назад)",
    "A) v' = -v (fully bounces back)"
+  ],
+  "AI Pipeline (Claude va Antigravity) mantiqiy rollari": [
+   "Логические роли ИИ-конвейера (Claude и Antigravity)",
+   "The logical roles in the AI pipeline (Claude and Antigravity)"
+  ],
+  "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!": [
+   "Именно классический Эйлер расширяет площадь фазового пространства и на каждом шаге искусственно увеличивает энергию. Обязательно используйте Эйлера–Кромера или RK4!",
+   "It is precisely classical Euler that expands phase-space area and artificially raises the energy at every step. You must use Euler–Cromer or RK4!"
+  ],
+  "B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)": [
+   "Кластер B (2D-моделирование и симплектический Эйлер–Кромер)",
+   "Cluster B (2D modelling and symplectic Euler–Cromer)"
   ],
   "B Klaster (O‘rta / Standart)": [
    "Кластер B (средний / Standard)",
@@ -2266,6 +3740,10 @@
    "C) Не загружена библиотека Math",
    "C) The Math library is not loaded"
   ],
+  "Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas.": [
+   "Очистка Canvas влияет только на визуальную графику, а не на физические расчёты.",
+   "Clearing the Canvas only affects the visual graphics, not the physics calculations."
+  ],
   "Energiya saqlanish qonuniga zid.": [
    "Противоречит закону сохранения энергии.",
    "Contradicts the law of conservation of energy."
@@ -2281,6 +3759,10 @@
   "Gravitatsiya ekranga bog‘liq emas, fizik qonundir.": [
    "Гравитация не зависит от экрана — это физический закон.",
    "Gravity does not depend on the screen — it is a physical law."
+  ],
+  "Iltimos, barcha savollarga javob bering.": [
+   "Пожалуйста, ответьте на все вопросы.",
+   "Please answer all the questions."
   ],
   "JavaScript barcha haqiqiy sonlar bilan ishlaydi.": [
    "JavaScript работает со всеми вещественными числами.",
@@ -2302,9 +3784,17 @@
    "Как записываются дифференциальные уравнения по осям x и y для тела, движущегося при квадратичном сопротивлении воздуха (F_drag = -k*v*v)?",
    "How are the differential equations along the x and y axes written for a body moving under quadratic air drag (F_drag = -k*v*v)?"
   ],
+  "Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.": [
+   "Рекомендуются научные симуляции по квадратичной силе сопротивления, системам дифференциальных уравнений и интегрированию Рунге–Кутты 4-го порядка (RK4).",
+   "Scientific simulations on quadratic drag, systems of differential equations and 4th-order Runge–Kutta (RK4) integration are recommended."
+  ],
   "Magnit maydonida tezlik moduli o‘zgarmaydi.": [
    "В магнитном поле модуль скорости не изменяется.",
    "In a magnetic field the speed does not change."
+  ],
+  "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?": [
+   "Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, что стало причиной?",
+   "If the total mechanical energy of a freely oscillating simple pendulum grows artificially over time, what caused it?"
   ],
   "Math obyekti JS da global o‘rnatilgan.": [
    "Объект Math встроен в JS глобально.",
@@ -2314,6 +3804,22 @@
    "Math.sin работает с вещественными числами.",
    "Math.sin works with real numbers."
   ],
+  "Men termodinamika va makroskopik holatlarning stoxastik tabiatini to‘liq tushundim. Endi Claude uchun HTML5 Canvas yordamida N ta zarrachaning to‘qnashuv algoritmini va T-S (Harorat-Entropiya) grafigini chizuvchi murakkab AI simulyatsiyasi kodini so‘rash uchun Prompt yozib bering.": [
+   "Я полностью понял термодинамику и стохастическую природу макроскопических состояний. Теперь напишите промпт для Claude, чтобы запросить код сложной ИИ-симуляции на HTML5 Canvas, реализующей алгоритм столкновений N частиц и строящей T-S-график (температура–энтропия).",
+   "I fully understand thermodynamics and the stochastic nature of macroscopic states. Now write me a prompt for Claude asking for code for a complex AI simulation in HTML5 Canvas that implements an N-particle collision algorithm and draws a T-S (temperature–entropy) graph."
+  ],
+  "Mendeleyev-Klapeyron tenglamasi": [
+   "Уравнение Менделеева–Клапейрона",
+   "The Mendeleev–Clapeyron equation"
+  ],
+  "Mening termodinamika bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: {0}. Iltimos, stoxastik simulyatsiyalar (Broun harakati) orqali makroskopik qonunlar (P=nRT) qanday kelib chiqishini aniq tushuntiring.": [
+   "Мой уровень знаний термодинамики средний. Я допустил ошибки в следующих темах: {0}. Пожалуйста, чётко объясните, как макроскопические законы (P=nRT) возникают из стохастических симуляций (броуновского движения).",
+   "My knowledge of thermodynamics is intermediate. I made mistakes on these topics: {0}. Please explain clearly how macroscopic laws (P=nRT) emerge from stochastic simulations (Brownian motion)."
+  ],
+  "Natija: {0}% (100% dan)": [
+   "Результат: {0}% (из 100%)",
+   "Result: {0}% (out of 100%)"
+  ],
   "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?": [
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
@@ -2322,6 +3828,14 @@
    "Скопировано!",
    "Copied!"
   ],
+  "P, kPa": [
+   "P, кПа",
+   "P, kPa"
+  ],
+  "P-V grafigidagi izotermik jarayon": [
+   "Изотермический процесс на P-V-графике",
+   "The isothermal process on a P-V graph"
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
@@ -2329,6 +3843,10 @@
   "Statsionar magnit maydonida potensial energiya o‘zgarmaydi.": [
    "В стационарном магнитном поле потенциальная энергия не изменяется.",
    "In a static magnetic field the potential energy does not change."
+  ],
+  "Stoxastik jarayonlarning tabiati": [
+   "Природа стохастических процессов",
+   "The nature of stochastic processes"
   ],
   "To‘g‘ri!": [
    "Верно!",
@@ -2360,6 +3878,46 @@
   ]
  },
  "lab14.html": {
+  "2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.": [
+   "Рекомендуется самостоятельное проектирование 2D-движков Canvas и применение симплектических алгоритмов Эйлера–Кромера.",
+   "Designing your own 2D Canvas engines and using symplectic Euler–Cromer algorithms is recommended."
+  ],
+  "2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.": [
+   "Рекомендуются самостоятельные лабораторные работы по 2D-векторному движению, гравитации и симплектическому интегратору Эйлера–Кромера.",
+   "Independent lab work on 2D vector motion, gravity and the symplectic Euler–Cromer integrator is recommended."
+  ],
+  "3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.": [
+   "Направляется на сложные проекты по 3D WebGL (Three.js), методу Рунге–Кутты 4-го порядка (RK4) и интеграции Boris particle pusher.",
+   "You are pointed towards advanced projects on 3D WebGL (Three.js), the 4th-order Runge–Kutta (RK4) method and Boris particle pusher integration."
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>": [
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, отметьте ответы на все 3 вопроса!</span>\n    </div>",
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Please mark answers to all 3 questions!</span>\n    </div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результаты диагностики лекции 1:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 1 diagnostic results:</h4>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результат диагностики моделирования лекции 2:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 2 modelling diagnostic result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая траектория моделирования:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended modelling pathway:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая учебная траектория:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Общий результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended learning pathway:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Overall result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
+  "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"></polygon><path d=\"M15.54 8.46a5 5 0 0 1 0 7.07\"></path><path d=\"M19.07 4.93a10 10 0 0 1 0 14.14\"></path></svg> Ovozli izoh (SI TTS)": [
+   "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"></polygon><path d=\"M15.54 8.46a5 5 0 0 1 0 7.07\"></path><path d=\"M19.07 4.93a10 10 0 0 1 0 14.14\"></path></svg> Голосовое пояснение (ИИ TTS)",
+   "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"></polygon><path d=\"M15.54 8.46a5 5 0 0 1 0 7.07\"></path><path d=\"M19.07 4.93a10 10 0 0 1 0 14.14\"></path></svg> Spoken commentary (AI TTS)"
+  ],
+  "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"9\" y1=\"9\" x2=\"15\" y2=\"15\"></line><line x1=\"15\" y1=\"9\" x2=\"9\" y2=\"15\"></line></svg> To‘xtatish": [
+   "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"9\" y1=\"9\" x2=\"15\" y2=\"15\"></line><line x1=\"15\" y1=\"9\" x2=\"9\" y2=\"15\"></line></svg> Остановить",
+   "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"9\" y1=\"9\" x2=\"15\" y2=\"15\"></line><line x1=\"15\" y1=\"9\" x2=\"9\" y2=\"15\"></line></svg> Stop"
+  ],
   "A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)": [
    "Кластер A (1D-движение и основы скалярных уравнений)",
    "Cluster A (1D Motion & Scalar Equation Basics)"
@@ -2391,6 +3949,18 @@
   "A) v' = -v (to‘liq teskari qaytadi)": [
    "A) v' = -v (полностью отражается назад)",
    "A) v' = -v (fully bounces back)"
+  ],
+  "AI vositalari o‘rtasidagi multi-modal integratsiya": [
+   "Мультимодальная интеграция между ИИ-инструментами",
+   "Multimodal integration between AI tools"
+  ],
+  "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!": [
+   "Именно классический Эйлер расширяет площадь фазового пространства и на каждом шаге искусственно увеличивает энергию. Обязательно используйте Эйлера–Кромера или RK4!",
+   "It is precisely classical Euler that expands phase-space area and artificially raises the energy at every step. You must use Euler–Cromer or RK4!"
+  ],
+  "B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)": [
+   "Кластер B (2D-моделирование и симплектический Эйлер–Кромер)",
+   "Cluster B (2D modelling and symplectic Euler–Cromer)"
   ],
   "B Klaster (O‘rta / Standart)": [
    "Кластер B (средний / Standard)",
@@ -2456,9 +4026,21 @@
    "C) Не загружена библиотека Math",
    "C) The Math library is not loaded"
   ],
+  "Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas.": [
+   "Очистка Canvas влияет только на визуальную графику, а не на физические расчёты.",
+   "Clearing the Canvas only affects the visual graphics, not the physics calculations."
+  ],
   "Energiya saqlanish qonuniga zid.": [
    "Противоречит закону сохранения энергии.",
    "Contradicts the law of conservation of energy."
+  ],
+  "Faradey qonuni va magnit oqimi": [
+   "Закон Фарадея и магнитный поток",
+   "Faraday’s law and magnetic flux"
+  ],
+  "Faradeyning elektromagnit induksiya qonuniga ko‘ra, shtab-magnit yopiq g‘altak ichiga kiritilganda yoki chiqarilganda, magnit oqimining o‘zgarishi natijasida elektr toki hosil bo‘ladi. Magnit qanchalik tez harakatlansa, tok shuncha kuchli bo‘ladi.": [
+   "Согласно закону электромагнитной индукции Фарадея, когда полосовой магнит вводят в замкнутую катушку или выводят из неё, из-за изменения магнитного потока возникает электрический ток. Чем быстрее движется магнит, тем сильнее ток.",
+   "According to Faraday’s law of electromagnetic induction, when a bar magnet is pushed into or pulled out of a closed coil, the changing magnetic flux produces an electric current. The faster the magnet moves, the stronger the current."
   ],
   "Fizik modellarni bosqichma-bosqich Scaffolding va vizual yo‘riqnomalar orqali o‘zlashtirish tavsiya etiladi.": [
    "Рекомендуется осваивать физические модели поэтапно, с помощью скаффолдинга и визуальных инструкций.",
@@ -2471,6 +4053,14 @@
   "Gravitatsiya ekranga bog‘liq emas, fizik qonundir.": [
    "Гравитация не зависит от экрана — это физический закон.",
    "Gravity does not depend on the screen — it is a physical law."
+  ],
+  "Iltimos, barcha savollarga javob bering.": [
+   "Пожалуйста, ответьте на все вопросы.",
+   "Please answer all the questions."
+  ],
+  "Induksiya EYuK ning paydo bo‘lish shartlari (Lents qoidasi)": [
+   "Условия возникновения ЭДС индукции (правило Ленца)",
+   "Conditions for induced EMF (Lenz’s rule)"
   ],
   "JavaScript barcha haqiqiy sonlar bilan ishlaydi.": [
    "JavaScript работает со всеми вещественными числами.",
@@ -2488,13 +4078,25 @@
    "Какой будет скорость тела после абсолютно неупругого удара о стенку (e = 0)?",
    "What is a body’s velocity after a perfectly inelastic impact with a wall (e = 0)?"
   ],
+  "Kechirasiz, brauzeringiz Text-to-Speech (Web Speech API) texnologiyasini qo‘llab-quvvatlamaydi.": [
+   "Извините, ваш браузер не поддерживает технологию Text-to-Speech (Web Speech API).",
+   "Sorry, your browser does not support text-to-speech (Web Speech API)."
+  ],
   "Kvadratik havo qarshiligida (F_drag = -k*v*v) harakatlanayotgan jism uchun x va y o‘qlari bo‘yicha differensial tenglamalar qanday yoziladi?": [
    "Как записываются дифференциальные уравнения по осям x и y для тела, движущегося при квадратичном сопротивлении воздуха (F_drag = -k*v*v)?",
    "How are the differential equations along the x and y axes written for a body moving under quadratic air drag (F_drag = -k*v*v)?"
   ],
+  "Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.": [
+   "Рекомендуются научные симуляции по квадратичной силе сопротивления, системам дифференциальных уравнений и интегрированию Рунге–Кутты 4-го порядка (RK4).",
+   "Scientific simulations on quadratic drag, systems of differential equations and 4th-order Runge–Kutta (RK4) integration are recommended."
+  ],
   "Magnit maydonida tezlik moduli o‘zgarmaydi.": [
    "В магнитном поле модуль скорости не изменяется.",
    "In a magnetic field the speed does not change."
+  ],
+  "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?": [
+   "Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, что стало причиной?",
+   "If the total mechanical energy of a freely oscillating simple pendulum grows artificially over time, what caused it?"
   ],
   "Math obyekti JS da global o‘rnatilgan.": [
    "Объект Math встроен в JS глобально.",
@@ -2503,6 +4105,18 @@
   "Math.sin haqiqiy sonlar bilan ishlaydi.": [
    "Math.sin работает с вещественными числами.",
    "Math.sin works with real numbers."
+  ],
+  "Men Faradey qonuni va induksiya hodisasini to‘liq o‘zlashtirdim. Endi Claude uchun HTML5 Canvas yordamida shtab-magnit, g‘altak va ampermetr vizualizatsiyasini yaratib, tok kuchini magnit tezligiga (dx/dt) proporsional tarzda hisoblaydigan va TTS tugmasiga ega bo‘lgan kod generatsiya qilish uchun Prompt yozib bering.": [
+   "Я полностью освоил закон Фарадея и явление индукции. Теперь напишите промпт для Claude, чтобы сгенерировать код на HTML5 Canvas, создающий визуализацию полосового магнита, катушки и амперметра, рассчитывающий силу тока пропорционально скорости магнита (dx/dt) и имеющий кнопку TTS.",
+   "I have fully mastered Faraday’s law and induction. Now write me a prompt for Claude to generate HTML5 Canvas code that visualises a bar magnet, a coil and an ammeter, calculates the current in proportion to the magnet’s speed (dx/dt) and has a TTS button."
+  ],
+  "Mening elektrodinamika va AI audio vositalari bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: {0}. Iltimos, nima uchun magnit harakatsiz turganda tok hosil bo‘lmasligini va TTS vositalari qanday qilib o‘quvchilarga yordam berishini tushuntiring.": [
+   "Мой уровень знаний по электродинамике и аудиоинструментам ИИ средний. Я допустил ошибки в следующих темах: {0}. Пожалуйста, объясните, почему при неподвижном магните ток не возникает и как TTS-инструменты помогают учащимся.",
+   "My knowledge of electrodynamics and AI audio tools is intermediate. I made mistakes on these topics: {0}. Please explain why no current flows when the magnet is still and how TTS tools help learners."
+  ],
+  "Natija: {0}% (100% dan)": [
+   "Результат: {0}% (из 100%)",
+   "Result: {0}% (out of 100%)"
   ],
   "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?": [
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
@@ -2519,6 +4133,10 @@
   "Statsionar magnit maydonida potensial energiya o‘zgarmaydi.": [
    "В стационарном магнитном поле потенциальная энергия не изменяется.",
    "In a static magnetic field the potential energy does not change."
+  ],
+  "TTS texnologiyasining ta’limdagi ro‘li": [
+   "Роль технологии TTS в образовании",
+   "The role of TTS technology in education"
   ],
   "To‘g‘ri!": [
    "Верно!",
@@ -2550,6 +4168,38 @@
   ]
  },
  "lab15.html": {
+  "2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.": [
+   "Рекомендуется самостоятельное проектирование 2D-движков Canvas и применение симплектических алгоритмов Эйлера–Кромера.",
+   "Designing your own 2D Canvas engines and using symplectic Euler–Cromer algorithms is recommended."
+  ],
+  "2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.": [
+   "Рекомендуются самостоятельные лабораторные работы по 2D-векторному движению, гравитации и симплектическому интегратору Эйлера–Кромера.",
+   "Independent lab work on 2D vector motion, gravity and the symplectic Euler–Cromer integrator is recommended."
+  ],
+  "3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.": [
+   "Направляется на сложные проекты по 3D WebGL (Three.js), методу Рунге–Кутты 4-го порядка (RK4) и интеграции Boris particle pusher.",
+   "You are pointed towards advanced projects on 3D WebGL (Three.js), the 4th-order Runge–Kutta (RK4) method and Boris particle pusher integration."
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>": [
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, отметьте ответы на все 3 вопроса!</span>\n    </div>",
+   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Please mark answers to all 3 questions!</span>\n    </div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результаты диагностики лекции 1:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 1 diagnostic results:</h4>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Результат диагностики моделирования лекции 2:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 2 modelling diagnostic result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая траектория моделирования:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended modelling pathway:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
+  "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>": [
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Рекомендуемая учебная траектория:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Общий результат: {5} / {6} баллов ({7}%)</div>\n  </div></div>",
+   "<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Recommended learning pathway:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Overall result: {5} / {6} points ({7}%)</div>\n  </div></div>"
+  ],
   "A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)": [
    "Кластер A (1D-движение и основы скалярных уравнений)",
    "Cluster A (1D Motion & Scalar Equation Basics)"
@@ -2581,6 +4231,22 @@
   "A) v' = -v (to‘liq teskari qaytadi)": [
    "A) v' = -v (полностью отражается назад)",
    "A) v' = -v (fully bounces back)"
+  ],
+  "AI Pipeline qismlari ketma-ketligi": [
+   "Последовательность частей ИИ-конвейера",
+   "The order of the AI pipeline’s parts"
+  ],
+  "AI-detektorlarning cheklovlari va originallik": [
+   "Ограничения ИИ-детекторов и оригинальность",
+   "The limits of AI detectors and originality"
+  ],
+  "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!": [
+   "Именно классический Эйлер расширяет площадь фазового пространства и на каждом шаге искусственно увеличивает энергию. Обязательно используйте Эйлера–Кромера или RK4!",
+   "It is precisely classical Euler that expands phase-space area and artificially raises the energy at every step. You must use Euler–Cromer or RK4!"
+  ],
+  "B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)": [
+   "Кластер B (2D-моделирование и симплектический Эйлер–Кромер)",
+   "Cluster B (2D modelling and symplectic Euler–Cromer)"
   ],
   "B Klaster (O‘rta / Standart)": [
    "Кластер B (средний / Standard)",
@@ -2614,6 +4280,10 @@
    "Рекомендуются инструкции со скаффолдингом по основам дифференциального исчисления и простому шагу Эйлера.",
    "Scaffolded guides on introductory differential calculus and the simple Euler step are recommended."
   ],
+  "Boshlash": [
+   "Старт",
+   "Start"
+  ],
   "Bu e = 1 (mutlaq elastik) holatidir.": [
    "Это случай e = 1 (абсолютно упругий удар).",
    "This is the e = 1 case (perfectly elastic)."
@@ -2646,6 +4316,14 @@
    "C) Не загружена библиотека Math",
    "C) The Math library is not loaded"
   ],
+  "Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas.": [
+   "Очистка Canvas влияет только на визуальную графику, а не на физические расчёты.",
+   "Clearing the Canvas only affects the visual graphics, not the physics calculations."
+  ],
+  "Davom etish": [
+   "Продолжить",
+   "Resume"
+  ],
   "Energiya saqlanish qonuniga zid.": [
    "Противоречит закону сохранения энергии.",
    "Contradicts the law of conservation of energy."
@@ -2661,6 +4339,10 @@
   "Gravitatsiya ekranga bog‘liq emas, fizik qonundir.": [
    "Гравитация не зависит от экрана — это физический закон.",
    "Gravity does not depend on the screen — it is a physical law."
+  ],
+  "Iltimos, barcha savollarga javob bering.": [
+   "Пожалуйста, ответьте на все вопросы.",
+   "Please answer all the questions."
   ],
   "JavaScript barcha haqiqiy sonlar bilan ishlaydi.": [
    "JavaScript работает со всеми вещественными числами.",
@@ -2682,9 +4364,17 @@
    "Как записываются дифференциальные уравнения по осям x и y для тела, движущегося при квадратичном сопротивлении воздуха (F_drag = -k*v*v)?",
    "How are the differential equations along the x and y axes written for a body moving under quadratic air drag (F_drag = -k*v*v)?"
   ],
+  "Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.": [
+   "Рекомендуются научные симуляции по квадратичной силе сопротивления, системам дифференциальных уравнений и интегрированию Рунге–Кутты 4-го порядка (RK4).",
+   "Scientific simulations on quadratic drag, systems of differential equations and 4th-order Runge–Kutta (RK4) integration are recommended."
+  ],
   "Magnit maydonida tezlik moduli o‘zgarmaydi.": [
    "В магнитном поле модуль скорости не изменяется.",
    "In a magnetic field the speed does not change."
+  ],
+  "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?": [
+   "Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, что стало причиной?",
+   "If the total mechanical energy of a freely oscillating simple pendulum grows artificially over time, what caused it?"
   ],
   "Math obyekti JS da global o‘rnatilgan.": [
    "Объект Math встроен в JS глобально.",
@@ -2694,6 +4384,18 @@
    "Math.sin работает с вещественными числами.",
    "Math.sin works with real numbers."
   ],
+  "Men barcha AI vositalari (Claude, Undetectable, Otter, MagicSchool) ro‘lini to‘liq o‘zlashtirdim va Yadro fizikasining yemirilish qonunini bilaman. Endi yakuniy loyiham uchun HTML5/JS da 400 ta nuklonning stoxastik yemirilishini va eksponensial kamayish grafigini real-time chizib beradigan murakkab kod generatsiya qilish uchun yakuniy Prompt yozib bering.": [
+   "Я полностью освоил роль всех ИИ-инструментов (Claude, Undetectable, Otter, MagicSchool) и знаю закон распада ядерной физики. Теперь напишите итоговый промпт для генерации сложного кода на HTML5/JS для моего итогового проекта, который в реальном времени рисует стохастический распад 400 нуклонов и график экспоненциального убывания.",
+   "I have fully mastered the role of every AI tool (Claude, Undetectable, Otter, MagicSchool) and know the nuclear decay law. Now write me a final prompt to generate complex HTML5/JS code for my final project that draws the stochastic decay of 400 nucleons and an exponential decay graph in real time."
+  ],
+  "Mening yadro fizikasi va AI vositalari integratsiyasi bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: {0}. Iltimos, nega radioaktiv yemirilishni aniq oldindan aytib bo‘lmasligini va AI-detektorlar nima uchun xato qilishi mumkinligini tushuntiring.": [
+   "Мой уровень знаний по ядерной физике и интеграции ИИ-инструментов средний. Я допустил ошибки в следующих темах: {0}. Пожалуйста, объясните, почему радиоактивный распад нельзя точно предсказать заранее и почему ИИ-детекторы могут ошибаться.",
+   "My knowledge of nuclear physics and AI tool integration is intermediate. I made mistakes on these topics: {0}. Please explain why radioactive decay cannot be predicted exactly in advance and why AI detectors can be wrong."
+  ],
+  "Natija: {0}% (100% dan)": [
+   "Результат: {0}% (из 100%)",
+   "Result: {0}% (out of 100%)"
+  ],
   "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?": [
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
@@ -2702,9 +4404,17 @@
    "Скопировано!",
    "Copied!"
   ],
+  "Otter.ai orqali himoyani transkripsiya qilish": [
+   "Транскрипция защиты через Otter.ai",
+   "Transcribing the defence with Otter.ai"
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
+  ],
+  "Radioaktiv yemirilishning stoxastik tabiati": [
+   "Стохастическая природа радиоактивного распада",
+   "The stochastic nature of radioactive decay"
   ],
   "Statsionar magnit maydonida potensial energiya o‘zgarmaydi.": [
    "В стационарном магнитном поле потенциальная энергия не изменяется.",
@@ -2729,6 +4439,18 @@
   "To‘g‘ri! e = 0 bo‘lganda tiklanish sodir bo‘lmaydi va barcha kinetik energiya yo‘qotiladi.": [
    "Верно! При e = 0 восстановления не происходит, и вся кинетическая энергия теряется.",
    "Correct! With e = 0 there is no restitution and all kinetic energy is lost."
+  ],
+  "To‘xtatish": [
+   "Остановить",
+   "Stop"
+  ],
+  "Tugadi": [
+   "Завершено",
+   "Finished"
+  ],
+  "Vaqt (t)": [
+   "Время (t)",
+   "Time (t)"
   ],
   "Xato!": [
    "Неверно!",
@@ -3217,6 +4939,16 @@
   "⚠️ Iltimos, barcha 3 ta savolga javob belgilang!": [
    "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
    "⚠️ Please answer all 3 questions!"
+  ]
+ },
+ "sims/quyosh-sintezi.html": {
+  "Davom etish": [
+   "Продолжить",
+   "Resume"
+  ],
+  "To‘xtatish": [
+   "Остановить",
+   "Stop"
   ]
  }
 }

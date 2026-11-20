@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1946,25 +1946,25 @@ function generateSimPrompt() {
     const q4 = document.querySelector('input[name="diag15_q4"]:checked');
 
     if (!q1 || !q2 || !q3 || !q4) {
-        alert("Iltimos, barcha savollarga javob bering.");
+        alert(__t("Iltimos, barcha savollarga javob bering."));
         return;
     }
 
-    if (q1.value === 'B') score += 25; else missingConcepts.push("Radioaktiv yemirilishning stoxastik tabiati");
-    if (q2.value === 'A') score += 25; else missingConcepts.push("AI-detektorlarning cheklovlari va originallik");
-    if (q3.value === 'B') score += 25; else missingConcepts.push("Otter.ai orqali himoyani transkripsiya qilish");
-    if (q4.value === 'B') score += 25; else missingConcepts.push("AI Pipeline qismlari ketma-ketligi");
+    if (q1.value === 'B') score += 25; else missingConcepts.push(__t("Radioaktiv yemirilishning stoxastik tabiati"));
+    if (q2.value === 'A') score += 25; else missingConcepts.push(__t("AI-detektorlarning cheklovlari va originallik"));
+    if (q3.value === 'B') score += 25; else missingConcepts.push(__t("Otter.ai orqali himoyani transkripsiya qilish"));
+    if (q4.value === 'B') score += 25; else missingConcepts.push(__t("AI Pipeline qismlari ketma-ketligi"));
 
     document.getElementById('diagnostic-result').style.display = 'block';
     const scoreEl = document.getElementById('diagnostic-score');
-    scoreEl.innerText = `Natija: ${score}% (100% dan)`;
+    scoreEl.innerText = __t("Natija: {0}% (100% dan)", [score]);
     scoreEl.style.color = score >= 75 ? 'var(--accent-emerald)' : 'var(--accent-amber)';
 
     let promptText = "";
     if (score === 100) {
-        promptText = "Men barcha AI vositalari (Claude, Undetectable, Otter, MagicSchool) ro‘lini to‘liq o‘zlashtirdim va Yadro fizikasining yemirilish qonunini bilaman. Endi yakuniy loyiham uchun HTML5/JS da 400 ta nuklonning stoxastik yemirilishini va eksponensial kamayish grafigini real-time chizib beradigan murakkab kod generatsiya qilish uchun yakuniy Prompt yozib bering.";
+        promptText = __t("Men barcha AI vositalari (Claude, Undetectable, Otter, MagicSchool) ro‘lini to‘liq o‘zlashtirdim va Yadro fizikasining yemirilish qonunini bilaman. Endi yakuniy loyiham uchun HTML5/JS da 400 ta nuklonning stoxastik yemirilishini va eksponensial kamayish grafigini real-time chizib beradigan murakkab kod generatsiya qilish uchun yakuniy Prompt yozib bering.");
     } else {
-        promptText = `Mening yadro fizikasi va AI vositalari integratsiyasi bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: ${missingConcepts.join(', ')}. Iltimos, nega radioaktiv yemirilishni aniq oldindan aytib bo‘lmasligini va AI-detektorlar nima uchun xato qilishi mumkinligini tushuntiring.`;
+        promptText = __t("Mening yadro fizikasi va AI vositalari integratsiyasi bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: {0}. Iltimos, nega radioaktiv yemirilishni aniq oldindan aytib bo‘lmasligini va AI-detektorlar nima uchun xato qilishi mumkinligini tushuntiring.", [missingConcepts.join(', ')]);
     }
 
     document.getElementById('ai-prompt-output').value = promptText;
@@ -2043,7 +2043,7 @@ function drawDecayGraph() {
     
     ctx.fillStyle = "#94a3b8";
     ctx.font = "12px sans-serif";
-    ctx.fillText("Vaqt (t)", canvas.width - 45, canvas.height - 10);
+    ctx.fillText(__t("Vaqt (t)"), canvas.width - 45, canvas.height - 10);
     ctx.fillText("N(t)", 5, 15);
     
     if(decayData.length < 2) return;
@@ -2100,17 +2100,17 @@ function nuclearLoop() {
         }, 50);
     } else {
         isNuclearRunning = false;
-        document.getElementById('start-btn').innerText = "Tugadi";
+        document.getElementById('start-btn').innerText = __t("Tugadi");
     }
 }
 
 function toggleNuclearSim() {
     if (isNuclearRunning) {
         isNuclearRunning = false;
-        document.getElementById('start-btn').innerText = "Davom etish";
+        document.getElementById('start-btn').innerText = __t("Davom etish");
     } else {
         isNuclearRunning = true;
-        document.getElementById('start-btn').innerText = "To‘xtatish";
+        document.getElementById('start-btn').innerText = __t("To‘xtatish");
         nuclearLoop();
     }
 }
@@ -2118,7 +2118,7 @@ function toggleNuclearSim() {
 function resetNuclearSim() {
     isNuclearRunning = false;
     cancelAnimationFrame(nuclearAnimReq);
-    document.getElementById('start-btn').innerText = "Boshlash";
+    document.getElementById('start-btn').innerText = __t("Boshlash");
     initNuclearSim();
 }
 
@@ -2171,11 +2171,11 @@ document.addEventListener('DOMContentLoaded', () => {
 const quiz1Questions = [
   {
     id: 1,
-    question: "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?",
+    question: __t("Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?"),
     options: [
       { text: __t("A) Burchak radianda emas, gradusda hisoblangan"), correct: false, note: __t("Gradus xatoligi davrni buzadi, lekin energiyaning eksponensial portlashiga sabab bo‘lmaydi.") },
-      { text: __t("B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas"), correct: true, note: "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!" },
-      { text: __t("C) Canvas ekrani har kadrda tozalanmagan"), correct: false, note: "Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas." }
+      { text: __t("B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas"), correct: true, note: __t("Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!") },
+      { text: __t("C) Canvas ekrani har kadrda tozalanmagan"), correct: false, note: __t("Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas.") }
     ]
   },
   {
@@ -2228,14 +2228,11 @@ window.checkDiagnosticQuiz = function() {
   });
 
   if (!allAnswered) {
-    feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-    </div>`;
+    feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>", []);
     return;
   }
 
-  let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 1-ma’ruza diagnostika natijalari:</h4>`;
+  let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>", []);
 
   quiz1Questions.forEach(q => {
     const userOptIdx = userAnswers1[q.id];
@@ -2258,19 +2255,14 @@ window.checkDiagnosticQuiz = function() {
   if (correctCount === 2) {
     cluster = __t("B Klaster (O‘rta / Standart)");
     clusterColor = '#047857';
-    clusterDesc = '2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.';
+    clusterDesc = __t("2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.");
   } else if (correctCount === 3) {
     cluster = __t("C Klaster (Ilg‘or / Research)");
     clusterColor = '#7C3AED';
-    clusterDesc = '3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.';
+    clusterDesc = __t("3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.");
   }
 
-  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${clusterColor}; text-align:center;">
-    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>
-    <div style="font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
-    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Umumiy Natija: ${correctCount} / ${totalCount} ball (${uzFix(((correctCount/totalCount)*100), 0)}%)</div>
-  </div></div>`;
+  htmlResult += __t("<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>", [clusterColor, clusterColor, cluster, clusterDesc, clusterColor, correctCount, totalCount, uzFix(((correctCount/totalCount)*100), 0)]);
 
   feedbackEl.innerHTML = htmlResult;
 };
@@ -2339,14 +2331,11 @@ window.checkDiagnostic2Quiz = function() {
   });
 
   if (!allAnswered) {
-    feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-    </div>`;
+    feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>", []);
     return;
   }
 
-  let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>`;
+  let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>", []);
 
   quiz2Questions.forEach(q => {
     const userOptIdx = userAnswers2[q.id];
@@ -2362,26 +2351,21 @@ window.checkDiagnostic2Quiz = function() {
     </div>`;
   });
 
-  let cluster = 'B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)';
+  let cluster = __t("B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)");
   let clusterColor = '#047857';
-  let clusterDesc = '2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.';
+  let clusterDesc = __t("2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.");
 
   if (correctCount === 3) {
     cluster = __t("C Klaster (No-chiziqli Tizimlar, Aerodinamik Drag & RK4 Integratori)");
     clusterColor = '#7C3AED';
-    clusterDesc = 'Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.';
+    clusterDesc = __t("Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.");
   } else if (correctCount <= 1) {
     cluster = __t("A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)");
     clusterColor = '#1C4E9E';
     clusterDesc = __t("Boshlang‘ich differensial hisob va sodda Eyler qadami bo‘yicha Scaffolding yo‘riqnomalar tavsiya etiladi.");
   }
 
-  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${clusterColor}; text-align:center;">
-    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>
-    <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
-    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Natija: ${correctCount} / ${totalCount} ball (${uzFix(((correctCount/totalCount)*100), 0)}%)</div>
-  </div></div>`;
+  htmlResult += __t("<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>", [clusterColor, clusterColor, cluster, clusterDesc, clusterColor, correctCount, totalCount, uzFix(((correctCount/totalCount)*100), 0)]);
 
   feedbackEl.innerHTML = htmlResult;
 };

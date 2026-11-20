@@ -1,0 +1,482 @@
+[
+ {
+  "k": "8250efcf",
+  "s": "12-laboratoriya mashg‘uloti: Nyuton qonuniyatlari va AI orqali kodlash",
+  "ru": "Лабораторное занятие 12: законы Ньютона и программирование с помощью ИИ",
+  "en": "Lab 12: Newton’s Laws and Coding with AI"
+ },
+ {
+  "k": "752ae475",
+  "s": "Ushbu laboratoriya mashg‘ulotida talabalar Nyuton qonunlari va impulsning saqlanish qonunini PhET «Collision Lab» simulyatsiyasida tadqiq qiladi, so‘ng Claude yordamida HTML5 Canvas’da elastik to‘qnashuvlar dvigatelini yozadi va natijani Google Antigravity agentlari yordamida tekshiradi. <strong>Algodoo</strong> — ikki o‘lchamli fizika «qum qutisi» dasturi — mexanik tizimlarni tez prototiplash va kinematik videolarni yozib olish uchun ishlatiladi. Kod natijalari impuls va kinetik energiyaning saqlanishi bo‘yicha sonli tekshiriladi.",
+  "ru": "На этом лабораторном занятии студенты исследуют законы Ньютона и закон сохранения импульса в симуляции PhET «Collision Lab», затем с помощью Claude пишут на HTML5 Canvas движок упругих столкновений и проверяют результат с помощью агентов Google Antigravity. <strong>Algodoo</strong> — двумерная физическая «песочница» — используется для быстрого прототипирования механических систем и записи кинематических видео. Результаты кода численно проверяются на сохранение импульса и кинетической энергии.",
+  "en": "In this lab, students investigate Newton’s laws and momentum conservation in the PhET \"Collision Lab\" simulation, then use Claude to write an elastic-collision engine in HTML5 Canvas and check the result with Google Antigravity agents. <strong>Algodoo</strong>, a 2D physics \"sandbox\", is used for quick prototyping of mechanical systems and recording kinematic videos. The code’s results are checked numerically for conservation of momentum and kinetic energy."
+ },
+ {
+  "k": "b3980d0d",
+  "s": "📋 12-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 12 и этапы анализа:",
+  "en": "📋 Lab 12 plan and analysis stages:"
+ },
+ {
+  "k": "037e25b9",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Nyuton qonunlari, impuls saqlanishi hamda sun’iy intellekt vositalarida modellashtirish prinsiplari bo‘yicha test.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Тест по законам Ньютона, сохранению импульса и принципам моделирования в ИИ-инструментах.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A test on Newton’s laws, momentum conservation and modelling principles in AI tools.</span>"
+ },
+ {
+  "k": "9507e7f0",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Mexanika loyihasi: to‘liq pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Mexanik tizim tahlili, kodni AI orqali generatsiya qilish va natijalarni avtomatlashtirilgan monitoring qilishning uzluksiz zanjiri.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Проект по механике: полный конвейер:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Непрерывная цепочка анализа механической системы, генерации кода через ИИ и автоматизированного мониторинга результатов.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Mechanics project: the full pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A continuous chain from analysing the mechanical system to generating code with AI and automated monitoring of the results.</span>"
+ },
+ {
+  "k": "27e5b9a1",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Model tahlili (Vascak.cz / PhET):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Ishqalanish kuchi, massa, tezlanish kabi kinematik va dinamik o‘zgaruvchilarni vizual hamda analitik tadqiq etish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Анализ модели (Vascak.cz / PhET):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Визуальное и аналитическое исследование кинематических и динамических переменных, таких как сила трения, масса, ускорение.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Model analysis (Vascak.cz / PhET):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Visual and analytic study of kinematic and dynamic variables such as friction, mass and acceleration.</span>"
+ },
+ {
+  "k": "d1717415",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Claude va Antigravity monitoring:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude yordamida HTML5/JS fizika dvigateli kodini yaratish va Antigravity agentlari yordamida uni monitoring qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Claude и мониторинг Antigravity:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Создание кода физического движка HTML5/JS с помощью Claude и его мониторинг с помощью агентов Antigravity.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Claude and Antigravity monitoring:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Building HTML5/JS physics engine code with Claude and monitoring it with Antigravity agents.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "9cb5013b",
+  "s": "1. Diagnostika va individual o‘quv rejasi",
+  "ru": "1. Диагностика и индивидуальный учебный план",
+  "en": "1. Diagnostics and an individual learning plan"
+ },
+ {
+  "k": "6c7427ee",
+  "s": "Nyutonning dinamika qonuniyatlari, impuls saqlanishi va AI vositalarida (Claude, Antigravity) kod yaratish arxitekturasi bo‘yicha bilimlaringizni tekshiring.",
+  "ru": "Проверьте свои знания законов динамики Ньютона, сохранения импульса и архитектуры создания кода в ИИ-инструментах (Claude, Antigravity).",
+  "en": "Test your knowledge of Newton’s laws of dynamics, momentum conservation and how code is built with AI tools (Claude, Antigravity)."
+ },
+ {
+  "k": "8561e695",
+  "s": "1-savol: Impulsning saqlanish qonuni (Momentum Conservation) qaysi shartda o‘rinli bo‘ladi?",
+  "ru": "Вопрос 1: При каком условии выполняется закон сохранения импульса (Momentum Conservation)?",
+  "en": "Question 1: Under what condition does the law of conservation of momentum hold?"
+ },
+ {
+  "k": "dea935c4",
+  "s": "A) Faqatgina elastik bo‘lmagan to‘qnashuvlarda",
+  "ru": "A) Только при неупругих столкновениях",
+  "en": "A) Only in inelastic collisions"
+ },
+ {
+  "k": "05691b94",
+  "s": "B) Tashqi kuchlar yig‘indisi nolga teng bo‘lgan yopiq tizimlarda",
+  "ru": "B) В замкнутых системах, где сумма внешних сил равна нулю",
+  "en": "B) In closed systems where the sum of external forces is zero"
+ },
+ {
+  "k": "55c715e1",
+  "s": "C) Faqat jismlar tinch holatda bo‘lganda",
+  "ru": "C) Только когда тела покоятся",
+  "en": "C) Only when the bodies are at rest"
+ },
+ {
+  "k": "a8dcc02c",
+  "s": "D) Jism tezligi yorug‘lik tezligiga yaqinlashganda",
+  "ru": "D) Когда скорость тела приближается к скорости света",
+  "en": "D) When the body’s speed approaches the speed of light"
+ },
+ {
+  "k": "d18b6210",
+  "s": "2-savol: PhET va Vascak.cz kabi platformalar asosan qanday maqsadlarda ishlatiladi?",
+  "ru": "Вопрос 2: Для каких целей в основном используются такие платформы, как PhET и Vascak.cz?",
+  "en": "Question 2: What are platforms such as PhET and Vascak.cz mainly used for?"
+ },
+ {
+  "k": "70d970cb",
+  "s": "A) Matematik tenglamalarni yechish uchun",
+  "ru": "A) Для решения математических уравнений",
+  "en": "A) Solving mathematical equations"
+ },
+ {
+  "k": "8302c8db",
+  "s": "B) Murakkab fizik jarayonlarni vizuallashtirish va parametrlarni tadqiq qilish uchun",
+  "ru": "B) Для визуализации сложных физических процессов и исследования параметров",
+  "en": "B) Visualising complex physical processes and investigating parameters"
+ },
+ {
+  "k": "60cceb9e",
+  "s": "C) Sun’iy intellekt agentlarini o‘rgatish uchun",
+  "ru": "C) Для обучения агентов искусственного интеллекта",
+  "en": "C) Training AI agents"
+ },
+ {
+  "k": "0ba0b3c6",
+  "s": "D) 3D o‘yinlarni dasturlash uchun",
+  "ru": "D) Для программирования 3D-игр",
+  "en": "D) Programming 3D games"
+ },
+ {
+  "k": "216c1bd7",
+  "s": "3-savol: Claude’dan fizika dvigateli (Physics Engine) kodini yaratishni so‘rashda (prompt) qaysi ko‘rsatma muhimroq?",
+  "ru": "Вопрос 3: Какое указание важнее при запросе (промпте) к Claude на создание кода физического движка (Physics Engine)?",
+  "en": "Question 3: When asking (prompting) Claude to create physics engine code, which instruction matters most?"
+ },
+ {
+  "k": "9a686011",
+  "s": "A) Asosiy fizik qonuniyatlar, vektor operatsiyalari va chegaraviy shartlarni aniq belgilash",
+  "ru": "A) Чётко задать основные физические закономерности, векторные операции и граничные условия",
+  "en": "A) Clearly specifying the core physical laws, vector operations and boundary conditions"
+ },
+ {
+  "k": "8756af52",
+  "s": "B) Faqatgina animatsiya ranglari va dizaynni tasvirlash",
+  "ru": "B) Описать только цвета и дизайн анимации",
+  "en": "B) Describing only the animation’s colours and design"
+ },
+ {
+  "k": "6259eea0",
+  "s": "C) HTML teglari ro‘yxatini berish",
+  "ru": "C) Дать список HTML-тегов",
+  "en": "C) Giving a list of HTML tags"
+ },
+ {
+  "k": "18708e23",
+  "s": "D) Yaratilgan simulyatsiya hajmini mb da belgilash",
+  "ru": "D) Указать размер созданной симуляции в МБ",
+  "en": "D) Stating the simulation’s size in MB"
+ },
+ {
+  "k": "b6172dba",
+  "s": "4-savol: Multi-agent ekotizimida Google Antigravity qanday operatsion vazifani bajaradi?",
+  "ru": "Вопрос 4: Какую операционную задачу выполняет Google Antigravity в многоагентной экосистеме?",
+  "en": "Question 4: What operational role does Google Antigravity play in a multi-agent ecosystem?"
+ },
+ {
+  "k": "b6ec2be8",
+  "s": "A) U faqat rasmlarni vizuallashtiradi",
+  "ru": "A) Он только визуализирует изображения",
+  "en": "A) It only visualises images"
+ },
+ {
+  "k": "540b58aa",
+  "s": "B) Brauzerda xatolarni yashiradi",
+  "ru": "B) Скрывает ошибки в браузере",
+  "en": "B) It hides errors in the browser"
+ },
+ {
+  "k": "aa88e5a4",
+  "s": "C) Vascak saytidagi ma’lumotlarni o‘chirib tashlaydi",
+  "ru": "C) Удаляет данные на сайте Vascak",
+  "en": "C) It deletes data on the Vascak site"
+ },
+ {
+  "k": "edc58801",
+  "s": "D) Dasturlash jarayonida xatolarni tekshiradi (debugging), kodlarni monitoring qiladi va agentlarni orkestratsiya qiladi",
+  "ru": "D) Проверяет ошибки в ходе программирования (debugging), отслеживает код и оркестрирует агентов",
+  "en": "D) It checks for errors during programming (debugging), monitors code and orchestrates agents"
+ },
+ {
+  "k": "ba4289cf",
+  "s": "2. Mexanika loyihasi: to‘liq pipeline (Tahlil $\\rightarrow$ Kod $\\rightarrow$ Monitoring)",
+  "ru": "2. Проект по механике: полный конвейер (анализ $\\rightarrow$ код $\\rightarrow$ мониторинг)",
+  "en": "2. Mechanics project: the full pipeline (analysis $\\rightarrow$ code $\\rightarrow$ monitoring)"
+ },
+ {
+  "k": "11013671",
+  "s": "Murakkab dinamik simulyatsiyalarni ishlab chiqishda jarayonni bo‘laklarga bo‘lib, har bir qadamni alohida AI vositasiga ishonib topshirish (pipeline architecture) yuqori samaradorlikni ta’minlaydi.",
+  "ru": "При разработке сложных динамических симуляций высокую эффективность обеспечивает разбиение процесса на части и поручение каждого шага отдельному ИИ-инструменту (pipeline architecture).",
+  "en": "When developing complex dynamic simulations, splitting the process into parts and assigning each step to a separate AI tool (pipeline architecture) is highly effective."
+ },
+ {
+  "k": "0cd67227",
+  "s": "Fizik tizim modeli (massalar, ishqalanish koeffitsiyentlari, boshlang‘ich tezliklar) PhET yoki Vascak.cz ilovalari orqali emulyatsiya qilinadi.",
+  "ru": "Модель физической системы (массы, коэффициенты трения, начальные скорости) эмулируется с помощью приложений PhET или Vascak.cz.",
+  "en": "The physical system model (masses, friction coefficients, initial velocities) is emulated with PhET or Vascak.cz apps."
+ },
+ {
+  "k": "b37f8026",
+  "s": "Tahlildan olingan xulosalar aniq texnik \"prompt\"ga aylantirilib, Claude’ga kiritiladi. Claude ushbu formula va parametrlarni HTML5 Canvas + JavaScript kodiga o‘giradi.",
+  "ru": "Выводы анализа превращаются в точный технический «промпт» и вводятся в Claude. Claude переводит эти формулы и параметры в код HTML5 Canvas + JavaScript.",
+  "en": "The analysis conclusions are turned into a precise technical \"prompt\" and given to Claude, which converts the formulas and parameters into HTML5 Canvas + JavaScript code."
+ },
+ {
+  "k": "1d2ce4c3",
+  "s": "<strong>3. Avtomatlashtirilgan monitoring:</strong> Yozilgan kod Google Antigravity (yoki shunga o‘xshash agentlik tizimlari) orqali tekshiriladi, xatolar tuzatiladi (debugging) va platformaga joylashtiriladi.",
+  "ru": "<strong>3. Автоматизированный мониторинг:</strong> написанный код проверяется через Google Antigravity (или подобные агентные системы), ошибки исправляются (debugging), и код размещается на платформе.",
+  "en": "<strong>3. Automated monitoring:</strong> the code is checked with Google Antigravity (or similar agentic systems), bugs are fixed (debugging) and the code is deployed to the platform."
+ },
+ {
+  "k": "4ad07cd8",
+  "s": "Afzalliklar:",
+  "ru": "Преимущества:",
+  "en": "Advantages:"
+ },
+ {
+  "k": "6387f40c",
+  "s": "Vaqtni tejash: Noldan kod yozish o‘rniga, tayyor fizik formulalarga asoslangan generatsiya.",
+  "ru": "Экономия времени: генерация на основе готовых физических формул вместо написания кода с нуля.",
+  "en": "Saving time: generation from ready physics formulas instead of writing code from scratch."
+ },
+ {
+  "k": "525537d6",
+  "s": "Xatolarni kamaytirish: AI tizimlari matematikasini (Nyuton-Rafson iteratsiyalari yoki Eyler/Runge–Kutta usullari) aniq qo‘llaydi.",
+  "ru": "Снижение ошибок: системы ИИ точно применяют математику (итерации Ньютона–Рафсона или методы Эйлера/Рунге–Кутты).",
+  "en": "Fewer errors: AI systems apply the mathematics precisely (Newton–Raphson iterations or Euler/Runge–Kutta methods)."
+ },
+ {
+  "k": "149e22d2",
+  "s": "Tizimli takomillashtirish: Antigravity kabi agentlar orqali simulyatsiyaga moslashuvchan funksiyalar (friction, gravity, restitution) ni tezda qo‘shish imkoniyati.",
+  "ru": "Системное совершенствование: возможность быстро добавлять в симуляцию гибкие функции (friction, gravity, restitution) через агентов, подобных Antigravity.",
+  "en": "Systematic improvement: flexible features (friction, gravity, restitution) can be added to the simulation quickly through agents such as Antigravity."
+ },
+ {
+  "k": "0667dd72",
+  "s": "3. Model tahlili: Vascak.cz va PhET",
+  "ru": "3. Анализ модели: Vascak.cz и PhET",
+  "en": "3. Model analysis: Vascak.cz and PhET"
+ },
+ {
+  "k": "da6485d5",
+  "s": "Simulyatsiya kodini yozishdan oldin uning nazariy modellarini va harakat tenglamalarini <strong>PhET Interactive Simulations</strong> va <strong>Vascak.cz</strong> orqali tadqiq qilish zarur. Ular to‘qnashuvlar (impuls) va harakat dinamikasini vizual isbotlab beradi.",
+  "ru": "Перед написанием кода симуляции необходимо исследовать её теоретические модели и уравнения движения через <strong>PhET Interactive Simulations</strong> и <strong>Vascak.cz</strong>. Они наглядно доказывают динамику столкновений (импульс) и движения.",
+  "en": "Before writing simulation code, its theoretical models and equations of motion should be investigated with <strong>PhET Interactive Simulations</strong> and <strong>Vascak.cz</strong>. They show the dynamics of collisions (momentum) and motion visually."
+ },
+ {
+  "k": "6c7fa18d",
+  "s": "Nyutonning ikkinchi qonuni va impuls",
+  "ru": "Второй закон Ньютона и импульс",
+  "en": "Newton’s second law and momentum"
+ },
+ {
+  "k": "83454ab7",
+  "s": "Jismga ta’sir etuvchi kuch uning massasi va tezlanishi ko‘paytmasiga teng:",
+  "ru": "Сила, действующая на тело, равна произведению его массы на ускорение:",
+  "en": "The force on a body equals its mass times its acceleration:"
+ },
+ {
+  "k": "fba208e7",
+  "s": "$$ \\sum \\vec{F} = m \\vec{a} \\quad \\text{yoki} \\quad \\vec{F} = \\frac{d\\vec{p}}{dt} $$",
+  "ru": "$$ \\sum \\vec{F} = m \\vec{a} \\quad \\text{yoki} \\quad \\vec{F} = \\frac{d\\vec{p}}{dt} $$",
+  "en": "$$ \\sum \\vec{F} = m \\vec{a} \\quad \\text{yoki} \\quad \\vec{F} = \\frac{d\\vec{p}}{dt} $$"
+ },
+ {
+  "k": "e4cc0dac",
+  "s": "Elastik to‘qnashuvlarda ham impuls, ham kinetik energiya saqlanadi:",
+  "ru": "При упругих столкновениях сохраняются и импульс, и кинетическая энергия:",
+  "en": "In elastic collisions both momentum and kinetic energy are conserved:"
+ },
+ {
+  "k": "e15d99bd",
+  "s": "$$ m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f} $$ <br> $$ \\frac{1}{2} m_1 v_{1i}^2 + \\frac{1}{2} m_2 v_{2i}^2 = \\frac{1}{2} m_1 v_{1f}^2 + \\frac{1}{2} m_2 v_{2f}^2 $$",
+  "ru": "$$ m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f} $$ <br> $$ \\frac{1}{2} m_1 v_{1i}^2 + \\frac{1}{2} m_2 v_{2i}^2 = \\frac{1}{2} m_1 v_{1f}^2 + \\frac{1}{2} m_2 v_{2f}^2 $$",
+  "en": "$$ m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f} $$ <br> $$ \\frac{1}{2} m_1 v_{1i}^2 + \\frac{1}{2} m_2 v_{2i}^2 = \\frac{1}{2} m_1 v_{1f}^2 + \\frac{1}{2} m_2 v_{2f}^2 $$"
+ },
+ {
+  "k": "db8b14da",
+  "s": "Ushbu formulalar simulyatorlarda <strong>restitution</strong> (qayta tiklanish) koeffitsiyenti $e$ orqali boshqariladi. O‘ta elastik to‘qnashuvda $e=1$, qisman elastik to‘qnashuvda $0 &lt; e &lt; 1$ bo'ladi.",
+  "ru": "В симуляторах эти формулы управляются коэффициентом <strong>restitution</strong> (восстановления) $e$. При абсолютно упругом столкновении $e=1$, при частично упругом $0 &lt; e &lt; 1$.",
+  "en": "In simulators these formulas are controlled by the coefficient of <strong>restitution</strong> $e$. For a perfectly elastic collision $e=1$, for a partly elastic one $0 &lt; e &lt; 1$."
+ },
+ {
+  "k": "51098bf7",
+  "s": "4. Fizika dvigateli: Claude va Antigravity",
+  "ru": "4. Физический движок: Claude и Antigravity",
+  "en": "4. The physics engine: Claude and Antigravity"
+ },
+ {
+  "k": "20b1eef3",
+  "s": "PhET da tahlil qilingan modellar asosida Claude’ga fizik o‘zgaruvchilarni va rendering mantig‘ini o‘z ichiga olgan batafsil Prompt kiritiladi. Keng ko‘lamli loyihalarda esa <strong>Google Antigravity</strong> kod sifatini (code linting), aylanma xatolarni (circular dependencies) va mantiqiy nosozliklarni avtomatik tartibga soladi.",
+  "ru": "На основе моделей, проанализированных в PhET, в Claude вводится подробный промпт, включающий физические переменные и логику рендеринга. В крупных проектах <strong>Google Antigravity</strong> автоматически упорядочивает качество кода (code linting), циклические зависимости (circular dependencies) и логические неисправности.",
+  "en": "Based on the models analysed in PhET, Claude is given a detailed prompt with the physical variables and rendering logic. In large projects, <strong>Google Antigravity</strong> automatically handles code quality (linting), circular dependencies and logic bugs."
+ },
+ {
+  "k": "a3ba607a",
+  "s": "Claude prompt strukturasi",
+  "ru": "Структура промпта Claude",
+  "en": "Claude prompt structure"
+ },
+ {
+  "k": "e39dbf3d",
+  "s": "\"HTML5 Canvas va requestAnimationFrame yordamida ikkita sharning 3 o‘lchamli (3D) mutlaq elastik to‘qnashuvini modellashtir. Massalar va boshlang‘ich tezliklar DOM orqali boshqarilsin. Impulsning saqlanish qonunidan (m1v1 + m2v2 = ...) foydalan va to‘qnashuv deteksiyasini (distance &lt;= r1 + r2) aniq ko'rsat.\"",
+  "ru": "«С помощью HTML5 Canvas и requestAnimationFrame смоделируй абсолютно упругое трёхмерное (3D) столкновение двух шаров. Массы и начальные скорости должны управляться через DOM. Используй закон сохранения импульса (m1v1 + m2v2 = ...) и чётко покажи обнаружение столкновения (distance &lt;= r1 + r2).»",
+  "en": "\"Using HTML5 Canvas and requestAnimationFrame, model a perfectly elastic three-dimensional (3D) collision between two balls. Let the masses and initial velocities be controlled through the DOM. Use the law of conservation of momentum (m1v1 + m2v2 = ...) and show the collision detection (distance &lt;= r1 + r2) clearly.\""
+ },
+ {
+  "k": "151cce60",
+  "s": "Antigravity multi-agent tizimi",
+  "ru": "Многоагентная система Antigravity",
+  "en": "The Antigravity multi-agent system"
+ },
+ {
+  "k": "d3738fbd",
+  "s": "<strong>Kodni tahlil qilish (audit):</strong> Vektor operatsiyalaridagi nolga bo‘lish xatolarini (DivisionByZero) proaktiv tarzda topadi.",
+  "ru": "<strong>Анализ кода (аудит):</strong> проактивно находит ошибки деления на ноль (DivisionByZero) в векторных операциях.",
+  "en": "<strong>Code analysis (audit):</strong> proactively finds division-by-zero errors in vector operations."
+ },
+ {
+  "k": "3335059f",
+  "s": "<strong>CI/CD orkestratsiyasi:</strong> Loyiha ustida ishlashni to‘liq fon rejimiga (background task) o‘tkazib, natijani mustaqil ravishda sinovdan (unit tests) o‘tkazadi.",
+  "ru": "<strong>Оркестрация CI/CD:</strong> полностью переводит работу над проектом в фоновый режим (background task) и самостоятельно прогоняет результат через тесты (unit tests).",
+  "en": "<strong>CI/CD orchestration:</strong> moves work on the project fully into the background and independently runs the result through unit tests."
+ },
+ {
+  "k": "e5e1c353",
+  "s": "<strong>Refaktoring:</strong> Monolit kodni kichik, modulyar fizik mantiqlarga ajratadi.",
+  "ru": "<strong>Рефакторинг:</strong> разделяет монолитный код на небольшие модульные физические блоки логики.",
+  "en": "<strong>Refactoring:</strong> splits monolithic code into small, modular physics logic units."
+ },
+ {
+  "k": "6671e7f7",
+  "s": "5. Interaktiv dastgoh: 3D elastik to‘qnashuv simulyatori (SI yordamida yaratilgan)",
+  "ru": "5. Интерактивный стенд: симулятор упругого 3D-столкновения (создан с помощью ИИ)",
+  "en": "5. Interactive bench: a 3D elastic collision simulator (built with AI)"
+ },
+ {
+  "k": "9510d75a",
+  "s": "Ushbu dvigatel impuls saqlanish qonuni va Claude texnologiyasidan foydalangan holda yozilgan bo‘lib, jismlar orasidagi elastik to‘qnashuvni vizuallashtiradi.",
+  "ru": "Этот движок написан с использованием закона сохранения импульса и технологии Claude и визуализирует упругое столкновение между телами.",
+  "en": "This engine was written using the law of conservation of momentum and Claude, and visualises an elastic collision between bodies."
+ },
+ {
+  "k": "6ff8669a",
+  "s": "Moviy shar (m₁)",
+  "ru": "Голубой шар (m₁)",
+  "en": "Blue ball (m₁)"
+ },
+ {
+  "k": "f858d13e",
+  "s": "Massa:",
+  "ru": "Масса:",
+  "en": "Mass:"
+ },
+ {
+  "k": "605c7862",
+  "s": "Tezlik:",
+  "ru": "Скорость:",
+  "en": "Rate:"
+ },
+ {
+  "k": "84abe9db",
+  "s": "Binafsha shar (m₂)",
+  "ru": "Фиолетовый шар (m₂)",
+  "en": "Purple ball (m₂)"
+ },
+ {
+  "k": "4aa6221a",
+  "s": "Ishga tushirish",
+  "ru": "Запустить",
+  "en": "Run"
+ },
+ {
+  "k": "44e6d743",
+  "s": "📊 Antigravity monitoring ko‘rsatkichlari",
+  "ru": "📊 Показатели мониторинга Antigravity",
+  "en": "📊 Antigravity monitoring readings"
+ },
+ {
+  "k": "87521221",
+  "s": "Tizim kutilmoqda...",
+  "ru": "Ожидание системы...",
+  "en": "Waiting for the system..."
+ },
+ {
+  "k": "eb807bd1",
+  "s": "6. Yakuniy taqdimot rubrikasi va manbalar",
+  "ru": "6. Рубрика итоговой презентации и источники",
+  "en": "6. Final presentation rubric and sources"
+ },
+ {
+  "k": "565f16b6",
+  "s": "Loyiha (Tahlil $\\rightarrow$ Kod $\\rightarrow$ Monitoring) sifati quyidagi rubrika orqali baholanadi (Jami: 100 ball).",
+  "ru": "Качество проекта (анализ $\\rightarrow$ код $\\rightarrow$ мониторинг) оценивается по следующей рубрике (всего: 100 баллов).",
+  "en": "Project quality (analysis $\\rightarrow$ code $\\rightarrow$ monitoring) is assessed with the following rubric (total: 100 points)."
+ },
+ {
+  "k": "45bb5ded",
+  "s": "<strong>Fizik tahlil (Vascak/PhET):</strong> Dinamik qonuniyatlarning (Impuls) to‘g‘ri o‘rnatilishi.",
+  "ru": "<strong>Физический анализ (Vascak/PhET):</strong> правильная постановка динамических закономерностей (импульс).",
+  "en": "<strong>Physical analysis (Vascak/PhET):</strong> setting up the dynamic laws (momentum) correctly."
+ },
+ {
+  "k": "492c577a",
+  "s": "<strong>AI kod generatsiyasi:</strong> Claude yordamida Canvas va fizika mantig‘ining mukammal ishlashi.",
+  "ru": "<strong>Генерация кода ИИ:</strong> безупречная работа Canvas и физической логики с помощью Claude.",
+  "en": "<strong>AI code generation:</strong> Canvas and the physics logic working flawlessly with Claude."
+ },
+ {
+  "k": "76cacf65",
+  "s": "<strong>Antigravity monitoring / taqdimot:</strong> Xatolarni kuzatish (log) va loyihani ravon taqdim etish.",
+  "ru": "<strong>Мониторинг Antigravity / презентация:</strong> отслеживание ошибок (log) и уверенная презентация проекта.",
+  "en": "<strong>Antigravity monitoring / presentation:</strong> tracking errors (logs) and presenting the project fluently."
+ },
+ {
+  "k": "e68c8703",
+  "s": "90 / 100 ball",
+  "ru": "90 / 100 баллов",
+  "en": "90 / 100 points"
+ },
+ {
+  "k": "7ebf3ed9",
+  "s": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "ru": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "en": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+ },
+ {
+  "k": "1b479f90",
+  "s": "2. Google. (2025, November 18). <em>Build with Google Antigravity, our new agentic development platform</em>. Google Developers Blog. https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+  "ru": "2. Google. (2025, November 18). <em>Build with Google Antigravity, our new agentic development platform</em>. Google Developers Blog. https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+  "en": "2. Google. (2025, November 18). <em>Build with Google Antigravity, our new agentic development platform</em>. Google Developers Blog. https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/"
+ },
+ {
+  "k": "146bad3d",
+  "s": "3. Halliday, D., Resnick, R., va Walker, J. (2018). <em>Fundamentals of physics</em> (11th ed.). Wiley.",
+  "ru": "3. Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of physics</em> (11th ed.). Wiley.",
+  "en": "3. Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "bca052ad",
+  "s": "4. PhET Interactive Simulations. (n.d.). <em>Collision Lab</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/collision-lab",
+  "ru": "4. PhET Interactive Simulations. (n.d.). <em>Collision Lab</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/collision-lab",
+  "en": "4. PhET Interactive Simulations. (n.d.). <em>Collision Lab</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/collision-lab"
+ },
+ {
+  "k": "b928c7b7",
+  "s": "5. Vaščák, V. (n.d.). <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "5. Vaščák, V. (n.d.). <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "5. Vaščák, V. (n.d.). <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "031a1724",
+  "s": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "ru": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "en": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>"
+ },
+ {
+  "k": "543abd6e",
+  "s": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "ru": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "en": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>"
+ }
+]

@@ -40,7 +40,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
           toast(__t("Nusxalandi!"));
         };
@@ -62,19 +62,19 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
-      plan: "Avval 2-bo‘limdagi FBD qoidalarini o‘rganing va qog‘ozda gorizontal sirtdagi, so‘ng qiya tekislikdagi jism uchun FBD chizing. 5-bo‘limdagi dastgohda ishqalanishni nolga tushirib, faqat $m\\vec{g}$ va $\\vec{N}$ qolganda tezlanish $g\\sin\\alpha$ ga teng ekanini tekshiring.",
-      focus: "FBD qoidalari, og‘irlik va normal reaksiya kuchlari, qiya tekislikda og‘irlik kuchining proyeksiyalari"
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
+      plan: __t("Avval 2-bo‘limdagi FBD qoidalarini o‘rganing va qog‘ozda gorizontal sirtdagi, so‘ng qiya tekislikdagi jism uchun FBD chizing. 5-bo‘limdagi dastgohda ishqalanishni nolga tushirib, faqat $m\\vec{g}$ va $\\vec{N}$ qolganda tezlanish $g\\sin\\alpha$ ga teng ekanini tekshiring."),
+      focus: __t("FBD qoidalari, og‘irlik va normal reaksiya kuchlari, qiya tekislikda og‘irlik kuchining proyeksiyalari")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "Midjourney yoki DALL-E’da FBD yarating, uni 2-bo‘limdagi qoidalar bo‘yicha tekshirib xatolarini belgilang, so‘ng Claude’ga 1-promptni yuboring. Dastgohda $\\tan\\alpha = \\mu$ chegarasini topib, stick va slip holatlarini tenglamalar bilan solishtiring.",
-      focus: "Kulon-Amonton ishqalanishi, stick-slip sharti, AI yaratgan diagrammadagi xatolarni aniqlash"
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
+      plan: __t("Midjourney yoki DALL-E’da FBD yarating, uni 2-bo‘limdagi qoidalar bo‘yicha tekshirib xatolarini belgilang, so‘ng Claude’ga 1-promptni yuboring. Dastgohda $\\tan\\alpha = \\mu$ chegarasini topib, stick va slip holatlarini tenglamalar bilan solishtiring."),
+      focus: __t("Kulon-Amonton ishqalanishi, stick-slip sharti, AI yaratgan diagrammadagi xatolarni aniqlash")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
-      plan: "Tizimga burchak ostida tortuvchi tashqi kuch qo‘shilgan holat uchun FBD va tenglamalarni tuzing ($N$ o‘zgarishiga e’tibor bering). 4-bo‘limdagi psevdokod asosida kod yozdirib, uni analitik yechim $x(t) = \\tfrac{1}{2} a t^2$ bilan test qiling va $\\mu_s \\neq \\mu_k$ holatiga kengaytiring.",
-      focus: "tashqi kuch qo‘shilgan FBD, μs va μk farqi, psevdokoddan kodga o‘tish va analitik test"
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
+      plan: __t("Tizimga burchak ostida tortuvchi tashqi kuch qo‘shilgan holat uchun FBD va tenglamalarni tuzing ($N$ o‘zgarishiga e’tibor bering). 4-bo‘limdagi psevdokod asosida kod yozdirib, uni analitik yechim $x(t) = \\tfrac{1}{2} a t^2$ bilan test qiling va $\\mu_s \\neq \\mu_k$ holatiga kengaytiring."),
+      focus: __t("tashqi kuch qo‘shilgan FBD, μs va μk farqi, psevdokoddan kodga o‘tish va analitik test")
     }
   };
 
@@ -92,7 +92,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       box.style.display = 'block';
       if (answers.some(a => !a)) {
         scoreEl.textContent = '—';
-        clusterEl.textContent = '⚠️ Barcha 4 ta savolga javob bering';
+        clusterEl.textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         planEl.textContent = '';
         promptEl.value = '';
         return;
@@ -107,17 +107,11 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-A, 3-C, 4-B.` : '');
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-A, 3-C, 4-B.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz fizika bo‘yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Asosiy mavzular: ${c.focus}.
-Masala: massasi m bo‘lgan jism alpha burchakli qiya tekislikda, ishqalanish koeffitsiyenti mu.
-Iltimos:
-1. FBD’ni men o‘zim chizishim uchun tayyor javob bermasdan yo‘naltiruvchi savollar bering.
-2. Men yuklagan diagrammadagi xatolarni topishimga yordam bering, lekin to‘g‘ri variantni darhol aytmang.
-3. Mening darajamga mos bitta qo‘shimcha masala taklif qiling.`;
+__t("Siz fizika bo‘yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nMasala: massasi m bo‘lgan jism alpha burchakli qiya tekislikda, ishqalanish koeffitsiyenti mu.\nIltimos:\n1. FBD’ni men o‘zim chizishim uchun tayyor javob bermasdan yo‘naltiruvchi savollar bering.\n2. Men yuklagan diagrammadagi xatolarni topishimga yordam bering, lekin to‘g‘ri variantni darhol aytmang.\n3. Mening darajamga mos bitta qo‘shimcha masala taklif qiling.", [score, key, c.focus]);
     });
   }
 
@@ -211,10 +205,10 @@ Iltimos:
       hud('acc').textContent = uzFix(aShow, 2) + ' m/s²';
       hud('vel').textContent = uzFix(v, 2) + ' m/s';
       const st = hud('status');
-      if (f.state === 'bottom') { st.textContent = `Qiya pastiga yetdi (t = ${uzFix(t, 2)} s)`; st.style.color = '#38bdf8'; }
+      if (f.state === 'bottom') { st.textContent = __t("Qiya pastiga yetdi (t = {0} s)", [uzFix(t, 2)]); st.style.color = '#38bdf8'; }
       else if (!willSlip) { st.textContent = `Tinch: tan α = ${uzFix(Math.tan(alpha), 2)} ≤ μ (statik ishqalanish)`; st.style.color = '#fbbf24'; }
-      else if (running || v > 0) { st.textContent = 'Sirpanmoqda (kinetik ishqalanish)'; st.style.color = '#10b981'; }
-      else { st.textContent = `Sirpanishga tayyor: tan α = ${uzFix(Math.tan(alpha), 2)} > μ`; st.style.color = '#10b981'; }
+      else if (running || v > 0) { st.textContent = __t("Sirpanmoqda (kinetik ishqalanish)"); st.style.color = '#10b981'; }
+      else { st.textContent = __t("Sirpanishga tayyor: tan α = {0} > μ", [uzFix(Math.tan(alpha), 2)]); st.style.color = '#10b981'; }
     }
 
     function resize(c) {
@@ -382,10 +376,10 @@ Iltimos:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
-      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "FBD qoidalari va AI yaratgan diagrammadagi xatolarni tahlil qilishni kuchaytiring." };
-      else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
+      if (total >= 86) g = { text: __t("A’LO (5)"), cls: 'badge-emerald', fb: __t("Barcha mezonlar yuqori darajada bajarilgan.") };
+      else if (total >= 71) g = { text: __t("YAXSHI (4)"), cls: 'badge-cyan', fb: __t("Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.") };
+      else if (total >= 55) g = { text: __t("QONIQARLI (3)"), cls: 'badge-amber', fb: __t("FBD qoidalari va AI yaratgan diagrammadagi xatolarni tahlil qilishni kuchaytiring.") };
+      else g = { text: __t("QONIQARSIZ (2)"), cls: 'badge-rose', fb: __t("Laboratoriya ishini qayta bajarish tavsiya etiladi.") };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }
       if (fbEl) fbEl.textContent = g.fb;
     }

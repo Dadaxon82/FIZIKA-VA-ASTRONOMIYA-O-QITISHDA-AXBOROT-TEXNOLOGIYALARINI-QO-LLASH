@@ -31,7 +31,7 @@ if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
           toast(__t("Prompt nusxalandi!"));
         };
@@ -53,22 +53,22 @@ if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
       color: 'var(--accent-cyan)',
-      plan: "Avval ro‘yxatdan o‘tishni talab qilmaydigan vositalardan boshlang: PhET/Vascak.cz (4-topshiriq) va Claude (1-topshiriq). Har bir vositaning vazifasini bir jumlada yozib boring, so‘ng qolgan 5 ta vositaga o‘ting. Xavfsizlik: har bir xizmatga alohida kuchli parol qo‘ying va shaxsiy ma’lumotlarni kiritmang.",
-      focus: "har bir AI vositaning vazifasi, ro‘yxatdan o‘tish va xavfsiz foydalanish, oddiy prompt yozish"
+      plan: __t("Avval ro‘yxatdan o‘tishni talab qilmaydigan vositalardan boshlang: PhET/Vascak.cz (4-topshiriq) va Claude (1-topshiriq). Har bir vositaning vazifasini bir jumlada yozib boring, so‘ng qolgan 5 ta vositaga o‘ting. Xavfsizlik: har bir xizmatga alohida kuchli parol qo‘ying va shaxsiy ma’lumotlarni kiritmang."),
+      focus: __t("har bir AI vositaning vazifasi, ro‘yxatdan o‘tish va xavfsiz foydalanish, oddiy prompt yozish")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
       color: 'var(--accent-emerald)',
-      plan: "Barcha 7 ta mini-topshiriqni ketma-ket bajaring va har bir vosita natijasini keyingisiga kirish sifatida ulang (masalan, Claude kodi → Antigravity auditi → Otter hisobot). 5-bo‘limdagi trekerda jarayonni belgilab boring.",
-      focus: "vositalar orasidagi ma’lumot oqimi, Eyler–Kromer kodi auditi, ASR va TTS ning didaktik roli"
+      plan: __t("Barcha 7 ta mini-topshiriqni ketma-ket bajaring va har bir vosita natijasini keyingisiga kirish sifatida ulang (masalan, Claude kodi → Antigravity auditi → Otter hisobot). 5-bo‘limdagi trekerda jarayonni belgilab boring."),
+      focus: __t("vositalar orasidagi ma’lumot oqimi, Eyler–Kromer kodi auditi, ASR va TTS ning didaktik roli")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
       color: 'var(--accent-purple)',
-      plan: "Pipeline’ni tanqidiy baholang: har bir vositaning cheklovlarini (xatolar, bepul tarif limitlari, maxfiylik, AI-detektorlar ishonchsizligi) jadvalga kiriting va vositalarni almashtirish variantlarini taklif qiling. Infografikada ma’lumot oqimi va nazorat nuqtalarini aniq ko‘rsating.",
-      focus: "AI vositalarning cheklovlari, agentik IDE (Antigravity) bilan kod auditi, akademik halollik va AI-detektorlarning ishonchliligi"
+      plan: __t("Pipeline’ni tanqidiy baholang: har bir vositaning cheklovlarini (xatolar, bepul tarif limitlari, maxfiylik, AI-detektorlar ishonchsizligi) jadvalga kiriting va vositalarni almashtirish variantlarini taklif qiling. Infografikada ma’lumot oqimi va nazorat nuqtalarini aniq ko‘rsating."),
+      focus: __t("AI vositalarning cheklovlari, agentik IDE (Antigravity) bilan kod auditi, akademik halollik va AI-detektorlarning ishonchliligi")
     }
   };
 
@@ -85,7 +85,7 @@ if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/
       const answers = Object.keys(DIAG_KEY).map(name => document.querySelector(`input[name="${name}"]:checked`));
       box.style.display = 'block';
       if (answers.some(a => !a)) {
-        titleEl.textContent = '⚠️ Barcha 4 ta savolga javob bering';
+        titleEl.textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         titleEl.style.color = 'var(--accent-amber)';
         scoreEl.textContent = '';
         planEl.textContent = '';
@@ -102,19 +102,13 @@ if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/
       box.style.borderColor = c.color;
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
-      planEl.innerHTML = `<strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
+      scoreEl.textContent = __t("{0} / 100 ball ({1}/4 to‘g‘ri)", [score, correct]);
+      planEl.innerHTML = __t("<strong>Individual reja:</strong> {0}", [c.plan]) +
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz fizika o‘qitishda AI vositalaridan foydalanish bo‘yicha tyutorsiz. Men 3-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Asosiy mavzular: ${c.focus}.
-Laboratoriyada 7 ta vosita bor: PhET/Vascak.cz, Claude, Google Antigravity, MagicSchool AI, ElevenLabs/Muxlisa, Otter.ai, Undetectable AI (faqat AI-detektor).
-Iltimos:
-1. Mening darajamga mos ravishda vositalarni o‘rganish tartibini taklif qiling.
-2. Har bir vosita uchun fizika darsiga oid bitta qisqa amaliy mashq bering.
-3. Tayyor javob bermang — natijani o‘zim tekshirishim uchun yo‘naltiruvchi savollar bering.`;
+__t("Siz fizika o‘qitishda AI vositalaridan foydalanish bo‘yicha tyutorsiz. Men 3-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nLaboratoriyada 7 ta vosita bor: PhET/Vascak.cz, Claude, Google Antigravity, MagicSchool AI, ElevenLabs/Muxlisa, Otter.ai, Undetectable AI (faqat AI-detektor).\nIltimos:\n1. Mening darajamga mos ravishda vositalarni o‘rganish tartibini taklif qiling.\n2. Har bir vosita uchun fizika darsiga oid bitta qisqa amaliy mashq bering.\n3. Tayyor javob bermang — natijani o‘zim tekshirishim uchun yo‘naltiruvchi savollar bering.", [score, key, c.focus]);
     });
   }
 
@@ -123,12 +117,12 @@ Iltimos:
   // -------------------------------------------------------------------------
   // Tartib 4.1-bo‘limdagi axborot oqimi bosqichlariga mos keladi.
   const NODES = [
-    { tool: 't4_phet', label: 'PhET / Vascak', sub: 'Tajriba', color: '#38BDF8' },
-    { tool: 't1_claude', label: 'Claude', sub: 'Model va kod', color: '#C084FC' },
-    { tool: 't2_antigravity', label: 'Antigravity', sub: 'Agentik audit', color: '#34D399' },
-    { tool: 't3_magicschool', label: 'MagicSchool', sub: 'Rubrika', color: '#FBBF24' },
-    { tool: 't6_otter', label: 'Otter.ai', sub: 'Transkripsiya', color: '#38BDF8' },
-    { tool: 't5_elevenlabs', label: 'ElevenLabs', sub: 'Audio', color: '#F43F5E' },
+    { tool: 't4_phet', label: 'PhET / Vascak', sub: __t("Tajriba"), color: '#38BDF8' },
+    { tool: 't1_claude', label: 'Claude', sub: __t("Model va kod"), color: '#C084FC' },
+    { tool: 't2_antigravity', label: 'Antigravity', sub: __t("Agentik audit"), color: '#34D399' },
+    { tool: 't3_magicschool', label: 'MagicSchool', sub: __t("Rubrika"), color: '#FBBF24' },
+    { tool: 't6_otter', label: 'Otter.ai', sub: __t("Transkripsiya"), color: '#38BDF8' },
+    { tool: 't5_elevenlabs', label: 'ElevenLabs', sub: __t("Audio"), color: '#F43F5E' },
     { tool: 't7_undetectable', label: 'Undetectable', sub: 'SI-detektor', color: '#C084FC' }
   ];
   const STORAGE_KEY = 'lab3-ecosystem-tools';
@@ -264,10 +258,10 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
-      if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
-      if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
-      return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };
+      if (total >= 86) return { text: __t("A (A’lo — 5)"), cls: 'badge-emerald' };
+      if (total >= 71) return { text: __t("B (Yaxshi — 4)"), cls: 'badge-cyan' };
+      if (total >= 55) return { text: __t("C (Qoniqarli — 3)"), cls: 'badge-amber' };
+      return { text: __t("D (Qoniqarsiz — 2)"), cls: 'badge-rose' };
     }
 
     function update() {

@@ -78,7 +78,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
           toast(__t("Nusxalandi!"));
         };
@@ -100,22 +100,22 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
       color: 'var(--accent-cyan)',
-      plan: "Avval mayatnik tenglamasini ikkita 1-tartibli tenglamaga ajratishni o‘rganing (2-bo‘lim). So‘ng dastgohda faqat Eyler va Eyler–Kromer usullarini $\\Delta t = 0{,}05$ va $0{,}01$ s da solishtiring va xatolik qadamga qanday bog‘liqligini jadvalga yozing.",
-      focus: "Eyler usuli, lokal va global xatolik farqi, integratsiya qadamining ta’siri"
+      plan: __t("Avval mayatnik tenglamasini ikkita 1-tartibli tenglamaga ajratishni o‘rganing (2-bo‘lim). So‘ng dastgohda faqat Eyler va Eyler–Kromer usullarini $\\Delta t = 0{,}05$ va $0{,}01$ s da solishtiring va xatolik qadamga qanday bog‘liqligini jadvalga yozing."),
+      focus: __t("Eyler usuli, lokal va global xatolik farqi, integratsiya qadamining ta’siri")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
       color: 'var(--accent-emerald)',
-      plan: "WolframAlpha’da analitik yechim va Taylor qatorini oling, 3-bo‘limdagi Python skriptini ishga tushirib, log-log grafikdan Eyler va Eyler–Kromer uchun $p \\approx 1$ ekanini tasdiqlang. Dastgohda energiya dreyfini kuzating.",
-      focus: "xatolik tartibi p, log-log konvergentsiya grafigi, energiya dreyfi va simplektik usullar"
+      plan: __t("WolframAlpha’da analitik yechim va Taylor qatorini oling, 3-bo‘limdagi Python skriptini ishga tushirib, log-log grafikdan Eyler va Eyler–Kromer uchun $p \\approx 1$ ekanini tasdiqlang. Dastgohda energiya dreyfini kuzating."),
+      focus: __t("xatolik tartibi p, log-log konvergentsiya grafigi, energiya dreyfi va simplektik usullar")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
       color: 'var(--accent-purple)',
-      plan: "RK4 uchun $p \\approx 4$ ni isbotlang va nima uchun juda kichik $\\Delta t$ da xatolik mashina aniqligi darajasida to‘xtashini tushuntiring. Katta burchak ($\\theta_0 = 0.8$ rad) uchun chiziqli analitik yechim nega etalon bo‘la olmasligini dastgoh orqali ko‘rsating.",
-      focus: "RK4 konvergentsiyasi, yaxlitlash xatoligi, chiziqli va nochiziqli model farqi, elliptik integral orqali davr"
+      plan: __t("RK4 uchun $p \\approx 4$ ni isbotlang va nima uchun juda kichik $\\Delta t$ da xatolik mashina aniqligi darajasida to‘xtashini tushuntiring. Katta burchak ($\\theta_0 = 0.8$ rad) uchun chiziqli analitik yechim nega etalon bo‘la olmasligini dastgoh orqali ko‘rsating."),
+      focus: __t("RK4 konvergentsiyasi, yaxlitlash xatoligi, chiziqli va nochiziqli model farqi, elliptik integral orqali davr")
     }
   };
 
@@ -132,7 +132,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       const answers = Object.keys(DIAG_KEY).map(name => document.querySelector(`input[name="${name}"]:checked`));
       box.style.display = 'block';
       if (answers.some(a => !a)) {
-        titleEl.textContent = '⚠️ Barcha 4 ta savolga javob bering';
+        titleEl.textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         titleEl.style.color = 'var(--accent-amber)';
         scoreEl.textContent = '';
         planEl.textContent = '';
@@ -149,19 +149,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       box.style.borderColor = c.color;
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
-      planEl.innerHTML = `<strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.` : '');
+      scoreEl.textContent = __t("{0} / 100 ball ({1}/4 to‘g‘ri)", [score, correct]);
+      planEl.innerHTML = __t("<strong>Individual reja:</strong> {0}", [c.plan]) +
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-B, 2-C, 3-A, 4-C.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz hisoblash fizikasi bo‘yicha Sokratik konsultantsiz. Men 4-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Asosiy mavzular: ${c.focus}.
-Model: matematik mayatnik, L = 1.0 m, g = 9.8 m/s^2, theta0 = 0.2 rad.
-Iltimos:
-1. Tayyor javob bermang — xatolik tartibini o‘zim aniqlashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.
-2. Men yozgan kodni tekshirishda WolframAlpha’da qaysi natija bilan solishtirishim kerakligini ayting.
-3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.`;
+__t("Siz hisoblash fizikasi bo‘yicha Sokratik konsultantsiz. Men 4-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nModel: matematik mayatnik, L = 1.0 m, g = 9.8 m/s^2, theta0 = 0.2 rad.\nIltimos:\n1. Tayyor javob bermang — xatolik tartibini o‘zim aniqlashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.\n2. Men yozgan kodni tekshirishda WolframAlpha’da qaysi natija bilan solishtirishim kerakligini ayting.\n3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.", [score, key, c.focus]);
     });
   }
 
@@ -265,8 +259,8 @@ Iltimos:
       drawBob(ref.th, '#38BDF8', 0.45);
       if (isFinite(sim.th)) drawBob(sim.th, '#F43F5E', 1);
       pctx.font = '11px ui-monospace, monospace';
-      pctx.fillStyle = '#38BDF8'; pctx.fillText('● etalon', 8, H - 22);
-      pctx.fillStyle = '#F43F5E'; pctx.fillText('● sonli', 8, H - 8);
+      pctx.fillStyle = '#38BDF8'; pctx.fillText(__t("● etalon"), 8, H - 22);
+      pctx.fillStyle = '#F43F5E'; pctx.fillText(__t("● sonli"), 8, H - 8);
 
       // O‘ng yarmi: fazaviy portret (θ, ω)
       const ox = half + 10, ow = W - ox - 8, oy = 10, oh = H - 26;
@@ -308,7 +302,7 @@ Iltimos:
       pctx.fillStyle = '#94A3B8'; pctx.font = '10px ui-monospace, monospace';
       pctx.fillText('θ →', ox + ow - 26, cy - 4);
       pctx.fillText('ω ↑', cx + 4, oy + 12);
-      pctx.fillText('Fazaviy portret', ox + 4, oy + oh + 12);
+      pctx.fillText(__t("Fazaviy portret"), ox + 4, oy + oh + 12);
     }
 
     function drawGraph() {
@@ -348,8 +342,8 @@ Iltimos:
       ectx.stroke();
 
       ectx.font = '10px ui-monospace, monospace';
-      ectx.fillStyle = '#38BDF8'; ectx.fillText('θ etalon', padL + 4, 20);
-      ectx.fillStyle = '#F43F5E'; ectx.fillText('θ sonli', padL + 70, 20);
+      ectx.fillStyle = '#38BDF8'; ectx.fillText(__t("θ etalon"), padL + 4, 20);
+      ectx.fillStyle = '#F43F5E'; ectx.fillText(__t("θ sonli"), padL + 70, 20);
       ectx.fillStyle = '#FBBF24'; ectx.fillText('|Δθ| (log)', padL + 4, by + 12);
       ectx.fillStyle = '#94A3B8';
       ectx.fillText('1', 22, Y2(1) + 4);
@@ -369,7 +363,7 @@ Iltimos:
       const T = 5.0;
       const refTh = integrate('rk4', th0, L, REF_DT, T);
       const fmt = (v) => {
-        if (!isFinite(v)) return '<span style="color:#E11D48;">∞ (portlash)</span>';
+        if (!isFinite(v)) return __t("<span style=\"color:#E11D48;\">∞ (portlash)</span>");
         const e = Math.abs(v - refTh);
         const color = e < 1e-4 ? '#34D399' : e < 1e-2 ? '#FBBF24' : '#F43F5E';
         return `${uzFix(v, 5)}<br><span style="color:${color}; font-size:0.8rem;">|Δθ| = ${uzExp(e, 2)}</span>`;
@@ -436,10 +430,10 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
-      if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
-      if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
-      return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };
+      if (total >= 86) return { text: __t("A (A’lo — 5)"), cls: 'badge-emerald' };
+      if (total >= 71) return { text: __t("B (Yaxshi — 4)"), cls: 'badge-cyan' };
+      if (total >= 55) return { text: __t("C (Qoniqarli — 3)"), cls: 'badge-amber' };
+      return { text: __t("D (Qoniqarsiz — 2)"), cls: 'badge-rose' };
     }
 
     function update() {

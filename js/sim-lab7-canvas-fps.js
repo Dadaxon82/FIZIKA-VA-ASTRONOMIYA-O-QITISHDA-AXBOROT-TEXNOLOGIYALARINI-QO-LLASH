@@ -46,7 +46,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
           toast(__t("Nusxalandi!"));
         };
@@ -68,19 +68,19 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
-      plan: "Avval 2-bo‘limdagi kadr sikli skeletini qo‘lda qayta yozing va har bir qatorini izohlang. 5-bo‘limdagi dastgohda Delta-Time’ni o‘chirib, FPS cheklovini 60 → 15 ga o‘zgartiring va punktir etalon kontur bilan jism orasidagi farqni kuzating. So‘ng $x \\mathrel{+}= v \\cdot \\Delta t$ formulasi nima uchun bu farqni yo‘qotishini o‘z so‘zlaringiz bilan tushuntiring.",
-      focus: "requestAnimationFrame, millisekunddan sekundga o‘tish, x += v·dt formulasi"
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
+      plan: __t("Avval 2-bo‘limdagi kadr sikli skeletini qo‘lda qayta yozing va har bir qatorini izohlang. 5-bo‘limdagi dastgohda Delta-Time’ni o‘chirib, FPS cheklovini 60 → 15 ga o‘zgartiring va punktir etalon kontur bilan jism orasidagi farqni kuzating. So‘ng $x \\mathrel{+}= v \\cdot \\Delta t$ formulasi nima uchun bu farqni yo‘qotishini o‘z so‘zlaringiz bilan tushuntiring."),
+      focus: __t("requestAnimationFrame, millisekunddan sekundga o‘tish, x += v·dt formulasi")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "Skeletga Fiedler akkumulyatorini qo‘shing (2-bo‘limdagi ikkinchi kod) va 4-bo‘limdagi Eyler–Kromer ossilyatorini ishga tushiring. Dastgohda ossilyator rejimida energiya nisbati $E/E_0$ ni 60 va 15 FPS da solishtiring. Antigravity agentiga 3-bo‘limdagi promptni yuborib, uning o‘lchov natijalarini o‘zingiz takrorlab tekshiring.",
-      focus: "Fiedler akkumulyatori, qat’iy fizik qadam, Eyler–Kromer sxemasi, agent natijalarini tekshirish"
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
+      plan: __t("Skeletga Fiedler akkumulyatorini qo‘shing (2-bo‘limdagi ikkinchi kod) va 4-bo‘limdagi Eyler–Kromer ossilyatorini ishga tushiring. Dastgohda ossilyator rejimida energiya nisbati $E/E_0$ ni 60 va 15 FPS da solishtiring. Antigravity agentiga 3-bo‘limdagi promptni yuborib, uning o‘lchov natijalarini o‘zingiz takrorlab tekshiring."),
+      focus: __t("Fiedler akkumulyatori, qat’iy fizik qadam, Eyler–Kromer sxemasi, agent natijalarini tekshirish")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
-      plan: "Oddiy Eyler, Eyler–Kromer va velocity-Verlet sxemalarini bir xil $h$ da solishtirib, 60 s davomidagi energiya dreyfini grafikda ko‘rsating. Akkumulyatorga $\\alpha = \\text{accumulator}/h$ bo‘yicha interpolyatsiya qo‘shing va 30 FPS da harakat silliqligini baholang. Kadr sikli ichida xotira ajratilmasligini DevTools «Memory» panelida isbotlang.",
-      focus: "integratorlar barqarorligi, energiya dreyfi, holatlar interpolyatsiyasi, zero-allocation sikl"
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
+      plan: __t("Oddiy Eyler, Eyler–Kromer va velocity-Verlet sxemalarini bir xil $h$ da solishtirib, 60 s davomidagi energiya dreyfini grafikda ko‘rsating. Akkumulyatorga $\\alpha = \\text{accumulator}/h$ bo‘yicha interpolyatsiya qo‘shing va 30 FPS da harakat silliqligini baholang. Kadr sikli ichida xotira ajratilmasligini DevTools «Memory» panelida isbotlang."),
+      focus: __t("integratorlar barqarorligi, energiya dreyfi, holatlar interpolyatsiyasi, zero-allocation sikl")
     }
   };
 
@@ -98,7 +98,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       box.style.display = 'block';
       if (answers.some(a => !a)) {
         scoreEl.textContent = '—';
-        clusterEl.textContent = '⚠️ Barcha 4 ta savolga javob bering';
+        clusterEl.textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         planEl.textContent = '';
         promptEl.value = '';
         return;
@@ -113,17 +113,11 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-A, 2-B, 3-C, 4-B.` : '');
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-A, 2-B, 3-C, 4-B.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz JavaScript va kompyuter fizikasi bo‘yicha Sokratik ustozsiz. Men 7-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Asosiy mavzular: ${c.focus}.
-Vazifa: HTML5 Canvas’da requestAnimationFrame va delta-time asosida prujinali garmonik tebranish animatsiyasini yozish.
-Iltimos:
-1. Tayyor kodni darhol bermang — avval men yozgan kod bo‘lagini tahlil qilib, yo‘naltiruvchi savollar bering.
-2. Mening kodimda FPS ga bog‘liq joylarni topishimga yordam bering.
-3. Natijani tekshirishim uchun bitta o‘lchanadigan test taklif qiling (masalan, 60 va 15 FPS da 5 soniyadagi siljish).`;
+__t("Siz JavaScript va kompyuter fizikasi bo‘yicha Sokratik ustozsiz. Men 7-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nVazifa: HTML5 Canvas’da requestAnimationFrame va delta-time asosida prujinali garmonik tebranish animatsiyasini yozish.\nIltimos:\n1. Tayyor kodni darhol bermang — avval men yozgan kod bo‘lagini tahlil qilib, yo‘naltiruvchi savollar bering.\n2. Mening kodimda FPS ga bog‘liq joylarni topishimga yordam bering.\n3. Natijani tekshirishim uchun bitta o‘lchanadigan test taklif qiling (masalan, 60 va 15 FPS da 5 soniyadagi siljish).", [score, key, c.focus]);
     });
   }
 
@@ -360,13 +354,13 @@ Iltimos:
       mctx.font = '12px monospace';
       mctx.textAlign = 'left';
       mctx.fillStyle = '#10b981';
-      mctx.fillText(`Real vaqt: ${uzFix(ref.t, 1)} s`, 8, Hc - 9);
+      mctx.fillText(__t("Real vaqt: {0} s", [uzFix(ref.t, 1)]), 8, Hc - 9);
       const lag = ref.t > 0 ? sim.t / ref.t : 1;
       mctx.fillStyle = Math.abs(lag - 1) < 0.02 ? '#38bdf8' : '#f43f5e';
-      mctx.fillText(`Fizik vaqt: ${uzFix(sim.t, 1)} s (×${uzFix(lag, 2)})`, 150, Hc - 9);
+      mctx.fillText(__t("Fizik vaqt: {0} s (×{1})", [uzFix(sim.t, 1), uzFix(lag, 2)]), 150, Hc - 9);
       mctx.fillStyle = 'rgba(16, 185, 129, 0.9)';
       mctx.textAlign = 'right';
-      mctx.fillText('┄ etalon', W - 8, Hc - 9);
+      mctx.fillText(__t("┄ etalon"), W - 8, Hc - 9);
 
       drawFpsScope();
     }
@@ -394,12 +388,12 @@ Iltimos:
       });
       fctx.fillStyle = '#94a3b8';
       fctx.textAlign = 'left';
-      fctx.fillText('Kadr oralig‘i, ms (oxirgi 120 kadr)', padL, h - 7);
+      fctx.fillText(__t("Kadr oralig‘i, ms (oxirgi 120 kadr)"), padL, h - 7);
 
       if (!histCount) {
         fctx.fillStyle = '#64748b';
         fctx.textAlign = 'center';
-        fctx.fillText('▶ tugmasini bosing', (w + padL) / 2, h / 2);
+        fctx.fillText(__t("▶ tugmasini bosing"), (w + padL) / 2, h / 2);
         drawScopeLabels();
         return;
       }
@@ -426,7 +420,7 @@ Iltimos:
       fctx.fillStyle = 'rgba(9, 13, 22, 0.85)';
       fctx.fillRect(padL, 2, 250, 15);
       fctx.fillStyle = '#e2e8f0';
-      fctx.fillText(`O‘rtacha: ${uzFix(avgFps, 1)} FPS (${goal})`, padL + 4, 13);
+      fctx.fillText(__t("O‘rtacha: {0} FPS ({1})", [uzFix(avgFps, 1), goal]), padL + 4, 13);
     }
 
     function drawScopeLabels() {
@@ -447,17 +441,17 @@ Iltimos:
     function updateHud() {
       const setT = (id, t) => { const el = hud(id); if (el) el.textContent = t; };
       setT('fps', fpsEma ? `${uzFix(fpsEma, 1)} FPS` : '— FPS');
-      setT('dt', lastDtMs ? `${uzFix(lastDtMs, 2)} ms` : '— ms');
-      setT('mode', mode() === 'ball' ? "2D elastik to‘p" : 'Garmonik ossilyator');
+      setT('dt', lastDtMs ? `${uzFix(lastDtMs, 2)} ms` : __t("— ms"));
+      setT('mode', mode() === 'ball' ? __t("2D elastik to‘p") : __t("Garmonik ossilyator"));
       setT('speed', `${uzFix(speed(), 1)}×`);
       const st = hud('status');
       if (st) {
         if (dtOn()) {
-          st.textContent = "Barqaror (FPS ga bog‘liq emas)";
+          st.textContent = __t("Barqaror (FPS ga bog‘liq emas)");
           st.style.color = '#10b981';
         } else {
           const ratio = lastDtMs ? (FRAME_REF * 1000) / lastDtMs : 1;
-          st.textContent = `FPS ga bog‘liq: fizika real vaqtdan ×${uzFix(ratio, 2)} tezlikda (xato!)`;
+          st.textContent = __t("FPS ga bog‘liq: fizika real vaqtdan ×{0} tezlikda (xato!)", [uzFix(ratio, 2)]);
           st.style.color = Math.abs(ratio - 1) < 0.05 ? '#f59e0b' : '#f43f5e';
         }
       }
@@ -466,10 +460,10 @@ Iltimos:
     function updateDtLabel() {
       if (!chkLabel) return;
       if (dtOn()) {
-        chkLabel.textContent = "Delta-time integratsiyasi YOQILGAN (to‘g‘ri fizika)";
+        chkLabel.textContent = __t("Delta-time integratsiyasi YOQILGAN (to‘g‘ri fizika)");
         chkLabel.style.color = 'var(--accent-emerald)';
       } else {
-        chkLabel.textContent = "Delta-time integratsiyasi O‘CHIRILGAN (kadrga bog‘liq fizika)";
+        chkLabel.textContent = __t("Delta-time integratsiyasi O‘CHIRILGAN (kadrga bog‘liq fizika)");
         chkLabel.style.color = '#f43f5e';
       }
     }
@@ -531,10 +525,10 @@ Iltimos:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
-      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Delta-Time va akkumulyator integratsiyasini hamda FPS o‘lchovlarini kuchaytiring." };
-      else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
+      if (total >= 86) g = { text: __t("A’LO (5)"), cls: 'badge-emerald', fb: __t("Barcha mezonlar yuqori darajada bajarilgan.") };
+      else if (total >= 71) g = { text: __t("YAXSHI (4)"), cls: 'badge-cyan', fb: __t("Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.") };
+      else if (total >= 55) g = { text: __t("QONIQARLI (3)"), cls: 'badge-amber', fb: __t("Delta-Time va akkumulyator integratsiyasini hamda FPS o‘lchovlarini kuchaytiring.") };
+      else g = { text: __t("QONIQARSIZ (2)"), cls: 'badge-rose', fb: __t("Laboratoriya ishini qayta bajarish tavsiya etiladi.") };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }
       if (fbEl) fbEl.textContent = g.fb;
     }

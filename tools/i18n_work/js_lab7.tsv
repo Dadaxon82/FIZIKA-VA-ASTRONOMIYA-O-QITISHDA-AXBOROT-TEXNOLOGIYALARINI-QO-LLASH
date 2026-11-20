@@ -1,0 +1,26 @@
+j4213ae3	Сначала вручную перепишите скелет цикла кадров из раздела 2 и прокомментируйте каждую строку. На стенде раздела 5 выключите Delta-Time, измените ограничение FPS с 60 на 15 и понаблюдайте разницу между пунктирным эталонным контуром и телом. Затем своими словами объясните, почему формула ⟦1⟧ устраняет эту разницу.	First rewrite the Section 2 frame loop skeleton by hand and comment every line. On the Section 5 bench, switch Delta-Time off, change the FPS limit from 60 to 15 and watch the gap between the dashed reference outline and the body. Then explain in your own words why the formula ⟦1⟧ removes that gap.
+jfb56971	requestAnimationFrame, переход от миллисекунд к секундам, формула x += v·dt	requestAnimationFrame, converting milliseconds to seconds, the formula x += v·dt
+j956f22c	Добавьте в скелет аккумулятор Фидлера (второй код раздела 2) и запустите осциллятор Эйлера–Кромера из раздела 4. На стенде в режиме осциллятора сравните отношение энергий ⟦1⟧ при 60 и 15 FPS. Отправьте агенту Antigravity промпт из раздела 3 и сами повторите его измерения для проверки.	Add the Fiedler accumulator (the second code in Section 2) to the skeleton and run the Euler–Cromer oscillator from Section 4. On the bench in oscillator mode, compare the energy ratio ⟦1⟧ at 60 and 15 FPS. Send the Section 3 prompt to the Antigravity agent and repeat its measurements yourself to check them.
+je80ae27	аккумулятор Фидлера, фиксированный физический шаг, схема Эйлера–Кромера, проверка результатов агента	the Fiedler accumulator, a fixed physics step, the Euler–Cromer scheme, checking the agent’s results
+j93fcad7	Сравните схемы простого Эйлера, Эйлера–Кромера и velocity-Verlet при одинаковом ⟦1⟧ и покажите на графике дрейф энергии за 60 с. Добавьте в аккумулятор интерполяцию по ⟦2⟧ и оцените плавность движения при 30 FPS. Докажите на панели «Memory» в DevTools, что в цикле кадров не выделяется память.	Compare the simple Euler, Euler–Cromer and velocity-Verlet schemes at the same ⟦1⟧ and plot the energy drift over 60 s. Add interpolation by ⟦2⟧ to the accumulator and judge how smooth the motion is at 30 FPS. Use the DevTools "Memory" panel to prove that the frame loop allocates no memory.
+j8381266	устойчивость интеграторов, дрейф энергии, интерполяция состояний, цикл zero-allocation	integrator stability, energy drift, state interpolation, a zero-allocation loop
+jf2592ac	↵<strong>Повторите:</strong> вопрос(ы) {0}. Правильные ответы: 1-A, 2-B, 3-C, 4-B.	↵<strong>Review:</strong> question(s) {0}. Correct answers: 1-A, 2-B, 3-C, 4-B.
+j1e5cb0b	Вы — сократический наставник по JavaScript и компьютерной физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 7 и попал в кластер «{1}».⏎Основные темы: {2}.⏎Задача: написать в HTML5 Canvas анимацию пружинных гармонических колебаний на основе requestAnimationFrame и delta-time.⏎Пожалуйста:⏎1. Не давайте сразу готовый код — сначала проанализируйте написанный мной фрагмент и задайте наводящие вопросы.⏎2. Помогите мне найти в коде места, зависящие от FPS.⏎3. Предложите один измеримый тест для проверки результата (например, смещение за 5 секунд при 60 и 15 FPS).	You are a Socratic mentor in JavaScript and computer physics. I scored {0}/100 on the Lab 7 diagnostic test and was placed in cluster "{1}".⏎Main topics: {2}.⏎Task: write an HTML5 Canvas animation of a spring harmonic oscillator using requestAnimationFrame and delta-time.⏎Please:⏎1. Do not give me ready code straight away — first analyse a code fragment I wrote and ask guiding questions.⏎2. Help me find the FPS-dependent parts of my code.⏎3. Suggest one measurable test to check the result (for example, the displacement after 5 seconds at 60 and 15 FPS).
+j80f9b9a	Реальное время: {0} с	Real time: {0} s
+jd634f3d	Физическое время: {0} с (×{1})	Physics time: {0} s (×{1})
+j83f448f	┄ эталон	┄ reference
+jaa38e5e	=	=
+j7d59275	=	=
+ja358bc9	=	=
+jfe478cf	Интервал кадров, мс (последние 120 кадров)	Frame interval, ms (last 120 frames)
+j1c2c813	Нажмите кнопку ▶	Press ▶
+j16d0c0b	Среднее: {0} FPS ({1})	Average: {0} FPS ({1})
+je1faf75	=	=
+j252743f	— мс	— ms
+jd913b4b	Упругий 2D-мяч	2D elastic ball
+j9b5f25a	Гармонический осциллятор	Harmonic oscillator
+j3a78a38	Стабильно (не зависит от FPS)	Stable (independent of FPS)
+jffe5b26	Зависит от FPS: физика идёт в ×{0} от реального времени (ошибка!)	FPS-dependent: physics runs at ×{0} real time (error!)
+jfc42119	Интегрирование delta-time ВКЛЮЧЕНО (правильная физика)	Delta-time integration ON (correct physics)
+j8df3c36	Интегрирование delta-time ВЫКЛЮЧЕНО (физика зависит от кадров)	Delta-time integration OFF (frame-dependent physics)
+j57471ba	Усильте интеграцию delta-time и аккумулятора, а также измерения FPS.	Strengthen your delta-time and accumulator integration and your FPS measurements.

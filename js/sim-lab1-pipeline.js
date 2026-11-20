@@ -18,32 +18,32 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   // -------------------------------------------------------------------------
   const TOPICS = {
     'free-fall': {
-      title: "Vakuumda va muhitda jismning erkin tushishi",
+      title: __t("Vakuumda va muhitda jismning erkin tushishi"),
       math: "$$y(t) = v_0 t + \\frac{1}{2}g t^2, \\quad v(t) = v_0 + g t, \\quad F_{\\text{qarshilik}} = -k v$$",
-      name: "jismning erkin tushishi (vakuum va havo qarshiligida)",
-      formula: "y = v0*t + 0.5*g*t^2, F_drag = -k*v yoki -0.5*rho*Cd*A*v^2",
-      params: "boshlang‘ich tezlik v0, gravitatsiya g, qarshilik koeffitsiyenti k"
+      name: __t("jismning erkin tushishi (vakuum va havo qarshiligida)"),
+      formula: __t("y = v0*t + 0.5*g*t^2, F_drag = -k*v yoki -0.5*rho*Cd*A*v^2"),
+      params: __t("boshlang‘ich tezlik v0, gravitatsiya g, qarshilik koeffitsiyenti k")
     },
     'pendulum': {
-      title: "Matematik mayatnikning garmonik tebranishlari",
+      title: __t("Matematik mayatnikning garmonik tebranishlari"),
       math: "$$T = 2\\pi\\sqrt{\\frac{l}{g}}, \\quad \\theta''(t) + \\frac{g}{l}\\sin\\theta + \\gamma\\theta' = 0$$",
       name: "matematik mayatnikning tebranishlari",
       formula: "theta'' = -(g/l)*sin(theta) - gamma*theta'",
-      params: "ip uzunligi l, boshlang‘ich burchak theta0, so‘nish koeffitsiyenti gamma"
+      params: __t("ip uzunligi l, boshlang‘ich burchak theta0, so‘nish koeffitsiyenti gamma")
     },
     'refraction': {
-      title: "Yorug‘likning sinishi va Snellius qonuni",
+      title: __t("Yorug‘likning sinishi va Snellius qonuni"),
       math: "$$n_1 \\sin\\alpha = n_2 \\sin\\beta, \\quad \\alpha_{\\text{crit}} = \\arcsin(n_2/n_1)$$",
-      name: "yorug‘likning ikki muhit chegarasida sinishi",
-      formula: "n1*sin(alpha) = n2*sin(beta), to‘la ichki qaytish: alpha >= asin(n2/n1)",
-      params: "sindirish ko‘rsatkichlari n1 va n2, tushish burchagi alpha"
+      name: __t("yorug‘likning ikki muhit chegarasida sinishi"),
+      formula: __t("n1*sin(alpha) = n2*sin(beta), to‘la ichki qaytish: alpha >= asin(n2/n1)"),
+      params: __t("sindirish ko‘rsatkichlari n1 va n2, tushish burchagi alpha")
     },
     'circular-motion': {
-      title: "Tekis aylanma harakat va markazga intilma kuch",
+      title: __t("Tekis aylanma harakat va markazga intilma kuch"),
       math: "$$F = m\\omega^2 R = \\frac{mv^2}{R}, \\quad \\omega = \\frac{2\\pi}{T}$$",
-      name: "tekis aylanma harakatdagi markazga intilma kuch",
+      name: __t("tekis aylanma harakatdagi markazga intilma kuch"),
       formula: "F = m*omega^2*R, a_c = omega^2*R = v^2/R",
-      params: "radius R, burchak tezlik omega, massa m"
+      params: __t("radius R, burchak tezlik omega, massa m")
     }
   };
 
@@ -61,29 +61,11 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   function buildPrompts(topic) {
     const t = TOPICS[topic];
     return {
-      magicschool: `Sen ta’limiy diagnostika sun’iy intellektisan (MagicSchool AI uslubida).
-Vazifa: "${t.name}" mavzusi bo‘yicha talabaning boshlang‘ich matematik va dasturlash tayyorgarligini aniqlaydigan 5 ta savoldan iborat qisqa diagnostik so‘rovnoma tuz.
-Natijada talabani 3 ta klasterdan biriga ajrat: Bazaviy, Standart yoki Ilg‘or (Vygotskiy ZPD modeli asosida) va har biriga mos individual o‘quv trayektoriyasini taklif qil.`,
-      gemini: `Sen Oliy ta’lim fizika professori va pedagogik dizaynersiz.
-Mavzu: ${t.title}
-Vazifa: Ushbu mavzuni 1-kurs talabalariga raqamli simulyatsiya orqali tushuntirish uchun 30 soniyalik ssenariy (Storyboard) va JSON formatidagi parametrlar xaritasini tuzib bering.
-Talablar:
-1. Ssenariy 4 ta sahnadan iborat bo‘lsin: Muammo, Nazariya, Dinamik tahlil, Xulosa.
-2. Formula: ${t.formula}
-3. Boshqariladigan parametrlar (${t.params}) uchun slayder chegaralarini (min, max, default) JSON formatida bering.`,
+      magicschool: __t("Sen ta’limiy diagnostika sun’iy intellektisan (MagicSchool AI uslubida).\nVazifa: \"{0}\" mavzusi bo‘yicha talabaning boshlang‘ich matematik va dasturlash tayyorgarligini aniqlaydigan 5 ta savoldan iborat qisqa diagnostik so‘rovnoma tuz.\nNatijada talabani 3 ta klasterdan biriga ajrat: Bazaviy, Standart yoki Ilg‘or (Vygotskiy ZPD modeli asosida) va har biriga mos individual o‘quv trayektoriyasini taklif qil.", [t.name]),
+      gemini: __t("Sen Oliy ta’lim fizika professori va pedagogik dizaynersiz.\nMavzu: {0}\nVazifa: Ushbu mavzuni 1-kurs talabalariga raqamli simulyatsiya orqali tushuntirish uchun 30 soniyalik ssenariy (Storyboard) va JSON formatidagi parametrlar xaritasini tuzib bering.\nTalablar:\n1. Ssenariy 4 ta sahnadan iborat bo‘lsin: Muammo, Nazariya, Dinamik tahlil, Xulosa.\n2. Formula: {1}\n3. Boshqariladigan parametrlar ({2}) uchun slayder chegaralarini (min, max, default) JSON formatida bering.", [t.title, t.formula, t.params]),
       midjourney: `/imagine prompt: high precision physics laboratory experiment demonstrating ${t.name}, transparent scientific apparatus with glowing vector indicators, dark modern laboratory background, volumetric lighting, photorealistic 8k, raytracing reflections, digital HUD data overlay --ar 16:9 --v 6.0 --style raw`,
-      runway: `Fizik jarayon: ${t.title}.
-Motion Brush: harakatlanadigan asosiy jismni bo‘yang va unga fizik jihatdan to‘g‘ri vektor tezlik yo‘nalishini bering.
-Camera Control: sekin zoom-in va parametrlarning eng nozik daqiqasida slow-motion 60fps qo‘llang.
-Eslatma: bu bosqich faqat vizual prototip uchun — yakuniy aniqlik Claude kod bosqichida ta’minlanadi.`,
-      claude: `Siz tajribali Computational Physics (Hisoblash fizikasi) dasturchisisiz.
-Vazifa: "${t.title}" mavzusi bo‘yicha sof JavaScript va HTML5 Canvas orqali interaktiv simulyatsiya yozing.
-Differensial tenglama: ${t.formula}
-Boshqariladigan parametrlar: ${t.params}
-Qoidalar:
-1. Hech qanday tashqi kutubxonalarsiz (Pure Vanilla JS & Canvas 2D Context).
-2. Sonli integrallash usuli: Euler-Cromer yoki RK4. Energiyaning saqlanish qonuni kafolatlansin.
-3. Interfeys: Dark theme, slayderlar (Range inputs), Reset/Play tugmalari va real vaqtli telemetriya grafigi bo‘lsin.`
+      runway: __t("Fizik jarayon: {0}.\nMotion Brush: harakatlanadigan asosiy jismni bo‘yang va unga fizik jihatdan to‘g‘ri vektor tezlik yo‘nalishini bering.\nCamera Control: sekin zoom-in va parametrlarning eng nozik daqiqasida slow-motion 60fps qo‘llang.\nEslatma: bu bosqich faqat vizual prototip uchun — yakuniy aniqlik Claude kod bosqichida ta’minlanadi.", [t.title]),
+      claude: __t("Siz tajribali Computational Physics (Hisoblash fizikasi) dasturchisisiz.\nVazifa: \"{0}\" mavzusi bo‘yicha sof JavaScript va HTML5 Canvas orqali interaktiv simulyatsiya yozing.\nDifferensial tenglama: {1}\nBoshqariladigan parametrlar: {2}\nQoidalar:\n1. Hech qanday tashqi kutubxonalarsiz (Pure Vanilla JS & Canvas 2D Context).\n2. Sonli integrallash usuli: Euler-Cromer yoki RK4. Energiyaning saqlanish qonuni kafolatlansin.\n3. Interfeys: Dark theme, slayderlar (Range inputs), Reset/Play tugmalari va real vaqtli telemetriya grafigi bo‘lsin.", [t.title, t.formula, t.params])
     };
   }
 
@@ -215,26 +197,26 @@ Qoidalar:
         const scale = h * 0.6 / L;
 
         // Deterministik (chapda, moviy)
-        drawPendulum(originLX, originY, theta, scale, '#38BDF8', 'Deterministik (Claude kodi)');
+        drawPendulum(originLX, originY, theta, scale, '#38BDF8', __t("Deterministik (Claude kodi)"));
         // AI drift (o‘ngda, amber)
-        drawPendulum(originRX, originY, aiTheta, scale, '#FBBF24', "Generativ SI-video (dreyf)");
+        drawPendulum(originRX, originY, aiTheta, scale, '#FBBF24', __t("Generativ SI-video (dreyf)"));
 
         const deltaDeg = Math.abs((theta - aiTheta) * 180 / Math.PI);
-        if (deltaEl) deltaEl.innerHTML = `Burchak xatoligi: <strong style="color:${deltaDeg > 8 ? '#F43F5E' : '#34D399'}">${uzFix(deltaDeg, 2)}°</strong>`;
+        if (deltaEl) deltaEl.innerHTML = __t("Burchak xatoligi: <strong style=\"color:{0}\">{1}°</strong>", [deltaDeg > 8 ? '#F43F5E' : '#34D399', uzFix(deltaDeg, 2)]);
       } else {
         const groundY = h * 0.92;
         const topY = h * 0.08;
         const scaleY = (groundY - topY) / DROP_HEIGHT;
         const xL = w * 0.32, xR = w * 0.68;
 
-        drawFallingBody(xL, topY, y, scaleY, '#38BDF8', 'Deterministik (Claude kodi)');
-        drawFallingBody(xR, topY, aiY, scaleY, '#FBBF24', "Generativ SI-video (dreyf)");
+        drawFallingBody(xL, topY, y, scaleY, '#38BDF8', __t("Deterministik (Claude kodi)"));
+        drawFallingBody(xR, topY, aiY, scaleY, '#FBBF24', __t("Generativ SI-video (dreyf)"));
 
         ctx.strokeStyle = 'rgba(255,255,255,0.15)';
         ctx.beginPath(); ctx.moveTo(0, groundY); ctx.lineTo(w, groundY); ctx.stroke();
 
         const deltaM = Math.abs(y - aiY);
-        if (deltaEl) deltaEl.innerHTML = `Masofa xatoligi: <strong style="color:${deltaM > 0.3 ? '#F43F5E' : '#34D399'}">${uzFix(deltaM, 2)} m</strong>`;
+        if (deltaEl) deltaEl.innerHTML = __t("Masofa xatoligi: <strong style=\"color:{0}\">{1} m</strong>", [deltaM > 0.3 ? '#F43F5E' : '#34D399', uzFix(deltaM, 2)]);
       }
     }
 
@@ -328,10 +310,10 @@ Qoidalar:
     const gradeEl = document.getElementById('rubric-grade-badge');
 
     function grade(total) {
-      if (total >= 90) return { text: "A (a’lo / mukammal portfolio)", cls: 'badge-emerald' };
-      if (total >= 75) return { text: "B (Yaxshi)", cls: 'badge-cyan' };
-      if (total >= 60) return { text: "C (Qoniqarli)", cls: 'badge-amber' };
-      return { text: "D (qayta ishlash talab etiladi)", cls: 'badge-rose' };
+      if (total >= 90) return { text: __t("A (a’lo / mukammal portfolio)"), cls: 'badge-emerald' };
+      if (total >= 75) return { text: __t("B (Yaxshi)"), cls: 'badge-cyan' };
+      if (total >= 60) return { text: __t("C (Qoniqarli)"), cls: 'badge-amber' };
+      return { text: __t("D (qayta ishlash talab etiladi)"), cls: 'badge-rose' };
     }
 
     function update() {
@@ -363,9 +345,9 @@ Qoidalar:
 
     const correct = { q1: 'C', q2: 'B', q3: 'D' };
     const explanations = {
-      q1: "To‘g‘ri javob: C — MagicSchool AI talabaning boshlang‘ich bilim darajasini aniqlab, Vygotskiy ZPD modeli asosida individual o‘quv trayektoriyasini shakllantiradi.",
-      q2: "To‘g‘ri javob: B — Generativ video ehtimoliy piksellardan iborat bo‘lib, qat’iy matematik aniqlik va slayderlar orqali interaktivlikni ta’minlay olmaydi, shu sababli Claude kod bosqichi zarur.",
-      q3: "To‘g‘ri javob: D — Nazariya → Tayyor namunani tahlil → Kod yozish → Ovozlashtirish → Yakuniy loyiha (Capstone) himoyasi."
+      q1: __t("To‘g‘ri javob: C — MagicSchool AI talabaning boshlang‘ich bilim darajasini aniqlab, Vygotskiy ZPD modeli asosida individual o‘quv trayektoriyasini shakllantiradi."),
+      q2: __t("To‘g‘ri javob: B — Generativ video ehtimoliy piksellardan iborat bo‘lib, qat’iy matematik aniqlik va slayderlar orqali interaktivlikni ta’minlay olmaydi, shu sababli Claude kod bosqichi zarur."),
+      q3: __t("To‘g‘ri javob: D — Nazariya → Tayyor namunani tahlil → Kod yozish → Ovozlashtirish → Yakuniy loyiha (Capstone) himoyasi.")
     };
 
     form.addEventListener('submit', (e) => {
@@ -381,10 +363,10 @@ Qoidalar:
       });
 
       resultEl.style.display = 'block';
-      resultEl.innerHTML = `<div style="margin-bottom:10px;">Natija: ${score} / 3 to‘g‘ri javob</div>` + feedback.join('');
+      resultEl.innerHTML = __t("<div style=\"margin-bottom:10px;\">Natija: {0} / 3 to‘g‘ri javob</div>", [score]) + feedback.join('');
 
       if (window.showToast) {
-        window.showToast(score === 3 ? "Ajoyib! Barcha savollarga to‘g‘ri javob berdingiz!" : "Test yakunlandi, tushuntirishlarni ko‘rib chiqing.");
+        window.showToast(score === 3 ? __t("Ajoyib! Barcha savollarga to‘g‘ri javob berdingiz!") : __t("Test yakunlandi, tushuntirishlarni ko‘rib chiqing."));
       }
     });
   }

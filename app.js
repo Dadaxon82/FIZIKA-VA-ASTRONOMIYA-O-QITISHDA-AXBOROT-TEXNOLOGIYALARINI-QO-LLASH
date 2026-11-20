@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 (() => {
   'use strict';
 
@@ -14,7 +15,7 @@
     return params ? fallback.replace(/\{(\w+)\}/g, (m, name) => (name in params ? params[name] : m)) : fallback;
   };
 
-  const playLabel = running => (running ? tr('app.pause', 'To‘xtatish') : tr('app.play', 'Boshlash'));
+  const playLabel = running => (running ? tr('app.pause', __t("To‘xtatish")) : tr('app.play', __t("Boshlash")));
 
   // ---------- Navigation ----------
   const menuButton = $('.menu-toggle');

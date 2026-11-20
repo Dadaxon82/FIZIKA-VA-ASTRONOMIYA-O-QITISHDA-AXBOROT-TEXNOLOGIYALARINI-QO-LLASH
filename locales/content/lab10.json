@@ -1,0 +1,728 @@
+[
+ {
+  "k": "8a7e10de",
+  "s": "10-laboratoriya mashg‘uloti: astronomical data va speech synthesis",
+  "ru": "Лабораторное занятие 10: астрономические данные и синтез речи",
+  "en": "Lab 10: Astronomical Data and Speech Synthesis"
+ },
+ {
+  "k": "6637e459",
+  "s": "Zamonaviy astronomiya va astrofizika ta’limi ochiq ma’lumotlar bazalariga (NASA JPL Horizons, ESA Gaia) tayanadi. Ushbu laboratoriya mashg‘ulotida talabalar sayyoralar va kometalar harakatini <strong>Kepler qonunlari</strong> asosida vizuallashtiradi, <strong>Gemini</strong> yordamida ilmiy diktorlik ssenariysini yozadi, <strong>Muxlisa AI</strong>, <strong>Aisha AI</strong>, <strong>ElevenLabs</strong> yoki <strong>Google Cloud TTS</strong> orqali o‘zbek tilida nutq sintez qiladi hamda ovozni animatsiya vaqt shkalasi (timeline) bilan aniq sinxronlashtiradi.",
+  "ru": "Современное образование в области астрономии и астрофизики опирается на открытые базы данных (NASA JPL Horizons, ESA Gaia). На этом лабораторном занятии студенты визуализируют движение планет и комет на основе <strong>законов Кеплера</strong>, пишут научный дикторский сценарий с помощью <strong>Gemini</strong>, синтезируют речь на узбекском языке через <strong>Muxlisa AI</strong>, <strong>Aisha AI</strong>, <strong>ElevenLabs</strong> или <strong>Google Cloud TTS</strong> и точно синхронизируют голос с временной шкалой (timeline) анимации.",
+  "en": "Modern astronomy and astrophysics education relies on open databases (NASA JPL Horizons, ESA Gaia). In this lab, students visualise the motion of planets and comets with <strong>Kepler’s laws</strong>, write a scientific narration script with <strong>Gemini</strong>, synthesise speech in Uzbek with <strong>Muxlisa AI</strong>, <strong>Aisha AI</strong>, <strong>ElevenLabs</strong> or <strong>Google Cloud TTS</strong>, and synchronise the voice precisely with the animation timeline."
+ },
+ {
+  "k": "4174e3a7",
+  "s": "📋 10-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 10 и этапы анализа:",
+  "en": "📋 Lab 10 plan and analysis stages:"
+ },
+ {
+  "k": "a74b26fe",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va shaxsiy reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">TPACK va ZPD mezonlari asosida orbital mexanika, TTS nutq sintezi va audio-vizual sinxronlash bo‘yicha diagnostik test hamda shaxsiy o‘quv yo‘riqnomasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и личный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Диагностический тест на основе критериев TPACK и ЗБР по орбитальной механике, синтезу речи TTS и аудиовизуальной синхронизации и личная учебная инструкция.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and a personal plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A TPACK- and ZPD-based diagnostic test on orbital mechanics, TTS speech synthesis and audio-visual synchronisation, plus a personal learning instruction.</span>"
+ },
+ {
+  "k": "13dbed5c",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Animatsiyaga ovoz sintez qilish:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Keplerning 1- va 2-qonunlari, NASA JPL parametrlari, Mel-spektrogramma va neyron vokoderlar asosida audio-animatsiya sinxronligi nazariyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Синтез голоса для анимации:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">1-й и 2-й законы Кеплера, параметры NASA JPL, мел-спектрограмма и теория синхронизации аудио и анимации на основе нейронных вокодеров.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Synthesising a voice for animation:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Kepler’s 1st and 2nd laws, NASA JPL parameters, the mel spectrogram and the theory of audio–animation sync based on neural vocoders.</span>"
+ },
+ {
+  "k": "4c42e3c2",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Nutq sintezi va ovoz generatsiyasi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Muxlisa AI, Aisha AI (milliy o‘zbek tili TTS), ElevenLabs va Google Cloud TTS vositalari orqali professional ilmiy audio ishlab chiqarish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Синтез речи и генерация голоса:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Профессиональное научное аудиопроизводство с помощью Muxlisa AI, Aisha AI (национальный узбекский TTS), ElevenLabs и Google Cloud TTS.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Speech synthesis and voice generation:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Professional scientific audio production with Muxlisa AI, Aisha AI (national Uzbek TTS), ElevenLabs and Google Cloud TTS.</span>"
+ },
+ {
+  "k": "7e681d49",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Gemini ovozli ssenariy tahriri:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Gemini modeli orqali vaqt belgilari (timestamps [00:00 - 00:30]) bilan boyitilgan, fonetik moslashgan ilmiy diktorlik ssenariysini shakllantirish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Редактирование голосового сценария в Gemini:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Формирование с помощью модели Gemini фонетически адаптированного научного дикторского сценария, дополненного временными метками (timestamps [00:00 - 00:30]).</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Editing the voice script in Gemini:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Using Gemini to produce a phonetically adapted scientific narration script with timestamps ([00:00 - 00:30]).</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "c759fbbf",
+  "s": "1. Sun’iy intellekt uchun kognitiv diagnostika va individual ta’lim trayektoriyasi",
+  "ru": "1. Когнитивная диагностика и индивидуальная учебная траектория для работы с искусственным интеллектом",
+  "en": "1. Cognitive diagnostics and an individual learning pathway for AI work"
+ },
+ {
+  "k": "a29f6328",
+  "s": "Astronomik animatsiyalarga ovoz sintez qilish va ularni sinxronlashtirish — bir vaqtning o‘zida ham orbital dinamika qonuniyatlarini (Kepler, Nyuton), ham neyron tarmoqli nutq sintezi (Text-to-Speech) texnologiyalarini va audio-video montaj mezonlarini bilishni talab etadi. <strong>TPACK</strong> va <strong>ZPD</strong> tamoyillari asosida tuzilgan quyidagi 4 ta diagnostik savol talabaning dastlabki darajasini aniqlaydi.",
+  "ru": "Синтез голоса для астрономических анимаций и их синхронизация требуют одновременно знания закономерностей орбитальной динамики (Кеплер, Ньютон), технологий нейросетевого синтеза речи (Text-to-Speech) и критериев аудио-видеомонтажа. 4 диагностических вопроса, составленных на основе принципов <strong>TPACK</strong> и <strong>ЗБР</strong>, определяют исходный уровень студента.",
+  "en": "Adding synthesised narration to astronomical animations and synchronising it requires knowing orbital dynamics (Kepler, Newton), neural text-to-speech technology and audio-video editing criteria all at once. Four diagnostic questions based on the <strong>TPACK</strong> and <strong>ZPD</strong> principles identify the student’s starting level."
+ },
+ {
+  "k": "a900d188",
+  "s": "1. Keplerning 1-qonuniga binoan, Quyosh tizimidagi sayyora yoki kometa orbitasida Quyosh qayerda joylashgan?",
+  "ru": "1. Согласно 1-му закону Кеплера, где находится Солнце на орбите планеты или кометы Солнечной системы?",
+  "en": "1. According to Kepler’s 1st law, where is the Sun located on the orbit of a planet or comet in the Solar System?"
+ },
+ {
+  "k": "099544ef",
+  "s": "A) Ellipsning geometrik markazida.",
+  "ru": "A) В геометрическом центре эллипса.",
+  "en": "A) At the geometric centre of the ellipse."
+ },
+ {
+  "k": "59d38181",
+  "s": "B) Ellips fokuslaridan birida (ikkinchi fokus esa bo‘sh qoladi).",
+  "ru": "B) В одном из фокусов эллипса (второй фокус остаётся пустым).",
+  "en": "B) At one focus of the ellipse (the other focus is empty)."
+ },
+ {
+  "k": "f866a82f",
+  "s": "C) Doimiy ravishda orbitaning perigeliy nuqtasida.",
+  "ru": "C) Постоянно в точке перигелия орбиты.",
+  "en": "C) Always at the perihelion of the orbit."
+ },
+ {
+  "k": "8506bba1",
+  "s": "2. Zamonaviy neyron tarmoqli nutq sintezi (TTS) modellarida audio to‘lqini qanday generatsiya qilinadi?",
+  "ru": "2. Как генерируется звуковая волна в современных моделях нейросетевого синтеза речи (TTS)?",
+  "en": "2. How is the audio waveform generated in modern neural text-to-speech (TTS) models?"
+ },
+ {
+  "k": "06108c20",
+  "s": "A) Matn harflari alohida mikrofon yozuvlariga to‘g‘ridan-to‘g‘ri ulanadi.",
+  "ru": "A) Буквы текста напрямую соединяются с отдельными записями микрофона.",
+  "en": "A) The letters of the text are linked directly to separate microphone recordings."
+ },
+ {
+  "k": "daacd43b",
+  "s": "B) Model tasodifiy shovqin generatsiya qiladi.",
+  "ru": "B) Модель генерирует случайный шум.",
+  "en": "B) The model generates random noise."
+ },
+ {
+  "k": "92bbab3d",
+  "s": "C) Matn fonemik tahlildan o‘tadi, akustik model (Tacotron/FastSpeech) Mel-spektrogramma tuzadi, neyron vokoder (HiFi-GAN/WaveNet) esa uni silliq ovoz to‘lqiniga aylantiradi.",
+  "ru": "C) Текст проходит фонемный анализ, акустическая модель (Tacotron/FastSpeech) строит мел-спектрограмму, а нейронный вокодер (HiFi-GAN/WaveNet) превращает её в плавную звуковую волну.",
+  "en": "C) The text goes through phonemic analysis, an acoustic model (Tacotron/FastSpeech) builds a mel spectrogram and a neural vocoder (HiFi-GAN/WaveNet) turns it into a smooth audio waveform."
+ },
+ {
+  "k": "90ee9a86",
+  "s": "3. O‘zbek tilidagi milliy TTS vositalari (Muxlisa AI, Aisha AI)ning xalqaro modellardan asosiy afzalligi nimada?",
+  "ru": "3. В чём основное преимущество национальных TTS-инструментов на узбекском языке (Muxlisa AI, Aisha AI) перед международными моделями?",
+  "en": "3. What is the main advantage of national Uzbek TTS tools (Muxlisa AI, Aisha AI) over international models?"
+ },
+ {
+  "k": "d788eb76",
+  "s": "A) O‘zbek tili fonetikasi, tutuq belgisi, urg‘u qoidalari va o‘zbekcha fizik-astronomik atamalar talaffuziga maxsus moslashtirilgan.",
+  "ru": "A) Они специально адаптированы к фонетике узбекского языка, знаку тутук, правилам ударения и произношению узбекских физико-астрономических терминов.",
+  "en": "A) They are specially adapted to Uzbek phonetics, the tutuq (glottal stop) mark, stress rules and the pronunciation of Uzbek physics and astronomy terms."
+ },
+ {
+  "k": "382c8885",
+  "s": "B) Ular faqat musiqiy akkordlar chalishga mo‘ljallangan.",
+  "ru": "B) Они предназначены только для игры музыкальных аккордов.",
+  "en": "B) They are only designed to play musical chords."
+ },
+ {
+  "k": "b5639403",
+  "s": "C) Ular internetga ulanmasdan qog‘ozga matn chop etadi.",
+  "ru": "C) Они печатают текст на бумаге без подключения к интернету.",
+  "en": "C) They print text on paper without an internet connection."
+ },
+ {
+  "k": "cc34e953",
+  "s": "4. Animatsiya vaqt shkalasi (Canvas loop) bilan generatsiya qilingan audioni qat’iy sinxronlashning eng ishonchli usuli qaysi?",
+  "ru": "4. Какой способ строгой синхронизации сгенерированного аудио с временной шкалой анимации (Canvas loop) наиболее надёжен?",
+  "en": "4. What is the most reliable way to synchronise generated audio strictly with the animation timeline (Canvas loop)?"
+ },
+ {
+  "k": "00ed18da",
+  "s": "A) Foydalanuvchi klaviaturadagi bo‘shliq tugmasini qo‘lda bosib turishi kerak.",
+  "ru": "A) Пользователь должен вручную удерживать пробел на клавиатуре.",
+  "en": "A) The user must hold down the space bar by hand."
+ },
+ {
+  "k": "d3035ba0",
+  "s": "B) Animatsiyani 1 FPS ga tushirib qo‘yish.",
+  "ru": "B) Снизить анимацию до 1 FPS.",
+  "en": "B) Drop the animation to 1 FPS."
+ },
+ {
+  "k": "14d0ac9d",
+  "s": "C) Ssenariyni vaqt belgilari (timestamps [00:00 - 00:08]) bilan segmentlash hamda animatsiya progressini audio pleyerning `currentTime` ko‘rsatkichiga qat’iy bog‘lash.",
+  "ru": "C) Сегментировать сценарий временными метками (timestamps [00:00 - 00:08]) и строго привязать прогресс анимации к показателю `currentTime` аудиоплеера.",
+  "en": "C) Segment the script with timestamps ([00:00 - 00:08]) and tie the animation progress strictly to the audio player’s `currentTime`."
+ },
+ {
+  "k": "81f83a92",
+  "s": "Diagnostika natijasini hisoblash va shaxsiy rejani tuzish",
+  "ru": "Рассчитать результат диагностики и составить личный план",
+  "en": "Calculate the diagnostic result and build a personal plan"
+ },
+ {
+  "k": "29853027",
+  "s": "Klaster aniqlanmoqda",
+  "ru": "Определяется кластер",
+  "en": "Identifying cluster"
+ },
+ {
+  "k": "7a48b855",
+  "s": "📋 Gemini va TTS Vositalari Uchun Shaxsiylashtirilgan Ssenariy Prompti:",
+  "ru": "📋 Персонализированный промпт сценария для Gemini и TTS-инструментов:",
+  "en": "📋 Personalised script prompt for Gemini and TTS tools:"
+ },
+ {
+  "k": "a630e03c",
+  "s": "2. Astronomik trayektoriyalar (Kepler qonunlari) va nutq sintezi (TTS) nazariyasi",
+  "ru": "2. Теория астрономических траекторий (законы Кеплера) и синтеза речи (TTS)",
+  "en": "2. The theory of astronomical trajectories (Kepler’s laws) and speech synthesis (TTS)"
+ },
+ {
+  "k": "6041db08",
+  "s": "Jismlarning kosmik fazodagi harakatini modellashtirish osmon mexanikasining klassik qonunlariga asoslanadi. NASA Jet Propulsion Laboratory (JPL) Horizons ochiq ma’lumotlar bazasi har bir sayyora va kometa uchun orbital elementlarni real vaqt rejimida taqdim etadi.",
+  "ru": "Моделирование движения тел в космическом пространстве основано на классических законах небесной механики. Открытая база данных NASA Jet Propulsion Laboratory (JPL) Horizons в реальном времени предоставляет орбитальные элементы для каждой планеты и кометы.",
+  "en": "Modelling the motion of bodies in space rests on the classical laws of celestial mechanics. NASA Jet Propulsion Laboratory’s (JPL) Horizons open database provides orbital elements for every planet and comet in real time."
+ },
+ {
+  "k": "a5b6eb25",
+  "s": "2.1. Keplerning qonunlari va orbital parametrlar",
+  "ru": "2.1. Законы Кеплера и орбитальные параметры",
+  "en": "2.1. Kepler’s laws and orbital parameters"
+ },
+ {
+  "k": "cb723463",
+  "s": "Sayyoralar va kometalarning elliptik orbitasi quyidagi tenglamalar orqali ifodalanadi:",
+  "ru": "Эллиптическая орбита планет и комет выражается следующими уравнениями:",
+  "en": "The elliptical orbits of planets and comets are described by these equations:"
+ },
+ {
+  "k": "3b42313c",
+  "s": "<strong>Ellipsning qutbiy tenglamasi (1-qonun):</strong> $$r(\\theta) = \\frac{a(1 - e^2)}{1 + e \\cos\\theta}$$ (bu yerda $a$ — katta yarim o‘q, $e$ — ekssentrisitet, $\\theta$ — haqiqiy anomaliya burchagi).",
+  "ru": "<strong>Полярное уравнение эллипса (1-й закон):</strong> $$r(\\theta) = \\frac{a(1 - e^2)}{1 + e \\cos\\theta}$$ (здесь $a$ — большая полуось, $e$ — эксцентриситет, $\\theta$ — угол истинной аномалии).",
+  "en": "<strong>Polar equation of the ellipse (1st law):</strong> $$r(\\theta) = \\frac{a(1 - e^2)}{1 + e \\cos\\theta}$$ (where $a$ is the semi-major axis, $e$ the eccentricity and $\\theta$ the true anomaly)."
+ },
+ {
+  "k": "606fce65",
+  "s": "<strong>Perigeliy va afeliy masofalari:</strong> $$r_{peri} = a(1 - e), \\quad r_{afe} = a(1 + e)$$",
+  "ru": "<strong>Расстояния перигелия и афелия:</strong> $$r_{peri} = a(1 - e), \\quad r_{afe} = a(1 + e)$$",
+  "en": "<strong>Perihelion and aphelion distances:</strong> $$r_{peri} = a(1 - e), \\quad r_{afe} = a(1 + e)$$"
+ },
+ {
+  "k": "76fcfce8",
+  "s": "<strong>Maydonlar tengligi (2-qonun):</strong> Sektor yuzasi $\\frac{dA}{dt} = \\frac{1}{2} r^2 \\frac{d\\theta}{dt} = \\text{const}$. Jism perigeliyda eng katta tezlikka, afeliyda esa eng kichik tezlikka ega bo‘ladi.",
+  "ru": "<strong>Равенство площадей (2-й закон):</strong> площадь сектора $\\frac{dA}{dt} = \\frac{1}{2} r^2 \\frac{d\\theta}{dt} = \\text{const}$. Тело имеет наибольшую скорость в перигелии и наименьшую — в афелии.",
+  "en": "<strong>Equal areas (2nd law):</strong> the sector area $\\frac{dA}{dt} = \\frac{1}{2} r^2 \\frac{d\\theta}{dt} = \\text{const}$. A body moves fastest at perihelion and slowest at aphelion."
+ },
+ {
+  "k": "64a459dc",
+  "s": "<strong>Kepler tenglamasi (sonli yechim):</strong> $$M = E - e \\sin E$$ (bu yerda $M$ — o‘rtacha anomaliya, $E$ — ekssentrik anomaliya; Nyuton-Rafson iteratsiyasi orqali yechiladi).",
+  "ru": "<strong>Уравнение Кеплера (численное решение):</strong> $$M = E - e \\sin E$$ (здесь $M$ — средняя аномалия, $E$ — эксцентрическая аномалия; решается итерацией Ньютона–Рафсона).",
+  "en": "<strong>Kepler’s equation (numerical solution):</strong> $$M = E - e \\sin E$$ (where $M$ is the mean anomaly and $E$ the eccentric anomaly; solved by Newton–Raphson iteration)."
+ },
+ {
+  "k": "8aa1c1a5",
+  "s": "2.2. Neyron tarmoqli nutq sintezi (TTS pipeline) arxitekturasi",
+  "ru": "2.2. Архитектура нейросетевого синтеза речи (TTS pipeline)",
+  "en": "2.2. Neural speech synthesis (TTS pipeline) architecture"
+ },
+ {
+  "k": "2fac447b",
+  "s": "Zamonaviy generativ sun’iy intellekt nutq sintezi quyidagi 4 ta ketma-ket bosqichdan iborat (Shen et al., 2018):",
+  "ru": "Современный генеративный синтез речи на основе искусственного интеллекта состоит из следующих 4 последовательных этапов (Shen et al., 2018):",
+  "en": "Modern generative AI speech synthesis consists of the following 4 successive stages (Shen et al., 2018):"
+ },
+ {
+  "k": "9896597e",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Matnni normallashtirish (Text Normalization):</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Raqamlar, formulalar va qisqartmalarni to‘liq so‘zga aylantirish (masalan, <em>\"54 km/s\"</em> → <em>\"ellik to‘rt kilometr sekundiga\"</em>).</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Нормализация текста (Text Normalization):</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Превращение чисел, формул и сокращений в полные слова (например, <em>«54 км/с»</em> → <em>«пятьдесят четыре километра в секунду»</em>).</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Text normalisation:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Turning numbers, formulas and abbreviations into full words (for example, <em>\"54 km/s\"</em> → <em>\"fifty-four kilometres per second\"</em>).</span>"
+ },
+ {
+  "k": "3ac0f159",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Fonemik transkripsiya va G2P:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Grapheme-to-Phoneme algoritmi yordamida o‘zbek tili tovushlari va urg‘ularini fonemalarga ajratish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Фонемная транскрипция и G2P:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Разбиение звуков и ударений узбекского языка на фонемы с помощью алгоритма Grapheme-to-Phoneme.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Phonemic transcription and G2P:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Splitting the sounds and stresses of Uzbek into phonemes with a grapheme-to-phoneme algorithm.</span>"
+ },
+ {
+  "k": "dbc70655",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Akustik neyron model:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Transformator yoki Diffusion tarmoqlari fonemalardan chastotaviy <strong>Mel-spektrogramma</strong> (akustik matritsa) tuzadi.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Акустическая нейронная модель:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Сети Transformer или Diffusion строят из фонем частотную <strong>мел-спектрограмму</strong> (акустическую матрицу).</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Acoustic neural model:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">Transformer or diffusion networks build a frequency <strong>mel spectrogram</strong> (an acoustic matrix) from the phonemes.</span>"
+ },
+ {
+  "k": "20eededb",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Neyron vokoder (vocoder):</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">HiFi-GAN yoki WaveNet spektrogrammani tabiiy inson ovozi to‘lqiniga (WAV/MP3 formatda $44.1\\text{ kHz}$) sintezlaydi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Нейронный вокодер (vocoder):</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">HiFi-GAN или WaveNet синтезирует спектрограмму в волну естественного человеческого голоса (в формате WAV/MP3 $44.1\\text{ kHz}$).</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Neural vocoder:</strong><br> <span style=\"font-size: 0.86rem; color: var(--text-secondary);\">HiFi-GAN or WaveNet synthesises the spectrogram into a natural human voice waveform (WAV/MP3 $44.1\\text{ kHz}$).</span>"
+ },
+ {
+  "k": "c7eb0390",
+  "s": "2.3. Animatsiya va audio sinxronizatsiyasi",
+  "ru": "2.3. Синхронизация анимации и аудио",
+  "en": "2.3. Synchronising animation and audio"
+ },
+ {
+  "k": "4dd5881a",
+  "s": "Animatsiyada obyekt perigeliyga yetib kelganda audio diktor aynan shu hodisa haqida gapirishi kerak. Bunga erishish uchun ssenariy segmentlanadi va progress foizi quyidagi formula bilan bog‘lanadi:",
+  "ru": "Когда в анимации объект достигает перигелия, диктор должен говорить именно об этом событии. Для этого сценарий сегментируется, а процент прогресса связывается по следующей формуле:",
+  "en": "When the object reaches perihelion in the animation, the narrator must be talking about exactly that event. To achieve this, the script is segmented and the progress percentage is linked with the following formula:"
+ },
+ {
+  "k": "03fdb0af",
+  "s": "$$t_{norm} = \\frac{t_{audio}}{T_{total}}, \\quad M(t) = 2\\pi \\cdot t_{norm}$$",
+  "ru": "$$t_{norm} = \\frac{t_{audio}}{T_{total}}, \\quad M(t) = 2\\pi \\cdot t_{norm}$$",
+  "en": "$$t_{norm} = \\frac{t_{audio}}{T_{total}}, \\quad M(t) = 2\\pi \\cdot t_{norm}$$"
+ },
+ {
+  "k": "60f50f90",
+  "s": "3. Nutq sintezi va ovoz generatsiyasi vositalari: Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS",
+  "ru": "3. Инструменты синтеза речи и генерации голоса: Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS",
+  "en": "3. Speech synthesis and voice generation tools: Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS"
+ },
+ {
+  "k": "1f335037",
+  "s": "Fizika darslari va astronomik videodarslar yaratishda foydalaniladigan zamonaviy 4 ta yetakchi nutq sintezi platformasining taqqoslama tahlili va amaliy sozlamalari.",
+  "ru": "Сравнительный анализ и практические настройки 4 современных ведущих платформ синтеза речи, используемых при создании уроков физики и астрономических видеоуроков.",
+  "en": "A comparison and practical settings for 4 leading modern speech synthesis platforms used to create physics lessons and astronomy video lessons."
+ },
+ {
+  "k": "355ec8ee",
+  "s": "🇺🇿 Muxlisa AI (milliy o‘zbek TTS)",
+  "ru": "🇺🇿 Muxlisa AI (национальный узбекский TTS)",
+  "en": "🇺🇿 Muxlisa AI (national Uzbek TTS)"
+ },
+ {
+  "k": "49122902",
+  "s": "O‘zbek tili",
+  "ru": "Узбекский язык",
+  "en": "Uzbek language"
+ },
+ {
+  "k": "8c50d274",
+  "s": "O‘zbek tili uchun ishlab chiqilgan neyron nutq sintezi xizmati. O‘zbek adabiy tili urg‘ulari, tutuq belgisi (`'`) va fizik atamalarni o‘qish sifatini darsda o‘zingiz sinab, xalqaro vositalar bilan solishtiring.",
+  "ru": "Сервис нейросетевого синтеза речи, разработанный для узбекского языка. Проверьте на уроке сами качество чтения ударений узбекского литературного языка, знака тутук (`'`) и физических терминов и сравните с международными инструментами.",
+  "en": "A neural speech synthesis service built for Uzbek. Test in class how well it reads literary Uzbek stress, the tutuq mark (`'`) and physics terms, and compare it with international tools."
+ },
+ {
+  "k": "67d640af",
+  "s": "<strong>Tavsiya:</strong> O‘zbek tilidagi astronomiya ma’ruzalari va maktab/universitet darsliklari uchun asosiy vosita.",
+  "ru": "<strong>Рекомендация:</strong> основной инструмент для лекций по астрономии и школьных/университетских учебников на узбекском языке.",
+  "en": "<strong>Recommendation:</strong> the main tool for Uzbek-language astronomy lectures and school/university textbooks."
+ },
+ {
+  "k": "6c225715",
+  "s": "🤖 Aisha AI (o‘zbekcha nutq modeli)",
+  "ru": "🤖 Aisha AI (узбекская речевая модель)",
+  "en": "🤖 Aisha AI (Uzbek speech model)"
+ },
+ {
+  "k": "c3136e95",
+  "s": "Tezkor sintez",
+  "ru": "Быстрый синтез",
+  "en": "Fast synthesis"
+ },
+ {
+  "k": "cad0e693",
+  "s": "O‘zbek tilidagi interaktiv ovozli yordamchi va diktorlik xizmati. Real vaqt rejimida past kechikish (low latency) bilan audio oqimini uzatishga qodir.",
+  "ru": "Интерактивный голосовой помощник и дикторский сервис на узбекском языке. Способен передавать аудиопоток в реальном времени с низкой задержкой (low latency).",
+  "en": "An interactive voice assistant and narration service in Uzbek. It can stream audio in real time with low latency."
+ },
+ {
+  "k": "dbe9e960",
+  "s": "<strong>Tavsiya:</strong> Jonli interaktiv simulyatsiya paytida talabaga ovozli ko‘rsatmalar berish.",
+  "ru": "<strong>Рекомендация:</strong> голосовые указания студенту во время живой интерактивной симуляции.",
+  "en": "<strong>Recommendation:</strong> giving students spoken instructions during a live interactive simulation."
+ },
+ {
+  "k": "e4622204",
+  "s": "🎙️ ElevenLabs (Professional Voice AI)",
+  "ru": "🎙️ ElevenLabs (Professional Voice AI)",
+  "en": "🎙️ ElevenLabs (Professional Voice AI)"
+ },
+ {
+  "k": "501842dd",
+  "s": "Yuqori hissiy reallik",
+  "ru": "Высокий эмоциональный реализм",
+  "en": "High emotional realism"
+ },
+ {
+  "k": "d4e6b475",
+  "s": "Keng tarqalgan generativ nutq sintezi va ovoz klonlash platformasi. Ko‘p tilli modellari o‘zbekcha matnni ham o‘qiy oladi, biroq o‘zbek atamalari talaffuzini albatta tinglab tekshiring. Boshqa odamning ovozini faqat uning roziligi bilan klonlash mumkin.",
+  "ru": "Широко распространённая платформа генеративного синтеза речи и клонирования голоса. Её многоязычные модели могут читать и узбекский текст, однако произношение узбекских терминов обязательно прослушайте и проверьте. Клонировать голос другого человека можно только с его согласия.",
+  "en": "A widely used generative speech synthesis and voice cloning platform. Its multilingual models can also read Uzbek text, but always listen to check how Uzbek terms are pronounced. Another person’s voice may only be cloned with their consent."
+ },
+ {
+  "k": "cac384b5",
+  "s": "<strong>Sozlamalar:</strong> Stability: 0.65, Similarity: 0.85, Style Exaggeration: 0.15.",
+  "ru": "<strong>Настройки:</strong> Stability: 0.65, Similarity: 0.85, Style Exaggeration: 0.15.",
+  "en": "<strong>Settings:</strong> Stability: 0.65, Similarity: 0.85, Style Exaggeration: 0.15."
+ },
+ {
+  "k": "7ab081ef",
+  "s": "☁️ Google Cloud text-to-speech",
+  "ru": "☁️ Google Cloud text-to-speech",
+  "en": "☁️ Google Cloud text-to-speech"
+ },
+ {
+  "k": "a129896a",
+  "s": "SSML standarti",
+  "ru": "Стандарт SSML",
+  "en": "SSML standard"
+ },
+ {
+  "k": "f9331468",
+  "s": "DeepMind WaveNet va Journey neyron arxitekturasiga asoslangan korporativ tizim. <strong>SSML (Speech Synthesis Markup Language)</strong> teglari orqali har bir so‘z orasidagi pauzani millisekundgacha boshqarish imkonini beradi.",
+  "ru": "Корпоративная система на основе нейронной архитектуры DeepMind WaveNet и Journey. Позволяет с помощью тегов <strong>SSML (Speech Synthesis Markup Language)</strong> управлять паузой между словами с точностью до миллисекунд.",
+  "en": "An enterprise system based on DeepMind’s WaveNet and Journey neural architectures. <strong>SSML (Speech Synthesis Markup Language)</strong> tags let you control the pause between words down to the millisecond."
+ },
+ {
+  "k": "a5239d55",
+  "s": "<strong>Xususiyati:</strong> `&lt;break time=\"500ms\"/&gt;` yordamida animatsiya kadrlariga qat’iy sinxronlanadi.",
+  "ru": "<strong>Особенность:</strong> с помощью `&lt;break time=\"500ms\"/&gt;` строго синхронизируется с кадрами анимации.",
+  "en": "<strong>Feature:</strong> `&lt;break time=\"500ms\"/&gt;` keeps it strictly in sync with the animation frames."
+ },
+ {
+  "k": "133d8d03",
+  "s": "4. Ovozli matn tahriri va ssenariy: Gemini multimodal prompt muhandisligi",
+  "ru": "4. Редактирование голосового текста и сценарий: мультимодальный промпт-инжиниринг Gemini",
+  "en": "4. Editing the voice text and script: Gemini multimodal prompt engineering"
+ },
+ {
+  "k": "17868338",
+  "s": "Oddiy ilmiy maqola matnini to‘g‘ridan-to‘g‘ri ovozga aylantirib bo‘lmaydi: og‘zaki nutqda jumlalar qisqa, tushunarli, aniq urg‘uli va vaqt kadrlariga moslangan bo‘lishi kerak. <strong>Gemini</strong> modeli fizika-astronomiya ko‘rsatkichlarini professional radio-diktor ssenariysiga aylantiruvchi eng qulay vositadir.",
+  "ru": "Текст обычной научной статьи нельзя напрямую превратить в голос: в устной речи предложения должны быть короткими, понятными, с чётким ударением и подогнанными под временные кадры. Модель <strong>Gemini</strong> — самый удобный инструмент для превращения физико-астрономических показателей в профессиональный радиодикторский сценарий.",
+  "en": "You cannot turn the text of an ordinary scientific article straight into speech: spoken sentences must be short, clear, well stressed and fitted to time frames. <strong>Gemini</strong> is the handiest tool for turning physics and astronomy figures into a professional radio-style narration script."
+ },
+ {
+  "k": "3f33f95f",
+  "s": "📋 Gemini uchun 30 soniyalik astronomik ssenariy yozish prompti:",
+  "ru": "📋 Промпт для написания 30-секундного астрономического сценария в Gemini:",
+  "en": "📋 Gemini prompt for writing a 30-second astronomy script:"
+ },
+ {
+  "k": "1eca376e",
+  "s": "🏷️ Google Cloud TTS uchun SSML belgilash prompti:",
+  "ru": "🏷️ Промпт разметки SSML для Google Cloud TTS:",
+  "en": "🏷️ SSML markup prompt for Google Cloud TTS:"
+ },
+ {
+  "k": "d46359d0",
+  "s": "5. Astronomik trayektoriya va sinxron ovoz pleerining interaktiv dastgohi",
+  "ru": "5. Интерактивный стенд астрономической траектории и синхронного голосового плеера",
+  "en": "5. Interactive bench: an astronomical trajectory and a synchronised voice player"
+ },
+ {
+  "k": "52911f93",
+  "s": "Quyidagi laboratoriya dastgohida NASA JPL Horizons ko‘rsatkichlari bo‘yicha haqiqiy orbital harakat animatsiyasi hamda Gemini tomonidan tuzilgan vaqt shkalasi bo‘yicha sinxron ovozli tushuntirish ishlaydi. <strong>“🎙️ Ovozli tushuntirishni boshlash”</strong> tugmasini bosib, ovoz va animatsiya uyg‘unligini tekshiring.",
+  "ru": "На лабораторном стенде ниже работают анимация реального орбитального движения по данным NASA JPL Horizons и синхронное голосовое объяснение по временной шкале, составленной Gemini. Нажмите кнопку <strong>«🎙️ Начать голосовое объяснение»</strong> и проверьте согласованность голоса и анимации.",
+  "en": "On the lab bench below, an animation of real orbital motion from NASA JPL Horizons data runs together with a synchronised spoken explanation on a Gemini-written timeline. Press <strong>\"🎙️ Start narration\"</strong> and check how well the voice and animation match."
+ },
+ {
+  "k": "341bba9c",
+  "s": "Galley kometasi (1P/Halley)",
+  "ru": "Комета Галлея (1P/Halley)",
+  "en": "Halley’s Comet (1P/Halley)"
+ },
+ {
+  "k": "d83e5810",
+  "s": "Kepler elliptik modeli",
+  "ru": "Эллиптическая модель Кеплера",
+  "en": "Kepler elliptical model"
+ },
+ {
+  "k": "4ec38fdd",
+  "s": "🎙️ Jonli ovozli subtitr (sinxron ijro):",
+  "ru": "🎙️ Живые голосовые субтитры (синхронное воспроизведение):",
+  "en": "🎙️ Live spoken subtitles (synchronised playback):"
+ },
+ {
+  "k": "077bd8ae",
+  "s": "“Animatsiya va ovoz ijrosini boshlash uchun tugmani bosing.”",
+  "ru": "«Нажмите кнопку, чтобы начать воспроизведение анимации и голоса.»",
+  "en": "\"Press the button to start the animation and narration.\""
+ },
+ {
+  "k": "ce5f3172",
+  "s": "🪐 Kosmik jismni tanlash",
+  "ru": "🪐 Выбор космического тела",
+  "en": "🪐 Choose a celestial body"
+ },
+ {
+  "k": "616d5574",
+  "s": "NASA JPL parametrlari:",
+  "ru": "Параметры NASA JPL:",
+  "en": "NASA JPL parameters:"
+ },
+ {
+  "k": "f010afb0",
+  "s": "1. Galley kometasi (e = 0,967, o‘ta cho‘ziq)",
+  "ru": "1. Комета Галлея (e = 0,967, сильно вытянутая)",
+  "en": "1. Halley’s Comet (e = 0.967, highly elongated)"
+ },
+ {
+  "k": "720b1fd7",
+  "s": "2. Mars (e = 0,093, sezilarli ellips)",
+  "ru": "2. Марс (e = 0,093, заметный эллипс)",
+  "en": "2. Mars (e = 0.093, a noticeable ellipse)"
+ },
+ {
+  "k": "db4966e0",
+  "s": "3. Yer (e = 0,017, deyarli aylanma)",
+  "ru": "3. Земля (e = 0,017, почти круговая)",
+  "en": "3. Earth (e = 0.017, almost circular)"
+ },
+ {
+  "k": "7766a7a9",
+  "s": "4. Yupiter (e = 0,048, gigant orbita)",
+  "ru": "4. Юпитер (e = 0,048, гигантская орбита)",
+  "en": "4. Jupiter (e = 0.048, a giant orbit)"
+ },
+ {
+  "k": "f1519c78",
+  "s": "Katta yarim o‘q (a):",
+  "ru": "Большая полуось (a):",
+  "en": "Semi-major axis (a):"
+ },
+ {
+  "k": "6cbfc818",
+  "s": "17,83 AU",
+  "ru": "17,83 AU",
+  "en": "17,83 AU"
+ },
+ {
+  "k": "cf67d282",
+  "s": "Ekssentrisitet (e):",
+  "ru": "Эксцентриситет (e):",
+  "en": "Eccentricity (e):"
+ },
+ {
+  "k": "0e47b517",
+  "s": "Aylanish davri (T):",
+  "ru": "Период обращения (T):",
+  "en": "Orbital period (T):"
+ },
+ {
+  "k": "9b2437aa",
+  "s": "75,3 yil",
+  "ru": "75,3 года",
+  "en": "75.3 years"
+ },
+ {
+  "k": "27462526",
+  "s": "O‘ta cho‘ziq elliptik orbita. Perigeliyda tezlik 54 km/s ga yetadi, afeliyda esa 1 km/s gacha sekinlashadi.",
+  "ru": "Сильно вытянутая эллиптическая орбита. В перигелии скорость достигает 54 км/с, а в афелии замедляется до 1 км/с.",
+  "en": "A highly elongated elliptical orbit. The speed reaches 54 km/s at perihelion and drops to 1 km/s at aphelion."
+ },
+ {
+  "k": "b97595c3",
+  "s": "🎧 Sinxron ijro boshqaruvi",
+  "ru": "🎧 Управление синхронным воспроизведением",
+  "en": "🎧 Synchronised playback controls"
+ },
+ {
+  "k": "fe2b9023",
+  "s": "🎙️ Ovozli tushuntirishni boshlash",
+  "ru": "🎙️ Начать голосовое объяснение",
+  "en": "🎙️ Start narration"
+ },
+ {
+  "k": "a9b2ffc9",
+  "s": "▶ Animatsiya",
+  "ru": "▶ Анимация",
+  "en": "▶ Animation"
+ },
+ {
+  "k": "7e0619bc",
+  "s": "⏸ Pauza",
+  "ru": "⏸ Пауза",
+  "en": "⏸ Pause"
+ },
+ {
+  "k": "3c91c9da",
+  "s": "🔄 Qayta",
+  "ru": "🔄 Заново",
+  "en": "🔄 Restart"
+ },
+ {
+  "k": "45e8beb9",
+  "s": "Ijro tezligi:",
+  "ru": "Скорость воспроизведения:",
+  "en": "Playback speed:"
+ },
+ {
+  "k": "adfb41eb",
+  "s": "Kepler yuzalarini chizish (2-qonun)",
+  "ru": "Рисовать площади Кеплера (2-й закон)",
+  "en": "Draw Kepler’s areas (2nd law)"
+ },
+ {
+  "k": "2718ae3c",
+  "s": "Tezlik vektorini ko‘rsatish ($\\vec{v}$)",
+  "ru": "Показывать вектор скорости ($\\vec{v}$)",
+  "en": "Show velocity vector ($\\vec{v}$)"
+ },
+ {
+  "k": "e12a9d8d",
+  "s": "6. Akademik baholash rubrikasi (100 ball) va ilmiy-metodologik manbalar",
+  "ru": "6. Академическая рубрика оценивания (100 баллов) и научно-методические источники",
+  "en": "6. Academic assessment rubric (100 points) and scholarly sources"
+ },
+ {
+  "k": "cc68ea15",
+  "s": "Talabalarning 10-laboratoriya mashg‘uloti bo‘yicha astronomik ma’lumotlar vizualizatsiyasi va nutq sintezini integratsiyalash ko‘nikmalari quyidagi 5 ta standart mezon asosida baholanadi.",
+  "ru": "Навыки студентов по визуализации астрономических данных и интеграции синтеза речи в лабораторном занятии 10 оцениваются по следующим 5 стандартным критериям.",
+  "en": "Students’ skills in visualising astronomical data and integrating speech synthesis in Lab 10 are assessed on the following 5 standard criteria."
+ },
+ {
+  "k": "3bf40274",
+  "s": "1. Astronomik ma’lumotlar bazasidan foydalanish va Kepler orbitasi:",
+  "ru": "1. Использование астрономической базы данных и орбита Кеплера:",
+  "en": "1. Using an astronomical database and the Kepler orbit:"
+ },
+ {
+  "k": "32fd86d5",
+  "s": "NASA JPL Horizons ko‘rsatkichlari ($a, e, T$) asosida ellips, perigeliy/afeliy va tezliklar dinamikasini to‘g‘ri modellashtirish.",
+  "ru": "Правильное моделирование эллипса, перигелия/афелия и динамики скоростей по данным NASA JPL Horizons ($a, e, T$).",
+  "en": "Correctly modelling the ellipse, perihelion/aphelion and speed dynamics from NASA JPL Horizons data ($a, e, T$)."
+ },
+ {
+  "k": "205f8638",
+  "s": "2. Muxlisa AI / ElevenLabs ovoz sintezi sifati:",
+  "ru": "2. Качество синтеза голоса Muxlisa AI / ElevenLabs:",
+  "en": "2. Muxlisa AI / ElevenLabs voice synthesis quality:"
+ },
+ {
+  "k": "a3359139",
+  "s": "O‘zbek tilidagi tabiiy intonatsiya, to‘g‘ri urg‘ular, shovqinsiz va tushunarli audio generatsiyasi.",
+  "ru": "Естественная интонация на узбекском языке, правильные ударения, генерация чистого и понятного аудио без шумов.",
+  "en": "Natural Uzbek intonation, correct stress and clean, clear, noise-free audio."
+ },
+ {
+  "k": "1e9452ad",
+  "s": "3. Gemini ovozli ssenariy tahriri va vaqt belgilari:",
+  "ru": "3. Редактирование голосового сценария в Gemini и временные метки:",
+  "en": "3. Editing the voice script in Gemini and timestamps:"
+ },
+ {
+  "k": "4c9801b3",
+  "s": "Gemini yordamida vaqt kodlari (timestamps) bilan boyitilgan, ilmiy jihatdan asosli diktorlik ssenariysini tuzish.",
+  "ru": "Составление с помощью Gemini научно обоснованного дикторского сценария, дополненного временными кодами (timestamps).",
+  "en": "Writing a scientifically sound narration script with timestamps using Gemini."
+ },
+ {
+  "k": "5ac39733",
+  "s": "4. Animatsiya va audio sinxronizatsiyasi:",
+  "ru": "4. Синхронизация анимации и аудио:",
+  "en": "4. Animation and audio synchronisation:"
+ },
+ {
+  "k": "8024bf82",
+  "s": "Vaqt shkalasi (timeline), jonli subtitrlar va jismning perigeliy/afeliy o‘tishlariga ovozning to‘liq mosligi.",
+  "ru": "Временная шкала (timeline), живые субтитры и полное соответствие голоса прохождению телом перигелия/афелия.",
+  "en": "The timeline, live subtitles and the voice matching the body’s perihelion/aphelion passages exactly."
+ },
+ {
+  "k": "3319b12d",
+  "s": "5. Akademik hisobot va metodologik xulosalar:",
+  "ru": "5. Академический отчёт и методологические выводы:",
+  "en": "5. Academic report and methodological conclusions:"
+ },
+ {
+  "k": "ebc845b4",
+  "s": "Sof o‘zbek adabiy tilidagi mukammal hisobot, ilmiy atamalarning to‘g‘ri talaffuzi va xulosalar.",
+  "ru": "Безупречный отчёт на грамотном литературном языке, правильное произношение научных терминов и выводы.",
+  "en": "An excellent report in clear literary language, correct pronunciation of scientific terms and conclusions."
+ },
+ {
+  "k": "480b16ec",
+  "s": "Umumiy ballni hisoblash",
+  "ru": "Рассчитать общий балл",
+  "en": "Calculate the total score"
+ },
+ {
+  "k": "7bed2278",
+  "s": "Baholanmagan",
+  "ru": "Не оценено",
+  "en": "Not graded"
+ },
+ {
+  "k": "9b0e5074",
+  "s": "📚 Foydalanilgan ilmiy-metodologik adabiyotlar (APA 7 standarti):",
+  "ru": "📚 Использованная научно-методическая литература (стандарт APA 7):",
+  "en": "📚 References (APA 7):"
+ },
+ {
+  "k": "f74bd901",
+  "s": "ElevenLabs. (n.d.). <em>ElevenLabs documentation</em>. https://elevenlabs.io/docs",
+  "ru": "ElevenLabs. (n.d.). <em>ElevenLabs documentation</em>. https://elevenlabs.io/docs",
+  "en": "ElevenLabs. (n.d.). <em>ElevenLabs documentation</em>. https://elevenlabs.io/docs"
+ },
+ {
+  "k": "a1352f3b",
+  "s": "Gemini Team, Google. (2024). <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em> (arXiv:2403.05530). arXiv. https://doi.org/10.48550/arXiv.2403.05530",
+  "ru": "Gemini Team, Google. (2024). <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em> (arXiv:2403.05530). arXiv. https://doi.org/10.48550/arXiv.2403.05530",
+  "en": "Gemini Team, Google. (2024). <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em> (arXiv:2403.05530). arXiv. https://doi.org/10.48550/arXiv.2403.05530"
+ },
+ {
+  "k": "3efc70fb",
+  "s": "Google Cloud. (n.d.). <em>Speech Synthesis Markup Language (SSML)</em>. Cloud Text-to-Speech documentation. https://cloud.google.com/text-to-speech/docs/ssml",
+  "ru": "Google Cloud. (n.d.). <em>Speech Synthesis Markup Language (SSML)</em>. Cloud Text-to-Speech documentation. https://cloud.google.com/text-to-speech/docs/ssml",
+  "en": "Google Cloud. (n.d.). <em>Speech Synthesis Markup Language (SSML)</em>. Cloud Text-to-Speech documentation. https://cloud.google.com/text-to-speech/docs/ssml"
+ },
+ {
+  "k": "78b8f046",
+  "s": "Kepler, J. (1609). <em>Astronomia nova</em>. Heidelberg.",
+  "ru": "Kepler, J. (1609). <em>Astronomia nova</em>. Heidelberg.",
+  "en": "Kepler, J. (1609). <em>Astronomia nova</em>. Heidelberg."
+ },
+ {
+  "k": "52926866",
+  "s": "Kong, J., Kim, J., va Bae, J. (2020). HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis. <em>Advances in Neural Information Processing Systems, 33</em>, 17022–17033.",
+  "ru": "Kong, J., Kim, J., & Bae, J. (2020). HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis. <em>Advances in Neural Information Processing Systems, 33</em>, 17022–17033.",
+  "en": "Kong, J., Kim, J., & Bae, J. (2020). HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis. <em>Advances in Neural Information Processing Systems, 33</em>, 17022–17033."
+ },
+ {
+  "k": "392e8caa",
+  "s": "NASA Jet Propulsion Laboratory. (n.d.). <em>Horizons system</em>. Solar System Dynamics. https://ssd.jpl.nasa.gov/horizons/",
+  "ru": "NASA Jet Propulsion Laboratory. (n.d.). <em>Horizons system</em>. Solar System Dynamics. https://ssd.jpl.nasa.gov/horizons/",
+  "en": "NASA Jet Propulsion Laboratory. (n.d.). <em>Horizons system</em>. Solar System Dynamics. https://ssd.jpl.nasa.gov/horizons/"
+ },
+ {
+  "k": "e732e1eb",
+  "s": "Shen, J., Pang, R., Weiss, R. J., Schuster, M., Jaitly, N., Yang, Z., … Wu, Y. (2018). Natural TTS synthesis by conditioning WaveNet on mel spectrogram predictions. In <em>2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em> (pp. 4779–4783). https://doi.org/10.1109/ICASSP.2018.8461368",
+  "ru": "Shen, J., Pang, R., Weiss, R. J., Schuster, M., Jaitly, N., Yang, Z., … Wu, Y. (2018). Natural TTS synthesis by conditioning WaveNet on mel spectrogram predictions. In <em>2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em> (pp. 4779–4783). https://doi.org/10.1109/ICASSP.2018.8461368",
+  "en": "Shen, J., Pang, R., Weiss, R. J., Schuster, M., Jaitly, N., Yang, Z., … Wu, Y. (2018). Natural TTS synthesis by conditioning WaveNet on mel spectrogram predictions. In <em>2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em> (pp. 4779–4783). https://doi.org/10.1109/ICASSP.2018.8461368"
+ },
+ {
+  "k": "031a1724",
+  "s": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "ru": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "en": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>"
+ },
+ {
+  "k": "543abd6e",
+  "s": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "ru": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "en": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>"
+ }
+]

@@ -1,0 +1,452 @@
+[
+ {
+  "k": "c93202a5",
+  "s": "15-laboratoriya mashg‘uloti: yadro fizikasi va yakuniy mustaqil loyiha tahlili",
+  "ru": "Лабораторное занятие 15: ядерная физика и анализ итогового самостоятельного проекта",
+  "en": "Lab 15: Nuclear Physics and Analysis of the Final Independent Project"
+ },
+ {
+  "k": "77ef2374",
+  "s": "Radioaktiv yemirilish qonuni ($N(t) = N_0 e^{-\\lambda t}$) va yarim yemirilish davri ($T_{1/2} = \\ln 2/\\lambda$) stoxastik jarayon sifatida modellashtiriladi: har bir yadro har bir vaqt qadamida $p = \\lambda\\,\\Delta t$ ehtimollik bilan yemiriladi. Semestr davomida o‘rganilgan AI vositalari (PhET, WolframAlpha, Claude, Antigravity, TTS, LMS) yagona loyihaga birlashtiriladi va yakuniy loyiha himoya qilinadi.",
+  "ru": "Закон радиоактивного распада ($N(t) = N_0 e^{-\\lambda t}$) и период полураспада ($T_{1/2} = \\ln 2/\\lambda$) моделируются как стохастический процесс: каждое ядро на каждом шаге по времени распадается с вероятностью $p = \\lambda\\,\\Delta t$. ИИ-инструменты, изученные в течение семестра (PhET, WolframAlpha, Claude, Antigravity, TTS, LMS), объединяются в единый проект, и проходит защита итогового проекта.",
+  "en": "The radioactive decay law ($N(t) = N_0 e^{-\\lambda t}$) and the half-life ($T_{1/2} = \\ln 2/\\lambda$) are modelled as a stochastic process: at each time step every nucleus decays with probability $p = \\lambda\\,\\Delta t$. The AI tools studied over the semester (PhET, WolframAlpha, Claude, Antigravity, TTS, LMS) are combined into a single project, and the final project is defended."
+ },
+ {
+  "k": "be9bcf62",
+  "s": "📋 15-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 15 и этапы анализа:",
+  "en": "📋 Lab 15 plan and analysis stages:"
+ },
+ {
+  "k": "b6966055",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Radioaktiv yemirilish qonuni, yarim yemirilish davri va AI ekotizimi bo‘yicha diagnostik test.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Диагностический тест по закону радиоактивного распада, периоду полураспада и экосистеме ИИ.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A diagnostic test on the radioactive decay law, half-life and the AI ecosystem.</span>"
+ },
+ {
+  "k": "27b00f88",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Yakuniy loyiha va himoya:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Fizik asos, kod, hisobot va taqdimotni yagona loyihaga birlashtirish hamda himoya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Итоговый проект и защита:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Объединение физической основы, кода, отчёта и презентации в единый проект и его защита.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. The final project and defence:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Combining the physics, code, report and presentation into one project and defending it.</span>"
+ },
+ {
+  "k": "13e5e20f",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. To‘liq AI pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Tahlil (PhET, WolframAlpha) → kod (Claude, Antigravity) → ovoz (TTS) → LMS’ga joylash.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Полный ИИ-конвейер:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Анализ (PhET, WolframAlpha) → код (Claude, Antigravity) → голос (TTS) → размещение в LMS.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. The full AI pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Analysis (PhET, WolframAlpha) → code (Claude, Antigravity) → voice (TTS) → posting to the LMS.</span>"
+ },
+ {
+  "k": "1147b088",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Originallik va baholash:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">AI yordamidan halol foydalanish, o‘z tahlilini asoslash va og‘zaki himoya.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Оригинальность и оценивание:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Честное использование помощи ИИ, обоснование собственного анализа и устная защита.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Originality and assessment:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Using AI help honestly, justifying your own analysis and an oral defence.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "9cb5013b",
+  "s": "1. Diagnostika va individual o‘quv rejasi",
+  "ru": "1. Диагностика и индивидуальный учебный план",
+  "en": "1. Diagnostics and an individual learning plan"
+ },
+ {
+  "k": "08c39e10",
+  "s": "Radioaktiv yemirilish qonuniyati va semestr yakunida foydalaniladigan murakkab AI ekotizimi bo‘yicha bilimlaringizni tekshiring.",
+  "ru": "Проверьте свои знания закономерности радиоактивного распада и сложной экосистемы ИИ, используемой в конце семестра.",
+  "en": "Test your knowledge of the radioactive decay law and the complex AI ecosystem used at the end of the semester."
+ },
+ {
+  "k": "827db7b8",
+  "s": "1-savol: Radioaktiv yemirilish qonuni (N = N₀e^(-λt)) qanday hodisa hisoblanadi?",
+  "ru": "Вопрос 1: Каким явлением является закон радиоактивного распада (N = N₀e^(-λt))?",
+  "en": "Question 1: What kind of phenomenon is the radioactive decay law (N = N₀e^(-λt))?"
+ },
+ {
+  "k": "59b3befc",
+  "s": "A) To‘liq deterministik, har bir atom qachon parchalanishi aniq ma’lum.",
+  "ru": "A) Полностью детерминированным, точно известно, когда распадётся каждый атом.",
+  "en": "A) Fully deterministic — it is known exactly when each atom will decay."
+ },
+ {
+  "k": "42d9780e",
+  "s": "B) Kvant mexanikasiga asoslangan stoxastik (tasodifiy) hodisa.",
+  "ru": "B) Стохастическим (случайным) явлением, основанным на квантовой механике.",
+  "en": "B) A stochastic (random) phenomenon based on quantum mechanics."
+ },
+ {
+  "k": "882513f2",
+  "s": "C) Harorat va bosimga to‘g‘ridan-to‘g‘ri bog‘liq bo‘lgan termodinamik hodisa.",
+  "ru": "C) Термодинамическим явлением, напрямую зависящим от температуры и давления.",
+  "en": "C) A thermodynamic phenomenon that depends directly on temperature and pressure."
+ },
+ {
+  "k": "497b38aa",
+  "s": "D) Makroskopik jismlarning gravitatsion tortishish qonuniyati.",
+  "ru": "D) Закономерностью гравитационного притяжения макроскопических тел.",
+  "en": "D) The law of gravitational attraction between macroscopic bodies."
+ },
+ {
+  "k": "25a91414",
+  "s": "2-savol: Undetectable AI va shunga o‘xshash anti-AI vositalarining asosiy vazifasi nima?",
+  "ru": "Вопрос 2: Какова основная задача Undetectable AI и подобных анти-ИИ инструментов?",
+  "en": "Question 2: What is the main job of Undetectable AI and similar anti-AI tools?"
+ },
+ {
+  "k": "3006d21c",
+  "s": "A) Matn sun’iy intellekt orqali yozilgan bo‘lishi ehtimolini taxminiy baholash (natija ishonchli dalil emas, xato bo‘lishi mumkin).",
+  "ru": "A) Приблизительно оценить вероятность того, что текст написан искусственным интеллектом (результат — не надёжное доказательство и может быть ошибочным).",
+  "en": "A) To estimate roughly how likely it is that a text was written by AI (the result is not reliable evidence and can be wrong)."
+ },
+ {
+  "k": "95a57b39",
+  "s": "B) Xato yozilgan Python kodlarini avtomatik to‘g‘rilash.",
+  "ru": "B) Автоматически исправлять ошибочно написанный код Python.",
+  "en": "B) To fix badly written Python code automatically."
+ },
+ {
+  "k": "ff4f20dc",
+  "s": "C) Fizik formulalarni yechish va grafik chizish.",
+  "ru": "C) Решать физические формулы и строить графики.",
+  "en": "C) To solve physics formulas and draw graphs."
+ },
+ {
+  "k": "27e2dd1d",
+  "s": "D) Audio fayllarni matnga o‘girib berish.",
+  "ru": "D) Переводить аудиофайлы в текст.",
+  "en": "D) To convert audio files to text."
+ },
+ {
+  "k": "83d6d9ea",
+  "s": "3-savol: Otter.ai platformasi yakuniy himoyada qanday yordam beradi?",
+  "ru": "Вопрос 3: Как платформа Otter.ai помогает на итоговой защите?",
+  "en": "Question 3: How does Otter.ai help in the final defence?"
+ },
+ {
+  "k": "3c8eeaf3",
+  "s": "A) Ekrandagi simulyatsiyani videoga yozib oladi.",
+  "ru": "A) Записывает симуляцию на экране в видео.",
+  "en": "A) It records the on-screen simulation as video."
+ },
+ {
+  "k": "3f0ff2a0",
+  "s": "B) Loyiha muhokamasi (savol-javoblar) davomidagi barcha ovozli nutqni transkripsiya qilib, yakuniy konspekt va xulosani avtomatik tayyorlaydi.",
+  "ru": "B) Транскрибирует всю устную речь во время обсуждения проекта (вопросы и ответы) и автоматически готовит итоговый конспект и вывод.",
+  "en": "B) It transcribes all the speech during the project discussion (questions and answers) and automatically produces final notes and a summary."
+ },
+ {
+  "k": "fa2cee26",
+  "s": "C) Faqat ingliz tilidagi darsliklarni tarjima qilib beradi.",
+  "ru": "C) Переводит только учебники на английском языке.",
+  "en": "C) It only translates English-language textbooks."
+ },
+ {
+  "k": "655690b3",
+  "s": "D) Kod ichidagi mantiqiy xatolarni qidiradi.",
+  "ru": "D) Ищет логические ошибки в коде.",
+  "en": "D) It looks for logic errors in the code."
+ },
+ {
+  "k": "e588b03a",
+  "s": "4-savol: Loyihaning yakuniy \"AI Pipeline\" zanjiriga qaysi ketma-ketlik eng mos keladi?",
+  "ru": "Вопрос 4: Какая последовательность лучше всего подходит для итоговой цепочки «AI Pipeline» проекта?",
+  "en": "Question 4: Which sequence best fits the project’s final \"AI Pipeline\"?"
+ },
+ {
+  "k": "0e9723cc",
+  "s": "A) MagicSchool -&gt; Undetectable AI -&gt; Otter.ai",
+  "ru": "A) MagicSchool -&gt; Undetectable AI -&gt; Otter.ai",
+  "en": "A) MagicSchool -&gt; Undetectable AI -&gt; Otter.ai"
+ },
+ {
+  "k": "458b793b",
+  "s": "B) Claude (Kod) -&gt; ElevenLabs (Audio) -&gt; Undetectable AI (Matn Originalligi) -&gt; Otter.ai (Himoya qaydlari) -&gt; MagicSchool (Baholash).",
+  "ru": "B) Claude (код) -&gt; ElevenLabs (аудио) -&gt; Undetectable AI (оригинальность текста) -&gt; Otter.ai (записи защиты) -&gt; MagicSchool (оценивание).",
+  "en": "B) Claude (code) -&gt; ElevenLabs (audio) -&gt; Undetectable AI (text originality) -&gt; Otter.ai (defence notes) -&gt; MagicSchool (assessment)."
+ },
+ {
+  "k": "6c47a285",
+  "s": "C) PhET -&gt; Gemini -&gt; Hech qanday boshqa vosita kerak emas.",
+  "ru": "C) PhET -&gt; Gemini -&gt; никакие другие инструменты не нужны.",
+  "en": "C) PhET -&gt; Gemini -&gt; no other tools needed."
+ },
+ {
+  "k": "7cc3be12",
+  "s": "D) Faqat Google Antigravity kod yozadi va baholaydi.",
+  "ru": "D) Только Google Antigravity пишет код и оценивает.",
+  "en": "D) Only Google Antigravity writes and assesses the code."
+ },
+ {
+  "k": "1c604944",
+  "s": "2. Yakuniy loyihani yakunlash va himoya qilish",
+  "ru": "2. Завершение и защита итогового проекта",
+  "en": "2. Completing and defending the final project"
+ },
+ {
+  "k": "06a1b7c6",
+  "s": "Yadro fizikasi, xususan, zarrachalarning radioaktiv yemirilishi — tabiatdagi eng klassik stoxastik hodisadir. Ushbu bosqichda barcha nazariy va dasturlash ko‘nikmalari birlashtirilib, mustaqil taqdimot himoya qilinadi.",
+  "ru": "Ядерная физика, в частности радиоактивный распад частиц, — самое классическое стохастическое явление в природе. На этом этапе все теоретические навыки и навыки программирования объединяются, и защищается самостоятельная презентация.",
+  "en": "Nuclear physics — and radioactive decay in particular — is the most classic stochastic phenomenon in nature. At this stage all the theory and programming skills come together and an independent presentation is defended."
+ },
+ {
+  "k": "3b79ee8c",
+  "s": "Loyiha tarkibiy qismlari:",
+  "ru": "Составные части проекта:",
+  "en": "Project components:"
+ },
+ {
+  "k": "6610d1e2",
+  "s": "<strong>Fizik asos:</strong> Yemirilish qonuniyati $N(t) = N_0 e^{-\\lambda t}$ va uning ehtimoliy tabiati ($p = \\lambda \\Delta t$).",
+  "ru": "<strong>Физическая основа:</strong> закономерность распада $N(t) = N_0 e^{-\\lambda t}$ и её вероятностная природа ($p = \\lambda \\Delta t$).",
+  "en": "<strong>Physics:</strong> the decay law $N(t) = N_0 e^{-\\lambda t}$ and its probabilistic nature ($p = \\lambda \\Delta t$)."
+ },
+ {
+  "k": "298d270f",
+  "s": "<strong>Kod va simulyatsiya:</strong> JS/Canvas orqali yuzlab yadrolarning parchalanish jarayonini tasodifiy sonlar (RNG) generatori yordamida chizish va grafikda ko‘rsatish.",
+  "ru": "<strong>Код и симуляция:</strong> отрисовка процесса распада сотен ядер на JS/Canvas с помощью генератора случайных чисел (RNG) и отображение на графике.",
+  "en": "<strong>Code and simulation:</strong> drawing the decay of hundreds of nuclei in JS/Canvas with a random number generator (RNG) and showing it on a graph."
+ },
+ {
+  "k": "74f9aa7d",
+  "s": "<strong>Ssenariy va audio:</strong> Simulyatsiya nima haqida ekanligini TTS orqali audiotrekka tushirish.",
+  "ru": "<strong>Сценарий и аудио:</strong> запись через TTS аудиодорожки о том, чему посвящена симуляция.",
+  "en": "<strong>Script and audio:</strong> recording, with TTS, an audio track explaining what the simulation shows."
+ },
+ {
+  "k": "cf34c6fa",
+  "s": "Himoya (Defense) jarayoni:",
+  "ru": "Процесс защиты (Defense):",
+  "en": "The defence process:"
+ },
+ {
+  "k": "7870c158",
+  "s": "<strong>Plagiat tekshiruvi:</strong> Yozma hisobot matni originallik uchun skan qilinadi (AI emas, balki talabaning o‘zi tomonidan tahrirlangani tasdiqlanadi).",
+  "ru": "<strong>Проверка на плагиат:</strong> текст письменного отчёта сканируется на оригинальность (подтверждается, что он отредактирован самим студентом, а не ИИ).",
+  "en": "<strong>Plagiarism check:</strong> the written report is scanned for originality (confirming it was edited by the student, not by AI)."
+ },
+ {
+  "k": "038758c5",
+  "s": "<strong>Mualliflik kodingiz:</strong> Yozilgan kod strukturasini tushuntirib berish va o‘zgaruvchilar (masalan, $\\lambda$ - yemirilish doimiysi) parametrlarini asoslash.",
+  "ru": "<strong>Авторство вашего кода:</strong> объяснение структуры написанного кода и обоснование параметров переменных (например, $\\lambda$ — постоянная распада).",
+  "en": "<strong>Authorship of your code:</strong> explaining the structure of the code and justifying its parameters (for example, $\\lambda$, the decay constant)."
+ },
+ {
+  "k": "44b8edb4",
+  "s": "<strong>Otter.ai qaydlari:</strong> Himoya paytidagi barcha munozaralar va ustozning fikrlari kelajak uchun transkripsiya qilinadi.",
+  "ru": "<strong>Записи Otter.ai:</strong> все обсуждения во время защиты и замечания преподавателя транскрибируются на будущее.",
+  "en": "<strong>Otter.ai notes:</strong> all the discussion during the defence and the teacher’s comments are transcribed for the future."
+ },
+ {
+  "k": "d0c21c44",
+  "s": "3. To‘liq pipeline integratsiyasi (AI ekotizim sxemasi)",
+  "ru": "3. Полная интеграция конвейера (схема ИИ-экосистемы)",
+  "en": "3. Full pipeline integration (the AI ecosystem diagram)"
+ },
+ {
+  "k": "c1292585",
+  "s": "Semestr davomida o‘zlashtirilgan vositalar yagona zanjirga aylanadi. Quyidagi algoritm yakuniy mahsulot (Loyiha) yaratilish jarayonini ifodalaydi:",
+  "ru": "Инструменты, освоенные в течение семестра, превращаются в единую цепочку. Следующий алгоритм отражает процесс создания итогового продукта (проекта):",
+  "en": "The tools mastered over the semester become one chain. The following algorithm describes how the final product (the project) is made:"
+ },
+ {
+  "k": "b149c89d",
+  "s": "Fizik-AI loyiha zanjiri (pipeline)",
+  "ru": "Цепочка физико-ИИ проекта (pipeline)",
+  "en": "The physics-and-AI project chain (pipeline)"
+ },
+ {
+  "k": "8198ed9d",
+  "s": "<strong style=\"color:#11182B;\">1. Tadqiqot va tahlil (PhET va Wolfram):</strong> Fizik jarayonning asosiy qonuniyatlari va parametrlarini vizual tushunish hamda to‘g‘riligini tasdiqlash.",
+  "ru": "<strong style=\"color:#11182B;\">1. Исследование и анализ (PhET и Wolfram):</strong> визуальное понимание основных закономерностей и параметров физического процесса и подтверждение их правильности.",
+  "en": "<strong style=\"color:#11182B;\">1. Research and analysis (PhET and Wolfram):</strong> understanding the process’s main laws and parameters visually and confirming they are correct."
+ },
+ {
+  "k": "f4e9619f",
+  "s": "<strong style=\"color:#11182B;\">2. Kod generatsiyasi va UI (Claude va Antigravity):</strong> Algoritmni tuzish, HTML5/JS vizualizatsiya interfeysini shakllantirish va xatoliklarni diskret vaqtda (delta-time) hal qilish.",
+  "ru": "<strong style=\"color:#11182B;\">2. Генерация кода и UI (Claude и Antigravity):</strong> составление алгоритма, формирование интерфейса визуализации HTML5/JS и устранение ошибок в дискретном времени (delta-time).",
+  "en": "<strong style=\"color:#11182B;\">2. Code generation and UI (Claude and Antigravity):</strong> designing the algorithm, building the HTML5/JS visualisation interface and fixing discrete-time (delta-time) errors."
+ },
+ {
+  "k": "ff666f92",
+  "s": "<strong style=\"color:#11182B;\">3. Narratsiya va matn (Gemini va ElevenLabs):</strong> Loyiha haqida ilmiy matn yozish va uni insonga xos sifatli ovozga (TTS) aylantirish.",
+  "ru": "<strong style=\"color:#11182B;\">3. Наррация и текст (Gemini и ElevenLabs):</strong> написание научного текста о проекте и превращение его в качественный, похожий на человеческий голос (TTS).",
+  "en": "<strong style=\"color:#11182B;\">3. Narration and text (Gemini and ElevenLabs):</strong> writing a scientific text about the project and turning it into a good, human-sounding voice (TTS)."
+ },
+ {
+  "k": "2c85e5da",
+  "s": "<strong style=\"color:#11182B;\">4. Hujjatlashtirish va originallik (Otter.ai):</strong> Ish jarayoni dalillarini (qoralamalar, promptlar, kod tarixi) saqlash, himoyani yozib olish va referat formatiga o‘tkazish. AI matnini detektorlardan yashirish uchun «insoniylashtirish» akademik halollikni buzadi.",
+  "ru": "<strong style=\"color:#11182B;\">4. Документирование и оригинальность (Otter.ai):</strong> сохранение доказательств рабочего процесса (черновики, промпты, история кода), запись защиты и перевод в формат реферата. «Очеловечивание» ИИ-текста, чтобы скрыть его от детекторов, нарушает академическую честность.",
+  "en": "<strong style=\"color:#11182B;\">4. Documentation and originality (Otter.ai):</strong> keeping evidence of the work process (drafts, prompts, code history), recording the defence and turning it into a report. \"Humanising\" AI text to hide it from detectors breaches academic integrity."
+ },
+ {
+  "k": "ec3f21ba",
+  "s": "<strong style=\"color:#11182B;\">5. Yakuniy baholash (MagicSchool AI):</strong> O‘qituvchi tomonidan maxsus rubrika asosida talabaning bilim va loyihasini sun’iy intellekt orqali kompleks tekshirish.",
+  "ru": "<strong style=\"color:#11182B;\">5. Итоговое оценивание (MagicSchool AI):</strong> комплексная проверка знаний и проекта студента преподавателем с помощью искусственного интеллекта по специальной рубрике.",
+  "en": "<strong style=\"color:#11182B;\">5. Final assessment (MagicSchool AI):</strong> the teacher’s comprehensive AI-assisted review of the student’s knowledge and project against a special rubric."
+ },
+ {
+  "k": "162545c8",
+  "s": "4. Hisobot originalligi va baholash",
+  "ru": "4. Оригинальность отчёта и оценивание",
+  "en": "4. Report originality and assessment"
+ },
+ {
+  "k": "d7c05492",
+  "s": "Sun’iy intellektdan foydalanish — uni to‘g‘ridan-to‘g‘ri ko‘chirib olish degani emas. Asosiy maqsad AI vositalarini fikrlash jarayonini kengaytirish uchun ishlatishdir.",
+  "ru": "Использовать искусственный интеллект не значит напрямую копировать из него. Главная цель — использовать ИИ-инструменты для расширения процесса мышления.",
+  "en": "Using AI does not mean copying from it directly. The main aim is to use AI tools to extend your thinking."
+ },
+ {
+  "k": "ae405b99",
+  "s": "AI-detektorlar va originallik",
+  "ru": "ИИ-детекторы и оригинальность",
+  "en": "AI detectors and originality"
+ },
+ {
+  "k": "89d5a2c8",
+  "s": "<strong>Undetectable AI</strong> yoki <strong>ZeroGPT</strong> kabi AI-detektorlar matnning LLM tomonidan yozilgan bo‘lishi ehtimolini faqat taxminiy baholaydi. Tadqiqotlar ular ishonchsiz ekanini va inson yozgan matnni ham xato belgilashini ko‘rsatgan (Weber-Wulff va boshq., 2023). Shuning uchun detektor natijasi yagona dalil bo‘la olmaydi. Originallik ish jarayoni dalillari, o‘z o‘lchov natijalari va og‘zaki himoya orqali baholanadi. Talaba ilmiy matnni o‘zining tahliliy xulosalari bilan boyitgan bo‘lishi shart.",
+  "ru": "ИИ-детекторы, такие как <strong>Undetectable AI</strong> или <strong>ZeroGPT</strong>, лишь приблизительно оценивают вероятность того, что текст написан LLM. Исследования показали, что они ненадёжны и ошибочно помечают и написанный человеком текст (Weber-Wulff и др., 2023). Поэтому результат детектора не может быть единственным доказательством. Оригинальность оценивается по доказательствам рабочего процесса, собственным результатам измерений и устной защите. Студент обязан обогатить научный текст своими аналитическими выводами.",
+  "en": "AI detectors such as <strong>Undetectable AI</strong> or <strong>ZeroGPT</strong> only estimate roughly how likely a text is to have been written by an LLM. Research has shown they are unreliable and also wrongly flag human-written text (Weber-Wulff et al., 2023). So a detector result cannot be the only evidence. Originality is assessed through evidence of the work process, the student’s own measurements and the oral defence. The student must enrich the scientific text with their own analytical conclusions."
+ },
+ {
+  "k": "50bf0d77",
+  "s": "MagicSchool AI asistent",
+  "ru": "ИИ-ассистент MagicSchool",
+  "en": "The MagicSchool AI assistant"
+ },
+ {
+  "k": "351dccaf",
+  "s": "O‘qituvchi <strong>MagicSchool AI</strong> platformasidan foydalanib, loyihaning kod, dizayn, taqdimot, matn va mantiqiy jihatlari bo‘yicha maxsus rubrika ishlab chiqadi. Platforma Otter.ai dan olingan taqdimot transkripsiyasi va talabaning kodini analiz qilib, baholash tavsiyasini, shuningdek, shaxsiy rivojlanish uchun (Feedback) maslahatlarni avtomatik tuzib beradi.",
+  "ru": "Преподаватель с помощью платформы <strong>MagicSchool AI</strong> разрабатывает специальную рубрику по коду, дизайну, презентации, тексту и логике проекта. Платформа анализирует транскрипцию презентации из Otter.ai и код студента и автоматически составляет рекомендацию по оценке, а также советы для личного развития (Feedback).",
+  "en": "Using <strong>MagicSchool AI</strong>, the teacher develops a special rubric covering the project’s code, design, presentation, text and logic. The platform analyses the presentation transcript from Otter.ai and the student’s code and automatically drafts a grading recommendation and advice for personal development (feedback)."
+ },
+ {
+  "k": "913a004a",
+  "s": "5. Interaktiv dastgoh: radioaktiv yemirilish simulyatori",
+  "ru": "5. Интерактивный стенд: симулятор радиоактивного распада",
+  "en": "5. Interactive bench: a radioactive decay simulator"
+ },
+ {
+  "k": "1fc8c96c",
+  "s": "Quyidagi simulyatorda yuzlab beqaror (qizil) yadro izotoplari ko‘rsatilgan. <strong>“Boshlash”</strong> tugmasini bosganingizda, zarrachalar tasodifiy tarzda barqaror holatga (yashil) yemiriladi. Eksponensial kamayish grafigini jonli kuzating.",
+  "ru": "В симуляторе ниже показаны сотни нестабильных (красных) изотопов ядер. Когда вы нажмёте кнопку <strong>«Старт»</strong>, частицы случайным образом распадаются в стабильное состояние (зелёное). Наблюдайте график экспоненциального убывания в прямом эфире.",
+  "en": "The simulator below shows hundreds of unstable (red) nuclear isotopes. When you press <strong>\"Start\"</strong>, the particles decay at random into a stable state (green). Watch the exponential decay graph live."
+ },
+ {
+  "k": "9a635c89",
+  "s": "Yemirilish ehtimolligi ($\\lambda$):",
+  "ru": "Вероятность распада ($\\lambda$):",
+  "en": "Decay probability ($\\lambda$):"
+ },
+ {
+  "k": "b7f180e5",
+  "s": "Beqaror (qizil):",
+  "ru": "Нестабильные (красные):",
+  "en": "Unstable (red):"
+ },
+ {
+  "k": "ebbf9ef4",
+  "s": "Barqaror (yashil):",
+  "ru": "Стабильные (зелёные):",
+  "en": "Stable (green):"
+ },
+ {
+  "k": "71b46cd5",
+  "s": "Boshlash",
+  "ru": "Старт",
+  "en": "Start"
+ },
+ {
+  "k": "e85cae78",
+  "s": "6. Umumiy yakuniy rubrika va manbalar",
+  "ru": "6. Общая итоговая рубрика и источники",
+  "en": "6. Overall final rubric and sources"
+ },
+ {
+  "k": "94a51dcd",
+  "s": "Ushbu yakuniy modul uchun ishlab chiqilgan rubrika talabaning barcha 15 ta laboratoriya davomidagi vizualizatsiya, kod yozish va AI yordamida ishlash qobiliyatini yig‘indisi sifatida baholaydi (Jami: 100 ball).",
+  "ru": "Рубрика, разработанная для этого итогового модуля, оценивает совокупно способности студента к визуализации, написанию кода и работе с помощью ИИ на протяжении всех 15 лабораторных работ (всего: 100 баллов).",
+  "en": "The rubric for this final module assesses the student’s visualisation, coding and AI-assisted work across all 15 labs as a whole (total: 100 points)."
+ },
+ {
+  "k": "0e5164e5",
+  "s": "<strong>Ilmiy mantiq va originallik:</strong> Yemirilish qonuniyatining to‘g‘ri ishlashi, Hisobotning mustaqilligi (ish jarayoni dalillari va og‘zaki himoya; AI-detektor faqat yordamchi signal).",
+  "ru": "<strong>Научная логика и оригинальность:</strong> правильная работа закономерности распада, самостоятельность отчёта (доказательства рабочего процесса и устная защита; ИИ-детектор — лишь вспомогательный сигнал).",
+  "en": "<strong>Scientific logic and originality:</strong> the decay law working correctly and an independent report (evidence of the work process and the oral defence; an AI detector is only a supporting signal)."
+ },
+ {
+  "k": "6e41293c",
+  "s": "<strong>Kodlash va arxitektura:</strong> HTML5 Canvas stoxastik dvigateli, to‘g‘ri render, va real-time eksponensial grafik arxitekturasi.",
+  "ru": "<strong>Программирование и архитектура:</strong> стохастический движок HTML5 Canvas, правильный рендер и архитектура экспоненциального графика в реальном времени.",
+  "en": "<strong>Coding and architecture:</strong> an HTML5 Canvas stochastic engine, correct rendering and a real-time exponential graph architecture."
+ },
+ {
+  "k": "9fed4714",
+  "s": "<strong>Integratsiya (TTS, Otter.ai):</strong> Loyihani to‘liq \"Pipeline\" asosida o‘tkazish, ovozli va yozma hujjatlashtirish sifat darajasi.",
+  "ru": "<strong>Интеграция (TTS, Otter.ai):</strong> проведение проекта полностью на основе «конвейера», уровень качества голосового и письменного документирования.",
+  "en": "<strong>Integration (TTS, Otter.ai):</strong> running the project fully as a \"pipeline\" and the quality of spoken and written documentation."
+ },
+ {
+  "k": "f2191d93",
+  "s": "100 / 100 ball",
+  "ru": "100 / 100 баллов",
+  "en": "100 / 100 points"
+ },
+ {
+  "k": "2893f6b4",
+  "s": "1. Krane, K. S. (1988). <em>Introductory nuclear physics</em>. Wiley.",
+  "ru": "1. Krane, K. S. (1988). <em>Introductory nuclear physics</em>. Wiley.",
+  "en": "1. Krane, K. S. (1988). <em>Introductory nuclear physics</em>. Wiley."
+ },
+ {
+  "k": "a9211071",
+  "s": "2. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai",
+  "ru": "2. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai",
+  "en": "2. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai"
+ },
+ {
+  "k": "6288356a",
+  "s": "3. PhET Interactive Simulations. (n.d.). <em>Alpha Decay</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/alpha-decay",
+  "ru": "3. PhET Interactive Simulations. (n.d.). <em>Alpha Decay</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/alpha-decay",
+  "en": "3. PhET Interactive Simulations. (n.d.). <em>Alpha Decay</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/alpha-decay"
+ },
+ {
+  "k": "f31cdf74",
+  "s": "4. Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., va Waddington, L. (2023). Testing of detection tools for AI-generated text. <em>International Journal for Educational Integrity, 19</em>, Article 26. https://doi.org/10.1007/s40979-023-00146-z",
+  "ru": "4. Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023). Testing of detection tools for AI-generated text. <em>International Journal for Educational Integrity, 19</em>, Article 26. https://doi.org/10.1007/s40979-023-00146-z",
+  "en": "4. Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023). Testing of detection tools for AI-generated text. <em>International Journal for Educational Integrity, 19</em>, Article 26. https://doi.org/10.1007/s40979-023-00146-z"
+ },
+ {
+  "k": "031a1724",
+  "s": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "ru": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "en": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>"
+ },
+ {
+  "k": "543abd6e",
+  "s": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "ru": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "en": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>"
+ }
+]

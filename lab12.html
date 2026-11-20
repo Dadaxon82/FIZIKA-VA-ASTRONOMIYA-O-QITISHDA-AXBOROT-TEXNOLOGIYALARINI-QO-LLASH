@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1950,25 +1950,25 @@ function generateSimPrompt() {
     const q4 = document.querySelector('input[name="diag12_q4"]:checked');
 
     if (!q1 || !q2 || !q3 || !q4) {
-        alert("Iltimos, barcha savollarga javob bering.");
+        alert(__t("Iltimos, barcha savollarga javob bering."));
         return;
     }
 
-    if (q1.value === 'B') score += 25; else missingConcepts.push("Impulsning saqlanish qonuni qo‘llanilish shartlari");
-    if (q2.value === 'B') score += 25; else missingConcepts.push("PhET/Vascak simulyatorlarining maqsadi");
-    if (q3.value === 'A') score += 25; else missingConcepts.push("Claude uchun samarali Prompt strukturasi");
-    if (q4.value === 'D') score += 25; else missingConcepts.push("Antigravity ning multi-agent sifatidagi ro‘li");
+    if (q1.value === 'B') score += 25; else missingConcepts.push(__t("Impulsning saqlanish qonuni qo‘llanilish shartlari"));
+    if (q2.value === 'B') score += 25; else missingConcepts.push(__t("PhET/Vascak simulyatorlarining maqsadi"));
+    if (q3.value === 'A') score += 25; else missingConcepts.push(__t("Claude uchun samarali Prompt strukturasi"));
+    if (q4.value === 'D') score += 25; else missingConcepts.push(__t("Antigravity ning multi-agent sifatidagi ro‘li"));
 
     document.getElementById('diagnostic-result').style.display = 'block';
     const scoreEl = document.getElementById('diagnostic-score');
-    scoreEl.innerText = `Natija: ${score}% (100% dan)`;
+    scoreEl.innerText = __t("Natija: {0}% (100% dan)", [score]);
     scoreEl.style.color = score >= 75 ? 'var(--accent-emerald)' : 'var(--accent-amber)';
 
     let promptText = "";
     if (score === 100) {
-        promptText = "Men Nyuton qonunlari, elastik to‘qnashuvlar va PhET/Vascak tahlilini to‘liq tushundim. Endi Claude uchun HTML5 Canvas va JavaScript (requestAnimationFrame) dan foydalangan holda, ishqalanish va yer tortishish kuchlarini hisobga oluvchi yanada murakkab 3D mexanik tizim dvigateli kodini generatsiya qiluvchi Prompt yozib bering.";
+        promptText = __t("Men Nyuton qonunlari, elastik to‘qnashuvlar va PhET/Vascak tahlilini to‘liq tushundim. Endi Claude uchun HTML5 Canvas va JavaScript (requestAnimationFrame) dan foydalangan holda, ishqalanish va yer tortishish kuchlarini hisobga oluvchi yanada murakkab 3D mexanik tizim dvigateli kodini generatsiya qiluvchi Prompt yozib bering.");
     } else {
-        promptText = `Mening mexanika modellashtirish va AI dvigatellari bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: ${missingConcepts.join(', ')}. Iltimos, Vascak.cz da to‘qnashuvlar qanday tahlil qilinishini va Google Antigravity kod xatolarini qanday ushlab qolishini sodda misollar bilan tushuntiring.`;
+        promptText = __t("Mening mexanika modellashtirish va AI dvigatellari bo‘yicha bilish darajam o‘rtacha. Men quyidagi mavzularda xatoga yo‘l qo‘ydim: {0}. Iltimos, Vascak.cz da to‘qnashuvlar qanday tahlil qilinishini va Google Antigravity kod xatolarini qanday ushlab qolishini sodda misollar bilan tushuntiring.", [missingConcepts.join(', ')]);
     }
 
     document.getElementById('ai-prompt-output').value = promptText;
@@ -2035,12 +2035,7 @@ function updateLog() {
 
     let p_mag = uzFix(Math.sqrt(p_total_x**2 + p_total_y**2 + p_total_z**2), 2);
     
-    document.getElementById('momentum-log').innerHTML = `
-        [ANTIGRAVITY: 3D MONITORING]<br>
-        > Tizimdagi topshiriq: 3D to‘qnashuvlar<br>
-        <strong style="color: var(--accent-cyan);">> Umumiy impuls vektori moduli: ${p_mag} kg·m/s | Umumiy kinetik energiya: ${uzFix(e_total, 2)} J</strong><br>
-        <span style="color: var(--text-secondary); font-size: 0.85rem;">* 3D vizualizatsiya HTML5 Canvas API yordamida perspektiv proyeksiya bilan chizilgan.</span>
-    `;
+    document.getElementById('momentum-log').innerHTML = __t("\n        [ANTIGRAVITY: 3D MONITORING]<br>\n        > Tizimdagi topshiriq: 3D to‘qnashuvlar<br>\n        <strong style=\"color: var(--accent-cyan);\">> Umumiy impuls vektori moduli: {0} kg·m/s | Umumiy kinetik energiya: {1} J</strong><br>\n        <span style=\"color: var(--text-secondary); font-size: 0.85rem;\">* 3D vizualizatsiya HTML5 Canvas API yordamida perspektiv proyeksiya bilan chizilgan.</span>\n    ", [p_mag, uzFix(e_total, 2)]);
 }
 
 // 3D to 2D projection
@@ -2262,11 +2257,11 @@ document.addEventListener('DOMContentLoaded', () => {
 const quiz1Questions = [
   {
     id: 1,
-    question: "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?",
+    question: __t("Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?"),
     options: [
       { text: __t("A) Burchak radianda emas, gradusda hisoblangan"), correct: false, note: __t("Gradus xatoligi davrni buzadi, lekin energiyaning eksponensial portlashiga sabab bo‘lmaydi.") },
-      { text: __t("B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas"), correct: true, note: "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!" },
-      { text: __t("C) Canvas ekrani har kadrda tozalanmagan"), correct: false, note: "Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas." }
+      { text: __t("B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas"), correct: true, note: __t("Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun’iy oshiradi. Eyler–Kromer yoki RK4 ishlatish shart!") },
+      { text: __t("C) Canvas ekrani har kadrda tozalanmagan"), correct: false, note: __t("Canvas tozalanishi faqat vizual grafikaga ta’sir qiladi, fizik hisoblarga emas.") }
     ]
   },
   {
@@ -2319,14 +2314,11 @@ window.checkDiagnosticQuiz = function() {
   });
 
   if (!allAnswered) {
-    feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-    </div>`;
+    feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>", []);
     return;
   }
 
-  let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 1-ma’ruza diagnostika natijalari:</h4>`;
+  let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>", []);
 
   quiz1Questions.forEach(q => {
     const userOptIdx = userAnswers1[q.id];
@@ -2349,19 +2341,14 @@ window.checkDiagnosticQuiz = function() {
   if (correctCount === 2) {
     cluster = __t("B Klaster (O‘rta / Standart)");
     clusterColor = '#047857';
-    clusterDesc = '2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.';
+    clusterDesc = __t("2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler–Kromer algoritmlarini qo‘llash tavsiya etiladi.");
   } else if (correctCount === 3) {
     cluster = __t("C Klaster (Ilg‘or / Research)");
     clusterColor = '#7C3AED';
-    clusterDesc = '3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.';
+    clusterDesc = __t("3D WebGL (Three.js), 4-tartibli Runge–Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.");
   }
 
-  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${clusterColor}; text-align:center;">
-    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>
-    <div style="font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
-    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Umumiy Natija: ${correctCount} / ${totalCount} ball (${uzFix(((correctCount/totalCount)*100), 0)}%)</div>
-  </div></div>`;
+  htmlResult += __t("<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>", [clusterColor, clusterColor, cluster, clusterDesc, clusterColor, correctCount, totalCount, uzFix(((correctCount/totalCount)*100), 0)]);
 
   feedbackEl.innerHTML = htmlResult;
 };
@@ -2430,14 +2417,11 @@ window.checkDiagnostic2Quiz = function() {
   });
 
   if (!allAnswered) {
-    feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-    </div>`;
+    feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>", []);
     return;
   }
 
-  let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>`;
+  let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>", []);
 
   quiz2Questions.forEach(q => {
     const userOptIdx = userAnswers2[q.id];
@@ -2453,26 +2437,21 @@ window.checkDiagnostic2Quiz = function() {
     </div>`;
   });
 
-  let cluster = 'B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)';
+  let cluster = __t("B Klaster (2D Modellashtirish & Simplektik Eyler–Kromer)");
   let clusterColor = '#047857';
-  let clusterDesc = '2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.';
+  let clusterDesc = __t("2D vektor harakat, gravitatsiya va simplektik Eyler–Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.");
 
   if (correctCount === 3) {
     cluster = __t("C Klaster (No-chiziqli Tizimlar, Aerodinamik Drag & RK4 Integratori)");
     clusterColor = '#7C3AED';
-    clusterDesc = 'Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.';
+    clusterDesc = __t("Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge–Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.");
   } else if (correctCount <= 1) {
     cluster = __t("A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)");
     clusterColor = '#1C4E9E';
     clusterDesc = __t("Boshlang‘ich differensial hisob va sodda Eyler qadami bo‘yicha Scaffolding yo‘riqnomalar tavsiya etiladi.");
   }
 
-  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${clusterColor}; text-align:center;">
-    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>
-    <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
-    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Natija: ${correctCount} / ${totalCount} ball (${uzFix(((correctCount/totalCount)*100), 0)}%)</div>
-  </div></div>`;
+  htmlResult += __t("<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>", [clusterColor, clusterColor, cluster, clusterDesc, clusterColor, correctCount, totalCount, uzFix(((correctCount/totalCount)*100), 0)]);
 
   feedbackEl.innerHTML = htmlResult;
 };

@@ -1,0 +1,446 @@
+[
+ {
+  "k": "5aec27d1",
+  "s": "13-laboratoriya mashg‘uloti: termodinamik jarayonlar va AI stoxastik modellari",
+  "ru": "Лабораторное занятие 13: термодинамические процессы и стохастические модели ИИ",
+  "en": "Lab 13: Thermodynamic Processes and Stochastic AI Models"
+ },
+ {
+  "k": "f6f76cf2",
+  "s": "Ideal gaz holat tenglamasi ($pV = \\nu RT$) va molekulyar-kinetik nazariya asosida talabalar PhET «Gas Properties» simulyatsiyasini tahlil qiladi, so‘ng Claude yordamida zarrachalar tizimining stoxastik simulyatsiyasini yozadi. Dastgohda hajm va harorat o‘zgartirilganda bosimning o‘zgarishi P-V diagrammasida nazariy izoterma bilan solishtiriladi. T-S diagrammasi dastgohda chizilmaydi: uni hisobotda $\\Delta S = \\nu C_V \\ln(T_2/T_1) + \\nu R \\ln(V_2/V_1)$ formulasi bo‘yicha qurish tavsiya etiladi.",
+  "ru": "На основе уравнения состояния идеального газа ($pV = \\nu RT$) и молекулярно-кинетической теории студенты анализируют симуляцию PhET «Gas Properties», затем с помощью Claude пишут стохастическую симуляцию системы частиц. На стенде изменение давления при изменении объёма и температуры сравнивается на P-V-диаграмме с теоретической изотермой. T-S-диаграмма на стенде не строится: её рекомендуется построить в отчёте по формуле $\\Delta S = \\nu C_V \\ln(T_2/T_1) + \\nu R \\ln(V_2/V_1)$.",
+  "en": "Using the ideal gas equation of state ($pV = \\nu RT$) and molecular kinetic theory, students analyse the PhET \"Gas Properties\" simulation, then use Claude to write a stochastic simulation of a particle system. On the bench, the pressure change as volume and temperature vary is compared with the theoretical isotherm on a P-V diagram. The bench does not draw a T-S diagram: build it in your report using the formula $\\Delta S = \\nu C_V \\ln(T_2/T_1) + \\nu R \\ln(V_2/V_1)$."
+ },
+ {
+  "k": "fa327d7c",
+  "s": "📋 13-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 13 и этапы анализа:",
+  "en": "📋 Lab 13 plan and analysis stages:"
+ },
+ {
+  "k": "a3f2dc81",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Ideal gaz qonuniyatlari, stoxastik jarayonlar hamda AI tizimlariga oid diagnostika.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Диагностика по законам идеального газа, стохастическим процессам и системам ИИ.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Diagnostics on the ideal gas laws, stochastic processes and AI systems.</span>"
+ },
+ {
+  "k": "30e18581",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Termodinamika loyihasi: pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">PhET tahlilidan kodlashgacha va Antigravity monitoringigacha bo‘lgan to‘liq zanjir.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Проект по термодинамике: конвейер:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Полная цепочка от анализа в PhET до программирования и мониторинга в Antigravity.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Thermodynamics project: the pipeline:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The full chain from PhET analysis to coding and Antigravity monitoring.</span>"
+ },
+ {
+  "k": "0151a0a3",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Model tahlili (PhET / Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Harorat, bosim va hajm orasidagi muvozanatni vizual hamda analitik tadqiq etish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Анализ модели (PhET / Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Визуальное и аналитическое исследование равновесия между температурой, давлением и объёмом.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Model analysis (PhET / Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Visual and analytic study of the balance between temperature, pressure and volume.</span>"
+ },
+ {
+  "k": "de15483d",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Claude stoxastik dvigatel:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Zarrachalar kinetikasi (Broun harakati) bo‘yicha stoxastik HTML5/JS simulyatsiyasini yozish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Стохастический движок Claude:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Написание стохастической симуляции HTML5/JS по кинетике частиц (броуновское движение).</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. A Claude stochastic engine:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Writing a stochastic HTML5/JS simulation of particle kinetics (Brownian motion).</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "9cb5013b",
+  "s": "1. Diagnostika va individual o‘quv rejasi",
+  "ru": "1. Диагностика и индивидуальный учебный план",
+  "en": "1. Diagnostics and an individual learning plan"
+ },
+ {
+  "k": "8e175c90",
+  "s": "Ideal gaz qonuniyatlari, stoxastik jarayonlar (tasodifiylik) va AI vositalarida termodinamik kod yaratish bo‘yicha bilimlaringizni tekshiring.",
+  "ru": "Проверьте свои знания законов идеального газа, стохастических процессов (случайности) и создания термодинамического кода в ИИ-инструментах.",
+  "en": "Test your knowledge of the ideal gas laws, stochastic processes (randomness) and building thermodynamics code with AI tools."
+ },
+ {
+  "k": "9ff55fcf",
+  "s": "1-savol: Mendeleyev-Klapeyron tenglamasi (ideal gaz holat tenglamasi) qanday ifodalanadi?",
+  "ru": "Вопрос 1: Как выражается уравнение Менделеева–Клапейрона (уравнение состояния идеального газа)?",
+  "en": "Question 1: How is the Mendeleev–Clapeyron equation (the ideal gas equation of state) written?"
+ },
+ {
+  "k": "179bfa5d",
+  "s": "B) pV = (m/M)RT",
+  "ru": "B) pV = (m/M)RT",
+  "en": "B) pV = (m/M)RT"
+ },
+ {
+  "k": "e8a247b7",
+  "s": "C) E = mc^2",
+  "ru": "C) E = mc^2",
+  "en": "C) E = mc^2"
+ },
+ {
+  "k": "69dfcff5",
+  "s": "2-savol: Stoxastik simulyatsiya nima va u termodinamikada nima uchun kerak?",
+  "ru": "Вопрос 2: Что такое стохастическая симуляция и зачем она нужна в термодинамике?",
+  "en": "Question 2: What is a stochastic simulation and why does thermodynamics need it?"
+ },
+ {
+  "k": "96f03af6",
+  "s": "A) Tasodifiylikni (masalan, gaz molekulalarining xaotik harakatini) hisobga oluvchi model bo‘lib, makroskopik holatlarni to‘g‘ri ifodalash uchun zarur",
+  "ru": "A) Это модель, учитывающая случайность (например, хаотическое движение молекул газа); она необходима для правильного описания макроскопических состояний",
+  "en": "A) A model that accounts for randomness (for example, the chaotic motion of gas molecules); it is needed to describe macroscopic states correctly"
+ },
+ {
+  "k": "07f23ca4",
+  "s": "B) U faqat planetalar harakatini hisoblaydigan qat’iy (deterministik) modeldir",
+  "ru": "B) Это строгая (детерминированная) модель, рассчитывающая только движение планет",
+  "en": "B) A strict (deterministic) model that only computes planetary motion"
+ },
+ {
+  "k": "5f9d6791",
+  "s": "C) Faqatgina yorug‘lik tezligini o‘lchash uchun kerak",
+  "ru": "C) Она нужна только для измерения скорости света",
+  "en": "C) It is only needed to measure the speed of light"
+ },
+ {
+  "k": "1413683e",
+  "s": "D) Stoxastik modellar fizika fani uchun mutlaqo ishlatilmaydi",
+  "ru": "D) Стохастические модели вообще не используются в физике",
+  "en": "D) Stochastic models are never used in physics"
+ },
+ {
+  "k": "125e1470",
+  "s": "3-savol: P-V (bosim-hajm) grafigida izotermik jarayon qanday chiziq bilan ifodalanadi?",
+  "ru": "Вопрос 3: Какой линией изображается изотермический процесс на P-V-графике (давление–объём)?",
+  "en": "Question 3: On a P-V (pressure–volume) graph, what line represents an isothermal process?"
+ },
+ {
+  "k": "59609e9e",
+  "s": "A) Gorizontal to‘g‘ri chiziq (V o‘qiga parallel)",
+  "ru": "A) Горизонтальной прямой (параллельной оси V)",
+  "en": "A) A horizontal straight line (parallel to the V axis)"
+ },
+ {
+  "k": "520bc0a7",
+  "s": "B) Giperbola ko‘rinishidagi egri chiziq",
+  "ru": "B) Кривой в виде гиперболы",
+  "en": "B) A hyperbola-shaped curve"
+ },
+ {
+  "k": "11919605",
+  "s": "C) Vertikal to‘g‘ri chiziq (P o‘qiga parallel)",
+  "ru": "C) Вертикальной прямой (параллельной оси P)",
+  "en": "C) A vertical straight line (parallel to the P axis)"
+ },
+ {
+  "k": "f2247486",
+  "s": "D) Koordinata boshidan chiquvchi nurlar",
+  "ru": "D) Лучами, выходящими из начала координат",
+  "en": "D) Rays from the origin"
+ },
+ {
+  "k": "612a8762",
+  "s": "4-savol: Claude va Antigravity orqali gaz modelini yaratishning (pipeline) afzalligi nima?",
+  "ru": "Вопрос 4: В чём преимущество создания модели газа через Claude и Antigravity (конвейер)?",
+  "en": "Question 4: What is the advantage of building a gas model with Claude and Antigravity (a pipeline)?"
+ },
+ {
+  "k": "abd2cd4f",
+  "s": "A) U inson aralashuvisiz barcha imtihonlarni topshirib beradi",
+  "ru": "A) Он сдаёт все экзамены без участия человека",
+  "en": "A) It passes all exams with no human involvement"
+ },
+ {
+  "k": "50e6ef55",
+  "s": "B) Claude kod yozadi, Antigravity esa agentlar orqali simulyatsiyadagi xatolarni avtomatik tuzatib monitoring qiladi",
+  "ru": "B) Claude пишет код, а Antigravity через агентов автоматически исправляет ошибки в симуляции и ведёт мониторинг",
+  "en": "B) Claude writes the code, and Antigravity’s agents automatically fix simulation errors and monitor it"
+ },
+ {
+  "k": "f2951717",
+  "s": "C) Faqat HTML dizayn yaratib beradi",
+  "ru": "C) Он создаёт только HTML-дизайн",
+  "en": "C) It only creates an HTML design"
+ },
+ {
+  "k": "eb1dfda2",
+  "s": "D) Hech qanday afzalligi yo‘q, qo‘lda yozish tezroq",
+  "ru": "D) Никакого преимущества нет, писать вручную быстрее",
+  "en": "D) There is no advantage; writing by hand is faster"
+ },
+ {
+  "k": "8062b196",
+  "s": "2. Termodinamika loyihasi: to‘liq pipeline (Tahlil $\\rightarrow$ Kod $\\rightarrow$ Monitoring)",
+  "ru": "2. Проект по термодинамике: полный конвейер (анализ $\\rightarrow$ код $\\rightarrow$ мониторинг)",
+  "en": "2. Thermodynamics project: the full pipeline (analysis $\\rightarrow$ code $\\rightarrow$ monitoring)"
+ },
+ {
+  "k": "985076c6",
+  "s": "Gazlar kinetik nazariyasini vizuallashtirish millionlab zarrachalar tasodifiyligini talab etadi. Bunday stoxastik dvigatellarni qurishda AI pipeline juda qo‘l keladi.",
+  "ru": "Визуализация кинетической теории газов требует случайности миллионов частиц. При построении таких стохастических движков ИИ-конвейер очень удобен.",
+  "en": "Visualising the kinetic theory of gases requires the randomness of millions of particles. An AI pipeline is very handy for building such stochastic engines."
+ },
+ {
+  "k": "96a84820",
+  "s": "PhET \"Gas Properties\" orqali harorat (T), hajm (V) va bosim (P) orasidagi bog‘liqlikni o‘rganish.",
+  "ru": "Изучение связи между температурой (T), объёмом (V) и давлением (P) через PhET «Gas Properties».",
+  "en": "Studying the relationship between temperature (T), volume (V) and pressure (P) with PhET \"Gas Properties\"."
+ },
+ {
+  "k": "0408ed3f",
+  "s": "Claude’ga zarrachalarning stoxastik (Broun) harakati va HTML5 Canvas da P-V grafigini real vaqtda chizuvchi mantiqni kiritish (Prompt muhandisligi).",
+  "ru": "Ввод в Claude логики стохастического (броуновского) движения частиц и построения P-V-графика в реальном времени на HTML5 Canvas (промпт-инжиниринг).",
+  "en": "Giving Claude the logic for stochastic (Brownian) particle motion and drawing a real-time P-V graph on HTML5 Canvas (prompt engineering)."
+ },
+ {
+  "k": "e070e2dd",
+  "s": "<strong>3. Avtomatlashtirilgan monitoring:</strong> Google Antigravity orqali Canvas renderlanish chastotasini (FPS) nazorat qilish va xatolarni tuzatish.",
+  "ru": "<strong>3. Автоматизированный мониторинг:</strong> контроль частоты рендеринга Canvas (FPS) и исправление ошибок через Google Antigravity.",
+  "en": "<strong>3. Automated monitoring:</strong> controlling the Canvas render rate (FPS) and fixing bugs with Google Antigravity."
+ },
+ {
+  "k": "d4b80678",
+  "s": "Deterministik va stoxastik:",
+  "ru": "Детерминированное и стохастическое:",
+  "en": "Deterministic vs stochastic:"
+ },
+ {
+  "k": "a6801033",
+  "s": "<strong>Deterministik model (mexanika):</strong> Har bir jismning kelajakdagi joylashuvi aniq qonunlar bilan belgilanadi (oldin ishlangan 12-laboratoriya).",
+  "ru": "<strong>Детерминированная модель (механика):</strong> будущее положение каждого тела определяется точными законами (ранее выполненная лабораторная 12).",
+  "en": "<strong>Deterministic model (mechanics):</strong> each body’s future position is fixed by exact laws (Lab 12, done earlier)."
+ },
+ {
+  "k": "46a29eca",
+  "s": "<strong>Stoxastik model (termodinamika):</strong> Ko‘p sonli zarrachalar to‘qnashuvi ehtimollik qonunlariga (tasodifiylikka) tayanadi. Makroskopik qonunlar (bosim, harorat) aynan shu mikro-tasodifiylik natijasida yuzaga keladi.",
+  "ru": "<strong>Стохастическая модель (термодинамика):</strong> столкновения большого числа частиц опираются на вероятностные законы (случайность). Макроскопические законы (давление, температура) возникают именно в результате этой микрослучайности.",
+  "en": "<strong>Stochastic model (thermodynamics):</strong> collisions among many particles follow the laws of probability (randomness). The macroscopic laws (pressure, temperature) emerge precisely from this micro-randomness."
+ },
+ {
+  "k": "e6daee0a",
+  "s": "3. Model tahlili: PhET va Vascak.cz",
+  "ru": "3. Анализ модели: PhET и Vascak.cz",
+  "en": "3. Model analysis: PhET and Vascak.cz"
+ },
+ {
+  "k": "d2203eba",
+  "s": "Izojarayonlarni simulyatsiya qilish uchun avval ularning muvozanat holatlarini va Maksvell taqsimotini nazariy jihatdan tasdiqlashimiz kerak.",
+  "ru": "Чтобы симулировать изопроцессы, сначала нужно теоретически подтвердить их равновесные состояния и распределение Максвелла.",
+  "en": "To simulate isoprocesses we must first confirm their equilibrium states and the Maxwell distribution theoretically."
+ },
+ {
+  "k": "e44c2afa",
+  "s": "Ideal gaz kinetik nazariyasi",
+  "ru": "Кинетическая теория идеального газа",
+  "en": "The kinetic theory of the ideal gas"
+ },
+ {
+  "k": "68f59997",
+  "s": "Gazning idish devoriga beradigan bosimi uning konsentratsiyasi ($n$) va zarrachalarning o‘rtacha kinetik energiyasiga mutanosib:",
+  "ru": "Давление газа на стенку сосуда пропорционально его концентрации ($n$) и средней кинетической энергии частиц:",
+  "en": "The pressure a gas exerts on the container wall is proportional to its concentration ($n$) and the particles’ mean kinetic energy:"
+ },
+ {
+  "k": "72243738",
+  "s": "$$ p = \\frac{1}{3} m_0 n \\bar{v}^2 \\quad \\text{yoki} \\quad p = n k T $$",
+  "ru": "$$ p = \\frac{1}{3} m_0 n \\bar{v}^2 \\quad \\text{yoki} \\quad p = n k T $$",
+  "en": "$$ p = \\frac{1}{3} m_0 n \\bar{v}^2 \\quad \\text{yoki} \\quad p = n k T $$"
+ },
+ {
+  "k": "ceca4505",
+  "s": "Mendeleyev-Klapeyron holat tenglamasi (Makroskopik daraja):",
+  "ru": "Уравнение состояния Менделеева–Клапейрона (макроскопический уровень):",
+  "en": "The Mendeleev–Clapeyron equation of state (macroscopic level):"
+ },
+ {
+  "k": "51e3a83c",
+  "s": "$$ pV = \\nu R T \\quad \\rightarrow \\quad p \\propto \\frac{T}{V} $$",
+  "ru": "$$ pV = \\nu R T \\quad \\rightarrow \\quad p \\propto \\frac{T}{V} $$",
+  "en": "$$ pV = \\nu R T \\quad \\rightarrow \\quad p \\propto \\frac{T}{V} $$"
+ },
+ {
+  "k": "2bf6303c",
+  "s": "PhET vizualizatsiyasi orqali tasdiqlangan ushbu proporsionallikni quyidagi interaktiv Canvas paneliga dasturlaymiz.",
+  "ru": "Эту пропорциональность, подтверждённую визуализацией PhET, мы запрограммируем в интерактивную Canvas-панель ниже.",
+  "en": "We will program this proportionality, confirmed by the PhET visualisation, into the interactive Canvas panel below."
+ },
+ {
+  "k": "1693f8a8",
+  "s": "4. Stoxastik kod: Claude va Antigravity",
+  "ru": "4. Стохастический код: Claude и Antigravity",
+  "en": "4. Stochastic code: Claude and Antigravity"
+ },
+ {
+  "k": "529c050a",
+  "s": "Gaz xossalari \"Particle System\" (zarrachalar tizimi) mexanizmi asosida yoziladi. Har bir zarracha (Particle) mantiqiy jihatdan sinf (Class) yoki obyekt bo‘lib, <code>Math.random()</code> orqali tasodifiy boshlang‘ich tezlikka ega bo‘ladi.",
+  "ru": "Свойства газа пишутся на основе механизма «Particle System» (системы частиц). Каждая частица (Particle) логически является классом (Class) или объектом и получает случайную начальную скорость через <code>Math.random()</code>.",
+  "en": "The gas properties are written on a \"particle system\" mechanism. Each particle is logically a class or object and gets a random initial velocity via <code>Math.random()</code>."
+ },
+ {
+  "k": "2b6aa1ab",
+  "s": "Claude prompt",
+  "ru": "Промпт Claude",
+  "en": "Claude prompt"
+ },
+ {
+  "k": "c50f2bdd",
+  "s": "\"HTML5 Canvas yordamida ideal gazning 2D stoxastik simulyatsiyasini yoz. N=200 zarracha tasodifiy tezlikda harakatlansin va idish devorlariga elastik urilsin. Boshqaruv elementlari: Idish hajmi (Porshen orqali V ni o‘zgartirish) va Harorat (T - zarralar tezligiga proporsional). Real vaqtda P-V grafigini ham yonida chizib bor.\"",
+  "ru": "«Напиши с помощью HTML5 Canvas 2D-стохастическую симуляцию идеального газа. Пусть N=200 частиц движутся со случайными скоростями и упруго ударяются о стенки сосуда. Элементы управления: объём сосуда (изменение V через поршень) и температура (T — пропорциональна скорости частиц). Рядом в реальном времени рисуй также P-V-график.»",
+  "en": "\"Use HTML5 Canvas to write a 2D stochastic simulation of an ideal gas. Let N=200 particles move with random velocities and bounce elastically off the container walls. Controls: container volume (change V with a piston) and temperature (T — proportional to the particles’ speed). Draw a real-time P-V graph alongside.\""
+ },
+ {
+  "k": "678b3521",
+  "s": "Antigravity monitoring",
+  "ru": "Antigravity monitoring",
+  "en": "Antigravity monitoring"
+ },
+ {
+  "k": "e334ccde",
+  "s": "<strong>Samaradorlik:</strong> 200 zarrachaning $O(N^2)$ to‘qnashuv algoritmlari kompyuter xotirasini tez to‘ldiradi. Antigravity buni $O(N)$ Spatial Partitioning orqali yengillashtiradi.",
+  "ru": "<strong>Эффективность:</strong> алгоритмы столкновений 200 частиц $O(N^2)$ быстро заполняют память компьютера. Antigravity облегчает это через $O(N)$ Spatial Partitioning.",
+  "en": "<strong>Efficiency:</strong> the $O(N^2)$ collision algorithms for 200 particles quickly fill the computer’s memory. Antigravity eases this with $O(N)$ spatial partitioning."
+ },
+ {
+  "k": "f5e3e334",
+  "s": "<strong>UI/UX orkestratsiyasi:</strong> Porshen hajmi noldan kichik bo‘lib ketmasligini va harorat keskin oshganda xatolar kelib chiqmasligini tekshiradi (Boundary Testing).",
+  "ru": "<strong>Оркестрация UI/UX:</strong> проверяет, чтобы объём поршня не стал меньше нуля и при резком росте температуры не возникали ошибки (Boundary Testing).",
+  "en": "<strong>UI/UX orchestration:</strong> checks that the piston volume never drops below zero and that no errors occur when the temperature rises sharply (boundary testing)."
+ },
+ {
+  "k": "eab4337b",
+  "s": "5. Interaktiv dastgoh: P–V grafigi va ideal gazning stoxastik simulyatori",
+  "ru": "5. Интерактивный стенд: P–V-график и стохастический симулятор идеального газа",
+  "en": "5. Interactive bench: a P–V graph and a stochastic ideal gas simulator"
+ },
+ {
+  "k": "39284ce5",
+  "s": "Porshen holatini (hajm, V) va olov haroratini (T) o‘zgartirish orqali bosim (P) o‘zgarishini real vaqtda kuzating. O‘ng paneldagi P–V grafigi o‘zgarishni qayd etib boradi.",
+  "ru": "Меняя положение поршня (объём, V) и температуру пламени (T), наблюдайте в реальном времени изменение давления (P). P–V-график на правой панели фиксирует изменения.",
+  "en": "Change the piston position (volume, V) and the flame temperature (T) to watch the pressure (P) change in real time. The P–V graph on the right records the changes."
+ },
+ {
+  "k": "c3ab05c7",
+  "s": "Harorat (T):",
+  "ru": "Температура (T):",
+  "en": "Temperature (T):"
+ },
+ {
+  "k": "db6ac438",
+  "s": "Hajm / porshen (V):",
+  "ru": "Объём / поршень (V):",
+  "en": "Volume / piston (V):"
+ },
+ {
+  "k": "4aa6221a",
+  "s": "Ishga tushirish",
+  "ru": "Запустить",
+  "en": "Run"
+ },
+ {
+  "k": "128ed131",
+  "s": "Tozalash",
+  "ru": "Очистить",
+  "en": "Clear"
+ },
+ {
+  "k": "673a653a",
+  "s": "📊 Real vaqtdagi bosim (P):",
+  "ru": "📊 Давление в реальном времени (P):",
+  "en": "📊 Real-time pressure (P):"
+ },
+ {
+  "k": "647fb77d",
+  "s": "kPa",
+  "ru": "kPa",
+  "en": "kPa"
+ },
+ {
+  "k": "eb807bd1",
+  "s": "6. Yakuniy taqdimot rubrikasi va manbalar",
+  "ru": "6. Рубрика итоговой презентации и источники",
+  "en": "6. Final presentation rubric and sources"
+ },
+ {
+  "k": "4d8f8c4f",
+  "s": "Loyiha sifatini stoxastik dvigatel aniqligi va integratsiyasi orqali baholash (Jami: 100 ball).",
+  "ru": "Оценка качества проекта по точности и интеграции стохастического движка (всего: 100 баллов).",
+  "en": "Project quality is assessed on the stochastic engine’s accuracy and integration (total: 100 points)."
+ },
+ {
+  "k": "9c3f7a27",
+  "s": "<strong>Termodinamik tahlil:</strong> $pV = \\nu RT$ ga muvofiqlik, izojarayonlarni to‘g‘ri isbotlash.",
+  "ru": "<strong>Термодинамический анализ:</strong> соответствие $pV = \\nu RT$, правильное доказательство изопроцессов.",
+  "en": "<strong>Thermodynamic analysis:</strong> agreement with $pV = \\nu RT$ and correctly demonstrating the isoprocesses."
+ },
+ {
+  "k": "69328b10",
+  "s": "<strong>AI stoxastik kod generatsiyasi:</strong> Canvas zarrachalar kinetikasi, real vaqt (Real-time) grafik.",
+  "ru": "<strong>Генерация стохастического кода ИИ:</strong> кинетика частиц Canvas, график в реальном времени (Real-time).",
+  "en": "<strong>AI stochastic code generation:</strong> Canvas particle kinetics and a real-time graph."
+ },
+ {
+  "k": "8585bf46",
+  "s": "<strong>Antigravity monitoring / UX:</strong> Algoritmik samaradorlik, chegaraviy sinovlar va interfeys.",
+  "ru": "<strong>Мониторинг Antigravity / UX:</strong> алгоритмическая эффективность, граничные испытания и интерфейс.",
+  "en": "<strong>Antigravity monitoring / UX:</strong> algorithmic efficiency, boundary tests and the interface."
+ },
+ {
+  "k": "f2191d93",
+  "s": "100 / 100 ball",
+  "ru": "100 / 100 баллов",
+  "en": "100 / 100 points"
+ },
+ {
+  "k": "7ebf3ed9",
+  "s": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "ru": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "en": "1. Anthropic. (2024). <em>Claude model card addendum</em>. https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+ },
+ {
+  "k": "8abc62c5",
+  "s": "2. PhET Interactive Simulations. (n.d.). <em>Gas Properties</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties",
+  "ru": "2. PhET Interactive Simulations. (n.d.). <em>Gas Properties</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties",
+  "en": "2. PhET Interactive Simulations. (n.d.). <em>Gas Properties</em>. University of Colorado Boulder. https://phet.colorado.edu/en/simulations/gas-properties"
+ },
+ {
+  "k": "08648b7d",
+  "s": "3. Reif, F. (2009). <em>Fundamentals of statistical and thermal physics</em>. Waveland Press. (Asl nashr: 1965)",
+  "ru": "3. Reif, F. (2009). <em>Fundamentals of statistical and thermal physics</em>. Waveland Press. (Оригинал: 1965)",
+  "en": "3. Reif, F. (2009). <em>Fundamentals of statistical and thermal physics</em>. Waveland Press. (Original work published 1965)"
+ },
+ {
+  "k": "52429533",
+  "s": "4. Schroeder, D. V. (2000). <em>An introduction to thermal physics</em>. Addison Wesley Longman.",
+  "ru": "4. Schroeder, D. V. (2000). <em>An introduction to thermal physics</em>. Addison Wesley Longman.",
+  "en": "4. Schroeder, D. V. (2000). <em>An introduction to thermal physics</em>. Addison Wesley Longman."
+ },
+ {
+  "k": "031a1724",
+  "s": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "ru": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "en": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>"
+ },
+ {
+  "k": "543abd6e",
+  "s": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "ru": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "en": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>"
+ }
+]

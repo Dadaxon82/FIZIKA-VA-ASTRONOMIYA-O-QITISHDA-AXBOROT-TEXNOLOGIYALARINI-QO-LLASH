@@ -1,0 +1,1070 @@
+[
+ {
+  "k": "3106137a",
+  "s": "5-laboratoriya mashg‘uloti: model turlari va kompyuter simulyatsiyasi",
+  "ru": "Лабораторное занятие 5: типы моделей и компьютерная симуляция",
+  "en": "Lab 5: Model Types and Computer Simulation"
+ },
+ {
+  "k": "20536b5c",
+  "s": "Kompyuterda fizik jarayonlarni modellashtirishning ikkita yirik paradigmasi mavjud: qat’iy sabab-oqibat qonuniyatiga bo‘ysunuvchi <strong>Deterministik dinamik modellar</strong> (Nyuton mexanikasi, orbital dinamika) hamda tasodifiy ehtimolli fluktuatsiyalarga tayanuvchi <strong>Stoxastik modellar</strong> (gazlarning kinetik nazariyasi, Broun harakati). Mazkur laboratoriya mashg‘ulotida talabalar <strong>PhET Interactive Simulations</strong> bazasidagi ikkita etalon simulyatsiyani (<em>«Gravity and Orbits»</em> va <em>«Gas Properties»</em>) tanlab oladi, ularning matematik apparatini, kirish-chiqish parametrlarini qiyoslaydi hamda <strong>Claude yoki Gemini</strong> yordamida chuqur tahliliy taqqoslash hisobotini tayyorlaydi.",
+  "ru": "Существуют две крупные парадигмы компьютерного моделирования физических процессов: <strong>детерминированные динамические модели</strong>, подчиняющиеся строгой причинно-следственной закономерности (ньютоновская механика, орбитальная динамика), и <strong>стохастические модели</strong>, опирающиеся на случайные вероятностные флуктуации (кинетическая теория газов, броуновское движение). На этом лабораторном занятии студенты выбирают две эталонные симуляции из базы <strong>PhET Interactive Simulations</strong> (<em>«Gravity and Orbits»</em> и <em>«Gas Properties»</em>), сравнивают их математический аппарат и входные-выходные параметры и с помощью <strong>Claude или Gemini</strong> готовят глубокий аналитический сравнительный отчёт.",
+  "en": "There are two major paradigms for modelling physical processes on a computer: <strong>deterministic dynamic models</strong>, which obey strict cause and effect (Newtonian mechanics, orbital dynamics), and <strong>stochastic models</strong>, which rest on random probabilistic fluctuations (the kinetic theory of gases, Brownian motion). In this lab, students choose two reference simulations from <strong>PhET Interactive Simulations</strong> (<em>\"Gravity and Orbits\"</em> and <em>\"Gas Properties\"</em>), compare their mathematics and input–output parameters, and prepare an in-depth comparative analysis report with <strong>Claude or Gemini</strong>."
+ },
+ {
+  "k": "bbe33c58",
+  "s": "📋 5-laboratoriya mashg‘uloti rejasi va tahliliy konveyeri:",
+  "ru": "📋 План лабораторного занятия 5 и аналитический конвейер:",
+  "en": "📋 Lab 5 plan and analysis pipeline:"
+ },
+ {
+  "k": "cbdfd8f8",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Laplas determinizmi, ergodiklik va statistik fluktuatsiyalar bo‘yicha kognitiv diagnostika hamda shaxsiy ta’lim trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Когнитивная диагностика по детерминизму Лапласа, эргодичности и статистическим флуктуациям и личная учебная траектория.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Cognitive diagnostics on Laplacian determinism, ergodicity and statistical fluctuations, plus a personal learning pathway.</span>"
+ },
+ {
+  "k": "ff900fb9",
+  "s": "<strong style=\"color: var(--accent-purple);\">2. Model turlarini aniqlash va taqqoslash:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Differensial tenglamalar va Ehtimollik zichligi, takrorlanuvchanlik va fazaviy fazoning xatti-harakati.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">2. Определение и сравнение типов моделей:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Дифференциальные уравнения и плотность вероятности, воспроизводимость и поведение фазового пространства.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">2. Identifying and comparing model types:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Differential equations vs probability density, reproducibility and phase-space behaviour.</span>"
+ },
+ {
+  "k": "51b8c4a3",
+  "s": "<strong style=\"color: var(--accent-emerald);\">3. Virtual baza (PhET Simulations):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">«Gravity and Orbits» va «Gas Properties» simulyatsiyalarining interfeysi, boshqaruv elementlari va o‘lchov datchiklari.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">3. Виртуальная база (PhET Simulations):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Интерфейс, элементы управления и измерительные датчики симуляций «Gravity and Orbits» и «Gas Properties».</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">3. Virtual base (PhET Simulations):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The interface, controls and measuring sensors of the \"Gravity and Orbits\" and \"Gas Properties\" simulations.</span>"
+ },
+ {
+  "k": "a97ce4a9",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Tahlil va qiyosiy hisobot (Claude / Gemini):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">8 ta mezonli qiyosiy taqqoslash jadvalini to‘ldirish va IMRaD formatidagi ilmiy hisobot loyihasini shakllantirish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Анализ и сравнительный отчёт (Claude / Gemini):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Заполнение сравнительной таблицы по 8 критериям и подготовка проекта научного отчёта в формате IMRaD.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Analysis and comparative report (Claude / Gemini):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Filling in an 8-criterion comparison table and drafting an IMRaD-format scientific report.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "50e22abc",
+  "s": "TPACK modeli va Vygotskiy ZPD",
+  "ru": "Модель TPACK и ЗБР Выготского",
+  "en": "The TPACK model and Vygotsky’s ZPD"
+ },
+ {
+  "k": "8a8191c0",
+  "s": "Mazkur laboratoriya mashg‘ulotini muvaffaqiyatli bajargan talaba quyidagi ilmiy-metodik ko‘nikmalarga ega bo‘ladi:",
+  "ru": "Студент, успешно выполнивший это лабораторное занятие, приобретает следующие научно-методические навыки:",
+  "en": "A student who completes this lab successfully gains the following scholarly and methodological skills:"
+ },
+ {
+  "k": "d96ddc65",
+  "s": "1. Metodologik kompetensiya:",
+  "ru": "1. Методологическая компетенция:",
+  "en": "1. Methodological competence:"
+ },
+ {
+  "k": "85fa424a",
+  "s": "Ixtiyoriy fizik jarayonni model turi bo‘yicha (deterministik dinamik yoki stoxastik ehtimolli) mustaqil tasniflay oladi va ularning chegaralarini asoslaydi.",
+  "ru": "Может самостоятельно классифицировать любой физический процесс по типу модели (детерминированная динамическая или стохастическая вероятностная) и обосновать их границы.",
+  "en": "Can independently classify any physical process by model type (deterministic dynamic or stochastic probabilistic) and justify their limits."
+ },
+ {
+  "k": "23160fca",
+  "s": "2. Simulyatsion ko‘nikma:",
+  "ru": "2. Навык симуляции:",
+  "en": "2. Simulation skill:"
+ },
+ {
+  "k": "fcdb9f62",
+  "s": "PhET Interactive Simulations interfeysida gravitatsiya orbitalarini va gaz xossalarini mustaqil parametrlar orqali boshqaradi va datchiklar yordamida o‘lchov oladi.",
+  "ru": "В интерфейсе PhET Interactive Simulations самостоятельно управляет гравитационными орбитами и свойствами газа через параметры и снимает измерения с помощью датчиков.",
+  "en": "Controls gravitational orbits and gas properties independently through parameters in PhET Interactive Simulations and takes measurements with its sensors."
+ },
+ {
+  "k": "c52f19c8",
+  "s": "3. SI-tahliliy kompetensiya:",
+  "ru": "3. ИИ-аналитическая компетенция:",
+  "en": "3. AI-analytical competence:"
+ },
+ {
+  "k": "65fb7f8c",
+  "s": "Claude yoki Gemini yordamida modellarning matematik apparatini, ergodik xususiyatlarini va IMRaD hisobotini tizimli shakllantiradi.",
+  "ru": "С помощью Claude или Gemini системно формирует математический аппарат моделей, их эргодические свойства и отчёт IMRaD.",
+  "en": "Uses Claude or Gemini to systematically set out the models’ mathematics, their ergodic properties and an IMRaD report."
+ },
+ {
+  "k": "403526dc",
+  "s": "Quyidagi 4 ta diagnostik savolga javob bering. Test natijasi sizning dastlabki tayyorgarlik darajangizni aniqlab, 5-laboratoriya uchun moslashtirilgan sun’iy intellekt yo‘riqnomasini (prompt) shakllantiradi:",
+  "ru": "Ответьте на 4 диагностических вопроса ниже. Результат теста определит ваш исходный уровень подготовки и сформирует адаптированную инструкцию (промпт) для искусственного интеллекта для лабораторной работы 5:",
+  "en": "Answer the 4 diagnostic questions below. The result identifies your starting level and builds an AI instruction (prompt) tailored for Lab 5:"
+ },
+ {
+  "k": "e5ca32f2",
+  "s": "1. Deterministik modelning eng muhim fundamental xususiyati nima?",
+  "ru": "1. Каково самое важное фундаментальное свойство детерминированной модели?",
+  "en": "1. What is the most important fundamental property of a deterministic model?"
+ },
+ {
+  "k": "777dd658",
+  "s": "A) Boshlang‘ich shartlar va parametrlar aniq ma’lum bo‘lsa, tizimning har bir kelgusi holati 100% bir qiymatli va takrorlanuvchan ravishda aniqlanadi",
+  "ru": "A) Если начальные условия и параметры точно известны, каждое будущее состояние системы определяется на 100% однозначно и воспроизводимо",
+  "en": "A) If the initial conditions and parameters are known exactly, every future state of the system is determined 100% uniquely and reproducibly"
+ },
+ {
+  "k": "b29dc27d",
+  "s": "B) Har bir simulyatsiya qayta ishga tushirilganda butunlay tasodifiy yangi natija beradi",
+  "ru": "B) При каждом повторном запуске симуляция даёт совершенно случайный новый результат",
+  "en": "B) Every time the simulation is rerun it gives a completely random new result"
+ },
+ {
+  "k": "ef0205c0",
+  "s": "C) Unda fizik formulalar umuman ishlatilmaydi",
+  "ru": "C) В ней вообще не используются физические формулы",
+  "en": "C) It does not use physics formulas at all"
+ },
+ {
+  "k": "ecc193fd",
+  "s": "2. Nima sababdan idishdagi gaz molekulalarining harakati (PhET «Gas Properties») stoxastik model sifatida qaraladi?",
+  "ru": "2. Почему движение молекул газа в сосуде (PhET «Gas Properties») рассматривается как стохастическая модель?",
+  "en": "2. Why is the motion of gas molecules in a container (PhET \"Gas Properties\") treated as a stochastic model?"
+ },
+ {
+  "k": "599c5bea",
+  "s": "A) Gaz molekulalari Nyuton qonunlariga bo‘ysunmagani sababli",
+  "ru": "A) Потому что молекулы газа не подчиняются законам Ньютона",
+  "en": "A) Because gas molecules do not obey Newton’s laws"
+ },
+ {
+  "k": "ebcd02ee",
+  "s": "B) Gaz harorati doimo o‘zgarib turishi sababli",
+  "ru": "B) Потому что температура газа постоянно меняется",
+  "en": "B) Because the gas temperature is always changing"
+ },
+ {
+  "k": "c803a302",
+  "s": "C) Gigant miqdordagi zarralarning ($N \\sim 10^{23}$) xaotik to‘qnashuvlari mikroskopik darajada noaniqlik tug‘diradi va tizim faqat ehtimollik taqsimotlari (Maksvell-Bolsman) bilan tavsiflanadi",
+  "ru": "C) Хаотические столкновения гигантского количества частиц ($N \\sim 10^{23}$) порождают неопределённость на микроскопическом уровне, и система описывается только распределениями вероятностей (Максвелла–Больцмана)",
+  "en": "C) Chaotic collisions of a huge number of particles ($N \\sim 10^{23}$) create microscopic uncertainty, and the system can only be described by probability distributions (Maxwell–Boltzmann)"
+ },
+ {
+  "k": "6efa600f",
+  "s": "3. PhET «Gravity and Orbits» va «Gas Properties» simulyatsiyalari o‘rtasidagi asosiy metodologik farq nimadan iborat?",
+  "ru": "3. В чём основное методологическое различие между симуляциями PhET «Gravity and Orbits» и «Gas Properties»?",
+  "en": "3. What is the main methodological difference between the PhET \"Gravity and Orbits\" and \"Gas Properties\" simulations?"
+ },
+ {
+  "k": "9c590736",
+  "s": "A) Ikkala simulyatsiya ham mutlaqo bir xil tenglamalardan foydalanadi",
+  "ru": "A) Обе симуляции используют абсолютно одинаковые уравнения",
+  "en": "A) Both simulations use exactly the same equations"
+ },
+ {
+  "k": "7828dbbd",
+  "s": "B) «Gravity and Orbits» — Nyuton tenglamalari sonli integrallanadigan deterministik orbital dinamika, «Gas Properties» esa ko‘p zarrali stoxastik kinetik va statistik modeldir",
+  "ru": "B) «Gravity and Orbits» — детерминированная орбитальная динамика с численным интегрированием уравнений Ньютона, а «Gas Properties» — многочастичная стохастическая кинетическая и статистическая модель",
+  "en": "B) \"Gravity and Orbits\" is deterministic orbital dynamics with numerically integrated Newton’s equations, while \"Gas Properties\" is a many-particle stochastic kinetic and statistical model"
+ },
+ {
+  "k": "b4db6df3",
+  "s": "C) Gravitatsiya simulyatsiyasi faqat 2D, gaz esa faqat 1D o‘lchamda ishlaydi",
+  "ru": "C) Гравитационная симуляция работает только в 2D, а газовая — только в 1D",
+  "en": "C) The gravity simulation works only in 2D and the gas one only in 1D"
+ },
+ {
+  "k": "d8c891da",
+  "s": "4. Mazkur laboratoriyada Claude yoki Gemini sun’iy intellekt vositalarining integratsiyasidan ko‘zlangan asosiy maqsad nima?",
+  "ru": "4. Какова основная цель интеграции ИИ-инструментов Claude или Gemini в этой лаборатории?",
+  "en": "4. What is the main purpose of integrating Claude or Gemini in this lab?"
+ },
+ {
+  "k": "ecb3e250",
+  "s": "A) PhET saytiga kirish parollarini buzish",
+  "ru": "A) Взломать пароли для входа на сайт PhET",
+  "en": "A) To crack the passwords for the PhET site"
+ },
+ {
+  "k": "05c9b29e",
+  "s": "B) Faqat tayyor rasm chizib berish",
+  "ru": "B) Только рисовать готовые изображения",
+  "en": "B) Only to draw ready-made images"
+ },
+ {
+  "k": "1ac2fa40",
+  "s": "C) Har ikki modelning matematik apparatini (differensial tenglama va ehtimollik zichligi), parametrlar sezgirligini chuqur tahlil qilish hamda akademik taqqoslash hisobotini tuzish",
+  "ru": "C) Глубоко проанализировать математический аппарат обеих моделей (дифференциальное уравнение и плотность вероятности), чувствительность параметров и составить академический сравнительный отчёт",
+  "en": "C) To analyse in depth both models’ mathematics (differential equation and probability density) and parameter sensitivity, and to write an academic comparative report"
+ },
+ {
+  "k": "1968ae18",
+  "s": "🎯 Diagnostika natijasini aniqlash va individual reja tuzish",
+  "ru": "🎯 Определить результат диагностики и составить индивидуальный план",
+  "en": "🎯 Get the diagnostic result and build an individual plan"
+ },
+ {
+  "k": "0c4a4df9",
+  "s": "📋 Shaxsiy SI-Konsultant Uchun Tayyor Yo‘riqnoma (Prompt):",
+  "ru": "📋 Готовая инструкция (промпт) для личного ИИ-консультанта:",
+  "en": "📋 A ready instruction (prompt) for your personal AI consultant:"
+ },
+ {
+  "k": "53333116",
+  "s": "Mishra, P., va Koehler, M. J. (2006).",
+  "ru": "Mishra, P., & Koehler, M. J. (2006).",
+  "en": "Mishra, P., & Koehler, M. J. (2006)."
+ },
+ {
+  "k": "5e08db2a",
+  "s": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge",
+  "ru": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge",
+  "en": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge"
+ },
+ {
+  "k": "27de804e",
+  "s": ". Teachers College Record, 108(6), 1017–1054.",
+  "ru": ". Teachers College Record, 108(6), 1017–1054.",
+  "en": ". Teachers College Record, 108(6), 1017–1054."
+ },
+ {
+  "k": "7fa24f2d",
+  "s": "https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "ru": "https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "en": "https://doi.org/10.1111/j.1467-9620.2006.00684.x"
+ },
+ {
+  "k": "1b985dc4",
+  "s": "Vygotsky, L. S. (1978).",
+  "ru": "Vygotsky, L. S. (1978).",
+  "en": "Vygotsky, L. S. (1978)."
+ },
+ {
+  "k": "bdd7953c",
+  "s": "Mind in Society: The Development of Higher Psychological Processes",
+  "ru": "Mind in Society: The Development of Higher Psychological Processes",
+  "en": "Mind in Society: The Development of Higher Psychological Processes"
+ },
+ {
+  "k": "7ff844f2",
+  "s": ". Harvard University Press.",
+  "ru": ". Harvard University Press.",
+  "en": ". Harvard University Press."
+ },
+ {
+  "k": "6f64dfae",
+  "s": "TPACK modeli texnologiya (PhET, LLM), fan mazmuni (deterministik va stoxastik modellar) va pedagogikani birgalikda qo‘llashni asoslaydi; Vygotskiyning ZPD tushunchasi esa diagnostika natijasiga ko‘ra talabaga yordam bilan bajariladigan, uning darajasidan biroz yuqori vazifa berishni asoslaydi.",
+  "ru": "Модель TPACK обосновывает совместное применение технологии (PhET, LLM), предметного содержания (детерминированные и стохастические модели) и педагогики; понятие ЗБР Выготского обосновывает выдачу студенту по результатам диагностики задания чуть выше его уровня, выполнимого с помощью.",
+  "en": "The TPACK model justifies combining technology (PhET, LLMs), subject content (deterministic and stochastic models) and pedagogy; Vygotsky’s ZPD justifies giving students, based on the diagnostic, a task slightly above their level that they can do with help."
+ },
+ {
+  "k": "b3fa4ba1",
+  "s": "2. Model turlarini aniqlash va taqqoslash (deterministik va stoxastik)",
+  "ru": "2. Определение и сравнение типов моделей (детерминированные и стохастические)",
+  "en": "2. Identifying and comparing model types (deterministic and stochastic)"
+ },
+ {
+  "k": "2163d08b",
+  "s": "Ilmiy paradigma va matematik poydevor",
+  "ru": "Научная парадигма и математический фундамент",
+  "en": "The scientific paradigm and mathematical foundation"
+ },
+ {
+  "k": "b210a08a",
+  "s": "Fizika fanida real voqelikni kompyuterda ifodalash uchun qo‘llaniladigan barcha modellar axborotning noaniqlik darajasiga ko‘ra ikkita asosiy toifaga ajratiladi:",
+  "ru": "Все модели, применяемые в физике для представления реальности на компьютере, по степени неопределённости информации делятся на две основные категории:",
+  "en": "All the models physics uses to represent reality on a computer fall into two main categories by how uncertain the information is:"
+ },
+ {
+  "k": "374ee4ad",
+  "s": "<span class=\"badge badge-cyan\">Dinamik va deterministik</span> <span style=\"font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);\">Nyuton / Kepler</span>",
+  "ru": "<span class=\"badge badge-cyan\">Динамическая и детерминированная</span> <span style=\"font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);\">Ньютон / Кеплер</span>",
+  "en": "<span class=\"badge badge-cyan\">Dynamic and deterministic</span> <span style=\"font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);\">Newton / Kepler</span>"
+ },
+ {
+  "k": "81661352",
+  "s": "1. Deterministik model (deterministik dinamika)",
+  "ru": "1. Детерминированная модель (детерминированная динамика)",
+  "en": "1. Deterministic model (deterministic dynamics)"
+ },
+ {
+  "k": "46d67497",
+  "s": "Tizimning joriy holati ma’lum bir qat’iy matematik formula yoki differensial tenglamalar orqali keyingi holatni 100% kafolatli aniqlaydi. Tasodifiylik elementi mutlaqo mavjud emas. Bir xil boshlang‘ich shartlarda simulyatsiya har safar bir xil natija beradi.",
+  "ru": "Текущее состояние системы через определённую строгую математическую формулу или дифференциальные уравнения со 100% гарантией определяет следующее состояние. Элемент случайности полностью отсутствует. При одинаковых начальных условиях симуляция каждый раз даёт одинаковый результат.",
+  "en": "The system’s current state determines the next state with 100% certainty through a strict mathematical formula or differential equations. There is no element of chance at all. With the same initial conditions, the simulation gives the same result every time."
+ },
+ {
+  "k": "635115f5",
+  "s": "<strong>Matematik ifodasi:</strong> $\\frac{d\\vec{r}}{dt} = \\vec{v}, \\quad \\frac{d\\vec{v}}{dt} = \\frac{\\vec{F}(\\vec{r})}{m}$<br> <em>Misol:</em> Quyosh atrofida sayyoralarning harakati (PhET «Gravity and Orbits»).",
+  "ru": "<strong>Математическое выражение:</strong> $\\frac{d\\vec{r}}{dt} = \\vec{v}, \\quad \\frac{d\\vec{v}}{dt} = \\frac{\\vec{F}(\\vec{r})}{m}$<br> <em>Пример:</em> движение планет вокруг Солнца (PhET «Gravity and Orbits»).",
+  "en": "<strong>Mathematical form:</strong> $\\frac{d\\vec{r}}{dt} = \\vec{v}, \\quad \\frac{d\\vec{v}}{dt} = \\frac{\\vec{F}(\\vec{r})}{m}$<br> <em>Example:</em> the motion of planets around the Sun (PhET \"Gravity and Orbits\")."
+ },
+ {
+  "k": "1af734ff",
+  "s": "💡 <em>Tarixiy asos: Laplas demoni (1814) — butun koinot mexanik soatdek qat’iy harakat qiladi.</em>",
+  "ru": "💡 <em>Историческая основа: демон Лапласа (1814) — вся Вселенная движется строго, как механические часы.</em>",
+  "en": "💡 <em>Historical basis: Laplace’s demon (1814) — the whole universe runs as strictly as a mechanical clock.</em>"
+ },
+ {
+  "k": "f6b79df8",
+  "s": "<span class=\"badge badge-purple\">Ehtimolli va statistik</span> <span style=\"font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple);\">Bolsman / Maksvell</span>",
+  "ru": "<span class=\"badge badge-purple\">Вероятностная и статистическая</span> <span style=\"font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple);\">Больцман / Максвелл</span>",
+  "en": "<span class=\"badge badge-purple\">Probabilistic and statistical</span> <span style=\"font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple);\">Boltzmann / Maxwell</span>"
+ },
+ {
+  "k": "ca141e28",
+  "s": "2. Stoxastik model (ehtimollik nazariyasi)",
+  "ru": "2. Стохастическая модель (теория вероятностей)",
+  "en": "2. Stochastic model (probability theory)"
+ },
+ {
+  "k": "a6a19b6f",
+  "s": "Tizim o‘z ichiga tasodifiy o‘zgaruvchilarni, ehtimollik taqsimotlarini yoki fluktuatsiyalarni oladi. Tizimning kelgusi holatini yakka zarracha uchun aniq aytib bo‘lmaydi, biroq butun ansambl uchun statistik qonuniyatlar (o‘rtacha tezlik, bosim, entropiya) qat’iy saqlanadi.",
+  "ru": "Система включает случайные переменные, распределения вероятностей или флуктуации. Будущее состояние системы нельзя точно предсказать для отдельной частицы, однако для всего ансамбля статистические закономерности (средняя скорость, давление, энтропия) строго сохраняются.",
+  "en": "The system includes random variables, probability distributions or fluctuations. Its future state cannot be predicted exactly for a single particle, but for the whole ensemble statistical laws (mean speed, pressure, entropy) hold strictly."
+ },
+ {
+  "k": "5b073fe2",
+  "s": "<strong>Matematik ifodasi:</strong> $f(v) = 4\\pi \\left(\\frac{m}{2\\pi k_B T}\\right)^{3/2} v^2 \\exp\\left(-\\frac{m v^2}{2 k_B T}\\right)$<br> <em>Misol:</em> Idishdagi ideal gaz molekulalari (PhET «Gas Properties») va Broun harakati.",
+  "ru": "<strong>Математическое выражение:</strong> $f(v) = 4\\pi \\left(\\frac{m}{2\\pi k_B T}\\right)^{3/2} v^2 \\exp\\left(-\\frac{m v^2}{2 k_B T}\\right)$<br> <em>Пример:</em> молекулы идеального газа в сосуде (PhET «Gas Properties») и броуновское движение.",
+  "en": "<strong>Mathematical form:</strong> $f(v) = 4\\pi \\left(\\frac{m}{2\\pi k_B T}\\right)^{3/2} v^2 \\exp\\left(-\\frac{m v^2}{2 k_B T}\\right)$<br> <em>Example:</em> ideal gas molecules in a container (PhET \"Gas Properties\") and Brownian motion."
+ },
+ {
+  "k": "5f87b44c",
+  "s": "💡 <em>Tarixiy asos: Maksvellning tezliklar taqsimoti (1860), Bolsmanning statistik mexanikasi (1868–1877) va Eynshteynning Broun harakati nazariyasi (1905).</em>",
+  "ru": "💡 <em>Историческая основа: распределение скоростей Максвелла (1860), статистическая механика Больцмана (1868–1877) и теория броуновского движения Эйнштейна (1905).</em>",
+  "en": "💡 <em>Historical basis: Maxwell’s speed distribution (1860), Boltzmann’s statistical mechanics (1868–1877) and Einstein’s theory of Brownian motion (1905).</em>"
+ },
+ {
+  "k": "ebea7858",
+  "s": "2.1. Fundamental qiyosiy taqqoslash jadvali (8 mezon):",
+  "ru": "2.1. Фундаментальная сравнительная таблица (8 критериев):",
+  "en": "2.1. Fundamental comparison table (8 criteria):"
+ },
+ {
+  "k": "22bc4c6a",
+  "s": "Taqqoslash mezoni",
+  "ru": "Критерий сравнения",
+  "en": "Criterion"
+ },
+ {
+  "k": "eb0307a5",
+  "s": "Deterministik model («Gravity and Orbits»)",
+  "ru": "Детерминированная модель («Gravity and Orbits»)",
+  "en": "Deterministic model (\"Gravity and Orbits\")"
+ },
+ {
+  "k": "e955552d",
+  "s": "Stoxastik model («Gas Properties»)",
+  "ru": "Стохастическая модель («Gas Properties»)",
+  "en": "Stochastic model (\"Gas Properties\")"
+ },
+ {
+  "k": "065fd487",
+  "s": "<strong>1. Matematik apparat</strong>",
+  "ru": "<strong>1. Математический аппарат</strong>",
+  "en": "<strong>1. Mathematics</strong>"
+ },
+ {
+  "k": "30e49ef4",
+  "s": "Oddiy differensial tenglamalar (Nyutonning gravitatsiya qonuni)",
+  "ru": "Обыкновенные дифференциальные уравнения (закон всемирного тяготения Ньютона)",
+  "en": "Ordinary differential equations (Newton’s law of gravitation)"
+ },
+ {
+  "k": "91900c21",
+  "s": "Ehtimollik zichligi va Maksvell-Bolsman taqsimoti (statistik tavsif). PhET ichida zarralar Nyuton qonunlari va elastik to‘qnashuvlar bilan hisoblanadi; tasodifiylik boshlang‘ich tezlik va yo‘nalishlarda. Broun harakati uchun Langevin tenglamasi qo‘llaniladi",
+  "ru": "Плотность вероятности и распределение Максвелла–Больцмана (статистическое описание). Внутри PhET частицы рассчитываются по законам Ньютона и упругим столкновениям; случайность — в начальных скоростях и направлениях. Для броуновского движения применяется уравнение Ланжевена",
+  "en": "Probability density and the Maxwell–Boltzmann distribution (statistical description). Inside PhET, particles are computed with Newton’s laws and elastic collisions; the randomness is in the initial speeds and directions. Brownian motion uses the Langevin equation"
+ },
+ {
+  "k": "59155b8f",
+  "s": "<strong>2. Takrorlanuvchanlik</strong>",
+  "ru": "<strong>2. Воспроизводимость</strong>",
+  "en": "<strong>2. Reproducibility</strong>"
+ },
+ {
+  "k": "87893517",
+  "s": "100% takrorlanuvchan (bir xil $x_0, v_0$ da trayektoriya mutlaqo bir xil)",
+  "ru": "100% воспроизводима (при одинаковых $x_0, v_0$ траектория абсолютно одинакова)",
+  "en": "100% reproducible (with the same $x_0, v_0$ the trajectory is exactly the same)"
+ },
+ {
+  "k": "18199d1d",
+  "s": "Har bir alohida trayektoriya noyob, lekin statistik o‘rtacha qiymatlar barqaror",
+  "ru": "Каждая отдельная траектория уникальна, но статистические средние значения устойчивы",
+  "en": "Each individual trajectory is unique, but the statistical averages are stable"
+ },
+ {
+  "k": "6c34e213",
+  "s": "<strong>3. Kirish parametrlari</strong>",
+  "ru": "<strong>3. Входные параметры</strong>",
+  "en": "<strong>3. Input parameters</strong>"
+ },
+ {
+  "k": "d1025072",
+  "s": "Sayyora massasi $m$, Quyosh massasi $M$, masofa $r$, orbital tezlik $v_0$",
+  "ru": "Масса планеты $m$, масса Солнца $M$, расстояние $r$, орбитальная скорость $v_0$",
+  "en": "Planet mass $m$, Sun mass $M$, distance $r$, orbital speed $v_0$"
+ },
+ {
+  "k": "e9074285",
+  "s": "Molekulalar soni $N$, gaz harorati $T$, hajm $V$, zarracha massasi $m$",
+  "ru": "Число молекул $N$, температура газа $T$, объём $V$, масса частицы $m$",
+  "en": "Number of molecules $N$, gas temperature $T$, volume $V$, particle mass $m$"
+ },
+ {
+  "k": "4dd0251e",
+  "s": "<strong>4. Chiqish kattaliklari</strong>",
+  "ru": "<strong>4. Выходные величины</strong>",
+  "en": "<strong>4. Outputs</strong>"
+ },
+ {
+  "k": "25ce470c",
+  "s": "Orbita radiusi, ekssentrisitet, aylanish davri $T$, fazaviy koordinatalar $(x, y)$",
+  "ru": "Радиус орбиты, эксцентриситет, период обращения $T$, фазовые координаты $(x, y)$",
+  "en": "Orbit radius, eccentricity, orbital period $T$, phase coordinates $(x, y)$"
+ },
+ {
+  "k": "4b7deb48",
+  "s": "Gaz bosimi $P$, o‘rtacha kvadratik tezlik $v_{rms}$, tezlik gistogrammasi, diffuziya",
+  "ru": "Давление газа $P$, среднеквадратичная скорость $v_{rms}$, гистограмма скоростей, диффузия",
+  "en": "Gas pressure $P$, rms speed $v_{rms}$, speed histogram, diffusion"
+ },
+ {
+  "k": "b99007b7",
+  "s": "<strong>5. Tizim holati (State)</strong>",
+  "ru": "<strong>5. Состояние системы (State)</strong>",
+  "en": "<strong>5. System state</strong>"
+ },
+ {
+  "k": "ac374700",
+  "s": "Har bir vaqt nuqtasida diskret aniq koordinata va impuls $(\\vec{r}, \\vec{p})$",
+  "ru": "В каждый момент времени дискретные точные координата и импульс $(\\vec{r}, \\vec{p})$",
+  "en": "Exact discrete position and momentum $(\\vec{r}, \\vec{p})$ at every moment"
+ },
+ {
+  "k": "a83f7277",
+  "s": "Ansamblning makroskopik holati $(P, V, T, S)$ va fluktuatsiyalar",
+  "ru": "Макроскопическое состояние ансамбля $(P, V, T, S)$ и флуктуации",
+  "en": "The ensemble’s macroscopic state $(P, V, T, S)$ and fluctuations"
+ },
+ {
+  "k": "ac693a62",
+  "s": "<strong>6. Qaytaruvchanlik (Time-reversal)</strong>",
+  "ru": "<strong>6. Обратимость (Time-reversal)</strong>",
+  "en": "<strong>6. Time reversal</strong>"
+ },
+ {
+  "k": "9c7dfcf1",
+  "s": "Vaqt bo‘yicha to‘liq simmetrik ($t \\to -t$ da Nyuton tenglamalari o‘zgarmaydi)",
+  "ru": "Полностью симметрична во времени (при $t \\to -t$ уравнения Ньютона не меняются)",
+  "en": "Fully time-symmetric (Newton’s equations do not change under $t \\to -t$)"
+ },
+ {
+  "k": "65345a54",
+  "s": "Qaytmas jarayon (Termodinamikaning 2-qonuni, Entropiya $\\Delta S \\ge 0$)",
+  "ru": "Необратимый процесс (2-е начало термодинамики, энтропия $\\Delta S \\ge 0$)",
+  "en": "An irreversible process (the second law of thermodynamics, entropy $\\Delta S \\ge 0$)"
+ },
+ {
+  "k": "926283bb",
+  "s": "<strong>7. Sezgirlik (Sensitivity)</strong>",
+  "ru": "<strong>7. Чувствительность (Sensitivity)</strong>",
+  "en": "<strong>7. Sensitivity</strong>"
+ },
+ {
+  "k": "4a0bb3ce",
+  "s": "Regulyar orbitalarda past; ko‘p jism gravitatsiyasida xaos yuzaga kelishi mumkin",
+  "ru": "На регулярных орбитах низкая; в гравитации многих тел может возникнуть хаос",
+  "en": "Low on regular orbits; chaos can arise in many-body gravity"
+ },
+ {
+  "k": "4f3688e0",
+  "s": "Bitta zarrachaga o‘ta sezgir, biroq makroskopik ko‘rsatkichlar fluktuatsiyaga chidamli",
+  "ru": "Сверхчувствительна к отдельной частице, но макроскопические показатели устойчивы к флуктуациям",
+  "en": "Extremely sensitive to individual particles, but the macroscopic measures are robust to fluctuations"
+ },
+ {
+  "k": "9707ac30",
+  "s": "<strong>8. Hisoblash resursi</strong>",
+  "ru": "<strong>8. Вычислительный ресурс</strong>",
+  "en": "<strong>8. Computing cost</strong>"
+ },
+ {
+  "k": "37589eec",
+  "s": "Zarralar soni kam bo‘lsa (2-3 ta jism) juda yengil va tez hisoblanadi",
+  "ru": "При малом числе частиц (2–3 тела) рассчитывается очень легко и быстро",
+  "en": "With few particles (2–3 bodies) it is very light and fast to compute"
+ },
+ {
+  "k": "8e025aa1",
+  "s": "Katta $N$ zarralar to‘qnashuvini hisoblash $\\mathcal{O}(N^2)$ kuch talab etadi",
+  "ru": "Расчёт столкновений большого числа $N$ частиц требует $\\mathcal{O}(N^2)$ вычислительной мощности",
+  "en": "Computing collisions for a large number $N$ of particles needs $\\mathcal{O}(N^2)$ computing power"
+ },
+ {
+  "k": "a4183707",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Model Turlari Nazariyasi (2-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и теория типов моделей (пункт 2):",
+  "en": "🌐 WWW scholarly sources and the theory of model types (Part 2):"
+ },
+ {
+  "k": "d0cfc9e2",
+  "s": "Gardiner, C. W. (2004).",
+  "ru": "Gardiner, C. W. (2004).",
+  "en": "Gardiner, C. W. (2004)."
+ },
+ {
+  "k": "7c8ffbb7",
+  "s": "Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences",
+  "ru": "Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences",
+  "en": "Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences"
+ },
+ {
+  "k": "1dc82a30",
+  "s": "(3rd ed.). Springer.",
+  "ru": "(3rd ed.). Springer.",
+  "en": "(3rd ed.). Springer."
+ },
+ {
+  "k": "56e3e714",
+  "s": "Laplace, P.-S. (1951).",
+  "ru": "Laplace, P.-S. (1951).",
+  "en": "Laplace, P.-S. (1951)."
+ },
+ {
+  "k": "e555305c",
+  "s": "A Philosophical Essay on Probabilities",
+  "ru": "A Philosophical Essay on Probabilities",
+  "en": "A Philosophical Essay on Probabilities"
+ },
+ {
+  "k": "78801578",
+  "s": "(F. W. Truscott va F. L. Emory, Trans.). Dover. (Asl asar 1814-yilda nashr etilgan)",
+  "ru": "(F. W. Truscott & F. L. Emory, Trans.). Dover. (Оригинал опубликован в 1814 г.)",
+  "en": "(F. W. Truscott & F. L. Emory, Trans.). Dover. (Original work published 1814)"
+ },
+ {
+  "k": "5503713d",
+  "s": "Laplas \"demon\" misolida qat’iy determinizmni ta’riflab, ehtimollik nazariyasini to‘liq bo‘lmagan bilim vositasi sifatida asoslagan. Gardiner Fokker-Planck va Langevin tenglamalari kabi stoxastik usullarni bayon qiladi. Ikki yondashuv bir-birini to‘ldiradi: mikroskopik darajada deterministik tenglamalarga bo‘ysunuvchi ko‘p zarrali tizim makroskopik darajada statistik qonuniyatlar bilan tavsiflanadi.",
+  "ru": "Лаплас на примере «демона» описал строгий детерминизм и обосновал теорию вероятностей как средство неполного знания. Гардинер излагает стохастические методы, такие как уравнения Фоккера–Планка и Ланжевена. Два подхода дополняют друг друга: многочастичная система, подчиняющаяся на микроскопическом уровне детерминированным уравнениям, на макроскопическом уровне описывается статистическими закономерностями.",
+  "en": "Laplace described strict determinism through his \"demon\" and justified probability theory as a tool for incomplete knowledge. Gardiner sets out stochastic methods such as the Fokker–Planck and Langevin equations. The two approaches complement each other: a many-particle system that obeys deterministic equations microscopically is described by statistical laws macroscopically."
+ },
+ {
+  "k": "dc0116a5",
+  "s": "3. Virtual laboratoriya bazasi: PhET Interactive Simulations",
+  "ru": "3. База виртуальной лаборатории: PhET Interactive Simulations",
+  "en": "3. Virtual lab base: PhET Interactive Simulations"
+ },
+ {
+  "k": "39927d1a",
+  "s": "Kolorado universiteti ochiq ta’lim resursi",
+  "ru": "Открытый образовательный ресурс Университета Колорадо",
+  "en": "An open educational resource from the University of Colorado"
+ },
+ {
+  "k": "3f72ca9e",
+  "s": "Talaba quyidagi ikkita rasmiy <strong>PhET Interactive Simulations</strong> laboratoriyasiga kirib, ularni qiyosiy amaliy tadqiqot obyekti sifatida o‘rganadi:",
+  "ru": "Студент заходит в две следующие официальные лаборатории <strong>PhET Interactive Simulations</strong> и изучает их как объекты сравнительного практического исследования:",
+  "en": "The student opens the following two official <strong>PhET Interactive Simulations</strong> labs and studies them as objects of comparative practical research:"
+ },
+ {
+  "k": "a83d4de7",
+  "s": "<span class=\"badge badge-cyan\">1-obyekt: Deterministik</span> <a href=\"https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">PhET Ochish ↗</a>",
+  "ru": "<span class=\"badge badge-cyan\">Объект 1: детерминированный</span> <a href=\"https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">Открыть PhET ↗</a>",
+  "en": "<span class=\"badge badge-cyan\">Object 1: deterministic</span> <a href=\"https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">Open PhET ↗</a>"
+ },
+ {
+  "k": "45790fbe",
+  "s": "PhET: «Gravity and Orbits» (gravitatsiya va orbitalar)",
+  "ru": "PhET: «Gravity and Orbits» (гравитация и орбиты)",
+  "en": "PhET: \"Gravity and Orbits\""
+ },
+ {
+  "k": "d8aaefd6",
+  "s": "Quyosh, Yer, Oy va Sun’iy yo‘ldoshning o‘zaro gravitatsiyaviy tortishish harakatini modellashtiradi.",
+  "ru": "Моделирует движение Солнца, Земли, Луны и искусственного спутника под действием взаимного гравитационного притяжения.",
+  "en": "Models the motion of the Sun, Earth, Moon and a satellite under their mutual gravitational attraction."
+ },
+ {
+  "k": "ed584235",
+  "s": "<strong>O‘rganiladigan boshqaruv elementlari:</strong><br> • «Star Mass» va «Planet Mass» slayderlari;<br> • «Velocity» vektori strelkasini cho‘zish orqali boshlang‘ich tezlikni o‘zgartirish;<br> • «Path» (Orbita trayektoriyasi) va «Grid» (Koordinata to‘ri) tugmalari;<br> • «Gravity Force» (Gravitatsiya kuchi vektorlari) dinamikasi.",
+  "ru": "<strong>Изучаемые элементы управления:</strong><br> • ползунки «Star Mass» и «Planet Mass»;<br> • изменение начальной скорости растягиванием стрелки вектора «Velocity»;<br> • кнопки «Path» (траектория орбиты) и «Grid» (координатная сетка);<br> • динамика «Gravity Force» (векторы силы тяготения).",
+  "en": "<strong>Controls to study:</strong><br> • the \"Star Mass\" and \"Planet Mass\" sliders;<br> • changing the initial speed by stretching the \"Velocity\" vector arrow;<br> • the \"Path\" (orbit trajectory) and \"Grid\" (coordinate grid) buttons;<br> • the \"Gravity Force\" vector dynamics."
+ },
+ {
+  "k": "07ec9050",
+  "s": "💡 <em>Tajriba vazifasi: Orbital tezlikni $v_0$ o‘zgartirib, aylanma, elliptik va giperbolik trayektoriyalarni kuzating.</em>",
+  "ru": "💡 <em>Задание опыта: меняя орбитальную скорость $v_0$, пронаблюдайте круговые, эллиптические и гиперболические траектории.</em>",
+  "en": "💡 <em>Experiment task: change the orbital speed $v_0$ and observe circular, elliptical and hyperbolic trajectories.</em>"
+ },
+ {
+  "k": "2248554f",
+  "s": "<span class=\"badge badge-purple\">2-obyekt: Stoxastik</span> <a href=\"https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">PhET Ochish ↗</a>",
+  "ru": "<span class=\"badge badge-purple\">Объект 2: стохастический</span> <a href=\"https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">Открыть PhET ↗</a>",
+  "en": "<span class=\"badge badge-purple\">Object 2: stochastic</span> <a href=\"https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">Open PhET ↗</a>"
+ },
+ {
+  "k": "dd5f34cf",
+  "s": "PhET: «Gas Properties» (gaz xossalari)",
+  "ru": "PhET: «Gas Properties» (свойства газа)",
+  "en": "PhET: \"Gas Properties\""
+ },
+ {
+  "k": "6947d920",
+  "s": "Yopiq idish ichidagi yuzlab gaz molekulalarining xaotik to‘qnashuvlari va termodinamik parametrlarni o‘rganadi.",
+  "ru": "Изучает хаотические столкновения сотен молекул газа в закрытом сосуде и термодинамические параметры.",
+  "en": "Studies the chaotic collisions of hundreds of gas molecules in a closed container and the thermodynamic parameters."
+ },
+ {
+  "k": "07bfe7ce",
+  "s": "<strong>O‘rganiladigan boshqaruv elementlari:</strong><br> • Nasos orqali idishga $N$ ta og‘ir (ko‘k) yoki yengil (qizil) zarrachalar kiritish;<br> • «Heat / Cool» o‘txonasi orqali harorat $T$ ni boshqarish;<br> • Idish hajmini $V$ kengaytirish yoki toraytirish dastagi;<br> • Manometr (Bosim $P$ o‘lchagichi) va Tezlik taqsimoti gistogrammasi («Energy» bo‘limi).",
+  "ru": "<strong>Изучаемые элементы управления:</strong><br> • введение насосом в сосуд $N$ тяжёлых (синих) или лёгких (красных) частиц;<br> • управление температурой $T$ через горелку «Heat / Cool»;<br> • рычаг расширения или сжатия объёма сосуда $V$;<br> • манометр (измеритель давления $P$) и гистограмма распределения скоростей (раздел «Energy»).",
+  "en": "<strong>Controls to study:</strong><br> • pumping $N$ heavy (blue) or light (red) particles into the container;<br> • controlling the temperature $T$ with the \"Heat / Cool\" burner;<br> • the handle that expands or compresses the container volume $V$;<br> • the pressure gauge ($P$ meter) and the speed distribution histogram (\"Energy\" screen)."
+ },
+ {
+  "k": "fe20b686",
+  "s": "💡 <em>Tajriba vazifasi: Haroratni oshirganda manometr tilchasidagi fluktuatsiyalar va tezlik gistogrammasi siljishini qayd qiling.</em>",
+  "ru": "💡 <em>Задание опыта: при повышении температуры зафиксируйте флуктуации стрелки манометра и сдвиг гистограммы скоростей.</em>",
+  "en": "💡 <em>Experiment task: as you raise the temperature, note the fluctuations of the pressure gauge needle and the shift in the speed histogram.</em>"
+ },
+ {
+  "k": "b6b46a7d",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Interaktiv Simulyatsiyalar (3-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и интерактивные симуляции (пункт 3):",
+  "en": "🌐 WWW scholarly sources and interactive simulations (Part 3):"
+ },
+ {
+  "k": "0f40db2e",
+  "s": "Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).",
+  "ru": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).",
+  "en": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008)."
+ },
+ {
+  "k": "acacd01d",
+  "s": "PhET: Simulations That Enhance Learning",
+  "ru": "PhET: Simulations That Enhance Learning",
+  "en": "PhET: Simulations That Enhance Learning"
+ },
+ {
+  "k": "20cc8bc5",
+  "s": ". Science, 322(5902), 682–683.",
+  "ru": ". Science, 322(5902), 682–683.",
+  "en": ". Science, 322(5902), 682–683."
+ },
+ {
+  "k": "dbf0609b",
+  "s": "https://doi.org/10.1126/science.1161948",
+  "ru": "https://doi.org/10.1126/science.1161948",
+  "en": "https://doi.org/10.1126/science.1161948"
+ },
+ {
+  "k": "201b7f6f",
+  "s": "Perkins, K., Adams, W., Dubson, M., Finkelstein, N., Reid, S., Wieman, C., va LeMaster, R. (2006).",
+  "ru": "Perkins, K., Adams, W., Dubson, M., Finkelstein, N., Reid, S., Wieman, C., & LeMaster, R. (2006).",
+  "en": "Perkins, K., Adams, W., Dubson, M., Finkelstein, N., Reid, S., Wieman, C., & LeMaster, R. (2006)."
+ },
+ {
+  "k": "af6654c4",
+  "s": "PhET: Interactive Simulations for Teaching and Learning Physics",
+  "ru": "PhET: Interactive Simulations for Teaching and Learning Physics",
+  "en": "PhET: Interactive Simulations for Teaching and Learning Physics"
+ },
+ {
+  "k": "0906f5f4",
+  "s": ". The Physics Teacher, 44(1), 18–23.",
+  "ru": ". The Physics Teacher, 44(1), 18–23.",
+  "en": ". The Physics Teacher, 44(1), 18–23."
+ },
+ {
+  "k": "3013ebae",
+  "s": "https://doi.org/10.1119/1.2150754",
+  "ru": "https://doi.org/10.1119/1.2150754",
+  "en": "https://doi.org/10.1119/1.2150754"
+ },
+ {
+  "k": "7c8da4c3",
+  "s": "PhET simulyatsiyalarining ko‘rgazmali animatsiyasi talabalarga ko‘rinmas mikroskopik xaotik jarayonlar va astronomik makromodellarni bevosita manipulyatsiya qilish orqali tushunishga imkon beradi.",
+  "ru": "Наглядная анимация симуляций PhET позволяет студентам понимать невидимые микроскопические хаотические процессы и астрономические макромодели через непосредственное манипулирование ими.",
+  "en": "The visual animations of PhET simulations let students understand invisible microscopic chaotic processes and astronomical macro-models by manipulating them directly."
+ },
+ {
+  "k": "1b35de15",
+  "s": "4. Modellarni tahlil qilish va qiyosiy hisobot: Claude yoki Gemini",
+  "ru": "4. Анализ моделей и сравнительный отчёт: Claude или Gemini",
+  "en": "4. Model analysis and a comparative report: Claude or Gemini"
+ },
+ {
+  "k": "fa6e8628",
+  "s": "Sokratik konsultatsiya va IMRaD akademik hisoboti",
+  "ru": "Сократическая консультация и академический отчёт IMRaD",
+  "en": "Socratic consultation and an IMRaD academic report"
+ },
+ {
+  "k": "d94a5228",
+  "s": "Talaba PhET simulyatsiyalarida tajriba o‘tkazgach, olingan kuzatuvlarni umumlashtirish, matematik formulalarini tasdiqlash va akademik hisobot loyihasini yozish uchun <strong>Claude</strong> yoki <strong>Google Gemini</strong> platformalariga quyidagi maqsadli yo‘riqnomalarni (promptlarni) yuboradi:",
+  "ru": "Проведя опыты в симуляциях PhET, студент отправляет на платформы <strong>Claude</strong> или <strong>Google Gemini</strong> следующие целевые инструкции (промпты), чтобы обобщить наблюдения, подтвердить математические формулы и написать проект академического отчёта:",
+  "en": "After running the PhET experiments, the student sends the following targeted instructions (prompts) to <strong>Claude</strong> or <strong>Google Gemini</strong> to summarise the observations, confirm the formulas and draft an academic report:"
+ },
+ {
+  "k": "364e2c18",
+  "s": "1-Yo‘riqnoma: Claude — Matematik Apparat va Qiyosiy Tahlil",
+  "ru": "Инструкция 1: Claude — математический аппарат и сравнительный анализ",
+  "en": "Instruction 1: Claude — mathematics and comparative analysis"
+ },
+ {
+  "k": "9f243838",
+  "s": "Ushbu yo‘riqnoma orqali Claude ikkala modelning differensial va statistik tenglamalarini tahlil qilib, taqqoslash xulosasini beradi:",
+  "ru": "С помощью этой инструкции Claude анализирует дифференциальные и статистические уравнения обеих моделей и даёт сравнительный вывод:",
+  "en": "With this instruction, Claude analyses both models’ differential and statistical equations and gives a comparative conclusion:"
+ },
+ {
+  "k": "7e034317",
+  "s": "2-Yo‘riqnoma: Google Gemini — IMRaD Formatidagi Laboratoriya Hisoboti",
+  "ru": "Инструкция 2: Google Gemini — лабораторный отчёт в формате IMRaD",
+  "en": "Instruction 2: Google Gemini — a lab report in IMRaD format"
+ },
+ {
+  "k": "4b832e72",
+  "s": "Ushbu yo‘riqnoma yordamida Gemini xalqaro akademik standart (IMRaD) bo‘yicha to‘liq hisobot matnini generatsiya qiladi:",
+  "ru": "С помощью этой инструкции Gemini генерирует полный текст отчёта по международному академическому стандарту (IMRaD):",
+  "en": "With this instruction, Gemini generates the full report text to the international academic standard (IMRaD):"
+ },
+ {
+  "k": "d453b742",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va AI Tahlil (4-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и ИИ-анализ (пункт 4):",
+  "en": "🌐 WWW scholarly sources and AI analysis (Part 4):"
+ },
+ {
+  "k": "cc261ab8",
+  "s": "Anthropic. (2024).",
+  "ru": "Anthropic. (2024).",
+  "en": "Anthropic. (2024)."
+ },
+ {
+  "k": "b1efca82",
+  "s": "Claude Model Card Addendum",
+  "ru": "Claude Model Card Addendum",
+  "en": "Claude Model Card Addendum"
+ },
+ {
+  "k": "19d8edc7",
+  "s": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "ru": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "en": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+ },
+ {
+  "k": "cc4f47b4",
+  "s": "Gemini Team, Google. (2023).",
+  "ru": "Gemini Team, Google. (2023).",
+  "en": "Gemini Team, Google. (2023)."
+ },
+ {
+  "k": "3404c8a5",
+  "s": "Gemini: A Family of Highly Capable Multimodal Models",
+  "ru": "Gemini: A Family of Highly Capable Multimodal Models",
+  "en": "Gemini: A Family of Highly Capable Multimodal Models"
+ },
+ {
+  "k": "6c0c4365",
+  "s": "(arXiv:2312.11805). arXiv.",
+  "ru": "(arXiv:2312.11805). arXiv.",
+  "en": "(arXiv:2312.11805). arXiv."
+ },
+ {
+  "k": "0cc35724",
+  "s": "https://doi.org/10.48550/arXiv.2312.11805",
+  "ru": "https://doi.org/10.48550/arXiv.2312.11805",
+  "en": "https://doi.org/10.48550/arXiv.2312.11805"
+ },
+ {
+  "k": "95d1d670",
+  "s": "Model hujjatlari Claude va Gemini’ning matn, kod va multimodal tahlil imkoniyatlari bilan birga ularning xato qilishi mumkinligini ham tavsiflaydi. Shu sababli AI yozgan qiyosiy jadval va IMRaD loyihasi talabaning PhET’dagi o‘z o‘lchovlari bilan tekshiriladi va to‘ldiriladi.",
+  "ru": "Документация моделей описывает возможности Claude и Gemini в анализе текста, кода и мультимодальных данных, а также то, что они могут ошибаться. Поэтому сравнительная таблица и проект IMRaD, написанные ИИ, проверяются и дополняются собственными измерениями студента в PhET.",
+  "en": "The model documentation describes Claude’s and Gemini’s abilities in text, code and multimodal analysis, and also that they can make mistakes. So the comparison table and IMRaD draft written by AI are checked and completed with the student’s own PhET measurements."
+ },
+ {
+  "k": "33962f62",
+  "s": "5. Ikki oynali interaktiv dastgoh: deterministik va stoxastik modellarni jonli taqqoslash",
+  "ru": "5. Двухоконный интерактивный стенд: живое сравнение детерминированной и стохастической моделей",
+  "en": "5. Dual-window interactive bench: comparing deterministic and stochastic models live"
+ },
+ {
+  "k": "4dec19f8",
+  "s": "Parallel Canvas simulyatori va real vaqtdagi statistik tahlil",
+  "ru": "Параллельный Canvas-симулятор и статистический анализ в реальном времени",
+  "en": "A parallel Canvas simulator and real-time statistical analysis"
+ },
+ {
+  "k": "a122895e",
+  "s": "Ushbu dastgohda ikkita fizik tizim parallel ishlaydi. <strong>Chap tomonda</strong> — Nyuton gravitatsiya qonuniga bo‘ysunuvchi <em>deterministik orbital harakat</em>; <strong>o‘ng tomonda</strong> — elastik to‘qnashuvchi molekulalar va ular orasidagi og‘ir zarraning <em>Broun harakati (stoxastik tavsif)</em>. \"Qayta o‘rnatish\" tugmasini bir necha marta bosing: orbita har safar aynan takrorlanadi, gaz esa har safar yangi tasodifiy boshlang‘ich holatdan boshlanadi.",
+  "ru": "На этом стенде параллельно работают две физические системы. <strong>Слева</strong> — <em>детерминированное орбитальное движение</em>, подчиняющееся закону тяготения Ньютона; <strong>справа</strong> — упруго сталкивающиеся молекулы и <em>броуновское движение (стохастическое описание)</em> тяжёлой частицы между ними. Нажмите кнопку «Сброс» несколько раз: орбита каждый раз точно повторяется, а газ каждый раз начинает с нового случайного начального состояния.",
+  "en": "Two physical systems run in parallel on this bench. <strong>On the left</strong> is <em>deterministic orbital motion</em> obeying Newton’s law of gravitation; <strong>on the right</strong> are elastically colliding molecules and the <em>Brownian motion (stochastic description)</em> of a heavy particle among them. Press \"Reset\" a few times: the orbit repeats exactly each time, while the gas starts from a new random initial state each time."
+ },
+ {
+  "k": "81b1b891",
+  "s": "▶ Ikkala simulyatsiyani boshlash",
+  "ru": "▶ Запустить обе симуляции",
+  "en": "▶ Start both simulations"
+ },
+ {
+  "k": "7e0619bc",
+  "s": "⏸ Pauza",
+  "ru": "⏸ Пауза",
+  "en": "⏸ Pause"
+ },
+ {
+  "k": "eb2003c8",
+  "s": "🔄 Qayta o‘rnatish",
+  "ru": "🔄 Сброс",
+  "en": "🔄 Reset"
+ },
+ {
+  "k": "a2e29e06",
+  "s": "💡 Har ikki tizimni parallel ishga tushirib, takrorlanuvchanlik va fluktuatsiyalarni kuzating.",
+  "ru": "💡 Запустите обе системы параллельно и понаблюдайте воспроизводимость и флуктуации.",
+  "en": "💡 Run both systems in parallel and watch reproducibility and fluctuations."
+ },
+ {
+  "k": "cf9cdc7a",
+  "s": "🪐 1-model: deterministik (“Gravity and Orbits”)",
+  "ru": "🪐 Модель 1: детерминированная (“Gravity and Orbits”)",
+  "en": "🪐 Model 1: deterministic (\"Gravity and Orbits\")"
+ },
+ {
+  "k": "de70a43a",
+  "s": "100 % takrorlanuvchan",
+  "ru": "100 % воспроизводима",
+  "en": "100 % reproducible"
+ },
+ {
+  "k": "a6ed9684",
+  "s": "Sayyora massasi:",
+  "ru": "Масса планеты:",
+  "en": "Planet mass:"
+ },
+ {
+  "k": "9e038f9e",
+  "s": "Boshlang‘ich tezlik v₀:",
+  "ru": "Начальная скорость v₀:",
+  "en": "Initial velocity v₀:"
+ },
+ {
+  "k": "83390cb2",
+  "s": "Aylanish davri T:",
+  "ru": "Период обращения T:",
+  "en": "Orbital period T:"
+ },
+ {
+  "k": "766e5a2a",
+  "s": "Mexanik energiya:",
+  "ru": "Механическая энергия:",
+  "en": "Mechanical energy:"
+ },
+ {
+  "k": "0aec9f54",
+  "s": "💨 2-model: stoxastik (“Gas Properties”)",
+  "ru": "💨 Модель 2: стохастическая (“Gas Properties”)",
+  "en": "💨 Model 2: stochastic (\"Gas Properties\")"
+ },
+ {
+  "k": "27f1e420",
+  "s": "Fluktuatsiyali",
+  "ru": "С флуктуациями",
+  "en": "Fluctuating"
+ },
+ {
+  "k": "87890f05",
+  "s": "Gaz harorati T:",
+  "ru": "Температура газа T:",
+  "en": "Gas temperature T:"
+ },
+ {
+  "k": "6af64eb1",
+  "s": "Molekulalar soni N:",
+  "ru": "Число молекул N:",
+  "en": "Number of molecules N:"
+ },
+ {
+  "k": "8937683b",
+  "s": "65 ta",
+  "ru": "65 шт.",
+  "en": "65"
+ },
+ {
+  "k": "ec90bd32",
+  "s": "O‘rtacha tezlik:",
+  "ru": "Средняя скорость:",
+  "en": "Mean speed:"
+ },
+ {
+  "k": "eb24cce8",
+  "s": "Zarralarning idish kataklari bo‘yicha taqsimotidan hisoblangan Shannon entropiyasi",
+  "ru": "Энтропия Шеннона, рассчитанная по распределению частиц по ячейкам сосуда",
+  "en": "Shannon entropy calculated from how the particles are spread across the container’s cells"
+ },
+ {
+  "k": "4674d333",
+  "s": "Entropiya S/k:",
+  "ru": "Энтропия S/k:",
+  "en": "Entropy S/k:"
+ },
+ {
+  "k": "b486b063",
+  "s": "🔍 Laboratoriya kuzatuvi va amaliy xulosa:",
+  "ru": "🔍 Лабораторное наблюдение и практический вывод:",
+  "en": "🔍 Lab observation and practical conclusion:"
+ },
+ {
+  "k": "c171a052",
+  "s": "1. <strong>Deterministik orbital modelda:</strong> Sayyora boshlang‘ich tezlik $v_0$ ga qarab bitta yopiq Kepler ellipsi bo‘ylab harakatlanadi (sayyora massasi $m \\ll M$ bo‘lgani uchun orbita shakli massaga bog‘liq emas — massa faqat energiyani o‘zgartiradi). Qayta ishga tushirilsa, trayektoriya aynan takrorlanadi.<br> 2. <strong>Stoxastik gaz modelida:</strong> Har bir molekulaning to‘qnashuvi individual darajada deterministik elastik qonunlarga bo‘ysunsa-da, yuzlab zarralar to‘plamida markaziy og‘ir zarrachaning (qizil shar) harakati <em>tasodifiy Broun harakati</em> (2D da $\\langle r^2 \\rangle = 4Dt$, har bir o‘q bo‘yicha $\\langle x^2 \\rangle = 2Dt$) ko‘rinishida namoyon bo‘ladi va tezliklar doimo Maksvell-Bolsman taqsimotiga intiladi.",
+  "ru": "1. <strong>В детерминированной орбитальной модели:</strong> в зависимости от начальной скорости $v_0$ планета движется по одному замкнутому эллипсу Кеплера (так как масса планеты $m \\ll M$, форма орбиты не зависит от массы — масса меняет только энергию). При повторном запуске траектория точно повторяется.<br> 2. <strong>В стохастической газовой модели:</strong> хотя каждое столкновение молекулы на индивидуальном уровне подчиняется детерминированным упругим законам, в совокупности сотен частиц движение центральной тяжёлой частицы (красный шар) проявляется как <em>случайное броуновское движение</em> (в 2D $\\langle r^2 \\rangle = 4Dt$, по каждой оси $\\langle x^2 \\rangle = 2Dt$), а скорости всегда стремятся к распределению Максвелла–Больцмана.",
+  "en": "1. <strong>In the deterministic orbital model:</strong> depending on the initial speed $v_0$, the planet moves along a single closed Kepler ellipse (because the planet’s mass is $m \\ll M$, the orbit shape does not depend on mass — the mass only changes the energy). Restarted, the trajectory repeats exactly.<br> 2. <strong>In the stochastic gas model:</strong> although each molecular collision obeys deterministic elastic laws individually, across hundreds of particles the motion of the central heavy particle (red ball) appears as <em>random Brownian motion</em> ($\\langle r^2 \\rangle = 4Dt$ in 2D, $\\langle x^2 \\rangle = 2Dt$ along each axis), and the speeds always tend towards the Maxwell–Boltzmann distribution."
+ },
+ {
+  "k": "2cb557c3",
+  "s": "6. Baholash rubrikasi (100 ball) va ilmiy manbalar (APA 7)",
+  "ru": "6. Рубрика оценивания (100 баллов) и научные источники (APA 7)",
+  "en": "6. Assessment rubric (100 points) and scholarly sources (APA 7)"
+ },
+ {
+  "k": "c1ef1ba0",
+  "s": "5-laboratoriya mashg‘uloti talabaning deterministik va stoxastik modellarni ajrata olishini, PhET simulyatsiyalarini tadqiq qilish hamda qiyosiy hisobot tuzish sifatini 100 ballik shkalada baholaydi:",
+  "ru": "Лабораторное занятие 5 оценивает по 100-балльной шкале умение студента различать детерминированные и стохастические модели, исследовать симуляции PhET и качество составления сравнительного отчёта:",
+  "en": "Lab 5 assesses, on a 100-point scale, the student’s ability to tell deterministic and stochastic models apart, investigate PhET simulations and write a good comparative report:"
+ },
+ {
+  "k": "064462d9",
+  "s": "📊 Interaktiv rubrika kalkulyatori (5-laboratoriya):",
+  "ru": "📊 Интерактивный калькулятор рубрики (лабораторная 5):",
+  "en": "📊 Interactive rubric calculator (Lab 5):"
+ },
+ {
+  "k": "98659cf0",
+  "s": "<strong style=\"color: var(--text-main);\">1. Nazariy Tushuncha va Diagnostika Testi</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Laplas determinizmi va Bolsman statistik mexanikasi farqlarini to‘g‘ri izohlash.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">1. Теоретическое понимание и диагностический тест</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Правильное объяснение различий между детерминизмом Лапласа и статистической механикой Больцмана.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">1. Theoretical understanding and diagnostic test</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Correctly explaining the differences between Laplacian determinism and Boltzmann’s statistical mechanics.</span>"
+ },
+ {
+  "k": "d54e78cb",
+  "s": "<strong style=\"color: var(--text-main);\">2. PhET «Gravity and Orbits» Deterministik Tahlili</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Orbital tezlik, massalar nisbati va trayektoriya barqarorligini eksperimental o‘rganish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">2. Детерминированный анализ PhET «Gravity and Orbits»</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Экспериментальное изучение орбитальной скорости, отношения масс и устойчивости траектории.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">2. Deterministic analysis of PhET \"Gravity and Orbits\"</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Experimentally studying orbital speed, mass ratios and trajectory stability.</span>"
+ },
+ {
+  "k": "6715ef0b",
+  "s": "<strong style=\"color: var(--text-main);\">3. PhET «Gas Properties» Stoxastik Tahlili</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Molekulalar soni, harorat va Maksvell-Bolsman tezlik gistogrammasi fluktuatsiyalarini o‘lchash.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">3. Стохастический анализ PhET «Gas Properties»</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Измерение числа молекул, температуры и флуктуаций гистограммы скоростей Максвелла–Больцмана.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">3. Stochastic analysis of PhET \"Gas Properties\"</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Measuring the number of molecules, the temperature and fluctuations in the Maxwell–Boltzmann speed histogram.</span>"
+ },
+ {
+  "k": "fdc10c77",
+  "s": "<strong style=\"color: var(--text-main);\">4. 8 Mezonli Qiyosiy Taqqoslash Jadvalini Tuzish</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Matematik apparat, takrorlanuvchanlik, qaytuvchanlik va hisoblash resurslarini qiyoslash.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">4. Составление сравнительной таблицы по 8 критериям</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Сравнение математического аппарата, воспроизводимости, обратимости и вычислительных ресурсов.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">4. Building the 8-criterion comparison table</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Comparing the mathematics, reproducibility, reversibility and computing resources.</span>"
+ },
+ {
+  "k": "75d27e8e",
+  "s": "<strong style=\"color: var(--text-main);\">5. Claude / Gemini AI Yordamida IMRaD Hisoboti</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Ergodiklik xulosasi, ilmiy savodxonlik va himoyadagi mustaqil tahliliy fikr.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">5. Отчёт IMRaD с помощью ИИ Claude / Gemini</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Вывод об эргодичности, научная грамотность и самостоятельная аналитическая мысль на защите.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">5. An IMRaD report with Claude / Gemini</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The ergodicity conclusion, scientific literacy and independent analytical thinking in the defence.</span>"
+ },
+ {
+  "k": "f2191d93",
+  "s": "100 / 100 ball",
+  "ru": "100 / 100 баллов",
+  "en": "100 / 100 points"
+ },
+ {
+  "k": "751c583f",
+  "s": "A (A’lo — 5)",
+  "ru": "A (отлично — 5)",
+  "en": "A (excellent — 5)"
+ },
+ {
+  "k": "9bbfef6a",
+  "s": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>",
+  "ru": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>",
+  "en": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>"
+ },
+ {
+  "k": "c4af3bd9",
+  "s": "<strong>Einstein, A. (1905).</strong> <em>Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen</em>. Annalen der Physik, 322(8), 549–560. <a href=\"https://doi.org/10.1002/andp.19053220806\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/andp.19053220806</a>",
+  "ru": "<strong>Einstein, A. (1905).</strong> <em>Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen</em>. Annalen der Physik, 322(8), 549–560. <a href=\"https://doi.org/10.1002/andp.19053220806\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/andp.19053220806</a>",
+  "en": "<strong>Einstein, A. (1905).</strong> <em>Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen</em>. Annalen der Physik, 322(8), 549–560. <a href=\"https://doi.org/10.1002/andp.19053220806\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/andp.19053220806</a>"
+ },
+ {
+  "k": "2ad4e45d",
+  "s": "<strong>Gardiner, C. W. (2004).</strong> <em>Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences</em> (3rd ed.). Springer.",
+  "ru": "<strong>Gardiner, C. W. (2004).</strong> <em>Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences</em> (3rd ed.). Springer.",
+  "en": "<strong>Gardiner, C. W. (2004).</strong> <em>Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences</em> (3rd ed.). Springer."
+ },
+ {
+  "k": "e4a8ec7d",
+  "s": "<strong>Gemini Team, Google. (2023).</strong> <em>Gemini: A Family of Highly Capable Multimodal Models</em> (arXiv:2312.11805). arXiv. <a href=\"https://doi.org/10.48550/arXiv.2312.11805\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.48550/arXiv.2312.11805</a>",
+  "ru": "<strong>Gemini Team, Google. (2023).</strong> <em>Gemini: A Family of Highly Capable Multimodal Models</em> (arXiv:2312.11805). arXiv. <a href=\"https://doi.org/10.48550/arXiv.2312.11805\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.48550/arXiv.2312.11805</a>",
+  "en": "<strong>Gemini Team, Google. (2023).</strong> <em>Gemini: A Family of Highly Capable Multimodal Models</em> (arXiv:2312.11805). arXiv. <a href=\"https://doi.org/10.48550/arXiv.2312.11805\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.48550/arXiv.2312.11805</a>"
+ },
+ {
+  "k": "8f993bde",
+  "s": "<strong>Laplace, P.-S. (1951).</strong> <em>A Philosophical Essay on Probabilities</em> (F. W. Truscott va F. L. Emory, Trans.). Dover. (Asl asar: <em>Essai philosophique sur les probabilités</em>, Courcier, 1814)",
+  "ru": "<strong>Laplace, P.-S. (1951).</strong> <em>A Philosophical Essay on Probabilities</em> (F. W. Truscott & F. L. Emory, Trans.). Dover. (Оригинал: <em>Essai philosophique sur les probabilités</em>, Courcier, 1814)",
+  "en": "<strong>Laplace, P.-S. (1951).</strong> <em>A Philosophical Essay on Probabilities</em> (F. W. Truscott & F. L. Emory, Trans.). Dover. (Original work: <em>Essai philosophique sur les probabilités</em>, Courcier, 1814)"
+ },
+ {
+  "k": "e2c0caa1",
+  "s": "<strong>Mishra, P., va Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>",
+  "ru": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>",
+  "en": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>"
+ },
+ {
+  "k": "27978df4",
+  "s": "<strong>Perkins, K., Adams, W., Dubson, M., Finkelstein, N., Reid, S., Wieman, C., va LeMaster, R. (2006).</strong> <em>PhET: Interactive Simulations for Teaching and Learning Physics</em>. The Physics Teacher, 44(1), 18–23. <a href=\"https://doi.org/10.1119/1.2150754\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1119/1.2150754</a>",
+  "ru": "<strong>Perkins, K., Adams, W., Dubson, M., Finkelstein, N., Reid, S., Wieman, C., & LeMaster, R. (2006).</strong> <em>PhET: Interactive Simulations for Teaching and Learning Physics</em>. The Physics Teacher, 44(1), 18–23. <a href=\"https://doi.org/10.1119/1.2150754\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1119/1.2150754</a>",
+  "en": "<strong>Perkins, K., Adams, W., Dubson, M., Finkelstein, N., Reid, S., Wieman, C., & LeMaster, R. (2006).</strong> <em>PhET: Interactive Simulations for Teaching and Learning Physics</em>. The Physics Teacher, 44(1), 18–23. <a href=\"https://doi.org/10.1119/1.2150754\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1119/1.2150754</a>"
+ },
+ {
+  "k": "549db7aa",
+  "s": "<strong>PhET Interactive Simulations. (n.d.).</strong> <em>Gravity and Orbits</em>; <em>Gas Properties</em> [HTML5 simulyatsiyalar]. University of Colorado Boulder. <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu</a>",
+  "ru": "<strong>PhET Interactive Simulations. (n.d.).</strong> <em>Gravity and Orbits</em>; <em>Gas Properties</em> [HTML5-симуляции]. University of Colorado Boulder. <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu</a>",
+  "en": "<strong>PhET Interactive Simulations. (n.d.).</strong> <em>Gravity and Orbits</em>; <em>Gas Properties</em> [HTML5 simulations]. University of Colorado Boulder. <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu</a>"
+ },
+ {
+  "k": "0e99e766",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, va E. Souberman, Eds.). Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press."
+ },
+ {
+  "k": "412b2901",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>"
+ }
+]

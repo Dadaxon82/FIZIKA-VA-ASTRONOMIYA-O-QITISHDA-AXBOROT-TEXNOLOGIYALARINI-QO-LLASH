@@ -273,7 +273,7 @@
       }
     });
     playBtn.addEventListener('click', () => { running = !running; renderPlay(); });
-    function renderPlay() { playBtn.textContent = running ? '⏸ ' + tr('sims.stop', 'To‘xtatish') : '▶ ' + tr('sims.continue', 'Davom etish'); }
+    function renderPlay() { playBtn.textContent = running ? '⏸ ' + tr('sims.stop', __t("To‘xtatish")) : '▶ ' + tr('sims.continue', __t("Davom etish")); }
     document.addEventListener('i18n:change', renderPlay);
     document.getElementById('reset').addEventListener('click', reset);
     window.addEventListener('resize', resize);

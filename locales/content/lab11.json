@@ -1,0 +1,536 @@
+[
+ {
+  "k": "74961eb6",
+  "s": "11-laboratoriya mashg‘uloti: LMS va sun’iy intellekt vositalari",
+  "ru": "Лабораторное занятие 11: LMS и инструменты искусственного интеллекта",
+  "en": "Lab 11: LMS and AI Tools"
+ },
+ {
+  "k": "a93591c2",
+  "s": "Zamonaviy ta’limni boshqarish tizimlari (LMS - Learning Management Systems) o‘quv jarayonini markazlashtirish va samaradorligini oshirish uchun keng qo‘llaniladi. Ushbu laboratoriya mashg‘ulotida talabalar o‘zlarining laboratoriya ishini (izohlar, savol-javoblar) <strong>Otter.ai</strong> platformasi yordamida yozib oladi, nutqni matnga avtomatik o‘girib (transkripsiya) raqamli konspekt generatsiya qiladi. Olingan ma’lumotlarni <strong>MagicSchool AI</strong> yordamida shaxsiy o‘quv trayektoriyasiga moslashtirib monitoring qiladi hamda yaratilgan kontentni Google Classroom yoki Moodle kabi <strong>LMS</strong> platformalarida portfolioga joylashtirish ko‘nikmalarini shakllantiradi.",
+  "ru": "Современные системы управления обучением (LMS — Learning Management Systems) широко применяются для централизации и повышения эффективности учебного процесса. На этом лабораторном занятии студенты записывают свою лабораторную работу (пояснения, вопросы и ответы) с помощью платформы <strong>Otter.ai</strong>, автоматически переводят речь в текст (транскрипция) и генерируют цифровой конспект. Полученные данные с помощью <strong>MagicSchool AI</strong> адаптируются к личной учебной траектории и отслеживаются, а также формируются навыки размещения созданного контента в портфолио на платформах <strong>LMS</strong>, таких как Google Classroom или Moodle.",
+  "en": "Modern learning management systems (LMS) are widely used to centralise the learning process and make it more effective. In this lab, students record their lab work (explanations, questions and answers) with <strong>Otter.ai</strong>, automatically convert the speech to text (transcription) and generate digital notes. They use <strong>MagicSchool AI</strong> to adapt and monitor this data against a personal learning pathway, and build the skills to post the content to a portfolio on <strong>LMS</strong> platforms such as Google Classroom or Moodle."
+ },
+ {
+  "k": "28fdf7c6",
+  "s": "📋 11-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 11 и этапы анализа:",
+  "en": "📋 Lab 11 plan and analysis stages:"
+ },
+ {
+  "k": "48561c3c",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">LMS arxitekturasi, SCORM standartlari va ASR (Automatic Speech Recognition) texnologiyalari bo‘yicha diagnostik tekshiruv.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Диагностическая проверка по архитектуре LMS, стандартам SCORM и технологиям ASR (Automatic Speech Recognition).</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A diagnostic check on LMS architecture, SCORM standards and ASR (automatic speech recognition) technology.</span>"
+ },
+ {
+  "k": "55e14dd3",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. O‘quv jarayonini hujjatlashtirish:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Laboratoriya izohlari, formulalar tahlili va amaliyot natijalarini raqamlashtirish hamda arxivlash jarayonlarini tashkil etish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Документирование учебного процесса:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Организация оцифровки и архивирования лабораторных пояснений, анализа формул и результатов практики.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Documenting the learning process:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Organising the digitisation and archiving of lab explanations, formula analysis and practical results.</span>"
+ },
+ {
+  "k": "b4d6d627",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Ovozli qaydlar va transkripsiya:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Otter.ai yordamida tovush to‘lqinlarini (ovozli qaydlarni) yuqori aniqlikda matnga (avtomatik transkripsiya) aylantirish algoritmlari va amaliyoti.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Голосовые заметки и транскрипция:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Алгоритмы и практика высокоточного преобразования звуковых волн (голосовых заметок) в текст (автоматическая транскрипция) с помощью Otter.ai.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Voice notes and transcription:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Algorithms and practice for converting sound waves (voice notes) into text with high accuracy (automatic transcription) using Otter.ai.</span>"
+ },
+ {
+  "k": "ae203e3c",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Trayektoriyani monitoring qilish:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI imkoniyatlaridan foydalanib o‘quvchining shaxsiy progressini baholash, adaptiv rubrikalar tuzish va LMS ga integratsiya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Мониторинг траектории:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Оценка личного прогресса учащегося с помощью возможностей MagicSchool AI, составление адаптивных рубрик и интеграция в LMS.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Monitoring the pathway:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Using MagicSchool AI to assess each learner’s progress, building adaptive rubrics and integrating them into the LMS.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "9cb5013b",
+  "s": "1. Diagnostika va individual o‘quv rejasi",
+  "ru": "1. Диагностика и индивидуальный учебный план",
+  "en": "1. Diagnostics and an individual learning plan"
+ },
+ {
+  "k": "ced764b8",
+  "s": "LMS arxitekturasi (Google Classroom, Moodle), ASR (Automatic Speech Recognition) texnologiyalari va raqamli portfoliolarni shakllantirish bo‘yicha bilimlaringizni tekshiring.",
+  "ru": "Проверьте свои знания об архитектуре LMS (Google Classroom, Moodle), технологиях ASR (Automatic Speech Recognition) и формировании цифровых портфолио.",
+  "en": "Test your knowledge of LMS architecture (Google Classroom, Moodle), ASR (automatic speech recognition) technology and building digital portfolios."
+ },
+ {
+  "k": "ffe8850d",
+  "s": "1-savol: LMS (Learning Management System) tizimlarining qaysi standarti turli platformalar o‘rtasida o‘quv kontentini almashishga xizmat qiladi?",
+  "ru": "Вопрос 1: Какой стандарт систем LMS (Learning Management System) служит для обмена учебным контентом между разными платформами?",
+  "en": "Question 1: Which LMS standard is used to exchange learning content between different platforms?"
+ },
+ {
+  "k": "74ce0074",
+  "s": "A) HTML5 va CSS3",
+  "ru": "A) HTML5 и CSS3",
+  "en": "A) HTML5 and CSS3"
+ },
+ {
+  "k": "58eb5a35",
+  "s": "B) SCORM va xAPI",
+  "ru": "B) SCORM и xAPI",
+  "en": "B) SCORM and xAPI"
+ },
+ {
+  "k": "7a2a0e1a",
+  "s": "C) HTTP va FTP",
+  "ru": "C) HTTP и FTP",
+  "en": "C) HTTP and FTP"
+ },
+ {
+  "k": "907c5b06",
+  "s": "D) SQL va NoSQL",
+  "ru": "D) SQL и NoSQL",
+  "en": "D) SQL and NoSQL"
+ },
+ {
+  "k": "5cead3dd",
+  "s": "2-savol: Otter.ai platformasida qo‘llaniladigan WER (Word Error Rate) formulasi nimani anglatadi?",
+  "ru": "Вопрос 2: Что означает формула WER (Word Error Rate), применяемая на платформе Otter.ai?",
+  "en": "Question 2: What does the WER (Word Error Rate) formula used on Otter.ai mean?"
+ },
+ {
+  "k": "396e6105",
+  "s": "A) Tizimning ishlash tezligi va xotira hajmi",
+  "ru": "A) Скорость работы системы и объём памяти",
+  "en": "A) The system’s speed and memory size"
+ },
+ {
+  "k": "aceac1df",
+  "s": "B) Ovozli yozuvni saqlash formatini",
+  "ru": "B) Формат хранения голосовой записи",
+  "en": "B) The storage format of the voice recording"
+ },
+ {
+  "k": "f62ee16b",
+  "s": "C) Almashtirilgan, o‘chirilgan va qo‘shilgan so‘zlar sonining jami so‘zlarga nisbatini",
+  "ru": "C) Отношение суммы заменённых, удалённых и вставленных слов к общему числу слов",
+  "en": "C) The ratio of substituted, deleted and inserted words to the total number of words"
+ },
+ {
+  "k": "c0688dec",
+  "s": "D) Neyron tarmoqdagi yashirin qatlamlar miqdorini",
+  "ru": "D) Количество скрытых слоёв в нейронной сети",
+  "en": "D) The number of hidden layers in the neural network"
+ },
+ {
+  "k": "0a945c8a",
+  "s": "3-savol: Talabaning qobiliyati va topshiriq qiyinligini hisobga olib, keyingi topshiriqni tanlaydigan adaptiv baholash qaysi modelga asoslanadi?",
+  "ru": "Вопрос 3: На какой модели основано адаптивное оценивание, выбирающее следующее задание с учётом способностей студента и трудности задания?",
+  "en": "Question 3: Which model underpins adaptive assessment that picks the next task based on the student’s ability and the task’s difficulty?"
+ },
+ {
+  "k": "4081cb62",
+  "s": "A) Adaptiv baholash va IRT (Item Response Theory) modeli",
+  "ru": "A) Адаптивное оценивание и модель IRT (Item Response Theory)",
+  "en": "A) Adaptive assessment and the IRT (Item Response Theory) model"
+ },
+ {
+  "k": "73fcdd7e",
+  "s": "B) Faqatgina an’anaviy o‘rtacha arifmetik baho chiqarish",
+  "ru": "B) Только традиционное вычисление среднего арифметического балла",
+  "en": "B) Only the traditional arithmetic mean grade"
+ },
+ {
+  "k": "2b210ce0",
+  "s": "C) O‘quvchilarni alifbo tartibida guruhlash",
+  "ru": "C) Группировка учащихся в алфавитном порядке",
+  "en": "C) Grouping learners alphabetically"
+ },
+ {
+  "k": "0cf2ffab",
+  "s": "D) Videodarslarni avtomatik tasvirga olish",
+  "ru": "D) Автоматическая съёмка видеоуроков",
+  "en": "D) Filming video lessons automatically"
+ },
+ {
+  "k": "db6a84a9",
+  "s": "4-savol: Google Classroom platformasida raqamli fizika kursini tuzishda integratsiya qilinadigan asosiy obyektlar ketma-ketligi qanday?",
+  "ru": "Вопрос 4: Какова последовательность основных объектов, интегрируемых при построении цифрового курса физики на платформе Google Classroom?",
+  "en": "Question 4: What is the order of the main objects combined when building a digital physics course in Google Classroom?"
+ },
+ {
+  "k": "66d10ad8",
+  "s": "A) Faqat matnli hujjatlar va jadvallar",
+  "ru": "A) Только текстовые документы и таблицы",
+  "en": "A) Only text documents and spreadsheets"
+ },
+ {
+  "k": "58a2af82",
+  "s": "B) Mavzu (Topic), Material (Content), Topshiriq (Assignment) va Baholash (Rubric)",
+  "ru": "B) Тема (Topic), материал (Content), задание (Assignment) и оценивание (Rubric)",
+  "en": "B) Topic, Content (material), Assignment and Rubric (assessment)"
+ },
+ {
+  "k": "46933290",
+  "s": "C) Faqat test savollari va qisqa javoblar",
+  "ru": "C) Только тестовые вопросы и короткие ответы",
+  "en": "C) Only test questions and short answers"
+ },
+ {
+  "k": "bb8075c8",
+  "s": "D) Tasdiqlangan darsliklar va an’anaviy jurnallar",
+  "ru": "D) Утверждённые учебники и традиционные журналы",
+  "en": "D) Approved textbooks and traditional gradebooks"
+ },
+ {
+  "k": "754f713c",
+  "s": "Tavsiya etiladigan AI prompt (Claude / ChatGPT / Gemini uchun):",
+  "ru": "Рекомендуемый ИИ-промпт (для Claude / ChatGPT / Gemini):",
+  "en": "Recommended AI prompt (for Claude / ChatGPT / Gemini):"
+ },
+ {
+  "k": "f8d8ce6f",
+  "s": "2. Otter.ai bilan o‘quv jarayonini hujjatlashtirish",
+  "ru": "2. Документирование учебного процесса с Otter.ai",
+  "en": "2. Documenting the learning process with Otter.ai"
+ },
+ {
+  "k": "6ce4c104",
+  "s": "Laboratoriya mashg‘ulotlarida talabalar turli fizik jarayonlarni kuzatishadi, o‘lchashlar olib borishadi va xulosalar chiqarishadi. Bu jarayonni yozma ravishda qayd etish ko‘p vaqt talab qiladi va muhim detallar tushirib qoldirilishi mumkin. <strong>Otter.ai</strong> platformasi ovozli qaydlarni yozib olish va ularni real vaqt rejimida matnga aylantirish orqali bu muammoni hal qiladi.",
+  "ru": "На лабораторных занятиях студенты наблюдают различные физические процессы, проводят измерения и делают выводы. Письменная фиксация этого процесса требует много времени, и важные детали могут быть упущены. Платформа <strong>Otter.ai</strong> решает эту проблему, записывая голосовые заметки и превращая их в текст в реальном времени.",
+  "en": "In lab sessions, students observe physical processes, take measurements and draw conclusions. Writing all this down takes a long time and important details can be missed. <strong>Otter.ai</strong> solves this by recording voice notes and turning them into text in real time."
+ },
+ {
+  "k": "180058bd",
+  "s": "Hujjatlashtirish bosqichlari:",
+  "ru": "Этапы документирования:",
+  "en": "Documentation stages:"
+ },
+ {
+  "k": "19e3e8bc",
+  "s": "<strong>Audio yozib olish:</strong> Tajriba davomida (masalan, mayatnik tebranishini o‘lchashda) o‘qituvchi va talaba dialogini mikrafon orqali yozib olish.",
+  "ru": "<strong>Аудиозапись:</strong> запись через микрофон диалога преподавателя и студента во время опыта (например, при измерении колебаний маятника).",
+  "en": "<strong>Audio recording:</strong> recording the teacher–student dialogue through a microphone during the experiment (for example, while measuring a pendulum’s oscillation)."
+ },
+ {
+  "k": "a4520835",
+  "s": "<strong>Sinxron transkripsiya:</strong> Otter.ai dvigateli tovush to‘lqinlarini so‘zlarga aylantiradi. Speaker diarization (so‘zlovchilarni ajratish) texnologiyasi orqali \"Talaba 1\" va \"O‘qituvchi\" avtomatik aniqlanadi.",
+  "ru": "<strong>Синхронная транскрипция:</strong> движок Otter.ai превращает звуковые волны в слова. Благодаря технологии speaker diarization (разделение говорящих) «Студент 1» и «Преподаватель» определяются автоматически.",
+  "en": "<strong>Synchronous transcription:</strong> the Otter.ai engine turns sound waves into words. Speaker diarisation technology automatically identifies \"Student 1\" and \"Teacher\"."
+ },
+ {
+  "k": "cb2e3d70",
+  "s": "<strong>Kalit so‘zlar va xulosalar:</strong> AI asosida matndan asosiy atamalar (amplituda, garmonik tebranish, xatolik) ajratib olinadi va avtomatik qisqacha xulosa (Summary) shakllantiriladi.",
+  "ru": "<strong>Ключевые слова и выводы:</strong> на основе ИИ из текста выделяются основные термины (амплитуда, гармонические колебания, погрешность) и автоматически формируется краткий итог (Summary).",
+  "en": "<strong>Keywords and conclusions:</strong> AI pulls the main terms (amplitude, harmonic oscillation, error) out of the text and automatically produces a short summary."
+ },
+ {
+  "k": "73c46f63",
+  "s": "Portfolioga integratsiya:",
+  "ru": "Интеграция в портфолио:",
+  "en": "Adding it to the portfolio:"
+ },
+ {
+  "k": "d67b90f8",
+  "s": "Yaratilgan raqamli konspektni DOCX yoki PDF formatida yuklab olish.",
+  "ru": "Скачать созданный цифровой конспект в формате DOCX или PDF.",
+  "en": "Download the digital notes as DOCX or PDF."
+ },
+ {
+  "k": "355fc52f",
+  "s": "Konspektni Google Classroom yoki Moodle platformasidagi topshiriqqa (Assignment) biriktirish.",
+  "ru": "Прикрепить конспект к заданию (Assignment) на платформе Google Classroom или Moodle.",
+  "en": "Attach the notes to an assignment in Google Classroom or Moodle."
+ },
+ {
+  "k": "ad54ae66",
+  "s": "Tajriba davomida yuzaga kelgan muammolarni va ularning yechimini ko‘rsatib beruvchi audio-matnli dalillar bazasini yaratish.",
+  "ru": "Создать базу аудио-текстовых доказательств, показывающих возникшие в ходе опыта проблемы и их решение.",
+  "en": "Build an audio-and-text evidence base showing the problems that came up during the experiment and how they were solved."
+ },
+ {
+  "k": "d8398892",
+  "s": "3. Ovozli qaydlar va avtomatik transkripsiya (ASR) nazariyasi",
+  "ru": "3. Теория голосовых заметок и автоматической транскрипции (ASR)",
+  "en": "3. The theory of voice notes and automatic transcription (ASR)"
+ },
+ {
+  "k": "cb6d989a",
+  "s": "Avtomatik nutqni aniqlash (ASR - Automatic Speech Recognition) tizimlari akustik signallarni til modellariga o‘zgartiradi. Ilgari ASR tizimlari yashirin Markov modellari (HMM) asosida qurilgan; zamonaviy tizimlar esa asosan chuqur neyron tarmoqlaridan (RNN, Transformer) foydalanadi. Otter.ai kabi tijoriy xizmatlarning aniq arxitekturasi ochiq e’lon qilinmagan (Jurafsky va Martin, n.d.).",
+  "ru": "Системы автоматического распознавания речи (ASR — Automatic Speech Recognition) преобразуют акустические сигналы в языковые модели. Раньше системы ASR строились на скрытых марковских моделях (HMM); современные системы в основном используют глубокие нейронные сети (RNN, Transformer). Точная архитектура коммерческих сервисов, таких как Otter.ai, публично не раскрывается (Jurafsky & Martin, n.d.).",
+  "en": "Automatic speech recognition (ASR) systems map acoustic signals onto language models. Earlier ASR systems were built on hidden Markov models (HMMs); modern systems mostly use deep neural networks (RNNs, Transformers). The exact architecture of commercial services such as Otter.ai is not published (Jurafsky & Martin, n.d.)."
+ },
+ {
+  "k": "a8430d6a",
+  "s": "WER (Word Error Rate) modeli",
+  "ru": "Модель WER (Word Error Rate)",
+  "en": "The WER (Word Error Rate) model"
+ },
+ {
+  "k": "9a574ee9",
+  "s": "Transkripsiya aniqligi WER ko‘rsatkichi bilan o‘lchanadi. Formula quyidagicha ifodalanadi:",
+  "ru": "Точность транскрипции измеряется показателем WER. Формула выражается следующим образом:",
+  "en": "Transcription accuracy is measured by WER. The formula is:"
+ },
+ {
+  "k": "19d510cf",
+  "s": "$$ \\text{WER} = \\frac{S + D + I}{N} \\times 100\\% $$",
+  "ru": "$$ \\text{WER} = \\frac{S + D + I}{N} \\times 100\\% $$",
+  "en": "$$ \\text{WER} = \\frac{S + D + I}{N} \\times 100\\% $$"
+ },
+ {
+  "k": "3a65c883",
+  "s": "$S$ – Substitutions (Noto‘g‘ri almashtirilgan so‘zlar)",
+  "ru": "$S$ – Substitutions (неправильно заменённые слова)",
+  "en": "$S$ – Substitutions (wrongly replaced words)"
+ },
+ {
+  "k": "00b5a045",
+  "s": "$D$ – Deletions (Tushirib qoldirilgan so‘zlar)",
+  "ru": "$D$ – Deletions (пропущенные слова)",
+  "en": "$D$ – Deletions (missing words)"
+ },
+ {
+  "k": "ee842710",
+  "s": "$I$ – Insertions (Ortiqcha qo‘shilgan so‘zlar)",
+  "ru": "$I$ – Insertions (лишние вставленные слова)",
+  "en": "$I$ – Insertions (extra added words)"
+ },
+ {
+  "k": "4ed1dc42",
+  "s": "$N$ – Nutqdagi jami asl so‘zlar soni",
+  "ru": "$N$ – общее число исходных слов в речи",
+  "en": "$N$ – the total number of original words spoken"
+ },
+ {
+  "k": "0ee6bf1a",
+  "s": "Akustik model va til modeli",
+  "ru": "Акустическая модель и языковая модель",
+  "en": "The acoustic model and the language model"
+ },
+ {
+  "k": "fb326fd3",
+  "s": "Tizim dastlab audio faylni kichik vaqt oraliqlariga (freymlarga) ajratadi va ulardan Mel-spektrogramma vektorlarini ajratib oladi. Akustik model (AM) bu vektorlarning qaysi fonemaga mos kelish ehtimolini hisoblaydi: $P(\\text{Audio} | \\text{Fonema})$. So‘ngra, Til modeli (LM) so‘zlarning ketma-ket kelish ehtimolligini N-gram yoki Transformer algoritmlari orqali baholaydi: $P(\\text{Matn})$. Eng katta ehtimollikka ega matn Bayes teoremasi yordamida topiladi: $$ \\hat{W} = \\arg\\max_{W} P(A|W)P(W) $$",
+  "ru": "Система сначала разбивает аудиофайл на малые временные интервалы (фреймы) и извлекает из них векторы мел-спектрограммы. Акустическая модель (AM) рассчитывает вероятность того, какой фонеме соответствуют эти векторы: $P(\\text{Audio} | \\text{Fonema})$. Затем языковая модель (LM) оценивает вероятность последовательности слов с помощью алгоритмов N-gram или Transformer: $P(\\text{Matn})$. Текст с наибольшей вероятностью находится с помощью теоремы Байеса: $$ \\hat{W} = \\arg\\max_{W} P(A|W)P(W) $$",
+  "en": "The system first splits the audio into short time intervals (frames) and extracts mel-spectrogram vectors from them. The acoustic model (AM) computes the probability that these vectors match each phoneme: $P(\\text{Audio} | \\text{Fonema})$. Then the language model (LM) estimates the probability of word sequences using N-gram or Transformer algorithms: $P(\\text{Matn})$. The most probable text is found with Bayes’ theorem: $$ \\hat{W} = \\arg\\max_{W} P(A|W)P(W) $$"
+ },
+ {
+  "k": "e34919f8",
+  "s": "4. O‘quv trayektoriyasini monitoring qilish: MagicSchool AI",
+  "ru": "4. Мониторинг учебной траектории: MagicSchool AI",
+  "en": "4. Monitoring the learning pathway: MagicSchool AI"
+ },
+ {
+  "k": "ce7ea032",
+  "s": "Transkripsiya qilingan konspektlar asosida talabaning fanni o‘zlashtirish darajasini aniqlash va moslashtirilgan topshiriqlar yaratish uchun <strong>MagicSchool AI</strong> vositasidan foydalaniladi.",
+  "ru": "Инструмент <strong>MagicSchool AI</strong> используется для определения уровня освоения дисциплины студентом на основе транскрибированных конспектов и создания адаптированных заданий.",
+  "en": "<strong>MagicSchool AI</strong> is used to gauge how well the student has mastered the subject from the transcribed notes and to create tailored tasks."
+ },
+ {
+  "k": "38091991",
+  "s": "Item Response Theory (IRT) va adaptiv o‘qitish",
+  "ru": "Item Response Theory (IRT) и адаптивное обучение",
+  "en": "Item Response Theory (IRT) and adaptive learning"
+ },
+ {
+  "k": "a8714639",
+  "s": "Adaptiv baholash tizimlari o‘quvchining qobiliyatini ($\\theta$) va topshiriqning qiyinlik darajasini ($b$) inobatga olgan holda keyingi topshiriqni tanlaydi. Eng sodda model — 1 parametrli logistik model (Rasch, 1960). <em>Eslatma:</em> MagicSchool AI asosan o‘qituvchi uchun matn, test va rubrika yaratuvchi LLM vositasi; u IRT asosida adaptiv test o‘tkazadi degan ma’lumot yo‘q.",
+  "ru": "Системы адаптивного оценивания выбирают следующее задание с учётом способности учащегося ($\\theta$) и уровня трудности задания ($b$). Простейшая модель — 1-параметрическая логистическая модель (Rasch, 1960). <em>Примечание:</em> MagicSchool AI — в основном LLM-инструмент для создания текстов, тестов и рубрик для преподавателя; сведений о том, что он проводит адаптивное тестирование на основе IRT, нет.",
+  "en": "Adaptive assessment systems choose the next task based on the learner’s ability ($\\theta$) and the task’s difficulty ($b$). The simplest model is the one-parameter logistic model (Rasch, 1960). <em>Note:</em> MagicSchool AI is mainly an LLM tool that creates texts, tests and rubrics for teachers; there is no evidence that it runs IRT-based adaptive tests."
+ },
+ {
+  "k": "7c7503d6",
+  "s": "$$ P(\\theta) = \\frac{1}{1 + e^{-(\\theta - b)}} $$",
+  "ru": "$$ P(\\theta) = \\frac{1}{1 + e^{-(\\theta - b)}} $$",
+  "en": "$$ P(\\theta) = \\frac{1}{1 + e^{-(\\theta - b)}} $$"
+ },
+ {
+  "k": "44091235",
+  "s": "Bu yerda $P(\\theta)$ o‘quvchining savolga to‘g‘ri javob berish ehtimolligi.",
+  "ru": "Здесь $P(\\theta)$ — вероятность того, что учащийся правильно ответит на вопрос.",
+  "en": "Here $P(\\theta)$ is the probability that the learner answers the question correctly."
+ },
+ {
+  "k": "b4e7597f",
+  "s": "LMS integratsiyasi",
+  "ru": "Интеграция в LMS",
+  "en": "LMS integration"
+ },
+ {
+  "k": "4b07add8",
+  "s": "<strong>Shaxsiy rubrikalar:</strong> Talabaning kuchli va zaif tomonlariga ko‘ra (masalan, tajriba xatoligini topa olmasligi) maxsus baholash rubrikalari tuzish.",
+  "ru": "<strong>Личные рубрики:</strong> составление специальных рубрик оценивания с учётом сильных и слабых сторон студента (например, неумения найти погрешность опыта).",
+  "en": "<strong>Personal rubrics:</strong> building special assessment rubrics around the student’s strengths and weaknesses (for example, failing to find the experimental error)."
+ },
+ {
+  "k": "bc22152c",
+  "s": "<strong>Kontent generatsiyasi:</strong> MagicSchool AI yordamida qisqa viktorinalar va amaliy masalalar tuzib, to‘g‘ridan-to‘g‘ri Google Classroom’ga eksport qilish.",
+  "ru": "<strong>Генерация контента:</strong> составление с помощью MagicSchool AI коротких викторин и практических задач и их прямой экспорт в Google Classroom.",
+  "en": "<strong>Content generation:</strong> creating short quizzes and practice problems with MagicSchool AI and exporting them straight to Google Classroom."
+ },
+ {
+  "k": "de8dbe0c",
+  "s": "<strong>Qayta aloqa (feedback):</strong> Otter.ai’dan olingan matnga asoslanib, avtomatlashtirilgan sifatli izohlar qoldirish.",
+  "ru": "<strong>Обратная связь (feedback):</strong> оставление автоматизированных качественных комментариев на основе текста, полученного из Otter.ai.",
+  "en": "<strong>Feedback:</strong> leaving good-quality automated comments based on the text from Otter.ai."
+ },
+ {
+  "k": "b7e95254",
+  "s": "5. Interaktiv dastgoh: ovozdan matnga va LMS’ga integratsiya",
+  "ru": "5. Интерактивный стенд: из голоса в текст и интеграция в LMS",
+  "en": "5. Interactive bench: from voice to text and into the LMS"
+ },
+ {
+  "k": "a2415fb9",
+  "s": "Ushbu simulyatorda siz Otter.ai transkripsiyasi jarayonini (simulyatsiya qilingan) ko‘rishingiz, generatsiya qilingan konspektni ko‘rib chiqishingiz va “MagicSchool” orqali baholash grafigini (trayektoriya) tahlil qilishingiz mumkin.",
+  "ru": "В этом симуляторе вы можете увидеть процесс транскрипции Otter.ai (симулированный), просмотреть сгенерированный конспект и проанализировать график оценивания (траекторию) через «MagicSchool».",
+  "en": "In this simulator you can see the (simulated) Otter.ai transcription process, review the generated notes and analyse the assessment graph (pathway) through \"MagicSchool\"."
+ },
+ {
+  "k": "22ffbe8c",
+  "s": "🎙️ Ovozli yozuv (Otter.ai simulyatsiyasi)",
+  "ru": "🎙️ Голосовая запись (симуляция Otter.ai)",
+  "en": "🎙️ Voice recording (Otter.ai simulation)"
+ },
+ {
+  "k": "21fef722",
+  "s": "Yozib olishni boshlash",
+  "ru": "Начать запись",
+  "en": "Start recording"
+ },
+ {
+  "k": "3168c892",
+  "s": "To‘xtatish va transkripsiya qilish",
+  "ru": "Остановить и транскрибировать",
+  "en": "Stop and transcribe"
+ },
+ {
+  "k": "e1e9877b",
+  "s": "📝 Avtomatik konspekt (transkripsiya)",
+  "ru": "📝 Автоматический конспект (транскрипция)",
+  "en": "📝 Automatic notes (transcript)"
+ },
+ {
+  "k": "74e64369",
+  "s": "MagicSchool AI va LMS’ga yuborish",
+  "ru": "Отправить в MagicSchool AI и LMS",
+  "en": "Send to MagicSchool AI and the LMS"
+ },
+ {
+  "k": "6c29fa42",
+  "s": "📈 O‘quv trayektoriyasi (Rasch modeli asosidagi adaptiv tahlil simulyatsiyasi)",
+  "ru": "📈 Учебная траектория (симуляция адаптивного анализа на основе модели Раша)",
+  "en": "📈 Learning pathway (simulated Rasch-model adaptive analysis)"
+ },
+ {
+  "k": "37f7c58a",
+  "s": "6. Loyiha baholash rubrikasi va manbalar",
+  "ru": "6. Рубрика оценивания проекта и источники",
+  "en": "6. Project assessment rubric and sources"
+ },
+ {
+  "k": "ef46d2c5",
+  "s": "Laboratoriya ishi shaxsiy raqamli portfolio, transkripsiya aniqligi va LMS’dagi topshiriq sifatiga ko‘ra baholanadi (Jami: 100 ball).",
+  "ru": "Лабораторная работа оценивается по личному цифровому портфолио, точности транскрипции и качеству задания в LMS (всего: 100 баллов).",
+  "en": "The lab is assessed on the personal digital portfolio, transcription accuracy and the quality of the LMS assignment (total: 100 points)."
+ },
+ {
+  "k": "b32d6d14",
+  "s": "Baholash Mezoni (MagicSchool AI tavsiyasi)",
+  "ru": "Критерий оценивания (рекомендация MagicSchool AI)",
+  "en": "Assessment criterion (MagicSchool AI recommendation)"
+ },
+ {
+  "k": "a82718a8",
+  "s": "<strong>Ovozli yozuv sifati:</strong> Fizik jarayonning to‘liq va aniq izohlanganligi.",
+  "ru": "<strong>Качество голосовой записи:</strong> полнота и точность пояснения физического процесса.",
+  "en": "<strong>Voice recording quality:</strong> how fully and accurately the physical process is explained."
+ },
+ {
+  "k": "ab9e6b7b",
+  "s": "<strong>Transkripsiya tahlili:</strong> Otter.ai matnidagi xatolarni to‘g‘rilash (WER ni pasaytirish).",
+  "ru": "<strong>Анализ транскрипции:</strong> исправление ошибок в тексте Otter.ai (снижение WER).",
+  "en": "<strong>Transcript analysis:</strong> correcting errors in the Otter.ai text (lowering WER)."
+ },
+ {
+  "k": "acc1f21c",
+  "s": "<strong>LMS integratsiyasi:</strong> Google Classroom/Moodle’da kontentning to‘g‘ri tuzilishi.",
+  "ru": "<strong>Интеграция в LMS:</strong> правильная структура контента в Google Classroom/Moodle.",
+  "en": "<strong>LMS integration:</strong> a correct content structure in Google Classroom/Moodle."
+ },
+ {
+  "k": "e68c8703",
+  "s": "90 / 100 ball",
+  "ru": "90 / 100 баллов",
+  "en": "90 / 100 points"
+ },
+ {
+  "k": "584b9eb7",
+  "s": "1. ADL Initiative. (n.d.). <em>SCORM</em>. https://adlnet.gov/projects/scorm/",
+  "ru": "1. ADL Initiative. (n.d.). <em>SCORM</em>. https://adlnet.gov/projects/scorm/",
+  "en": "1. ADL Initiative. (n.d.). <em>SCORM</em>. https://adlnet.gov/projects/scorm/"
+ },
+ {
+  "k": "0f057427",
+  "s": "2. Baker, R. S., va Inventado, P. S. (2014). Educational data mining and learning analytics. In J. A. Larusson va B. White (Eds.), <em>Learning analytics: From research to practice</em> (pp. 61–75). Springer. https://doi.org/10.1007/978-1-4614-3305-7_4",
+  "ru": "2. Baker, R. S., & Inventado, P. S. (2014). Educational data mining and learning analytics. In J. A. Larusson & B. White (Eds.), <em>Learning analytics: From research to practice</em> (pp. 61–75). Springer. https://doi.org/10.1007/978-1-4614-3305-7_4",
+  "en": "2. Baker, R. S., & Inventado, P. S. (2014). Educational data mining and learning analytics. In J. A. Larusson & B. White (Eds.), <em>Learning analytics: From research to practice</em> (pp. 61–75). Springer. https://doi.org/10.1007/978-1-4614-3305-7_4"
+ },
+ {
+  "k": "c446cbc7",
+  "s": "3. Google for Developers. (n.d.). <em>Google Classroom API</em>. https://developers.google.com/classroom",
+  "ru": "3. Google for Developers. (n.d.). <em>Google Classroom API</em>. https://developers.google.com/classroom",
+  "en": "3. Google for Developers. (n.d.). <em>Google Classroom API</em>. https://developers.google.com/classroom"
+ },
+ {
+  "k": "20d87c86",
+  "s": "4. Jurafsky, D., va Martin, J. H. (n.d.). <em>Speech and language processing</em> (3rd ed. draft). https://web.stanford.edu/~jurafsky/slp3/",
+  "ru": "4. Jurafsky, D., & Martin, J. H. (n.d.). <em>Speech and language processing</em> (3rd ed. draft). https://web.stanford.edu/~jurafsky/slp3/",
+  "en": "4. Jurafsky, D., & Martin, J. H. (n.d.). <em>Speech and language processing</em> (3rd ed. draft). https://web.stanford.edu/~jurafsky/slp3/"
+ },
+ {
+  "k": "1fb92965",
+  "s": "5. MagicSchool AI. (n.d.). <em>MagicSchool</em>. https://www.magicschool.ai",
+  "ru": "5. MagicSchool AI. (n.d.). <em>MagicSchool</em>. https://www.magicschool.ai",
+  "en": "5. MagicSchool AI. (n.d.). <em>MagicSchool</em>. https://www.magicschool.ai"
+ },
+ {
+  "k": "7495108d",
+  "s": "6. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai",
+  "ru": "6. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai",
+  "en": "6. Otter.ai. (n.d.). <em>Otter.ai help center</em>. https://help.otter.ai"
+ },
+ {
+  "k": "7b424fb5",
+  "s": "7. Rasch, G. (1960). <em>Probabilistic models for some intelligence and attainment tests</em>. Danish Institute for Educational Research.",
+  "ru": "7. Rasch, G. (1960). <em>Probabilistic models for some intelligence and attainment tests</em>. Danish Institute for Educational Research.",
+  "en": "7. Rasch, G. (1960). <em>Probabilistic models for some intelligence and attainment tests</em>. Danish Institute for Educational Research."
+ },
+ {
+  "k": "031a1724",
+  "s": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "ru": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>",
+  "en": "<a href=\"https://ssd.jpl.nasa.gov/horizons/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA JPL Horizons</a>"
+ },
+ {
+  "k": "543abd6e",
+  "s": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "ru": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>",
+  "en": "<a href=\"https://elevenlabs.io\" target=\"_blank\" rel=\"noopener noreferrer\">ElevenLabs AI</a>"
+ }
+]
