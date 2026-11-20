@@ -18,9 +18,10 @@ jobs:
       - name: JavaScript syntax
         run: |
           node --check app.js
-          node --check js/mustaqil-public.js
-          node --check js/i18n.js
-          node --check js/i18n-boot.js
+          for f in js/*.js; do node --check "$f"; done
+      - name: Locale JSON validity
+        run: |
+          for f in locales/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))"; done
       - name: Curriculum and HEMIS separation
         run: node --test tests/*.test.cjs
       - name: Internal references

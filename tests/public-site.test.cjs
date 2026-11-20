@@ -11,7 +11,7 @@ test("15 ma'ruza va 15 laboratoriya",()=>{
 });
 test("15 ta to'rt soatli topshiriq va alohida yo'riqnoma",()=>{
  const html=load("mustaqil.html");
- assert.equal((html.match(/class="task-card"/g)||[]).length,15);
+ assert.equal((html.match(/class="task-card(?: [^"]*)?"/g)||[]).length,15);
  assert.equal((html.match(/Fan dasturidagi mustaqil topshiriq · 4 soat/g)||[]).length,15);
  assert.equal((html.match(/class="download-guide"/g)||[]).length,15);
  for(let i=1;i<=15;i++){

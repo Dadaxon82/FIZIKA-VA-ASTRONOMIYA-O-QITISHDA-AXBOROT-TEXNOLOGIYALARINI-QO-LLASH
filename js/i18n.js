@@ -23,13 +23,13 @@
  *                tanlanganda asl matnlar aynan tiklanadi (tarmoq so'rovisiz).
  *  - JS API:     window.I18N.t('kalit', {param: 1}), I18N.setLanguage('ru'),
  *                I18N.onChange(fn), I18N.ready (Promise), 'i18n:change' hodisasi.
- *  - Mashina tarjimasi (ixtiyoriy zaxira): ma'ruza/laboratoriya sahifalarining
- *                juda katta hajmli asosiy matni (yuz minglab so'z) hali qo'lda
- *                tarjima qilinmagan. Shu qismlar uchun Google Website Translator
- *                faqat zaxira sifatida yoqiladi. Qo'lda tarjima qilingan barcha
- *                elementlar, kod bloklari, KaTeX formulalari va <canvas>
- *                translate="no" bilan himoyalanadi. Sahifada
- *                <html data-i18n-mt="off"> bo'lsa, zaxira umuman yuklanmaydi.
+ *  - HTML-tarjima: ichida <strong>, <a> kabi teglar bo'lgan butun abzaslar
+ *                uchun data-i18n-html="kalit" — lug'atdagi qiymat (HTML)
+ *                elementning ichki qismini to'liq almashtiradi.
+ *  - Qisman tarjima: sahifadagi asosiy ma'ruza matni hali tarjima
+ *                qilinmagan bo'lsa (<html data-i18n-coverage="partial">),
+ *                RU/EN tanlanganda bu haqda yopiladigan bildirishnoma
+ *                ko'rsatiladi. Uchinchi tomon (Google) tarjimasi ishlatilmaydi.
  */
 (function () {
   'use strict';
@@ -38,22 +38,15 @@
     languages: ['uz', 'ru', 'en'],
     defaultLang: 'uz',
     storageKey: 'site_lang',
-    version: '2026.11.19-1',
+    version: '2026.11.20-1',
     siteUrl: 'https://ilimziyo.uz/',
-    machineFallback: true,
     labels: {
       uz: { short: 'UZ', name: 'O‘zbekcha' },
       ru: { short: 'RU', name: 'Русский' },
       en: { short: 'EN', name: 'English' }
     },
     intlLocale: { uz: 'uz-UZ', ru: 'ru-RU', en: 'en-US' },
-    ogLocale: { uz: 'uz_UZ', ru: 'ru_RU', en: 'en_US' },
-    protectSelectors: [
-      'code', 'pre', 'kbd', 'samp', 'var', 'math', 'canvas',
-      '.katex', '.katex-display', '.MathJax',
-      '.code-block', '.code-content', '.prompt-output',
-      '[data-no-translate]', '[data-i18n]', '.i18n-switcher', '.i18n-mt-notice'
-    ]
+    ogLocale: { uz: 'uz_UZ', ru: 'ru_RU', en: 'en_US' }
   };
 
   var root = document.documentElement;
@@ -75,7 +68,6 @@
     originals: new WeakMap(),
     attrOriginals: new WeakMap(),
     meta: null,
-    titleGuard: null,
     applied: false,
     debug: /[?&]i18n-debug=1\b/.test(window.location.search)
   };
@@ -319,12 +311,28 @@
     });
   }
 
+  function translateHtmlElement(el) {
+    var key = el.getAttribute('data-i18n-html');
+    if (!key) return;
+    if (!state.originals.has(el)) state.originals.set(el, { html: el.innerHTML });
+    var record = state.originals.get(el);
+    var value = state.lang === CONFIG.defaultLang ? undefined : lookup(state.dict, key);
+    var next = typeof value === 'string' ? value : record.html;
+    if (typeof value !== 'string' && state.lang !== CONFIG.defaultLang && state.missing.indexOf(key) === -1) {
+      state.missing.push(key);
+    }
+    if (el.innerHTML !== next) el.innerHTML = next;
+  }
+
   function translateElement(scope) {
     var base = scope || document;
     if (base.nodeType === 1) {
       if (base.hasAttribute('data-i18n')) translateTextElement(base);
       if (base.hasAttribute('data-i18n-attr')) translateAttributes(base);
+      if (base.hasAttribute('data-i18n-html')) translateHtmlElement(base);
     }
+    var htmlEls = base.querySelectorAll('[data-i18n-html]');
+    for (var h = 0; h < htmlEls.length; h++) translateHtmlElement(htmlEls[h]);
     var textEls = base.querySelectorAll('[data-i18n]');
     for (var i = 0; i < textEls.length; i++) translateTextElement(textEls[i]);
     var attrEls = base.querySelectorAll('[data-i18n-attr]');
@@ -411,18 +419,6 @@
       canonical.setAttribute('href', urlWithLang(original.canonical, state.lang));
     }
     ensureAlternates(original.canonical);
-    guardTitle(title);
-  }
-
-  /* Mashina tarjimasi skripti <title>'ni qayta "tarjima" qilib yubormasligi uchun. */
-  function guardTitle(expected) {
-    var titleEl = document.querySelector('title');
-    if (!titleEl || !window.MutationObserver) return;
-    if (state.titleGuard) state.titleGuard.disconnect();
-    state.titleGuard = new MutationObserver(function () {
-      if (document.title !== expected) document.title = expected;
-    });
-    state.titleGuard.observe(titleEl, { childList: true, characterData: true, subtree: true });
   }
 
   /* ------------------------------------------------------------------ */
@@ -436,8 +432,7 @@
 
   function buildSwitcher(variant) {
     var wrap = document.createElement('div');
-    wrap.className = 'i18n-switcher i18n-switcher--' + variant + ' notranslate';
-    wrap.setAttribute('translate', 'no');
+    wrap.className = 'i18n-switcher i18n-switcher--' + variant;
     wrap.setAttribute('role', 'group');
     wrap.setAttribute('data-i18n-attr', 'aria-label:switcher.groupLabel');
     wrap.setAttribute('aria-label', 'Sayt tili');
@@ -503,6 +498,11 @@
       insertBefore(homeNavbar, compact, homeNavbar.querySelector('.menu-toggle'));
     } else if (topmenu) {
       insertBefore(topmenu, compact, topmenu.querySelector('.topmenu-toggle'));
+    } else if (document.querySelector('body > header')) {
+      // Simulyatsiyalar: o'z sarlavha paneli bor — tugmalarni yopib qo'ymaslik
+      // uchun almashtirgich panel oxiriga oddiy oqimda joylashadi.
+      compact.classList.add('i18n-switcher--floating', 'i18n-switcher--in-header');
+      document.querySelector('body > header').appendChild(compact);
     } else {
       compact.classList.add('i18n-switcher--floating');
       document.body.appendChild(compact);
@@ -538,153 +538,54 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /*  Mashina tarjimasi zaxirasi (Google Website Translator)             */
+  /*  Qisman tarjima qilingan sahifalar uchun bildirishnoma              */
   /* ------------------------------------------------------------------ */
 
-  var MT = {
-    loaded: false,
-    observer: null,
+  var NOTICE_KEY = 'i18n_coverage_notice_dismissed';
 
-    enabled: function () {
-      return CONFIG.machineFallback && root.getAttribute('data-i18n-mt') !== 'off';
-    },
+  function isPartialPage() {
+    return root.getAttribute('data-i18n-coverage') === 'partial';
+  }
 
-    hostVariants: function () {
-      var host = window.location.hostname;
-      var list = [''];
-      if (host) {
-        list.push(host, '.' + host);
-        var parts = host.split('.');
-        if (parts.length > 2) list.push('.' + parts.slice(-2).join('.'));
-      }
-      return list;
-    },
+  function hideCoverageNotice() {
+    var bar = document.getElementById('i18n-coverage-notice');
+    if (bar) bar.hidden = true;
+  }
 
-    setCookie: function (lang) {
-      var value = lang === CONFIG.defaultLang ? '' : '/' + CONFIG.defaultLang + '/' + lang;
-      var expires = lang === CONFIG.defaultLang ? 'Thu, 01 Jan 1970 00:00:00 GMT' : 'Fri, 31 Dec 9999 23:59:59 GMT';
-      MT.hostVariants().forEach(function (domain) {
-        document.cookie = 'googtrans=' + value + '; path=/; expires=' + expires + (domain ? '; domain=' + domain : '');
-      });
-    },
-
-    protect: function (scope) {
-      var base = scope || document;
-      var selector = CONFIG.protectSelectors.join(',');
-      var nodes = base.querySelectorAll ? base.querySelectorAll(selector) : [];
-      for (var i = 0; i < nodes.length; i++) {
-        nodes[i].classList.add('notranslate');
-        nodes[i].setAttribute('translate', 'no');
-      }
-      if (base.nodeType === 1 && base.matches && base.matches(selector)) {
-        base.classList.add('notranslate');
-        base.setAttribute('translate', 'no');
-      }
-    },
-
-    watch: function () {
-      if (MT.observer || !window.MutationObserver) return;
-      MT.observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-          Array.prototype.forEach.call(mutation.addedNodes, function (node) {
-            if (node.nodeType === 1) MT.protect(node);
-          });
-        });
-      });
-      MT.observer.observe(document.body, { childList: true, subtree: true });
-    },
-
-    activate: function (lang) {
-      if (!MT.enabled() || lang === CONFIG.defaultLang) return;
-      MT.setCookie(lang);
-      MT.protect();
-      MT.watch();
-      var combo = document.querySelector('select.goog-te-combo');
-      if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change'));
-      } else if (!MT.loaded) {
-        MT.load();
-      }
-      showMtNotice();
-    },
-
-    load: function () {
-      MT.loaded = true;
-      if (!document.getElementById('google_translate_element')) {
-        var host = document.createElement('div');
-        host.id = 'google_translate_element';
-        host.className = 'notranslate';
-        host.setAttribute('translate', 'no');
-        host.setAttribute('aria-hidden', 'true');
-        document.body.appendChild(host);
-      }
-      window.googleTranslateElementInit = function () {
-        /* global google */
-        new google.translate.TranslateElement({
-          pageLanguage: CONFIG.defaultLang,
-          includedLanguages: CONFIG.languages.join(','),
-          autoDisplay: false
-        }, 'google_translate_element');
-      };
-      var start = function () {
-        var script = document.createElement('script');
-        script.id = 'google-translate-script';
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        document.body.appendChild(script);
-      };
-      /* KaTeX formulalari chizib bo'lingach yuklaymiz — xom $$…$$ manbasi tarjimaga tushmaydi. */
-      if (document.readyState === 'complete') start();
-      else window.addEventListener('load', start, { once: true });
-    },
-
-    /* O'zbekchaga qaytishda mashina tarjimasini toza bekor qilishning ishonchli yo'li — qayta yuklash. */
-    needsReloadForDefault: function () {
-      return MT.loaded || root.classList.contains('translated-ltr') || root.classList.contains('translated-rtl');
+  function updateCoverageNotice() {
+    if (state.lang === CONFIG.defaultLang || !isPartialPage() ||
+        storageGet(NOTICE_KEY) === CONFIG.version + ':' + state.lang) {
+      hideCoverageNotice();
+      return;
     }
-  };
+    var bar = document.getElementById('i18n-coverage-notice');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'i18n-coverage-notice';
+      bar.className = 'i18n-notice';
+      bar.setAttribute('role', 'status');
 
-  function showMtNotice() {
-    if (document.getElementById('i18n-mt-notice')) return;
-    if (storageGet('i18n_mt_notice_dismissed') === CONFIG.version) return;
-    var bar = document.createElement('div');
-    bar.id = 'i18n-mt-notice';
-    bar.className = 'i18n-mt-notice notranslate';
-    bar.setAttribute('translate', 'no');
-    bar.setAttribute('role', 'status');
+      var text = document.createElement('span');
+      text.className = 'i18n-notice__text';
+      text.setAttribute('data-i18n', 'coverageNotice.text');
+      text.textContent = 'Menyu, sarlavhalar va ilmiy atamalar tarjima qilingan; ma’ruzaning asosiy matni hozircha o‘zbek tilida.';
 
-    var text = document.createElement('span');
-    text.className = 'i18n-mt-notice__text';
-    text.setAttribute('data-i18n', 'mtNotice.text');
-    text.textContent = 'Sarlavhalar, menyu va ilmiy atamalar qo‘lda tarjima qilingan; ma’ruza matnining qolgan qismi Google Translate orqali avtomatik tarjima qilinmoqda. Formulalar va kodlar asl holida saqlanadi.';
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'i18n-notice__btn';
+      close.setAttribute('data-i18n', 'coverageNotice.dismiss');
+      close.textContent = 'Tushunarli';
+      close.addEventListener('click', function () {
+        storageSet(NOTICE_KEY, CONFIG.version + ':' + state.lang);
+        hideCoverageNotice();
+      });
 
-    var actions = document.createElement('span');
-    actions.className = 'i18n-mt-notice__actions';
-
-    var original = document.createElement('button');
-    original.type = 'button';
-    original.className = 'i18n-mt-notice__btn i18n-mt-notice__btn--ghost';
-    original.setAttribute('data-i18n', 'mtNotice.showOriginal');
-    original.textContent = 'Asl matn (o‘zbekcha)';
-    original.addEventListener('click', function () { setLanguage(CONFIG.defaultLang); });
-
-    var close = document.createElement('button');
-    close.type = 'button';
-    close.className = 'i18n-mt-notice__btn';
-    close.setAttribute('data-i18n', 'mtNotice.dismiss');
-    close.textContent = 'Tushunarli';
-    close.addEventListener('click', function () {
-      storageSet('i18n_mt_notice_dismissed', CONFIG.version);
-      bar.remove();
-    });
-
-    actions.appendChild(original);
-    actions.appendChild(close);
-    bar.appendChild(text);
-    bar.appendChild(actions);
-    document.body.appendChild(bar);
+      bar.appendChild(text);
+      bar.appendChild(close);
+      document.body.appendChild(bar);
+    }
     translateElement(bar);
+    bar.hidden = false;
   }
 
   /* ------------------------------------------------------------------ */
@@ -714,6 +615,7 @@
       updateSwitchers();
       root.classList.remove('i18n-pending');
       state.applied = true;
+      updateCoverageNotice();
       if (state.debug && state.missing.length && window.console) {
         console.info('[i18n] "' + lang + '" tilida topilmagan kalitlar:', state.missing);
       }
@@ -740,15 +642,7 @@
     syncUrl(lang);
     if (lang === previous && state.applied) return Promise.resolve(lang);
 
-    if (lang === CONFIG.defaultLang && MT.needsReloadForDefault()) {
-      MT.setCookie(CONFIG.defaultLang);
-      window.location.reload();
-      return Promise.resolve(lang);
-    }
-    return applyLanguage(lang).then(function () {
-      if (lang !== CONFIG.defaultLang) MT.activate(lang);
-      return lang;
-    });
+    return applyLanguage(lang);
   }
 
   function onChange(fn) {
@@ -774,8 +668,8 @@
       mutations.forEach(function (mutation) {
         Array.prototype.forEach.call(mutation.addedNodes, function (node) {
           if (node.nodeType !== 1) return;
-          if (node.hasAttribute('data-i18n') || node.hasAttribute('data-i18n-attr') ||
-              (node.querySelector && node.querySelector('[data-i18n],[data-i18n-attr]'))) {
+          if (node.hasAttribute('data-i18n') || node.hasAttribute('data-i18n-attr') || node.hasAttribute('data-i18n-html') ||
+              (node.querySelector && node.querySelector('[data-i18n],[data-i18n-attr],[data-i18n-html]'))) {
             translateElement(node);
           }
         });
@@ -788,24 +682,29 @@
   /*  Ishga tushirish                                                    */
   /* ------------------------------------------------------------------ */
 
-  /* Eski Google Translate tizimidan qolgan sozlamani tozalash
-     (agar foydalanuvchi o'zbekchani tanlagan bo'lsa-yu, cookie qolib ketgan bo'lsa). */
-  function cleanupLegacy(lang) {
-    if (lang === CONFIG.defaultLang && /(?:^|;\s*)googtrans=/.test(document.cookie)) {
-      MT.setCookie(CONFIG.defaultLang);
+  /* Avvalgi Google Translate vidjetidan qolgan "googtrans" cookie'larini o'chirish. */
+  function cleanupLegacy() {
+    if (!/(?:^|;\s*)googtrans=/.test(document.cookie)) return;
+    var host = window.location.hostname;
+    var domains = [''];
+    if (host) {
+      domains.push(host, '.' + host);
+      var parts = host.split('.');
+      if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
     }
-    try { window.localStorage.removeItem('cookie_notice_dismissed'); } catch (e) { /* yo'q */ }
+    domains.forEach(function (domain) {
+      document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT' + (domain ? '; domain=' + domain : '');
+    });
   }
 
   function init() {
     var lang = detectInitialLang();
     state.lang = CONFIG.defaultLang;
     captureMeta();
-    cleanupLegacy(lang);
+    cleanupLegacy();
     mountSwitchers();
     observeDynamicContent();
     applyLanguage(lang).then(function () {
-      if (lang !== CONFIG.defaultLang) MT.activate(lang);
       readyResolve(api);
     }, function () {
       root.classList.remove('i18n-pending');

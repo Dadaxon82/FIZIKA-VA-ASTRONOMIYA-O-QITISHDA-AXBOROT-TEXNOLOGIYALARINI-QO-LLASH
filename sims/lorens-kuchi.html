@@ -48,8 +48,8 @@
     <h1 data-i18n="pages.sims_lorens_kuchi.h1">🔄 Lorens kuchi: magnit maydondagi zaryadli zarra</h1>
     <div class="controls">
       <button id="play">⏸ Pauza</button>
-      <button id="reset">↺ Boshidan</button>
-      <button id="flip">± Zaryad ishorasi</button>
+      <button id="reset" data-i18n="common.fromStart">↺ Boshidan</button>
+      <button id="flip" data-i18n="sims.flipCharge">± Zaryad ishorasi</button>
     </div>
   </header>
   <main>
@@ -69,20 +69,23 @@
 
       <h2 data-i18n="pages.sims_lorens_kuchi.h2_7">Nazariya va o‘lchov</h2>
       <div class="stats">
-        <div class="stat"><b id="rTh">—</b><span>r nazariy = mv/|q|B</span></div>
+        <div class="stat"><b id="rTh">—</b><span data-i18n="simsUi.rTheory">r nazariy = mv/|q|B</span></div>
         <div class="stat"><b id="rMe">—</b><span data-i18n="pages.sims_lorens_kuchi.span_8">r o‘lchangan</span></div>
-        <div class="stat"><b id="tTh">—</b><span>T nazariy = 2πm/|q|B</span></div>
+        <div class="stat"><b id="tTh">—</b><span data-i18n="simsUi.tTheory">T nazariy = 2πm/|q|B</span></div>
         <div class="stat"><b id="tMe">—</b><span data-i18n="pages.sims_lorens_kuchi.span_9">T o‘lchangan</span></div>
         <div class="stat"><b id="vD">—</b><span data-i18n="pages.sims_lorens_kuchi.span_10">dreyf E/B</span></div>
         <div class="stat"><b id="kE">—</b><span>|v| / v₀</span></div>
       </div>
       <h2 data-i18n="pages.sims_lorens_kuchi.h2_11">Formulalar</h2>
-      <p>F = q(E + v × B). Faqat B bo‘lsa, kuch tezlikka perpendikulyar: u ish bajarmaydi, tezlik moduli o‘zgarmaydi va zarra aylana chizadi. E ham qo‘shilsa, aylana E × B yo‘nalishida v<sub>d</sub> = E/B tezlik bilan siljiydi (dreyf).</p>
-      <p class="note">Hisoblash Boris usulida bajariladi: bu usul faqat magnit maydonda tezlik modulini aniq saqlaydi. Musbat zaryad soat mili yo‘nalishida, manfiy zaryad unga teskari aylanadi. Oddiy Eyler usulida aylana spirallashib kattalashib borardi.</p>
+      <p data-i18n-html="sims.lorentzTheory">F = q(E + v × B). Faqat B bo‘lsa, kuch tezlikka perpendikulyar: u ish bajarmaydi, tezlik moduli o‘zgarmaydi va zarra aylana chizadi. E ham qo‘shilsa, aylana E × B yo‘nalishida v<sub>d</sub> = E/B tezlik bilan siljiydi (dreyf).</p>
+      <p class="note" data-i18n-html="sims.lorentzNote">Hisoblash Boris usulida bajariladi: bu usul faqat magnit maydonda tezlik modulini aniq saqlaydi. Musbat zaryad soat mili yo‘nalishida, manfiy zaryad unga teskari aylanadi. Oddiy Eyler usulida aylana spirallashib kattalashib borardi.</p>
       <p class="note" data-i18n="pages.sims_lorens_kuchi.p_12">Bu simulyatsiya reklamasiz, sayt ichida ishlaydi.</p>
     </aside>
   </main>
 <script>
+    // I18N (../js/i18n.js): joriy tildagi matn; i18n yuklanmasa o'zbekcha zaxira.
+    const tr = (key, fallback, params) => (window.I18N ? window.I18N.t(key, params, fallback) : fallback);
+
 (function () {
   const cv = document.getElementById('cv');
   const ctx = cv.getContext('2d');
@@ -181,7 +184,7 @@
     const fs = 0.25 / k.m;
     arrow(p.x, p.y, p.x + fx * fs, p.y + fy * fs, '#FBBF24', 'F');
     ctx.textAlign = 'left'; ctx.fillStyle = '#94A3B8'; ctx.font = '12px ui-monospace, monospace';
-    ctx.fillText('⊙ B — ekrandan bizga' + (k.E > 0 ? '   | E — pastga' : ''), 10, Hc - 10);
+    ctx.fillText('⊙ B — ' + tr('sims.bOut', 'ekrandan bizga') + (k.E > 0 ? '   | E — ' + tr('sims.eDown', 'pastga') : ''), 10, Hc - 10);
   }
   function arrow(x0, y0, x1, y1, color, label) {
     const a = Math.atan2(y1 - y0, x1 - x0), L = Math.hypot(x1 - x0, y1 - y0);
@@ -210,7 +213,9 @@
     $('tMe').textContent = (k.E === 0 && turns > 0) ? (t / (angAcc / (2 * Math.PI))).toFixed(3).replace('.', ',') + ' s' : '—';
   }
   ['q', 'm', 'v', 'b', 'e'].forEach(id => $(id).addEventListener('input', reset));
-  $('play').addEventListener('click', () => { running = !running; $('play').textContent = running ? '⏸ Pauza' : '▶ Davom'; });
+  function renderPlay() { $('play').textContent = running ? '⏸ ' + tr('sims.pause', 'Pauza') : '▶ ' + tr('sims.resume', 'Davom'); }
+  $('play').addEventListener('click', () => { running = !running; renderPlay(); });
+  document.addEventListener('i18n:change', renderPlay);
   $('reset').addEventListener('click', reset);
   $('flip').addEventListener('click', () => { sign = -sign; reset(); });
   window.addEventListener('resize', () => { resize(); reset(); });

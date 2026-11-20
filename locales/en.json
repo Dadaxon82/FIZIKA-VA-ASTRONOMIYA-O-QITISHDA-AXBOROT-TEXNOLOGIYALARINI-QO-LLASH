@@ -128,7 +128,9 @@
     "aiPipeline": "AI pipeline",
     "liveLabs": "Live virtual laboratories",
     "phetHtml5": "PhET Interactive Simulations (HTML5):",
+    "restart": "Restart",
     "reset": "Reset",
+    "fromStart": "From the start",
     "time": "Time:",
     "week": "Week",
     "week1": "Week 1",
@@ -1310,10 +1312,42 @@
     "groupLabel": "Site language",
     "heading": "Site language"
   },
-  "mtNotice": {
-    "text": "Headings, menus and scientific terms are translated by hand; the rest of the lecture text is machine-translated by Google Translate. Formulas and code are kept in their original form.",
-    "showOriginal": "Original (Uzbek)",
+  "coverageNotice": {
+    "text": "Menus, headings and scientific terms are translated; the main lecture text is currently available in Uzbek.",
     "dismiss": "Got it"
+  },
+  "sims": {
+    "stop": "Stop",
+    "continue": "Continue",
+    "pause": "Pause",
+    "resume": "Resume",
+    "auto": "Auto",
+    "back": "Back",
+    "nextDecay": "Next decay",
+    "flipCharge": "Charge sign",
+    "coreTemp": "Core temperature:",
+    "mlnK": "million K",
+    "bOut": "out of the screen",
+    "eDown": "downward",
+    "axisN": "Neutron number N",
+    "axisZ": "Atomic number Z",
+    "stableEnd": "Stable nucleus — the series is complete.",
+    "decay": "Decay:",
+    "stable": "stable",
+    "unitYear": "yr",
+    "unitDay": "d",
+    "unitHour": "h",
+    "fusionNote": "* The stage-1 energy includes the annihilation of the positron with an electron; part of it (≈ 0.26 MeV on average) is carried away by the neutrino. In the real Sun, stage 1 is extremely slow because it proceeds via the weak interaction (billions of years per proton on average); for clarity this model speeds up all reaction rates while preserving their relative order (stage 1 is the slowest) and their strong temperature dependence.",
+    "seriesNote": "α decay: A → A−4, Z → Z−2 (down-left on the chart). β⁻ decay: A is unchanged, Z → Z+1, N → N−1 (up-left, not right). Half-lives: NUBASE2020 data (rounded). Minor branchings of the series are not shown; for the thorium series the main (64%) β⁻ branch of Bi-212 is given.",
+    "lorentzTheory": "F = q(E + v × B). With B alone, the force is perpendicular to the velocity: it does no work, the speed stays constant and the particle moves in a circle. Adding E makes the circle drift along E × B with velocity v<sub>d</sub> = E/B.",
+    "lorentzNote": "The computation uses the Boris method, which conserves the speed exactly in a pure magnetic field. A positive charge circulates clockwise, a negative one counter-clockwise. A plain Euler method would turn the circle into a growing spiral."
+  },
+  "simsUi": {
+    "rTheory": "r theoretical = mv/|q|B",
+    "tTheory": "T theoretical = 2πm/|q|B",
+    "total": "Total: 4 ¹H → ⁴He + 2e⁺ + 2νₑ (≈ 26.7 MeV)",
+    "uSeries": "Uranium series (U-238 → Pb-206)",
+    "thSeries": "Thorium series (Th-232 → Pb-208)"
   },
   "app": {
     "pause": "Pause",
