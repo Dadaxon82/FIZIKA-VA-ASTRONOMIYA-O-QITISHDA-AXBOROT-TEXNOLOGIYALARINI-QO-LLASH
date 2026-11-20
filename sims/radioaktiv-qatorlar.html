@@ -52,13 +52,13 @@
     <h1 data-i18n="pages.sims_radioaktiv_qatorlar.h1">📜 Radioaktiv qatorlar: N–Z diagrammasida yemirilish zanjiri</h1>
     <div class="controls">
       <select id="series">
-        <option value="u238">Uran qatori (U-238 → Pb-206)</option>
-        <option value="th232">Toriy qatori (Th-232 → Pb-208)</option>
+        <option value="u238" data-i18n="simsUi.uSeries">Uran qatori (U-238 → Pb-206)</option>
+        <option value="th232" data-i18n="simsUi.thSeries">Toriy qatori (Th-232 → Pb-208)</option>
       </select>
-      <button id="prev">◀ Orqaga</button>
-      <button id="next">Keyingi yemirilish ▶</button>
+      <button id="prev" data-i18n="sims.back">◀ Orqaga</button>
+      <button id="next" data-i18n="sims.nextDecay">Keyingi yemirilish ▶</button>
       <button id="auto">⏵ Avto</button>
-      <button id="reset">↺ Boshidan</button>
+      <button id="reset" data-i18n="common.fromStart">↺ Boshidan</button>
     </div>
   </header>
   <main>
@@ -81,7 +81,7 @@
       <h2 data-i18n="pages.sims_radioaktiv_qatorlar.h2_6">Zanjir</h2>
       <table><tbody id="chain"></tbody></table>
 
-      <p class="note">α-yemirilish: A → A−4, Z → Z−2 (diagrammada chapga-pastga).
+      <p class="note" data-i18n-html="sims.seriesNote">α-yemirilish: A → A−4, Z → Z−2 (diagrammada chapga-pastga).
       β⁻-yemirilish: A o‘zgarmaydi, Z → Z+1, N → N−1 (o‘ngga emas, yuqoriga-chapga).
       Yarim yemirilish davrlari: NUBASE2020 ma’lumotlari (yaxlitlangan). Qatorlardagi kichik tarmoqlanishlar ko‘rsatilmagan;
       toriy qatorida Bi-212 ning asosiy (64%) β⁻ tarmog‘i berilgan.</p>
@@ -89,6 +89,11 @@
   </main>
 
   <script>
+    // I18N (../js/i18n.js): joriy tildagi matn; i18n yuklanmasa o'zbekcha zaxira.
+    const tr = (key, fallback, params) => (window.I18N ? window.I18N.t(key, params, fallback) : fallback);
+    const UNITS = { yil: ['sims.unitYear', 'yil'], kun: ['sims.unitDay', 'kun'], soat: ['sims.unitHour', 'soat'] };
+    const halfLife = text => text.replace(/\b(yil|kun|soat)\b/g, unit => tr(UNITS[unit][0], UNITS[unit][1]));
+
   (function () {
     const SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
     const sup = n => String(n).split('').map(c => SUP[c]).join('');
@@ -165,10 +170,10 @@
       for (let Z = b.zMin; Z <= b.zMax + 1; Z++) { const y = oy + (Z - b.zMin) * cell; ctx.beginPath(); ctx.moveTo(ox, y); ctx.lineTo(ox + cell * (b.nMax - b.nMin + 1), y); ctx.stroke(); }
       ctx.fillStyle = '#94A3B8'; ctx.font = '11px ui-monospace, monospace'; ctx.textAlign = 'center';
       for (let N = b.nMin; N <= b.nMax; N += 2) ctx.fillText(N, X(N), oy + cell * (b.zMax - b.zMin + 1) + 14);
-      ctx.fillText('Neytronlar soni N', W / 2, H - 6);
+      ctx.fillText(tr('sims.axisN', 'Neytronlar soni N'), W / 2, H - 6);
       ctx.textAlign = 'right';
       for (let Z = b.zMin; Z <= b.zMax; Z++) ctx.fillText(Z, ox - 6, Y(Z) + 4);
-      ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText('Zaryad soni Z', 0, 0); ctx.restore();
+      ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText(tr('sims.axisZ', 'Zaryad soni Z'), 0, 0); ctx.restore();
 
       // O‘tilgan yo‘l (strelkalar)
       for (let i = 0; i < chain.length - 1; i++) {
@@ -215,8 +220,8 @@
       document.getElementById('curInfo').innerHTML =
         `A = ${n[1]}, Z = ${n[2]}, N = ${n[1] - n[2]}<br>` +
         (n[3] === 'barqaror'
-          ? '<span class="s">Barqaror yadro — qator tugadi.</span>'
-          : `Yemirilish: <b class="${n[3] === 'α' ? 'a' : 'b'}">${n[3]}</b>, T½ = ${n[4]}`);
+          ? '<span class="s">' + tr('sims.stableEnd', 'Barqaror yadro — qator tugadi.') + '</span>'
+          : `${tr('sims.decay', 'Yemirilish:')} <b class="${n[3] === 'α' ? 'a' : 'b'}">${n[3]}</b>, T½ = ${halfLife(n[4])}`);
 
       let a = 0, bb = 0;
       for (let i = 0; i < idx; i++) chain[i][3] === 'α' ? a++ : bb++;
@@ -228,7 +233,7 @@
         `Z: ${chain[0][2]} − 2·${a} + ${bb} = ${chain[0][2] - 2 * a + bb} ${chain[0][2] - 2 * a + bb === n[2] ? '✓' : '✗'}`;
 
       document.getElementById('chain').innerHTML = chain.map((m, i) =>
-        `<tr class="${i < idx ? 'done' : i === idx ? 'now' : ''}"><td>${label(m)}</td><td class="${m[3] === 'α' ? 'a' : m[3] === 'β⁻' ? 'b' : 's'}">${m[3]}</td><td>${m[4]}</td></tr>`
+        `<tr class="${i < idx ? 'done' : i === idx ? 'now' : ''}"><td>${label(m)}</td><td class="${m[3] === 'α' ? 'a' : m[3] === 'β⁻' ? 'b' : 's'}">${m[3] === 'barqaror' ? tr('sims.stable', 'barqaror') : m[3]}</td><td>${halfLife(m[4])}</td></tr>`
       ).join('');
     }
 
@@ -240,7 +245,7 @@
 
     function stopAuto() {
       if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
-      document.getElementById('auto').textContent = '⏵ Avto';
+      document.getElementById('auto').textContent = '⏵ ' + tr('sims.auto', 'Avto');
     }
 
     document.getElementById('next').addEventListener('click', () => { stopAuto(); go(idx + 1); });
@@ -249,11 +254,15 @@
     document.getElementById('auto').addEventListener('click', () => {
       if (autoTimer) return stopAuto();
       if (idx >= chain.length - 1) go(0);
-      document.getElementById('auto').textContent = '⏸ Pauza';
+      document.getElementById('auto').textContent = '⏸ ' + tr('sims.pause', 'Pauza');
       autoTimer = setInterval(() => { if (idx >= chain.length - 1) stopAuto(); else go(idx + 1); }, 1200);
     });
     sel.addEventListener('change', () => { stopAuto(); chain = SERIES[sel.value]; go(0); anim = 1; });
     window.addEventListener('resize', resize);
+    document.addEventListener('i18n:change', () => {
+      renderPanel();
+      document.getElementById('auto').textContent = autoTimer ? '⏸ ' + tr('sims.pause', 'Pauza') : '⏵ ' + tr('sims.auto', 'Avto');
+    });
 
     let last = performance.now();
     function loop(now) {

@@ -15,8 +15,9 @@ Ishlash tamoyili
   dinamik o'zgartirishi mumkin (bunday matnlar JS ichida I18N.t() orqali
   tarjima qilinadi).
 * <head>: <meta name="i18n-page">, js/i18n-boot.js, css/i18n.css,
-  js/i18n.js va hreflang muqobil havolalari qo'shiladi; eski
-  js/translate.js / css/translate.css ulanishlari almashtiriladi.
+  js/i18n.js va hreflang muqobil havolalari qo'shiladi.
+* Asosiy matni hali tarjima qilinmagan sahifalarga
+  <html data-i18n-coverage="partial"> qo'yiladi.
 
 Skript idempotent — qayta ishga tushirish xavfsiz. Yangi sahifa yoki
 yangi lug'at kaliti qo'shilgandan so'ng:
@@ -37,10 +38,10 @@ SITE_URL = 'https://ilimziyo.uz/'
 LANGS = ('uz', 'ru', 'en')
 
 # Faqat JavaScript orqali ishlatiladigan kalitlar (DOM'da qidirilmaydi).
-JS_ONLY_PREFIXES = ('meta.', 'app.', 'switcher.', 'mtNotice.', 'independent.', 'glossaryUi.', 'ui.', '_meta.')
+JS_ONLY_PREFIXES = ('meta.', 'app.', 'switcher.', 'coverageNotice.', 'sims.', 'independent.', 'glossaryUi.', 'ui.', '_meta.')
 
 SKIP_TAGS = {'script', 'style', 'pre', 'code', 'textarea', 'svg', 'math', 'title', 'head', 'canvas', 'kbd', 'samp', 'var'}
-SKIP_CLASSES = {'katex', 'katex-display', 'code-block', 'code-content', 'prompt-output', 'notranslate'}
+SKIP_CLASSES = {'katex', 'katex-display', 'code-block', 'code-content', 'prompt-output'}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 TRANSLATABLE_ATTRS = ('placeholder', 'aria-label', 'title', 'alt')
 
@@ -196,10 +197,6 @@ def wire_head(source, path):
     prefix = '../' if rel.parts[0] == 'sims' else ''
     pid = page_id(path)
 
-    # Eski Google Translate ulanishlarini almashtirish
-    source = re.sub(r'\s*<link rel="stylesheet" href="(?:\.\./)?css/translate\.css">', '', source)
-    source = re.sub(r'<script src="(?:\.\./)?js/translate\.js"></script>', '', source)
-
     head_end = source.find('</head>')
     if head_end == -1:
         return source
@@ -238,13 +235,12 @@ def process(path, lookup):
     source = path.read_text(encoding='utf-8')
     original = source
     source = wire_head(source, path)
-    if path.name == 'index.html' and 'data-i18n-mt=' not in source:
-        source = source.replace('<html lang="uz">', '<html lang="uz" data-i18n-mt="off">', 1)
-    if path.name == 'glossariy.html':
-        # Lug'atdagi o'zbekcha va inglizcha atamalar — ma'lumot; mashina tarjimasi ularni o'zgartirmasin.
-        source = re.sub(r'<tr><td><strong>', '<tr><td translate="no"><strong>', source)
-        source = source.replace('<td lang="en">', '<td lang="en" translate="no">')
-        source = source.replace('<td class="refs">', '<td class="refs" translate="no">')
+    # Asosiy matni to'liq tarjima qilingan sahifalar: bosh sahifa va simulyatorlar.
+    # Qolganlarida RU/EN tanlanganda "asosiy matn o'zbek tilida" bildirishnomasi chiqadi.
+    full = path.name == 'index.html' or path.parent.name == 'sims'
+    source = source.replace(' data-i18n-mt="off"', '')
+    if not full and 'data-i18n-coverage=' not in source:
+        source = re.sub(r'<html lang="uz"', '<html lang="uz" data-i18n-coverage="partial"', source, count=1)
     marker = Marker(source, lookup)
     marker.feed(source)
     marker.close()

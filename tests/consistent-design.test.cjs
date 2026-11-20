@@ -22,14 +22,22 @@ test("Home sections have identical three-column card structures",()=>{
  }
 });
 test("Independent detail page follows main theme colors and card styling",()=>{
- const main=read("styles.css");
- const independent=read("css/mustaqil-public.css");
- for(const token of ["#060b16","#22d3ee","#22304a","#93c5fd"]) {
-   assert.ok(main.includes(token),"main missing "+token);
-   assert.ok(independent.includes(token),"independent missing "+token);
+ // Sayt yagona yorug' (light) akademik mavzuga o'tgan: asosiy tokenlar
+ // styles.css (bosh sahifa) va css/main.css (ichki sahifalar)da bir xil.
+ const main=read("styles.css").toUpperCase();
+ const shared=read("css/main.css").toUpperCase();
+ for(const token of ["#F6F7F9","#11182B","#1C4E9E"]) {
+   assert.ok(main.includes(token),"styles.css missing "+token);
+   assert.ok(shared.includes(token),"css/main.css missing "+token);
  }
+ assert.match(read("styles.css"),/color-scheme:\s*light/);
+ const page=read("mustaqil.html");
+ for(const css of ["css/main.css","css/components.css","css/mustaqil-public.css"])
+   assert.ok(page.includes('href="'+css+'"'),"mustaqil.html missing "+css);
+ const independent=read("css/mustaqil-public.css");
  assert.match(independent,/\.task-card:hover/);
- assert.match(independent,/color-scheme:dark/);
+ assert.match(independent,/color-scheme:\s*light/);
+ assert.doesNotMatch(independent,/color-scheme:\s*dark/);
 });
 test("HEMIS-only grading preserved, lessons unchanged",()=>{
  const home=read("index.html"),tasks=read("mustaqil.html");

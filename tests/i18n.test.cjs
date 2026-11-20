@@ -82,8 +82,17 @@ test("Fan nomi akademik standartga mos tarjima qilingan", () => {
   assert.match(dicts.en["home.hero.title"], /Application of Information Technologies in Teaching Physics and Astronomy/);
 });
 
-test("Bosh sahifa to'liq qo'lda tarjima qilingan (mashina tarjimasi o'chiq)", () => {
-  assert.match(read("index.html"), /<html lang="uz" data-i18n-mt="off">/);
+test("Faqat o'z i18n tizimi: Google Translate yo'q, qamrov belgilari to'g'ri", () => {
+  const pages = fs.readdirSync(root).filter((f) => f.endsWith(".html"))
+    .concat(fs.readdirSync(path.join(root, "sims")).filter((f) => f.endsWith(".html")).map((f) => "sims/" + f));
+  for (const p of pages) {
+    const html = read(p);
+    assert.doesNotMatch(html, /translate\.google|googtrans|google_translate_element|js\/translate\.js|data-i18n-mt/, p);
+    const partial = /<html[^>]*data-i18n-coverage="partial"/.test(html);
+    if (p === "index.html" || p.startsWith("sims/")) assert.ok(!partial, p + " to'liq tarjima qilingan bo'lishi kerak");
+  }
+  assert.doesNotMatch(read("js/i18n.js"), /translate\.google|TranslateElement/);
+  assert.ok(!fs.existsSync(path.join(root, "js/translate.js")));
   const engine = read("js/i18n.js");
   assert.match(engine, /storageKey: 'site_lang'/);
   assert.match(engine, /defaultLang: 'uz'/);

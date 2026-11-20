@@ -1,7 +1,6 @@
 /* ==========================================================================
-   I18N.CSS — 3 tilli (UZ / RU / EN) til almashtirgich, mashina tarjimasi
-   haqidagi bildirishnoma va Google Website Translator'ning standart
-   elementlarini yashirish uchun uslublar.
+   I18N.CSS — 3 tilli (UZ / RU / EN) til almashtirgich va qisman tarjima
+   qilingan sahifalar uchun bildirishnoma uslublari.
 
    Sayt uchta sarlavha tizimiga ega: index.html (.site-header .navbar),
    ma'ruza/laboratoriya sahifalari (.nav-actions + #mobile-drawer) va
@@ -116,6 +115,13 @@ html body {
   backdrop-filter: blur(8px);
 }
 
+.i18n-switcher--floating.i18n-switcher--in-header {
+  position: static;
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  box-shadow: none;
+}
+
 /* --------------------------------------------------------------------------
    Menyu / drawer ichidagi to'liq ko'rinish
    -------------------------------------------------------------------------- */
@@ -194,9 +200,9 @@ html body {
 }
 
 /* --------------------------------------------------------------------------
-   Mashina tarjimasi haqida bildirishnoma
+   "Asosiy matn o'zbek tilida" bildirishnomasi (qisman tarjima qilingan sahifalar)
    -------------------------------------------------------------------------- */
-.i18n-mt-notice {
+.i18n-notice {
   position: fixed;
   left: 16px;
   right: 16px;
@@ -206,10 +212,9 @@ html body {
   display: flex;
   align-items: center;
   gap: 14px;
-  flex-wrap: wrap;
-  max-width: 860px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-radius: 14px;
   background: var(--i18n-surface);
   border: 1px solid var(--i18n-border);
@@ -220,19 +225,17 @@ html body {
   line-height: 1.5;
 }
 
-.i18n-mt-notice__text {
-  flex: 1 1 360px;
+.i18n-notice[hidden] {
+  display: none;
 }
 
-.i18n-mt-notice__actions {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
-  flex-wrap: wrap;
+.i18n-notice__text {
+  flex: 1 1 auto;
 }
 
-.i18n-mt-notice__btn {
+.i18n-notice__btn {
   appearance: none;
+  flex-shrink: 0;
   border: 1px solid var(--i18n-accent);
   background: var(--i18n-accent);
   color: #FFFFFF;
@@ -244,20 +247,14 @@ html body {
   cursor: pointer;
 }
 
-.i18n-mt-notice__btn--ghost {
-  background: transparent;
-  color: var(--i18n-accent);
-}
-
-.i18n-mt-notice__btn:focus-visible {
+.i18n-notice__btn:focus-visible {
   outline: none;
   box-shadow: var(--i18n-focus);
 }
 
 @media (max-width: 600px) {
-  .i18n-mt-notice { left: 10px; right: 10px; bottom: 10px; padding: 12px 14px; font-size: 0.8rem; }
-  .i18n-mt-notice__actions { width: 100%; }
-  .i18n-mt-notice__btn { flex: 1; }
+  .i18n-notice { left: 10px; right: 10px; bottom: 10px; padding: 12px 14px; font-size: 0.8rem; flex-wrap: wrap; }
+  .i18n-notice__btn { width: 100%; }
 }
 
 /* Tuzatish rejimi (?i18n-debug=1): tarjimasi yo'q kalitlarni ajratib ko'rsatish. */
@@ -266,38 +263,9 @@ html body {
   outline-offset: 2px;
 }
 
-/* --------------------------------------------------------------------------
-   Google Website Translator'ning standart paneli, ajratishlari va maslahat
-   oynalari yashiriladi — o'rniga yuqoridagi .i18n-switcher ishlatiladi.
-   -------------------------------------------------------------------------- */
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-iframe.skiptranslate,
-body > .skiptranslate,
-.goog-te-balloon-frame,
-#goog-gt-tt,
-.goog-tooltip,
-.goog-tooltip:hover,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-#google_translate_element,
-.goog-te-gadget-icon {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-body {
-  top: 0 !important;
-}
-
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-
 @media print {
   .i18n-switcher,
-  .i18n-mt-notice {
+  .i18n-notice {
     display: none !important;
   }
 }

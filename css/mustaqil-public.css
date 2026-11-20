@@ -133,8 +133,14 @@
    umumiy tizimdan keladi — bu yerda faqat <details>/<summary> interaktivligi
    uchun kerak bo'lgan qo'shimcha joylashuv qoidalari qoladi. */
 .task-card {
+  color-scheme: light;
   padding: 0;
   overflow: hidden;
+}
+
+.task-card:hover,
+.task-card[open] {
+  border-color: var(--border-hover);
 }
 
 .task-card summary {
