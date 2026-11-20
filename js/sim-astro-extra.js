@@ -261,7 +261,7 @@ if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/
         ctx.fillStyle = 'rgba(244,63,94,0.9)'; ctx.font = 'bold 14px system-ui, sans-serif'; ctx.textAlign = 'center';
         ctx.fillText(__t("💥 O‘ta yangi yulduz"), x - 60, y + 30);
       }
-      stage.textContent = cur.label + (cur.t > 0 ? ` · yoshi ≈ ${fmtExp(cur.t)} yil` : '');
+      stage.textContent = cur.label + (cur.t > 0 ? __t(" · yoshi ≈ {0} yil", [fmtExp(cur.t)]) : '');
     }
 
     function updateInfo() {

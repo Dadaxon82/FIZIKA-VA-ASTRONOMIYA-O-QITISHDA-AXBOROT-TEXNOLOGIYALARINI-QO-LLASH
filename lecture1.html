@@ -29,7 +29,7 @@
   </script>
   <script>
   /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-  function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '−').replace('.', ','); }
+  function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '−').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
   function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
   function uzExp(x, d) { if (!isFinite(x)) return '∞'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '−').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '⁻').replace(/\d/g, function (c) { return '⁰¹²³⁴⁵⁶⁷⁸⁹'[c]; }); return m + '·10' + sup; }
   </script>

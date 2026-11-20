@@ -267,7 +267,7 @@ __t("Siz fizika o‘qitishda AI vositalaridan foydalanish bo‘yicha tyutorsiz. 
     function update() {
       let total = 0;
       selects.forEach(s => { total += parseInt(s.value, 10) || 0; });
-      totalEl.textContent = `${total} / 100 ball`;
+      totalEl.textContent = __t("{0} / 100 ball", [total]);
       if (gradeEl) {
         const g = grade(total);
         gradeEl.textContent = g.text;

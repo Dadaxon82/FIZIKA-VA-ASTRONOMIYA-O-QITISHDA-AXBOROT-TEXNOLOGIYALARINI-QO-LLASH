@@ -1,6 +1,6 @@
 if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -206,7 +206,7 @@ __t("Siz fizika bo‘yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik
       hud('vel').textContent = uzFix(v, 2) + ' m/s';
       const st = hud('status');
       if (f.state === 'bottom') { st.textContent = __t("Qiya pastiga yetdi (t = {0} s)", [uzFix(t, 2)]); st.style.color = '#38bdf8'; }
-      else if (!willSlip) { st.textContent = `Tinch: tan α = ${uzFix(Math.tan(alpha), 2)} ≤ μ (statik ishqalanish)`; st.style.color = '#fbbf24'; }
+      else if (!willSlip) { st.textContent = __t("Tinch: tan α = {0} ≤ μ (statik ishqalanish)", [uzFix(Math.tan(alpha), 2)]); st.style.color = '#fbbf24'; }
       else if (running || v > 0) { st.textContent = __t("Sirpanmoqda (kinetik ishqalanish)"); st.style.color = '#10b981'; }
       else { st.textContent = __t("Sirpanishga tayyor: tan α = {0} > μ", [uzFix(Math.tan(alpha), 2)]); st.style.color = '#10b981'; }
     }

@@ -246,9 +246,17 @@
    "Лаб. 9: интерактивное управление — ползунки, кнопки и HUD телеметрии",
    "Lab 9: Interactive Controls — Sliders, Buttons and a Telemetry HUD"
   ],
+  "Asosiy AI Vosita:": [
+   "Основной ИИ-инструмент:",
+   "Main AI tool:"
+  ],
   "Bajarildi (100%)": [
    "Выполнено (100%)",
    "Completed (100%)"
+  ],
+  "Ball": [
+   "балл.",
+   "pts"
   ],
   "Canvas Dvigatel": [
    "Движок на Canvas",
@@ -262,12 +270,20 @@
    "Журнал проекта скачан как отчёт в Markdown!",
    "The project log was downloaded as a Markdown report!"
   ],
+  "{0}% ({1}/15 Lab Bajarildi - {2}/{3} Ball)": [
+   "{0}% (выполнено лаб.: {1}/15 — {2}/{3} балл.)",
+   "{0}% ({1}/15 labs done — {2}/{3} pts)"
+  ],
   "| № | Laboratoriya Bosqichi | AI Vosita | Holati | Ball |\n": [
    "| № | Лабораторный этап | ИИ-инструмент | Статус | Балл |\n",
    "| № | Lab stage | AI tool | Status | Points |\n"
   ]
  },
  "js/sim-astro-extra.js": {
+  " · yoshi ≈ {0} yil": [
+   " · возраст ≈ {0} лет",
+   " · age ≈ {0} yr"
+  ],
   "<div style=\"color:#66708A\">Baho fazaga yig‘ilgan egri chiziqning eng xira qismi (faza bo‘yicha 1/50 bin) bo‘yicha olinadi, shuning uchun u faqat to‘g‘ri davrda ma’noli.</div>": [
    "<div style=\"color:#66708A\">Оценка берётся по самой тусклой части свёрнутой по фазе кривой (бин 1/50 по фазе), поэтому она имеет смысл только при правильном периоде.</div>",
    "<div style=\"color:#66708A\">The estimate comes from the faintest part of the phase-folded curve (a 1/50 phase bin), so it only makes sense at the correct period.</div>"
@@ -605,6 +621,18 @@
   "Yupiter": [
    "Юпитер",
    "Jupiter"
+  ],
+  "mln km": [
+   "млн км",
+   "million km"
+  ],
+  "{0} kun": [
+   "{0} сут",
+   "{0} d"
+  ],
+  "{0} yil": [
+   "{0} лет",
+   "{0} yr"
   ],
   "⏸ Pauza": [
    "⏸ Пауза",
@@ -1014,6 +1042,14 @@
   ]
  },
  "js/sim-lab1-pipeline.js": {
+  " ball": [
+   " балл.",
+   " pts"
+  ],
+  "$$y(t) = v_0 t + \\frac{1}{2}g t^2, \\quad v(t) = v_0 + g t, \\quad F_{\\text{qarshilik}} = -k v$$": [
+   "$$y(t) = v_0 t + \\frac{1}{2}g t^2, \\quad v(t) = v_0 + g t, \\quad F_{\\text{сопр}} = -k v$$",
+   "$$y(t) = v_0 t + \\frac{1}{2}g t^2, \\quad v(t) = v_0 + g t, \\quad F_{\\text{drag}} = -k v$$"
+  ],
   "<div style=\"margin-bottom:10px;\">Natija: {0} / 3 to‘g‘ri javob</div>": [
    "<div style=\"margin-bottom:10px;\">Результат: {0} / 3 правильных ответа</div>",
    "<div style=\"margin-bottom:10px;\">Result: {0} / 3 correct answers</div>"
@@ -1228,6 +1264,10 @@
    "Марс",
    "Mars"
   ],
+  "Masshtab: 30 s ssenariy = 1 aylanish (T = {0} yil)": [
+   "Масштаб: 30 с сценария = 1 оборот (T = {0} лет)",
+   "Scale: 30 s of script = 1 orbit (T = {0} yr)"
+  ],
   "NASA JPL Horizons’dan tanlagan jismingiz uchun $a$, $e$ va $T$ ni oling va dastgohdagi qiymatlar bilan solishtiring. Ssenariyni SSML bilan belgilab (4-bo‘lim), TTS vositasida ovozga aylantiring va segment chegaralarini audio vaqtiga moslang.": [
    "Получите из NASA JPL Horizons для выбранного тела $a$, $e$ и $T$ и сравните со значениями стенда. Разметьте сценарий SSML (раздел 4), озвучьте его в TTS-инструменте и подгоните границы сегментов под время аудио.",
    "Get $a$, $e$ and $T$ for your chosen body from NASA JPL Horizons and compare them with the bench values. Mark up the script with SSML (Section 4), voice it in a TTS tool and align the segment boundaries with the audio timing."
@@ -1283,6 +1323,14 @@
   "orbital elementlar, SSML, ssenariy segmentlari va vaqt belgilari": [
    "орбитальные элементы, SSML, сегменты сценария и временные метки",
    "orbital elements, SSML, script segments and timestamps"
+  ],
+  "r = {0} AU   v = {1} km/s   perigeliydan: {2} yil": [
+   "r = {0} а. е.   v = {1} км/с   от перигелия: {2} лет",
+   "r = {0} AU   v = {1} km/s   since perihelion: {2} yr"
+  ],
+  "{0} yil": [
+   "{0} лет",
+   "{0} yr"
   ],
   "“Animatsiya va ovoz ijrosini boshlash uchun tugmani bosing.”": [
    "«Нажмите кнопку, чтобы начать воспроизведение анимации и голоса.»",
@@ -1417,6 +1465,10 @@
   "transkripsiya xatolarini tahrirlash, konspektni LMS topshirig‘iga biriktirish, rubrika tuzish": [
    "редактирование ошибок транскрипции, прикрепление конспекта к заданию LMS, составление рубрики",
    "editing transcription errors, attaching the notes to an LMS assignment, building a rubric"
+  ],
+  "{0} / 100 ball — {1}": [
+   "{0} / 100 баллов — {1}",
+   "{0} / 100 points — {1}"
   ],
   "{0}-mashg‘ulot": [
    "Занятие {0}",
@@ -1564,6 +1616,10 @@
    "затухающие колебания, beta = b/(2m), omega_d, экспоненциальное затухание амплитуды, алгоритм Эйлера–Кромера",
    "damped oscillation, beta = b/(2m), omega_d, exponential amplitude decay, the Euler–Cromer algorithm"
   ],
+  "{0} / 100 ball": [
+   "{0} / 100 баллов",
+   "{0} / 100 points"
+  ],
   "{0} / 100 ball ({1}/4 to‘g‘ri)": [
    "{0} / 100 баллов ({1}/4 верно)",
    "{0} / 100 points ({1}/4 correct)"
@@ -1694,6 +1750,10 @@
    "поток данных между инструментами, аудит кода Эйлера–Кромера, дидактическая роль ASR и TTS",
    "the data flow between tools, auditing the Euler–Cromer code, the didactic role of ASR and TTS"
   ],
+  "{0} / 100 ball": [
+   "{0} / 100 баллов",
+   "{0} / 100 points"
+  ],
   "{0} / 100 ball ({1}/4 to‘g‘ri)": [
    "{0} / 100 баллов ({1}/4 верно)",
    "{0} / 100 points ({1}/4 correct)"
@@ -1783,6 +1843,10 @@
   "xatolik tartibi p, log-log konvergentsiya grafigi, energiya dreyfi va simplektik usullar": [
    "порядок ошибки p, log-log график сходимости, дрейф энергии и симплектические методы",
    "error order p, the log-log convergence plot, energy drift and symplectic methods"
+  ],
+  "{0} / 100 ball": [
+   "{0} / 100 баллов",
+   "{0} / 100 points"
   ],
   "{0} / 100 ball ({1}/4 to‘g‘ri)": [
    "{0} / 100 баллов ({1}/4 верно)",
@@ -1890,6 +1954,14 @@
    "открытая орбита (E ≥ 0)",
    "open orbit (E ≥ 0)"
   ],
+  "yopiq orbita, a = {0}": [
+   "замкнутая орбита, a = {0}",
+   "closed orbit, a = {0}"
+  ],
+  "{0} / 100 ball": [
+   "{0} / 100 баллов",
+   "{0} / 100 points"
+  ],
   "{0} / 100 ball ({1}/4 to‘g‘ri)": [
    "{0} / 100 баллов ({1}/4 верно)",
    "{0} / 100 points ({1}/4 correct)"
@@ -1983,6 +2055,10 @@
   "Siz fizika bo‘yicha Sokratik konsultantsiz. Men 6-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nMasala: massasi m bo‘lgan jism alpha burchakli qiya tekislikda, ishqalanish koeffitsiyenti mu.\nIltimos:\n1. FBD’ni men o‘zim chizishim uchun tayyor javob bermasdan yo‘naltiruvchi savollar bering.\n2. Men yuklagan diagrammadagi xatolarni topishimga yordam bering, lekin to‘g‘ri variantni darhol aytmang.\n3. Mening darajamga mos bitta qo‘shimcha masala taklif qiling.": [
    "Вы — сократический консультант по физике. Я набрал {0}/100 баллов в диагностическом тесте лабораторной работы 6 и попал в кластер «{1}».\nОсновные темы: {2}.\nЗадача: тело массой m на наклонной плоскости с углом alpha, коэффициент трения mu.\nПожалуйста:\n1. Не давайте готового ответа — задайте наводящие вопросы, чтобы я сам нарисовал FBD.\n2. Помогите мне найти ошибки в загруженной мной диаграмме, но не называйте сразу правильный вариант.\n3. Предложите одну дополнительную задачу, подходящую моему уровню.",
    "You are a Socratic physics consultant. I scored {0}/100 on the Lab 6 diagnostic test and was placed in cluster \"{1}\".\nMain topics: {2}.\nProblem: a body of mass m on an incline at angle alpha, friction coefficient mu.\nPlease:\n1. Do not give a ready answer — ask guiding questions so I can draw the FBD myself.\n2. Help me find the errors in the diagram I upload, but do not tell me the correct version straight away.\n3. Suggest one extra problem suited to my level."
+  ],
+  "Tinch: tan α = {0} ≤ μ (statik ishqalanish)": [
+   "Покой: tan α = {0} ≤ μ (статическое трение)",
+   "At rest: tan α = {0} ≤ μ (static friction)"
   ],
   "Tizimga burchak ostida tortuvchi tashqi kuch qo‘shilgan holat uchun FBD va tenglamalarni tuzing ($N$ o‘zgarishiga e’tibor bering). 4-bo‘limdagi psevdokod asosida kod yozdirib, uni analitik yechim $x(t) = \\tfrac{1}{2} a t^2$ bilan test qiling va $\\mu_s \\neq \\mu_k$ holatiga kengaytiring.": [
    "Составьте FBD и уравнения для случая, когда к системе добавлена внешняя сила, тянущая под углом (обратите внимание на изменение $N$). По псевдокоду раздела 4 попросите написать код, протестируйте его аналитическим решением $x(t) = \\tfrac{1}{2} a t^2$ и расширьте на случай $\\mu_s \\neq \\mu_k$.",
@@ -2539,6 +2615,10 @@
   "Vis-Viva tenglamasi: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, bu yerda katta yarim o‘q $a$ ellipsning o‘lchamini, ekssentrisitet $e$ shaklini belgilaydi. Kepler 3-qonuniga ko‘ra aylanish davri $T^2 \\propto a^3$, maydonlar tezligi esa Kepler 2-qonuniga ko‘ra doimiy: $\\frac{dA}{dt} = \\text{const}$.": [
    "Уравнение Vis-Viva: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, где большая полуось $a$ задаёт размер эллипса, а эксцентриситет $e$ — его форму. По 3-му закону Кеплера период обращения $T^2 \\propto a^3$, а секторная скорость по 2-му закону Кеплера постоянна: $\\frac{dA}{dt} = \\text{const}$.",
    "The vis-viva equation: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, where the semi-major axis $a$ sets the size of the ellipse and the eccentricity $e$ its shape. By Kepler’s 3rd law the orbital period is $T^2 \\propto a^3$, and by his 2nd law the areal velocity is constant: $\\frac{dA}{dt} = \\text{const}$."
+  ],
+  "r = {0} AU   v = {1} AU/yil": [
+   "r = {0} а. е.   v = {1} а. е./год",
+   "r = {0} AU   v = {1} AU/yr"
   ],
   "⏳ Otter.ai orqali audio transkripsiya qilinmoqda...": [
    "⏳ Аудиотранскрипция через Otter.ai...",
@@ -3683,6 +3763,10 @@
   "Xato! Havo qarshiligi vektor bo‘lib, o‘qlarga v_x/|v| va v_y/|v| nisbatda proyeksiyalanadi.": [
    "Неверно! Сопротивление воздуха — вектор, который проецируется на оси в отношении v_x/|v| и v_y/|v|.",
    "Incorrect! Air drag is a vector that projects onto the axes in the ratios v_x/|v| and v_y/|v|."
+  ],
+  "{0}-Savol:": [
+   "Вопрос {0}:",
+   "Question {0}:"
   ]
  },
  "lab12.html": {

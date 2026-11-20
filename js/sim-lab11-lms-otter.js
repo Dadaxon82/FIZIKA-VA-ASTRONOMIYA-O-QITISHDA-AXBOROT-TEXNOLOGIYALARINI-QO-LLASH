@@ -1,6 +1,6 @@
 if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -345,7 +345,7 @@ __t("[Talaba 1, 00:00] {0}\n\n— ASR sifat tahlili (asl matn bilan solishtirish
     const grade = total >= 86 ? __t("A’lo (5)") : total >= 71 ? __t("Yaxshi (4)") : total >= 55 ? __t("Qoniqarli (3)") : __t("Qoniqarsiz (2)");
     const out = document.getElementById('rubric11-total');
     if (out) {
-      out.textContent = `${total} / 100 ball — ${grade}`;
+      out.textContent = __t("{0} / 100 ball — {1}", [total, grade]);
       out.style.color = total >= 86 ? 'var(--accent-emerald)' : total >= 71 ? 'var(--accent-cyan)' : total >= 55 ? 'var(--accent-amber)' : '#f43f5e';
     }
   };

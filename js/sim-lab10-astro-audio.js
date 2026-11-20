@@ -1,6 +1,6 @@
 if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -209,7 +209,7 @@ __t("Sen astronomiya va ilmiy-ommabop kontent bo‘yicha Sokratik ustozsan. Men 
       const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
       set('lab10-val-a', `${b.a < 2 ? uzFix(b.a, 3) : uzFix(b.a, 2)} AU`);
       set('lab10-val-e', uzFix(b.e, 4));
-      set('lab10-val-t', `${b.T < 2 ? uzFix(b.T, 3) : uzFix(b.T, 1)} yil`);
+      set('lab10-val-t', __t("{0} yil", [b.T < 2 ? uzFix(b.T, 3) : uzFix(b.T, 1)]));
       set('lab10-body-desc', b.desc);
       if (titleEl) titleEl.textContent = b.name;
     }
@@ -302,9 +302,9 @@ __t("Sen astronomiya va ilmiy-ommabop kontent bo‘yicha Sokratik ustozsan. Men 
       ctx.font = '12px monospace';
       ctx.fillStyle = '#e2e8f0';
       const years = ((((t - PERI_AT) / DURATION) % 1 + 1) % 1) * b.T;
-      ctx.fillText(`r = ${uzFix(s.r, 3)} AU   v = ${uzFix(s.v, 2)} km/s   perigeliydan: ${uzFix(years, b.T < 2 ? 3 : 1)} yil`, 12, 20);
+      ctx.fillText(__t("r = {0} AU   v = {1} km/s   perigeliydan: {2} yil", [uzFix(s.r, 3), uzFix(s.v, 2), uzFix(years, b.T < 2 ? 3 : 1)]), 12, 20);
       ctx.fillStyle = '#94a3b8';
-      ctx.fillText(`Masshtab: 30 s ssenariy = 1 aylanish (T = ${String(b.T).replace('.', ',')} yil)`, 12, Hc - 10);
+      ctx.fillText(__t("Masshtab: 30 s ssenariy = 1 aylanish (T = {0} yil)", [uzFix(b.T, String(b.T).split(".")[1] ? String(b.T).split(".")[1].length : 0)]), 12, Hc - 10);
 
       drawTimeline();
     }

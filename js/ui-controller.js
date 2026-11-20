@@ -80,7 +80,7 @@ window.checkDiagnosticQuiz = function() {
 
     htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
       <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#047857' : '#E11D48'};">
-        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? __t("To‘g‘ri!") : __t("Xato!")}
+        ${isCorrect ? '✅' : '❌'} ${__t("{0}-Savol:", [q.id])} ${isCorrect ? __t("To‘g‘ri!") : __t("Xato!")}
       </div>
       <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${opt.note}</div>
     </div>`;
@@ -183,7 +183,7 @@ window.checkDiagnostic2Quiz = function() {
 
     htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
       <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#047857' : '#E11D48'};">
-        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? __t("To‘g‘ri!") : __t("Xato!")}
+        ${isCorrect ? '✅' : '❌'} ${__t("{0}-Savol:", [q.id])} ${isCorrect ? __t("To‘g‘ri!") : __t("Xato!")}
       </div>
       <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${opt.note}</div>
     </div>`;

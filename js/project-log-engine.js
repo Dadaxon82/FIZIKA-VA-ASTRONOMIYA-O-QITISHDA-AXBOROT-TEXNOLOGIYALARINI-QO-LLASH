@@ -60,11 +60,11 @@ window.renderProjectLog = function() {
         <span style="font-size:1.2rem;">${isDone ? '✅' : '⚪'}</span>
         <div>
           <div style="font-weight:600; font-size:0.92rem; color:${isDone ? '#047857' : '#11182B'}; text-decoration:${isDone ? 'line-through' : 'none'};">${lab.title}</div>
-          <div style="font-size:0.8rem; color:#66708A;">Asosiy AI Vosita: <strong style="color:#1C4E9E;">${lab.tool}</strong></div>
+          <div style="font-size:0.8rem; color:#66708A;">${__t("Asosiy AI Vosita:")} <strong style="color:#1C4E9E;">${lab.tool}</strong></div>
         </div>
       </div>
       <div style="display:flex; align-items:center; gap:10px;">
-        <span class="badge ${isDone ? 'badge-emerald' : 'badge-cyan'}" style="font-size:0.75rem;">+${lab.weight} Ball</span>
+        <span class="badge ${isDone ? 'badge-emerald' : 'badge-cyan'}" style="font-size:0.75rem;">+${lab.weight} ${__t("Ball")}</span>
       </div>
     `;
     listEl.appendChild(item);
@@ -72,7 +72,7 @@ window.renderProjectLog = function() {
 
   const pct = Math.round((earnedScore / totalScore) * 100);
   if (progressFill) progressFill.style.width = `${pct}%`;
-  if (progressText) progressText.textContent = `${pct}% (${completedLabs.length}/15 Lab Bajarildi - ${earnedScore}/${totalScore} Ball)`;
+  if (progressText) progressText.textContent = __t("{0}% ({1}/15 Lab Bajarildi - {2}/{3} Ball)", [pct, completedLabs.length, earnedScore, totalScore]);
   if (badgeCount) badgeCount.textContent = `${completedLabs.length} / 15`;
 };
 

@@ -44,6 +44,18 @@ def main():
     js_path = os.path.join(CONTENT, '_js.json')
     if os.path.exists(js_path):
         js_dict = json.load(open(js_path, encoding='utf-8'))
+    math_path = os.path.join(CONTENT, '_math.json')
+    math_text = json.load(open(math_path, encoding='utf-8')) if os.path.exists(math_path) else {}
+
+    def fix_math(text, lang):
+        # LaTeX ichidagi o'zbekcha \text{...} yozuvlarini tarjima qilish
+        if not math_text or '\\' not in text:
+            return text
+        idx = LANGS.index(lang)
+        return re.sub(r'\\(text|mathrm|textbf|operatorname)\{([^{}]*)\}',
+                      lambda m: '\\' + m.group(1) + '{' + (math_text[m.group(2)][idx] if m.group(2) in math_text else m.group(2)) + '}',
+                      text)
+
     pages, digest = [], hashlib.sha1()
     problems = 0
     for name in sorted(os.listdir(CONTENT)):
@@ -62,11 +74,13 @@ def main():
                     problems += 1
                     print(f'  tarjima yo\'q: {pid} [{lang}] {u["s"][:70]}', file=sys.stderr)
                     continue
+                tr = fix_math(tr, lang)
                 if tr != u['s']:
                     h[u['k']] = tr
             for js in scripts:
                 for src, pair in js_dict.get(js, {}).items():
                     tr = pair[LANGS.index(lang)]
+                    tr = fix_math(tr, lang) if tr else tr
                     if tr and tr != src:
                         s[src] = tr
             img = {}
