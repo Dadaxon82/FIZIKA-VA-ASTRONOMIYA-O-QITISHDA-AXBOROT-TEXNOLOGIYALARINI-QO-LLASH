@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -440,15 +440,15 @@ Har bir qadamda fizik birliklarni yoz.</pre>
       Object.keys(key).forEach(q => {
         const sel = document.querySelector('input[name="' + q + '"]:checked');
         const fb = document.getElementById('fb-' + q);
-        if (!sel) { fb.style.color = '#A16207'; fb.textContent = 'Javob tanlanmagan.'; return; }
-        if (sel.value === key[q]) { score++; fb.style.color = '#047857'; fb.textContent = 'To‘g‘ri. ' + explain[q]; }
-        else { fb.style.color = '#DC2626'; fb.textContent = 'Noto‘g‘ri. ' + explain[q]; }
+        if (!sel) { fb.style.color = '#A16207'; fb.textContent = __t("Javob tanlanmagan."); return; }
+        if (sel.value === key[q]) { score++; fb.style.color = '#047857'; fb.textContent = __t("To‘g‘ri. ") + explain[q]; }
+        else { fb.style.color = '#DC2626'; fb.textContent = __t("Noto‘g‘ri. ") + explain[q]; }
       });
       const res = document.getElementById('quiz-result');
       const pct = Math.round(score / total * 100);
       res.style.display = 'block';
       res.style.color = pct >= 86 ? '#047857' : pct >= 55 ? '#A16207' : '#DC2626';
-      res.textContent = 'Natija: ' + score + '/' + total + ' (' + pct + ' %).';
+      res.textContent = __t("Natija: ") + score + '/' + total + ' (' + pct + ' %).';
     };
   </script>
   <script src="js/sim-astro-extra.js"></script>

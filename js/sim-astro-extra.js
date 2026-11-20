@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * Qo‘shimcha astronomiya mavzulari (A1–A3) uchun interaktiv modellar.
  *  A1 — Gertsshprung–Rassel diagrammasi va yulduz evolyutsiyasining sxematik treki
@@ -90,18 +91,18 @@
     const T_SUN = 5772;
     // Taxminiy qiymatlar (T — effektiv harorat, K; L — Quyosh yorqinligi birligida)
     const STARS = [
-      { n: 'Quyosh', T: 5772, L: 1 },
-      { n: 'Sirius A', T: 9940, L: 25.4 },
-      { n: 'Vega', T: 9600, L: 40 },
-      { n: 'Arktur', T: 4290, L: 170 },
-      { n: 'Aldebaran', T: 3900, L: 440 },
-      { n: 'Betelgeyze', T: 3600, L: 1.0e5 },
-      { n: 'Rigel', T: 12100, L: 1.2e5 },
-      { n: 'Qutb yulduzi', T: 6000, L: 1260 },
-      { n: 'Proksima Sentavra', T: 3040, L: 0.0017 },
-      { n: 'Barnard yulduzi', T: 3130, L: 0.0035 },
-      { n: 'Sirius B', T: 25000, L: 0.056 },
-      { n: 'Prosion B', T: 7740, L: 0.00049 }
+      { n: __t("Quyosh"), T: 5772, L: 1 },
+      { n: __t("Sirius A"), T: 9940, L: 25.4 },
+      { n: __t("Vega"), T: 9600, L: 40 },
+      { n: __t("Arktur"), T: 4290, L: 170 },
+      { n: __t("Aldebaran"), T: 3900, L: 440 },
+      { n: __t("Betelgeyze"), T: 3600, L: 1.0e5 },
+      { n: __t("Rigel"), T: 12100, L: 1.2e5 },
+      { n: __t("Qutb yulduzi"), T: 6000, L: 1260 },
+      { n: __t("Proksima Sentavra"), T: 3040, L: 0.0017 },
+      { n: __t("Barnard yulduzi"), T: 3130, L: 0.0035 },
+      { n: __t("Sirius B"), T: 25000, L: 0.056 },
+      { n: __t("Prosion B"), T: 7740, L: 0.00049 }
     ];
 
     // Asosiy ketma-ketlik uchun soddalashtirilgan munosabatlar (M — Quyosh massasi birligida)
@@ -128,31 +129,31 @@
 
     function buildTrack(M) {
       const L0 = msLum(M), T0 = msTemp(M), tMS = msLife(M);
-      const pts = [{ T: T0, L: L0, label: 'Asosiy ketma-ketlik (vodorod yonishi)', t: 0 }];
+      const pts = [{ T: T0, L: L0, label: __t("Asosiy ketma-ketlik (vodorod yonishi)"), t: 0 }];
       if (tMS > AGE_UNIVERSE) {
-        pts.push({ T: T0 * 1.01, L: L0 * 1.05, label: 'Koinot yoshidan ham uzoq yashaydi — hali asosiy ketma-ketlikda', t: AGE_UNIVERSE });
-        return { pts, end: 'Qizil mitti: hali birorta ham shunday yulduz asosiy ketma-ketlikni tark etmagan.' };
+        pts.push({ T: T0 * 1.01, L: L0 * 1.05, label: __t("Koinot yoshidan ham uzoq yashaydi — hali asosiy ketma-ketlikda"), t: AGE_UNIVERSE });
+        return { pts, end: __t("Qizil mitti: hali birorta ham shunday yulduz asosiy ketma-ketlikni tark etmagan.") };
       }
       if (M < 8) {
         const wd = 0.109 * M + 0.394; // boshlang‘ich–oxirgi massa munosabati (Kalirai va b., 2008)
-        pts.push({ T: T0 * 0.93, L: L0 * 1.8, label: 'Asosiy ketma-ketlik oxiri', t: tMS });
-        pts.push({ T: 5000, L: L0 * 2.2, label: 'Subgigant: yadroda vodorod tugadi', t: tMS * 1.05 });
-        pts.push({ T: 4000, L: Math.max(L0 * 30, 100), label: 'Qizil gigant: qobiqda vodorod yonadi', t: tMS * 1.1 });
-        pts.push({ T: 3700, L: Math.min(Math.max(L0 * 300, 2000), 3000), label: 'Qizil gigant tarmog‘i uchi: geliy chaqnashi', t: tMS * 1.12 });
-        pts.push({ T: 5200, L: Math.max(L0 * 15, 50), label: 'Yadroda geliy yonishi', t: tMS * 1.13 });
-        pts.push({ T: 3300, L: Math.max(L0 * 1000, 5000), label: 'Asimptotik gigantlar tarmog‘i', t: tMS * 1.2 });
-        pts.push({ T: 38000, L: Math.max(L0 * 600, 3000), label: 'Planetar tumanlik: qobiq tashlanadi', t: tMS * 1.2001 });
-        pts.push({ T: 30000, L: 0.3, label: `Oq mitti (massasi ≈ ${fmt(wd, 2)} M☉) soviy boshlaydi`, t: tMS * 1.2002 });
-        pts.push({ T: 7000, L: 3e-4, label: 'Oq mitti milliardlab yil davomida soviydi', t: tMS * 1.2002 + 5e9 });
-        return { pts, end: `Yakuni: oq mitti, massasi ≈ ${fmt(wd, 2)} M☉ (Chandrasekar chegarasi 1,4 M☉ dan kichik).` };
+        pts.push({ T: T0 * 0.93, L: L0 * 1.8, label: __t("Asosiy ketma-ketlik oxiri"), t: tMS });
+        pts.push({ T: 5000, L: L0 * 2.2, label: __t("Subgigant: yadroda vodorod tugadi"), t: tMS * 1.05 });
+        pts.push({ T: 4000, L: Math.max(L0 * 30, 100), label: __t("Qizil gigant: qobiqda vodorod yonadi"), t: tMS * 1.1 });
+        pts.push({ T: 3700, L: Math.min(Math.max(L0 * 300, 2000), 3000), label: __t("Qizil gigant tarmog‘i uchi: geliy chaqnashi"), t: tMS * 1.12 });
+        pts.push({ T: 5200, L: Math.max(L0 * 15, 50), label: __t("Yadroda geliy yonishi"), t: tMS * 1.13 });
+        pts.push({ T: 3300, L: Math.max(L0 * 1000, 5000), label: __t("Asimptotik gigantlar tarmog‘i"), t: tMS * 1.2 });
+        pts.push({ T: 38000, L: Math.max(L0 * 600, 3000), label: __t("Planetar tumanlik: qobiq tashlanadi"), t: tMS * 1.2001 });
+        pts.push({ T: 30000, L: 0.3, label: __t("Oq mitti (massasi ≈ {0} M☉) soviy boshlaydi", [fmt(wd, 2)]), t: tMS * 1.2002 });
+        pts.push({ T: 7000, L: 3e-4, label: __t("Oq mitti milliardlab yil davomida soviydi"), t: tMS * 1.2002 + 5e9 });
+        return { pts, end: __t("Yakuni: oq mitti, massasi ≈ {0} M☉ (Chandrasekar chegarasi 1,4 M☉ dan kichik).", [fmt(wd, 2)]) };
       }
-      pts.push({ T: T0 * 0.85, L: L0 * 1.3, label: 'Asosiy ketma-ketlik oxiri', t: tMS });
-      pts.push({ T: 9000, L: L0 * 1.5, label: 'Gertsshprung bo‘shlig‘i orqali tez o‘tish', t: tMS * 1.02 });
-      pts.push({ T: 3500, L: L0 * 1.7, label: 'Qizil supergigant: og‘ir elementlar sintezi temirgacha', t: tMS * 1.1 });
+      pts.push({ T: T0 * 0.85, L: L0 * 1.3, label: __t("Asosiy ketma-ketlik oxiri"), t: tMS });
+      pts.push({ T: 9000, L: L0 * 1.5, label: __t("Gertsshprung bo‘shlig‘i orqali tez o‘tish"), t: tMS * 1.02 });
+      pts.push({ T: 3500, L: L0 * 1.7, label: __t("Qizil supergigant: og‘ir elementlar sintezi temirgacha"), t: tMS * 1.1 });
       const remnant = M < 20
-        ? 'neytron yulduz (1,4–2 M☉ atrofida)'
-        : 'qora tuynuk (taxminan 20 M☉ dan katta yulduzlar uchun; aniq chegara metallik va aylanishga bog‘liq)';
-      return { pts, end: `Yakuni: o‘ta yangi yulduz portlashi (II tur), qoldig‘i — ${remnant}.`, sn: true };
+        ? __t("neytron yulduz (1,4–2 M☉ atrofida)")
+        : __t("qora tuynuk (taxminan 20 M☉ dan katta yulduzlar uchun; aniq chegara metallik va aylanishga bog‘liq)");
+      return { pts, end: __t("Yakuni: o‘ta yangi yulduz portlashi (II tur), qoldig‘i — {0}.", [remnant]), sn: true };
     }
 
     function xOf(T, pad, w) { // harorat chapdan o‘ngga kamayadi, logarifmik
@@ -197,9 +198,9 @@
         ctx.textAlign = 'right'; ctx.fillText('10' + supNum(e), pad.l - 8, y + 4);
       }
       ctx.fillStyle = COLORS.text; ctx.textAlign = 'center';
-      ctx.fillText('Effektiv harorat T, K (logarifmik shkala, chapga qarab ortadi)', (pad.l + w - pad.r) / 2, h - 10);
+      ctx.fillText(__t("Effektiv harorat T, K (logarifmik shkala, chapga qarab ortadi)"), (pad.l + w - pad.r) / 2, h - 10);
       ctx.save(); ctx.translate(16, (pad.t + h - pad.b) / 2); ctx.rotate(-Math.PI / 2);
-      ctx.fillText('Yorqinlik L / L☉', 0, 0); ctx.restore();
+      ctx.fillText(__t("Yorqinlik L / L☉"), 0, 0); ctx.restore();
 
       // spektral sinflar
       const cls = [['O', 40000, 30000], ['B', 30000, 10000], ['A', 10000, 7500], ['F', 7500, 6000], ['G', 6000, 5200], ['K', 5200, 3700], ['M', 3700, 2500]];
@@ -223,10 +224,10 @@
       ctx.restore();
       ctx.lineWidth = 1;
       ctx.fillStyle = COLORS.cyan; ctx.font = '11px system-ui, sans-serif'; ctx.textAlign = 'left';
-      ctx.fillText('Asosiy ketma-ketlik', xOf(msTemp(3), pad, w) + 12, yOf(msLum(3), pad, h) + 18);
-      ctx.fillStyle = COLORS.amber; ctx.fillText('Gigantlar', xOf(5400, pad, w), yOf(25, pad, h));
-      ctx.fillText('Supergigantlar', xOf(9000, pad, w), yOf(3e5, pad, h));
-      ctx.fillStyle = COLORS.white; ctx.fillText('Oq mittilar', xOf(30000, pad, w), yOf(5e-4, pad, h));
+      ctx.fillText(__t("Asosiy ketma-ketlik"), xOf(msTemp(3), pad, w) + 12, yOf(msLum(3), pad, h) + 18);
+      ctx.fillStyle = COLORS.amber; ctx.fillText(__t("Gigantlar"), xOf(5400, pad, w), yOf(25, pad, h));
+      ctx.fillText(__t("Supergigantlar"), xOf(9000, pad, w), yOf(3e5, pad, h));
+      ctx.fillStyle = COLORS.white; ctx.fillText(__t("Oq mittilar"), xOf(30000, pad, w), yOf(5e-4, pad, h));
 
       // katalog yulduzlari
       STARS.forEach(s => {
@@ -258,7 +259,7 @@
 
       if (track.sn && progress >= 0.999) {
         ctx.fillStyle = 'rgba(244,63,94,0.9)'; ctx.font = 'bold 14px system-ui, sans-serif'; ctx.textAlign = 'center';
-        ctx.fillText('💥 O‘ta yangi yulduz', x - 60, y + 30);
+        ctx.fillText(__t("💥 O‘ta yangi yulduz"), x - 60, y + 30);
       }
       stage.textContent = cur.label + (cur.t > 0 ? ` · yoshi ≈ ${fmtExp(cur.t)} yil` : '');
     }
@@ -269,15 +270,15 @@
       const L = msLum(M), T = msTemp(M), R = msRad(M), t = msLife(M);
       info.innerHTML =
         `<div>Yorqinlik: <strong>${fmtExp(L)} L☉</strong></div>` +
-        `<div>Effektiv harorat: <strong>${Math.round(T).toLocaleString('uz-UZ').replace(/,/g, ' ')} K</strong></div>` +
+        __t("<div>Effektiv harorat: <strong>{0} K</strong></div>", [Math.round(T).toLocaleString('uz-UZ').replace(/,/g, ' ')]) +
         `<div>Radius: <strong>${fmt(R, 2)} R☉</strong></div>` +
-        `<div>Asosiy ketma-ketlikdagi umri: <strong>${fmtExp(t)} yil</strong></div>` +
+        __t("<div>Asosiy ketma-ketlikdagi umri: <strong>{0} yil</strong></div>", [fmtExp(t)]) +
         `<div style="margin-top:6px;color:#A16207">${track.end}</div>`;
     }
 
     function rebuild() {
       track = buildTrack(parseFloat(massInput.value));
-      progress = 0; anim = null; playBtn.textContent = '▶ Evolyutsiyani boshlash';
+      progress = 0; anim = null; playBtn.textContent = __t("▶ Evolyutsiyani boshlash");
       updateInfo(); draw();
     }
 
@@ -285,7 +286,7 @@
       if (anim) {
         if (anim.start === null) anim.start = ts;
         progress = Math.min(1, (ts - anim.start) / anim.dur);
-        if (progress >= 1) { anim = null; playBtn.textContent = '↻ Qayta ko‘rish'; }
+        if (progress >= 1) { anim = null; playBtn.textContent = __t("↻ Qayta ko‘rish"); }
       }
       draw();
       requestAnimationFrame(loop);
@@ -295,7 +296,7 @@
     playBtn.addEventListener('click', () => {
       if (progress >= 1) progress = 0;
       anim = { start: null, dur: 9000 * (1 - progress) };
-      playBtn.textContent = '⏳ Evolyutsiya ketmoqda…';
+      playBtn.textContent = __t("⏳ Evolyutsiya ketmoqda…");
     });
     resetBtn.addEventListener('click', rebuild);
     rebuild();
@@ -362,9 +363,9 @@
       ctx.strokeStyle = COLORS.axis; ctx.beginPath(); ctx.moveTo(pad.l, plotH); ctx.lineTo(w - pad.r, plotH); ctx.stroke();
       ctx.fillStyle = COLORS.axis; ctx.font = '11px system-ui, sans-serif'; ctx.textAlign = 'center';
       for (let l = 200; l <= 2000; l += 200) ctx.fillText(l, X(l), plotH + 14);
-      ctx.fillText('λ, nm', w - pad.r - 14, plotH + 28);
+      ctx.fillText(__t("λ, nm"), w - pad.r - 14, plotH + 28);
       ctx.save(); ctx.translate(14, (pad.t + plotH) / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center';
-      ctx.fillStyle = COLORS.text; ctx.fillText('B_λ (normallashtirilgan)', 0, 0); ctx.restore();
+      ctx.fillStyle = COLORS.text; ctx.fillText(__t("B_λ (normallashtirilgan)"), 0, 0); ctx.restore();
 
       // spektr chizig‘i (380–750 nm), yutilish chiziqlari bilan
       const sy = plotH + 40, sh = H - sy - 26;
@@ -395,15 +396,15 @@
 
       // ma’lumot
       if (mystery) {
-        out.innerHTML = 'Noma’lum obyekt: Hα chizig‘ining kuzatilgan to‘lqin uzunligini spektrdan o‘lchang (pastdagi shkala), so‘ng radial tezlikni hisoblang. ' +
-          `Ko‘rsatma: Hα laboratoriyada 656,28 nm. Kuzatilgan Hα ≈ <strong>${fmt(shift(656.28, v), 1)} nm</strong>.`;
+        out.innerHTML = __t("Noma’lum obyekt: Hα chizig‘ining kuzatilgan to‘lqin uzunligini spektrdan o‘lchang (pastdagi shkala), so‘ng radial tezlikni hisoblang. ") +
+          __t("Ko‘rsatma: Hα laboratoriyada 656,28 nm. Kuzatilgan Hα ≈ <strong>{0} nm</strong>.", [fmt(shift(656.28, v), 1)]);
       } else {
         const z = shift(1, v) - 1;
         out.innerHTML =
-          `<div>Vin qonuni: λ_max = b / T = <strong>${Math.round(lmax)} nm</strong></div>` +
+          __t("<div>Vin qonuni: λ_max = b / T = <strong>{0} nm</strong></div>", [Math.round(lmax)]) +
           `<div>Stefan–Bolsman: sirt birligidan nurlanish oqimi σT⁴ = <strong>${fmtExp(5.670374419e-8 * Math.pow(T, 4))} Vt/m²</strong></div>` +
-          `<div>Qizil siljish z = Δλ/λ₀ = <strong>${fmt(z, 4)}</strong>; Hα: 656,28 → <strong>${fmt(shift(656.28, v), 2)} nm</strong></div>` +
-          `<div>${v > 0 ? 'Obyekt bizdan uzoqlashmoqda (qizil siljish)' : v < 0 ? 'Obyekt bizga yaqinlashmoqda (binafsha siljish)' : 'Radial tezlik nolga teng'}</div>`;
+          __t("<div>Qizil siljish z = Δλ/λ₀ = <strong>{0}</strong>; Hα: 656,28 → <strong>{1} nm</strong></div>", [fmt(z, 4), fmt(shift(656.28, v), 2)]) +
+          `<div>${v > 0 ? __t("Obyekt bizdan uzoqlashmoqda (qizil siljish)") : v < 0 ? __t("Obyekt bizga yaqinlashmoqda (binafsha siljish)") : __t("Radial tezlik nolga teng")}</div>`;
       }
     }
 
@@ -422,14 +423,14 @@
     });
     $('spec-check').addEventListener('click', () => {
       const res = $('spec-check-out');
-      if (!mystery) { res.textContent = 'Avval “Noma’lum obyekt” tugmasini bosing.'; return; }
+      if (!mystery) { res.textContent = __t("Avval “Noma’lum obyekt” tugmasini bosing."); return; }
       const ans = parseFloat(String($('spec-answer').value).replace(',', '.').replace('−', '-'));
-      if (!isFinite(ans)) { res.textContent = 'Tezlikni km/s da kiriting.'; return; }
+      if (!isFinite(ans)) { res.textContent = __t("Tezlikni km/s da kiriting."); return; }
       const err = Math.abs(ans - mystery.v) / Math.abs(mystery.v);
       res.style.color = err < 0.05 ? COLORS.emerald : COLORS.rose;
       res.textContent = err < 0.05
-        ? `To‘g‘ri! Haqiqiy qiymat ${mystery.v} km/s (xatolik ${fmt(err * 100, 1)} %).`
-        : `Hali aniq emas (xatolik ${fmt(err * 100, 0)} %). v ≈ c·Δλ/λ₀ formulasini qo‘llang.`;
+        ? __t("To‘g‘ri! Haqiqiy qiymat {0} km/s (xatolik {1} %).", [mystery.v, fmt(err * 100, 1)])
+        : __t("Hali aniq emas (xatolik {0} %). v ≈ c·Δλ/λ₀ formulasini qo‘llang.", [fmt(err * 100, 0)]);
     });
     labels();
     function loop() { draw(); requestAnimationFrame(loop); }
@@ -550,7 +551,7 @@
       for (let i = 0; i <= 5; i++) ctx.fillText(fmt(xMax * i / 5, xMax < 3 ? 1 : 0), X(xMax * i / 5), h - pad.b + 15);
       ctx.fillStyle = COLORS.text; ctx.fillText(xLabel, (pad.l + w - pad.r) / 2, h - 6);
       ctx.save(); ctx.translate(14, (pad.t + h - pad.b) / 2); ctx.rotate(-Math.PI / 2);
-      ctx.fillText('Yulduz kattaligi m', 0, 0); ctx.restore();
+      ctx.fillText(__t("Yulduz kattaligi m"), 0, 0); ctx.restore();
       ctx.fillStyle = COLORS.cyan;
       pts.forEach(p => { ctx.beginPath(); ctx.arc(X(p.x), Y(p.y), 2.2, 0, Math.PI * 2); ctx.fill(); });
     }
@@ -558,21 +559,21 @@
     function drawAll() {
       if (!star) return;
       const span = star.type === 'cepheid' ? 120 : 40;
-      plot(canvas, obs.map(o => ({ x: o.t, y: o.mag })), 'Kuzatuv vaqti, sutka', span, 0.42);
+      plot(canvas, obs.map(o => ({ x: o.t, y: o.mag })), __t("Kuzatuv vaqti, sutka"), span, 0.42);
       const P = parseFloat(pIn.value);
       const ph = [];
       obs.forEach(o => { const f = (o.t / P) % 1; ph.push({ x: f, y: o.mag }); ph.push({ x: f + 1, y: o.mag }); });
-      plot(fold, ph, 'Faza (sinov davri bo‘yicha)', 2, 0.42);
+      plot(fold, ph, __t("Faza (sinov davri bo‘yicha)"), 2, 0.42);
       $('lc-P-val').textContent = fmt(P, 3) + ' sutka';
       const theta = pdm(P);
-      let html = `<div>Faza dispersiyasi Θ = <strong>${fmt(theta, 3)}</strong> (to‘g‘ri davrda eng kichik bo‘ladi)</div>`;
+      let html = __t("<div>Faza dispersiyasi Θ = <strong>{0}</strong> (to‘g‘ri davrda eng kichik bo‘ladi)</div>", [fmt(theta, 3)]);
       const meanM = obs.reduce((a, o) => a + o.mag, 0) / obs.length;
-      html += `<div>O‘rtacha kuzatilgan kattalik: <strong>${fmt(meanM, 2)}<sup>m</sup></strong></div>`;
+      html += __t("<div>O‘rtacha kuzatilgan kattalik: <strong>{0}<sup>m</sup></strong></div>", [fmt(meanM, 2)]);
       if (star.type === 'cepheid') {
         const M = -2.43 * (Math.log10(P) - 1) - 4.05;
         const d = Math.pow(10, (meanM - M + 5) / 5);
-        html += `<div>Sinov davri bo‘yicha absolyut kattalik M<sub>V</sub> = <strong>${fmt(M, 2)}</strong></div>`;
-        html += `<div>Masofa d = 10<sup>(m−M+5)/5</sup> ≈ <strong>${Math.round(d).toLocaleString('uz-UZ').replace(/,/g, ' ')} pk</strong> (yulduzlararo yutilish hisobga olinmagan)</div>`;
+        html += __t("<div>Sinov davri bo‘yicha absolyut kattalik M<sub>V</sub> = <strong>{0}</strong></div>", [fmt(M, 2)]);
+        html += __t("<div>Masofa d = 10<sup>(m−M+5)/5</sup> ≈ <strong>{0} pk</strong> (yulduzlararo yutilish hisobga olinmagan)</div>", [Math.round(d).toLocaleString('uz-UZ').replace(/,/g, ' ')]);
       } else {
         // fazani 50 ta bin ga bo‘lib, eng xira binni tranzit, qolganlarining medianasini fon deb olamiz
         const NB = 50, sums = new Array(NB).fill(0), cnt = new Array(NB).fill(0);
@@ -582,8 +583,8 @@
         const base = valid.length ? valid[Math.floor(valid.length / 2)] : meanM;
         const minMag = valid.length ? valid[valid.length - 1] : meanM;
         const depth = 1 - Math.pow(10, -0.4 * (minMag - base));
-        html += `<div>Tranzit chuqurligining taxminiy bahosi ΔF/F ≈ <strong>${fmt(Math.max(0, depth) * 100, 2)} %</strong> → R<sub>p</sub>/R<sub>*</sub> ≈ √(ΔF/F) = <strong>${fmt(Math.sqrt(Math.max(0, depth)), 3)}</strong></div>`;
-        html += '<div style="color:#66708A">Baho fazaga yig‘ilgan egri chiziqning eng xira qismi (faza bo‘yicha 1/50 bin) bo‘yicha olinadi, shuning uchun u faqat to‘g‘ri davrda ma’noli.</div>';
+        html += __t("<div>Tranzit chuqurligining taxminiy bahosi ΔF/F ≈ <strong>{0} %</strong> → R<sub>p</sub>/R<sub>*</sub> ≈ √(ΔF/F) = <strong>{1}</strong></div>", [fmt(Math.max(0, depth) * 100, 2), fmt(Math.sqrt(Math.max(0, depth)), 3)]);
+        html += __t("<div style=\"color:#66708A\">Baho fazaga yig‘ilgan egri chiziqning eng xira qismi (faza bo‘yicha 1/50 bin) bo‘yicha olinadi, shuning uchun u faqat to‘g‘ri davrda ma’noli.</div>");
       }
       info.innerHTML = html;
     }
@@ -596,10 +597,10 @@
       const gain = Math.pow(D / 7, 2);
       const mlim = 2.7 + 5 * Math.log10(D);
       tel.innerHTML =
-        `<div>Ajrata olish chegarasi (550 nm): θ = 1,22·λ/D ≈ <strong>${fmt(theta, 2)}″</strong></div>` +
-        `<div>Yorug‘lik yig‘ish ko‘zga nisbatan (ko‘z qorachig‘i 7 mm): <strong>${Math.round(gain).toLocaleString('uz-UZ').replace(/,/g, ' ')} marta</strong></div>` +
-        `<div>Vizual chegaraviy kattalik (taxminiy): <strong>${fmt(mlim, 1)}<sup>m</sup></strong></div>` +
-        `<div>Bitta o‘lchash xatoligi (model): σ ≈ <strong>${fmt(sigmaMag(), 3)}<sup>m</sup></strong></div>`;
+        __t("<div>Ajrata olish chegarasi (550 nm): θ = 1,22·λ/D ≈ <strong>{0}″</strong></div>", [fmt(theta, 2)]) +
+        __t("<div>Yorug‘lik yig‘ish ko‘zga nisbatan (ko‘z qorachig‘i 7 mm): <strong>{0} marta</strong></div>", [Math.round(gain).toLocaleString('uz-UZ').replace(/,/g, ' ')]) +
+        __t("<div>Vizual chegaraviy kattalik (taxminiy): <strong>{0}<sup>m</sup></strong></div>", [fmt(mlim, 1)]) +
+        __t("<div>Bitta o‘lchash xatoligi (model): σ ≈ <strong>{0}<sup>m</sup></strong></div>", [fmt(sigmaMag(), 3)]);
     }
 
     typeIn.addEventListener('change', () => newStar((Math.random() * 1e9) | 0));
@@ -651,8 +652,8 @@
     $('lc-answer').addEventListener('click', () => {
       if (!star) return;
       const txt = star.type === 'cepheid'
-        ? `Haqiqiy davr ${fmt(star.P, 3)} sutka, masofa ${Math.round(star.d).toLocaleString('uz-UZ').replace(/,/g, ' ')} pk.`
-        : `Haqiqiy davr ${fmt(star.P, 3)} sutka, R_p/R_* = ${fmt(star.k, 3)} (chuqurlik ${fmt(star.k * star.k * 100, 2)} %).`;
+        ? __t("Haqiqiy davr {0} sutka, masofa {1} pk.", [fmt(star.P, 3), Math.round(star.d).toLocaleString('uz-UZ').replace(/,/g, ' ')])
+        : __t("Haqiqiy davr {0} sutka, R_p/R_* = {1} (chuqurlik {2} %).", [fmt(star.P, 3), fmt(star.k, 3), fmt(star.k * star.k * 100, 2)]);
       $('lc-answer-out').textContent = txt;
     });
     newStar(20261030);

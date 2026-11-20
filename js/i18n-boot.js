@@ -48,8 +48,8 @@
 
   /* Sahifaning to'liq tarjima lug'ati: locales/pages/<til>/<sahifa>.js.
      Ro'yxat tools/i18n_pages.py tomonidan yangilanadi. */
-  var PAGE_DICTS = /*PAGE_DICTS*/["lab1", "lab10", "lab11", "lab12", "lab13", "lab14", "lab15", "lab2", "lab3", "lab4", "lab5", "lab6", "lab7", "lab8", "lab9", "lecture1", "lecture10", "lecture11", "lecture12", "lecture13", "lecture14", "lecture15", "lecture2", "lecture3", "lecture4", "lecture5", "lecture6", "lecture7", "lecture8", "lecture9", "sims-lorens-kuchi"]/*END*/;
-  var VERSION = /*VERSION*/'b2f7a5c3a7'/*END*/;
+  var PAGE_DICTS = /*PAGE_DICTS*/["annotatsiya", "astro1", "astro2", "astro3", "glossariy", "lab1", "lab10", "lab11", "lab12", "lab13", "lab14", "lab15", "lab2", "lab3", "lab4", "lab5", "lab6", "lab7", "lab8", "lab9", "lecture1", "lecture10", "lecture11", "lecture12", "lecture13", "lecture14", "lecture15", "lecture2", "lecture3", "lecture4", "lecture5", "lecture6", "lecture7", "lecture8", "lecture9", "mustaqil", "si-vositalari", "sims-lorens-kuchi", "sims-quyosh-sintezi", "sims-radioaktiv-qatorlar"]/*END*/;
+  var VERSION = /*VERSION*/'8b29042aa9'/*END*/;
   var pathName = (window.location.pathname || '').replace(/\/+$/, '/');
   var file = pathName.slice(pathName.lastIndexOf('/') + 1) || 'index.html';
   var inSims = /\/sims\/[^/]*$/.test(pathName);

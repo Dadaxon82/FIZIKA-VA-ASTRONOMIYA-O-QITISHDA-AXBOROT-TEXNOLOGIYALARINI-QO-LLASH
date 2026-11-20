@@ -1,0 +1,722 @@
+[
+ {
+  "k": "a64aa137",
+  "s": "Yopish",
+  "ru": "Закрыть",
+  "en": "Close"
+ },
+ {
+  "k": "ce9bca06",
+  "s": "Qo‘shimcha ma’ruza A3 · Astronomiya",
+  "ru": "Дополнительная лекция A3 · Астрономия",
+  "en": "Supplementary lecture A3 · Astronomy"
+ },
+ {
+  "k": "4dbd5147",
+  "s": "Teleskopning yorug‘lik yig‘ish va ajrata olish qobiliyati, Pogson shkalasi va CCD fotometriya, yorug‘lik egri chizig‘idan davrni topish, Sefeidlar yordamida masofani o‘lchash va tranzit fotometriya. Interaktiv kuzatuv modeli hamda Kepler kosmik teleskopining ochiq ma’lumotlari bilan laboratoriya ishi.",
+  "ru": "Светосила и разрешающая способность телескопа, шкала Погсона и ПЗС-фотометрия, определение периода по кривой блеска, измерение расстояний с помощью цефеид и транзитная фотометрия. Лабораторная работа с интерактивной моделью наблюдений и открытыми данными космического телескопа Kepler.",
+  "en": "A telescope’s light-gathering power and resolution, the Pogson scale and CCD photometry, finding a period from a light curve, measuring distances with Cepheids and transit photometry. A lab with an interactive observing model and open data from the Kepler space telescope."
+ },
+ {
+  "k": "1552d63e",
+  "s": "Zamonaviy astronomiya — ma’lumotlar fani. Teleskoplar millionlab yulduzning yorqinligini vaqt bo‘yicha o‘lchaydi va bu ma’lumotlar ochiq arxivlarda hamma uchun bepul. Ushbu ma’ruzada teleskopning asosiy parametrlari, fotometriya, yorug‘lik egri chizig‘idan davrni topish va <strong>Sefeidlar yordamida masofani o‘lchash</strong> o‘rganiladi.",
+  "ru": "Современная астрономия — наука о данных. Телескопы измеряют яркость миллионов звёзд во времени, и эти данные бесплатно доступны всем в открытых архивах. В этой лекции изучаются основные параметры телескопа, фотометрия, определение периода по кривой блеска и <strong>измерение расстояний с помощью цефеид</strong>.",
+  "en": "Modern astronomy is a data science. Telescopes measure the brightness of millions of stars over time, and the data are free for everyone in open archives. This lecture covers a telescope’s main parameters, photometry, finding periods from light curves and <strong>measuring distances with Cepheids</strong>."
+ },
+ {
+  "k": "257d17e2",
+  "s": "3.1. Teleskopning asosiy parametrlari",
+  "ru": "3.1. Основные параметры телескопа",
+  "en": "3.1. A telescope’s main parameters"
+ },
+ {
+  "k": "c02442d3",
+  "s": "Parametr",
+  "ru": "Параметр",
+  "en": "Parameter"
+ },
+ {
+  "k": "aa3897fd",
+  "s": "Formula",
+  "ru": "Формула",
+  "en": "Formula"
+ },
+ {
+  "k": "e199b5c1",
+  "s": "Ma’nosi",
+  "ru": "Смысл",
+  "en": "Meaning"
+ },
+ {
+  "k": "efb6f91e",
+  "s": "<strong>Yorug‘lik yig‘ish qobiliyati</strong>",
+  "ru": "<strong>Светосила (сбор света)</strong>",
+  "en": "<strong>Light-gathering power</strong>"
+ },
+ {
+  "k": "88a8f20f",
+  "s": "$\\propto D^2$",
+  "ru": "$\\propto D^2$",
+  "en": "$\\propto D^2$"
+ },
+ {
+  "k": "8ccd1699",
+  "s": "Diametri 2 marta katta teleskop 4 marta ko‘p foton yig‘adi",
+  "ru": "Телескоп вдвое большего диаметра собирает в 4 раза больше фотонов",
+  "en": "A telescope with twice the diameter collects 4 times as many photons"
+ },
+ {
+  "k": "7ac8ceb7",
+  "s": "<strong>Ajrata olish chegarasi</strong>",
+  "ru": "<strong>Предел разрешения</strong>",
+  "en": "<strong>Resolution limit</strong>"
+ },
+ {
+  "k": "d204fb80",
+  "s": "$\\theta \\approx 1{,}22\\,\\lambda / D$",
+  "ru": "$\\theta \\approx 1{,}22\\,\\lambda / D$",
+  "en": "$\\theta \\approx 1{,}22\\,\\lambda / D$"
+ },
+ {
+  "k": "cdc34f8e",
+  "s": "Ikki yaqin nuqtani alohida ko‘rish mumkin bo‘lgan eng kichik burchak (Reley mezoni)",
+  "ru": "Наименьший угол, при котором две близкие точки видны раздельно (критерий Рэлея)",
+  "en": "The smallest angle at which two close points can be seen separately (the Rayleigh criterion)"
+ },
+ {
+  "k": "98ed71c8",
+  "s": "<strong>Kattalashtirish</strong>",
+  "ru": "<strong>Увеличение</strong>",
+  "en": "<strong>Magnification</strong>"
+ },
+ {
+  "k": "e8c03d2d",
+  "s": "$\\Gamma = F_{\\text{ob}} / f_{\\text{ok}}$",
+  "ru": "$\\Gamma = F_{\\text{ob}} / f_{\\text{ok}}$",
+  "en": "$\\Gamma = F_{\\text{ob}} / f_{\\text{ok}}$"
+ },
+ {
+  "k": "a3492070",
+  "s": "Obyektiv va okulyar fokus masofalari nisbati; fotometriyada asosiy emas",
+  "ru": "Отношение фокусных расстояний объектива и окуляра; в фотометрии не главное",
+  "en": "The ratio of the objective and eyepiece focal lengths; not important in photometry"
+ },
+ {
+  "k": "005b0955",
+  "s": "<strong>Ko‘rish sharoiti (seeing)</strong>",
+  "ru": "<strong>Условия видимости (seeing)</strong>",
+  "en": "<strong>Seeing</strong>"
+ },
+ {
+  "k": "9ca8f01a",
+  "s": "odatda 0,5″–2″",
+  "ru": "обычно 0,5″–2″",
+  "en": "typically 0.5″–2″"
+ },
+ {
+  "k": "45f8b593",
+  "s": "Atmosfera turbulentligi tufayli Yerdagi teleskoplarning haqiqiy ajrata olishi",
+  "ru": "Реальное разрешение наземных телескопов из-за турбулентности атмосферы",
+  "en": "The real resolution of ground-based telescopes, limited by atmospheric turbulence"
+ },
+ {
+  "k": "3156b89c",
+  "s": "3.2. Fotometriya va yulduz kattaliklari",
+  "ru": "3.2. Фотометрия и звёздные величины",
+  "en": "3.2. Photometry and magnitudes"
+ },
+ {
+  "k": "9a6b1cbd",
+  "s": "Yulduz kattaliklari logarifmik shkalada o‘lchanadi (Pogson formulasi). 5 kattalik farqi oqimning roppa-rosa 100 marta farqiga teng, kattalik qancha kichik bo‘lsa, yulduz shuncha yorug‘:",
+  "ru": "Звёздные величины измеряются по логарифмической шкале (формула Погсона). Разница в 5 величин соответствует разнице потоков ровно в 100 раз; чем меньше величина, тем ярче звезда:",
+  "en": "Stellar magnitudes are measured on a logarithmic scale (the Pogson formula). A difference of 5 magnitudes is exactly a factor of 100 in flux; the smaller the magnitude, the brighter the star:"
+ },
+ {
+  "k": "a9f51598",
+  "s": "$$m_1 - m_2 = -2{,}5\\,\\lg\\frac{F_1}{F_2}$$",
+  "ru": "$$m_1 - m_2 = -2{,}5\\,\\lg\\frac{F_1}{F_2}$$",
+  "en": "$$m_1 - m_2 = -2{,}5\\,\\lg\\frac{F_1}{F_2}$$"
+ },
+ {
+  "k": "57326bea",
+  "s": "CCD kamerada yulduz atrofidagi doiraviy apertura ichidagi signal yig‘iladi, osmon foni ayiriladi. O‘lchash aniqligini signal/shovqin nisbati (S/N) belgilaydi:",
+  "ru": "В ПЗС-камере сигнал собирается внутри круглой апертуры вокруг звезды, фон неба вычитается. Точность измерения определяется отношением сигнал/шум (S/N):",
+  "en": "In a CCD camera the signal is summed inside a circular aperture around the star and the sky background is subtracted. Measurement precision is set by the signal-to-noise ratio (S/N):"
+ },
+ {
+  "k": "161af30f",
+  "s": "$$\\frac{S}{N} = \\frac{N_*}{\\sqrt{N_* + n_{\\text{pix}}\\left(N_{\\text{fon}} + N_{\\text{qorong‘i}} + R^2\\right)}}, \\qquad \\sigma_m \\approx \\frac{1{,}0857}{S/N}$$",
+  "ru": "$$\\frac{S}{N} = \\frac{N_*}{\\sqrt{N_* + n_{\\text{pix}}\\left(N_{\\text{fon}} + N_{\\text{qorong‘i}} + R^2\\right)}}, \\qquad \\sigma_m \\approx \\frac{1{,}0857}{S/N}$$",
+  "en": "$$\\frac{S}{N} = \\frac{N_*}{\\sqrt{N_* + n_{\\text{pix}}\\left(N_{\\text{fon}} + N_{\\text{qorong‘i}} + R^2\\right)}}, \\qquad \\sigma_m \\approx \\frac{1{,}0857}{S/N}$$"
+ },
+ {
+  "k": "6c431478",
+  "s": "Bu yerda $N_*$ — yulduzdan kelgan elektronlar soni, $n_{\\text{pix}}$ — aperturadagi piksellar soni, $R$ — o‘qish shovqini. Yorug‘ yulduz uchun $S/N \\approx \\sqrt{N_*}$, ya’ni ekspozitsiya vaqtini 4 marta oshirsak, xatolik 2 marta kamayadi.",
+  "ru": "Здесь $N_*$ — число электронов от звезды, $n_{\\text{pix}}$ — число пикселей в апертуре, $R$ — шум считывания. Для яркой звезды $S/N \\approx \\sqrt{N_*}$, то есть если увеличить экспозицию в 4 раза, погрешность уменьшится в 2 раза.",
+  "en": "Here $N_*$ is the number of electrons from the star, $n_{\\text{pix}}$ the number of pixels in the aperture and $R$ the read noise. For a bright star $S/N \\approx \\sqrt{N_*}$, so making the exposure 4 times longer halves the error."
+ },
+ {
+  "k": "2b5ed9e3",
+  "s": "3.3. Yorug‘lik egri chizig‘i va davrni topish",
+  "ru": "3.3. Кривая блеска и определение периода",
+  "en": "3.3. Light curves and finding the period"
+ },
+ {
+  "k": "3e3bec52",
+  "s": "Yorug‘lik egri chizig‘i — yulduz kattaligining vaqtga bog‘liqligi. Kuzatuvlar notekis vaqtlarda olinadi (kunduzi, bulutli kunlarda kuzatib bo‘lmaydi), shuning uchun davr <strong>fazaga yig‘ish</strong> usuli bilan topiladi:",
+  "ru": "Кривая блеска — зависимость звёздной величины от времени. Наблюдения проводятся в неравномерные моменты времени (днём и в облачные дни наблюдать нельзя), поэтому период находят методом <strong>свёртки по фазе</strong>:",
+  "en": "A light curve is a star’s magnitude as a function of time. Observations are taken at uneven times (you cannot observe by day or when it is cloudy), so the period is found by <strong>phase folding</strong>:"
+ },
+ {
+  "k": "25ce5e9a",
+  "s": "$$\\varphi = \\frac{t - t_0}{P} - \\left\\lfloor \\frac{t - t_0}{P} \\right\\rfloor$$",
+  "ru": "$$\\varphi = \\frac{t - t_0}{P} - \\left\\lfloor \\frac{t - t_0}{P} \\right\\rfloor$$",
+  "en": "$$\\varphi = \\frac{t - t_0}{P} - \\left\\lfloor \\frac{t - t_0}{P} \\right\\rfloor$$"
+ },
+ {
+  "k": "4766720b",
+  "s": "Agar sinov davri $P$ to‘g‘ri bo‘lsa, barcha nuqtalar fazada yagona silliq egri chiziq hosil qiladi; noto‘g‘ri bo‘lsa — tartibsiz bulut. Bu g‘oya <em>faza dispersiyasini minimallashtirish</em> (PDM, Stellingwerf, 1978) usulining asosidir. Boshqa usullar: Lomb–Scargle periodogrammasi (sinusoidal o‘zgarishlar uchun) va BLS (tranzitlar uchun “quti” shaklidagi signal).",
+  "ru": "Если пробный период $P$ верен, все точки образуют по фазе единую гладкую кривую; если неверен — беспорядочное облако. Эта идея лежит в основе метода <em>минимизации фазовой дисперсии</em> (PDM, Stellingwerf, 1978). Другие методы: периодограмма Ломба–Скаргла (для синусоидальных изменений) и BLS (сигнал в форме «коробки» для транзитов).",
+  "en": "If the trial period $P$ is right, all the points form one smooth curve in phase; if it is wrong, a jumbled cloud. This idea underlies <em>phase dispersion minimisation</em> (PDM, Stellingwerf, 1978). Other methods: the Lomb–Scargle periodogram (for sinusoidal variation) and BLS (a \"box\"-shaped signal for transits)."
+ },
+ {
+  "k": "240520b8",
+  "s": "3.4. Sefeidlar — “standart sham”",
+  "ru": "3.4. Цефеиды — «стандартная свеча»",
+  "en": "3.4. Cepheids — a \"standard candle\""
+ },
+ {
+  "k": "087b5dca",
+  "s": "Sefeidlar — radial pulsatsiyalanuvchi gigant yulduzlar. 1912-yilda Henrietta Livitt (Leavitt) Kichik Magellan bulutidagi Sefeidlar qanchalik yorqin bo‘lsa, davri shunchalik uzun ekanini aniqladi. Zamonaviy kalibrovka (Benedict va b., 2007):",
+  "ru": "Цефеиды — радиально пульсирующие звёзды-гиганты. В 1912 году Генриетта Ливитт (Leavitt) установила, что чем ярче цефеиды в Малом Магеллановом Облаке, тем длиннее их период. Современная калибровка (Benedict и др., 2007):",
+  "en": "Cepheids are radially pulsating giant stars. In 1912 Henrietta Leavitt found that the brighter the Cepheids in the Small Magellanic Cloud, the longer their periods. A modern calibration (Benedict et al., 2007):"
+ },
+ {
+  "k": "30a55806",
+  "s": "$$M_V = -2{,}43\\,(\\lg P - 1) - 4{,}05 \\qquad (P \\text{ — sutkalarda})$$",
+  "ru": "$$M_V = -2{,}43\\,(\\lg P - 1) - 4{,}05 \\qquad (P \\text{ — sutkalarda})$$",
+  "en": "$$M_V = -2{,}43\\,(\\lg P - 1) - 4{,}05 \\qquad (P \\text{ — sutkalarda})$$"
+ },
+ {
+  "k": "af50bdf7",
+  "s": "Davrni yorug‘lik egri chizig‘idan, o‘rtacha ko‘rinma kattalik $m$ ni kuzatuvdan topib, masofa moduli orqali masofani hisoblaymiz:",
+  "ru": "Найдя период по кривой блеска, а среднюю видимую величину $m$ — из наблюдений, вычисляем расстояние через модуль расстояния:",
+  "en": "With the period from the light curve and the mean apparent magnitude $m$ from observation, we compute the distance through the distance modulus:"
+ },
+ {
+  "k": "b344e5b6",
+  "s": "$$d = 10^{(m - M + 5)/5}\\ \\text{pk} \\qquad (\\text{yulduzlararo yutilish } A_V \\text{ bo‘lsa: } m - M - A_V)$$",
+  "ru": "$$d = 10^{(m - M + 5)/5}\\ \\text{pk} \\qquad (\\text{yulduzlararo yutilish } A_V \\text{ bo‘lsa: } m - M - A_V)$$",
+  "en": "$$d = 10^{(m - M + 5)/5}\\ \\text{pk} \\qquad (\\text{yulduzlararo yutilish } A_V \\text{ bo‘lsa: } m - M - A_V)$$"
+ },
+ {
+  "k": "9960a02f",
+  "s": "Sefeidlar Habbl Andromeda tumanligining galaktika ekanini isbotlashida (1925) va bugungi Habbl doimiysini o‘lchashda asosiy “masofa zinapoyasi” pog‘onasi bo‘lib xizmat qiladi.",
+  "ru": "Цефеиды послужили Хабблу при доказательстве того, что туманность Андромеды — галактика (1925), и остаются ключевой ступенью «лестницы расстояний» при измерении современной постоянной Хаббла.",
+  "en": "Cepheids let Hubble prove that the Andromeda Nebula is a galaxy (1925), and they remain a key rung of the \"distance ladder\" in measuring today’s Hubble constant."
+ },
+ {
+  "k": "1cf87654",
+  "s": "3.5. Tranzit fotometriya",
+  "ru": "3.5. Транзитная фотометрия",
+  "en": "3.5. Transit photometry"
+ },
+ {
+  "k": "98aa1269",
+  "s": "Sayyora yulduz diski oldidan o‘tganda yorug‘lik biroz pasayadi: $\\Delta F / F \\approx (R_p / R_*)^2$. Yupiter o‘lchamidagi sayyora Quyoshsimon yulduz yorug‘ligini ~1 %, Yer o‘lchamidagisi esa atigi ~0,008 % ga kamaytiradi. Kepler (2009–2018) va TESS (2018-yildan) kosmik teleskoplari minglab ekzosayyorani shu usulda topgan. Batafsil —",
+  "ru": "Когда планета проходит перед диском звезды, свет немного ослабевает: $\\Delta F / F \\approx (R_p / R_*)^2$. Планета размером с Юпитер уменьшает свет звезды, подобной Солнцу, на ~1 %, а планета размером с Землю — лишь на ~0,008 %. Космические телескопы Kepler (2009–2018) и TESS (с 2018 года) нашли этим методом тысячи экзопланет. Подробнее —",
+  "en": "When a planet passes in front of its star’s disc the light dims slightly: $\\Delta F / F \\approx (R_p / R_*)^2$. A Jupiter-sized planet dims a Sun-like star by ~1 %, an Earth-sized one by only ~0.008 %. The Kepler (2009–2018) and TESS (since 2018) space telescopes have found thousands of exoplanets this way. More detail in"
+ },
+ {
+  "k": "d1b76e34",
+  "s": "3.6. Ochiq kuzatuv arxivlari",
+  "ru": "3.6. Открытые архивы наблюдений",
+  "en": "3.6. Open observation archives"
+ },
+ {
+  "k": "93d4ded1",
+  "s": "Arxiv",
+  "ru": "Arxiv",
+  "en": "Arxiv"
+ },
+ {
+  "k": "8ada97e6",
+  "s": "Nimani beradi",
+  "ru": "Что даёт",
+  "en": "What it offers"
+ },
+ {
+  "k": "d8e135fa",
+  "s": "Manzil",
+  "ru": "Manzil",
+  "en": "Manzil"
+ },
+ {
+  "k": "4b75410a",
+  "s": "<strong>MAST</strong> (STScI)",
+  "ru": "<strong>MAST</strong> (STScI)",
+  "en": "<strong>MAST</strong> (STScI)"
+ },
+ {
+  "k": "d9ae1419",
+  "s": "Kepler, TESS, Habbl va JWST ma’lumotlari",
+  "ru": "Данные Kepler, TESS, Хаббла и JWST",
+  "en": "Kepler, TESS, Hubble and JWST data"
+ },
+ {
+  "k": "fd7a25d5",
+  "s": "<a class=\"citation-link\" href=\"https://archive.stsci.edu\" target=\"_blank\" rel=\"noopener\">archive.stsci.edu</a>",
+  "ru": "<a class=\"citation-link\" href=\"https://archive.stsci.edu\" target=\"_blank\" rel=\"noopener\">archive.stsci.edu</a>",
+  "en": "<a class=\"citation-link\" href=\"https://archive.stsci.edu\" target=\"_blank\" rel=\"noopener\">archive.stsci.edu</a>"
+ },
+ {
+  "k": "71260eb8",
+  "s": "<strong>AAVSO</strong>",
+  "ru": "<strong>AAVSO</strong>",
+  "en": "<strong>AAVSO</strong>"
+ },
+ {
+  "k": "a6db94ae",
+  "s": "O‘zgaruvchan yulduzlarning havaskor va professional kuzatuvlari (100 yildan ortiq)",
+  "ru": "Любительские и профессиональные наблюдения переменных звёзд (более 100 лет)",
+  "en": "Amateur and professional variable star observations (over 100 years)"
+ },
+ {
+  "k": "8200c928",
+  "s": "<a class=\"citation-link\" href=\"https://www.aavso.org/data-download\" target=\"_blank\" rel=\"noopener\">aavso.org</a>",
+  "ru": "<a class=\"citation-link\" href=\"https://www.aavso.org/data-download\" target=\"_blank\" rel=\"noopener\">aavso.org</a>",
+  "en": "<a class=\"citation-link\" href=\"https://www.aavso.org/data-download\" target=\"_blank\" rel=\"noopener\">aavso.org</a>"
+ },
+ {
+  "k": "4dd95cd9",
+  "s": "<strong>Gaia arxivi</strong> (ESA)",
+  "ru": "<strong>Архив Gaia</strong> (ESA)",
+  "en": "<strong>Gaia archive</strong> (ESA)"
+ },
+ {
+  "k": "e759192c",
+  "s": "~1,8 mlrd yulduz: parallaks, fotometriya, o‘zgaruvchanlik",
+  "ru": "~1,8 млрд звёзд: параллакс, фотометрия, переменность",
+  "en": "~1.8 billion stars: parallax, photometry, variability"
+ },
+ {
+  "k": "cba209e9",
+  "s": "<a class=\"citation-link\" href=\"https://gea.esac.esa.int/archive/\" target=\"_blank\" rel=\"noopener\">gea.esac.esa.int</a>",
+  "ru": "<a class=\"citation-link\" href=\"https://gea.esac.esa.int/archive/\" target=\"_blank\" rel=\"noopener\">gea.esac.esa.int</a>",
+  "en": "<a class=\"citation-link\" href=\"https://gea.esac.esa.int/archive/\" target=\"_blank\" rel=\"noopener\">gea.esac.esa.int</a>"
+ },
+ {
+  "k": "3fb799af",
+  "s": "<strong>NASA Exoplanet Archive</strong>",
+  "ru": "<strong>NASA Exoplanet Archive</strong>",
+  "en": "<strong>NASA Exoplanet Archive</strong>"
+ },
+ {
+  "k": "3043f843",
+  "s": "Tasdiqlangan ekzosayyoralar va ularning parametrlari",
+  "ru": "Подтверждённые экзопланеты и их параметры",
+  "en": "Confirmed exoplanets and their parameters"
+ },
+ {
+  "k": "7504fa4d",
+  "s": "<a class=\"citation-link\" href=\"https://exoplanetarchive.ipac.caltech.edu\" target=\"_blank\" rel=\"noopener\">exoplanetarchive.ipac.caltech.edu</a>",
+  "ru": "<a class=\"citation-link\" href=\"https://exoplanetarchive.ipac.caltech.edu\" target=\"_blank\" rel=\"noopener\">exoplanetarchive.ipac.caltech.edu</a>",
+  "en": "<a class=\"citation-link\" href=\"https://exoplanetarchive.ipac.caltech.edu\" target=\"_blank\" rel=\"noopener\">exoplanetarchive.ipac.caltech.edu</a>"
+ },
+ {
+  "k": "5725f6d2",
+  "s": "Model sun’iy kuzatuvlar seriyasini yaratadi: tasodifiy vaqtlarda olingan, shovqinli o‘lchashlar. Vazifangiz — <strong>sinov davri</strong> slayderini surib, fazaga yig‘ilgan grafikda nuqtalar silliq egri chiziqqa tushadigan davrni topish. Shovqin teleskop diametri va ekspozitsiya vaqtiga bog‘liq (soddalashtirilgan model).",
+  "ru": "Модель создаёт серию искусственных наблюдений: зашумлённые измерения, полученные в случайные моменты времени. Ваша задача — двигая ползунок <strong>пробного периода</strong>, найти период, при котором точки на свёрнутом по фазе графике ложатся на гладкую кривую. Шум зависит от диаметра телескопа и времени экспозиции (упрощённая модель).",
+  "en": "The model creates a series of artificial observations: noisy measurements taken at random times. Your job is to move the <strong>trial period</strong> slider and find the period at which the points on the phase-folded plot fall on a smooth curve. The noise depends on the telescope diameter and exposure time (a simplified model)."
+ },
+ {
+  "k": "2f5bca45",
+  "s": "Obyekt turi",
+  "ru": "Тип объекта",
+  "en": "Object type"
+ },
+ {
+  "k": "68c2f2aa",
+  "s": "Sefeid (pulsatsiyalanuvchi yulduz)",
+  "ru": "Цефеида (пульсирующая звезда)",
+  "en": "Cepheid (pulsating star)"
+ },
+ {
+  "k": "bdaaed3f",
+  "s": "Tranzitli ekzosayyora",
+  "ru": "Транзитная экзопланета",
+  "en": "Transiting exoplanet"
+ },
+ {
+  "k": "a3368a69",
+  "s": "Teleskop diametri D:",
+  "ru": "Диаметр телескопа D:",
+  "en": "Telescope diameter D:"
+ },
+ {
+  "k": "7af50982",
+  "s": "100 mm",
+  "ru": "100 мм",
+  "en": "100 mm"
+ },
+ {
+  "k": "a9fb68c3",
+  "s": "Ekspozitsiya vaqti:",
+  "ru": "Время экспозиции:",
+  "en": "Exposure time:"
+ },
+ {
+  "k": "5376736c",
+  "s": "Sinov davri P:",
+  "ru": "Пробный период P:",
+  "en": "Trial period P:"
+ },
+ {
+  "k": "b540305d",
+  "s": "🔎 Avtomatik izlash (PDM / BLS)",
+  "ru": "🔎 Автоматический поиск (PDM / BLS)",
+  "en": "🔎 Automatic search (PDM / BLS)"
+ },
+ {
+  "k": "71d330f5",
+  "s": "🎲 Yangi obyekt",
+  "ru": "🎲 Новый объект",
+  "en": "🎲 New object"
+ },
+ {
+  "k": "57788c12",
+  "s": "Javobni ko‘rsatish",
+  "ru": "Показать ответ",
+  "en": "Show answer"
+ },
+ {
+  "k": "c32f3ca3",
+  "s": "Kuzatish vazifalari:",
+  "ru": "Задания для наблюдения:",
+  "en": "Observation tasks:"
+ },
+ {
+  "k": "02da3f22",
+  "s": "Davrni qo‘lda toping, so‘ng “Avtomatik izlash” natijasi bilan solishtiring. Θ qiymati qanday o‘zgaradi?",
+  "ru": "Найдите период вручную, затем сравните с результатом «Автоматического поиска». Как меняется значение Θ?",
+  "en": "Find the period by hand, then compare it with the \"Automatic search\" result. How does Θ change?"
+ },
+ {
+  "k": "b4fec3a2",
+  "s": "Sinov davrini haqiqiy davrdan ikki marta katta qilib qo‘ying. Fazaga yig‘ilgan grafikda nima ko‘rinadi va nima uchun PDM bunday davrlarda ham minimum beradi?",
+  "ru": "Установите пробный период вдвое больше истинного. Что видно на свёрнутом по фазе графике и почему PDM даёт минимум и при таких периодах?",
+  "en": "Set the trial period to twice the true period. What do you see on the phase-folded plot, and why does PDM also give a minimum at such periods?"
+ },
+ {
+  "k": "e05d2965",
+  "s": "Teleskop diametrini 50 mm dan 500 mm gacha oshiring. Bitta o‘lchash xatoligi necha marta kamayadi?",
+  "ru": "Увеличьте диаметр телескопа с 50 мм до 500 мм. Во сколько раз уменьшится погрешность одного измерения?",
+  "en": "Increase the telescope diameter from 50 mm to 500 mm. By what factor does a single measurement’s error drop?"
+ },
+ {
+  "k": "763dc065",
+  "s": "Topilgan davr bo‘yicha Sefeid masofasini hisoblang va “Javobni ko‘rsatish” bilan tekshiring. Xatolik qayerdan kelib chiqadi?",
+  "ru": "По найденному периоду рассчитайте расстояние до цефеиды и проверьте с помощью «Показать ответ». Откуда берётся погрешность?",
+  "en": "Calculate the Cepheid’s distance from the period you found and check it with \"Show answer\". Where does the error come from?"
+ },
+ {
+  "k": "db03b550",
+  "s": "Kepler kosmik teleskopining ochiq fotometrik ma’lumotlari bo‘yicha (1) ekzosayyora tranziti davri va sayyora radiusini, (2) Sefeid davri va masofasini aniqlash; SI yozgan tahlil kodini mustaqil tekshirish.",
+  "ru": "По открытым фотометрическим данным космического телескопа Kepler определить (1) период транзита экзопланеты и радиус планеты, (2) период и расстояние цефеиды; самостоятельно проверить код анализа, написанный ИИ.",
+  "en": "Use open Kepler space telescope photometry to find (1) an exoplanet’s transit period and the planet’s radius and (2) a Cepheid’s period and distance; check the AI-written analysis code yourself."
+ },
+ {
+  "k": "1da8923e",
+  "s": "<strong>Kerakli vositalar (hammasi bepul):</strong> Google Colab, ochiq manbali <a class=\"citation-link\" href=\"https://lightkurve.github.io/lightkurve/\" target=\"_blank\" rel=\"noopener\">Lightkurve</a> Python kutubxonasi (ma’lumotlarni MAST arxividan avtomatik yuklaydi), Gemini, ChatGPT yoki Claude’ning bepul tarifi.",
+  "ru": "<strong>Необходимые инструменты (все бесплатные):</strong> Google Colab, Python-библиотека с открытым кодом <a class=\"citation-link\" href=\"https://lightkurve.github.io/lightkurve/\" target=\"_blank\" rel=\"noopener\">Lightkurve</a> (автоматически загружает данные из архива MAST), бесплатный тариф Gemini, ChatGPT или Claude.",
+  "en": "<strong>Tools you need (all free):</strong> Google Colab, the open-source <a class=\"citation-link\" href=\"https://lightkurve.github.io/lightkurve/\" target=\"_blank\" rel=\"noopener\">Lightkurve</a> Python library (it downloads data from the MAST archive automatically), and the free tier of Gemini, ChatGPT or Claude."
+ },
+ {
+  "k": "98c0686e",
+  "s": "A qism. Kepler-10 b ekzosayyorasi",
+  "ru": "Часть A. Экзопланета Kepler-10 b",
+  "en": "Part A. The exoplanet Kepler-10 b"
+ },
+ {
+  "k": "e213c422",
+  "s": "!pip install -q lightkurve\nimport numpy as np\nimport lightkurve as lk\n\nlc = lk.search_lightcurve(\"Kepler-10\", author=\"Kepler\", cadence=\"long\").download_all().stitch()\nlc = lc.flatten(window_length=901).remove_outliers(sigma=5)\n\npg = lc.to_periodogram(method=\"bls\", period=np.arange(0.3, 10, 0.0005), duration=0.08)\nP = pg.period_at_max_power\nt0 = pg.transit_time_at_max_power\nprint(\"Davr:\", P, \"  chuqurlik:\", pg.depth_at_max_power)\n\nlc.fold(period=P, epoch_time=t0).scatter(alpha=0.2)",
+  "ru": "!pip install -q lightkurve\nimport numpy as np\nimport lightkurve as lk\n\nlc = lk.search_lightcurve(\"Kepler-10\", author=\"Kepler\", cadence=\"long\").download_all().stitch()\nlc = lc.flatten(window_length=901).remove_outliers(sigma=5)\n\npg = lc.to_periodogram(method=\"bls\", period=np.arange(0.3, 10, 0.0005), duration=0.08)\nP = pg.period_at_max_power\nt0 = pg.transit_time_at_max_power\nprint(\"Период:\", P, \"  глубина:\", pg.depth_at_max_power)\n\nlc.fold(period=P, epoch_time=t0).scatter(alpha=0.2)",
+  "en": "!pip install -q lightkurve\nimport numpy as np\nimport lightkurve as lk\n\nlc = lk.search_lightcurve(\"Kepler-10\", author=\"Kepler\", cadence=\"long\").download_all().stitch()\nlc = lc.flatten(window_length=901).remove_outliers(sigma=5)\n\npg = lc.to_periodogram(method=\"bls\", period=np.arange(0.3, 10, 0.0005), duration=0.08)\nP = pg.period_at_max_power\nt0 = pg.transit_time_at_max_power\nprint(\"Period:\", P, \"  depth:\", pg.depth_at_max_power)\n\nlc.fold(period=P, epoch_time=t0).scatter(alpha=0.2)"
+ },
+ {
+  "k": "aa06fb5b",
+  "s": "Topilgan davrni NASA Exoplanet Archive’dagi qiymat bilan solishtiring (Kepler-10 b uchun ≈ 0,837 sutka).",
+  "ru": "Сравните найденный период со значением в NASA Exoplanet Archive (для Kepler-10 b ≈ 0,837 сут).",
+  "en": "Compare the period you found with the NASA Exoplanet Archive value (≈ 0.837 days for Kepler-10 b)."
+ },
+ {
+  "k": "fc18bf36",
+  "s": "Chuqurlikdan $R_p/R_*$ ni toping. Yulduz radiusi $R_* \\approx 1{,}07\\,R_\\odot$ deb olib, sayyora radiusini Yer radiuslarida hisoblang ($R_\\odot \\approx 109\\,R_\\oplus$).",
+  "ru": "По глубине найдите $R_p/R_*$. Приняв радиус звезды $R_* \\approx 1{,}07\\,R_\\odot$, рассчитайте радиус планеты в радиусах Земли ($R_\\odot \\approx 109\\,R_\\oplus$).",
+  "en": "Find $R_p/R_*$ from the depth. Taking the star’s radius as $R_* \\approx 1{,}07\\,R_\\odot$, calculate the planet’s radius in Earth radii ($R_\\odot \\approx 109\\,R_\\oplus$)."
+ },
+ {
+  "k": "33e0fa98",
+  "s": "Periodogrammada P/2 va 2P davrlardagi cho‘qqilarga e’tibor bering: ular nima uchun paydo bo‘ladi? Tizimdagi ikkinchi sayyora Kepler-10 c (P ≈ 45,3 sutka) nima uchun bu periodogrammada ko‘rinmaydi?",
+  "ru": "Обратите внимание на пики периодограммы при периодах P/2 и 2P: почему они появляются? Почему вторая планета системы Kepler-10 c (P ≈ 45,3 сут) не видна на этой периодограмме?",
+  "en": "Look at the periodogram peaks at P/2 and 2P: why do they appear? Why is the system’s second planet, Kepler-10 c (P ≈ 45.3 days), not visible in this periodogram?"
+ },
+ {
+  "k": "7d55a5da",
+  "s": "B qism. V1154 Cyg Sefeidi",
+  "ru": "Часть B. Цефеида V1154 Cyg",
+  "en": "Part B. The Cepheid V1154 Cyg"
+ },
+ {
+  "k": "5ab362b7",
+  "s": "lc = lk.search_lightcurve(\"V1154 Cyg\", author=\"Kepler\", cadence=\"long\").download_all().stitch()\nlc = lc.remove_nans().remove_outliers(sigma=5)\npg = lc.to_periodogram(method=\"lombscargle\", minimum_period=1, maximum_period=20)\nprint(\"Davr:\", pg.period_at_max_power)\nlc.fold(period=pg.period_at_max_power).scatter(alpha=0.3)",
+  "ru": "lc = lk.search_lightcurve(\"V1154 Cyg\", author=\"Kepler\", cadence=\"long\").download_all().stitch()\nlc = lc.remove_nans().remove_outliers(sigma=5)\npg = lc.to_periodogram(method=\"lombscargle\", minimum_period=1, maximum_period=20)\nprint(\"Период:\", pg.period_at_max_power)\nlc.fold(period=pg.period_at_max_power).scatter(alpha=0.3)",
+  "en": "lc = lk.search_lightcurve(\"V1154 Cyg\", author=\"Kepler\", cadence=\"long\").download_all().stitch()\nlc = lc.remove_nans().remove_outliers(sigma=5)\npg = lc.to_periodogram(method=\"lombscargle\", minimum_period=1, maximum_period=20)\nprint(\"Period:\", pg.period_at_max_power)\nlc.fold(period=pg.period_at_max_power).scatter(alpha=0.3)"
+ },
+ {
+  "k": "0b08c08a",
+  "s": "Topilgan davr (≈ 4,9 sutka) bo‘yicha Livitt qonunidan $M_V$ ni hisoblang.",
+  "ru": "По найденному периоду (≈ 4,9 сут) рассчитайте $M_V$ из закона Ливитт.",
+  "en": "Using the period you found (≈ 4.9 days), calculate $M_V$ from Leavitt’s law."
+ },
+ {
+  "k": "190d1de5",
+  "s": "Yulduzning o‘rtacha ko‘rinma kattaligini SIMBAD yoki AAVSO dan oling ($V \\approx 9{,}2^m$) va masofani yutilishsiz baholang.",
+  "ru": "Возьмите среднюю видимую величину звезды из SIMBAD или AAVSO ($V \\approx 9{,}2^m$) и оцените расстояние без учёта поглощения.",
+  "en": "Take the star’s mean apparent magnitude from SIMBAD or AAVSO ($V \\approx 9{,}2^m$) and estimate the distance ignoring extinction."
+ },
+ {
+  "k": "4adce792",
+  "s": "Natijani Gaia parallaksi bo‘yicha masofa bilan solishtiring. Farq qaysi omillar (yulduzlararo yutilish, Leavitt qonunining sochilishi) bilan bog‘liq?",
+  "ru": "Сравните результат с расстоянием по параллаксу Gaia. С какими факторами (межзвёздное поглощение, разброс закона Ливитт) связано различие?",
+  "en": "Compare the result with the Gaia parallax distance. Which factors (interstellar extinction, scatter in Leavitt’s law) explain the difference?"
+ },
+ {
+  "k": "39b788f6",
+  "s": "C qism. SI bilan ishlash",
+  "ru": "Часть C. Работа с ИИ",
+  "en": "Part C. Working with AI"
+ },
+ {
+  "k": "2f9b3362",
+  "s": "Men Lightkurve yordamida Kepler ma’lumotlaridan yorug‘lik egri chizig‘ini oldim.\n1) BLS periodogrammasi qanday ishlashini talabaga tushunarli qilib izohla.\n2) Fazaga yig‘ilgan egri chiziqdan tranzit chuqurligi va davomiyligini o‘lchovchi\n   kod yoz; xatolikni bootstrap usulida bahola.\n3) Davr karraliligi (P/2, 2P) xatosini qanday aniqlash mumkinligini ko‘rsat.\nHar bir qadamda fizik birliklarni yoz.",
+  "ru": "Я получил с помощью Lightkurve кривую блеска из данных Kepler.\n1) Понятно для студента объясни, как работает периодограмма BLS.\n2) Напиши код, измеряющий глубину и длительность транзита по свёрнутой по фазе\n   кривой; оцени погрешность методом bootstrap.\n3) Покажи, как распознать ошибку кратности периода (P/2, 2P).\nНа каждом шаге указывай физические единицы.",
+  "en": "I used Lightkurve to get a light curve from Kepler data.\n1) Explain how the BLS periodogram works in a way a student can follow.\n2) Write code that measures the transit depth and duration from the phase-folded\n   curve; estimate the error with bootstrapping.\n3) Show how to spot a period-multiple error (P/2, 2P).\nGive the physical units at every step."
+ },
+ {
+  "k": "9d5c0543",
+  "s": "SI kutubxona funksiyalarining nomlari va argumentlarini ba’zan “o‘ylab topadi”. Kodni ishga tushirib tekshiring, xato bergan qatorlarni rasmiy hujjatlar bilan solishtiring va SI jurnaliga yozing.",
+  "ru": "ИИ иногда «придумывает» имена и аргументы библиотечных функций. Запустите код и проверьте, сравните строки с ошибками с официальной документацией и запишите в журнал ИИ.",
+  "en": "AI sometimes \"invents\" library function names and arguments. Run the code to check it, compare any lines that fail with the official documentation and log them in your AI journal."
+ },
+ {
+  "k": "1cf22ae6",
+  "s": "Tranzit tahlili",
+  "ru": "Анализ транзита",
+  "en": "Transit analysis"
+ },
+ {
+  "k": "242996f5",
+  "s": "Davr, chuqurlik, sayyora radiusi va ularning xatoligi",
+  "ru": "Период, глубина, радиус планеты и их погрешности",
+  "en": "Period, depth, planet radius and their errors"
+ },
+ {
+  "k": "6e5a8e17",
+  "s": "Sefeid va masofa",
+  "ru": "Цефеида и расстояние",
+  "en": "Cepheid and distance"
+ },
+ {
+  "k": "f1ff53df",
+  "s": "Davr, $M_V$, masofa; Gaia bilan solishtirish",
+  "ru": "Период, $M_V$, расстояние; сравнение с Gaia",
+  "en": "Period, $M_V$, distance; comparison with Gaia"
+ },
+ {
+  "k": "28ee80ef",
+  "s": "Kod va grafiklar",
+  "ru": "Код и графики",
+  "en": "Code and plots"
+ },
+ {
+  "k": "9699966d",
+  "s": "Kod ishlaydi, grafiklar o‘qlari va birliklari bilan",
+  "ru": "Код работает, у графиков есть оси и единицы",
+  "en": "The code runs; the plots have axes and units"
+ },
+ {
+  "k": "71653afd",
+  "s": "Promptlar, SI javoblari va tuzatilgan xatolar",
+  "ru": "Промпты, ответы ИИ и исправленные ошибки",
+  "en": "Prompts, AI answers and corrected errors"
+ },
+ {
+  "k": "81a023c2",
+  "s": "Usullarning cheklovlari va xatolik manbalari tahlil qilingan",
+  "ru": "Проанализированы ограничения методов и источники погрешностей",
+  "en": "The methods’ limits and sources of error are analysed"
+ },
+ {
+  "k": "c64e0009",
+  "s": "1-savol. Ikki yulduz kattaliklari farqi 5ᵐ. Ularning yorug‘lik oqimlari nisbati qancha?",
+  "ru": "Вопрос 1. Разность величин двух звёзд 5ᵐ. Каково отношение их световых потоков?",
+  "en": "Question 1. Two stars differ by 5ᵐ. What is the ratio of their fluxes?"
+ },
+ {
+  "k": "2e787d00",
+  "s": "2-savol. Teleskop diametri 2 marta oshirildi. Ajrata olish chegarasi qanday o‘zgaradi?",
+  "ru": "Вопрос 2. Диаметр телескопа увеличили в 2 раза. Как изменится предел разрешения?",
+  "en": "Question 2. A telescope’s diameter is doubled. How does its resolution limit change?"
+ },
+ {
+  "k": "88e23e40",
+  "s": "A) 2 marta yomonlashadi",
+  "ru": "A) Ухудшится в 2 раза",
+  "en": "A) It gets 2 times worse"
+ },
+ {
+  "k": "09d0ccbc",
+  "s": "B) 2 marta yaxshilanadi (θ kichrayadi)",
+  "ru": "B) Улучшится в 2 раза (θ уменьшится)",
+  "en": "B) It gets 2 times better (θ gets smaller)"
+ },
+ {
+  "k": "44ee0247",
+  "s": "C) 4 marta yaxshilanadi",
+  "ru": "C) Улучшится в 4 раза",
+  "en": "C) It gets 4 times better"
+ },
+ {
+  "k": "f0306289",
+  "s": "3-savol. Sefeidning davri 10 sutka, o‘rtacha ko‘rinma kattaligi 10ᵐ. Yutilishni hisobga olmasdan masofa qancha?",
+  "ru": "Вопрос 3. Период цефеиды 10 сут, средняя видимая величина 10ᵐ. Каково расстояние без учёта поглощения?",
+  "en": "Question 3. A Cepheid has a 10-day period and a mean apparent magnitude of 10ᵐ. What is its distance, ignoring extinction?"
+ },
+ {
+  "k": "9530248a",
+  "s": "A) ≈ 640 pk",
+  "ru": "A) ≈ 640 пк",
+  "en": "A) ≈ 640 pc"
+ },
+ {
+  "k": "0f687136",
+  "s": "B) ≈ 6,4 kpk",
+  "ru": "B) ≈ 6,4 кпк",
+  "en": "B) ≈ 6.4 kpc"
+ },
+ {
+  "k": "3ea8cc29",
+  "s": "C) ≈ 64 kpk",
+  "ru": "C) ≈ 64 кпк",
+  "en": "C) ≈ 64 kpc"
+ },
+ {
+  "k": "21d551f6",
+  "s": "D) ≈ 100 pk",
+  "ru": "D) ≈ 100 пк",
+  "en": "D) ≈ 100 pc"
+ },
+ {
+  "k": "613cd5f3",
+  "s": "4-savol. Nima uchun davrni topishda fazaga yig‘ish usuli qo‘llaniladi?",
+  "ru": "Вопрос 4. Почему при поиске периода применяется метод свёртки по фазе?",
+  "en": "Question 4. Why is phase folding used to find a period?"
+ },
+ {
+  "k": "5c242711",
+  "s": "A) Kuzatuvlar notekis vaqtlarda olinadi va bir davr ichida kam nuqta bo‘ladi",
+  "ru": "A) Наблюдения проводятся в неравномерные моменты, и на один период приходится мало точек",
+  "en": "A) Observations are taken at uneven times and few points fall within one period"
+ },
+ {
+  "k": "7ca0ce4d",
+  "s": "B) Teleskop faqat bitta tunda ishlaydi",
+  "ru": "B) Телескоп работает только одну ночь",
+  "en": "B) The telescope only works for one night"
+ },
+ {
+  "k": "5514f65a",
+  "s": "C) Faza yulduz haroratini beradi",
+  "ru": "C) Фаза даёт температуру звезды",
+  "en": "C) The phase gives the star’s temperature"
+ },
+ {
+  "k": "bc45c948",
+  "s": "D) Fazaga yig‘ish shovqinni butunlay yo‘qotadi",
+  "ru": "D) Свёртка по фазе полностью устраняет шум",
+  "en": "D) Phase folding removes noise completely"
+ },
+ {
+  "k": "27ea89fb",
+  "s": "Nima uchun kosmik teleskoplar (Kepler, TESS) Yerdagi teleskoplarga qaraganda aniqroq fotometriya beradi?",
+  "ru": "Почему космические телескопы (Kepler, TESS) дают более точную фотометрию, чем наземные?",
+  "en": "Why do space telescopes (Kepler, TESS) give more precise photometry than ground-based ones?"
+ },
+ {
+  "k": "2f4dcccb",
+  "s": "“Masofa zinapoyasi” nima? Parallaks, Sefeidlar va Ia tur o‘ta yangi yulduzlar bu zinapoyada qanday bog‘langan?",
+  "ru": "Что такое «лестница расстояний»? Как на этой лестнице связаны параллакс, цефеиды и сверхновые типа Ia?",
+  "en": "What is the \"distance ladder\"? How are parallax, Cepheids and type Ia supernovae linked on it?"
+ },
+ {
+  "k": "a854798b",
+  "s": "Tutiluvchi qo‘shaloq yulduz yorug‘lik egri chizig‘i tranzitdan qanday farq qiladi?",
+  "ru": "Чем кривая блеска затменной двойной звезды отличается от транзита?",
+  "en": "How does an eclipsing binary’s light curve differ from a transit?"
+ },
+ {
+  "k": "a1af54d3",
+  "s": "Howell, S. B. (2006). <em>Handbook of CCD Astronomy</em> (2nd ed.). Cambridge University Press.",
+  "ru": "Howell, S. B. (2006). <em>Handbook of CCD Astronomy</em> (2nd ed.). Cambridge University Press.",
+  "en": "Howell, S. B. (2006). <em>Handbook of CCD Astronomy</em> (2nd ed.). Cambridge University Press."
+ },
+ {
+  "k": "2ed9da2f",
+  "s": "Stellingwerf, R. F. (1978). Period determination using phase dispersion minimization. <em>The Astrophysical Journal, 224</em>, 953–960. <a class=\"citation-link\" href=\"https://doi.org/10.1086/156444\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/156444</a>",
+  "ru": "Stellingwerf, R. F. (1978). Period determination using phase dispersion minimization. <em>The Astrophysical Journal, 224</em>, 953–960. <a class=\"citation-link\" href=\"https://doi.org/10.1086/156444\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/156444</a>",
+  "en": "Stellingwerf, R. F. (1978). Period determination using phase dispersion minimization. <em>The Astrophysical Journal, 224</em>, 953–960. <a class=\"citation-link\" href=\"https://doi.org/10.1086/156444\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/156444</a>"
+ },
+ {
+  "k": "99e53f4b",
+  "s": "VanderPlas, J. T. (2018). Understanding the Lomb–Scargle periodogram. <em>The Astrophysical Journal Supplement Series, 236</em>(1), 16. <a class=\"citation-link\" href=\"https://doi.org/10.3847/1538-4365/aab766\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/1538-4365/aab766</a>",
+  "ru": "VanderPlas, J. T. (2018). Understanding the Lomb–Scargle periodogram. <em>The Astrophysical Journal Supplement Series, 236</em>(1), 16. <a class=\"citation-link\" href=\"https://doi.org/10.3847/1538-4365/aab766\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/1538-4365/aab766</a>",
+  "en": "VanderPlas, J. T. (2018). Understanding the Lomb–Scargle periodogram. <em>The Astrophysical Journal Supplement Series, 236</em>(1), 16. <a class=\"citation-link\" href=\"https://doi.org/10.3847/1538-4365/aab766\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/1538-4365/aab766</a>"
+ },
+ {
+  "k": "ab2d4a92",
+  "s": "Kovács, G., Zucker, S., &amp; Mazeh, T. (2002). A box-fitting algorithm in the search for periodic transits. <em>Astronomy &amp; Astrophysics, 391</em>, 369–377. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361:20020802\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361:20020802</a>",
+  "ru": "Kovács, G., Zucker, S., &amp; Mazeh, T. (2002). A box-fitting algorithm in the search for periodic transits. <em>Astronomy &amp; Astrophysics, 391</em>, 369–377. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361:20020802\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361:20020802</a>",
+  "en": "Kovács, G., Zucker, S., &amp; Mazeh, T. (2002). A box-fitting algorithm in the search for periodic transits. <em>Astronomy &amp; Astrophysics, 391</em>, 369–377. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361:20020802\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361:20020802</a>"
+ },
+ {
+  "k": "833b5cbd",
+  "s": "Leavitt, H. S., &amp; Pickering, E. C. (1912). Periods of 25 variable stars in the Small Magellanic Cloud. <em>Harvard College Observatory Circular, 173</em>, 1–3.",
+  "ru": "Leavitt, H. S., &amp; Pickering, E. C. (1912). Periods of 25 variable stars in the Small Magellanic Cloud. <em>Harvard College Observatory Circular, 173</em>, 1–3.",
+  "en": "Leavitt, H. S., &amp; Pickering, E. C. (1912). Periods of 25 variable stars in the Small Magellanic Cloud. <em>Harvard College Observatory Circular, 173</em>, 1–3."
+ },
+ {
+  "k": "cadf907a",
+  "s": "Benedict, G. F., et al. (2007). Hubble Space Telescope Fine Guidance Sensor parallaxes of Galactic Cepheid variable stars: Period-luminosity relations. <em>The Astronomical Journal, 133</em>(4), 1810–1827. <a class=\"citation-link\" href=\"https://doi.org/10.1086/511980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/511980</a>",
+  "ru": "Benedict, G. F., et al. (2007). Hubble Space Telescope Fine Guidance Sensor parallaxes of Galactic Cepheid variable stars: Period-luminosity relations. <em>The Astronomical Journal, 133</em>(4), 1810–1827. <a class=\"citation-link\" href=\"https://doi.org/10.1086/511980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/511980</a>",
+  "en": "Benedict, G. F., et al. (2007). Hubble Space Telescope Fine Guidance Sensor parallaxes of Galactic Cepheid variable stars: Period-luminosity relations. <em>The Astronomical Journal, 133</em>(4), 1810–1827. <a class=\"citation-link\" href=\"https://doi.org/10.1086/511980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/511980</a>"
+ },
+ {
+  "k": "67dc7ba7",
+  "s": "Borucki, W. J., et al. (2010). Kepler planet-detection mission: Introduction and first results. <em>Science, 327</em>(5968), 977–980. <a class=\"citation-link\" href=\"https://doi.org/10.1126/science.1185402\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1126/science.1185402</a>",
+  "ru": "Borucki, W. J., et al. (2010). Kepler planet-detection mission: Introduction and first results. <em>Science, 327</em>(5968), 977–980. <a class=\"citation-link\" href=\"https://doi.org/10.1126/science.1185402\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1126/science.1185402</a>",
+  "en": "Borucki, W. J., et al. (2010). Kepler planet-detection mission: Introduction and first results. <em>Science, 327</em>(5968), 977–980. <a class=\"citation-link\" href=\"https://doi.org/10.1126/science.1185402\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1126/science.1185402</a>"
+ },
+ {
+  "k": "24c80793",
+  "s": "Ricker, G. R., et al. (2015). The Transiting Exoplanet Survey Satellite. <em>Journal of Astronomical Telescopes, Instruments, and Systems, 1</em>(1), 014003. <a class=\"citation-link\" href=\"https://doi.org/10.1117/1.JATIS.1.1.014003\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1117/1.JATIS.1.1.014003</a>",
+  "ru": "Ricker, G. R., et al. (2015). The Transiting Exoplanet Survey Satellite. <em>Journal of Astronomical Telescopes, Instruments, and Systems, 1</em>(1), 014003. <a class=\"citation-link\" href=\"https://doi.org/10.1117/1.JATIS.1.1.014003\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1117/1.JATIS.1.1.014003</a>",
+  "en": "Ricker, G. R., et al. (2015). The Transiting Exoplanet Survey Satellite. <em>Journal of Astronomical Telescopes, Instruments, and Systems, 1</em>(1), 014003. <a class=\"citation-link\" href=\"https://doi.org/10.1117/1.JATIS.1.1.014003\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1117/1.JATIS.1.1.014003</a>"
+ },
+ {
+  "k": "7b79fccd",
+  "s": "Lightkurve Collaboration (2018). <em>Lightkurve: Kepler and TESS time series analysis in Python</em>. Astrophysics Source Code Library, ascl:1812.013.",
+  "ru": "Lightkurve Collaboration (2018). <em>Lightkurve: Kepler and TESS time series analysis in Python</em>. Astrophysics Source Code Library, ascl:1812.013.",
+  "en": "Lightkurve Collaboration (2018). <em>Lightkurve: Kepler and TESS time series analysis in Python</em>. Astrophysics Source Code Library, ascl:1812.013."
+ }
+]

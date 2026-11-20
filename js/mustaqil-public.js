@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 "use strict";
 (() => {
  const input = document.getElementById('search');
@@ -24,14 +25,14 @@
      card.hidden = !found;
      if (found) matches++;
    }
-   count.textContent = tr('independent.count', matches + ' ta mavzu', { count: matches });
-   empty.textContent = tr('independent.empty', 'Ushbu so‘rov bo‘yicha mavzu topilmadi.');
+   count.textContent = tr('independent.count', matches + __t(" ta mavzu"), { count: matches });
+   empty.textContent = tr('independent.empty', __t("Ushbu so‘rov bo‘yicha mavzu topilmadi."));
    empty.hidden = matches > 0;
  }
 
  input.addEventListener('input', filter);
  document.addEventListener('i18n:change', () => {
-   input.setAttribute('placeholder', tr('independent.searchPlaceholder', 'Masalan: astronomiya, Canvas, elektromagnit...'));
+   input.setAttribute('placeholder', tr('independent.searchPlaceholder', __t("Masalan: astronomiya, Canvas, elektromagnit...")));
    filter();
  });
 })();

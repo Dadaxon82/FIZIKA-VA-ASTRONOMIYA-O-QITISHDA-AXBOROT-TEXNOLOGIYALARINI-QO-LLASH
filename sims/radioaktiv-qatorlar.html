@@ -101,32 +101,32 @@
     // [belgi, A, Z, yemirilish turi, yarim yemirilish davri]
     const SERIES = {
       u238: [
-        ['U', 238, 92, 'α', '4.47·10⁹ yil'],
-        ['Th', 234, 90, 'β⁻', '24.1 kun'],
-        ['Pa', 234, 91, 'β⁻', '1.17 min (²³⁴ᵐPa)'],
-        ['U', 234, 92, 'α', '2.46·10⁵ yil'],
-        ['Th', 230, 90, 'α', '7.54·10⁴ yil'],
-        ['Ra', 226, 88, 'α', '1600 yil'],
-        ['Rn', 222, 86, 'α', '3.82 kun'],
-        ['Po', 218, 84, 'α', '3.10 min'],
-        ['Pb', 214, 82, 'β⁻', '26.8 min'],
-        ['Bi', 214, 83, 'β⁻', '19.9 min'],
+        ['U', 238, 92, 'α', __t("4.47·10⁹ yil")],
+        ['Th', 234, 90, 'β⁻', __t("24.1 kun")],
+        ['Pa', 234, 91, 'β⁻', __t("1.17 min (²³⁴ᵐPa)")],
+        ['U', 234, 92, 'α', __t("2.46·10⁵ yil")],
+        ['Th', 230, 90, 'α', __t("7.54·10⁴ yil")],
+        ['Ra', 226, 88, 'α', __t("1600 yil")],
+        ['Rn', 222, 86, 'α', __t("3.82 kun")],
+        ['Po', 218, 84, 'α', __t("3.10 min")],
+        ['Pb', 214, 82, 'β⁻', __t("26.8 min")],
+        ['Bi', 214, 83, 'β⁻', __t("19.9 min")],
         ['Po', 214, 84, 'α', '164 μs'],
-        ['Pb', 210, 82, 'β⁻', '22.2 yil'],
-        ['Bi', 210, 83, 'β⁻', '5.01 kun'],
-        ['Po', 210, 84, 'α', '138.4 kun'],
+        ['Pb', 210, 82, 'β⁻', __t("22.2 yil")],
+        ['Bi', 210, 83, 'β⁻', __t("5.01 kun")],
+        ['Po', 210, 84, 'α', __t("138.4 kun")],
         ['Pb', 206, 82, 'barqaror', '—']
       ],
       th232: [
-        ['Th', 232, 90, 'α', '1.40·10¹⁰ yil'],
-        ['Ra', 228, 88, 'β⁻', '5.75 yil'],
-        ['Ac', 228, 89, 'β⁻', '6.15 soat'],
-        ['Th', 228, 90, 'α', '1.91 yil'],
-        ['Ra', 224, 88, 'α', '3.63 kun'],
+        ['Th', 232, 90, 'α', __t("1.40·10¹⁰ yil")],
+        ['Ra', 228, 88, 'β⁻', __t("5.75 yil")],
+        ['Ac', 228, 89, 'β⁻', __t("6.15 soat")],
+        ['Th', 228, 90, 'α', __t("1.91 yil")],
+        ['Ra', 224, 88, 'α', __t("3.63 kun")],
         ['Rn', 220, 86, 'α', '55.6 s'],
         ['Po', 216, 84, 'α', '0.145 s'],
-        ['Pb', 212, 82, 'β⁻', '10.6 soat'],
-        ['Bi', 212, 83, 'β⁻', '60.6 min (64%)'],
+        ['Pb', 212, 82, 'β⁻', __t("10.6 soat")],
+        ['Bi', 212, 83, 'β⁻', __t("60.6 min (64%)")],
         ['Po', 212, 84, 'α', '0.30 μs'],
         ['Pb', 208, 82, 'barqaror', '—']
       ]
@@ -170,10 +170,10 @@
       for (let Z = b.zMin; Z <= b.zMax + 1; Z++) { const y = oy + (Z - b.zMin) * cell; ctx.beginPath(); ctx.moveTo(ox, y); ctx.lineTo(ox + cell * (b.nMax - b.nMin + 1), y); ctx.stroke(); }
       ctx.fillStyle = '#94A3B8'; ctx.font = '11px ui-monospace, monospace'; ctx.textAlign = 'center';
       for (let N = b.nMin; N <= b.nMax; N += 2) ctx.fillText(N, X(N), oy + cell * (b.zMax - b.zMin + 1) + 14);
-      ctx.fillText(tr('sims.axisN', 'Neytronlar soni N'), W / 2, H - 6);
+      ctx.fillText(tr('sims.axisN', __t("Neytronlar soni N")), W / 2, H - 6);
       ctx.textAlign = 'right';
       for (let Z = b.zMin; Z <= b.zMax; Z++) ctx.fillText(Z, ox - 6, Y(Z) + 4);
-      ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText(tr('sims.axisZ', 'Zaryad soni Z'), 0, 0); ctx.restore();
+      ctx.save(); ctx.translate(12, H / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText(tr('sims.axisZ', __t("Zaryad soni Z")), 0, 0); ctx.restore();
 
       // O‘tilgan yo‘l (strelkalar)
       for (let i = 0; i < chain.length - 1; i++) {
@@ -220,8 +220,8 @@
       document.getElementById('curInfo').innerHTML =
         `A = ${n[1]}, Z = ${n[2]}, N = ${n[1] - n[2]}<br>` +
         (n[3] === 'barqaror'
-          ? '<span class="s">' + tr('sims.stableEnd', 'Barqaror yadro — qator tugadi.') + '</span>'
-          : `${tr('sims.decay', 'Yemirilish:')} <b class="${n[3] === 'α' ? 'a' : 'b'}">${n[3]}</b>, T½ = ${halfLife(n[4])}`);
+          ? '<span class="s">' + tr('sims.stableEnd', __t("Barqaror yadro — qator tugadi.")) + '</span>'
+          : `${tr('sims.decay', __t("Yemirilish:"))} <b class="${n[3] === 'α' ? 'a' : 'b'}">${n[3]}</b>, T½ = ${halfLife(n[4])}`);
 
       let a = 0, bb = 0;
       for (let i = 0; i < idx; i++) chain[i][3] === 'α' ? a++ : bb++;
@@ -245,7 +245,7 @@
 
     function stopAuto() {
       if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
-      document.getElementById('auto').textContent = '⏵ ' + tr('sims.auto', 'Avto');
+      document.getElementById('auto').textContent = '⏵ ' + tr('sims.auto', __t("Avto"));
     }
 
     document.getElementById('next').addEventListener('click', () => { stopAuto(); go(idx + 1); });
@@ -254,14 +254,14 @@
     document.getElementById('auto').addEventListener('click', () => {
       if (autoTimer) return stopAuto();
       if (idx >= chain.length - 1) go(0);
-      document.getElementById('auto').textContent = '⏸ ' + tr('sims.pause', 'Pauza');
+      document.getElementById('auto').textContent = '⏸ ' + tr('sims.pause', __t("Pauza"));
       autoTimer = setInterval(() => { if (idx >= chain.length - 1) stopAuto(); else go(idx + 1); }, 1200);
     });
     sel.addEventListener('change', () => { stopAuto(); chain = SERIES[sel.value]; go(0); anim = 1; });
     window.addEventListener('resize', resize);
     document.addEventListener('i18n:change', () => {
       renderPanel();
-      document.getElementById('auto').textContent = autoTimer ? '⏸ ' + tr('sims.pause', 'Pauza') : '⏵ ' + tr('sims.auto', 'Avto');
+      document.getElementById('auto').textContent = autoTimer ? '⏸ ' + tr('sims.pause', __t("Pauza")) : '⏵ ' + tr('sims.auto', __t("Avto"));
     });
 
     let last = performance.now();

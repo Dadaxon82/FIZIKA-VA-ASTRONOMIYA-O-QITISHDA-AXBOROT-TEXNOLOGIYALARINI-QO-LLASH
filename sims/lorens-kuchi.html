@@ -213,7 +213,7 @@
     $('tMe').textContent = (k.E === 0 && turns > 0) ? (t / (angAcc / (2 * Math.PI))).toFixed(3).replace('.', ',') + ' s' : '—';
   }
   ['q', 'm', 'v', 'b', 'e'].forEach(id => $(id).addEventListener('input', reset));
-  function renderPlay() { $('play').textContent = running ? '⏸ ' + tr('sims.pause', 'Pauza') : '▶ ' + tr('sims.resume', 'Davom'); }
+  function renderPlay() { $('play').textContent = running ? '⏸ ' + tr('sims.pause', __t("Pauza")) : '▶ ' + tr('sims.resume', 'Davom'); }
   $('play').addEventListener('click', () => { running = !running; renderPlay(); });
   document.addEventListener('i18n:change', renderPlay);
   $('reset').addEventListener('click', reset);

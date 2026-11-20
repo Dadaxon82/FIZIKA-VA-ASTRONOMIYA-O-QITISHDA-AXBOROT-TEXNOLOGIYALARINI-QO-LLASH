@@ -1,0 +1,110 @@
+483046a0	Закрыть	Close
+a87014d1	Дополнительная лекция A1 · Астрономия	Supplementary lecture A1 · Astronomy
+0032860c	Спектральные классы звёзд, связь между светимостью и температурой, соотношение масса–светимость и жизненный путь звёзд разной массы. Лабораторная работа с интерактивной диаграммой Г–Р и открытыми данными космического телескопа Gaia.	Stellar spectral classes, the relationship between luminosity and temperature, the mass–luminosity relation and the life paths of stars of different masses. A lab with an interactive H–R diagram and open data from the Gaia space telescope.
+f9adf134	Звезда — газовый шар, сжатый собственной силой тяжести, в центре которого идут термоядерные реакции. Весь её жизненный путь в основном определяется одной величиной — <strong>начальной массой</strong>. В этой лекции изучаются классификация звёзд, диаграмма Герцшпрунга–Рассела (Г–Р) и эволюция звёзд разной массы.	A star is a ball of gas squeezed by its own gravity, with thermonuclear reactions running at its centre. Its whole life is set mainly by one quantity — its <strong>initial mass</strong>. This lecture covers stellar classification, the Hertzsprung–Russell (H–R) diagram and the evolution of stars of different masses.
+9d80f68d	1.1. Основные параметры звезды	1.1. A star’s basic parameters
+7197cf63	Если считать поверхность звезды абсолютно чёрным телом, её светимость (полная энергия, излучаемая за секунду) выражается через радиус и эффективную температуру (закон Стефана–Больцмана):	Treating the star’s surface as a black body, its luminosity (the total energy emitted per second) is given by its radius and effective temperature (the Stefan–Boltzmann law):
+29ba538a	Номинальные значения для Солнца (МАС, 2015): ⟦1⟧ Вт, ⟦2⟧ м, ⟦3⟧ К. Поэтому параметры звёзд удобно записывать в солнечных единицах:	Nominal solar values (IAU, 2015): ⟦1⟧ W, ⟦2⟧ m, ⟦3⟧ K. It is therefore convenient to write stellar parameters in solar units:
+c90cd3aa	Видимая звёздная величина ⟦1⟧ и абсолютная звёздная величина ⟦2⟧ (величина, видимая с расстояния 10 пк) связаны через модуль расстояния:	The apparent magnitude ⟦1⟧ and the absolute magnitude ⟦2⟧ (the magnitude seen from 10 pc) are linked by the distance modulus:
+4b02dd30	1.2. Спектральные классы	1.2. Spectral classes
+93df55ce	Линии в спектрах звёзд зависят в основном от температуры поверхности. По Гарвардской классификации классы располагаются в порядке убывания температуры: <strong>O, B, A, F, G, K, M</strong>. Каждый класс делится на подклассы от 0 до 9 (например, Солнце — G2). Класс светимости обозначается римской цифрой: I — сверхгиганты, III — гиганты, V — звёзды главной последовательности (карлики).	The lines in stellar spectra depend mainly on surface temperature. In the Harvard classification the classes run in order of decreasing temperature: <strong>O, B, A, F, G, K, M</strong>. Each class is split into subclasses 0 to 9 (the Sun is G2, for example). The luminosity class is given as a Roman numeral: I — supergiants, III — giants, V — main-sequence (dwarf) stars.
+298e816c	Класс	Class
+80d85cc1	Температура, К	Temperature, K
+cc5f09d9	Основные линии в спектре	Main spectral lines
+39d13bf2	Пример	Example
+7c0f1a6f	голубой	blue
+8f439001	ионизованный гелий (He II)	ionised helium (He II)
+9491ebf0	Минтака (δ Ориона), O9.5	Mintaka (δ Orionis), O9.5
+fc110c4d	голубовато-белый	bluish-white
+d39c247d	нейтральный гелий (He I), водород	neutral helium (He I), hydrogen
+b71d7703	Ригель, B8 Ia	Rigel, B8 Ia
+051761cb	белый	white
+2b120996	серия Бальмера сильнее всего	the Balmer series is strongest
+ab2385ff	желтовато-белый	yellowish-white
+696b9efb	Ca II, линии металлов усиливаются	Ca II; metal lines grow stronger
+fabdce88	Процион A, F5 IV–V	Procyon A, F5 IV–V
+b9fb7314	жёлтый	yellow
+0b1b8901	Ca II H и K, нейтральные металлы	Ca II H and K, neutral metals
+cb5d7f28	Солнце, G2 V	The Sun, G2 V
+f6dc1cc4	оранжевый	orange
+eba1a113	нейтральные металлы сильны	strong neutral metals
+d8b60b75	Арктур, K1.5 III	Arcturus, K1.5 III
+69b9d87f	красный	red
+b3193b85	молекулярные полосы TiO	TiO molecular bands
+f32820f8	Бетельгейзе, M1–M2 Ia; Проксима Центавра, M5.5 V	Betelgeuse, M1–M2 Ia; Proxima Centauri, M5.5 V
+33a10f5f	1.3. Диаграмма Герцшпрунга–Рассела	1.3. The Hertzsprung–Russell diagram
+6b6d6fd9	На диаграмме Г–Р по горизонтальной оси откладывается температура (или спектральный класс, показатель цвета), по вертикальной — светимость (или абсолютная звёздная величина). По традиции температура <em>убывает слева направо</em>. Звёзды располагаются на диаграмме не случайно:	On an H–R diagram, temperature (or spectral class, colour index) runs along the horizontal axis and luminosity (or absolute magnitude) up the vertical axis. By tradition, temperature <em>decreases from left to right</em>. Stars do not fall on the diagram at random:
+20281356	<strong>Главная последовательность</strong> — звёзды, в ядре которых горит водород (примерно 90 % звёзд). При подъёме вдоль последовательности масса увеличивается.	<strong>The main sequence</strong> — stars burning hydrogen in their cores (about 90 % of stars). Mass increases going up the sequence.
+affeb546	<strong>Гиганты и сверхгиганты</strong> — звёзды, у которых водород в ядре закончился и которые расширились и остыли (верхний правый угол).	<strong>Giants and supergiants</strong> — stars that have run out of core hydrogen and have expanded and cooled (top right corner).
+fbda7567	<strong>Белые карлики</strong> — горячие, но тусклые остатки размером с Землю, в которых термоядерные реакции прекратились (нижний левый угол).	<strong>White dwarfs</strong> — hot but faint Earth-sized remnants in which thermonuclear reactions have stopped (bottom left corner).
+7fc3cc8a	1.4. Источник энергии и время жизни звезды	1.4. Energy source and stellar lifetime
+246b1018	Звезда главной последовательности получает энергию, превращая водород в гелий. В звёздах, подобных Солнцу, преобладает протон-протонная цепочка, а в звёздах тяжелее 1,3 M☉ — цикл CNO:	A main-sequence star gets its energy by turning hydrogen into helium. The proton–proton chain dominates in Sun-like stars, and the CNO cycle in stars heavier than 1.3 M☉:
+3cb9fac8	Соотношение масса–светимость (приближённо, для ⟦1⟧) и вытекающее из него время жизни на главной последовательности:	The mass–luminosity relation (approximately, for ⟦1⟧) and the resulting main-sequence lifetime:
+86444ec8	Значит, звезда массой 10 M☉ в ~3000 раз ярче Солнца, но живёт всего ~30 миллионов лет. А красный карлик массой 0,2 M☉ живёт сотни миллиардов лет — намного больше возраста Вселенной (13,8 млрд лет).	So a 10 M☉ star is ~3000 times brighter than the Sun but lives only ~30 million years, while a 0.2 M☉ red dwarf lives hundreds of billions of years — far longer than the age of the Universe (13.8 billion years).
+498cdfa7	1.5. Пути эволюции	1.5. Evolutionary paths
+52cbb37c	Малая масса: M &lt; 0,5 M☉	Low mass: M &lt; 0.5 M☉
+9ea3c1f3	Красный карлик, полностью конвективный.	A red dwarf, fully convective.
+ab46b720	Очень медленно расходует водород (10¹¹–10¹³ лет).	Uses up its hydrogen very slowly (10¹¹–10¹³ years).
+d607916f	Теоретический итог — гелиевый белый карлик; такие звёзды ещё не успели появиться.	The theoretical end is a helium white dwarf; none has had time to form yet.
+10c01e6f	Средняя масса: 0,5–8 M☉ (включая Солнце)	Intermediate mass: 0.5–8 M☉ (including the Sun)
+19352591	Главная последовательность.	Main sequence.
+768622f9	Субгигант и красный гигант (в оболочке горит водород).	Subgiant and red giant (hydrogen burns in a shell).
+3f2c9468	Горение гелия в ядре (образуются углерод и кислород).	Core helium burning (producing carbon and oxygen).
+2efeb9f1	Асимптотическая ветвь гигантов, сброс внешней оболочки — планетарная туманность.	The asymptotic giant branch; the outer envelope is shed — a planetary nebula.
+245a5112	Белый карлик; масса меньше предела Чандрасекара (≈1,4 M☉).	A white dwarf; its mass is below the Chandrasekhar limit (≈1.4 M☉).
+a4861a02	Большая масса: M &gt; 8 M☉	High mass: M &gt; 8 M☉
+9725a8ce	Главная последовательность (цикл CNO).	Main sequence (CNO cycle).
+a2c8294e	Красный (или голубой) сверхгигант: синтез элементов до железа.	Red (or blue) supergiant: fusing elements up to iron.
+c93c384f	Коллапс железного ядра — сверхновая II типа.	Iron core collapse — a type II supernova.
+9ce3ae01	Остаток: нейтронная звезда или (у звёзд тяжелее примерно 20–25 M☉) чёрная дыра.	Remnant: a neutron star or (for stars heavier than about 20–25 M☉) a black hole.
+4a7abc42	Эмпирическая формула оценки массы белого карлика по начальной массе: ⟦1⟧ (Kalirai и др., 2008). Например, когда Солнце станет белым карликом, его масса будет ≈ 0,5 M☉ — остальное оно потеряет в виде планетарной туманности.	An empirical formula for estimating a white dwarf’s mass from the initial mass: ⟦1⟧ (Kalirai et al., 2008). For example, when the Sun becomes a white dwarf its mass will be ≈ 0.5 M☉ — it will lose the rest as a planetary nebula.
+5d7fb3ee	Выберите массу и нажмите кнопку «Начать эволюцию». Модель рассчитывает параметры на главной последовательности по приведённым выше соотношениям, а следующие этапы показывает в виде <strong>схематического трека</strong>. Это не программа расчёта строения звезды — треки упрощены в учебных целях.	Choose a mass and press "Start evolution". The model computes the main-sequence parameters from the relations above and shows the later stages as a <strong>schematic track</strong>. This is not a stellar structure code — the tracks are simplified for teaching.
+e0d71090	Начальная масса:	Initial mass:
+a973de20	▶ Начать эволюцию	▶ Start evolution
+c3b76cb3	Заново	Restart
+c2db49b6	Задания для наблюдения:	Observation tasks:
+3c82b7d2	Увеличьте массу с 1 M☉ до 10 M☉. Во сколько раз меняются светимость и время жизни? Сравните результат с формулой ⟦1⟧.	Increase the mass from 1 M☉ to 10 M☉. By what factors do the luminosity and lifetime change? Compare the result with the formula ⟦1⟧.
+a710aa84	Начиная с какой массы звезда взрывается как сверхновая? Почему коллапсирует именно железное ядро?	From what mass does a star explode as a supernova? Why is it the iron core that collapses?
+e5711bed	Для Бетельгейзе и Сириуса B на диаграмме рассчитайте радиус из ⟦1⟧. Во сколько раз они больше или меньше Солнца?	For Betelgeuse and Sirius B on the diagram, calculate the radius from ⟦1⟧. How many times larger or smaller than the Sun are they?
+5b4f18bb	Почему модель не показывает эволюцию для звезды массой 0,2 M☉?	Why does the model show no evolution for a 0.2 M☉ star?
+df29d62b	Построить на основе открытых данных космического телескопа Gaia диаграмму цвет–величина (наблюдательную диаграмму Г–Р) звёзд в окрестности Солнца, выделить на ней главную последовательность, гиганты и белые карлики, а также физически проверить код, написанный с помощью ИИ.	Build a colour–magnitude (observational H–R) diagram of stars near the Sun from Gaia space telescope open data, pick out the main sequence, giants and white dwarfs, and check AI-written code for physical correctness.
+0903c540	<strong>Необходимые инструменты (все бесплатные):</strong> ⟨2⟩архив Gaia⟨/2⟩ (запросы можно отправлять без регистрации), ⟨3⟩Google Colab⟨/3⟩, бесплатный тариф Gemini, ChatGPT или Claude, ⟨4⟩SIMBAD⟨/4⟩ для проверки данных.	<strong>Tools you need (all free):</strong> the ⟨2⟩Gaia archive⟨/2⟩ (queries can be sent without signing up), ⟨3⟩Google Colab⟨/3⟩, the free tier of Gemini, ChatGPT or Claude, and ⟨4⟩SIMBAD⟨/4⟩ for checking data.
+e846edde	Порядок выполнения работы	Procedure
+307e4466	<strong>Получение данных.</strong> В разделе «Search → Advanced (ADQL)» архива Gaia выполните следующий запрос и скачайте результат в формате CSV. Запрос выбирает звёзды в пределах 100 пк с точно измеренным параллаксом.	<strong>Getting the data.</strong> In the Gaia archive’s "Search → Advanced (ADQL)" section, run the following query and download the result as CSV. The query selects stars within 100 pc with accurately measured parallaxes.
+39254b9f	<strong>Расчёт абсолютной величины.</strong> Поскольку параллакс дан в миллисекундах дуги (mas), используйте формулу ⟦1⟧. Выведите эту формулу из модуля расстояния самостоятельно и запишите в отчёт.	<strong>Computing the absolute magnitude.</strong> Because the parallax is given in milliarcseconds (mas), use the formula ⟦1⟧. Derive it yourself from the distance modulus and write it in your report.
+80e9555a	<strong>Построение диаграммы.</strong> Запустите в Colab следующий код (замените имя файла на своё):	<strong>Plotting the diagram.</strong> Run the following code in Colab (replace the file name with your own):
+30088d92	<strong>Работа с ИИ.</strong> Дайте следующий промпт Gemini, ChatGPT или Claude. Запустите код из ответа и проверьте каждую формулу в нём по теории раздела 1. Отдельно укажите в отчёте места, где ИИ ошибся.	<strong>Working with AI.</strong> Give the following prompt to Gemini, ChatGPT or Claude. Run the code from the answer and check every formula in it against the Section 1 theory. Point out separately in your report where the AI made mistakes.
+33f33f84	<strong>Анализ.</strong> Отметьте на диаграмме главную последовательность, гиганты и белые карлики. Почему в пределах 100 пк так мало гигантов? (Подсказка: сравните выборку, ограниченную объёмом, с выборкой, ограниченной яркостью.)	<strong>Analysis.</strong> Mark the main sequence, giants and white dwarfs on the diagram. Why are there so few giants within 100 pc? (Hint: compare a volume-limited sample with a brightness-limited one.)
+4b0b002d	<strong>Проверка.</strong> Выберите на диаграмме три звезды и по их <code>source_id</code> найдите в SIMBAD спектральный класс. Соответствует ли класс положению на диаграмме?	<strong>Check.</strong> Pick three stars on the diagram and look up their spectral class in SIMBAD by <code>source_id</code>. Does the class match their position on the diagram?
+244f384e	Научная точность	Scientific accuracy
+c6caa61a	Формулы приведены правильно, единицы указаны, области отмечены верно	Formulas are correct, units are given and regions are marked correctly
+0fc446f6	Работа с данными	Working with data
+716257b1	Объяснены запрос ADQL, условия отбора и ограничения выборки	The ADQL query, selection conditions and sample limits are explained
+91215719	Код и график	Code and plot
+333c9883	Оси, единицы и заголовок диаграммы полные; код работает	The diagram’s axes, units and title are complete; the code runs
+3c0066db	Зафиксированы промпты, ответы ИИ и найденные ошибки	Prompts, AI answers and the errors found are recorded
+c3477809	Даны обоснованные ответы на вопросы анализа	The analysis questions are answered with sound reasoning
+9528211c	Вопрос 1. В какой части диаграммы Г–Р располагаются белые карлики?	Question 1. Where on the H–R diagram are white dwarfs found?
+95c8ae2c	A) В верхнем правом углу	A) Top right corner
+bff061af	B) В нижнем левом углу	B) Bottom left corner
+e2e67951	C) В середине главной последовательности	C) In the middle of the main sequence
+fc916df1	D) В нижнем правом углу	D) Bottom right corner
+34853031	Вопрос 2. Сколько примерно живёт на главной последовательности звезда массой в 4 раза больше солнечной?	Question 2. Roughly how long does a star of 4 solar masses spend on the main sequence?
+75a8e493	A) 40 млрд лет	A) 40 billion years
+bf6246e8	B) 2,5 млрд лет	B) 2.5 billion years
+71e13274	C) 310 млн лет	C) 310 million years
+7df8c377	D) 10 млн лет	D) 10 million years
+6576a311	Вопрос 3. Две звезды имеют одинаковую температуру, радиус первой в 10 раз больше. Каково отношение светимостей?	Question 3. Two stars have the same temperature, and the first has 10 times the radius. What is the ratio of their luminosities?
+38ac9a4b	Вопрос 4. Чем завершается эволюция звезды массой 15 M☉?	Question 4. How does the evolution of a 15 M☉ star end?
+bbaeb0b0	A) Белый карлик и планетарная туманность	A) A white dwarf and a planetary nebula
+fe175557	B) Сверхновая II типа, остаток — нейтронная звезда	B) A type II supernova leaving a neutron star
+aa880717	C) Остаётся красным карликом	C) It remains a red dwarf
+b4bc2bb4	D) Сверхновая типа Ia	D) A type Ia supernova
+3d433d2b	Почему на главной последовательности с ростом массы время жизни звезды сокращается?	Why does a star’s lifetime get shorter as mass increases on the main sequence?
+435c3f27	Что такое предел Чандрасекара и с каким физическим давлением он связан?	What is the Chandrasekhar limit and which physical pressure is it linked to?
+c5004ef6	Как определить возраст рассеянного звёздного скопления по «точке поворота» на диаграмме Г–Р?	How can you find an open cluster’s age from the "turn-off point" on its H–R diagram?
+1f7beca7	=	=
+1dd457b2	=	=
+8fb5a3d7	import pandas as pd, numpy as np, matplotlib.pyplot as plt⏎df = pd.read_csv("gaia_100pc.csv")⏎df["M_G"] = df["phot_g_mean_mag"] + 5*np.log10(df["parallax"]) - 10⏎plt.figure(figsize=(6, 7))⏎plt.scatter(df["bp_rp"], df["M_G"], s=1, c=df["bp_rp"], cmap="RdYlBu_r")⏎plt.gca().invert_yaxis()          # яркие звёзды сверху⏎plt.xlabel("Показатель цвета BP − RP")⏎plt.ylabel("Абсолютная звёздная величина M_G")⏎plt.title("Gaia DR3: звёзды в пределах 100 пк")⏎plt.show()	import pandas as pd, numpy as np, matplotlib.pyplot as plt⏎df = pd.read_csv("gaia_100pc.csv")⏎df["M_G"] = df["phot_g_mean_mag"] + 5*np.log10(df["parallax"]) - 10⏎plt.figure(figsize=(6, 7))⏎plt.scatter(df["bp_rp"], df["M_G"], s=1, c=df["bp_rp"], cmap="RdYlBu_r")⏎plt.gca().invert_yaxis()          # bright stars at the top⏎plt.xlabel("Colour index BP − RP")⏎plt.ylabel("Absolute magnitude M_G")⏎plt.title("Gaia DR3: stars within 100 pc")⏎plt.show()
+9d266972	Ты — преподаватель астрофизики. У меня есть CSV-файл из Gaia DR3:⏎столбцы — parallax (mas), phot_g_mean_mag, bp_rp.⏎1) Напиши код на Python, вычисляющий абсолютную величину M_G, и поясни формулу.⏎2) На диаграмме цвет–величина выдели с приблизительными границами главную последовательность, красных гигантов и белых⏎   карликов и нарисуй каждую группу отдельным цветом.⏎3) Выведи число звёзд в каждой группе.⏎Используй только numpy, pandas и matplotlib. Отдельно объясни, как ты⏎выбрал приблизительные границы.	You are an astrophysics teacher. I have a CSV file from Gaia DR3:⏎columns — parallax (mas), phot_g_mean_mag, bp_rp.⏎1) Write Python code that computes the absolute magnitude M_G and explain the formula.⏎2) On the colour–magnitude diagram, separate the main sequence, red giants and white⏎   dwarfs with approximate boundaries and plot each group in its own colour.⏎3) Print the number of stars in each group.⏎Use only numpy, pandas and matplotlib. Explain separately how you⏎chose the approximate boundaries.
+805c889d	=	=

@@ -1,0 +1,638 @@
+[
+ {
+  "k": "a64aa137",
+  "s": "Yopish",
+  "ru": "Закрыть",
+  "en": "Close"
+ },
+ {
+  "k": "c27a8551",
+  "s": "Qo‘shimcha ma’ruza A2 · Astronomiya",
+  "ru": "Дополнительная лекция A2 · Астрономия",
+  "en": "Supplementary lecture A2 · Astronomy"
+ },
+ {
+  "k": "fb4e2629",
+  "s": "Kirxgof qonunlari, Plank, Vin va Stefan–Bolsman qonunlari, vodorodning Balmer seriyasi va kimyoviy tarkibni aniqlash, Doppler siljishi orqali radial tezlik va Koinot kengayishini o‘lchash. Interaktiv spektr modeli, uyda yasaladigan CD spektroskop va SDSS ma’lumotlari bilan laboratoriya ishi.",
+  "ru": "Законы Кирхгофа, законы Планка, Вина и Стефана–Больцмана, серия Бальмера водорода и определение химического состава, измерение лучевой скорости и расширения Вселенной по доплеровскому смещению. Лабораторная работа с интерактивной моделью спектра, самодельным CD-спектроскопом и данными SDSS.",
+  "en": "Kirchhoff’s laws; the Planck, Wien and Stefan–Boltzmann laws; hydrogen’s Balmer series and determining chemical composition; measuring radial velocity and the expansion of the Universe from Doppler shifts. A lab with an interactive spectrum model, a homemade CD spectroscope and SDSS data."
+ },
+ {
+  "k": "ec136781",
+  "s": "Yulduzgacha borib bo‘lmaydi, lekin uning nurini parchalab, <strong>harorati, kimyoviy tarkibi, tezligi va hatto atrofidagi sayyoralar</strong> haqida bilish mumkin. Spektral tahlil — astrofizikaning asosiy kuzatuv usuli. Bu ma’ruzada qora jism nurlanishi, spektral chiziqlarning kelib chiqishi va Doppler siljishi o‘rganiladi.",
+  "ru": "До звезды добраться нельзя, но, разложив её свет, можно узнать о её <strong>температуре, химическом составе, скорости и даже планетах вокруг неё</strong>. Спектральный анализ — основной наблюдательный метод астрофизики. В этой лекции изучаются излучение чёрного тела, происхождение спектральных линий и доплеровское смещение.",
+  "en": "We cannot travel to a star, but by splitting its light we can learn its <strong>temperature, chemical composition, velocity and even the planets around it</strong>. Spectral analysis is astrophysics’ main observational method. This lecture covers black-body radiation, where spectral lines come from and the Doppler shift."
+ },
+ {
+  "k": "73d20505",
+  "s": "2.1. Kirxgof qonunlari: spektr turlari",
+  "ru": "2.1. Законы Кирхгофа: типы спектров",
+  "en": "2.1. Kirchhoff’s laws: types of spectra"
+ },
+ {
+  "k": "547b5c35",
+  "s": "<strong>Uzluksiz spektr</strong> — qizdirilgan zich jism (qattiq jism, suyuqlik, zich gaz) barcha to‘lqin uzunliklarida nurlanadi.",
+  "ru": "<strong>Сплошной спектр</strong> — нагретое плотное тело (твёрдое тело, жидкость, плотный газ) излучает на всех длинах волн.",
+  "en": "<strong>Continuous spectrum</strong> — a hot dense body (solid, liquid or dense gas) radiates at all wavelengths."
+ },
+ {
+  "k": "ac9a5649",
+  "s": "<strong>Nurlanish (emission) spektri</strong> — siyrak qaynoq gaz faqat ma’lum to‘lqin uzunliklarida yorug‘ chiziqlar beradi (masalan, gaz tumanliklari).",
+  "ru": "<strong>Спектр излучения (эмиссионный)</strong> — разреженный горячий газ даёт яркие линии только на определённых длинах волн (например, газовые туманности).",
+  "en": "<strong>Emission spectrum</strong> — a hot thin gas gives bright lines only at certain wavelengths (gas nebulae, for example)."
+ },
+ {
+  "k": "13a7e0e6",
+  "s": "<strong>Yutilish (absorbsiya) spektri</strong> — uzluksiz nur sovuqroq siyrak gaz orqali o‘tsa, aynan shu gaz chiqaradigan to‘lqin uzunliklarida qora chiziqlar paydo bo‘ladi. Yulduzlar spektri shu turga kiradi: issiq fotosfera nuri sovuqroq atmosfera qatlamida yutiladi.",
+  "ru": "<strong>Спектр поглощения (абсорбционный)</strong> — если сплошной свет проходит через более холодный разреженный газ, появляются тёмные линии именно на тех длинах волн, которые излучает этот газ. К этому типу относятся спектры звёзд: свет горячей фотосферы поглощается в более холодном слое атмосферы.",
+  "en": "<strong>Absorption spectrum</strong> — when continuous light passes through a cooler thin gas, dark lines appear at exactly the wavelengths that gas would emit. Stellar spectra are of this type: light from the hot photosphere is absorbed in a cooler atmospheric layer."
+ },
+ {
+  "k": "2834f87e",
+  "s": "2.2. Qora jism nurlanishi",
+  "ru": "2.2. Излучение чёрного тела",
+  "en": "2.2. Black-body radiation"
+ },
+ {
+  "k": "b3795a93",
+  "s": "Absolyut qora jismning spektral energetik yorqinligi Plank qonuni bilan ifodalanadi:",
+  "ru": "Спектральная энергетическая яркость абсолютно чёрного тела выражается законом Планка:",
+  "en": "A black body’s spectral radiance is given by Planck’s law:"
+ },
+ {
+  "k": "4568bc33",
+  "s": "$$B_\\lambda(T) = \\frac{2hc^2}{\\lambda^5}\\,\\frac{1}{e^{hc/(\\lambda k T)} - 1}$$",
+  "ru": "$$B_\\lambda(T) = \\frac{2hc^2}{\\lambda^5}\\,\\frac{1}{e^{hc/(\\lambda k T)} - 1}$$",
+  "en": "$$B_\\lambda(T) = \\frac{2hc^2}{\\lambda^5}\\,\\frac{1}{e^{hc/(\\lambda k T)} - 1}$$"
+ },
+ {
+  "k": "4a12d675",
+  "s": "Bu yerda $h = 6{,}626 \\cdot 10^{-34}$ J·s — Plank doimiysi, $k = 1{,}381 \\cdot 10^{-23}$ J/K — Bolsman doimiysi, $c$ — yorug‘lik tezligi. Plank egri chizig‘idan ikkita muhim natija kelib chiqadi:",
+  "ru": "Здесь $h = 6{,}626 \\cdot 10^{-34}$ Дж·с — постоянная Планка, $k = 1{,}381 \\cdot 10^{-23}$ Дж/К — постоянная Больцмана, $c$ — скорость света. Из кривой Планка следуют два важных результата:",
+  "en": "Here $h = 6{,}626 \\cdot 10^{-34}$ J·s is Planck’s constant, $k = 1{,}381 \\cdot 10^{-23}$ J/K is Boltzmann’s constant and $c$ is the speed of light. Two important results follow from the Planck curve:"
+ },
+ {
+  "k": "2ccd7293",
+  "s": "$$\\lambda_{\\max} = \\frac{b}{T}, \\quad b = 2{,}898 \\cdot 10^{-3}\\ \\text{m}\\cdot\\text{K} \\qquad (\\text{Vinning siljish qonuni})$$ $$F = \\sigma T^4 \\qquad (\\text{Stefan–Bolsman qonuni})$$",
+  "ru": "$$\\lambda_{\\max} = \\frac{b}{T}, \\quad b = 2{,}898 \\cdot 10^{-3}\\ \\text{m}\\cdot\\text{K} \\qquad (\\text{Vinning siljish qonuni})$$ $$F = \\sigma T^4 \\qquad (\\text{Stefan–Bolsman qonuni})$$",
+  "en": "$$\\lambda_{\\max} = \\frac{b}{T}, \\quad b = 2{,}898 \\cdot 10^{-3}\\ \\text{m}\\cdot\\text{K} \\qquad (\\text{Vinning siljish qonuni})$$ $$F = \\sigma T^4 \\qquad (\\text{Stefan–Bolsman qonuni})$$"
+ },
+ {
+  "k": "126a07bf",
+  "s": "<strong>Misol.</strong> Quyosh uchun $T = 5772$ K: $\\lambda_{\\max} = 2{,}898\\cdot10^{-3}/5772 \\approx 502$ nm — spektrning yashil-moviy qismi. Betelgeyze ($T \\approx 3600$ K) uchun $\\lambda_{\\max} \\approx 805$ nm — infraqizil sohaga yaqin, shuning uchun yulduz qizil ko‘rinadi.",
+  "ru": "<strong>Пример.</strong> Для Солнца $T = 5772$ К: $\\lambda_{\\max} = 2{,}898\\cdot10^{-3}/5772 \\approx 502$ нм — сине-зелёная часть спектра. Для Бетельгейзе ($T \\approx 3600$ К) $\\lambda_{\\max} \\approx 805$ нм — близко к инфракрасной области, поэтому звезда выглядит красной.",
+  "en": "<strong>Example.</strong> For the Sun, $T = 5772$ K: $\\lambda_{\\max} = 2{,}898\\cdot10^{-3}/5772 \\approx 502$ nm — the blue-green part of the spectrum. For Betelgeuse ($T \\approx 3600$ K), $\\lambda_{\\max} \\approx 805$ nm — close to the infrared, which is why the star looks red."
+ },
+ {
+  "k": "6797fff2",
+  "s": "2.3. Spektral chiziqlar va kimyoviy tarkib",
+  "ru": "2.3. Спектральные линии и химический состав",
+  "en": "2.3. Spectral lines and chemical composition"
+ },
+ {
+  "k": "4f680258",
+  "s": "Har bir kimyoviy element atomi faqat o‘z energetik sathlari orasidagi o‘tishlarga mos fotonlarni yutadi yoki chiqaradi. Vodorod atomining ko‘rinadigan sohadagi chiziqlari (Balmer seriyasi) uchun:",
+  "ru": "Атом каждого химического элемента поглощает или излучает только фотоны, соответствующие переходам между его энергетическими уровнями. Для линий атома водорода в видимой области (серия Бальмера):",
+  "en": "Each element’s atoms absorb or emit only photons matching transitions between their own energy levels. For the hydrogen atom’s visible lines (the Balmer series):"
+ },
+ {
+  "k": "58d67169",
+  "s": "$$\\frac{1}{\\lambda} = R_H\\left(\\frac{1}{2^2} - \\frac{1}{n^2}\\right), \\qquad R_H \\approx 1{,}0968 \\cdot 10^{7}\\ \\text{m}^{-1}, \\quad n = 3, 4, 5, \\dots$$",
+  "ru": "$$\\frac{1}{\\lambda} = R_H\\left(\\frac{1}{2^2} - \\frac{1}{n^2}\\right), \\qquad R_H \\approx 1{,}0968 \\cdot 10^{7}\\ \\text{m}^{-1}, \\quad n = 3, 4, 5, \\dots$$",
+  "en": "$$\\frac{1}{\\lambda} = R_H\\left(\\frac{1}{2^2} - \\frac{1}{n^2}\\right), \\qquad R_H \\approx 1{,}0968 \\cdot 10^{7}\\ \\text{m}^{-1}, \\quad n = 3, 4, 5, \\dots$$"
+ },
+ {
+  "k": "2eee9b87",
+  "s": "Chiziq",
+  "ru": "Линия",
+  "en": "Line"
+ },
+ {
+  "k": "2c979610",
+  "s": "Element, o‘tish",
+  "ru": "Элемент, переход",
+  "en": "Element, transition"
+ },
+ {
+  "k": "151617b9",
+  "s": "λ (havoda), nm",
+  "ru": "λ (в воздухе), нм",
+  "en": "λ (in air), nm"
+ },
+ {
+  "k": "18e98de5",
+  "s": "Izoh",
+  "ru": "Примечание",
+  "en": "Note"
+ },
+ {
+  "k": "c7062b7c",
+  "s": "Qizil; tumanliklar rangini beradi",
+  "ru": "Красная; придаёт цвет туманностям",
+  "en": "Red; gives nebulae their colour"
+ },
+ {
+  "k": "64c2db36",
+  "s": "Moviy-yashil",
+  "ru": "Сине-зелёная",
+  "en": "Blue-green"
+ },
+ {
+  "k": "56280aca",
+  "s": "Ko‘k",
+  "ru": "Синяя",
+  "en": "Blue"
+ },
+ {
+  "k": "6595fc51",
+  "s": "Binafsha",
+  "ru": "Фиолетовая",
+  "en": "Violet"
+ },
+ {
+  "k": "6e2b95b9",
+  "s": "<strong>Na D</strong>",
+  "ru": "<strong>Na D</strong>",
+  "en": "<strong>Na D</strong>"
+ },
+ {
+  "k": "aff079d7",
+  "s": "Natriy (dublet)",
+  "ru": "Натрий (дублет)",
+  "en": "Sodium (doublet)"
+ },
+ {
+  "k": "9a6d339c",
+  "s": "589,00 va 589,59",
+  "ru": "589,00 и 589,59",
+  "en": "589.00 and 589.59"
+ },
+ {
+  "k": "ee02ed23",
+  "s": "Modelda o‘rtacha 589,29 nm",
+  "ru": "В модели в среднем 589,29 нм",
+  "en": "The model uses an average of 589.29 nm"
+ },
+ {
+  "k": "311b493c",
+  "s": "<strong>Mg b</strong>",
+  "ru": "<strong>Mg b</strong>",
+  "en": "<strong>Mg b</strong>"
+ },
+ {
+  "k": "e1ba8fd4",
+  "s": "Magniy",
+  "ru": "Магний",
+  "en": "Magnesium"
+ },
+ {
+  "k": "a79f9317",
+  "s": "Quyoshsimon yulduzlarda kuchli",
+  "ru": "Сильна у звёзд, подобных Солнцу",
+  "en": "Strong in Sun-like stars"
+ },
+ {
+  "k": "158ed50c",
+  "s": "<strong>Ca II H va K</strong>",
+  "ru": "<strong>Ca II H и K</strong>",
+  "en": "<strong>Ca II H and K</strong>"
+ },
+ {
+  "k": "0f860cf8",
+  "s": "Ionlashgan kalsiy",
+  "ru": "Ионизованный кальций",
+  "en": "Ionised calcium"
+ },
+ {
+  "k": "bd102ab2",
+  "s": "396,85 va 393,37",
+  "ru": "396,85 и 393,37",
+  "en": "396.85 and 393.37"
+ },
+ {
+  "k": "19cbc322",
+  "s": "G va K sinf yulduzlarida eng kuchli",
+  "ru": "Сильнее всего у звёзд классов G и K",
+  "en": "Strongest in G and K stars"
+ },
+ {
+  "k": "43d60e8a",
+  "s": "Chiziqlar kuchi faqat element miqdoriga emas, haroratga ham bog‘liq: vodorodning Balmer chiziqlari ~10 000 K da (A sinf) eng kuchli bo‘ladi. Issiqroq yulduzlarda vodorod ionlashib ketadi, sovuqroqlarida esa atomlarning ko‘pi asosiy sathda qoladi. Spektral sinflar (O, B, A, F, G, K, M) aynan shu effekt asosida tuzilgan.",
+  "ru": "Сила линий зависит не только от количества элемента, но и от температуры: линии Бальмера водорода сильнее всего при ~10 000 К (класс A). В более горячих звёздах водород ионизуется, а в более холодных большинство атомов остаётся на основном уровне. Спектральные классы (O, B, A, F, G, K, M) построены именно на этом эффекте.",
+  "en": "Line strength depends not only on how much of an element there is but also on temperature: hydrogen’s Balmer lines are strongest at ~10,000 K (class A). In hotter stars hydrogen is ionised, while in cooler ones most atoms stay in the ground state. The spectral classes (O, B, A, F, G, K, M) are built on exactly this effect."
+ },
+ {
+  "k": "5c6efcf4",
+  "s": "2.4. Doppler siljishi",
+  "ru": "2.4. Доплеровское смещение",
+  "en": "2.4. The Doppler shift"
+ },
+ {
+  "k": "b6d3b96f",
+  "s": "Manba kuzatuvchidan uzoqlashsa, chiziqlar qizil tomonga, yaqinlashsa binafsha tomonga siljiydi. Qizil siljish $z$ va radial tezlik $v_r$ ($v_r \\ll c$ bo‘lganda):",
+  "ru": "Если источник удаляется от наблюдателя, линии смещаются к красному краю, если приближается — к фиолетовому. Красное смещение $z$ и лучевая скорость $v_r$ (при $v_r \\ll c$):",
+  "en": "If the source moves away from the observer the lines shift towards the red; if it approaches they shift towards the violet. The redshift $z$ and radial velocity $v_r$ (for $v_r \\ll c$):"
+ },
+ {
+  "k": "34ff31c0",
+  "s": "$$z = \\frac{\\lambda_{\\text{kuz}} - \\lambda_0}{\\lambda_0} \\approx \\frac{v_r}{c}; \\qquad \\text{relyativistik holda: } 1 + z = \\sqrt{\\frac{1+\\beta}{1-\\beta}}, \\ \\beta = \\frac{v_r}{c}$$",
+  "ru": "$$z = \\frac{\\lambda_{\\text{kuz}} - \\lambda_0}{\\lambda_0} \\approx \\frac{v_r}{c}; \\qquad \\text{relyativistik holda: } 1 + z = \\sqrt{\\frac{1+\\beta}{1-\\beta}}, \\ \\beta = \\frac{v_r}{c}$$",
+  "en": "$$z = \\frac{\\lambda_{\\text{kuz}} - \\lambda_0}{\\lambda_0} \\approx \\frac{v_r}{c}; \\qquad \\text{relyativistik holda: } 1 + z = \\sqrt{\\frac{1+\\beta}{1-\\beta}}, \\ \\beta = \\frac{v_r}{c}$$"
+ },
+ {
+  "k": "d27c42c5",
+  "s": "<strong>Qo‘llanilishi:</strong>",
+  "ru": "<strong>Применение:</strong>",
+  "en": "<strong>Applications:</strong>"
+ },
+ {
+  "k": "6eec569f",
+  "s": "<strong>Qo‘shaloq yulduzlar va ekzosayyoralar.</strong> Yulduz chiziqlarining davriy tebranishi ko‘rinmas yo‘ldoshni ochib beradi. 1995-yilda Quyoshsimon yulduz atrofidagi birinchi ekzosayyora (51 Pegas b) shu usulda topilgan.",
+  "ru": "<strong>Двойные звёзды и экзопланеты.</strong> Периодические колебания линий звезды выдают невидимый спутник. В 1995 году этим методом была найдена первая экзопланета у звезды, подобной Солнцу (51 Пегаса b).",
+  "en": "<strong>Binary stars and exoplanets.</strong> Periodic wobbles in a star’s lines reveal an unseen companion. In 1995 the first exoplanet around a Sun-like star (51 Pegasi b) was found this way."
+ },
+ {
+  "k": "d5bee592",
+  "s": "<strong>Galaktikalarning aylanishi</strong> — aylanish egri chizig‘idan qorong‘i materiya haqida xulosa chiqariladi.",
+  "ru": "<strong>Вращение галактик</strong> — по кривой вращения делается вывод о тёмной материи.",
+  "en": "<strong>Galaxy rotation</strong> — dark matter is inferred from the rotation curve."
+ },
+ {
+  "k": "c8f04bbf",
+  "s": "<strong>Koinotning kengayishi.</strong> Habbl qonuni: $v = H_0 d$. Hozirgi o‘lchashlar $H_0 \\approx 67$–$73$ km/(s·Mpk) oralig‘ini beradi; usullar orasidagi bu farq “Habbl ziddiyati” deb ataladi va faol tadqiq qilinmoqda.",
+  "ru": "<strong>Расширение Вселенной.</strong> Закон Хаббла: $v = H_0 d$. Современные измерения дают диапазон $H_0 \\approx 67$–$73$ км/(с·Мпк); это расхождение между методами называется «напряжённостью Хаббла» и активно исследуется.",
+  "en": "<strong>The expanding Universe.</strong> Hubble’s law: $v = H_0 d$. Current measurements give a range of $H_0 \\approx 67$–$73$ km/(s·Mpc); this disagreement between methods is called the \"Hubble tension\" and is being actively studied."
+ },
+ {
+  "k": "0643989e",
+  "s": "Harorat va radial tezlikni o‘zgartiring. Yuqori grafik — Plank egri chizig‘i (rangli fon — ko‘rinadigan diapazon), pastda — yutilish chiziqlari bilan ko‘rinadigan spektr. Kichik qora chiziqchalar chiziqlarning laboratoriyadagi (siljimagan) o‘rnini ko‘rsatadi.",
+  "ru": "Меняйте температуру и лучевую скорость. Верхний график — кривая Планка (цветной фон — видимый диапазон), внизу — видимый спектр с линиями поглощения. Маленькие чёрные чёрточки показывают лабораторное (несмещённое) положение линий.",
+  "en": "Change the temperature and radial velocity. The top plot is the Planck curve (the coloured background is the visible range); below is the visible spectrum with absorption lines. The small black ticks mark the lines’ laboratory (unshifted) positions."
+ },
+ {
+  "k": "4cfc6a10",
+  "s": "Fotosfera harorati:",
+  "ru": "Температура фотосферы:",
+  "en": "Photosphere temperature:"
+ },
+ {
+  "k": "6f5e929a",
+  "s": "Radial tezlik (+ uzoqlashish):",
+  "ru": "Лучевая скорость (+ удаление):",
+  "en": "Radial velocity (+ receding):"
+ },
+ {
+  "k": "1b8598ff",
+  "s": "0 km/s",
+  "ru": "0 км/с",
+  "en": "0 km/s"
+ },
+ {
+  "k": "ac7e81c3",
+  "s": "Yutilish chiziqlarini ko‘rsatish",
+  "ru": "Показывать линии поглощения",
+  "en": "Show absorption lines"
+ },
+ {
+  "k": "792d3a37",
+  "s": "Mashq: noma’lum obyektning tezligi",
+  "ru": "Упражнение: скорость неизвестного объекта",
+  "en": "Exercise: the speed of an unknown object"
+ },
+ {
+  "k": "157343da",
+  "s": "Tugmani bosing: model tasodifiy harorat va tezlikli obyekt spektrini ko‘rsatadi. Hα chizig‘ining siljishidan radial tezlikni hisoblang ($v \\approx c\\,\\Delta\\lambda/\\lambda_0$, katta tezliklarda relyativistik formuladan foydalaning) va javobingizni tekshiring.",
+  "ru": "Нажмите кнопку: модель покажет спектр объекта со случайными температурой и скоростью. По смещению линии Hα рассчитайте лучевую скорость ($v \\approx c\\,\\Delta\\lambda/\\lambda_0$, при больших скоростях используйте релятивистскую формулу) и проверьте свой ответ.",
+  "en": "Press the button: the model shows the spectrum of an object with a random temperature and velocity. Calculate the radial velocity from the shift of the Hα line ($v \\approx c\\,\\Delta\\lambda/\\lambda_0$; at high speeds use the relativistic formula) and check your answer."
+ },
+ {
+  "k": "30d216d5",
+  "s": "🔭 Noma’lum obyekt",
+  "ru": "🔭 Неизвестный объект",
+  "en": "🔭 Unknown object"
+ },
+ {
+  "k": "4817fc75",
+  "s": "v, km/s",
+  "ru": "v, км/с",
+  "en": "v, km/s"
+ },
+ {
+  "k": "daba0925",
+  "s": "Tekshirish",
+  "ru": "Проверить",
+  "en": "Check"
+ },
+ {
+  "k": "14b42ee3",
+  "s": "uyda yasalgan spektroskop bilan nurlanish spektrlarini kuzatish, to‘lqin uzunligi shkalasini kalibrlash va Sloan raqamli osmon tadqiqoti (SDSS) ochiq ma’lumotlari bo‘yicha galaktikaning qizil siljishi va masofasini aniqlash.",
+  "ru": "наблюдать спектры излучения самодельным спектроскопом, калибровать шкалу длин волн и определить красное смещение и расстояние галактики по открытым данным Слоановского цифрового обзора неба (SDSS).",
+  "en": "observe emission spectra with a homemade spectroscope, calibrate the wavelength scale and find a galaxy’s redshift and distance from Sloan Digital Sky Survey (SDSS) open data."
+ },
+ {
+  "k": "716fd049",
+  "s": "<strong>Kerakli vositalar (hammasi bepul yoki uy sharoitida topiladi):</strong> eski CD/DVD disk, karton quti, smartfon kamerasi; <a class=\"citation-link\" href=\"https://skyserver.sdss.org\" target=\"_blank\" rel=\"noopener\">SDSS SkyServer</a>; <a class=\"citation-link\" href=\"https://physics.nist.gov/asd\" target=\"_blank\" rel=\"noopener\">NIST atom spektrlari bazasi</a>; Google Colab; Gemini, ChatGPT yoki Claude’ning bepul tarifi.",
+  "ru": "<strong>Необходимые инструменты (все бесплатные или найдутся дома):</strong> старый CD/DVD-диск, картонная коробка, камера смартфона; <a class=\"citation-link\" href=\"https://skyserver.sdss.org\" target=\"_blank\" rel=\"noopener\">SDSS SkyServer</a>; <a class=\"citation-link\" href=\"https://physics.nist.gov/asd\" target=\"_blank\" rel=\"noopener\">база атомных спектров NIST</a>; Google Colab; бесплатный тариф Gemini, ChatGPT или Claude.",
+  "en": "<strong>What you need (all free or found at home):</strong> an old CD/DVD, a cardboard box, a smartphone camera; <a class=\"citation-link\" href=\"https://skyserver.sdss.org\" target=\"_blank\" rel=\"noopener\">SDSS SkyServer</a>; the <a class=\"citation-link\" href=\"https://physics.nist.gov/asd\" target=\"_blank\" rel=\"noopener\">NIST atomic spectra database</a>; Google Colab; the free tier of Gemini, ChatGPT or Claude."
+ },
+ {
+  "k": "f3c3bd1c",
+  "s": "A qism. CD spektroskop",
+  "ru": "Часть A. CD-спектроскоп",
+  "en": "Part A. A CD spectroscope"
+ },
+ {
+  "k": "ea650f04",
+  "s": "Quti bir uchiga ingichka (≈1 mm) tirqish, qarama-qarshi tomoniga ~45° burchak ostida CD bo‘lagini o‘rnating. CD ustidagi zich izlar difraksion panjara vazifasini bajaradi (CD da izlar oralig‘i ≈ 1,6 mkm, DVD da ≈ 0,74 mkm).",
+  "ru": "На одном конце коробки сделайте узкую (≈1 мм) щель, а на противоположной стороне установите кусок CD под углом ~45°. Плотные дорожки на CD работают как дифракционная решётка (шаг дорожек на CD ≈ 1,6 мкм, на DVD ≈ 0,74 мкм).",
+  "en": "Cut a narrow (≈1 mm) slit at one end of the box and fit a piece of CD at ~45° on the opposite side. The CD’s closely spaced tracks act as a diffraction grating (track spacing ≈ 1.6 µm on a CD and ≈ 0.74 µm on a DVD)."
+ },
+ {
+  "k": "79eaa787",
+  "s": "Kompakt lyuminessent (energiya tejovchi) lampa spektrini telefon bilan suratga oling. Simob chiziqlari — 404,7; 435,8; 546,1; 577,0 va 579,1 nm — kalibrlash uchun etalon bo‘ladi.",
+  "ru": "Сфотографируйте телефоном спектр компактной люминесцентной (энергосберегающей) лампы. Линии ртути — 404,7; 435,8; 546,1; 577,0 и 579,1 нм — служат эталоном для калибровки.",
+  "en": "Photograph the spectrum of a compact fluorescent (energy-saving) lamp with your phone. The mercury lines — 404.7, 435.8, 546.1, 577.0 and 579.1 nm — are the calibration reference."
+ },
+ {
+  "k": "afc9d4ed",
+  "s": "Rasmda chiziqlar holatini (piksellarda) o‘lchang va “piksel → nm” chiziqli kalibrlash tenglamasini tuzing.",
+  "ru": "Измерьте на снимке положения линий (в пикселях) и составьте линейное калибровочное уравнение «пиксель → нм».",
+  "en": "Measure the line positions in the image (in pixels) and write a linear \"pixel → nm\" calibration equation."
+ },
+ {
+  "k": "3ffb0a08",
+  "s": "Xuddi shu sozlamada cho‘g‘lanma lampa (uzluksiz spektr) va bulutli osmon (Quyosh spektri, Fraunhofer chiziqlari) spektrlarini oling. <em>Diqqat: Quyoshga to‘g‘ridan to‘g‘ri qaramang!</em>",
+  "ru": "При тех же настройках получите спектры лампы накаливания (сплошной спектр) и облачного неба (спектр Солнца, фраунгоферовы линии). <em>Внимание: не смотрите прямо на Солнце!</em>",
+  "en": "With the same settings, take spectra of an incandescent bulb (continuous spectrum) and a cloudy sky (the solar spectrum with Fraunhofer lines). <em>Warning: never look directly at the Sun!</em>"
+ },
+ {
+  "k": "2db65172",
+  "s": "B qism. Galaktikaning qizil siljishi (SDSS)",
+  "ru": "Часть B. Красное смещение галактики (SDSS)",
+  "en": "Part B. A galaxy’s redshift (SDSS)"
+ },
+ {
+  "k": "b7f8778c",
+  "s": "SkyServer’da “Explore” vositasi orqali spektri bor biror spiral galaktikani tanlang va spektrini yuklab oling (CSV yoki FITS).",
+  "ru": "В SkyServer с помощью инструмента «Explore» выберите какую-нибудь спиральную галактику со спектром и скачайте спектр (CSV или FITS).",
+  "en": "In SkyServer, use the \"Explore\" tool to pick a spiral galaxy that has a spectrum and download the spectrum (CSV or FITS)."
+ },
+ {
+  "k": "b5bce86f",
+  "s": "Hα (havoda 656,28 nm) va [O III] (havoda 500,68 nm) nurlanish chiziqlarining kuzatilgan to‘lqin uzunligini aniqlang. SDSS spektrlarida to‘lqin uzunliklari vakuum uchun berilishini hisobga oling (vakuumda Hα — 656,46 nm, [O III] — 500,82 nm).",
+  "ru": "Определите наблюдаемую длину волны эмиссионных линий Hα (в воздухе 656,28 нм) и [O III] (в воздухе 500,68 нм). Учтите, что в спектрах SDSS длины волн даны для вакуума (в вакууме Hα — 656,46 нм, [O III] — 500,82 нм).",
+  "en": "Find the observed wavelengths of the Hα (656.28 nm in air) and [O III] (500.68 nm in air) emission lines. Note that SDSS spectra give vacuum wavelengths (Hα is 656.46 nm and [O III] 500.82 nm in vacuum)."
+ },
+ {
+  "k": "12d39273",
+  "s": "$z$ ni hisoblang, natijani SDSS katalogidagi qiymat bilan solishtiring.",
+  "ru": "Рассчитайте $z$ и сравните результат со значением в каталоге SDSS.",
+  "en": "Calculate $z$ and compare the result with the SDSS catalogue value."
+ },
+ {
+  "k": "d8427da1",
+  "s": "Habbl qonuni bo‘yicha masofani baholang ($v \\approx cz$, $H_0 = 70$ km/(s·Mpk)). $H_0$ ning 67 va 73 qiymatlari uchun masofa qanchaga farq qiladi?",
+  "ru": "Оцените расстояние по закону Хаббла ($v \\approx cz$, $H_0 = 70$ км/(с·Мпк)). Насколько различается расстояние при значениях $H_0$ 67 и 73?",
+  "en": "Estimate the distance with Hubble’s law ($v \\approx cz$, $H_0 = 70$ km/(s·Mpc)). How much does the distance differ for $H_0$ values of 67 and 73?"
+ },
+ {
+  "k": "39b788f6",
+  "s": "C qism. SI bilan ishlash",
+  "ru": "Часть C. Работа с ИИ",
+  "en": "Part C. Working with AI"
+ },
+ {
+  "k": "22aa9b84",
+  "s": "Quyidagi promptni SI ga bering, olingan kodni Colab’da sinang va natijani Vin qonuni bilan tekshiring:",
+  "ru": "Дайте ИИ следующий промпт, проверьте полученный код в Colab и сверьте результат с законом Вина:",
+  "en": "Give the AI the following prompt, test the code in Colab and check the result against Wien’s law:"
+ },
+ {
+  "k": "4c10d155",
+  "s": "Menda spektr fayli bor: birinchi ustun — to‘lqin uzunligi (nm), ikkinchisi — oqim.\n1) Plank funksiyasini B_λ(T) = 2hc²/λ⁵ · 1/(exp(hc/λkT) − 1) ko‘rinishida yoz\n   (SI birliklarida, h, c, k doimiylari bilan).\n2) scipy.optimize.curve_fit yordamida harorat T va masshtab koeffitsiyentini top.\n3) Topilgan T bo‘yicha Vin qonunidan λ_max ni hisobla va grafikda ko‘rsat.\n4) Yutilish chiziqlari sohalarini (Hα, Hβ, Na D) moslashtirishdan chiqarib tashla\n   va nima uchun bunday qilish kerakligini tushuntir.",
+  "ru": "У меня есть файл спектра: первый столбец — длина волны (нм), второй — поток.\n1) Запиши функцию Планка в виде B_λ(T) = 2hc²/λ⁵ · 1/(exp(hc/λkT) − 1)\n   (в единицах СИ, с постоянными h, c, k).\n2) С помощью scipy.optimize.curve_fit найди температуру T и масштабный коэффициент.\n3) По найденной T вычисли λ_max из закона Вина и покажи на графике.\n4) Исключи из подгонки области линий поглощения (Hα, Hβ, Na D)\n   и объясни, почему это нужно делать.",
+  "en": "I have a spectrum file: the first column is wavelength (nm), the second is flux.\n1) Write the Planck function as B_λ(T) = 2hc²/λ⁵ · 1/(exp(hc/λkT) − 1)\n   (in SI units, with the constants h, c, k).\n2) Use scipy.optimize.curve_fit to find the temperature T and a scale factor.\n3) From the fitted T, compute λ_max with Wien’s law and show it on the plot.\n4) Exclude the absorption-line regions (Hα, Hβ, Na D) from the fit\n   and explain why this has to be done."
+ },
+ {
+  "k": "31c8407e",
+  "s": "SI ko‘pincha to‘lqin uzunligini nanometrdan metrga o‘tkazishni unutadi yoki eksponenta argumentida birliklarni aralashtiradi. Har bir formulani o‘lchamlilik bo‘yicha tekshiring va topilgan xatolarni SI jurnaliga yozing.",
+  "ru": "ИИ часто забывает перевести длину волны из нанометров в метры или смешивает единицы в аргументе экспоненты. Проверьте каждую формулу по размерности и запишите найденные ошибки в журнал ИИ.",
+  "en": "AI often forgets to convert wavelength from nanometres to metres or mixes units inside the exponential. Check every formula dimensionally and log the errors you find in your AI journal."
+ },
+ {
+  "k": "c68dc3ac",
+  "s": "Spektroskop va kalibrlash",
+  "ru": "Спектроскоп и калибровка",
+  "en": "Spectroscope and calibration"
+ },
+ {
+  "k": "30fcc78a",
+  "s": "Kalibrlash tenglamasi, uning xatoligi va spektr rasmlari",
+  "ru": "Калибровочное уравнение, его погрешность и снимки спектров",
+  "en": "The calibration equation, its error and the spectrum photos"
+ },
+ {
+  "k": "b8266192",
+  "s": "Qizil siljish va masofa",
+  "ru": "Красное смещение и расстояние",
+  "en": "Redshift and distance"
+ },
+ {
+  "k": "209c2f4d",
+  "s": "$z$, $v$, $d$ to‘g‘ri hisoblangan; vakuum/havo farqi hisobga olingan",
+  "ru": "$z$, $v$, $d$ рассчитаны правильно; учтена разница вакуум/воздух",
+  "en": "$z$, $v$ and $d$ calculated correctly; the vacuum/air difference accounted for"
+ },
+ {
+  "k": "28ee80ef",
+  "s": "Kod va grafiklar",
+  "ru": "Код и графики",
+  "en": "Code and plots"
+ },
+ {
+  "k": "23cf3111",
+  "s": "Plank funksiyasini moslashtirish ishlaydi, grafiklar to‘liq",
+  "ru": "Подгонка функции Планка работает, графики полные",
+  "en": "The Planck-function fit works and the plots are complete"
+ },
+ {
+  "k": "71653afd",
+  "s": "Promptlar, SI javoblari va tuzatilgan xatolar",
+  "ru": "Промпты, ответы ИИ и исправленные ошибки",
+  "en": "Prompts, AI answers and corrected errors"
+ },
+ {
+  "k": "7b30b78b",
+  "s": "Natijalar adabiyot qiymatlari bilan solishtirilgan",
+  "ru": "Результаты сравнены с литературными значениями",
+  "en": "The results are compared with published values"
+ },
+ {
+  "k": "fe1dd1bb",
+  "s": "1-savol. Yulduzning nurlanish maksimumi 290 nm da. Uning sirt harorati taxminan qancha?",
+  "ru": "Вопрос 1. Максимум излучения звезды приходится на 290 нм. Какова примерно температура её поверхности?",
+  "en": "Question 1. A star’s emission peaks at 290 nm. Roughly what is its surface temperature?"
+ },
+ {
+  "k": "41e22fdd",
+  "s": "2-savol. Yulduz spektrida qora (yutilish) chiziqlar nima sababdan hosil bo‘ladi?",
+  "ru": "Вопрос 2. Почему в спектре звезды образуются тёмные (абсорбционные) линии?",
+  "en": "Question 2. Why do dark (absorption) lines form in a star’s spectrum?"
+ },
+ {
+  "k": "d68d44b3",
+  "s": "A) Fotosfera nuri sovuqroq atmosfera qatlamida yutiladi",
+  "ru": "A) Свет фотосферы поглощается в более холодном слое атмосферы",
+  "en": "A) Light from the photosphere is absorbed in a cooler atmospheric layer"
+ },
+ {
+  "k": "edf28fd9",
+  "s": "B) Yulduz ichida neytrino hosil bo‘ladi",
+  "ru": "B) Внутри звезды образуются нейтрино",
+  "en": "B) Neutrinos are produced inside the star"
+ },
+ {
+  "k": "97dfb096",
+  "s": "C) Teleskop linzasi nurni yutadi",
+  "ru": "C) Линза телескопа поглощает свет",
+  "en": "C) The telescope lens absorbs the light"
+ },
+ {
+  "k": "fe3c2a01",
+  "s": "D) Yulduz magnit maydoni nurni buradi",
+  "ru": "D) Магнитное поле звезды отклоняет свет",
+  "en": "D) The star’s magnetic field bends the light"
+ },
+ {
+  "k": "9db9852f",
+  "s": "3-savol. Galaktika spektrida Hα chizig‘i 656,3 nm o‘rniga 669,4 nm da kuzatildi. Galaktika tezligi taxminan qancha?",
+  "ru": "Вопрос 3. В спектре галактики линия Hα наблюдается на 669,4 нм вместо 656,3 нм. Какова примерно скорость галактики?",
+  "en": "Question 3. In a galaxy’s spectrum the Hα line is seen at 669.4 nm instead of 656.3 nm. Roughly what is the galaxy’s velocity?"
+ },
+ {
+  "k": "d381f903",
+  "s": "A) 600 km/s, yaqinlashmoqda",
+  "ru": "A) 600 км/с, приближается",
+  "en": "A) 600 km/s, approaching"
+ },
+ {
+  "k": "9a835441",
+  "s": "B) 6000 km/s, uzoqlashmoqda",
+  "ru": "B) 6000 км/с, удаляется",
+  "en": "B) 6000 km/s, receding"
+ },
+ {
+  "k": "082df2c6",
+  "s": "C) 60 000 km/s, uzoqlashmoqda",
+  "ru": "C) 60 000 км/с, удаляется",
+  "en": "C) 60,000 km/s, receding"
+ },
+ {
+  "k": "d6eb8d84",
+  "s": "D) 6000 km/s, yaqinlashmoqda",
+  "ru": "D) 6000 км/с, приближается",
+  "en": "D) 6000 km/s, approaching"
+ },
+ {
+  "k": "9aed86e4",
+  "s": "4-savol. Nima uchun vodorodning Balmer chiziqlari O sinf yulduzlarida A sinfdagiga qaraganda kuchsiz?",
+  "ru": "Вопрос 4. Почему линии Бальмера водорода у звёзд класса O слабее, чем у класса A?",
+  "en": "Question 4. Why are hydrogen’s Balmer lines weaker in O stars than in A stars?"
+ },
+ {
+  "k": "f9b634cc",
+  "s": "A) O sinf yulduzlarida vodorod yo‘q",
+  "ru": "A) В звёздах класса O нет водорода",
+  "en": "A) O stars contain no hydrogen"
+ },
+ {
+  "k": "180abf15",
+  "s": "B) Juda yuqori haroratda vodorod asosan ionlashgan",
+  "ru": "B) При очень высокой температуре водород в основном ионизован",
+  "en": "B) At very high temperatures hydrogen is mostly ionised"
+ },
+ {
+  "k": "739e5920",
+  "s": "C) O sinf yulduzlari bizdan juda uzoq",
+  "ru": "C) Звёзды класса O очень далеко от нас",
+  "en": "C) O stars are very far from us"
+ },
+ {
+  "k": "2a314c53",
+  "s": "D) Balmer chiziqlari faqat infraqizil sohada",
+  "ru": "D) Линии Бальмера бывают только в инфракрасной области",
+  "en": "D) Balmer lines occur only in the infrared"
+ },
+ {
+  "k": "8f3376b4",
+  "s": "Radial tezlik usuli bilan ekzosayyoraning qaysi parametrini aniqlab bo‘lmaydi va nima uchun?",
+  "ru": "Какой параметр экзопланеты нельзя определить методом лучевых скоростей и почему?",
+  "en": "Which exoplanet parameter cannot be found with the radial velocity method, and why?"
+ },
+ {
+  "k": "f8a7a274",
+  "s": "Nima uchun yulduz rangi (masalan, B−V ko‘rsatkichi) uning harorati haqida ma’lumot beradi?",
+  "ru": "Почему цвет звезды (например, показатель B−V) несёт информацию о её температуре?",
+  "en": "Why does a star’s colour (for example, its B−V index) tell us about its temperature?"
+ },
+ {
+  "k": "26be2d80",
+  "s": "Galaktikaning aylanish egri chizig‘i qanday qilib qorong‘i materiya mavjudligiga ishora qiladi?",
+  "ru": "Как кривая вращения галактики указывает на существование тёмной материи?",
+  "en": "How does a galaxy’s rotation curve point to the existence of dark matter?"
+ },
+ {
+  "k": "cfdff3b6",
+  "s": "Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class=\"citation-link\" href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1017/9781108380980</a>",
+  "ru": "Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class=\"citation-link\" href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1017/9781108380980</a>",
+  "en": "Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class=\"citation-link\" href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1017/9781108380980</a>"
+ },
+ {
+  "k": "8be58dfd",
+  "s": "Rybicki, G. B., &amp; Lightman, A. P. (1979). <em>Radiative Processes in Astrophysics</em>. Wiley. <a class=\"citation-link\" href=\"https://doi.org/10.1002/9783527618170\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1002/9783527618170</a>",
+  "ru": "Rybicki, G. B., &amp; Lightman, A. P. (1979). <em>Radiative Processes in Astrophysics</em>. Wiley. <a class=\"citation-link\" href=\"https://doi.org/10.1002/9783527618170\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1002/9783527618170</a>",
+  "en": "Rybicki, G. B., &amp; Lightman, A. P. (1979). <em>Radiative Processes in Astrophysics</em>. Wiley. <a class=\"citation-link\" href=\"https://doi.org/10.1002/9783527618170\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1002/9783527618170</a>"
+ },
+ {
+  "k": "11f006ef",
+  "s": "Gray, D. F. (2005). <em>The Observation and Analysis of Stellar Photospheres</em> (3rd ed.). Cambridge University Press.",
+  "ru": "Gray, D. F. (2005). <em>The Observation and Analysis of Stellar Photospheres</em> (3rd ed.). Cambridge University Press.",
+  "en": "Gray, D. F. (2005). <em>The Observation and Analysis of Stellar Photospheres</em> (3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "c01ab5e2",
+  "s": "Kramida, A., Ralchenko, Yu., Reader, J., &amp; NIST ASD Team. <em>NIST Atomic Spectra Database</em>. National Institute of Standards and Technology. <a class=\"citation-link\" href=\"https://physics.nist.gov/asd\" target=\"_blank\" rel=\"noopener\">https://physics.nist.gov/asd</a>",
+  "ru": "Kramida, A., Ralchenko, Yu., Reader, J., &amp; NIST ASD Team. <em>NIST Atomic Spectra Database</em>. National Institute of Standards and Technology. <a class=\"citation-link\" href=\"https://physics.nist.gov/asd\" target=\"_blank\" rel=\"noopener\">https://physics.nist.gov/asd</a>",
+  "en": "Kramida, A., Ralchenko, Yu., Reader, J., &amp; NIST ASD Team. <em>NIST Atomic Spectra Database</em>. National Institute of Standards and Technology. <a class=\"citation-link\" href=\"https://physics.nist.gov/asd\" target=\"_blank\" rel=\"noopener\">https://physics.nist.gov/asd</a>"
+ },
+ {
+  "k": "cf29f2fd",
+  "s": "Mayor, M., &amp; Queloz, D. (1995). A Jupiter-mass companion to a solar-type star. <em>Nature, 378</em>(6555), 355–359. <a class=\"citation-link\" href=\"https://doi.org/10.1038/378355a0\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1038/378355a0</a>",
+  "ru": "Mayor, M., &amp; Queloz, D. (1995). A Jupiter-mass companion to a solar-type star. <em>Nature, 378</em>(6555), 355–359. <a class=\"citation-link\" href=\"https://doi.org/10.1038/378355a0\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1038/378355a0</a>",
+  "en": "Mayor, M., &amp; Queloz, D. (1995). A Jupiter-mass companion to a solar-type star. <em>Nature, 378</em>(6555), 355–359. <a class=\"citation-link\" href=\"https://doi.org/10.1038/378355a0\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1038/378355a0</a>"
+ },
+ {
+  "k": "4d1c0620",
+  "s": "Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. <em>Proceedings of the National Academy of Sciences, 15</em>(3), 168–173. <a class=\"citation-link\" href=\"https://doi.org/10.1073/pnas.15.3.168\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1073/pnas.15.3.168</a>",
+  "ru": "Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. <em>Proceedings of the National Academy of Sciences, 15</em>(3), 168–173. <a class=\"citation-link\" href=\"https://doi.org/10.1073/pnas.15.3.168\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1073/pnas.15.3.168</a>",
+  "en": "Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. <em>Proceedings of the National Academy of Sciences, 15</em>(3), 168–173. <a class=\"citation-link\" href=\"https://doi.org/10.1073/pnas.15.3.168\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1073/pnas.15.3.168</a>"
+ },
+ {
+  "k": "0f799cab",
+  "s": "Planck Collaboration, Aghanim, N., et al. (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astronomy &amp; Astrophysics, 641</em>, A6. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/201833910\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/201833910</a>",
+  "ru": "Planck Collaboration, Aghanim, N., et al. (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astronomy &amp; Astrophysics, 641</em>, A6. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/201833910\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/201833910</a>",
+  "en": "Planck Collaboration, Aghanim, N., et al. (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astronomy &amp; Astrophysics, 641</em>, A6. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/201833910\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/201833910</a>"
+ },
+ {
+  "k": "804767be",
+  "s": "Riess, A. G., et al. (2022). A comprehensive measurement of the local value of the Hubble constant with 1 km s⁻¹ Mpc⁻¹ uncertainty from the Hubble Space Telescope and the SH0ES team. <em>The Astrophysical Journal Letters, 934</em>(1), L7. <a class=\"citation-link\" href=\"https://doi.org/10.3847/2041-8213/ac5c5b\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/2041-8213/ac5c5b</a>",
+  "ru": "Riess, A. G., et al. (2022). A comprehensive measurement of the local value of the Hubble constant with 1 km s⁻¹ Mpc⁻¹ uncertainty from the Hubble Space Telescope and the SH0ES team. <em>The Astrophysical Journal Letters, 934</em>(1), L7. <a class=\"citation-link\" href=\"https://doi.org/10.3847/2041-8213/ac5c5b\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/2041-8213/ac5c5b</a>",
+  "en": "Riess, A. G., et al. (2022). A comprehensive measurement of the local value of the Hubble constant with 1 km s⁻¹ Mpc⁻¹ uncertainty from the Hubble Space Telescope and the SH0ES team. <em>The Astrophysical Journal Letters, 934</em>(1), L7. <a class=\"citation-link\" href=\"https://doi.org/10.3847/2041-8213/ac5c5b\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/2041-8213/ac5c5b</a>"
+ },
+ {
+  "k": "4919e124",
+  "s": "Abdurro’uf, et al. (2022). The seventeenth data release of the Sloan Digital Sky Surveys. <em>The Astrophysical Journal Supplement Series, 259</em>(2), 35. <a class=\"citation-link\" href=\"https://doi.org/10.3847/1538-4365/ac4414\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/1538-4365/ac4414</a>",
+  "ru": "Abdurro’uf, et al. (2022). The seventeenth data release of the Sloan Digital Sky Surveys. <em>The Astrophysical Journal Supplement Series, 259</em>(2), 35. <a class=\"citation-link\" href=\"https://doi.org/10.3847/1538-4365/ac4414\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/1538-4365/ac4414</a>",
+  "en": "Abdurro’uf, et al. (2022). The seventeenth data release of the Sloan Digital Sky Surveys. <em>The Astrophysical Journal Supplement Series, 259</em>(2), 35. <a class=\"citation-link\" href=\"https://doi.org/10.3847/1538-4365/ac4414\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/1538-4365/ac4414</a>"
+ }
+]

@@ -9,6 +9,74 @@
    "Stop"
   ]
  },
+ "astro1.html": {
+  "Javob tanlanmagan.": [
+   "Ответ не выбран.",
+   "No answer selected."
+  ],
+  "Natija: ": [
+   "Результат: ",
+   "Result: "
+  ],
+  "Noto‘g‘ri. ": [
+   "Неверно. ",
+   "Incorrect. "
+  ],
+  "To‘g‘ri. ": [
+   "Верно. ",
+   "Correct. "
+  ]
+ },
+ "astro2.html": {
+  "Javob tanlanmagan.": [
+   "Ответ не выбран.",
+   "No answer selected."
+  ],
+  "Natija: ": [
+   "Результат: ",
+   "Result: "
+  ],
+  "Noto‘g‘ri. ": [
+   "Неверно. ",
+   "Incorrect. "
+  ],
+  "To‘g‘ri. ": [
+   "Верно. ",
+   "Correct. "
+  ]
+ },
+ "astro3.html": {
+  "Javob tanlanmagan.": [
+   "Ответ не выбран.",
+   "No answer selected."
+  ],
+  "Natija: ": [
+   "Результат: ",
+   "Result: "
+  ],
+  "Noto‘g‘ri. ": [
+   "Неверно. ",
+   "Incorrect. "
+  ],
+  "To‘g‘ri. ": [
+   "Верно. ",
+   "Correct. "
+  ]
+ },
+ "glossariy.html": {
+  "Lug‘atda {total} ta atama.": [
+   "В словаре терминов: {total}.",
+   "The glossary has {total} terms."
+  ],
+  "Masalan: impuls, prompt, redshift": [
+   "Например: импульс, prompt, redshift",
+   "For example: momentum, prompt, redshift"
+  ],
+  "Topildi: {shown} ta atama (jami {total}).": [
+   "Найдено терминов: {shown} (всего {total}).",
+   "Found: {shown} terms (out of {total})."
+  ]
+ },
  "js/debugging-lab.js": {
   " (Kutilayotgan: 0.7071)": [
    " (ожидалось: 0.7071)",
@@ -99,6 +167,20 @@
    "❌ ERROR: Math.sin(45) was left in degrees! Result:"
   ]
  },
+ "js/mustaqil-public.js": {
+  " ta mavzu": [
+   " тем",
+   " topics"
+  ],
+  "Masalan: astronomiya, Canvas, elektromagnit...": [
+   "Например: астрономия, Canvas, электромагнит...",
+   "For example: astronomy, Canvas, electromagnetism..."
+  ],
+  "Ushbu so‘rov bo‘yicha mavzu topilmadi.": [
+   "По этому запросу тем не найдено.",
+   "No topics match this search."
+  ]
+ },
  "js/project-log-engine.js": {
   "# GOOGLE ANTIGRAVITY AI - TALABA LOYIHA JURNALI (PROJECT LOG)\n\n": [
    "# GOOGLE ANTIGRAVITY AI — ЖУРНАЛ ПРОЕКТА СТУДЕНТА (PROJECT LOG)\n\n",
@@ -183,6 +265,288 @@
   "| № | Laboratoriya Bosqichi | AI Vosita | Holati | Ball |\n": [
    "| № | Лабораторный этап | ИИ-инструмент | Статус | Балл |\n",
    "| № | Lab stage | AI tool | Status | Points |\n"
+  ]
+ },
+ "js/sim-astro-extra.js": {
+  "<div style=\"color:#66708A\">Baho fazaga yig‘ilgan egri chiziqning eng xira qismi (faza bo‘yicha 1/50 bin) bo‘yicha olinadi, shuning uchun u faqat to‘g‘ri davrda ma’noli.</div>": [
+   "<div style=\"color:#66708A\">Оценка берётся по самой тусклой части свёрнутой по фазе кривой (бин 1/50 по фазе), поэтому она имеет смысл только при правильном периоде.</div>",
+   "<div style=\"color:#66708A\">The estimate comes from the faintest part of the phase-folded curve (a 1/50 phase bin), so it only makes sense at the correct period.</div>"
+  ],
+  "<div>Ajrata olish chegarasi (550 nm): θ = 1,22·λ/D ≈ <strong>{0}″</strong></div>": [
+   "<div>Предел разрешения (550 нм): θ = 1,22·λ/D ≈ <strong>{0}″</strong></div>",
+   "<div>Resolution limit (550 nm): θ = 1.22·λ/D ≈ <strong>{0}″</strong></div>"
+  ],
+  "<div>Asosiy ketma-ketlikdagi umri: <strong>{0} yil</strong></div>": [
+   "<div>Время жизни на главной последовательности: <strong>{0} лет</strong></div>",
+   "<div>Main-sequence lifetime: <strong>{0} years</strong></div>"
+  ],
+  "<div>Bitta o‘lchash xatoligi (model): σ ≈ <strong>{0}<sup>m</sup></strong></div>": [
+   "<div>Ошибка одного измерения (модель): σ ≈ <strong>{0}<sup>m</sup></strong></div>",
+   "<div>Single-measurement error (model): σ ≈ <strong>{0}<sup>m</sup></strong></div>"
+  ],
+  "<div>Effektiv harorat: <strong>{0} K</strong></div>": [
+   "<div>Эффективная температура: <strong>{0} К</strong></div>",
+   "<div>Effective temperature: <strong>{0} K</strong></div>"
+  ],
+  "<div>Faza dispersiyasi Θ = <strong>{0}</strong> (to‘g‘ri davrda eng kichik bo‘ladi)</div>": [
+   "<div>Дисперсия фазы Θ = <strong>{0}</strong> (минимальна при правильном периоде)</div>",
+   "<div>Phase dispersion Θ = <strong>{0}</strong> (smallest at the correct period)</div>"
+  ],
+  "<div>Masofa d = 10<sup>(m−M+5)/5</sup> ≈ <strong>{0} pk</strong> (yulduzlararo yutilish hisobga olinmagan)</div>": [
+   "<div>Расстояние d = 10<sup>(m−M+5)/5</sup> ≈ <strong>{0} пк</strong> (межзвёздное поглощение не учтено)</div>",
+   "<div>Distance d = 10<sup>(m−M+5)/5</sup> ≈ <strong>{0} pc</strong> (interstellar extinction ignored)</div>"
+  ],
+  "<div>O‘rtacha kuzatilgan kattalik: <strong>{0}<sup>m</sup></strong></div>": [
+   "<div>Средняя наблюдаемая величина: <strong>{0}<sup>m</sup></strong></div>",
+   "<div>Mean observed magnitude: <strong>{0}<sup>m</sup></strong></div>"
+  ],
+  "<div>Qizil siljish z = Δλ/λ₀ = <strong>{0}</strong>; Hα: 656,28 → <strong>{1} nm</strong></div>": [
+   "<div>Красное смещение z = Δλ/λ₀ = <strong>{0}</strong>; Hα: 656,28 → <strong>{1} нм</strong></div>",
+   "<div>Redshift z = Δλ/λ₀ = <strong>{0}</strong>; Hα: 656.28 → <strong>{1} nm</strong></div>"
+  ],
+  "<div>Sinov davri bo‘yicha absolyut kattalik M<sub>V</sub> = <strong>{0}</strong></div>": [
+   "<div>Абсолютная величина по пробному периоду M<sub>V</sub> = <strong>{0}</strong></div>",
+   "<div>Absolute magnitude for the trial period M<sub>V</sub> = <strong>{0}</strong></div>"
+  ],
+  "<div>Tranzit chuqurligining taxminiy bahosi ΔF/F ≈ <strong>{0} %</strong> → R<sub>p</sub>/R<sub>*</sub> ≈ √(ΔF/F) = <strong>{1}</strong></div>": [
+   "<div>Приблизительная оценка глубины транзита ΔF/F ≈ <strong>{0} %</strong> → R<sub>p</sub>/R<sub>*</sub> ≈ √(ΔF/F) = <strong>{1}</strong></div>",
+   "<div>Approximate transit depth ΔF/F ≈ <strong>{0} %</strong> → R<sub>p</sub>/R<sub>*</sub> ≈ √(ΔF/F) = <strong>{1}</strong></div>"
+  ],
+  "<div>Vin qonuni: λ_max = b / T = <strong>{0} nm</strong></div>": [
+   "<div>Закон Вина: λ_max = b / T = <strong>{0} нм</strong></div>",
+   "<div>Wien’s law: λ_max = b / T = <strong>{0} nm</strong></div>"
+  ],
+  "<div>Vizual chegaraviy kattalik (taxminiy): <strong>{0}<sup>m</sup></strong></div>": [
+   "<div>Визуальная предельная величина (приблизительно): <strong>{0}<sup>m</sup></strong></div>",
+   "<div>Visual limiting magnitude (approximate): <strong>{0}<sup>m</sup></strong></div>"
+  ],
+  "<div>Yorug‘lik yig‘ish ko‘zga nisbatan (ko‘z qorachig‘i 7 mm): <strong>{0} marta</strong></div>": [
+   "<div>Светосбор относительно глаза (зрачок 7 мм): <strong>в {0} раз</strong></div>",
+   "<div>Light-gathering power relative to the eye (7 mm pupil): <strong>{0} times</strong></div>"
+  ],
+  "Aldebaran": [
+   "Альдебаран",
+   "Aldebaran"
+  ],
+  "Arktur": [
+   "Арктур",
+   "Arcturus"
+  ],
+  "Asimptotik gigantlar tarmog‘i": [
+   "Асимптотическая ветвь гигантов",
+   "Asymptotic giant branch"
+  ],
+  "Asosiy ketma-ketlik": [
+   "Главная последовательность",
+   "Main sequence"
+  ],
+  "Asosiy ketma-ketlik (vodorod yonishi)": [
+   "Главная последовательность (горение водорода)",
+   "Main sequence (hydrogen burning)"
+  ],
+  "Asosiy ketma-ketlik oxiri": [
+   "Конец главной последовательности",
+   "End of the main sequence"
+  ],
+  "Avval “Noma’lum obyekt” tugmasini bosing.": [
+   "Сначала нажмите кнопку «Неизвестный объект».",
+   "Press \"Unknown object\" first."
+  ],
+  "B_λ (normallashtirilgan)": [
+   "B_λ (нормированная)",
+   "B_λ (normalised)"
+  ],
+  "Barnard yulduzi": [
+   "Звезда Барнарда",
+   "Barnard’s Star"
+  ],
+  "Betelgeyze": [
+   "Бетельгейзе",
+   "Betelgeuse"
+  ],
+  "Effektiv harorat T, K (logarifmik shkala, chapga qarab ortadi)": [
+   "Эффективная температура T, К (логарифмическая шкала, растёт влево)",
+   "Effective temperature T, K (log scale, increasing to the left)"
+  ],
+  "Faza (sinov davri bo‘yicha)": [
+   "Фаза (по пробному периоду)",
+   "Phase (for the trial period)"
+  ],
+  "Gertsshprung bo‘shlig‘i orqali tez o‘tish": [
+   "Быстрый переход через пробел Герцшпрунга",
+   "Rapid crossing of the Hertzsprung gap"
+  ],
+  "Gigantlar": [
+   "Гиганты",
+   "Giants"
+  ],
+  "Hali aniq emas (xatolik {0} %). v ≈ c·Δλ/λ₀ formulasini qo‘llang.": [
+   "Пока неточно (погрешность {0} %). Примените формулу v ≈ c·Δλ/λ₀.",
+   "Not accurate yet (error {0} %). Use the formula v ≈ c·Δλ/λ₀."
+  ],
+  "Haqiqiy davr {0} sutka, R_p/R_* = {1} (chuqurlik {2} %).": [
+   "Истинный период {0} сут, R_p/R_* = {1} (глубина {2} %).",
+   "True period {0} days, R_p/R_* = {1} (depth {2} %)."
+  ],
+  "Haqiqiy davr {0} sutka, masofa {1} pk.": [
+   "Истинный период {0} сут, расстояние {1} пк.",
+   "True period {0} days, distance {1} pc."
+  ],
+  "Koinot yoshidan ham uzoq yashaydi — hali asosiy ketma-ketlikda": [
+   "Живёт дольше возраста Вселенной — ещё на главной последовательности",
+   "Lives longer than the age of the Universe — still on the main sequence"
+  ],
+  "Ko‘rsatma: Hα laboratoriyada 656,28 nm. Kuzatilgan Hα ≈ <strong>{0} nm</strong>.": [
+   "Подсказка: лабораторная Hα — 656,28 нм. Наблюдаемая Hα ≈ <strong>{0} нм</strong>.",
+   "Hint: laboratory Hα is 656.28 nm. Observed Hα ≈ <strong>{0} nm</strong>."
+  ],
+  "Kuzatuv vaqti, sutka": [
+   "Время наблюдения, сутки",
+   "Observation time, days"
+  ],
+  "Noma’lum obyekt: Hα chizig‘ining kuzatilgan to‘lqin uzunligini spektrdan o‘lchang (pastdagi shkala), so‘ng radial tezlikni hisoblang. ": [
+   "Неизвестный объект: измерьте по спектру наблюдаемую длину волны линии Hα (шкала внизу), затем рассчитайте лучевую скорость. ",
+   "Unknown object: measure the observed wavelength of the Hα line from the spectrum (scale below), then calculate the radial velocity. "
+  ],
+  "Obyekt bizdan uzoqlashmoqda (qizil siljish)": [
+   "Объект удаляется от нас (красное смещение)",
+   "The object is moving away from us (redshift)"
+  ],
+  "Obyekt bizga yaqinlashmoqda (binafsha siljish)": [
+   "Объект приближается к нам (фиолетовое смещение)",
+   "The object is approaching us (blueshift)"
+  ],
+  "Oq mitti (massasi ≈ {0} M☉) soviy boshlaydi": [
+   "Белый карлик (масса ≈ {0} M☉) начинает остывать",
+   "White dwarf (mass ≈ {0} M☉) begins to cool"
+  ],
+  "Oq mitti milliardlab yil davomida soviydi": [
+   "Белый карлик остывает миллиарды лет",
+   "The white dwarf cools for billions of years"
+  ],
+  "Oq mittilar": [
+   "Белые карлики",
+   "White dwarfs"
+  ],
+  "Planetar tumanlik: qobiq tashlanadi": [
+   "Планетарная туманность: оболочка сбрасывается",
+   "Planetary nebula: the envelope is shed"
+  ],
+  "Proksima Sentavra": [
+   "Проксима Центавра",
+   "Proxima Centauri"
+  ],
+  "Prosion B": [
+   "Процион B",
+   "Procyon B"
+  ],
+  "Qizil gigant tarmog‘i uchi: geliy chaqnashi": [
+   "Вершина ветви красных гигантов: гелиевая вспышка",
+   "Tip of the red giant branch: the helium flash"
+  ],
+  "Qizil gigant: qobiqda vodorod yonadi": [
+   "Красный гигант: в оболочке горит водород",
+   "Red giant: hydrogen burns in a shell"
+  ],
+  "Qizil mitti: hali birorta ham shunday yulduz asosiy ketma-ketlikni tark etmagan.": [
+   "Красный карлик: ни одна такая звезда ещё не покинула главную последовательность.",
+   "Red dwarf: no such star has left the main sequence yet."
+  ],
+  "Qizil supergigant: og‘ir elementlar sintezi temirgacha": [
+   "Красный сверхгигант: синтез тяжёлых элементов до железа",
+   "Red supergiant: fusing heavy elements up to iron"
+  ],
+  "Qutb yulduzi": [
+   "Полярная звезда",
+   "Polaris"
+  ],
+  "Quyosh": [
+   "Солнце",
+   "The Sun"
+  ],
+  "Radial tezlik nolga teng": [
+   "Лучевая скорость равна нулю",
+   "The radial velocity is zero"
+  ],
+  "Rigel": [
+   "Ригель",
+   "Rigel"
+  ],
+  "Sirius A": [
+   "Сириус A",
+   "Sirius A"
+  ],
+  "Sirius B": [
+   "Сириус B",
+   "Sirius B"
+  ],
+  "Subgigant: yadroda vodorod tugadi": [
+   "Субгигант: водород в ядре закончился",
+   "Subgiant: core hydrogen exhausted"
+  ],
+  "Supergigantlar": [
+   "Сверхгиганты",
+   "Supergiants"
+  ],
+  "Tezlikni km/s da kiriting.": [
+   "Введите скорость в км/с.",
+   "Enter the speed in km/s."
+  ],
+  "To‘g‘ri! Haqiqiy qiymat {0} km/s (xatolik {1} %).": [
+   "Верно! Истинное значение {0} км/с (погрешность {1} %).",
+   "Correct! The true value is {0} km/s (error {1} %)."
+  ],
+  "Vega": [
+   "Вега",
+   "Vega"
+  ],
+  "Yadroda geliy yonishi": [
+   "Горение гелия в ядре",
+   "Core helium burning"
+  ],
+  "Yakuni: oq mitti, massasi ≈ {0} M☉ (Chandrasekar chegarasi 1,4 M☉ dan kichik).": [
+   "Итог: белый карлик массой ≈ {0} M☉ (меньше предела Чандрасекара 1,4 M☉).",
+   "End point: a white dwarf of ≈ {0} M☉ (below the 1.4 M☉ Chandrasekhar limit)."
+  ],
+  "Yakuni: o‘ta yangi yulduz portlashi (II tur), qoldig‘i — {0}.": [
+   "Итог: взрыв сверхновой (II тип), остаток — {0}.",
+   "End point: a supernova explosion (type II) leaving {0}."
+  ],
+  "Yorqinlik L / L☉": [
+   "Светимость L / L☉",
+   "Luminosity L / L☉"
+  ],
+  "Yulduz kattaligi m": [
+   "Звёздная величина m",
+   "Magnitude m"
+  ],
+  "neytron yulduz (1,4–2 M☉ atrofida)": [
+   "нейтронная звезда (около 1,4–2 M☉)",
+   "a neutron star (about 1.4–2 M☉)"
+  ],
+  "qora tuynuk (taxminan 20 M☉ dan katta yulduzlar uchun; aniq chegara metallik va aylanishga bog‘liq)": [
+   "чёрная дыра (для звёзд тяжелее примерно 20 M☉; точная граница зависит от металличности и вращения)",
+   "a black hole (for stars heavier than about 20 M☉; the exact limit depends on metallicity and rotation)"
+  ],
+  "λ, nm": [
+   "λ, нм",
+   "λ, nm"
+  ],
+  "↻ Qayta ko‘rish": [
+   "↻ Посмотреть снова",
+   "↻ Watch again"
+  ],
+  "⏳ Evolyutsiya ketmoqda…": [
+   "⏳ Идёт эволюция…",
+   "⏳ Evolving…"
+  ],
+  "▶ Evolyutsiyani boshlash": [
+   "▶ Начать эволюцию",
+   "▶ Start evolution"
+  ],
+  "💥 O‘ta yangi yulduz": [
+   "💥 Сверхновая",
+   "💥 Supernova"
   ]
  },
  "js/sim-astronomy-visualization.js": {
@@ -4941,6 +5305,12 @@
    "⚠️ Please answer all 3 questions!"
   ]
  },
+ "sims/lorens-kuchi.html": {
+  "Pauza": [
+   "Пауза",
+   "Pause"
+  ]
+ },
  "sims/quyosh-sintezi.html": {
   "Davom etish": [
    "Продолжить",
@@ -4949,6 +5319,112 @@
   "To‘xtatish": [
    "Остановить",
    "Stop"
+  ]
+ },
+ "sims/radioaktiv-qatorlar.html": {
+  "1.17 min (²³⁴ᵐPa)": [
+   "1,17 мин (²³⁴ᵐPa)",
+   "1.17 min (²³⁴ᵐPa)"
+  ],
+  "1.40·10¹⁰ yil": [
+   "1,40·10¹⁰ лет",
+   "1.40·10¹⁰ yr"
+  ],
+  "1.91 yil": [
+   "1,91 года",
+   "1.91 yr"
+  ],
+  "10.6 soat": [
+   "10,6 ч",
+   "10.6 h"
+  ],
+  "138.4 kun": [
+   "138,4 сут",
+   "138.4 d"
+  ],
+  "1600 yil": [
+   "1600 лет",
+   "1600 yr"
+  ],
+  "19.9 min": [
+   "19,9 мин",
+   "19.9 min"
+  ],
+  "2.46·10⁵ yil": [
+   "2,46·10⁵ лет",
+   "2.46·10⁵ yr"
+  ],
+  "22.2 yil": [
+   "22,2 года",
+   "22.2 yr"
+  ],
+  "24.1 kun": [
+   "24,1 сут",
+   "24.1 d"
+  ],
+  "26.8 min": [
+   "26,8 мин",
+   "26.8 min"
+  ],
+  "3.10 min": [
+   "3,10 мин",
+   "3.10 min"
+  ],
+  "3.63 kun": [
+   "3,63 сут",
+   "3.63 d"
+  ],
+  "3.82 kun": [
+   "3,82 сут",
+   "3.82 d"
+  ],
+  "4.47·10⁹ yil": [
+   "4,47·10⁹ лет",
+   "4.47·10⁹ yr"
+  ],
+  "5.01 kun": [
+   "5,01 сут",
+   "5.01 d"
+  ],
+  "5.75 yil": [
+   "5,75 года",
+   "5.75 yr"
+  ],
+  "6.15 soat": [
+   "6,15 ч",
+   "6.15 h"
+  ],
+  "60.6 min (64%)": [
+   "60,6 мин (64%)",
+   "60.6 min (64%)"
+  ],
+  "7.54·10⁴ yil": [
+   "7,54·10⁴ лет",
+   "7.54·10⁴ yr"
+  ],
+  "Avto": [
+   "Авто",
+   "Auto"
+  ],
+  "Barqaror yadro — qator tugadi.": [
+   "Стабильное ядро — ряд завершён.",
+   "Stable nucleus — the series is complete."
+  ],
+  "Neytronlar soni N": [
+   "Число нейтронов N",
+   "Neutron number N"
+  ],
+  "Pauza": [
+   "Пауза",
+   "Pause"
+  ],
+  "Yemirilish:": [
+   "Распад:",
+   "Decay:"
+  ],
+  "Zaryad soni Z": [
+   "Зарядовое число Z",
+   "Charge number Z"
   ]
  }
 }
