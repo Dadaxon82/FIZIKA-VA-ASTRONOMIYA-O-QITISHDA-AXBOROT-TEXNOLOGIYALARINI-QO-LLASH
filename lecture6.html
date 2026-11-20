@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -982,9 +982,9 @@ function stepPhysics(state, params, dt) {
 
       const answers = [1, 0, 0]; // Correct indices for Q1, Q2, Q3
       const explanations = [
-        "Normal reaksiya kuchi N doimo sirtga perpendikulyar (tik) bo‘ladi. Qiya tekislikda uning moduli N = mg*cos(alpha) ga teng.",
-        "Tashqi kuch (15 N) maksimal statik ishqalanishdan (25 N) kichik bo‘lsa, jism qo‘zg‘almaydi va statik ishqalanish tashqi kuchga teng bo‘ladi (F_ishq = 15 N).",
-        "Simplektik Eyler–Kromer yangi tezlik bilan koordinatani yangilagani sababli simplektik 2-formani saqlaydi va energiyani barqaror ushlab turadi."
+        __t("Normal reaksiya kuchi N doimo sirtga perpendikulyar (tik) bo‘ladi. Qiya tekislikda uning moduli N = mg*cos(alpha) ga teng."),
+        __t("Tashqi kuch (15 N) maksimal statik ishqalanishdan (25 N) kichik bo‘lsa, jism qo‘zg‘almaydi va statik ishqalanish tashqi kuchga teng bo‘ladi (F_ishq = 15 N)."),
+        __t("Simplektik Eyler–Kromer yangi tezlik bilan koordinatani yangilagani sababli simplektik 2-formani saqlaydi va energiyani barqaror ushlab turadi.")
       ];
 
       let correctCount = 0;
@@ -998,8 +998,7 @@ function stepPhysics(state, params, dt) {
         return;
       }
 
-      let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 6-ma’ruza modellarni shakllantirish natijasi:</h4>`;
+      let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 6-ma’ruza modellarni shakllantirish natijasi:</h4>", []);
 
       for (let i = 1; i <= 3; i++) {
         const userOpt = userAnswers6[i];
@@ -1014,18 +1013,14 @@ function stepPhysics(state, params, dt) {
         </div>`;
       }
 
-      let badgeName = "Fizik Modellar Arxitektori (To‘liq O‘zlashtirildi)";
+      let badgeName = __t("Fizik Modellar Arxitektori (To‘liq O‘zlashtirildi)");
       let badgeColor = '#047857';
       if (correctCount < 3) {
-        badgeName = "FBD va Kuchlar Tadqiqotchisi (Qisman O‘zlashtirildi)";
+        badgeName = __t("FBD va Kuchlar Tadqiqotchisi (Qisman O‘zlashtirildi)");
         badgeColor = '#1C4E9E';
       }
 
-      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${badgeColor}; text-align:center;">
-        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Fizik Modellashtirish Kompetensiyangiz:</div>
-        <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${badgeName}</div>
-        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${uzFix(((correctCount/3)*100), 0)}%)</div>
-      </div></div>`;
+      htmlResult += __t("<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Fizik Modellashtirish Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>", [badgeColor, badgeColor, badgeName, badgeColor, correctCount, uzFix(((correctCount/3)*100), 0)]);
 
       feedbackEl.innerHTML = htmlResult;
     };

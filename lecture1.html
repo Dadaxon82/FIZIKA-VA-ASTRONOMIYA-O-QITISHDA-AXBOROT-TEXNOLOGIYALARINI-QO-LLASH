@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -758,13 +758,13 @@
       const selected = document.querySelector('input[name="diag-q"]:checked');
       const feedback = document.getElementById('diag-feedback');
       if (!selected) {
-        feedback.innerHTML = '<span class="hud-pill text-amber">Iltimos, variantlardan birini tanlang!</span>';
+        feedback.innerHTML = __t("<span class=\"hud-pill text-amber\">Iltimos, variantlardan birini tanlang!</span>");
         return;
       }
       if (selected.value === 'B') {
-        feedback.innerHTML = '<span class="hud-pill text-emerald">✅ A’lo! Aynan Forward Euler usuli simplektik bo‘lmagani uchun energiya sun’iy o‘sib ketadi. Eyler–Kromer yoki RK4 ishlatish lozim. (Klaster: B/C)</span>';
+        feedback.innerHTML = __t("<span class=\"hud-pill text-emerald\">✅ A’lo! Aynan Forward Euler usuli simplektik bo‘lmagani uchun energiya sun’iy o‘sib ketadi. Eyler–Kromer yoki RK4 ishlatish lozim. (Klaster: B/C)</span>");
       } else {
-        feedback.innerHTML = '<span class="hud-pill text-rose">❌ Noto‘g‘ri. To‘g‘ri javob B: Klassik Forward Euler faza fazosi kengaytiradi va beqarorlik keltiradi. (Klaster: A)</span>';
+        feedback.innerHTML = __t("<span class=\"hud-pill text-rose\">❌ Noto‘g‘ri. To‘g‘ri javob B: Klassik Forward Euler faza fazosi kengaytiradi va beqarorlik keltiradi. (Klaster: A)</span>");
       }
     }
 

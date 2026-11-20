@@ -78,7 +78,7 @@ function initFBD() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : '▶ Boshlash';
+      btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : __t("▶ Boshlash");
     });
   }
 
@@ -87,7 +87,7 @@ function initFBD() {
       s = 0;
       v = 0;
       isRunning = false;
-      if (btnPlay) btnPlay.textContent = '▶ Boshlash';
+      if (btnPlay) btnPlay.textContent = __t("▶ Boshlash");
     });
   }
 
@@ -111,13 +111,13 @@ function initFBD() {
       friction = -appliedNet;
       netForce = 0;
       accel = 0;
-      state = 'Muvozanatda (statik)';
+      state = __t("Muvozanatda (statik)");
     } else {
       const dir = moving ? Math.sign(v) : Math.sign(appliedNet || 1);
       friction = -dir * muk * N;
       netForce = appliedNet + friction;
       accel = netForce / mass;
-      state = dir > 0 ? 'Sirpanmoqda (yuqoriga) ↑' : 'Sirpanmoqda (pastga) ↓';
+      state = dir > 0 ? __t("Sirpanmoqda (yuqoriga) ↑") : __t("Sirpanmoqda (pastga) ↓");
     }
 
     return { alpha, angleDeg, mass, force, mg, mgPar, mgPerp, N, Fsmax, friction, netForce, accel, state };
@@ -137,12 +137,12 @@ function initFBD() {
 
     s += v * dt;
 
-    if (s > MAX_S) { s = MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = '▶ Boshlash'; }
-    if (s < -MAX_S) { s = -MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = '▶ Boshlash'; }
+    if (s > MAX_S) { s = MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = __t("▶ Boshlash"); }
+    if (s < -MAX_S) { s = -MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = __t("▶ Boshlash"); }
   }
 
   function updateHUD(p) {
-    hudState.textContent = p.accel === 0 && p.netForce === 0 ? 'Muvozanatda (statik)' : p.state;
+    hudState.textContent = p.accel === 0 && p.netForce === 0 ? __t("Muvozanatda (statik)") : p.state;
     hudN.textContent = uzFix(p.N, 2) + ' N';
     hudMg.textContent = uzFix(p.mg, 2) + ' N';
     hudMgPar.textContent = uzFix(p.mgPar, 2) + ' N';

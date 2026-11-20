@@ -105,7 +105,7 @@ function initCanvasArchitecture() {
   if (fpsSlider) {
     fpsSlider.addEventListener('input', () => {
       const v = parseInt(fpsSlider.value, 10);
-      fpsVal.textContent = v >= 120 ? "Cheklovsiz (V-Sync)" : v + ' FPS';
+      fpsVal.textContent = v >= 120 ? __t("Cheklovsiz (V-Sync)") : v + ' FPS';
     });
   }
   if (cpuLoadSlider) {
@@ -199,11 +199,11 @@ function initCanvasArchitecture() {
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px sans-serif';
     const modeLabels = {
-      'fixed-interp': 'qat’iy Δt + interpolyatsiya',
-      'fixed': 'qat’iy Δt akkumulyatori',
-      'variable': "o‘zgaruvchan Δt"
+      'fixed-interp': __t("qat’iy Δt + interpolyatsiya"),
+      'fixed': __t("qat’iy Δt akkumulyatori"),
+      'variable': __t("o‘zgaruvchan Δt")
     };
-    ctx.fillText('Rejim: ' + (modeLabels[modeSelect.value] || ''), 20, 27);
+    ctx.fillText(__t("Rejim: ") + (modeLabels[modeSelect.value] || ''), 20, 27);
   }
 
   function drawPacingGraph() {
@@ -331,7 +331,7 @@ function initCanvasArchitecture() {
   }
 
   countVal.textContent = countSlider.value + ' ta';
-  fpsVal.textContent = parseInt(fpsSlider.value, 10) >= 120 ? "Cheklovsiz (V-Sync)" : fpsSlider.value + ' FPS';
+  fpsVal.textContent = parseInt(fpsSlider.value, 10) >= 120 ? __t("Cheklovsiz (V-Sync)") : fpsSlider.value + ' FPS';
   cpuLoadVal.textContent = uzFix(parseFloat(cpuLoadSlider.value), 1) + ' ms';
 
   resetSimulation();

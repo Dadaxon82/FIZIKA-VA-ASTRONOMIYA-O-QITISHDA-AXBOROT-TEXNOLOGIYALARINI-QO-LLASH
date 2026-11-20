@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -778,9 +778,9 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
 
       const answers = [1, 2, 0]; // Correct indices for Q1, Q2, Q3
       const explanations = [
-        "Forward Euler usulida o‘tish matritsasi determinanti det(A) = 1 + ω²Δt² > 1 bo‘lib, faza maydoni sun'iy kengayadi va energiya eksponensial portlaydi.",
-        "RK4 to‘rtinchi tartibli usul (O(Δt⁴)). Qadam 2 barobar kamaysa, xato 2⁴ = 16 barobarga qisqaradi.",
-        "Simplektik integratorlar (Euler-Cromer, Verlet) Gamilton faza fazosi invariantini aynan saqlaydi va resurs tejamkor (1 FLOP)."
+        __t("Forward Euler usulida o‘tish matritsasi determinanti det(A) = 1 + ω²Δt² > 1 bo‘lib, faza maydoni sun'iy kengayadi va energiya eksponensial portlaydi."),
+        __t("RK4 to‘rtinchi tartibli usul (O(Δt⁴)). Qadam 2 barobar kamaysa, xato 2⁴ = 16 barobarga qisqaradi."),
+        __t("Simplektik integratorlar (Euler-Cromer, Verlet) Gamilton faza fazosi invariantini aynan saqlaydi va resurs tejamkor (1 FLOP).")
       ];
 
       let correctCount = 0;
@@ -794,8 +794,7 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
         return;
       }
 
-      let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 4-ma’ruza hisoblash aniqligi natijasi:</h4>`;
+      let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 4-ma’ruza hisoblash aniqligi natijasi:</h4>", []);
 
       for (let i = 1; i <= 3; i++) {
         const userOpt = userAnswers4[i];
@@ -810,18 +809,14 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
         </div>`;
       }
 
-      let badgeName = 'Hisoblash Fizikasi Arxitektori (To‘liq O‘zlashtirildi)';
+      let badgeName = __t("Hisoblash Fizikasi Arxitektori (To‘liq O‘zlashtirildi)");
       let badgeColor = '#047857';
       if (correctCount < 3) {
-        badgeName = 'Sonli Usullar Tadqiqotchisi (Qisman O‘zlashtirildi)';
+        badgeName = __t("Sonli Usullar Tadqiqotchisi (Qisman O‘zlashtirildi)");
         badgeColor = '#1C4E9E';
       }
 
-      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${badgeColor}; text-align:center;">
-        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Hisoblash Aniqligi Kompetensiyangiz:</div>
-        <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${badgeName}</div>
-        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
-      </div></div>`;
+      htmlResult += __t("<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Hisoblash Aniqligi Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>", [badgeColor, badgeColor, badgeName, badgeColor, correctCount, ((correctCount/3)*100).toFixed(0)]);
 
       feedbackEl.innerHTML = htmlResult;
     };

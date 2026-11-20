@@ -126,7 +126,7 @@ function initKeplerDeterministic() {
             if (r < sun.r) {
                 // Collided with Sun
                 isRunning = false;
-                if (btnPlay) btnPlay.textContent = '▶ Qayta boshlash';
+                if (btnPlay) btnPlay.textContent = __t("▶ Qayta boshlash");
                 break;
             }
 
@@ -264,10 +264,10 @@ function initKeplerDeterministic() {
 
         ctx.fillStyle = '#38BDF8';
         ctx.font = 'bold 12px sans-serif';
-        ctx.fillText('DETERMINISTIK DINAMIK MODEL', 25, 33);
+        ctx.fillText(__t("DETERMINISTIK DINAMIK MODEL"), 25, 33);
         ctx.fillStyle = '#94A3B8';
         ctx.font = '11px sans-serif';
-        ctx.fillText('100 % oldindan aniq yopiq orbita (Kepler)', 25, 49);
+        ctx.fillText(__t("100 % oldindan aniq yopiq orbita (Kepler)"), 25, 49);
     }
 
     function loop() {
@@ -574,7 +574,7 @@ function initGasStochastic() {
                 // Tracer label
                 ctx.fillStyle = '#FB7185';
                 ctx.font = 'bold 9px sans-serif';
-                ctx.fillText('Broun zarrasi', p.x + 8, p.y - 4);
+                ctx.fillText(__t("Broun zarrasi"), p.x + 8, p.y - 4);
             } else {
                 // Color by speed (Cold blue to hot orange)
                 const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
@@ -598,10 +598,10 @@ function initGasStochastic() {
 
         ctx.fillStyle = '#F43F5E';
         ctx.font = 'bold 12px sans-serif';
-        ctx.fillText('STOXASTIK DINAMIK MODEL', 25, 33);
+        ctx.fillText(__t("STOXASTIK DINAMIK MODEL"), 25, 33);
         ctx.fillStyle = '#94A3B8';
         ctx.font = '11px sans-serif';
-        ctx.fillText('N ta molekulaning tasodifiy to‘qnashuvi (MKT)', 25, 49);
+        ctx.fillText(__t("N ta molekulaning tasodifiy to‘qnashuvi (MKT)"), 25, 49);
 
         // Draw Live Maxwell-Boltzmann Histogram
         drawMaxwellHistogram();
@@ -674,12 +674,12 @@ function initGasStochastic() {
         // Axis labels
         hctx.fillStyle = '#94A3B8';
         hctx.font = '10px sans-serif';
-        hctx.fillText('Tezlik v [m/s] →', w - 90, h - 8);
+        hctx.fillText(__t("Tezlik v [m/s] →"), w - 90, h - 8);
         hctx.fillText('f(v)', 8, 20);
 
         // Legend
         hctx.fillStyle = '#FBBF24';
-        hctx.fillText('— Maksvell nazariy egri chizig‘i', paddingLeft + 10, 20);
+        hctx.fillText(__t("— Maksvell nazariy egri chizig‘i"), paddingLeft + 10, 20);
     }
 
     function loop() {

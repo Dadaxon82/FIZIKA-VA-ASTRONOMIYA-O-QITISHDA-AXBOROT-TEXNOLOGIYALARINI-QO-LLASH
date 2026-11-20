@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * SIM-TTS-NARRATOR.JS - Interactive Audio Narrator & Speech Synthesis Simulator (Muxlisa AI / ElevenLabs)
  */
@@ -11,10 +12,10 @@ class TTSNarrator {
     this.wavePhase = 0;
 
     this.presets = {
-      pendulum: "Matematik mayatnik harakatida tebranish burchagi oshgani sari noliner effektlar yuzaga keladi. Kinetik va potensial energiya o‘zaro almashinib turadi.",
-      lorentz: "Zaryadlangan zarracha bir jinsli magnit maydoniga kirganda, Lorents kuchi ta’sirida Larmor radiusi bo‘ylab spiral harakat qiladi.",
-      drag: "Havo qarshiligi mavjud bo‘lganda otilgan jismning trayektoriyasi ideal paraboladan chetga chiqadi va jism chekli tezlikka erishadi.",
-      doppler: "Manba tovush tezligidan tezroq harakatlanganda zarba to‘lqinlari siqilib, Mach konusi hosil bo‘ladi."
+      pendulum: __t("Matematik mayatnik harakatida tebranish burchagi oshgani sari noliner effektlar yuzaga keladi. Kinetik va potensial energiya o‘zaro almashinib turadi."),
+      lorentz: __t("Zaryadlangan zarracha bir jinsli magnit maydoniga kirganda, Lorents kuchi ta’sirida Larmor radiusi bo‘ylab spiral harakat qiladi."),
+      drag: __t("Havo qarshiligi mavjud bo‘lganda otilgan jismning trayektoriyasi ideal paraboladan chetga chiqadi va jism chekli tezlikka erishadi."),
+      doppler: __t("Manba tovush tezligidan tezroq harakatlanganda zarba to‘lqinlari siqilib, Mach konusi hosil bo‘ladi.")
     };
 
     this.initEvents();
@@ -71,10 +72,17 @@ class TTSNarrator {
       utterance.rate = speed;
       utterance.pitch = pitch;
 
-      // Try to find Uzbek / Turkish or natural voice
+      // Sahifa tiliga mos ovoz: uz → o'zbek/turk/rus, ru → rus, en → ingliz.
+      const pageLang = (document.documentElement.lang || 'uz').slice(0, 2);
+      const prefs = { uz: ['uz', 'tr', 'ru'], ru: ['ru'], en: ['en'] }[pageLang] || ['uz'];
+      utterance.lang = { uz: 'uz-UZ', ru: 'ru-RU', en: 'en-US' }[pageLang] || 'uz-UZ';
       const voices = window.speechSynthesis.getVoices();
-      const uzVoice = voices.find(v => v.lang.includes('uz') || v.lang.includes('tr') || v.lang.includes('ru'));
-      if (uzVoice) utterance.voice = uzVoice;
+      let voice = null;
+      for (const p of prefs) {
+        voice = voices.find(v => v.lang.toLowerCase().startsWith(p));
+        if (voice) break;
+      }
+      if (voice) utterance.voice = voice;
 
       utterance.onstart = () => {
         this.isSpeaking = true;
@@ -99,7 +107,7 @@ class TTSNarrator {
         this.stopWaveAnimation();
       }, 4000);
     }
-    if (window.showToast) window.showToast("Audio narratsiya ijro etilmoqda...");
+    if (window.showToast) window.showToast(__t("Audio narratsiya ijro etilmoqda..."));
   }
 
   stop() {

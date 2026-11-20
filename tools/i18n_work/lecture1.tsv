@@ -1,0 +1,137 @@
+a5b685e6	В этой лекции, в отличие от традиционного подхода ⟨1⟩"синтаксического изучения программы"⟨/1⟩, рассматриваются полная 5-этапная дорожная карта создания интерактивных веб-симуляций в синергии инструментов генеративного искусственного интеллекта (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude) с целью формирования студента как ⟨2⟩"физика-инженера и программного архитектора"⟨/2⟩, а также требования к итоговому портфолио (Capstone).	Unlike the traditional ⟨1⟩"learn the program’s syntax"⟨/1⟩ approach, this lecture presents a complete 5-stage roadmap for building interactive web simulations with a synergy of generative AI tools (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude), shaping the student as a ⟨2⟩"physicist-engineer and software architect"⟨/2⟩, together with the Capstone portfolio requirements.
+c1fdab1e	📋 План лекции:	📋 Lecture plan:
+9cda7936	⟨1⟩1–2. ИИ-диагностика и индивидуальный план:⟨/1⟩↵ ⟨2⟩MagicSchool AI и адаптивные траектории на основе ЗБР Выготского.⟨/2⟩	⟨1⟩1–2. AI diagnostics and individual plan:⟨/1⟩↵ ⟨2⟩MagicSchool AI and adaptive pathways based on Vygotsky’s ZPD.⟨/2⟩
+d91e0c4e	⟨1⟩3. Теория и сценарий занятия:⟨/1⟩↵ ⟨2⟩4-этапная инженерия сценария с помощью Gemini / ChatGPT.⟨/2⟩	⟨1⟩3. Theory and lesson scenario:⟨/1⟩↵ ⟨2⟩4-stage scenario engineering with Gemini / ChatGPT.⟨/2⟩
+e2e4432f	⟨1⟩4. Изображения и иллюстрации:⟨/1⟩↵ ⟨2⟩Научные лабораторные ассеты в Midjourney и DALL-E.⟨/2⟩	⟨1⟩4. Images and illustration:⟨/1⟩↵ ⟨2⟩Scientific laboratory assets with Midjourney and DALL-E.⟨/2⟩
+641479d7	⟨1⟩5. Анимация и видео:⟨/1⟩↵ ⟨2⟩Runway, Sora, Pika Labs и динамика движения.⟨/2⟩	⟨1⟩5. Animation and video:⟨/1⟩↵ ⟨2⟩Runway, Sora, Pika Labs and motion dynamics.⟨/2⟩
+5ab5b827	⟨1⟩6. Интерактивная симуляция и код:⟨/1⟩↵ ⟨2⟩Claude, HTML5 Canvas и движок RK4.⟨/2⟩	⟨1⟩6. Interactive simulation and code:⟨/1⟩↵ ⟨2⟩Claude, HTML5 Canvas and an RK4 engine.⟨/2⟩
+bf3e476d	⟨1⟩🎯 Цель курса и Capstone:⟨/1⟩↵ ⟨2⟩Самостоятельное создание веб-симуляций и защита портфолио.⟨/2⟩	⟨1⟩🎯 Course goal and Capstone:⟨/1⟩↵ ⟨2⟩Building web simulations independently and defending a portfolio.⟨/2⟩
+1379c858	🎯 Дидактическая цель курса и критерии итогового мастерства	🎯 Didactic goal of the course and final mastery criteria
+71d3df96	Ожидаемый результат	Expected outcome
+9b8d6761	Главная цель курса — сформировать у каждого студента умение ⟨1⟩построить математическую модель любого физического явления или закономерности, разработать её компьютерный алгоритм и с помощью искусственного интеллекта полностью самостоятельно создать её симуляцию в виде интерактивной веб-страницы⟨/1⟩.	The main goal of the course is to develop in every student the ability to ⟨1⟩build a mathematical model of any physical phenomenon or law, develop its computer algorithm and, with the help of artificial intelligence, create a fully independent simulation of it as an interactive web page⟨/1⟩.
+575588e1	1. Теоретико-математическая компетенция	1. Theoretical and mathematical competence
+d9a88779	Выделение степеней свободы физического процесса, составление системы дифференциальных уравнений, корректная постановка граничных и начальных условий.	Identifying the degrees of freedom of a physical process, setting up a system of differential equations, and correctly stating boundary and initial conditions.
+c543c33f	2. Культура промпт-инжиниринга для ИИ	2. AI prompt-engineering culture
+5e487571	Научно строгие инструкции для Claude, Gemini и ChatGPT, фильтрация галлюцинаций, получение чистого кода.	Giving Claude, Gemini and ChatGPT scientifically rigorous instructions, filtering hallucinations and obtaining clean code.
+7ca3b659	3. Итоговое веб-портфолио (Capstone) и публикация	3. Capstone web portfolio and publication
+ee703184	Размещение разработанной симуляции в открытой сети через GitHub Pages, составление её научного паспорта и защита.	Publishing the finished simulation on the open web via GitHub Pages, writing its scientific passport and defending it.
+b4914bc7	⚖️ Сравнение педагогических парадигм: традиционное и AI-native моделирование	⚖️ Comparing pedagogical paradigms: traditional vs AI-native modelling
+84be25a3	Различия подходов	Differences in approach
+e1ce4e33	Традиционная парадигма (старый подход)	Traditional paradigm (old approach)
+5d0d907b	Механическое заучивание программных интерфейсов (Flash, Pascal, Delphi).	Rote memorisation of software interfaces (Flash, Pascal, Delphi).
+10b74efb	Ограниченность жёсткими и статичными шаблонами, пассивное конспектирование.	Confinement to rigid, static templates and passive note-taking.
+68e2d239	Физическая суть отходит на второй план из-за синтаксических трудностей программирования.	The physics fades into the background because of the syntactic difficulties of coding.
+beb72b32	Единый, неадаптивный темп обучения для всех студентов.	A single, non-adaptive learning pace for all students.
+e1460da1	AI-native парадигма (современный подход)	AI-native paradigm (modern approach)
+1da230eb	Проблемно-ориентированное проектирование: промпт-инжиниринг и вычислительная физика вместе.	Problem-based design: prompt engineering and computational physics together.
+935a63ac	Гибкая персональная учебная траектория для каждого студента через MagicSchool AI.	A flexible personal learning path for every student through MagicSchool AI.
+af6ab87d	Быстрое создание симуляций на Canvas/WebGL с помощью Claude и их проверка физическими законами.	Rapid creation of Canvas/WebGL simulations with Claude and their validation against physical laws.
+4c4d989a	Открытое портфолио на GitHub Pages и интерактивность в реальном времени.	An open portfolio on GitHub Pages and real-time interactivity.
+044a6459	Траектория семестра	Semester pathway
+5575ff90	5-этапная дорожная карта семестра (roadmap)	5-stage semester roadmap
+34d99228	Полный учебный поток студента — от теории на 1-й неделе до защиты Capstone на 16-й неделе:	The student’s complete learning flow — from theory in week 1 to the Capstone defence in week 16:
+12af1a78	Этап 1 (недели 1–3)	Stage 1 (weeks 1–3)
+6b63cec0	Теория и сценарий	Theory and scenario
+c1bf9cea	Составление дифференциальных уравнений, сценарий занятия через Gemini/ChatGPT и выявление неверных представлений (misconceptions).	Setting up differential equations, writing a lesson scenario with Gemini/ChatGPT and identifying misconceptions.
+b3ea538c	Этап 2 (недели 4–6)	Stage 2 (weeks 4–6)
+1285c952	Анализ образца	Analysing an example
+30a631cc	Деконструкция симуляций PhET и Vascak.cz методом обратной разработки, выделение степеней свободы.	Deconstructing PhET and Vascak.cz simulations through reverse engineering and identifying degrees of freedom.
+b95b1d82	Этап 3 (недели 7–10)	Stage 3 (weeks 7–10)
+6467aa99	Программирование с ИИ	Coding with AI
+7e7a8ec8	Построение с Claude физического движка на HTML5 Canvas и системы координат фазового пространства.	Building an HTML5 Canvas physics engine and a phase-space coordinate system with Claude.
+3fe2175c	Этапы 4–5 (недели 11–16)	Stages 4–5 (weeks 11–16)
+c2b28e01	Озвучка и Capstone	Voice and Capstone
+66c6503f	Текстуры Midjourney, озвучивание в ElevenLabs, публикация проекта на GitHub Pages и защита научного паспорта.	Midjourney textures, ElevenLabs voice-over, publishing the project on GitHub Pages and defending the scientific passport.
+f8ed093d	🧠 MagicSchool AI: входная диагностика и адаптивная траектория из 3 кластеров	🧠 MagicSchool AI: entry diagnostics and a 3-cluster adaptive pathway
+ddde4eee	Модель ЗБР Выготского	Vygotsky’s ZPD model
+f7d07923	Подготовка студентов в аудитории по программированию и физике различна (гетерогенна). В начале семестра на платформе MagicSchool AI проводится диагностический тест из 10 вопросов, и студенты распределяются по 3 когнитивным кластерам:	Students in a class differ (are heterogeneous) in their programming and physics preparation. At the start of the semester a 10-question diagnostic test is run on MagicSchool AI and students are sorted into 3 cognitive clusters:
+4614cc02	Кластер A: начальный (Remedial)	Cluster A: beginner (Remedial)
+b004cca6	Скаффолдинг и пошаговая помощь	Scaffolding and step-by-step support
+b7e410f8	Для сильных в физике, но не умеющих программировать: готовые блоки кода, пошаговые видеоинструкции и визуальные шаблоны.	For students strong in physics but new to coding: ready-made code blocks, step-by-step video guides and visual templates.
+98e115f7	Кластер B: средний (стандарт)	Cluster B: intermediate (standard)
+ce0bbb54	2D-моделирование на Canvas	2D Canvas modelling
+826bc425	Студенты, знающие теорию и основы JS: самостоятельное построение алгоритма Эйлера–Кромера, сопротивления воздуха и графиков фазового пространства.	Students who know the theory and JS basics: independently building the Euler–Cromer algorithm, air drag and phase-space plots.
+a98c13e3	Кластер C: продвинутый (Research)	Cluster C: advanced (Research)
+2a753153	3D WebGL и интегратор RK4	3D WebGL and an RK4 integrator
+4701428c	Студенты с сильным математическим и программистским аппаратом: 3D-спираль Лоренца, гравитация N тел, интегрирование методами Бориса и RK4.	Students with strong mathematical and programming skills: the 3D Lorentz helix, N-body gravity, Boris and RK4 integration.
+4252e661	🧪 MagicSchool AI: интерактивный входной диагностический тест	🧪 MagicSchool AI: interactive entry diagnostic test
+afc9d3f3	3 вопроса	3 questions
+f9070c56	Ответьте на следующие вопросы. На основе ваших ответов система порекомендует вам подходящую ⟨1⟩индивидуальную учебную траекторию (кластер A, B или C)⟨/1⟩:	Answer the following questions. Based on your answers the system will recommend a suitable ⟨1⟩individual learning pathway (Cluster A, B or C)⟨/1⟩:
+a7fd3db0	1. Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, в чём причина?	1. If the total mechanical energy of a simple pendulum grows artificially over time during free oscillations, what is the cause?
+23d47d6d	⟨1⟩⚪⟨/1⟩ ⟨2⟩A) Угол вычислялся в градусах, а не в радианах⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩A) The angle was computed in degrees rather than radians⟨/2⟩
+1597cfe1	⟨1⟩⚪⟨/1⟩ ⟨2⟩B) Использован метод Forward Euler (классический Эйлер), который не является симплектическим⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩B) The Forward Euler (classical Euler) method was used, which is not symplectic⟨/2⟩
+e21141a4	⟨1⟩⚪⟨/1⟩ ⟨2⟩C) Экран Canvas не очищался в каждом кадре⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩C) The Canvas was not cleared on every frame⟨/2⟩
+20671f54	2. Почему в JavaScript при записи ⟨1⟩Math.sin(30)⟨/1⟩ не получается ожидаемое значение ⟨2⟩0.5⟨/2⟩?	2. Why does writing ⟨1⟩Math.sin(30)⟨/1⟩ in JavaScript not give the expected value ⟨2⟩0.5⟨/2⟩?
+cf0b211a	⟨1⟩⚪⟨/1⟩ ⟨2⟩A) Math.sin работает только с целыми числами⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩A) Math.sin works only with integers⟨/2⟩
+7566ebea	⟨1⟩⚪⟨/1⟩ ⟨2⟩B) Аргумент задан в градусах, а JS ожидает угол только в радианах (⟨3⟩30 * Math.PI / 180⟨/3⟩)⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩B) The argument is given in degrees, while JS expects the angle in radians only (⟨3⟩30 * Math.PI / 180⟨/3⟩)⟨/2⟩
+078ac645	⟨1⟩⚪⟨/1⟩ ⟨2⟩C) Не загружена библиотека Math⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩C) The Math library is not loaded⟨/2⟩
+ac491d44	3. Какое утверждение о кинетической энергии заряженной частицы, движущейся в однородном магнитном поле (⟦1⟧), верно?	3. Which statement about the kinetic energy of a charged particle moving in a uniform magnetic field (⟦1⟧) is correct?
+e45f90f7	⟨1⟩⚪⟨/1⟩ ⟨2⟩A) Кинетическая энергия сохраняется (сила Лоренца всегда перпендикулярна скорости частицы ⟦1⟧ и не совершает работы)⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩A) Kinetic energy is conserved (the Lorentz force is always perpendicular to the particle’s velocity ⟦1⟧ and does no work)⟨/2⟩
+f01fe4f4	⟨1⟩⚪⟨/1⟩ ⟨2⟩B) Так как частица ускоряется, кинетическая энергия непрерывно растёт⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩B) Because the particle accelerates, its kinetic energy keeps increasing⟨/2⟩
+3372e0c3	⟨1⟩⚪⟨/1⟩ ⟨2⟩C) Кинетическая энергия уменьшается, переходя в потенциальную⟨/2⟩	⟨1⟩⚪⟨/1⟩ ⟨2⟩C) Kinetic energy decreases, turning into potential energy⟨/2⟩
+efd628c3	📚 Список научно-методической литературы к лекции 1:	📚 Scholarly and methodological references for Lecture 1:
+e8b33a63	📖 Gemini и ChatGPT: 4-этапная инженерия сценария занятия	📖 Gemini and ChatGPT: 4-stage lesson-scenario engineering
+c1569b5f	Теория и педагогика	Theory and pedagogy
+a8df17bb	Модели ИИ дают не просто команду "составь план урока", а промпт на основе 4 строгих педагогических модулей:	Instead of simply telling the AI model "write a lesson plan", the prompt is built on 4 strict pedagogical modules:
+399e847f	1. The hook (кейс, вызывающий интерес)	1. The hook (an engaging case)
+6e70b3ce	"Почему полярное сияние возникает только у полюсов?" — реальный жизненный физический парадокс.	"Why do auroras appear only near the poles?" — a real-life physics paradox.
+497fc3d9	2. Core Physics (фундаментальное уравнение)	2. Core Physics (the fundamental equation)
+e254b41d	Векторное произведение ⟦1⟧ и дифференциальные уравнения движения.	The ⟦1⟧ cross product and the differential equations of motion.
+ef562cec	3. Misconception alert (типичные ошибки)	3. Misconception alert (typical errors)
+66db8c24	"Магнитное поле не совершает работы над зарядом?" (⟦1⟧, поскольку ⟦2⟧ и работа не совершается).	"Does the magnetic field do no work on the charge?" (⟦1⟧, because ⟦2⟧ and no work is done).
+150cc13c	4. Simulation spec (техническое задание)	4. Simulation spec (technical specification)
+64b0cfc4	Размеры Canvas, ползунки параметров (⟦1⟧) и требования к телеметрии.	Canvas dimensions, parameter sliders (⟦1⟧) and telemetry requirements.
+783e5f50	Шаблон промпта сценария занятия для Gemini	Lesson-scenario prompt template for Gemini
+ce033c56	Ты — профессор физики и методист высшей школы. Разработай 4-этапный сценарий занятия по теме «Сила Лоренца и спиральное движение частицы в магнитном поле»: 1) Hook (парадокс полярного сияния); 2) фундаментальные дифференциальные уравнения; 3) 3 типичные ошибки студентов; 4) требования к технической архитектуре для создания веб-симуляции.	You are a university physics professor and methodologist. Develop a 4-stage lesson scenario on the topic of the Lorentz force and the helical motion of a particle in a magnetic field: 1) Hook (the aurora paradox), 2) the fundamental differential equations, 3) 3 typical student errors, 4) technical architecture requirements for building a web simulation.
+08d52e1d	🎨 Midjourney и Runway: мультимодальные научные ассеты	🎨 Midjourney and Runway: multimodal scientific assets
+93aa3b37	Графика и видео	Graphics and video
+e9ab76a3	Чтобы придать интерфейсу симуляции вид профессиональной лаборатории, в Midjourney генерируются фотореалистичные приборы, а в Runway готовятся физические интро-видео:	To give the simulation interface the look of a professional laboratory, photorealistic instruments are generated in Midjourney and physics intro videos are produced in Runway:
+b1f18c8d	Промпт для Midjourney: оптическая лаборатория	Midjourney prompt: optics laboratory
+99e54351	=	=
+6c4ff23c	Промпт для Runway: траектория частицы	Runway prompt: particle trajectory
+0982a181	=	=
+85ae2526	Угол θ:	Angle θ:
+3b6d7bec	Скорость ω:	Velocity ω:
+43f61839	0,00 рад/с	0.00 rad/s
+f35a3f3c	Полная энергия:	Total energy:
+4a378348	Ek (кинетическая)	Ek (kinetic)
+a1495253	Ep (потенциальная)	Ep (potential)
+483726ae	Управление параметрами (RK4)	Parameter controls (RK4)
+b1182ab8	Длина нити L:	String length L:
+d8ad42f2	Коэффициент затухания γ:	Damping coefficient γ:
+ed1c472b	Ускорение свободного падения g:	Gravitational acceleration g:
+1776a842	Аттрактор фазового пространства (θ и ω):	Phase-space attractor (θ and ω):
+60a41651	Перезапустить	Restart
+b713a3ab	Ларморовский радиус R⟨1⟩L⟨/1⟩:	Larmor radius R⟨1⟩L⟨/1⟩:
+daa81ecb	Циклотронная частота ω⟨1⟩c⟨/1⟩:	Cyclotron frequency ω⟨1⟩c⟨/1⟩:
+abd0ab31	1,50 рад/с	1.50 rad/s
+4adfd1b1	Магнитное поле (3D, метод Бориса)	Magnetic field (3D, Boris method)
+3db7216a	Перетаскивая мышью или пальцем, можно вращать 3D-координаты в пространстве на 360°!	Drag with the mouse or a finger to rotate the 3D coordinates through 360°!
+5a09a8eb	Индукция поля B⟨1⟩z⟨/1⟩:	Field induction B⟨1⟩z⟨/1⟩:
+c8960ca4	1,5 Тл	1.5 T
+3762834d	Поперечная скорость v⟨1⟩⊥⟨/1⟩:	Transverse velocity v⟨1⟩⊥⟨/1⟩:
+f6246f9d	Продольная скорость v⟨1⟩∥⟨/1⟩:	Longitudinal velocity v⟨1⟩∥⟨/1⟩:
+a0a1856a	Очистить траекторию	Clear trajectory
+e145e5c3	Эффект Доплера и конус Маха	The Doppler effect and the Mach cone
+e9dbea6b	Число Маха M (v/c):	Mach number M (v/c):
+77c9e2d0	⟦1⟧: дозвуковое движение — фронты волн сжимаются перед источником.↵ ⟦2⟧: сверхзвуковое движение и ударный конус Маха (красный).	⟦1⟧: subsonic motion — wavefronts bunch up ahead of the source.↵ ⟦2⟧: supersonic motion and the Mach shock cone (red).
+5308e15b	Длина волны λ:	Wavelength λ:
+8fc1d672	532 нм (зелёный)	532 nm (green)
+6f3a5813	Расстояние между щелями d:	Slit separation d:
+55aa39e9	0,25 мм	0.25 mm
+1c1ab3a1	📊 Стандарт оценивания по 5 критериям и требования к итоговому портфолио (Capstone)	📊 The 5-criterion assessment standard and Capstone portfolio requirements
+9be03bd6	Матрица оценивания	Assessment matrix
+6a9b04d3	Итоговый семестровый проект студентов (Capstone) оценивается по следующей формуле: ⟦1⟧	Students’ end-of-semester Capstone project is graded with the following formula: ⟦1⟧
+fdfb3966	📋 Научный паспорт проекта Capstone:	📋 Scientific passport of the Capstone project:
+01835615	🔹 ⟨1⟩1. Название темы:⟨/1⟩ точное описание физического процесса.	🔹 ⟨1⟩1. Topic title:⟨/1⟩ a precise description of the physical process.
+b491624a	🔹 ⟨1⟩2. Математический аппарат:⟨/1⟩ дифференциальные уравнения и граничные условия.	🔹 ⟨1⟩2. Mathematical apparatus:⟨/1⟩ differential equations and boundary conditions.
+46156946	🔹 ⟨1⟩3. Журнал ИИ-промптов:⟨/1⟩ запросы к Claude, Gemini, Midjourney.	🔹 ⟨1⟩3. AI prompt log:⟨/1⟩ the queries given to Claude, Gemini and Midjourney.
+45bb30ca	🔹 ⟨1⟩4. Код JavaScript:⟨/1⟩ физический движок RK4 / Эйлера–Кромера и рендер на Canvas.	🔹 ⟨1⟩4. JavaScript code:⟨/1⟩ an RK4 / Euler–Cromer physics engine and Canvas rendering.
+18558f6c	🔹 ⟨1⟩5. Открытая ссылка:⟨/1⟩ работающее веб-приложение, опубликованное на GitHub Pages.	🔹 ⟨1⟩5. Public link:⟨/1⟩ a working web app published on GitHub Pages.
+b6e36e69	🧮 Интерактивный калькулятор баллов:	🧮 Interactive score calculator:
+22cdd9ec	1. Научная точность (30 баллов):	1. Scientific accuracy (30 points):
+ae7f579e	2. Математическая модель / RK4 (25 баллов):	2. Mathematical model / RK4 (25 points):
+4531cc5f	3. UI/UX и Canvas (20 баллов):	3. UI/UX and Canvas (20 points):
+943fcf33	4. Промпт-инжиниринг ИИ (15 баллов):	4. AI prompt engineering (15 points):
+a2f00e7d	5. Портфолио на GitHub (10 баллов):	5. GitHub portfolio (10 points):
+d034bfcc	Итоговый балл:	Final score:

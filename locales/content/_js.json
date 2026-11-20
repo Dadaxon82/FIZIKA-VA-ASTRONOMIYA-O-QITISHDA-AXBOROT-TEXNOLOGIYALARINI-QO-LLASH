@@ -1,4 +1,160 @@
 {
+ "js/debugging-lab.js": {
+  " (Kutilayotgan: 0.7071)": [
+   " (ожидалось: 0.7071)",
+   " (expected: 0.7071)"
+  ],
+  " (Nazariy: 0.7071)": [
+   " (теоретически: 0.7071)",
+   " (theoretical: 0.7071)"
+  ],
+  " J (Saqlanish barqaror!)": [
+   " Дж (сохранение устойчиво!)",
+   " J (conservation is stable!)"
+  ],
+  " N (Dvigatel qotib qoladi!)": [
+   " Н (движок зависнет!)",
+   " N (the engine will freeze!)"
+  ],
+  " px, v = ": [
+   " пкс, v = ",
+   " px, v ="
+  ],
+  " px/s)": [
+   " пкс/с)",
+   " px/s)"
+  ],
+  "% xatolik)": [
+   "% погрешность)",
+   "% error)"
+  ],
+  "Sinov muvaffaqiyatli o‘tdi!": [
+   "Тест успешно пройден!",
+   "Test passed successfully!"
+  ],
+  "Sintaksis xatosi: ": [
+   "Синтаксическая ошибка: ",
+   "Syntax error:"
+  ],
+  "Xatolik aniqlandi!": [
+   "Обнаружена ошибка!",
+   "Error detected!"
+  ],
+  "Xatolik: ": [
+   "Ошибка: ",
+   "Error:"
+  ],
+  "⚠️ Kuch qiymati: ": [
+   "⚠️ Значение силы: ",
+   "⚠️ Force value:"
+  ],
+  "⚠️ Qaytarilgan qiymat mos kelmadi: ": [
+   "⚠️ Возвращённое значение не совпало: ",
+   "⚠️ The returned value did not match:"
+  ],
+  "⚠️ Qaytarilgan qiymat: x=": [
+   "⚠️ Возвращённое значение: x=",
+   "⚠️ Returned value: x="
+  ],
+  "✅ TO‘G‘RI: Burchak radianga o‘girildi! sin(45°) ≈ ": [
+   "✅ ВЕРНО: угол переведён в радианы! sin(45°) ≈ ",
+   "✅ CORRECT: the angle was converted to radians! sin(45°) ≈"
+  ],
+  "✅ TO‘G‘RI: Jism devor ichiga kirmay qaytarildi (x = ": [
+   "✅ ВЕРНО: тело отражено, не войдя в стенку (x = ",
+   "✅ CORRECT: the body was reflected without entering the wall (x ="
+  ],
+  "✅ TO‘G‘RI: Simplektik Eyler-Kromer (v yangilanib, so‘ng x hisoblandi). E = ": [
+   "✅ ВЕРНО: симплектический Эйлер–Кромер (сначала обновлена v, затем вычислена x). E = ",
+   "✅ CORRECT: symplectic Euler–Cromer (v updated first, then x computed). E ="
+  ],
+  "✅ TO‘G‘RI: Yumshatuvchi parametr (epsilon) qo‘shildi! Kuch chekli qiymatda ushlab turildi: F = ": [
+   "✅ ВЕРНО: добавлен сглаживающий параметр (epsilon)! Сила удержана в конечных пределах: F = ",
+   "✅ CORRECT: a softening parameter (epsilon) was added! The force stays finite: F ="
+  ],
+  "❌ BEQARORLIK: Klassik Eyler energiyani portlatdi! E = ": [
+   "❌ НЕУСТОЙЧИВОСТЬ: классический Эйлер «взорвал» энергию! E = ",
+   "❌ INSTABILITY: classical Euler blew up the energy! E ="
+  ],
+  "❌ SINGULYARLIK: r -> 0 da kuch cheksizlikka intildi: F = ": [
+   "❌ СИНГУЛЯРНОСТЬ: при r -> 0 сила устремилась к бесконечности: F = ",
+   "❌ SINGULARITY: as r -> 0 the force tends to infinity: F ="
+  ],
+  "❌ TUNNEL EFFEKTI: Jism devor ichida yoki tashqarisida qolib ketdi (x = ": [
+   "❌ ТУННЕЛЬНЫЙ ЭФФЕКТ: тело осталось внутри или за пределами стенки (x = ",
+   "❌ TUNNELLING: the body was left inside or beyond the wall (x ="
+  ],
+  "❌ XATO: Math.sin(45) gradusda qolib ketdi! Natija: ": [
+   "❌ ОШИБКА: Math.sin(45) остался в градусах! Результат: ",
+   "❌ ERROR: Math.sin(45) was left in degrees! Result:"
+  ]
+ },
+ "js/project-log-engine.js": {
+  "# GOOGLE ANTIGRAVITY AI - TALABA LOYIHA JURNALI (PROJECT LOG)\n\n": [
+   "# GOOGLE ANTIGRAVITY AI — ЖУРНАЛ ПРОЕКТА СТУДЕНТА (PROJECT LOG)\n\n",
+   "# GOOGLE ANTIGRAVITY AI — STUDENT PROJECT LOG\n\n"
+  ],
+  "1-Lab: Fizik Jarayonni Tanlash va Erkinlik Darajalarini Ajratish": [
+   "Лаб. 1: выбор физического процесса и выделение степеней свободы",
+   "Lab 1: Choosing a Physical Process and Identifying Degrees of Freedom"
+  ],
+  "10-Lab: ChatGPT Code Interpreter yordamida Debugging va Xatolar Tahlili": [
+   "Лаб. 10: отладка и анализ ошибок с ChatGPT Code Interpreter",
+   "Lab 10: Debugging and Error Analysis with ChatGPT Code Interpreter"
+  ],
+  "13-Lab: Otter.ai yordamida Laboratoriya Qaydlari va Hisobot Transkripsiyasi": [
+   "Лаб. 13: лабораторные записи и транскрипция отчёта с помощью Otter.ai",
+   "Lab 13: Lab Notes and Report Transcription with Otter.ai"
+  ],
+  "14-Lab: Undetectable AI va Turnitin orqali Akademik Originallik Tekshiruvi": [
+   "Лаб. 14: проверка академической оригинальности через Undetectable AI и Turnitin",
+   "Lab 14: Academic Originality Checks with Undetectable AI and Turnitin"
+  ],
+  "15-Lab: Yakuniy Capstone Loyihani GitHub Pages da Nashr Qilish va Himoya": [
+   "Лаб. 15: публикация итогового проекта Capstone на GitHub Pages и защита",
+   "Lab 15: Publishing and Defending the Final Capstone Project on GitHub Pages"
+  ],
+  "3-Lab: PhET va Vascak.cz Simulyatsiyalarini Teskari Muhandislik Tahlili": [
+   "Лаб. 3: анализ симуляций PhET и Vascak.cz методом обратной разработки",
+   "Lab 3: Reverse-Engineering Analysis of PhET and Vascak.cz Simulations"
+  ],
+  "4-Lab: Saqlanish Qonunlari va Chegaraviy Shartlarni Belgilash": [
+   "Лаб. 4: законы сохранения и задание граничных условий",
+   "Lab 4: Conservation Laws and Boundary Conditions"
+  ],
+  "5-Lab: Sonli Integrallash: Forward Euler va Eyler-Kromer Kodlash": [
+   "Лаб. 5: численное интегрирование — программирование Forward Euler и Эйлера–Кромера",
+   "Lab 5: Numerical Integration — Coding Forward Euler and Euler–Cromer"
+  ],
+  "8-Lab: Real Vaqtli Vektorlar (v, a, F) va Faza Fazosi Chizmasi": [
+   "Лаб. 8: векторы в реальном времени (v, a, F) и построение фазового пространства",
+   "Lab 8: Real-Time Vectors (v, a, F) and Phase-Space Plotting"
+  ],
+  "9-Lab: Interaktiv Boshqaruv: Slayderlar, Tugmalar va Telemetriya HUD": [
+   "Лаб. 9: интерактивное управление — ползунки, кнопки и HUD телеметрии",
+   "Lab 9: Interactive Controls — Sliders, Buttons and a Telemetry HUD"
+  ],
+  "Bajarildi (100%)": [
+   "Выполнено (100%)",
+   "Completed (100%)"
+  ],
+  "Canvas Dvigatel": [
+   "Движок на Canvas",
+   "Canvas engine"
+  ],
+  "Jarayonda": [
+   "В процессе",
+   "In progress"
+  ],
+  "Loyiha jurnali Markdown hisobot sifatida yuklab olindi!": [
+   "Журнал проекта скачан как отчёт в Markdown!",
+   "The project log was downloaded as a Markdown report!"
+  ],
+  "| № | Laboratoriya Bosqichi | AI Vosita | Holati | Ball |\n": [
+   "| № | Лабораторный этап | ИИ-инструмент | Статус | Балл |\n",
+   "| № | Lab stage | AI tool | Status | Points |\n"
+  ]
+ },
  "js/sim-astronomy-visualization.js": {
   "▶ Davom ettirish": [
    "▶ Продолжить",
@@ -6,6 +162,26 @@
   ]
  },
  "js/sim-canvas-architecture.js": {
+  "Cheklovsiz (V-Sync)": [
+   "Без ограничения (V-Sync)",
+   "Uncapped (V-Sync)"
+  ],
+  "Rejim: ": [
+   "Режим:",
+   "Mode:"
+  ],
+  "o‘zgaruvchan Δt": [
+   "переменный Δt",
+   "variable Δt"
+  ],
+  "qat’iy Δt + interpolyatsiya": [
+   "фиксированный Δt + интерполяция",
+   "fixed Δt + interpolation"
+  ],
+  "qat’iy Δt akkumulyatori": [
+   "аккумулятор фиксированного Δt",
+   "fixed-Δt accumulator"
+  ],
   "⏸ To‘xtatish": [
    "⏸ Остановить",
    "⏸ Stop"
@@ -15,10 +191,82 @@
    "▶ Resume"
   ]
  },
+ "js/sim-collision.js": {
+  " kg·m/s": [
+   " кг·м/с",
+   " kg·m/s"
+  ]
+ },
+ "js/sim-error-analysis.js": {
+  "Aniq yechim": [
+   "Точное решение",
+   "Exact solution"
+  ],
+  "E(t)/E₀ = 1 (saqlanish qonuni)": [
+   "E(t)/E₀ = 1 (закон сохранения)",
+   "E(t)/E₀ = 1 (conservation law)"
+  ],
+  "Eyler–Kromer": [
+   "Эйлер–Кромер",
+   "Euler–Cromer"
+  ],
+  "Faza portreti ω(θ)": [
+   "Фазовый портрет ω(θ)",
+   "Phase portrait ω(θ)"
+  ],
+  "Heun (RK2)": [
+   "Хойн (RK2)",
+   "Heun (RK2)"
+  ],
+  "O(Δt), simplektik": [
+   "O(Δt), симплектический",
+   "O(Δt), symplectic"
+  ],
+  "Oshkor Eyler": [
+   "Явный Эйлер",
+   "Explicit Euler"
+  ],
+  "Runge–Kutta 4": [
+   "Рунге–Кутта 4",
+   "Runge–Kutta 4"
+  ],
+  "θ(t), rad — vaqt bo‘yicha": [
+   "θ(t), рад — во времени",
+   "θ(t), rad — over time"
+  ],
+  "⏸️ To‘xtatish": [
+   "⏸️ Остановить",
+   "⏸️ Stop"
+  ],
+  "▶️ Boshlash": [
+   "▶️ Старт",
+   "▶️ Start"
+  ],
+  "⚠️ (portlash)": [
+   "⚠️ (взрыв)",
+   "⚠️ (blow-up)"
+  ]
+ },
  "js/sim-forces-fbd.js": {
+  "Muvozanatda (statik)": [
+   "В равновесии (статика)",
+   "At rest (static)"
+  ],
+  "Sirpanmoqda (pastga) ↓": [
+   "Скользит (вниз) ↓",
+   "Sliding (down) ↓"
+  ],
+  "Sirpanmoqda (yuqoriga) ↑": [
+   "Скользит (вверх) ↑",
+   "Sliding (up) ↑"
+  ],
   "⏸ To‘xtatish": [
    "⏸ Остановить",
    "⏸ Stop"
+  ],
+  "▶ Boshlash": [
+   "▶ Старт",
+   "▶ Start"
   ]
  },
  "js/sim-lab1-pipeline.js": {
@@ -31,6 +279,10 @@
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
+  ],
+  "⏸️ To‘xtatish": [
+   "⏸️ Остановить",
+   "⏸️ Stop"
   ]
  },
  "js/sim-lab3-pipeline.js": {
@@ -39,7 +291,41 @@
    "Prompt copied!"
   ]
  },
+ "js/sim-mechanics-pipeline.js": {
+  "⏸️ To‘xtatish": [
+   "⏸️ Остановить",
+   "⏸️ Stop"
+  ]
+ },
  "js/sim-model-taxonomy.js": {
+  "100 % oldindan aniq yopiq orbita (Kepler)": [
+   "На 100 % предсказуемая замкнутая орбита (Кеплер)",
+   "A 100 % predictable closed orbit (Kepler)"
+  ],
+  "Broun zarrasi": [
+   "Броуновская частица",
+   "Brownian particle"
+  ],
+  "DETERMINISTIK DINAMIK MODEL": [
+   "ДЕТЕРМИНИРОВАННАЯ ДИНАМИЧЕСКАЯ МОДЕЛЬ",
+   "DETERMINISTIC DYNAMIC MODEL"
+  ],
+  "N ta molekulaning tasodifiy to‘qnashuvi (MKT)": [
+   "Случайные столкновения N молекул (МКТ)",
+   "Random collisions of N molecules (kinetic theory)"
+  ],
+  "STOXASTIK DINAMIK MODEL": [
+   "СТОХАСТИЧЕСКАЯ ДИНАМИЧЕСКАЯ МОДЕЛЬ",
+   "STOCHASTIC DYNAMIC MODEL"
+  ],
+  "Tezlik v [m/s] →": [
+   "Скорость v [м/с] →",
+   "Speed v [m/s] →"
+  ],
+  "— Maksvell nazariy egri chizig‘i": [
+   "— теоретическая кривая Максвелла",
+   "— Maxwell theoretical curve"
+  ],
   "⏸ To‘xtatish": [
    "⏸ Остановить",
    "⏸ Stop"
@@ -47,6 +333,20 @@
   "▶ Davom ettirish": [
    "▶ Продолжить",
    "▶ Resume"
+  ],
+  "▶ Qayta boshlash": [
+   "▶ Перезапустить",
+   "▶ Restart"
+  ]
+ },
+ "js/sim-pendulum.js": {
+  "θ (rad)": [
+   "θ (рад)",
+   "θ (rad)"
+  ],
+  "ω (rad/s)": [
+   "ω (рад/с)",
+   "ω (rad/s)"
   ]
  },
  "js/sim-physics-programming.js": {
@@ -71,6 +371,42 @@
   "▶ Davom ettirish": [
    "▶ Продолжить",
    "▶ Resume"
+  ]
+ },
+ "js/sim-spring.js": {
+  "Faza fazosi (v va x)": [
+   "Фазовое пространство (v и x)",
+   "Phase space (v and x)"
+  ],
+  "vaqt o‘qi t →": [
+   "ось времени t →",
+   "time axis t →"
+  ],
+  "x(t) tebranishlar": [
+   "колебания x(t)",
+   "x(t) oscillations"
+  ]
+ },
+ "js/sim-tts-narrator.js": {
+  "Audio narratsiya ijro etilmoqda...": [
+   "Воспроизводится аудионаррация...",
+   "Playing audio narration..."
+  ],
+  "Havo qarshiligi mavjud bo‘lganda otilgan jismning trayektoriyasi ideal paraboladan chetga chiqadi va jism chekli tezlikka erishadi.": [
+   "При наличии сопротивления воздуха траектория брошенного тела отклоняется от идеальной параболы, и тело достигает предельной скорости.",
+   "With air drag, a projectile’s trajectory deviates from the ideal parabola and the body reaches a terminal velocity."
+  ],
+  "Manba tovush tezligidan tezroq harakatlanganda zarba to‘lqinlari siqilib, Mach konusi hosil bo‘ladi.": [
+   "Когда источник движется быстрее скорости звука, ударные волны сжимаются и образуют конус Маха.",
+   "When the source moves faster than sound, the shock waves bunch up and form a Mach cone."
+  ],
+  "Matematik mayatnik harakatida tebranish burchagi oshgani sari noliner effektlar yuzaga keladi. Kinetik va potensial energiya o‘zaro almashinib turadi.": [
+   "При движении математического маятника с ростом угла колебаний возникают нелинейные эффекты. Кинетическая и потенциальная энергия непрерывно переходят друг в друга.",
+   "As the swing angle of a simple pendulum increases, non-linear effects appear. Kinetic and potential energy continually exchange with each other."
+  ],
+  "Zaryadlangan zarracha bir jinsli magnit maydoniga kirganda, Lorents kuchi ta’sirida Larmor radiusi bo‘ylab spiral harakat qiladi.": [
+   "Когда заряженная частица попадает в однородное магнитное поле, под действием силы Лоренца она движется по спирали с ларморовским радиусом.",
+   "When a charged particle enters a uniform magnetic field, the Lorentz force makes it move along a helix with the Larmor radius."
   ]
  },
  "js/ui-controller.js": {
@@ -1055,10 +1391,52 @@
    "Incorrect! Air drag is a vector that projects onto the axes in the ratios v_x/|v| and v_y/|v|."
   ]
  },
+ "lecture1.html": {
+  "<span class=\"hud-pill text-amber\">Iltimos, variantlardan birini tanlang!</span>": [
+   "<span class=\"hud-pill text-amber\">Пожалуйста, выберите один из вариантов!</span>",
+   "<span class=\"hud-pill text-amber\">Please choose one of the options!</span>"
+  ],
+  "<span class=\"hud-pill text-emerald\">✅ A’lo! Aynan Forward Euler usuli simplektik bo‘lmagani uchun energiya sun’iy o‘sib ketadi. Eyler–Kromer yoki RK4 ishlatish lozim. (Klaster: B/C)</span>": [
+   "<span class=\"hud-pill text-emerald\">✅ Отлично! Именно потому, что метод Forward Euler не симплектический, энергия искусственно растёт. Нужно использовать Эйлера–Кромера или RK4. (Кластер: B/C)</span>",
+   "<span class=\"hud-pill text-emerald\">✅ Excellent! It is precisely because Forward Euler is not symplectic that the energy grows artificially. Euler–Cromer or RK4 should be used. (Cluster: B/C)</span>"
+  ],
+  "<span class=\"hud-pill text-rose\">❌ Noto‘g‘ri. To‘g‘ri javob B: Klassik Forward Euler faza fazosi kengaytiradi va beqarorlik keltiradi. (Klaster: A)</span>": [
+   "<span class=\"hud-pill text-rose\">❌ Неверно. Правильный ответ B: классический Forward Euler расширяет фазовое пространство и вызывает неустойчивость. (Кластер: A)</span>",
+   "<span class=\"hud-pill text-rose\">❌ Incorrect. The correct answer is B: classical Forward Euler expands the phase space and causes instability. (Cluster: A)</span>"
+  ]
+ },
  "lecture3.html": {
   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n          <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n        </div>": [
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, ответьте на все 3 вопроса!</span></div>",
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Please answer all 3 questions!</span></div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 3-ma’ruza AI ekotizimi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Лекция 3: результат по ИИ-экосистеме:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 3 AI ecosystem result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Ekotizim Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>": [
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Ваша компетенция по экосистеме:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Результат: {4} / 3 балла ({5}%)</div></div></div>",
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Your ecosystem competence:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Score: {4} / 3 points ({5}%)</div></div></div>"
+  ],
+  "AI Ekotizim Arxitektori (To‘liq O‘zlashtirildi)": [
+   "Архитектор ИИ-экосистемы (полностью освоено)",
+   "AI Ecosystem Architect (fully mastered)"
+  ],
+  "AI Pipeline Tadqiqotchisi (Qisman O‘zlashtirildi)": [
+   "Исследователь AI-конвейера (частично освоено)",
+   "AI Pipeline Explorer (partially mastered)"
+  ],
+  "Google Antigravity barcha 15 ta laboratoriya bosqichini yagona tizimli monitoring qiladi va talabaning shaxsiy loyiha jurnalini yuritadi.": [
+   "Google Antigravity единой системой отслеживает все 15 лабораторных этапов и ведёт личный журнал проекта студента.",
+   "Google Antigravity monitors all 15 lab stages as a single system and keeps the student’s personal project log."
+  ],
+  "Muxlisa AI va ElevenLabs neyron nutq modellari orqali talabaning simulyatsiyasi tabiiy audio-narratsiya bilan ta’minlanadi.": [
+   "С помощью нейронных моделей речи Muxlisa AI и ElevenLabs симуляция студента получает естественную аудионаррацию.",
+   "Muxlisa AI and ElevenLabs neural speech models give the student’s simulation natural audio narration."
+  ],
+  "Otter.ai dars audio yozuvlarini real vaqtda matnga aylantirib, seminar va laboratoriya xulosalarini tayyorlaydi.": [
+   "Otter.ai в реальном времени переводит аудиозаписи занятий в текст и готовит выводы семинаров и лабораторных.",
+   "Otter.ai converts lesson audio to text in real time and prepares seminar and lab summaries."
   ],
   "To‘g‘ri!": [
    "Верно!",
@@ -1074,6 +1452,34 @@
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, ответьте на все 3 вопроса!</span></div>",
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Please answer all 3 questions!</span></div>"
   ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 4-ma’ruza hisoblash aniqligi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Лекция 4: результат по точности вычислений:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 4 computational accuracy result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Hisoblash Aniqligi Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>": [
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Ваша компетенция в точности вычислений:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Результат: {4} / 3 балла ({5}%)</div></div></div>",
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Your computational accuracy competence:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Score: {4} / 3 points ({5}%)</div></div></div>"
+  ],
+  "Forward Euler usulida o‘tish matritsasi determinanti det(A) = 1 + ω²Δt² > 1 bo‘lib, faza maydoni sun'iy kengayadi va energiya eksponensial portlaydi.": [
+   "В методе Forward Euler определитель матрицы перехода det(A) = 1 + ω²Δt² > 1, поэтому фазовая площадь искусственно расширяется и энергия экспоненциально «взрывается».",
+   "In Forward Euler the transition-matrix determinant det(A) = 1 + ω²Δt² > 1, so the phase area expands artificially and the energy blows up exponentially."
+  ],
+  "Hisoblash Fizikasi Arxitektori (To‘liq O‘zlashtirildi)": [
+   "Архитектор вычислительной физики (полностью освоено)",
+   "Computational Physics Architect (fully mastered)"
+  ],
+  "RK4 to‘rtinchi tartibli usul (O(Δt⁴)). Qadam 2 barobar kamaysa, xato 2⁴ = 16 barobarga qisqaradi.": [
+   "RK4 — метод четвёртого порядка (O(Δt⁴)). При уменьшении шага в 2 раза ошибка сокращается в 2⁴ = 16 раз.",
+   "RK4 is a fourth-order method (O(Δt⁴)). Halving the step reduces the error by 2⁴ = 16 times."
+  ],
+  "Simplektik integratorlar (Euler-Cromer, Verlet) Gamilton faza fazosi invariantini aynan saqlaydi va resurs tejamkor (1 FLOP).": [
+   "Симплектические интеграторы (Эйлер–Кромер, Верле) точно сохраняют инвариант гамильтонова фазового пространства и экономичны по ресурсам (1 FLOP).",
+   "Symplectic integrators (Euler–Cromer, Verlet) preserve the Hamiltonian phase-space invariant exactly and are resource-efficient (1 FLOP)."
+  ],
+  "Sonli Usullar Tadqiqotchisi (Qisman O‘zlashtirildi)": [
+   "Исследователь численных методов (частично освоено)",
+   "Numerical Methods Explorer (partially mastered)"
+  ],
   "To‘g‘ri!": [
    "Верно!",
    "Correct!"
@@ -1087,6 +1493,34 @@
   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n          <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n        </div>": [
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, ответьте на все 3 вопроса!</span></div>",
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Please answer all 3 questions!</span></div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 5-ma’ruza modellar taksonomiyasi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Лекция 5: результат по таксономии моделей:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 5 model taxonomy result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Modellar Taksonomiyasi Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>": [
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Ваша компетенция по таксономии моделей:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Результат: {4} / 3 балла ({5}%)</div></div></div>",
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Your model taxonomy competence:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Score: {4} / 3 points ({5}%)</div></div></div>"
+  ],
+  "Fizik Modellar Tadqiqotchisi (Qisman O‘zlashtirildi)": [
+   "Исследователь физических моделей (частично освоено)",
+   "Physical Models Explorer (partially mastered)"
+  ],
+  "Fizik Modellashtirish Taksonomisti (Mukammal O‘zlashtirildi)": [
+   "Таксономист физического моделирования (освоено отлично)",
+   "Physical Modelling Taxonomist (excellently mastered)"
+  ],
+  "Katta sonlar ansamblida dinamik xaos tufayli deterministik kuzatish imkonsiz, shuning uchun statistik (stoxastik) Maksvell-Bolsman taqsimoti qo‘llaniladi.": [
+   "В ансамбле из огромного числа частиц детерминированное слежение невозможно из-за динамического хаоса, поэтому применяется статистическое (стохастическое) распределение Максвелла–Больцмана.",
+   "In an ensemble of a huge number of particles deterministic tracking is impossible because of dynamic chaos, so the statistical (stochastic) Maxwell–Boltzmann distribution is used."
+  ],
+  "Koshi teoremasiga ko‘ra, 2-tartibli differensial tenglamada boshlang‘ich holat (x0, v0) ma’lum bo‘lsa, orbita 100% deterministik aniqlanadi.": [
+   "По теореме Коши, если в дифференциальном уравнении 2-го порядка известно начальное состояние (x0, v0), орбита определяется на 100% детерминированно.",
+   "By Cauchy’s theorem, if the initial state (x0, v0) of a second-order differential equation is known, the orbit is 100% deterministic."
+  ],
+  "Rezonans va vaqt bo‘yicha tebranishlar yuzaga kelganda statik muvozanat (ΣF=0) buziladi va differensial harakat tenglamasiga (dinamik model) o‘tiladi.": [
+   "При резонансе и колебаниях во времени статическое равновесие (ΣF=0) нарушается, и необходимо перейти к дифференциальному уравнению движения (динамической модели).",
+   "When resonance and time-dependent oscillations occur, static equilibrium (ΣF=0) breaks down and one must switch to the differential equation of motion (a dynamic model)."
   ],
   "To‘g‘ri!": [
    "Верно!",
@@ -1102,6 +1536,34 @@
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, ответьте на все 3 вопроса!</span></div>",
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Please answer all 3 questions!</span></div>"
   ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 6-ma’ruza modellarni shakllantirish natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Лекция 6: результат по построению моделей:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 6 model-building result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Fizik Modellashtirish Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>": [
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Ваша компетенция в физическом моделировании:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Результат: {4} / 3 балла ({5}%)</div></div></div>",
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Your physical modelling competence:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Score: {4} / 3 points ({5}%)</div></div></div>"
+  ],
+  "FBD va Kuchlar Tadqiqotchisi (Qisman O‘zlashtirildi)": [
+   "Исследователь FBD и сил (частично освоено)",
+   "FBD & Forces Explorer (partially mastered)"
+  ],
+  "Fizik Modellar Arxitektori (To‘liq O‘zlashtirildi)": [
+   "Архитектор физических моделей (полностью освоено)",
+   "Physical Models Architect (fully mastered)"
+  ],
+  "Normal reaksiya kuchi N doimo sirtga perpendikulyar (tik) bo‘ladi. Qiya tekislikda uning moduli N = mg*cos(alpha) ga teng.": [
+   "Сила нормальной реакции N всегда перпендикулярна поверхности. На наклонной плоскости её модуль равен N = mg*cos(alpha).",
+   "The normal force N is always perpendicular to the surface. On an incline its magnitude is N = mg*cos(alpha)."
+  ],
+  "Simplektik Eyler–Kromer yangi tezlik bilan koordinatani yangilagani sababli simplektik 2-formani saqlaydi va energiyani barqaror ushlab turadi.": [
+   "Поскольку симплектический Эйлер–Кромер обновляет координату по новой скорости, он сохраняет симплектическую 2-форму и удерживает энергию устойчивой.",
+   "Because symplectic Euler–Cromer updates the position with the new velocity, it preserves the symplectic 2-form and keeps the energy stable."
+  ],
+  "Tashqi kuch (15 N) maksimal statik ishqalanishdan (25 N) kichik bo‘lsa, jism qo‘zg‘almaydi va statik ishqalanish tashqi kuchga teng bo‘ladi (F_ishq = 15 N).": [
+   "Если внешняя сила (15 Н) меньше максимального трения покоя (25 Н), тело не сдвигается, и трение покоя равно внешней силе (F_тр = 15 Н).",
+   "If the external force (15 N) is less than maximum static friction (25 N), the body does not move and static friction equals the external force (F_fr = 15 N)."
+  ],
   "To‘g‘ri!": [
    "Верно!",
    "Correct!"
@@ -1115,6 +1577,34 @@
   "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n          <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n        </div>": [
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Пожалуйста, ответьте на все 3 вопроса!</span></div>",
    "<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\"><span style=\"font-size:1.2rem;\">⚠️</span><span>Please answer all 3 questions!</span></div>"
+  ],
+  "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 7-ma’ruza Canvas arxitekturasi natijasi:</h4>": [
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Лекция 7: результат по архитектуре Canvas:</h4>",
+   "<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\"><h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 Lecture 7 Canvas architecture result:</h4>"
+  ],
+  "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Canvas Modellashtirish Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>": [
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Ваша компетенция в моделировании на Canvas:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Результат: {4} / 3 балла ({5}%)</div></div></div>",
+   "<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\"><div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Your Canvas modelling competence:</div> <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div> <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Score: {4} / 3 points ({5}%)</div></div></div>"
+  ],
+  "Canvas ichki piksel buferini DPR ga ko‘paytirib, kontekstni scale qilish orqali Retina displeylarda kristal aniq chizish ta’minlanadi.": [
+   "Умножение внутреннего пиксельного буфера Canvas на DPR и масштабирование контекста обеспечивают кристально чёткое изображение на Retina-дисплеях.",
+   "Multiplying the Canvas’s internal pixel buffer by DPR and scaling the context gives crystal-clear drawing on Retina displays."
+  ],
+  "Canvas va Animatsiya Tadqiqotchisi (Qisman O‘zlashtirildi)": [
+   "Исследователь Canvas и анимации (частично освоено)",
+   "Canvas & Animation Explorer (partially mastered)"
+  ],
+  "Fizik Grafika Dvigatellari Arxitektori (To‘liq O‘zlashtirildi)": [
+   "Архитектор движков физической графики (полностью освоено)",
+   "Physics Graphics Engine Architect (fully mastered)"
+  ],
+  "Glenn Fiedler akkumulyatori fizik hisoblarni qat’iy qadamlar (dt = 1/60s) bilan amalga oshiradi, bu esa render FPS ga bog‘liq bo‘lmagan to‘liq barqarorlik va determinizmni beradi.": [
+   "Аккумулятор Гленна Фидлера выполняет физические расчёты фиксированными шагами (dt = 1/60 с), что даёт полную устойчивость и детерминизм, не зависящие от FPS рендеринга.",
+   "Glenn Fiedler’s accumulator runs physics in fixed steps (dt = 1/60 s), giving complete stability and determinism independent of the render FPS."
+  ],
+  "Object Pooling yangi xotira ajratish va tozalashni bartaraf etadi, natijada Garbage Collection pauzalari sodir bo‘lmaydi va animatsiya qotmaydi.": [
+   "Object Pooling устраняет выделение и очистку новой памяти, поэтому паузы Garbage Collection не возникают и анимация не подтормаживает.",
+   "Object pooling eliminates new memory allocation and clean-up, so garbage-collection pauses do not occur and the animation does not stutter."
   ],
   "To‘g‘ri!": [
    "Верно!",

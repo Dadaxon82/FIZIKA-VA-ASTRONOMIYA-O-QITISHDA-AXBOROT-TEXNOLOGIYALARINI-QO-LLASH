@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
 function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
@@ -109,8 +110,8 @@ class SpringSimulation {
 
     ctx.fillStyle = '#64748B';
     ctx.font = '10px JetBrains Mono, monospace';
-    ctx.fillText('vaqt o‘qi t →', splitX - 80, h / 2 - 6);
-    ctx.fillText('x(t) tebranishlar', 14, 20);
+    ctx.fillText(__t("vaqt o‘qi t →"), splitX - 80, h / 2 - 6);
+    ctx.fillText(__t("x(t) tebranishlar"), 14, 20);
 
     const scaleY = h / 8;
     const drawCurve = (hist, color, width) => {
@@ -135,7 +136,7 @@ class SpringSimulation {
     const phaseCenterX = splitX + (w - splitX) / 2;
     const phaseCenterY = h / 2;
 
-    ctx.fillText('Faza fazosi (v va x)', splitX + 14, 20);
+    ctx.fillText(__t("Faza fazosi (v va x)"), splitX + 14, 20);
 
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
     ctx.beginPath();

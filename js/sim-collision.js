@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * SIM-COLLISION.JS - 1D Elastic and Inelastic Momentum Collision
  */
@@ -94,7 +95,7 @@ class CollisionSimulation {
 
     const pEl = document.getElementById('collision-p');
     const eEl = document.getElementById('collision-e');
-    if (pEl) pEl.textContent = P.toFixed(2).replace('.', ',').replace('-', '−') + ' kg·m/s';
+    if (pEl) pEl.textContent = P.toFixed(2).replace('.', ',').replace('-', '−') + __t(" kg·m/s");
     if (eEl) eEl.textContent = Ek.toFixed(2).replace('.', ',') + ' J';
   }
 

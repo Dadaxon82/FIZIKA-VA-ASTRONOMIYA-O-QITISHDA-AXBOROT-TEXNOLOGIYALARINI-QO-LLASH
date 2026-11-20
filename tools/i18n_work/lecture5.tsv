@@ -1,0 +1,186 @@
+d94be295	В методологии физического познания всесторонне изучается классификация моделей: <strong>статические и динамические</strong>, <strong>детерминированные и стохастические</strong>, <strong>дискретные и непрерывные</strong>. Симуляции PhET Interactive Simulations (<em>Gravity and Orbits</em>, <em>Gas Properties</em>, <em>Wave on a String</em>) и платформы Vascak.cz анализируются методом обратной разработки (Reverse Engineering), а с помощью Claude создаются интерактивные модели детерминированного кеплеровского движения и стохастической газовой кинетики Максвелла–Больцмана.	The methodology of physical inquiry is used to study the classification of models in depth: <strong>static vs dynamic</strong>, <strong>deterministic vs stochastic</strong>, <strong>discrete vs continuous</strong>. Simulations from PhET Interactive Simulations (<em>Gravity and Orbits</em>, <em>Gas Properties</em>, <em>Wave on a String</em>) and Vascak.cz are analysed through reverse engineering, and Claude is used to build interactive models of deterministic Keplerian motion and stochastic Maxwell–Boltzmann gas kinetics.
+deda147d	📋 План лекции и этапы дидактической интеграции:	📋 Lecture plan and didactic integration stages:
+7e78d2fb	1. Диагностика для искусственного интеллекта:	1. AI diagnostics:
+a418fb94	Тестирование подготовки студента по типам моделей (статические/динамические, детерминированные/стохастические) с помощью MagicSchool AI.	Testing the student’s readiness on model types (static/dynamic, deterministic/stochastic) with MagicSchool AI.
+48d5b543	2. Визуальный анализ типов моделей:	2. Visual analysis of model types:
+1d17e0d7	Классификация симуляций PhET (Gas Properties, Gravity and Orbits) и Vascak.cz методом обратной разработки.	Reverse-engineering classification of PhET (Gas Properties, Gravity and Orbits) and Vascak.cz simulations.
+385236f7	3. Классификация моделей и теоретическое сравнение:	3. Model classification and theoretical comparison:
+11be637f	Математическая формализация расширенной 6-ячеечной таксономической матрицы с помощью Gemini / ChatGPT.	Mathematically formalising an extended 6-cell taxonomy matrix with Gemini / ChatGPT.
+e60f5751	4. Код стохастических и детерминированных моделей:	4. Code for stochastic and deterministic models:
+8461fecc	Написание с Claude программ для орбиты Кеплера (детерминированной) и 2D газовой кинетики (стохастической).	Writing software with Claude for a Kepler orbit (deterministic) and 2D gas kinetics (stochastic).
+3c2299af	5. Сравнительные таблицы и структура:	5. Comparison tables and structure:
+258c5d35	Разработка с Claude Sonnet рекомендаций по вычислительной сложности, источникам погрешности и дидактическому применению.	Using Claude Sonnet to develop guidance on computational complexity, error sources and didactic use.
+6485e72e	6. Площадка с двумя движками:	6. A two-engine sandbox:
+d1bd566e	Веб-симулятор с живой телеметрией: эллиптическое движение Кеплера и распределение скоростей Максвелла–Больцмана.	A web simulator with live telemetry: Kepler elliptical motion and the Maxwell–Boltzmann speed distribution.
+13ea7a70	🔬 Научный AI-конвейер лекции 5:	🔬 Lecture 5 scientific AI pipeline:
+7ac2cea1	1. Моделирование как универсальный метод познания	1. Modelling as a universal method of inquiry
+4a101f7c	В физике <strong>моделирование</strong> — это процесс создания и изучения упрощённой абстрактной копии (модели) сложного физического явления, тела или системы реального мира с сохранением важнейших её закономерностей. Реальные физические объекты подвержены бесконечному числу факторов (сопротивление воздуха, изменение температуры, гравитационная неоднородность, релятивистские эффекты). Учесть их все одновременно невозможно ни человеческому мозгу, ни самым мощным суперкомпьютерам.	In physics, <strong>modelling</strong> is the process of creating and studying a simplified abstract copy (model) of a complex real-world phenomenon, body or system while keeping its most important laws. Real physical objects are affected by countless factors (air drag, temperature changes, gravitational non-uniformity, relativistic effects). Accounting for all of them at once is impossible for the human brain and for the most powerful supercomputers alike.
+a87cb861	1. Объект и абстракция	1. Object and abstraction
+52de6f49	Если размеры реального тела очень малы по сравнению с длиной траектории, оно принимается за <strong>материальную точку</strong>. Если не учитывать силы взаимодействия молекул, возникает модель <strong>идеального газа</strong>.	If a real body’s size is tiny compared with the length of its trajectory, it is treated as a <strong>point mass</strong>. If intermolecular forces are ignored, the <strong>ideal gas</strong> model arises.
+35b04098	2. Математическая модель	2. Mathematical model
+24a15b78	Выражение законов физики в виде дифференциальных и алгебраических уравнений: второй закон Ньютона, уравнения электродинамики Максвелла, волновое уравнение Шрёдингера.	Physical laws expressed as differential and algebraic equations: Newton’s second law, Maxwell’s equations of electrodynamics, the Schrödinger wave equation.
+dc520911	3. Компьютерный эксперимент	3. Computer experiment
+75f29707	Открытие новых знаний через дискретизированный программный код и интерактивную симуляцию математических уравнений численными методами (Эйлер, RK4, Монте-Карло).	Discovering new knowledge through discretised program code and interactive simulation of mathematical equations using numerical methods (Euler, RK4, Monte Carlo).
+fe5459bc	Цепочка физического моделирования:	The physical modelling chain:
+0fa9ab70	Реальный физический объект → гипотеза и ограничения → математические уравнения → численный алгоритм → программный код → визуальная симуляция → верификация	Real physical object → hypothesis and constraints → mathematical equations → numerical algorithm → program code → visual simulation → verification
+dbbcb660	2. Обратная разработка (Reverse Engineering) симуляций PhET и Vascak.cz и методология классификации моделей	2. Reverse engineering of PhET and Vascak.cz simulations and the methodology of model classification
+7f7c2c6e	Один из самых эффективных способов формирования у студентов вузов исследовательских и программистских навыков — анализ движка открытых физических симуляций мирового уровня (<strong>PhET Interactive Simulations</strong> Университета Колорадо и ресурсы <strong>Vascak.cz</strong> чешского учителя Владимира Вашчака) методом <em>обратной разработки (Reverse Engineering)</em>. В отличие от простого просмотра готовой анимации, этот подход позволяет выявить и восстановить стоящие за ней <strong>дифференциальные уравнения</strong>, <strong>граничные условия</strong>, <strong>законы сохранения</strong> и <strong>численные алгоритмы</strong>.	One of the most effective ways to build research and programming skills in university students is to analyse the engine of world-class open physics simulations (the University of Colorado’s <strong>PhET Interactive Simulations</strong> and the <strong>Vascak.cz</strong> resources of Czech teacher Vladimír Vaščák) through <em>reverse engineering</em>. Unlike simply watching a finished animation, this approach makes it possible to identify and reconstruct the <strong>differential equations</strong>, <strong>boundary conditions</strong>, <strong>conservation laws</strong> and <strong>numerical algorithms</strong> behind it.
+912fccaf	🔬 5-этапный научно-методологический алгоритм обратной разработки:	🔬 The 5-stage scientific and methodological reverse-engineering algorithm:
+06d3ce69	1. Визуальная феноменология:	1. Visual phenomenology:
+b85f06f1	Составление списка движений тел в симуляции (окружность, эллипс, волна, столкновение) и управляющих ползунков.	Listing the motions in the simulation (circle, ellipse, wave, collision) and the control sliders.
+5cd6148e	2. Вектор состояния (state vector):	2. State vector:
+6204f296	Определение степеней свободы системы: ⟦1⟧.	Identifying the system’s degrees of freedom: ⟦1⟧.
+03430920	3. Восстановление физических законов:	3. Reconstructing the physical laws:
+d4f34d06	Запись основных дифференциальных или статистических уравнений, управляющих движением (Ньютон, Максвелл, Больцман).	Writing down the main differential or statistical equations governing the motion (Newton, Maxwell, Boltzmann).
+6b2239fa	4. Граничные условия:	4. Boundary conditions:
+41732873	Формализация упругих стенок, открытых границ, коэффициентов затухания и ограничений.	Formalising elastic walls, open boundaries, damping coefficients and constraints.
+72ab429b	5. Программная реконструкция:	5. Software reconstruction:
+d4411dc8	Создание упрощённого рабочего прототипа модели на HTML5 Canvas с помощью Claude / Python.	Building a simplified working HTML5 Canvas prototype of the model with Claude / Python.
+71aa34eb	🌐 Глубокая обратная разработка проектов PhET Interactive Simulations:	🌐 In-depth reverse engineering of PhET Interactive Simulations projects:
+e2a17e02	1. PhET: Gravity and Orbits (гравитация и орбитальное движение)	1. PhET: Gravity and Orbits (gravity and orbital motion)
+583cf020	Детерминированная динамическая непрерывная	Deterministic, dynamic, continuous
+27fc7122	<strong>Математическая модель:</strong> гравитационное взаимодействие двух тел записывается через второй закон Ньютона и закон всемирного тяготения в виде системы нелинейных дифференциальных уравнений 2-го порядка: ⟦1⟧ <strong>Законы сохранения (инварианты):</strong> ↵• Полная механическая энергия: ⟦2⟧ ↵• Угловой момент (момент импульса): ⟦3⟧ ↵• Вектор Лапласа–Рунге–Ленца ⟦4⟧ (обеспечивает отсутствие поворота перигелия орбиты в пространстве).	<strong>Mathematical model:</strong> the gravitational interaction of two bodies is written via Newton’s second law and the law of universal gravitation as a system of second-order non-linear differential equations: ⟦1⟧ <strong>Conservation laws (invariants):</strong> ↵• Total mechanical energy: ⟦2⟧ ↵• Angular momentum: ⟦3⟧ ↵• The Laplace–Runge–Lenz vector ⟦4⟧ (keeps the orbit’s perihelion from precessing in space).
+0b5bd4c8	Выводы обратной разработки:	Reverse-engineering findings:
+ba8945d2	<strong>Геометрия орбиты:</strong> при ⟦1⟧ — окружность (⟦2⟧), при ⟦3⟧ — эллипс (⟦4⟧), при ⟦5⟧ — парабола (⟦6⟧), при ⟦7⟧ — гипербола (⟦8⟧).	<strong>Orbit geometry:</strong> for ⟦1⟧ a circle (⟦2⟧), for ⟦3⟧ an ellipse (⟦4⟧), for ⟦5⟧ a parabola (⟦6⟧), for ⟦7⟧ a hyperbola (⟦8⟧).
+40f8e4f3	<strong>Численный интегратор:</strong> PhET не может использовать в этой симуляции простой метод Эйлера (орбита «взорвётся» по спирали). Применён симплектический метод <em>Верле</em> или метод <em>Рунге–Кутты 4-го порядка (RK4)</em>.	<strong>Numerical integrator:</strong> PhET cannot use plain Euler in this simulation (the orbit would spiral out). A symplectic <em>Verlet</em> or 4th-order <em>Runge–Kutta (RK4)</em> method is used.
+e2c6f67e	<strong>Классификация:</strong> <em>100% детерминированная динамическая модель</em> — если известны начальная координата ⟦1⟧ и скорость ⟦2⟧, состояние в любой будущий момент ⟦3⟧ однозначно определяется по теореме Коши.	<strong>Classification:</strong> a <em>100% deterministic dynamic model</em> — if the initial position ⟦1⟧ and velocity ⟦2⟧ are known, the state at any future time ⟦3⟧ is uniquely determined by Cauchy’s theorem.
+1fc2daff	2. PhET: Gas Properties (свойства идеального газа и МКТ)	2. PhET: Gas Properties (ideal gas properties and kinetic theory)
+109b272c	Стохастическая динамическая дискретная	Stochastic, dynamic, discrete
+4235a88d	<strong>Математическая модель:</strong> ⟦1⟧ абсолютно упругих твёрдых дисков (Hard-Sphere Model). При столкновениях частиц сохраняются импульс и механическая энергия: ⟦2⟧ <strong>Связь макро- и микроскопических параметров:</strong> ↵• Поток импульса на стенку и давление: ⟦3⟧ ↵• Температура и средняя кинетическая энергия: ⟦4⟧ ↵• Распределение скоростей Максвелла–Больцмана: ⟦5⟧	<strong>Mathematical model:</strong> ⟦1⟧ perfectly elastic hard discs (hard-sphere model). Momentum and mechanical energy are conserved in particle collisions: ⟦2⟧ <strong>Linking macroscopic and microscopic parameters:</strong> ↵• Momentum flux onto the wall and pressure: ⟦3⟧ ↵• Temperature and mean kinetic energy: ⟦4⟧ ↵• The Maxwell–Boltzmann speed distribution: ⟦5⟧
+880eed5a	<strong>Динамический хаос и случайность:</strong> хотя каждое столкновение подчиняется механике Ньютона, при ⟦1⟧ частицах из-за чрезвычайной чувствительности траекторий к начальным условиям (показатель Ляпунова ⟦2⟧) система становится хаотической.	<strong>Dynamic chaos and randomness:</strong> although every collision obeys Newtonian mechanics, with ⟦1⟧ particles the system becomes chaotic because trajectories are extremely sensitive to initial conditions (Lyapunov exponent ⟦2⟧).
+3453fa1c	<strong>Статистическое равновесие:</strong> даже если вначале всем частицам задана одинаковая скорость, через 2–3 секунды столкновений скорости сами собой ложатся на кривую распределения Максвелла.	<strong>Statistical equilibrium:</strong> even if all particles start with the same speed, after 2–3 seconds of collisions the speeds settle onto the Maxwell distribution curve on their own.
+853f4da8	<strong>Классификация:</strong> <em>стохастическая динамическая дискретная модель</em> — траектория отдельной частицы случайна (броуновское движение), но весь ансамбль подчиняется строгим статистическим закономерностям.	<strong>Classification:</strong> a <em>stochastic dynamic discrete model</em> — an individual particle’s trajectory is random (Brownian motion), but the ensemble as a whole obeys strict statistical laws.
+167303b2	3. PhET: Wave on a String (распространение волны по струне)	3. PhET: Wave on a String (wave propagation on a string)
+13b18f85	Детерминированная непрерывная модель поля	Deterministic continuous field model
+29e14fa4	<strong>Математическая модель:</strong> дифференциальное волновое уравнение в частных производных для колебаний 1D-струны (уравнение Д’Аламбера): ⟦1⟧ <strong>Граничные условия (boundary conditions):</strong> ↵• <em>Жёстко закреплённый конец (Fixed End):</em> ⟦2⟧ волна отражается со сдвигом фазы ⟦3⟧ (переворачивается). ↵• <em>Свободный конец (Loose End):</em> ⟦4⟧ волна отражается без изменения фазы. ↵• <em>Бесконечная среда (No End):</em> волна полностью поглощается на границе без отражения.	<strong>Mathematical model:</strong> the partial differential wave equation for a vibrating 1D string (d’Alembert’s equation): ⟦1⟧ <strong>Boundary conditions:</strong> ↵• <em>Fixed end:</em> ⟦2⟧ the wave reflects with a ⟦3⟧ phase shift (inverted). ↵• <em>Loose end:</em> ⟦4⟧ the wave reflects without a phase change. ↵• <em>No end:</em> the wave is fully absorbed at the boundary with no reflection.
+09150fcd	<strong>Способ дискретизации:</strong> непрерывная струна смоделирована в компьютере как цепочка из ⟦1⟧ дискретных материальных точек, соединённых пружинами (метод конечных разностей — FDM).	<strong>Discretisation:</strong> the continuous string is modelled in the computer as a chain of ⟦1⟧ discrete point masses connected by springs (the finite-difference method, FDM).
+43552101	<strong>Резонанс и стоячие волны:</strong> при частоте источника ⟦1⟧ на струне образуются стоячие волны (узлы и пучности).	<strong>Resonance and standing waves:</strong> when the source frequency is ⟦1⟧, standing waves (nodes and antinodes) form on the string.
+b6f0d5d9	<strong>Классификация:</strong> <em>детерминированная непрерывная модель поля</em> — точно описывает эволюцию волнового поля ⟦1⟧ в пространстве и времени.	<strong>Classification:</strong> a <em>deterministic continuous field model</em> — it precisely describes how the wave field ⟦1⟧ evolves in space and time.
+9cc7a863	🇨🇿 Дидактический анализ и обратная разработка базы физических симуляций Vascak.cz:	🇨🇿 Didactic and reverse-engineering analysis of the Vascak.cz physics simulation collection:
+9333a488	<strong>Vascak.cz</strong> — открытая образовательная платформа мирового уровня, созданная чешским физиком Владимиром Вашчаком и содержащая более 200 интерактивных анимаций на HTML5 Canvas. Главная сила симуляций Vascak — их визуальная простота, наглядная прямая связь с формулами движения и очень быстрая работа в браузере (60 FPS).	<strong>Vascak.cz</strong> is a world-class open educational platform created by Czech physicist Vladimír Vaščák, with more than 200 interactive HTML5 Canvas animations. Its main strength is visual simplicity, a clear direct link to the equations of motion and very fast performance in the browser (60 FPS).
+87a04578	1. Раздел «Механика» (Vascak.cz)	1. Mechanics (Vascak.cz)
+7a6ccd7f	<strong>Модели:</strong> законы Кеплера, математический маятник, пружинный осциллятор, свободное падение.↵ <strong>Классификация:</strong> <em>детерминированная динамическая модель</em>.↵ <strong>Дидактическое применение:</strong> показ изменения траектории и энергии во времени через строгие аналитические и численные решения уравнений механики Ньютона.	<strong>Models:</strong> Kepler’s laws, the simple pendulum, the spring oscillator, free fall.↵ <strong>Classification:</strong> <em>deterministic dynamic model</em>.↵ <strong>Didactic use:</strong> showing how trajectory and energy change over time through exact analytical and numerical solutions of Newtonian equations.
+1e1937ea	2. Молекулярная физика и МКТ	2. Molecular physics and kinetic theory
+a83051e7	<strong>Модели:</strong> броуновское движение, цикл Карно, газовые законы (Бойля–Мариотта, Гей-Люссака).↵ <strong>Классификация:</strong> <em>стохастическая и феноменологическая модель</em>.↵ <strong>Дидактическое применение:</strong> объяснение стохастической динамики через хаотическое смещение тяжёлой пылинки под ударами лёгких молекул (уравнение Ланжевена).	<strong>Models:</strong> Brownian motion, the Carnot cycle, the gas laws (Boyle–Mariotte, Gay-Lussac).↵ <strong>Classification:</strong> <em>stochastic and phenomenological model</em>.↵ <strong>Didactic use:</strong> explaining stochastic dynamics through the chaotic drift of a heavy dust grain struck by light molecules (the Langevin equation).
+7fe78c97	3. Электродинамика и волны	3. Electrodynamics and waves
+5469b6b9	<strong>Модели:</strong> эффект Доплера, колебания RLC-контура, сила Лоренца, интерференция Юнга.↵ <strong>Классификация:</strong> <em>детерминированная полевая и гармоническая модель</em>.↵ <strong>Дидактическое применение:</strong> наглядное наблюдение сферического распространения волновых фронтов и суперпозиции фаз.	<strong>Models:</strong> the Doppler effect, RLC circuit oscillations, the Lorentz force, Young’s interference.↵ <strong>Classification:</strong> <em>deterministic field and harmonic model</em>.↵ <strong>Didactic use:</strong> visualising the spherical spread of wavefronts and phase superposition.
+435632f5	📊 Паспорт обратной разработки симуляций PhET и Vascak.cz:	📊 Reverse-engineering passport of PhET and Vascak.cz simulations:
+d967b607	Платформа и симуляция	Platform and simulation
+75f65b0c	Управляемые входные параметры	Controllable input parameters
+8f40de75	Восстанавливаемая математическая модель	Reconstructed mathematical model
+40f181ae	Таксономический тип модели	Taxonomic model type
+0bd26fa5	Дидактическое значение	Didactic value
+14377178	<strong>PhET: Gravity и Orbits</strong>	<strong>PhET: Gravity and Orbits</strong>
+d69ebc92	Массы ⟦1⟧, начальный радиус ⟦2⟧, скорость ⟦3⟧	Masses ⟦1⟧, initial radius ⟦2⟧, velocity ⟦3⟧
+4e4be253	⟦1⟧ (задача Коши)	⟦1⟧ (Cauchy problem)
+532e1eef	⟨1⟩Детерминированная динамическая⟨/1⟩	⟨1⟩Deterministic dynamic⟨/1⟩
+d0bc5001	Доказательство устойчивости орбиты и детерминизма механики Ньютона	Demonstrating orbital stability and the determinism of Newtonian mechanics
+ddc1e7ea	Число молекул ⟦1⟧, температура ⟦2⟧, объём ⟦3⟧	Number of molecules ⟦1⟧, temperature ⟦2⟧, volume ⟦3⟧
+323b13a0	Упругие столкновения и распределение Максвелла–Больцмана	Elastic collisions and the Maxwell–Boltzmann distribution
+e04c697c	⟨1⟩Стохастическая дискретная⟨/1⟩	⟨1⟩Stochastic discrete⟨/1⟩
+42cea569	Показ возникновения статистической закономерности (кривой Максвелла) из хаоса	Showing how a statistical law (the Maxwell curve) emerges from chaos
+6085ad33	Амплитуда ⟦1⟧, частота ⟦2⟧, натяжение ⟦3⟧, затухание ⟦4⟧	Amplitude ⟦1⟧, frequency ⟦2⟧, tension ⟦3⟧, damping ⟦4⟧
+d0d22131	⟨1⟩Непрерывное поле⟨/1⟩	⟨1⟩Continuous field⟨/1⟩
+e2322103	Изучение стоячих волн, резонанса и граничных условий	Studying standing waves, resonance and boundary conditions
+a3797971	<strong>Vascak: Brownian Motion</strong>	<strong>Vascak: Brownian Motion</strong>
+9236377a	Радиус частиц ⟦1⟧, температура ⟦2⟧, число частиц	Particle radius ⟦1⟧, temperature ⟦2⟧, number of particles
+dff8b286	Уравнение Ланжевена: ⟦1⟧	Langevin equation: ⟦1⟧
+9ad14c41	⟨1⟩Стохастическая динамическая⟨/1⟩	⟨1⟩Stochastic dynamic⟨/1⟩
+f062ded1	Объяснение флуктуационно-диссипационной теоремы и броуновской диффузии	Explaining the fluctuation–dissipation theorem and Brownian diffusion
+56eee8ba	<strong>Vascak: RLC Circuit</strong>	<strong>Vascak: RLC Circuit</strong>
+cd91df04	Индуктивность ⟦1⟧, ёмкость ⟦2⟧, сопротивление ⟦3⟧, напряжение ⟦4⟧	Inductance ⟦1⟧, capacitance ⟦2⟧, resistance ⟦3⟧, voltage ⟦4⟧
+3c518d7d	⟨1⟩Детерминированная гармоническая⟨/1⟩	⟨1⟩Deterministic harmonic⟨/1⟩
+fba757f9	Анализ электромагнитных колебаний и декремента затухания	Analysing electromagnetic oscillations and the damping decrement
+e8811d72	💡 Дидактический вывод:	💡 Didactic conclusion:
+2dee716b	Благодаря «обратной разработке» платформ PhET и Vascak.cz студенты поднимаются от пассивных пользователей до уровня <strong>активных физиков-исследователей и архитекторов моделей</strong>. С помощью этого метода студент, увидев любой физический процесс, сразу умеет определить его дифференциальное уравнение, граничные условия и адекватный тип модели.	By "reverse engineering" PhET and Vascak.cz, students move from passive users to <strong>active physics researchers and model architects</strong>. With this method, a student who sees any physical process can immediately identify its differential equation, boundary conditions and the appropriate model type.
+b317718e	3. Классификация (таксономия) моделей и теоретическое сравнение	3. Model classification (taxonomy) and theoretical comparison
+af14cd06	На основе научно-методологического анализа, проведённого с помощью Gemini и ChatGPT, физические модели делятся по 3 основным координатным осям на 6 крупных классов.	Based on scientific and methodological analysis carried out with Gemini and ChatGPT, physical models are divided along 3 main axes into 6 major classes.
+9a35b43f	Матрица таксономии моделей	Model Taxonomy Matrix
+d803604a	3 основных критерия классификации моделей:	The 3 main criteria for classifying models:
+5d4d764e	1. Фактор времени: статические и динамические	1. Time: static vs dynamic
+87e3f00a	<strong>Статические:</strong> параметры системы не меняются со временем (⟦1⟧). Условия равновесия: ⟦2⟧.↵ <strong>Динамические:</strong> состояние системы эволюционирует во времени: ⟦3⟧.	<strong>Static:</strong> the system’s parameters do not change over time (⟦1⟧). Equilibrium conditions: ⟦2⟧.↵ <strong>Dynamic:</strong> the system’s state evolves over time: ⟦3⟧.
+2666a284	2. Случайность: детерминированные и стохастические	2. Randomness: deterministic vs stochastic
+7e78fb9a	<strong>Детерминированные:</strong> при заданных начальных условиях решение на 100% однозначно и единственно (задача Коши).↵ <strong>Стохастические:</strong> преобладают случайные вероятности, флуктуации и статистика Монте-Карло.	<strong>Deterministic:</strong> given the initial conditions, the solution is 100% unique (the Cauchy problem).↵ <strong>Stochastic:</strong> random probabilities, fluctuations and Monte Carlo statistics dominate.
+cb998fe9	3. Пространственная структура: дискретные и непрерывные	3. Spatial structure: discrete vs continuous
+2a1f3830	<strong>Дискретные:</strong> описываются отдельными материальными точками, молекулами, узлами ⟦1⟧.↵ <strong>Непрерывные:</strong> поля сплошной среды ⟦2⟧ и дифференциальные уравнения в частных производных (PDE).	<strong>Discrete:</strong> described by individual point masses, molecules or nodes ⟦1⟧.↵ <strong>Continuous:</strong> continuum fields ⟦2⟧ and partial differential equations (PDEs).
+76044abf	4. Claude: программный код детерминированных и стохастических моделей	4. Claude: code for deterministic and stochastic models
+45dd2bb1	Ниже приведён код двух фундаментальных моделей, сгенерированный Claude, который можно непосредственно использовать в учебном процессе:	Below is code for two fundamental models generated by Claude that can be used directly in teaching:
+2a3e3586	1. Код детерминированного движения Кеплера (JavaScript)	1. Deterministic Kepler motion code (JavaScript)
+1fbfcce6	⟨1⟩Код⟨/1⟩	⟨1⟩Code⟨/1⟩
+c5dbb23e	<code>// Детерминированный Кеплер: симплектический интегратор function stepKepler(planet, GM, dt) { const r2 = planet.x * planet.x + planet.y * planet.y; const r = Math.sqrt(r2); // Гравитационное ускорение a = -GM / r^3 * r const a = -GM / (r2 * r); const ax = a * planet.x; const ay = a * planet.y; // Симплектический Эйлер–Кромер (сначала обновляется v, затем x) planet.vx += ax * dt; planet.vy += ay * dt; planet.x += planet.vx * dt; planet.y += planet.vy * dt; // Инварианты: E и L const Ek = 0.5 * (planet.vx**2 + planet.vy**2); const Ep = -GM / r; const Etot = Ek + Ep; const L = planet.x * planet.vy - planet.y * planet.vx; return { Etot, L }; }</code>	<code>// Deterministic Kepler: symplectic integrator function stepKepler(planet, GM, dt) { const r2 = planet.x * planet.x + planet.y * planet.y; const r = Math.sqrt(r2); // Gravitational acceleration a = -GM / r^3 * r const a = -GM / (r2 * r); const ax = a * planet.x; const ay = a * planet.y; // Symplectic Euler–Cromer (update v first, then x) planet.vx += ax * dt; planet.vy += ay * dt; planet.x += planet.vx * dt; planet.y += planet.vy * dt; // Invariants: E and L const Ek = 0.5 * (planet.vx**2 + planet.vy**2); const Ep = -GM / r; const Etot = Ek + Ep; const L = planet.x * planet.vy - planet.y * planet.vx; return { Etot, L }; }</code>
+dfb88ba7	🔴 Живая симуляция приведённого выше кода:	🔴 Live simulation of the code above:
+658866d6	2. Код стохастических столкновений 2D-газа (JavaScript)	2. Stochastic 2D gas collision code (JavaScript)
+4d5b8c25	<code>// Стохастические 2D упругие столкновения function resolveParticleCollision(p1, p2) { const dx = p2.x - p1.x; const dy = p2.y - p1.y; const dist2 = dx * dx + dy * dy; const minDist = p1.r + p2.r; if (dist2 &lt; minDist * minDist) { const dist = Math.sqrt(dist2) || 0.001; const nx = dx / dist; const ny = dy / dist; // Относительная скорость const kx = p1.vx - p2.vx; const ky = p1.vy - p2.vy; const pvn = kx * nx + ky * ny; if (pvn &gt; 0) { const impulse = (2 * pvn) / (p1.m + p2.m); p1.vx -= impulse * p2.m * nx; p1.vy -= impulse * p2.m * ny; p2.vx += impulse * p1.m * nx; p2.vy += impulse * p1.m * ny; } } }</code>	<code>// Stochastic 2D elastic collisions function resolveParticleCollision(p1, p2) { const dx = p2.x - p1.x; const dy = p2.y - p1.y; const dist2 = dx * dx + dy * dy; const minDist = p1.r + p2.r; if (dist2 &lt; minDist * minDist) { const dist = Math.sqrt(dist2) || 0.001; const nx = dx / dist; const ny = dy / dist; // Relative velocity const kx = p1.vx - p2.vx; const ky = p1.vy - p2.vy; const pvn = kx * nx + ky * ny; if (pvn &gt; 0) { const impulse = (2 * pvn) / (p1.m + p2.m); p1.vx -= impulse * p2.m * nx; p1.vy -= impulse * p2.m * ny; p2.vx += impulse * p1.m * nx; p2.vy += impulse * p1.m * ny; } } }</code>
+b1074a34	5. Интерактивная площадка с двумя движками: детерминированные и стохастические модели	5. Interactive two-engine sandbox: deterministic and stochastic models
+4e135e2d	С помощью двух интерактивных физических движков ниже проверьте в реальном времени закономерности детерминированного орбитального движения и стохастической газовой кинетики.	Use the two interactive physics engines below to test the laws of deterministic orbital motion and stochastic gas kinetics in real time.
+e4cd3066	🌌 Движок 1: детерминированная орбита Кеплера	🌌 Engine 1: deterministic Kepler orbit
+a3bb7061	ОДУ / симплектический	ODE / symplectic
+54fbef79	Начальная скорость ⟦1⟧:	Initial velocity ⟦1⟧:
+ef9a01c4	Центральная масса ⟦1⟧:	Central mass ⟦1⟧:
+84f79846	🔄 Сбросить	🔄 Reset
+48f26825	🧹 Очистить	🧹 Clear
+044d50ce	Скорость ⟦1⟧:	Speed ⟦1⟧:
+f4dded3b	14,5 км/с	14.5 km/s
+05bb49f7	Кин. энергия ⟦1⟧:	Kinetic energy ⟦1⟧:
+033c4a9a	105,1 Дж/кг	105.1 J/kg
+3c31b759	Пот. энергия ⟦1⟧:	Potential energy ⟦1⟧:
+1413aab4	−222,2 Дж/кг	−222.2 J/kg
+69534b1c	Полная энергия ⟦1⟧:	Total energy ⟦1⟧:
+8f054787	−117,1 Дж/кг	−117.1 J/kg
+f165d114	Момент импульса ⟦1⟧:	Angular momentum ⟦1⟧:
+451499d3	💨 Движок 2: стохастическая 2D газовая кинетика	💨 Engine 2: stochastic 2D gas kinetics
+1b5a4896	МКТ / Максвелл	Kinetic theory / Maxwell
+75d92813	Число молекул ⟦1⟧:	Number of molecules ⟦1⟧:
+fc472511	Температура ⟦1⟧:	Temperature ⟦1⟧:
+98755376	🔥 Нагреть	🔥 Heat
+9cb9f0f0	❄️ Охладить	❄️ Cool
+34dbec70	🔄 Сбросить	🔄 Reset
+5724d9ce	Давление ⟦1⟧:	Pressure ⟦1⟧:
+5cc01a99	Средняя ⟦1⟧:	Mean ⟦1⟧:
+2d1120d8	Наиболее вероятная ⟦1⟧:	Most probable ⟦1⟧:
+e93f7c3a	6. Таксономическая матрица сравнения и диагностический ИИ-тест	6. Taxonomic comparison matrix and AI diagnostic test
+cb3e0eaf	Тип модели	Model type
+457413bc	Математический аппарат	Mathematical apparatus
+27e21e26	Начальные условия	Initial conditions
+fbf45b66	Метод вычисления	Computation method
+045b441c	Источник погрешности	Error source
+dd922e38	Типичные физические примеры	Typical physical examples
+958e931d	⟨1⟩Статическая детерминированная⟨/1⟩	⟨1⟩Static deterministic⟨/1⟩
+214816b1	Алгебраические уравнения / уравнение Лапласа	Algebraic / Laplace equations
+9f1c8584	Граничные силы и потенциалы	Boundary forces and potentials
+9fcea6ae	Матричный метод Гаусса, метод конечных элементов (FEM)	Gaussian elimination, finite elements (FEM)
+e7dfba90	Ошибка сетки дискретизации	Discretisation mesh error
+3ce09408	Мостовые фермы, потенциал электростатического поля	Bridge trusses, electrostatic potential
+0aa90ab2	⟨1⟩Динамическая детерминированная⟨/1⟩	⟨1⟩Dynamic deterministic⟨/1⟩
+742f2f8c	Обыкновенные дифференциальные уравнения (ОДУ)	Ordinary differential equations (ODEs)
+8301b570	Условия Коши ⟦1⟧	Cauchy conditions ⟦1⟧
+9279d5c7	Эйлер–Кромер, Верле, RK4	Euler–Cromer, Verlet, RK4
+ec315e37	Ошибка усечения по шагу времени ⟦1⟧	Time-step truncation error ⟦1⟧
+e9618667	Орбита Кеплера, пружинный маятник, движение мяча	Kepler orbit, spring pendulum, ball motion
+24bc372d	⟨1⟩Динамическая стохастическая⟨/1⟩	⟨1⟩Dynamic stochastic⟨/1⟩
+bd3d233c	Теория вероятностей, уравнения МКТ	Probability theory, kinetic-theory equations
+a592d25d	Число частиц ⟦1⟧, температура ⟦2⟧	Number of particles ⟦1⟧, temperature ⟦2⟧
+25bb1660	Упругие столкновения, Монте-Карло	Elastic collisions, Monte Carlo
+6f418b9e	Статистическая флуктуация ⟦1⟧	Statistical fluctuation ⟦1⟧
+510c3553	Броуновское движение, идеальный газ, радиоактивный распад	Brownian motion, ideal gas, radioactive decay
+54c49296	⟨1⟩Непрерывная модель поля⟨/1⟩	⟨1⟩Continuous field model⟨/1⟩
+93355f9f	Уравнения в частных производных (PDE)	Partial differential equations (PDEs)
+18d6dac3	Начальные и граничные условия	Initial and boundary conditions
+71302bd0	Конечные разности (FDM), конечные объёмы (FVM)	Finite differences (FDM), finite volumes (FVM)
+94f5c484	Ошибка пространственного и временного шага	Spatial and temporal step error
+c652bc6d	Гидродинамика Навье–Стокса, волны Максвелла	Navier–Stokes hydrodynamics, Maxwell waves
+a50f8021	🧪 Диагностический тест MagicSchool AI (типы моделей):	🧪 MagicSchool AI diagnostic test (model types):
+9a190390	Вопрос 1: В каком случае модель статического равновесия мостовой фермы под действием внешней периодической силы требует перехода к динамической модели?	Question 1: When does a static equilibrium model of a bridge truss under an external periodic force require switching to a dynamic model?
+a05997da	A) Когда частота внешней силы приближается к собственной частоте колебаний конструкции и существенное значение приобретают резонанс и силы инерции (⟦1⟧)	A) When the forcing frequency approaches the structure’s natural frequency and resonance and inertial forces (⟦1⟧) become significant
+16858708	B) Когда длина моста превышает 100 метров	B) When the bridge is longer than 100 metres
+c7c95261	C) Только когда температура воздуха опускается ниже 0 градусов	C) Only when the air temperature drops below 0 degrees
+0e0eb028	Вопрос 2: Почему задача двух тел в симуляции PhET «Gravity and Orbits» считается строго детерминированной моделью?	Question 2: Why is the two-body problem in the PhET "Gravity and Orbits" simulation considered a strictly deterministic model?
+c4606f45	A) Потому что планеты движутся только летом	A) Because planets move only in summer
+372f9fc6	B) Потому что движение описывается дифференциальным уравнением второго закона Ньютона, и при заданных начальных координате и скорости ⟦1⟧ будущая орбита по теореме Коши на 100% однозначна	B) Because the motion is described by Newton’s second-law differential equation, and given the initial position and velocity ⟦1⟧ the future orbit is 100% unique by Cauchy’s theorem
+9e560db1	C) Потому что масса планеты всегда больше массы центрального тела	C) Because the planet’s mass is always greater than the central body’s
+49b866f3	Вопрос 3: Какова главная причина того, что траектория отдельной молекулы при столкновениях молекул газа (PhET «Gas Properties») изучается не детерминированной, а стохастической моделью?	Question 3: What is the main reason that the trajectory of an individual molecule in gas collisions (PhET "Gas Properties") is studied with a stochastic rather than a deterministic model?
+70b5474b	A) В макроскопическом объёме частиц очень много (⟦1⟧), а из-за крайне высокой чувствительности к начальным условиям (динамический хаос) гораздо адекватнее и эффективнее рассчитывать не отдельную частицу, а статистическое распределение Максвелла для всего ансамбля	A) A macroscopic volume contains a huge number of particles (⟦1⟧), and because of extreme sensitivity to initial conditions (dynamic chaos) it is far more appropriate and efficient to compute the Maxwell statistical distribution of the whole ensemble rather than individual particles
+8ee5920f	B) Потому что в молекулах газа не сохраняется импульс	B) Because momentum is not conserved in gas molecules
+c3eedd59	C) Потому что молекулы могут двигаться только по прямой	C) Because molecules can only move in straight lines
+2066b1fc	📚 Список научно-методической литературы к лекции 5:	📚 Scholarly and methodological references for Lecture 5:
+c8c9e21d	=	=

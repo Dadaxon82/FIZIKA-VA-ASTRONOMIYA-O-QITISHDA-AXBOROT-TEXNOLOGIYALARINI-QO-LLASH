@@ -1,0 +1,878 @@
+[
+ {
+  "k": "73bae27b",
+  "s": "Ushbu ma’ruzada an’anaviy <em style=\"color: var(--text-main);\">\"dasturni sintaktik o‘rganish\"</em> yondashuvidan farqli o‘laroq, talabani <strong style=\"color: var(--text-main);\">\"Fizik-Muhandis va Dasturiy Arxitektor\"</strong> sifatida shakllantirish, generativ sun’iy intellekt vositalari (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude) sinergiyasida interaktiv Web-simulyatsiyalar yaratishning to‘liq 5 bosqichli yo‘l xaritasi va Capstone portfolio talablari o‘rganiladi.",
+  "ru": "В этой лекции, в отличие от традиционного подхода <em style=\"color: var(--text-main);\">\"синтаксического изучения программы\"</em>, рассматриваются полная 5-этапная дорожная карта создания интерактивных веб-симуляций в синергии инструментов генеративного искусственного интеллекта (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude) с целью формирования студента как <strong style=\"color: var(--text-main);\">\"физика-инженера и программного архитектора\"</strong>, а также требования к итоговому портфолио (Capstone).",
+  "en": "Unlike the traditional <em style=\"color: var(--text-main);\">\"learn the program’s syntax\"</em> approach, this lecture presents a complete 5-stage roadmap for building interactive web simulations with a synergy of generative AI tools (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude), shaping the student as a <strong style=\"color: var(--text-main);\">\"physicist-engineer and software architect\"</strong>, together with the Capstone portfolio requirements."
+ },
+ {
+  "k": "eeb6213e",
+  "s": "📋 Ma’ruza rejasi:",
+  "ru": "📋 План лекции:",
+  "en": "📋 Lecture plan:"
+ },
+ {
+  "k": "df485952",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1-2. AI diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">MagicSchool AI va Vygotskiy ZPD adaptiv trayektoriyalari.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1–2. ИИ-диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">MagicSchool AI и адаптивные траектории на основе ЗБР Выготского.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1–2. AI diagnostics and individual plan:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">MagicSchool AI and adaptive pathways based on Vygotsky’s ZPD.</span>"
+ },
+ {
+  "k": "7e2eb6bf",
+  "s": "<strong style=\"color: var(--accent-emerald);\">3. Nazariya va dars ssenariysi:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Gemini / ChatGPT orqali 4 bosqichli ssenariy injiniringi.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">3. Теория и сценарий занятия:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">4-этапная инженерия сценария с помощью Gemini / ChatGPT.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">3. Theory and lesson scenario:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">4-stage scenario engineering with Gemini / ChatGPT.</span>"
+ },
+ {
+  "k": "5d679c51",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Tasvir va illyustratsiya:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Midjourney va DALL-E ilmiy laboratoriya aktivlari.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Изображения и иллюстрации:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Научные лабораторные ассеты в Midjourney и DALL-E.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Images and illustration:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Scientific laboratory assets with Midjourney and DALL-E.</span>"
+ },
+ {
+  "k": "b351f686",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Animatsiya va video:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Runway, Sora, Pika Labs va harakat dinamikasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Анимация и видео:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Runway, Sora, Pika Labs и динамика движения.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Animation and video:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Runway, Sora, Pika Labs and motion dynamics.</span>"
+ },
+ {
+  "k": "eacdc508",
+  "s": "<strong style=\"color: var(--accent-purple);\">6. Interaktiv simulyatsiya va kod:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Claude, HTML5 Canvas va RK4 dvigateli.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">6. Интерактивная симуляция и код:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Claude, HTML5 Canvas и движок RK4.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">6. Interactive simulation and code:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Claude, HTML5 Canvas and an RK4 engine.</span>"
+ },
+ {
+  "k": "4bc31c7a",
+  "s": "<strong style=\"color:#1C4E9E;\">🎯 Fanning maqsadi va Capstone:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Mustaqil Web simulyatsiyalar yaratish va portfolio himoyasi.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">🎯 Цель курса и Capstone:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Самостоятельное создание веб-симуляций и защита портфолио.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">🎯 Course goal and Capstone:</strong><br> <span style=\"font-size: 0.9rem; color: var(--text-secondary);\">Building web simulations independently and defending a portfolio.</span>"
+ },
+ {
+  "k": "ca30eb56",
+  "s": "🎯 Fanning didaktik maqsadi va yakuniy mahorat mezonlari",
+  "ru": "🎯 Дидактическая цель курса и критерии итогового мастерства",
+  "en": "🎯 Didactic goal of the course and final mastery criteria"
+ },
+ {
+  "k": "f4b5d49a",
+  "s": "Kutilayotgan natija",
+  "ru": "Ожидаемый результат",
+  "en": "Expected outcome"
+ },
+ {
+  "k": "f7a32231",
+  "s": "Fanning asosiy maqsadi — har bir talabada <strong style=\"color: var(--text-main);\">istalgan fizik hodisa yoki qonuniyatning matematik modelini tuzish, uning kompyuter algoritmini ishlab chiqish hamda Sun’iy intellekt yordamida interaktiv Web-sahifa ko‘rinishida to‘liq mustaqil simulyatsiyasini yarata olish</strong> mahoratini shakllantirishdir.",
+  "ru": "Главная цель курса — сформировать у каждого студента умение <strong style=\"color: var(--text-main);\">построить математическую модель любого физического явления или закономерности, разработать её компьютерный алгоритм и с помощью искусственного интеллекта полностью самостоятельно создать её симуляцию в виде интерактивной веб-страницы</strong>.",
+  "en": "The main goal of the course is to develop in every student the ability to <strong style=\"color: var(--text-main);\">build a mathematical model of any physical phenomenon or law, develop its computer algorithm and, with the help of artificial intelligence, create a fully independent simulation of it as an interactive web page</strong>."
+ },
+ {
+  "k": "69c0b631",
+  "s": "1. Nazariy-matematik kompetensiya",
+  "ru": "1. Теоретико-математическая компетенция",
+  "en": "1. Theoretical and mathematical competence"
+ },
+ {
+  "k": "e97e9271",
+  "s": "Fizik jarayonning erkinlik darajalarini ajratish, differensial tenglamalar sistemasini tuzish, chegaraviy va boshlang‘ich shartlarni to‘g‘ri qo‘yish.",
+  "ru": "Выделение степеней свободы физического процесса, составление системы дифференциальных уравнений, корректная постановка граничных и начальных условий.",
+  "en": "Identifying the degrees of freedom of a physical process, setting up a system of differential equations, and correctly stating boundary and initial conditions."
+ },
+ {
+  "k": "c01ecdfe",
+  "s": "2. AI prompt injiniringi madaniyati",
+  "ru": "2. Культура промпт-инжиниринга для ИИ",
+  "en": "2. AI prompt-engineering culture"
+ },
+ {
+  "k": "406517a5",
+  "s": "Claude, Gemini va ChatGPT ga ilmiy jihatdan qat’iy ko‘rsatmalar berish, gallyutsinatsiyalarni filtrlash, toza kod olish.",
+  "ru": "Научно строгие инструкции для Claude, Gemini и ChatGPT, фильтрация галлюцинаций, получение чистого кода.",
+  "en": "Giving Claude, Gemini and ChatGPT scientifically rigorous instructions, filtering hallucinations and obtaining clean code."
+ },
+ {
+  "k": "3618aa38",
+  "s": "3. Capstone web portfolio va nashr",
+  "ru": "3. Итоговое веб-портфолио (Capstone) и публикация",
+  "en": "3. Capstone web portfolio and publication"
+ },
+ {
+  "k": "5404e3c4",
+  "s": "Ishlab chiqilgan simulyatsiyani GitHub Pages orqali ochiq tarmoqqa joylash, ilmiy pasportini tuzish va himoya qilish.",
+  "ru": "Размещение разработанной симуляции в открытой сети через GitHub Pages, составление её научного паспорта и защита.",
+  "en": "Publishing the finished simulation on the open web via GitHub Pages, writing its scientific passport and defending it."
+ },
+ {
+  "k": "21738a08",
+  "s": "⚖️ Pedagogik paradigma qiyosi: an’anaviy va AI-native modellashtirish",
+  "ru": "⚖️ Сравнение педагогических парадигм: традиционное и AI-native моделирование",
+  "en": "⚖️ Comparing pedagogical paradigms: traditional vs AI-native modelling"
+ },
+ {
+  "k": "3ae6b3b6",
+  "s": "Yondashuvlar farqi",
+  "ru": "Различия подходов",
+  "en": "Differences in approach"
+ },
+ {
+  "k": "17433755",
+  "s": "An’anaviy paradigma (eski yondashuv)",
+  "ru": "Традиционная парадигма (старый подход)",
+  "en": "Traditional paradigm (old approach)"
+ },
+ {
+  "k": "4a892177",
+  "s": "Dasturiy interfeyslarni (Flash, Pascal, Delphi) mexanik yodlash.",
+  "ru": "Механическое заучивание программных интерфейсов (Flash, Pascal, Delphi).",
+  "en": "Rote memorisation of software interfaces (Flash, Pascal, Delphi)."
+ },
+ {
+  "k": "a8dd0cf6",
+  "s": "Qat’iy va statik shablonlar bilan cheklanish, passiv konspektlash.",
+  "ru": "Ограниченность жёсткими и статичными шаблонами, пассивное конспектирование.",
+  "en": "Confinement to rigid, static templates and passive note-taking."
+ },
+ {
+  "k": "91dbee19",
+  "s": "Kodlashdagi sintaktik qiyinchiliklar tufayli fizik mohiyatning ikkinchi o‘ringa tushib qolishi.",
+  "ru": "Физическая суть отходит на второй план из-за синтаксических трудностей программирования.",
+  "en": "The physics fades into the background because of the syntactic difficulties of coding."
+ },
+ {
+  "k": "bbfbbf60",
+  "s": "Barcha talabalar uchun yagona, moslashmaydigan o‘qish sur’ati.",
+  "ru": "Единый, неадаптивный темп обучения для всех студентов.",
+  "en": "A single, non-adaptive learning pace for all students."
+ },
+ {
+  "k": "8dde1c01",
+  "s": "AI-native paradigma (zamonaviy yondashuv)",
+  "ru": "AI-native парадигма (современный подход)",
+  "en": "AI-native paradigm (modern approach)"
+ },
+ {
+  "k": "d2893ea2",
+  "s": "Muammoga yo‘naltirilgan loyihalash: prompt-muhandislik va hisoblash fizikasi birgalikda.",
+  "ru": "Проблемно-ориентированное проектирование: промпт-инжиниринг и вычислительная физика вместе.",
+  "en": "Problem-based design: prompt engineering and computational physics together."
+ },
+ {
+  "k": "a99887d2",
+  "s": "MagicSchool AI orqali har bir talabaga moslashuvchan shaxsiy o‘quv yo‘li.",
+  "ru": "Гибкая персональная учебная траектория для каждого студента через MagicSchool AI.",
+  "en": "A flexible personal learning path for every student through MagicSchool AI."
+ },
+ {
+  "k": "a2c4e6ff",
+  "s": "Claude yordamida Canvas/WebGL simulyatsiyalarini tez yaratish va ularni fizik qonunlar bilan tekshirish.",
+  "ru": "Быстрое создание симуляций на Canvas/WebGL с помощью Claude и их проверка физическими законами.",
+  "en": "Rapid creation of Canvas/WebGL simulations with Claude and their validation against physical laws."
+ },
+ {
+  "k": "0f65511f",
+  "s": "GitHub Pages’da ochiq portfolio va real vaqtli interaktivlik.",
+  "ru": "Открытое портфолио на GitHub Pages и интерактивность в реальном времени.",
+  "en": "An open portfolio on GitHub Pages and real-time interactivity."
+ },
+ {
+  "k": "40a67df4",
+  "s": "Semestr trayektoriyasi",
+  "ru": "Траектория семестра",
+  "en": "Semester pathway"
+ },
+ {
+  "k": "73ea1de9",
+  "s": "5 Bosqichli semestr yo‘l xaritasi (roadmap)",
+  "ru": "5-этапная дорожная карта семестра (roadmap)",
+  "en": "5-stage semester roadmap"
+ },
+ {
+  "k": "06b5de8e",
+  "s": "Talabaning 1-haftadagi nazariyadan 16-haftadagi Capstone himoyasigacha bo‘lgan to‘liq o‘quv oqimi:",
+  "ru": "Полный учебный поток студента — от теории на 1-й неделе до защиты Capstone на 16-й неделе:",
+  "en": "The student’s complete learning flow — from theory in week 1 to the Capstone defence in week 16:"
+ },
+ {
+  "k": "0dfde022",
+  "s": "1-bosqich (hafta 1-3)",
+  "ru": "Этап 1 (недели 1–3)",
+  "en": "Stage 1 (weeks 1–3)"
+ },
+ {
+  "k": "f5499875",
+  "s": "Nazariya va ssenariy",
+  "ru": "Теория и сценарий",
+  "en": "Theory and scenario"
+ },
+ {
+  "k": "bf69e88c",
+  "s": "Differensial tenglamalarni tuzish, Gemini/ChatGPT orqali dars ssenariysi va noto‘g‘ri tushunchalarni (misconceptions) aniqlash.",
+  "ru": "Составление дифференциальных уравнений, сценарий занятия через Gemini/ChatGPT и выявление неверных представлений (misconceptions).",
+  "en": "Setting up differential equations, writing a lesson scenario with Gemini/ChatGPT and identifying misconceptions."
+ },
+ {
+  "k": "6d7cab63",
+  "s": "2-bosqich (hafta 4-6)",
+  "ru": "Этап 2 (недели 4–6)",
+  "en": "Stage 2 (weeks 4–6)"
+ },
+ {
+  "k": "2bfb3c6c",
+  "s": "Namunani tahlil",
+  "ru": "Анализ образца",
+  "en": "Analysing an example"
+ },
+ {
+  "k": "82d23bc7",
+  "s": "PhET va Vascak.cz simulyatsiyalarini teskari muhandislik orqali dekonstruksiya qilish, erkinlik darajalarini ajratish.",
+  "ru": "Деконструкция симуляций PhET и Vascak.cz методом обратной разработки, выделение степеней свободы.",
+  "en": "Deconstructing PhET and Vascak.cz simulations through reverse engineering and identifying degrees of freedom."
+ },
+ {
+  "k": "68559c7e",
+  "s": "3-bosqich (hafta 7-10)",
+  "ru": "Этап 3 (недели 7–10)",
+  "en": "Stage 3 (weeks 7–10)"
+ },
+ {
+  "k": "befed861",
+  "s": "AI bilan kodlash",
+  "ru": "Программирование с ИИ",
+  "en": "Coding with AI"
+ },
+ {
+  "k": "08adbf7d",
+  "s": "Claude bilan HTML5 Canvas fizik dvigateli va faza fazosi koordinata tizimini qurish.",
+  "ru": "Построение с Claude физического движка на HTML5 Canvas и системы координат фазового пространства.",
+  "en": "Building an HTML5 Canvas physics engine and a phase-space coordinate system with Claude."
+ },
+ {
+  "k": "b34ee2f9",
+  "s": "4-5 Bosqich (hafta 11-16)",
+  "ru": "Этапы 4–5 (недели 11–16)",
+  "en": "Stages 4–5 (weeks 11–16)"
+ },
+ {
+  "k": "baf51bbf",
+  "s": "Ovoz va Capstone",
+  "ru": "Озвучка и Capstone",
+  "en": "Voice and Capstone"
+ },
+ {
+  "k": "d021024d",
+  "s": "Midjourney teksturalari, ElevenLabs ovozlashtirish, GitHub Pages da loyihani e’lon qilish va ilmiy pasport himoyasi.",
+  "ru": "Текстуры Midjourney, озвучивание в ElevenLabs, публикация проекта на GitHub Pages и защита научного паспорта.",
+  "en": "Midjourney textures, ElevenLabs voice-over, publishing the project on GitHub Pages and defending the scientific passport."
+ },
+ {
+  "k": "a05ad07a",
+  "s": "🧠 MagicSchool AI: boshlang‘ich diagnostika va 3 klasterli adaptiv trayektoriya",
+  "ru": "🧠 MagicSchool AI: входная диагностика и адаптивная траектория из 3 кластеров",
+  "en": "🧠 MagicSchool AI: entry diagnostics and a 3-cluster adaptive pathway"
+ },
+ {
+  "k": "39444b7c",
+  "s": "Vygotskiy ZPD modeli",
+  "ru": "Модель ЗБР Выготского",
+  "en": "Vygotsky’s ZPD model"
+ },
+ {
+  "k": "5117706b",
+  "s": "Auditoriyadagi talabalarning dasturlash va fizikadan tayyorgarligi har xil (geterogen) bo‘ladi. MagicSchool AI platformasi orqali semestr boshida 10 savoldan iborat diagnostik test o‘tkaziladi va talabalar 3 ta kognitiv klasterga ajratiladi:",
+  "ru": "Подготовка студентов в аудитории по программированию и физике различна (гетерогенна). В начале семестра на платформе MagicSchool AI проводится диагностический тест из 10 вопросов, и студенты распределяются по 3 когнитивным кластерам:",
+  "en": "Students in a class differ (are heterogeneous) in their programming and physics preparation. At the start of the semester a 10-question diagnostic test is run on MagicSchool AI and students are sorted into 3 cognitive clusters:"
+ },
+ {
+  "k": "ea0602d4",
+  "s": "A klaster: boshlang‘ich (Remedial)",
+  "ru": "Кластер A: начальный (Remedial)",
+  "en": "Cluster A: beginner (Remedial)"
+ },
+ {
+  "k": "c4d3365b",
+  "s": "Scaffolding va qadamli yordam",
+  "ru": "Скаффолдинг и пошаговая помощь",
+  "en": "Scaffolding and step-by-step support"
+ },
+ {
+  "k": "5c158596",
+  "s": "Fizikadan kuchli, ammo kodlashni bilmaydiganlar uchun tayyor kod bloklari, qadamma-qadam video yo‘riqnomalar va vizual shablonlar.",
+  "ru": "Для сильных в физике, но не умеющих программировать: готовые блоки кода, пошаговые видеоинструкции и визуальные шаблоны.",
+  "en": "For students strong in physics but new to coding: ready-made code blocks, step-by-step video guides and visual templates."
+ },
+ {
+  "k": "109488d1",
+  "s": "B klaster: o‘rta (standart)",
+  "ru": "Кластер B: средний (стандарт)",
+  "en": "Cluster B: intermediate (standard)"
+ },
+ {
+  "k": "8c84b851",
+  "s": "2D Canvas modellashtirish",
+  "ru": "2D-моделирование на Canvas",
+  "en": "2D Canvas modelling"
+ },
+ {
+  "k": "24acc593",
+  "s": "Nazariya va JS asoslarini biladigan talabalar: Eyler–Kromer algoritmi, havo qarshiligi va faza fazosi grafiklarini mustaqil qurish.",
+  "ru": "Студенты, знающие теорию и основы JS: самостоятельное построение алгоритма Эйлера–Кромера, сопротивления воздуха и графиков фазового пространства.",
+  "en": "Students who know the theory and JS basics: independently building the Euler–Cromer algorithm, air drag and phase-space plots."
+ },
+ {
+  "k": "4d752743",
+  "s": "C klaster: ilg‘or (Research)",
+  "ru": "Кластер C: продвинутый (Research)",
+  "en": "Cluster C: advanced (Research)"
+ },
+ {
+  "k": "de4198b2",
+  "s": "3D WebGL va RK4 integrator",
+  "ru": "3D WebGL и интегратор RK4",
+  "en": "3D WebGL and an RK4 integrator"
+ },
+ {
+  "k": "145d22fd",
+  "s": "Yuqori matematik va dasturlash apparatiga ega talabalar: 3D Lorents spirali, N-jism gravitatsiyasi, Boris va RK4 integratsiyasi.",
+  "ru": "Студенты с сильным математическим и программистским аппаратом: 3D-спираль Лоренца, гравитация N тел, интегрирование методами Бориса и RK4.",
+  "en": "Students with strong mathematical and programming skills: the 3D Lorentz helix, N-body gravity, Boris and RK4 integration."
+ },
+ {
+  "k": "5bf7e968",
+  "s": "🧪 MagicSchool AI: interaktiv boshlang‘ich diagnostika testi",
+  "ru": "🧪 MagicSchool AI: интерактивный входной диагностический тест",
+  "en": "🧪 MagicSchool AI: interactive entry diagnostic test"
+ },
+ {
+  "k": "99b661b0",
+  "s": "3 ta savol",
+  "ru": "3 вопроса",
+  "en": "3 questions"
+ },
+ {
+  "k": "c1fc60d8",
+  "s": "Quyidagi savollarga javob bering. Tizim javoblaringiz asosida sizga mos <strong style=\"color: var(--text-main);\">individual o‘quv trayektoriyasini (Klaster A, B yoki C)</strong> tavsiya qiladi:",
+  "ru": "Ответьте на следующие вопросы. На основе ваших ответов система порекомендует вам подходящую <strong style=\"color: var(--text-main);\">индивидуальную учебную траекторию (кластер A, B или C)</strong>:",
+  "en": "Answer the following questions. Based on your answers the system will recommend a suitable <strong style=\"color: var(--text-main);\">individual learning pathway (Cluster A, B or C)</strong>:"
+ },
+ {
+  "k": "640b1afb",
+  "s": "1. Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun’iy o‘sib ketsa, bunga qanday sabab bo‘lgan?",
+  "ru": "1. Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, в чём причина?",
+  "en": "1. If the total mechanical energy of a simple pendulum grows artificially over time during free oscillations, what is the cause?"
+ },
+ {
+  "k": "8554870c",
+  "s": "<span>⚪</span> <span>A) Burchak radianda emas, gradusda hisoblangan</span>",
+  "ru": "<span>⚪</span> <span>A) Угол вычислялся в градусах, а не в радианах</span>",
+  "en": "<span>⚪</span> <span>A) The angle was computed in degrees rather than radians</span>"
+ },
+ {
+  "k": "aa925465",
+  "s": "<span>⚪</span> <span>B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas</span>",
+  "ru": "<span>⚪</span> <span>B) Использован метод Forward Euler (классический Эйлер), который не является симплектическим</span>",
+  "en": "<span>⚪</span> <span>B) The Forward Euler (classical Euler) method was used, which is not symplectic</span>"
+ },
+ {
+  "k": "66017dbc",
+  "s": "<span>⚪</span> <span>C) Canvas ekrani har kadrda tozalanmagan</span>",
+  "ru": "<span>⚪</span> <span>C) Экран Canvas не очищался в каждом кадре</span>",
+  "en": "<span>⚪</span> <span>C) The Canvas was not cleared on every frame</span>"
+ },
+ {
+  "k": "ec68b1ca",
+  "s": "2. JavaScript dasturlash tilida <code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">Math.sin(30)</code> yozilganda, nega kutilgan <code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">0.5</code> qiymat chiqmaydi?",
+  "ru": "2. Почему в JavaScript при записи <code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">Math.sin(30)</code> не получается ожидаемое значение <code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">0.5</code>?",
+  "en": "2. Why does writing <code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">Math.sin(30)</code> in JavaScript not give the expected value <code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">0.5</code>?"
+ },
+ {
+  "k": "55de8398",
+  "s": "<span>⚪</span> <span>A) Math.sin faqat butun sonlar bilan ishlaydi</span>",
+  "ru": "<span>⚪</span> <span>A) Math.sin работает только с целыми числами</span>",
+  "en": "<span>⚪</span> <span>A) Math.sin works only with integers</span>"
+ },
+ {
+  "k": "c76385c6",
+  "s": "<span>⚪</span> <span>B) Argument gradusda berilgan, JS esa burchakni faqat radianda kutadi (<code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">30 * Math.PI / 180</code>)</span>",
+  "ru": "<span>⚪</span> <span>B) Аргумент задан в градусах, а JS ожидает угол только в радианах (<code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">30 * Math.PI / 180</code>)</span>",
+  "en": "<span>⚪</span> <span>B) The argument is given in degrees, while JS expects the angle in radians only (<code style=\"background:#F3F5F8; padding:2px 4px; border-radius:4px;\">30 * Math.PI / 180</code>)</span>"
+ },
+ {
+  "k": "2f5a8e16",
+  "s": "<span>⚪</span> <span>C) Math kutubxonasi yuklanmagan</span>",
+  "ru": "<span>⚪</span> <span>C) Не загружена библиотека Math</span>",
+  "en": "<span>⚪</span> <span>C) The Math library is not loaded</span>"
+ },
+ {
+  "k": "a13fb077",
+  "s": "3. Bir jinsli magnit maydonida ($\\vec{E} = 0$) harakatlanayotgan zaryadlangan zarrachaning kinetik energiyasi haqida qaysi fikr to‘g‘ri?",
+  "ru": "3. Какое утверждение о кинетической энергии заряженной частицы, движущейся в однородном магнитном поле ($\\vec{E} = 0$), верно?",
+  "en": "3. Which statement about the kinetic energy of a charged particle moving in a uniform magnetic field ($\\vec{E} = 0$) is correct?"
+ },
+ {
+  "k": "428a2822",
+  "s": "<span>⚪</span> <span>A) Kinetik energiya doimiy saqlanadi (Lorents kuchi zarracha tezligiga doimo perpendikulyar $\\vec{F}\\perp\\vec{v}$ va ish bajarmaydi)</span>",
+  "ru": "<span>⚪</span> <span>A) Кинетическая энергия сохраняется (сила Лоренца всегда перпендикулярна скорости частицы $\\vec{F}\\perp\\vec{v}$ и не совершает работы)</span>",
+  "en": "<span>⚪</span> <span>A) Kinetic energy is conserved (the Lorentz force is always perpendicular to the particle’s velocity $\\vec{F}\\perp\\vec{v}$ and does no work)</span>"
+ },
+ {
+  "k": "b2a00c05",
+  "s": "<span>⚪</span> <span>B) Zarracha tezlashgani uchun kinetik energiya tinimsiz oshadi</span>",
+  "ru": "<span>⚪</span> <span>B) Так как частица ускоряется, кинетическая энергия непрерывно растёт</span>",
+  "en": "<span>⚪</span> <span>B) Because the particle accelerates, its kinetic energy keeps increasing</span>"
+ },
+ {
+  "k": "6c804d02",
+  "s": "<span>⚪</span> <span>C) Kinetik energiya kamayib, potensial energiyaga aylanadi</span>",
+  "ru": "<span>⚪</span> <span>C) Кинетическая энергия уменьшается, переходя в потенциальную</span>",
+  "en": "<span>⚪</span> <span>C) Kinetic energy decreases, turning into potential energy</span>"
+ },
+ {
+  "k": "a4becf72",
+  "s": "📚 1-ma’ruza bo‘yicha ilmiy-uslubiy adabiyotlar ro‘yxati:",
+  "ru": "📚 Список научно-методической литературы к лекции 1:",
+  "en": "📚 Scholarly and methodological references for Lecture 1:"
+ },
+ {
+  "k": "eafd4c8b",
+  "s": "<strong style=\"color: var(--text-main);\">Russell, S., va Norvig, P. (2021).</strong> <em style=\"color: var(--text-main);\">Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson.",
+  "ru": "<strong style=\"color: var(--text-main);\">Russell, S., & Norvig, P. (2021).</strong> <em style=\"color: var(--text-main);\">Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson.",
+  "en": "<strong style=\"color: var(--text-main);\">Russell, S., & Norvig, P. (2021).</strong> <em style=\"color: var(--text-main);\">Artificial Intelligence: A Modern Approach</em> (4th ed.). Pearson."
+ },
+ {
+  "k": "aa0febf9",
+  "s": "<strong style=\"color: var(--text-main);\">Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em style=\"color: var(--text-main);\">Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong style=\"color: var(--text-main);\">Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em style=\"color: var(--text-main);\">Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong style=\"color: var(--text-main);\">Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em style=\"color: var(--text-main);\">Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "0e285a3f",
+  "s": "<strong style=\"color: var(--text-main);\">Chollet, F. (2021).</strong> <em style=\"color: var(--text-main);\">Deep Learning with Python</em> (2nd ed.). Manning Publications.",
+  "ru": "<strong style=\"color: var(--text-main);\">Chollet, F. (2021).</strong> <em style=\"color: var(--text-main);\">Deep Learning with Python</em> (2nd ed.). Manning Publications.",
+  "en": "<strong style=\"color: var(--text-main);\">Chollet, F. (2021).</strong> <em style=\"color: var(--text-main);\">Deep Learning with Python</em> (2nd ed.). Manning Publications."
+ },
+ {
+  "k": "4792bcca",
+  "s": "<strong style=\"color: var(--text-main);\">OpenAI. (2024).</strong> <em style=\"color: var(--text-main);\">GPT-4 Technical Report</em>. OpenAI Research.",
+  "ru": "<strong style=\"color: var(--text-main);\">OpenAI. (2024).</strong> <em style=\"color: var(--text-main);\">GPT-4 Technical Report</em>. OpenAI Research.",
+  "en": "<strong style=\"color: var(--text-main);\">OpenAI. (2024).</strong> <em style=\"color: var(--text-main);\">GPT-4 Technical Report</em>. OpenAI Research."
+ },
+ {
+  "k": "531b31ba",
+  "s": "<strong style=\"color: var(--text-main);\">Mishra, P., va Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em style=\"color: var(--text-main);\">Teachers College Record</em>.",
+  "ru": "<strong style=\"color: var(--text-main);\">Mishra, P., & Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em style=\"color: var(--text-main);\">Teachers College Record</em>.",
+  "en": "<strong style=\"color: var(--text-main);\">Mishra, P., & Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em style=\"color: var(--text-main);\">Teachers College Record</em>."
+ },
+ {
+  "k": "38637894",
+  "s": "<strong style=\"color: var(--text-main);\">Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em style=\"color: var(--text-main);\">A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "ru": "<strong style=\"color: var(--text-main);\">Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em style=\"color: var(--text-main);\">A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "en": "<strong style=\"color: var(--text-main);\">Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em style=\"color: var(--text-main);\">A Taxonomy for Learning, Teaching, and Assessing</em>. Longman."
+ },
+ {
+  "k": "57722596",
+  "s": "<strong style=\"color: var(--text-main);\">Vygotsky, L. S. (1978).</strong> <em style=\"color: var(--text-main);\">Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "ru": "<strong style=\"color: var(--text-main);\">Vygotsky, L. S. (1978).</strong> <em style=\"color: var(--text-main);\">Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "en": "<strong style=\"color: var(--text-main);\">Vygotsky, L. S. (1978).</strong> <em style=\"color: var(--text-main);\">Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press."
+ },
+ {
+  "k": "d0b5260d",
+  "s": "<strong style=\"color: var(--text-main);\">Mozilla Developer Network (MDN). (2024).</strong> <em style=\"color: var(--text-main);\">Web Animations API</em>. MDN Web Docs.",
+  "ru": "<strong style=\"color: var(--text-main);\">Mozilla Developer Network (MDN). (2024).</strong> <em style=\"color: var(--text-main);\">Web Animations API</em>. MDN Web Docs.",
+  "en": "<strong style=\"color: var(--text-main);\">Mozilla Developer Network (MDN). (2024).</strong> <em style=\"color: var(--text-main);\">Web Animations API</em>. MDN Web Docs."
+ },
+ {
+  "k": "cb71d73f",
+  "s": "📖 Gemini va ChatGPT: 4 bosqichli dars ssenariysi injiniringi",
+  "ru": "📖 Gemini и ChatGPT: 4-этапная инженерия сценария занятия",
+  "en": "📖 Gemini and ChatGPT: 4-stage lesson-scenario engineering"
+ },
+ {
+  "k": "41d5e3db",
+  "s": "Nazariya va pedagogika",
+  "ru": "Теория и педагогика",
+  "en": "Theory and pedagogy"
+ },
+ {
+  "k": "181099a9",
+  "s": "AI modeliga oddiy \"dars rejasi tuz\" deb emas, balki 4 ta qat’iy pedagogik modul asosida prompt beriladi:",
+  "ru": "Модели ИИ дают не просто команду \"составь план урока\", а промпт на основе 4 строгих педагогических модулей:",
+  "en": "Instead of simply telling the AI model \"write a lesson plan\", the prompt is built on 4 strict pedagogical modules:"
+ },
+ {
+  "k": "b4ffc358",
+  "s": "1. The hook (qiziqish uyg‘otuvchi keys)",
+  "ru": "1. The hook (кейс, вызывающий интерес)",
+  "en": "1. The hook (an engaging case)"
+ },
+ {
+  "k": "b3f4a529",
+  "s": "\"Qutb yog‘dusi nega faqat qutblarda paydo bo‘ladi?\" — real hayotiy fizik paradoks.",
+  "ru": "\"Почему полярное сияние возникает только у полюсов?\" — реальный жизненный физический парадокс.",
+  "en": "\"Why do auroras appear only near the poles?\" — a real-life physics paradox."
+ },
+ {
+  "k": "09866ac0",
+  "s": "2. Core Physics (fundamental tenglama)",
+  "ru": "2. Core Physics (фундаментальное уравнение)",
+  "en": "2. Core Physics (the fundamental equation)"
+ },
+ {
+  "k": "2c0a6bcf",
+  "s": "$\\vec{F} = q(\\vec{E} + \\vec{v}\\times\\vec{B})$ vektor ko‘paytmasi va differensial harakat tenglamalari.",
+  "ru": "Векторное произведение $\\vec{F} = q(\\vec{E} + \\vec{v}\\times\\vec{B})$ и дифференциальные уравнения движения.",
+  "en": "The $\\vec{F} = q(\\vec{E} + \\vec{v}\\times\\vec{B})$ cross product and the differential equations of motion."
+ },
+ {
+  "k": "f3d33adc",
+  "s": "3. Misconception alert (tipik xatolar)",
+  "ru": "3. Misconception alert (типичные ошибки)",
+  "en": "3. Misconception alert (typical errors)"
+ },
+ {
+  "k": "86757f4d",
+  "s": "\"Magnit maydoni zaryad ustida ish bajarmaydi?\" ($A = 0$, chunki $\\vec{F} \\perp \\vec{v}$ va ish bajarmaydi).",
+  "ru": "\"Магнитное поле не совершает работы над зарядом?\" ($A = 0$, поскольку $\\vec{F} \\perp \\vec{v}$ и работа не совершается).",
+  "en": "\"Does the magnetic field do no work on the charge?\" ($A = 0$, because $\\vec{F} \\perp \\vec{v}$ and no work is done)."
+ },
+ {
+  "k": "50a78380",
+  "s": "4. Simulation spec (texnik vazifa)",
+  "ru": "4. Simulation spec (техническое задание)",
+  "en": "4. Simulation spec (technical specification)"
+ },
+ {
+  "k": "8fdb333e",
+  "s": "Canvas o‘lchamlari, parametr slayderlari ($B, v_\\perp, v_\\parallel$) va telemetriya talablari.",
+  "ru": "Размеры Canvas, ползунки параметров ($B, v_\\perp, v_\\parallel$) и требования к телеметрии.",
+  "en": "Canvas dimensions, parameter sliders ($B, v_\\perp, v_\\parallel$) and telemetry requirements."
+ },
+ {
+  "k": "8b93b484",
+  "s": "Gemini uchun Dars Ssenariysi Prompt Shablon",
+  "ru": "Шаблон промпта сценария занятия для Gemini",
+  "en": "Lesson-scenario prompt template for Gemini"
+ },
+ {
+  "k": "0c2e0652",
+  "s": "Nusxalash",
+  "ru": "Копировать",
+  "en": "Copy"
+ },
+ {
+  "k": "2ca502d6",
+  "s": "Sen Oliy ta’lim fizika professori va metodistisan. Magnit maydonida Lorents kuchi va zarrachaning spiral harakati mavzusi bo‘yicha 4 bosqichli dars ssenariysini ishlab chiq: 1) Hook (Qutb yog‘dusi paradoksi), 2) Fundamental differensial tenglamalar, 3) Talabalar yo‘l qo‘yadigan 3 ta tipik xato, 4) Web simulyatsiya yaratish uchun texnik arxitektura talablari.",
+  "ru": "Ты — профессор физики и методист высшей школы. Разработай 4-этапный сценарий занятия по теме «Сила Лоренца и спиральное движение частицы в магнитном поле»: 1) Hook (парадокс полярного сияния); 2) фундаментальные дифференциальные уравнения; 3) 3 типичные ошибки студентов; 4) требования к технической архитектуре для создания веб-симуляции.",
+  "en": "You are a university physics professor and methodologist. Develop a 4-stage lesson scenario on the topic of the Lorentz force and the helical motion of a particle in a magnetic field: 1) Hook (the aurora paradox), 2) the fundamental differential equations, 3) 3 typical student errors, 4) technical architecture requirements for building a web simulation."
+ },
+ {
+  "k": "d57fa9ea",
+  "s": "🎨 Midjourney va Runway: multimodal ilmiy aktivlar",
+  "ru": "🎨 Midjourney и Runway: мультимодальные научные ассеты",
+  "en": "🎨 Midjourney and Runway: multimodal scientific assets"
+ },
+ {
+  "k": "92e44010",
+  "s": "Grafika va video",
+  "ru": "Графика и видео",
+  "en": "Graphics and video"
+ },
+ {
+  "k": "adb4229b",
+  "s": "Simulyatsiya interfeysiga professional laboratoriya ko‘rinishini berish uchun Midjourney da fotorealistik asboblar generatsiya qilinadi, Runway da esa fizik intro-videolar tayyorlanadi:",
+  "ru": "Чтобы придать интерфейсу симуляции вид профессиональной лаборатории, в Midjourney генерируются фотореалистичные приборы, а в Runway готовятся физические интро-видео:",
+  "en": "To give the simulation interface the look of a professional laboratory, photorealistic instruments are generated in Midjourney and physics intro videos are produced in Runway:"
+ },
+ {
+  "k": "70d10414",
+  "s": "Midjourney Prompt: Optika Laboratoriyasi",
+  "ru": "Промпт для Midjourney: оптическая лаборатория",
+  "en": "Midjourney prompt: optics laboratory"
+ },
+ {
+  "k": "9fa78122",
+  "s": "/imagine prompt: Modern university optics laboratory bench, green laser beam 532nm passing through precision double slit apparatus, interference pattern glowing on screen, cinematic lighting, 8k resolution, photorealistic, scientific equipment --ar 16:9 --v 6.0",
+  "ru": "/imagine prompt: Modern university optics laboratory bench, green laser beam 532nm passing through precision double slit apparatus, interference pattern glowing on screen, cinematic lighting, 8k resolution, photorealistic, scientific equipment --ar 16:9 --v 6.0",
+  "en": "/imagine prompt: Modern university optics laboratory bench, green laser beam 532nm passing through precision double slit apparatus, interference pattern glowing on screen, cinematic lighting, 8k resolution, photorealistic, scientific equipment --ar 16:9 --v 6.0"
+ },
+ {
+  "k": "635549d1",
+  "s": "Runway Prompt: Zarracha Trayektoriyasi",
+  "ru": "Промпт для Runway: траектория частицы",
+  "en": "Runway prompt: particle trajectory"
+ },
+ {
+  "k": "35c69c12",
+  "s": "3D glowing neon electron spiraling smoothly along magnetic field lines inside a tokamak fusion reactor, high frame rate, scientific visualization, accurate helical pitch",
+  "ru": "3D glowing neon electron spiraling smoothly along magnetic field lines inside a tokamak fusion reactor, high frame rate, scientific visualization, accurate helical pitch",
+  "en": "3D glowing neon electron spiraling smoothly along magnetic field lines inside a tokamak fusion reactor, high frame rate, scientific visualization, accurate helical pitch"
+ },
+ {
+  "k": "10c10ebd",
+  "s": "Burchak θ:",
+  "ru": "Угол θ:",
+  "en": "Angle θ:"
+ },
+ {
+  "k": "91f42457",
+  "s": "Tezlik ω:",
+  "ru": "Скорость ω:",
+  "en": "Velocity ω:"
+ },
+ {
+  "k": "5b8afe18",
+  "s": "0,00 rad/s",
+  "ru": "0,00 рад/с",
+  "en": "0.00 rad/s"
+ },
+ {
+  "k": "f1057446",
+  "s": "To‘liq energiya:",
+  "ru": "Полная энергия:",
+  "en": "Total energy:"
+ },
+ {
+  "k": "4918eae3",
+  "s": "Ek (kinetik)",
+  "ru": "Ek (кинетическая)",
+  "en": "Ek (kinetic)"
+ },
+ {
+  "k": "0e7c4d40",
+  "s": "Ep (potensial)",
+  "ru": "Ep (потенциальная)",
+  "en": "Ep (potential)"
+ },
+ {
+  "k": "e54a16b5",
+  "s": "Parametrlarni boshqarish (RK4)",
+  "ru": "Управление параметрами (RK4)",
+  "en": "Parameter controls (RK4)"
+ },
+ {
+  "k": "3d95adc3",
+  "s": "Ip uzunligi L:",
+  "ru": "Длина нити L:",
+  "en": "String length L:"
+ },
+ {
+  "k": "807d514b",
+  "s": "So‘nish koeffitsiyenti γ:",
+  "ru": "Коэффициент затухания γ:",
+  "en": "Damping coefficient γ:"
+ },
+ {
+  "k": "5b1bee7a",
+  "s": "Erkin tushish tezlanishi g:",
+  "ru": "Ускорение свободного падения g:",
+  "en": "Gravitational acceleration g:"
+ },
+ {
+  "k": "59b55ebd",
+  "s": "Faza fazosi attraktori (θ va ω):",
+  "ru": "Аттрактор фазового пространства (θ и ω):",
+  "en": "Phase-space attractor (θ and ω):"
+ },
+ {
+  "k": "125e9d53",
+  "s": "Qayta boshlash",
+  "ru": "Перезапустить",
+  "en": "Restart"
+ },
+ {
+  "k": "354955d3",
+  "s": "Larmor radiusi R<sub style=\"font-size:0.7em;\">L</sub>:",
+  "ru": "Ларморовский радиус R<sub style=\"font-size:0.7em;\">L</sub>:",
+  "en": "Larmor radius R<sub style=\"font-size:0.7em;\">L</sub>:"
+ },
+ {
+  "k": "88bd8de7",
+  "s": "Siklotron chastotasi ω<sub style=\"font-size:0.7em;\">c</sub>:",
+  "ru": "Циклотронная частота ω<sub style=\"font-size:0.7em;\">c</sub>:",
+  "en": "Cyclotron frequency ω<sub style=\"font-size:0.7em;\">c</sub>:"
+ },
+ {
+  "k": "7d46b504",
+  "s": "1,50 rad/s",
+  "ru": "1,50 рад/с",
+  "en": "1.50 rad/s"
+ },
+ {
+  "k": "89377fab",
+  "s": "Magnit maydoni (3D, Boris usuli)",
+  "ru": "Магнитное поле (3D, метод Бориса)",
+  "en": "Magnetic field (3D, Boris method)"
+ },
+ {
+  "k": "c9050127",
+  "s": "Sichqoncha yoki barmoq bilan sudrab 3D koordinatalarni fazoda 360° aylantirishingiz mumkin!",
+  "ru": "Перетаскивая мышью или пальцем, можно вращать 3D-координаты в пространстве на 360°!",
+  "en": "Drag with the mouse or a finger to rotate the 3D coordinates through 360°!"
+ },
+ {
+  "k": "317039b2",
+  "s": "Maydon induksiyasi B<sub style=\"font-size:0.7em;\">z</sub>:",
+  "ru": "Индукция поля B<sub style=\"font-size:0.7em;\">z</sub>:",
+  "en": "Field induction B<sub style=\"font-size:0.7em;\">z</sub>:"
+ },
+ {
+  "k": "329b5695",
+  "s": "1,5 Tl",
+  "ru": "1,5 Тл",
+  "en": "1.5 T"
+ },
+ {
+  "k": "21d8c926",
+  "s": "Ko‘ndalang tezlik v<sub style=\"font-size:0.7em;\">⊥</sub>:",
+  "ru": "Поперечная скорость v<sub style=\"font-size:0.7em;\">⊥</sub>:",
+  "en": "Transverse velocity v<sub style=\"font-size:0.7em;\">⊥</sub>:"
+ },
+ {
+  "k": "0610719c",
+  "s": "Bo‘ylama tezlik v<sub style=\"font-size:0.7em;\">∥</sub>:",
+  "ru": "Продольная скорость v<sub style=\"font-size:0.7em;\">∥</sub>:",
+  "en": "Longitudinal velocity v<sub style=\"font-size:0.7em;\">∥</sub>:"
+ },
+ {
+  "k": "a1aff4e2",
+  "s": "Trayektoriyani tozalash",
+  "ru": "Очистить траекторию",
+  "en": "Clear trajectory"
+ },
+ {
+  "k": "14d65745",
+  "s": "Doppler effekti va Max konusi",
+  "ru": "Эффект Доплера и конус Маха",
+  "en": "The Doppler effect and the Mach cone"
+ },
+ {
+  "k": "8e87e052",
+  "s": "Max soni M (v/c):",
+  "ru": "Число Маха M (v/c):",
+  "en": "Mach number M (v/c):"
+ },
+ {
+  "k": "2b1a666d",
+  "s": "$M &lt; 1$: tovushdan sekin harakat — to‘lqin frontlari manba oldida siqiladi.<br> $M &gt; 1$: tovushdan tez harakat va Max zarba konusi (qizil).",
+  "ru": "$M &lt; 1$: дозвуковое движение — фронты волн сжимаются перед источником.<br> $M &gt; 1$: сверхзвуковое движение и ударный конус Маха (красный).",
+  "en": "$M &lt; 1$: subsonic motion — wavefronts bunch up ahead of the source.<br> $M &gt; 1$: supersonic motion and the Mach shock cone (red)."
+ },
+ {
+  "k": "f82c4114",
+  "s": "To‘lqin uzunligi λ:",
+  "ru": "Длина волны λ:",
+  "en": "Wavelength λ:"
+ },
+ {
+  "k": "c00ad941",
+  "s": "532 nm (yashil)",
+  "ru": "532 нм (зелёный)",
+  "en": "532 nm (green)"
+ },
+ {
+  "k": "43340902",
+  "s": "Tirqishlar orasidagi masofa d:",
+  "ru": "Расстояние между щелями d:",
+  "en": "Slit separation d:"
+ },
+ {
+  "k": "3523be72",
+  "s": "0,25 mm",
+  "ru": "0,25 мм",
+  "en": "0.25 mm"
+ },
+ {
+  "k": "1ccc7e6a",
+  "s": "📊 5 Mezonli baholash standarti va Capstone portfolioga qo‘yiladigan talablar",
+  "ru": "📊 Стандарт оценивания по 5 критериям и требования к итоговому портфолио (Capstone)",
+  "en": "📊 The 5-criterion assessment standard and Capstone portfolio requirements"
+ },
+ {
+  "k": "25722622",
+  "s": "Baholash matritsasi",
+  "ru": "Матрица оценивания",
+  "en": "Assessment matrix"
+ },
+ {
+  "k": "c38b9fc5",
+  "s": "Talabalarning semestr yakuniy Capstone loyihasi quyidagi formula asosida baholanadi: $$\\text{Ball} = 0.30 \\cdot K_{\\text{ilmiy}} + 0.25 \\cdot K_{\\text{matematik}} + 0.20 \\cdot K_{\\text{UI/UX}} + 0.15 \\cdot K_{\\text{AI}} + 0.10 \\cdot K_{\\text{portfolio}}$$",
+  "ru": "Итоговый семестровый проект студентов (Capstone) оценивается по следующей формуле: $$\\text{Ball} = 0.30 \\cdot K_{\\text{ilmiy}} + 0.25 \\cdot K_{\\text{matematik}} + 0.20 \\cdot K_{\\text{UI/UX}} + 0.15 \\cdot K_{\\text{AI}} + 0.10 \\cdot K_{\\text{portfolio}}$$",
+  "en": "Students’ end-of-semester Capstone project is graded with the following formula: $$\\text{Ball} = 0.30 \\cdot K_{\\text{ilmiy}} + 0.25 \\cdot K_{\\text{matematik}} + 0.20 \\cdot K_{\\text{UI/UX}} + 0.15 \\cdot K_{\\text{AI}} + 0.10 \\cdot K_{\\text{portfolio}}$$"
+ },
+ {
+  "k": "373daa1a",
+  "s": "📋 Capstone loyihaning ilmiy pasporti:",
+  "ru": "📋 Научный паспорт проекта Capstone:",
+  "en": "📋 Scientific passport of the Capstone project:"
+ },
+ {
+  "k": "a3bda8f4",
+  "s": "🔹 <strong style=\"color: var(--text-main);\">1. Mavzu nomi:</strong> Fizik jarayonning aniq tavsifi.",
+  "ru": "🔹 <strong style=\"color: var(--text-main);\">1. Название темы:</strong> точное описание физического процесса.",
+  "en": "🔹 <strong style=\"color: var(--text-main);\">1. Topic title:</strong> a precise description of the physical process."
+ },
+ {
+  "k": "9adece0a",
+  "s": "🔹 <strong style=\"color: var(--text-main);\">2. Matematik apparat:</strong> Differensial tenglamalar va chegaraviy shartlar.",
+  "ru": "🔹 <strong style=\"color: var(--text-main);\">2. Математический аппарат:</strong> дифференциальные уравнения и граничные условия.",
+  "en": "🔹 <strong style=\"color: var(--text-main);\">2. Mathematical apparatus:</strong> differential equations and boundary conditions."
+ },
+ {
+  "k": "4b9fb597",
+  "s": "🔹 <strong style=\"color: var(--text-main);\">3. AI promptlar jurnali:</strong> Claude, Gemini, Midjourney ga berilgan so‘rovlar.",
+  "ru": "🔹 <strong style=\"color: var(--text-main);\">3. Журнал ИИ-промптов:</strong> запросы к Claude, Gemini, Midjourney.",
+  "en": "🔹 <strong style=\"color: var(--text-main);\">3. AI prompt log:</strong> the queries given to Claude, Gemini and Midjourney."
+ },
+ {
+  "k": "4260f116",
+  "s": "🔹 <strong style=\"color: var(--text-main);\">4. JavaScript kodi:</strong> RK4 / Eyler–Kromer fizik dvigateli va Canvas render.",
+  "ru": "🔹 <strong style=\"color: var(--text-main);\">4. Код JavaScript:</strong> физический движок RK4 / Эйлера–Кромера и рендер на Canvas.",
+  "en": "🔹 <strong style=\"color: var(--text-main);\">4. JavaScript code:</strong> an RK4 / Euler–Cromer physics engine and Canvas rendering."
+ },
+ {
+  "k": "886a0d28",
+  "s": "🔹 <strong style=\"color: var(--text-main);\">5. Ochiq havola:</strong> GitHub Pages da e’lon qilingan ishchi web ilova.",
+  "ru": "🔹 <strong style=\"color: var(--text-main);\">5. Открытая ссылка:</strong> работающее веб-приложение, опубликованное на GitHub Pages.",
+  "en": "🔹 <strong style=\"color: var(--text-main);\">5. Public link:</strong> a working web app published on GitHub Pages."
+ },
+ {
+  "k": "598f88a7",
+  "s": "🧮 Interaktiv ball kalkulyatori:",
+  "ru": "🧮 Интерактивный калькулятор баллов:",
+  "en": "🧮 Interactive score calculator:"
+ },
+ {
+  "k": "2f8661b6",
+  "s": "1. Ilmiy aniqlik (30 ball):",
+  "ru": "1. Научная точность (30 баллов):",
+  "en": "1. Scientific accuracy (30 points):"
+ },
+ {
+  "k": "da0ca6f2",
+  "s": "2. Matematik model / RK4 (25 ball):",
+  "ru": "2. Математическая модель / RK4 (25 баллов):",
+  "en": "2. Mathematical model / RK4 (25 points):"
+ },
+ {
+  "k": "efbf9773",
+  "s": "3. UI/UX va Canvas (20 ball):",
+  "ru": "3. UI/UX и Canvas (20 баллов):",
+  "en": "3. UI/UX and Canvas (20 points):"
+ },
+ {
+  "k": "c397105d",
+  "s": "4. AI Prompt Injiniringi (15 ball):",
+  "ru": "4. Промпт-инжиниринг ИИ (15 баллов):",
+  "en": "4. AI prompt engineering (15 points):"
+ },
+ {
+  "k": "7da8dbb6",
+  "s": "5. GitHub Portfolio (10 ball):",
+  "ru": "5. Портфолио на GitHub (10 баллов):",
+  "en": "5. GitHub portfolio (10 points):"
+ },
+ {
+  "k": "d607fb34",
+  "s": "Yakuniy ball:",
+  "ru": "Итоговый балл:",
+  "en": "Final score:"
+ }
+]

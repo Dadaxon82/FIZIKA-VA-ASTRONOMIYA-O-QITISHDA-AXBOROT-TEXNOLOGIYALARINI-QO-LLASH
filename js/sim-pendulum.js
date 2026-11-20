@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
 function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
@@ -242,8 +243,8 @@ class PendulumSimulation {
     // Labels
     ctx.fillStyle = '#64748B';
     ctx.font = '10px JetBrains Mono, monospace';
-    ctx.fillText('θ (rad)', w - 40, h / 2 - 4);
-    ctx.fillText('ω (rad/s)', w / 2 + 4, 12);
+    ctx.fillText(__t("θ (rad)"), w - 40, h / 2 - 4);
+    ctx.fillText(__t("ω (rad/s)"), w / 2 + 4, 12);
 
     // Phase Curve
     if (this.phaseHistory.length > 1) {

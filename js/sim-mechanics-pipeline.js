@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
 function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
@@ -340,14 +341,14 @@ function initMechanicsPipeline() {
 
   function togglePlay() {
     running = !running;
-    btnPlayInner.textContent = running ? '⏸️ To‘xtatish' : '▶️ Davom ettirish';
+    btnPlayInner.textContent = running ? __t("⏸️ To‘xtatish") : '▶️ Davom ettirish';
   }
   btnPlayInner.addEventListener('click', togglePlay);
 
   function resetSim() {
     resetAll();
     running = true;
-    btnPlayInner.textContent = "⏸️ To‘xtatish";
+    btnPlayInner.textContent = __t("⏸️ To‘xtatish");
   }
   btnResetInner.addEventListener('click', resetSim);
 

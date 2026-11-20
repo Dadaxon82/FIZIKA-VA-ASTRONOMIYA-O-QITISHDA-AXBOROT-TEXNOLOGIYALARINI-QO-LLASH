@@ -314,7 +314,7 @@ Iltimos:
     [slM, slK, slB].forEach(sl => sl.addEventListener('input', () => { updateLabels(); reset(); }));
     btnPlay.addEventListener('click', () => {
       running = !running;
-      btnPlay.textContent = running ? "⏸️ To‘xtatish" : '▶️ Davom etish';
+      btnPlay.textContent = running ? __t("⏸️ To‘xtatish") : '▶️ Davom etish';
     });
     btnReset.addEventListener('click', reset);
 
