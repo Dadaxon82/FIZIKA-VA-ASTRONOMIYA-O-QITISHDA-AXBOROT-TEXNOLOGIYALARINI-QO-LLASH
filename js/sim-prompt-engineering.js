@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * Lecture 9, Tab 6: HTML5 Canvas Prompt Workbench & Live Code Sandbox.
  * 4 preset stsenariy (projectile, spring, collision, wave), har biri
@@ -395,7 +396,7 @@ function initPromptEngineeringLab() {
   });
   if (btnPlay) btnPlay.addEventListener('click', () => {
     isRunning = !isRunning;
-    btnPlay.textContent = isRunning ? '⏸ Pauza' : '▶ Davom ettirish';
+    btnPlay.textContent = isRunning ? '⏸ Pauza' : __t("▶ Davom ettirish");
     lastTime = null;
   });
 

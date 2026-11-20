@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * UI-CONTROLLER.JS - Universal UI Controller, Navigation Drawer, Tabs, Code Copying, Toasts & Quiz Engines
  */
@@ -8,29 +9,29 @@
 const quiz1Questions = [
   {
     id: 1,
-    question: "Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun'iy o‘sib ketsa, bunga qanday sabab bo‘lgan?",
+    question: __t("Matematik mayatnikning erkin tebranishlarida vaqt o‘tishi bilan to‘liq mexanik energiya sun'iy o‘sib ketsa, bunga qanday sabab bo‘lgan?"),
     options: [
-      { text: "A) Burchak radianda emas, gradusda hisoblangan", correct: false, note: "Gradus xatoligi davrni buzadi, lekin energiyaning eksponensial portlashiga sabab bo‘lmaydi." },
-      { text: "B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas", correct: true, note: "Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun'iy oshiradi. Eyler-Kromer yoki RK4 ishlatish shart!" },
-      { text: "C) Canvas ekrani har kadrda tozalanmagan", correct: false, note: "Canvas tozalanishi faqat vizual grafikaga ta'sir qiladi, fizik hisoblarga emas." }
+      { text: __t("A) Burchak radianda emas, gradusda hisoblangan"), correct: false, note: __t("Gradus xatoligi davrni buzadi, lekin energiyaning eksponensial portlashiga sabab bo‘lmaydi.") },
+      { text: __t("B) Forward Euler (Klassik Eyler) usuli qo‘llangan bo‘lib, u simplektik emas"), correct: true, note: __t("Aynan Klassik Eyler faza fazosi maydonini kengaytiradi va har qadamda energiyani sun'iy oshiradi. Eyler-Kromer yoki RK4 ishlatish shart!") },
+      { text: __t("C) Canvas ekrani har kadrda tozalanmagan"), correct: false, note: __t("Canvas tozalanishi faqat vizual grafikaga ta'sir qiladi, fizik hisoblarga emas.") }
     ]
   },
   {
     id: 2,
-    question: "JavaScript dasturlash tilida Math.sin(30) yozilsa, nega kutilgan 0.5 qiymat chiqmaydi?",
+    question: __t("JavaScript dasturlash tilida Math.sin(30) yozilsa, nega kutilgan 0.5 qiymat chiqmaydi?"),
     options: [
-      { text: "A) Math.sin faqat butun sonlar bilan ishlaydi", correct: false, note: "Math.sin haqiqiy sonlar bilan ishlaydi." },
-      { text: "B) Argument gradusda berilgan, JS esa burchakni faqat radianda kutadi (30 * Math.PI / 180)", correct: true, note: "JavaScript trigonometrik funksiyalari (sin, cos, tan) doimo radianda hisoblaydi." },
-      { text: "C) Math kutubxonasi yuklanmagan", correct: false, note: "Math obyekti JS da global o‘rnatilgan." }
+      { text: __t("A) Math.sin faqat butun sonlar bilan ishlaydi"), correct: false, note: __t("Math.sin haqiqiy sonlar bilan ishlaydi.") },
+      { text: __t("B) Argument gradusda berilgan, JS esa burchakni faqat radianda kutadi (30 * Math.PI / 180)"), correct: true, note: __t("JavaScript trigonometrik funksiyalari (sin, cos, tan) doimo radianda hisoblaydi.") },
+      { text: __t("C) Math kutubxonasi yuklanmagan"), correct: false, note: __t("Math obyekti JS da global o‘rnatilgan.") }
     ]
   },
   {
     id: 3,
-    question: "Bir jinsli magnit maydonida (E = 0) harakatlanayotgan zaryadlangan zarrachaning kinetik energiyasi haqida qaysi fikr to‘g‘ri?",
+    question: __t("Bir jinsli magnit maydonida (E = 0) harakatlanayotgan zaryadlangan zarrachaning kinetik energiyasi haqida qaysi fikr to‘g‘ri?"),
     options: [
-      { text: "A) Kinetik energiya doimiy saqlanadi (Lorents kuchi zarracha tezligiga doimo perpendikulyar va ish bajarmaydi)", correct: true, note: "To‘g‘ri! F = q(v x B) => F . v = 0 => dE_k/dt = 0. Magnit maydoni faqat tezlik yo‘nalishini o‘zgartiradi." },
-      { text: "B) Zarracha tezlashgani uchun kinetik energiya oshadi", correct: false, note: "Magnit maydonida tezlik moduli o‘zgarmaydi." },
-      { text: "C) Kinetik energiya kamayib, potensial energiyaga aylanadi", correct: false, note: "Statsionar magnit maydonida potensial energiya o‘zgarmaydi." }
+      { text: __t("A) Kinetik energiya doimiy saqlanadi (Lorents kuchi zarracha tezligiga doimo perpendikulyar va ish bajarmaydi)"), correct: true, note: __t("To‘g‘ri! F = q(v x B) => F . v = 0 => dE_k/dt = 0. Magnit maydoni faqat tezlik yo‘nalishini o‘zgartiradi.") },
+      { text: __t("B) Zarracha tezlashgani uchun kinetik energiya oshadi"), correct: false, note: __t("Magnit maydonida tezlik moduli o‘zgarmaydi.") },
+      { text: __t("C) Kinetik energiya kamayib, potensial energiyaga aylanadi"), correct: false, note: __t("Statsionar magnit maydonida potensial energiya o‘zgarmaydi.") }
     ]
   }
 ];
@@ -65,14 +66,11 @@ window.checkDiagnosticQuiz = function() {
   });
 
   if (!allAnswered) {
-    feedbackEl.innerHTML = `<div style="background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-    </div>`;
+    feedbackEl.innerHTML = __t("<div style=\"background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>", []);
     return;
   }
 
-  let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 1-ma’ruza diagnostika natijalari:</h4>`;
+  let htmlResult = __t("<div style=\"background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 1-ma’ruza diagnostika natijalari:</h4>", []);
 
   quiz1Questions.forEach(q => {
     const userOptIdx = userAnswers1[q.id];
@@ -82,32 +80,27 @@ window.checkDiagnosticQuiz = function() {
 
     htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
       <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#047857' : '#E11D48'};">
-        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? 'To‘g‘ri!' : 'Xato!'}
+        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? __t("To‘g‘ri!") : __t("Xato!")}
       </div>
       <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${opt.note}</div>
     </div>`;
   });
 
-  let cluster = 'A Klaster (Boshlang‘ich / Remedial)';
+  let cluster = __t("A Klaster (Boshlang‘ich / Remedial)");
   let clusterColor = '#38BDF8';
-  let clusterDesc = 'Fizik modellarni bosqichma-bosqich Scaffolding va vizual yo‘riqnomalar orqali o‘zlashtirish tavsiya etiladi.';
+  let clusterDesc = __t("Fizik modellarni bosqichma-bosqich Scaffolding va vizual yo‘riqnomalar orqali o‘zlashtirish tavsiya etiladi.");
 
   if (correctCount === 2) {
-    cluster = 'B Klaster (O‘rta / Standart)';
+    cluster = __t("B Klaster (O‘rta / Standart)");
     clusterColor = '#34D399';
-    clusterDesc = '2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler-Kromer algoritmlarini qo‘llash tavsiya etiladi.';
+    clusterDesc = __t("2D Canvas dvigatellarini mustaqil loyihalash va simplektik Eyler-Kromer algoritmlarini qo‘llash tavsiya etiladi.");
   } else if (correctCount === 3) {
-    cluster = 'C Klaster (Ilg‘or / Research)';
+    cluster = __t("C Klaster (Ilg‘or / Research)");
     clusterColor = '#C084FC';
-    clusterDesc = '3D WebGL (Three.js), 4-tartibli Runge-Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.';
+    clusterDesc = __t("3D WebGL (Three.js), 4-tartibli Runge-Kutta (RK4) va Boris particle pusher integratsiyasi bo‘yicha murakkab loyihalarga yo‘naltiriladi.");
   }
 
-  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
-    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>
-    <div style="font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
-    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Umumiy Natija: ${correctCount} / ${totalCount} ball (${((correctCount/totalCount)*100).toFixed(0)}%)</div>
-  </div></div>`;
+  htmlResult += __t("<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan O‘quv Trayektoriyasi:</div>\n    <div style=\"font-size:1.3rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Umumiy Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>", [clusterColor, clusterColor, cluster, clusterDesc, clusterColor, correctCount, totalCount, ((correctCount/totalCount)*100).toFixed(0)]);
 
   feedbackEl.innerHTML = htmlResult;
 };
@@ -119,29 +112,29 @@ window.checkDiagnosticQuiz = function() {
 const quiz2Questions = [
   {
     id: 1,
-    question: "Kvadratik havo qarshiligida (F_drag = -k*v*v) harakatlanayotgan jism uchun x va y o‘qlari bo‘yicha differensial tenglamalar qanday yoziladi?",
+    question: __t("Kvadratik havo qarshiligida (F_drag = -k*v*v) harakatlanayotgan jism uchun x va y o‘qlari bo‘yicha differensial tenglamalar qanday yoziladi?"),
     options: [
-      { text: "A) dv_x/dt = -k*v_x^2,  dv_y/dt = -g - k*v_y^2", correct: false, note: "Xato! Havo qarshiligi vektor bo‘lib, o‘qlarga v_x/|v| va v_y/|v| nisbatda proyeksiyalanadi." },
-      { text: "B) dv_x/dt = -(k/m)*sqrt(v_x^2 + v_y^2)*v_x,  dv_y/dt = -g - (k/m)*sqrt(v_x^2 + v_y^2)*v_y", correct: true, note: "To‘g‘ri! F_drag = -k*|v|*v vektorini proyeksiyalash orqali to‘g‘ri bog‘langan sistema olinadi." },
-      { text: "C) dv_x/dt = 0,  dv_y/dt = -g", correct: false, note: "Bu qarshiliksiz ideal vakuum formulasidir." }
+      { text: __t("A) dv_x/dt = -k*v_x^2,  dv_y/dt = -g - k*v_y^2"), correct: false, note: __t("Xato! Havo qarshiligi vektor bo‘lib, o‘qlarga v_x/|v| va v_y/|v| nisbatda proyeksiyalanadi.") },
+      { text: "B) dv_x/dt = -(k/m)*sqrt(v_x^2 + v_y^2)*v_x,  dv_y/dt = -g - (k/m)*sqrt(v_x^2 + v_y^2)*v_y", correct: true, note: __t("To‘g‘ri! F_drag = -k*|v|*v vektorini proyeksiyalash orqali to‘g‘ri bog‘langan sistema olinadi.") },
+      { text: "C) dv_x/dt = 0,  dv_y/dt = -g", correct: false, note: __t("Bu qarshiliksiz ideal vakuum formulasidir.") }
     ]
   },
   {
     id: 2,
-    question: "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?",
+    question: __t("Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?"),
     options: [
-      { text: "A) Canvasda Y o‘qi pastga yo‘nalgan, Dekart koordinatalarida esa yuqoriga yo‘nalgan", correct: true, note: "To‘g‘ri! Ekran piksellarida (0,0) chap yuqori burchakda joylashgani uchun Y o‘qini teskari o‘girish shart." },
-      { text: "B) Gravitatsiya kuchini yo‘qotish uchun", correct: false, note: "Gravitatsiya ekranga bog‘liq emas, fizik qonundir." },
-      { text: "C) JavaScript faqat manfiy sonlarni qabul qilgani uchun", correct: false, note: "JavaScript barcha haqiqiy sonlar bilan ishlaydi." }
+      { text: __t("A) Canvasda Y o‘qi pastga yo‘nalgan, Dekart koordinatalarida esa yuqoriga yo‘nalgan"), correct: true, note: __t("To‘g‘ri! Ekran piksellarida (0,0) chap yuqori burchakda joylashgani uchun Y o‘qini teskari o‘girish shart.") },
+      { text: __t("B) Gravitatsiya kuchini yo‘qotish uchun"), correct: false, note: __t("Gravitatsiya ekranga bog‘liq emas, fizik qonundir.") },
+      { text: __t("C) JavaScript faqat manfiy sonlarni qabul qilgani uchun"), correct: false, note: __t("JavaScript barcha haqiqiy sonlar bilan ishlaydi.") }
     ]
   },
   {
     id: 3,
-    question: "Jism devordan mutlaq noelastik urilganda (e = 0), to‘qnashuvdan keyin uning tezligi qanday bo‘ladi?",
+    question: __t("Jism devordan mutlaq noelastik urilganda (e = 0), to‘qnashuvdan keyin uning tezligi qanday bo‘ladi?"),
     options: [
-      { text: "A) v' = -v (to‘liq teskari qaytadi)", correct: false, note: "Bu e = 1 (mutlaq elastik) holatidir." },
-      { text: "B) v' = 0 (jism devorga yopishib to‘xtaydi, kinetik energiya issiqlikka aylanadi)", correct: true, note: "To‘g‘ri! e = 0 bo‘lganda tiklanish sodir bo‘lmaydi va barcha kinetik energiya yo‘qotiladi." },
-      { text: "C) v' = 2*v", correct: false, note: "Energiya saqlanish qonuniga zid." }
+      { text: __t("A) v' = -v (to‘liq teskari qaytadi)"), correct: false, note: __t("Bu e = 1 (mutlaq elastik) holatidir.") },
+      { text: __t("B) v' = 0 (jism devorga yopishib to‘xtaydi, kinetik energiya issiqlikka aylanadi)"), correct: true, note: __t("To‘g‘ri! e = 0 bo‘lganda tiklanish sodir bo‘lmaydi va barcha kinetik energiya yo‘qotiladi.") },
+      { text: "C) v' = 2*v", correct: false, note: __t("Energiya saqlanish qonuniga zid.") }
     ]
   }
 ];
@@ -176,14 +169,11 @@ window.checkDiagnostic2Quiz = function() {
   });
 
   if (!allAnswered) {
-    feedbackEl.innerHTML = `<div style="background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-      <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-    </div>`;
+    feedbackEl.innerHTML = __t("<div style=\"background:#1E293B; border:1px solid #F59E0B; color:#FBBF24; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n      <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n    </div>", []);
     return;
   }
 
-  let htmlResult = `<div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;">
-    <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>`;
+  let htmlResult = __t("<div style=\"background:rgba(15, 23, 42, 0.95); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px; margin-top:16px;\">\n    <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 2-ma’ruza modellashtirish diagnostikasi natijasi:</h4>", []);
 
   quiz2Questions.forEach(q => {
     const userOptIdx = userAnswers2[q.id];
@@ -193,32 +183,27 @@ window.checkDiagnostic2Quiz = function() {
 
     htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorrect ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorrect ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
       <div style="font-weight:600; font-size:0.92rem; color:${isCorrect ? '#047857' : '#E11D48'};">
-        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? 'To‘g‘ri!' : 'Xato!'}
+        ${isCorrect ? '✅' : '❌'} ${q.id}-Savol: ${isCorrect ? __t("To‘g‘ri!") : __t("Xato!")}
       </div>
       <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${opt.note}</div>
     </div>`;
   });
 
-  let cluster = 'B Klaster (2D Modellashtirish & Simplektik Eyler-Kromer)';
+  let cluster = __t("B Klaster (2D Modellashtirish & Simplektik Eyler-Kromer)");
   let clusterColor = '#34D399';
-  let clusterDesc = '2D vektor harakat, gravitatsiya va simplektik Eyler-Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.';
+  let clusterDesc = __t("2D vektor harakat, gravitatsiya va simplektik Eyler-Kromer integratori bo‘yicha mustaqil laboratoriya ishlari tavsiya etiladi.");
 
   if (correctCount === 3) {
-    cluster = 'C Klaster (No-chiziqli Tizimlar, Aerodinamik Drag & RK4 Integratori)';
+    cluster = __t("C Klaster (No-chiziqli Tizimlar, Aerodinamik Drag & RK4 Integratori)");
     clusterColor = '#C084FC';
-    clusterDesc = 'Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge-Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.';
+    clusterDesc = __t("Kvadratik qarshilik kuchi, differensial tenglamalar sistemasi va 4-tartibli Runge-Kutta (RK4) integratsiyasi bo‘yicha ilmiy simulyatsiyalar tavsiya etiladi.");
   } else if (correctCount <= 1) {
-    cluster = 'A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)';
+    cluster = __t("A Klaster (1D Harakat & Skalyar Tenglamalar Asoslari)");
     clusterColor = '#38BDF8';
-    clusterDesc = 'Boshlang‘ich differensial hisob va sodda Eyler qadami bo‘yicha Scaffolding yo‘riqnomalar tavsiya etiladi.';
+    clusterDesc = __t("Boshlang‘ich differensial hisob va sodda Eyler qadami bo‘yicha Scaffolding yo‘riqnomalar tavsiya etiladi.");
   }
 
-  htmlResult += `<div style="margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid ${clusterColor}; text-align:center;">
-    <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${clusterColor}; font-weight:700;">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>
-    <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${cluster}</div>
-    <div style="font-size:0.9rem; color:#4B5464;">${clusterDesc}</div>
-    <div style="margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:${clusterColor};">Natija: ${correctCount} / ${totalCount} ball (${((correctCount/totalCount)*100).toFixed(0)}%)</div>
-  </div></div>`;
+  htmlResult += __t("<div style=\"margin-top:14px; padding:16px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid {0}; text-align:center;\">\n    <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Tavsiya Etilgan Modellashtirish Trayektoriyasi:</div>\n    <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n    <div style=\"font-size:0.9rem; color:#4B5464;\">{3}</div>\n    <div style=\"margin-top:8px; font-family:var(--font-mono); font-size:0.95rem; color:{4};\">Natija: {5} / {6} ball ({7}%)</div>\n  </div></div>", [clusterColor, clusterColor, cluster, clusterDesc, clusterColor, correctCount, totalCount, ((correctCount/totalCount)*100).toFixed(0)]);
 
   feedbackEl.innerHTML = htmlResult;
 };
@@ -302,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text = targetEl ? (targetEl.value !== undefined ? targetEl.value : targetEl.innerText) : btn.parentElement.innerText;
       }
       navigator.clipboard.writeText(text).then(() => {
-        window.showToast(window.I18N ? window.I18N.t('ui.promptCopied', null, 'Prompt nusxalandi!') : 'Prompt nusxalandi!');
+        window.showToast(window.I18N ? window.I18N.t('ui.promptCopied', null, 'Prompt nusxalandi!') : __t("Prompt nusxalandi!"));
       });
     });
   });

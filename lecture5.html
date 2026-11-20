@@ -958,9 +958,7 @@ function resolveParticleCollision(p1, p2) {
       }
 
       if (!allAnswered) {
-        feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-          <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-        </div>`;
+        feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n          <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n        </div>", []);
         return;
       }
 
@@ -974,7 +972,7 @@ function resolveParticleCollision(p1, p2) {
 
         htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
           <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#047857' : '#E11D48'};">
-            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? 'To‘g‘ri!' : 'Xato!'}
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? __t("To‘g‘ri!") : __t("Xato!")}
           </div>
           <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${explanations[i - 1]}</div>
         </div>`;

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="Inter, sans-serif">
+  <defs>
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+  </defs>
+  <rect width="900" height="460" fill="#0B0F19"/>
+  <text x="450" y="40" text-anchor="middle" fill="#F8FAFC" font-size="22" font-weight="700">Standard vs Retina High-DPI Canvas Scaling</text>
+
+  <!-- Standard (blurry) -->
+  <text x="220" y="80" text-anchor="middle" fill="#F43F5E" font-size="16" font-weight="700">❌ Standard (assumes DPR = 1)</text>
+  <rect x="70" y="100" width="300" height="220" rx="10" fill="#0F172A" stroke="#F43F5E" stroke-width="2.5"/>
+  <g filter="url(#blurFilter)">
+    <circle cx="220" cy="185" r="55" fill="#38BDF8"/>
+    <text x="220" y="195" text-anchor="middle" fill="#0B0F19" font-size="26" font-weight="700">AI</text>
+  </g>
+  <text x="220" y="300" text-anchor="middle" fill="#FCA5A5" font-size="12">canvas.width = CSS width (e.g. 300px)</text>
+
+  <!-- Retina (sharp) -->
+  <text x="680" y="80" text-anchor="middle" fill="#34D399" font-size="16" font-weight="700">✅ Retina High-DPI (DPR = 2 accounted for)</text>
+  <rect x="530" y="100" width="300" height="220" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="2.5"/>
+  <circle cx="680" cy="185" r="55" fill="#38BDF8"/>
+  <text x="680" y="195" text-anchor="middle" fill="#0B0F19" font-size="26" font-weight="700">AI</text>
+  <text x="680" y="300" text-anchor="middle" fill="#A7F3D0" font-size="12">canvas.width = CSS width × devicePixelRatio (600px)</text>
+
+  <!-- Explanation box -->
+  <rect x="70" y="350" width="760" height="90" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <text x="90" y="376" fill="#FBBF24" font-size="14" font-weight="700">Reason:</text>
+  <text x="90" y="398" fill="#CBD5E1" font-size="13">If pixel density (DPR) is ignored, the browser stretches a low-resolution pixel buffer</text>
+  <text x="90" y="418" fill="#CBD5E1" font-size="13">to the screen size — the image looks blurry. Multiplying the internal buffer by DPR and applying ctx.scale(dpr, dpr) keeps the image sharp.</text>
+</svg>

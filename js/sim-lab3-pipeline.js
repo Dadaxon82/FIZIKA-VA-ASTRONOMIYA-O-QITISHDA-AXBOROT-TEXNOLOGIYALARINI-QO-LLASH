@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * 3-Laboratoriya: AI ekotizimi va virtual ish muhitini sozlash.
  * 1. Diagnostik test → A/B/C klaster, individual reja va shaxsiy prompt.
@@ -32,7 +33,7 @@
           const old = btn.textContent;
           btn.textContent = '✅ Nusxalandi!';
           setTimeout(() => { btn.textContent = old; }, 1500);
-          toast('Prompt nusxalandi!');
+          toast(__t("Prompt nusxalandi!"));
         };
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(text).then(done).catch(() => { target.select(); document.execCommand('copy'); done(); });

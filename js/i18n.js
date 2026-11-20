@@ -544,7 +544,7 @@
   var NOTICE_KEY = 'i18n_coverage_notice_dismissed';
 
   function isPartialPage() {
-    return root.getAttribute('data-i18n-coverage') === 'partial';
+    return root.getAttribute('data-i18n-coverage') === 'partial' && !window.__I18N_FULL_PAGE__;
   }
 
   function hideCoverageNotice() {
@@ -641,6 +641,14 @@
     storageSet(CONFIG.storageKey, lang);
     syncUrl(lang);
     if (lang === previous && state.applied) return Promise.resolve(lang);
+
+    // To'liq tarjima qilingan sahifa: asosiy matn va simulyatsiyalar boshqa
+    // til lug'ati bilan qaytadan quriladi — sahifani qayta yuklash eng ishonchli yo'l.
+    if (window.__I18N_FULL_PAGE__) {
+      root.classList.add('i18n-pending');
+      window.location.reload();
+      return new Promise(function () {});
+    }
 
     return applyLanguage(lang);
   }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1156,9 +1156,9 @@ Python Matplotlib orqali:
 
       const answers = [0, 1, 0]; // Correct indices for Q1, Q2, Q3
       const explanations = [
-        "Agar v_norm > 0 bo‘lsa, jismlar uzoqlashmoqda, shuning uchun impuls qo‘llanmaydi.",
-        "MTV positional correction orqali jismlar normal o‘q bo‘yicha penetratsiyaning yarmiga surilib, sinking xatosi to‘liq bartaraf etiladi.",
-        "Mutlaq noelastik to‘qnashuvda (e = 0) to‘qnashuvdan so‘ng normal bo‘yicha nisbiy tezlik 0 bo‘lib, jismlar birgalikda harakatlanadi."
+        __t("Agar v_norm > 0 bo‘lsa, jismlar uzoqlashmoqda, shuning uchun impuls qo‘llanmaydi."),
+        __t("MTV positional correction orqali jismlar normal o‘q bo‘yicha penetratsiyaning yarmiga surilib, sinking xatosi to‘liq bartaraf etiladi."),
+        __t("Mutlaq noelastik to‘qnashuvda (e = 0) to‘qnashuvdan so‘ng normal bo‘yicha nisbiy tezlik 0 bo‘lib, jismlar birgalikda harakatlanadi.")
       ];
 
       let correctCount = 0;
@@ -1168,14 +1168,11 @@ Python Matplotlib orqali:
       }
 
       if (!allAnswered) {
-        feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-          <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-        </div>`;
+        feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n          <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n        </div>", []);
         return;
       }
 
-      let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 8-ma’ruza vektorlar & to‘qnashuv natijasi:</h4>`;
+      let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 8-ma’ruza vektorlar & to‘qnashuv natijasi:</h4>", []);
 
       for (let i = 1; i <= 3; i++) {
         const userOpt = userAnswers8[i];
@@ -1184,24 +1181,20 @@ Python Matplotlib orqali:
 
         htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
           <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#047857' : '#E11D48'};">
-            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To‘g‘ri!" : "Xato!"}
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? __t("To‘g‘ri!") : __t("Xato!")}
           </div>
           <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${explanations[i - 1]}</div>
         </div>`;
       }
 
-      let badgeName = "Fizika Dasturlash va To‘qnashuvlar Mutaxassisi (To‘liq O‘zlashtirildi)";
+      let badgeName = __t("Fizika Dasturlash va To‘qnashuvlar Mutaxassisi (To‘liq O‘zlashtirildi)");
       let badgeColor = '#047857';
       if (correctCount < 3) {
-        badgeName = "Vektor Mexanikasi Tadqiqotchisi (Qisman O‘zlashtirildi)";
+        badgeName = __t("Vektor Mexanikasi Tadqiqotchisi (Qisman O‘zlashtirildi)");
         badgeColor = '#1C4E9E';
       }
 
-      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${badgeColor}; text-align:center;">
-        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Vektor Dasturlash Kompetensiyangiz:</div>
-        <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${badgeName}</div>
-        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${((correctCount/3)*100).toFixed(0)}%)</div>
-      </div></div>`;
+      htmlResult += __t("<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Vektor Dasturlash Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>", [badgeColor, badgeColor, badgeName, badgeColor, correctCount, ((correctCount/3)*100).toFixed(0)]);
 
       feedbackEl.innerHTML = htmlResult;
     };
