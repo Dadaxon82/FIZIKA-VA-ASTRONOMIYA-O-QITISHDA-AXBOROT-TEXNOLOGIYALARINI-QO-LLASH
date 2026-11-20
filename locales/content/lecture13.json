@@ -1,0 +1,1298 @@
+[
+ {
+  "k": "aa1317da",
+  "s": "13-ma’ruza: Molekulyar fizika va stoxastik termodinamika",
+  "ru": "Лекция 13: Молекулярная физика и стохастическая термодинамика",
+  "en": "Lecture 13: Molecular Physics and Stochastic Thermodynamics"
+ },
+ {
+  "k": "adb5f8c2",
+  "s": "Ideal gaz qonunlari, molekulyar-kinetik nazariya (MKT), Maksvell-Bolsman tezliklar taqsimoti, stoxastik (ehtimoliy) hisoblashlar hamda $P-V$ va $T-S$ sikl faza diagrammalarini to‘liq 5 bosqichli",
+  "ru": "Целостное моделирование законов идеального газа, молекулярно-кинетической теории (МКТ), распределения скоростей Максвелла–Больцмана, стохастических (вероятностных) вычислений, а также фазовых диаграмм циклов $P-V$ и $T-S$ через полный 5-этапный",
+  "en": "Holistic modelling of the ideal gas laws, kinetic molecular theory, the Maxwell–Boltzmann speed distribution, stochastic (probabilistic) computation and $P-V$ and $T-S$ cycle phase diagrams through the complete 5-stage"
+ },
+ {
+  "k": "584d5494",
+  "s": "(PhET/Vascak.cz dekonstruksiyasi → Claude stoxastik dvigateli → ChatGPT Code Interpreter grafiklari → Google Antigravity monitoringi) orqali yaxlit modellashtirish.",
+  "ru": "(деконструкция PhET/Vascak.cz → стохастический движок Claude → графики ChatGPT Code Interpreter → мониторинг Google Antigravity).",
+  "en": "(PhET/Vascak.cz deconstruction → a Claude stochastic engine → ChatGPT Code Interpreter plots → Google Antigravity monitoring)."
+ },
+ {
+  "k": "b96abe06",
+  "s": "📋 13-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:",
+  "ru": "📋 План лекции 13 и полный AI-конвейер:",
+  "en": "📋 Lecture 13 plan and the complete AI pipeline:"
+ },
+ {
+  "k": "8aca7c63",
+  "s": "<strong style=\"color: var(--accent-amber);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD va Blum taksonomiyasi asosida 3 klasterli individual termodinamika trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: индивидуальная траектория по термодинамике из 3 кластеров на основе ЗБР и таксономии Блума.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: an individual 3-cluster thermodynamics pathway based on ZPD and Bloom’s taxonomy.</span>"
+ },
+ {
+  "k": "aa9fc865",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Termodinamika tahlili (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">PhET Gas Properties va Vascak.cz termodinamik modellarini teskari muhandislik bilan dekonstruksiya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Анализ термодинамики (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Деконструкция термодинамических моделей PhET Gas Properties и Vascak.cz методом обратной разработки.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Thermodynamics analysis (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Deconstructing the PhET Gas Properties and Vascak.cz thermodynamic models through reverse engineering.</span>"
+ },
+ {
+  "k": "eec2fca8",
+  "s": "<strong style=\"color: var(--accent-cyan);\">3. Stoxastik dvigatel kodi (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Maksvell-Bolsman tezliklar taqsimoti, Box-Muller algoritmi va 2D elastik to‘qnashuvlar kodi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">3. Код стохастического движка (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Распределение скоростей Максвелла–Больцмана, алгоритм Бокса–Мюллера и код 2D упругих столкновений.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">3. Stochastic engine code (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The Maxwell–Boltzmann speed distribution, the Box–Muller algorithm and 2D elastic collision code.</span>"
+ },
+ {
+  "k": "0bad71d8",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Bosim-hajm (P-V) va harorat-entropiya (T-S) grafiklari (ChatGPT):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter: Izoprotsesslar, Karno va Stirling sikllari hamda termodinamikaning 1- va 2-qonunlari.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Графики давление–объём (P-V) и температура–энтропия (T-S) (ChatGPT):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter: изопроцессы, циклы Карно и Стирлинга, 1-е и 2-е начала термодинамики.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Pressure–volume (P-V) and temperature–entropy (T-S) plots (ChatGPT):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter: isoprocesses, the Carnot and Stirling cycles and the 1st and 2nd laws of thermodynamics.</span>"
+ },
+ {
+  "k": "f26ec6f2",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Jarayon monitoringi (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: $\\chi^2$ taqsimot konvergensiyasi, energiya saqlanish dreyfi va entropiya auditi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Мониторинг процесса (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: сходимость распределения $\\chi^2$, дрейф сохранения энергии и аудит энтропии.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Process monitoring (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: $\\chi^2$ distribution convergence, energy-conservation drift and an entropy audit.</span>"
+ },
+ {
+  "k": "7195604b",
+  "s": "<strong style=\"color:#1C4E9E;\">6 va 7. Sandbox va manbalar:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Dual-Canvas stoxastik gaz va sikl laboratoriyasi, 3 ta kognitiv test va APA 7th manbalar.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6 и 7. Песочница и источники:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Двухканвасная лаборатория стохастического газа и циклов, 3 когнитивных теста и источники APA 7th.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6 and 7. Sandbox and sources:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A dual-canvas stochastic gas and cycle lab, 3 cognitive tests and APA 7th sources.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "6151d661",
+  "s": "MagicSchool AI va Vygotsky ZPD",
+  "ru": "MagicSchool AI и ЗБР Выготского",
+  "en": "MagicSchool AI and Vygotsky’s ZPD"
+ },
+ {
+  "k": "5faa1cfa",
+  "s": "Molekulyar fizika va termodinamika bo‘limini o‘rganishda talabalar ko‘pincha mikroskopik (tasodifiy molekulalar to‘qnashuvi, Maksvell-Bolsman tezlik taqsimoti) va makroskopik (bosim $P$, hajm $V$, harorat $T$, entropiya $S$) kattaliklar o‘rtasidagi bog‘liqlikni tushunishda jiddiy kognitiv qiyinchilikka duch keladilar.",
+  "ru": "При изучении молекулярной физики и термодинамики студенты часто сталкиваются с серьёзными когнитивными трудностями в понимании связи между микроскопическими (случайные столкновения молекул, распределение скоростей Максвелла–Больцмана) и макроскопическими (давление $P$, объём $V$, температура $T$, энтропия $S$) величинами.",
+  "en": "When studying molecular physics and thermodynamics, students often struggle to understand the link between microscopic quantities (random molecular collisions, the Maxwell–Boltzmann speed distribution) and macroscopic ones (pressure $P$, volume $V$, temperature $T$, entropy $S$)."
+ },
+ {
+  "k": "1537b4ce",
+  "s": "MagicSchool AI",
+  "ru": "MagicSchool AI",
+  "en": "MagicSchool AI"
+ },
+ {
+  "k": "8648538b",
+  "s": "yordamida",
+  "ru": "с помощью",
+  "en": "with"
+ },
+ {
+  "k": "1d42420c",
+  "s": "va Blum taksonomiyasi asosida 3 ta kognitiv klaster bo‘yicha individual trayektoriya shakllantiriladi:",
+  "ru": "и таксономии Блума формируется индивидуальная траектория по 3 когнитивным кластерам:",
+  "en": "and Bloom’s taxonomy, an individual pathway is built across 3 cognitive clusters:"
+ },
+ {
+  "k": "ffac70bc",
+  "s": "3 Kognitiv klaster bo‘yicha individual termodinamika trayektoriyasi:",
+  "ru": "Индивидуальная траектория по термодинамике по 3 когнитивным кластерам:",
+  "en": "Individual thermodynamics pathway across 3 cognitive clusters:"
+ },
+ {
+  "k": "6b5c319d",
+  "s": "Ideal gaz qonunlari ($PV = \\nu RT$), Mendeleyev-Klapeyron tenglamasi va izoprotsesslarni ($T=\\text{const}$, $V=\\text{const}$, $P=\\text{const}$) o‘zlashtiruvchi daraja.",
+  "ru": "Уровень освоения законов идеального газа ($PV = \\nu RT$), уравнения Менделеева–Клапейрона и изопроцессов ($T=\\text{const}$, $V=\\text{const}$, $P=\\text{const}$).",
+  "en": "The level that masters the ideal gas laws ($PV = \\nu RT$), the Mendeleev–Clapeyron equation and isoprocesses ($T=\\text{const}$, $V=\\text{const}$, $P=\\text{const}$)."
+ },
+ {
+  "k": "2b9b28ea",
+  "s": "PhET Gas Properties orqali bosimning molekulalar urilish soniga bog‘liqligini ko‘rish va 1-darajali hisoblash mashqlari.",
+  "ru": "Наблюдение зависимости давления от числа ударов молекул через PhET Gas Properties и вычислительные упражнения 1-го уровня.",
+  "en": "Seeing how pressure depends on the number of molecular impacts in PhET Gas Properties, plus level-1 calculation exercises."
+ },
+ {
+  "k": "2f53758c",
+  "s": "Maksvell-Bolsman tezlik taqsimoti, $v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}$ va termodinamikaning 1-qonunini ($Q = \\Delta U + A$) hisoblay oluvchi daraja.",
+  "ru": "Уровень, умеющий вычислять распределение скоростей Максвелла–Больцмана, $v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}$ и 1-е начало термодинамики ($Q = \\Delta U + A$).",
+  "en": "The level that can compute the Maxwell–Boltzmann speed distribution, $v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}$ and the 1st law of thermodynamics ($Q = \\Delta U + A$)."
+ },
+ {
+  "k": "f9b80694",
+  "s": "Claude bilan Box-Muller stoxastik algoritmi kodi, $P-V$ egri chiziq ostidagi yuzani integrallash va Karno F.I.K. hisoblash.",
+  "ru": "Код стохастического алгоритма Бокса–Мюллера с Claude, интегрирование площади под кривой $P-V$ и расчёт КПД цикла Карно.",
+  "en": "Box–Muller stochastic algorithm code with Claude, integrating the area under the $P-V$ curve and computing the Carnot efficiency."
+ },
+ {
+  "k": "f935515a",
+  "s": "Stoxastik fluktuatsiyalar, Bolsman $H$-teoremasi, entropiya o‘sish qonuni ($\\mathrm{d}S \\ge 0$) va $T-S$ faza fazosi tahlili.",
+  "ru": "Стохастические флуктуации, $H$-теорема Больцмана, закон возрастания энтропии ($\\mathrm{d}S \\ge 0$) и анализ фазового пространства $T-S$.",
+  "en": "Stochastic fluctuations, Boltzmann’s $H$-theorem, the law of entropy increase ($\\mathrm{d}S \\ge 0$) and $T-S$ phase-space analysis."
+ },
+ {
+  "k": "57ff4ed2",
+  "s": "ChatGPT Code Interpreter orqali faza trayektoriyalari, Google Antigravity monitoringida $\\chi^2$ taqsimot auditi.",
+  "ru": "Фазовые траектории через ChatGPT Code Interpreter, аудит распределения $\\chi^2$ в мониторинге Google Antigravity.",
+  "en": "Phase trajectories with ChatGPT Code Interpreter and a $\\chi^2$ distribution audit in Google Antigravity monitoring."
+ },
+ {
+  "k": "fbc55c5e",
+  "s": "Garrison, D. R., Anderson, T., va Archer, W. (2000).",
+  "ru": "Garrison, D. R., Anderson, T., & Archer, W. (2000).",
+  "en": "Garrison, D. R., Anderson, T., & Archer, W. (2000)."
+ },
+ {
+  "k": "3d4ae04f",
+  "s": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education",
+  "ru": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education",
+  "en": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education"
+ },
+ {
+  "k": "0de3997a",
+  "s": ". The Internet and Higher Education, 2(2-3), 87-105.",
+  "ru": ". The Internet and Higher Education, 2(2-3), 87-105.",
+  "en": ". The Internet and Higher Education, 2(2-3), 87-105."
+ },
+ {
+  "k": "e2a797b7",
+  "s": "https://doi.org/10.1016/S1096-7516(00)00016-6",
+  "ru": "https://doi.org/10.1016/S1096-7516(00)00016-6",
+  "en": "https://doi.org/10.1016/S1096-7516(00)00016-6"
+ },
+ {
+  "k": "1ff67e8f",
+  "s": "Talabaning mustaqil tadqiqot olib borishi uchun kognitiv va pedagogik hozirlik muhitini sun’iy intellekt agentlari orqali individual diagnostika bilan ta’minlash o‘zlashtirish samaradorligini 2.8 baravarga oshiradi.",
+  "ru": "Обеспечение среды когнитивного и педагогического присутствия для самостоятельного исследования студента с индивидуальной диагностикой через агентов искусственного интеллекта повышает эффективность освоения в 2.8 раза.",
+  "en": "Providing a cognitive and teaching-presence environment for independent student research, with individual diagnostics by AI agents, increases learning effectiveness 2.8-fold."
+ },
+ {
+  "k": "d7f94983",
+  "s": "2. Termodinamika simulyatsiyalari tahlili: PhET va Vascak.cz",
+  "ru": "2. Анализ симуляций термодинамики: PhET и Vascak.cz",
+  "en": "2. Analysing thermodynamics simulations: PhET and Vascak.cz"
+ },
+ {
+  "k": "5e90f4d6",
+  "s": "Teskari muhandislik va MKT dekonstruksiyasi",
+  "ru": "Обратная разработка и деконструкция МКТ",
+  "en": "Reverse engineering and kinetic-theory deconstruction"
+ },
+ {
+  "k": "307ffc86",
+  "s": "Fizika dasturlashni boshlashdan oldin talaba tayyor professional simulyatsiyalarni (",
+  "ru": "Прежде чем начинать программировать физику, студент деконструирует готовые профессиональные симуляции (",
+  "en": "Before starting to program physics, the student deconstructs ready-made professional simulations ("
+ },
+ {
+  "k": "b5a8976c",
+  "s": "PhET Interactive Simulations",
+  "ru": "PhET Interactive Simulations",
+  "en": "PhET Interactive Simulations"
+ },
+ {
+  "k": "fbfdf0b3",
+  "s": "Gas Properties",
+  "ru": "Gas Properties",
+  "en": "Gas Properties"
+ },
+ {
+  "k": "7726d415",
+  "s": "States of Matter",
+  "ru": "States of Matter",
+  "en": "States of Matter"
+ },
+ {
+  "k": "6c2e448e",
+  "s": "hamda",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "2fd1f033",
+  "s": "Vascak.cz Physics Animations",
+  "ru": "Vascak.cz Physics Animations",
+  "en": "Vascak.cz Physics Animations"
+ },
+ {
+  "k": "434de50c",
+  "s": "Carnot Cycle",
+  "ru": "Carnot Cycle",
+  "en": "Carnot Cycle"
+ },
+ {
+  "k": "f1d810fe",
+  "s": "Iso-processes",
+  "ru": "Iso-processes",
+  "en": "Iso-processes"
+ },
+ {
+  "k": "1ab77b01",
+  "s": ") 2-ma’ruzada o‘rganilgan",
+  "ru": ") с помощью изученной в лекции 2",
+  "en": ") using the"
+ },
+ {
+  "k": "b5dab0e6",
+  "s": "metodologiyasi yordamida dekonstruksiya qiladi:",
+  "ru": "деконструирует с помощью методологии:",
+  "en": "deconstructs using the methodology:"
+ },
+ {
+  "k": "5becff49",
+  "s": "1. PhET \"Gas Properties\" modeli dekonstruksiyasi",
+  "ru": "1. Деконструкция модели PhET \"Gas Properties\"",
+  "en": "1. Deconstructing the PhET \"Gas Properties\" model"
+ },
+ {
+  "k": "d6c920b6",
+  "s": "• <strong>Mikroskopik bosim mexanizmi:</strong> Gaz bosimi datchigi vaqt birligi ichida idish devorlariga urilgan zarrachalarning impuls uzatish integrali orqali hisoblanadi: $$\\bar{P} = \\frac{\\sum_{i} 2 m |v_{x,i}|}{A \\cdot \\Delta t}$$ • <strong>Harorat va tezlik masshtabi:</strong> Idish tagidagi isitgich/sovutgich zarrachalar tezligini termal faktor bilan yangilaydi: $$v_{new} = v_{old} \\cdot \\sqrt{\\frac{T_{target}}{T_{current}}}$$",
+  "ru": "• <strong>Микроскопический механизм давления:</strong> датчик давления газа вычисляет его через интеграл переданного импульса частиц, ударившихся о стенки сосуда за единицу времени: $$\\bar{P} = \\frac{\\sum_{i} 2 m |v_{x,i}|}{A \\cdot \\Delta t}$$ • <strong>Масштаб температуры и скорости:</strong> нагреватель/охладитель на дне сосуда обновляет скорости частиц термическим множителем: $$v_{new} = v_{old} \\cdot \\sqrt{\\frac{T_{target}}{T_{current}}}$$",
+  "en": "• <strong>Microscopic pressure mechanism:</strong> the gas pressure sensor computes it from the integral of the momentum transferred by particles hitting the container walls per unit time: $$\\bar{P} = \\frac{\\sum_{i} 2 m |v_{x,i}|}{A \\cdot \\Delta t}$$ • <strong>Temperature and speed scaling:</strong> the heater/cooler at the bottom of the container updates particle speeds by a thermal factor: $$v_{new} = v_{old} \\cdot \\sqrt{\\frac{T_{target}}{T_{current}}}$$"
+ },
+ {
+  "k": "ee291c92",
+  "s": "2. Vascak.cz \"Carnot va Cycles\" dekonstruksiyasi",
+  "ru": "2. Деконструкция Vascak.cz \"Carnot и Cycles\"",
+  "en": "2. Deconstructing Vascak.cz \"Carnot and Cycles\""
+ },
+ {
+  "k": "da348587",
+  "s": "• <strong>Izoprotsesslar va sikllar:</strong> Porshen harakati va $P-V$ egri chiziqlari Puasson tenglamasi ($PV^\\gamma = \\text{const}$) va Boyl–Mariott qonuni ($PV = \\text{const}$) bilan boshqariladi.<br> • <strong>Karno sikli F.I.K.:</strong> $$\\eta_{max} = 1 - \\frac{T_C}{T_H} = \\frac{A_{net}}{Q_H}$$",
+  "ru": "• <strong>Изопроцессы и циклы:</strong> движение поршня и кривые $P-V$ управляются уравнением Пуассона ($PV^\\gamma = \\text{const}$) и законом Бойля–Мариотта ($PV = \\text{const}$).<br> • <strong>КПД цикла Карно:</strong> $$\\eta_{max} = 1 - \\frac{T_C}{T_H} = \\frac{A_{net}}{Q_H}$$",
+  "en": "• <strong>Isoprocesses and cycles:</strong> the piston motion and the $P-V$ curves are governed by Poisson’s equation ($PV^\\gamma = \\text{const}$) and the Boyle–Mariotte law ($PV = \\text{const}$).<br> • <strong>Carnot cycle efficiency:</strong> $$\\eta_{max} = 1 - \\frac{T_C}{T_H} = \\frac{A_{net}}{Q_H}$$"
+ },
+ {
+  "k": "e79b60e8",
+  "s": "📊 Termodinamika teskari muhandislik matritsasi:",
+  "ru": "📊 Матрица обратной разработки термодинамики:",
+  "en": "📊 Thermodynamics reverse-engineering matrix:"
+ },
+ {
+  "k": "648c509a",
+  "s": "Harorat Termometri",
+  "ru": "Термометр",
+  "en": "Thermometer"
+ },
+ {
+  "k": "bfbd7a80",
+  "s": "Harorat $T$ (Kelvin)",
+  "ru": "Температура $T$ (кельвины)",
+  "en": "Temperature $T$ (kelvin)"
+ },
+ {
+  "k": "e1ffc273",
+  "s": "$\\sigma = \\sqrt{\\frac{k_B T}{m}}$, $v_{rms} = \\sqrt{\\frac{2 k_B T}{m}}$",
+  "ru": "$\\sigma = \\sqrt{\\frac{k_B T}{m}}$, $v_{rms} = \\sqrt{\\frac{2 k_B T}{m}}$",
+  "en": "$\\sigma = \\sqrt{\\frac{k_B T}{m}}$, $v_{rms} = \\sqrt{\\frac{2 k_B T}{m}}$"
+ },
+ {
+  "k": "c0f1c650",
+  "s": "const sigma = Math.sqrt((kB*T)/m);",
+  "ru": "const sigma = Math.sqrt((kB*T)/m);",
+  "en": "const sigma = Math.sqrt((kB*T)/m);"
+ },
+ {
+  "k": "10b72905",
+  "s": "Porshen Slayderi",
+  "ru": "Ползунок поршня",
+  "en": "Piston slider"
+ },
+ {
+  "k": "d3067b6b",
+  "s": "Hajm $V$ (Litr)",
+  "ru": "Объём $V$ (литры)",
+  "en": "Volume $V$ (litres)"
+ },
+ {
+  "k": "b39baf7c",
+  "s": "$P = \\frac{N k_B T}{V}$, $V = A \\cdot h$",
+  "ru": "$P = \\frac{N k_B T}{V}$, $V = A \\cdot h$",
+  "en": "$P = \\frac{N k_B T}{V}$, $V = A \\cdot h$"
+ },
+ {
+  "k": "97d90a14",
+  "s": "this.pistonY += (targetY - this.pistonY)*0.08;",
+  "ru": "this.pistonY += (targetY - this.pistonY)*0.08;",
+  "en": "this.pistonY += (targetY - this.pistonY)*0.08;"
+ },
+ {
+  "k": "796e366d",
+  "s": "Manometr Datchigi",
+  "ru": "Датчик манометра",
+  "en": "Pressure gauge sensor"
+ },
+ {
+  "k": "59cbbd3c",
+  "s": "Bosim $P$ (kPa)",
+  "ru": "Давление $P$ (кПа)",
+  "en": "Pressure $P$ (kPa)"
+ },
+ {
+  "k": "3ab7887c",
+  "s": "$P = \\frac{\\sum 2 m |v_x|}{A \\cdot \\Delta t}$",
+  "ru": "$P = \\frac{\\sum 2 m |v_x|}{A \\cdot \\Delta t}$",
+  "en": "$P = \\frac{\\sum 2 m |v_x|}{A \\cdot \\Delta t}$"
+ },
+ {
+  "k": "d9f51cea",
+  "s": "this.measuredPressure = (wallImpulses/areaDt)*0.12;",
+  "ru": "this.measuredPressure = (wallImpulses/areaDt)*0.12;",
+  "en": "this.measuredPressure = (wallImpulses/areaDt)*0.12;"
+ },
+ {
+  "k": "50b3973a",
+  "s": "Sikl Integratori",
+  "ru": "Интегратор цикла",
+  "en": "Cycle integrator"
+ },
+ {
+  "k": "186b50ec",
+  "s": "Foydali Ish $A_{net}$",
+  "ru": "Полезная работа $A_{net}$",
+  "en": "Useful work $A_{net}$"
+ },
+ {
+  "k": "bf8bee16",
+  "s": "$A = \\oint P \\mathrm{d}V = \\nu R (T_H - T_C)\\ln(V_2/V_1)$",
+  "ru": "$A = \\oint P \\mathrm{d}V = \\nu R (T_H - T_C)\\ln(V_2/V_1)$",
+  "en": "$A = \\oint P \\mathrm{d}V = \\nu R (T_H - T_C)\\ln(V_2/V_1)$"
+ },
+ {
+  "k": "25eb0c70",
+  "s": "const eta = (1 - Tc/Th)*100;",
+  "ru": "const eta = (1 - Tc/Th)*100;",
+  "en": "const eta = (1 - Tc/Th)*100;"
+ },
+ {
+  "k": "0f40db2e",
+  "s": "Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).",
+  "ru": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).",
+  "en": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008)."
+ },
+ {
+  "k": "acacd01d",
+  "s": "PhET: Simulations That Enhance Learning",
+  "ru": "PhET: Simulations That Enhance Learning",
+  "en": "PhET: Simulations That Enhance Learning"
+ },
+ {
+  "k": "213ce8a7",
+  "s": ". Science, 322(5902), 682-683.",
+  "ru": ". Science, 322(5902), 682-683.",
+  "en": ". Science, 322(5902), 682-683."
+ },
+ {
+  "k": "dbf0609b",
+  "s": "https://doi.org/10.1126/science.1161948",
+  "ru": "https://doi.org/10.1126/science.1161948",
+  "en": "https://doi.org/10.1126/science.1161948"
+ },
+ {
+  "k": "49cf7d01",
+  "s": "PhET interaktiv simulyatsiyalari talabalarga ko‘rinmas mikroskopik fizik kattaliklarni (molekulalar to‘qnashuvi, tezlik taqsimoti, bosim oqimi) bevosita vizual boshqarish va ilmiy gipotezalarni tezkor tekshirish imkonini beradi.",
+  "ru": "Интерактивные симуляции PhET позволяют студентам напрямую визуально управлять невидимыми микроскопическими физическими величинами (столкновения молекул, распределение скоростей, поток давления) и быстро проверять научные гипотезы.",
+  "en": "PhET interactive simulations let students control invisible microscopic physical quantities (molecular collisions, the speed distribution, pressure flux) visually and directly and test scientific hypotheses quickly."
+ },
+ {
+  "k": "60ebd74e",
+  "s": "3. Stoxastik jarayonlar simulyatsiyasi kodi: Claude",
+  "ru": "3. Код симуляции стохастических процессов: Claude",
+  "en": "3. Stochastic process simulation code: Claude"
+ },
+ {
+  "k": "af7c1c57",
+  "s": "Box-Muller transform, Maxwell-Boltzmann va elastic ensemble",
+  "ru": "Преобразование Бокса–Мюллера, Максвелл–Больцман и упругий ансамбль",
+  "en": "The Box–Muller transform, Maxwell–Boltzmann and an elastic ensemble"
+ },
+ {
+  "k": "76eb9d8c",
+  "s": "Termodinamikada molekulalarning tartibsiz issiqlik harakatini modellashtirish uchun oddiy tekis tasodifiy sonlar yetarli emas. <strong>Claude</strong> bilan \"Juftlikda dasturlash\" sessiyasida <strong>Box-Muller algoritmi</strong> orqali 2D Maksvell-Bolsman tezlik taqsimotini shakllantiruvchi yuqori unumdor stoxastik dvigatel kodi yoziladi:",
+  "ru": "Для моделирования хаотического теплового движения молекул в термодинамике простых равномерно распределённых случайных чисел недостаточно. В сессии «парного программирования» с <strong>Claude</strong> пишется высокопроизводительный стохастический движок, формирующий 2D-распределение скоростей Максвелла–Больцмана через <strong>алгоритм Бокса–Мюллера</strong>:",
+  "en": "Uniform random numbers are not enough to model the chaotic thermal motion of molecules. In a pair-programming session with <strong>Claude</strong>, a high-performance stochastic engine is written that produces a 2D Maxwell–Boltzmann speed distribution with the <strong>Box–Muller algorithm</strong>:"
+ },
+ {
+  "k": "0e8d238d",
+  "s": "📐 Box-Muller transformatsiyasi va 2D Maksvell taqsimoti:",
+  "ru": "📐 Преобразование Бокса–Мюллера и 2D-распределение Максвелла:",
+  "en": "📐 The Box–Muller transform and the 2D Maxwell distribution:"
+ },
+ {
+  "k": "2e36c46c",
+  "s": "Ikkita mustaqil tekis taqsimlangan $u_1, u_2 \\in (0, 1]$ sonlaridan nol o‘rtacha qiymatli va $\\sigma = \\sqrt{\\frac{k_B T}{m}}$ dispersiyali normal (Gaus) tasodifiy sonlar generatsiya qilinadi:",
+  "ru": "Из двух независимых равномерно распределённых чисел $u_1, u_2 \\in (0, 1]$ генерируются нормальные (гауссовы) случайные числа с нулевым средним и дисперсией $\\sigma = \\sqrt{\\frac{k_B T}{m}}$:",
+  "en": "Two independent uniformly distributed numbers $u_1, u_2 \\in (0, 1]$ are turned into normal (Gaussian) random numbers with zero mean and variance $\\sigma = \\sqrt{\\frac{k_B T}{m}}$:"
+ },
+ {
+  "k": "d61e9cdb",
+  "s": "$$z_0 = \\sqrt{-2 \\ln u_1} \\cos(2\\pi u_2) \\cdot \\sigma, \\qquad z_1 = \\sqrt{-2 \\ln u_1} \\sin(2\\pi u_2) \\cdot \\sigma$$",
+  "ru": "$$z_0 = \\sqrt{-2 \\ln u_1} \\cos(2\\pi u_2) \\cdot \\sigma, \\qquad z_1 = \\sqrt{-2 \\ln u_1} \\sin(2\\pi u_2) \\cdot \\sigma$$",
+  "en": "$$z_0 = \\sqrt{-2 \\ln u_1} \\cos(2\\pi u_2) \\cdot \\sigma, \\qquad z_1 = \\sqrt{-2 \\ln u_1} \\sin(2\\pi u_2) \\cdot \\sigma$$"
+ },
+ {
+  "k": "e0117dbe",
+  "s": "Natijada zarrachalar tezligi $v = \\sqrt{v_x^2 + v_y^2}$ analitik 2D Maksvell-Bolsman (Rayleigh) taqsimotiga qat’iy bo‘ysunadi:",
+  "ru": "В результате скорости частиц $v = \\sqrt{v_x^2 + v_y^2}$ строго подчиняются аналитическому 2D-распределению Максвелла–Больцмана (Рэлея):",
+  "en": "As a result the particle speeds $v = \\sqrt{v_x^2 + v_y^2}$ strictly follow the analytical 2D Maxwell–Boltzmann (Rayleigh) distribution:"
+ },
+ {
+  "k": "96afa37f",
+  "s": "$$f(v) = \\frac{m}{k_B T} v \\exp\\left( -\\frac{m v^2}{2 k_B T} \\right)$$",
+  "ru": "$$f(v) = \\frac{m}{k_B T} v \\exp\\left( -\\frac{m v^2}{2 k_B T} \\right)$$",
+  "en": "$$f(v) = \\frac{m}{k_B T} v \\exp\\left( -\\frac{m v^2}{2 k_B T} \\right)$$"
+ },
+ {
+  "k": "b5928ce0",
+  "s": "<span>Kod</span>",
+  "ru": "<span>Код</span>",
+  "en": "<span>Code</span>"
+ },
+ {
+  "k": "69c15875",
+  "s": "<code>// ============================================================================ // 13-ma’ruza: Claude Stoxastik Termodinamika Dvigateli Kodi // ============================================================================ // 1. Box-Muller Transformatsiyasi: Normal (Gaus) tasodifiy sonlar function randomGaussian(mean = 0, stdev = 1) { const u1 = Math.max(1e-7, 1 - Math.random()); const u2 = Math.random(); const z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2); return z0 * stdev + mean; } // 2. Maksvell-Bolsman ansamblini harorat T bo‘yicha initsializatsiya qilish function createThermalGasEnsemble(N, T, kB, mass, width, height, topY) { const particles = []; const sigma = Math.sqrt((kB * T) / mass) * 22; for (let i = 0; i &lt; N; i++) { particles.push({ x: 15 + Math.random() * (width - 30), y: topY + 15 + Math.random() * (height - topY - 30), vx: randomGaussian(0, sigma), vy: randomGaussian(0, sigma), radius: 3.5, mass: mass }); } return particles; } // 3. Devorlar va porshen bilan elastik to‘qnashuv impulslari function updateGasWallCollisions(particle, left, right, top, bottom, dt) { let impulse = 0; particle.x += particle.vx * dt * 60; particle.y += particle.vy * dt * 60; if (particle.x - particle.radius &lt; left) { particle.x = left + particle.radius; particle.vx = -particle.vx; impulse += 2 * particle.mass * Math.abs(particle.vx); } if (particle.x + particle.radius &gt; right) { particle.x = right - particle.radius; particle.vx = -particle.vx; impulse += 2 * particle.mass * Math.abs(particle.vx); } if (particle.y - particle.radius &lt; top) { particle.y = top + particle.radius; particle.vy = -particle.vy; impulse += 2 * particle.mass * Math.abs(particle.vy); } if (particle.y + particle.radius &gt; bottom) { particle.y = bottom - particle.radius; particle.vy = -particle.vy; impulse += 2 * particle.mass * Math.abs(particle.vy); } return impulse; }</code>",
+  "ru": "<code>// ============================================================================ // Лекция 13: код стохастического термодинамического движка Claude // ============================================================================ // 1. Преобразование Бокса–Мюллера: нормальные (гауссовы) случайные числа function randomGaussian(mean = 0, stdev = 1) { const u1 = Math.max(1e-7, 1 - Math.random()); const u2 = Math.random(); const z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2); return z0 * stdev + mean; } // 2. Инициализация ансамбля Максвелла–Больцмана по температуре T function createThermalGasEnsemble(N, T, kB, mass, width, height, topY) { const particles = []; const sigma = Math.sqrt((kB * T) / mass) * 22; for (let i = 0; i &lt; N; i++) { particles.push({ x: 15 + Math.random() * (width - 30), y: topY + 15 + Math.random() * (height - topY - 30), vx: randomGaussian(0, sigma), vy: randomGaussian(0, sigma), radius: 3.5, mass: mass }); } return particles; } // 3. Импульсы упругих столкновений со стенками и поршнем function updateGasWallCollisions(particle, left, right, top, bottom, dt) { let impulse = 0; particle.x += particle.vx * dt * 60; particle.y += particle.vy * dt * 60; if (particle.x - particle.radius &lt; left) { particle.x = left + particle.radius; particle.vx = -particle.vx; impulse += 2 * particle.mass * Math.abs(particle.vx); } if (particle.x + particle.radius &gt; right) { particle.x = right - particle.radius; particle.vx = -particle.vx; impulse += 2 * particle.mass * Math.abs(particle.vx); } if (particle.y - particle.radius &lt; top) { particle.y = top + particle.radius; particle.vy = -particle.vy; impulse += 2 * particle.mass * Math.abs(particle.vy); } if (particle.y + particle.radius &gt; bottom) { particle.y = bottom - particle.radius; particle.vy = -particle.vy; impulse += 2 * particle.mass * Math.abs(particle.vy); } return impulse; }</code>",
+  "en": "<code>// ============================================================================ // Lecture 13: Claude stochastic thermodynamics engine code // ============================================================================ // 1. Box–Muller transform: normal (Gaussian) random numbers function randomGaussian(mean = 0, stdev = 1) { const u1 = Math.max(1e-7, 1 - Math.random()); const u2 = Math.random(); const z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2); return z0 * stdev + mean; } // 2. Initialise a Maxwell–Boltzmann ensemble at temperature T function createThermalGasEnsemble(N, T, kB, mass, width, height, topY) { const particles = []; const sigma = Math.sqrt((kB * T) / mass) * 22; for (let i = 0; i &lt; N; i++) { particles.push({ x: 15 + Math.random() * (width - 30), y: topY + 15 + Math.random() * (height - topY - 30), vx: randomGaussian(0, sigma), vy: randomGaussian(0, sigma), radius: 3.5, mass: mass }); } return particles; } // 3. Elastic collision impulses with the walls and the piston function updateGasWallCollisions(particle, left, right, top, bottom, dt) { let impulse = 0; particle.x += particle.vx * dt * 60; particle.y += particle.vy * dt * 60; if (particle.x - particle.radius &lt; left) { particle.x = left + particle.radius; particle.vx = -particle.vx; impulse += 2 * particle.mass * Math.abs(particle.vx); } if (particle.x + particle.radius &gt; right) { particle.x = right - particle.radius; particle.vx = -particle.vx; impulse += 2 * particle.mass * Math.abs(particle.vx); } if (particle.y - particle.radius &lt; top) { particle.y = top + particle.radius; particle.vy = -particle.vy; impulse += 2 * particle.mass * Math.abs(particle.vy); } if (particle.y + particle.radius &gt; bottom) { particle.y = bottom - particle.radius; particle.vy = -particle.vy; impulse += 2 * particle.mass * Math.abs(particle.vy); } return impulse; }</code>"
+ },
+ {
+  "k": "a062c8ba",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Statistik Mexanika Asosi (3-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы статистической механики (раздел 3):",
+  "en": "🌐 WWW scholarly sources and statistical mechanics basis (Section 3):"
+ },
+ {
+  "k": "01e970b7",
+  "s": "Feynman, R. P., Leighton, R. B., va Sands, M. (2011).",
+  "ru": "Feynman, R. P., Leighton, R. B., & Sands, M. (2011).",
+  "en": "Feynman, R. P., Leighton, R. B., & Sands, M. (2011)."
+ },
+ {
+  "k": "0f20b4fb",
+  "s": "The Feynman Lectures on Physics, Vol. I: The New Millennium Edition: Mainly Mechanics, Radiation, and Heat",
+  "ru": "The Feynman Lectures on Physics, Vol. I: The New Millennium Edition: Mainly Mechanics, Radiation, and Heat",
+  "en": "The Feynman Lectures on Physics, Vol. I: The New Millennium Edition: Mainly Mechanics, Radiation, and Heat"
+ },
+ {
+  "k": "90c4a919",
+  "s": ". Basic Books.",
+  "ru": ". Basic Books.",
+  "en": ". Basic Books."
+ },
+ {
+  "k": "6eaf20f2",
+  "s": "https://www.feynmanlectures.caltech.edu/I_39.html",
+  "ru": "https://www.feynmanlectures.caltech.edu/I_39.html",
+  "en": "https://www.feynmanlectures.caltech.edu/I_39.html"
+ },
+ {
+  "k": "d01a092e",
+  "s": "Gaz molekulalarining mikroskopik kinetik energiyasi makroskopik harorat va bosimning yagona fizik manbaidir; stoxastik taqsimot termodinamik muvozanatning fundamental poydevoridir.",
+  "ru": "Микроскопическая кинетическая энергия молекул газа — единственный физический источник макроскопических температуры и давления; стохастическое распределение — фундаментальная основа термодинамического равновесия.",
+  "en": "The microscopic kinetic energy of gas molecules is the sole physical source of macroscopic temperature and pressure; the stochastic distribution is the fundamental basis of thermodynamic equilibrium."
+ },
+ {
+  "k": "7cdb25cd",
+  "s": "4. Bosim – hajm (P-V) va harorat – entropiya (T-S) grafiklarini chizish: ChatGPT (Code Interpreter)",
+  "ru": "4. Построение графиков давление – объём (P-V) и температура – энтропия (T-S): ChatGPT (Code Interpreter)",
+  "en": "4. Plotting pressure–volume (P-V) and temperature–entropy (T-S) diagrams: ChatGPT (Code Interpreter)"
+ },
+ {
+  "k": "db1c7e69",
+  "s": "Phase space, Carnot efficiency va entropy planes",
+  "ru": "Фазовое пространство, КПД Карно и плоскости энтропии",
+  "en": "Phase space, Carnot efficiency and entropy planes"
+ },
+ {
+  "k": "78d01aaa",
+  "s": "Termodinamik sikllarning (Karno, Stirling, Otto, Dizel) foydali ish koeffitsiyentini tahlil qilishda holat diagrammalari eng kuchli analitik vosita hisoblanadi. <strong>ChatGPT Code Interpreter (Advanced Data Analysis)</strong> yordamida $P-V$ (Bosim-Hajm) va $T-S$ (Harorat-Entropiya) faza fazosi egri chiziqlari aniq matematik integrallanadi:",
+  "ru": "При анализе КПД термодинамических циклов (Карно, Стирлинга, Отто, Дизеля) диаграммы состояния — самый мощный аналитический инструмент. С помощью <strong>ChatGPT Code Interpreter (Advanced Data Analysis)</strong> кривые фазового пространства $P-V$ (давление–объём) и $T-S$ (температура–энтропия) точно интегрируются математически:",
+  "en": "State diagrams are the most powerful analytical tool for analysing the efficiency of thermodynamic cycles (Carnot, Stirling, Otto, Diesel). With <strong>ChatGPT Code Interpreter (Advanced Data Analysis)</strong>, the $P-V$ (pressure–volume) and $T-S$ (temperature–entropy) phase-space curves are integrated precisely:"
+ },
+ {
+  "k": "0a773aa4",
+  "s": "📈 Bosim – hajm ($P-V$) tekisligi va bajarilgan ish ($A$)",
+  "ru": "📈 Плоскость давление – объём ($P-V$) и совершённая работа ($A$)",
+  "en": "📈 The pressure–volume ($P-V$) plane and work done ($A$)"
+ },
+ {
+  "k": "33207b36",
+  "s": "• Yopiq siklda bajarilgan to‘liq foydali ish egri chiziq bilan chegaralangan maydonga teng: $$A_{sikl} = \\oint P \\, \\mathrm{d}V$$ • <strong>Karno sikli:</strong> $A_{net} = \\nu R (T_H - T_C)\\ln\\left(\\frac{V_2}{V_1}\\right)$<br> • <strong>Izotermik ish:</strong> $A_{12} = \\nu R T_H \\ln\\left(\\frac{V_2}{V_1}\\right)$<br> • <strong>Adiabatik ish:</strong> $A_{23} = \\frac{\\nu R}{\\gamma - 1}(T_H - T_C)$",
+  "ru": "• Полная полезная работа за замкнутый цикл равна площади, ограниченной кривой: $$A_{sikl} = \\oint P \\, \\mathrm{d}V$$ • <strong>Цикл Карно:</strong> $A_{net} = \\nu R (T_H - T_C)\\ln\\left(\\frac{V_2}{V_1}\\right)$<br> • <strong>Изотермическая работа:</strong> $A_{12} = \\nu R T_H \\ln\\left(\\frac{V_2}{V_1}\\right)$<br> • <strong>Адиабатическая работа:</strong> $A_{23} = \\frac{\\nu R}{\\gamma - 1}(T_H - T_C)$",
+  "en": "• The total useful work in a closed cycle equals the area enclosed by the curve: $$A_{sikl} = \\oint P \\, \\mathrm{d}V$$ • <strong>Carnot cycle:</strong> $A_{net} = \\nu R (T_H - T_C)\\ln\\left(\\frac{V_2}{V_1}\\right)$<br> • <strong>Isothermal work:</strong> $A_{12} = \\nu R T_H \\ln\\left(\\frac{V_2}{V_1}\\right)$<br> • <strong>Adiabatic work:</strong> $A_{23} = \\frac{\\nu R}{\\gamma - 1}(T_H - T_C)$"
+ },
+ {
+  "k": "a5e85001",
+  "s": "🌡 Harorat – entropiya ($T-S$) tekisligi va entropiya ($S$)",
+  "ru": "🌡 Плоскость температура – энтропия ($T-S$) и энтропия ($S$)",
+  "en": "🌡 The temperature–entropy ($T-S$) plane and entropy ($S$)"
+ },
+ {
+  "k": "fbdd1cbc",
+  "s": "• Termodinamikaning 2-qonuni va Klauzius tengsizligi bo‘yicha entropiya o‘zgarishi: $$\\mathrm{d}S = \\frac{\\delta Q_{qayt}}{T}, \\qquad Q_{sikl} = \\oint T \\, \\mathrm{d}S$$ • $T-S$ tekisligida Karno sikli mukammal to‘g‘ri to‘rtburchak shaklini oladi.<br> • Gorizontal chiziqlar: Izotermalar ($T=\\text{const}$); vertikal chiziqlar: Izoentropalar ($S=\\text{const}$).",
+  "ru": "• Изменение энтропии по 2-му началу термодинамики и неравенству Клаузиуса: $$\\mathrm{d}S = \\frac{\\delta Q_{qayt}}{T}, \\qquad Q_{sikl} = \\oint T \\, \\mathrm{d}S$$ • На плоскости $T-S$ цикл Карно принимает форму идеального прямоугольника.<br> • Горизонтальные линии — изотермы ($T=\\text{const}$); вертикальные — изоэнтропы ($S=\\text{const}$).",
+  "en": "• The entropy change by the 2nd law and the Clausius inequality: $$\\mathrm{d}S = \\frac{\\delta Q_{qayt}}{T}, \\qquad Q_{sikl} = \\oint T \\, \\mathrm{d}S$$ • In the $T-S$ plane the Carnot cycle is a perfect rectangle.<br> • Horizontal lines are isotherms ($T=\\text{const}$); vertical lines are isentropes ($S=\\text{const}$)."
+ },
+ {
+  "k": "8f3102aa",
+  "s": "<code># ============================================================================ # ChatGPT Code Interpreter: Carnot va Stirling Cycles Phase Plotter # ============================================================================ import numpy as np import matplotlib.pyplot as plt R = 8.314 Th, Tc = 600, 300 # Issiq va sovuq manbalar (K) gamma = 1.4 # Ikki atomli gaz (gamma = Cp/Cv) V1, V2 = 1.0, 2.0 # Boshlang‘ich hajmlar # Karno 4 holat nuqtalari V3 = V2 * (Th / Tc)**(1 / (gamma - 1)) V4 = V1 * (Th / Tc)**(1 / (gamma - 1)) eta = 1 - Tc / Th print(f\"Nazariy Karno F.I.K.: {eta*100:.2f}%\") v_iso_h = np.linspace(V1, V2, 100) p_iso_h = R * Th / v_iso_h v_adiab_exp = np.linspace(V2, V3, 100) p_adiab_exp = (R * Th / V2) * (V2 / v_adiab_exp)**gamma plt.style.use('dark_background') fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5)) ax1.plot(v_iso_h, p_iso_h, color='#38bdf8', label='1-2 Izoterma (Th)') ax1.plot(v_adiab_exp, p_adiab_exp, color='#fbbf24', label='2-3 Adiabata') ax1.set_title('Karno Sikli: P-V Diagrammasi') ax1.set_xlabel('Hajm V (m³)') ax1.set_ylabel('Bosim P (Pa)') ax1.grid(alpha=0.3) ax1.legend() plt.tight_layout() plt.show()</code>",
+  "ru": "<code># ============================================================================ # ChatGPT Code Interpreter: Carnot va Stirling Cycles Phase Plotter # ============================================================================ import numpy as np import matplotlib.pyplot as plt R = 8.314 Th, Tc = 600, 300 # Горячий и холодный источники (K) gamma = 1.4 # Двухатомный газ (gamma = Cp/Cv) V1, V2 = 1.0, 2.0 # Начальные объёмы # 4 состояния цикла Карно V3 = V2 * (Th / Tc)**(1 / (gamma - 1)) V4 = V1 * (Th / Tc)**(1 / (gamma - 1)) eta = 1 - Tc / Th print(f\"Теоретический КПД Карно: {eta*100:.2f}%\") v_iso_h = np.linspace(V1, V2, 100) p_iso_h = R * Th / v_iso_h v_adiab_exp = np.linspace(V2, V3, 100) p_adiab_exp = (R * Th / V2) * (V2 / v_adiab_exp)**gamma plt.style.use('dark_background') fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5)) ax1.plot(v_iso_h, p_iso_h, color='#38bdf8', label='1-2 Изотерма (Th)') ax1.plot(v_adiab_exp, p_adiab_exp, color='#fbbf24', label='2-3 Адиабата') ax1.set_title('Цикл Карно: диаграмма P-V') ax1.set_xlabel('Объём V (м³)') ax1.set_ylabel('Давление P (Па)') ax1.grid(alpha=0.3) ax1.legend() plt.tight_layout() plt.show()</code>",
+  "en": "<code># ============================================================================ # ChatGPT Code Interpreter: Carnot & Stirling Cycles Phase Plotter # ============================================================================ import numpy as np import matplotlib.pyplot as plt R = 8.314 Th, Tc = 600, 300 # Hot and cold reservoirs (K) gamma = 1.4 # Diatomic gas (gamma = Cp/Cv) V1, V2 = 1.0, 2.0 # Initial volumes # The 4 Carnot states V3 = V2 * (Th / Tc)**(1 / (gamma - 1)) V4 = V1 * (Th / Tc)**(1 / (gamma - 1)) eta = 1 - Tc / Th print(f\"Theoretical Carnot efficiency: {eta*100:.2f}%\") v_iso_h = np.linspace(V1, V2, 100) p_iso_h = R * Th / v_iso_h v_adiab_exp = np.linspace(V2, V3, 100) p_adiab_exp = (R * Th / V2) * (V2 / v_adiab_exp)**gamma plt.style.use('dark_background') fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5)) ax1.plot(v_iso_h, p_iso_h, color='#38bdf8', label='1-2 Isotherm (Th)') ax1.plot(v_adiab_exp, p_adiab_exp, color='#fbbf24', label='2-3 Adiabat') ax1.set_title('Carnot Cycle: P-V Diagram') ax1.set_xlabel('Volume V (m³)') ax1.set_ylabel('Pressure P (Pa)') ax1.grid(alpha=0.3) ax1.legend() plt.tight_layout() plt.show()</code>"
+ },
+ {
+  "k": "310ab34e",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Termodinamika Asosi (4-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы термодинамики (раздел 4):",
+  "en": "🌐 WWW scholarly sources and thermodynamics basis (Section 4):"
+ },
+ {
+  "k": "2bd5f9f6",
+  "s": "Young, H. D., va Freedman, R. A. (2020).",
+  "ru": "Young, H. D., & Freedman, R. A. (2020).",
+  "en": "Young, H. D., & Freedman, R. A. (2020)."
+ },
+ {
+  "k": "67b84411",
+  "s": "Sears and Zemansky’s University Physics with Modern Physics",
+  "ru": "Sears and Zemansky’s University Physics with Modern Physics",
+  "en": "Sears and Zemansky’s University Physics with Modern Physics"
+ },
+ {
+  "k": "93b3ab33",
+  "s": "(15th ed.). Pearson.",
+  "ru": "(15th ed.). Pearson.",
+  "en": "(15th ed.). Pearson."
+ },
+ {
+  "k": "616883af",
+  "s": "P-V va T-S diagrammalarini parallel tahlil qilish talabalarda termodinamikaning 1-qonuni (energiya balansi) va 2-qonunini (entropiya va qaytmaslik) bir vaqtda yaxlit anglash imkonini beradi.",
+  "ru": "Параллельный анализ диаграмм P-V и T-S позволяет студентам одновременно целостно осмыслить 1-е начало термодинамики (энергетический баланс) и 2-е начало (энтропия и необратимость).",
+  "en": "Analysing P-V and T-S diagrams in parallel lets students grasp the 1st law of thermodynamics (energy balance) and the 2nd law (entropy and irreversibility) together as a whole."
+ },
+ {
+  "k": "d7b2aed1",
+  "s": "5. Ish jarayoni monitoringi: Google Antigravity",
+  "ru": "5. Мониторинг рабочего процесса: Google Antigravity",
+  "en": "5. Workflow monitoring: Google Antigravity"
+ },
+ {
+  "k": "bacedfb1",
+  "s": "Chi-square test, Energy Conservation va entropy audit",
+  "ru": "Критерий хи-квадрат, сохранение энергии и аудит энтропии",
+  "en": "Chi-square test, energy conservation and an entropy audit"
+ },
+ {
+  "k": "04d7e9da",
+  "s": "Stoxastik fizik modellarda zarrachalar soni ko‘payganda hisoblash xatoliklari, faza fazosi simmetriyasining buzilishi va energiya saqlanish dreyfi yuzaga kelishi mumkin. <strong>Google Antigravity</strong> monitoring agenti simulyatsiya parametrlari va stoxastik konvergensiyani real vaqtda audit qiladi:",
+  "ru": "В стохастических физических моделях при увеличении числа частиц могут возникать вычислительные ошибки, нарушение симметрии фазового пространства и дрейф сохранения энергии. Агент мониторинга <strong>Google Antigravity</strong> в реальном времени проверяет параметры симуляции и стохастическую сходимость:",
+  "en": "In stochastic physics models, as the number of particles grows, computational errors, broken phase-space symmetry and energy-conservation drift can appear. The <strong>Google Antigravity</strong> monitoring agent audits the simulation parameters and stochastic convergence in real time:"
+ },
+ {
+  "k": "b03d54dc",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Maksvell $\\chi^2$ konvergensiyasi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Zarrachalar tezligi haqiqatdan ham Maksvell-Bolsman nazariy egri chizig‘iga mos kelishi Pirsonning $\\chi^2$ muvofiqlik mezoni orqali tekshiriladi ($p &gt; 0.05$). </span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Сходимость $\\chi^2$ Максвелла:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Соответствие скоростей частиц теоретической кривой Максвелла–Больцмана проверяется критерием согласия Пирсона $\\chi^2$ ($p &gt; 0.05$). </span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Maxwell $\\chi^2$ convergence:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Whether the particle speeds really match the Maxwell–Boltzmann theoretical curve is checked with Pearson’s $\\chi^2$ goodness-of-fit test ($p &gt; 0.05$). </span>"
+ },
+ {
+  "k": "c665b4ab",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Energiya dreyfi ($\\Delta E / E_0$):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Elastik to‘qnashuvlarda kinetik energiya yo‘qolishi yoki sun’iy portlash sodir bo‘lmasligi uchun dreyf chegarasi: $|\\Delta E / E_0| &lt; 0.001\\%$. </span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Энергетический дрейф ($\\Delta E / E_0$):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Чтобы в упругих столкновениях не было потери кинетической энергии или искусственного «взрыва», порог дрейфа: $|\\Delta E / E_0| &lt; 0.001\\%$. </span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Energy drift ($\\Delta E / E_0$):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> To ensure no kinetic energy loss or artificial blow-up in elastic collisions, the drift threshold is $|\\Delta E / E_0| &lt; 0.001\\%$. </span>"
+ },
+ {
+  "k": "77756c17",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Entropiya o‘sish kafolati:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Yopiq tizimda aralashtirish jarayonida Bolsman entropiyasining monotonic o‘sishi $S = k_B \\ln \\Omega \\uparrow$ va $\\mathrm{d}S \\ge 0$ nazorat qilinadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Гарантия роста энтропии:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> В замкнутой системе при перемешивании контролируются монотонный рост энтропии Больцмана $S = k_B \\ln \\Omega \\uparrow$ и $\\mathrm{d}S \\ge 0$. </span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Entropy-increase guarantee:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> During mixing in a closed system, the monotonic increase of Boltzmann entropy $S = k_B \\ln \\Omega \\uparrow$ and $\\mathrm{d}S \\ge 0$ are monitored. </span>"
+ },
+ {
+  "k": "6ce39973",
+  "s": "<span style=\"font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-rose);\">Antigravity Telemetry Audit Console [Live Stream]</span> <span style=\"font-size:0.8rem; color:#047857;\">● REAL-TIME AUDIT ACTIVE</span>",
+  "ru": "<span style=\"font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-rose);\">Antigravity Telemetry Audit Console [Live Stream]</span> <span style=\"font-size:0.8rem; color:#047857;\">● REAL-TIME AUDIT ACTIVE</span>",
+  "en": "<span style=\"font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-rose);\">Antigravity Telemetry Audit Console [Live Stream]</span> <span style=\"font-size:0.8rem; color:#047857;\">● REAL-TIME AUDIT ACTIVE</span>"
+ },
+ {
+  "k": "6e8bd974",
+  "s": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Thermodynamics Stochastic Inspector...\n[AUDIT: T=300K] Ensemble Size: 120 particles | Box Volume: 2.85 L\n[STOCHASTIC-CHECK] Chi-Square Pearson goodness-of-fit: chi2=3.84, df=9, p-val=0.921 -&gt; [PASSED: Maxwell-Boltzmann]\n[CONSERVATION-CHECK] Total Kinetic Energy: E0 = 744.52 J | Current E = 744.51 J | Drift: -0.00018% -&gt; [STABLE]\n[PRESSURE-CHECK] Microscopic Wall Impulses: P_micro = 1.05 kPa | Ideal Gas Law P_theory = 1.04 kPa -&gt; [MATCH 99.2%]\n[CYCLE-VALIDATOR] Carnot Cycle Area Integral: Net Work A = 142.8 J | Efficiency eta = 50.00% -&gt; [PERFECT CARNOT]\n[STATUS] ALL 5 THERMODYNAMIC DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.",
+  "ru": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Thermodynamics Stochastic Inspector...\n[AUDIT: T=300K] Ensemble Size: 120 particles | Box Volume: 2.85 L\n[STOCHASTIC-CHECK] Chi-Square Pearson goodness-of-fit: chi2=3.84, df=9, p-val=0.921 -&gt; [PASSED: Maxwell-Boltzmann]\n[CONSERVATION-CHECK] Total Kinetic Energy: E0 = 744.52 J | Current E = 744.51 J | Drift: -0.00018% -&gt; [STABLE]\n[PRESSURE-CHECK] Microscopic Wall Impulses: P_micro = 1.05 kPa | Ideal Gas Law P_theory = 1.04 kPa -&gt; [MATCH 99.2%]\n[CYCLE-VALIDATOR] Carnot Cycle Area Integral: Net Work A = 142.8 J | Efficiency eta = 50.00% -&gt; [PERFECT CARNOT]\n[STATUS] ALL 5 THERMODYNAMIC DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.",
+  "en": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Thermodynamics Stochastic Inspector...\n[AUDIT: T=300K] Ensemble Size: 120 particles | Box Volume: 2.85 L\n[STOCHASTIC-CHECK] Chi-Square Pearson goodness-of-fit: chi2=3.84, df=9, p-val=0.921 -&gt; [PASSED: Maxwell-Boltzmann]\n[CONSERVATION-CHECK] Total Kinetic Energy: E0 = 744.52 J | Current E = 744.51 J | Drift: -0.00018% -&gt; [STABLE]\n[PRESSURE-CHECK] Microscopic Wall Impulses: P_micro = 1.05 kPa | Ideal Gas Law P_theory = 1.04 kPa -&gt; [MATCH 99.2%]\n[CYCLE-VALIDATOR] Carnot Cycle Area Integral: Net Work A = 142.8 J | Efficiency eta = 50.00% -&gt; [PERFECT CARNOT]\n[STATUS] ALL 5 THERMODYNAMIC DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS."
+ },
+ {
+  "k": "b63d9316",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Statistik Monitoring Asosi (5-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы статистического мониторинга (раздел 5):",
+  "en": "🌐 WWW scholarly sources and statistical monitoring basis (Section 5):"
+ },
+ {
+  "k": "cf59325f",
+  "s": "Kardar, M. (2007).",
+  "ru": "Kardar, M. (2007).",
+  "en": "Kardar, M. (2007)."
+ },
+ {
+  "k": "114f27b5",
+  "s": "Statistical Physics of Particles",
+  "ru": "Statistical Physics of Particles",
+  "en": "Statistical Physics of Particles"
+ },
+ {
+  "k": "1eca2ce0",
+  "s": ". Cambridge University Press.",
+  "ru": ". Cambridge University Press.",
+  "en": ". Cambridge University Press."
+ },
+ {
+  "k": "df66e0f8",
+  "s": "https://doi.org/10.1017/CBO9780511815874",
+  "ru": "https://doi.org/10.1017/CBO9780511815874",
+  "en": "https://doi.org/10.1017/CBO9780511815874"
+ },
+ {
+  "k": "c69bcdb0",
+  "s": "Ko‘p zarrachali stoxastik tizimlarni kompyuterda modellashtirishda fluktuatsiya-dissipatsiya teoremalari va ehtimollik taqsimoti konvergensiyasi fizik simulyatsiyaning ilmiy haqiqiyligini belgilaydi.",
+  "ru": "При компьютерном моделировании многочастичных стохастических систем научную достоверность физической симуляции определяют флуктуационно-диссипационные теоремы и сходимость распределения вероятностей.",
+  "en": "When modelling many-particle stochastic systems on a computer, fluctuation–dissipation theorems and the convergence of probability distributions determine the scientific validity of the simulation."
+ },
+ {
+  "k": "ab2a71ed",
+  "s": "6. Interaktiv termodinamika va stoxastik faza laboratoriyasi",
+  "ru": "6. Интерактивная лаборатория термодинамики и стохастических фаз",
+  "en": "6. Interactive thermodynamics and stochastic phase lab"
+ },
+ {
+  "k": "f5f285ec",
+  "s": "HTML5 Canvas, dynamic telemetry va thermodynamics sandbox",
+  "ru": "HTML5 Canvas, динамическая телеметрия и песочница термодинамики",
+  "en": "HTML5 Canvas, dynamic telemetry and a thermodynamics sandbox"
+ },
+ {
+  "k": "f5eabccb",
+  "s": "Quyidagi laboratoriyada siz <strong>Stoxastik gaz molekulalarining mikroskopik harakati</strong> (harorat, porshen hajmi va Maksvell tezliklar spektri) hamda <strong>Real vaqtda P-V va T-S sikl diagrammasi</strong> sinxron ishlashini sinab ko‘rishingiz mumkin!",
+  "ru": "В лаборатории ниже вы можете испытать синхронную работу <strong>микроскопического движения стохастических молекул газа</strong> (температура, объём поршня и спектр скоростей Максвелла) и <strong>диаграммы цикла P-V и T-S в реальном времени</strong>!",
+  "en": "In the lab below you can test the <strong>microscopic motion of stochastic gas molecules</strong> (temperature, piston volume and the Maxwell speed spectrum) working in sync with a <strong>real-time P-V and T-S cycle diagram</strong>!"
+ },
+ {
+  "k": "c0f0c098",
+  "s": "Eksperiment Rejimi:",
+  "ru": "Режим эксперимента:",
+  "en": "Experiment mode:"
+ },
+ {
+  "k": "145ac2fc",
+  "s": "🔥 1-rejim: Stoxastik gaz molekulalari va porshen",
+  "ru": "🔥 Режим 1: стохастические молекулы газа и поршень",
+  "en": "🔥 Mode 1: Stochastic gas molecules and a piston"
+ },
+ {
+  "k": "0e4b9c78",
+  "s": "📊 2-rejim: P-V va T-S sikl diagrammasi",
+  "ru": "📊 Режим 2: диаграмма цикла P-V и T-S",
+  "en": "📊 Mode 2: P-V and T-S cycle diagram"
+ },
+ {
+  "k": "2dbdfeaf",
+  "s": "Harorat ($T$):",
+  "ru": "Температура ($T$):",
+  "en": "Temperature ($T$):"
+ },
+ {
+  "k": "9d2ed53c",
+  "s": "Porshen Hajmi ($V$):",
+  "ru": "Объём поршня ($V$):",
+  "en": "Piston volume ($V$):"
+ },
+ {
+  "k": "20d7ce9c",
+  "s": "Molekulalar Soni ($N$):",
+  "ru": "Число молекул ($N$):",
+  "en": "Number of molecules ($N$):"
+ },
+ {
+  "k": "b7f06710",
+  "s": "Termodinamik Rejim:",
+  "ru": "Термодинамический режим:",
+  "en": "Thermodynamic mode:"
+ },
+ {
+  "k": "eef93288",
+  "s": "Karno sikli",
+  "ru": "Цикл Карно",
+  "en": "Carnot cycle"
+ },
+ {
+  "k": "b6defcea",
+  "s": "Stirling sikli (2 izoterma + 2 izoxora)",
+  "ru": "Цикл Стирлинга (2 изотермы + 2 изохоры)",
+  "en": "Stirling cycle (2 isotherms + 2 isochores)"
+ },
+ {
+  "k": "5073822d",
+  "s": "Alohida izojarayon",
+  "ru": "Отдельный изопроцесс",
+  "en": "Single isoprocess"
+ },
+ {
+  "k": "d741b994",
+  "s": "Diagramma Turi:",
+  "ru": "Тип диаграммы:",
+  "en": "Diagram type:"
+ },
+ {
+  "k": "98ae3a57",
+  "s": "P–V diagrammasi (ish A)",
+  "ru": "Диаграмма P–V (работа A)",
+  "en": "P–V diagram (work A)"
+ },
+ {
+  "k": "fe309128",
+  "s": "T–S diagrammasi (entropiya)",
+  "ru": "Диаграмма T–S (энтропия)",
+  "en": "T–S diagram (entropy)"
+ },
+ {
+  "k": "de9fb1b0",
+  "s": "Izoprotsess Turi:",
+  "ru": "Тип изопроцесса:",
+  "en": "Isoprocess type:"
+ },
+ {
+  "k": "82621985",
+  "s": "Izotermik (T = const, Boyl–Mariott)",
+  "ru": "Изотермический (T = const, Бойль–Мариотт)",
+  "en": "Isothermal (T = const, Boyle–Mariotte)"
+ },
+ {
+  "k": "1b58b801",
+  "s": "Izoxorik (V = const, Sharl)",
+  "ru": "Изохорный (V = const, Шарль)",
+  "en": "Isochoric (V = const, Charles)"
+ },
+ {
+  "k": "3ea63e2d",
+  "s": "Izobarik (P = const, Gey-Lyussak)",
+  "ru": "Изобарный (P = const, Гей-Люссак)",
+  "en": "Isobaric (P = const, Gay-Lussac)"
+ },
+ {
+  "k": "854aab13",
+  "s": "Adiabatik (Q = 0, Puasson)",
+  "ru": "Адиабатический (Q = 0, Пуассон)",
+  "en": "Adiabatic (Q = 0, Poisson)"
+ },
+ {
+  "k": "1186573d",
+  "s": "Issiq Manba ($T_H$):",
+  "ru": "Горячий источник ($T_H$):",
+  "en": "Hot reservoir ($T_H$):"
+ },
+ {
+  "k": "3cdfdf4d",
+  "s": "Sovuq Manba ($T_C$):",
+  "ru": "Холодный источник ($T_C$):",
+  "en": "Cold reservoir ($T_C$):"
+ },
+ {
+  "k": "bae46fb3",
+  "s": "💡 Termodinamik holatni boshqarish: haroratni oshirish / sovutish va simulyatsiyani to‘xtatish",
+  "ru": "💡 Управление термодинамическим состоянием: нагрев / охлаждение и остановка симуляции",
+  "en": "💡 Thermodynamic state controls: heat / cool and stop the simulation"
+ },
+ {
+  "k": "27cde5d0",
+  "s": "🔥 Isitish",
+  "ru": "🔥 Нагреть",
+  "en": "🔥 Heat"
+ },
+ {
+  "k": "cc01e63b",
+  "s": "❄️ Sovutish",
+  "ru": "❄️ Охладить",
+  "en": "❄️ Cool"
+ },
+ {
+  "k": "b98b7366",
+  "s": "<span style=\"font-size: 1.05rem; line-height: 1;\">⏸</span> To‘xtatish",
+  "ru": "<span style=\"font-size: 1.05rem; line-height: 1;\">⏸</span> Остановить",
+  "en": "<span style=\"font-size: 1.05rem; line-height: 1;\">⏸</span> Stop"
+ },
+ {
+  "k": "9366e50a",
+  "s": "<span style=\"font-size: 1.1rem; line-height: 1;\">↺</span> Qayta boshlash",
+  "ru": "<span style=\"font-size: 1.1rem; line-height: 1;\">↺</span> Перезапустить",
+  "en": "<span style=\"font-size: 1.1rem; line-height: 1;\">↺</span> Restart"
+ },
+ {
+  "k": "9e595b47",
+  "s": "Harorat (T)",
+  "ru": "Температура (T)",
+  "en": "Temperature (T)"
+ },
+ {
+  "k": "bbfca112",
+  "s": "Bosim (P)",
+  "ru": "Давление (P)",
+  "en": "Pressure (P)"
+ },
+ {
+  "k": "cd34d9bf",
+  "s": "1.05 kPa",
+  "ru": "1.05 kPa",
+  "en": "1.05 kPa"
+ },
+ {
+  "k": "d9f07516",
+  "s": "Hajm (V)",
+  "ru": "Объём (V)",
+  "en": "Volume (V)"
+ },
+ {
+  "k": "0601909b",
+  "s": "Kvadratik Tezlik (v_rms)",
+  "ru": "Среднеквадратичная скорость (v_rms)",
+  "en": "RMS speed (v_rms)"
+ },
+ {
+  "k": "c71dfccc",
+  "s": "🎮 1. Gaz molekulalari va porshen dinamikasi:",
+  "ru": "🎮 1. Динамика молекул газа и поршня:",
+  "en": "🎮 1. Gas molecule and piston dynamics:"
+ },
+ {
+  "k": "0c563fb4",
+  "s": "Tezlik spektri: moviy — past energiya (sovuq), yashil — o‘rtacha tezlik, sariq — iliq, qizil — yuqori kinetik energiya (tez).",
+  "ru": "Спектр скоростей: синий — низкая энергия (холодные), зелёный — средняя скорость, жёлтый — тёплые, красный — высокая кинетическая энергия (быстрые).",
+  "en": "Speed spectrum: blue — low energy (cold), green — average speed, yellow — warm, red — high kinetic energy (fast)."
+ },
+ {
+  "k": "2f813b09",
+  "s": "📊 2. Real vaqtdagi P–V va T–S sikl diagrammasi:",
+  "ru": "📊 2. Диаграмма цикла P–V и T–S в реальном времени:",
+  "en": "📊 2. Real-time P–V and T–S cycle diagram:"
+ },
+ {
+  "k": "e9d7e75d",
+  "s": "Sikl yuzasi — foydali mexanik ish $A = \\oint P \\mathrm{d}V$; qizil nuqta — joriy termodinamik holat.",
+  "ru": "Площадь цикла — полезная механическая работа $A = \\oint P \\mathrm{d}V$; красная точка — текущее термодинамическое состояние.",
+  "en": "The cycle area is the useful mechanical work $A = \\oint P \\mathrm{d}V$; the red dot is the current thermodynamic state."
+ },
+ {
+  "k": "88fd407b",
+  "s": "PhET Interactive Simulations va Vascak.cz termodinamika laboratoriyasi",
+  "ru": "Лаборатория термодинамики PhET Interactive Simulations и Vascak.cz",
+  "en": "PhET Interactive Simulations and Vascak.cz thermodynamics lab"
+ },
+ {
+  "k": "3678e659",
+  "s": "🔗 Yangi Oynada Ochish",
+  "ru": "🔗 Открыть в новом окне",
+  "en": "🔗 Open in a new window"
+ },
+ {
+  "k": "cc676a0d",
+  "s": "⛶ To‘liq ekran",
+  "ru": "⛶ На весь экран",
+  "en": "⛶ Full screen"
+ },
+ {
+  "k": "5bcf5a63",
+  "s": "Quyidagi interaktiv oynada <strong>PhET (Gas Properties, States of Matter, Diffusion, Energy)</strong> va <strong>Vascak.cz (Gas Laws, Carnot Cycle)</strong> xalqaro virtual laboratoriyalarini to‘g‘ridan-to‘g‘ri ishlating va tajribalarni mustaqil bajaring:",
+  "ru": "В интерактивном окне ниже напрямую запускайте международные виртуальные лаборатории <strong>PhET (Gas Properties, States of Matter, Diffusion, Energy)</strong> и <strong>Vascak.cz (Gas Laws, Carnot Cycle)</strong> и выполняйте опыты самостоятельно:",
+  "en": "Run the international virtual labs <strong>PhET (Gas Properties, States of Matter, Diffusion, Energy)</strong> and <strong>Vascak.cz (Gas Laws, Carnot Cycle)</strong> directly in the interactive window below and do the experiments yourself:"
+ },
+ {
+  "k": "2aaa5e86",
+  "s": "🧪 PhET: Gas Properties",
+  "ru": "🧪 PhET: Gas Properties",
+  "en": "🧪 PhET: Gas Properties"
+ },
+ {
+  "k": "8ae56de0",
+  "s": "🧊 PhET: States of Matter",
+  "ru": "🧊 PhET: States of Matter",
+  "en": "🧊 PhET: States of Matter"
+ },
+ {
+  "k": "36ce2c6d",
+  "s": "🔥 PhET: Energy Forms",
+  "ru": "🔥 PhET: Energy Forms",
+  "en": "🔥 PhET: Energy Forms"
+ },
+ {
+  "k": "0b02798a",
+  "s": "💨 PhET: diffusion",
+  "ru": "💨 PhET: diffusion",
+  "en": "💨 PhET: diffusion"
+ },
+ {
+  "k": "de2e0963",
+  "s": "🔄 Vascak.cz Gaz Qonunlari va Sikllar (O‘zbek tilida):",
+  "ru": "🔄 Газовые законы и циклы Vascak.cz:",
+  "en": "🔄 Vascak.cz gas laws and cycles:"
+ },
+ {
+  "k": "6dae876b",
+  "s": "🌡️ Vascak: izotermik (T=const)",
+  "ru": "🌡️ Vascak: изотермический (T=const)",
+  "en": "🌡️ Vascak: isothermal (T=const)"
+ },
+ {
+  "k": "3f59685b",
+  "s": "⚖️ Vascak: izobarik (P=const)",
+  "ru": "⚖️ Vascak: изобарный (P=const)",
+  "en": "⚖️ Vascak: isobaric (P=const)"
+ },
+ {
+  "k": "c1dd0b0d",
+  "s": "🔒 Vascak: izoxorik (V=const)",
+  "ru": "🔒 Vascak: изохорный (V=const)",
+  "en": "🔒 Vascak: isochoric (V=const)"
+ },
+ {
+  "k": "ac8f77d4",
+  "s": "⚡ Vascak: adiabatik (Q=0)",
+  "ru": "⚡ Vascak: адиабатический (Q=0)",
+  "en": "⚡ Vascak: adiabatic (Q=0)"
+ },
+ {
+  "k": "d9bade49",
+  "s": "⚙️ Vascak: Karno sikli",
+  "ru": "⚙️ Vascak: цикл Карно",
+  "en": "⚙️ Vascak: Carnot cycle"
+ },
+ {
+  "k": "b5f00175",
+  "s": "🧪 PhET Interactive Simulations: Gas Properties (ideal gaz qonunlari)",
+  "ru": "🧪 PhET Interactive Simulations: Gas Properties (законы идеального газа)",
+  "en": "🧪 PhET Interactive Simulations: Gas Properties (ideal gas laws)"
+ },
+ {
+  "k": "53662fdc",
+  "s": "PhET HTML5",
+  "ru": "PhET HTML5",
+  "en": "PhET HTML5"
+ },
+ {
+  "k": "80b6bc93",
+  "s": "Ideal gaz holat tenglamasi ($PV = N k_B T$), harorat, hajm va bosimning o‘zaro dinamik bog‘liqligi, og‘ir va yengil gaz molekulalarining to‘qnashuvlari hamda Maksvell-Bolsman tezliklar gistogrammasi.",
+  "ru": "Уравнение состояния идеального газа ($PV = N k_B T$), взаимная динамическая связь температуры, объёма и давления, столкновения тяжёлых и лёгких молекул газа и гистограмма скоростей Максвелла–Больцмана.",
+  "en": "The ideal gas equation of state ($PV = N k_B T$), the dynamic interplay of temperature, volume and pressure, collisions of heavy and light gas molecules and the Maxwell–Boltzmann speed histogram."
+ },
+ {
+  "k": "2a4ca9ba",
+  "s": "$$PV = \\nu R T = N k_B T, \\quad v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}, \\quad P = \\frac{1}{3} n m \\langle v^2 \\rangle$$",
+  "ru": "$$PV = \\nu R T = N k_B T, \\quad v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}, \\quad P = \\frac{1}{3} n m \\langle v^2 \\rangle$$",
+  "en": "$$PV = \\nu R T = N k_B T, \\quad v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}, \\quad P = \\frac{1}{3} n m \\langle v^2 \\rangle$$"
+ },
+ {
+  "k": "07077f61",
+  "s": "📋 Bajarilishi kerak bo‘lgan virtual laboratoriya topshiriqlari:",
+  "ru": "📋 Задания виртуальной лаборатории:",
+  "en": "📋 Virtual lab tasks:"
+ },
+ {
+  "k": "ffd1e1fd",
+  "s": "1. Nasos orqali idishga 100 ta og‘ir zarracha kiriting va bosim $P$ hamda harorat $T$ ko‘rsatkichini qayd eting.",
+  "ru": "1. Накачайте в сосуд 100 тяжёлых частиц и запишите показания давления $P$ и температуры $T$.",
+  "en": "1. Pump 100 heavy particles into the container and record the pressure $P$ and temperature $T$ readings."
+ },
+ {
+  "k": "41670e80",
+  "s": "2. Porshenni surib hajmni $V$ kamaytiring (Izotermik siqilish) va Boyl–Mariott qonuni ($P \\propto 1/V$) bajarilishini tekshiring.",
+  "ru": "2. Сдвиньте поршень, уменьшив объём $V$ (изотермическое сжатие), и проверьте выполнение закона Бойля–Мариотта ($P \\propto 1/V$).",
+  "en": "2. Push the piston to reduce the volume $V$ (isothermal compression) and check that the Boyle–Mariotte law ($P \\propto 1/V$) holds."
+ },
+ {
+  "k": "e4a3074e",
+  "s": "3. Pastdagi olov orqali haroratni $T$ oshiring va Maksvell tezliklar gistogrammasi o‘ng tomonga qarab yassilanishini kuzating.",
+  "ru": "3. Повысьте температуру $T$ огнём снизу и пронаблюдайте, как гистограмма скоростей Максвелла сплющивается и смещается вправо.",
+  "en": "3. Raise the temperature $T$ with the flame below and watch the Maxwell speed histogram flatten and shift to the right."
+ },
+ {
+  "k": "c48a21d7",
+  "s": "1. PhET dekonstruksiyasi",
+  "ru": "1. Деконструкция PhET",
+  "en": "1. PhET deconstruction"
+ },
+ {
+  "k": "91458e3b",
+  "s": "2. Claude stoxastik kod",
+  "ru": "2. Стохастический код Claude",
+  "en": "2. Claude stochastic code"
+ },
+ {
+  "k": "236fbcdb",
+  "s": "3. ChatGPT P-V/T-S sintezi",
+  "ru": "3. Синтез P-V/T-S в ChatGPT",
+  "en": "3. ChatGPT P-V/T-S synthesis"
+ },
+ {
+  "k": "3541e49e",
+  "s": "4. Antigravity audit",
+  "ru": "4. Antigravity audit",
+  "en": "4. Antigravity audit"
+ },
+ {
+  "k": "230da7bd",
+  "s": "de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).",
+  "ru": "de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).",
+  "en": "de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013)."
+ },
+ {
+  "k": "34be031c",
+  "s": "Physical and Virtual Laboratories in Science and Engineering Education",
+  "ru": "Physical and Virtual Laboratories in Science and Engineering Education",
+  "en": "Physical and Virtual Laboratories in Science and Engineering Education"
+ },
+ {
+  "k": "a49fe38d",
+  "s": ". Science, 340(6130), 305-308.",
+  "ru": ". Science, 340(6130), 305-308.",
+  "en": ". Science, 340(6130), 305-308."
+ },
+ {
+  "k": "855e1022",
+  "s": "https://doi.org/10.1126/science.1230579",
+  "ru": "https://doi.org/10.1126/science.1230579",
+  "en": "https://doi.org/10.1126/science.1230579"
+ },
+ {
+  "k": "dfcfc1cb",
+  "s": "Virtual laboratoriyalarda parametrlarni erkin o‘zgartirish va real vaqtli faza diagrammalarini tahlil qilish talabalarda termodinamik modellashtirish kompetensiyasini 31% ga oshiradi.",
+  "ru": "Свободное изменение параметров в виртуальных лабораториях и анализ фазовых диаграмм в реальном времени повышают у студентов компетенцию термодинамического моделирования на 31%.",
+  "en": "Freely changing parameters in virtual labs and analysing real-time phase diagrams increases students’ thermodynamic modelling competence by 31%."
+ },
+ {
+  "k": "c5687538",
+  "s": "7. Diagnostik test va ilmiy-metodik manbalar",
+  "ru": "7. Диагностический тест и научно-методические источники",
+  "en": "7. Diagnostic test and scholarly sources"
+ },
+ {
+  "k": "8280fef2",
+  "s": "🧠 13-ma’ruza diagnostik testi (3 ta kognitiv savol):",
+  "ru": "🧠 Диагностический тест к лекции 13 (3 когнитивных вопроса):",
+  "en": "🧠 Lecture 13 diagnostic test (3 cognitive questions):"
+ },
+ {
+  "k": "e7139051",
+  "s": "1-Savol: Gaz harorati $T$ 2 marta oshirilganda, Maksvell-Bolsman taqsimotiga ko‘ra o‘rtacha kvadratik tezlik $v_{rms}$ qanday o‘zgaradi?",
+  "ru": "Вопрос 1: Как, согласно распределению Максвелла–Больцмана, изменится среднеквадратичная скорость $v_{rms}$ при увеличении температуры газа $T$ в 2 раза?",
+  "en": "Question 1: According to the Maxwell–Boltzmann distribution, how does the RMS speed $v_{rms}$ change when the gas temperature $T$ is doubled?"
+ },
+ {
+  "k": "4bb4d587",
+  "s": "A) 2 marta ortadi",
+  "ru": "A) Увеличится в 2 раза",
+  "en": "A) It doubles"
+ },
+ {
+  "k": "34631776",
+  "s": "B) $\\sqrt{2} \\approx 1.41$ marta ortadi",
+  "ru": "B) Увеличится в $\\sqrt{2} \\approx 1.41$ раз",
+  "en": "B) It increases $\\sqrt{2} \\approx 1.41$-fold"
+ },
+ {
+  "k": "7b47fcbf",
+  "s": "C) 4 marta ortadi",
+  "ru": "C) Увеличится в 4 раза",
+  "en": "C) It quadruples"
+ },
+ {
+  "k": "752b3776",
+  "s": "2-Savol: Ideal gaz ustida adiabatik kengayish ($Q=0$) sodir bo‘lganda uning ichki energiyasi $\\Delta U$ va harorati qanday o‘zgaradi?",
+  "ru": "Вопрос 2: Как изменяются внутренняя энергия $\\Delta U$ и температура идеального газа при адиабатическом расширении ($Q=0$)?",
+  "en": "Question 2: How do the internal energy $\\Delta U$ and temperature of an ideal gas change during adiabatic expansion ($Q=0$)?"
+ },
+ {
+  "k": "7a58ba84",
+  "s": "A) Gaz musbat ish bajaradi ($A &gt; 0$), ichki energiya kamayadi ($\\Delta U &lt; 0$), harorat pasayadi",
+  "ru": "A) Газ совершает положительную работу ($A &gt; 0$), внутренняя энергия уменьшается ($\\Delta U &lt; 0$), температура падает",
+  "en": "A) The gas does positive work ($A &gt; 0$), its internal energy decreases ($\\Delta U &lt; 0$) and the temperature drops"
+ },
+ {
+  "k": "bf0c89b6",
+  "s": "B) Gaz ish bajarmaydi, harorat doimiy qoladi",
+  "ru": "B) Газ не совершает работы, температура остаётся постоянной",
+  "en": "B) The gas does no work and the temperature stays constant"
+ },
+ {
+  "k": "5c93bf51",
+  "s": "C) Ichki energiya ortadi, harorat ko‘tariladi",
+  "ru": "C) Внутренняя энергия растёт, температура повышается",
+  "en": "C) The internal energy increases and the temperature rises"
+ },
+ {
+  "k": "21245b93",
+  "s": "D) Entropiya keskin ortadi",
+  "ru": "D) Энтропия резко возрастает",
+  "en": "D) The entropy rises sharply"
+ },
+ {
+  "k": "3601020b",
+  "s": "3-Savol: Issiq manba harorati $T_H = 600\\,\\text{K}$ va sovuq manba harorati $T_C = 300\\,\\text{K}$ bo‘lgan Karno issiqlik dvigatelining maksimal nazariy F.I.K. ($\\eta$) qanchaga teng?",
+  "ru": "Вопрос 3: Чему равен максимальный теоретический КПД ($\\eta$) тепловой машины Карно с температурой горячего источника $T_H = 600\\,\\text{K}$ и холодного $T_C = 300\\,\\text{K}$?",
+  "en": "Question 3: What is the maximum theoretical efficiency ($\\eta$) of a Carnot heat engine with a hot reservoir at $T_H = 600\\,\\text{K}$ and a cold reservoir at $T_C = 300\\,\\text{K}$?"
+ },
+ {
+  "k": "ca57705a",
+  "s": "✅ Natijani tekshirish",
+  "ru": "✅ Проверить результат",
+  "en": "✅ Check result"
+ },
+ {
+  "k": "bfea1954",
+  "s": "Black, P., va Wiliam, D. (2009).",
+  "ru": "Black, P., & Wiliam, D. (2009).",
+  "en": "Black, P., & Wiliam, D. (2009)."
+ },
+ {
+  "k": "2211e14e",
+  "s": "Developing the Theory of Formative Assessment",
+  "ru": "Developing the Theory of Formative Assessment",
+  "en": "Developing the Theory of Formative Assessment"
+ },
+ {
+  "k": "bb742829",
+  "s": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31.",
+  "ru": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31.",
+  "en": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31."
+ },
+ {
+  "k": "8d956244",
+  "s": "https://doi.org/10.1007/s11092-008-9068-5",
+  "ru": "https://doi.org/10.1007/s11092-008-9068-5",
+  "en": "https://doi.org/10.1007/s11092-008-9068-5"
+ },
+ {
+  "k": "2d9a33e3",
+  "s": "Shakllantiruvchi baholash va uzluksiz qayta aloqa (Formative Feedback) talabaning o‘z xatolarini real vaqt rejimida tushunib, o‘quv faoliyatini to‘g‘rilashiga xizmat qiladi.",
+  "ru": "Формирующее оценивание и непрерывная обратная связь (Formative Feedback) помогают студенту понимать свои ошибки в реальном времени и корректировать учебную деятельность.",
+  "en": "Formative assessment and continuous feedback help students understand their mistakes in real time and adjust their learning."
+ },
+ {
+  "k": "3b54ee62",
+  "s": "📚 13-ma’ruza bo‘yicha nufuzli ilmiy va didaktik manbalar (APA 7th Edition):",
+  "ru": "📚 Авторитетные научные и дидактические источники к лекции 13 (APA 7th Edition):",
+  "en": "📚 Authoritative scholarly and didactic sources for Lecture 13 (APA 7th Edition):"
+ },
+ {
+  "k": "163ec21f",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>"
+ },
+ {
+  "k": "5d46c482",
+  "s": "<strong>Young, H. D., va Freedman, R. A. (2020).</strong> <em>Sears and Zemansky’s University Physics with Modern Physics</em> (15th ed.). Pearson.",
+  "ru": "<strong>Young, H. D., & Freedman, R. A. (2020).</strong> <em>Sears and Zemansky’s University Physics with Modern Physics</em> (15th ed.). Pearson.",
+  "en": "<strong>Young, H. D., & Freedman, R. A. (2020).</strong> <em>Sears and Zemansky’s University Physics with Modern Physics</em> (15th ed.). Pearson."
+ },
+ {
+  "k": "cfe461ad",
+  "s": "<strong>Feynman, R. P., Leighton, R. B., va Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I: Mainly Mechanics, Radiation, and Heat</em>. Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu/I_39.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu/I_39.html</a>",
+  "ru": "<strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I: Mainly Mechanics, Radiation, and Heat</em>. Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu/I_39.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu/I_39.html</a>",
+  "en": "<strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. I: Mainly Mechanics, Radiation, and Heat</em>. Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu/I_39.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu/I_39.html</a>"
+ },
+ {
+  "k": "d9d20607",
+  "s": "<strong>Kardar, M. (2007).</strong> <em>Statistical Physics of Particles</em>. Cambridge University Press. <a href=\"https://doi.org/10.1017/CBO9780511815874\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/CBO9780511815874</a>",
+  "ru": "<strong>Kardar, M. (2007).</strong> <em>Statistical Physics of Particles</em>. Cambridge University Press. <a href=\"https://doi.org/10.1017/CBO9780511815874\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/CBO9780511815874</a>",
+  "en": "<strong>Kardar, M. (2007).</strong> <em>Statistical Physics of Particles</em>. Cambridge University Press. <a href=\"https://doi.org/10.1017/CBO9780511815874\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/CBO9780511815874</a>"
+ },
+ {
+  "k": "d8d75389",
+  "s": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "ru": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "en": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>"
+ },
+ {
+  "k": "a7d3f595",
+  "s": "<strong>de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "ru": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "en": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>"
+ },
+ {
+  "k": "2e1da364",
+  "s": "<strong>Garrison, D. R., Anderson, T., va Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "ru": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "en": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>"
+ },
+ {
+  "k": "70d11540",
+  "s": "<strong>Sweller, J., van Merriënboer, J. J. G., va Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "ru": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "en": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>"
+ },
+ {
+  "k": "6f7ea41f",
+  "s": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "ru": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "en": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>"
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "8b8bba00",
+  "s": "<strong>Rutten, N., van Joolingen, W. R., va van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers va Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "ru": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "en": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>"
+ },
+ {
+  "k": "4a70bb90",
+  "s": "<strong>Black, P., va Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "ru": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "en": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>"
+ },
+ {
+  "k": "d26b1d4a",
+  "s": "<strong>Hattie, J., va Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>",
+  "ru": "<strong>Hattie, J., & Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>",
+  "en": "<strong>Hattie, J., & Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>"
+ },
+ {
+  "k": "6eaa9d4f",
+  "s": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "c4471db2",
+  "s": "<strong>Reif, F. (2008).</strong> <em>Fundamentals of Statistical and Thermal Physics</em>. Waveland Press.",
+  "ru": "<strong>Reif, F. (2008).</strong> <em>Fundamentals of Statistical and Thermal Physics</em>. Waveland Press.",
+  "en": "<strong>Reif, F. (2008).</strong> <em>Fundamentals of Statistical and Thermal Physics</em>. Waveland Press."
+ },
+ {
+  "k": "582252a7",
+  "s": "<strong>Callen, H. B. (1985).</strong> <em>Thermodynamics and an Introduction to Thermostatistics</em> (2nd ed.). John Wiley va Sons.",
+  "ru": "<strong>Callen, H. B. (1985).</strong> <em>Thermodynamics and an Introduction to Thermostatistics</em> (2nd ed.). John Wiley & Sons.",
+  "en": "<strong>Callen, H. B. (1985).</strong> <em>Thermodynamics and an Introduction to Thermostatistics</em> (2nd ed.). John Wiley & Sons."
+ }
+]

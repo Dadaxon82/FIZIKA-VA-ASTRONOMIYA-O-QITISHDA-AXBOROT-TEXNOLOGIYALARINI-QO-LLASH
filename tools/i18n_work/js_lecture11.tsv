@@ -1,0 +1,40 @@
+j9886c83	🎉 Поздравляем! 3/3 (100%) — вы отлично освоили дистанционное обучение, интеграцию LMS, Otter.ai и требования к портфолио Antigravity!	🎉 Congratulations! 3/3 (100%) — you have mastered distance learning, LMS integration, Otter.ai and the Antigravity portfolio requirements!
+j695093d	Результат: {0}/3 верно. Пожалуйста, ещё раз просмотрите теоретический и методический аппарат в разделах 2, 4 и 5.	Score: {0}/3 correct. Please review the theory and methods in Sections 2, 4 and 5 again.
+ja94855c	🎮 Модуль симуляции внутри LMS (пружинные колебания):	🎮 In-LMS simulation module (spring oscillation):
+j68fe152	📐 Теоретическая основа динамики колебаний:	📐 Theoretical basis of oscillation dynamics:
+jaef8dc4	Уравнение движения: ⟦1⟧, где коэффициент затухания ⟦2⟧, собственная угловая частота ⟦3⟧, полная механическая энергия ⟦4⟧, скорость убывания энергии ⟦5⟧.	Equation of motion: ⟦1⟧, where the damping coefficient is ⟦2⟧, the natural angular frequency ⟦3⟧, the total mechanical energy ⟦4⟧ and the rate of energy loss ⟦5⟧.
+j66f8b96	🎙️ Гармонические колебания и затухающая динамика	🎙️ Harmonic Oscillations and Damped Dynamics
+j9d33dc8	"Уважаемые магистранты, на сегодняшней лекции мы разберём дифференциальное уравнение затухающих гармонических колебаний: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Поскольку в методе Эйлера энергия искусственно растёт, мы применяем симплектический метод Эйлера–Кромера или Рунге–Кутты."	"Dear master’s students, in today’s lecture we will analyse the differential equation of damped harmonic oscillation: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Because the energy grows artificially with Euler’s method, we use the symplectic Euler–Cromer or Runge–Kutta method."
+jca2a8c7	1. Основное уравнение: ⟦1⟧.↵2. Коэффициент затухания: ⟦2⟧, собственная частота: ⟦3⟧.↵3. Рекомендация: применять симплектический интегратор вместо метода Эйлера.	1. Main equation: ⟦1⟧.↵2. Damping coefficient: ⟦2⟧, natural frequency: ⟦3⟧.↵3. Recommendation: use a symplectic integrator instead of Euler.
+jc5a4e0b	1. Построить фазовый портрет, меняя жёсткость пружины ⟦1⟧ и параметр затухания ⟦2⟧.	1. Plot the phase portrait while varying the spring stiffness ⟦1⟧ and the damping parameter ⟦2⟧.
+j7360c73	2. Проверить график экспоненциального убывания энергии для малых колебаний.	2. Check the exponential energy-decay plot for small oscillations.
+jf48e5f3	3. Загрузить код личного проекта в портфолио на GitHub Pages.	3. Upload your project code to your GitHub Pages portfolio.
+j0799b50	Масса (⟦1⟧):	Mass (⟦1⟧):
+j23acfe3	Жёсткость (⟦1⟧):	Stiffness (⟦1⟧):
+j445e147	Затухание (⟦1⟧):	Damping (⟦1⟧):
+j6c8c3c7	🎮 Модуль симуляции внутри LMS (орбита Кеплера):	🎮 In-LMS simulation module (Kepler orbit):
+j966564b	📐 Теоретическая основа орбитального движения Кеплера:	📐 Theoretical basis of Kepler orbital motion:
+je36605c	Уравнение Vis-Viva: ⟦1⟧, где большая полуось ⟦2⟧ задаёт размер эллипса, а эксцентриситет ⟦3⟧ — его форму. По 3-му закону Кеплера период обращения ⟦4⟧, а секторная скорость по 2-му закону Кеплера постоянна: ⟦5⟧.	The vis-viva equation: ⟦1⟧, where the semi-major axis ⟦2⟧ sets the size of the ellipse and the eccentricity ⟦3⟧ its shape. By Kepler’s 3rd law the orbital period is ⟦4⟧, and by his 2nd law the areal velocity is constant: ⟦5⟧.
+jaacb9f3	🎙️ Орбитальное движение Кеплера и уравнение скорости Vis-Viva	🎙️ Kepler Orbital Motion and the Vis-Viva Speed Equation
+j57b43d0	"Наша сегодняшняя тема — орбитальное движение планеты на основе законов Кеплера. С помощью уравнения Vis-Viva вычислим орбитальную скорость на любом расстоянии: v^2 = GM*(2/r - 1/a), где a — большая полуось, а эксцентриситет e определяет форму эллипса. Замкнутое аналитическое решение, в отличие от численного интегрирования, не имеет энергетического дрейфа."	"Today’s topic is a planet’s orbital motion based on Kepler’s laws. Using the vis-viva equation we compute the orbital speed at any distance: v^2 = GM*(2/r - 1/a), where a is the semi-major axis and the eccentricity e sets the shape of the ellipse. Unlike numerical integration, the closed-form analytical solution has no energy drift."
+j264ee8c	1. Уравнение Vis-Viva: ⟦1⟧.↵2. 3-й закон Кеплера: ⟦2⟧.↵3. Рекомендация: замкнутое аналитическое решение превосходит численное интегрирование (дрейф энергии равен нулю).	1. Vis-viva equation: ⟦1⟧.↵2. Kepler’s 3rd law: ⟦2⟧.↵3. Recommendation: the closed-form analytical solution beats numerical integration (zero energy drift).
+jf181113	1. Увеличивая эксцентриситет ⟦1⟧, наблюдать разницу скоростей в перигелии и афелии.	1. Increase the eccentricity ⟦1⟧ and observe the speed difference between perihelion and aphelion.
+j9db58cb	2. Меняя большую полуось ⟦1⟧, проверить изменение периода обращения ⟦2⟧ (3-й закон Кеплера).	2. Change the semi-major axis ⟦1⟧ and check how the orbital period ⟦2⟧ changes (Kepler’s 3rd law).
+j0d5000f	3. Численно рассчитать инвариантность орбитальной энергии и добавить в личное портфолио.	3. Compute the invariance of the orbital energy numerically and add it to your personal portfolio.
+j5c1976a	Большая полуось (⟦1⟧):	Semi-major axis (⟦1⟧):
+jaf1090b	Эксцентриситет (⟦1⟧):	Eccentricity (⟦1⟧):
+j88d8f6d	Масштаб времени:	Time scale:
+je2d3961	<strong>Кластер A (начальный):</strong> пошаговые указания (скаффолдинг), простые 1D визуальные модели и ежедневные микромодули закрепления.	<strong>Cluster A (beginner):</strong> step-by-step guidance (scaffolding), simple 1D visual models and daily reinforcement micro-modules.
+j11ffb2a	<strong>Кластер B (практик):</strong> алгоритм Эйлера–Кромера, затухающая динамика и банк интерактивных заданий.	<strong>Cluster B (practitioner):</strong> the Euler–Cromer algorithm, damped dynamics and an interactive task bank.
+jc1a1a1b	<strong>Кластер C (исследователь):</strong> многотельные симуляции, 3D-рендер WebGL и автоматизированный аудит Google Antigravity.	<strong>Cluster C (researcher):</strong> many-body simulations, 3D WebGL rendering and automated Google Antigravity audits.
+ja84a818	Теория	Theory
+jbd97e94	Программирование	Programming
+j9c8a759	Численный метод	Numerical methods
+ja817d7e	Промпт	Prompting
+j036b18f	Портфолио	Portfolio
+jcf91415	⏳ Аудиотранскрипция через Otter.ai...	⏳ Transcribing audio with Otter.ai...
+j5cc1c26	🧠 Claude генерирует конспект и Action Items...	🧠 Claude is generating notes and action items...
+j51718cf	✅ Готово — синхронизировано с журналом оценок LMS.	✅ Done — synced with the LMS gradebook.
+j3af2c8d	✓ <strong>Физические инварианты:</strong> с симплектическим интегратором Эйлера–Кромера энергия монотонно убывает (dE/dt ≤ 0), искусственный рост не обнаружен. ω₀ = {0} рад/с.	✓ <strong>Physical invariants:</strong> with the symplectic Euler–Cromer integrator the energy decreases monotonically (dE/dt ≤ 0); no artificial growth detected. ω₀ = {0} rad/s.
+je6f4c22	✓ <strong>Физические инварианты:</strong> аналитическое решение Кеплера — дрейф энергии |ΔE/E₀| = {0}% (решение в замкнутой форме, нет ошибки интегрирования).	✓ <strong>Physical invariants:</strong> analytical Kepler solution — energy drift |ΔE/E₀| = {0}% (closed-form solution, no integration error).
+j17201ba	⟨1⟩⟨2⟩🔍 Результат аудита Google Antigravity:⟨/2⟩ ⟨3⟩✓ <strong>Статический анализ AST:</strong> eval() или опасных обращений к DOM не обнаружено.⟨/3⟩ ⟨5⟩{0}⟨/5⟩ ⟨6⟩✓ <strong>Временной цикл кадров:</strong> {1} FPS, аккумулятор delta-time работает устойчиво.⟨/6⟩⟨/1⟩	⟨1⟩⟨2⟩🔍 Google Antigravity Audit Result:⟨/2⟩ ⟨3⟩✓ <strong>AST static analysis:</strong> no eval() or unsafe DOM access detected.⟨/3⟩ ⟨5⟩{0}⟨/5⟩ ⟨6⟩✓ <strong>Frame timing loop:</strong> {1} FPS, the delta-time accumulator is running stably.⟨/6⟩⟨/1⟩

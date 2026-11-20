@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -956,7 +956,7 @@ class PhysicsParticle2D {
       if (!q1 || !q2 || !q3) {
         res.style.display = 'block';
         res.style.color = '#F59E0B';
-        res.textContent = '⚠️ Iltimos, barcha 3 ta savolga javob bering!';
+        res.textContent = __t("⚠️ Iltimos, barcha 3 ta savolga javob bering!");
         return;
       }
       
@@ -965,32 +965,32 @@ class PhysicsParticle2D {
 
       if (q1.value === 'B') {
         score++;
-        feedback.push('1-Savol: To‘g‘ri! 2D elastik to‘qnashuvda skalyar impuls J = -((1+e)(v1-v2).n)/(1/m1 + 1/m2) orqali normal bo‘yicha impulslar taqsimlanadi.');
+        feedback.push(__t("1-Savol: To‘g‘ri! 2D elastik to‘qnashuvda skalyar impuls J = -((1+e)(v1-v2).n)/(1/m1 + 1/m2) orqali normal bo‘yicha impulslar taqsimlanadi."));
       } else {
-        feedback.push('1-Savol: Noto‘g‘ri. 2D to‘qnashuvda skalyar impuls J formulasi nisbiy tezlikning normalga proyeksiyasi va massalar yig‘indisiga bog‘liq (B varianti).');
+        feedback.push(__t("1-Savol: Noto‘g‘ri. 2D to‘qnashuvda skalyar impuls J formulasi nisbiy tezlikning normalga proyeksiyasi va massalar yig‘indisiga bog‘liq (B varianti)."));
       }
 
       if (q2.value === 'A') {
         score++;
-        feedback.push('2-Savol: To‘g‘ri! Qiya tekislikda sirpanish boshlanishi uchun og‘irlik kuchining parallel tashkil etuvchisi maksimal tinchlikdagi ishqalanishdan katta bo‘lishi kerak: mg*sin(a) > mu*mg*cos(a) => tan(a) > mu.');
+        feedback.push(__t("2-Savol: To‘g‘ri! Qiya tekislikda sirpanish boshlanishi uchun og‘irlik kuchining parallel tashkil etuvchisi maksimal tinchlikdagi ishqalanishdan katta bo‘lishi kerak: mg*sin(a) > mu*mg*cos(a) => tan(a) > mu."));
       } else {
-        feedback.push('2-Savol: Noto‘g‘ri. Jism harakatlanishi uchun qiyalik tangensi ishqalanish koeffitsiyentidan katta bo‘lishi shart: tan(a) > mu (A varianti).');
+        feedback.push(__t("2-Savol: Noto‘g‘ri. Jism harakatlanishi uchun qiyalik tangensi ishqalanish koeffitsiyentidan katta bo‘lishi shart: tan(a) > mu (A varianti)."));
       }
 
       if (q3.value === 'B') {
         score++;
-        feedback.push('3-Savol: To‘g‘ri! Simplektik Eyler–Kromer integratori fazaviy hajmni saqlaydi va energiya dreyfini chegaralaydi (dE/E0 < 10^-3), oddiy Eyler esa energiyani har kadrda portlatib yuboradi.');
+        feedback.push(__t("3-Savol: To‘g‘ri! Simplektik Eyler–Kromer integratori fazaviy hajmni saqlaydi va energiya dreyfini chegaralaydi (dE/E0 < 10^-3), oddiy Eyler esa energiyani har kadrda portlatib yuboradi."));
       } else {
-        feedback.push('3-Savol: Noto‘g‘ri. Google Antigravity Simplektik usulni fazaviy invariantlarni saqlash va energiya dreyfini < 10^-3 darajasida ushlab turish uchun talab qiladi (B varianti).');
+        feedback.push(__t("3-Savol: Noto‘g‘ri. Google Antigravity Simplektik usulni fazaviy invariantlarni saqlash va energiya dreyfini < 10^-3 darajasida ushlab turish uchun talab qiladi (B varianti)."));
       }
       
       res.style.display = 'block';
       if (score === 3) {
         res.style.color = '#047857';
-        res.innerHTML = `🎉 Tabriklaymiz! 3/3 (100%) - Klassik mexanika dinamikasi, 2D to‘qnashuv impulsi va Antigravity simplektik monitoring talablarini mukammal o‘zlashtirdingiz!<br><br><small style="color:#4B5464;">${feedback.join('<br>')}</small>`;
+        res.innerHTML = __t("🎉 Tabriklaymiz! 3/3 (100%) - Klassik mexanika dinamikasi, 2D to‘qnashuv impulsi va Antigravity simplektik monitoring talablarini mukammal o‘zlashtirdingiz!<br><br><small style=\"color:#4B5464;\">{0}</small>", [feedback.join('<br>')]);
       } else {
         res.style.color = '#DC2626';
-        res.innerHTML = `Natija: ${score}/3 ta to‘g‘ri.<br><br><small style="color:#4B5464;">${feedback.join('<br>')}</small>`;
+        res.innerHTML = __t("Natija: {0}/3 ta to‘g‘ri.<br><br><small style=\"color:#4B5464;\">{1}</small>", [score, feedback.join('<br>')]);
       }
     }
   </script>

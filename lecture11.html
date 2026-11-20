@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -879,7 +879,7 @@ Dars transkripti: \${otterRawTranscript}
       if (!q1 || !q2 || !q3) {
         res.style.display = 'block';
         res.style.color = '#F59E0B';
-        res.textContent = '⚠️ Iltimos, barcha 3 ta savolga javob bering!';
+        res.textContent = __t("⚠️ Iltimos, barcha 3 ta savolga javob bering!");
         return;
       }
       
@@ -891,10 +891,10 @@ Dars transkripti: \${otterRawTranscript}
       res.style.display = 'block';
       if (score === 3) {
         res.style.color = '#047857';
-        res.textContent = '🎉 Tabriklaymiz! 3/3 (100%) - Masofaviy ta’lim, LMS integratsiyasi, Otter.ai va Antigravity portfolio talablarini mukammal o‘zlashtirdingiz!';
+        res.textContent = __t("🎉 Tabriklaymiz! 3/3 (100%) - Masofaviy ta’lim, LMS integratsiyasi, Otter.ai va Antigravity portfolio talablarini mukammal o‘zlashtirdingiz!");
       } else {
         res.style.color = '#DC2626';
-        res.textContent = `Natija: ${score}/3 ta to‘g‘ri. Iltimos, 2, 4 va 5-bo‘limlardagi nazariy va metodik apparatni qayta ko‘rib chiqing.`;
+        res.textContent = __t("Natija: {0}/3 ta to‘g‘ri. Iltimos, 2, 4 va 5-bo‘limlardagi nazariy va metodik apparatni qayta ko‘rib chiqing.", [score]);
       }
     }
   </script>

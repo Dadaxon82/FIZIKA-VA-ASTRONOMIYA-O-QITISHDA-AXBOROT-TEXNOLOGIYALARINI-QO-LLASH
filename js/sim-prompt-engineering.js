@@ -46,43 +46,14 @@ function initPromptEngineeringLab() {
   const LIBRARY = {
     projectile: {
       vague: {
-        prompt: "Menga snaryad otilishini Canvasda ko‘rsatadigan JS kod yozib ber.",
-        comment: "❌ Aniqlik past: havo qarshiligi yo‘q, metr-piksel masshtabi yo‘q, yerga urilganda chegara sharti aniqlanmagan — snaryad ekrandan tez chiqib ketadi.",
+        prompt: __t("Menga snaryad otilishini Canvasda ko‘rsatadigan JS kod yozib ber."),
+        comment: __t("❌ Aniqlik past: havo qarshiligi yo‘q, metr-piksel masshtabi yo‘q, yerga urilganda chegara sharti aniqlanmagan — snaryad ekrandan tez chiqib ketadi."),
         code:
-`class Sim {
-  reset(w, h) {
-    this.x = 20; this.y = h - 20;
-    this.vx = 90; this.vy = -160;
-    this.g = 60;
-    this.trail = [];
-  }
-  update(dt, w, h) {
-    this.vy += this.g * dt;
-    this.x += this.vx * dt;
-    this.y += this.vy * dt;
-    this.trail.push({ x: this.x, y: this.y });
-    if (this.trail.length > 80) this.trail.shift();
-    // Chegara sharti yo‘q: snaryad yerdan pastga tushib ketaveradi.
-  }
-  render(ctx, w, h, opts) {
-    if (opts.trails) {
-      ctx.strokeStyle = 'rgba(244,63,94,0.4)'; ctx.beginPath();
-      this.trail.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
-      ctx.stroke();
-    }
-    ctx.fillStyle = '#F43F5E';
-    ctx.beginPath(); ctx.arc(this.x, this.y, 8, 0, Math.PI * 2); ctx.fill();
-  }
-  getTelemetry() {
-    const v = Math.hypot(this.vx, this.vy);
-    const unstable = this.y > 900 || this.y < -400;
-    return { energy: 0.5 * v * v, vel: v, stable: !unstable };
-  }
-}`
+__t("class Sim {\n  reset(w, h) {\n    this.x = 20; this.y = h - 20;\n    this.vx = 90; this.vy = -160;\n    this.g = 60;\n    this.trail = [];\n  }\n  update(dt, w, h) {\n    this.vy += this.g * dt;\n    this.x += this.vx * dt;\n    this.y += this.vy * dt;\n    this.trail.push({ x: this.x, y: this.y });\n    if (this.trail.length > 80) this.trail.shift();\n    // Chegara sharti yo‘q: snaryad yerdan pastga tushib ketaveradi.\n  }\n  render(ctx, w, h, opts) {\n    if (opts.trails) {\n      ctx.strokeStyle = 'rgba(244,63,94,0.4)'; ctx.beginPath();\n      this.trail.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));\n      ctx.stroke();\n    }\n    ctx.fillStyle = '#F43F5E';\n    ctx.beginPath(); ctx.arc(this.x, this.y, 8, 0, Math.PI * 2); ctx.fill();\n  }\n  getTelemetry() {\n    const v = Math.hypot(this.vx, this.vy);\n    const unstable = this.y > 900 || this.y < -400;\n    return { energy: 0.5 * v * v, vel: v, stable: !unstable };\n  }\n}", [])
       },
       structured: {
-        prompt: "Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yoz. Parametrlar: g=9.81 m/s^2, aerodinamik qarshilik F_drag = -0.5*rho*Cd*A*|v|*v, tiklanish koeffitsiyenti e=0.7. Yerga urilganda noelastik (e=0.7) qaytsin, ekran chegarasidan chiqmasin.",
-        comment: "✅ Aniq: havo qarshiligi, masshtablangan gravitatsiya va yerga noelastik urilish (e = 0,7) hisobga olingan — snaryad ekran ichida barqaror sakraydi.",
+        prompt: __t("Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yoz. Parametrlar: g=9.81 m/s^2, aerodinamik qarshilik F_drag = -0.5*rho*Cd*A*|v|*v, tiklanish koeffitsiyenti e=0.7. Yerga urilganda noelastik (e=0.7) qaytsin, ekran chegarasidan chiqmasin."),
+        comment: __t("✅ Aniq: havo qarshiligi, masshtablangan gravitatsiya va yerga noelastik urilish (e = 0,7) hisobga olingan — snaryad ekran ichida barqaror sakraydi."),
         code:
 `class Sim {
   reset(w, h) {
@@ -135,8 +106,8 @@ function initPromptEngineeringLab() {
 
     spring: {
       vague: {
-        prompt: "Prujina harakatini Canvasda animatsiya qiladigan kod yoz.",
-        comment: "❌ Noaniq: oddiy (Forward) Eyler integratori dempfirlashsiz ishlatilgan — har kadrda energiya sun'iy ravishda oshib, amplituda cheksiz kattalashadi (raqamli beqarorlik).",
+        prompt: __t("Prujina harakatini Canvasda animatsiya qiladigan kod yoz."),
+        comment: __t("❌ Noaniq: oddiy (Forward) Eyler integratori dempfirlashsiz ishlatilgan — har kadrda energiya sun'iy ravishda oshib, amplituda cheksiz kattalashadi (raqamli beqarorlik)."),
         code:
 `class Sim {
   reset(w, h) {
@@ -164,8 +135,8 @@ function initPromptEngineeringLab() {
 }`
       },
       structured: {
-        prompt: "HTML5 Canvasda vertikal so‘nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin.",
-        comment: "✅ Aniq: dempfirlash koeffitsiyenti (c) va simplektik (Semi-implicit Euler) integrator qo‘llanilgan — tebranish energiyasi bashoratli tarzda kamayib, barqaror muvozanatga keladi.",
+        prompt: __t("HTML5 Canvasda vertikal so‘nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin."),
+        comment: __t("✅ Aniq: dempfirlash koeffitsiyenti (c) va simplektik (Semi-implicit Euler) integrator qo‘llanilgan — tebranish energiyasi bashoratli tarzda kamayib, barqaror muvozanatga keladi."),
         code:
 `class Sim {
   reset(w, h) {
@@ -205,8 +176,8 @@ function initPromptEngineeringLab() {
 
     collision: {
       vague: {
-        prompt: "Ikkita to‘p to‘qnashuvini Canvasda ko‘rsat.",
-        comment: "❌ Noaniq: to‘qnashuvda faqat tezliklar almashtiriladi, penetratsiya (bir-biriga kirib ketish) tuzatilmaydi — to‘plar vaqti-vaqti bilan bir-birining ichiga yopishib qoladi.",
+        prompt: __t("Ikkita to‘p to‘qnashuvini Canvasda ko‘rsat."),
+        comment: __t("❌ Noaniq: to‘qnashuvda faqat tezliklar almashtiriladi, penetratsiya (bir-biriga kirib ketish) tuzatilmaydi — to‘plar vaqti-vaqti bilan bir-birining ichiga yopishib qoladi."),
         code:
 `class Sim {
   reset(w, h) {
@@ -236,8 +207,8 @@ function initPromptEngineeringLab() {
 }`
       },
       structured: {
-        prompt: "2D fazoda turli massali sharlar to‘qnashuvi uchun JavaScript dvigatelini yoz. To‘qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin.",
-        comment: "✅ Aniq: impuls asosidagi yechim va MTV positional correction qo‘llanilgan — to‘plar hech qachon bir-biriga kirib qolmaydi, impuls aniq saqlanadi.",
+        prompt: __t("2D fazoda turli massali sharlar to‘qnashuvi uchun JavaScript dvigatelini yoz. To‘qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin."),
+        comment: __t("✅ Aniq: impuls asosidagi yechim va MTV positional correction qo‘llanilgan — to‘plar hech qachon bir-biriga kirib qolmaydi, impuls aniq saqlanadi."),
         code:
 `class Sim {
   reset(w, h) {
@@ -288,8 +259,8 @@ function initPromptEngineeringLab() {
 
     wave: {
       vague: {
-        prompt: "Ikki tirqishli to‘lqin naqshini Canvasda chiz.",
-        comment: "❌ Noaniq: faqat bitta tirqish (yorug‘lik nuqtasi) chizilgan, interferensiya hisoblanmagan — natija haqiqiy Yung tajribasi naqshini aks ettirmaydi.",
+        prompt: __t("Ikki tirqishli to‘lqin naqshini Canvasda chiz."),
+        comment: __t("❌ Noaniq: faqat bitta tirqish (yorug‘lik nuqtasi) chizilgan, interferensiya hisoblanmagan — natija haqiqiy Yung tajribasi naqshini aks ettirmaydi."),
         code:
 `class Sim {
   reset(w, h) { this.t = 0; }
@@ -306,8 +277,8 @@ function initPromptEngineeringLab() {
 }`
       },
       structured: {
-        prompt: "Yung tajribasidagi ikki tirqishli to‘lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O‘ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin.",
-        comment: "✅ Aniq: ikkala tirqishdan kelayotgan to‘lqinlar yo‘l farqiga asosan qo‘shiladi va haqiqiy interferensiya chiziqlari (maksimum/minimumlar) hosil bo‘ladi.",
+        prompt: __t("Yung tajribasidagi ikki tirqishli to‘lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O‘ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin."),
+        comment: __t("✅ Aniq: ikkala tirqishdan kelayotgan to‘lqinlar yo‘l farqiga asosan qo‘shiladi va haqiqiy interferensiya chiziqlari (maksimum/minimumlar) hosil bo‘ladi."),
         code:
 `class Sim {
   reset(w, h) {
@@ -351,7 +322,7 @@ function initPromptEngineeringLab() {
     commentBoxEl.style.color = mode === 'structured' ? '#34D399' : '#FCA5A5';
     commentBoxEl.style.background = mode === 'structured' ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)';
 
-    modeBadge.textContent = mode === 'structured' ? '✅ Aniq fizik prompt' : '❌ Noaniq prompt';
+    modeBadge.textContent = mode === 'structured' ? __t("✅ Aniq fizik prompt") : __t("❌ Noaniq prompt");
     modeBadge.className = 'badge ' + (mode === 'structured' ? 'badge-emerald' : 'badge-rose');
 
     codeEditor.value = entry.code;
@@ -365,11 +336,11 @@ function initPromptEngineeringLab() {
       const instance = new SimClass();
       instance.reset(canvas.clientWidth || 700, canvas.clientHeight || 380);
       sim = instance;
-      errorLog.textContent = '● Sinov maydoni holati: tayyor';
+      errorLog.textContent = __t("● Sinov maydoni holati: tayyor");
       errorLog.style.color = '#34D399';
     } catch (err) {
       sim = null;
-      errorLog.textContent = '⚠ Xato: ' + err.message;
+      errorLog.textContent = __t("⚠ Xato: ") + err.message;
       errorLog.style.color = '#F43F5E';
     }
   }
@@ -396,7 +367,7 @@ function initPromptEngineeringLab() {
   });
   if (btnPlay) btnPlay.addEventListener('click', () => {
     isRunning = !isRunning;
-    btnPlay.textContent = isRunning ? '⏸ Pauza' : __t("▶ Davom ettirish");
+    btnPlay.textContent = isRunning ? __t("⏸ Pauza") : __t("▶ Davom ettirish");
     lastTime = null;
   });
 
@@ -414,7 +385,7 @@ function initPromptEngineeringLab() {
 
     if (sim) {
       if (isRunning) {
-        try { sim.update(dt, w, h); } catch (err) { errorLog.textContent = '⚠ Ishga tushirish xatosi: ' + err.message; errorLog.style.color = '#F43F5E'; }
+        try { sim.update(dt, w, h); } catch (err) { errorLog.textContent = __t("⚠ Ishga tushirish xatosi: ") + err.message; errorLog.style.color = '#F43F5E'; }
       }
       try {
         sim.render(ctx, w, h, { vectors: chkVectors ? chkVectors.checked : true, trails: chkTrails ? chkTrails.checked : true });
@@ -424,7 +395,7 @@ function initPromptEngineeringLab() {
       if (statEnergy) statEnergy.textContent = tel.energy.toFixed(2).replace('.', ',') + ' J';
       if (statVel) statVel.textContent = tel.vel.toFixed(2).replace('.', ',') + ' m/s';
       if (statStatus) {
-        statStatus.textContent = tel.stable ? '● barqaror' : '● beqaror';
+        statStatus.textContent = tel.stable ? __t("● barqaror") : __t("● beqaror");
         statStatus.style.color = tel.stable ? '#047857' : '#E11D48';
       }
     }

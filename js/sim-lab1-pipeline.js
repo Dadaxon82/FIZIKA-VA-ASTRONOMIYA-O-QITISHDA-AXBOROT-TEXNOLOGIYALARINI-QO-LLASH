@@ -300,7 +300,7 @@ Qoidalar:
     if (playBtn) {
       playBtn.addEventListener('click', () => {
         running = !running;
-        playBtn.textContent = running ? __t("⏸ To‘xtatish") : "▶️ Davom ettirish";
+        playBtn.textContent = running ? __t("⏸ To‘xtatish") : __t("▶️ Davom ettirish");
       });
     }
     if (resetBtn) {

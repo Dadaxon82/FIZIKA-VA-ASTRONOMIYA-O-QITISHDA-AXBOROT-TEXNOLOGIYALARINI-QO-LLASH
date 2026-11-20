@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
 function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
@@ -23,7 +24,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(() => toast('Nusxalandi!')).catch(() => toast('Nusxalandi!'));
+      navigator.clipboard.writeText(text).then(() => toast(__t("Nusxalandi!"))).catch(() => toast(__t("Nusxalandi!")));
     } else {
       const ta = document.createElement('textarea');
       ta.value = text;
@@ -31,7 +32,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       ta.select();
       document.execCommand('copy');
       ta.remove();
-      toast('Nusxalandi!');
+      toast(__t("Nusxalandi!"));
     }
   }
 

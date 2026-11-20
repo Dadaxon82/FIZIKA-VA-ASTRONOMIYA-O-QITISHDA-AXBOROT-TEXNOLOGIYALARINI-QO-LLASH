@@ -102,6 +102,14 @@
    "Лаб. 10: отладка и анализ ошибок с ChatGPT Code Interpreter",
    "Lab 10: Debugging and Error Analysis with ChatGPT Code Interpreter"
   ],
+  "11-Lab: Midjourney yordamida Ilmiy Laboratoriya Teksturalarini Sintezlash": [
+   "Лаб. 11: синтез текстур научной лаборатории с помощью Midjourney",
+   "Lab 11: Synthesising Science-Lab Textures with Midjourney"
+  ],
+  "12-Lab: Muxlisa AI / ElevenLabs orqali Fizik Izohlarni Audio-Narratsiya Qilish": [
+   "Лаб. 12: аудионаррация физических пояснений через Muxlisa AI / ElevenLabs",
+   "Lab 12: Audio Narration of Physics Explanations with Muxlisa AI / ElevenLabs"
+  ],
   "13-Lab: Otter.ai yordamida Laboratoriya Qaydlari va Hisobot Transkripsiyasi": [
    "Лаб. 13: лабораторные записи и транскрипция отчёта с помощью Otter.ai",
    "Lab 13: Lab Notes and Report Transcription with Otter.ai"
@@ -114,6 +122,10 @@
    "Лаб. 15: публикация итогового проекта Capstone на GitHub Pages и защита",
    "Lab 15: Publishing and Defending the Final Capstone Project on GitHub Pages"
   ],
+  "2-Lab: Nazariy Differensial Tenglamalar Sistemasini Tuzish": [
+   "Лаб. 2: составление системы теоретических дифференциальных уравнений",
+   "Lab 2: Setting Up a System of Theoretical Differential Equations"
+  ],
   "3-Lab: PhET va Vascak.cz Simulyatsiyalarini Teskari Muhandislik Tahlili": [
    "Лаб. 3: анализ симуляций PhET и Vascak.cz методом обратной разработки",
    "Lab 3: Reverse-Engineering Analysis of PhET and Vascak.cz Simulations"
@@ -125,6 +137,14 @@
   "5-Lab: Sonli Integrallash: Forward Euler va Eyler-Kromer Kodlash": [
    "Лаб. 5: численное интегрирование — программирование Forward Euler и Эйлера–Кромера",
    "Lab 5: Numerical Integration — Coding Forward Euler and Euler–Cromer"
+  ],
+  "6-Lab: 4-Tartibli Runge-Kutta (RK4) Algoritmini Qurish": [
+   "Лаб. 6: построение алгоритма Рунге–Кутты 4-го порядка (RK4)",
+   "Lab 6: Building the 4th-Order Runge–Kutta (RK4) Algorithm"
+  ],
+  "7-Lab: HTML5 Canvas Ekranida Koordinatalar Transformatsiyasi (toScreenX/Y)": [
+   "Лаб. 7: преобразование координат на экране HTML5 Canvas (toScreenX/Y)",
+   "Lab 7: Coordinate Transformation on an HTML5 Canvas (toScreenX/Y)"
   ],
   "8-Lab: Real Vaqtli Vektorlar (v, a, F) va Faza Fazosi Chizmasi": [
    "Лаб. 8: векторы в реальном времени (v, a, F) и построение фазового пространства",
@@ -156,9 +176,77 @@
   ]
  },
  "js/sim-astronomy-visualization.js": {
+  "\"Ovozli tushuntirishni boshlash uchun yuqoridagi tugmani bosing...\"": [
+   "\"Нажмите кнопку выше, чтобы начать голосовое объяснение...\"",
+   "\"Press the button above to start the spoken explanation...\""
+  ],
+  "Bu shuni anglatadiki, sayyora Quyoshga yaqinlashganda — perigeliyda — tezroq, uzoqlashganda — afeliyda — sekinroq harakatlanadi.": [
+   "Это означает, что при приближении к Солнцу — в перигелии — планета движется быстрее, а при удалении — в афелии — медленнее.",
+   "This means the planet moves faster when it is close to the Sun — at perihelion — and slower when it is far away — at aphelion."
+  ],
+  "Hot Jupiter": [
+   "Горячий юпитер",
+   "Hot Jupiter"
+  ],
+  "Kepler ikkinchi qonuniga ko‘ra, sayyorani Quyosh bilan tutashtiruvchi radius-vektor teng vaqt oralig‘ida teng maydonlarni chizadi.": [
+   "Согласно второму закону Кеплера, радиус-вектор, соединяющий планету с Солнцем, за равные промежутки времени описывает равные площади.",
+   "According to Kepler’s second law, the radius vector joining a planet to the Sun sweeps out equal areas in equal times."
+  ],
+  "Kometa": [
+   "Комета",
+   "Comet"
+  ],
+  "Mars": [
+   "Марс",
+   "Mars"
+  ],
+  "Merkuriy": [
+   "Меркурий",
+   "Mercury"
+  ],
+  "Venera": [
+   "Венера",
+   "Venus"
+  ],
+  "Vis-Viva tenglamasi orbitaning istalgan nuqtasidagi tezlikni radius va katta yarim o‘q orqali aniqlashga imkon beradi.": [
+   "Уравнение Vis-Viva позволяет найти скорость в любой точке орбиты через радиус и большую полуось.",
+   "The vis-viva equation gives the speed at any point of the orbit from the radius and the semi-major axis."
+  ],
+  "Yer": [
+   "Земля",
+   "Earth"
+  ],
+  "Yulduz": [
+   "Звезда",
+   "Star"
+  ],
+  "Yulduz A": [
+   "Звезда A",
+   "Star A"
+  ],
+  "Yulduz B": [
+   "Звезда B",
+   "Star B"
+  ],
+  "Yupiter": [
+   "Юпитер",
+   "Jupiter"
+  ],
+  "⏸ Pauza": [
+   "⏸ Пауза",
+   "⏸ Pause"
+  ],
   "▶ Davom ettirish": [
    "▶ Продолжить",
    "▶ Resume"
+  ],
+  "● barqaror (Kepler invarianti)": [
+   "● устойчиво (инвариант Кеплера)",
+   "● stable (Kepler invariant)"
+  ],
+  "⚠️ Brauzeringiz nutq sintezini (Web Speech API) qo‘llab-quvvatlamaydi.": [
+   "⚠️ Ваш браузер не поддерживает синтез речи (Web Speech API).",
+   "⚠️ Your browser does not support speech synthesis (Web Speech API)."
   ]
  },
  "js/sim-canvas-architecture.js": {
@@ -195,6 +283,288 @@
   " kg·m/s": [
    " кг·м/с",
    " kg·m/s"
+  ]
+ },
+ "js/sim-electrodynamics-pipeline.js": {
+  "\n          <strong>1. PhET \"Charges and Fields\" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          q1 = {0} nKl, q2 = {1} nKl.<br>\n          Sinov zaryadi nuqtasidagi maydon: <strong>E = {2} N/Kl</strong>, Φ = {3} V.": [
+   "<strong>1. Деконструкция PhET \"Charges and Fields\" (живые параметры):</strong><br> q1 = {0} нКл, q2 = {1} нКл.<br> Поле в точке пробного заряда: <strong>E = {2} Н/Кл</strong>, Φ = {3} В.",
+   "<strong>1. PhET \"Charges and Fields\" deconstruction (live parameters):</strong><br> q1 = {0} nC, q2 = {1} nC.<br> Field at the test charge: <strong>E = {2} N/C</strong>, Φ = {3} V."
+  ],
+  "\n          <strong>1. PhET \"Faraday’s Law\" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          N = {0} o‘ram, magnit tezligi = {1}x.<br>\n          Hisoblangan induksiyalangan E.Yu.K.: <strong>ε = {2} V</strong>.": [
+   "<strong>1. Деконструкция PhET \"Faraday’s Law\" (живые параметры):</strong><br> N = {0} витков, скорость магнита = {1}x.<br> Рассчитанная индуцированная ЭДС: <strong>ε = {2} В</strong>.",
+   "<strong>1. PhET \"Faraday’s Law\" deconstruction (live parameters):</strong><br> N = {0} turns, magnet speed = {1}x.<br> Computed induced EMF: <strong>ε = {2} V</strong>."
+  ],
+  "\n          <strong>1. Vascak.cz \"RLC Circuit\" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          R = {0} Ω, L = {1} mH, C = {2} µF, f = {3} Hz.<br>\n          Hisoblangan impedans: <strong>Z = {4} Ω</strong>, I₀ = {5} A.": [
+   "<strong>1. Деконструкция Vascak.cz \"RLC Circuit\" (живые параметры):</strong><br> R = {0} Ом, L = {1} мГн, C = {2} мкФ, f = {3} Гц.<br> Рассчитанный импеданс: <strong>Z = {4} Ом</strong>, I₀ = {5} А.",
+   "<strong>1. Vascak.cz \"RLC Circuit\" deconstruction (live parameters):</strong><br> R = {0} Ω, L = {1} mH, C = {2} µF, f = {3} Hz.<br> Computed impedance: <strong>Z = {4} Ω</strong>, I₀ = {5} A."
+  ],
+  "\n        <strong>2. Claude Maydon & Zanjir Kodi:</strong>\n        <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre>\n        <button id=\"btn-copy-electro-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>": [
+   "<strong>2. Код поля и цепи Claude:</strong> <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre> <button id=\"btn-copy-electro-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Копировать</button>",
+   "<strong>2. Claude field & circuit code:</strong> <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre> <button id=\"btn-copy-electro-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Copy</button>"
+  ],
+  "\n        <strong>3. Muxlisa AI / ElevenLabs Audio Sintezi:</strong><br>\n        Joriy mavzu (\"{0}\") uchun ilmiy audio-narratsiya Web Speech API orqali sintezlanmoqda (real brauzer TTS, 'uz-UZ').<br>\n        <button id=\"btn-play-narration-pipe\" class=\"btn btn-primary btn-sm\" style=\"margin-top:8px;\">🎙️ Eshitish</button>": [
+   "<strong>3. Аудиосинтез Muxlisa AI / ElevenLabs:</strong><br> Научная аудионаррация для текущей темы (\"{0}\") синтезируется через Web Speech API (реальный TTS браузера, 'ru-RU').<br> <button id=\"btn-play-narration-pipe\" class=\"btn btn-primary btn-sm\" style=\"margin-top:8px;\">🎙️ Слушать</button>",
+   "<strong>3. Muxlisa AI / ElevenLabs audio synthesis:</strong><br> Scientific audio narration for the current topic (\"{0}\") is being synthesised with the Web Speech API (real browser TTS, 'en-US').<br> <button id=\"btn-play-narration-pipe\" class=\"btn btn-primary btn-sm\" style=\"margin-top:8px;\">🎙️ Listen</button>"
+  ],
+  "\n        <strong>4. Google Antigravity Audit Natijasi:</strong><br>\n        ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>\n        ✓ Delta-Time Akkumulyatori: {0} FPS, kadrlar barqaror ishlamoqda.<br>\n        ✓ Fizik Invariantlar: {1}": [
+   "<strong>4. Результат аудита Google Antigravity:</strong><br> ✓ Статический анализ AST: eval() или опасных обращений к DOM не обнаружено.<br> ✓ Аккумулятор delta-time: {0} FPS, кадры стабильны.<br> ✓ Физические инварианты: {1}",
+   "<strong>4. Google Antigravity audit result:</strong><br> ✓ AST static analysis: no eval() or unsafe DOM access detected.<br> ✓ Delta-time accumulator: {0} FPS, frames are stable.<br> ✓ Physical invariants: {1}"
+  ],
+  "(rezonansga yaqin — Z minimal)": [
+   "(близко к резонансу — Z минимален)",
+   "(near resonance — Z is minimal)"
+  ],
+  "1. Bitta batareya va ikkita rezistorni ketma-ket ulab, umumiy qarshilikni hisoblang.": [
+   "1. Соедините последовательно одну батарею и два резистора и рассчитайте общее сопротивление.",
+   "1. Connect one battery and two resistors in series and compute the total resistance."
+  ],
+  "1. Ikkita musbat zaryadni yaqin joylashtirib, maydon kuch chiziqlarining bir-birini itarishini kuzating.": [
+   "1. Расположите рядом два положительных заряда и пронаблюдайте, как силовые линии поля отталкиваются.",
+   "1. Place two positive charges close together and watch the field lines push away from each other."
+  ],
+  "1. Kompasni magnit atrofida aylantirib, maydon chiziqlari yo‘nalishini xaritalang.": [
+   "1. Перемещая компас вокруг магнита, нанесите на карту направление линий поля.",
+   "1. Move the compass around the magnet and map the direction of the field lines."
+  ],
+  "1. Magnitni g‘altak ichiga turli tezlikda kiriting va induksiya EYuK ning tezlikka bog‘liqligini kuzating.": [
+   "1. Вводите магнит в катушку с разной скоростью и пронаблюдайте зависимость ЭДС индукции от скорости.",
+   "1. Push the magnet into the coil at different speeds and observe how the induced EMF depends on speed."
+  ],
+  "1. Magnitning N qutbini g‘altak ichiga kiriting va voltmetr ko‘rsatkichining qaysi tomonga og‘ishini qayd eting.": [
+   "1. Введите северный полюс магнита в катушку и запишите, в какую сторону отклоняется стрелка вольтметра.",
+   "1. Push the magnet’s N pole into the coil and record which way the voltmeter needle swings."
+  ],
+  "1. Qarshilikni oshirib, tok kuchining kamayishini kuzating.": [
+   "1. Увеличьте сопротивление и пронаблюдайте уменьшение силы тока.",
+   "1. Increase the resistance and watch the current decrease."
+  ],
+  "1. Tezlikni ikki marta oshirib, aylana radiusi ham ikki marta ortishini tekshiring.": [
+   "1. Увеличьте скорость вдвое и проверьте, что радиус окружности тоже вырос вдвое.",
+   "1. Double the speed and check that the circle radius doubles too."
+  ],
+  "1. Zaryadlar orasidagi masofani ikki marta oshirib, kuch to‘rt marta kamayishini tekshiring.": [
+   "1. Увеличьте расстояние между зарядами вдвое и проверьте, что сила уменьшилась в четыре раза.",
+   "1. Double the distance between the charges and check that the force drops four-fold."
+  ],
+  "2. Bitta zaryad kattaligini ikki marta oshirib, kuchning chiziqli o‘zgarishini kuzating.": [
+   "2. Увеличьте величину одного заряда вдвое и пронаблюдайте линейное изменение силы.",
+   "2. Double one charge and observe the linear change in force."
+  ],
+  "2. Ekvipotensial chiziqlar asbobini ishlatib, potensial=const egri chiziqlarni chizing.": [
+   "2. С помощью инструмента эквипотенциальных линий нарисуйте кривые потенциал=const.",
+   "2. Use the equipotential tool to draw potential=const curves."
+  ],
+  "2. Elektromagnitdagi tokni oshirib, maydon kuchi ortishini kuzating.": [
+   "2. Увеличьте ток в электромагните и пронаблюдайте рост силы поля.",
+   "2. Increase the current in the electromagnet and watch the field get stronger."
+  ],
+  "2. G‘altak o‘ramlari sonini o‘zgartirib, EYuK ning N ga proporsionalligini tekshiring.": [
+   "2. Меняя число витков катушки, проверьте пропорциональность ЭДС числу N.",
+   "2. Change the number of coil turns and check that the EMF is proportional to N."
+  ],
+  "2. Kuchlanishni o‘zgartirib, tok bilan chiziqli bog‘liqlikni tasdiqlang.": [
+   "2. Меняя напряжение, подтвердите его линейную связь с током.",
+   "2. Change the voltage and confirm its linear relationship with current."
+  ],
+  "2. Magnit induksiyani o‘zgartirib, aylanish davri T = 2πm/(|q|B) formulasini tasdiqlang (davr tezlikka bog‘liq emas).": [
+   "2. Меняя магнитную индукцию, подтвердите формулу периода T = 2πm/(|q|B) (период не зависит от скорости).",
+   "2. Change the magnetic induction and confirm the period formula T = 2πm/(|q|B) (the period does not depend on speed)."
+  ],
+  "2. Magnitni g‘altak ichida harakatsiz ushlab turing va nega E.Yu.K. nolga teng bo‘lishini tushuntiring.": [
+   "2. Держите магнит неподвижно внутри катушки и объясните, почему ЭДС равна нулю.",
+   "2. Hold the magnet still inside the coil and explain why the EMF is zero."
+  ],
+  "2. Xuddi shu rezistorlarni parallel ulab, tok taqsimotini solishtiring.": [
+   "2. Соедините те же резисторы параллельно и сравните распределение тока.",
+   "2. Connect the same resistors in parallel and compare how the current divides."
+  ],
+  "3. Ampermetr va voltmetrni zanjirga to‘g‘ri ulab, Om qonunini tasdiqlang.": [
+   "3. Правильно подключите амперметр и вольтметр к цепи и подтвердите закон Ома.",
+   "3. Connect the ammeter and voltmeter correctly and confirm Ohm’s law."
+  ],
+  "3. Bir nechta (U, I) juftligidan qarshilikni hisoblab, slayderdagi qiymat bilan solishtiring.": [
+   "3. Рассчитайте сопротивление по нескольким парам (U, I) и сравните со значением на ползунке.",
+   "3. Compute the resistance from several (U, I) pairs and compare it with the slider value."
+  ],
+  "3. Elektr maydonni qo‘shib, dreyf tezligi E/B ga tengligini kuzating.": [
+   "3. Добавьте электрическое поле и пронаблюдайте, что скорость дрейфа равна E/B.",
+   "3. Add an electric field and observe that the drift speed equals E/B."
+  ],
+  "3. G‘altak o‘ramlari sonini 2 tadan 4 taga oshirib, hosil bo‘layotgan kuchlanish 2 barobar ortishini tekshiring.": [
+   "3. Увеличьте число витков катушки с 2 до 4 и проверьте, что наводимое напряжение возрастает в 2 раза.",
+   "3. Increase the coil turns from 2 to 4 and check that the induced voltage doubles."
+  ],
+  "3. Lents qoidasiga ko‘ra induksion tok yo‘nalishini oldindan ayting va tekshiring.": [
+   "3. Предскажите по правилу Ленца направление индукционного тока и проверьте.",
+   "3. Predict the direction of the induced current with Lenz’s rule and check it."
+  ],
+  "3. Sensor bilan turli nuqtalarda maydon kuchlanganligini o‘lchang va masofa kvadratiga bog‘liqligini tasdiqlang.": [
+   "3. Измерьте датчиком напряжённость поля в разных точках и подтвердите её зависимость от квадрата расстояния.",
+   "3. Measure the field strength at different points with the sensor and confirm its dependence on the square of the distance."
+  ],
+  "3. Tok yo‘nalishini teskari qilib, qutblarning almashishini tekshiring.": [
+   "3. Поменяйте направление тока и проверьте смену полюсов.",
+   "3. Reverse the current and check that the poles swap."
+  ],
+  "3. Zaryad ishoralarini almashtirib, tortishish va itarishish holatlarini solishtiring.": [
+   "3. Поменяйте знаки зарядов и сравните случаи притяжения и отталкивания.",
+   "3. Swap the signs of the charges and compare attraction and repulsion."
+  ],
+  "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> To‘xtatish": [
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Остановить",
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Stop"
+  ],
+  "<span style=\"font-size: 1.1rem; line-height: 1;\">▶</span> Davom ettirish": [
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">▶</span> Продолжить",
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">▶</span> Resume"
+  ],
+  "Bir jinsli magnit maydondagi zaryadli zarra harakati: aylana radiusi, aylanish davri va E × B dreyfi (Boris usuli).": [
+   "Движение заряженной частицы в однородном магнитном поле: радиус окружности, период обращения и дрейф E × B (метод Бориса).",
+   "A charged particle in a uniform magnetic field: circle radius, orbital period and E × B drift (Boris method)."
+  ],
+  "Brauzeringizda ovoz sintezi qo‘llab-quvvatlanmaydi.": [
+   "Ваш браузер не поддерживает синтез речи.",
+   "Speech synthesis is not supported in your browser."
+  ],
+  "Doimiy magnit va elektromagnitning magnit maydon chiziqlari, kompas igna og‘ishi va tok kuchining magnit maydoniga ta’siri.": [
+   "Линии магнитного поля постоянного магнита и электромагнита, отклонение стрелки компаса и влияние силы тока на магнитное поле.",
+   "Magnetic field lines of a permanent magnet and an electromagnet, compass needle deflection and how current affects the magnetic field."
+  ],
+  "Elektr zanjirini erkin qurish, rezistor/batareya/lampochka ulash va tok/kuchlanishni virtual asboblar bilan o‘lchash.": [
+   "Свободная сборка электрической цепи, подключение резисторов/батарей/лампочек и измерение тока/напряжения виртуальными приборами.",
+   "Building electric circuits freely, connecting resistors/batteries/bulbs and measuring current/voltage with virtual instruments."
+  ],
+  "Faradey elektromagnit induksiya qonuniga ko‘ra, konturdan o‘tayotgan magnit oqimi vaqt bo‘yicha o‘zgarganda, konturda elektr yurituvchi kuch hosil bo‘ladi. Lens qoidasiga binoan, induksiyalangan tok o‘zining magnit maydoni bilan uni yuzaga keltirgan oqim o‘zgarishiga qarshilik ko‘rsatadi.": [
+   "Согласно закону электромагнитной индукции Фарадея, при изменении во времени магнитного потока через контур в нём возникает электродвижущая сила. По правилу Ленца индуцированный ток своим магнитным полем противодействует изменению потока, которое его вызвало.",
+   "According to Faraday’s law of electromagnetic induction, when the magnetic flux through a circuit changes over time, an electromotive force is induced in it. By Lenz’s rule, the induced current’s magnetic field opposes the change in flux that produced it."
+  ],
+  "Faradeyning elektromagnit induksiya qonuni, doimiy magnitning g‘altak ichidagi harakati, magnit oqimi o‘zgarishi va induksiyalangan elektr yurituvchi kuch (E.Yu.K.) dinamikasi.": [
+   "Закон электромагнитной индукции Фарадея, движение постоянного магнита в катушке, изменение магнитного потока и динамика индуцированной электродвижущей силы (ЭДС).",
+   "Faraday’s law of electromagnetic induction, a permanent magnet moving in a coil, the change in magnetic flux and the dynamics of the induced electromotive force (EMF)."
+  ],
+  "Fazaviy Siljish (φ)": [
+   "Фазовый сдвиг (φ)",
+   "Phase shift (φ)"
+  ],
+  "G‘altak O‘ramlari (N)": [
+   "Витки катушки (N)",
+   "Coil turns (N)"
+  ],
+  "Ikki nuqtaviy zaryad orasidagi elektrostatik kuchning zaryadlar kattaligi va masofaga bog‘liqligini o‘rganish (reklamasiz PhET simulyatsiyasi).": [
+   "Изучение зависимости электростатической силы между двумя точечными зарядами от величины зарядов и расстояния (симуляция PhET без рекламы).",
+   "Studying how the electrostatic force between two point charges depends on the charges and the distance (ad-free PhET simulation)."
+  ],
+  "Impedans (Z)": [
+   "Импеданс (Z)",
+   "Impedance (Z)"
+  ],
+  "Induksiyalangan EYuK (ε)": [
+   "Индуцированная ЭДС (ε)",
+   "Induced EMF (ε)"
+  ],
+  "Kuchlanish, qarshilik va tok kuchi orasidagi bog‘lanishni oddiy zanjirda o‘rganish (reklamasiz PhET simulyatsiyasi).": [
+   "Изучение связи между напряжением, сопротивлением и силой тока в простой цепи (симуляция PhET без рекламы).",
+   "Studying the relationship between voltage, resistance and current in a simple circuit (ad-free PhET simulation)."
+  ],
+  "Kulon qonuni ikki nuqtaviy zaryad orasidagi o‘zaro ta’sir kuchini ifodalaydi. Bir xil ishorali zaryadlar itarishadi, qarama-qarshi ishorali zaryadlar esa tortishadi. Maydon kuchlanganligi masofa kvadratiga teskari proporsional kamayadi.": [
+   "Закон Кулона выражает силу взаимодействия двух точечных зарядов. Одноимённые заряды отталкиваются, разноимённые — притягиваются. Напряжённость поля убывает обратно пропорционально квадрату расстояния.",
+   "Coulomb’s law gives the force between two point charges. Like charges repel and unlike charges attract. The field strength falls off with the inverse square of the distance."
+  ],
+  "Lens qoidasi {0}: magnit harakat yo‘nalishi va E.Yu.K. ishorasi mos. Joriy ε = {1} V.": [
+   "Правило Ленца {0}: направление движения магнита и знак ЭДС согласованы. Текущая ε = {1} В.",
+   "Lenz’s rule {0}: the magnet’s direction of motion and the sign of the EMF agree. Current ε = {1} V."
+  ],
+  "Lokal": [
+   "Локально",
+   "Local"
+  ],
+  "Magnit Oqimi (Φ)": [
+   "Магнитный поток (Φ)",
+   "Magnetic flux (Φ)"
+  ],
+  "Magnit Tezligi": [
+   "Скорость магнита",
+   "Magnet speed"
+  ],
+  "Magnit, elektromagnit, g‘altak, transformator va generator yordamida elektromagnit induksiyani chuqurroq o‘rganish (reklamasiz PhET simulyatsiyasi).": [
+   "Более глубокое изучение электромагнитной индукции с помощью магнита, электромагнита, катушки, трансформатора и генератора (симуляция PhET без рекламы).",
+   "A deeper study of electromagnetic induction with a magnet, an electromagnet, a coil, a transformer and a generator (ad-free PhET simulation)."
+  ],
+  "Maydon Kuchlanganligi (E)": [
+   "Напряжённость поля (E)",
+   "Field strength (E)"
+  ],
+  "Nuqtaviy zaryadlarning superpozitsiya maydoni, ekvipotensial chiziqlar va maydon sensori orqali kuchlanganlikni o‘lchash.": [
+   "Поле суперпозиции точечных зарядов, эквипотенциальные линии и измерение напряжённости датчиком поля.",
+   "The superposition field of point charges, equipotential lines and measuring field strength with a field sensor."
+  ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
+  "Potensial (V)": [
+   "Потенциал (V)",
+   "Potential (V)"
+  ],
+  "RLC zanjirida o‘zgaruvchan tok manbai ulanganda induktivlik va sig‘im qarshiliklari o‘zaro tenglashganda rezonans hodisasi yuz beradi va tok amplitudasi maksimal qiymatga erishadi.": [
+   "Когда к RLC-цепи подключён источник переменного тока и индуктивное и ёмкостное сопротивления становятся равными, возникает резонанс, и амплитуда тока достигает максимума.",
+   "When an AC source is connected to an RLC circuit and the inductive and capacitive reactances become equal, resonance occurs and the current amplitude reaches its maximum."
+  ],
+  "Rezonans Chastotasi (f0)": [
+   "Резонансная частота (f0)",
+   "Resonant frequency (f0)"
+  ],
+  "Rezonans chastotasi f₀ = {0} Hz, joriy f = {1} Hz {2}. Fazaviy siljish φ = {3}°.": [
+   "Резонансная частота f₀ = {0} Гц, текущая f = {1} Гц {2}. Фазовый сдвиг φ = {3}°.",
+   "Resonant frequency f₀ = {0} Hz, current f = {1} Hz {2}. Phase shift φ = {3}°."
+  ],
+  "Sinov Zaryadi (q0)": [
+   "Пробный заряд (q0)",
+   "Test charge (q0)"
+  ],
+  "Sinov zaryadi maydon ta’sirida uzluksiz harakatlanmoqda, hozirgi tezlik {0} m/s. Maydon superpozitsiyasi {1} ta manba zaryaddan to‘g‘ri hisoblanmoqda.": [
+   "Пробный заряд непрерывно движется под действием поля, текущая скорость {0} м/с. Суперпозиция поля корректно вычисляется от {1} зарядов-источников.",
+   "The test charge moves continuously under the field; current speed {0} m/s. The field superposition is computed correctly from {1} source charges."
+  ],
+  "Tok Amplitudasi (I0)": [
+   "Амплитуда тока (I0)",
+   "Current amplitude (I0)"
+  ],
+  "Zaryad Tezligi (v)": [
+   "Скорость заряда (v)",
+   "Charge speed (v)"
+  ],
+  "function calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, R, dt) {\n  const dPhi = (flux(magnetX) - flux(prevMagnetX)) / dt;\n  return -turns * dPhi; // Lens qoidasi: minus ishora\n}": [
+   "function calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, R, dt) {\n  const dPhi = (flux(magnetX) - flux(prevMagnetX)) / dt;\n  return -turns * dPhi; // правило Ленца: знак минус\n}",
+   "function calculateFaradayInduction(magnetX, prevMagnetX, coilX, turns, R, dt) {\n  const dPhi = (flux(magnetX) - flux(prevMagnetX)) / dt;\n  return -turns * dPhi; // Lenz’s rule: minus sign\n}"
+  ],
+  "Φ(t) — sinov zaryadi potensiali": [
+   "Φ(t) — потенциал пробного заряда",
+   "Φ(t) — test charge potential"
+  ],
+  "ε(t) — induksiyalangan EYuK": [
+   "ε(t) — индуцированная ЭДС",
+   "ε(t) — induced EMF"
+  ],
+  "⚡ PhET: Coulomb’s Law (Kulon Qonuni)": [
+   "⚡ PhET: Coulomb’s Law (закон Кулона)",
+   "⚡ PhET: Coulomb’s Law"
+  ],
+  "📐 PhET: Ohm’s Law (Om Qonuni)": [
+   "📐 PhET: Ohm’s Law (закон Ома)",
+   "📐 PhET: Ohm’s Law"
+  ],
+  "🔄 Lorens Kuchi (sayt ichidagi reklamasiz simulyatsiya)": [
+   "🔄 Сила Лоренца (симуляция на сайте без рекламы)",
+   "🔄 Lorentz Force (ad-free on-site simulation)"
+  ],
+  "🧲 PhET Interactive Simulations: Faraday’s Law (Elektromagnit Induksiya)": [
+   "🧲 PhET Interactive Simulations: Faraday’s Law (электромагнитная индукция)",
+   "🧲 PhET Interactive Simulations: Faraday’s Law (Electromagnetic Induction)"
+  ],
+  "🧲 PhET: Faraday’s Electromagnetic Lab (Faradey Induksiyasi)": [
+   "🧲 PhET: Faraday’s Electromagnetic Lab (индукция Фарадея)",
+   "🧲 PhET: Faraday’s Electromagnetic Lab"
   ]
  },
  "js/sim-error-analysis.js": {
@@ -273,6 +643,34 @@
   "⏸ To‘xtatish": [
    "⏸ Остановить",
    "⏸ Stop"
+  ],
+  "▶️ Davom ettirish": [
+   "▶️ Продолжить",
+   "▶️ Resume"
+  ]
+ },
+ "js/sim-lab10-astro-audio.js": {
+  "Mars": [
+   "Марс",
+   "Mars"
+  ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
+  "Yer": [
+   "Земля",
+   "Earth"
+  ],
+  "Yupiter": [
+   "Юпитер",
+   "Jupiter"
+  ]
+ },
+ "js/sim-lab11-lms-otter.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
   ]
  },
  "js/sim-lab2-pipeline.js": {
@@ -291,10 +689,272 @@
    "Prompt copied!"
   ]
  },
+ "js/sim-lab4-pendulum-error.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ]
+ },
+ "js/sim-lab5-deterministic-stochastic.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ]
+ },
+ "js/sim-lab6-fbd.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ]
+ },
+ "js/sim-lab7-canvas-fps.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ]
+ },
+ "js/sim-lab8-physics-engine.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ]
+ },
+ "js/sim-lab9-prompt-library.js": {
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ]
+ },
+ "js/sim-lms-distance-learning.js": {
+  "\n        <div style=\"background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7;\">\n          <div style=\"color:#047857; font-weight:700; margin-bottom:8px;\">🔍 Google Antigravity Audit Natijasi:</div>\n          <div style=\"margin-bottom:6px; color:#11182B;\">✓ <strong>AST Statik Tahlil:</strong> eval() yoki xavfli DOM murojaati aniqlanmadi.</div>\n          <div style=\"margin-bottom:6px; color:#11182B;\">{0}</div>\n          <div style=\"color:#11182B;\">✓ <strong>Kadrlar Vaqt Sikli:</strong> {1} FPS, delta-time akkumulyatori barqaror ishlamoqda.</div>\n        </div>": [
+   "<div style=\"background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7;\"><div style=\"color:#047857; font-weight:700; margin-bottom:8px;\">🔍 Результат аудита Google Antigravity:</div> <div style=\"margin-bottom:6px; color:#11182B;\">✓ <strong>Статический анализ AST:</strong> eval() или опасных обращений к DOM не обнаружено.</div> <div style=\"margin-bottom:6px; color:#11182B;\">{0}</div> <div style=\"color:#11182B;\">✓ <strong>Временной цикл кадров:</strong> {1} FPS, аккумулятор delta-time работает устойчиво.</div></div>",
+   "<div style=\"background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.3); border-radius: var(--radius-md); padding: 14px 16px; font-size: 0.86rem; line-height: 1.7;\"><div style=\"color:#047857; font-weight:700; margin-bottom:8px;\">🔍 Google Antigravity Audit Result:</div> <div style=\"margin-bottom:6px; color:#11182B;\">✓ <strong>AST static analysis:</strong> no eval() or unsafe DOM access detected.</div> <div style=\"margin-bottom:6px; color:#11182B;\">{0}</div> <div style=\"color:#11182B;\">✓ <strong>Frame timing loop:</strong> {1} FPS, the delta-time accumulator is running stably.</div></div>"
+  ],
+  "\"Bugungi mavzumiz — Kepler qonunlari asosida sayyoraning orbital harakati. Vis-Viva tenglamasi orqali istalgan masofadagi orbital tezlikni hisoblaymiz: v^2 = GM*(2/r - 1/a), bu yerda a — katta yarim o‘q, e — ekssentrisitet ellipsning shaklini belgilaydi. Yopiq analitik yechim raqamli integratsiyadan farqli o‘laroq energiya dreyfiga ega emas.\"": [
+   "\"Наша сегодняшняя тема — орбитальное движение планеты на основе законов Кеплера. С помощью уравнения Vis-Viva вычислим орбитальную скорость на любом расстоянии: v^2 = GM*(2/r - 1/a), где a — большая полуось, а эксцентриситет e определяет форму эллипса. Замкнутое аналитическое решение, в отличие от численного интегрирования, не имеет энергетического дрейфа.\"",
+   "\"Today’s topic is a planet’s orbital motion based on Kepler’s laws. Using the vis-viva equation we compute the orbital speed at any distance: v^2 = GM*(2/r - 1/a), where a is the semi-major axis and the eccentricity e sets the shape of the ellipse. Unlike numerical integration, the closed-form analytical solution has no energy drift.\""
+  ],
+  "\"Hurmatli magistrantlar, bugungi ma’ruzamizda so‘nuvchi garmonik tebranishlarning differensial tenglamasini tahlil qilamiz: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Eyler usulida energiya sun’iy ortishi sababli, biz simplektik Eyler–Kromer yoki Runge–Kutta usulini qo‘llaymiz.\"": [
+   "\"Уважаемые магистранты, на сегодняшней лекции мы разберём дифференциальное уравнение затухающих гармонических колебаний: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Поскольку в методе Эйлера энергия искусственно растёт, мы применяем симплектический метод Эйлера–Кромера или Рунге–Кутты.\"",
+   "\"Dear master’s students, in today’s lecture we will analyse the differential equation of damped harmonic oscillation: m*(d^2x/dt^2) + b*(dx/dt) + k*x = 0. Because the energy grows artificially with Euler’s method, we use the symplectic Euler–Cromer or Runge–Kutta method.\""
+  ],
+  "1. Asosiy tenglama: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$.<br>2. So‘nish koeffitsiyenti: $$\\beta = \\gamma / (2m)$$, xos chastota: $$\\omega_0 = \\sqrt{k/m}$$.<br>3. Tavsiya: Eyler o‘rniga simplektik integrator qo‘llash.": [
+   "1. Основное уравнение: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$.<br>2. Коэффициент затухания: $$\\beta = \\gamma / (2m)$$, собственная частота: $$\\omega_0 = \\sqrt{k/m}$$.<br>3. Рекомендация: применять симплектический интегратор вместо метода Эйлера.",
+   "1. Main equation: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$.<br>2. Damping coefficient: $$\\beta = \\gamma / (2m)$$, natural frequency: $$\\omega_0 = \\sqrt{k/m}$$.<br>3. Recommendation: use a symplectic integrator instead of Euler."
+  ],
+  "1. Ekssentrisitet $e$ ni oshirib, perigeliy va afeliydagi tezlik farqini kuzatish.": [
+   "1. Увеличивая эксцентриситет $e$, наблюдать разницу скоростей в перигелии и афелии.",
+   "1. Increase the eccentricity $e$ and observe the speed difference between perihelion and aphelion."
+  ],
+  "1. Prujina qattiqligi $k$ va so‘nish parametri $\\gamma$ ni o‘zgartirib faza portretini chizish.": [
+   "1. Построить фазовый портрет, меняя жёсткость пружины $k$ и параметр затухания $\\gamma$.",
+   "1. Plot the phase portrait while varying the spring stiffness $k$ and the damping parameter $\\gamma$."
+  ],
+  "1. Vis-Viva tenglamasi: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$.<br>2. Kepler 3-qonuni: $$T^2 \\propto a^3$$.<br>3. Tavsiya: Yopiq analitik yechim numerik integratsiyadan ustun (energiya dreyfi nolga teng).": [
+   "1. Уравнение Vis-Viva: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$.<br>2. 3-й закон Кеплера: $$T^2 \\propto a^3$$.<br>3. Рекомендация: замкнутое аналитическое решение превосходит численное интегрирование (дрейф энергии равен нулю).",
+   "1. Vis-viva equation: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$.<br>2. Kepler’s 3rd law: $$T^2 \\propto a^3$$.<br>3. Recommendation: the closed-form analytical solution beats numerical integration (zero energy drift)."
+  ],
+  "2. Katta yarim o‘q $a$ ni o‘zgartirib, aylanish davri $T$ ning o‘zgarishini tekshirish (Kepler 3-qonuni).": [
+   "2. Меняя большую полуось $a$, проверить изменение периода обращения $T$ (3-й закон Кеплера).",
+   "2. Change the semi-major axis $a$ and check how the orbital period $T$ changes (Kepler’s 3rd law)."
+  ],
+  "2. Kichik tebranishlar uchun energiyaning eksponensial kamayish grafigini tekshirish.": [
+   "2. Проверить график экспоненциального убывания энергии для малых колебаний.",
+   "2. Check the exponential energy-decay plot for small oscillations."
+  ],
+  "3. Orbital energiya invariantligini raqamli hisoblab, shaxsiy portfolioga qo‘shish.": [
+   "3. Численно рассчитать инвариантность орбитальной энергии и добавить в личное портфолио.",
+   "3. Compute the invariance of the orbital energy numerically and add it to your personal portfolio."
+  ],
+  "3. Shaxsiy loyiha kodini GitHub Pages portfeliga yuklash.": [
+   "3. Загрузить код личного проекта в портфолио на GitHub Pages.",
+   "3. Upload your project code to your GitHub Pages portfolio."
+  ],
+  "<strong>Klaster A (Boshlang‘ich):</strong> Qadamli ko‘rsatmalar (Scaffolding), sodda 1D vizual modellar va kundalik mustahkamlash mikromodullari.": [
+   "<strong>Кластер A (начальный):</strong> пошаговые указания (скаффолдинг), простые 1D визуальные модели и ежедневные микромодули закрепления.",
+   "<strong>Cluster A (beginner):</strong> step-by-step guidance (scaffolding), simple 1D visual models and daily reinforcement micro-modules."
+  ],
+  "<strong>Klaster B (Amaliyotchi):</strong> Eyler–Kromer algoritmi, so‘nuvchi dinamika va interaktiv topshiriqlar banki.": [
+   "<strong>Кластер B (практик):</strong> алгоритм Эйлера–Кромера, затухающая динамика и банк интерактивных заданий.",
+   "<strong>Cluster B (practitioner):</strong> the Euler–Cromer algorithm, damped dynamics and an interactive task bank."
+  ],
+  "<strong>Klaster C (Tadqiqotchi):</strong> Ko‘p jismli simulyatsiyalar, 3D WebGL render va Google Antigravity avtomatlashtirilgan audit.": [
+   "<strong>Кластер C (исследователь):</strong> многотельные симуляции, 3D-рендер WebGL и автоматизированный аудит Google Antigravity.",
+   "<strong>Cluster C (researcher):</strong> many-body simulations, 3D WebGL rendering and automated Google Antigravity audits."
+  ],
+  "Bikrlik ($k$):": [
+   "Жёсткость ($k$):",
+   "Stiffness ($k$):"
+  ],
+  "Dasturlash": [
+   "Программирование",
+   "Programming"
+  ],
+  "Ekssentrisitet ($e$):": [
+   "Эксцентриситет ($e$):",
+   "Eccentricity ($e$):"
+  ],
+  "Harakat tenglamasi: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$, bu yerda so‘nish koeffitsiyenti $\\beta = \\frac{\\gamma}{2m}$, xos burchak chastotasi $\\omega_0 = \\sqrt{\\frac{k}{m}}$, to‘liq mexanik energiya $E(t) = \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2$, energiyaning kamayish tezligi $\\frac{dE}{dt} = -\\gamma v^2 \\le 0$.": [
+   "Уравнение движения: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$, где коэффициент затухания $\\beta = \\frac{\\gamma}{2m}$, собственная угловая частота $\\omega_0 = \\sqrt{\\frac{k}{m}}$, полная механическая энергия $E(t) = \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2$, скорость убывания энергии $\\frac{dE}{dt} = -\\gamma v^2 \\le 0$.",
+   "Equation of motion: $$m \\ddot{x} + \\gamma \\dot{x} + kx = 0$$, where the damping coefficient is $\\beta = \\frac{\\gamma}{2m}$, the natural angular frequency $\\omega_0 = \\sqrt{\\frac{k}{m}}$, the total mechanical energy $E(t) = \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2$ and the rate of energy loss $\\frac{dE}{dt} = -\\gamma v^2 \\le 0$."
+  ],
+  "Katta yarim o‘q ($a$):": [
+   "Большая полуось ($a$):",
+   "Semi-major axis ($a$):"
+  ],
+  "Massa ($m$):": [
+   "Масса ($m$):",
+   "Mass ($m$):"
+  ],
+  "Nazariya": [
+   "Теория",
+   "Theory"
+  ],
+  "Portfolio": [
+   "Портфолио",
+   "Portfolio"
+  ],
+  "Prompt": [
+   "Промпт",
+   "Prompting"
+  ],
+  "Sonli metod": [
+   "Численный метод",
+   "Numerical methods"
+  ],
+  "So‘nish ($\\gamma$):": [
+   "Затухание ($\\gamma$):",
+   "Damping ($\\gamma$):"
+  ],
+  "Vaqt masshtabi:": [
+   "Масштаб времени:",
+   "Time scale:"
+  ],
+  "Vis-Viva tenglamasi: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, bu yerda katta yarim o‘q $a$ ellipsning o‘lchamini, ekssentrisitet $e$ shaklini belgilaydi. Kepler 3-qonuniga ko‘ra aylanish davri $T^2 \\propto a^3$, maydonlar tezligi esa Kepler 2-qonuniga ko‘ra doimiy: $\\frac{dA}{dt} = \\text{const}$.": [
+   "Уравнение Vis-Viva: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, где большая полуось $a$ задаёт размер эллипса, а эксцентриситет $e$ — его форму. По 3-му закону Кеплера период обращения $T^2 \\propto a^3$, а секторная скорость по 2-му закону Кеплера постоянна: $\\frac{dA}{dt} = \\text{const}$.",
+   "The vis-viva equation: $$v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$, where the semi-major axis $a$ sets the size of the ellipse and the eccentricity $e$ its shape. By Kepler’s 3rd law the orbital period is $T^2 \\propto a^3$, and by his 2nd law the areal velocity is constant: $\\frac{dA}{dt} = \\text{const}$."
+  ],
+  "⏳ Otter.ai orqali audio transkripsiya qilinmoqda...": [
+   "⏳ Аудиотранскрипция через Otter.ai...",
+   "⏳ Transcribing audio with Otter.ai..."
+  ],
+  "✅ Tayyor — LMS baholar jurnaliga sinxronlandi.": [
+   "✅ Готово — синхронизировано с журналом оценок LMS.",
+   "✅ Done — synced with the LMS gradebook."
+  ],
+  "✓ <strong>Fizik Invariantlar:</strong> Analitik Kepler yechimi — energiya dreyfi |ΔE/E₀| = {0}% (yopiq shakldagi yechim, integratsion xatolik yo‘q).": [
+   "✓ <strong>Физические инварианты:</strong> аналитическое решение Кеплера — дрейф энергии |ΔE/E₀| = {0}% (решение в замкнутой форме, нет ошибки интегрирования).",
+   "✓ <strong>Physical invariants:</strong> analytical Kepler solution — energy drift |ΔE/E₀| = {0}% (closed-form solution, no integration error)."
+  ],
+  "✓ <strong>Fizik Invariantlar:</strong> Simplektik Eyler–Kromer integratori bilan energiya monotonik kamaymoqda (dE/dt ≤ 0), sun’iy o‘sish aniqlanmadi. ω₀ = {0} rad/s.": [
+   "✓ <strong>Физические инварианты:</strong> с симплектическим интегратором Эйлера–Кромера энергия монотонно убывает (dE/dt ≤ 0), искусственный рост не обнаружен. ω₀ = {0} рад/с.",
+   "✓ <strong>Physical invariants:</strong> with the symplectic Euler–Cromer integrator the energy decreases monotonically (dE/dt ≤ 0); no artificial growth detected. ω₀ = {0} rad/s."
+  ],
+  "🎙️ Garmonik Tebranishlar va So‘nuvchi Dinamika": [
+   "🎙️ Гармонические колебания и затухающая динамика",
+   "🎙️ Harmonic Oscillations and Damped Dynamics"
+  ],
+  "🎙️ Kepler Orbital Harakati va Vis-Viva Tezlik Tenglamasi": [
+   "🎙️ Орбитальное движение Кеплера и уравнение скорости Vis-Viva",
+   "🎙️ Kepler Orbital Motion and the Vis-Viva Speed Equation"
+  ],
+  "🎮 LMS ichidagi simulyatsiya moduli (Kepler orbitasi):": [
+   "🎮 Модуль симуляции внутри LMS (орбита Кеплера):",
+   "🎮 In-LMS simulation module (Kepler orbit):"
+  ],
+  "🎮 LMS ichidagi simulyatsiya moduli (prujinali tebranish):": [
+   "🎮 Модуль симуляции внутри LMS (пружинные колебания):",
+   "🎮 In-LMS simulation module (spring oscillation):"
+  ],
+  "📐 Kepler Orbital Harakati Nazariy Asosi:": [
+   "📐 Теоретическая основа орбитального движения Кеплера:",
+   "📐 Theoretical basis of Kepler orbital motion:"
+  ],
+  "📐 Tebranish Dinamikasi Nazariy Asosi:": [
+   "📐 Теоретическая основа динамики колебаний:",
+   "📐 Theoretical basis of oscillation dynamics:"
+  ],
+  "🧠 Claude konspekt va Action Items generatsiya qilmoqda...": [
+   "🧠 Claude генерирует конспект и Action Items...",
+   "🧠 Claude is generating notes and action items..."
+  ]
+ },
  "js/sim-mechanics-pipeline.js": {
+  "\n          <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          Burchak α = {0}°, ishqalanish μ = {1}, massa m = {2} kg.<br>\n          Harakat sharti: tan(α) = {3} {4} μ = {5} &rArr; jism {6}.<br>\n          Hisoblangan tezlanish: <strong>a = {7} m/s²</strong>.": [
+   "<strong>1. Деконструкция PhET/Vascak.cz (живые параметры):</strong><br> Угол α = {0}°, трение μ = {1}, масса m = {2} кг.<br> Условие движения: tan(α) = {3} {4} μ = {5} &rArr; тело {6}.<br> Рассчитанное ускорение: <strong>a = {7} м/с²</strong>.",
+   "<strong>1. PhET/Vascak.cz deconstruction (live parameters):</strong><br> Angle α = {0}°, friction μ = {1}, mass m = {2} kg.<br> Condition for motion: tan(α) = {3} {4} μ = {5} &rArr; the body {6}.<br> Computed acceleration: <strong>a = {7} m/s²</strong>."
+  ],
+  "\n          <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          Tiklanish koeffitsiyenti e = {0} &rArr; to‘qnashuv turi: <strong>{1}</strong>.<br>\n          Yo‘qotiladigan energiya ulushi (1 - e²) = {2}.": [
+   "<strong>1. Деконструкция PhET/Vascak.cz (живые параметры):</strong><br> Коэффициент восстановления e = {0} &rArr; тип столкновения: <strong>{1}</strong>.<br> Доля теряемой энергии (1 - e²) = {2}.",
+   "<strong>1. PhET/Vascak.cz deconstruction (live parameters):</strong><br> Coefficient of restitution e = {0} &rArr; collision type: <strong>{1}</strong>.<br> Fraction of energy lost (1 - e²) = {2}."
+  ],
+  "\n        <strong>2. Claude Dvigatel Kodi:</strong>\n        <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre>\n        <button id=\"btn-copy-claude-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>": [
+   "<strong>2. Код движка Claude:</strong> <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre> <button id=\"btn-copy-claude-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Копировать</button>",
+   "<strong>2. Claude engine code:</strong> <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre> <button id=\"btn-copy-claude-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Copy</button>"
+  ],
+  "\n        <strong>3. Google Antigravity Audit Natijasi:</strong><br>\n        ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>\n        ✓ Delta-Time Akkumulyatori: {0} FPS, kadrlar barqaror ishlamoqda.<br>\n        ✓ Fizik Invariantlar: {1}": [
+   "<strong>3. Результат аудита Google Antigravity:</strong><br> ✓ Статический анализ AST: eval() или опасных обращений к DOM не обнаружено.<br> ✓ Аккумулятор delta-time: {0} FPS, кадры стабильны.<br> ✓ Физические инварианты: {1}",
+   "<strong>3. Google Antigravity audit result:</strong><br> ✓ AST static analysis: no eval() or unsafe DOM access detected.<br> ✓ Delta-time accumulator: {0} FPS, frames are stable.<br> ✓ Physical invariants: {1}"
+  ],
+  "\n        <strong>4. Runway Video Prompt:</strong><br>\n        <em style=\"color:#4B5464;\">\"{0}\"</em><br>\n        <button id=\"btn-copy-runway-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>": [
+   "<strong>4. Видеопромпт Runway:</strong><br> <em style=\"color:#4B5464;\">\"{0}\"</em><br> <button id=\"btn-copy-runway-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Копировать</button>",
+   "<strong>4. Runway video prompt:</strong><br> <em style=\"color:#4B5464;\">\"{0}\"</em><br> <button id=\"btn-copy-runway-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Copy</button>"
+  ],
+  "E(t) — qiya tekislik (ishqalanish bilan)": [
+   "E(t) — наклонная плоскость (с трением)",
+   "E(t) — incline (with friction)"
+  ],
+  "Ishqalanish tufayli energiya joriy bosqichda monotonik kamaymoqda: {0}% (fizik dissipatsiya, integratsion xatolik emas).": [
+   "Из-за трения энергия на текущем этапе монотонно убывает: {0}% (физическая диссипация, а не ошибка интегрирования).",
+   "Because of friction the energy is decreasing monotonically at this stage: {0}% (physical dissipation, not an integration error)."
+  ],
+  "Markaziy tiklovchi kuch ostida energiya {0}.": [
+   "Под действием центральной возвращающей силы энергия {0}.",
+   "Under the central restoring force the energy {0}."
+  ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
+  "Oddiy Eyler": [
+   "Простой Эйлер",
+   "Plain Euler"
+  ],
+  "Simplektik": [
+   "Симплектический",
+   "Symplectic"
+  ],
+  "Simulyatsiya hali boshlanmadi.": [
+   "Симуляция ещё не запущена.",
+   "The simulation has not started yet."
+  ],
+  "Slow-motion 120fps kinematik video: ikkita rangli sharcha (ko‘k va sariq) laboratoriya maydonida to‘qnashmoqda, tiklanish koeffitsiyenti {0}, to‘qnashuv paytida kontakt normali bo‘yicha impuls uzatilishi aniq ko‘rinadi, yuqoridan tekis yoritilgan, fizik jihatdan real trayektoriya bilan.": [
+   "Slow-motion 120fps kinematic video: two coloured balls (blue and yellow) collide on a laboratory table, coefficient of restitution {0}, the impulse transfer along the contact normal is clearly visible at the moment of impact, flat top lighting, physically realistic trajectories.",
+   "Slow-motion 120fps kinematic video: two coloured balls (blue and yellow) collide on a laboratory table, coefficient of restitution {0}, the impulse transfer along the contact normal is clearly visible at the moment of impact, flat top lighting, physically realistic trajectories."
+  ],
+  "Slow-motion 120fps kinematik video: {0} kg og‘irlikdagi metall blok {1}° burchakli qiya tekislikda pastga sirpanmoqda, ishqalanish koeffitsiyenti {2}, sirtdan mayda uchqunlar chiqmoqda, yon tomondan yumshoq studiya yorug‘ligi, fizik jihatdan real tezlanish bilan.": [
+   "Slow-motion 120fps kinematic video: a metal block of mass {0} kg slides down an inclined plane at {1}°, friction coefficient {2}, tiny sparks fly from the surface, soft side studio lighting, physically realistic acceleration.",
+   "Slow-motion 120fps kinematic video: a metal block of mass {0} kg slides down an inclined plane at {1}°, friction coefficient {2}, tiny sparks fly from the surface, soft side studio lighting, physically realistic acceleration."
+  ],
+  "const rad = angle * Math.PI / 180;\nconst a = Math.tan(rad) > mu ? g*(Math.sin(rad) - mu*Math.cos(rad)) : 0;\nv += a * dt;  // simplektik: avval tezlik\ns += v * dt;  // keyin koordinata": [
+   "const rad = angle * Math.PI / 180;\nconst a = Math.tan(rad) > mu ? g*(Math.sin(rad) - mu*Math.cos(rad)) : 0;\nv += a * dt;  // симплектически: сначала скорость\ns += v * dt;  // затем координата",
+   "const rad = angle * Math.PI / 180;\nconst a = Math.tan(rad) > mu ? g*(Math.sin(rad) - mu*Math.cos(rad)) : 0;\nv += a * dt;  // symplectic: velocity first\ns += v * dt;  // then position"
+  ],
+  "oddiy Eyler": [
+   "простой Эйлер",
+   "plain Euler"
+  ],
+  "sun’iy o‘sib bormoqda (|ΔE/E₀| = {0}% — dreyf aniqlandi)": [
+   "искусственно растёт (|ΔE/E₀| = {0}% — обнаружен дрейф)",
+   "is growing artificially (|ΔE/E₀| = {0}% — drift detected)"
+  ],
   "⏸️ To‘xtatish": [
    "⏸️ Остановить",
    "⏸️ Stop"
+  ],
+  "▶️ Davom ettirish": [
+   "▶️ Продолжить",
+   "▶️ Resume"
   ]
  },
  "js/sim-model-taxonomy.js": {
@@ -339,6 +999,312 @@
    "▶ Restart"
   ]
  },
+ "js/sim-nuclear-capstone.js": {
+  "$\\alpha$, $\\beta$ va $\\gamma$ nurlanishlarning magnit maydonda og‘ishi va turli materiallardan o‘tish qobiliyati.": [
+   "Отклонение $\\alpha$-, $\\beta$- и $\\gamma$-излучений в магнитном поле и их проникающая способность через разные материалы.",
+   "How $\\alpha$, $\\beta$ and $\\gamma$ radiation is deflected in a magnetic field and how well it penetrates different materials."
+  ],
+  "1. Har bir $T_{1/2}$ oralig‘ida yadrolar soni taxminan ikki marta kamayishini tekshiring.": [
+   "1. Проверьте, что за каждый интервал $T_{1/2}$ число ядер уменьшается примерно вдвое.",
+   "1. Check that the number of nuclei roughly halves in each $T_{1/2}$ interval."
+  ],
+  "1. Magnit maydonda $\\alpha$ va $\\beta$ nurlarining qarama-qarshi tomonga og‘ishini kuzating.": [
+   "1. Пронаблюдайте, что в магнитном поле $\\alpha$- и $\\beta$-лучи отклоняются в противоположные стороны.",
+   "1. Observe that $\\alpha$ and $\\beta$ rays are deflected in opposite directions in a magnetic field."
+  ],
+  "1. Proton va neytronlarni qo‘shib, barqaror va radioaktiv beqaror izotoplar hosil bo‘lishini kuzating.": [
+   "1. Добавляя протоны и нейтроны, пронаблюдайте образование стабильных и радиоактивно нестабильных изотопов.",
+   "1. Add protons and neutrons and watch stable and radioactive unstable isotopes form."
+  ],
+  "1. Qatorning boshlang‘ich va oxirgi izotopini aniqlang.": [
+   "1. Определите начальный и конечный изотоп ряда.",
+   "1. Identify the first and last isotope of the series."
+  ],
+  "1. Reaksiyadan oldin va keyin massa soni $A$ saqlanishini tekshiring.": [
+   "1. Проверьте сохранение массового числа $A$ до и после реакции.",
+   "1. Check that the mass number $A$ is conserved before and after the reaction."
+  ],
+  "1. Tomson modelida alfa-zarrachalar deyarli og‘masligini kuzating.": [
+   "1. Пронаблюдайте, что в модели Томсона альфа-частицы почти не отклоняются.",
+   "1. Observe that alpha particles barely deflect in Thomson’s model."
+  ],
+  "1. Uch bosqichdan qaysi biri eng sekin kechishini kuzating va sababini (kuchsiz o‘zaro ta’sir) tushuntiring.": [
+   "1. Пронаблюдайте, какой из трёх этапов идёт медленнее всего, и объясните причину (слабое взаимодействие).",
+   "1. Observe which of the three steps is slowest and explain why (the weak interaction)."
+  ],
+  "1. Uglerod atomiga neytron qo‘shib, C-12, C-13 va beqaror C-14 izotoplarini hosil qiling.": [
+   "1. Добавляя нейтроны к атому углерода, получите изотопы C-12, C-13 и нестабильный C-14.",
+   "1. Add neutrons to a carbon atom to make the C-12, C-13 and unstable C-14 isotopes."
+  ],
+  "2. $\\gamma$ nurlar nega og‘maydi — tushuntiring.": [
+   "2. Объясните, почему $\\gamma$-лучи не отклоняются.",
+   "2. Explain why $\\gamma$ rays are not deflected."
+  ],
+  "2. Haroratni 10 dan 20 mln K gacha oshirib, ⁴He hosil bo‘lish tezligi qanday o‘zgarishini qayd eting.": [
+   "2. Повысив температуру с 10 до 20 млн K, зафиксируйте, как меняется скорость образования ⁴He.",
+   "2. Raise the temperature from 10 to 20 million K and note how the ⁴He production rate changes."
+  ],
+  "2. Kichik $N_0$ da stoxastik tebranishlar kuchliroq bo‘lishini kuzating.": [
+   "2. Пронаблюдайте, что при малом $N_0$ стохастические флуктуации сильнее.",
+   "2. Observe that stochastic fluctuations are stronger for small $N_0$."
+  ],
+  "2. Neytronlar soni ortiqcha bo‘lganda $\\beta^-$, yetishmaganda $\\beta^+$ yemirilish yuz berishini tekshiring.": [
+   "2. Проверьте, что при избытке нейтронов происходит $\\beta^-$-распад, а при недостатке — $\\beta^+$-распад.",
+   "2. Check that $\\beta^-$ decay occurs with too many neutrons and $\\beta^+$ decay with too few."
+  ],
+  "2. Rezerford modelida katta burchakli sochilishlar paydo bo‘lishini qayd eting.": [
+   "2. Зафиксируйте появление рассеяния на большие углы в модели Резерфорда.",
+   "2. Note the appearance of large-angle scattering in Rutherford’s model."
+  ],
+  "2. Tabiiy izotop tarkibi asosida o‘rtacha atom massasini hisoblang.": [
+   "2. Рассчитайте среднюю атомную массу по природному изотопному составу.",
+   "2. Compute the average atomic mass from the natural isotopic abundance."
+  ],
+  "2. U-238 qatorida nechta $\\alpha$ va $\\beta^-$ yemirilish borligini $A$ va $Z$ balansidan hisoblang.": [
+   "2. По балансу $A$ и $Z$ рассчитайте, сколько $\\alpha$- и $\\beta^-$-распадов в ряду U-238.",
+   "2. Use the $A$ and $Z$ balance to work out how many $\\alpha$ and $\\beta^-$ decays the U-238 series contains."
+  ],
+  "2. Zaryad soni $Z$ saqlanishini tekshiring.": [
+   "2. Проверьте сохранение зарядового числа $Z$.",
+   "2. Check that the charge number $Z$ is conserved."
+  ],
+  "3. Ajralgan neytronlar zanjirli reaksiyani qanday davom ettirishini tushuntiring.": [
+   "3. Объясните, как высвободившиеся нейтроны продолжают цепную реакцию.",
+   "3. Explain how the released neutrons continue the chain reaction."
+  ],
+  "3. Alfa-zarracha energiyasini oshirib, sochilish burchagi kamayishini tushuntiring.": [
+   "3. Увеличьте энергию альфа-частиц и объясните уменьшение угла рассеяния.",
+   "3. Increase the alpha-particle energy and explain why the scattering angle decreases."
+  ],
+  "3. Bitta ⁴He yadrosi uchun ajralgan energiyani 26.7 MeV bilan solishtiring (neytrinolar olib ketgan qismni hisobga oling).": [
+   "3. Сравните энергию, выделяемую на одно ядро ⁴He, с 26.7 МэВ (учтите часть, уносимую нейтрино).",
+   "3. Compare the energy released per ⁴He nucleus with 26.7 MeV (account for the part carried off by neutrinos)."
+  ],
+  "3. C-14 ning yarim yemirilish davri ($\\approx 5730$ yil) radiouglerod usulida qanday qo‘llanishini tushuntiring.": [
+   "3. Объясните, как период полураспада C-14 ($\\approx 5730$ лет) применяется в радиоуглеродном методе.",
+   "3. Explain how the half-life of C-14 ($\\approx 5730$ years) is used in radiocarbon dating."
+  ],
+  "3. Grafikdan $\\lambda$ ni aniqlab, $T_{1/2}$ bilan solishtiring.": [
+   "3. Определите $\\lambda$ по графику и сравните с $T_{1/2}$.",
+   "3. Determine $\\lambda$ from the plot and compare it with $T_{1/2}$."
+  ],
+  "3. Har bir $\\alpha$-yemirilishda $A$ 4 ga, $Z$ 2 ga kamayishini tekshiring.": [
+   "3. Проверьте, что при каждом $\\alpha$-распаде $A$ уменьшается на 4, а $Z$ — на 2.",
+   "3. Check that each $\\alpha$ decay lowers $A$ by 4 and $Z$ by 2."
+  ],
+  "3. Nuklidlar xaritasida og‘ir yadrolar uchun barqarorlik yo‘lagi $N > Z$ tomonga siljishini tushuntiring.": [
+   "3. Объясните, почему для тяжёлых ядер полоса стабильности на карте нуклидов смещается в сторону $N > Z$.",
+   "3. Explain why the band of stability on the chart of nuclides shifts towards $N > Z$ for heavy nuclei."
+  ],
+  "3. Qog‘oz, alyuminiy va qo‘rg‘oshin to‘siqlarning himoya qobiliyatini solishtiring.": [
+   "3. Сравните защитные свойства бумаги, алюминия и свинца.",
+   "3. Compare the shielding of paper, aluminium and lead."
+  ],
+  "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> To‘xtatish": [
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Остановить",
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Stop"
+  ],
+  "<span style=\"font-size: 1.1rem; line-height: 1;\">▶</span> Davom etish": [
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">▶</span> Продолжить",
+   "<span style=\"font-size: 1.1rem; line-height: 1;\">▶</span> Resume"
+  ],
+  "Ajralgan Energiya": [
+   "Выделенная энергия",
+   "Energy released"
+  ],
+  "Aktivlik A = λN": [
+   "Активность A = λN",
+   "Activity A = λN"
+  ],
+  "Alfa-zarrachalarning oltin folgadagi sochilishi: Tomson (\"mayizli puding\") modeli va Rezerford yadroviy modelini taqqoslash.": [
+   "Рассеяние альфа-частиц на золотой фольге: сравнение модели Томсона («пудинг с изюмом») и ядерной модели Резерфорда.",
+   "Alpha particles scattering off gold foil: comparing Thomson’s (\"plum pudding\") model with Rutherford’s nuclear model."
+  ],
+  "Atom yadrosining proton va neytronlardan tuzilishi, nuklidlar xaritasidagi barqarorlik yo‘lagi (Band of Stability), bog‘lanish energiyasi va radioaktiv yemirilish turlarini o‘rganish.": [
+   "Изучение строения атомного ядра из протонов и нейтронов, полосы стабильности на карте нуклидов (Band of Stability), энергии связи и видов радиоактивного распада.",
+   "Studying how the nucleus is built from protons and neutrons, the band of stability on the chart of nuclides, binding energy and the types of radioactive decay."
+  ],
+  "Brauzeringizda ovoz sintezi qo‘llab-quvvatlanmaydi.": [
+   "Ваш браузер не поддерживает синтез речи.",
+   "Speech synthesis is not supported in your browser."
+  ],
+  "D + T Ionlari": [
+   "Ионы D + T",
+   "D + T ions"
+  ],
+  "Erkin Neytronlar": [
+   "Свободные нейтроны",
+   "Free neutrons"
+  ],
+  "Faol Yadrolar N(t)": [
+   "Активные ядра N(t)",
+   "Active nuclei N(t)"
+  ],
+  "Izotoplar tushunchasi, neytronlar sonining yadro barqarorligiga ta’siri va tabiiy izotop tarkibi asosida o‘rtacha atom massasini hisoblash.": [
+   "Понятие изотопов, влияние числа нейтронов на устойчивость ядра и расчёт средней атомной массы по природному изотопному составу.",
+   "The concept of isotopes, how the number of neutrons affects nuclear stability, and computing the average atomic mass from natural isotopic abundance."
+  ],
+  "Kadmiy sterjenlari: {0} %   k ≈ {1}": [
+   "Кадмиевые стержни: {0} %   k ≈ {1}",
+   "Cadmium rods: {0} %   k ≈ {1}"
+  ],
+  "Koeffitsiyent (k)": [
+   "Коэффициент (k)",
+   "Factor (k)"
+  ],
+  "Konveyer bosqichi": [
+   "Этап конвейера",
+   "Pipeline stage"
+  ],
+  "Massa Soni A": [
+   "Массовое число A",
+   "Mass number A"
+  ],
+  "N(t) Monte-Karlo": [
+   "N(t) Монте-Карло",
+   "N(t) Monte Carlo"
+  ],
+  "Nazariy N₀·2^(−t/T)": [
+   "Теоретическое N₀·2^(−t/T)",
+   "Theoretical N₀·2^(−t/T)"
+  ],
+  "Neytron ta’sirida og‘ir yadroning bo‘linishi, bo‘linish mahsulotlari va yangi neytronlarning ajralishi.": [
+   "Деление тяжёлого ядра под действием нейтрона, продукты деления и выделение новых нейтронов.",
+   "The fission of a heavy nucleus by a neutron, the fission products and the release of new neutrons."
+  ],
+  "Neytronlar soni": [
+   "Число нейтронов",
+   "Number of neutrons"
+  ],
+  "Og‘ir radioaktiv yadrolarning ketma-ket $\\alpha$- va $\\beta^-$-yemirilishlar orqali barqaror qo‘rg‘oshin izotopiga aylanish zanjiri N–Z diagrammasida, har bir bosqichda A va Z balansi bilan (portalning o‘z reklamasiz HTML5 simulyatsiyasi).": [
+   "Цепочка превращения тяжёлых радиоактивных ядер через последовательные $\\alpha$- и $\\beta^-$-распады в стабильный изотоп свинца на N–Z-диаграмме с балансом A и Z на каждом шаге (собственная HTML5-симуляция портала без рекламы).",
+   "The chain by which heavy radioactive nuclei turn into a stable lead isotope through successive $\\alpha$ and $\\beta^-$ decays, on an N–Z chart with the A and Z balance at each step (the portal’s own ad-free HTML5 simulation)."
+  ],
+  "Quyosh yadrosida vodorodning geliyga aylanishi: uch bosqichli pp-I zanjiri, pozitron, neytrino va gamma-kvant ajralishi hamda reaksiya tezligining haroratga kuchli bog‘liqligi (portalning o‘z reklamasiz HTML5 simulyatsiyasi).": [
+   "Превращение водорода в гелий в ядре Солнца: трёхэтапная pp-I цепочка, выделение позитрона, нейтрино и гамма-кванта и сильная зависимость скорости реакции от температуры (собственная HTML5-симуляция портала без рекламы).",
+   "Hydrogen turning into helium in the Sun’s core: the three-step pp-I chain, the release of a positron, a neutrino and a gamma photon, and the strong temperature dependence of the reaction rate (the portal’s own ad-free HTML5 simulation)."
+  ],
+  "Radioaktiv yadrolar sonining vaqt bo‘yicha eksponensial kamayishi va yarim yemirilish davrining vizual modeli.": [
+   "Визуальная модель экспоненциального убывания числа радиоактивных ядер во времени и периода полураспада.",
+   "A visual model of the exponential decrease of radioactive nuclei over time and of the half-life."
+  ],
+  "Radioaktiv yemirilish stoxastik jarayondir. Har bir yadroning qachon yemirilishini oldindan aytib bo‘lmaydi, lekin ko‘p yadrolar uchun ularning soni eksponensial qonun bo‘yicha kamayadi. Har bir yarim yemirilish davrida qolgan yadrolar soni ikki marta kamayadi.": [
+   "Радиоактивный распад — стохастический процесс. Нельзя предсказать, когда распадётся каждое ядро, но для большого числа ядер их количество убывает по экспоненциальному закону. За каждый период полураспада число оставшихся ядер уменьшается вдвое.",
+   "Radioactive decay is a stochastic process. You cannot predict when each nucleus will decay, but for many nuclei their number falls off exponentially. In each half-life the number of remaining nuclei halves."
+  ],
+  "Reaksiyalar soni": [
+   "Число реакций",
+   "Number of reactions"
+  ],
+  "Sintez Tezligi": [
+   "Скорость синтеза",
+   "Fusion rate"
+  ],
+  "Sintez quvvati, MeV/s": [
+   "Мощность синтеза, МэВ/с",
+   "Fusion power, MeV/s"
+  ],
+  "Termoyadroviy sintezda deyteriy va tritiy yadrolari qo‘shilib, geliy-to‘rt yadrosi va neytron hosil bo‘ladi hamda o‘n yetti yarim megaelektronvolt energiya ajraladi. Tokamak qurilmasida yuz million darajadan yuqori haroratli plazma magnit maydon yordamida ushlab turiladi.": [
+   "При термоядерном синтезе ядра дейтерия и трития сливаются, образуя ядро гелия-четыре и нейтрон, и выделяется семнадцать с половиной мегаэлектронвольт энергии. В токамаке плазма с температурой выше ста миллионов градусов удерживается магнитным полем.",
+   "In thermonuclear fusion, deuterium and tritium nuclei fuse into a helium-four nucleus and a neutron, releasing seventeen and a half megaelectronvolts of energy. In a tokamak, plasma hotter than a hundred million degrees is held by a magnetic field."
+  ],
+  "U-235 Yadrolari": [
+   "Ядра U-235",
+   "U-235 nuclei"
+  ],
+  "Uran-235 yadrosi sekin neytronni yutib, ikki bo‘lakka bo‘linadi va o‘rtacha ikki-uchta yangi neytron hamda taxminan ikki yuz megaelektronvolt energiya ajraladi. Kadmiy yoki bor sterjenlari ortiqcha neytronlarni yutib, ko‘payish koeffitsiyentini birga teng ushlab turadi.": [
+   "Ядро урана-235, поглотив медленный нейтрон, делится на два осколка, при этом выделяются в среднем два-три новых нейтрона и около двухсот мегаэлектронвольт энергии. Кадмиевые или борные стержни поглощают лишние нейтроны и удерживают коэффициент размножения равным единице.",
+   "A uranium-235 nucleus absorbs a slow neutron and splits into two fragments, releasing on average two or three new neutrons and about two hundred megaelectronvolts of energy. Cadmium or boron rods absorb the excess neutrons and keep the multiplication factor at one."
+  ],
+  "Vaqt t": [
+   "Время t",
+   "Time t"
+  ],
+  "Yakuniy mustaqil loyihada talaba yetti bosqichli sun’iy intellekt konveyeridan foydalanadi: diagnostika, teskari muhandislik, kod generatsiyasi, monitoring, audio-narratsiya, himoya transkripsiyasi va akademik halollik nazorati. Har bir bosqich natijasi talabaning o‘z tahlili bilan boyitilishi shart.": [
+   "В итоговом самостоятельном проекте студент использует семиэтапный конвейер искусственного интеллекта: диагностику, обратную разработку, генерацию кода, мониторинг, аудионаррацию, транскрипцию защиты и контроль академической честности. Результат каждого этапа должен быть дополнен собственным анализом студента.",
+   "In the final independent project the student uses a seven-stage AI pipeline: diagnostics, reverse engineering, code generation, monitoring, audio narration, transcription of the defence and academic integrity control. The result of each stage must be enriched with the student’s own analysis."
+  ],
+  "Zaryad Soni Z": [
+   "Зарядовое число Z",
+   "Charge number Z"
+  ],
+  "[ENERGIYA] Q = Δm·c²": [
+   "[ЭНЕРГИЯ] Q = Δm·c²",
+   "[ENERGY] Q = Δm·c²"
+  ],
+  "[ENERGIYA] Δm": [
+   "[ЭНЕРГИЯ] Δm",
+   "[ENERGY] Δm"
+  ],
+  "[IZOH] β/γ bilan jami": [
+   "[ПРИМЕЧАНИЕ] Всего с β/γ",
+   "[NOTE] Total with β/γ"
+  ],
+  "[KONVEYER] Bosqich": [
+   "[КОНВЕЙЕР] Этап",
+   "[PIPELINE] Stage"
+  ],
+  "[TEKSHIRUV] Massa soni A": [
+   "[ПРОВЕРКА] Массовое число A",
+   "[CHECK] Mass number A"
+  ],
+  "[TEKSHIRUV] Zaryad soni Z": [
+   "[ПРОВЕРКА] Зарядовое число Z",
+   "[CHECK] Charge number Z"
+  ],
+  "Δm = {0} u  →  Q = {1} MeV (tezkor energiya)": [
+   "Δm = {0} u  →  Q = {1} МэВ (мгновенная энергия)",
+   "Δm = {0} u  →  Q = {1} MeV (prompt energy)"
+  ],
+  "≈ 200 MeV": [
+   "≈ 200 МэВ",
+   "≈ 200 MeV"
+  ],
+  "● D   ● T   ● He-4 (3,5 MeV)   ● n (14,1 MeV)": [
+   "● D   ● T   ● He-4 (3,5 МэВ)   ● n (14,1 МэВ)",
+   "● D   ● T   ● He-4 (3.5 MeV)   ● n (14.1 MeV)"
+  ],
+  "● U-235   ● neytron   ● Ba-141 / Kr-92 parchalari": [
+   "● U-235   ● нейтрон   ● осколки Ba-141 / Kr-92",
+   "● U-235   ● neutron   ● Ba-141 / Kr-92 fragments"
+  ],
+  "● faol yadro   ● yemirilgan   ● nurlanish zarrasi": [
+   "● активное ядро   ● распавшееся   ● частица излучения",
+   "● active nucleus   ● decayed   ● radiation particle"
+  ],
+  "☢️ PhET Interactive Simulations: Build a Nucleus (Atom Yadrosi Tuzilishi & Bog‘lanish)": [
+   "☢️ PhET Interactive Simulations: Build a Nucleus (строение атомного ядра и связь)",
+   "☢️ PhET Interactive Simulations: Build a Nucleus (Nuclear Structure & Binding)"
+  ],
+  "☢️ Vascak.cz: Radioaktiv Yemirilish Qonuni": [
+   "☢️ Vascak.cz: закон радиоактивного распада",
+   "☢️ Vascak.cz: Radioactive Decay Law"
+  ],
+  "🌌 Quyosh Sintezi: Proton-Proton (pp-I) Zanjiri": [
+   "🌌 Синтез на Солнце: протон-протонная (pp-I) цепочка",
+   "🌌 Solar Fusion: The Proton–Proton (pp-I) Chain"
+  ],
+  "💥 Vascak.cz: Yadro Reaksiyasi": [
+   "💥 Vascak.cz: ядерная реакция",
+   "💥 Vascak.cz: Nuclear Reaction"
+  ],
+  "📜 Radioaktiv Qatorlar: Uran (U-238) va Toriy (Th-232) Zanjirlari": [
+   "📜 Радиоактивные ряды: цепочки урана (U-238) и тория (Th-232)",
+   "📜 Radioactive Series: The Uranium (U-238) and Thorium (Th-232) Chains"
+  ],
+  "🔄 3D Aylanish: OFF": [
+   "🔄 3D-вращение: ВЫКЛ",
+   "🔄 3D rotation: OFF"
+  ],
+  "🔄 3D Aylanish: ON": [
+   "🔄 3D-вращение: ВКЛ",
+   "🔄 3D rotation: ON"
+  ],
+  "🛡️ Vascak.cz: Radioaktiv Nurlanish": [
+   "🛡️ Vascak.cz: радиоактивное излучение",
+   "🛡️ Vascak.cz: Radioactive Radiation"
+  ]
+ },
  "js/sim-pendulum.js": {
   "θ (rad)": [
    "θ (рад)",
@@ -368,9 +1334,109 @@
   ]
  },
  "js/sim-prompt-engineering.js": {
+  "2D fazoda turli massali sharlar to‘qnashuvi uchun JavaScript dvigatelini yoz. To‘qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin.": [
+   "Напиши JavaScript-движок для столкновений шаров разной массы в 2D-пространстве. Устрани проникновение с помощью формулы импульса столкновения j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) и позиционной коррекции (MTV). Проверь сохранение импульса и кинетической энергии.",
+   "Write a JavaScript engine for collisions of balls of different masses in 2D. Remove penetration using the collision impulse formula j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) and positional correction (MTV). Check conservation of momentum and kinetic energy."
+  ],
+  "HTML5 Canvasda vertikal so‘nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin.": [
+   "Смоделируй на HTML5 Canvas вертикальный затухающий пружинный маятник методом Velocity Verlet. Уравнение: m*x'' + c*x' + k*x = m*g. На Canvas динамически рисуй спираль пружины, баланс кинетической и потенциальной энергии отслеживай в реальном времени.",
+   "Model a vertical damped spring pendulum on HTML5 Canvas with the Velocity Verlet method. Equation: m*x'' + c*x' + k*x = m*g. Draw the spring coil dynamically and monitor the kinetic and potential energy balance in real time."
+  ],
+  "Ikki tirqishli to‘lqin naqshini Canvasda chiz.": [
+   "Нарисуй на Canvas волновую картину от двух щелей.",
+   "Draw a two-slit wave pattern on a Canvas."
+  ],
+  "Ikkita to‘p to‘qnashuvini Canvasda ko‘rsat.": [
+   "Покажи столкновение двух мячей на Canvas.",
+   "Show two balls colliding on a Canvas."
+  ],
+  "Menga snaryad otilishini Canvasda ko‘rsatadigan JS kod yozib ber.": [
+   "Напиши мне JS-код, который показывает выстрел снаряда на Canvas.",
+   "Write me JS code that shows a projectile being fired on a Canvas."
+  ],
+  "Prujina harakatini Canvasda animatsiya qiladigan kod yoz.": [
+   "Напиши код, анимирующий движение пружины на Canvas.",
+   "Write code that animates a spring on a Canvas."
+  ],
+  "Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yoz. Parametrlar: g=9.81 m/s^2, aerodinamik qarshilik F_drag = -0.5*rho*Cd*A*|v|*v, tiklanish koeffitsiyenti e=0.7. Yerga urilganda noelastik (e=0.7) qaytsin, ekran chegarasidan chiqmasin.": [
+   "Ты — специалист по вычислительной механике. Напиши ES6-класс для HTML5 Canvas, моделирующий 2D-движение снаряда методом Semi-implicit Euler. Параметры: g=9.81 m/s^2, аэродинамическое сопротивление F_drag = -0.5*rho*Cd*A*|v|*v, коэффициент восстановления e=0.7. При ударе о землю тело должно отскакивать неупруго (e=0.7) и не выходить за границы экрана.",
+   "You are a computational mechanics specialist. Write an ES6 class for HTML5 Canvas that models 2D projectile motion with the semi-implicit Euler method. Parameters: g=9.81 m/s^2, aerodynamic drag F_drag = -0.5*rho*Cd*A*|v|*v, coefficient of restitution e=0.7. On hitting the ground it should bounce inelastically (e=0.7) and never leave the screen."
+  ],
+  "Yung tajribasidagi ikki tirqishli to‘lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O‘ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin.": [
+   "Отрендери на HTML5 Canvas интерференцию волн от двух щелей в опыте Юнга как 2D пространственное поле. Справа нарисуй график интенсивности на экране I(y) = I0 * cos^2(delta/2) и цветной спектр.",
+   "Render two-slit wave interference from Young’s experiment on HTML5 Canvas as a 2D spatial field. On the right, draw the screen intensity plot I(y) = I0 * cos^2(delta/2) and a colour spectrum."
+  ],
+  "class Sim {\n  reset(w, h) {\n    this.x = 20; this.y = h - 20;\n    this.vx = 90; this.vy = -160;\n    this.g = 60;\n    this.trail = [];\n  }\n  update(dt, w, h) {\n    this.vy += this.g * dt;\n    this.x += this.vx * dt;\n    this.y += this.vy * dt;\n    this.trail.push({ x: this.x, y: this.y });\n    if (this.trail.length > 80) this.trail.shift();\n    // Chegara sharti yo‘q: snaryad yerdan pastga tushib ketaveradi.\n  }\n  render(ctx, w, h, opts) {\n    if (opts.trails) {\n      ctx.strokeStyle = 'rgba(244,63,94,0.4)'; ctx.beginPath();\n      this.trail.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));\n      ctx.stroke();\n    }\n    ctx.fillStyle = '#F43F5E';\n    ctx.beginPath(); ctx.arc(this.x, this.y, 8, 0, Math.PI * 2); ctx.fill();\n  }\n  getTelemetry() {\n    const v = Math.hypot(this.vx, this.vy);\n    const unstable = this.y > 900 || this.y < -400;\n    return { energy: 0.5 * v * v, vel: v, stable: !unstable };\n  }\n}": [
+   "class Sim {\n  reset(w, h) {\n    this.x = 20; this.y = h - 20;\n    this.vx = 90; this.vy = -160;\n    this.g = 60;\n    this.trail = [];\n  }\n  update(dt, w, h) {\n    this.vy += this.g * dt;\n    this.x += this.vx * dt;\n    this.y += this.vy * dt;\n    this.trail.push({ x: this.x, y: this.y });\n    if (this.trail.length > 80) this.trail.shift();\n    // Нет граничного условия: снаряд проваливается сквозь землю.\n  }\n  render(ctx, w, h, opts) {\n    if (opts.trails) {\n      ctx.strokeStyle = 'rgba(244,63,94,0.4)'; ctx.beginPath();\n      this.trail.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));\n      ctx.stroke();\n    }\n    ctx.fillStyle = '#F43F5E';\n    ctx.beginPath(); ctx.arc(this.x, this.y, 8, 0, Math.PI * 2); ctx.fill();\n  }\n  getTelemetry() {\n    const v = Math.hypot(this.vx, this.vy);\n    const unstable = this.y > 900 || this.y < -400;\n    return { energy: 0.5 * v * v, vel: v, stable: !unstable };\n  }\n}",
+   "class Sim {\n  reset(w, h) {\n    this.x = 20; this.y = h - 20;\n    this.vx = 90; this.vy = -160;\n    this.g = 60;\n    this.trail = [];\n  }\n  update(dt, w, h) {\n    this.vy += this.g * dt;\n    this.x += this.vx * dt;\n    this.y += this.vy * dt;\n    this.trail.push({ x: this.x, y: this.y });\n    if (this.trail.length > 80) this.trail.shift();\n    // No boundary condition: the projectile falls through the ground.\n  }\n  render(ctx, w, h, opts) {\n    if (opts.trails) {\n      ctx.strokeStyle = 'rgba(244,63,94,0.4)'; ctx.beginPath();\n      this.trail.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));\n      ctx.stroke();\n    }\n    ctx.fillStyle = '#F43F5E';\n    ctx.beginPath(); ctx.arc(this.x, this.y, 8, 0, Math.PI * 2); ctx.fill();\n  }\n  getTelemetry() {\n    const v = Math.hypot(this.vx, this.vy);\n    const unstable = this.y > 900 || this.y < -400;\n    return { energy: 0.5 * v * v, vel: v, stable: !unstable };\n  }\n}"
+  ],
+  "⏸ Pauza": [
+   "⏸ Пауза",
+   "⏸ Pause"
+  ],
   "▶ Davom ettirish": [
    "▶ Продолжить",
    "▶ Resume"
+  ],
+  "● Sinov maydoni holati: tayyor": [
+   "● Состояние песочницы: готово",
+   "● Sandbox status: ready"
+  ],
+  "● barqaror": [
+   "● устойчиво",
+   "● stable"
+  ],
+  "● beqaror": [
+   "● неустойчиво",
+   "● unstable"
+  ],
+  "⚠ Ishga tushirish xatosi: ": [
+   "⚠ Ошибка запуска: ",
+   "⚠ Run error:"
+  ],
+  "⚠ Xato: ": [
+   "⚠ Ошибка: ",
+   "⚠ Error:"
+  ],
+  "✅ Aniq fizik prompt": [
+   "✅ Точный физический промпт",
+   "✅ Precise physics prompt"
+  ],
+  "✅ Aniq: dempfirlash koeffitsiyenti (c) va simplektik (Semi-implicit Euler) integrator qo‘llanilgan — tebranish energiyasi bashoratli tarzda kamayib, barqaror muvozanatga keladi.": [
+   "✅ Точно: применены коэффициент демпфирования (c) и симплектический интегратор (Semi-implicit Euler) — энергия колебаний предсказуемо убывает, и система приходит в устойчивое равновесие.",
+   "✅ Precise: a damping coefficient (c) and a symplectic (semi-implicit Euler) integrator are used — the oscillation energy decays predictably and the system settles into stable equilibrium."
+  ],
+  "✅ Aniq: havo qarshiligi, masshtablangan gravitatsiya va yerga noelastik urilish (e = 0,7) hisobga olingan — snaryad ekran ichida barqaror sakraydi.": [
+   "✅ Точно: учтены сопротивление воздуха, масштабированная гравитация и неупругий удар о землю (e = 0,7) — снаряд устойчиво подпрыгивает в пределах экрана.",
+   "✅ Precise: air drag, scaled gravity and an inelastic ground impact (e = 0.7) are included — the projectile bounces stably inside the screen."
+  ],
+  "✅ Aniq: ikkala tirqishdan kelayotgan to‘lqinlar yo‘l farqiga asosan qo‘shiladi va haqiqiy interferensiya chiziqlari (maksimum/minimumlar) hosil bo‘ladi.": [
+   "✅ Точно: волны от обеих щелей складываются с учётом разности хода, образуя настоящие интерференционные полосы (максимумы/минимумы).",
+   "✅ Precise: waves from both slits add according to their path difference, producing real interference fringes (maxima/minima)."
+  ],
+  "✅ Aniq: impuls asosidagi yechim va MTV positional correction qo‘llanilgan — to‘plar hech qachon bir-biriga kirib qolmaydi, impuls aniq saqlanadi.": [
+   "✅ Точно: применены решение на основе импульса и позиционная коррекция MTV — мячи никогда не входят друг в друга, импульс сохраняется точно.",
+   "✅ Precise: an impulse-based solution and MTV positional correction are used — the balls never sink into each other and momentum is conserved exactly."
+  ],
+  "❌ Aniqlik past: havo qarshiligi yo‘q, metr-piksel masshtabi yo‘q, yerga urilganda chegara sharti aniqlanmagan — snaryad ekrandan tez chiqib ketadi.": [
+   "❌ Низкая точность: нет сопротивления воздуха, нет масштаба метр–пиксель, не задано граничное условие при ударе о землю — снаряд быстро вылетает за экран.",
+   "❌ Low accuracy: no air drag, no metre-to-pixel scale, no boundary condition for hitting the ground — the projectile quickly leaves the screen."
+  ],
+  "❌ Noaniq prompt": [
+   "❌ Нечёткий промпт",
+   "❌ Vague prompt"
+  ],
+  "❌ Noaniq: faqat bitta tirqish (yorug‘lik nuqtasi) chizilgan, interferensiya hisoblanmagan — natija haqiqiy Yung tajribasi naqshini aks ettirmaydi.": [
+   "❌ Нечётко: нарисована только одна щель (светящаяся точка), интерференция не вычисляется — результат не отражает настоящую картину опыта Юнга.",
+   "❌ Vague: only one slit (a point of light) is drawn and interference is not computed — the result does not reflect a real Young’s experiment pattern."
+  ],
+  "❌ Noaniq: oddiy (Forward) Eyler integratori dempfirlashsiz ishlatilgan — har kadrda energiya sun'iy ravishda oshib, amplituda cheksiz kattalashadi (raqamli beqarorlik).": [
+   "❌ Нечётко: использован простой (Forward) интегратор Эйлера без демпфирования — в каждом кадре энергия искусственно растёт, амплитуда неограниченно увеличивается (численная неустойчивость).",
+   "❌ Vague: a plain (Forward) Euler integrator without damping is used — energy grows artificially every frame and the amplitude increases without bound (numerical instability)."
+  ],
+  "❌ Noaniq: to‘qnashuvda faqat tezliklar almashtiriladi, penetratsiya (bir-biriga kirib ketish) tuzatilmaydi — to‘plar vaqti-vaqti bilan bir-birining ichiga yopishib qoladi.": [
+   "❌ Нечётко: при столкновении лишь меняются местами скорости, проникновение (вхождение друг в друга) не исправляется — мячи время от времени слипаются.",
+   "❌ Vague: the collision only swaps velocities and penetration (sinking into each other) is not corrected — the balls occasionally stick together."
   ]
  },
  "js/sim-spring.js": {
@@ -385,6 +1451,272 @@
   "x(t) tebranishlar": [
    "колебания x(t)",
    "x(t) oscillations"
+  ]
+ },
+ "js/sim-thermodynamics-pipeline.js": {
+  "\n          <strong>1. PhET \"Gas Properties\" Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          T = {0} K, V = {1} L, N = {2} zarracha.<br>\n          O‘lchangan mikroskopik bosim: <strong>{3} kPa</strong> (devor impulslaridan).": [
+   "<strong>1. Деконструкция PhET \"Gas Properties\" (живые параметры):</strong><br> T = {0} K, V = {1} л, N = {2} частиц.<br> Измеренное микроскопическое давление: <strong>{3} кПа</strong> (по импульсам на стенки).",
+   "<strong>1. PhET \"Gas Properties\" deconstruction (live parameters):</strong><br> T = {0} K, V = {1} L, N = {2} particles.<br> Measured microscopic pressure: <strong>{3} kPa</strong> (from wall impulses)."
+  ],
+  "\n        <strong>2. Claude Stoxastik Dvigatel Kodi:</strong>\n        <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre>\n        <button id=\"btn-copy-thermo-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>": [
+   "<strong>2. Код стохастического движка Claude:</strong> <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre> <button id=\"btn-copy-thermo-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Копировать</button>",
+   "<strong>2. Claude stochastic engine code:</strong> <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre> <button id=\"btn-copy-thermo-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Copy</button>"
+  ],
+  "\n        <strong>3. ChatGPT Code Interpreter: P-V/T-S Sintezi:</strong><br>\n        Joriy sikl bo‘yicha hisoblangan foydali ish: <strong>A ≈ {0} J</strong> (ν=1 mol, R=8.314).<br>\n        <em style=\"color:#4B5464;\">\"{1}\"</em><br>\n        <button id=\"btn-copy-thermo-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>": [
+   "<strong>3. ChatGPT Code Interpreter: синтез P-V/T-S:</strong><br> Полезная работа, вычисленная для текущего цикла: <strong>A ≈ {0} Дж</strong> (ν=1 моль, R=8.314).<br> <em style=\"color:#4B5464;\">\"{1}\"</em><br> <button id=\"btn-copy-thermo-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Копировать</button>",
+   "<strong>3. ChatGPT Code Interpreter: P-V/T-S synthesis:</strong><br> Useful work computed for the current cycle: <strong>A ≈ {0} J</strong> (ν=1 mol, R=8.314).<br> <em style=\"color:#4B5464;\">\"{1}\"</em><br> <button id=\"btn-copy-thermo-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Copy</button>"
+  ],
+  "\n        <strong>4. Google Antigravity Audit Natijasi:</strong><br>\n        ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>\n        ✓ Delta-Time Akkumulyatori: {0} FPS, kadrlar barqaror ishlamoqda.<br>\n        ✓ Fizik Invariantlar: {1}": [
+   "<strong>4. Результат аудита Google Antigravity:</strong><br> ✓ Статический анализ AST: eval() или опасных обращений к DOM не обнаружено.<br> ✓ Аккумулятор delta-time: {0} FPS, кадры стабильны.<br> ✓ Физические инварианты: {1}",
+   "<strong>4. Google Antigravity audit result:</strong><br> ✓ AST static analysis: no eval() or unsafe DOM access detected.<br> ✓ Delta-time accumulator: {0} FPS, frames are stable.<br> ✓ Physical invariants: {1}"
+  ],
+  "1. Devorni olib tashlab, ikki gaz turining vaqt o‘tishi bilan aralashishini kuzating.": [
+   "1. Уберите перегородку и пронаблюдайте, как со временем смешиваются два вида газа.",
+   "1. Remove the divider and watch the two gases mix over time."
+  ],
+  "1. Haroratni asta-sekin oshirib, qattiq holatdan suyuqlikka, so‘ngra gazga o‘tishni kuzating.": [
+   "1. Постепенно повышая температуру, пронаблюдайте переход из твёрдого состояния в жидкое, а затем в газ.",
+   "1. Gradually raise the temperature and watch the transition from solid to liquid and then to gas."
+  ],
+  "1. Haroratni oshirib, hajmning chiziqli o‘sishini kuzating.": [
+   "1. Повышая температуру, пронаблюдайте линейный рост объёма.",
+   "1. Raise the temperature and observe the linear growth in volume."
+  ],
+  "1. Idishni qizdirib, bosim ortishini (portlash xavfisiz) kuzating.": [
+   "1. Нагрейте сосуд и пронаблюдайте рост давления (без риска взрыва).",
+   "1. Heat the container and watch the pressure rise (with no risk of explosion)."
+  ],
+  "1. Karno sikli animatsiyasida 4 bosqichni ketma-ket kuzating.": [
+   "1. Последовательно пронаблюдайте 4 этапа в анимации цикла Карно.",
+   "1. Watch the 4 stages of the Carnot cycle animation in turn."
+  ],
+  "1. Nasos orqali idishga 100 ta og‘ir zarracha kiriting va bosim $P$ hamda harorat $T$ ko‘rsatkichini qayd eting.": [
+   "1. Накачайте в сосуд 100 тяжёлых частиц и запишите показания давления $P$ и температуры $T$.",
+   "1. Pump 100 heavy particles into the container and record the pressure $P$ and temperature $T$ readings."
+  ],
+  "1. Porshenni surib hajmni ikki marta kamaytiring va bosimning ikki marta ortishini tasdiqlang.": [
+   "1. Сдвиньте поршень, уменьшив объём вдвое, и убедитесь, что давление выросло вдвое.",
+   "1. Push the piston to halve the volume and confirm that the pressure doubles."
+  ],
+  "1. Porshenni tez suring (adiabatik yaqinlashish) va harorat o‘zgarishini kuzating.": [
+   "1. Быстро сдвиньте поршень (адиабатическое приближение) и пронаблюдайте изменение температуры.",
+   "1. Push the piston quickly (adiabatic approximation) and observe the temperature change."
+  ],
+  "1. Turli issiqlik sig‘imiga ega ikkita jismni bir xil isitgichda qizdirib, harorat o‘sish tezligini solishtiring.": [
+   "1. Нагрейте на одинаковом нагревателе два тела с разной теплоёмкостью и сравните скорость роста температуры.",
+   "1. Heat two bodies with different heat capacities on the same heater and compare how fast their temperatures rise."
+  ],
+  "2. $T_H$ va $T_C$ qiymatlarini o‘zgartirib, F.I.K.ning o‘zgarishini hisoblang.": [
+   "2. Меняя значения $T_H$ и $T_C$, рассчитайте изменение КПД.",
+   "2. Change $T_H$ and $T_C$ and compute how the efficiency changes."
+  ],
+  "2. Adiabata egri chizig‘ini izotermaga solishtiring (adiabata tikroq).": [
+   "2. Сравните кривую адиабаты с изотермой (адиабата круче).",
+   "2. Compare the adiabat with the isotherm (the adiabat is steeper)."
+  ],
+  "2. Bosim-Harorat (P-T) fazaviy diagrammasida uchlik nuqtani (triple point) toping.": [
+   "2. Найдите тройную точку (triple point) на фазовой диаграмме давление–температура (P-T).",
+   "2. Find the triple point on the pressure–temperature (P-T) phase diagram."
+  ],
+  "2. Issiq va sovuq jismlarni bir-biriga tekkizib, muvozanat haroratiga yetishini kuzating.": [
+   "2. Приведите в контакт горячее и холодное тела и пронаблюдайте достижение равновесной температуры.",
+   "2. Put a hot and a cold body in contact and watch them reach an equilibrium temperature."
+  ],
+  "2. Og‘ir va yengil zarrachalarning diffuziya tezligini solishtiring.": [
+   "2. Сравните скорость диффузии тяжёлых и лёгких частиц.",
+   "2. Compare the diffusion rates of heavy and light particles."
+  ],
+  "2. P-T grafigida to‘g‘ri chiziqni tasdiqlang.": [
+   "2. Подтвердите прямую линию на графике P-T.",
+   "2. Confirm the straight line on the P-T plot."
+  ],
+  "2. P-V grafigida giperbola shaklini kuzating.": [
+   "2. Пронаблюдайте форму гиперболы на графике P-V.",
+   "2. Observe the hyperbola on the P-V plot."
+  ],
+  "2. Porshenni surib hajmni $V$ kamaytiring (Izotermik siqilish) va Boyl-Mariott qonuni ($P \\propto 1/V$) bajarilishini tekshiring.": [
+   "2. Сдвиньте поршень, уменьшив объём $V$ (изотермическое сжатие), и проверьте выполнение закона Бойля–Мариотта ($P \\propto 1/V$).",
+   "2. Push the piston to reduce the volume $V$ (isothermal compression) and check that the Boyle–Mariotte law ($P \\propto 1/V$) holds."
+  ],
+  "2. V-T grafigida to‘g‘ri chiziqni tasdiqlang.": [
+   "2. Подтвердите прямую линию на графике V-T.",
+   "2. Confirm the straight line on the V-T plot."
+  ],
+  "3. $\\gamma$ qiymatini gaz turiga (bir/ikki atomli) bog‘lab tushuntiring.": [
+   "3. Объясните значение $\\gamma$, связав его с типом газа (одно-/двухатомный).",
+   "3. Explain the value of $\\gamma$ in terms of the gas type (monatomic/diatomic)."
+  ],
+  "3. Bosim qiymatini o‘zgartirib, chiziq qiyaligi qanday o‘zgarishini kuzating.": [
+   "3. Меняя давление, пронаблюдайте, как меняется наклон прямой.",
+   "3. Change the pressure and watch how the slope of the line changes."
+  ],
+  "3. Energiya balansi diagrammasida issiqlik oqimi yo‘nalishini kuzating.": [
+   "3. Пронаблюдайте направление теплового потока на диаграмме энергетического баланса.",
+   "3. Observe the direction of heat flow on the energy balance diagram."
+  ],
+  "3. Hajm qiymatini o‘zgartirib, chiziq qiyaligi qanday o‘zgarishini kuzating.": [
+   "3. Меняя объём, пронаблюдайте, как меняется наклон прямой.",
+   "3. Change the volume and watch how the slope of the line changes."
+  ],
+  "3. Haroratni oshirib, diffuziya tezligiga ta’sirini baholang.": [
+   "3. Повысьте температуру и оцените её влияние на скорость диффузии.",
+   "3. Raise the temperature and assess its effect on the diffusion rate."
+  ],
+  "3. Haroratni o‘zgartirib, egri chiziq (izoterma) qanday siljishini kuzating.": [
+   "3. Меняя температуру, пронаблюдайте, как смещается кривая (изотерма).",
+   "3. Change the temperature and watch how the curve (isotherm) shifts."
+  ],
+  "3. Molekulalararo masofa ortishi bilan potensial energiya qanday o‘zgarishini tahlil qiling.": [
+   "3. Проанализируйте, как меняется потенциальная энергия с ростом межмолекулярного расстояния.",
+   "3. Analyse how the potential energy changes as the intermolecular distance increases."
+  ],
+  "3. P-V diagrammasidagi yopiq egri chiziq ichidagi maydonni foydali ish bilan bog‘lang.": [
+   "3. Свяжите площадь внутри замкнутой кривой на диаграмме P-V с полезной работой.",
+   "3. Relate the area inside the closed curve on the P-V diagram to the useful work."
+  ],
+  "3. Pastdagi olov orqali haroratni $T$ oshiring va Maksvell tezliklar gistogrammasi o‘ng tomonga qarab yassilanishini kuzating.": [
+   "3. Повысьте температуру $T$ огнём снизу и пронаблюдайте, как гистограмма скоростей Максвелла сплющивается и смещается вправо.",
+   "3. Raise the temperature $T$ with the flame below and watch the Maxwell speed histogram flatten and shift to the right."
+  ],
+  "<span style=\"font-size: 1.05rem; line-height: 1;\">⏸</span> To‘xtatish": [
+   "<span style=\"font-size: 1.05rem; line-height: 1;\">⏸</span> Остановить",
+   "<span style=\"font-size: 1.05rem; line-height: 1;\">⏸</span> Stop"
+  ],
+  "<span style=\"font-size: 1.05rem; line-height: 1;\">▶</span> Davom ettirish": [
+   "<span style=\"font-size: 1.05rem; line-height: 1;\">▶</span> Продолжить",
+   "<span style=\"font-size: 1.05rem; line-height: 1;\">▶</span> Resume"
+  ],
+  "Analitik yopiq shakldagi sikl — entropiya bo‘yicha yopiq konturning yig‘indisi $\\oint dS = 0$ (raqamli tekshirildi). Karno F.I.K. = {0}%.": [
+   "Аналитический цикл в замкнутой форме — сумма по замкнутому контуру энтропии $\\oint dS = 0$ (проверено численно). КПД Карно = {0}%.",
+   "A closed-form analytical cycle — the sum around the closed entropy contour is $\\oint dS = 0$ (checked numerically). Carnot efficiency = {0}%."
+  ],
+  "ChatGPT Code Interpreter uchun: Matplotlib bilan Th={0}K, Tc={1}K, V1={2}L, V2={3}L parametrlarida {4} sikli uchun P-V va T-S diagrammalarini chizuvchi Python kodi yarat.": [
+   "Для ChatGPT Code Interpreter: создай Python-код с Matplotlib, строящий диаграммы P-V и T-S для цикла {4} при параметрах Th={0}K, Tc={1}K, V1={2}L, V2={3}L.",
+   "For ChatGPT Code Interpreter: write Python code with Matplotlib that plots P-V and T-S diagrams for the {4} cycle with Th={0}K, Tc={1}K, V1={2}L, V2={3}L."
+  ],
+  "Elastik devor to‘qnashuvlaridan energiya dreyfi: |ΔE/E₀| = {0}% (so‘nggi termostat sozlamasidan buyon). Nazariy $v_{rms}$ = {1} m/s.": [
+   "Дрейф энергии от упругих столкновений со стенками: |ΔE/E₀| = {0}% (с момента последней настройки термостата). Теоретическая $v_{rms}$ = {1} м/с.",
+   "Energy drift from elastic wall collisions: |ΔE/E₀| = {0}% (since the last thermostat change). Theoretical $v_{rms}$ = {1} m/s."
+  ],
+  "Ideal gaz holat tenglamasi ($PV = N k_B T$), harorat, hajm va bosimning o‘zaro dinamik bog‘liqligi, og‘ir va yengil gaz molekulalarining to‘qnashuvlari hamda Maksvell-Bolsman tezliklar gistogrammasi.": [
+   "Уравнение состояния идеального газа ($PV = N k_B T$), взаимная динамическая связь температуры, объёма и давления, столкновения тяжёлых и лёгких молекул газа и гистограмма скоростей Максвелла–Больцмана.",
+   "The ideal gas equation of state ($PV = N k_B T$), the dynamic interplay of temperature, volume and pressure, collisions of heavy and light gas molecules and the Maxwell–Boltzmann speed histogram."
+  ],
+  "Ikki xil massali gaz zarrachalarining tasodifiy issiqlik harakati orqali aralashuvi (diffuziya) va massa farqining diffuziya tezligiga ta’siri.": [
+   "Смешивание (диффузия) частиц газов двух разных масс за счёт случайного теплового движения и влияние разницы масс на скорость диффузии.",
+   "Mixing (diffusion) of gas particles of two different masses through random thermal motion, and how the mass difference affects the diffusion rate."
+  ],
+  "Issiqlik almashinuvisiz ($Q=0$) tezkor siqilish/kengayish jarayonida haroratning o‘zgarishini o‘rganing.": [
+   "Изучите изменение температуры при быстром сжатии/расширении без теплообмена ($Q=0$).",
+   "Study how the temperature changes during rapid compression/expansion with no heat exchange ($Q=0$)."
+  ],
+  "Issiqlik energiyasining turli jismlar (temir, g‘isht, suv) orasida o‘tkazuvchanlik orqali uzatilishi va issiqlik sig‘imi $c$ ning harorat o‘zgarish tezligiga ta’siri.": [
+   "Передача тепловой энергии между разными телами (железо, кирпич, вода) путём теплопроводности и влияние теплоёмкости $c$ на скорость изменения температуры.",
+   "Heat transfer between different bodies (iron, brick, water) by conduction and how the heat capacity $c$ affects the rate of temperature change."
+  ],
+  "Karno issiqlik dvigateli animatsiyasida 4 bosqichli sikl (2 izoterma + 2 adiabata) va F.I.K.ni kuzating.": [
+   "Пронаблюдайте в анимации тепловой машины Карно 4-этапный цикл (2 изотермы + 2 адиабаты) и КПД.",
+   "Watch the 4-stage cycle (2 isotherms + 2 adiabats) and the efficiency in the Carnot heat engine animation."
+  ],
+  "Karno sikli": [
+   "Цикл Карно",
+   "Carnot cycle"
+  ],
+  "Molekulalararo Lennard-Jones o‘zaro ta’sir potensiali orqali qattiq, suyuq va gaz holatlari orasidagi fazaviy o‘tishlarni haroratga bog‘liq ravishda kuzatish.": [
+   "Наблюдение фазовых переходов между твёрдым, жидким и газообразным состояниями в зависимости от температуры через межмолекулярный потенциал Леннард-Джонса.",
+   "Observing temperature-dependent phase transitions between solid, liquid and gas through the Lennard-Jones intermolecular potential."
+  ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
+  "P=const sharoitida hajm va haroratning to‘g‘ri proporsionalligini o‘rganing.": [
+   "Изучите прямую пропорциональность объёма и температуры при P=const.",
+   "Study the direct proportionality of volume and temperature at P=const."
+  ],
+  "P–V diagrammasi": [
+   "Диаграмма P–V",
+   "P–V diagram"
+  ],
+  "Stirling sikli": [
+   "Цикл Стирлинга",
+   "Stirling cycle"
+  ],
+  "T=const sharoitida bosim va hajm orasidagi teskari proporsionallikni sinab ko‘ring.": [
+   "Проверьте обратную пропорциональность давления и объёма при T=const.",
+   "Test the inverse proportionality of pressure and volume at T=const."
+  ],
+  "Tezliklar gistogrammasi (moviy) va Maksvell taqsimoti (qizil)": [
+   "Гистограмма скоростей (синяя) и распределение Максвелла (красное)",
+   "Speed histogram (blue) and Maxwell distribution (red)"
+  ],
+  "T–S diagrammasi": [
+   "Диаграмма T–S",
+   "T–S diagram"
+  ],
+  "V=const sharoitida bosim va haroratning to‘g‘ri proporsionalligini kuzating.": [
+   "Пронаблюдайте прямую пропорциональность давления и температуры при V=const.",
+   "Observe the direct proportionality of pressure and temperature at V=const."
+  ],
+  "function randomGaussian(mean=0, stdev=1) {\n  const u1 = Math.max(1e-7, 1 - Math.random());\n  const u2 = Math.random();\n  const z0 = Math.sqrt(-2*Math.log(u1)) * Math.cos(2*Math.PI*u2);\n  return z0*stdev + mean;\n}\n// sigma = sqrt(kB*T/m) -> Maksvell-Bolsman ansambli": [
+   "function randomGaussian(mean=0, stdev=1) {\n  const u1 = Math.max(1e-7, 1 - Math.random());\n  const u2 = Math.random();\n  const z0 = Math.sqrt(-2*Math.log(u1)) * Math.cos(2*Math.PI*u2);\n  return z0*stdev + mean;\n}\n// sigma = sqrt(kB*T/m) -> ансамбль Максвелла–Больцмана",
+   "function randomGaussian(mean=0, stdev=1) {\n  const u1 = Math.max(1e-7, 1 - Math.random());\n  const u2 = Math.random();\n  const z0 = Math.sqrt(-2*Math.log(u1)) * Math.cos(2*Math.PI*u2);\n  return z0*stdev + mean;\n}\n// sigma = sqrt(kB*T/m) -> Maxwell–Boltzmann ensemble"
+  ],
+  "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_adiabaticky_dej_Canvas.html?l=uz": [
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_adiabaticky_dej_Canvas.html?l=ru",
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_adiabaticky_dej_Canvas.html?l=en"
+  ],
+  "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_carnot_Canvas.html?l=uz": [
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_carnot_Canvas.html?l=ru",
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_carnot_Canvas.html?l=en"
+  ],
+  "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izobaricky_dej_Canvas.html?l=uz": [
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izobaricky_dej_Canvas.html?l=ru",
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izobaricky_dej_Canvas.html?l=en"
+  ],
+  "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izochoricky_dej_Canvas.html?l=uz": [
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izochoricky_dej_Canvas.html?l=ru",
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izochoricky_dej_Canvas.html?l=en"
+  ],
+  "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izotermicky_dej_Canvas.html?l=uz": [
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izotermicky_dej_Canvas.html?l=ru",
+   "https://www.vascak.cz/data/android/physicsatschool/canvas/mf_izotermicky_dej_Canvas.html?l=en"
+  ],
+  "⚖️ Vascak.cz: Izobarik Jarayon (Gey-Lyussak Qonuni)": [
+   "⚖️ Vascak.cz: изобарный процесс (закон Гей-Люссака)",
+   "⚖️ Vascak.cz: Isobaric Process (Gay-Lussac’s Law)"
+  ],
+  "⚙️ Vascak.cz: Karno Sikli (Carnot Cycle)": [
+   "⚙️ Vascak.cz: цикл Карно (Carnot Cycle)",
+   "⚙️ Vascak.cz: Carnot Cycle"
+  ],
+  "⚡ Vascak.cz: Adiabatik Jarayon (Puasson Tenglamasi)": [
+   "⚡ Vascak.cz: адиабатический процесс (уравнение Пуассона)",
+   "⚡ Vascak.cz: Adiabatic Process (Poisson’s Equation)"
+  ],
+  "🌡️ Vascak.cz: Izotermik Jarayon (Boyl-Mariott Qonuni)": [
+   "🌡️ Vascak.cz: изотермический процесс (закон Бойля–Мариотта)",
+   "🌡️ Vascak.cz: Isothermal Process (Boyle–Mariotte Law)"
+  ],
+  "💨 PhET Interactive Simulations: Diffusion": [
+   "💨 PhET Interactive Simulations: Diffusion",
+   "💨 PhET Interactive Simulations: Diffusion"
+  ],
+  "🔒 Vascak.cz: Izoxorik Jarayon (Sharl Qonuni)": [
+   "🔒 Vascak.cz: изохорный процесс (закон Шарля)",
+   "🔒 Vascak.cz: Isochoric Process (Charles’s Law)"
+  ],
+  "🔥 PhET Interactive Simulations: Energy Forms and Changes": [
+   "🔥 PhET Interactive Simulations: Energy Forms and Changes",
+   "🔥 PhET Interactive Simulations: Energy Forms and Changes"
+  ],
+  "🧊 PhET Interactive Simulations: States of Matter (Modda Holatlari)": [
+   "🧊 PhET Interactive Simulations: States of Matter (агрегатные состояния)",
+   "🧊 PhET Interactive Simulations: States of Matter"
+  ],
+  "🧪 PhET Interactive Simulations: Gas Properties (Ideal Gaz Qonunlari)": [
+   "🧪 PhET Interactive Simulations: Gas Properties (законы идеального газа)",
+   "🧪 PhET Interactive Simulations: Gas Properties (Ideal Gas Laws)"
   ]
  },
  "js/sim-tts-narrator.js": {
@@ -796,6 +2128,10 @@
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
   ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
@@ -981,6 +2317,10 @@
   "Nega brauzer Canvas ekranida y koordinatani y_screen = H - (y_physics * scale) ko‘rinishida o‘zgartirish shart?": [
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
+  ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
   ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
@@ -1168,6 +2508,10 @@
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
   ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
@@ -1354,6 +2698,10 @@
    "Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?",
    "Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?"
   ],
+  "Nusxalandi!": [
+   "Скопировано!",
+   "Copied!"
+  ],
   "Prompt nusxalandi!": [
    "Промпт скопирован!",
    "Prompt copied!"
@@ -1403,6 +2751,186 @@
   "<span class=\"hud-pill text-rose\">❌ Noto‘g‘ri. To‘g‘ri javob B: Klassik Forward Euler faza fazosi kengaytiradi va beqarorlik keltiradi. (Klaster: A)</span>": [
    "<span class=\"hud-pill text-rose\">❌ Неверно. Правильный ответ B: классический Forward Euler расширяет фазовое пространство и вызывает неустойчивость. (Кластер: A)</span>",
    "<span class=\"hud-pill text-rose\">❌ Incorrect. The correct answer is B: classical Forward Euler expands the phase space and causes instability. (Cluster: A)</span>"
+  ]
+ },
+ "lecture10.html": {
+  "Natija: {0}/3 ta to‘g‘ri. Iltimos, 2, 4 va 5-bo‘limlardagi nazariy va matematik apparatni qayta ko‘rib chiqing.": [
+   "Результат: {0}/3 верно. Пожалуйста, ещё раз просмотрите теоретический и математический аппарат в разделах 2, 4 и 5.",
+   "Score: {0}/3 correct. Please review the theory and mathematics in Sections 2, 4 and 5 again."
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob bering!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
+  ],
+  "🎉 Tabriklaymiz! 3/3 (100%) - Kepler qonunlari, Vis-Viva tenglamasi va tranzit fotometriyasini mukammal o‘zlashtirdingiz!": [
+   "🎉 Поздравляем! 3/3 (100%) — вы отлично освоили законы Кеплера, уравнение Vis-Viva и транзитную фотометрию!",
+   "🎉 Congratulations! 3/3 (100%) — you have mastered Kepler’s laws, the vis-viva equation and transit photometry!"
+  ]
+ },
+ "lecture11.html": {
+  "Natija: {0}/3 ta to‘g‘ri. Iltimos, 2, 4 va 5-bo‘limlardagi nazariy va metodik apparatni qayta ko‘rib chiqing.": [
+   "Результат: {0}/3 верно. Пожалуйста, ещё раз просмотрите теоретический и методический аппарат в разделах 2, 4 и 5.",
+   "Score: {0}/3 correct. Please review the theory and methods in Sections 2, 4 and 5 again."
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob bering!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
+  ],
+  "🎉 Tabriklaymiz! 3/3 (100%) - Masofaviy ta’lim, LMS integratsiyasi, Otter.ai va Antigravity portfolio talablarini mukammal o‘zlashtirdingiz!": [
+   "🎉 Поздравляем! 3/3 (100%) — вы отлично освоили дистанционное обучение, интеграцию LMS, Otter.ai и требования к портфолио Antigravity!",
+   "🎉 Congratulations! 3/3 (100%) — you have mastered distance learning, LMS integration, Otter.ai and the Antigravity portfolio requirements!"
+  ]
+ },
+ "lecture12.html": {
+  "1-Savol: Noto‘g‘ri. 2D to‘qnashuvda skalyar impuls J formulasi nisbiy tezlikning normalga proyeksiyasi va massalar yig‘indisiga bog‘liq (B varianti).": [
+   "Вопрос 1: неверно. В 2D-столкновении формула скалярного импульса J зависит от проекции относительной скорости на нормаль и суммы обратных масс (вариант B).",
+   "Question 1: incorrect. In a 2D collision the scalar impulse J depends on the projection of the relative velocity onto the normal and the sum of inverse masses (option B)."
+  ],
+  "1-Savol: To‘g‘ri! 2D elastik to‘qnashuvda skalyar impuls J = -((1+e)(v1-v2).n)/(1/m1 + 1/m2) orqali normal bo‘yicha impulslar taqsimlanadi.": [
+   "Вопрос 1: верно! При 2D упругом столкновении импульсы распределяются вдоль нормали через скалярный импульс J = -((1+e)(v1-v2).n)/(1/m1 + 1/m2).",
+   "Question 1: correct! In a 2D elastic collision the impulses along the normal are distributed through the scalar impulse J = -((1+e)(v1-v2).n)/(1/m1 + 1/m2)."
+  ],
+  "2-Savol: Noto‘g‘ri. Jism harakatlanishi uchun qiyalik tangensi ishqalanish koeffitsiyentidan katta bo‘lishi shart: tan(a) > mu (A varianti).": [
+   "Вопрос 2: неверно. Чтобы тело двигалось, тангенс угла наклона должен быть больше коэффициента трения: tan(a) > mu (вариант A).",
+   "Question 2: incorrect. For the body to move, the tangent of the incline angle must exceed the friction coefficient: tan(a) > mu (option A)."
+  ],
+  "2-Savol: To‘g‘ri! Qiya tekislikda sirpanish boshlanishi uchun og‘irlik kuchining parallel tashkil etuvchisi maksimal tinchlikdagi ishqalanishdan katta bo‘lishi kerak: mg*sin(a) > mu*mg*cos(a) => tan(a) > mu.": [
+   "Вопрос 2: верно! Чтобы на наклонной плоскости началось скольжение, параллельная составляющая силы тяжести должна быть больше максимального трения покоя: mg*sin(a) > mu*mg*cos(a) => tan(a) > mu.",
+   "Question 2: correct! For sliding to start on an incline, the parallel component of weight must exceed maximum static friction: mg*sin(a) > mu*mg*cos(a) => tan(a) > mu."
+  ],
+  "3-Savol: Noto‘g‘ri. Google Antigravity Simplektik usulni fazaviy invariantlarni saqlash va energiya dreyfini < 10^-3 darajasida ushlab turish uchun talab qiladi (B varianti).": [
+   "Вопрос 3: неверно. Google Antigravity требует симплектический метод, чтобы сохранять фазовые инварианты и удерживать энергетический дрейф на уровне < 10^-3 (вариант B).",
+   "Question 3: incorrect. Google Antigravity requires the symplectic method to preserve phase invariants and keep energy drift below 10^-3 (option B)."
+  ],
+  "3-Savol: To‘g‘ri! Simplektik Eyler–Kromer integratori fazaviy hajmni saqlaydi va energiya dreyfini chegaralaydi (dE/E0 < 10^-3), oddiy Eyler esa energiyani har kadrda portlatib yuboradi.": [
+   "Вопрос 3: верно! Симплектический интегратор Эйлера–Кромера сохраняет фазовый объём и ограничивает энергетический дрейф (dE/E0 < 10^-3), а простой Эйлер «взрывает» энергию в каждом кадре.",
+   "Question 3: correct! The symplectic Euler–Cromer integrator preserves phase volume and bounds the energy drift (dE/E0 < 10^-3), while plain Euler blows up the energy every frame."
+  ],
+  "Natija: {0}/3 ta to‘g‘ri.<br><br><small style=\"color:#4B5464;\">{1}</small>": [
+   "Результат: {0}/3 верно.<br><br><small style=\"color:#4B5464;\">{1}</small>",
+   "Score: {0}/3 correct.<br><br><small style=\"color:#4B5464;\">{1}</small>"
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob bering!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
+  ],
+  "🎉 Tabriklaymiz! 3/3 (100%) - Klassik mexanika dinamikasi, 2D to‘qnashuv impulsi va Antigravity simplektik monitoring talablarini mukammal o‘zlashtirdingiz!<br><br><small style=\"color:#4B5464;\">{0}</small>": [
+   "🎉 Поздравляем! 3/3 (100%) — вы отлично освоили динамику классической механики, импульс 2D-столкновения и требования симплектического мониторинга Antigravity!<br><br><small style=\"color:#4B5464;\">{0}</small>",
+   "🎉 Congratulations! 3/3 (100%) — you have mastered classical mechanics dynamics, the 2D collision impulse and Antigravity’s symplectic monitoring requirements!<br><br><small style=\"color:#4B5464;\">{0}</small>"
+  ]
+ },
+ "lecture13.html": {
+  "1-Savol: Noto‘g‘ri. $v_{rms}$ tezlik haroratning kvadrat ildiziga to‘g‘ri mutanosib (B varianti).": [
+   "Вопрос 1: неверно. Скорость $v_{rms}$ прямо пропорциональна квадратному корню из температуры (вариант B).",
+   "Question 1: incorrect. The $v_{rms}$ speed is proportional to the square root of the temperature (option B)."
+  ],
+  "1-Savol: To‘g‘ri! $v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}$ formulaga ko‘ra, harorat 2 marta oshganda tezlik $\\sqrt{2} \\approx 1.41$ marta ortadi.": [
+   "Вопрос 1: верно! Согласно формуле $v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}$, при увеличении температуры в 2 раза скорость возрастает в $\\sqrt{2} \\approx 1.41$ раз.",
+   "Question 1: correct! By the $v_{rms} = \\sqrt{\\frac{3 k_B T}{m}}$ formula, doubling the temperature increases the speed $\\sqrt{2} \\approx 1.41$-fold."
+  ],
+  "2-Savol: Noto‘g‘ri. Adiabatik kengayishda gaz ishni o‘z ichki energiyasi hisobiga bajaradi va soviydi (A varianti).": [
+   "Вопрос 2: неверно. При адиабатическом расширении газ совершает работу за счёт своей внутренней энергии и охлаждается (вариант A).",
+   "Question 2: incorrect. In adiabatic expansion the gas does work at the expense of its internal energy and cools (option A)."
+  ],
+  "2-Savol: To‘g‘ri! $Q = 0$ bo‘lgani uchun $\\Delta U = -A$. Gaz kengayganda $A > 0$, demak $\\Delta U < 0$ va harorat pasayadi.": [
+   "Вопрос 2: верно! Поскольку $Q = 0$, то $\\Delta U = -A$. При расширении газа $A > 0$, значит $\\Delta U < 0$ и температура падает.",
+   "Question 2: correct! Since $Q = 0$, $\\Delta U = -A$. When the gas expands $A > 0$, so $\\Delta U < 0$ and the temperature drops."
+  ],
+  "3-Savol: Noto‘g‘ri. Karno F.I.K. $\\eta = 1 - T_C / T_H = 50\\%$ ga teng (C varianti).": [
+   "Вопрос 3: неверно. КПД Карно равен $\\eta = 1 - T_C / T_H = 50\\%$ (вариант C).",
+   "Question 3: incorrect. The Carnot efficiency equals $\\eta = 1 - T_C / T_H = 50\\%$ (option C)."
+  ],
+  "3-Savol: To‘g‘ri! Karno F.I.K. formulasi: $\\eta = 1 - \\frac{T_C}{T_H} = 1 - \\frac{300}{600} = 0.50$ (50%).": [
+   "Вопрос 3: верно! Формула КПД Карно: $\\eta = 1 - \\frac{T_C}{T_H} = 1 - \\frac{300}{600} = 0.50$ (50%).",
+   "Question 3: correct! The Carnot efficiency formula: $\\eta = 1 - \\frac{T_C}{T_H} = 1 - \\frac{300}{600} = 0.50$ (50%)."
+  ],
+  "Natija: {0}/3 ta to‘g‘ri.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>": [
+   "Результат: {0}/3 верно.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>",
+   "Score: {0}/3 correct.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>"
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob bering!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
+  ],
+  "🎉 Tabriklaymiz! 3/3 (100%) - Termodinamika qonuniyatlari, Maksvell-Bolsman taqsimoti va Karno sikli modellashtirish talablarini mukammal o‘zlashtirdingiz!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>": [
+   "🎉 Поздравляем! 3/3 (100%) — вы отлично освоили законы термодинамики, распределение Максвелла–Больцмана и моделирование цикла Карно!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>",
+   "🎉 Congratulations! 3/3 (100%) — you have mastered the laws of thermodynamics, the Maxwell–Boltzmann distribution and Carnot cycle modelling!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>"
+  ]
+ },
+ "lecture14.html": {
+  "1-Savol: Noto‘g‘ri. Masofa kvadratiga teskari proporsional bo‘lgani uchun kuch 9 marta ortadi (B varianti).": [
+   "Вопрос 1: неверно. Поскольку сила обратно пропорциональна квадрату расстояния, она возрастает в 9 раз (вариант B).",
+   "Question 1: incorrect. Because the force is inversely proportional to the square of the distance, it increases 9-fold (option B)."
+  ],
+  "1-Savol: To‘g‘ri! Kulon qonuni $F = k \\frac{q_1 q_2}{r^2}$ bo‘yicha, masofa 3 marta kamayganda kuch $3^2 = 9$ marta ortadi.": [
+   "Вопрос 1: верно! По закону Кулона $F = k \\frac{q_1 q_2}{r^2}$ при уменьшении расстояния в 3 раза сила возрастает в $3^2 = 9$ раз.",
+   "Question 1: correct! By Coulomb’s law $F = k \\frac{q_1 q_2}{r^2}$, reducing the distance 3-fold increases the force $3^2 = 9$-fold."
+  ],
+  "2-Savol: Noto‘g‘ri. Lens qoidasi induksiyalangan tokning oqim o‘zgarishiga qarshilik ko‘rsatishini anglatadi (A varianti).": [
+   "Вопрос 2: неверно. Правило Ленца означает, что индуцированный ток противодействует изменению потока (вариант A).",
+   "Question 2: incorrect. Lenz’s rule means the induced current opposes the change in flux (option A)."
+  ],
+  "2-Savol: To‘g‘ri! Lens qoidasiga ko‘ra induksiyalangan tok o‘z maydoni bilan tashqi oqim o‘zgarishiga qarshilik ko‘rsatadi va bu formulada minus belgisi bilan ifodalanadi.": [
+   "Вопрос 2: верно! По правилу Ленца индуцированный ток своим полем противодействует изменению внешнего потока, и в формуле это выражено знаком минус.",
+   "Question 2: correct! By Lenz’s rule the induced current’s field opposes the change in external flux, which the minus sign expresses in the formula."
+  ],
+  "3-Savol: Noto‘g‘ri. Rezonans burchak chastotasi $\\omega_0 = 1 / \\sqrt{LC}$ ga teng (C varianti).": [
+   "Вопрос 3: неверно. Резонансная угловая частота равна $\\omega_0 = 1 / \\sqrt{LC}$ (вариант C).",
+   "Question 3: incorrect. The resonant angular frequency equals $\\omega_0 = 1 / \\sqrt{LC}$ (option C)."
+  ],
+  "3-Savol: To‘g‘ri! RLC zanjirida rezonans chastotasi Tomson formulasi orqali topiladi: $\\omega_0 = \\frac{1}{\\sqrt{LC}}$.": [
+   "Вопрос 3: верно! Резонансная частота RLC-цепи находится по формуле Томсона: $\\omega_0 = \\frac{1}{\\sqrt{LC}}$.",
+   "Question 3: correct! The resonant frequency of an RLC circuit is given by Thomson’s formula: $\\omega_0 = \\frac{1}{\\sqrt{LC}}$."
+  ],
+  "Natija: {0}/3 ta to‘g‘ri.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>": [
+   "Результат: {0}/3 верно.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>",
+   "Score: {0}/3 correct.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>"
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob bering!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
+  ],
+  "🎉 Tabriklaymiz! 3/3 (100%) - Elektrodinamika qonuniyatlari, Faradey induksiyasi va RLC zanjirlarini modellashtirish talablarini mukammal o‘zlashtirdingiz!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>": [
+   "🎉 Поздравляем! 3/3 (100%) — вы отлично освоили законы электродинамики, индукцию Фарадея и моделирование RLC-цепей!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>",
+   "🎉 Congratulations! 3/3 (100%) — you have mastered the laws of electrodynamics, Faraday induction and RLC circuit modelling!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>"
+  ]
+ },
+ "lecture15.html": {
+  "1-Savol: Noto‘g‘ri. $t=2T_{1/2}$ da $N = N_0/4$ qoladi, ya’ni 75% yemirilib ketadi (B varianti).": [
+   "Вопрос 1: неверно. При $t=2T_{1/2}$ остаётся $N = N_0/4$, то есть 75% распадается (вариант B).",
+   "Question 1: incorrect. At $t=2T_{1/2}$, $N = N_0/4$ remains, i.e. 75% has decayed (option B)."
+  ],
+  "1-Savol: To‘g‘ri! 2 ta yarim yemirilish davridan so‘ng boshlang‘ich yadrolarning 75% qismi yemirilib, faqat 25% qoladi.": [
+   "Вопрос 1: верно! Через 2 периода полураспада распадается 75% исходных ядер, остаётся лишь 25%.",
+   "Question 1: correct! After 2 half-lives 75% of the initial nuclei have decayed and only 25% remain."
+  ],
+  "2-Savol: Noto‘g‘ri. Turg‘un boshqariluvchi kritik holatda $k=1.000$ bo‘ladi (A varianti).": [
+   "Вопрос 2: неверно. В стационарном управляемом критическом состоянии $k=1.000$ (вариант A).",
+   "Question 2: incorrect. In a steady controlled critical state $k=1.000$ (option A)."
+  ],
+  "2-Savol: To‘g‘ri! Reaktor turg‘un ishlashi uchun ko‘payish koeffitsiyenti aynan $k = 1.000$ bo‘lishi kerak.": [
+   "Вопрос 2: верно! Для устойчивой работы реактора коэффициент размножения должен быть ровно $k = 1.000$.",
+   "Question 2: correct! For steady reactor operation the multiplication factor must be exactly $k = 1.000$."
+  ],
+  "3-Savol: Noto‘g‘ri. Mustaqil bajarilganlik mezoniga ko‘ra originallik kamida 85%+ bo‘lishi talab etiladi (A varianti).": [
+   "Вопрос 3: неверно. По критерию самостоятельности требуется оригинальность не менее 85%+ (вариант A).",
+   "Question 3: incorrect. The independence criterion requires originality of at least 85%+ (option A)."
+  ],
+  "3-Savol: To‘g‘ri! Undetectable AI va akademik halollik talabiga binoan, mualliflik originalligi kamida 85% bo‘lishi shart.": [
+   "Вопрос 3: верно! Согласно требованию Undetectable AI и академической честности оригинальность авторства должна быть не менее 85%.",
+   "Question 3: correct! Under the Undetectable AI and academic integrity requirement, authorship originality must be at least 85%."
+  ],
+  "Natija: {0}/3 ta to‘g‘ri.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>": [
+   "Результат: {0}/3 верно.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>",
+   "Score: {0}/3 correct.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>"
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob bering!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
+  ],
+  "🎉 Tabriklaymiz! 3/3 (100%) - Yadro fizikasi qonuniyatlari va Capstone mustaqil loyiha talablarini mukammal o‘zlashtirdingiz!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>": [
+   "🎉 Поздравляем! 3/3 (100%) — вы отлично освоили законы ядерной физики и требования к самостоятельному проекту Capstone!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>",
+   "🎉 Congratulations! 3/3 (100%) — you have mastered the laws of nuclear physics and the Capstone project requirements!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>"
   ]
  },
  "lecture3.html": {
@@ -1655,6 +3183,40 @@
   "Xato!": [
    "Неверно!",
    "Incorrect!"
+  ]
+ },
+ "lecture9.html": {
+  "1-savol: Noto‘g‘ri (Forward Euler energiyani sun'iy oshirib yuboradi).": [
+   "Вопрос 1: неверно (Forward Euler искусственно увеличивает энергию).",
+   "Question 1: incorrect (Forward Euler increases the energy artificially)."
+  ],
+  "1-savol: To‘g‘ri (Velocity-Verlet simplektik integratori energiyani saqlaydi).": [
+   "Вопрос 1: верно (симплектический интегратор Velocity-Verlet сохраняет энергию).",
+   "Question 1: correct (the symplectic Velocity-Verlet integrator conserves energy)."
+  ],
+  "2-savol: Noto‘g‘ri (CoT mantiqiy fikrlash zanjirini hosil qiladi).": [
+   "Вопрос 2: неверно (CoT формирует цепочку логических рассуждений).",
+   "Question 2: incorrect (CoT builds a chain of logical reasoning)."
+  ],
+  "2-savol: To‘g‘ri (CoT differensial tenglama va chegaralarni qadamma-qadam tahlil qildiradi).": [
+   "Вопрос 2: верно (CoT заставляет пошагово анализировать дифференциальное уравнение и ограничения).",
+   "Question 2: correct (CoT forces a step-by-step analysis of the differential equation and constraints)."
+  ],
+  "3-savol: Noto‘g‘ri (Antigravity AI fizik invariantlar va saqlanish qonunlarini tekshiradi).": [
+   "Вопрос 3: неверно (Antigravity AI проверяет физические инварианты и законы сохранения).",
+   "Question 3: incorrect (Antigravity AI checks physical invariants and conservation laws)."
+  ],
+  "3-savol: To‘g‘ri (dE/E0 < 1e-3 energiya invariantligi va impuls nazorat qilinadi).": [
+   "Вопрос 3: верно (контролируются инвариантность энергии dE/E0 < 1e-3 и импульс).",
+   "Question 3: correct (energy invariance dE/E0 < 1e-3 and momentum are monitored)."
+  ],
+  "<strong>Natija: {0}/3 ball</strong><br>": [
+   "<strong>Результат: {0}/3 балла</strong><br>",
+   "<strong>Score: {0}/3 points</strong><br>"
+  ],
+  "⚠️ Iltimos, barcha 3 ta savolga javob belgilang!": [
+   "⚠️ Пожалуйста, ответьте на все 3 вопроса!",
+   "⚠️ Please answer all 3 questions!"
   ]
  }
 }

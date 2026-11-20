@@ -163,13 +163,28 @@
         }
         return;
       }
-      for (var n = el.firstChild; n; n = n.nextSibling) {
-        if (n.nodeType === 1) walk(n);
-        else if (n.nodeType === 3 && LETTERS.test(n.nodeValue)) {
-          var t = norm(esc(n.nodeValue));
-          out.push({ type: 'text', node: n, src: t, key: hash(t) });
+      // Aralash konteyner: matn tugunlari va formulalar ketma-ketligi bitta
+      // "run" birligi. KaTeX chizgandan keyin "matn $x$ matn" uch bo'lakka
+      // bo'linadi — kalit bo'linmagan manba bilan bir xil chiqishi uchun.
+      var run = [];
+      function flush() {
+        if (!run.length) return;
+        var txt = '';
+        for (var r = 0; r < run.length; r++) txt += run[r].nodeType === 3 ? run[r].nodeValue : '';
+        if (LETTERS.test(txt)) {
+          var raw = '';
+          for (var q = 0; q < run.length; q++) raw += run[q].nodeType === 3 ? esc(run[q].nodeValue) : esc(mathSource(run[q]));
+          var t = norm(raw);
+          if (run.length === 1) out.push({ type: 'text', node: run[0], src: t, key: hash(t) });
+          else out.push({ type: 'run', nodes: run.slice(), node: run[0], src: t, key: hash(t) });
         }
+        run = [];
       }
+      for (var n = el.firstChild; n; n = n.nextSibling) {
+        if (n.nodeType === 3 || (n.nodeType === 1 && isMath(n))) run.push(n);
+        else { flush(); if (n.nodeType === 1) walk(n); }
+      }
+      flush();
     }
     walk(root);
     return out;
@@ -236,7 +251,18 @@
       var u = units[i], tr = dict[u.key];
       if (typeof tr !== 'string') continue;
       if (u.type === 'attr') u.node.setAttribute(u.attr, tr);
-      else if (u.type === 'text') {
+      else if (u.type === 'run') {
+        var first = u.nodes[0], parent = first.parentNode;
+        if (!parent) continue;
+        var lead2 = first.nodeType === 3 ? first.nodeValue.match(/^\s*/)[0] : '';
+        var last = u.nodes[u.nodes.length - 1];
+        var trail2 = last.nodeType === 3 ? last.nodeValue.match(/\s*$/)[0] : '';
+        var tn = document.createTextNode(lead2 + decode(tr) + trail2);
+        parent.insertBefore(tn, first);
+        for (var z = 0; z < u.nodes.length; z++) if (u.nodes[z].parentNode) u.nodes[z].parentNode.removeChild(u.nodes[z]);
+        if (translatedNodes) translatedNodes.add(tn);
+        if (tr.indexOf('$') !== -1) renderMath(parent);
+      } else if (u.type === 'text') {
         var v = u.node.nodeValue;
         var lead = v.match(/^\s*/)[0], trail = v.match(/\s*$/)[0];
         u.node.nodeValue = lead + decode(tr) + trail;

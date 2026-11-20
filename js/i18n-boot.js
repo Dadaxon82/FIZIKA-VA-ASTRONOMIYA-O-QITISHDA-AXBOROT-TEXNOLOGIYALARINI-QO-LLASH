@@ -48,8 +48,8 @@
 
   /* Sahifaning to'liq tarjima lug'ati: locales/pages/<til>/<sahifa>.js.
      Ro'yxat tools/i18n_pages.py tomonidan yangilanadi. */
-  var PAGE_DICTS = /*PAGE_DICTS*/["lecture1", "lecture2", "lecture3", "lecture4", "lecture5", "lecture6", "lecture7", "lecture8"]/*END*/;
-  var VERSION = /*VERSION*/'58cec9a032'/*END*/;
+  var PAGE_DICTS = /*PAGE_DICTS*/["lecture1", "lecture10", "lecture11", "lecture12", "lecture13", "lecture14", "lecture15", "lecture2", "lecture3", "lecture4", "lecture5", "lecture6", "lecture7", "lecture8", "lecture9", "sims-lorens-kuchi"]/*END*/;
+  var VERSION = /*VERSION*/'9fefeeb341'/*END*/;
   var pathName = (window.location.pathname || '').replace(/\/+$/, '/');
   var file = pathName.slice(pathName.lastIndexOf('/') + 1) || 'index.html';
   var inSims = /\/sims\/[^/]*$/.test(pathName);

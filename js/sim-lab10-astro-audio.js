@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
 function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
@@ -23,11 +24,11 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   const BODIES = {
     halley: { name: 'Galley kometasi (1P/Halley)', a: 17.83, e: 0.967, T: 75.3, color: '#38bdf8',
       desc: "O‘ta cho‘ziq elliptik orbita: perigeliy ≈ 0,59 AU (Merkuriy va Venera orbitalari orasida), afeliy ≈ 35 AU (Neptundan narida). Tezlik perigeliyda ≈ 54,5 km/s, afeliyda ≈ 0,9 km/s." },
-    mars: { name: 'Mars', a: 1.524, e: 0.0934, T: 1.881, color: '#f97316',
+    mars: { name: __t("Mars"), a: 1.524, e: 0.0934, T: 1.881, color: '#f97316',
       desc: "Sezilarli ekssentrisitet: Quyoshgacha masofa 1,38 dan 1,67 AU gacha o‘zgaradi. Tezlik perigeliyda ≈ 26,5 km/s, afeliyda ≈ 22,0 km/s." },
-    earth: { name: 'Yer', a: 1.000, e: 0.0167, T: 1.000, color: '#10b981',
+    earth: { name: __t("Yer"), a: 1.000, e: 0.0167, T: 1.000, color: '#10b981',
       desc: "Deyarli aylanma orbita: perigeliy ≈ 0,983 AU (yanvar boshi), afeliy ≈ 1,017 AU (iyul boshi). Tezlik 29,3–30,3 km/s oralig‘ida." },
-    jupiter: { name: 'Yupiter', a: 5.203, e: 0.0484, T: 11.86, color: '#eab308',
+    jupiter: { name: __t("Yupiter"), a: 5.203, e: 0.0484, T: 11.86, color: '#eab308',
       desc: "Gigant sayyora: masofa 4,95 dan 5,46 AU gacha o‘zgaradi, bir aylanish ≈ 11,9 yil. Tezlik ≈ 12,4–13,7 km/s." }
   };
 
@@ -63,7 +64,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           const old = btn.textContent;
           btn.textContent = '✅ Nusxalandi!';
           setTimeout(() => { btn.textContent = old; }, 1500);
-          toast('Nusxalandi!');
+          toast(__t("Nusxalandi!"));
         };
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(text).then(done).catch(() => { target.select(); document.execCommand('copy'); done(); });

@@ -5,17 +5,17 @@ if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/
 
 const semesterLabs = [
   { id: 1, title: __t("1-Lab: Fizik Jarayonni Tanlash va Erkinlik Darajalarini Ajratish"), tool: "MagicSchool AI", weight: 5 },
-  { id: 2, title: "2-Lab: Nazariy Differensial Tenglamalar Sistemasini Tuzish", tool: "Gemini", weight: 6 },
+  { id: 2, title: __t("2-Lab: Nazariy Differensial Tenglamalar Sistemasini Tuzish"), tool: "Gemini", weight: 6 },
   { id: 3, title: __t("3-Lab: PhET va Vascak.cz Simulyatsiyalarini Teskari Muhandislik Tahlili"), tool: "PhET / Vascak", weight: 7 },
   { id: 4, title: __t("4-Lab: Saqlanish Qonunlari va Chegaraviy Shartlarni Belgilash"), tool: "WolframAlpha", weight: 6 },
   { id: 5, title: __t("5-Lab: Sonli Integrallash: Forward Euler va Eyler-Kromer Kodlash"), tool: "Claude", weight: 7 },
-  { id: 6, title: "6-Lab: 4-Tartibli Runge-Kutta (RK4) Algoritmini Qurish", tool: "Claude", weight: 8 },
-  { id: 7, title: "7-Lab: HTML5 Canvas Ekranida Koordinatalar Transformatsiyasi (toScreenX/Y)", tool: "Vanilla JS / Canvas", weight: 7 },
+  { id: 6, title: __t("6-Lab: 4-Tartibli Runge-Kutta (RK4) Algoritmini Qurish"), tool: "Claude", weight: 8 },
+  { id: 7, title: __t("7-Lab: HTML5 Canvas Ekranida Koordinatalar Transformatsiyasi (toScreenX/Y)"), tool: "Vanilla JS / Canvas", weight: 7 },
   { id: 8, title: __t("8-Lab: Real Vaqtli Vektorlar (v, a, F) va Faza Fazosi Chizmasi"), tool: __t("Canvas Dvigatel"), weight: 7 },
   { id: 9, title: __t("9-Lab: Interaktiv Boshqaruv: Slayderlar, Tugmalar va Telemetriya HUD"), tool: "DOM & CSS Glass", weight: 6 },
   { id: 10, title: __t("10-Lab: ChatGPT Code Interpreter yordamida Debugging va Xatolar Tahlili"), tool: "Code Interpreter", weight: 8 },
-  { id: 11, title: "11-Lab: Midjourney yordamida Ilmiy Laboratoriya Teksturalarini Sintezlash", tool: "Midjourney", weight: 6 },
-  { id: 12, title: "12-Lab: Muxlisa AI / ElevenLabs orqali Fizik Izohlarni Audio-Narratsiya Qilish", tool: "ElevenLabs / TTS", weight: 7 },
+  { id: 11, title: __t("11-Lab: Midjourney yordamida Ilmiy Laboratoriya Teksturalarini Sintezlash"), tool: "Midjourney", weight: 6 },
+  { id: 12, title: __t("12-Lab: Muxlisa AI / ElevenLabs orqali Fizik Izohlarni Audio-Narratsiya Qilish"), tool: "ElevenLabs / TTS", weight: 7 },
   { id: 13, title: __t("13-Lab: Otter.ai yordamida Laboratoriya Qaydlari va Hisobot Transkripsiyasi"), tool: "Otter.ai", weight: 6 },
   { id: 14, title: __t("14-Lab: Undetectable AI va Turnitin orqali Akademik Originallik Tekshiruvi"), tool: "Undetectable AI", weight: 6 },
   { id: 15, title: __t("15-Lab: Yakuniy Capstone Loyihani GitHub Pages da Nashr Qilish va Himoya"), tool: "Google Antigravity AI", weight: 8 }
