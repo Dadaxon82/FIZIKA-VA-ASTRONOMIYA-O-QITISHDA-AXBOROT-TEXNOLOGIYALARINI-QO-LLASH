@@ -1,0 +1,19 @@
+j4c5ce67	В методе Forward Euler определитель матрицы перехода det(A) = 1 + ω²Δt² > 1, поэтому фазовая площадь искусственно расширяется и энергия экспоненциально «взрывается».	In Forward Euler the transition-matrix determinant det(A) = 1 + ω²Δt² > 1, so the phase area expands artificially and the energy blows up exponentially.
+j4ae5af0	RK4 — метод четвёртого порядка (O(Δt⁴)). При уменьшении шага в 2 раза ошибка сокращается в 2⁴ = 16 раз.	RK4 is a fourth-order method (O(Δt⁴)). Halving the step reduces the error by 2⁴ = 16 times.
+j8873cac	Симплектические интеграторы (Эйлер–Кромер, Верле) точно сохраняют инвариант гамильтонова фазового пространства и экономичны по ресурсам (1 FLOP).	Symplectic integrators (Euler–Cromer, Verlet) preserve the Hamiltonian phase-space invariant exactly and are resource-efficient (1 FLOP).
+j9695881	⟨1⟩⟨2⟩📊 Лекция 4: результат по точности вычислений:⟨/2⟩	⟨1⟩⟨2⟩📊 Lecture 4 computational accuracy result:⟨/2⟩
+j670b741	Архитектор вычислительной физики (полностью освоено)	Computational Physics Architect (fully mastered)
+j7e1cf64	Исследователь численных методов (частично освоено)	Numerical Methods Explorer (partially mastered)
+j307cb2f	⟨1⟩⟨2⟩Ваша компетенция в точности вычислений:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩Результат: {4} / 3 балла ({5}%)⟨/4⟩⟨/1⟩</div>	⟨1⟩⟨2⟩Your computational accuracy competence:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩Score: {4} / 3 points ({5}%)⟨/4⟩⟨/1⟩</div>
+j1086e18	Точное решение	Exact solution
+j23bccbb	Явный Эйлер	Explicit Euler
+j13b765d	Эйлер–Кромер	Euler–Cromer
+j5b8ac6b	Хойн (RK2)	Heun (RK2)
+jd2dbab0	Рунге–Кутта 4	Runge–Kutta 4
+j5073cc2	θ(t), рад — во времени	θ(t), rad — over time
+j8632994	Фазовый портрет ω(θ)	Phase portrait ω(θ)
+ja7afb18	E(t)/E₀ = 1 (закон сохранения)	E(t)/E₀ = 1 (conservation law)
+j7c536b0	O(Δt), симплектический	O(Δt), symplectic
+j6e527d8	⚠️ (взрыв)	⚠️ (blow-up)
+jc041ec7	⏸️ Остановить	⏸️ Stop
+j5bb2ce6	▶️ Старт	▶️ Start

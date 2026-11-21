@@ -1,0 +1,1490 @@
+[
+ {
+  "k": "20bb4b9c",
+  "s": "12-ma’ruza: klassik mexanika va to‘liq SI-konveyer",
+  "ru": "Лекция 12: классическая механика и полный ИИ-конвейер",
+  "en": "Lecture 12: Classical Mechanics and the Complete AI Pipeline"
+ },
+ {
+  "k": "95c044c8",
+  "s": "Nyuton dinamikasi, impuls va energiyaning saqlanish qonunlari, qiya tekislikdagi Kulon ishqalanishi hamda 2D elastik to‘qnashuvlarni to‘liq 4 bosqichli",
+  "ru": "Целостное моделирование динамики Ньютона, законов сохранения импульса и энергии, кулоновского трения на наклонной плоскости и двумерных упругих столкновений через полный 4-этапный",
+  "en": "Holistic modelling of Newtonian dynamics, conservation of momentum and energy, Coulomb friction on an incline and 2D elastic collisions through the complete 4-stage"
+ },
+ {
+  "k": "67740617",
+  "s": "(PhET/Vascak.cz dekonstruksiyasi → Claude simplektik dvigateli → Google Antigravity monitoringi → Runway kinematik video sintezi) orqali yaxlit modellashtirish.",
+  "ru": "(деконструкция PhET/Vascak.cz → симплектический движок Claude → мониторинг Google Antigravity → синтез кинематического видео в Runway).",
+  "en": "(PhET/Vascak.cz deconstruction → a Claude symplectic engine → Google Antigravity monitoring → Runway kinematic video synthesis)."
+ },
+ {
+  "k": "defa6545",
+  "s": "📋 12-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:",
+  "ru": "📋 План лекции 12 и полный AI-конвейер:",
+  "en": "📋 Lecture 12 plan and the complete AI pipeline:"
+ },
+ {
+  "k": "77c59bba",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD va Blum taksonomiyasi asosida 3 klasterli individual mexanika trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: индивидуальная траектория по механике из 3 кластеров на основе ЗБР и таксономии Блума.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: an individual 3-cluster mechanics pathway based on ZPD and Bloom’s taxonomy.</span>"
+ },
+ {
+  "k": "da1de8b2",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Mexanika tahlili (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Tayyor simulyatsiyalarni teskari muhandislik orqali parametrlar va tenglamalarga dekonstruksiya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Анализ механики (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Деконструкция готовых симуляций в параметры и уравнения методом обратной разработки.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Mechanics analysis (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Deconstructing ready-made simulations into parameters and equations through reverse engineering.</span>"
+ },
+ {
+  "k": "3f41316e",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Dvigatel kodi (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Vector2D, simplektik Eyler–Kromer, to‘qnashuv impulsi $J$ va MTV penetratsiyani bartaraf etish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Код движка (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Vector2D, симплектический Эйлер–Кромер, импульс столкновения $J$ и устранение проникновения MTV.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Engine code (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Vector2D, symplectic Euler–Cromer, the collision impulse $J$ and MTV penetration removal.</span>"
+ },
+ {
+  "k": "5381ceb6",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Jarayon monitoringi (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Glenn Fiedler Delta-Time (60 FPS), energiya dreyfi $\\Delta E/E_0 &lt; 10^{-3}$ va impuls saqlanishi auditi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Мониторинг процесса (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Delta-Time Гленна Фидлера (60 FPS), аудит энергетического дрейфа $\\Delta E/E_0 &lt; 10^{-3}$ и сохранения импульса.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Process monitoring (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Glenn Fiedler’s delta time (60 FPS) and audits of energy drift $\\Delta E/E_0 &lt; 10^{-3}$ and momentum conservation.</span>"
+ },
+ {
+  "k": "70818675",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Kinematik video (Runway):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Generativ AI video render, matn/kadr promptlari orqali relyativistik va klassik animatsiyalar.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Кинематическое видео (Runway):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Генеративный видеорендер ИИ, релятивистские и классические анимации через текстовые/кадровые промпты.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Kinematic video (Runway):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Generative AI video rendering; relativistic and classical animations from text/frame prompts.</span>"
+ },
+ {
+  "k": "3b43e951",
+  "s": "<strong style=\"color: var(--accent-cyan);\">6. Interaktiv sandbox va test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Dual Physics Sandbox, Real-Time Invariantlar Grafigi va 3 ta kognitiv test savoli.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">6. Интерактивная песочница и тест:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Dual Physics Sandbox, график инвариантов в реальном времени и 3 когнитивных тестовых вопроса.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">6. Interactive sandbox and test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A dual physics sandbox, a real-time invariant plot and 3 cognitive test questions.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "6151d661",
+  "s": "MagicSchool AI va Vygotsky ZPD",
+  "ru": "MagicSchool AI и ЗБР Выготского",
+  "en": "MagicSchool AI and Vygotsky’s ZPD"
+ },
+ {
+  "k": "32524665",
+  "s": "Mexanika qonuniyatlarini modellashtirish talabadan ham fundamental nazariy fizikani (vektorlar, Nyuton dinamikasi, saqlanish qonunlari), ham hisoblash matematikasini (sonli integrallash), ham dasturlash ko‘nikmalarini (JavaScript Canvas) talab etadi. Shu bois dars boshida",
+  "ru": "Моделирование законов механики требует от студента и фундаментальной теоретической физики (векторы, динамика Ньютона, законы сохранения), и вычислительной математики (численное интегрирование), и навыков программирования (JavaScript Canvas). Поэтому в начале занятия",
+  "en": "Modelling the laws of mechanics requires fundamental theoretical physics (vectors, Newtonian dynamics, conservation laws), computational mathematics (numerical integration) and programming skills (JavaScript Canvas). So at the start of the lesson"
+ },
+ {
+  "k": "1537b4ce",
+  "s": "MagicSchool AI",
+  "ru": "MagicSchool AI",
+  "en": "MagicSchool AI"
+ },
+ {
+  "k": "8648538b",
+  "s": "yordamida",
+  "ru": "с помощью",
+  "en": "with"
+ },
+ {
+  "k": "a39061e7",
+  "s": "asosida 3 klasterli individual ta’lim yo‘li shakllantiriladi:",
+  "ru": "на основе формируется индивидуальный учебный путь из 3 кластеров:",
+  "en": "based on, a 3-cluster individual learning path is built:"
+ },
+ {
+  "k": "b4bc09d2",
+  "s": "To‘liq AI Pipeline Konveyeri",
+  "ru": "Полный AI-конвейер",
+  "en": "Complete AI Pipeline"
+ },
+ {
+  "k": "98e8c62c",
+  "s": "12.1-rasm: Klassik mexanikani o‘rganishda yaxlit 4 bosqichli AI-Pipeline konveyeri.",
+  "ru": "Рис. 12.1: целостный 4-этапный AI-конвейер изучения классической механики.",
+  "en": "Figure 12.1: A holistic 4-stage AI pipeline for studying classical mechanics."
+ },
+ {
+  "k": "e661ad61",
+  "s": "3 Kognitiv klaster bo‘yicha individual mexanika trayektoriyasi:",
+  "ru": "Индивидуальная траектория по механике по 3 когнитивным кластерам:",
+  "en": "Individual mechanics pathway across 3 cognitive clusters:"
+ },
+ {
+  "k": "cf916c18",
+  "s": "Klaster A: boshlang‘ich (Remedial)",
+  "ru": "Кластер A: начальный (Remedial)",
+  "en": "Cluster A: beginner (Remedial)"
+ },
+ {
+  "k": "e601641a",
+  "s": "Vektor proyeksiyalari va trigonometrik kuchlarni yoyishda qiynaladi.",
+  "ru": "Испытывает трудности с векторными проекциями и разложением тригонометрических сил.",
+  "en": "Struggles with vector projections and resolving forces trigonometrically."
+ },
+ {
+  "k": "b12e41de",
+  "s": "PhET simulyatsiyalari vizual tahlili, MagicSchool AI yordamida qadamli FBD (Free Body Diagram) yo‘riqnomalari, 1D to‘g‘ri chiziqli harakat.",
+  "ru": "Визуальный анализ симуляций PhET, пошаговые инструкции по FBD (Free Body Diagram) с помощью MagicSchool AI, 1D прямолинейное движение.",
+  "en": "Visual analysis of PhET simulations, step-by-step FBD (free-body diagram) guides with MagicSchool AI, 1D straight-line motion."
+ },
+ {
+  "k": "5bb5dc5e",
+  "s": "Nyuton tenglamalarini yaxshi biladi, 2D to‘qnashuv va qiya tekislik dinamikasini dasturlay oladi.",
+  "ru": "Хорошо знает уравнения Ньютона, может программировать 2D-столкновения и динамику на наклонной плоскости.",
+  "en": "Knows Newton’s equations well and can program 2D collisions and incline dynamics."
+ },
+ {
+  "k": "67b2a586",
+  "s": "Claude bilan simplektik Eyler–Kromer dvigateli, Google Antigravity orqali energiya dreyfini ($\\Delta E/E_0$) nazorat qilish.",
+  "ru": "Симплектический движок Эйлера–Кромера с Claude, контроль энергетического дрейфа ($\\Delta E/E_0$) через Google Antigravity.",
+  "en": "A symplectic Euler–Cromer engine with Claude, monitoring energy drift ($\\Delta E/E_0$) with Google Antigravity."
+ },
+ {
+  "k": "c2c663ce",
+  "s": "Ko‘p jismli to‘qnashuvlar, noelastik deformatsiyalar va relyativistik mexanika modellarini mustaqil yaratadi.",
+  "ru": "Самостоятельно создаёт модели многотельных столкновений, неупругих деформаций и релятивистской механики.",
+  "en": "Independently builds models of many-body collisions, inelastic deformation and relativistic mechanics."
+ },
+ {
+  "k": "86f9147c",
+  "s": "Runway neyron video sintezi, murakkab Fazaviy Portret tahlili va Google Antigravity Capstone portfelini yaratish.",
+  "ru": "Нейросинтез видео в Runway, анализ сложных фазовых портретов и создание итогового портфолио Google Antigravity.",
+  "en": "Neural video synthesis in Runway, analysis of complex phase portraits and building a Google Antigravity capstone portfolio."
+ },
+ {
+  "k": "fbc55c5e",
+  "s": "Garrison, D. R., Anderson, T., va Archer, W. (2000).",
+  "ru": "Garrison, D. R., Anderson, T., & Archer, W. (2000).",
+  "en": "Garrison, D. R., Anderson, T., & Archer, W. (2000)."
+ },
+ {
+  "k": "3d4ae04f",
+  "s": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education",
+  "ru": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education",
+  "en": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education"
+ },
+ {
+  "k": "0de3997a",
+  "s": ". The Internet and Higher Education, 2(2-3), 87-105.",
+  "ru": ". The Internet and Higher Education, 2(2-3), 87-105.",
+  "en": ". The Internet and Higher Education, 2(2-3), 87-105."
+ },
+ {
+  "k": "e2a797b7",
+  "s": "https://doi.org/10.1016/S1096-7516(00)00016-6",
+  "ru": "https://doi.org/10.1016/S1096-7516(00)00016-6",
+  "en": "https://doi.org/10.1016/S1096-7516(00)00016-6"
+ },
+ {
+  "k": "1ff67e8f",
+  "s": "Talabaning mustaqil tadqiqot olib borishi uchun kognitiv va pedagogik hozirlik muhitini sun’iy intellekt agentlari orqali individual diagnostika bilan ta’minlash o‘zlashtirish samaradorligini 2.8 baravarga oshiradi.",
+  "ru": "Обеспечение среды когнитивного и педагогического присутствия для самостоятельного исследования студента с индивидуальной диагностикой через агентов искусственного интеллекта повышает эффективность освоения в 2.8 раза.",
+  "en": "Providing a cognitive and teaching-presence environment for independent student research, with individual diagnostics by AI agents, increases learning effectiveness 2.8-fold."
+ },
+ {
+  "k": "02ce8ade",
+  "s": "2. Mexanika simulyatsiyalari tahlili: PhET va Vascak.cz",
+  "ru": "2. Анализ симуляций механики: PhET и Vascak.cz",
+  "en": "2. Analysing mechanics simulations: PhET and Vascak.cz"
+ },
+ {
+  "k": "4a2258f7",
+  "s": "Teskari muhandislik va gnoseologik tahlil",
+  "ru": "Обратная разработка и гносеологический анализ",
+  "en": "Reverse engineering and epistemological analysis"
+ },
+ {
+  "k": "307ffc86",
+  "s": "Fizika dasturlashni boshlashdan oldin talaba tayyor professional simulyatsiyalarni (",
+  "ru": "Прежде чем начинать программировать физику, студент деконструирует готовые профессиональные симуляции (",
+  "en": "Before starting to program physics, the student deconstructs ready-made professional simulations ("
+ },
+ {
+  "k": "b5a8976c",
+  "s": "PhET Interactive Simulations",
+  "ru": "PhET Interactive Simulations",
+  "en": "PhET Interactive Simulations"
+ },
+ {
+  "k": "6a956a1a",
+  "s": "Forces and Motion",
+  "ru": "Forces and Motion",
+  "en": "Forces and Motion"
+ },
+ {
+  "k": "bbbbe1ac",
+  "s": "Collision Lab",
+  "ru": "Collision Lab",
+  "en": "Collision Lab"
+ },
+ {
+  "k": "54514be1",
+  "s": "Energy Skate Park",
+  "ru": "Energy Skate Park",
+  "en": "Energy Skate Park"
+ },
+ {
+  "k": "6c2e448e",
+  "s": "hamda",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "2fd1f033",
+  "s": "Vascak.cz Physics Animations",
+  "ru": "Vascak.cz Physics Animations",
+  "en": "Vascak.cz Physics Animations"
+ },
+ {
+  "k": "1ab77b01",
+  "s": ") 2-ma’ruzada o‘rganilgan",
+  "ru": ") с помощью изученной в лекции 2",
+  "en": ") using the"
+ },
+ {
+  "k": "408a17bd",
+  "s": "metodologiyasi yordamida dekonstruksiya qiladi. Ushbu yondashuv vizual interfeys ortidagi matematik va fizik modellarni aniqlashga xizmat qiladi:",
+  "ru": "методологии. Этот подход помогает выявить математические и физические модели, стоящие за визуальным интерфейсом:",
+  "en": "methodology studied in Lecture 2. This approach helps identify the mathematical and physical models behind the visual interface:"
+ },
+ {
+  "k": "c9919a68",
+  "s": "Nyuton Dinamikasi va To‘qnashuv Simulyatsiyasi",
+  "ru": "Динамика Ньютона и симуляция столкновений",
+  "en": "Newtonian Dynamics and Collision Simulation"
+ },
+ {
+  "k": "5955d571",
+  "s": "12.2-rasm: Qiya tekislikdagi kuchlar balansi (FBD) va 2D elastik to‘qnashuv impulsi matematik apparati.",
+  "ru": "Рис. 12.2: баланс сил на наклонной плоскости (FBD) и математический аппарат импульса двумерного упругого столкновения.",
+  "en": "Figure 12.2: Force balance on an incline (FBD) and the mathematics of the 2D elastic collision impulse."
+ },
+ {
+  "k": "4a2f8930",
+  "s": "1. Qiya tekislikdagi harakat (PhET \"Forces and Motion\")",
+  "ru": "1. Движение по наклонной плоскости (PhET \"Forces and Motion\")",
+  "en": "1. Motion on an incline (PhET \"Forces and Motion\")"
+ },
+ {
+  "k": "fde8d737",
+  "s": "• <strong>Erkin jism diagrammasi (FBD):</strong> Jismga 3 ta asosiy kuch ta’sir qiladi: og‘irlik kuchi $m\\vec{g}$, normal reaksiya $\\vec{N}$ va sirt bilan jism orasidagi Kulon-Amonton ishqalanish kuchi $\\vec{F}_{ishq}$.<br> • <strong>Kuchlar proyeksiyalari:</strong> $$F_{\\parallel} = m g \\sin\\alpha, \\qquad N = m g \\cos\\alpha$$ • <strong>Tinchlikdagi va sirpanishdagi ishqalanish:</strong> $$F_{ishq,\\max} = \\mu_s N = \\mu_s m g \\cos\\alpha, \\qquad F_{ishq,k} = \\mu_k m g \\cos\\alpha$$ • <strong>Harakatlanish sharti va tezlanish:</strong> $$\\text{Agar } \\tan\\alpha &gt; \\mu_s \\implies a = g(\\sin\\alpha - \\mu_k\\cos\\alpha)$$ $$\\text{Agar } \\tan\\alpha \\le \\mu_s \\implies a = 0 \\text{ (jism qiya tekislikda tinch turadi)}$$",
+  "ru": "• <strong>Диаграмма свободного тела (FBD):</strong> на тело действуют 3 основные силы: сила тяжести $m\\vec{g}$, нормальная реакция $\\vec{N}$ и сила трения Кулона–Амонтона между поверхностью и телом $\\vec{F}_{ishq}$.<br> • <strong>Проекции сил:</strong> $$F_{\\parallel} = m g \\sin\\alpha, \\qquad N = m g \\cos\\alpha$$ • <strong>Трение покоя и скольжения:</strong> $$F_{ishq,\\max} = \\mu_s N = \\mu_s m g \\cos\\alpha, \\qquad F_{ishq,k} = \\mu_k m g \\cos\\alpha$$ • <strong>Условие движения и ускорение:</strong> $$\\text{Agar } \\tan\\alpha &gt; \\mu_s \\implies a = g(\\sin\\alpha - \\mu_k\\cos\\alpha)$$ $$\\text{Agar } \\tan\\alpha \\le \\mu_s \\implies a = 0 \\text{ (jism qiya tekislikda tinch turadi)}$$",
+  "en": "• <strong>Free-body diagram (FBD):</strong> 3 main forces act on the body: weight $m\\vec{g}$, the normal force $\\vec{N}$ and the Coulomb–Amontons friction between surface and body $\\vec{F}_{ishq}$.<br> • <strong>Force projections:</strong> $$F_{\\parallel} = m g \\sin\\alpha, \\qquad N = m g \\cos\\alpha$$ • <strong>Static and sliding friction:</strong> $$F_{ishq,\\max} = \\mu_s N = \\mu_s m g \\cos\\alpha, \\qquad F_{ishq,k} = \\mu_k m g \\cos\\alpha$$ • <strong>Condition for motion and acceleration:</strong> $$\\text{Agar } \\tan\\alpha &gt; \\mu_s \\implies a = g(\\sin\\alpha - \\mu_k\\cos\\alpha)$$ $$\\text{Agar } \\tan\\alpha \\le \\mu_s \\implies a = 0 \\text{ (jism qiya tekislikda tinch turadi)}$$"
+ },
+ {
+  "k": "13b7e430",
+  "s": "2. 2D to‘qnashuvlar tahlili (Vascak.cz \"Collision Lab\")",
+  "ru": "2. Анализ 2D-столкновений (Vascak.cz \"Collision Lab\")",
+  "en": "2. 2D collision analysis (Vascak.cz \"Collision Lab\")"
+ },
+ {
+  "k": "0c04a495",
+  "s": "• <strong>Chiziqli impulsning saqlanish qonuni (vektor ko‘rinishida):</strong> $$m_1 \\vec{v}_1 + m_2 \\vec{v}_2 = m_1 \\vec{v}_1' + m_2 \\vec{v}_2' \\implies \\sum_{i} m_i \\vec{v}_i = \\text{const}$$ • <strong>Tiklanish koeffitsiyenti ($e \\in [0, 1]$):</strong> $$e = -\\frac{(\\vec{v}_1' - \\vec{v}_2')\\cdot\\vec{n}}{(\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n}}$$ Bu yerda $e=1$ mutlaq elastik to‘qnashuv ($\\Delta E_k = 0$), $e=0$ esa mutlaq noelastik to‘qnashuvga mos keladi.<br> • <strong>Noelastik to‘qnashuvda yo‘qotilgan mexanik energiya:</strong> $$\\Delta E_k = \\frac{1}{2}\\frac{m_1 m_2}{m_1 + m_2}(1 - e^2)((\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n})^2$$",
+  "ru": "• <strong>Закон сохранения линейного импульса (в векторной форме):</strong> $$m_1 \\vec{v}_1 + m_2 \\vec{v}_2 = m_1 \\vec{v}_1' + m_2 \\vec{v}_2' \\implies \\sum_{i} m_i \\vec{v}_i = \\text{const}$$ • <strong>Коэффициент восстановления ($e \\in [0, 1]$):</strong> $$e = -\\frac{(\\vec{v}_1' - \\vec{v}_2')\\cdot\\vec{n}}{(\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n}}$$ Здесь $e=1$ соответствует абсолютно упругому столкновению ($\\Delta E_k = 0$), а $e=0$ — абсолютно неупругому.<br> • <strong>Механическая энергия, теряемая при неупругом столкновении:</strong> $$\\Delta E_k = \\frac{1}{2}\\frac{m_1 m_2}{m_1 + m_2}(1 - e^2)((\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n})^2$$",
+  "en": "• <strong>Conservation of linear momentum (vector form):</strong> $$m_1 \\vec{v}_1 + m_2 \\vec{v}_2 = m_1 \\vec{v}_1' + m_2 \\vec{v}_2' \\implies \\sum_{i} m_i \\vec{v}_i = \\text{const}$$ • <strong>Coefficient of restitution ($e \\in [0, 1]$):</strong> $$e = -\\frac{(\\vec{v}_1' - \\vec{v}_2')\\cdot\\vec{n}}{(\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n}}$$ Here $e=1$ corresponds to a perfectly elastic collision ($\\Delta E_k = 0$) and $e=0$ to a perfectly inelastic one.<br> • <strong>Mechanical energy lost in an inelastic collision:</strong> $$\\Delta E_k = \\frac{1}{2}\\frac{m_1 m_2}{m_1 + m_2}(1 - e^2)((\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n})^2$$"
+ },
+ {
+  "k": "11c5ce48",
+  "s": "📊 Teskari muhandislik (Reverse Engineering) bosqichlari matritsasi:",
+  "ru": "📊 Матрица этапов обратной разработки (Reverse Engineering):",
+  "en": "📊 Reverse-engineering stage matrix:"
+ },
+ {
+  "k": "6d461432",
+  "s": "Qiyalik Slayderi",
+  "ru": "Ползунок наклона",
+  "en": "Slope slider"
+ },
+ {
+  "k": "5869953e",
+  "s": "Burchak $\\alpha$ (gradus)",
+  "ru": "Угол $\\alpha$ (градусы)",
+  "en": "Angle $\\alpha$ (degrees)"
+ },
+ {
+  "k": "5f8fe039",
+  "s": "$\\theta = \\alpha \\cdot \\frac{\\pi}{180}$, $\\sin\\theta$, $\\cos\\theta$",
+  "ru": "$\\theta = \\alpha \\cdot \\frac{\\pi}{180}$, $\\sin\\theta$, $\\cos\\theta$",
+  "en": "$\\theta = \\alpha \\cdot \\frac{\\pi}{180}$, $\\sin\\theta$, $\\cos\\theta$"
+ },
+ {
+  "k": "cf704fa2",
+  "s": "const rad = (angle * Math.PI)/180;",
+  "ru": "const rad = (angle * Math.PI)/180;",
+  "en": "const rad = (angle * Math.PI)/180;"
+ },
+ {
+  "k": "46a2c6c3",
+  "s": "Ishqalanish Slayderi",
+  "ru": "Ползунок трения",
+  "en": "Friction slider"
+ },
+ {
+  "k": "9753df39",
+  "s": "Koeffitsiyent $\\mu$",
+  "ru": "Коэффициент $\\mu$",
+  "en": "Coefficient $\\mu$"
+ },
+ {
+  "k": "b360314f",
+  "s": "$F_{ishq} = \\mu m g \\cos\\theta$",
+  "ru": "$F_{ishq} = \\mu m g \\cos\\theta$",
+  "en": "$F_{ishq} = \\mu m g \\cos\\theta$"
+ },
+ {
+  "k": "87c2d1cf",
+  "s": "const fFr = mu * m * g * Math.cos(rad);",
+  "ru": "const fFr = mu * m * g * Math.cos(rad);",
+  "en": "const fFr = mu * m * g * Math.cos(rad);"
+ },
+ {
+  "k": "815a9b50",
+  "s": "To‘qnashuv Kontaktsiyasi",
+  "ru": "Контакт при столкновении",
+  "en": "Collision contact"
+ },
+ {
+  "k": "381d5e43",
+  "s": "Kontakt Normali $\\vec{n}$",
+  "ru": "Нормаль контакта $\\vec{n}$",
+  "en": "Contact normal $\\vec{n}$"
+ },
+ {
+  "k": "f295febc",
+  "s": "$\\vec{n} = \\frac{\\vec{r}_2 - \\vec{r}_1}{\\|\\vec{r}_2 - \\vec{r}_1\\|}$",
+  "ru": "$\\vec{n} = \\frac{\\vec{r}_2 - \\vec{r}_1}{\\|\\vec{r}_2 - \\vec{r}_1\\|}$",
+  "en": "$\\vec{n} = \\frac{\\vec{r}_2 - \\vec{r}_1}{\\|\\vec{r}_2 - \\vec{r}_1\\|}$"
+ },
+ {
+  "k": "4f47827b",
+  "s": "const n = diff.normalize();",
+  "ru": "const n = diff.normalize();",
+  "en": "const n = diff.normalize();"
+ },
+ {
+  "k": "7bdef1d2",
+  "s": "Energiya Telemetriyasi",
+  "ru": "Телеметрия энергии",
+  "en": "Energy telemetry"
+ },
+ {
+  "k": "985cd676",
+  "s": "To‘liq Mexanik Energiya $E$",
+  "ru": "Полная механическая энергия $E$",
+  "en": "Total mechanical energy $E$"
+ },
+ {
+  "k": "4edaee86",
+  "s": "$E = \\frac{1}{2}m v^2 + m g h$",
+  "ru": "$E = \\frac{1}{2}m v^2 + m g h$",
+  "en": "$E = \\frac{1}{2}m v^2 + m g h$"
+ },
+ {
+  "k": "a63bc228",
+  "s": "const E = 0.5*m*v*v + m*g*h;",
+  "ru": "const E = 0.5*m*v*v + m*g*h;",
+  "en": "const E = 0.5*m*v*v + m*g*h;"
+ },
+ {
+  "k": "0f40db2e",
+  "s": "Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).",
+  "ru": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).",
+  "en": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008)."
+ },
+ {
+  "k": "acacd01d",
+  "s": "PhET: Simulations That Enhance Learning",
+  "ru": "PhET: Simulations That Enhance Learning",
+  "en": "PhET: Simulations That Enhance Learning"
+ },
+ {
+  "k": "213ce8a7",
+  "s": ". Science, 322(5902), 682-683.",
+  "ru": ". Science, 322(5902), 682-683.",
+  "en": ". Science, 322(5902), 682-683."
+ },
+ {
+  "k": "dbf0609b",
+  "s": "https://doi.org/10.1126/science.1161948",
+  "ru": "https://doi.org/10.1126/science.1161948",
+  "en": "https://doi.org/10.1126/science.1161948"
+ },
+ {
+  "k": "28595aca",
+  "s": "PhET interaktiv simulyatsiyalari talabalarga ko‘rinmas fizik kattaliklarni (kuch vektorlari, impuls oqimi, mexanik energiya) bevosita vizual boshqarish va ilmiy gipotezalarni tezkor tekshirish imkonini beradi.",
+  "ru": "Интерактивные симуляции PhET позволяют студентам напрямую визуально управлять невидимыми физическими величинами (векторами сил, потоком импульса, механической энергией) и быстро проверять научные гипотезы.",
+  "en": "PhET interactive simulations let students control invisible physical quantities (force vectors, momentum flow, mechanical energy) visually and directly and test scientific hypotheses quickly."
+ },
+ {
+  "k": "220d4d71",
+  "s": "Adams, W. K., Reid, S., LeMaster, R., McKagan, S. B., Perkins, K. K., Dubson, M., va Wieman, C. E. (2008).",
+  "ru": "Adams, W. K., Reid, S., LeMaster, R., McKagan, S. B., Perkins, K. K., Dubson, M., & Wieman, C. E. (2008).",
+  "en": "Adams, W. K., Reid, S., LeMaster, R., McKagan, S. B., Perkins, K. K., Dubson, M., & Wieman, C. E. (2008)."
+ },
+ {
+  "k": "5a57623a",
+  "s": "A Study of Educational Simulations Part 1 - Engagement and Learning",
+  "ru": "A Study of Educational Simulations Part 1 - Engagement and Learning",
+  "en": "A Study of Educational Simulations Part 1 - Engagement and Learning"
+ },
+ {
+  "k": "f55c06f2",
+  "s": ". Journal of Interactive Learning Research, 19(3), 397-419.",
+  "ru": ". Journal of Interactive Learning Research, 19(3), 397-419.",
+  "en": ". Journal of Interactive Learning Research, 19(3), 397-419."
+ },
+ {
+  "k": "65911067",
+  "s": "Simulyatsiyaning o‘quv samaradorligi uning foydalanuvchiga interaktiv kashfiyot qilish, parametrlarni o‘zgartirib real vaqtda javob olish erkinligini berish darajasiga to‘g‘ridan-to‘g‘ri bog‘liqdir.",
+  "ru": "Учебная эффективность симуляции напрямую зависит от того, насколько она даёт пользователю свободу интерактивного открытия и получения отклика в реальном времени при изменении параметров.",
+  "en": "A simulation’s learning effectiveness depends directly on how much freedom it gives the user to discover interactively and get real-time feedback when changing parameters."
+ },
+ {
+  "k": "7eb54ceb",
+  "s": "Vaščák, V. (n.d.).",
+  "ru": "Vaščák, V. (n.d.).",
+  "en": "Vaščák, V. (n.d.)."
+ },
+ {
+  "k": "b8b48f36",
+  "s": "Physics Animations/Simulations",
+  "ru": "Physics Animations/Simulations",
+  "en": "Physics Animations/Simulations"
+ },
+ {
+  "k": "681a7a0c",
+  "s": "[HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "[HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "[HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "13378bcd",
+  "s": "HTML5 Canvas asosidagi yengil mexanika animatsiyalari klassik fizika qonuniyatlarini kadrlar ketma-ketligida tahlil qilish uchun eng qulay didaktik prototip hisoblanadi.",
+  "ru": "Лёгкие анимации механики на HTML5 Canvas — наиболее удобный дидактический прототип для покадрового анализа законов классической физики.",
+  "en": "Lightweight HTML5 Canvas mechanics animations are the most convenient didactic prototype for frame-by-frame analysis of classical physics laws."
+ },
+ {
+  "k": "e22c09c8",
+  "s": "3. Mexanika dinamikasi va harakat kodi: Claude",
+  "ru": "3. Динамика механики и код движения: Claude",
+  "en": "3. Mechanics dynamics and motion code: Claude"
+ },
+ {
+  "k": "c2bc4dd1",
+  "s": "Vector2D, symplectic Euler-Cromer va collision impulse",
+  "ru": "Vector2D, симплектический Эйлер–Кромер и импульс столкновения",
+  "en": "Vector2D, symplectic Euler–Cromer and the collision impulse"
+ },
+ {
+  "k": "7db50948",
+  "s": "Teskari muhandislik tahlilidan so‘ng talaba <strong>Claude</strong> bilan \"Juftlikda dasturlash\" (Pair-Programming) sessiyasida to‘liq mustaqil ishlovchi fizika dvigateli kodini yaratadi. Kod <strong>Simplektik Eyler–Kromer integratori</strong>, <strong>To‘qnashuv impulsi ($J$)</strong> va <strong>MTV (Minimum Translation Vector)</strong> penetratsiyani bartaraf etish algoritmlariga asoslanadi:",
+  "ru": "После анализа обратной разработки студент в сессии «парного программирования» (Pair-Programming) с <strong>Claude</strong> создаёт код полностью самостоятельно работающего физического движка. Код основан на <strong>симплектическом интеграторе Эйлера–Кромера</strong>, <strong>импульсе столкновения ($J$)</strong> и алгоритмах устранения проникновения <strong>MTV (Minimum Translation Vector)</strong>:",
+  "en": "After the reverse-engineering analysis, the student builds the code of a fully standalone physics engine in a pair-programming session with <strong>Claude</strong>. The code is based on the <strong>symplectic Euler–Cromer integrator</strong>, the <strong>collision impulse ($J$)</strong> and <strong>MTV (Minimum Translation Vector)</strong> penetration-removal algorithms:"
+ },
+ {
+  "k": "62c57fbc",
+  "s": "💥 2D to‘qnashuv skalyar impulsi formulasi:",
+  "ru": "💥 Формула скалярного импульса двумерного столкновения:",
+  "en": "💥 Scalar impulse formula for a 2D collision:"
+ },
+ {
+  "k": "c1796958",
+  "s": "Ikki qattiq jismning to‘qnashuvidan keyingi tezlik o‘zgarishi kontakt normali $\\vec{n}$ bo‘yicha beriladigan skalyar impuls $J$ orqali hisoblanadi:",
+  "ru": "Изменение скорости двух твёрдых тел после столкновения вычисляется через скалярный импульс $J$, передаваемый вдоль нормали контакта $\\vec{n}$:",
+  "en": "The change in velocity of two rigid bodies after a collision is computed from the scalar impulse $J$ applied along the contact normal $\\vec{n}$:"
+ },
+ {
+  "k": "586e7cb2",
+  "s": "$$J = -\\frac{(1 + e) \\, (\\vec{v}_1 - \\vec{v}_2) \\cdot \\vec{n}}{\\frac{1}{m_1} + \\frac{1}{m_2}}$$",
+  "ru": "$$J = -\\frac{(1 + e) \\, (\\vec{v}_1 - \\vec{v}_2) \\cdot \\vec{n}}{\\frac{1}{m_1} + \\frac{1}{m_2}}$$",
+  "en": "$$J = -\\frac{(1 + e) \\, (\\vec{v}_1 - \\vec{v}_2) \\cdot \\vec{n}}{\\frac{1}{m_1} + \\frac{1}{m_2}}$$"
+ },
+ {
+  "k": "887f763b",
+  "s": "Jismlarning to‘qnashuvdan keyingi yangilangan tezliklari:",
+  "ru": "Обновлённые скорости тел после столкновения:",
+  "en": "Updated velocities of the bodies after the collision:"
+ },
+ {
+  "k": "32d276a0",
+  "s": "$$\\vec{v}_1' = \\vec{v}_1 + \\frac{J}{m_1} \\vec{n}, \\qquad \\vec{v}_2' = \\vec{v}_2 - \\frac{J}{m_2} \\vec{n}$$",
+  "ru": "$$\\vec{v}_1' = \\vec{v}_1 + \\frac{J}{m_1} \\vec{n}, \\qquad \\vec{v}_2' = \\vec{v}_2 - \\frac{J}{m_2} \\vec{n}$$",
+  "en": "$$\\vec{v}_1' = \\vec{v}_1 + \\frac{J}{m_1} \\vec{n}, \\qquad \\vec{v}_2' = \\vec{v}_2 - \\frac{J}{m_2} \\vec{n}$$"
+ },
+ {
+  "k": "b5928ce0",
+  "s": "<span>Kod</span>",
+  "ru": "<span>Код</span>",
+  "en": "<span>Code</span>"
+ },
+ {
+  "k": "a78f3fa3",
+  "s": "<code>// ============================================================================ // 12-ma’ruza: Claude 2D Simplektik Fizika Dvigateli Kodi // ============================================================================ class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } add(v) { return new Vector2D(this.x + v.x, this.y + v.y); } sub(v) { return new Vector2D(this.x - v.x, this.y - v.y); } scale(s) { return new Vector2D(this.x * s, this.y * s); } dot(v) { return this.x * v.x + this.y * v.y; } magSq() { return this.x * this.x + this.y * this.y; } mag() { return Math.sqrt(this.magSq()); } unit() { const m = this.mag(); return m &gt; 0 ? this.scale(1 / m) : new Vector2D(); } } class PhysicsParticle2D { constructor(x, y, vx, vy, radius, mass, color) { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.radius = radius; this.mass = mass; this.color = color; } // Simplektik Eyler–Kromer integratsiyasi (Fazaviy hajm va invariantlar saqlanadi) update(dt, acc = new Vector2D(0, 0)) { // 1. Avval tezlik yangilanadi: v(t+dt) = v(t) + a(t)*dt this.vel = this.vel.add(acc.scale(dt)); // 2. Yangilangan tezlik bilan koordinata hisoblanadi: x(t+dt) = x(t) + v(t+dt)*dt this.pos = this.pos.add(this.vel.scale(dt)); } // 2D Elastik / Noelastik to‘qnashuvni impuls usulida hal qilish resolveCollision(other, e = 1.0) { const diff = other.pos.sub(this.pos); const dist = diff.mag(); const minDist = this.radius + other.radius; if (dist &lt; minDist &amp;&amp; dist &gt; 0) { // 1. Birlik normal vektor const normal = diff.unit(); // 2. Nisbiy tezlik normal bo‘yicha const relVel = this.vel.sub(other.vel); const velAlongNormal = relVel.dot(normal); // Faqat jismlar bir-biriga yaqinlashayotgan bo‘lsagina impuls hisoblanadi if (velAlongNormal &gt; 0) { const invM1 = 1 / this.mass; const invM2 = 1 / other.mass; const impulseMagnitude = -((1 + e) * velAlongNormal) / (invM1 + invM2); const impulseVec = normal.scale(impulseMagnitude); this.vel = this.vel.add(impulseVec.scale(invM1)); other.vel = other.vel.sub(impulseVec.scale(invM2)); // 3. Minimum Translation Vector (MTV) Penetratsiya tuzatish const overlap = 0.5 * (minDist - dist); this.pos = this.pos.sub(normal.scale(overlap)); other.pos = other.pos.add(normal.scale(overlap)); } } } }</code>",
+  "ru": "<code>// ============================================================================ // Лекция 12: код 2D симплектического физического движка Claude // ============================================================================ class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } add(v) { return new Vector2D(this.x + v.x, this.y + v.y); } sub(v) { return new Vector2D(this.x - v.x, this.y - v.y); } scale(s) { return new Vector2D(this.x * s, this.y * s); } dot(v) { return this.x * v.x + this.y * v.y; } magSq() { return this.x * this.x + this.y * this.y; } mag() { return Math.sqrt(this.magSq()); } unit() { const m = this.mag(); return m &gt; 0 ? this.scale(1 / m) : new Vector2D(); } } class PhysicsParticle2D { constructor(x, y, vx, vy, radius, mass, color) { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.radius = radius; this.mass = mass; this.color = color; } // Симплектическое интегрирование Эйлера–Кромера (сохраняются фазовый объём и инварианты) update(dt, acc = new Vector2D(0, 0)) { // 1. Сначала обновляется скорость: v(t+dt) = v(t) + a(t)*dt this.vel = this.vel.add(acc.scale(dt)); // 2. С обновлённой скоростью вычисляется координата: x(t+dt) = x(t) + v(t+dt)*dt this.pos = this.pos.add(this.vel.scale(dt)); } // Решение 2D упругого / неупругого столкновения импульсным методом resolveCollision(other, e = 1.0) { const diff = other.pos.sub(this.pos); const dist = diff.mag(); const minDist = this.radius + other.radius; if (dist &lt; minDist &amp;&amp; dist &gt; 0) { // 1. Единичный вектор нормали const normal = diff.unit(); // 2. Относительная скорость вдоль нормали const relVel = this.vel.sub(other.vel); const velAlongNormal = relVel.dot(normal); // Импульс вычисляется, только если тела сближаются if (velAlongNormal &gt; 0) { const invM1 = 1 / this.mass; const invM2 = 1 / other.mass; const impulseMagnitude = -((1 + e) * velAlongNormal) / (invM1 + invM2); const impulseVec = normal.scale(impulseMagnitude); this.vel = this.vel.add(impulseVec.scale(invM1)); other.vel = other.vel.sub(impulseVec.scale(invM2)); // 3. Коррекция проникновения по Minimum Translation Vector (MTV) const overlap = 0.5 * (minDist - dist); this.pos = this.pos.sub(normal.scale(overlap)); other.pos = other.pos.add(normal.scale(overlap)); } } } }</code>",
+  "en": "<code>// ============================================================================ // Lecture 12: Claude 2D symplectic physics engine code // ============================================================================ class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } add(v) { return new Vector2D(this.x + v.x, this.y + v.y); } sub(v) { return new Vector2D(this.x - v.x, this.y - v.y); } scale(s) { return new Vector2D(this.x * s, this.y * s); } dot(v) { return this.x * v.x + this.y * v.y; } magSq() { return this.x * this.x + this.y * this.y; } mag() { return Math.sqrt(this.magSq()); } unit() { const m = this.mag(); return m &gt; 0 ? this.scale(1 / m) : new Vector2D(); } } class PhysicsParticle2D { constructor(x, y, vx, vy, radius, mass, color) { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.radius = radius; this.mass = mass; this.color = color; } // Symplectic Euler–Cromer integration (phase volume and invariants are preserved) update(dt, acc = new Vector2D(0, 0)) { // 1. Update velocity first: v(t+dt) = v(t) + a(t)*dt this.vel = this.vel.add(acc.scale(dt)); // 2. Compute position with the updated velocity: x(t+dt) = x(t) + v(t+dt)*dt this.pos = this.pos.add(this.vel.scale(dt)); } // Resolve a 2D elastic / inelastic collision with the impulse method resolveCollision(other, e = 1.0) { const diff = other.pos.sub(this.pos); const dist = diff.mag(); const minDist = this.radius + other.radius; if (dist &lt; minDist &amp;&amp; dist &gt; 0) { // 1. Unit normal vector const normal = diff.unit(); // 2. Relative velocity along the normal const relVel = this.vel.sub(other.vel); const velAlongNormal = relVel.dot(normal); // Compute the impulse only if the bodies are approaching if (velAlongNormal &gt; 0) { const invM1 = 1 / this.mass; const invM2 = 1 / other.mass; const impulseMagnitude = -((1 + e) * velAlongNormal) / (invM1 + invM2); const impulseVec = normal.scale(impulseMagnitude); this.vel = this.vel.add(impulseVec.scale(invM1)); other.vel = other.vel.sub(impulseVec.scale(invM2)); // 3. Minimum Translation Vector (MTV) penetration correction const overlap = 0.5 * (minDist - dist); this.pos = this.pos.sub(normal.scale(overlap)); other.pos = other.pos.add(normal.scale(overlap)); } } } }</code>"
+ },
+ {
+  "k": "ee37711b",
+  "s": "📊 Sonli integratorlarning qiyosiy tahlili:",
+  "ru": "📊 Сравнительный анализ численных интеграторов:",
+  "en": "📊 Comparison of numerical integrators:"
+ },
+ {
+  "k": "79a96798",
+  "s": "Integrator usuli",
+  "ru": "Метод интегрирования",
+  "en": "Integration method"
+ },
+ {
+  "k": "8eb8abf0",
+  "s": "Xatolik tartibi",
+  "ru": "Порядок погрешности",
+  "en": "Error order"
+ },
+ {
+  "k": "80ccc5ad",
+  "s": "Simplektiklik (fazaviy hajm)",
+  "ru": "Симплектичность (фазовый объём)",
+  "en": "Symplecticity (phase volume)"
+ },
+ {
+  "k": "0366ad99",
+  "s": "Energiya dreyfi ($\\Delta E/E_0$)",
+  "ru": "Энергетический дрейф ($\\Delta E/E_0$)",
+  "en": "Energy drift ($\\Delta E/E_0$)"
+ },
+ {
+  "k": "7a158490",
+  "s": "Hisoblash narxi",
+  "ru": "Вычислительная стоимость",
+  "en": "Computational cost"
+ },
+ {
+  "k": "77e86cad",
+  "s": "Oddiy Eyler (Forward)",
+  "ru": "Простой Эйлер (Forward)",
+  "en": "Plain (Forward) Euler"
+ },
+ {
+  "k": "8929ba09",
+  "s": "$\\mathcal{O}(\\Delta t)$",
+  "ru": "$\\mathcal{O}(\\Delta t)$",
+  "en": "$\\mathcal{O}(\\Delta t)$"
+ },
+ {
+  "k": "c3ea6c51",
+  "s": "Yo‘q (Portlaydi)",
+  "ru": "Нет («взрывается»)",
+  "en": "No (blows up)"
+ },
+ {
+  "k": "e396f1d2",
+  "s": "Eksponensial ortadi ($&gt; 20\\%$)",
+  "ru": "Растёт экспоненциально ($&gt; 20\\%$)",
+  "en": "Grows exponentially ($&gt; 20\\%$)"
+ },
+ {
+  "k": "fb67c761",
+  "s": "Juda arzon",
+  "ru": "Очень дёшево",
+  "en": "Very cheap"
+ },
+ {
+  "k": "750d0f00",
+  "s": "Simplektik Eyler–Kromer",
+  "ru": "Симплектический Эйлер–Кромер",
+  "en": "Symplectic Euler–Cromer"
+ },
+ {
+  "k": "9cef4a40",
+  "s": "Ha (100% Simplektik)",
+  "ru": "Да (100% симплектический)",
+  "en": "Yes (100% symplectic)"
+ },
+ {
+  "k": "13afd508",
+  "s": "Chegaralangan tebranadi ($&lt; 10^{-3}$)",
+  "ru": "Ограниченно колеблется ($&lt; 10^{-3}$)",
+  "en": "Oscillates within bounds ($&lt; 10^{-3}$)"
+ },
+ {
+  "k": "bc800b74",
+  "s": "Juda arzon (Optimal)",
+  "ru": "Очень дёшево (оптимально)",
+  "en": "Very cheap (optimal)"
+ },
+ {
+  "k": "f2ff6ba5",
+  "s": "Verlet / Velocity Verlet",
+  "ru": "Верле / Velocity Verlet",
+  "en": "Verlet / Velocity Verlet"
+ },
+ {
+  "k": "eb903d19",
+  "s": "$\\mathcal{O}(\\Delta t^2)$",
+  "ru": "$\\mathcal{O}(\\Delta t^2)$",
+  "en": "$\\mathcal{O}(\\Delta t^2)$"
+ },
+ {
+  "k": "25f6ed36",
+  "s": "Ha (Simplektik va Time-reversible)",
+  "ru": "Да (симплектический и обратимый во времени)",
+  "en": "Yes (symplectic and time-reversible)"
+ },
+ {
+  "k": "e89eee1c",
+  "s": "Juda past ($&lt; 10^{-5}$)",
+  "ru": "Очень низкий ($&lt; 10^{-5}$)",
+  "en": "Very low ($&lt; 10^{-5}$)"
+ },
+ {
+  "k": "a92bd777",
+  "s": "O‘rtacha",
+  "ru": "Средняя",
+  "en": "Moderate"
+ },
+ {
+  "k": "8c6544b7",
+  "s": "Runge–Kutta 4-tartib (RK4)",
+  "ru": "Рунге–Кутта 4-го порядка (RK4)",
+  "en": "4th-order Runge–Kutta (RK4)"
+ },
+ {
+  "k": "8cfc95b3",
+  "s": "$\\mathcal{O}(\\Delta t^4)$",
+  "ru": "$\\mathcal{O}(\\Delta t^4)$",
+  "en": "$\\mathcal{O}(\\Delta t^4)$"
+ },
+ {
+  "k": "33c9988f",
+  "s": "Yo‘q (Uzoq vaqtda so‘nadi)",
+  "ru": "Нет (со временем затухает)",
+  "en": "No (decays over long runs)"
+ },
+ {
+  "k": "2e7dd822",
+  "s": "Juda yuqori lokal aniqlik",
+  "ru": "Очень высокая локальная точность",
+  "en": "Very high local accuracy"
+ },
+ {
+  "k": "651e5a36",
+  "s": "Qimmat (4 baholash/qadam)",
+  "ru": "Дорого (4 вычисления/шаг)",
+  "en": "Expensive (4 evaluations/step)"
+ },
+ {
+  "k": "d853cfdd",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Fizika Dasturlash Asosi (3-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы программирования физики (раздел 3):",
+  "en": "🌐 WWW scholarly sources and physics programming basis (Section 3):"
+ },
+ {
+  "k": "dddfa469",
+  "s": "Millington, I. (2010).",
+  "ru": "Millington, I. (2010).",
+  "en": "Millington, I. (2010)."
+ },
+ {
+  "k": "e05a9595",
+  "s": "Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game",
+  "ru": "Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game",
+  "en": "Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game"
+ },
+ {
+  "k": "0115f580",
+  "s": "(2nd ed.). CRC Press / Morgan Kaufmann.",
+  "ru": "(2nd ed.). CRC Press / Morgan Kaufmann.",
+  "en": "(2nd ed.). CRC Press / Morgan Kaufmann."
+ },
+ {
+  "k": "eca59fde",
+  "s": "https://doi.org/10.1201/b10297",
+  "ru": "https://doi.org/10.1201/b10297",
+  "en": "https://doi.org/10.1201/b10297"
+ },
+ {
+  "k": "ff362ec8",
+  "s": "2D elastik va noelastik to‘qnashuvlarda impulsga asoslangan yondashuv (Impulse-Based Resolution) va penetratsiyani minimal siljish vektori (MTV) bilan tuzatish raqamli fizik dvigatellarning barqarorligi uchun eng samarali matematik usuldir.",
+  "ru": "Импульсный подход (Impulse-Based Resolution) к 2D упругим и неупругим столкновениям и коррекция проникновения минимальным вектором смещения (MTV) — наиболее эффективный математический метод обеспечения устойчивости цифровых физических движков.",
+  "en": "The impulse-based approach to 2D elastic and inelastic collisions, together with correcting penetration with the minimum translation vector (MTV), is the most effective mathematical method for keeping digital physics engines stable."
+ },
+ {
+  "k": "a3bd411d",
+  "s": "Hairer, E., Lubich, C., va Wanner, G. (2006).",
+  "ru": "Hairer, E., Lubich, C., & Wanner, G. (2006).",
+  "en": "Hairer, E., Lubich, C., & Wanner, G. (2006)."
+ },
+ {
+  "k": "0d5bc6d0",
+  "s": "Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations",
+  "ru": "Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations",
+  "en": "Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations"
+ },
+ {
+  "k": "04122447",
+  "s": "(2nd ed.). Springer.",
+  "ru": "(2nd ed.). Springer.",
+  "en": "(2nd ed.). Springer."
+ },
+ {
+  "k": "d48442fb",
+  "s": "https://doi.org/10.1007/3-540-30666-8",
+  "ru": "https://doi.org/10.1007/3-540-30666-8",
+  "en": "https://doi.org/10.1007/3-540-30666-8"
+ },
+ {
+  "k": "3b0ae8a7",
+  "s": "Simplektik integratorlar klassik mexanika tizimlarining fazaviy hajmini (Liuvill teoremasi) va gamilton invariantlarini yuz minglab kadrlar davomida dreyfsiz saqlash imkonini beradi.",
+  "ru": "Симплектические интеграторы позволяют без дрейфа сохранять фазовый объём (теорема Лиувилля) и гамильтоновы инварианты систем классической механики на протяжении сотен тысяч кадров.",
+  "en": "Symplectic integrators preserve the phase volume (Liouville’s theorem) and Hamiltonian invariants of classical mechanical systems without drift over hundreds of thousands of frames."
+ },
+ {
+  "k": "d95b8943",
+  "s": "4. Jarayon monitoringi: Google Antigravity",
+  "ru": "4. Мониторинг процесса: Google Antigravity",
+  "en": "4. Process monitoring: Google Antigravity"
+ },
+ {
+  "k": "0d30ca27",
+  "s": "Fixed Timestep, symplectic drift va AST linter",
+  "ru": "Fixed Timestep, симплектический дрейф и AST-линтер",
+  "en": "Fixed timestep, symplectic drift and the AST linter"
+ },
+ {
+  "k": "7f7beebc",
+  "s": "Yozilgan fizika dvigateli kodi real vaqt rejimida <strong>Google Antigravity</strong> monitoring platformasi orqali tekshiriladi. Antigravity uchta asosiy fizik-matematik invariantni uzluksiz audit qiladi: <strong>1) Glenn Fiedler \"Fix Your Timestep\" kadrlar barqarorligi ($60\\text{ FPS}$)</strong>, <strong>2) Yopiq tizimda energiyaning sun’iy dreyfi ($\\Delta E/E_0 &lt; 10^{-3}$)</strong>, hamda <strong>3) Liuvill fazaviy hajm saqlanishi</strong>:",
+  "ru": "Написанный код физического движка проверяется в реальном времени платформой мониторинга <strong>Google Antigravity</strong>. Antigravity непрерывно проводит аудит трёх основных физико-математических инвариантов: <strong>1) стабильности кадров по Гленну Фидлеру \"Fix Your Timestep\" ($60\\text{ FPS}$)</strong>, <strong>2) искусственного дрейфа энергии в замкнутой системе ($\\Delta E/E_0 &lt; 10^{-3}$)</strong> и <strong>3) сохранения фазового объёма Лиувилля</strong>:",
+  "en": "The physics engine code is checked in real time by the <strong>Google Antigravity</strong> monitoring platform. Antigravity continuously audits three key physical–mathematical invariants: <strong>1) frame stability per Glenn Fiedler’s \"Fix Your Timestep\" ($60\\text{ FPS}$)</strong>, <strong>2) artificial energy drift in a closed system ($\\Delta E/E_0 &lt; 10^{-3}$)</strong> and <strong>3) Liouville phase-volume conservation</strong>:"
+ },
+ {
+  "k": "f545d7d1",
+  "s": "Fazaviy Fazo va Energiya Saqlanishi",
+  "ru": "Фазовое пространство и сохранение энергии",
+  "en": "Phase Space and Energy Conservation"
+ },
+ {
+  "k": "a91588b2",
+  "s": "12.3-rasm: Simplektik Eyler–Kromer va oddiy Eyler integratsiyasida fazaviy portret va energiya saqlanishi auditi.",
+  "ru": "Рис. 12.3: аудит фазового портрета и сохранения энергии при симплектическом Эйлере–Кромере и простом Эйлере.",
+  "en": "Figure 12.3: Phase portrait and energy conservation audit for symplectic Euler–Cromer vs plain Euler integration."
+ },
+ {
+  "k": "16bd4e93",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Delta-time akkumulyatori:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Kadrlar tezligi tebranishidan qat’i nazar fizika hisob-kitoblari qat’iy $\\Delta t = 1/60\\text{ s}$ fiksatsiyalangan qadamda bajariladi. Vaqt qoldig‘i $\\alpha = \\text{accumulator} / \\Delta t$ bilan interpolyatsiya qilinadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Аккумулятор delta-time:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Независимо от колебаний частоты кадров физические расчёты выполняются со строго фиксированным шагом $\\Delta t = 1/60\\text{ s}$. Остаток времени интерполируется через $\\alpha = \\text{accumulator} / \\Delta t$. </span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Delta-time accumulator:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Regardless of frame-rate fluctuations, physics calculations run at a strictly fixed step $\\Delta t = 1/60\\text{ s}$. The leftover time is interpolated via $\\alpha = \\text{accumulator} / \\Delta t$. </span>"
+ },
+ {
+  "k": "47b79caf",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Energiya dreyfi nazorati:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Konservativ to‘qnashuvlarda $\\frac{|E(t) - E_0|}{E_0} &lt; 10^{-3}$ sharti tekshiriladi; oddiy Eylerdagi kabi energiya portlashi (divergensiya) darhol ogohlantiriladi. </span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Контроль энергетического дрейфа:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> В консервативных столкновениях проверяется условие $\\frac{|E(t) - E_0|}{E_0} &lt; 10^{-3}$; «взрыв» энергии (дивергенция), как в простом Эйлере, немедленно сигнализируется. </span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Energy drift control:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> The $\\frac{|E(t) - E_0|}{E_0} &lt; 10^{-3}$ condition is checked in conservative collisions; an energy blow-up (divergence), as with plain Euler, is flagged immediately. </span>"
+ },
+ {
+  "k": "196c31ef",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. AST va zero-GC auditi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Kadr tsikli ichida yangi obyekt yaratmaslik (Object Pooling va In-Place Vector Reuse) orqali Garbage Collection to‘xtalishlari (Jank) bartaraf qilinadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Аудит AST и zero-GC:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Остановки сборки мусора (jank) устраняются отказом от создания новых объектов внутри цикла кадров (Object Pooling и In-Place Vector Reuse). </span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. AST and zero-GC audit:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Garbage-collection pauses (jank) are eliminated by not creating new objects inside the frame loop (object pooling and in-place vector reuse). </span>"
+ },
+ {
+  "k": "b9b5c0b2",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Integratsiya Barqarorligi Asosi (4-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы устойчивости интегрирования (раздел 4):",
+  "en": "🌐 WWW scholarly sources and integration stability basis (Section 4):"
+ },
+ {
+  "k": "7b439804",
+  "s": "Fiedler, G. (2004).",
+  "ru": "Fiedler, G. (2004).",
+  "en": "Fiedler, G. (2004)."
+ },
+ {
+  "k": "550bc129",
+  "s": "Fix Your Timestep!",
+  "ru": "Fix Your Timestep!",
+  "en": "Fix Your Timestep!"
+ },
+ {
+  "k": "d9b37f9a",
+  "s": "Gaffer on Games Physics Architecture.",
+  "ru": "Gaffer on Games Physics Architecture.",
+  "en": "Gaffer on Games Physics Architecture."
+ },
+ {
+  "k": "62197d58",
+  "s": "https://gafferongames.com/post/fix_your_timestep/",
+  "ru": "https://gafferongames.com/post/fix_your_timestep/",
+  "en": "https://gafferongames.com/post/fix_your_timestep/"
+ },
+ {
+  "k": "62fe28d0",
+  "s": "Fizik simulyatsiyalarda vaqt qadamini qat’iy fiksatsiya qilish (Fixed Timestep) va kadrlar o‘rtasida qolgan vaqt qoldig‘ini interpolyatsiya qilish hisoblash aniqligi hamda deterministik takrorlanuvchanlikning kafolatidir.",
+  "ru": "Строгая фиксация шага времени (Fixed Timestep) в физических симуляциях и интерполяция остатка времени между кадрами — гарантия точности вычислений и детерминированной воспроизводимости.",
+  "en": "Strictly fixing the time step in physics simulations and interpolating the leftover time between frames guarantees computational accuracy and deterministic reproducibility."
+ },
+ {
+  "k": "d86d299f",
+  "s": "Sanz-Serna, J. M., va Calvo, M. P. (1994).",
+  "ru": "Sanz-Serna, J. M., & Calvo, M. P. (1994).",
+  "en": "Sanz-Serna, J. M., & Calvo, M. P. (1994)."
+ },
+ {
+  "k": "f75405ff",
+  "s": "Numerical Hamiltonian Problems",
+  "ru": "Numerical Hamiltonian Problems",
+  "en": "Numerical Hamiltonian Problems"
+ },
+ {
+  "k": "300f6bc3",
+  "s": ". Chapman va Hall / CRC Press.",
+  "ru": ". Chapman & Hall / CRC Press.",
+  "en": ". Chapman & Hall / CRC Press."
+ },
+ {
+  "k": "625c6717",
+  "s": "Mexanik tizimlarni sonli modellashtirishda simplektik algoritmlar energiyaning global xatoligini nol atrofida chegaralaydi va vaqt bo‘yicha integrallash jarayonining fizik haqiqiyligini ta’minlaydi.",
+  "ru": "При численном моделировании механических систем симплектические алгоритмы ограничивают глобальную ошибку энергии около нуля и обеспечивают физическую достоверность интегрирования по времени.",
+  "en": "In numerical modelling of mechanical systems, symplectic algorithms keep the global energy error bounded around zero and ensure the physical validity of time integration."
+ },
+ {
+  "k": "8db4baa7",
+  "s": "5. Kinematik video illyustratsiya: Runway va Pika Labs",
+  "ru": "5. Кинематическая видеоиллюстрация: Runway и Pika Labs",
+  "en": "5. Kinematic video illustration: Runway and Pika Labs"
+ },
+ {
+  "k": "415a3093",
+  "s": "Generative AI video va visual physics intuition",
+  "ru": "Генеративное ИИ-видео и визуальная физическая интуиция",
+  "en": "Generative AI video and visual physics intuition"
+ },
+ {
+  "k": "6271e624",
+  "s": "Fizika ta’limida talabalarda fizik hodisalarning real dinamikasi, fazoviy relyativistik deformatsiyalar va to‘qnashuv jarayonlari bo‘yicha mustahkam vizual intuitsiyani shakllantirish uchun <strong>Runway</strong> va <strong>Pika Labs</strong> generativ sun’iy intellekt video modellaridan foydalaniladi:",
+  "ru": "Чтобы сформировать у студентов прочную визуальную интуицию о реальной динамике физических явлений, пространственных релятивистских деформациях и процессах столкновений, в обучении физике используются генеративные видеомодели искусственного интеллекта <strong>Runway</strong> и <strong>Pika Labs</strong>:",
+  "en": "To build students’ strong visual intuition for the real dynamics of physical phenomena, relativistic spatial deformations and collision processes, physics education uses the generative AI video models <strong>Runway</strong> and <strong>Pika Labs</strong>:"
+ },
+ {
+  "k": "999b1fd3",
+  "s": "Generativ Video Sintezi Konveyeri",
+  "ru": "Конвейер генеративного синтеза видео",
+  "en": "Generative Video Synthesis Pipeline"
+ },
+ {
+  "k": "3ad66ec4",
+  "s": "12.4-rasm: Claude prompt-muhandisligi orqali Runway da kinematik video sintez qilish bosqichlari.",
+  "ru": "Рис. 12.4: этапы синтеза кинематического видео в Runway с помощью промпт-инжиниринга Claude.",
+  "en": "Figure 12.4: Stages of kinematic video synthesis in Runway with Claude prompt engineering."
+ },
+ {
+  "k": "9fce8fd2",
+  "s": "Kinematik video generatsiyasining 3 ta asosiy didaktik bosqichi:",
+  "ru": "3 основных дидактических этапа генерации кинематического видео:",
+  "en": "3 main didactic stages of kinematic video generation:"
+ },
+ {
+  "k": "1a1a88a1",
+  "s": "1. Fizik parametrlarni promptga joylash",
+  "ru": "1. Внесение физических параметров в промпт",
+  "en": "1. Putting physical parameters in the prompt"
+ },
+ {
+  "k": "dffce96c",
+  "s": "Jism massasi, sirt ishqalanishi, to‘qnashuv burchagi va yorug‘lik yo‘nalishini promptda aniq ifodalash.",
+  "ru": "Чёткое указание в промпте массы тела, трения поверхности, угла столкновения и направления освещения.",
+  "en": "Stating the body’s mass, surface friction, collision angle and lighting direction precisely in the prompt."
+ },
+ {
+  "k": "3cc37fb7",
+  "s": "2. Neyron video sintezi",
+  "ru": "2. Нейросинтез видео",
+  "en": "2. Neural video synthesis"
+ },
+ {
+  "k": "e2c5c22f",
+  "s": "Runway Latent Diffusion modeli orqali 120fps sekinlashtirilgan (Slow-motion) fizik to‘qnashuv kadrlarini hosil qilish.",
+  "ru": "Получение замедленных (slow-motion, 120 fps) кадров физического столкновения через модель Latent Diffusion в Runway.",
+  "en": "Producing slow-motion (120 fps) frames of a physical collision with Runway’s latent diffusion model."
+ },
+ {
+  "k": "6bf4c9ec",
+  "s": "3. Taqqoslovchi tahlil",
+  "ru": "3. Сравнительный анализ",
+  "en": "3. Comparative analysis"
+ },
+ {
+  "k": "d98dec35",
+  "s": "Video-illyustratsiyadagi dinamikani Canvas simulyatsiyasidagi analitik natijalar bilan solishtirish.",
+  "ru": "Сравнение динамики в видеоиллюстрации с аналитическими результатами симуляции на Canvas.",
+  "en": "Comparing the dynamics in the video illustration with the analytical results of the Canvas simulation."
+ },
+ {
+  "k": "a8ba6754",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Multimodal Ta’lim Tadqiqoti (5-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и исследование мультимодального обучения (раздел 5):",
+  "en": "🌐 WWW scholarly source and multimodal learning research (Section 5):"
+ },
+ {
+  "k": "b3bdd633",
+  "s": "Mayer, R. E. (2020).",
+  "ru": "Mayer, R. E. (2020).",
+  "en": "Mayer, R. E. (2020)."
+ },
+ {
+  "k": "c90e4890",
+  "s": "Multimedia Learning",
+  "ru": "Multimedia Learning",
+  "en": "Multimedia Learning"
+ },
+ {
+  "k": "b867cc81",
+  "s": "(3rd ed.). Cambridge University Press.",
+  "ru": "(3rd ed.). Cambridge University Press.",
+  "en": "(3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "86f78d7e",
+  "s": "https://doi.org/10.1017/9781316941355",
+  "ru": "https://doi.org/10.1017/9781316941355",
+  "en": "https://doi.org/10.1017/9781316941355"
+ },
+ {
+  "k": "66e63515",
+  "s": "Talaba fizik hodisani bir vaqtning o‘zida matematik formula, interaktiv simulyatsiya va yuqori sifatli video-illyustratsiya ko‘rinishida ko‘rganda kognitiv model eng mustahkam shakllanadi (Dual-Coding Theory).",
+  "ru": "Когнитивная модель формируется наиболее прочно, когда студент видит физическое явление одновременно в виде математической формулы, интерактивной симуляции и качественной видеоиллюстрации (Dual-Coding Theory).",
+  "en": "A cognitive model forms most robustly when the student sees a physical phenomenon simultaneously as a mathematical formula, an interactive simulation and a high-quality video illustration (dual-coding theory)."
+ },
+ {
+  "k": "73cd7a62",
+  "s": "Paivio, A. (2007).",
+  "ru": "Paivio, A. (2007).",
+  "en": "Paivio, A. (2007)."
+ },
+ {
+  "k": "6c46d38a",
+  "s": "Mind and Its Evolution: A Dual Coding Theoretical Approach",
+  "ru": "Mind and Its Evolution: A Dual Coding Theoretical Approach",
+  "en": "Mind and Its Evolution: A Dual Coding Theoretical Approach"
+ },
+ {
+  "k": "d0c7daee",
+  "s": ". Lawrence Erlbaum Associates Publishers.",
+  "ru": ". Lawrence Erlbaum Associates Publishers.",
+  "en": ". Lawrence Erlbaum Associates Publishers."
+ },
+ {
+  "k": "0f09c9c8",
+  "s": "Vizual va verbal axborot kanallarining parallel ravishda faollashuvi talabaning abstrakt fizik modellarni uzoq muddatli xotiraga muhrlashini 60% ga tezlashtiradi.",
+  "ru": "Параллельная активация визуального и вербального каналов информации ускоряет закрепление абстрактных физических моделей в долговременной памяти студента на 60%.",
+  "en": "Activating the visual and verbal information channels in parallel speeds up the consolidation of abstract physical models in students’ long-term memory by 60%."
+ },
+ {
+  "k": "c0808412",
+  "s": "6. Klassik mexanika va SI-konveyerning interaktiv laboratoriyasi",
+  "ru": "6. Интерактивная лаборатория классической механики и ИИ-конвейера",
+  "en": "6. Interactive lab for classical mechanics and the AI pipeline"
+ },
+ {
+  "k": "459165a0",
+  "s": "HTML5 Canvas, dinamik telemetriya va SI-konveyer",
+  "ru": "HTML5 Canvas, динамическая телеметрия и ИИ-конвейер",
+  "en": "HTML5 Canvas, dynamic telemetry and the AI pipeline"
+ },
+ {
+  "k": "1b6284d5",
+  "s": "Quyidagi interaktiv laboratoriyada siz <strong>qiya tekislikdagi dinamika</strong> va <strong>2D elastik to‘qnashuvlar</strong> jarayonini real vaqt rejimida sinab ko‘rishingiz, simplektik integrator va oddiy Eyler xatoliklarini energiya grafigida solishtirishingiz hamda 4 bosqichli to‘liq SI-konveyerni ishga tushirishingiz mumkin.",
+  "ru": "В интерактивной лаборатории ниже вы можете в реальном времени испытать <strong>динамику на наклонной плоскости</strong> и <strong>двумерные упругие столкновения</strong>, сравнить на графике энергии ошибки симплектического интегратора и простого Эйлера, а также запустить полный 4-этапный ИИ-конвейер.",
+  "en": "In the interactive lab below you can test <strong>incline dynamics</strong> and <strong>2D elastic collisions</strong> in real time, compare symplectic-integrator and plain-Euler errors on the energy plot, and run the complete 4-stage AI pipeline."
+ },
+ {
+  "k": "a99499f8",
+  "s": "Eksperiment rejimi:",
+  "ru": "Режим эксперимента:",
+  "en": "Experiment mode:"
+ },
+ {
+  "k": "19e51337",
+  "s": "📐 1-rejim: qiya tekislik va ishqalanish dinamikasi",
+  "ru": "📐 Режим 1: наклонная плоскость и динамика трения",
+  "en": "📐 Mode 1: Incline and friction dynamics"
+ },
+ {
+  "k": "6603a5c7",
+  "s": "💥 2-rejim: 2D elastik zarrachalar to‘qnashuvi",
+  "ru": "💥 Режим 2: двумерное упругое столкновение частиц",
+  "en": "💥 Mode 2: 2D elastic particle collisions"
+ },
+ {
+  "k": "9692deaf",
+  "s": "Qiyalik burchagi ($\\alpha$):",
+  "ru": "Угол наклона ($\\alpha$):",
+  "en": "Incline angle ($\\alpha$):"
+ },
+ {
+  "k": "7cf305d8",
+  "s": "Ishqalanish koeffitsiyenti ($\\mu$):",
+  "ru": "Коэффициент трения ($\\mu$):",
+  "en": "Friction coefficient ($\\mu$):"
+ },
+ {
+  "k": "5106fb5f",
+  "s": "Jism massasi ($m$):",
+  "ru": "Масса тела ($m$):",
+  "en": "Body mass ($m$):"
+ },
+ {
+  "k": "f1ae2dad",
+  "s": "2,0 kg",
+  "ru": "2,0 кг",
+  "en": "2.0 kg"
+ },
+ {
+  "k": "98d4f55d",
+  "s": "Tiklanish koeffitsiyenti ($e$):",
+  "ru": "Коэффициент восстановления ($e$):",
+  "en": "Coefficient of restitution ($e$):"
+ },
+ {
+  "k": "bbf745d8",
+  "s": "Integratorni tanlash:",
+  "ru": "Выбор интегратора:",
+  "en": "Integrator:"
+ },
+ {
+  "k": "3fb3d625",
+  "s": "Simplektik Eyler–Kromer (barqaror)",
+  "ru": "Симплектический Эйлер–Кромер (устойчивый)",
+  "en": "Symplectic Euler–Cromer (stable)"
+ },
+ {
+  "k": "c901d9e2",
+  "s": "Oddiy Eyler (energiya portlaydi)",
+  "ru": "Простой Эйлер (энергия «взрывается»)",
+  "en": "Plain Euler (energy blows up)"
+ },
+ {
+  "k": "6dd6a282",
+  "s": "Zarracha massasi ($m_1$):",
+  "ru": "Масса частицы ($m_1$):",
+  "en": "Particle mass ($m_1$):"
+ },
+ {
+  "k": "0803149d",
+  "s": "💡 Simulyatsiya holatini boshqarish: harakatni to‘xtatish / davom ettirish va qayta boshlash",
+  "ru": "💡 Управление симуляцией: остановить / продолжить движение и перезапустить",
+  "en": "💡 Simulation controls: stop / resume motion and restart"
+ },
+ {
+  "k": "8a36460a",
+  "s": "⏸️ To‘xtatish",
+  "ru": "⏸️ Остановить",
+  "en": "⏸️ Stop"
+ },
+ {
+  "k": "90d64152",
+  "s": "🔄 Qayta boshlash",
+  "ru": "🔄 Перезапустить",
+  "en": "🔄 Restart"
+ },
+ {
+  "k": "cc19529f",
+  "s": "🎮 Interaktiv harakat maydoni:",
+  "ru": "🎮 Интерактивное поле движения:",
+  "en": "🎮 Interactive motion area:"
+ },
+ {
+  "k": "b89fc9f6",
+  "s": "Kuch vektorlari: yashil — N, sariq — F<sub>ishq</sub>, qizil — mg.",
+  "ru": "Векторы сил: зелёный — N, жёлтый — F<sub>тр</sub>, красный — mg.",
+  "en": "Force vectors: green — N, yellow — F<sub>fr</sub>, red — mg."
+ },
+ {
+  "k": "0cf454ea",
+  "s": "📊 Real vaqtdagi energiya dreyfi, $E(t)$:",
+  "ru": "📊 Энергетический дрейф в реальном времени, $E(t)$:",
+  "en": "📊 Real-time energy drift, $E(t)$:"
+ },
+ {
+  "k": "e21627ac",
+  "s": "Yashil — simplektik saqlanish, qizil — Eyler xatoligi dreyfi.",
+  "ru": "Зелёный — симплектическое сохранение, красный — дрейф ошибки Эйлера.",
+  "en": "Green — symplectic conservation; red — Euler error drift."
+ },
+ {
+  "k": "c48a21d7",
+  "s": "1. PhET dekonstruksiyasi",
+  "ru": "1. Деконструкция PhET",
+  "en": "1. PhET deconstruction"
+ },
+ {
+  "k": "b71018de",
+  "s": "2. Claude dvigatel kodi",
+  "ru": "2. Код движка Claude",
+  "en": "2. Claude engine code"
+ },
+ {
+  "k": "6041dc59",
+  "s": "3. Antigravity audit",
+  "ru": "3. Antigravity audit",
+  "en": "3. Antigravity audit"
+ },
+ {
+  "k": "36c20618",
+  "s": "4. Runway video prompt",
+  "ru": "4. Видеопромпт Runway",
+  "en": "4. Runway video prompt"
+ },
+ {
+  "k": "230da7bd",
+  "s": "de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).",
+  "ru": "de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).",
+  "en": "de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013)."
+ },
+ {
+  "k": "34be031c",
+  "s": "Physical and Virtual Laboratories in Science and Engineering Education",
+  "ru": "Physical and Virtual Laboratories in Science and Engineering Education",
+  "en": "Physical and Virtual Laboratories in Science and Engineering Education"
+ },
+ {
+  "k": "a49fe38d",
+  "s": ". Science, 340(6130), 305-308.",
+  "ru": ". Science, 340(6130), 305-308.",
+  "en": ". Science, 340(6130), 305-308."
+ },
+ {
+  "k": "855e1022",
+  "s": "https://doi.org/10.1126/science.1230579",
+  "ru": "https://doi.org/10.1126/science.1230579",
+  "en": "https://doi.org/10.1126/science.1230579"
+ },
+ {
+  "k": "5fa6c0ab",
+  "s": "Virtual laboratoriyalarda parametrlarni erkin o‘zgartirish va real vaqtli fazaviy energiya grafiklarini tahlil qilish talabalarda fizik modellashtirish kompetensiyasini 31% ga oshiradi.",
+  "ru": "Свободное изменение параметров в виртуальных лабораториях и анализ фазовых энергетических графиков в реальном времени повышают у студентов компетенцию физического моделирования на 31%.",
+  "en": "Freely changing parameters in virtual labs and analysing real-time phase and energy plots increases students’ physical modelling competence by 31%."
+ },
+ {
+  "k": "55bfea03",
+  "s": "Rutten, N., van Joolingen, W. R., va van der Veen, J. T. (2012).",
+  "ru": "Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).",
+  "en": "Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012)."
+ },
+ {
+  "k": "b1611ab5",
+  "s": "The Learning Effects of Computer Simulations in Science Education",
+  "ru": "The Learning Effects of Computer Simulations in Science Education",
+  "en": "The Learning Effects of Computer Simulations in Science Education"
+ },
+ {
+  "k": "c19b6f25",
+  "s": ". Computers va Education, 58(1), 136-153.",
+  "ru": ". Computers & Education, 58(1), 136-153.",
+  "en": ". Computers & Education, 58(1), 136-153."
+ },
+ {
+  "k": "e4baec13",
+  "s": "https://doi.org/10.1016/j.compedu.2011.07.017",
+  "ru": "https://doi.org/10.1016/j.compedu.2011.07.017",
+  "en": "https://doi.org/10.1016/j.compedu.2011.07.017"
+ },
+ {
+  "k": "6fd9eaa2",
+  "s": "Kompyuter simulyatsiyalari talabada gipotezalarni tezkor tekshirish, parametrik bog‘lanishlarni kashf etish va mustaqil tadqiqot ko‘nikmalarini jadal shakllantiradi.",
+  "ru": "Компьютерные симуляции стремительно формируют у студента навыки быстрой проверки гипотез, открытия параметрических связей и самостоятельного исследования.",
+  "en": "Computer simulations rapidly build students’ skills in quickly testing hypotheses, discovering parametric relationships and independent research."
+ },
+ {
+  "k": "c5687538",
+  "s": "7. Diagnostik test va ilmiy-metodik manbalar",
+  "ru": "7. Диагностический тест и научно-методические источники",
+  "en": "7. Diagnostic test and scholarly sources"
+ },
+ {
+  "k": "d9edda19",
+  "s": "🧠 12-ma’ruza diagnostik testi (3 ta kognitiv savol):",
+  "ru": "🧠 Диагностический тест к лекции 12 (3 когнитивных вопроса):",
+  "en": "🧠 Lecture 12 diagnostic test (3 cognitive questions):"
+ },
+ {
+  "k": "143e865a",
+  "s": "1-Savol: 2D elastik to‘qnashuvlarda ($e=1$) jismlarning kontakt normali bo‘yicha beriladigan to‘qnashuv skalyar impulsi $J$ nimaga teng?",
+  "ru": "Вопрос 1: Чему равен скалярный импульс столкновения $J$, передаваемый вдоль нормали контакта тел при двумерных упругих столкновениях ($e=1$)?",
+  "en": "Question 1: In 2D elastic collisions ($e=1$), what is the scalar collision impulse $J$ applied along the bodies’ contact normal?"
+ },
+ {
+  "k": "81e9be2b",
+  "s": "B) $J = -\\frac{(1+e)(\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n}}{1/m_1 + 1/m_2}$ (To‘g‘ri)",
+  "ru": "B) $J = -\\frac{(1+e)(\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n}}{1/m_1 + 1/m_2}$ (верно)",
+  "en": "B) $J = -\\frac{(1+e)(\\vec{v}_1 - \\vec{v}_2)\\cdot\\vec{n}}{1/m_1 + 1/m_2}$ (correct)"
+ },
+ {
+  "k": "1576e470",
+  "s": "C) $J = \\frac{1}{2}m v^2$",
+  "ru": "C) $J = \\frac{1}{2}m v^2$",
+  "en": "C) $J = \\frac{1}{2}m v^2$"
+ },
+ {
+  "k": "9c7308b5",
+  "s": "D) $J = \\mu N \\Delta t$",
+  "ru": "D) $J = \\mu N \\Delta t$",
+  "en": "D) $J = \\mu N \\Delta t$"
+ },
+ {
+  "k": "a31d0815",
+  "s": "2-Savol: Qiya tekislikdagi jismning pastga tezlanuvchan harakatlanishi uchun qanday fizik shart bajarilishi shart?",
+  "ru": "Вопрос 2: Какое физическое условие должно выполняться, чтобы тело на наклонной плоскости двигалось вниз с ускорением?",
+  "en": "Question 2: What physical condition must hold for a body on an incline to accelerate down it?"
+ },
+ {
+  "k": "e393b182",
+  "s": "A) $\\tan\\alpha &gt; \\mu$ (ya’ni $m g \\sin\\alpha &gt; \\mu m g \\cos\\alpha$) (To‘g‘ri)",
+  "ru": "A) $\\tan\\alpha &gt; \\mu$ (то есть $m g \\sin\\alpha &gt; \\mu m g \\cos\\alpha$) (верно)",
+  "en": "A) $\\tan\\alpha &gt; \\mu$ (i.e. $m g \\sin\\alpha &gt; \\mu m g \\cos\\alpha$) (correct)"
+ },
+ {
+  "k": "93be3424",
+  "s": "B) Faqat $\\alpha = 90^\\circ$ bo‘lishi kerak",
+  "ru": "B) Должно быть только $\\alpha = 90^\\circ$",
+  "en": "B) Only $\\alpha = 90^\\circ$ must hold"
+ },
+ {
+  "k": "1b78c1fe",
+  "s": "C) Jism massasi $m &gt; 100\\text{ kg}$ bo‘lishi kerak",
+  "ru": "C) Масса тела должна быть $m &gt; 100\\text{ kg}$",
+  "en": "C) The body’s mass must be $m &gt; 100\\text{ kg}$"
+ },
+ {
+  "k": "94b59bde",
+  "s": "D) Ishqalanish koeffitsiyenti $\\mu = 1$ bo‘lishi shart",
+  "ru": "D) Коэффициент трения обязательно должен быть $\\mu = 1$",
+  "en": "D) The friction coefficient must be $\\mu = 1$"
+ },
+ {
+  "k": "db057ee6",
+  "s": "3-Savol: Nega Google Antigravity klassik mexanika dvigatellarida oddiy Eyler usulidan voz kechib, Simplektik Eyler–Kromer integratorini talab qiladi?",
+  "ru": "Вопрос 3: Почему Google Antigravity в движках классической механики отказывается от простого метода Эйлера и требует симплектический интегратор Эйлера–Кромера?",
+  "en": "Question 3: Why does Google Antigravity reject plain Euler in classical mechanics engines and require the symplectic Euler–Cromer integrator?"
+ },
+ {
+  "k": "862aafea",
+  "s": "A) Chunki oddiy Eyler kodi juda ko‘p qator bo‘ladi",
+  "ru": "A) Потому что код простого Эйлера слишком длинный",
+  "en": "A) Because plain Euler code is too long"
+ },
+ {
+  "k": "737a8bde",
+  "s": "B) Oddiy Eylerda energiya har kadrda sun’iy eksponensial ortib ketadi, Simplektik usul esa fazaviy hajm va invariantlarni $\\Delta E/E_0 &lt; 10^{-3}$ darajasida saqlaydi (To'g'ri)",
+  "ru": "B) В простом Эйлере энергия в каждом кадре искусственно растёт экспоненциально, а симплектический метод сохраняет фазовый объём и инварианты на уровне $\\Delta E/E_0 &lt; 10^{-3}$ (верно)",
+  "en": "B) With plain Euler the energy grows artificially and exponentially every frame, while the symplectic method preserves phase volume and invariants at the $\\Delta E/E_0 &lt; 10^{-3}$ level (correct)"
+ },
+ {
+  "k": "481921b7",
+  "s": "C) Simplektik usul faqat WebGL da ishlaydi",
+  "ru": "C) Симплектический метод работает только в WebGL",
+  "en": "C) The symplectic method only works in WebGL"
+ },
+ {
+  "k": "5039a8d1",
+  "s": "D) Oddiy Eylerda tezlik manfiy bo‘la olmaydi",
+  "ru": "D) В простом Эйлере скорость не может быть отрицательной",
+  "en": "D) In plain Euler the velocity cannot be negative"
+ },
+ {
+  "k": "ca57705a",
+  "s": "✅ Natijani tekshirish",
+  "ru": "✅ Проверить результат",
+  "en": "✅ Check result"
+ },
+ {
+  "k": "bfea1954",
+  "s": "Black, P., va Wiliam, D. (2009).",
+  "ru": "Black, P., & Wiliam, D. (2009).",
+  "en": "Black, P., & Wiliam, D. (2009)."
+ },
+ {
+  "k": "2211e14e",
+  "s": "Developing the Theory of Formative Assessment",
+  "ru": "Developing the Theory of Formative Assessment",
+  "en": "Developing the Theory of Formative Assessment"
+ },
+ {
+  "k": "bb742829",
+  "s": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31.",
+  "ru": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31.",
+  "en": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31."
+ },
+ {
+  "k": "8d956244",
+  "s": "https://doi.org/10.1007/s11092-008-9068-5",
+  "ru": "https://doi.org/10.1007/s11092-008-9068-5",
+  "en": "https://doi.org/10.1007/s11092-008-9068-5"
+ },
+ {
+  "k": "48e27f17",
+  "s": "Shakllantiruvchi baholash va uzluksiz qayta aloqa (Formative Feedback) o‘quvchining o‘z xatolarini real vaqt rejimida tushunib, o‘quv faoliyatini to‘g‘rilashiga xizmat qiladi.",
+  "ru": "Формирующее оценивание и непрерывная обратная связь (Formative Feedback) помогают учащемуся понимать свои ошибки в реальном времени и корректировать учебную деятельность.",
+  "en": "Formative assessment and continuous feedback help learners understand their mistakes in real time and adjust their learning."
+ },
+ {
+  "k": "c9052432",
+  "s": "Hattie, J., va Timperley, H. (2007).",
+  "ru": "Hattie, J., & Timperley, H. (2007).",
+  "en": "Hattie, J., & Timperley, H. (2007)."
+ },
+ {
+  "k": "9893e4f5",
+  "s": "The Power of Feedback",
+  "ru": "The Power of Feedback",
+  "en": "The Power of Feedback"
+ },
+ {
+  "k": "7fe072bc",
+  "s": ". Review of Educational Research, 77(1), 81-112.",
+  "ru": ". Review of Educational Research, 77(1), 81-112.",
+  "en": ". Review of Educational Research, 77(1), 81-112."
+ },
+ {
+  "k": "eb03d134",
+  "s": "https://doi.org/10.3102/003465430298487",
+  "ru": "https://doi.org/10.3102/003465430298487",
+  "en": "https://doi.org/10.3102/003465430298487"
+ },
+ {
+  "k": "723732e0",
+  "s": "Samarali qayta aloqa talabaga 3 ta asosiy savolga javob berishi kerak: \"Men qayerga boryapman?\", \"Hozir qanday ketyapman?\" va \"Keyingi qadamim qanday bo‘lishi kerak?\".",
+  "ru": "Эффективная обратная связь должна отвечать студенту на 3 основных вопроса: «Куда я иду?», «Как у меня дела сейчас?» и «Каким должен быть мой следующий шаг?».",
+  "en": "Effective feedback should answer 3 key questions for the student: \"Where am I going?\", \"How am I doing now?\" and \"What should my next step be?\"."
+ },
+ {
+  "k": "0e92fc17",
+  "s": "📚 12-ma’ruza bo‘yicha nufuzli ilmiy va didaktik manbalar (APA 7th Edition):",
+  "ru": "📚 Авторитетные научные и дидактические источники к лекции 12 (APA 7th Edition):",
+  "en": "📚 Authoritative scholarly and didactic sources for Lecture 12 (APA 7th Edition):"
+ },
+ {
+  "k": "163ec21f",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>"
+ },
+ {
+  "k": "8c6cb2fb",
+  "s": "<strong>Millington, I. (2010).</strong> <em>Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game</em> (2nd ed.). CRC Press. <a href=\"https://doi.org/10.1201/b10297\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1201/b10297</a>",
+  "ru": "<strong>Millington, I. (2010).</strong> <em>Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game</em> (2nd ed.). CRC Press. <a href=\"https://doi.org/10.1201/b10297\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1201/b10297</a>",
+  "en": "<strong>Millington, I. (2010).</strong> <em>Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game</em> (2nd ed.). CRC Press. <a href=\"https://doi.org/10.1201/b10297\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1201/b10297</a>"
+ },
+ {
+  "k": "c3233696",
+  "s": "<strong>Fiedler, G. (2004).</strong> <em>Fix Your Timestep!</em> Gaffer on Games Physics Architecture. <a href=\"https://gafferongames.com/post/fix_your_timestep/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://gafferongames.com/post/fix_your_timestep/</a>",
+  "ru": "<strong>Fiedler, G. (2004).</strong> <em>Fix Your Timestep!</em> Gaffer on Games Physics Architecture. <a href=\"https://gafferongames.com/post/fix_your_timestep/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://gafferongames.com/post/fix_your_timestep/</a>",
+  "en": "<strong>Fiedler, G. (2004).</strong> <em>Fix Your Timestep!</em> Gaffer on Games Physics Architecture. <a href=\"https://gafferongames.com/post/fix_your_timestep/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://gafferongames.com/post/fix_your_timestep/</a>"
+ },
+ {
+  "k": "d8d75389",
+  "s": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "ru": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "en": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>"
+ },
+ {
+  "k": "a7d3f595",
+  "s": "<strong>de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "ru": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "en": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>"
+ },
+ {
+  "k": "2e1da364",
+  "s": "<strong>Garrison, D. R., Anderson, T., va Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "ru": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "en": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>"
+ },
+ {
+  "k": "70d11540",
+  "s": "<strong>Sweller, J., van Merriënboer, J. J. G., va Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "ru": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "en": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>"
+ },
+ {
+  "k": "6f7ea41f",
+  "s": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "ru": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "en": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>"
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "8b8bba00",
+  "s": "<strong>Rutten, N., van Joolingen, W. R., va van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers va Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "ru": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "en": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>"
+ },
+ {
+  "k": "4a70bb90",
+  "s": "<strong>Black, P., va Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "ru": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "en": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>"
+ },
+ {
+  "k": "d26b1d4a",
+  "s": "<strong>Hattie, J., va Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>",
+  "ru": "<strong>Hattie, J., & Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>",
+  "en": "<strong>Hattie, J., & Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>"
+ },
+ {
+  "k": "6eaa9d4f",
+  "s": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "f1c8f605",
+  "s": "<strong>Runway AI Research. (2024).</strong> <em>Gen-2 Multimodal Diffusion Video Architecture for Science Visualization</em>. <a href=\"https://runwayml.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://runwayml.com</a>",
+  "ru": "<strong>Runway AI Research. (2024).</strong> <em>Gen-2 Multimodal Diffusion Video Architecture for Science Visualization</em>. <a href=\"https://runwayml.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://runwayml.com</a>",
+  "en": "<strong>Runway AI Research. (2024).</strong> <em>Gen-2 Multimodal Diffusion Video Architecture for Science Visualization</em>. <a href=\"https://runwayml.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://runwayml.com</a>"
+ },
+ {
+  "k": "bd0a7716",
+  "s": "<strong>1EdTech Consortium. (2023).</strong> <em>Learning Tools Interoperability (LTI) Core Specification v1.3</em>. <a href=\"https://www.imsglobal.org/activity/learning-tools-interoperability\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.imsglobal.org/activity/learning-tools-interoperability</a>",
+  "ru": "<strong>1EdTech Consortium. (2023).</strong> <em>Learning Tools Interoperability (LTI) Core Specification v1.3</em>. <a href=\"https://www.imsglobal.org/activity/learning-tools-interoperability\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.imsglobal.org/activity/learning-tools-interoperability</a>",
+  "en": "<strong>1EdTech Consortium. (2023).</strong> <em>Learning Tools Interoperability (LTI) Core Specification v1.3</em>. <a href=\"https://www.imsglobal.org/activity/learning-tools-interoperability\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.imsglobal.org/activity/learning-tools-interoperability</a>"
+ },
+ {
+  "k": "024c3f13",
+  "s": "<strong>Carroll, B. W., va Ostlie, D. A. (2017).</strong> <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108380980</a>",
+  "ru": "<strong>Carroll, B. W., & Ostlie, D. A. (2017).</strong> <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108380980</a>",
+  "en": "<strong>Carroll, B. W., & Ostlie, D. A. (2017).</strong> <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108380980</a>"
+ }
+]

@@ -1,0 +1,812 @@
+[
+ {
+  "k": "19bcfb87",
+  "s": "Ushbu ma’ruzada har qanday fizik hodisani kompyuterda animatsiya va simulyatsiya qilishning fundamental ilmiy-metodologik konveyeri o‘rganiladi: <strong>Hodisani kuzatish (PhET/Vascak) $\\to$ Fizik qonunni aniqlash (Gemini) $\\to$ Matematik model (WolframAlpha) $\\to$ Algoritmlashtirish (Claude) $\\to$ Vizual kod (Canvas) $\\to$ Xatolarni tuzatish (Code Interpreter)</strong>.",
+  "ru": "В этой лекции изучается фундаментальный научно-методологический конвейер компьютерной анимации и симуляции любого физического явления: <strong>наблюдение явления (PhET/Vascak) $\\to$ определение физического закона (Gemini) $\\to$ математическая модель (WolframAlpha) $\\to$ алгоритмизация (Claude) $\\to$ визуальный код (Canvas) $\\to$ отладка (Code Interpreter)</strong>.",
+  "en": "This lecture covers the fundamental scientific and methodological pipeline for animating and simulating any physical phenomenon on a computer: <strong>observing the phenomenon (PhET/Vascak) $\\to$ identifying the physical law (Gemini) $\\to$ mathematical model (WolframAlpha) $\\to$ algorithm design (Claude) $\\to$ visual code (Canvas) $\\to$ debugging (Code Interpreter)</strong>."
+ },
+ {
+  "k": "cbed1e90",
+  "s": "📋 7 Bosqichli ma’ruza rejasi va AI vositalari:",
+  "ru": "📋 7-этапный план лекции и ИИ-инструменты:",
+  "en": "📋 7-stage lecture plan and AI tools:"
+ },
+ {
+  "k": "47486379",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI orqali dastlabki bilim darajasini aniqlash.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">определение исходного уровня знаний с помощью MagicSchool AI.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">identifying the initial level of knowledge with MagicSchool AI.</span>"
+ },
+ {
+  "k": "9e7f8ad0",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Hodisani kuzatish:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">PhET Interactive Simulations va Vascak.cz tahlili.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Наблюдение явления:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">анализ PhET Interactive Simulations и Vascak.cz.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Observing the phenomenon:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">analysis of PhET Interactive Simulations and Vascak.cz.</span>"
+ },
+ {
+  "k": "2ed59bfd",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Fizik qonunni aniqlash:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Gemini / ChatGPT orqali qonuniyatlarni verifikatsiya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Определение физического закона:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">верификация закономерностей с помощью Gemini / ChatGPT.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Identifying the physical law:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">verifying the laws with Gemini / ChatGPT.</span>"
+ },
+ {
+  "k": "96544f67",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Matematik model:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha / ChatGPT orqali differensial tenglamalar apparati.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Математическая модель:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">аппарат дифференциальных уравнений в WolframAlpha / ChatGPT.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Mathematical model:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">the differential-equation apparatus with WolframAlpha / ChatGPT.</span>"
+ },
+ {
+  "k": "460e4fbe",
+  "s": "<strong style=\"color:#1C4E9E;\">5. Algoritm va mantiq:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Eyler–Kromer va RK4 sonli diskretlash.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">5. Алгоритм и логика:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: численная дискретизация методами Эйлера–Кромера и RK4.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">5. Algorithm and logic:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: numerical discretisation with Euler–Cromer and RK4.</span>"
+ },
+ {
+  "k": "729547d0",
+  "s": "<strong style=\"color:#047857;\">6. Vizual kod va Canvas:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude Artifacts orqali HTML5 Canvas render dvigateli.</span>",
+  "ru": "<strong style=\"color:#047857;\">6. Визуальный код и Canvas:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">движок рендеринга HTML5 Canvas через Claude Artifacts.</span>",
+  "en": "<strong style=\"color:#047857;\">6. Visual code and Canvas:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">an HTML5 Canvas rendering engine via Claude Artifacts.</span>"
+ },
+ {
+  "k": "4c32b69c",
+  "s": "<strong style=\"color: var(--accent-rose);\">7. Debugging:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter: Chegaraviy shartlar, birliklar va faza tahlili.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">7. Отладка:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter: граничные условия, единицы измерения и фазовый анализ.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">7. Debugging:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter: boundary conditions, units and phase analysis.</span>"
+ },
+ {
+  "k": "27ab4335",
+  "s": "<strong style=\"color:#A16207;\">🔄 Teskari muhandislik:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Tayyor simulyatsiyani dekonstruksiya qilib yangi model yaratish.</span>",
+  "ru": "<strong style=\"color:#A16207;\">🔄 Обратная разработка:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">создание новой модели путём деконструкции готовой симуляции.</span>",
+  "en": "<strong style=\"color:#A16207;\">🔄 Reverse engineering:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">building a new model by deconstructing a ready-made simulation.</span>"
+ },
+ {
+  "k": "ee2d0d68",
+  "s": "Ilmiy konveyer",
+  "ru": "Научный конвейер",
+  "en": "Scientific pipeline"
+ },
+ {
+  "k": "cdfbda37",
+  "s": "Fizik modellashtirishning umumiy metodologik zanjiri",
+  "ru": "Общая методологическая цепочка физического моделирования",
+  "en": "The general methodological chain of physical modelling"
+ },
+ {
+  "k": "600ce73b",
+  "s": "Har qanday fizik simulyatsiyani yaratishda quyidagi fundamental zanjir bo‘yicha qat’iy harakat qilinadi:",
+  "ru": "При создании любой физической симуляции строго соблюдается следующая фундаментальная цепочка:",
+  "en": "Every physics simulation is built by strictly following this fundamental chain:"
+ },
+ {
+  "k": "553904d1",
+  "s": "1-qadam",
+  "ru": "Шаг 1",
+  "en": "Step 1"
+ },
+ {
+  "k": "b0c572c7",
+  "s": "Hodisani kuzatish",
+  "ru": "Наблюдение явления",
+  "en": "Observing the phenomenon"
+ },
+ {
+  "k": "b1c713a8",
+  "s": "PhET / Vascak.cz dagi hodisaning vizual harakatini kuzatish, o‘zgaruvchilarni va erkinlik darajalarini ajratish.",
+  "ru": "Наблюдение визуального поведения явления в PhET / Vascak.cz, выделение переменных и степеней свободы.",
+  "en": "Observing how the phenomenon behaves visually in PhET / Vascak.cz and identifying the variables and degrees of freedom."
+ },
+ {
+  "k": "fcc2c580",
+  "s": "2-qadam",
+  "ru": "Шаг 2",
+  "en": "Step 2"
+ },
+ {
+  "k": "241cad5f",
+  "s": "Fizik qonunni aniqlash",
+  "ru": "Определение физического закона",
+  "en": "Identifying the physical law"
+ },
+ {
+  "k": "461aef5e",
+  "s": "Nyuton mexanikasi, Lorents kuchi, energiya va impuls saqlanish qonuniyatlarini aniqlash (Gemini / ChatGPT).",
+  "ru": "Определение закономерностей механики Ньютона, силы Лоренца, законов сохранения энергии и импульса (Gemini / ChatGPT).",
+  "en": "Identifying the relevant laws: Newtonian mechanics, the Lorentz force, conservation of energy and momentum (Gemini / ChatGPT)."
+ },
+ {
+  "k": "41545857",
+  "s": "3-qadam",
+  "ru": "Шаг 3",
+  "en": "Step 3"
+ },
+ {
+  "k": "bf8e317d",
+  "s": "Matematik model qurish",
+  "ru": "Построение математической модели",
+  "en": "Building the mathematical model"
+ },
+ {
+  "k": "81ed51aa",
+  "s": "Differensial tenglamalar sistemasini tuzish ($dx/dt, dv/dt$) va chegaraviy shartlarni belgilash (WolframAlpha).",
+  "ru": "Составление системы дифференциальных уравнений ($dx/dt, dv/dt$) и задание граничных условий (WolframAlpha).",
+  "en": "Setting up the system of differential equations ($dx/dt, dv/dt$) and specifying boundary conditions (WolframAlpha)."
+ },
+ {
+  "k": "276a0fee",
+  "s": "4-qadam",
+  "ru": "Шаг 4",
+  "en": "Step 4"
+ },
+ {
+  "k": "1b478170",
+  "s": "Algoritm va vizual kod",
+  "ru": "Алгоритм и визуальный код",
+  "en": "Algorithm and visual code"
+ },
+ {
+  "k": "90c1889d",
+  "s": "Simplektik Eyler–Kromer yoki RK4 orqali diskretlash va Canvasda 60 FPS tezlikda render qilish (Claude).",
+  "ru": "Дискретизация симплектическим методом Эйлера–Кромера или RK4 и рендеринг на Canvas со скоростью 60 FPS (Claude).",
+  "en": "Discretisation with the symplectic Euler–Cromer method or RK4 and rendering on Canvas at 60 FPS (Claude)."
+ },
+ {
+  "k": "74d75f42",
+  "s": "🧠 MagicSchool AI: modellashtirish ko‘nikmalari diagnostikasi",
+  "ru": "🧠 MagicSchool AI: диагностика навыков моделирования",
+  "en": "🧠 MagicSchool AI: diagnosing modelling skills"
+ },
+ {
+  "k": "94207e44",
+  "s": "Adaptiv reja",
+  "ru": "Адаптивный план",
+  "en": "Adaptive plan"
+ },
+ {
+  "k": "edddc1d4",
+  "s": "Fizik jarayonlarni kompyuterda modellashtirishdan oldin har bir talabaning differensial hisob, diskretlash va fizik koordinatalar bo‘yicha boshlang‘ich bilim darajasi aniqlanadi:",
+  "ru": "Перед компьютерным моделированием физических процессов определяется исходный уровень знаний каждого студента по дифференциальному исчислению, дискретизации и физическим координатам:",
+  "en": "Before modelling physical processes on a computer, each student’s initial level in differential calculus, discretisation and physical coordinates is determined:"
+ },
+ {
+  "k": "66e3e35a",
+  "s": "A klaster (Remedial)",
+  "ru": "Кластер A (Remedial)",
+  "en": "Cluster A (Remedial)"
+ },
+ {
+  "k": "cc9aff7e",
+  "s": "1D harakat va skalyar tenglamalar",
+  "ru": "1D-движение и скалярные уравнения",
+  "en": "1D motion and scalar equations"
+ },
+ {
+  "k": "d7069ee6",
+  "s": "To‘g‘ri chiziqli tekis va tekis o‘zgaruvchan harakat, tayyor matematik formulalar va sodda Eyler qadami.",
+  "ru": "Прямолинейное равномерное и равнопеременное движение, готовые математические формулы и простой шаг Эйлера.",
+  "en": "Uniform and uniformly accelerated straight-line motion, ready-made formulas and the simple Euler step."
+ },
+ {
+  "k": "bc203a89",
+  "s": "B klaster (standart)",
+  "ru": "Кластер B (стандарт)",
+  "en": "Cluster B (standard)"
+ },
+ {
+  "k": "b9ba5267",
+  "s": "2D vektor harakat va Eyler–Kromer",
+  "ru": "2D векторное движение и метод Эйлера–Кромера",
+  "en": "2D vector motion and Euler–Cromer"
+ },
+ {
+  "k": "af23d7ad",
+  "s": "Gorizontal otilgan jism, chiziqli havo qarshiligi ($F = -kv$), simplektik Eyler–Kromer integratori va elastik urilishlar.",
+  "ru": "Горизонтально брошенное тело, линейное сопротивление воздуха ($F = -kv$), симплектический интегратор Эйлера–Кромера и упругие удары.",
+  "en": "A horizontally launched body, linear air drag ($F = -kv$), the symplectic Euler–Cromer integrator and elastic impacts."
+ },
+ {
+  "k": "64d17625",
+  "s": "C klaster (Advanced)",
+  "ru": "Кластер C (Advanced)",
+  "en": "Cluster C (Advanced)"
+ },
+ {
+  "k": "8389f4c8",
+  "s": "No-chiziqli tizimlar va RK4",
+  "ru": "Нелинейные системы и RK4",
+  "en": "Non-linear systems and RK4"
+ },
+ {
+  "k": "fa992251",
+  "s": "Kvadratik aerodinamik drag ($F = -kv^2$), o‘zgaruvchan massa (Meshcherskiy tenglamasi), 4-tartibli Runge–Kutta va faza fazosi tahlili.",
+  "ru": "Квадратичное аэродинамическое сопротивление ($F = -kv^2$), переменная масса (уравнение Мещерского), метод Рунге–Кутты 4-го порядка и анализ фазового пространства.",
+  "en": "Quadratic aerodynamic drag ($F = -kv^2$), variable mass (the Meshchersky equation), 4th-order Runge–Kutta and phase-space analysis."
+ },
+ {
+  "k": "7e300058",
+  "s": "🧪 Modellashtirish diagnostika testi (3 ta savol)",
+  "ru": "🧪 Диагностический тест по моделированию (3 вопроса)",
+  "en": "🧪 Modelling diagnostic test (3 questions)"
+ },
+ {
+  "k": "aa5aa2d7",
+  "s": "Interaktiv sinov",
+  "ru": "Интерактивная проверка",
+  "en": "Interactive check"
+ },
+ {
+  "k": "33146464",
+  "s": "Quyidagi savollarga javob bering. Tizim natijaga qarab sizga mos <strong>modellashtirish o‘quv trayektoriyasini (Klaster A, B yoki C)</strong> tavsiya qiladi:",
+  "ru": "Ответьте на следующие вопросы. По результату система порекомендует вам подходящую <strong>учебную траекторию моделирования (кластер A, B или C)</strong>:",
+  "en": "Answer the following questions. Based on the result, the system will recommend a suitable <strong>modelling learning pathway (Cluster A, B or C)</strong>:"
+ },
+ {
+  "k": "971801cf",
+  "s": "1. Kvadratik havo qarshiligida ($\\vec{F}_{drag} = -k v \\vec{v}$) harakatlanayotgan jism uchun $x$ va $y$ o‘qlari bo‘yicha differensial tenglamalar qanday yoziladi?",
+  "ru": "1. Как записываются дифференциальные уравнения по осям $x$ и $y$ для тела, движущегося при квадратичном сопротивлении воздуха ($\\vec{F}_{drag} = -k v \\vec{v}$)?",
+  "en": "1. How are the differential equations along the $x$ and $y$ axes written for a body moving under quadratic air drag ($\\vec{F}_{drag} = -k v \\vec{v}$)?"
+ },
+ {
+  "k": "e2e344a8",
+  "s": "A) $dv_x/dt = -k v_x^2, \\quad dv_y/dt = -g - k v_y^2$",
+  "ru": "A) $dv_x/dt = -k v_x^2, \\quad dv_y/dt = -g - k v_y^2$",
+  "en": "A) $dv_x/dt = -k v_x^2, \\quad dv_y/dt = -g - k v_y^2$"
+ },
+ {
+  "k": "abb0af9f",
+  "s": "B) $dv_x/dt = -\\frac{k}{m}\\sqrt{v_x^2+v_y^2}\\cdot v_x, \\quad dv_y/dt = -g - \\frac{k}{m}\\sqrt{v_x^2+v_y^2}\\cdot v_y$",
+  "ru": "B) $dv_x/dt = -\\frac{k}{m}\\sqrt{v_x^2+v_y^2}\\cdot v_x, \\quad dv_y/dt = -g - \\frac{k}{m}\\sqrt{v_x^2+v_y^2}\\cdot v_y$",
+  "en": "B) $dv_x/dt = -\\frac{k}{m}\\sqrt{v_x^2+v_y^2}\\cdot v_x, \\quad dv_y/dt = -g - \\frac{k}{m}\\sqrt{v_x^2+v_y^2}\\cdot v_y$"
+ },
+ {
+  "k": "37e86a51",
+  "s": "C) $dv_x/dt = 0, \\quad dv_y/dt = -g$",
+  "ru": "C) $dv_x/dt = 0, \\quad dv_y/dt = -g$",
+  "en": "C) $dv_x/dt = 0, \\quad dv_y/dt = -g$"
+ },
+ {
+  "k": "e879a2b0",
+  "s": "2. Nega brauzer Canvas ekranida $y$ koordinatani $y_{ekran} = H - (y_{fizik} \\cdot \\text{scale})$ ko‘rinishida o‘zgartirish shart?",
+  "ru": "2. Почему на экране Canvas в браузере координату $y$ необходимо преобразовывать в виде $y_{ekran} = H - (y_{fizik} \\cdot \\text{scale})$?",
+  "en": "2. Why must the $y$ coordinate be transformed as $y_{ekran} = H - (y_{fizik} \\cdot \\text{scale})$ on a browser Canvas?"
+ },
+ {
+  "k": "4d94051a",
+  "s": "A) Canvasda $Y$ o‘qi pastga yo‘nalgan, Dekart koordinatalarida esa yuqoriga yo‘nalgan",
+  "ru": "A) В Canvas ось $Y$ направлена вниз, а в декартовых координатах — вверх",
+  "en": "A) On a Canvas the $Y$ axis points down, while in Cartesian coordinates it points up"
+ },
+ {
+  "k": "c6e9fed0",
+  "s": "B) Gravitatsiya kuchini yo‘qotish uchun",
+  "ru": "B) Чтобы убрать силу тяжести",
+  "en": "B) To remove gravity"
+ },
+ {
+  "k": "27e8d42a",
+  "s": "C) JavaScript faqat manfiy sonlarni qabul qilgani uchun",
+  "ru": "C) Потому что JavaScript принимает только отрицательные числа",
+  "en": "C) Because JavaScript accepts only negative numbers"
+ },
+ {
+  "k": "b939989b",
+  "s": "3. Jism devordan mutlaq noelastik urilganda ($e = 0$), to‘qnashuvdan keyin uning tezligi qanday bo‘ladi?",
+  "ru": "3. Какой будет скорость тела после абсолютно неупругого удара о стенку ($e = 0$)?",
+  "en": "3. What is a body’s velocity after a perfectly inelastic impact with a wall ($e = 0$)?"
+ },
+ {
+  "k": "2a482fdb",
+  "s": "A) $v' = -v$ (to‘liq qaytadi)",
+  "ru": "A) $v' = -v$ (полностью отражается)",
+  "en": "A) $v' = -v$ (fully bounces back)"
+ },
+ {
+  "k": "3d986076",
+  "s": "B) $v' = 0$ (jism devorga yopishib to‘xtaydi, kinetik energiya issiqlikka aylanadi)",
+  "ru": "B) $v' = 0$ (тело прилипает к стенке и останавливается, кинетическая энергия переходит в теплоту)",
+  "en": "B) $v' = 0$ (the body sticks to the wall and stops; kinetic energy turns into heat)"
+ },
+ {
+  "k": "a11ef38d",
+  "s": "📚 2-ma’ruza bo‘yicha ilmiy-uslubiy adabiyotlar ro‘yxati:",
+  "ru": "📚 Список научно-методической литературы к лекции 2:",
+  "en": "📚 Scholarly and methodological references for Lecture 2:"
+ },
+ {
+  "k": "68301db2",
+  "s": "<strong>Zeigler, B. P., Praehofer, H., va Kim, T. G. (2000).</strong> <em>Theory of Modeling and Simulation</em> (2nd ed.). Academic Press.",
+  "ru": "<strong>Zeigler, B. P., Praehofer, H., & Kim, T. G. (2000).</strong> <em>Theory of Modeling and Simulation</em> (2nd ed.). Academic Press.",
+  "en": "<strong>Zeigler, B. P., Praehofer, H., & Kim, T. G. (2000).</strong> <em>Theory of Modeling and Simulation</em> (2nd ed.). Academic Press."
+ },
+ {
+  "k": "81b4b591",
+  "s": "<strong>Giordano, N. J., va Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson.",
+  "ru": "<strong>Giordano, N. J., & Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson.",
+  "en": "<strong>Giordano, N. J., & Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson."
+ },
+ {
+  "k": "4542e4d9",
+  "s": "<strong>Landau, R. H., Páez, M. J., va Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH.",
+  "ru": "<strong>Landau, R. H., Páez, M. J., & Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH.",
+  "en": "<strong>Landau, R. H., Páez, M. J., & Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH."
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "56477650",
+  "s": "<strong>Sargent, R. G. (2013).</strong> Verification and Validation of Simulation Models. <em>Journal of Simulation</em>, 7(1).",
+  "ru": "<strong>Sargent, R. G. (2013).</strong> Verification and Validation of Simulation Models. <em>Journal of Simulation</em>, 7(1).",
+  "en": "<strong>Sargent, R. G. (2013).</strong> Verification and Validation of Simulation Models. <em>Journal of Simulation</em>, 7(1)."
+ },
+ {
+  "k": "d77222b3",
+  "s": "<strong>Gould, H., Tobochnik, J., va Christian, W. (2016).</strong> <em>An Introduction to Computer Simulation Methods</em> (3rd ed.). Pearson.",
+  "ru": "<strong>Gould, H., Tobochnik, J., & Christian, W. (2016).</strong> <em>An Introduction to Computer Simulation Methods</em> (3rd ed.). Pearson.",
+  "en": "<strong>Gould, H., Tobochnik, J., & Christian, W. (2016).</strong> <em>An Introduction to Computer Simulation Methods</em> (3rd ed.). Pearson."
+ },
+ {
+  "k": "71a2267a",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman."
+ },
+ {
+  "k": "99381d7c",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press."
+ },
+ {
+  "k": "45b0f3fa",
+  "s": "🔬 Teskari muhandislik (Reverse Engineering): PhET va Vascak.cz",
+  "ru": "🔬 Обратная разработка (Reverse Engineering): PhET и Vascak.cz",
+  "en": "🔬 Reverse engineering: PhET and Vascak.cz"
+ },
+ {
+  "k": "a5cb0c05",
+  "s": "Dekonstruksiya metodikasi",
+  "ru": "Методика деконструкции",
+  "en": "Deconstruction method"
+ },
+ {
+  "k": "5c8a44fb",
+  "s": "<strong>Teskari muhandislik</strong> — mavjud sifatli simulyatsiyani (masalan: <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:var(--accent-cyan);\">PhET Interactive Simulations</a> yoki Vascak.cz (saytda reklama bor, shuning uchun havola berilmagan)) tahlil qilib, uning ortidagi fizik tenglamalar, parametrlar va algoritmlarni mustaqil tiklash metodikasidir:",
+  "ru": "<strong>Обратная разработка</strong> — методика анализа существующей качественной симуляции (например, <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:var(--accent-cyan);\">PhET Interactive Simulations</a> или Vascak.cz (на сайте есть реклама, поэтому ссылка не приводится)) с самостоятельным восстановлением стоящих за ней физических уравнений, параметров и алгоритмов:",
+  "en": "<strong>Reverse engineering</strong> is the method of analysing an existing high-quality simulation (for example <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:var(--accent-cyan);\">PhET Interactive Simulations</a> or Vascak.cz (the site carries ads, so no link is given)) and independently reconstructing the physical equations, parameters and algorithms behind it:"
+ },
+ {
+  "k": "a79a32fc",
+  "s": "🌐 1. PhET Interactive Simulations (Kolorado universiteti)",
+  "ru": "🌐 1. PhET Interactive Simulations (Университет Колорадо)",
+  "en": "🌐 1. PhET Interactive Simulations (University of Colorado)"
+ },
+ {
+  "k": "77edf76d",
+  "s": "Dunyo miqyosidagi ochiq manbali fizik simulyatsiyalar portali. HTML5 Canvas/SVG texnologiyalariga asoslangan bo‘lib, mikrodunyo va makrodunyo hodisalarini interaktiv o‘rganish imkonini beradi.",
+  "ru": "Мировой портал физических симуляций с открытым исходным кодом. Основан на технологиях HTML5 Canvas/SVG и позволяет интерактивно изучать явления микро- и макромира.",
+  "en": "A world-class portal of open-source physics simulations. Built on HTML5 Canvas/SVG, it lets learners explore micro- and macro-world phenomena interactively."
+ },
+ {
+  "k": "5a0efe6c",
+  "s": "🔹 <strong>Afzalligi:</strong> Yuqori ilmiy aniqlik, real vaqtli vektor ko‘rsatkichlari.",
+  "ru": "🔹 <strong>Преимущество:</strong> высокая научная точность, векторные индикаторы в реальном времени.",
+  "en": "🔹 <strong>Advantage:</strong> high scientific accuracy and real-time vector indicators."
+ },
+ {
+  "k": "30113604",
+  "s": "🔹 <strong>Tahlil obyekti:</strong> <em>Projectile Motion, Wave Interference, Gravity va Orbits</em>.",
+  "ru": "🔹 <strong>Объект анализа:</strong> <em>Projectile Motion, Wave Interference, Gravity и Orbits</em>.",
+  "en": "🔹 <strong>Objects of analysis:</strong> <em>Projectile Motion, Wave Interference, Gravity and Orbits</em>."
+ },
+ {
+  "k": "d997cd19",
+  "s": "🌐 2. Vascak.cz fizika animatsiyalari (Vladimir Vaščák)",
+  "ru": "🌐 2. Физические анимации Vascak.cz (Владимир Вашчак)",
+  "en": "🌐 2. Vascak.cz physics animations (Vladimír Vaščák)"
+ },
+ {
+  "k": "67efc8c7",
+  "s": "Yuzlab ixcham va toza fizik animatsiyalar to‘plami. Elektrodinamika, optika va atom fizikasidagi abstrakt tushunchalarni sodda mexanizmlar orqali namoyish etadi.",
+  "ru": "Собрание сотен компактных и чистых физических анимаций. Демонстрирует абстрактные понятия электродинамики, оптики и атомной физики через простые механизмы.",
+  "en": "A collection of hundreds of compact, clean physics animations. It demonstrates abstract concepts of electrodynamics, optics and atomic physics through simple mechanisms."
+ },
+ {
+  "k": "341c322e",
+  "s": "🔹 <strong>Afzalligi:</strong> Ixcham HTML5 Canvas kodi, sodda parametrli modellar.",
+  "ru": "🔹 <strong>Преимущество:</strong> компактный код HTML5 Canvas, простые параметрические модели.",
+  "en": "🔹 <strong>Advantage:</strong> compact HTML5 Canvas code and simple parametric models."
+ },
+ {
+  "k": "a9f80e59",
+  "s": "🔹 <strong>Tahlil obyekti:</strong> <em>Lorentz Force, Cyclotron, Doppler Effect, Young Slit</em>.",
+  "ru": "🔹 <strong>Объект анализа:</strong> <em>Lorentz Force, Cyclotron, Doppler Effect, Young Slit</em>.",
+  "en": "🔹 <strong>Objects of analysis:</strong> <em>Lorentz Force, Cyclotron, Doppler Effect, Young Slit</em>."
+ },
+ {
+  "k": "480764a8",
+  "s": "📊 4 Qatlamli dekonstruksiya matritsasi:",
+  "ru": "📊 4-уровневая матрица деконструкции:",
+  "en": "📊 4-layer deconstruction matrix:"
+ },
+ {
+  "k": "e3b7e129",
+  "s": "1. UI va kirish o‘zgaruvchilari",
+  "ru": "1. UI и входные переменные",
+  "en": "1. UI and input variables"
+ },
+ {
+  "k": "e5789e81",
+  "s": "Slayderlar, tugmalar, kirish massasi $m$, burchagi $\\alpha$, tezligi $v_0$.",
+  "ru": "Ползунки, кнопки, входные масса $m$, угол $\\alpha$, скорость $v_0$.",
+  "en": "Sliders, buttons, input mass $m$, angle $\\alpha$, velocity $v_0$."
+ },
+ {
+  "k": "af4c1a48",
+  "s": "2. Holat vektorlari",
+  "ru": "2. Векторы состояния",
+  "en": "2. State vectors"
+ },
+ {
+  "k": "1679ee02",
+  "s": "Har kadrda o‘zgaruvchi: koordinata $\\vec{r}(t)$, tezlik $\\vec{v}(t)$, tezlanish $\\vec{a}(t)$.",
+  "ru": "Меняются в каждом кадре: координата $\\vec{r}(t)$, скорость $\\vec{v}(t)$, ускорение $\\vec{a}(t)$.",
+  "en": "Change every frame: position $\\vec{r}(t)$, velocity $\\vec{v}(t)$, acceleration $\\vec{a}(t)$."
+ },
+ {
+  "k": "b4ed4e47",
+  "s": "3. Differensial tenglama",
+  "ru": "3. Дифференциальное уравнение",
+  "en": "3. Differential equation"
+ },
+ {
+  "k": "7acad86f",
+  "s": "Nyuton qonunlari $m\\vec{a} = \\sum \\vec{F}_i$, havo qarshiligi, prujina kuchi $-kx$.",
+  "ru": "Законы Ньютона $m\\vec{a} = \\sum \\vec{F}_i$, сопротивление воздуха, сила упругости пружины $-kx$.",
+  "en": "Newton’s laws $m\\vec{a} = \\sum \\vec{F}_i$, air drag, the spring force $-kx$."
+ },
+ {
+  "k": "de3874d1",
+  "s": "4. Chiqish telemetriyasi",
+  "ru": "4. Выходная телеметрия",
+  "en": "4. Output telemetry"
+ },
+ {
+  "k": "cb01dcd8",
+  "s": "Uchish masofasi $R$, to‘liq energiya $E_k+E_p$, faza grafigi $\\theta(\\omega)$.",
+  "ru": "Дальность полёта $R$, полная энергия $E_k+E_p$, фазовый график $\\theta(\\omega)$.",
+  "en": "Range $R$, total energy $E_k+E_p$, phase plot $\\theta(\\omega)$."
+ },
+ {
+  "k": "efb53ed6",
+  "s": "📐 Matematik modellar va differensial tenglamalar apparati",
+  "ru": "📐 Математические модели и аппарат дифференциальных уравнений",
+  "en": "📐 Mathematical models and the differential-equation apparatus"
+ },
+ {
+  "k": "5bcd4839",
+  "s": "WolframAlpha va ChatGPT",
+  "ru": "WolframAlpha и ChatGPT",
+  "en": "WolframAlpha and ChatGPT"
+ },
+ {
+  "k": "c321a899",
+  "s": "Fizik simulyatsiyaning asosi — analitik formulalar emas, balki differensial tenglamalar sistemasidir. Chunki analitik formulalar (masalan, $x = v_0 t$) faqat ideal holatlarda ishlaydi; qarshilik kuchi, no-chiziqlik yoki to‘qnashuvlar bo‘lganda esa faqat sonli integrallash mumkin:",
+  "ru": "Основа физической симуляции — не аналитические формулы, а система дифференциальных уравнений. Аналитические формулы (например, $x = v_0 t$) работают только в идеальных случаях; при наличии силы сопротивления, нелинейности или столкновений возможно лишь численное интегрирование:",
+  "en": "The foundation of a physics simulation is not analytical formulas but a system of differential equations. Analytical formulas (e.g. $x = v_0 t$) only hold in ideal cases; with drag, non-linearity or collisions, only numerical integration is possible:"
+ },
+ {
+  "k": "b6d47c62",
+  "s": "1. Kvadratik aerodinamik havo qarshiligi",
+  "ru": "1. Квадратичное аэродинамическое сопротивление воздуха",
+  "en": "1. Quadratic aerodynamic air drag"
+ },
+ {
+  "k": "f08215d2",
+  "s": "Nyutonning ikkinchi qonuni vektor ko‘rinishida:",
+  "ru": "Второй закон Ньютона в векторной форме:",
+  "en": "Newton’s second law in vector form:"
+ },
+ {
+  "k": "eecffc87",
+  "s": "$$m\\frac{d\\vec{v}}{dt} = m\\vec{g} - \\frac{1}{2} C_d \\rho A v \\vec{v}$$",
+  "ru": "$$m\\frac{d\\vec{v}}{dt} = m\\vec{g} - \\frac{1}{2} C_d \\rho A v \\vec{v}$$",
+  "en": "$$m\\frac{d\\vec{v}}{dt} = m\\vec{g} - \\frac{1}{2} C_d \\rho A v \\vec{v}$$"
+ },
+ {
+  "k": "000c5ad4",
+  "s": "Koordinatalar bo‘yicha bog‘langan sistema ($v = \\sqrt{v_x^2 + v_y^2}$):",
+  "ru": "Связанная система по координатам ($v = \\sqrt{v_x^2 + v_y^2}$):",
+  "en": "The coupled system by coordinates ($v = \\sqrt{v_x^2 + v_y^2}$):"
+ },
+ {
+  "k": "21e61d31",
+  "s": "$$\\begin{cases} \\frac{dx}{dt} = v_x, va \\frac{dv_x}{dt} = -\\frac{k}{m} \\sqrt{v_x^2+v_y^2} \\cdot v_x \\\\ \\frac{dy}{dt} = v_y, va \\frac{dv_y}{dt} = -g - \\frac{k}{m} \\sqrt{v_x^2+v_y^2} \\cdot v_y \\end{cases}$$",
+  "ru": "$$\\begin{cases} \\frac{dx}{dt} = v_x, va \\frac{dv_x}{dt} = -\\frac{k}{m} \\sqrt{v_x^2+v_y^2} \\cdot v_x \\\\ \\frac{dy}{dt} = v_y, va \\frac{dv_y}{dt} = -g - \\frac{k}{m} \\sqrt{v_x^2+v_y^2} \\cdot v_y \\end{cases}$$",
+  "en": "$$\\begin{cases} \\frac{dx}{dt} = v_x, va \\frac{dv_x}{dt} = -\\frac{k}{m} \\sqrt{v_x^2+v_y^2} \\cdot v_x \\\\ \\frac{dy}{dt} = v_y, va \\frac{dv_y}{dt} = -g - \\frac{k}{m} \\sqrt{v_x^2+v_y^2} \\cdot v_y \\end{cases}$$"
+ },
+ {
+  "k": "4cd8cfd5",
+  "s": "2. So‘nuvchi matematik mayatnik (no-chiziqli)",
+  "ru": "2. Затухающий математический маятник (нелинейный)",
+  "en": "2. The damped simple pendulum (non-linear)"
+ },
+ {
+  "k": "5973822e",
+  "s": "Kichik burchaklar ($\\sin\\theta \\approx \\theta$) cheklovsiz to‘liq tenglama:",
+  "ru": "Полное уравнение без ограничения малых углов ($\\sin\\theta \\approx \\theta$):",
+  "en": "The full equation without the small-angle restriction ($\\sin\\theta \\approx \\theta$):"
+ },
+ {
+  "k": "71b14526",
+  "s": "$$\\frac{d^2\\theta}{dt^2} + \\gamma \\frac{d\\theta}{dt} + \\frac{g}{L}\\sin\\theta = 0$$",
+  "ru": "$$\\frac{d^2\\theta}{dt^2} + \\gamma \\frac{d\\theta}{dt} + \\frac{g}{L}\\sin\\theta = 0$$",
+  "en": "$$\\frac{d^2\\theta}{dt^2} + \\gamma \\frac{d\\theta}{dt} + \\frac{g}{L}\\sin\\theta = 0$$"
+ },
+ {
+  "k": "0bd4612c",
+  "s": "Holat fazosi ko‘rinishi ($\\theta$ va $\\omega = d\\theta/dt$):",
+  "ru": "Запись в пространстве состояний ($\\theta$ и $\\omega = d\\theta/dt$):",
+  "en": "State-space form ($\\theta$ and $\\omega = d\\theta/dt$):"
+ },
+ {
+  "k": "f6231b76",
+  "s": "$$\\begin{cases} \\frac{d\\theta}{dt} = \\omega \\\\ \\frac{d\\omega}{dt} = -\\frac{g}{L}\\sin\\theta - \\gamma\\omega \\end{cases}$$",
+  "ru": "$$\\begin{cases} \\frac{d\\theta}{dt} = \\omega \\\\ \\frac{d\\omega}{dt} = -\\frac{g}{L}\\sin\\theta - \\gamma\\omega \\end{cases}$$",
+  "en": "$$\\begin{cases} \\frac{d\\theta}{dt} = \\omega \\\\ \\frac{d\\omega}{dt} = -\\frac{g}{L}\\sin\\theta - \\gamma\\omega \\end{cases}$$"
+ },
+ {
+  "k": "309f0cc5",
+  "s": "⚡ Sonli integrallash algoritmlari solishtiruvi:",
+  "ru": "⚡ Сравнение алгоритмов численного интегрирования:",
+  "en": "⚡ Comparison of numerical integration algorithms:"
+ },
+ {
+  "k": "f55443eb",
+  "s": "<strong style=\"color:#E11D48;\">1. Forward Euler (klassik):</strong><br> $x_{n+1} = x_n + v_n \\Delta t$<br> $v_{n+1} = v_n + a_n \\Delta t$<br> <span style=\"color:#E11D48;\">⚠️ Beqaror ($E \\propto (1+\\omega^2\\Delta t^2)^n$)</span>",
+  "ru": "<strong style=\"color:#E11D48;\">1. Forward Euler (классический):</strong><br> $x_{n+1} = x_n + v_n \\Delta t$<br> $v_{n+1} = v_n + a_n \\Delta t$<br> <span style=\"color:#E11D48;\">⚠️ Неустойчив ($E \\propto (1+\\omega^2\\Delta t^2)^n$)</span>",
+  "en": "<strong style=\"color:#E11D48;\">1. Forward Euler (classical):</strong><br> $x_{n+1} = x_n + v_n \\Delta t$<br> $v_{n+1} = v_n + a_n \\Delta t$<br> <span style=\"color:#E11D48;\">⚠️ Unstable ($E \\propto (1+\\omega^2\\Delta t^2)^n$)</span>"
+ },
+ {
+  "k": "286031f2",
+  "s": "<strong style=\"color:#047857;\">2. Euler-Cromer (simplektik):</strong><br> $v_{n+1} = v_n + a(x_n)\\Delta t$<br> $x_{n+1} = x_n + v_{n+1}\\Delta t$<br> <span style=\"color:#047857;\">✅ Simplektik (Energiya saqlanadi)</span>",
+  "ru": "<strong style=\"color:#047857;\">2. Euler–Cromer (симплектический):</strong><br> $v_{n+1} = v_n + a(x_n)\\Delta t$<br> $x_{n+1} = x_n + v_{n+1}\\Delta t$<br> <span style=\"color:#047857;\">✅ Симплектический (энергия сохраняется)</span>",
+  "en": "<strong style=\"color:#047857;\">2. Euler–Cromer (symplectic):</strong><br> $v_{n+1} = v_n + a(x_n)\\Delta t$<br> $x_{n+1} = x_n + v_{n+1}\\Delta t$<br> <span style=\"color:#047857;\">✅ Symplectic (energy is conserved)</span>"
+ },
+ {
+  "k": "1ee397f1",
+  "s": "<strong style=\"color:#1C4E9E;\">3. Runge–Kutta 4 (RK4):</strong><br> $y_{n+1} = y_n + \\frac{\\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$<br> Xatolik: $O(\\Delta t^5)$<br> <span style=\"color:#1C4E9E;\">✅ Maksimal aniqlik</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">3. Рунге–Кутта 4 (RK4):</strong><br> $y_{n+1} = y_n + \\frac{\\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$<br> Погрешность: $O(\\Delta t^5)$<br> <span style=\"color:#1C4E9E;\">✅ Максимальная точность</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">3. Runge–Kutta 4 (RK4):</strong><br> $y_{n+1} = y_n + \\frac{\\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$<br> Error: $O(\\Delta t^5)$<br> <span style=\"color:#1C4E9E;\">✅ Maximum accuracy</span>"
+ },
+ {
+  "k": "3604630a",
+  "s": "Uchish masofasi R:",
+  "ru": "Дальность полёта R:",
+  "en": "Range R:"
+ },
+ {
+  "k": "5e168c1f",
+  "s": "Maksimal balandlik Hₘₐₓ:",
+  "ru": "Максимальная высота Hₘₐₓ:",
+  "en": "Maximum height Hₘₐₓ:"
+ },
+ {
+  "k": "114cc806",
+  "s": "Chekli tezlik vₜ:",
+  "ru": "Предельная скорость vₜ:",
+  "en": "Terminal velocity vₜ:"
+ },
+ {
+  "k": "284abb9a",
+  "s": "Otish parametrlari (RK4)",
+  "ru": "Параметры броска (RK4)",
+  "en": "Launch parameters (RK4)"
+ },
+ {
+  "k": "9e038f9e",
+  "s": "Boshlang‘ich tezlik v₀:",
+  "ru": "Начальная скорость v₀:",
+  "en": "Initial velocity v₀:"
+ },
+ {
+  "k": "6979dfc6",
+  "s": "Otish burchagi α:",
+  "ru": "Угол броска α:",
+  "en": "Launch angle α:"
+ },
+ {
+  "k": "9aadd4e1",
+  "s": "Qarshilik koeffitsiyenti k:",
+  "ru": "Коэффициент сопротивления k:",
+  "en": "Drag coefficient k:"
+ },
+ {
+  "k": "2c57dcaa",
+  "s": "<span style=\"color:#A16207;\">Sariq uzuq chiziq:</span> vakuumdagi ideal parabola.<br> <span style=\"color:#1C4E9E;\">Moviy qalin chiziq:</span> kvadratik havo qarshiligidagi real trayektoriya ($\\mathbf{a}_q = -k\\,|\\mathbf{v}|\\,\\mathbf{v}$).",
+  "ru": "<span style=\"color:#A16207;\">Жёлтая пунктирная линия:</span> идеальная парабола в вакууме.<br> <span style=\"color:#1C4E9E;\">Синяя жирная линия:</span> реальная траектория при квадратичном сопротивлении воздуха ($\\mathbf{a}_q = -k\\,|\\mathbf{v}|\\,\\mathbf{v}$).",
+  "en": "<span style=\"color:#A16207;\">Yellow dashed line:</span> the ideal parabola in a vacuum.<br> <span style=\"color:#1C4E9E;\">Thick blue line:</span> the real trajectory with quadratic air drag ($\\mathbf{a}_q = -k\\,|\\mathbf{v}|\\,\\mathbf{v}$)."
+ },
+ {
+  "k": "eaee77ae",
+  "s": "Otish",
+  "ru": "Бросок",
+  "en": "Launch"
+ },
+ {
+  "k": "7ef177f6",
+  "s": "Klassik Eyler xatosi:",
+  "ru": "Ошибка классического Эйлера:",
+  "en": "Classical Euler error:"
+ },
+ {
+  "k": "6b2bc499",
+  "s": "Sonli integratorlar xatoligi",
+  "ru": "Погрешность численных интеграторов",
+  "en": "Numerical integrator error"
+ },
+ {
+  "k": "f0e86830",
+  "s": "<span style=\"color:#E11D48;\">Qizil (klassik Eyler):</span> $E_{n+1} \\approx E_n(1 + \\omega^2\\Delta t^2)$ — har bir qadamda energiya sun’iy oshib, faza fazosida spiral bo‘lib portlaydi.<br><br> <span style=\"color:#047857;\">Yashil (simplektik Eyler–Kromer):</span> faza fazosidagi yuzani saqlaydi, berk ellips hosil qiladi.<br><br> <span style=\"color:#1C4E9E;\">Moviy (RK4):</span> aniq nazariy aylana.",
+  "ru": "<span style=\"color:#E11D48;\">Красный (классический Эйлер):</span> $E_{n+1} \\approx E_n(1 + \\omega^2\\Delta t^2)$ — на каждом шаге энергия искусственно растёт, и траектория в фазовом пространстве раскручивается спиралью.<br><br> <span style=\"color:#047857;\">Зелёный (симплектический Эйлер–Кромер):</span> сохраняет площадь в фазовом пространстве, образуя замкнутый эллипс.<br><br> <span style=\"color:#1C4E9E;\">Синий (RK4):</span> точная теоретическая окружность.",
+  "en": "<span style=\"color:#E11D48;\">Red (classical Euler):</span> $E_{n+1} \\approx E_n(1 + \\omega^2\\Delta t^2)$ — the energy grows artificially at every step and the phase-space trajectory spirals outward.<br><br> <span style=\"color:#047857;\">Green (symplectic Euler–Cromer):</span> preserves phase-space area and forms a closed ellipse.<br><br> <span style=\"color:#1C4E9E;\">Blue (RK4):</span> the exact theoretical circle."
+ },
+ {
+  "k": "125e9d53",
+  "s": "Qayta boshlash",
+  "ru": "Перезапустить",
+  "en": "Restart"
+ },
+ {
+  "k": "c7ff4e08",
+  "s": "To‘liq impuls P:",
+  "ru": "Полный импульс P:",
+  "en": "Total momentum P:"
+ },
+ {
+  "k": "3b842353",
+  "s": "0,00 kg·m/s",
+  "ru": "0,00 кг·м/с",
+  "en": "0.00 kg·m/s"
+ },
+ {
+  "k": "5083cb79",
+  "s": "Kinetik energiya Eₖ:",
+  "ru": "Кинетическая энергия Eₖ:",
+  "en": "Kinetic energy Eₖ:"
+ },
+ {
+  "k": "0882579e",
+  "s": "To‘qnashuv parametrlari",
+  "ru": "Параметры столкновения",
+  "en": "Collision parameters"
+ },
+ {
+  "k": "ec9effc8",
+  "s": "Tiklanish koeffitsiyenti e:",
+  "ru": "Коэффициент восстановления e:",
+  "en": "Coefficient of restitution e:"
+ },
+ {
+  "k": "3c96f38e",
+  "s": "1,00 (elastik)",
+  "ru": "1,00 (упругий)",
+  "en": "1.00 (elastic)"
+ },
+ {
+  "k": "42cdd8bb",
+  "s": "$e = 1$: to‘liq elastik to‘qnashuv ($E_k = \\text{const}$).<br> $0 \\le e &lt; 1$: noelastik to‘qnashuv (kinetik energiyaning bir qismi issiqlikka aylanadi).",
+  "ru": "$e = 1$: абсолютно упругое столкновение ($E_k = \\text{const}$).<br> $0 \\le e &lt; 1$: неупругое столкновение (часть кинетической энергии переходит в теплоту).",
+  "en": "$e = 1$: perfectly elastic collision ($E_k = \\text{const}$).<br> $0 \\le e &lt; 1$: inelastic collision (part of the kinetic energy turns into heat)."
+ },
+ {
+  "k": "a96bfbce",
+  "s": "1-tipik xatolik",
+  "ru": "Типичная ошибка 1",
+  "en": "Typical error 1"
+ },
+ {
+  "k": "054c5408",
+  "s": "Burchak birligi (gradus va radian)",
+  "ru": "Единица угла (градусы и радианы)",
+  "en": "Angle units (degrees vs radians)"
+ },
+ {
+  "k": "ff9a2a1a",
+  "s": "JavaScript <code>Math.sin()</code> faqat radianda ishlaydi. <code>angle = 45°</code> ni to‘g‘rilang:",
+  "ru": "В JavaScript <code>Math.sin()</code> работает только с радианами. Исправьте <code>angle = 45°</code>:",
+  "en": "In JavaScript <code>Math.sin()</code> works in radians only. Fix <code>angle = 45°</code>:"
+ },
+ {
+  "k": "25c01f61",
+  "s": "Test qilish",
+  "ru": "Проверить",
+  "en": "Run test"
+ },
+ {
+  "k": "9f35fb3d",
+  "s": "Kodni sinab ko‘ring",
+  "ru": "Протестируйте код",
+  "en": "Try the code"
+ },
+ {
+  "k": "e2d0a98f",
+  "s": "2-tipik xatolik",
+  "ru": "Типичная ошибка 2",
+  "en": "Typical error 2"
+ },
+ {
+  "k": "75be0f1e",
+  "s": "Eyler beqarorligi (energiya portlashi)",
+  "ru": "Неустойчивость Эйлера («взрыв» энергии)",
+  "en": "Euler instability (energy blow-up)"
+ },
+ {
+  "k": "05ca0c65",
+  "s": "Klassik Eylerni Simplektik Eyler–Kromerga almashtiring:",
+  "ru": "Замените классический метод Эйлера симплектическим методом Эйлера–Кромера:",
+  "en": "Replace classical Euler with symplectic Euler–Cromer:"
+ },
+ {
+  "k": "acbec068",
+  "s": "3-tipik xatolik",
+  "ru": "Типичная ошибка 3",
+  "en": "Typical error 3"
+ },
+ {
+  "k": "5d8424c7",
+  "s": "Devor tunnel effekti (chegaradan chiqish)",
+  "ru": "Туннельный эффект стенки (выход за границу)",
+  "en": "Wall tunnelling (escaping the boundary)"
+ },
+ {
+  "k": "ce36108d",
+  "s": "Jism devordan o‘tib ketmasligi uchun uning o‘rnini $W - r$ chegarasida mahkamlang:",
+  "ru": "Чтобы тело не проходило сквозь стенку, зафиксируйте его положение на границе $W - r$:",
+  "en": "To stop the body passing through the wall, clamp its position at the $W - r$ boundary:"
+ },
+ {
+  "k": "c4489cf9",
+  "s": "4-tipik xatolik",
+  "ru": "Типичная ошибка 4",
+  "en": "Typical error 4"
+ },
+ {
+  "k": "69e3380e",
+  "s": "Singulyarlik ($r \\to 0$ da Cheksiz Kuch)",
+  "ru": "Сингулярность (бесконечная сила при $r \\to 0$)",
+  "en": "Singularity (infinite force at $r \\to 0$)"
+ },
+ {
+  "k": "eb12e29c",
+  "s": "Gravitatsiya / Kulon kuchida maxraj nol bo‘lmasligi uchun yumshatuvchi <code>eps = 0.5</code> qo‘shing:",
+  "ru": "Чтобы знаменатель в силе гравитации / Кулона не обращался в ноль, добавьте сглаживающий параметр <code>eps = 0.5</code>:",
+  "en": "To keep the denominator of the gravitational / Coulomb force from reaching zero, add a softening parameter <code>eps = 0.5</code>:"
+ },
+ {
+  "k": "0533d27c",
+  "s": "Teskari muhandislik va modellashtirish promptlari",
+  "ru": "Промпты для обратной разработки и моделирования",
+  "en": "Reverse-engineering and modelling prompts"
+ },
+ {
+  "k": "16c9006e",
+  "s": "Claude uchun Kvadratik Drag Simulyatsiya Prompti",
+  "ru": "Промпт для Claude: симуляция квадратичного сопротивления",
+  "en": "Claude prompt: quadratic drag simulation"
+ },
+ {
+  "k": "0c2e0652",
+  "s": "Nusxalash",
+  "ru": "Копировать",
+  "en": "Copy"
+ },
+ {
+  "k": "d51c87af",
+  "s": "Sen hisoblash fizikasi bo‘yicha mutaxassissan. Gorizontal otilgan jism harakatini kvadratik havo qarshiligi (F = -0.5*Cd*rho*A*v*v) bilan bitta HTML5 faylida Canvas va Vanilla JS yordamida yozib ber. 4-tartibli Runge–Kutta (RK4) usulidan foydalan. Real vaqtda ham vakuumdagi parabolani (sariq uzuq-chiziq), ham havo qarshiligidagi real egri chiziqni (moviy) chizsin. Telemetriya panelida uchish masofasi, maksimal balandlik va chekli tezlikni (terminal velocity) chiqar.",
+  "ru": "Ты — специалист по вычислительной физике. Напиши в одном HTML5-файле с помощью Canvas и Vanilla JS движение горизонтально брошенного тела с квадратичным сопротивлением воздуха (F = -0.5*Cd*rho*A*v*v). Используй метод Рунге–Кутты 4-го порядка (RK4). В реальном времени рисуй и параболу в вакууме (жёлтая пунктирная линия), и реальную кривую с сопротивлением воздуха (синяя). На панели телеметрии выводи дальность полёта, максимальную высоту и предельную скорость (terminal velocity).",
+  "en": "You are a computational physics specialist. Write the motion of a horizontally launched body with quadratic air drag (F = -0.5*Cd*rho*A*v*v) in a single HTML5 file using Canvas and Vanilla JS. Use the 4th-order Runge–Kutta (RK4) method. In real time, draw both the vacuum parabola (yellow dashed line) and the real drag curve (blue). Show the range, maximum height and terminal velocity on a telemetry panel."
+ }
+]

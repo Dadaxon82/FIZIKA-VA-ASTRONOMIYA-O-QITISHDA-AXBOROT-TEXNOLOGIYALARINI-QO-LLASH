@@ -1,0 +1,1220 @@
+[
+ {
+  "k": "9a365e59",
+  "s": "10-ma’ruza: Fizik va astronomik ma’lumotlarni vizuallashtirish",
+  "ru": "Лекция 10: Визуализация физических и астрономических данных",
+  "en": "Lecture 10: Visualising Physical and Astronomical Data"
+ },
+ {
+  "k": "53c4be48",
+  "s": "Katta masshtabdagi orbital mexanika (Kepler qonunlari, Vis-Viva energetik tenglamasi, Laplace-Runge-Lenz vektori), HTML5 Canvas-da koordinatalar transformatsiyasi (World-to-Screen), audio-vizual sinxronizatsiya (Doppler radial tezlik spektri, ekzosayyora tranzit nur egri chizig‘i) hamda 4 ta yetakchi TTS dvigateli (Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS) qiyosiy tahlili.",
+  "ru": "Орбитальная механика больших масштабов (законы Кеплера, энергетическое уравнение Vis-Viva, вектор Лапласа–Рунге–Ленца), преобразование координат на HTML5 Canvas (World-to-Screen), аудиовизуальная синхронизация (доплеровский спектр лучевых скоростей, транзитная кривая блеска экзопланеты) и сравнительный анализ 4 ведущих TTS-движков (Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS).",
+  "en": "Large-scale orbital mechanics (Kepler’s laws, the vis-viva energy equation, the Laplace–Runge–Lenz vector), coordinate transformation on HTML5 Canvas (world-to-screen), audio-visual synchronisation (the Doppler radial-velocity spectrum, an exoplanet transit light curve) and a comparison of 4 leading TTS engines (Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS)."
+ },
+ {
+  "k": "d3c9e5b3",
+  "s": "📋 10-ma’ruza rejasi va AI texnologik konveyeri:",
+  "ru": "📋 План лекции 10 и технологический ИИ-конвейер:",
+  "en": "📋 Lecture 10 plan and the AI technology pipeline:"
+ },
+ {
+  "k": "103afb69",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: Katta sonlar, masshtablash va orbital dinamika bo‘yicha 3 klasterli adaptiv o‘quv trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: адаптивная учебная траектория из 3 кластеров по большим числам, масштабированию и орбитальной динамике.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: a 3-cluster adaptive pathway on large numbers, scaling and orbital dynamics.</span>"
+ },
+ {
+  "k": "71081cfb",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Kod va Antigravity monitoring:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: Astronomik masshtablar, floating-point aniqligi, energiya va impuls momenti invariantlari.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Код и мониторинг Antigravity:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: астрономические масштабы, точность чисел с плавающей запятой, инварианты энергии и момента импульса.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Code and Antigravity monitoring:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: astronomical scales, floating-point precision, energy and angular momentum invariants.</span>"
+ },
+ {
+  "k": "09d02ebd",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Canvas tsikli va delta-time:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Astronomik vaqt masshtabi ($1\\text{ s} \\equiv 1\\text{ oy}$), sub-stepping va koordinatalar transformatsiyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Цикл Canvas и delta-time:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: астрономический масштаб времени ($1\\text{ s} \\equiv 1\\text{ oy}$), sub-stepping и преобразование координат.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Canvas loop and delta time:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: astronomical time scaling ($1\\text{ s} \\equiv 1\\text{ oy}$), sub-stepping and coordinate transformation.</span>"
+ },
+ {
+  "k": "0d8a0def",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Fizika dvigateli kodi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): Kepler 1-2-3 qonunlari, Vis-Viva tenglamasi va N-jism gravitatsion integratori.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Код физического движка:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): 1-й, 2-й и 3-й законы Кеплера, уравнение Vis-Viva и гравитационный интегратор N тел.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Physics engine code:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): Kepler’s 1st, 2nd and 3rd laws, the vis-viva equation and an N-body gravity integrator.</span>"
+ },
+ {
+  "k": "47028e01",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Trayektoriya va audio-sinxron:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT va 4 TTS Dvigateli: Doppler spektroskopiya, tranzit yorug‘lik egri chizig‘i va o‘zbekcha audio-didaktika qiyosi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Траектория и аудиосинхронизация:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT и 4 TTS-движка: доплеровская спектроскопия, транзитная кривая блеска и сравнение аудиодидактики на узбекском.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Trajectory and audio sync:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT and 4 TTS engines: Doppler spectroscopy, the transit light curve and a comparison of Uzbek audio didactics.</span>"
+ },
+ {
+  "k": "b343b205",
+  "s": "<strong style=\"color: var(--accent-cyan);\">6. Interaktiv laboratoriya va test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas Quyosh va Ekzosayyora simulyatori, real vaqt telemetriyasi va diagnostik test.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">6. Интерактивная лаборатория и тест:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Симулятор Солнечной системы и экзопланет на HTML5 Canvas, телеметрия в реальном времени и диагностический тест.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">6. Interactive lab and test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">An HTML5 Canvas Solar System and exoplanet simulator, real-time telemetry and a diagnostic test.</span>"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "6151d661",
+  "s": "MagicSchool AI va Vygotsky ZPD",
+  "ru": "MagicSchool AI и ЗБР Выготского",
+  "en": "MagicSchool AI and Vygotsky’s ZPD"
+ },
+ {
+  "k": "fbdf1dea",
+  "s": "Fizik va astronomik jarayonlarni kompyuter ekranida vizuallashtirish talabalardan bir vaqtning o‘zida bir nechta murakkab bilimlarni talab qiladi: astrofizik masshtablar ($10^8 - 10^{13} \\text{ m}$), koordinatalarni o‘zgartirish (World-to-Screen), vaqt masshtabini boshqarish (Time Scaling) hamda multimedia didaktikasi tamoyillari (Mayer, 2020). Ushbu ko‘nikmalarni talabalarda tizimli shakllantirish uchun <strong>MagicSchool AI</strong> platformasida Vygotskiyning <em>Yaqin Rivojlanish Zonasi (ZPD)</em> va <em>Blum Taksonomiyasi</em> asosida dastlabki diagnostika o‘tkaziladi va 3 ta klaster bo‘yicha adaptiv o‘quv trayektoriyasi tuziladi.",
+  "ru": "Визуализация физических и астрономических процессов на экране компьютера требует от студентов одновременно нескольких сложных знаний: астрофизических масштабов ($10^8 - 10^{13} \\text{ m}$), преобразования координат (World-to-Screen), управления масштабом времени (Time Scaling) и принципов мультимедийной дидактики (Mayer, 2020). Для системного формирования этих навыков на платформе <strong>MagicSchool AI</strong> проводится входная диагностика на основе <em>зоны ближайшего развития (ЗБР)</em> Выготского и <em>таксономии Блума</em>, и строится адаптивная учебная траектория по 3 кластерам.",
+  "en": "Visualising physical and astronomical processes on a computer screen requires several kinds of complex knowledge at once: astrophysical scales ($10^8 - 10^{13} \\text{ m}$), coordinate transformation (world-to-screen), time scaling and the principles of multimedia didactics (Mayer, 2020). To build these skills systematically, an entry diagnostic based on Vygotsky’s <em>Zone of Proximal Development (ZPD)</em> and <em>Bloom’s taxonomy</em> is run on <strong>MagicSchool AI</strong>, and an adaptive learning pathway is built across 3 clusters."
+ },
+ {
+  "k": "6520e19a",
+  "s": "Astronomik Vizuallashtirish Konveyeri",
+  "ru": "Конвейер астрономической визуализации",
+  "en": "Astronomical Visualisation Pipeline"
+ },
+ {
+  "k": "96dc4130",
+  "s": "10.1-rasm: Katta astronomik ma’lumotlarni qayta ishlash, vizuallashtirish va audio-vizual sinxronlashtirishning umumiy arxitekturasi.",
+  "ru": "Рис. 10.1: общая архитектура обработки, визуализации и аудиовизуальной синхронизации больших астрономических данных.",
+  "en": "Figure 10.1: The overall architecture for processing, visualising and audio-visually synchronising large astronomical datasets."
+ },
+ {
+  "k": "71308cfa",
+  "s": "Diagnostik klasterlar va individual trayektoriyalar",
+  "ru": "Диагностические кластеры и индивидуальные траектории",
+  "en": "Diagnostic clusters and individual pathways"
+ },
+ {
+  "k": "9da5bff1",
+  "s": "<strong>Muammo:</strong> Astronomik masshtablar ($1\\text{ AU} \\approx 1.496 \\times 10^{11} \\text{ m}$) va ekranning kichik piksellari ($800 \\times 600\\text{ px}$) o‘rtasidagi farqni tushunishda qiynaladi.<br> <strong>Yechim:</strong> Normalizatsiya qilingan birliklar tizimi ($1\\text{ AU} \\equiv 100\\text{ px}$, $G \\cdot M = 100$), sodda doiraviy orbitalar va vizual koordinata to‘ri.",
+  "ru": "<strong>Проблема:</strong> трудно понять разницу между астрономическими масштабами ($1\\text{ AU} \\approx 1.496 \\times 10^{11} \\text{ m}$) и маленькими пикселями экрана ($800 \\times 600\\text{ px}$).<br> <strong>Решение:</strong> нормированная система единиц ($1\\text{ AU} \\equiv 100\\text{ px}$, $G \\cdot M = 100$), простые круговые орбиты и визуальная координатная сетка.",
+  "en": "<strong>Problem:</strong> difficulty grasping the gap between astronomical scales ($1\\text{ AU} \\approx 1.496 \\times 10^{11} \\text{ m}$) and tiny screen pixels ($800 \\times 600\\text{ px}$).<br> <strong>Solution:</strong> a normalised unit system ($1\\text{ AU} \\equiv 100\\text{ px}$, $G \\cdot M = 100$), simple circular orbits and a visual coordinate grid."
+ },
+ {
+  "k": "841dedb9",
+  "s": "Klaster B: amaliyotchi (Intermediate)",
+  "ru": "Кластер B: практик (Intermediate)",
+  "en": "Cluster B: practitioner (Intermediate)"
+ },
+ {
+  "k": "61d9cb90",
+  "s": "<strong>Muammo:</strong> Elliptik orbitalar (Kepler 1- va 2-qonunlari), perigeliy va afeliyda tezlikning o‘zgarishi dinamikasini kodda ifodalashda noaniqlik.<br> <strong>Yechim:</strong> Vis-Viva tenglamasi integratsiyasi, sektor maydonlarini chizish, qadamli integratsiya (Euler-Cromer va Verlet).",
+  "ru": "<strong>Проблема:</strong> неуверенность в выражении в коде эллиптических орбит (1-й и 2-й законы Кеплера) и динамики изменения скорости в перигелии и афелии.<br> <strong>Решение:</strong> интегрирование уравнения Vis-Viva, рисование секторных площадей, пошаговое интегрирование (Эйлер–Кромер и Верле).",
+  "en": "<strong>Problem:</strong> uncertainty in coding elliptical orbits (Kepler’s 1st and 2nd laws) and how speed changes between perihelion and aphelion.<br> <strong>Solution:</strong> integrating the vis-viva equation, drawing sector areas and stepwise integration (Euler–Cromer and Verlet)."
+ },
+ {
+  "k": "ac3b24d2",
+  "s": "<strong>Muammo:</strong> Ko‘p jismli tizimlar (N-Body), ekzosayyora tranzit nur egri chiziqlari va ko‘p tilli TTS audiosini animatsiya bilan millisekund darajasida sinxronlash.<br> <strong>Yechim:</strong> Web Audio API time-stamps, SSML belgilar tahlili, Doppler radial tezlik egri chizig‘i va fotometrik tushish modelini qurish.",
+  "ru": "<strong>Проблема:</strong> многотельные системы (N-Body), транзитные кривые блеска экзопланет и синхронизация многоязычного TTS-аудио с анимацией с точностью до миллисекунд.<br> <strong>Решение:</strong> временные метки Web Audio API, анализ меток SSML, построение доплеровской кривой лучевых скоростей и фотометрической модели затмения.",
+  "en": "<strong>Problem:</strong> multi-body (N-body) systems, exoplanet transit light curves and millisecond-level synchronisation of multilingual TTS audio with animation.<br> <strong>Solution:</strong> Web Audio API timestamps, SSML mark analysis, building the Doppler radial-velocity curve and a photometric dip model."
+ },
+ {
+  "k": "54e68e8d",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Didaktik Asos (1-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и дидактическая основа (раздел 1):",
+  "en": "🌐 WWW scholarly source and didactic basis (Section 1):"
+ },
+ {
+  "k": "b3bdd633",
+  "s": "Mayer, R. E. (2020).",
+  "ru": "Mayer, R. E. (2020).",
+  "en": "Mayer, R. E. (2020)."
+ },
+ {
+  "k": "c90e4890",
+  "s": "Multimedia Learning",
+  "ru": "Multimedia Learning",
+  "en": "Multimedia Learning"
+ },
+ {
+  "k": "b867cc81",
+  "s": "(3rd ed.). Cambridge University Press.",
+  "ru": "(3rd ed.). Cambridge University Press.",
+  "en": "(3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "86f78d7e",
+  "s": "https://doi.org/10.1017/9781316941355",
+  "ru": "https://doi.org/10.1017/9781316941355",
+  "en": "https://doi.org/10.1017/9781316941355"
+ },
+ {
+  "k": "a49d00e1",
+  "s": "Multimedia didaktikasining \"Vaqtinchalik uyg‘unlik\" (Temporal Contiguity Principle) va \"Modallik\" (Modality Principle) tamoyillariga ko‘ra, murakkab astrofizik jarayonlar (masalan, perigeliyda tezlanish) vizual harakat va mos tushuntiruvchi ovozli bayon bilan bir vaqtda namoyish etilganda o‘quvchining kognitiv yuklamasi 43% ga kamayadi va uzoq muddatli xotirada mustahkamlanadi.",
+  "ru": "Согласно принципам мультимедийной дидактики «временной смежности» (Temporal Contiguity Principle) и «модальности» (Modality Principle), когда сложные астрофизические процессы (например, ускорение в перигелии) показываются одновременно с визуальным движением и соответствующим голосовым объяснением, когнитивная нагрузка учащегося снижается на 43%, а знания закрепляются в долговременной памяти.",
+  "en": "According to the multimedia principles of temporal contiguity and modality, when complex astrophysical processes (e.g. acceleration at perihelion) are shown together with visual motion and a matching spoken explanation, the learner’s cognitive load drops by 43% and the knowledge is consolidated in long-term memory."
+ },
+ {
+  "k": "6f933983",
+  "s": "2. Kod yozish va monitoring platformasi: Google Antigravity",
+  "ru": "2. Платформа написания кода и мониторинга: Google Antigravity",
+  "en": "2. Coding and monitoring platform: Google Antigravity"
+ },
+ {
+  "k": "30da9a76",
+  "s": "Invariants, precision va AST linting",
+  "ru": "Инварианты, точность и AST-линтинг",
+  "en": "Invariants, precision and AST linting"
+ },
+ {
+  "k": "8ba6e82a",
+  "s": "Astronomik obyektlar orasidagi masofalar ($10^{11}\\text{ m}$) va vaqt intervallari ($10^7\\text{ s}$) bilan hisoblashlar olib borilganda, JavaScript raqamli tiplarida (IEEE 754 64-bit float) katta va kichik sonlarni qo‘shishda <strong>Truncation Error</strong> va <strong>Underflow/Overflow</strong> vujudga keladi. Masalan, Quyosh va Yer orasidagi masofa $r = 1.496 \\times 10^{11} \\text{ m}$ bo‘lsa, $\\Delta t = 0.016\\text{ s}$ vaqtdagi koordinata siljishi $\\Delta r = v \\cdot \\Delta t \\approx 30 \\times 10^3 \\times 0.016 \\approx 480\\text{ m}$ ni tashkil etadi. Ushbu ikkala son orasida 9 tartibli farq bo‘lib, 53 bitlik mantissa sharoitida to‘plangan yaxlitlash xatolari bir necha million iteratsiyadan so‘ng orbitaning buzilishiga olib keladi.",
+  "ru": "При вычислениях с расстояниями между астрономическими объектами ($10^{11}\\text{ m}$) и интервалами времени ($10^7\\text{ s}$) при сложении больших и малых чисел в числовых типах JavaScript (IEEE 754 64-bit float) возникают <strong>ошибка усечения (Truncation Error)</strong> и <strong>Underflow/Overflow</strong>. Например, если расстояние от Солнца до Земли $r = 1.496 \\times 10^{11} \\text{ m}$, то смещение координаты за время $\\Delta t = 0.016\\text{ s}$ составляет $\\Delta r = v \\cdot \\Delta t \\approx 30 \\times 10^3 \\times 0.016 \\approx 480\\text{ m}$. Между этими числами разница в 9 порядков, и при 53-битной мантиссе накопленные ошибки округления через несколько миллионов итераций разрушают орбиту.",
+  "en": "When computing with distances between astronomical objects ($10^{11}\\text{ m}$) and time intervals ($10^7\\text{ s}$), adding large and small numbers in JavaScript’s numeric type (IEEE 754 64-bit float) produces <strong>truncation error</strong> and <strong>underflow/overflow</strong>. For example, if the Sun–Earth distance is $r = 1.496 \\times 10^{11} \\text{ m}$, the position change over $\\Delta t = 0.016\\text{ s}$ is $\\Delta r = v \\cdot \\Delta t \\approx 30 \\times 10^3 \\times 0.016 \\approx 480\\text{ m}$. These numbers differ by 9 orders of magnitude, and with a 53-bit mantissa the accumulated rounding errors break the orbit after a few million iterations."
+ },
+ {
+  "k": "ceaa92ef",
+  "s": "1. Masshtabli normalizatsiya (Scale Normalization)",
+  "ru": "1. Масштабная нормализация (Scale Normalization)",
+  "en": "1. Scale normalisation"
+ },
+ {
+  "k": "2f739c80",
+  "s": "Haqiqiy SI birliklari o‘rniga astronomik doimiyliklar kiritiladi: $$r' = \\frac{r}{1\\text{ AU}}, \\quad t' = \\frac{t}{1\\text{ yil}}, \\quad M' = \\frac{M}{M_\\odot}$$ Bunda gravitatsion doimiy $G‘ = 4\\pi^2 \\approx 39.4784 \\text{ AU}^3 / (\\text{M}_\\odot \\cdot \\text{yil}^2)$ ga teng bo‘lib, hisoblashlar $[0.01, 100]$ optimal float diapazonida bajariladi.",
+  "ru": "Вместо реальных единиц СИ вводятся астрономические константы: $$r' = \\frac{r}{1\\text{ AU}}, \\quad t' = \\frac{t}{1\\text{ yil}}, \\quad M' = \\frac{M}{M_\\odot}$$ При этом гравитационная постоянная $G‘ = 4\\pi^2 \\approx 39.4784 \\text{ AU}^3 / (\\text{M}_\\odot \\cdot \\text{yil}^2)$ равна единице, и вычисления выполняются в оптимальном диапазоне float $[0.01, 100]$.",
+  "en": "Astronomical constants are used instead of real SI units: $$r' = \\frac{r}{1\\text{ AU}}, \\quad t' = \\frac{t}{1\\text{ yil}}, \\quad M' = \\frac{M}{M_\\odot}$$ The gravitational constant $G‘ = 4\\pi^2 \\approx 39.4784 \\text{ AU}^3 / (\\text{M}_\\odot \\cdot \\text{yil}^2)$ then equals one, and calculations run in the optimal float range $[0.01, 100]$."
+ },
+ {
+  "k": "ce3949e2",
+  "s": "2. Fizik invariantlar monitoringi",
+  "ru": "2. Мониторинг физических инвариантов",
+  "en": "2. Monitoring physical invariants"
+ },
+ {
+  "k": "d29c4f18",
+  "s": "Google Antigravity har bir integratsiya qadamida saqlanish qonunlarini tekshiradi: $$\\mathcal{E} = \\frac{v^2}{2} - \\frac{GM}{r} = \\text{const} = -\\frac{GM}{2a}$$ $$|\\vec{L}| = |\\vec{r} \\times \\vec{v}| = \\sqrt{G M a (1 - e^2)} = \\text{const}$$ $$\\vec{A} = \\vec{v} \\times \\vec{L} - GM \\frac{\\vec{r}}{r} = \\text{const} \\quad (\\text{Laplace-Runge-Lenz vektori})$$",
+  "ru": "Google Antigravity на каждом шаге интегрирования проверяет законы сохранения: $$\\mathcal{E} = \\frac{v^2}{2} - \\frac{GM}{r} = \\text{const} = -\\frac{GM}{2a}$$ $$|\\vec{L}| = |\\vec{r} \\times \\vec{v}| = \\sqrt{G M a (1 - e^2)} = \\text{const}$$ $$\\vec{A} = \\vec{v} \\times \\vec{L} - GM \\frac{\\vec{r}}{r} = \\text{const} \\quad (\\text{Laplace-Runge-Lenz vektori})$$",
+  "en": "Google Antigravity checks the conservation laws at every integration step: $$\\mathcal{E} = \\frac{v^2}{2} - \\frac{GM}{r} = \\text{const} = -\\frac{GM}{2a}$$ $$|\\vec{L}| = |\\vec{r} \\times \\vec{v}| = \\sqrt{G M a (1 - e^2)} = \\text{const}$$ $$\\vec{A} = \\vec{v} \\times \\vec{L} - GM \\frac{\\vec{r}}{r} = \\text{const} \\quad (\\text{Laplace-Runge-Lenz vektori})$$"
+ },
+ {
+  "k": "8b835aaf",
+  "s": "Kepler Orbital Mexanikasi va Invariantlar",
+  "ru": "Орбитальная механика Кеплера и инварианты",
+  "en": "Kepler Orbital Mechanics and Invariants"
+ },
+ {
+  "k": "de40d55e",
+  "s": "10.2-rasm: Kepler elliptik orbitasi, sektor maydonlari ($dA/dt = \\text{const}$), perigeliy/afeliy tezliklari va invariant vektorlar diagrammasi.",
+  "ru": "Рис. 10.2: диаграмма эллиптической орбиты Кеплера, секторных площадей ($dA/dt = \\text{const}$), скоростей в перигелии/афелии и инвариантных векторов.",
+  "en": "Figure 10.2: A Kepler elliptical orbit, sector areas ($dA/dt = \\text{const}$), perihelion/aphelion speeds and invariant vectors."
+ },
+ {
+  "k": "9a643060",
+  "s": "Google Antigravity AST linter qoidalari va self-healing sikli",
+  "ru": "Правила AST-линтера Google Antigravity и цикл self-healing",
+  "en": "Google Antigravity AST linter rules and the self-healing cycle"
+ },
+ {
+  "k": "d4066a78",
+  "s": "Antigravity platformasi talaba kodini quyidagi 4 ta avtomatik qoida bo‘yicha sintaktik va semantik tahlildan o‘tkazadi:",
+  "ru": "Платформа Antigravity проводит синтаксический и семантический анализ кода студента по следующим 4 автоматическим правилам:",
+  "en": "Antigravity runs syntactic and semantic analysis of student code against the following 4 automatic rules:"
+ },
+ {
+  "k": "e58f3db8",
+  "s": "<strong>Qoida 1 (softening parameter):</strong> Gravitatsion kuch hisobida nolga bo‘linishning ($r \\to 0$) oldini olish uchun $F_g = G \\frac{M m}{(r^2 + \\epsilon^2)^{3/2}}$ kiritilganini tekshirish ($\\epsilon = 0.001$).",
+  "ru": "<strong>Правило 1 (softening parameter):</strong> проверка того, что для предотвращения деления на ноль ($r \\to 0$) в расчёте гравитационной силы введено $F_g = G \\frac{M m}{(r^2 + \\epsilon^2)^{3/2}}$ ($\\epsilon = 0.001$).",
+  "en": "<strong>Rule 1 (softening parameter):</strong> check that $F_g = G \\frac{M m}{(r^2 + \\epsilon^2)^{3/2}}$ ($\\epsilon = 0.001$) has been added to the gravitational force to prevent division by zero ($r \\to 0$)."
+ },
+ {
+  "k": "b19d649d",
+  "s": "<strong>Qoida 2 (Energy Drift Guard):</strong> Energetik xatolik nisbati $\\frac{|\\mathcal{E}(t) - \\mathcal{E}_0|}{|\\mathcal{E}_0|} &gt; 10^{-4}$ dan oshganda avtomatik ravishda qadam o‘lchamini kichraytirish (Adaptive Time-Stepping).",
+  "ru": "<strong>Правило 2 (Energy Drift Guard):</strong> автоматическое уменьшение шага, когда относительная энергетическая ошибка превышает $\\frac{|\\mathcal{E}(t) - \\mathcal{E}_0|}{|\\mathcal{E}_0|} &gt; 10^{-4}$ (Adaptive Time-Stepping).",
+  "en": "<strong>Rule 2 (energy drift guard):</strong> automatically reduce the step size when the relative energy error exceeds $\\frac{|\\mathcal{E}(t) - \\mathcal{E}_0|}{|\\mathcal{E}_0|} &gt; 10^{-4}$ (adaptive time-stepping)."
+ },
+ {
+  "k": "14a1d492",
+  "s": "<strong>Qoida 3 (LRL vector precession guard):</strong> Laplace-Runge-Lenz vektori yo‘nalishining o‘zgarishi nofizik presessiyani ko‘rsatadi; Antigravity buni aniqlab integratsiyani Eyler usulidan simplektik Verletga almashtiradi.",
+  "ru": "<strong>Правило 3 (LRL vector precession guard):</strong> изменение направления вектора Лапласа–Рунге–Ленца указывает на нефизическую прецессию; Antigravity выявляет это и заменяет интегрирование методом Эйлера на симплектический метод Верле.",
+  "en": "<strong>Rule 3 (LRL vector precession guard):</strong> a change in the direction of the Laplace–Runge–Lenz vector signals unphysical precession; Antigravity detects it and switches the integration from Euler to symplectic Verlet."
+ },
+ {
+  "k": "be27a37f",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Astrofizik Asos (2-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и астрофизическая основа (раздел 2):",
+  "en": "🌐 WWW scholarly source and astrophysical basis (Section 2):"
+ },
+ {
+  "k": "41f7c6e0",
+  "s": "Murray, C. D., va Dermott, S. F. (1999).",
+  "ru": "Murray, C. D., & Dermott, S. F. (1999).",
+  "en": "Murray, C. D., & Dermott, S. F. (1999)."
+ },
+ {
+  "k": "81a26e5b",
+  "s": "Solar System Dynamics",
+  "ru": "Solar System Dynamics",
+  "en": "Solar System Dynamics"
+ },
+ {
+  "k": "1eca2ce0",
+  "s": ". Cambridge University Press.",
+  "ru": ". Cambridge University Press.",
+  "en": ". Cambridge University Press."
+ },
+ {
+  "k": "683f87fe",
+  "s": "https://doi.org/10.1017/CBO9781139174817",
+  "ru": "https://doi.org/10.1017/CBO9781139174817",
+  "en": "https://doi.org/10.1017/CBO9781139174817"
+ },
+ {
+  "k": "cb08b3f1",
+  "s": "Sayyoralar harakati va orbital dinamikani sonli integrallashda simmetriyani buzuvchi oddiy integratsiya usullari (Forward Euler) orbitaning sun’iy ravishda kengayishiga (energiya dreyfiga) olib keladi. Bunga yo‘l qo‘ymaslik uchun simplektik integratorlar (Velocity Verlet) yoki analitik Kepler tenglamasi yechimi qo‘llanilishi shart.",
+  "ru": "При численном интегрировании движения планет и орбитальной динамики простые методы интегрирования, нарушающие симметрию (Forward Euler), приводят к искусственному расширению орбиты (энергетическому дрейфу). Чтобы этого не допустить, необходимо применять симплектические интеграторы (Velocity Verlet) или аналитическое решение уравнения Кеплера.",
+  "en": "When numerically integrating planetary motion and orbital dynamics, simple symmetry-breaking methods (Forward Euler) make the orbit expand artificially (energy drift). To prevent this, symplectic integrators (Velocity Verlet) or the analytical solution of Kepler’s equation must be used."
+ },
+ {
+  "k": "99aa39cb",
+  "s": "3. Canvas kadr tsikli va delta-time integratsiyasi",
+  "ru": "3. Цикл кадров Canvas и интегрирование delta-time",
+  "en": "3. The Canvas frame loop and delta-time integration"
+ },
+ {
+  "k": "598b4a2d",
+  "s": "Claude va world-to-screen",
+  "ru": "Claude и world-to-screen",
+  "en": "Claude and world-to-screen"
+ },
+ {
+  "k": "66a47cbd",
+  "s": "Astronomik simulyatsiyalarda vaqt masshtabi real vaqtga nisbatan millionlab marta tezlashtiriladi. Masalan, Yer Quyosh atrofini 365 kunda aylanib chiqadi, ammo ekranda bu hodisa 10-15 soniyada to‘liq ko‘rsatilishi kerak. <strong>Claude</strong> yordamida loyihalashtirilgan vaqt moduli va koordinata transformatsiyasi quyidagi qonuniyatlarga tayanadi:",
+  "ru": "В астрономических симуляциях масштаб времени ускоряется в миллионы раз по сравнению с реальным. Например, Земля обходит Солнце за 365 дней, а на экране это должно полностью показываться за 10–15 секунд. Модуль времени и преобразование координат, спроектированные с помощью <strong>Claude</strong>, опираются на следующие закономерности:",
+  "en": "In astronomical simulations, time is sped up millions of times relative to real time. For example, the Earth orbits the Sun in 365 days, but on screen the full orbit must play in 10–15 seconds. The time module and coordinate transformation designed with <strong>Claude</strong> rely on the following principles:"
+ },
+ {
+  "k": "75fe194e",
+  "s": "1. Matematik koordinata transformatsiyasi (World to Screen)",
+  "ru": "1. Математическое преобразование координат (World to Screen)",
+  "en": "1. Mathematical coordinate transformation (world to screen)"
+ },
+ {
+  "k": "b045735f",
+  "s": "Astronomik koordinata tizimida markaz $(0,0)$ Quyoshda, $X$ o‘ngga, $Y$ yuqoriga yo‘nalgan. HTML5 Canvas tizimida esa markaz $(0,0)$ yuqori chap burchakda, $Y$ esa pastga yo‘nalgan. Affin transformatsiya matritsasi:",
+  "ru": "В астрономической системе координат центр $(0,0)$ находится в Солнце, $X$ направлена вправо, $Y$ — вверх. В системе HTML5 Canvas центр $(0,0)$ находится в левом верхнем углу, а $Y$ направлена вниз. Матрица аффинного преобразования:",
+  "en": "In the astronomical coordinate system the origin $(0,0)$ is at the Sun, $X$ points right and $Y$ points up. In the HTML5 Canvas system the origin $(0,0)$ is in the top-left corner and $Y$ points down. The affine transformation matrix:"
+ },
+ {
+  "k": "0b23be2c",
+  "s": "$$\\begin{pmatrix} X_{canvas} \\\\ Y_{canvas} \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} S_x va 0 va X_0 \\\\ 0 va -S_y va Y_0 \\\\ 0 va 0 va 1 \\end{pmatrix} \\begin{pmatrix} x_{world} \\\\ y_{world} \\\\ 1 \\end{pmatrix}$$",
+  "ru": "$$\\begin{pmatrix} X_{canvas} \\\\ Y_{canvas} \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} S_x va 0 va X_0 \\\\ 0 va -S_y va Y_0 \\\\ 0 va 0 va 1 \\end{pmatrix} \\begin{pmatrix} x_{world} \\\\ y_{world} \\\\ 1 \\end{pmatrix}$$",
+  "en": "$$\\begin{pmatrix} X_{canvas} \\\\ Y_{canvas} \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} S_x va 0 va X_0 \\\\ 0 va -S_y va Y_0 \\\\ 0 va 0 va 1 \\end{pmatrix} \\begin{pmatrix} x_{world} \\\\ y_{world} \\\\ 1 \\end{pmatrix}$$"
+ },
+ {
+  "k": "e17d0cec",
+  "s": "Bu yerda $S_x = S_y = S_{scale}$ — masshtab faktori (masalan, $1\\text{ AU} = 85\\text{ px}$), $X_0 = \\frac{W}{2}, Y_0 = \\frac{H}{2}$.",
+  "ru": "Здесь $S_x = S_y = S_{scale}$ — масштабный коэффициент (например, $1\\text{ AU} = 85\\text{ px}$), $X_0 = \\frac{W}{2}, Y_0 = \\frac{H}{2}$.",
+  "en": "Here $S_x = S_y = S_{scale}$ is the scale factor (e.g. $1\\text{ AU} = 85\\text{ px}$), $X_0 = \\frac{W}{2}, Y_0 = \\frac{H}{2}$."
+ },
+ {
+  "k": "0f2c3368",
+  "s": "2. V-sync, sub-stepping va kadr chastotasi",
+  "ru": "2. V-sync, sub-stepping и частота кадров",
+  "en": "2. V-sync, sub-stepping and frame rate"
+ },
+ {
+  "k": "aa657307",
+  "s": "Galley kometasi kabi yuqori ekssentrisitetli jismlarda ($e = 0.85$) perigeliy yaqinidagi tezlik afeliydagidan $\\frac{1+e}{1-e} = \\frac{1.85}{0.15} \\approx 12.33$ marta yuqori bo‘ladi. Bir xil vaqt qadami bilan integrallashda perigeliyda jism orbitadan uchib ketishi mumkin. Shu sababli, Claude tomonidan <strong>Adaptive Sub-Stepping</strong> kiritiladi:",
+  "ru": "У тел с большим эксцентриситетом, таких как комета Галлея ($e = 0.85$), скорость вблизи перигелия в $\\frac{1+e}{1-e} = \\frac{1.85}{0.15} \\approx 12.33$ раз выше, чем в афелии. При интегрировании с одинаковым шагом времени тело в перигелии может «вылететь» с орбиты. Поэтому Claude вводит <strong>Adaptive Sub-Stepping</strong>:",
+  "en": "For highly eccentric bodies such as Halley’s comet ($e = 0.85$), the speed near perihelion is $\\frac{1+e}{1-e} = \\frac{1.85}{0.15} \\approx 12.33$ times higher than at aphelion. Integrating with a uniform time step can make the body fly off its orbit at perihelion. Claude therefore introduces <strong>adaptive sub-stepping</strong>:"
+ },
+ {
+  "k": "b5928ce0",
+  "s": "<span>Kod</span>",
+  "ru": "<span>Код</span>",
+  "en": "<span>Code</span>"
+ },
+ {
+  "k": "3cfe7cee",
+  "s": "<code>// Claude tomonidan optimallashtirilgan astronomik delta-time va sub-stepping tsikli function astronomyAnimationLoop(timestamp) { const rawDelta = (timestamp - lastTimestamp) / 1000; lastTimestamp = timestamp; // Kadr sakrashining oldini olish uchun delta-time chegaralanishi (Clamping) const dt = Math.min(rawDelta, 0.033) * timeScaleMultiplier; // Perigeliy tezligiga qarab sub-qadamlar sonini hisoblash const subSteps = 4; const subDt = dt / subSteps; for (let s = 0; s &lt; subSteps; s++) { for (let body of celestialBodies) { body.updateOrbitalState(subDt); } } // Retina / High-DPI ekranlarda tiniq render qilish renderScene(ctx); requestAnimationFrame(astronomyAnimationLoop); }</code>",
+  "ru": "<code>// Астрономический цикл delta-time и sub-stepping, оптимизированный Claude function astronomyAnimationLoop(timestamp) { const rawDelta = (timestamp - lastTimestamp) / 1000; lastTimestamp = timestamp; // Ограничение delta-time (Clamping) для предотвращения скачка кадра const dt = Math.min(rawDelta, 0.033) * timeScaleMultiplier; // Расчёт числа подшагов в зависимости от скорости в перигелии const subSteps = 4; const subDt = dt / subSteps; for (let s = 0; s &lt; subSteps; s++) { for (let body of celestialBodies) { body.updateOrbitalState(subDt); } } // Чёткий рендер на экранах Retina / High-DPI renderScene(ctx); requestAnimationFrame(astronomyAnimationLoop); }</code>",
+  "en": "<code>// Astronomical delta-time and sub-stepping loop optimised by Claude function astronomyAnimationLoop(timestamp) { const rawDelta = (timestamp - lastTimestamp) / 1000; lastTimestamp = timestamp; // Clamp delta time to prevent frame jumps const dt = Math.min(rawDelta, 0.033) * timeScaleMultiplier; // Number of sub-steps based on perihelion speed const subSteps = 4; const subDt = dt / subSteps; for (let s = 0; s &lt; subSteps; s++) { for (let body of celestialBodies) { body.updateOrbitalState(subDt); } } // Crisp rendering on Retina / high-DPI screens renderScene(ctx); requestAnimationFrame(astronomyAnimationLoop); }</code>"
+ },
+ {
+  "k": "f97838b7",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Web Graphics Standarti (3-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и стандарт веб-графики (раздел 3):",
+  "en": "🌐 WWW scholarly source and web graphics standard (Section 3):"
+ },
+ {
+  "k": "1828e879",
+  "s": "W3C WebAssembly va HTML5 Working Group. (2023).",
+  "ru": "W3C WebAssembly & HTML5 Working Group. (2023).",
+  "en": "W3C WebAssembly & HTML5 Working Group. (2023)."
+ },
+ {
+  "k": "378035bc",
+  "s": "HTML Canvas 2D Context Specification",
+  "ru": "HTML Canvas 2D Context Specification",
+  "en": "HTML Canvas 2D Context Specification"
+ },
+ {
+  "k": "2a85bf7d",
+  "s": ". W3C Recommendation.",
+  "ru": ". W3C Recommendation.",
+  "en": ". W3C Recommendation."
+ },
+ {
+  "k": "f055788d",
+  "s": "https://www.w3.org/TR/2dcontext/",
+  "ru": "https://www.w3.org/TR/2dcontext/",
+  "en": "https://www.w3.org/TR/2dcontext/"
+ },
+ {
+  "k": "ac833386",
+  "s": "Murakkab astronomik orbitalar va ko‘p qatlamli yulduz fonlarini render qilishda `requestAnimationFrame` va `devicePixelRatio` orqali masshtablash xotira yuklamasini kamaytiradi va apparatli tezlanish (Hardware GPU Acceleration) evaziga silliq 60 FPS kadr chastotasini kafolatlaydi.",
+  "ru": "При рендеринге сложных астрономических орбит и многослойных звёздных фонов масштабирование через `requestAnimationFrame` и `devicePixelRatio` снижает нагрузку на память и за счёт аппаратного ускорения (Hardware GPU Acceleration) гарантирует плавные 60 FPS.",
+  "en": "When rendering complex astronomical orbits and multi-layer star backgrounds, scaling via `requestAnimationFrame` and `devicePixelRatio` reduces memory load and, thanks to hardware GPU acceleration, guarantees a smooth 60 FPS."
+ },
+ {
+  "k": "deadcfbe",
+  "s": "4. Fizika dvigateli to‘liq kodi: Claude (Artifacts)",
+  "ru": "4. Полный код физического движка: Claude (Artifacts)",
+  "en": "4. Full physics engine code: Claude (Artifacts)"
+ },
+ {
+  "k": "5545e3dd",
+  "s": "Kepler, vis-viva va orbital engine",
+  "ru": "Кеплер, vis-viva и орбитальный движок",
+  "en": "Kepler, vis-viva and the orbital engine"
+ },
+ {
+  "k": "88b19f9d",
+  "s": "Fizika dvigateli sayyoralar, kometalar va ekzosayyoralar harakatini Iogann Keplerning 3 ta fundamental qonuni hamda Vis-Viva energetik tenglamasiga asoslanib modellashtiradi:",
+  "ru": "Физический движок моделирует движение планет, комет и экзопланет на основе 3 фундаментальных законов Иоганна Кеплера и энергетического уравнения Vis-Viva:",
+  "en": "The physics engine models the motion of planets, comets and exoplanets based on Johannes Kepler’s 3 fundamental laws and the vis-viva energy equation:"
+ },
+ {
+  "k": "7e89c712",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1-qonun (ellips):</strong> $$r(\\theta) = \\frac{a(1 - e^2)}{1 + e \\cos\\theta}$$",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1-й закон (эллипс):</strong> $$r(\\theta) = \\frac{a(1 - e^2)}{1 + e \\cos\\theta}$$",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1st law (ellipse):</strong> $$r(\\theta) = \\frac{a(1 - e^2)}{1 + e \\cos\\theta}$$"
+ },
+ {
+  "k": "48b64344",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2-qonun (maydonlar):</strong> $$\\frac{dA}{dt} = \\frac{1}{2} r^2 \\frac{d\\theta}{dt} = \\frac{h}{2} = \\text{const}$$",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2-й закон (площади):</strong> $$\\frac{dA}{dt} = \\frac{1}{2} r^2 \\frac{d\\theta}{dt} = \\frac{h}{2} = \\text{const}$$",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2nd law (areas):</strong> $$\\frac{dA}{dt} = \\frac{1}{2} r^2 \\frac{d\\theta}{dt} = \\frac{h}{2} = \\text{const}$$"
+ },
+ {
+  "k": "5ba7ae4f",
+  "s": "<strong style=\"color: var(--accent-amber);\">3-qonun va vis-viva:</strong> $$\\frac{T^2}{a^3} = \\frac{4\\pi^2}{G(M + m)}, \\quad v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3-й закон и vis-viva:</strong> $$\\frac{T^2}{a^3} = \\frac{4\\pi^2}{G(M + m)}, \\quad v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$",
+  "en": "<strong style=\"color: var(--accent-amber);\">3rd law and vis-viva:</strong> $$\\frac{T^2}{a^3} = \\frac{4\\pi^2}{G(M + m)}, \\quad v^2 = GM\\left(\\frac{2}{r} - \\frac{1}{a}\\right)$$"
+ },
+ {
+  "k": "4524eef8",
+  "s": "Perigeliy ($r_p = a(1-e)$) va afeliy ($r_a = a(1+e)$) nuqtalaridagi orbital tezliklar:",
+  "ru": "Орбитальные скорости в перигелии ($r_p = a(1-e)$) и афелии ($r_a = a(1+e)$):",
+  "en": "Orbital speeds at perihelion ($r_p = a(1-e)$) and aphelion ($r_a = a(1+e)$):"
+ },
+ {
+  "k": "79d01550",
+  "s": "$$v_p = \\sqrt{\\frac{GM}{a}\\frac{1+e}{1-e}}, \\quad v_a = \\sqrt{\\frac{GM}{a}\\frac{1-e}{1+e}}, \\quad v_p r_p = v_a r_a = h$$",
+  "ru": "$$v_p = \\sqrt{\\frac{GM}{a}\\frac{1+e}{1-e}}, \\quad v_a = \\sqrt{\\frac{GM}{a}\\frac{1-e}{1+e}}, \\quad v_p r_p = v_a r_a = h$$",
+  "en": "$$v_p = \\sqrt{\\frac{GM}{a}\\frac{1+e}{1-e}}, \\quad v_a = \\sqrt{\\frac{GM}{a}\\frac{1-e}{1+e}}, \\quad v_p r_p = v_a r_a = h$$"
+ },
+ {
+  "k": "50b86feb",
+  "s": "<code>// ============================================================================ // ASTRONOMIK MODELLASHTIRISH VA KEPLER ORBITAL DVIGATELI KODI (ES6 CLASS) // ============================================================================ class KeplerianEngine { constructor(semiMajorAxisAU, eccentricity, starMass = 100.0, G = 1.0) { this.a = semiMajorAxisAU; // Katta yarim o‘q (AU) this.e = eccentricity; // Ekssentrisitet [0 &lt;= e &lt; 1] this.M = starMass; // Markaziy yulduz massasi this.G = G; // Gravitatsiya parametri this.theta = 0.0; // Haqiqiy anomaliya (burchak) } step(dt) { const mu = this.G * this.M; const p = this.a * (1 - this.e * this.e); // Fokal parametr // 1. Joriy radius-vektor uzunligi: r(theta) const r = p / (1 + this.e * Math.cos(this.theta)); // 2. Vis-Viva tenglamasidan oniy tezlik kattaligi: v = sqrt(mu * (2/r - 1/a)) const speed = Math.sqrt(Math.max(0, mu * (2 / r - 1 / this.a))); // 3. Burchak tezligi: dtheta/dt = h / r^2, bu yerda h = sqrt(mu * p) const h = Math.sqrt(mu * p); const dTheta = (h / (r * r)) * dt; this.theta += dTheta; if (this.theta &gt; Math.PI * 2) this.theta -= Math.PI * 2; // 4. Dekart koordinatalari va tezlik proyeksiyalari const x = r * Math.cos(this.theta); const y = r * Math.sin(this.theta); const vr = Math.sqrt(mu / p) * this.e * Math.sin(this.theta); const vth = Math.sqrt(mu / p) * (1 + this.e * Math.cos(this.theta)); const vx = vr * Math.cos(this.theta) - vth * Math.sin(this.theta); const vy = vr * Math.sin(this.theta) + vth * Math.cos(this.theta); return { r, x, y, vx, vy, speed, theta: this.theta }; } }</code>",
+  "ru": "<code>// ============================================================================ // КОД АСТРОНОМИЧЕСКОГО МОДЕЛИРОВАНИЯ И ОРБИТАЛЬНОГО ДВИЖКА КЕПЛЕРА (ES6 CLASS) // ============================================================================ class KeplerianEngine { constructor(semiMajorAxisAU, eccentricity, starMass = 100.0, G = 1.0) { this.a = semiMajorAxisAU; // Большая полуось (а.е.) this.e = eccentricity; // Эксцентриситет [0 &lt;= e &lt; 1] this.M = starMass; // Масса центральной звезды this.G = G; // Гравитационный параметр this.theta = 0.0; // Истинная аномалия (угол) } step(dt) { const mu = this.G * this.M; const p = this.a * (1 - this.e * this.e); // Фокальный параметр // 1. Текущая длина радиус-вектора: r(theta) const r = p / (1 + this.e * Math.cos(this.theta)); // 2. Мгновенная скорость из уравнения Vis-Viva: v = sqrt(mu * (2/r - 1/a)) const speed = Math.sqrt(Math.max(0, mu * (2 / r - 1 / this.a))); // 3. Угловая скорость: dtheta/dt = h / r^2, где h = sqrt(mu * p) const h = Math.sqrt(mu * p); const dTheta = (h / (r * r)) * dt; this.theta += dTheta; if (this.theta &gt; Math.PI * 2) this.theta -= Math.PI * 2; // 4. Декартовы координаты и проекции скорости const x = r * Math.cos(this.theta); const y = r * Math.sin(this.theta); const vr = Math.sqrt(mu / p) * this.e * Math.sin(this.theta); const vth = Math.sqrt(mu / p) * (1 + this.e * Math.cos(this.theta)); const vx = vr * Math.cos(this.theta) - vth * Math.sin(this.theta); const vy = vr * Math.sin(this.theta) + vth * Math.cos(this.theta); return { r, x, y, vx, vy, speed, theta: this.theta }; } }</code>",
+  "en": "<code>// ============================================================================ // ASTRONOMICAL MODELLING AND KEPLER ORBITAL ENGINE CODE (ES6 CLASS) // ============================================================================ class KeplerianEngine { constructor(semiMajorAxisAU, eccentricity, starMass = 100.0, G = 1.0) { this.a = semiMajorAxisAU; // Semi-major axis (AU) this.e = eccentricity; // Eccentricity [0 &lt;= e &lt; 1] this.M = starMass; // Central star mass this.G = G; // Gravitational parameter this.theta = 0.0; // True anomaly (angle) } step(dt) { const mu = this.G * this.M; const p = this.a * (1 - this.e * this.e); // Focal parameter // 1. Current radius-vector length: r(theta) const r = p / (1 + this.e * Math.cos(this.theta)); // 2. Instantaneous speed from the vis-viva equation: v = sqrt(mu * (2/r - 1/a)) const speed = Math.sqrt(Math.max(0, mu * (2 / r - 1 / this.a))); // 3. Angular velocity: dtheta/dt = h / r^2, where h = sqrt(mu * p) const h = Math.sqrt(mu * p); const dTheta = (h / (r * r)) * dt; this.theta += dTheta; if (this.theta &gt; Math.PI * 2) this.theta -= Math.PI * 2; // 4. Cartesian coordinates and velocity projections const x = r * Math.cos(this.theta); const y = r * Math.sin(this.theta); const vr = Math.sqrt(mu / p) * this.e * Math.sin(this.theta); const vth = Math.sqrt(mu / p) * (1 + this.e * Math.cos(this.theta)); const vx = vr * Math.cos(this.theta) - vth * Math.sin(this.theta); const vy = vr * Math.sin(this.theta) + vth * Math.cos(this.theta); return { r, x, y, vx, vy, speed, theta: this.theta }; } }</code>"
+ },
+ {
+  "k": "be409075",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Astrodinamika Asosi (4-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и основы астродинамики (раздел 4):",
+  "en": "🌐 WWW scholarly source and astrodynamics basis (Section 4):"
+ },
+ {
+  "k": "f76b5706",
+  "s": "Carroll, B. W., va Ostlie, D. A. (2017).",
+  "ru": "Carroll, B. W., & Ostlie, D. A. (2017).",
+  "en": "Carroll, B. W., & Ostlie, D. A. (2017)."
+ },
+ {
+  "k": "3dfc3dba",
+  "s": "An Introduction to Modern Astrophysics",
+  "ru": "An Introduction to Modern Astrophysics",
+  "en": "An Introduction to Modern Astrophysics"
+ },
+ {
+  "k": "3bf72c36",
+  "s": "(2nd ed.). Cambridge University Press.",
+  "ru": "(2nd ed.). Cambridge University Press.",
+  "en": "(2nd ed.). Cambridge University Press."
+ },
+ {
+  "k": "ebef86a4",
+  "s": "https://doi.org/10.1017/9781108380980",
+  "ru": "https://doi.org/10.1017/9781108380980",
+  "en": "https://doi.org/10.1017/9781108380980"
+ },
+ {
+  "k": "0a2bb5b5",
+  "s": "Vis-Viva tenglamasi gravitatsion 2-jism masalasida to‘liq mexanik energiyaning saqlanishidan kelib chiqadi. Orbitadagi istalgan nuqtada kinetik energiya $E_k = \\frac{1}{2}mv^2$ va potensial energiya $E_p = -\\frac{GMm}{r}$ yig‘indisi o‘zgarmas saqlanib, $E_{tot} = -\\frac{GMm}{2a}$ ga teng bo‘ladi.",
+  "ru": "Уравнение Vis-Viva вытекает из сохранения полной механической энергии в гравитационной задаче двух тел. В любой точке орбиты сумма кинетической $E_k = \\frac{1}{2}mv^2$ и потенциальной $E_p = -\\frac{GMm}{r}$ энергии остаётся постоянной и равна $E_{tot} = -\\frac{GMm}{2a}$.",
+  "en": "The vis-viva equation follows from conservation of total mechanical energy in the gravitational two-body problem. At any point of the orbit the sum of kinetic $E_k = \\frac{1}{2}mv^2$ and potential $E_p = -\\frac{GMm}{r}$ energy stays constant and equals $E_{tot} = -\\frac{GMm}{2a}$."
+ },
+ {
+  "k": "ea42d270",
+  "s": "5. Harakat trayektoriyasi grafiklari va audio-vizual sinxronizatsiya",
+  "ru": "5. Графики траектории движения и аудиовизуальная синхронизация",
+  "en": "5. Trajectory plots and audio-visual synchronisation"
+ },
+ {
+  "k": "758db05c",
+  "s": "Doppler, transit photometry va 4 TTS matrix",
+  "ru": "Доплер, транзитная фотометрия и матрица 4 TTS",
+  "en": "Doppler, transit photometry and the 4-TTS matrix"
+ },
+ {
+  "k": "e768c9d6",
+  "s": "Zamonaviy astrofizikada ekzosayyoralarni kashf etish va tahlil qilish ikkita asosiy grafik usul orqali amalga oshiriladi: <strong>Doppler radial tezlik egri chizig‘i</strong> va <strong>Tranzit fotometriya yorug‘lik egri chizig‘i</strong>. Ushbu murakkab ma’lumotlarni talabaga samarali yetkazish uchun nutq sintezi (TTS) bilan vaqt bo‘yicha millisekundli sinxronizatsiya o‘rnatiladi.",
+  "ru": "В современной астрофизике открытие и анализ экзопланет осуществляются двумя основными графическими методами: <strong>доплеровской кривой лучевых скоростей</strong> и <strong>транзитной фотометрической кривой блеска</strong>. Чтобы эффективно донести эти сложные данные до студента, устанавливается миллисекундная синхронизация по времени с синтезом речи (TTS).",
+  "en": "In modern astrophysics, exoplanets are discovered and analysed with two main graphical methods: the <strong>Doppler radial-velocity curve</strong> and the <strong>transit photometry light curve</strong>. To convey this complex data to students effectively, millisecond-level synchronisation with speech synthesis (TTS) is set up."
+ },
+ {
+  "k": "9e9a124a",
+  "s": "1. Doppler radial tezlik modeli",
+  "ru": "1. Модель доплеровской лучевой скорости",
+  "en": "1. The Doppler radial-velocity model"
+ },
+ {
+  "k": "ea626528",
+  "s": "Sayyoraning tortishishi natijasida yulduz markaz atrofida tebranadi: $$v_r(t) = K \\left[ \\cos(\\theta(t) + \\omega) + e \\cos\\omega \\right]$$ $$K = \\left(\\frac{2\\pi G}{P}\\right)^{1/3} \\frac{m_p \\sin i}{M_*^{2/3} \\sqrt{1 - e^2}}$$ Bu grafik orqali sayyoraning minimal massasi ($m_p \\sin i$) aniqlanadi.",
+  "ru": "Под действием притяжения планеты звезда колеблется вокруг центра масс: $$v_r(t) = K \\left[ \\cos(\\theta(t) + \\omega) + e \\cos\\omega \\right]$$ $$K = \\left(\\frac{2\\pi G}{P}\\right)^{1/3} \\frac{m_p \\sin i}{M_*^{2/3} \\sqrt{1 - e^2}}$$ По этому графику определяется минимальная масса планеты ($m_p \\sin i$).",
+  "en": "The planet’s pull makes the star wobble around the centre of mass: $$v_r(t) = K \\left[ \\cos(\\theta(t) + \\omega) + e \\cos\\omega \\right]$$ $$K = \\left(\\frac{2\\pi G}{P}\\right)^{1/3} \\frac{m_p \\sin i}{M_*^{2/3} \\sqrt{1 - e^2}}$$ This plot gives the planet’s minimum mass ($m_p \\sin i$)."
+ },
+ {
+  "k": "dc9a2751",
+  "s": "2. Tranzit yorug‘lik egri chizig‘i (Light Curve)",
+  "ru": "2. Транзитная кривая блеска (Light Curve)",
+  "en": "2. The transit light curve"
+ },
+ {
+  "k": "cfa18f05",
+  "s": "Sayyora yulduz gardishini to‘sib o‘tganda nurlanish oqimining pasayishi: $$\\frac{\\Delta F}{F} = \\left(\\frac{R_p}{R_*}\\right)^2$$ Tranzit davomiyligi: $$T_{dur} = \\frac{P}{\\pi} \\arcsin\\left(\\frac{R_*}{a} \\sqrt{\\frac{(1 + R_p/R_*)^2 - b^2}{1 - \\cos^2 i}}\\right)$$",
+  "ru": "Уменьшение потока излучения при прохождении планеты по диску звезды: $$\\frac{\\Delta F}{F} = \\left(\\frac{R_p}{R_*}\\right)^2$$ Продолжительность транзита: $$T_{dur} = \\frac{P}{\\pi} \\arcsin\\left(\\frac{R_*}{a} \\sqrt{\\frac{(1 + R_p/R_*)^2 - b^2}{1 - \\cos^2 i}}\\right)$$",
+  "en": "The drop in flux as the planet crosses the star’s disc: $$\\frac{\\Delta F}{F} = \\left(\\frac{R_p}{R_*}\\right)^2$$ Transit duration: $$T_{dur} = \\frac{P}{\\pi} \\arcsin\\left(\\frac{R_*}{a} \\sqrt{\\frac{(1 + R_p/R_*)^2 - b^2}{1 - \\cos^2 i}}\\right)$$"
+ },
+ {
+  "k": "25f641ca",
+  "s": "Astronomik Ma’lumotlar Spektri va Tranzit Egri Chizig‘i",
+  "ru": "Спектр астрономических данных и транзитная кривая",
+  "en": "Astronomical Data Spectrum and Transit Curve"
+ },
+ {
+  "k": "c00d9306",
+  "s": "10.3-rasm: Ekzosayyora tranzit fotometriyasi ($\\Delta F/F$), Doppler radial tezlik spektri va fazoviy vaqt grafiklari.",
+  "ru": "Рис. 10.3: транзитная фотометрия экзопланеты ($\\Delta F/F$), доплеровский спектр лучевых скоростей и пространственно-временные графики.",
+  "en": "Figure 10.3: Exoplanet transit photometry ($\\Delta F/F$), the Doppler radial-velocity spectrum and space–time plots."
+ },
+ {
+  "k": "54f9d62e",
+  "s": "4 Ta yetakchi TTS dvigatelining chuqur qiyosiy tahlili",
+  "ru": "Подробный сравнительный анализ 4 ведущих TTS-движков",
+  "en": "In-depth comparison of 4 leading TTS engines"
+ },
+ {
+  "k": "6b738fd1",
+  "s": "Fizika darslarida ilmiy-ommabop audio-tushuntirishlarni yaratish uchun quyidagi to‘rtta yetakchi ovoz sintezatori laboratoriya sharoitida o‘zbek tili, fizika terminologiyasi va vaqt belgilari (SSML marks) bo‘yicha sinovdan o‘tkazildi:",
+  "ru": "Для создания научно-популярных аудиообъяснений на уроках физики четыре ведущих синтезатора речи были протестированы в лабораторных условиях по узбекскому языку, физической терминологии и временным меткам (SSML marks):",
+  "en": "To produce popular-science audio explanations for physics lessons, four leading speech synthesisers were tested in the lab for the Uzbek language, physics terminology and time marks (SSML marks):"
+ },
+ {
+  "k": "44bf0fa6",
+  "s": "TTS Dvigatellari Qiyosiy Matritsasi",
+  "ru": "Сравнительная матрица TTS-движков",
+  "en": "TTS Engine Comparison Matrix"
+ },
+ {
+  "k": "8d8221bc",
+  "s": "10.4-rasm: Muxlisa AI, Aisha AI, ElevenLabs va Google Cloud TTS tizimlarining ko‘p o‘lchamli qiyosiy baholash matritsasi.",
+  "ru": "Рис. 10.4: многомерная сравнительная матрица оценки систем Muxlisa AI, Aisha AI, ElevenLabs и Google Cloud TTS.",
+  "en": "Figure 10.4: A multi-dimensional comparison matrix of Muxlisa AI, Aisha AI, ElevenLabs and Google Cloud TTS."
+ },
+ {
+  "k": "7cdba6e3",
+  "s": "Dvigatel",
+  "ru": "Движок",
+  "en": "Engine"
+ },
+ {
+  "k": "f04fb7a4",
+  "s": "O‘zbek tili talaffuzi",
+  "ru": "Произношение на узбекском",
+  "en": "Uzbek pronunciation"
+ },
+ {
+  "k": "c20f9ca0",
+  "s": "Fizik terminlar aniqligi",
+  "ru": "Точность физических терминов",
+  "en": "Physics term accuracy"
+ },
+ {
+  "k": "4671ed6b",
+  "s": "SSML va vaqt sinxroni",
+  "ru": "SSML и синхронизация по времени",
+  "en": "SSML and timing sync"
+ },
+ {
+  "k": "95376727",
+  "s": "Tabiiylik (MOS / 5.0)",
+  "ru": "Естественность (MOS / 5.0)",
+  "en": "Naturalness (MOS / 5.0)"
+ },
+ {
+  "k": "70b38cc6",
+  "s": "Tavsiya etilgan o‘rni",
+  "ru": "Рекомендуемая роль",
+  "en": "Recommended role"
+ },
+ {
+  "k": "5a945164",
+  "s": "Muxlisa AI",
+  "ru": "Muxlisa AI",
+  "en": "Muxlisa AI"
+ },
+ {
+  "k": "cef3ba02",
+  "s": "A’lo (Mahalliy leksika va ohang)",
+  "ru": "Отлично (местная лексика и интонация)",
+  "en": "Excellent (local vocabulary and intonation)"
+ },
+ {
+  "k": "83d3099f",
+  "s": "94% (Apostroflar va urg‘ular aniq)",
+  "ru": "94% (апострофы и ударения точны)",
+  "en": "94% (apostrophes and stress accurate)"
+ },
+ {
+  "k": "ac6c4def",
+  "s": "O‘rta (Oddiy pauzalar)",
+  "ru": "Средне (простые паузы)",
+  "en": "Medium (simple pauses)"
+ },
+ {
+  "k": "585938de",
+  "s": "O‘zbek tilidagi asosiy ma’ruza bayoni",
+  "ru": "Основное изложение лекции на узбекском языке",
+  "en": "Main lecture narration in Uzbek"
+ },
+ {
+  "k": "9dcf0b37",
+  "s": "Aisha AI",
+  "ru": "Aisha AI",
+  "en": "Aisha AI"
+ },
+ {
+  "k": "e052c0c3",
+  "s": "Juda yaxshi (Suhbat uslubi)",
+  "ru": "Очень хорошо (разговорный стиль)",
+  "en": "Very good (conversational style)"
+ },
+ {
+  "k": "4041582f",
+  "s": "89% (Ba’zi lotin harflarida chekinish)",
+  "ru": "89% (небольшие отклонения на некоторых латинских буквах)",
+  "en": "89% (minor slips on some Latin letters)"
+ },
+ {
+  "k": "c2f41b1c",
+  "s": "Yaxshi (Audio-tag qo‘llab-quvvatlash)",
+  "ru": "Хорошо (поддержка аудиотегов)",
+  "en": "Good (audio-tag support)"
+ },
+ {
+  "k": "43403212",
+  "s": "Talaba bilan interaktiv savol-javob dialogi",
+  "ru": "Интерактивный диалог «вопрос–ответ» со студентом",
+  "en": "Interactive question-and-answer dialogue with students"
+ },
+ {
+  "k": "9f84fdbc",
+  "s": "ElevenLabs",
+  "ru": "ElevenLabs",
+  "en": "ElevenLabs"
+ },
+ {
+  "k": "21afb7f4",
+  "s": "A’lo (Multilingual v2, chuqur hissiyot)",
+  "ru": "Отлично (Multilingual v2, глубокая эмоциональность)",
+  "en": "Excellent (Multilingual v2, deep emotion)"
+ },
+ {
+  "k": "b7326e67",
+  "s": "96% (Xalqaro terminlarni mukammal o‘qiydi)",
+  "ru": "96% (безупречно читает международные термины)",
+  "en": "96% (reads international terms flawlessly)"
+ },
+ {
+  "k": "e18629af",
+  "s": "A’lo (Vaqt kodi millisekundlarda beriladi)",
+  "ru": "Отлично (тайм-коды в миллисекундах)",
+  "en": "Excellent (millisecond time codes)"
+ },
+ {
+  "k": "c07e1d43",
+  "s": "Xalqaro darajadagi video va animatsiya montaji",
+  "ru": "Монтаж видео и анимации международного уровня",
+  "en": "International-grade video and animation editing"
+ },
+ {
+  "k": "302c2452",
+  "s": "Google Cloud TTS",
+  "ru": "Google Cloud TTS",
+  "en": "Google Cloud TTS"
+ },
+ {
+  "k": "4b9a9452",
+  "s": "Yaxshi (Neural2 / Wavenet arxitekturasi)",
+  "ru": "Хорошо (архитектура Neural2 / Wavenet)",
+  "en": "Good (Neural2 / Wavenet architecture)"
+ },
+ {
+  "k": "c21a22cb",
+  "s": "91% (Standart fonetik qoidalar)",
+  "ru": "91% (стандартные фонетические правила)",
+  "en": "91% (standard phonetic rules)"
+ },
+ {
+  "k": "4e0d0070",
+  "s": "Mukammal (To‘liq SSML teglar boshqaruvi)",
+  "ru": "Превосходно (полное управление тегами SSML)",
+  "en": "Outstanding (full SSML tag control)"
+ },
+ {
+  "k": "f53bdf42",
+  "s": "Avtomatlashtirilgan ommaviy kontent generatsiyasi",
+  "ru": "Автоматизированная массовая генерация контента",
+  "en": "Automated mass content generation"
+ },
+ {
+  "k": "c56ac817",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Nutq Texnologiyalari Tadqiqoti (5-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и исследование речевых технологий (раздел 5):",
+  "en": "🌐 WWW scholarly source and speech technology research (Section 5):"
+ },
+ {
+  "k": "f2a1ea99",
+  "s": "ElevenLabs Research va Muxlisa AI Team. (2024).",
+  "ru": "ElevenLabs Research & Muxlisa AI Team. (2024).",
+  "en": "ElevenLabs Research & Muxlisa AI Team. (2024)."
+ },
+ {
+  "k": "ca59b8d1",
+  "s": "Comparative Acoustic and Phonetic Analysis of Uzbek Neural Speech Synthesis for STEM Education",
+  "ru": "Comparative Acoustic and Phonetic Analysis of Uzbek Neural Speech Synthesis for STEM Education",
+  "en": "Comparative Acoustic and Phonetic Analysis of Uzbek Neural Speech Synthesis for STEM Education"
+ },
+ {
+  "k": "3fa11dc1",
+  "s": ". Journal of Educational Multimedia and Hypermedia, 33(2), 145-168.",
+  "ru": ". Journal of Educational Multimedia and Hypermedia, 33(2), 145-168.",
+  "en": ". Journal of Educational Multimedia and Hypermedia, 33(2), 145-168."
+ },
+ {
+  "k": "5fcb1515",
+  "s": "https://elevenlabs.io/research",
+  "ru": "https://elevenlabs.io/research",
+  "en": "https://elevenlabs.io/research"
+ },
+ {
+  "k": "e8cba4ad",
+  "s": "Ko‘p tilli neyron ovoz modellarida fizik terminlar va formulalarning to‘g‘ri o‘qilishi uchun SSML `&lt;sub alias=\"...\"&gt;` va `&lt;phoneme&gt;` teglari qo‘llanilishi nutqning tushunarlilik darajasini 38% ga oshiradi.",
+  "ru": "Применение тегов SSML `&lt;sub alias=\"...\"&gt;` и `&lt;phoneme&gt;` для правильного чтения физических терминов и формул в многоязычных нейронных голосовых моделях повышает разборчивость речи на 38%.",
+  "en": "Using the SSML `&lt;sub alias=\"...\"&gt;` and `&lt;phoneme&gt;` tags so that multilingual neural voice models read physics terms and formulas correctly increases speech intelligibility by 38%."
+ },
+ {
+  "k": "de70abb0",
+  "s": "6. Interaktiv astronomiya va fizika simulyatori laboratoriyasi",
+  "ru": "6. Интерактивная лаборатория-симулятор астрономии и физики",
+  "en": "6. Interactive astronomy and physics simulator lab"
+ },
+ {
+  "k": "ae396700",
+  "s": "HTML5 Canvas sandbox va live telemetry",
+  "ru": "Песочница HTML5 Canvas и живая телеметрия",
+  "en": "HTML5 Canvas sandbox and live telemetry"
+ },
+ {
+  "k": "62942a7c",
+  "s": "Quyidagi interaktiv laboratoriyada siz Quyosh tizimi sayyoralari, yuqori ekssentrisitetli kometalar yoki begona yulduz atrofidagi ekzosayyoralar harakatini real vaqt rejimida kuzatishingiz mumkin. Katta yarim o‘q ($a$) va ekssentrisitet ($e$) parametrlarini o‘zgartirib, Kepler maydonlar qonuni va orbital tezlik dinamikasini sinang!",
+  "ru": "В интерактивной лаборатории ниже вы можете в реальном времени наблюдать движение планет Солнечной системы, комет с большим эксцентриситетом или экзопланет вокруг чужой звезды. Меняя большую полуось ($a$) и эксцентриситет ($e$), проверьте закон площадей Кеплера и динамику орбитальной скорости!",
+  "en": "In the interactive lab below you can watch, in real time, the planets of the Solar System, highly eccentric comets or exoplanets around another star. Change the semi-major axis ($a$) and eccentricity ($e$) to test Kepler’s law of areas and orbital speed dynamics!"
+ },
+ {
+  "k": "6c88b3e2",
+  "s": "🪐 Quyosh tizimi (ichki + Yupiter + kometa)",
+  "ru": "🪐 Солнечная система (внутренние + Юпитер + комета)",
+  "en": "🪐 Solar System (inner + Jupiter + comet)"
+ },
+ {
+  "k": "439f3b20",
+  "s": "🌌 Ekzosayyora tizimi (Tranzit va Hot Jupiter)",
+  "ru": "🌌 Система экзопланет (транзит и горячий юпитер)",
+  "en": "🌌 Exoplanet system (transit and hot Jupiter)"
+ },
+ {
+  "k": "547f9ef6",
+  "s": "✨ Qo‘shaloq yulduz tizimi (Binary Orbit)",
+  "ru": "✨ Двойная звёздная система (Binary Orbit)",
+  "en": "✨ Binary star system"
+ },
+ {
+  "k": "88d17e73",
+  "s": "🛰️ Telemetriya paneli (oniy ko‘rsatkichlar):",
+  "ru": "🛰️ Панель телеметрии (мгновенные показатели):",
+  "en": "🛰️ Telemetry panel (instantaneous readings):"
+ },
+ {
+  "k": "da20f66e",
+  "s": "Kadr chastotasi:",
+  "ru": "Частота кадров:",
+  "en": "Frame rate:"
+ },
+ {
+  "k": "705e34d4",
+  "s": "60 FPS",
+  "ru": "60 FPS",
+  "en": "60 FPS"
+ },
+ {
+  "k": "321b720c",
+  "s": "Sayyora masofasi:",
+  "ru": "Расстояние до планеты:",
+  "en": "Planet distance:"
+ },
+ {
+  "k": "cfa0de4a",
+  "s": "1,000 AU (149,6 mln km)",
+  "ru": "1,000 а.е. (149,6 млн км)",
+  "en": "1.000 AU (149.6 million km)"
+ },
+ {
+  "k": "9fa4f053",
+  "s": "Orbital tezlik:",
+  "ru": "Орбитальная скорость:",
+  "en": "Orbital speed:"
+ },
+ {
+  "k": "4a55a98f",
+  "s": "29,78 km/s",
+  "ru": "29,78 км/с",
+  "en": "29.78 km/s"
+ },
+ {
+  "k": "4fc03eae",
+  "s": "Aylanish davri:",
+  "ru": "Период обращения:",
+  "en": "Orbital period:"
+ },
+ {
+  "k": "ec3698be",
+  "s": "1,00 yil",
+  "ru": "1,00 года",
+  "en": "1.00 yr"
+ },
+ {
+  "k": "36cf20b6",
+  "s": "Energiya holati:",
+  "ru": "Энергетическое состояние:",
+  "en": "Energy state:"
+ },
+ {
+  "k": "f2f4f8c5",
+  "s": "● barqaror (Kepler invarianti)",
+  "ru": "● устойчиво (инвариант Кеплера)",
+  "en": "● stable (Kepler invariant)"
+ },
+ {
+  "k": "9a99398a",
+  "s": "🖱️ Aylantirish uchun sudrab torting • kattalashtirish uchun sichqoncha g‘ildiragi • siljitish uchun o‘ng tugma bilan torting",
+  "ru": "🖱️ Перетаскивание — вращение • колесо мыши — масштаб • правая кнопка — сдвиг",
+  "en": "🖱️ Drag to rotate • mouse wheel to zoom • right-drag to pan"
+ },
+ {
+  "k": "ba4cc2d4",
+  "s": "Ekssentrisitet ($e$):",
+  "ru": "Эксцентриситет ($e$):",
+  "en": "Eccentricity ($e$):"
+ },
+ {
+  "k": "2485acfa",
+  "s": "Katta Yarim O‘q ($a$):",
+  "ru": "Большая полуось ($a$):",
+  "en": "Semi-major axis ($a$):"
+ },
+ {
+  "k": "665bc3d4",
+  "s": "1.00 AU",
+  "ru": "1.00 AU",
+  "en": "1.00 AU"
+ },
+ {
+  "k": "6411c6c5",
+  "s": "Vaqt Masshtabi ($k_{speed}$):",
+  "ru": "Масштаб времени ($k_{speed}$):",
+  "en": "Time scale ($k_{speed}$):"
+ },
+ {
+  "k": "7e0619bc",
+  "s": "⏸ Pauza",
+  "ru": "⏸ Пауза",
+  "en": "⏸ Pause"
+ },
+ {
+  "k": "90d64152",
+  "s": "🔄 Qayta boshlash",
+  "ru": "🔄 Перезапустить",
+  "en": "🔄 Restart"
+ },
+ {
+  "k": "447b65d9",
+  "s": "Vektorlarni ko‘rsatish ($\\vec{v}, \\vec{F}_g$)",
+  "ru": "Показывать векторы ($\\vec{v}, \\vec{F}_g$)",
+  "en": "Show vectors ($\\vec{v}, \\vec{F}_g$)"
+ },
+ {
+  "k": "d38fee8b",
+  "s": "Harakat izlari (Orbital Trails)",
+  "ru": "Следы движения (Orbital Trails)",
+  "en": "Orbital trails"
+ },
+ {
+  "k": "8eaa94af",
+  "s": "🎙️ Audio-vizual sinxronizatsiya va o‘zbekcha TTS sintezatori:",
+  "ru": "🎙️ Аудиовизуальная синхронизация и узбекский TTS-синтезатор:",
+  "en": "🎙️ Audio-visual sync and the Uzbek TTS synthesiser:"
+ },
+ {
+  "k": "373f41ed",
+  "s": "Harakat bilan sinxron ovozli tushuntirishni eshitish uchun TTS dvigatelini tanlang va tinglashni faollashtiring:",
+  "ru": "Чтобы услышать голосовое объяснение, синхронное с движением, выберите TTS-движок и включите прослушивание:",
+  "en": "To hear a spoken explanation synchronised with the motion, choose a TTS engine and start listening:"
+ },
+ {
+  "k": "db2271c2",
+  "s": "Muxlisa AI (O‘zbek tili - Tabiiy ohang)",
+  "ru": "Muxlisa AI (узбекский — естественная интонация)",
+  "en": "Muxlisa AI (Uzbek — natural intonation)"
+ },
+ {
+  "k": "54796682",
+  "s": "Aisha AI (Interaktiv didaktik ovoz)",
+  "ru": "Aisha AI (интерактивный дидактический голос)",
+  "en": "Aisha AI (interactive didactic voice)"
+ },
+ {
+  "k": "e8309253",
+  "s": "ElevenLabs Multilingual v2 (Astrofizik rejim)",
+  "ru": "ElevenLabs Multilingual v2 (астрофизический режим)",
+  "en": "ElevenLabs Multilingual v2 (astrophysics mode)"
+ },
+ {
+  "k": "3db415af",
+  "s": "Google Cloud Neural2 (SSML standart)",
+  "ru": "Google Cloud Neural2 (стандарт SSML)",
+  "en": "Google Cloud Neural2 (SSML standard)"
+ },
+ {
+  "k": "c35bbeec",
+  "s": "🔊 Ovozli tushuntirishni boshlash",
+  "ru": "🔊 Начать голосовое объяснение",
+  "en": "🔊 Start the spoken explanation"
+ },
+ {
+  "k": "460a0eae",
+  "s": "⏹ To‘xtatish",
+  "ru": "⏹ Остановить",
+  "en": "⏹ Stop"
+ },
+ {
+  "k": "11692f55",
+  "s": "\"Ovozli tushuntirishni boshlash uchun yuqoridagi tugmani bosing...\"",
+  "ru": "\"Нажмите кнопку выше, чтобы начать голосовое объяснение...\"",
+  "en": "\"Press the button above to start the spoken explanation...\""
+ },
+ {
+  "k": "25e8146f",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Interaktiv Ta’lim Asosi (6-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и основа интерактивного обучения (раздел 6):",
+  "en": "🌐 WWW scholarly source and interactive learning basis (Section 6):"
+ },
+ {
+  "k": "a7716455",
+  "s": "PhET Interactive Simulations. (2024).",
+  "ru": "PhET Interactive Simulations. (2024).",
+  "en": "PhET Interactive Simulations. (2024)."
+ },
+ {
+  "k": "1ea8fde7",
+  "s": "My Solar System: Planetary Orbits and Gravitational Mechanics",
+  "ru": "My Solar System: Planetary Orbits and Gravitational Mechanics",
+  "en": "My Solar System: Planetary Orbits and Gravitational Mechanics"
+ },
+ {
+  "k": "0b699404",
+  "s": ". University of Colorado Boulder.",
+  "ru": ". University of Colorado Boulder.",
+  "en": ". University of Colorado Boulder."
+ },
+ {
+  "k": "85c2f978",
+  "s": "https://phet.colorado.edu/en/simulations/my-solar-system",
+  "ru": "https://phet.colorado.edu/en/simulations/my-solar-system",
+  "en": "https://phet.colorado.edu/en/simulations/my-solar-system"
+ },
+ {
+  "k": "a469f113",
+  "s": "Foydalanuvchi orbital parametrlarni interaktiv o‘zgartirishi va real vaqtda trayektoriya, vektorlar va maydonlar o‘zgarishini ko‘rishi uning astrofizik qonuniyatlarni intuitiv tushunish samaradorligini 68% ga oshiradi.",
+  "ru": "Возможность интерактивно менять орбитальные параметры и в реальном времени видеть изменения траектории, векторов и площадей повышает эффективность интуитивного понимания астрофизических закономерностей на 68%.",
+  "en": "Letting learners change orbital parameters interactively and see the trajectory, vectors and areas change in real time increases how well they intuitively grasp astrophysical laws by 68%."
+ },
+ {
+  "k": "c5687538",
+  "s": "7. Diagnostik test va ilmiy-metodik manbalar",
+  "ru": "7. Диагностический тест и научно-методические источники",
+  "en": "7. Diagnostic test and scholarly sources"
+ },
+ {
+  "k": "27d35c3b",
+  "s": "🧠 10-ma’ruza diagnostik testi (3 ta kognitiv savol):",
+  "ru": "🧠 Диагностический тест к лекции 10 (3 когнитивных вопроса):",
+  "en": "🧠 Lecture 10 diagnostic test (3 cognitive questions):"
+ },
+ {
+  "k": "98471de1",
+  "s": "1-Savol: Keplerning ikkinchi qonuniga binoan, sayyora o‘z orbitasining perigeliy (quyoshga eng yaqin) nuqtasidan afeliy (eng uzoq) nuqtasiga o‘tganda uning oniy tezligi va sektor maydon tezligi ($dA/dt$) qanday o‘zgaradi?",
+  "ru": "Вопрос 1: Согласно второму закону Кеплера, как меняются мгновенная скорость планеты и секторная скорость ($dA/dt$) при переходе из перигелия (ближайшей к Солнцу точки) в афелий (самую дальнюю)?",
+  "en": "Question 1: According to Kepler’s second law, how do a planet’s instantaneous speed and areal velocity ($dA/dt$) change as it moves from perihelion (closest to the Sun) to aphelion (farthest)?"
+ },
+ {
+  "k": "ee5fb563",
+  "s": "A) Oniy tezlik ortadi, $dA/dt$ ham ortadi",
+  "ru": "A) Мгновенная скорость растёт, $dA/dt$ тоже растёт",
+  "en": "A) Instantaneous speed increases, and $dA/dt$ increases too"
+ },
+ {
+  "k": "218c3179",
+  "s": "B) Oniy tezlik kamayadi, ammo $dA/dt = \\text{const}$ o‘zgarmaydi (To‘g‘ri)",
+  "ru": "B) Мгновенная скорость уменьшается, а $dA/dt = \\text{const}$ не меняется (верно)",
+  "en": "B) Instantaneous speed decreases, but $dA/dt = \\text{const}$ stays constant (correct)"
+ },
+ {
+  "k": "61793185",
+  "s": "C) Oniy tezlik o‘zgarmaydi, $dA/dt$ kamayadi",
+  "ru": "C) Мгновенная скорость не меняется, $dA/dt$ уменьшается",
+  "en": "C) Instantaneous speed stays the same, $dA/dt$ decreases"
+ },
+ {
+  "k": "90d0b611",
+  "s": "D) Ikkala kattalik ham nolgacha pasayadi",
+  "ru": "D) Обе величины падают до нуля",
+  "en": "D) Both quantities drop to zero"
+ },
+ {
+  "k": "67a2a5c8",
+  "s": "2-Savol: Vis-Viva tenglamasiga ($v^2 = GM(2/r - 1/a)$) asosan, agar sayyora radiusi $r = a$ bo‘lgan nuqtadan o‘tayotgan bo‘lsa, uning tezligi qanday ifodalanadi?",
+  "ru": "Вопрос 2: Как, согласно уравнению Vis-Viva ($v^2 = GM(2/r - 1/a)$), выражается скорость планеты, проходящей точку с радиусом $r = a$?",
+  "en": "Question 2: According to the vis-viva equation ($v^2 = GM(2/r - 1/a)$), what is the speed of a planet passing a point at radius $r = a$?"
+ },
+ {
+  "k": "a4d19b6d",
+  "s": "A) $v = \\sqrt{GM/a}$ (Aylanma tezlikka teng) (To‘g‘ri)",
+  "ru": "A) $v = \\sqrt{GM/a}$ (равна круговой скорости) (верно)",
+  "en": "A) $v = \\sqrt{GM/a}$ (equal to the circular speed) (correct)"
+ },
+ {
+  "k": "7abe3b7f",
+  "s": "B) $v = \\sqrt{2GM/a}$ (Ikkinchi kosmik tezlik)",
+  "ru": "B) $v = \\sqrt{2GM/a}$ (вторая космическая скорость)",
+  "en": "B) $v = \\sqrt{2GM/a}$ (escape velocity)"
+ },
+ {
+  "k": "c1eb4f17",
+  "s": "C) $v = 0$ (To‘xtaydi)",
+  "ru": "C) $v = 0$ (останавливается)",
+  "en": "C) $v = 0$ (comes to a stop)"
+ },
+ {
+  "k": "b7dd8fcb",
+  "s": "D) $v = 2\\sqrt{GM/a}$",
+  "ru": "D) $v = 2\\sqrt{GM/a}$",
+  "en": "D) $v = 2\\sqrt{GM/a}$"
+ },
+ {
+  "k": "fdbf9627",
+  "s": "3-Savol: Tranzit fotometriya usulida yulduz yorug‘lik oqimining pasayish chuqurligi ($\\Delta F / F$) orqali ekzosayyoralarning qaysi parametri bevosita hisoblanadi?",
+  "ru": "Вопрос 3: Какой параметр экзопланеты непосредственно вычисляется по глубине падения потока света звезды ($\\Delta F / F$) в методе транзитной фотометрии?",
+  "en": "Question 3: Which exoplanet parameter is computed directly from the depth of the dip in starlight ($\\Delta F / F$) in transit photometry?"
+ },
+ {
+  "k": "7e2070b0",
+  "s": "A) Ekzosayyora massasi ($m_p$)",
+  "ru": "A) Масса экзопланеты ($m_p$)",
+  "en": "A) The exoplanet’s mass ($m_p$)"
+ },
+ {
+  "k": "a99c0520",
+  "s": "B) Ekzosayyora radiusi ($R_p / R_*$ nisbati orqali) (To‘g‘ri)",
+  "ru": "B) Радиус экзопланеты (через отношение $R_p / R_*$) (верно)",
+  "en": "B) The exoplanet’s radius (via the $R_p / R_*$ ratio) (correct)"
+ },
+ {
+  "k": "296d4b19",
+  "s": "C) Sayyora atmosferasidagi magnit maydon kuchlanganligi",
+  "ru": "C) Напряжённость магнитного поля в атмосфере планеты",
+  "en": "C) The magnetic field strength in the planet’s atmosphere"
+ },
+ {
+  "k": "c5a888bb",
+  "s": "D) Faqat uning aylanish davri",
+  "ru": "D) Только её период обращения",
+  "en": "D) Only its orbital period"
+ },
+ {
+  "k": "ca57705a",
+  "s": "✅ Natijani tekshirish",
+  "ru": "✅ Проверить результат",
+  "en": "✅ Check result"
+ },
+ {
+  "k": "1a6344c4",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Baholash Metodikasi (7-Bo‘lim):",
+  "ru": "🌐 Научно-методический источник WWW и методика оценивания (раздел 7):",
+  "en": "🌐 WWW scholarly source and assessment methodology (Section 7):"
+ },
+ {
+  "k": "1ffce04e",
+  "s": "Hestenes, D., Wells, M., va Swackhamer, G. (1992).",
+  "ru": "Hestenes, D., Wells, M., & Swackhamer, G. (1992).",
+  "en": "Hestenes, D., Wells, M., & Swackhamer, G. (1992)."
+ },
+ {
+  "k": "862e4d94",
+  "s": "Force Concept Inventory",
+  "ru": "Force Concept Inventory",
+  "en": "Force Concept Inventory"
+ },
+ {
+  "k": "db1217ad",
+  "s": ". The Physics Teacher, 30(3), 141-158.",
+  "ru": ". The Physics Teacher, 30(3), 141-158.",
+  "en": ". The Physics Teacher, 30(3), 141-158."
+ },
+ {
+  "k": "39ba9200",
+  "s": "https://doi.org/10.1119/1.2343497",
+  "ru": "https://doi.org/10.1119/1.2343497",
+  "en": "https://doi.org/10.1119/1.2343497"
+ },
+ {
+  "k": "1ec2f9da",
+  "s": "Kognitiv diagnostik testlar talabalarning fizika va astronomiyadagi nofizik noto‘g‘ri tushunchalarini (misconceptions) 92% aniqlik bilan aniqlash va o‘quv trayektoriyasini to‘g‘rilash imkonini beradi.",
+  "ru": "Когнитивные диагностические тесты позволяют с точностью 92% выявлять нефизичные неверные представления (misconceptions) студентов в физике и астрономии и корректировать учебную траекторию.",
+  "en": "Cognitive diagnostic tests make it possible to detect students’ unphysical misconceptions in physics and astronomy with 92% accuracy and correct their learning pathway."
+ },
+ {
+  "k": "a09764ed",
+  "s": "📚 10-ma’ruza bo‘yicha nufuzli ilmiy va didaktik manbalar (APA 7th Edition):",
+  "ru": "📚 Авторитетные научные и дидактические источники к лекции 10 (APA 7th Edition):",
+  "en": "📚 Authoritative scholarly and didactic sources for Lecture 10 (APA 7th Edition):"
+ },
+ {
+  "k": "024c3f13",
+  "s": "<strong>Carroll, B. W., va Ostlie, D. A. (2017).</strong> <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108380980</a>",
+  "ru": "<strong>Carroll, B. W., & Ostlie, D. A. (2017).</strong> <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108380980</a>",
+  "en": "<strong>Carroll, B. W., & Ostlie, D. A. (2017).</strong> <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108380980</a>"
+ },
+ {
+  "k": "c828cafa",
+  "s": "<strong>Murray, C. D., va Dermott, S. F. (1999).</strong> <em>Solar System Dynamics</em>. Cambridge University Press. <a href=\"https://doi.org/10.1017/CBO9781139174817\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/CBO9781139174817</a>",
+  "ru": "<strong>Murray, C. D., & Dermott, S. F. (1999).</strong> <em>Solar System Dynamics</em>. Cambridge University Press. <a href=\"https://doi.org/10.1017/CBO9781139174817\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/CBO9781139174817</a>",
+  "en": "<strong>Murray, C. D., & Dermott, S. F. (1999).</strong> <em>Solar System Dynamics</em>. Cambridge University Press. <a href=\"https://doi.org/10.1017/CBO9781139174817\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/CBO9781139174817</a>"
+ },
+ {
+  "k": "9f58d435",
+  "s": "<strong>Goldstein, H., Poole, C., va Safko, J. (2002).</strong> <em>Classical Mechanics</em> (3rd ed.). Addison-Wesley.",
+  "ru": "<strong>Goldstein, H., Poole, C., & Safko, J. (2002).</strong> <em>Classical Mechanics</em> (3rd ed.). Addison-Wesley.",
+  "en": "<strong>Goldstein, H., Poole, C., & Safko, J. (2002).</strong> <em>Classical Mechanics</em> (3rd ed.). Addison-Wesley."
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "d8d75389",
+  "s": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "ru": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "en": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>"
+ },
+ {
+  "k": "87d75092",
+  "s": "<strong>Mandel, K., va Agol, E. (2002).</strong> <em>Analytic Light Curves for Planetary Transit Searches</em>. The Astrophysical Journal, 580(2), L171. <a href=\"https://doi.org/10.1086/345520\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1086/345520</a>",
+  "ru": "<strong>Mandel, K., & Agol, E. (2002).</strong> <em>Analytic Light Curves for Planetary Transit Searches</em>. The Astrophysical Journal, 580(2), L171. <a href=\"https://doi.org/10.1086/345520\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1086/345520</a>",
+  "en": "<strong>Mandel, K., & Agol, E. (2002).</strong> <em>Analytic Light Curves for Planetary Transit Searches</em>. The Astrophysical Journal, 580(2), L171. <a href=\"https://doi.org/10.1086/345520\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1086/345520</a>"
+ },
+ {
+  "k": "af8abe14",
+  "s": "<strong>Mayor, M., va Queloz, D. (1995).</strong> <em>A Jupiter-mass companion to a solar-type star</em>. Nature, 378(6555), 355-359. <a href=\"https://doi.org/10.1038/378355a0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1038/378355a0</a>",
+  "ru": "<strong>Mayor, M., & Queloz, D. (1995).</strong> <em>A Jupiter-mass companion to a solar-type star</em>. Nature, 378(6555), 355-359. <a href=\"https://doi.org/10.1038/378355a0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1038/378355a0</a>",
+  "en": "<strong>Mayor, M., & Queloz, D. (1995).</strong> <em>A Jupiter-mass companion to a solar-type star</em>. Nature, 378(6555), 355-359. <a href=\"https://doi.org/10.1038/378355a0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1038/378355a0</a>"
+ },
+ {
+  "k": "51f5792d",
+  "s": "<strong>Seager, S. (2010).</strong> <em>Exoplanet Atmospheres: Physical Processes</em>. Princeton University Press.",
+  "ru": "<strong>Seager, S. (2010).</strong> <em>Exoplanet Atmospheres: Physical Processes</em>. Princeton University Press.",
+  "en": "<strong>Seager, S. (2010).</strong> <em>Exoplanet Atmospheres: Physical Processes</em>. Princeton University Press."
+ },
+ {
+  "k": "bc3761cb",
+  "s": "<strong>NASA Exoplanet Archive. (2024).</strong> <em>Transit and Radial Velocity Cumulative Data</em>. California Institute of Technology. <a href=\"https://exoplanetarchive.ipac.caltech.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://exoplanetarchive.ipac.caltech.edu</a>",
+  "ru": "<strong>NASA Exoplanet Archive. (2024).</strong> <em>Transit and Radial Velocity Cumulative Data</em>. California Institute of Technology. <a href=\"https://exoplanetarchive.ipac.caltech.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://exoplanetarchive.ipac.caltech.edu</a>",
+  "en": "<strong>NASA Exoplanet Archive. (2024).</strong> <em>Transit and Radial Velocity Cumulative Data</em>. California Institute of Technology. <a href=\"https://exoplanetarchive.ipac.caltech.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://exoplanetarchive.ipac.caltech.edu</a>"
+ },
+ {
+  "k": "6122c159",
+  "s": "<strong>PhET Interactive Simulations. (2024).</strong> <em>My Solar System: Planetary Orbits and Gravitational Mechanics</em>. University of Colorado Boulder. <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu</a>",
+  "ru": "<strong>PhET Interactive Simulations. (2024).</strong> <em>My Solar System: Planetary Orbits and Gravitational Mechanics</em>. University of Colorado Boulder. <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu</a>",
+  "en": "<strong>PhET Interactive Simulations. (2024).</strong> <em>My Solar System: Planetary Orbits and Gravitational Mechanics</em>. University of Colorado Boulder. <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu</a>"
+ },
+ {
+  "k": "616750a7",
+  "s": "<strong>ElevenLabs Research. (2024).</strong> <em>Acoustic Model Architectures for Multilingual Neural TTS</em>. <a href=\"https://elevenlabs.io/research\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://elevenlabs.io/research</a>",
+  "ru": "<strong>ElevenLabs Research. (2024).</strong> <em>Acoustic Model Architectures for Multilingual Neural TTS</em>. <a href=\"https://elevenlabs.io/research\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://elevenlabs.io/research</a>",
+  "en": "<strong>ElevenLabs Research. (2024).</strong> <em>Acoustic Model Architectures for Multilingual Neural TTS</em>. <a href=\"https://elevenlabs.io/research\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://elevenlabs.io/research</a>"
+ },
+ {
+  "k": "1461edac",
+  "s": "<strong>Google Cloud Speech Team. (2023).</strong> <em>Text-to-Speech SSML Implementation Guide</em>. Google Cloud Documentation. <a href=\"https://cloud.google.com/text-to-speech/docs/ssml\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://cloud.google.com/text-to-speech/docs/ssml</a>",
+  "ru": "<strong>Google Cloud Speech Team. (2023).</strong> <em>Text-to-Speech SSML Implementation Guide</em>. Google Cloud Documentation. <a href=\"https://cloud.google.com/text-to-speech/docs/ssml\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://cloud.google.com/text-to-speech/docs/ssml</a>",
+  "en": "<strong>Google Cloud Speech Team. (2023).</strong> <em>Text-to-Speech SSML Implementation Guide</em>. Google Cloud Documentation. <a href=\"https://cloud.google.com/text-to-speech/docs/ssml\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://cloud.google.com/text-to-speech/docs/ssml</a>"
+ },
+ {
+  "k": "04965420",
+  "s": "<strong>Muxlisa AI Research Group. (2024).</strong> <em>Natural Uzbek Language Processing and Neural Voice Modeling</em>. Tashkent AI Lab.",
+  "ru": "<strong>Muxlisa AI Research Group. (2024).</strong> <em>Natural Uzbek Language Processing and Neural Voice Modeling</em>. Tashkent AI Lab.",
+  "en": "<strong>Muxlisa AI Research Group. (2024).</strong> <em>Natural Uzbek Language Processing and Neural Voice Modeling</em>. Tashkent AI Lab."
+ },
+ {
+  "k": "ea384a51",
+  "s": "<strong>W3C WebAssembly va Graphics Group. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. <a href=\"https://www.w3.org/TR/2dcontext/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.w3.org/TR/2dcontext/</a>",
+  "ru": "<strong>W3C WebAssembly & Graphics Group. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. <a href=\"https://www.w3.org/TR/2dcontext/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.w3.org/TR/2dcontext/</a>",
+  "en": "<strong>W3C WebAssembly & Graphics Group. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. <a href=\"https://www.w3.org/TR/2dcontext/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.w3.org/TR/2dcontext/</a>"
+ },
+ {
+  "k": "214e3197",
+  "s": "<strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/3-540-30666-8</a>",
+  "ru": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/3-540-30666-8</a>",
+  "en": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/3-540-30666-8</a>"
+ }
+]

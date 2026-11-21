@@ -1,0 +1,91 @@
+7fb327d4	Дополнительная лекция A3 · Астрономия	Supplementary lecture A3 · Astronomy
+a4a6b532	Светосила и разрешающая способность телескопа, шкала Погсона и ПЗС-фотометрия, определение периода по кривой блеска, измерение расстояний с помощью цефеид и транзитная фотометрия. Лабораторная работа с интерактивной моделью наблюдений и открытыми данными космического телескопа Kepler.	A telescope’s light-gathering power and resolution, the Pogson scale and CCD photometry, finding a period from a light curve, measuring distances with Cepheids and transit photometry. A lab with an interactive observing model and open data from the Kepler space telescope.
+3a78e9f6	Современная астрономия — наука о данных. Телескопы измеряют яркость миллионов звёзд во времени, и эти данные бесплатно доступны всем в открытых архивах. В этой лекции изучаются основные параметры телескопа, фотометрия, определение периода по кривой блеска и <strong>измерение расстояний с помощью цефеид</strong>.	Modern astronomy is a data science. Telescopes measure the brightness of millions of stars over time, and the data are free for everyone in open archives. This lecture covers a telescope’s main parameters, photometry, finding periods from light curves and <strong>measuring distances with Cepheids</strong>.
+8880aa4c	3.1. Основные параметры телескопа	3.1. A telescope’s main parameters
+720f58fb	Формула	Formula
+5a457f7b	Смысл	Meaning
+d2b6c294	<strong>Светосила (сбор света)</strong>	<strong>Light-gathering power</strong>
+f65e1913	Телескоп вдвое большего диаметра собирает в 4 раза больше фотонов	A telescope with twice the diameter collects 4 times as many photons
+5aa5edc6	<strong>Предел разрешения</strong>	<strong>Resolution limit</strong>
+affa4a9e	Наименьший угол, при котором две близкие точки видны раздельно (критерий Рэлея)	The smallest angle at which two close points can be seen separately (the Rayleigh criterion)
+708a9608	<strong>Увеличение</strong>	<strong>Magnification</strong>
+c1ba5ae1	Отношение фокусных расстояний объектива и окуляра; в фотометрии не главное	The ratio of the objective and eyepiece focal lengths; not important in photometry
+093fd97d	<strong>Условия видимости (seeing)</strong>	<strong>Seeing</strong>
+7e27a011	обычно 0,5″–2″	typically 0.5″–2″
+bb8635d7	Реальное разрешение наземных телескопов из-за турбулентности атмосферы	The real resolution of ground-based telescopes, limited by atmospheric turbulence
+59b1ddab	3.2. Фотометрия и звёздные величины	3.2. Photometry and magnitudes
+08fd0311	Звёздные величины измеряются по логарифмической шкале (формула Погсона). Разница в 5 величин соответствует разнице потоков ровно в 100 раз; чем меньше величина, тем ярче звезда:	Stellar magnitudes are measured on a logarithmic scale (the Pogson formula). A difference of 5 magnitudes is exactly a factor of 100 in flux; the smaller the magnitude, the brighter the star:
+b9c3fdf4	В ПЗС-камере сигнал собирается внутри круглой апертуры вокруг звезды, фон неба вычитается. Точность измерения определяется отношением сигнал/шум (S/N):	In a CCD camera the signal is summed inside a circular aperture around the star and the sky background is subtracted. Measurement precision is set by the signal-to-noise ratio (S/N):
+f2ad2ca6	Здесь ⟦1⟧ — число электронов от звезды, ⟦2⟧ — число пикселей в апертуре, ⟦3⟧ — шум считывания. Для яркой звезды ⟦4⟧, то есть если увеличить экспозицию в 4 раза, погрешность уменьшится в 2 раза.	Here ⟦1⟧ is the number of electrons from the star, ⟦2⟧ the number of pixels in the aperture and ⟦3⟧ the read noise. For a bright star ⟦4⟧, so making the exposure 4 times longer halves the error.
+2be5ebad	3.3. Кривая блеска и определение периода	3.3. Light curves and finding the period
+c9cfa2ed	Кривая блеска — зависимость звёздной величины от времени. Наблюдения проводятся в неравномерные моменты времени (днём и в облачные дни наблюдать нельзя), поэтому период находят методом <strong>свёртки по фазе</strong>:	A light curve is a star’s magnitude as a function of time. Observations are taken at uneven times (you cannot observe by day or when it is cloudy), so the period is found by <strong>phase folding</strong>:
+8a918d80	Если пробный период ⟦1⟧ верен, все точки образуют по фазе единую гладкую кривую; если неверен — беспорядочное облако. Эта идея лежит в основе метода <em>минимизации фазовой дисперсии</em> (PDM, Stellingwerf, 1978). Другие методы: периодограмма Ломба–Скаргла (для синусоидальных изменений) и BLS (сигнал в форме «коробки» для транзитов).	If the trial period ⟦1⟧ is right, all the points form one smooth curve in phase; if it is wrong, a jumbled cloud. This idea underlies <em>phase dispersion minimisation</em> (PDM, Stellingwerf, 1978). Other methods: the Lomb–Scargle periodogram (for sinusoidal variation) and BLS (a "box"-shaped signal for transits).
+6eb641ff	3.4. Цефеиды — «стандартная свеча»	3.4. Cepheids — a "standard candle"
+6fdaae1a	Цефеиды — радиально пульсирующие звёзды-гиганты. В 1912 году Генриетта Ливитт (Leavitt) установила, что чем ярче цефеиды в Малом Магеллановом Облаке, тем длиннее их период. Современная калибровка (Benedict и др., 2007):	Cepheids are radially pulsating giant stars. In 1912 Henrietta Leavitt found that the brighter the Cepheids in the Small Magellanic Cloud, the longer their periods. A modern calibration (Benedict et al., 2007):
+7198122d	Найдя период по кривой блеска, а среднюю видимую величину ⟦1⟧ — из наблюдений, вычисляем расстояние через модуль расстояния:	With the period from the light curve and the mean apparent magnitude ⟦1⟧ from observation, we compute the distance through the distance modulus:
+55779356	Цефеиды послужили Хабблу при доказательстве того, что туманность Андромеды — галактика (1925), и остаются ключевой ступенью «лестницы расстояний» при измерении современной постоянной Хаббла.	Cepheids let Hubble prove that the Andromeda Nebula is a galaxy (1925), and they remain a key rung of the "distance ladder" in measuring today’s Hubble constant.
+d06f08f5	3.5. Транзитная фотометрия	3.5. Transit photometry
+e5de69fc	Когда планета проходит перед диском звезды, свет немного ослабевает: ⟦1⟧. Планета размером с Юпитер уменьшает свет звезды, подобной Солнцу, на ~1 %, а планета размером с Землю — лишь на ~0,008 %. Космические телескопы Kepler (2009–2018) и TESS (с 2018 года) нашли этим методом тысячи экзопланет. Подробнее —	When a planet passes in front of its star’s disc the light dims slightly: ⟦1⟧. A Jupiter-sized planet dims a Sun-like star by ~1 %, an Earth-sized one by only ~0.008 %. The Kepler (2009–2018) and TESS (since 2018) space telescopes have found thousands of exoplanets this way. More detail in
+43da894d	3.6. Открытые архивы наблюдений	3.6. Open observation archives
+31f0db15	Что даёт	What it offers
+43626d16	Данные Kepler, TESS, Хаббла и JWST	Kepler, TESS, Hubble and JWST data
+817e7a6d	Любительские и профессиональные наблюдения переменных звёзд (более 100 лет)	Amateur and professional variable star observations (over 100 years)
+13ac8516	<strong>Архив Gaia</strong> (ESA)	<strong>Gaia archive</strong> (ESA)
+9865eb0e	~1,8 млрд звёзд: параллакс, фотометрия, переменность	~1.8 billion stars: parallax, photometry, variability
+2b46b70a	Подтверждённые экзопланеты и их параметры	Confirmed exoplanets and their parameters
+255d8bde	Модель создаёт серию искусственных наблюдений: зашумлённые измерения, полученные в случайные моменты времени. Ваша задача — двигая ползунок <strong>пробного периода</strong>, найти период, при котором точки на свёрнутом по фазе графике ложатся на гладкую кривую. Шум зависит от диаметра телескопа и времени экспозиции (упрощённая модель).	The model creates a series of artificial observations: noisy measurements taken at random times. Your job is to move the <strong>trial period</strong> slider and find the period at which the points on the phase-folded plot fall on a smooth curve. The noise depends on the telescope diameter and exposure time (a simplified model).
+c268e44c	Тип объекта	Object type
+743d5f7e	Цефеида (пульсирующая звезда)	Cepheid (pulsating star)
+ceceeea2	Транзитная экзопланета	Transiting exoplanet
+d2087685	Диаметр телескопа D:	Telescope diameter D:
+3935a128	100 мм	100 mm
+bc6d0d0e	Время экспозиции:	Exposure time:
+19f4edd0	Пробный период P:	Trial period P:
+2088f10e	🔎 Автоматический поиск (PDM / BLS)	🔎 Automatic search (PDM / BLS)
+04272b2c	🎲 Новый объект	🎲 New object
+bb423cbc	Показать ответ	Show answer
+06b9688b	Найдите период вручную, затем сравните с результатом «Автоматического поиска». Как меняется значение Θ?	Find the period by hand, then compare it with the "Automatic search" result. How does Θ change?
+e9ff6942	Установите пробный период вдвое больше истинного. Что видно на свёрнутом по фазе графике и почему PDM даёт минимум и при таких периодах?	Set the trial period to twice the true period. What do you see on the phase-folded plot, and why does PDM also give a minimum at such periods?
+a7188493	Увеличьте диаметр телескопа с 50 мм до 500 мм. Во сколько раз уменьшится погрешность одного измерения?	Increase the telescope diameter from 50 mm to 500 mm. By what factor does a single measurement’s error drop?
+50e5626c	По найденному периоду рассчитайте расстояние до цефеиды и проверьте с помощью «Показать ответ». Откуда берётся погрешность?	Calculate the Cepheid’s distance from the period you found and check it with "Show answer". Where does the error come from?
+9cd7fa2e	По открытым фотометрическим данным космического телескопа Kepler определить (1) период транзита экзопланеты и радиус планеты, (2) период и расстояние цефеиды; самостоятельно проверить код анализа, написанный ИИ.	Use open Kepler space telescope photometry to find (1) an exoplanet’s transit period and the planet’s radius and (2) a Cepheid’s period and distance; check the AI-written analysis code yourself.
+f715ac6e	<strong>Необходимые инструменты (все бесплатные):</strong> Google Colab, Python-библиотека с открытым кодом ⟨2⟩Lightkurve⟨/2⟩ (автоматически загружает данные из архива MAST), бесплатный тариф Gemini, ChatGPT или Claude.	<strong>Tools you need (all free):</strong> Google Colab, the open-source ⟨2⟩Lightkurve⟨/2⟩ Python library (it downloads data from the MAST archive automatically), and the free tier of Gemini, ChatGPT or Claude.
+97300875	Часть A. Экзопланета Kepler-10 b	Part A. The exoplanet Kepler-10 b
+7ca5e7e7	Сравните найденный период со значением в NASA Exoplanet Archive (для Kepler-10 b ≈ 0,837 сут).	Compare the period you found with the NASA Exoplanet Archive value (≈ 0.837 days for Kepler-10 b).
+1538f462	По глубине найдите ⟦1⟧. Приняв радиус звезды ⟦2⟧, рассчитайте радиус планеты в радиусах Земли (⟦3⟧).	Find ⟦1⟧ from the depth. Taking the star’s radius as ⟦2⟧, calculate the planet’s radius in Earth radii (⟦3⟧).
+d2b6768e	Обратите внимание на пики периодограммы при периодах P/2 и 2P: почему они появляются? Почему вторая планета системы Kepler-10 c (P ≈ 45,3 сут) не видна на этой периодограмме?	Look at the periodogram peaks at P/2 and 2P: why do they appear? Why is the system’s second planet, Kepler-10 c (P ≈ 45.3 days), not visible in this periodogram?
+310e6f65	Часть B. Цефеида V1154 Cyg	Part B. The Cepheid V1154 Cyg
+390434b1	По найденному периоду (≈ 4,9 сут) рассчитайте ⟦1⟧ из закона Ливитт.	Using the period you found (≈ 4.9 days), calculate ⟦1⟧ from Leavitt’s law.
+d8547ce2	Возьмите среднюю видимую величину звезды из SIMBAD или AAVSO (⟦1⟧) и оцените расстояние без учёта поглощения.	Take the star’s mean apparent magnitude from SIMBAD or AAVSO (⟦1⟧) and estimate the distance ignoring extinction.
+f202246d	Сравните результат с расстоянием по параллаксу Gaia. С какими факторами (межзвёздное поглощение, разброс закона Ливитт) связано различие?	Compare the result with the Gaia parallax distance. Which factors (interstellar extinction, scatter in Leavitt’s law) explain the difference?
+d00c7003	ИИ иногда «придумывает» имена и аргументы библиотечных функций. Запустите код и проверьте, сравните строки с ошибками с официальной документацией и запишите в журнал ИИ.	AI sometimes "invents" library function names and arguments. Run the code to check it, compare any lines that fail with the official documentation and log them in your AI journal.
+72864bdb	Анализ транзита	Transit analysis
+a8625c95	Период, глубина, радиус планеты и их погрешности	Period, depth, planet radius and their errors
+f965a659	Цефеида и расстояние	Cepheid and distance
+e3c41a3e	Период, ⟦1⟧, расстояние; сравнение с Gaia	Period, ⟦1⟧, distance; comparison with Gaia
+a952a031	Код работает, у графиков есть оси и единицы	The code runs; the plots have axes and units
+07dc2493	Проанализированы ограничения методов и источники погрешностей	The methods’ limits and sources of error are analysed
+20357b1d	Вопрос 1. Разность величин двух звёзд 5ᵐ. Каково отношение их световых потоков?	Question 1. Two stars differ by 5ᵐ. What is the ratio of their fluxes?
+c9c49d88	Вопрос 2. Диаметр телескопа увеличили в 2 раза. Как изменится предел разрешения?	Question 2. A telescope’s diameter is doubled. How does its resolution limit change?
+dd09048e	A) Ухудшится в 2 раза	A) It gets 2 times worse
+cbfdfd72	B) Улучшится в 2 раза (θ уменьшится)	B) It gets 2 times better (θ gets smaller)
+18772338	C) Улучшится в 4 раза	C) It gets 4 times better
+f245e105	Вопрос 3. Период цефеиды 10 сут, средняя видимая величина 10ᵐ. Каково расстояние без учёта поглощения?	Question 3. A Cepheid has a 10-day period and a mean apparent magnitude of 10ᵐ. What is its distance, ignoring extinction?
+3477f898	A) ≈ 640 пк	A) ≈ 640 pc
+0bafbac6	B) ≈ 6,4 кпк	B) ≈ 6.4 kpc
+42199d43	C) ≈ 64 кпк	C) ≈ 64 kpc
+478efa8a	D) ≈ 100 пк	D) ≈ 100 pc
+a4578fb2	Вопрос 4. Почему при поиске периода применяется метод свёртки по фазе?	Question 4. Why is phase folding used to find a period?
+e793a2e5	A) Наблюдения проводятся в неравномерные моменты, и на один период приходится мало точек	A) Observations are taken at uneven times and few points fall within one period
+142bbecf	B) Телескоп работает только одну ночь	B) The telescope only works for one night
+b562ae3f	C) Фаза даёт температуру звезды	C) The phase gives the star’s temperature
+a47fcfd9	D) Свёртка по фазе полностью устраняет шум	D) Phase folding removes noise completely
+175c15a5	Почему космические телескопы (Kepler, TESS) дают более точную фотометрию, чем наземные?	Why do space telescopes (Kepler, TESS) give more precise photometry than ground-based ones?
+15462ee0	Что такое «лестница расстояний»? Как на этой лестнице связаны параллакс, цефеиды и сверхновые типа Ia?	What is the "distance ladder"? How are parallax, Cepheids and type Ia supernovae linked on it?
+7e1017b1	Чем кривая блеска затменной двойной звезды отличается от транзита?	How does an eclipsing binary’s light curve differ from a transit?
+c9fa69e7	=	=
+bfdd70d2	=	=
+ad29f897	=	=
+d67876ad	!pip install -q lightkurve⏎import numpy as np⏎import lightkurve as lk⏎⏎lc = lk.search_lightcurve("Kepler-10", author="Kepler", cadence="long").download_all().stitch()⏎lc = lc.flatten(window_length=901).remove_outliers(sigma=5)⏎⏎pg = lc.to_periodogram(method="bls", period=np.arange(0.3, 10, 0.0005), duration=0.08)⏎P = pg.period_at_max_power⏎t0 = pg.transit_time_at_max_power⏎print("Период:", P, "  глубина:", pg.depth_at_max_power)⏎⏎lc.fold(period=P, epoch_time=t0).scatter(alpha=0.2)	!pip install -q lightkurve⏎import numpy as np⏎import lightkurve as lk⏎⏎lc = lk.search_lightcurve("Kepler-10", author="Kepler", cadence="long").download_all().stitch()⏎lc = lc.flatten(window_length=901).remove_outliers(sigma=5)⏎⏎pg = lc.to_periodogram(method="bls", period=np.arange(0.3, 10, 0.0005), duration=0.08)⏎P = pg.period_at_max_power⏎t0 = pg.transit_time_at_max_power⏎print("Period:", P, "  depth:", pg.depth_at_max_power)⏎⏎lc.fold(period=P, epoch_time=t0).scatter(alpha=0.2)
+edc38349	lc = lk.search_lightcurve("V1154 Cyg", author="Kepler", cadence="long").download_all().stitch()⏎lc = lc.remove_nans().remove_outliers(sigma=5)⏎pg = lc.to_periodogram(method="lombscargle", minimum_period=1, maximum_period=20)⏎print("Период:", pg.period_at_max_power)⏎lc.fold(period=pg.period_at_max_power).scatter(alpha=0.3)	lc = lk.search_lightcurve("V1154 Cyg", author="Kepler", cadence="long").download_all().stitch()⏎lc = lc.remove_nans().remove_outliers(sigma=5)⏎pg = lc.to_periodogram(method="lombscargle", minimum_period=1, maximum_period=20)⏎print("Period:", pg.period_at_max_power)⏎lc.fold(period=pg.period_at_max_power).scatter(alpha=0.3)
+85b38640	Я получил с помощью Lightkurve кривую блеска из данных Kepler.⏎1) Понятно для студента объясни, как работает периодограмма BLS.⏎2) Напиши код, измеряющий глубину и длительность транзита по свёрнутой по фазе⏎   кривой; оцени погрешность методом bootstrap.⏎3) Покажи, как распознать ошибку кратности периода (P/2, 2P).⏎На каждом шаге указывай физические единицы.	I used Lightkurve to get a light curve from Kepler data.⏎1) Explain how the BLS periodogram works in a way a student can follow.⏎2) Write code that measures the transit depth and duration from the phase-folded⏎   curve; estimate the error with bootstrapping.⏎3) Show how to spot a period-multiple error (P/2, 2P).⏎Give the physical units at every step.

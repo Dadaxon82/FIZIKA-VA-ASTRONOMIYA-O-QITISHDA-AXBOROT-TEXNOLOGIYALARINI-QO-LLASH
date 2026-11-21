@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -39,9 +40,9 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
-          toast('Nusxalandi!');
+          toast(__t("Nusxalandi!"));
         };
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(text).then(done).catch(() => { target.select(); document.execCommand('copy'); done(); });
@@ -61,22 +62,22 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
       color: 'var(--accent-cyan)',
-      plan: "Avval 5-bo‘limdagi dastgohda \"Qayta o‘rnatish\" tugmasini bir necha marta bosib, orbita har safar aynan takrorlanishini, gaz esa har safar boshqacha boshlanishini kuzating. So‘ng 2-bo‘limdagi jadvalning 1–4-mezonlarini o‘z so‘zlaringiz bilan to‘ldiring.",
-      focus: "deterministik va stoxastik model ta’rifi, takrorlanuvchanlik, kirish va chiqish parametrlari"
+      plan: __t("Avval 5-bo‘limdagi dastgohda \"Qayta o‘rnatish\" tugmasini bir necha marta bosib, orbita har safar aynan takrorlanishini, gaz esa har safar boshqacha boshlanishini kuzating. So‘ng 2-bo‘limdagi jadvalning 1–4-mezonlarini o‘z so‘zlaringiz bilan to‘ldiring."),
+      focus: __t("deterministik va stoxastik model ta’rifi, takrorlanuvchanlik, kirish va chiqish parametrlari")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
       color: 'var(--accent-emerald)',
-      plan: "PhET «Gravity and Orbits» da orbital tezlikni o‘zgartirib aylanma, elliptik va ochiq trayektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting.",
-      focus: "Kepler orbitalari, Maksvell-Bolsman taqsimoti, bosim fluktuatsiyalari, 8 mezonli taqqoslash"
+      plan: __t("PhET «Gravity and Orbits» da orbital tezlikni o‘zgartirib aylanma, elliptik va ochiq trayektoriyalarni oling; «Gas Properties» da haroratni oshirib, tezlik gistogrammasi va bosim fluktuatsiyalarini qayd eting. Natijalarni 8 mezonli jadvalga kiriting."),
+      focus: __t("Kepler orbitalari, Maksvell-Bolsman taqsimoti, bosim fluktuatsiyalari, 8 mezonli taqqoslash")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
       color: 'var(--accent-purple)',
-      plan: "Gaz modeli ichki jihatdan deterministik (Nyuton + elastik to‘qnashuvlar) bo‘lsa-da, nima uchun uni statistik tavsiflash zarurligini tushuntiring. Dastgohda Broun zarrasining $\\langle r^2 \\rangle$ ning vaqtga chiziqli o‘sishini baholang va entropiya o‘sishini qaytmaslik bilan bog‘lang.",
-      focus: "mikroskopik determinizm va makroskopik statistika, ergodik gipoteza, Broun harakati (<r^2> = 4Dt), entropiya va qaytmaslik"
+      plan: __t("Gaz modeli ichki jihatdan deterministik (Nyuton + elastik to‘qnashuvlar) bo‘lsa-da, nima uchun uni statistik tavsiflash zarurligini tushuntiring. Dastgohda Broun zarrasining $\\langle r^2 \\rangle$ ning vaqtga chiziqli o‘sishini baholang va entropiya o‘sishini qaytmaslik bilan bog‘lang."),
+      focus: __t("mikroskopik determinizm va makroskopik statistika, ergodik gipoteza, Broun harakati (<r^2> = 4Dt), entropiya va qaytmaslik")
     }
   };
 
@@ -93,7 +94,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       const answers = Object.keys(DIAG_KEY).map(name => document.querySelector(`input[name="${name}"]:checked`));
       box.style.display = 'block';
       if (answers.some(a => !a)) {
-        titleEl.textContent = '⚠️ Barcha 4 ta savolga javob bering';
+        titleEl.textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         titleEl.style.color = 'var(--accent-amber)';
         scoreEl.textContent = '';
         planEl.textContent = '';
@@ -110,19 +111,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       box.style.borderColor = c.color;
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      scoreEl.textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
-      planEl.innerHTML = `<strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-A, 2-C, 3-B, 4-C.` : '');
+      scoreEl.textContent = __t("{0} / 100 ball ({1}/4 to‘g‘ri)", [score, correct]);
+      planEl.innerHTML = __t("<strong>Individual reja:</strong> {0}", [c.plan]) +
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-A, 2-C, 3-B, 4-C.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       promptEl.value =
-`Siz fizikada kompyuterli modellashtirish bo‘yicha Sokratik konsultantsiz. Men 5-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Asosiy mavzular: ${c.focus}.
-Laboratoriya obyektlari: PhET «Gravity and Orbits» (deterministik) va «Gas Properties» (stoxastik tavsif).
-Iltimos:
-1. Tayyor jadval yoki xulosa bermang — ikkala modelni o‘zim taqqoslashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.
-2. PhET’da qaysi o‘lchovlarni olishim kerakligini ayting.
-3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.`;
+__t("Siz fizikada kompyuterli modellashtirish bo‘yicha Sokratik konsultantsiz. Men 5-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nLaboratoriya obyektlari: PhET «Gravity and Orbits» (deterministik) va «Gas Properties» (stoxastik tavsif).\nIltimos:\n1. Tayyor jadval yoki xulosa bermang — ikkala modelni o‘zim taqqoslashim uchun bosqichma-bosqich yo‘naltiruvchi savollar bering.\n2. PhET’da qaysi o‘lchovlarni olishim kerakligini ayting.\n3. Mening darajamga mos bitta qo‘shimcha tajriba taklif qiling.", [score, key, c.focus]);
     });
   }
 
@@ -220,7 +215,7 @@ Iltimos:
       dctx.fillStyle = '#94A3B8'; dctx.font = '11px ui-monospace, monospace';
       dctx.fillText(`t = ${uzFix(planet.t, 2)}`, 8, 16);
       const info = orbitInfo();
-      dctx.fillText(info.closed ? `yopiq orbita, a = ${uzFix(info.a, 2)}` : 'ochiq orbita (E ≥ 0)', 8, 30);
+      dctx.fillText(info.closed ? __t("yopiq orbita, a = {0}", [uzFix(info.a, 2)]) : __t("ochiq orbita (E ≥ 0)"), 8, 30);
     }
 
     // ---------------- Stoxastik tavsif: 2D gaz + Broun zarrasi -------------
@@ -356,7 +351,7 @@ Iltimos:
       }
       sctx.stroke();
       sctx.fillStyle = '#94A3B8'; sctx.font = '10px ui-monospace, monospace';
-      sctx.textAlign = 'right'; sctx.fillText('f(v) va Maksvell taqsimoti', hx + hw + 2, hy - 4); sctx.textAlign = 'left';
+      sctx.textAlign = 'right'; sctx.fillText(__t("f(v) va Maksvell taqsimoti"), hx + hw + 2, hy - 4); sctx.textAlign = 'left';
 
       const r2 = (big.x - bigStart.x) ** 2 + (big.y - bigStart.y) ** 2;
       sctx.fillText(`t = ${uzFix(stoTime, 1)} s   r² = ${uzFix(r2, 0)} px²`, 8, 14);
@@ -364,7 +359,7 @@ Iltimos:
 
     function updateReadouts() {
       const info = orbitInfo();
-      outPeriod.textContent = info.closed ? `${uzFix(info.T, 2)} (shartli birlik)` : '∞ (ochiq orbita)';
+      outPeriod.textContent = info.closed ? `${uzFix(info.T, 2)} (shartli birlik)` : __t("∞ (ochiq orbita)");
       outEnergy.textContent = `${uzFix(info.E, 2)} (shartli birlik)`;
       const mean = gas.reduce((a, p) => a + Math.hypot(p.vx, p.vy), 0) / gas.length;
       outSpeed.textContent = `${uzFix(toMs(mean), 0)} m/s (N₂, 2D)`;
@@ -455,16 +450,16 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
-      if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
-      if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
-      return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };
+      if (total >= 86) return { text: __t("A (A’lo — 5)"), cls: 'badge-emerald' };
+      if (total >= 71) return { text: __t("B (Yaxshi — 4)"), cls: 'badge-cyan' };
+      if (total >= 55) return { text: __t("C (Qoniqarli — 3)"), cls: 'badge-amber' };
+      return { text: __t("D (Qoniqarsiz — 2)"), cls: 'badge-rose' };
     }
 
     function update() {
       let total = 0;
       selects.forEach(s => { total += parseInt(s.value, 10) || 0; });
-      totalEl.textContent = `${total} / 100 ball`;
+      totalEl.textContent = __t("{0} / 100 ball", [total]);
       if (gradeEl) {
         const g = grade(total);
         gradeEl.textContent = g.text;

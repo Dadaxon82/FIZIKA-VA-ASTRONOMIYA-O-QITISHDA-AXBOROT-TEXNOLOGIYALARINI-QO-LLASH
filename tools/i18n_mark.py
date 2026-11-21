@@ -237,7 +237,9 @@ def process(path, lookup):
     source = wire_head(source, path)
     # Asosiy matni to'liq tarjima qilingan sahifalar: bosh sahifa va simulyatorlar.
     # Qolganlarida RU/EN tanlanganda "asosiy matn o'zbek tilida" bildirishnomasi chiqadi.
-    full = path.name == 'index.html' or path.parent.name == 'sims'
+    pid = ('sims-' if path.parent.name == 'sims' else '') + path.stem
+    full = (path.name == 'index.html' or path.parent.name == 'sims' or
+            (path.parents[1 if path.parent.name == 'sims' else 0] / 'locales' / 'content' / (pid + '.json')).exists())
     source = source.replace(' data-i18n-mt="off"', '')
     if not full and 'data-i18n-coverage=' not in source:
         source = re.sub(r'<html lang="uz"', '<html lang="uz" data-i18n-coverage="partial"', source, count=1)

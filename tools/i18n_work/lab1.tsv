@@ -1,0 +1,177 @@
+bd26c54f	Лабораторное занятие 1: генеративный ИИ и проект физической симуляции	Lab 1: Generative AI and a Physics Simulation Project
+960d1c26	Цели и задачи дисциплины, ожидаемые итоговые результаты и навык — умение самостоятельно создавать веб-страницы с симуляцией любого физического процесса с помощью цифровых технологий — формируются через полный 6-этапный	The aims and objectives of the course, the expected learning outcomes and the core skill — independently building simulation web pages of any physical process with digital technology — are developed through the complete 6-stage
+940241d6	(диагностика MagicSchool AI → сценарий урока Gemini/ChatGPT → визуальный концепт Midjourney → видеоанимация Runway/Sora → детерминированная Canvas-симуляция Claude).	(MagicSchool AI diagnostics → Gemini/ChatGPT lesson scenario → Midjourney visual concept → Runway/Sora video animation → Claude deterministic Canvas simulation).
+a986b6bd	📋 План лабораторного занятия 1 и полный AI-конвейер:	📋 Lab 1 plan and the complete AI pipeline:
+c0d9ed82	⟨1⟩1. ИИ-диагностика и цели:⟨/1⟩↵ ⟨2⟩Цель дисциплины, ожидаемые итоговые результаты, критерии навыков по ЗБР Выготского и таксономии Блума.⟨/2⟩	⟨1⟩1. AI diagnostics and goals:⟨/1⟩↵ ⟨2⟩The course aim, expected learning outcomes and skill criteria based on Vygotsky’s ZPD and Bloom’s taxonomy.⟨/2⟩
+d0483ed4	⟨1⟩2. MagicSchool и дорожная карта:⟨/1⟩↵ ⟨2⟩Диагностика MagicSchool AI, 3 когнитивных кластера и дорожная карта семестра (Теория → Анализ → Код → Голос → Защита).⟨/2⟩	⟨1⟩2. MagicSchool and the roadmap:⟨/1⟩↵ ⟨2⟩MagicSchool AI diagnostics, 3 cognitive clusters and the semester roadmap (Theory → Analysis → Code → Voice → Defence).⟨/2⟩
+2271659d	⟨1⟩3. Сценарий урока (Gemini / ChatGPT):⟨/1⟩↵ ⟨2⟩4-этапный раскадровка моделирования физического явления, педагогическая декомпозиция и JSON-карта параметров.⟨/2⟩	⟨1⟩3. Lesson scenario (Gemini / ChatGPT):⟨/1⟩↵ ⟨2⟩A 4-stage storyboard for modelling a physical phenomenon, pedagogical decomposition and a JSON parameter map.⟨/2⟩
+04d09568	⟨1⟩4. Изображения и графика (Midjourney):⟨/1⟩↵ ⟨2⟩Фотореалистичные 8K и схематичные 2D/3D визуальные активы, приборы и HUD-оверлеи с помощью Midjourney / DALL-E.⟨/2⟩	⟨1⟩4. Images and graphics (Midjourney):⟨/1⟩↵ ⟨2⟩Photorealistic 8K and schematic 2D/3D visual assets, apparatus and HUD overlays with Midjourney / DALL-E.⟨/2⟩
+0be57a94	⟨1⟩5. Анимация (Runway / Sora):⟨/1⟩↵ ⟨2⟩Динамика движения в Runway и Pika Labs (Motion Brush, Camera Control), анализ физических ограничений генеративного видео.⟨/2⟩	⟨1⟩5. Animation (Runway / Sora):⟨/1⟩↵ ⟨2⟩Motion dynamics in Runway and Pika Labs (Motion Brush, Camera Control) and an analysis of the physical limits of generative video.⟨/2⟩
+87373024	⟨1⟩6 и 7. Интерактивный код и песочница:⟨/1⟩↵ ⟨2⟩Детерминированное Canvas-программирование с Claude, сравнительная лаборатория, рубрика Capstone и источники APA 7.⟨/2⟩	⟨1⟩6 and 7. Interactive code and sandbox:⟨/1⟩↵ ⟨2⟩Deterministic Canvas programming with Claude, a comparative lab, the Capstone rubric and APA 7 sources.⟨/2⟩
+8a6a9c5f	Парадигма и ожидаемый навык	Paradigm and expected skill
+b6c2d75e	Традиционный подход к преподаванию физики и астрономии в высшей школе предлагал студентам пассивно изучать готовые программные интерфейсы. Этот обновлённый лабораторный курс опирается на принципиально иную педагогическую парадигму: <strong>студент становится самостоятельным архитектором, разработчиком моделей и создателем цифровой физической среды</strong>.	The traditional approach to teaching physics and astronomy in higher education had students passively study ready-made software interfaces. This updated lab course rests on a fundamentally different pedagogical paradigm: <strong>the student becomes the independent architect, modeller and creator of a digital physics environment</strong>.
+4c0ac48c	1.1. Цель дисциплины и критерии итоговых навыков (Learning Outcomes):	1.1. Course aim and final skill criteria (Learning Outcomes):
+351b3db0	<strong>Математическая декомпозиция:</strong> описание любого классического или современного физического процесса (механика, термодинамика, электродинамика, оптика, квантовая физика) дифференциальными уравнениями и определение параметров;	<strong>Mathematical decomposition:</strong> describing any classical or modern physical process (mechanics, thermodynamics, electrodynamics, optics, quantum physics) with differential equations and identifying its parameters;
+1ae1ca1f	<strong>ИИ-сценарий урока и раскадровка:</strong> проектирование наглядного педагогического сценария процесса и временной шкалы с помощью генеративного ИИ (Gemini / ChatGPT);	<strong>AI lesson scenario and storyboard:</strong> designing a visual pedagogical scenario and timeline for the process with generative AI (Gemini / ChatGPT);
+846b6995	<strong>Генерация визуальных активов:</strong> создание в высоком разрешении приборов, лабораторных стендов и HUD-оверлеев с помощью Midjourney и DALL-E;	<strong>Visual asset generation:</strong> creating high-resolution apparatus, lab benches and HUD overlays with Midjourney and DALL-E;
+5150666a	<strong>Детерминированное программирование:</strong> превращение этого концепта с помощью Claude в математически строгую интерактивную веб-симуляцию на <strong>HTML5 Canvas / WebGL</strong>;	<strong>Deterministic programming:</strong> turning this concept, with Claude, into a mathematically rigorous interactive <strong>HTML5 Canvas / WebGL</strong> web simulation;
+14b94d3c	<strong>Аудиосинтез и портфолио:</strong> обогащение освоенных моделей аудионаррацией и успешная защита в собственном цифровом <strong>портфолио Capstone</strong>.	<strong>Audio synthesis and portfolio:</strong> enriching the mastered models with audio narration and defending them successfully in one’s own digital <strong>Capstone Portfolio</strong>.
+78e36fff	1.2. Когнитивная диагностика и модель ЗБР Выготского:	1.2. Cognitive diagnostics and Vygotsky’s ZPD model:
+83a2acb0	Исходная математическая подготовка, способность представлять физические закономерности и грамотность в информационных технологиях (основы программирования) у каждого студента различны. Поэтому учебный процесс организуется в 3 этапа на основе <em>«Зоны ближайшего развития»</em> (Zone of Proximal Development — ZPD) Льва Выготского и обновлённой таксономии Блума:	Each student’s initial mathematical preparation, ability to visualise physical laws and information technology (programming basics) literacy differ. The learning process is therefore organised in 3 stages based on Lev Vygotsky’s <em>"Zone of Proximal Development"</em> (ZPD) and Bloom’s revised taxonomy:
+24f5daa7	1. Знание и понимание	1. Remembering and understanding
+801d0edc	Правильная запись физических формул (⟦1⟧), величин и единиц измерения. Точность исходных данных, передаваемых искусственному интеллекту.	Writing physical formulas (⟦1⟧), quantities and units correctly. The accuracy of the input data given to the AI.
+3fd8d324	2. Применение и анализ	2. Applying and analysing
+56286249	Анализ визуальных ошибок генеративных видеомоделей (фазовый сдвиг, несохранение энергии) и их исправление с помощью дифференциальных уравнений.	Analysing visual errors in generative video models (phase shift, non-conservation of energy) and correcting them with differential equations.
+03802e02	3. Оценка и создание	3. Evaluating and creating
+d72b371b	Программирование с нуля и защита полностью интерактивной физической веб-лаборатории, параметры которой пользователь меняет в реальном времени.	Coding from scratch and defending a fully interactive physics web lab whose parameters the user changes in real time.
+2a7a228b	Благодаря синтезу технологических, педагогических и содержательных знаний (TPACK) студенты превращаются из пассивных получателей информации в самостоятельных создателей сложных научных симуляций.	Through the synthesis of technological, pedagogical and content knowledge (TPACK), students move from passive recipients of information to independent creators of complex scientific simulations.
+c7420412	2. Диагностика и индивидуальный план: MagicSchool AI	2. Diagnostics and an individual plan: MagicSchool AI
+68fd2fb8	ЗБР Выготского и дорожная карта семестра	Vygotsky’s ZPD and the semester roadmap
+20d55e8f	По результатам входного опроса, проводимого с помощью образовательной ИИ-платформы <strong>MagicSchool AI</strong>, студенты распределяются по 3 когнитивным кластерам и получают индивидуальные траектории развития:	Based on an entry survey run on the <strong>MagicSchool AI</strong> educational AI platform, students are sorted into 3 cognitive clusters and given individual development pathways:
+c3c5ee51	2.1. Индивидуальная траектория по 3 когнитивным кластерам:	2.1. Individual pathway across 3 cognitive clusters:
+b96fa998	Кластер 1: базовый (Foundational)	Cluster 1: Foundational
+56ebc178	Студенты с начальными навыками в математическом аппарате и программировании.	Students with beginner skills in mathematics and programming.
+c0cd3cce	ИИ-решение:	AI solution:
+ef728c45	Изменение и анализ 1 готовой модели с помощью готовых Canvas-шаблонов, визуальных блок-схем и пошагово объяснённых промптов.	Modifying and analysing 1 ready-made model using Canvas templates, visual flowcharts and step-by-step explained prompts.
+85b6cb43	Кластер 2: стандартный (Core)	Cluster 2: Core
+1ddbde89	Студенты, хорошо понимающие законы физики и знакомые с веб-технологиями.	Students who understand the laws of physics well and are familiar with web technologies.
+bd8d9db2	Полностью самостоятельное выполнение конвейера Gemini → Midjourney → Runway → Claude и создание интерактивной симуляции нового физического явления.	Running the Gemini → Midjourney → Runway → Claude pipeline fully independently and building an interactive simulation of a new physical phenomenon.
+75d47f96	Кластер 3: продвинутый (Advanced / Research)	Cluster 3: Advanced / Research
+c71b340a	Студенты с сильной подготовкой по математической физике и высоким талантом к программированию.	Students strong in mathematical physics and highly talented at programming.
+c03df6f4	Разработка нелинейных колебаний, фазовых портретов, шейдеров WebGL и вычислительного ядра на методе Рунге–Кутты 4-го порядка (RK4).	Developing nonlinear oscillations, phase-space portraits, WebGL shaders and a 4th-order Runge–Kutta (RK4) computational core.
+02282beb	2.2. Дорожная карта на весь семестр (roadmap):	2.2. Roadmap for the whole semester:
+5f9fb723	В течение семестра при подготовке проекта студент следует следующей строгой 5-этапной профессиональной методологии:	Over the semester, the student prepares the project by following this strict 5-stage professional methodology:
+eb12ceb2	Этап 1: теория и математическое моделирование	Stage 1: Theory and mathematical modelling
+e5020415	Недели 1–4	Weeks 1–4
+1d134865	Выбирается закономерность физического процесса, составляются его дифференциальные уравнения и задаются начальные/граничные условия (⟦1⟧).	A physical process law is chosen, its differential equations are written and the initial/boundary conditions (⟦1⟧) are set.
+991da131	Этап 2: анализ готовых образцов и ИИ-раскадровка	Stage 2: Analysing existing models and an AI storyboard
+e5311f96	Недели 5–7	Weeks 5–7
+6bb8f290	Анализируются модели PhET и Vascak.cz. С помощью Gemini готовится сценарий урока, а с помощью Midjourney/Runway — визуальный видеопроект.	PhET and Vascak.cz models are analysed. A lesson scenario is prepared with Gemini and a visual video project with Midjourney/Runway.
+2264a0c7	Этап 3: написание кода с Claude	Stage 3: Writing code with Claude
+b9538621	Недели 8–11	Weeks 8–11
+e1b0b779	Полностью программируются детерминированный HTML5 Canvas, интерактивные ползунки, графики телеметрии в реальном времени и алгоритмы математических расчётов.	The deterministic HTML5 Canvas, interactive sliders, real-time telemetry plots and mathematical algorithms are fully programmed.
+e4713bf5	Этап 4: синтез аудионаррации (TTS)	Stage 4: Audio narration synthesis (TTS)
+82e11295	Недели 12–13	Weeks 12–13
+4c5000b3	С помощью Muxlisa AI / ElevenLabs синтезируется научное аудиообъяснение и синхронизируется с анимацией на веб-странице с точностью до миллисекунд.	A scientific audio explanation is synthesised with Muxlisa AI / ElevenLabs and synchronised with the web page animation to the millisecond.
+2614c5cc	Этап 5: защита итогового проекта (Capstone)	Stage 5: Final (Capstone) project defence
+06344b73	Недели 14–15	Weeks 14–15
+c1d51918	Готовый проект представляется как самостоятельная веб-страница, оценивается по строгим рубрикам и включается в личное портфолио студента.	The finished project is presented as an independent web page, assessed against strict rubrics and added to the student’s personal portfolio.
+bc21acc9	🌐 Научно-методические источники WWW и индивидуальное обучение (раздел 2):	🌐 WWW scholarly sources and individualised learning (Section 2):
+dcaa9b26	Учебная среда, адаптированная через когнитивную диагностику к расстоянию между актуальным уровнем развития каждого студента и его потенциальными возможностями, обеспечивает наивысшую эффективность.	A learning environment tailored, through cognitive diagnostics, to the gap between each student’s actual level of development and their potential gives the highest effectiveness.
+cb3d4657	3. Теория и сценарий урока: Gemini или ChatGPT	3. Theory and lesson scenario: Gemini or ChatGPT
+31e5aa8e	Раскадровка и педагогическая декомпозиция	Storyboard and pedagogical decomposition
+1d32b5f3	За каждой успешной симуляцией стоит тщательно продуманный сценарий урока (*storyboard*). Большие языковые модели (LLM — <strong>Google Gemini</strong> или <strong>ChatGPT</strong>) помогают разложить физическую закономерность на части и выстроить самую удобную для студента последовательность объяснения:	Behind every successful simulation is a carefully thought-out lesson scenario (*storyboard*). Large language models (LLMs — <strong>Google Gemini</strong> or <strong>ChatGPT</strong>) help break a physical law into parts and build the explanation sequence that suits students best:
+dd4d1020	3.1. Структура 4-этапной физической раскадровки:	3.1. Structure of a 4-stage physics storyboard:
+dca349c7	<strong>Постановка проблемы (0–5 с):</strong> жизненный или экспериментальный когнитивный конфликт (например: <em>«Упадут ли в вакууме тяжёлый металлический шар и лёгкое перо одновременно?»</em>).	<strong>Posing the problem (0–5 s):</strong> an everyday or experimental cognitive conflict (for example: <em>"Do a heavy metal ball and a light feather fall at the same time in a vacuum?"</em>).
+193a919f	<strong>Математическая модель и баланс сил (5–15 с):</strong> законы Ньютона ⟦1⟧, гравитация и формула турбулентного сопротивления воздуха (⟦2⟧).	<strong>Mathematical model and force balance (5–15 s):</strong> Newton’s laws ⟦1⟧, gravity and the turbulent air-drag formula (⟦2⟧).
+a258b2ba	<strong>Динамическое влияние параметров (15–25 с):</strong> как меняется результат при изменении переменных (масса ⟦1⟧, форма тела ⟦2⟧, гравитация ⟦3⟧), и предельная скорость ⟦4⟧.	<strong>Dynamic effect of parameters (15–25 s):</strong> how the result changes when variables change (mass ⟦1⟧, body shape ⟦2⟧, gravity ⟦3⟧), and the terminal velocity ⟦4⟧.
+85f5b35d	<strong>Вывод и практическое применение (25–30 с):</strong> фундаментальные выводы о космосе, ускорении свободного падения и законе инерции.	<strong>Conclusion and practical application (25–30 s):</strong> the fundamental conclusions about outer space, free-fall acceleration and the law of inertia.
+0fbc6087	3.2. Шаблон системного промпта для Gemini / ChatGPT:	3.2. System prompt template for Gemini / ChatGPT:
+c2db891c	Системный промпт (System Prompt)	System Prompt
+d7412151	🌐 Научно-методические источники WWW и основы LLM-сценария (раздел 3):	🌐 WWW scholarly sources and LLM scenario basis (Section 3):
+090fe580	=	=
+a14f2b8e	Мультимодальные большие языковые модели демонстрируют высокую логическую последовательность при превращении текстов учебников, формул и экспериментальных данных в целостные педагогические сценарии.	Multimodal large language models show high logical coherence when turning textbook text, formulas and experimental data into integrated pedagogical scenarios.
+367d9ad2	4. Изображения и иллюстрации: Midjourney или DALL-E	4. Images and illustrations: Midjourney or DALL-E
+67710a06	8K визуальные активы и HUD-оверлеи	8K visual assets and HUD overlays
+7c4773eb	Интерфейс симуляции (UI/UX) и элементы фона должны вызывать у студента эстетическое удовольствие и глубокий интерес. С помощью <strong>Midjourney</strong> и <strong>DALL-E</strong> генерируются графические 8K-активы высокого разрешения: лабораторные приборы, прозрачные вакуумные колбы, оптические призмы, лазерные лучи и т. п.:	The simulation interface (UI/UX) and background elements should give students aesthetic pleasure and spark deep interest. High-resolution 8K graphic assets — lab apparatus, transparent vacuum flasks, optical prisms, laser beams and more — are generated with <strong>Midjourney</strong> and <strong>DALL-E</strong>:
+321290a7	4.1. Генерация фотореалистичных и схематичных физических активов:	4.1. Generating photorealistic and schematic physics assets:
+d0f25c73	🎨 Параметры научной стилистики	🎨 Scientific style parameters
+6d04fb4a	<code>--ar 16:9</code> — стандартное соотношение сторон для веб-экранов;	<code>--ar 16:9</code> — the standard aspect ratio for web screens;
+4ee5c8cf	<code>--style raw</code> — реальная научная точность без художественных украшений нейросети;	<code>--style raw</code> — real scientific accuracy without the neural network’s artistic embellishment;
+65f42a79	<code>--v 6.0</code> — высокая детализация и фотореалистичная физика света;	<code>--v 6.0</code> — high detail and photorealistic light physics;
+3e06deb1	<code>volumetric lighting, caustics</code> — эффекты оптического излучения и преломления.	<code>volumetric lighting, caustics</code> — optical radiation and refraction effects.
+75d5eddf	📐 2D/3D векторные HUD-индикаторы	📐 2D/3D vector HUD indicators
+e56147ff	С помощью Midjourney проектируются не только статические фоны, но и шкалы приборов, векторы сил (⟦1⟧), координатные сетки и цифровые датчики телеметрии (HUD overlays).	Midjourney is used to design not only static backgrounds but also instrument scales, force vectors (⟦1⟧), coordinate grids and digital telemetry sensors (HUD overlays).
+2f6af641	4.2. Пример промпта Midjourney:	4.2. Example Midjourney prompt:
+6c4a57ff	Промпт Midjourney	Midjourney prompt
+a4391a42	🌐 Научно-методические источники WWW и модели изображений (раздел 4):	🌐 WWW scholarly sources and image models (Section 4):
+505d3921	=	=
+57d30322	=	=
+fe22689f	Научные изображения высокого разрешения развивают пространственное воображение студента и резко повышают уровень визуального понимания сложных микроскопических явлений.	High-resolution scientific images develop students’ spatial imagination and sharply improve their visual grasp of complex microscopic phenomena.
+1d1083e2	5. Анимация и видео: Runway, Sora или Pika Labs	5. Animation and video: Runway, Sora or Pika Labs
+cd6e25da	Motion Brush и видеопрототип	Motion Brush and a video prototype
+ff2d17d7	Статичное изображение, созданное в Midjourney, загружается на платформы <strong>Runway</strong>, <strong>OpenAI Sora</strong> или <strong>Pika Labs</strong> и приводится в движение. Этот этап позволяет студентам быстро увидеть динамический прототип физического процесса в видеоформате и оценить характер движения:	The static image created in Midjourney is loaded into <strong>Runway</strong>, <strong>OpenAI Sora</strong> or <strong>Pika Labs</strong> and set in motion. This stage lets students quickly see a dynamic video prototype of the physical process and judge the nature of the motion:
+d4567691	5.1. Физическая динамика в генеративном видео и Motion Brush:	5.1. Physical dynamics in generative video and Motion Brush:
+35dfb9e3	🖌️ Технология Motion Brush	🖌️ Motion Brush technology
+4b80022d	Закрашивается только объект, который должен двигаться (например, шарик маятника или падающее тело), и ему задаётся векторное направление скорости (⟦1⟧ вертикально вниз или ⟦2⟧ горизонтально).	Only the object that should move (for example, a pendulum bob or a falling body) is painted, and it is given a velocity vector direction (⟦1⟧ vertically down or ⟦2⟧ horizontally).
+e1263855	🎥 Динамика камеры (Camera Control)	🎥 Camera dynamics (Camera Control)
+a15a76ec	Самые тонкие моменты физического явления раскрываются через приближение к измерительному прибору (*Zoom in*), панорамное слежение за движением маятника (*Pan right/left*) и замедленную съёмку (*Slow-motion 60fps*).	The subtlest moments of a phenomenon are revealed by zooming in on the measuring instrument (*Zoom in*), panning to follow the pendulum (*Pan right/left*) and slow motion (*Slow-motion 60fps*).
+e34c4644	⚠️ Физические ограничения генеративного видео (Scientific Limitations):	⚠️ Physical limitations of generative video (Scientific Limitations):
+f5f02155	Нейросети генерируют пиксели на основе статистической вероятности — они не вычисляют уравнения Ньютона напрямую. Поэтому в генеративных видео встречаются <em>несохранение энергии, фазовая неопределённость и искажения изображения (артефакты)</em>. <strong>Поэтому для полной научной точности на следующем этапе мы переходим к написанию кода (Claude)!</strong>	Neural networks generate pixels from statistical probability — they do not compute Newton’s equations directly. That is why generative videos show <em>non-conservation of energy, phase uncertainty and image distortions (artefacts)</em>. <strong>So for full scientific accuracy we move on to writing code (Claude) in the next stage!</strong>
+1563cc3e	🌐 Научно-методические источники WWW и генерация видео (раздел 5):	🌐 WWW scholarly sources and video generation (Section 5):
+c50591f7	=	=
+e6678d8f	Хотя диффузионные видеомодели отражают 3D-пространство и устойчивость объектов, в расчётах, ограниченных точными физическими законами, их необходимо дополнять детерминированным кодом.	Although diffusion video models capture 3D space and object permanence, they must be complemented by deterministic code for calculations bound by exact physical laws.
+61d6024d	6. Интерактивная симуляция и код: Claude	6. Interactive simulation and code: Claude
+80324b52	HTML5 Canvas и интегрирование Эйлера–Кромера	HTML5 Canvas and Euler–Cromer integration
+8ba0564f	<strong>Claude</strong> — модель с наивысшей точностью в физическом и математическом программировании. Она может превратить видеоконцепт, созданный на предыдущих этапах, в полностью интерактивный программный код на <strong>HTML5 Canvas и JavaScript</strong> с изменяемыми параметрами:	<strong>Claude</strong> is the model with the highest accuracy in physics and mathematical programming. It can turn the video concept from the previous stages into fully interactive <strong>HTML5 Canvas and JavaScript</strong> code with adjustable parameters:
+25afcf8d	6.1. Детерминированное вычислительное ядро (Эйлер–Кромер / Рунге–Кутта):	6.1. Deterministic computational core (Euler–Cromer / Runge–Kutta):
+f41f8733	В физической симуляции при частоте кадров ⟦1⟧ на каждом временном шаге ⟦2⟧ дифференциальные уравнения интегрируются напрямую:	In a physics simulation at a ⟦1⟧ frame rate, the differential equations are integrated directly at each ⟦2⟧ time step:
+3ca54be6	// 1. Расчёт ускорения (2-й закон Ньютона)↵ const a = g - (k / m) * v * Math.abs(v);↵↵ // 2. Обновление скорости и координаты (Эйлер–Кромер)↵ v += a * dt;↵ y += v * dt;	// 1. Acceleration (Newton’s 2nd law)↵ const a = g - (k / m) * v * Math.abs(v);↵↵ // 2. Update velocity and position (Euler–Cromer)↵ v += a * dt;↵ y += v * dt;
+a7894347	6.2. Системный промпт для работы с Claude:	6.2. System prompt for working with Claude:
+e7b1ff64	Промпт для программирования с Claude	Claude coding prompt
+2181c213	🌐 Научно-методические источники WWW и вычислительная физика (раздел 6):	🌐 WWW scholarly sources and computational physics (Section 6):
+6dd004c5	=	=
+ae053eff	Компьютерное моделирование дифференциальных уравнений численными методами позволяет студентам глубоко изучать реальные нелинейные физические процессы, не имеющие аналитического решения.	Computer modelling of differential equations with numerical methods lets students study in depth real nonlinear physical processes that have no analytic solution.
+9ecf8745	7. Интерактивный лабораторный стенд, тест и источники	7. Interactive lab bench, test and sources
+f3d48dd5	Двухканвасная песочница и портфолио	Dual-canvas sandbox and portfolio
+a28996b7	🧪 1. Студия-генератор AI-конвейера и промпт-инжиниринга	🧪 1. AI pipeline and prompt engineering generator studio
+329c382c	Выберите физическую тему и автоматически получите научно настроенные готовые промпты для всех 5 ИИ-инструментов:	Choose a physics topic and automatically get scientifically tuned ready prompts for all 5 AI tools:
+42ae4429	Выберите физическую тему:	Choose a physics topic:
+3464779a	1. Свободное падение тела в вакууме и в среде (y = v₀t + gt²/2)	1. Free fall of a body in a vacuum and in a medium (y = v₀t + gt²/2)
+9d87ec29	2. Гармонические колебания математического маятника (T = 2π√(l/g))	2. Harmonic oscillations of a simple pendulum (T = 2π√(l/g))
+d56d4124	3. Преломление света и закон Снеллиуса (n₁ sin α = n₂ sin β)	3. Refraction of light and Snell’s law (n₁ sin α = n₂ sin β)
+fce36343	4. Равномерное движение по окружности и центростремительная сила (F = mω²R)	4. Uniform circular motion and centripetal force (F = mω²R)
+0788310b	Свободное падение тела в вакууме и в среде	Free fall of a body in a vacuum and in a medium
+1f6d57c6	1. MagicSchool AI (диагностический опрос)	1. MagicSchool AI (diagnostic survey)
+cc6c6eee	2. Google Gemini / ChatGPT (сценарий урока и раскадровка)	2. Google Gemini / ChatGPT (lesson scenario and storyboard)
+19409635	3. Midjourney (концепт-арт и UI-активы)	3. Midjourney (concept art and UI assets)
+4bd8eac2	4. Runway / Sora (видеопрототип и Motion Brush)	4. Runway / Sora (video prototype and Motion Brush)
+70bb5ec5	5. Claude (код HTML5 Canvas и JS)	5. Claude (HTML5 Canvas and JS code)
+4e46f555	📊 2. Сравнительная лаборатория: детерминированный Canvas и дрейф генеративного ИИ-видео	📊 2. Comparative lab: deterministic Canvas vs generative AI video drift
+bdcae368	Сравните в реальном времени математически строгую модель (слева) с вероятностными смещениями в генеративном видео нейросети (справа):	Compare in real time the mathematically rigorous model (left) with the probabilistic drift in a neural network’s generative video (right):
+e660976a	Режим модели:	Model mode:
+abf6f40b	Колебания математического маятника	Simple pendulum oscillation
+febd13a8	Свободное падение тела	Free fall of a body
+52cf2069	🔄 Сброс	🔄 Reset
+ebbb9235	Неточность ИИ (дрейф):	AI inaccuracy (drift):
+5f3a8ecf	Ошибка угла: ⟨1⟩0,00°⟨/1⟩	Angle error: ⟨1⟩0.00°⟨/1⟩
+1d6b29bb	🏆 3. Калькулятор рубрики оценивания итогового проекта (Capstone)	🏆 3. Final (Capstone) project rubric calculator
+a93957d2	Посмотрите, по каким критериям оценивается итоговое портфолио студента, и рассчитайте балл своего проекта:	See which criteria the student’s final portfolio is assessed on and calculate your project’s score:
+d8366bcf	1. Теоретическая и математическая основа (20 баллов)	1. Theoretical and mathematical basis (20 points)
+c3189084	Правильность дифференциальных уравнений, полнота описания физических величин.	Correct differential equations and complete description of physical quantities.
+22865654	18 баллов	18 points
+b8728549	2. ИИ-видеораскадровка и визуальный концепт (20 баллов)	2. AI video storyboard and visual concept (20 points)
+882a2328	Согласованность сценария Gemini, изображений Midjourney и видеодвижений Runway.	Coherence between the Gemini scenario, Midjourney images and Runway video motion.
+ea65f1d2	19 баллов	19 points
+e86a3f85	3. Интерактивность HTML5 Canvas и вычислительный движок (30 баллов)	3. HTML5 Canvas interactivity and computational engine (30 points)
+55226400	Интегрирование Эйлера/RK, управление ползунками, графики в реальном времени и безошибочная работа.	Euler/RK integration, slider controls, real-time plots and error-free operation.
+63aa31b2	28 баллов	28 points
+ca55604e	4. Аудионаррация и синтез научного объяснения (15 баллов)	4. Audio narration and scientific explanation synthesis (15 points)
+9b85c911	Синхронность голоса, синтезированного Muxlisa AI / ElevenLabs, с анимацией.	Synchronisation of the Muxlisa AI / ElevenLabs synthesised voice with the animation.
+3115c05d	14 баллов	14 points
+e7296310	5. Архитектура портфолио и защитная презентация (15 баллов)	5. Portfolio architecture and defence presentation (15 points)
+0f643b68	Размещение на GitHub Pages / сервере, чистота кода и умение отвечать на научные вопросы.	Deployment to GitHub Pages / a server, clean code and the ability to answer scientific questions.
+990213ed	Общий балл Capstone:	Total Capstone score:
+c20dbf6f	A (отлично / совершенное портфолио)	A (excellent / outstanding portfolio)
+2b62f3cd	📝 4. Диагностический контрольный тест (3 вопроса)	📝 4. Diagnostic check test (3 questions)
+f02c914b	Проверьте знания, полученные на занятии (правильные ответы с пояснениями показываются после сдачи теста):	Test what you learned in the session (the correct answers are shown with explanations after you submit):
+c03ce16a	Вопрос 1: В чём основная задача платформы MagicSchool AI в этом курсе?	Question 1: What is the main role of the MagicSchool AI platform in this course?
+7f526204	A) Выполнять роль калькулятора, считающего только физические формулы	A) To act as a calculator that only evaluates physics formulas
+a9632d0e	B) Автоматически компилировать код JavaScript	B) To compile JavaScript code automatically
+db8efba8	C) Определить исходные знания студента и сформировать для него индивидуальную учебную траекторию на основе ЗБР Выготского	C) To identify the student’s starting knowledge and build an individual learning pathway based on Vygotsky’s ZPD
+83260046	D) Автоматически загружать веб-страницы HTML5 на сервер	D) To upload HTML5 web pages to a server automatically
+063459ab	Вопрос 2: Почему после генеративных видеомоделей (Runway, Sora) требуется этап написания Canvas-кода с Claude?	Question 2: Why is a Canvas coding stage with Claude needed after generative video models (Runway, Sora)?
+0f31e1dd	A) Потому что видео нельзя разместить на веб-странице	A) Because video cannot be embedded in a web page
+d15b6a32	B) Потому что генеративное видео состоит из вероятностных пикселей и не может обеспечить строгую математическую точность и интерактивность для пользователя (управление ползунками)	B) Because generative video consists of probabilistic pixels and cannot provide strict mathematical accuracy or user interactivity (slider control)
+819226d7	C) Потому что видеофайлы занимают очень мало места	C) Because video files take up very little space
+525ac516	D) Потому что через видео нельзя услышать звук	D) Because you cannot hear sound through video
+1a6166ee	Вопрос 3: В какой строке правильно указана последовательность создания проекта в дорожной карте курса (roadmap)?	Question 3: Which line shows the correct order for building the project in the course roadmap?
+a8158c35	A) Защита → Написание кода → Теория → Озвучивание → Анализ	A) Defence → Coding → Theory → Voice-over → Analysis
+fce81092	B) Написание кода → Теория → Защита → Анализ → Озвучивание	B) Coding → Theory → Defence → Analysis → Voice-over
+34a2f48e	C) Озвучивание → Анализ готового образца → Написание кода → Теория	C) Voice-over → Analysing an existing model → Coding → Theory
+b07b61da	D) Теория → Анализ готового образца → Написание кода → Озвучивание → Защита итогового проекта (Capstone)	D) Theory → Analysing an existing model → Coding → Voice-over → Final (Capstone) project defence
+3396277a	Проверить ответы и посмотреть результат	Check answers and see the result
+8debbf54	📚 5. Список использованной научно-методической литературы (APA 7th Edition)	📚 5. References (APA 7th Edition)
+e9d23fef	=	=
+aad73baa	=	=
+95b9546b	<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz (на сайте есть реклама, поэтому ссылка здесь не приводится)	<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz (the site carries ads, so no link is given here)

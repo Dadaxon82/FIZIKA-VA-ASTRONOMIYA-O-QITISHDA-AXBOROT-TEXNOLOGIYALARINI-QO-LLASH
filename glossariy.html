@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -363,11 +363,11 @@
         : fallback.replace(/\{(\w+)\}/g, (m, n) => (n in params ? params[n] : m)));
       function renderCount() {
         count.textContent = lastQuery
-          ? tr('glossaryUi.found', 'Topildi: {shown} ta atama (jami {total}).', { shown: lastShown, total: total })
-          : tr('glossaryUi.total', 'Lug‘atda {total} ta atama.', { total: total });
+          ? tr('glossaryUi.found', __t("Topildi: {shown} ta atama (jami {total})."), { shown: lastShown, total: total })
+          : tr('glossaryUi.total', __t("Lug‘atda {total} ta atama."), { total: total });
       }
       document.addEventListener('i18n:change', () => {
-        q.setAttribute('placeholder', tr('glossaryUi.searchPlaceholder', 'Masalan: impuls, prompt, redshift'));
+        q.setAttribute('placeholder', tr('glossaryUi.searchPlaceholder', __t("Masalan: impuls, prompt, redshift")));
         renderCount();
       });
     })();

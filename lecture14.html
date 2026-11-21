@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1023,7 +1023,7 @@ function speakScientificNarration(topic = 'faraday') {
       if (!q1 || !q2 || !q3) {
         res.style.display = 'block';
         res.style.color = '#F59E0B';
-        res.textContent = '⚠️ Iltimos, barcha 3 ta savolga javob bering!';
+        res.textContent = __t("⚠️ Iltimos, barcha 3 ta savolga javob bering!");
         return;
       }
       
@@ -1032,32 +1032,32 @@ function speakScientificNarration(topic = 'faraday') {
 
       if (q1.value === 'B') {
         score++;
-        feedback.push('1-Savol: To‘g‘ri! Kulon qonuni $F = k \\frac{q_1 q_2}{r^2}$ bo‘yicha, masofa 3 marta kamayganda kuch $3^2 = 9$ marta ortadi.');
+        feedback.push(__t("1-Savol: To‘g‘ri! Kulon qonuni $F = k \\frac{q_1 q_2}{r^2}$ bo‘yicha, masofa 3 marta kamayganda kuch $3^2 = 9$ marta ortadi."));
       } else {
-        feedback.push('1-Savol: Noto‘g‘ri. Masofa kvadratiga teskari proporsional bo‘lgani uchun kuch 9 marta ortadi (B varianti).');
+        feedback.push(__t("1-Savol: Noto‘g‘ri. Masofa kvadratiga teskari proporsional bo‘lgani uchun kuch 9 marta ortadi (B varianti)."));
       }
 
       if (q2.value === 'A') {
         score++;
-        feedback.push('2-Savol: To‘g‘ri! Lens qoidasiga ko‘ra induksiyalangan tok o‘z maydoni bilan tashqi oqim o‘zgarishiga qarshilik ko‘rsatadi va bu formulada minus belgisi bilan ifodalanadi.');
+        feedback.push(__t("2-Savol: To‘g‘ri! Lens qoidasiga ko‘ra induksiyalangan tok o‘z maydoni bilan tashqi oqim o‘zgarishiga qarshilik ko‘rsatadi va bu formulada minus belgisi bilan ifodalanadi."));
       } else {
-        feedback.push('2-Savol: Noto‘g‘ri. Lens qoidasi induksiyalangan tokning oqim o‘zgarishiga qarshilik ko‘rsatishini anglatadi (A varianti).');
+        feedback.push(__t("2-Savol: Noto‘g‘ri. Lens qoidasi induksiyalangan tokning oqim o‘zgarishiga qarshilik ko‘rsatishini anglatadi (A varianti)."));
       }
 
       if (q3.value === 'C') {
         score++;
-        feedback.push('3-Savol: To‘g‘ri! RLC zanjirida rezonans chastotasi Tomson formulasi orqali topiladi: $\\omega_0 = \\frac{1}{\\sqrt{LC}}$.');
+        feedback.push(__t("3-Savol: To‘g‘ri! RLC zanjirida rezonans chastotasi Tomson formulasi orqali topiladi: $\\omega_0 = \\frac{1}{\\sqrt{LC}}$."));
       } else {
-        feedback.push('3-Savol: Noto‘g‘ri. Rezonans burchak chastotasi $\\omega_0 = 1 / \\sqrt{LC}$ ga teng (C varianti).');
+        feedback.push(__t("3-Savol: Noto‘g‘ri. Rezonans burchak chastotasi $\\omega_0 = 1 / \\sqrt{LC}$ ga teng (C varianti)."));
       }
       
       res.style.display = 'block';
       if (score === 3) {
         res.style.color = '#047857';
-        res.innerHTML = `🎉 Tabriklaymiz! 3/3 (100%) - Elektrodinamika qonuniyatlari, Faradey induksiyasi va RLC zanjirlarini modellashtirish talablarini mukammal o‘zlashtirdingiz!<br><br><div style="color:#4B5464; font-size:0.9rem; line-height:1.6;">${feedback.join('<br>')}</div>`;
+        res.innerHTML = __t("🎉 Tabriklaymiz! 3/3 (100%) - Elektrodinamika qonuniyatlari, Faradey induksiyasi va RLC zanjirlarini modellashtirish talablarini mukammal o‘zlashtirdingiz!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>", [feedback.join('<br>')]);
       } else {
         res.style.color = '#DC2626';
-        res.innerHTML = `Natija: ${score}/3 ta to‘g‘ri.<br><br><div style="color:#4B5464; font-size:0.9rem; line-height:1.6;">${feedback.join('<br>')}</div>`;
+        res.innerHTML = __t("Natija: {0}/3 ta to‘g‘ri.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>", [score, feedback.join('<br>')]);
       }
 
       if (window.renderMathInElement) {

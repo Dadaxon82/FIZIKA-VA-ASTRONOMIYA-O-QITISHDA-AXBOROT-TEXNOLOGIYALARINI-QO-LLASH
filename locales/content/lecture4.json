@@ -1,0 +1,914 @@
+[
+ {
+  "k": "beb9c85b",
+  "s": "Fizik kompyuter modellarining uch fundamental mezoni — <strong>Aniqlik (Accuracy)</strong>, <strong>Barqarorlik (Numerical Stability)</strong> va <strong>Hisoblash Tezligi (Efficiency)</strong> o‘rganiladi. Forward Euler, Euler-Cromer, Heun (RK2) va Klassik Runge-Kutta 4 (RK4) usullarining xatolik darajalari, Teylor qatori kesish xatosi (LTE va GTE) hamda integratsiya qadami ($\\Delta t$) ning animatsiya sifatiga ta’siri matematik va interaktiv tarzda tahlil qilinadi.",
+  "ru": "Изучаются три фундаментальных критерия физических компьютерных моделей — <strong>точность (Accuracy)</strong>, <strong>численная устойчивость (Numerical Stability)</strong> и <strong>скорость вычислений (Efficiency)</strong>. Математически и интерактивно анализируются уровни погрешности методов Forward Euler, Euler–Cromer, Хойна (RK2) и классического Рунге–Кутты 4 (RK4), ошибка усечения ряда Тейлора (LTE и GTE), а также влияние шага интегрирования ($\\Delta t$) на качество анимации.",
+  "en": "The lecture covers the three fundamental criteria of physical computer models — <strong>accuracy</strong>, <strong>numerical stability</strong> and <strong>computational efficiency</strong>. The error levels of Forward Euler, Euler–Cromer, Heun (RK2) and classical Runge–Kutta 4 (RK4), the Taylor-series truncation error (LTE and GTE) and the effect of the integration step ($\\Delta t$) on animation quality are analysed mathematically and interactively."
+ },
+ {
+  "k": "1055789c",
+  "s": "📋 Ma’ruza rejasi va AI integratsiyasi bosqichlari:",
+  "ru": "📋 План лекции и этапы интеграции ИИ:",
+  "en": "📋 Lecture plan and AI integration stages:"
+ },
+ {
+  "k": "ed32d01c",
+  "s": "1. AI diagnostika va individual reja:",
+  "ru": "1. ИИ-диагностика и индивидуальный план:",
+  "en": "1. AI diagnostics and individual plan:"
+ },
+ {
+  "k": "b0c6cbb4",
+  "s": "MagicSchool AI orqali talabaning differensial modellar va sonli usullar bo‘yicha tayyorgarligini testlash.",
+  "ru": "Тестирование подготовки студента по дифференциальным моделям и численным методам с помощью MagicSchool AI.",
+  "en": "Testing the student’s preparation in differential models and numerical methods with MagicSchool AI."
+ },
+ {
+  "k": "adb712d9",
+  "s": "2. Sonli integratsiya hisobi va tahlil:",
+  "ru": "2. Расчёт и анализ численного интегрирования:",
+  "en": "2. Numerical integration: derivation and analysis:"
+ },
+ {
+  "k": "3d84c359",
+  "s": "Claude yordamida Forward Euler, Heun va RK4 diskretlash qadamlarini annotatsiya bilan keltirib chiqarish.",
+  "ru": "Вывод шагов дискретизации Forward Euler, Хойна и RK4 с аннотациями с помощью Claude.",
+  "en": "Deriving annotated Forward Euler, Heun and RK4 discretisation steps with Claude."
+ },
+ {
+  "k": "584aa351",
+  "s": "3. Analitik va sonli yechimlar qiyosi:",
+  "ru": "3. Сравнение аналитического и численного решений:",
+  "en": "3. Comparing analytical and numerical solutions:"
+ },
+ {
+  "k": "b1174290",
+  "s": "WolframAlpha yordamida Koshi masalasining aniq analitik yechimini topish va $L_2$ xatolik normasini o‘rnatish.",
+  "ru": "Нахождение точного аналитического решения задачи Коши в WolframAlpha и задание нормы погрешности $L_2$.",
+  "en": "Finding the exact analytical solution of the Cauchy problem in WolframAlpha and setting the $L_2$ error norm."
+ },
+ {
+  "k": "01da29a0",
+  "s": "4. Xatolik grafiklarini qurish:",
+  "ru": "4. Построение графиков погрешности:",
+  "en": "4. Plotting the error:"
+ },
+ {
+  "k": "76fc8a46",
+  "s": "ChatGPT Advanced Data Analysis orqali $\\log(E)$ vs $\\log(\\Delta t)$ Log-Log konvergensiya egri chiziqlarini qurish.",
+  "ru": "Построение кривых сходимости $\\log(E)$ vs $\\log(\\Delta t)$ в двойном логарифмическом масштабе с помощью ChatGPT Advanced Data Analysis.",
+  "en": "Building $\\log(E)$ vs $\\log(\\Delta t)$ log-log convergence curves with ChatGPT Advanced Data Analysis."
+ },
+ {
+  "k": "177c568c",
+  "s": "5. Integratsiya qadamini ($\\Delta t$) vizual sinash:",
+  "ru": "5. Визуальная проверка шага интегрирования ($\\Delta t$):",
+  "en": "5. Visual testing of the integration step ($\\Delta t$):"
+ },
+ {
+  "k": "db60c816",
+  "s": "Claude Artifacts asosidagi 4-kamerali interaktiv fizik simulyator va telemetriya sandboxingi.",
+  "ru": "4-камерный интерактивный физический симулятор и песочница телеметрии на основе Claude Artifacts.",
+  "en": "A 4-camera interactive physics simulator and telemetry sandbox built with Claude Artifacts."
+ },
+ {
+  "k": "f3a3015e",
+  "s": "6. Hisoblash barqarorligi nazariyasi:",
+  "ru": "6. Теория вычислительной устойчивости:",
+  "en": "6. Theory of computational stability:"
+ },
+ {
+  "k": "746ead49",
+  "s": "Gemini orqali Fon Neyman (von Neumann) spektral tahlili va simplektik fazaviy hajm saqlanishini isbotlash.",
+  "ru": "Доказательство спектрального анализа фон Неймана и сохранения симплектического фазового объёма с помощью Gemini.",
+  "en": "Proving von Neumann spectral analysis and symplectic phase-volume conservation with Gemini."
+ },
+ {
+  "k": "8dc348ba",
+  "s": "🔬 4-ma’ruza bo‘yicha ilmiy AI-pipeline konveyeri:",
+  "ru": "🔬 Научный AI-конвейер лекции 4:",
+  "en": "🔬 Lecture 4 scientific AI pipeline:"
+ },
+ {
+  "k": "73c47af4",
+  "s": "Lecture 4 AI Workflow",
+  "ru": "Lecture 4 AI Workflow",
+  "en": "Lecture 4 AI Workflow"
+ },
+ {
+  "k": "36cf82d4",
+  "s": "1-bosqich: Diagnostika va individual reja",
+  "ru": "Этап 1: диагностика и индивидуальный план",
+  "en": "Stage 1: Diagnostics and individual plan"
+ },
+ {
+  "k": "3fbed6c5",
+  "s": "MagicSchool AI bilan talaba tayyorgarligini baholash",
+  "ru": "Оценка подготовки студента с MagicSchool AI",
+  "en": "Assessing student readiness with MagicSchool AI"
+ },
+ {
+  "k": "b9b79d18",
+  "s": "Fizik modellashtirishda sonli integrallash usullarini tanlashdan oldin, talabaning differensial tenglamalar, Koshi masalasi va diskretlash qadami tushunchalari bo‘yicha bazaviy bilimlari diagnostika qilinadi.",
+  "ru": "Прежде чем выбирать методы численного интегрирования в физическом моделировании, диагностируются базовые знания студента о дифференциальных уравнениях, задаче Коши и шаге дискретизации.",
+  "en": "Before choosing numerical integration methods for physical modelling, the student’s basic knowledge of differential equations, the Cauchy problem and the discretisation step is diagnosed."
+ },
+ {
+  "k": "0ec37e2f",
+  "s": "🤖 MagicSchool AI diagnostic prompt namunasi:",
+  "ru": "🤖 Пример диагностического промпта MagicSchool AI:",
+  "en": "🤖 Sample MagicSchool AI diagnostic prompt:"
+ },
+ {
+  "k": "aa3f7b2e",
+  "s": "Rol: Fizika va hisoblash matematikasi bo‘yicha oliy toifali dotsent.\nVazifa: 3-kurs fizika talabalari uchun \"Oddiy differensial tenglamalarni sonli integrallash va hisoblash xatolari\" mavzusida 3 darajali diagnostik test va individual o‘quv trayektoriyasi tuzib ber.\nFormat:\n1. Bazaviy daraja: Teylor qatori va 1-tartibli Eyler usuli diskretlash qadami.\n2. O‘rta daraja: Konservativ tebranishlarda energiyaning sun’iy dreyfi va faza xatosi.\n3. Ilg‘or daraja: Runge-Kutta 4 usulining oraliq qiyaliklari (k1..k4) va simplektik integratsiya mohiyati.\nChiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsin.",
+  "ru": "Роль: доцент высшей категории по физике и вычислительной математике.\nЗадача: составь 3-уровневый диагностический тест и индивидуальную учебную траекторию для студентов-физиков 3-го курса по теме \"Численное интегрирование обыкновенных дифференциальных уравнений и вычислительные погрешности\".\nФормат:\n1. Базовый уровень: ряд Тейлора и шаг дискретизации метода Эйлера 1-го порядка.\n2. Средний уровень: искусственный дрейф энергии и фазовая ошибка в консервативных колебаниях.\n3. Продвинутый уровень: промежуточные наклоны (k1..k4) метода Рунге–Кутты 4 и суть симплектического интегрирования.\nФормат вывода: для каждого неверного ответа дай индивидуальную методическую рекомендацию.",
+  "en": "Role: senior associate professor of physics and computational mathematics.\nTask: create a 3-level diagnostic test and individual learning pathway for third-year physics students on \"Numerical integration of ordinary differential equations and computational errors\".\nFormat:\n1. Basic level: the Taylor series and the discretisation step of the first-order Euler method.\n2. Intermediate level: artificial energy drift and phase error in conservative oscillations.\n3. Advanced level: the intermediate slopes (k1..k4) of Runge–Kutta 4 and the essence of symplectic integration.\nOutput format: give individual methodological guidance for every wrong answer."
+ },
+ {
+  "k": "15d3c063",
+  "s": "🎯 Diagnostika maqsadlari:",
+  "ru": "🎯 Цели диагностики:",
+  "en": "🎯 Diagnostic goals:"
+ },
+ {
+  "k": "53065017",
+  "s": "Talabaning analitik integrallash bilan sonli diskretlash farqini bilishi;",
+  "ru": "знать разницу между аналитическим интегрированием и численной дискретизацией;",
+  "en": "knowing the difference between analytical integration and numerical discretisation;"
+ },
+ {
+  "k": "4ba57a4f",
+  "s": "Lokal kesish xatosi ($\\text{LTE} \\propto \\Delta t^2$) va global xato ($\\text{GTE} \\propto \\Delta t$) ni ajrata olishi;",
+  "ru": "различать локальную ошибку усечения ($\\text{LTE} \\propto \\Delta t^2$) и глобальную ошибку ($\\text{GTE} \\propto \\Delta t$);",
+  "en": "distinguishing the local truncation error ($\\text{LTE} \\propto \\Delta t^2$) from the global error ($\\text{GTE} \\propto \\Delta t$);"
+ },
+ {
+  "k": "a2b15097",
+  "s": "Kompyuter animatsiyasida $\\Delta t$ ning 60 FPS kadrlar chastotasi bilan bog‘liqligini tushunishi.",
+  "ru": "понимать связь $\\Delta t$ с частотой кадров 60 FPS в компьютерной анимации.",
+  "en": "understanding how $\\Delta t$ relates to the 60 FPS frame rate in computer animation."
+ },
+ {
+  "k": "b91a708e",
+  "s": "📈 Individual rejalashtirish:",
+  "ru": "📈 Индивидуальное планирование:",
+  "en": "📈 Individual planning:"
+ },
+ {
+  "k": "5c0cf0b9",
+  "s": "<strong>A-trayektoriya (bazaviy):</strong> Eyler usuli va xatoliklar vizualizatsiyasidan boshlash;",
+  "ru": "<strong>Траектория A (базовая):</strong> начать с метода Эйлера и визуализации погрешностей;",
+  "en": "<strong>Pathway A (basic):</strong> start with the Euler method and error visualisation;"
+ },
+ {
+  "k": "75a5784a",
+  "s": "<strong>B-trayektoriya (standart):</strong> Euler-Cromer va Heun (RK2) usullarini solishtirish;",
+  "ru": "<strong>Траектория B (стандартная):</strong> сравнить методы Эйлера–Кромера и Хойна (RK2);",
+  "en": "<strong>Pathway B (standard):</strong> compare Euler–Cromer and Heun (RK2);"
+ },
+ {
+  "k": "e8f5430b",
+  "s": "<strong>C-trayektoriya (ilg‘or):</strong> RK4, Verlet va adaptiv qadamli (RK45) tizimlarni dasturlash.",
+  "ru": "<strong>Траектория C (продвинутая):</strong> программирование RK4, Верле и систем с адаптивным шагом (RK45).",
+  "en": "<strong>Pathway C (advanced):</strong> programming RK4, Verlet and adaptive-step (RK45) schemes."
+ },
+ {
+  "k": "3a625bc8",
+  "s": "2-bosqich: Sonli integratsiya hisobi",
+  "ru": "Этап 2: расчёт численного интегрирования",
+  "en": "Stage 2: Numerical integration derivation"
+ },
+ {
+  "k": "077c5ae8",
+  "s": "Differensial tenglamalarni sonli diskretlash nazariyasi",
+  "ru": "Теория численной дискретизации дифференциальных уравнений",
+  "en": "Theory of numerical discretisation of differential equations"
+ },
+ {
+  "k": "9d0578a2",
+  "s": "Garmonik tebranishning 2-tartibli differensial tenglamasi $\\ddot{x} + \\omega_0^2 x = 0$ ni 1-tartibli tenglamalar sistemasiga keltiramiz: $$\\begin{cases} \\frac{dx}{dt} = v \\\\ \\frac{dv}{dt} = -\\omega_0^2 x \\end{cases}$$",
+  "ru": "Сведём дифференциальное уравнение гармонических колебаний 2-го порядка $\\ddot{x} + \\omega_0^2 x = 0$ к системе уравнений 1-го порядка: $$\\begin{cases} \\frac{dx}{dt} = v \\\\ \\frac{dv}{dt} = -\\omega_0^2 x \\end{cases}$$",
+  "en": "We reduce the second-order differential equation of harmonic oscillation $\\ddot{x} + \\omega_0^2 x = 0$ to a system of first-order equations: $$\\begin{cases} \\frac{dx}{dt} = v \\\\ \\frac{dv}{dt} = -\\omega_0^2 x \\end{cases}$$"
+ },
+ {
+  "k": "8b67c8c2",
+  "s": "1. Forward Euler (klassik Eyler)",
+  "ru": "1. Forward Euler (классический Эйлер)",
+  "en": "1. Forward Euler (classical Euler)"
+ },
+ {
+  "k": "844be266",
+  "s": "1-tartibli oshkor usul ($\\mathcal{O}(\\Delta t)$):",
+  "ru": "Явный метод 1-го порядка ($\\mathcal{O}(\\Delta t)$):",
+  "en": "First-order explicit method ($\\mathcal{O}(\\Delta t)$):"
+ },
+ {
+  "k": "adb4b0ab",
+  "s": "$x_{n+1} = x_n + v_n \\Delta t$<br> $v_{n+1} = v_n - \\omega_0^2 x_n \\Delta t$",
+  "ru": "$x_{n+1} = x_n + v_n \\Delta t$<br> $v_{n+1} = v_n - \\omega_0^2 x_n \\Delta t$",
+  "en": "$x_{n+1} = x_n + v_n \\Delta t$<br> $v_{n+1} = v_n - \\omega_0^2 x_n \\Delta t$"
+ },
+ {
+  "k": "5d916dd8",
+  "s": "⚠️ <strong>Xato:</strong> Faza maydoni har qadamda $(1 + \\omega_0^2 \\Delta t^2)$ koeffitsiyentga kattalashadi va energiya eksponensial portlaydi!",
+  "ru": "⚠️ <strong>Ошибка:</strong> фазовая площадь на каждом шаге увеличивается в $(1 + \\omega_0^2 \\Delta t^2)$ раз, и энергия экспоненциально «взрывается»!",
+  "en": "⚠️ <strong>Error:</strong> the phase area grows by a factor of $(1 + \\omega_0^2 \\Delta t^2)$ every step and the energy blows up exponentially!"
+ },
+ {
+  "k": "09e52b48",
+  "s": "2. Euler-Cromer (simplektik Eyler)",
+  "ru": "2. Euler–Cromer (симплектический Эйлер)",
+  "en": "2. Euler–Cromer (symplectic Euler)"
+ },
+ {
+  "k": "7caec5ad",
+  "s": "1-tartibli simplektik usul ($\\mathcal{O}(\\Delta t)$):",
+  "ru": "Симплектический метод 1-го порядка ($\\mathcal{O}(\\Delta t)$):",
+  "en": "First-order symplectic method ($\\mathcal{O}(\\Delta t)$):"
+ },
+ {
+  "k": "77eaaed7",
+  "s": "$v_{n+1} = v_n - \\omega_0^2 x_n \\Delta t$<br> $x_{n+1} = x_n + v_{n+1} \\Delta t$",
+  "ru": "$v_{n+1} = v_n - \\omega_0^2 x_n \\Delta t$<br> $x_{n+1} = x_n + v_{n+1} \\Delta t$",
+  "en": "$v_{n+1} = v_n - \\omega_0^2 x_n \\Delta t$<br> $x_{n+1} = x_n + v_{n+1} \\Delta t$"
+ },
+ {
+  "k": "d9d0ea84",
+  "s": "✅ <strong>Afzallik:</strong> Yangilangan tezlikdan foydalanadi. Faza fazosi hajmi saqlanadi ($\\det(J)=1$), tebranish uzoq vaqt barqaror!",
+  "ru": "✅ <strong>Преимущество:</strong> использует обновлённую скорость. Объём фазового пространства сохраняется ($\\det(J)=1$), колебания устойчивы длительное время!",
+  "en": "✅ <strong>Advantage:</strong> it uses the updated velocity. Phase-space volume is preserved ($\\det(J)=1$) and the oscillation stays stable for a long time!"
+ },
+ {
+  "k": "d30401e3",
+  "s": "3. Runge-Kutta 4 (klassik RK4)",
+  "ru": "3. Рунге–Кутта 4 (классический RK4)",
+  "en": "3. Runge–Kutta 4 (classical RK4)"
+ },
+ {
+  "k": "3def7038",
+  "s": "4-tartibli yuqori aniqlik ($\\mathcal{O}(\\Delta t^4)$):",
+  "ru": "Высокая точность 4-го порядка ($\\mathcal{O}(\\Delta t^4)$):",
+  "en": "High fourth-order accuracy ($\\mathcal{O}(\\Delta t^4)$):"
+ },
+ {
+  "k": "db8f28f1",
+  "s": "$k_1, k_2, k_3, k_4$ qiyaliklari<br> $x_{n+1} = x_n + \\frac{\\Delta t}{6}(k_1^x + 2k_2^x + 2k_3^x + k_4^x)$",
+  "ru": "Наклоны $k_1, k_2, k_3, k_4$<br> $x_{n+1} = x_n + \\frac{\\Delta t}{6}(k_1^x + 2k_2^x + 2k_3^x + k_4^x)$",
+  "en": "Slopes $k_1, k_2, k_3, k_4$<br> $x_{n+1} = x_n + \\frac{\\Delta t}{6}(k_1^x + 2k_2^x + 2k_3^x + k_4^x)$"
+ },
+ {
+  "k": "44c73218",
+  "s": "⭐ <strong>Standart:</strong> Xatolik o‘ta kichik ($\\sim 10^{-10}$), professional simulyatsiyalarning tayanch dvigateli.",
+  "ru": "⭐ <strong>Стандарт:</strong> погрешность крайне мала ($\\sim 10^{-10}$) — опорный движок профессиональных симуляций.",
+  "en": "⭐ <strong>Standard:</strong> the error is extremely small ($\\sim 10^{-10}$) — the workhorse engine of professional simulations."
+ },
+ {
+  "k": "e21df07b",
+  "s": "🧠 Claude: RK4 oraliq qiyaliklarining fizik ma’nosi",
+  "ru": "🧠 Claude: физический смысл промежуточных наклонов RK4",
+  "en": "🧠 Claude: the physical meaning of the RK4 intermediate slopes"
+ },
+ {
+  "k": "d24d4da9",
+  "s": "<strong>$k_1 = f(t_n, y_n)$</strong>: Interval boshidagi boshlang‘ich qiyalik (Klassik Eyler vektori).",
+  "ru": "<strong>$k_1 = f(t_n, y_n)$</strong>: начальный наклон в начале интервала (вектор классического Эйлера).",
+  "en": "<strong>$k_1 = f(t_n, y_n)$</strong>: the initial slope at the start of the interval (the classical Euler vector)."
+ },
+ {
+  "k": "7aa117b2",
+  "s": "<strong>$k_2 = f(t_n + \\frac{\\Delta t}{2}, y_n + \\frac{\\Delta t}{2} k_1)$</strong>: $k_1$ yordamida oraliq nuqtaga ($\\Delta t/2$) borib, u yerdagi yangilangan qiyalikni baholash.",
+  "ru": "<strong>$k_2 = f(t_n + \\frac{\\Delta t}{2}, y_n + \\frac{\\Delta t}{2} k_1)$</strong>: переход с помощью $k_1$ в промежуточную точку ($\\Delta t/2$) и оценка обновлённого наклона там.",
+  "en": "<strong>$k_2 = f(t_n + \\frac{\\Delta t}{2}, y_n + \\frac{\\Delta t}{2} k_1)$</strong>: using $k_1$ to step to the midpoint ($\\Delta t/2$) and estimating the updated slope there."
+ },
+ {
+  "k": "eccec55f",
+  "s": "<strong>$k_3 = f(t_n + \\frac{\\Delta t}{2}, y_n + \\frac{\\Delta t}{2} k_2)$</strong>: $k_2$ qiyaligi orqali oraliq nuqtadagi qiyalikni ikkinchi bor aniqlashtirish.",
+  "ru": "<strong>$k_3 = f(t_n + \\frac{\\Delta t}{2}, y_n + \\frac{\\Delta t}{2} k_2)$</strong>: повторное уточнение наклона в промежуточной точке через наклон $k_2$.",
+  "en": "<strong>$k_3 = f(t_n + \\frac{\\Delta t}{2}, y_n + \\frac{\\Delta t}{2} k_2)$</strong>: refining the midpoint slope a second time using the $k_2$ slope."
+ },
+ {
+  "k": "34872896",
+  "s": "<strong>$k_4 = f(t_n + \\Delta t, y_n + \\Delta t k_3)$</strong>: Oraliq qiyalik $k_3$ asosida to‘liq qadam ($\\Delta t$) oxiridagi yakuniy qiyalikni bashorat qilish.",
+  "ru": "<strong>$k_4 = f(t_n + \\Delta t, y_n + \\Delta t k_3)$</strong>: прогноз итогового наклона в конце полного шага ($\\Delta t$) на основе промежуточного наклона $k_3$.",
+  "en": "<strong>$k_4 = f(t_n + \\Delta t, y_n + \\Delta t k_3)$</strong>: predicting the final slope at the end of the full step ($\\Delta t$) from the intermediate slope $k_3$."
+ },
+ {
+  "k": "a5230f53",
+  "s": "Yakuniy natija Simpson qoidasi bo‘yicha o‘rtacha qiyalik sifatida olinadi: $k_{avg} = \\frac{k_1 + 2k_2 + 2k_3 + k_4}{6}$.",
+  "ru": "Итоговый результат берётся как средний наклон по правилу Симпсона: $k_{avg} = \\frac{k_1 + 2k_2 + 2k_3 + k_4}{6}$.",
+  "en": "The final result is taken as the average slope by Simpson’s rule: $k_{avg} = \\frac{k_1 + 2k_2 + 2k_3 + k_4}{6}$."
+ },
+ {
+  "k": "584d7975",
+  "s": "3-bosqich: Analitik va sonli yechimlar qiyosi",
+  "ru": "Этап 3: сравнение аналитического и численного решений",
+  "en": "Stage 3: Comparing analytical and numerical solutions"
+ },
+ {
+  "k": "f607352e",
+  "s": "WolframAlpha bilan Koshi masalasini yechish va xatolik normasi",
+  "ru": "Решение задачи Коши в WolframAlpha и норма погрешности",
+  "en": "Solving the Cauchy problem in WolframAlpha and the error norm"
+ },
+ {
+  "k": "87389320",
+  "s": "Sonli usullarning xatosini baholash uchun etalon (aniq analitik) yechim kerak bo‘ladi. WolframAlpha orqali garmonik ossilyator tenglamasini aniq integrallaymiz:",
+  "ru": "Для оценки погрешности численных методов нужно эталонное (точное аналитическое) решение. С помощью WolframAlpha точно проинтегрируем уравнение гармонического осциллятора:",
+  "en": "To evaluate the error of numerical methods we need a reference (exact analytical) solution. We integrate the harmonic oscillator equation exactly with WolframAlpha:"
+ },
+ {
+  "k": "19b5d3ba",
+  "s": "🔍 WolframAlpha Query: <code>DSolve[{x''[t] + omega^2 * x[t] == 0, x[0] == x0, x'[0] == 0}, x[t], t]</code>",
+  "ru": "🔍 Запрос WolframAlpha: <code>DSolve[{x''[t] + omega^2 * x[t] == 0, x[0] == x0, x'[0] == 0}, x[t], t]</code>",
+  "en": "🔍 WolframAlpha query: <code>DSolve[{x''[t] + omega^2 * x[t] == 0, x[0] == x0, x'[0] == 0}, x[t], t]</code>"
+ },
+ {
+  "k": "0f51ddb4",
+  "s": "$$x_{exact}(t) = x_0 \\cos(\\omega_0 t), \\quad v_{exact}(t) = -x_0 \\omega_0 \\sin(\\omega_0 t)$$",
+  "ru": "$$x_{exact}(t) = x_0 \\cos(\\omega_0 t), \\quad v_{exact}(t) = -x_0 \\omega_0 \\sin(\\omega_0 t)$$",
+  "en": "$$x_{exact}(t) = x_0 \\cos(\\omega_0 t), \\quad v_{exact}(t) = -x_0 \\omega_0 \\sin(\\omega_0 t)$$"
+ },
+ {
+  "k": "1c391815",
+  "s": "📊 Asosiy xatolik metrikalari:",
+  "ru": "📊 Основные метрики погрешности:",
+  "en": "📊 Key error metrics:"
+ },
+ {
+  "k": "a6205996",
+  "s": "<strong>1. Nuqtaviy mutlaq xato:</strong><br> $e(t_n) = |x_{num}(t_n) - x_{exact}(t_n)|$",
+  "ru": "<strong>1. Точечная абсолютная ошибка:</strong><br> $e(t_n) = |x_{num}(t_n) - x_{exact}(t_n)|$",
+  "en": "<strong>1. Pointwise absolute error:</strong><br> $e(t_n) = |x_{num}(t_n) - x_{exact}(t_n)|$"
+ },
+ {
+  "k": "3d8b1c17",
+  "s": "<strong>2. $L_2$ integrallangan normasi:</strong><br> $\\|e\\|_2 = \\sqrt{\\frac{1}{N} \\sum_{n=1}^N \\left(x_{num}(t_n) - x_{exact}(t_n)\\right)^2}$",
+  "ru": "<strong>2. Интегральная норма $L_2$:</strong><br> $\\|e\\|_2 = \\sqrt{\\frac{1}{N} \\sum_{n=1}^N \\left(x_{num}(t_n) - x_{exact}(t_n)\\right)^2}$",
+  "en": "<strong>2. Integrated $L_2$ norm:</strong><br> $\\|e\\|_2 = \\sqrt{\\frac{1}{N} \\sum_{n=1}^N \\left(x_{num}(t_n) - x_{exact}(t_n)\\right)^2}$"
+ },
+ {
+  "k": "b0ea0f45",
+  "s": "<strong>3. Faza xatosi ($\\Delta \\phi$):</strong><br> $\\Delta \\phi(t) = \\omega_{num} t - \\omega_0 t$ (tebranish davrining sonli cho‘zilishi yoki qisqarishi)",
+  "ru": "<strong>3. Фазовая ошибка ($\\Delta \\phi$):</strong><br> $\\Delta \\phi(t) = \\omega_{num} t - \\omega_0 t$ (численное удлинение или укорочение периода колебаний)",
+  "en": "<strong>3. Phase error ($\\Delta \\phi$):</strong><br> $\\Delta \\phi(t) = \\omega_{num} t - \\omega_0 t$ (numerical lengthening or shortening of the oscillation period)"
+ },
+ {
+  "k": "9b0ac7ca",
+  "s": "<strong>4. Nisbiy energiya dreyfi:</strong><br> $\\frac{\\Delta E(t)}{E_0} = \\frac{|E_{num}(t) - E_0|}{E_0} \\times 100\\%$",
+  "ru": "<strong>4. Относительный дрейф энергии:</strong><br> $\\frac{\\Delta E(t)}{E_0} = \\frac{|E_{num}(t) - E_0|}{E_0} \\times 100\\%$",
+  "en": "<strong>4. Relative energy drift:</strong><br> $\\frac{\\Delta E(t)}{E_0} = \\frac{|E_{num}(t) - E_0|}{E_0} \\times 100\\%$"
+ },
+ {
+  "k": "d51a8f96",
+  "s": "📈 Vaqt bo‘yicha siljish grafigi:",
+  "ru": "📈 График смещения во времени:",
+  "en": "📈 Displacement-versus-time plot:"
+ },
+ {
+  "k": "050a7a7e",
+  "s": "Numerical Integration Comparison",
+  "ru": "Numerical Integration Comparison",
+  "en": "Numerical Integration Comparison"
+ },
+ {
+  "k": "f2d8db59",
+  "s": "$\\Delta t = 0.25\\text{ s}$ qadamda Forward Euler (qizil) amplitudasining eksponensial o‘sishi va RK4 (moviy) ning aniq yechim bilan mos kelishi.",
+  "ru": "Экспоненциальный рост амплитуды Forward Euler (красный) при шаге $\\Delta t = 0.25\\text{ s}$ и совпадение RK4 (синий) с точным решением.",
+  "en": "The exponential amplitude growth of Forward Euler (red) at step $\\Delta t = 0.25\\text{ s}$ and RK4 (blue) matching the exact solution."
+ },
+ {
+  "k": "a60391ce",
+  "s": "4-bosqich: Xatolik grafiklarini qurish",
+  "ru": "Этап 4: построение графиков погрешности",
+  "en": "Stage 4: Plotting the error"
+ },
+ {
+  "k": "dcca4d17",
+  "s": "ChatGPT bilan log-log konvergensiya tahlili",
+  "ru": "Логарифмический анализ сходимости с ChatGPT",
+  "en": "Log-log convergence analysis with ChatGPT"
+ },
+ {
+  "k": "a0e0f4ac",
+  "s": "Sonli usulning nazariy tartibini ($p$) isbotlash uchun xatolikning qadamga bog‘liqligi logarifmik masshtabda o‘rganiladi: $$E(\\Delta t) = C \\cdot \\Delta t^p \\implies \\log E(\\Delta t) = p \\cdot \\log(\\Delta t) + \\log C$$ Log-Log grafigining qiyalik burchagi $\\tan\\alpha = p$ integratsiyalash tartibini to‘g‘ridan-to‘g‘ri ko‘rsatadi.",
+  "ru": "Чтобы доказать теоретический порядок численного метода ($p$), зависимость ошибки от шага изучается в логарифмическом масштабе: $$E(\\Delta t) = C \\cdot \\Delta t^p \\implies \\log E(\\Delta t) = p \\cdot \\log(\\Delta t) + \\log C$$ Угловой коэффициент графика Log-Log $\\tan\\alpha = p$ прямо показывает порядок интегрирования.",
+  "en": "To prove the theoretical order of a numerical method ($p$), the error’s dependence on the step is studied on a logarithmic scale: $$E(\\Delta t) = C \\cdot \\Delta t^p \\implies \\log E(\\Delta t) = p \\cdot \\log(\\Delta t) + \\log C$$ The slope of the log-log plot $\\tan\\alpha = p$ directly gives the order of integration."
+ },
+ {
+  "k": "32ca982f",
+  "s": "Log-Log Convergence Error",
+  "ru": "Log-Log Convergence Error",
+  "en": "Log-Log Convergence Error"
+ },
+ {
+  "k": "3db33c68",
+  "s": "📉 Qiyalik burchaklari tahlili:",
+  "ru": "📉 Анализ угловых коэффициентов:",
+  "en": "📉 Slope analysis:"
+ },
+ {
+  "k": "d27d8598",
+  "s": "Usul",
+  "ru": "Usul",
+  "en": "Usul"
+ },
+ {
+  "k": "3780aae0",
+  "s": "Qiyalik ($p$)",
+  "ru": "Наклон ($p$)",
+  "en": "Slope ($p$)"
+ },
+ {
+  "k": "2a764373",
+  "s": "$\\Delta t = 0.1\\text{ s}$ xato",
+  "ru": "Ошибка $\\Delta t = 0.1\\text{ s}$",
+  "en": "$\\Delta t = 0.1\\text{ s}$ error"
+ },
+ {
+  "k": "9a99ab83",
+  "s": "$\\Delta t = 0.01\\text{ s}$ xato",
+  "ru": "Ошибка $\\Delta t = 0.01\\text{ s}$",
+  "en": "$\\Delta t = 0.01\\text{ s}$ error"
+ },
+ {
+  "k": "2bf37d97",
+  "s": "Forward Euler",
+  "ru": "Forward Euler",
+  "en": "Forward Euler"
+ },
+ {
+  "k": "1fcfac00",
+  "s": "$p \\approx 1.0$",
+  "ru": "$p \\approx 1.0$",
+  "en": "$p \\approx 1.0$"
+ },
+ {
+  "k": "4f614b24",
+  "s": "$\\sim 2.5 \\times 10^{-1}$",
+  "ru": "$\\sim 2.5 \\times 10^{-1}$",
+  "en": "$\\sim 2.5 \\times 10^{-1}$"
+ },
+ {
+  "k": "7d4d4b05",
+  "s": "$\\sim 2.5 \\times 10^{-2}$",
+  "ru": "$\\sim 2.5 \\times 10^{-2}$",
+  "en": "$\\sim 2.5 \\times 10^{-2}$"
+ },
+ {
+  "k": "60a4bfaf",
+  "s": "Heun / RK2",
+  "ru": "Хойн / RK2",
+  "en": "Heun / RK2"
+ },
+ {
+  "k": "cf28c5bf",
+  "s": "$p \\approx 2.0$",
+  "ru": "$p \\approx 2.0$",
+  "en": "$p \\approx 2.0$"
+ },
+ {
+  "k": "279f68ec",
+  "s": "$\\sim 4.1 \\times 10^{-3}$",
+  "ru": "$\\sim 4.1 \\times 10^{-3}$",
+  "en": "$\\sim 4.1 \\times 10^{-3}$"
+ },
+ {
+  "k": "1dfbbb52",
+  "s": "$\\sim 4.1 \\times 10^{-5}$",
+  "ru": "$\\sim 4.1 \\times 10^{-5}$",
+  "en": "$\\sim 4.1 \\times 10^{-5}$"
+ },
+ {
+  "k": "262e69fe",
+  "s": "Klassik RK4",
+  "ru": "Классический RK4",
+  "en": "Classical RK4"
+ },
+ {
+  "k": "d2fdc369",
+  "s": "$p \\approx 4.0$",
+  "ru": "$p \\approx 4.0$",
+  "en": "$p \\approx 4.0$"
+ },
+ {
+  "k": "a4d24d3a",
+  "s": "$\\sim 1.2 \\times 10^{-7}$",
+  "ru": "$\\sim 1.2 \\times 10^{-7}$",
+  "en": "$\\sim 1.2 \\times 10^{-7}$"
+ },
+ {
+  "k": "ff2ffa25",
+  "s": "$\\sim 1.2 \\times 10^{-11}$",
+  "ru": "$\\sim 1.2 \\times 10^{-11}$",
+  "en": "$\\sim 1.2 \\times 10^{-11}$"
+ },
+ {
+  "k": "1b46cdf1",
+  "s": "💡 <strong>Xulosa:</strong> Qadam $\\Delta t$ ni 10 barobarga qisqartirganda: Forward Euler xatosi 10 barobar, Heun xatosi 100 barobar, RK4 xatosi esa <strong>$10^4 = 10\\,000$ barobarga</strong> kamayadi!",
+  "ru": "💡 <strong>Вывод:</strong> при уменьшении шага $\\Delta t$ в 10 раз ошибка Forward Euler уменьшается в 10 раз, ошибка Хойна — в 100 раз, а ошибка RK4 — <strong>в $10^4 = 10\\,000$ раз</strong>!",
+  "en": "💡 <strong>Conclusion:</strong> when the step $\\Delta t$ is reduced 10-fold, the Forward Euler error drops 10-fold, Heun’s 100-fold and RK4’s <strong>$10^4 = 10\\,000$-fold</strong>!"
+ },
+ {
+  "k": "6d5e636d",
+  "s": "5-bosqich: integrallash qadamini vizual sinash",
+  "ru": "Этап 5: визуальная проверка шага интегрирования",
+  "en": "Stage 5: Visual testing of the integration step"
+ },
+ {
+  "k": "093e9e87",
+  "s": "Interaktiv xatolik va barqarorlik sinov maydoni",
+  "ru": "Интерактивная площадка для проверки погрешности и устойчивости",
+  "en": "Interactive error and stability sandbox"
+ },
+ {
+  "k": "a3d832b6",
+  "s": "Vaqt qadami $\\Delta t$, mayatnik uzunligi $L$ va boshlang‘ich burchak $\\theta_0$ ni o‘zgartiring. To‘rt usulning bir vaqtda harakatini, to‘lqin shaklini, faza portretini va energiya dreyfini jonli kuzating:",
+  "ru": "Меняйте шаг времени $\\Delta t$, длину маятника $L$ и начальный угол $\\theta_0$. Наблюдайте вживую одновременное движение четырёх методов, форму волны, фазовый портрет и дрейф энергии:",
+  "en": "Change the time step $\\Delta t$, pendulum length $L$ and initial angle $\\theta_0$. Watch the four methods move simultaneously, along with the waveform, phase portrait and energy drift:"
+ },
+ {
+  "k": "ba285580",
+  "s": "💥 Eyler portlashi (Δt = 0,25 s)",
+  "ru": "💥 Взрыв Эйлера (Δt = 0,25 с)",
+  "en": "💥 Euler blow-up (Δt = 0.25 s)"
+ },
+ {
+  "k": "c5a1013f",
+  "s": "🛡️ Simplektik barqarorlik (Δt = 0,10 s)",
+  "ru": "🛡️ Симплектическая устойчивость (Δt = 0,10 с)",
+  "en": "🛡️ Symplectic stability (Δt = 0.10 s)"
+ },
+ {
+  "k": "9d140220",
+  "s": "⭐ RK4 yuqori aniqlik (Δt = 0,05 s)",
+  "ru": "⭐ Высокая точность RK4 (Δt = 0,05 с)",
+  "en": "⭐ RK4 high accuracy (Δt = 0.05 s)"
+ },
+ {
+  "k": "a715a393",
+  "s": "⚡ Qattiq tebranish (L = 0,4 m, Δt = 0,35 s)",
+  "ru": "⚡ Жёсткие колебания (L = 0,4 м, Δt = 0,35 с)",
+  "en": "⚡ Stiff oscillation (L = 0.4 m, Δt = 0.35 s)"
+ },
+ {
+  "k": "7d3dbb65",
+  "s": "Vaqt qadami ($\\Delta t$):",
+  "ru": "Шаг времени ($\\Delta t$):",
+  "en": "Time step ($\\Delta t$):"
+ },
+ {
+  "k": "41a8bed1",
+  "s": "Mayatnik uzunligi ($L$):",
+  "ru": "Длина маятника ($L$):",
+  "en": "Pendulum length ($L$):"
+ },
+ {
+  "k": "96cb478d",
+  "s": "Boshlang‘ich burchak ($\\theta_0$):",
+  "ru": "Начальный угол ($\\theta_0$):",
+  "en": "Initial angle ($\\theta_0$):"
+ },
+ {
+  "k": "74b29f04",
+  "s": "0.50 rad (28.6°)",
+  "ru": "0.50 rad (28.6°)",
+  "en": "0.50 rad (28.6°)"
+ },
+ {
+  "k": "e9eed963",
+  "s": "Aniq yechim",
+  "ru": "Точное решение",
+  "en": "Exact solution"
+ },
+ {
+  "k": "1fec30ae",
+  "s": "Oshkor Eyler",
+  "ru": "Явный Эйлер",
+  "en": "Explicit Euler"
+ },
+ {
+  "k": "dcb1e071",
+  "s": "Eyler–Kromer",
+  "ru": "Эйлер–Кромер",
+  "en": "Euler–Cromer"
+ },
+ {
+  "k": "f631f283",
+  "s": "Heun (RK2)",
+  "ru": "Хойн (RK2)",
+  "en": "Heun (RK2)"
+ },
+ {
+  "k": "a31f891a",
+  "s": "Runge–Kutta 4",
+  "ru": "Runge–Kutta 4",
+  "en": "Runge–Kutta 4"
+ },
+ {
+  "k": "70c6f53a",
+  "s": "▶️ Boshlash",
+  "ru": "▶️ Старт",
+  "en": "▶️ Start"
+ },
+ {
+  "k": "7a2f335a",
+  "s": "⏭️ 1 qadam",
+  "ru": "⏭️ 1 шаг",
+  "en": "⏭️ 1 step"
+ },
+ {
+  "k": "562e26e8",
+  "s": "🔄 Qaytarish",
+  "ru": "🔄 Сброс",
+  "en": "🔄 Reset"
+ },
+ {
+  "k": "a17d19bd",
+  "s": "🎥 Mayatnik harakati animatsiyasi",
+  "ru": "🎥 Анимация движения маятника",
+  "en": "🎥 Pendulum motion animation"
+ },
+ {
+  "k": "44aa4581",
+  "s": "📈 Siljish grafigi $\\theta(t)$, rad",
+  "ru": "📈 График смещения $\\theta(t)$, рад",
+  "en": "📈 Displacement plot $\\theta(t)$, rad"
+ },
+ {
+  "k": "49ad5aac",
+  "s": "Qadamlar:",
+  "ru": "Шаги:",
+  "en": "Steps:"
+ },
+ {
+  "k": "06889d14",
+  "s": "🌀 Faza portreti $\\omega(\\theta)$",
+  "ru": "🌀 Фазовый портрет $\\omega(\\theta)$",
+  "en": "🌀 Phase portrait $\\omega(\\theta)$"
+ },
+ {
+  "k": "2c7e8f58",
+  "s": "⚡ To‘liq mexanik energiya dreyfi $E(t)/E_0$",
+  "ru": "⚡ Дрейф полной механической энергии $E(t)/E_0$",
+  "en": "⚡ Total mechanical energy drift $E(t)/E_0$"
+ },
+ {
+  "k": "0ae8a73a",
+  "s": "📊 Real vaqtdagi hisoblash xatoliklari va energiya telemetriyasi:",
+  "ru": "📊 Погрешности вычислений и телеметрия энергии в реальном времени:",
+  "en": "📊 Real-time computational errors and energy telemetry:"
+ },
+ {
+  "k": "c23e5c71",
+  "s": "Sonli usul",
+  "ru": "Численный метод",
+  "en": "Numerical method"
+ },
+ {
+  "k": "3e7d057b",
+  "s": "Nazariy tartib",
+  "ru": "Теоретический порядок",
+  "en": "Theoretical order"
+ },
+ {
+  "k": "ff410735",
+  "s": "Joriy burchak $\\theta(t)$",
+  "ru": "Текущий угол $\\theta(t)$",
+  "en": "Current angle $\\theta(t)$"
+ },
+ {
+  "k": "c7acc117",
+  "s": "Mutlaq xato $|\\theta_{\\text{son}} - \\theta_{\\text{aniq}}|$",
+  "ru": "Абсолютная ошибка $|\\theta_{\\text{son}} - \\theta_{\\text{aniq}}|$",
+  "en": "Absolute error $|\\theta_{\\text{son}} - \\theta_{\\text{aniq}}|$"
+ },
+ {
+  "k": "36f53875",
+  "s": "Energiya o‘zgarishi $\\Delta E/E_0$",
+  "ru": "Изменение энергии $\\Delta E/E_0$",
+  "en": "Energy change $\\Delta E/E_0$"
+ },
+ {
+  "k": "068cfc8c",
+  "s": "6-bosqich: Hisoblash barqarorligi nazariyasi",
+  "ru": "Этап 6: теория вычислительной устойчивости",
+  "en": "Stage 6: Theory of computational stability"
+ },
+ {
+  "k": "f48f4604",
+  "s": "Gemini: Fon Neyman tahlili va simplektik geometriya",
+  "ru": "Gemini: анализ фон Неймана и симплектическая геометрия",
+  "en": "Gemini: von Neumann analysis and symplectic geometry"
+ },
+ {
+  "k": "0b0d5db0",
+  "s": "Nima sababdan ba’zi sonli usullar vaqt o‘tishi bilan fizik qonuniyatlarni buzib, energiya portlashini keltirib chiqaradi? Buning sababi <strong>Fon Neyman (von Neumann) spektral barqarorligi</strong> va <strong>Liuvill teoremasi</strong> bilan tushuntiriladi.",
+  "ru": "Почему некоторые численные методы со временем нарушают физические законы и вызывают «взрыв» энергии? Это объясняется <strong>спектральной устойчивостью фон Неймана</strong> и <strong>теоремой Лиувилля</strong>.",
+  "en": "Why do some numerical methods break physical laws over time and cause the energy to blow up? It is explained by <strong>von Neumann spectral stability</strong> and <strong>Liouville’s theorem</strong>."
+ },
+ {
+  "k": "02d63912",
+  "s": "🔬 Fon Neyman spektral barqarorlik sharti:",
+  "ru": "🔬 Условие спектральной устойчивости фон Неймана:",
+  "en": "🔬 Von Neumann spectral stability condition:"
+ },
+ {
+  "k": "aec74f4f",
+  "s": "Chiziqli differensial operator uchun bitta qadam matritsasi $A$ tuziladi: $\\mathbf{u}_{n+1} = A \\mathbf{u}_n$. Barqarorlik sharti uning xos qiymatlari $\\lambda$ moduli bo‘yicha belgilanadi: $$|\\lambda| \\le 1$$",
+  "ru": "Для линейного дифференциального оператора строится матрица одного шага $A$: $\\mathbf{u}_{n+1} = A \\mathbf{u}_n$. Условие устойчивости определяется модулем её собственных значений $\\lambda$: $$|\\lambda| \\le 1$$",
+  "en": "For a linear differential operator, a one-step matrix $A$ is formed: $\\mathbf{u}_{n+1} = A \\mathbf{u}_n$. Stability is determined by the modulus of its eigenvalues $\\lambda$: $$|\\lambda| \\le 1$$"
+ },
+ {
+  "k": "6dc5152a",
+  "s": "<strong>Forward Euler:</strong> $\\det(A) = 1 + \\omega_0^2 \\Delta t^2 &gt; 1$. Barcha xos qiymatlar moduli birlik doiradan tashqarida ($|\\lambda| &gt; 1$). Har qanday garmonik tizimda <strong>muqarrar beqaror</strong>!",
+  "ru": "<strong>Forward Euler:</strong> $\\det(A) = 1 + \\omega_0^2 \\Delta t^2 &gt; 1$. Модули всех собственных значений лежат вне единичного круга ($|\\lambda| &gt; 1$). В любой гармонической системе <strong>неизбежно неустойчив</strong>!",
+  "en": "<strong>Forward Euler:</strong> $\\det(A) = 1 + \\omega_0^2 \\Delta t^2 &gt; 1$. All eigenvalue moduli lie outside the unit circle ($|\\lambda| &gt; 1$). It is <strong>inevitably unstable</strong> for any harmonic system!"
+ },
+ {
+  "k": "5d3dba4f",
+  "s": "<strong>Euler-Cromer:</strong> $\\det(A) = 1$. Matritsa determinanti aynan 1 ga teng, faza maydoni buzilmaydi ($|\\lambda| = 1$).",
+  "ru": "<strong>Euler–Cromer:</strong> $\\det(A) = 1$. Определитель матрицы равен ровно 1, фазовая площадь не искажается ($|\\lambda| = 1$).",
+  "en": "<strong>Euler–Cromer:</strong> $\\det(A) = 1$. The matrix determinant equals exactly 1, so the phase area is not distorted ($|\\lambda| = 1$)."
+ },
+ {
+  "k": "adb1e632",
+  "s": "<strong>RK4:</strong> Xos qiymatlar kompleks tekislikda keng barqarorlik doirasiga ega ($\\omega_0 \\Delta t &lt; 2.83$).",
+  "ru": "<strong>RK4:</strong> собственные значения имеют широкую область устойчивости на комплексной плоскости ($\\omega_0 \\Delta t &lt; 2.83$).",
+  "en": "<strong>RK4:</strong> the eigenvalues have a wide stability region in the complex plane ($\\omega_0 \\Delta t &lt; 2.83$)."
+ },
+ {
+  "k": "7fbf8968",
+  "s": "🛡️ Simplektik integratorlar va Liuvill teoremasi:",
+  "ru": "🛡️ Симплектические интеграторы и теорема Лиувилля:",
+  "en": "🛡️ Symplectic integrators and Liouville’s theorem:"
+ },
+ {
+  "k": "d6ea4060",
+  "s": "Gamilton mexanikasida fazaviy hajm invariantdir: $d\\Gamma = dq \\wedge dp = \\text{const}$. Simplektik integratorlar (Euler-Cromer, Verlet, Yoshidaning yuqori tartibli sxemalari) aynan shu geometrik simplektik 2-formani aynan saqlaydi.",
+  "ru": "В гамильтоновой механике фазовый объём инвариантен: $d\\Gamma = dq \\wedge dp = \\text{const}$. Симплектические интеграторы (Эйлер–Кромер, Верле, схемы высокого порядка Ёсиды) точно сохраняют именно эту геометрическую симплектическую 2-форму.",
+  "en": "In Hamiltonian mechanics, phase volume is invariant: $d\\Gamma = dq \\wedge dp = \\text{const}$. Symplectic integrators (Euler–Cromer, Verlet, Yoshida’s higher-order schemes) preserve exactly this geometric symplectic 2-form."
+ },
+ {
+  "k": "cc4c02d3",
+  "s": "Phase Space Stability",
+  "ru": "Phase Space Stability",
+  "en": "Phase Space Stability"
+ },
+ {
+  "k": "a221ffc1",
+  "s": "💡 Veb animatsiyada oltin qoida (Sub-stepping):",
+  "ru": "💡 Золотое правило веб-анимации (Sub-stepping):",
+  "en": "💡 The golden rule of web animation (sub-stepping):"
+ },
+ {
+  "k": "0f43bd8d",
+  "s": "Brauzerda ekranni yangilash kadrlar chastotasi o‘zgaruvchan (30 FPS dan 144 FPS gacha) bo‘ladi. Hech qachon brauzerning $\\Delta t_{frame}$ ini to‘g‘ridan-to‘g‘ri fizik tenglamaga bermang! Doimo <strong>Fixed Timestep</strong> (masalan $dt = 0.005\\text{ s}$) va kadr ichida bir necha kichik hisoblash qadami tashlaydigan <code>accumulator</code> mexanizmini qo‘llang.",
+  "ru": "Частота кадров обновления экрана в браузере переменная (от 30 до 144 FPS). Никогда не подавайте $\\Delta t_{frame}$ браузера напрямую в физическое уравнение! Всегда используйте <strong>Fixed Timestep</strong> (например, $dt = 0.005\\text{ s}$) и механизм <code>accumulator</code>, делающий внутри кадра несколько малых шагов вычислений.",
+  "en": "The browser’s screen refresh rate varies (from 30 to 144 FPS). Never feed the browser’s $\\Delta t_{frame}$ directly into the physics equation! Always use a <strong>fixed timestep</strong> (e.g. $dt = 0.005\\text{ s}$) and an <code>accumulator</code> that takes several small computation steps within a frame."
+ },
+ {
+  "k": "33c6607c",
+  "s": "O‘z-o‘zini tekshirish",
+  "ru": "Самопроверка",
+  "en": "Self-check"
+ },
+ {
+  "k": "426af39c",
+  "s": "4-ma’ruza diagnostika testi (3 ta ilmiy savol)",
+  "ru": "Диагностический тест к лекции 4 (3 научных вопроса)",
+  "en": "Lecture 4 diagnostic test (3 scientific questions)"
+ },
+ {
+  "k": "e85521a1",
+  "s": "Hisoblash aniqligi, Teylor qatori xatosi va simplektik barqarorlik bo‘yicha bilimlaringizni sinab ko‘ring:",
+  "ru": "Проверьте свои знания о точности вычислений, погрешности ряда Тейлора и симплектической устойчивости:",
+  "en": "Test your knowledge of computational accuracy, Taylor-series error and symplectic stability:"
+ },
+ {
+  "k": "2ed9f4c7",
+  "s": "1-savol: Klassik forward Euler usulida garmonik ossilyator modellashtirilganda nima sababdan to‘liq mexanik energiya eksponensial o‘sib ketadi?",
+  "ru": "Вопрос 1: Почему при моделировании гармонического осциллятора классическим методом forward Euler полная механическая энергия экспоненциально растёт?",
+  "en": "Question 1: Why does the total mechanical energy grow exponentially when a harmonic oscillator is modelled with classical forward Euler?"
+ },
+ {
+  "k": "9bacb947",
+  "s": "A) Gravitatsiya tezlanishi noto‘g‘ri o‘zgarmas deb olingani uchun",
+  "ru": "A) Потому что ускорение свободного падения ошибочно принято постоянным",
+  "en": "A) Because gravitational acceleration was wrongly taken as constant"
+ },
+ {
+  "k": "d53de404",
+  "s": "B) Forward Euler simplektik emas va uning o‘tish matritsasi determinanti det(A) = 1 + ω²Δt² &gt; 1 bo‘lib, faza maydonini har qadamda sun’iy kengaytiradi",
+  "ru": "B) Forward Euler не симплектичен: определитель его матрицы перехода det(A) = 1 + ω²Δt² &gt; 1, и он искусственно расширяет фазовую площадь на каждом шаге",
+  "en": "B) Forward Euler is not symplectic: the determinant of its transition matrix det(A) = 1 + ω²Δt² &gt; 1, so it artificially expands the phase area at every step"
+ },
+ {
+  "k": "488fac24",
+  "s": "C) Vaqt qadami Δt juda kichik tanlangani tufayli",
+  "ru": "C) Потому что шаг времени Δt выбран слишком малым",
+  "en": "C) Because the time step Δt was chosen too small"
+ },
+ {
+  "k": "4f600be7",
+  "s": "2-savol: Runge-Kutta 4 (RK4) usulida integratsiya qadami Δt 2 barobarga qisqartirilsa, global kesish xatosi (GTE) necha barobarga kamayadi?",
+  "ru": "Вопрос 2: Во сколько раз уменьшится глобальная ошибка усечения (GTE) метода Рунге–Кутты 4 (RK4), если шаг интегрирования Δt уменьшить в 2 раза?",
+  "en": "Question 2: By what factor does the global truncation error (GTE) of Runge–Kutta 4 (RK4) decrease if the integration step Δt is halved?"
+ },
+ {
+  "k": "c72cdd32",
+  "s": "A) 2 barobarga",
+  "ru": "A) В 2 раза",
+  "en": "A) 2 times"
+ },
+ {
+  "k": "536a75ef",
+  "s": "B) 8 barobarga",
+  "ru": "B) В 8 раз",
+  "en": "B) 8 times"
+ },
+ {
+  "k": "72ff4081",
+  "s": "C) 16 barobarga (chunki RK4 usulida xatolik tartibi O(Δt⁴) bo‘lib, 2⁴ = 16)",
+  "ru": "C) В 16 раз (поскольку порядок погрешности RK4 равен O(Δt⁴), а 2⁴ = 16)",
+  "en": "C) 16 times (because RK4’s error order is O(Δt⁴) and 2⁴ = 16)"
+ },
+ {
+  "k": "f1bab982",
+  "s": "3-savol: Nega real vaqt o‘yinlarida va uzoq davom etuvchi planetar simulyatsiyalarda RK4 o‘rniga ko‘pincha Euler-Cromer yoki Verlet usullari afzal ko‘riladi?",
+  "ru": "Вопрос 3: Почему в играх реального времени и длительных планетарных симуляциях вместо RK4 часто предпочитают методы Эйлера–Кромера или Верле?",
+  "en": "Question 3: Why are Euler–Cromer or Verlet often preferred over RK4 in real-time games and long-running planetary simulations?"
+ },
+ {
+  "k": "d898570c",
+  "s": "A) Chunki Euler-Cromer va Verlet simplektik bo‘lib, faza fazosi hajmini aynan saqlaydi va 1 FLOP hisoblash sarfi bilan uzoq vaqt energetik barqarorlikni kafolatlaydi",
+  "ru": "A) Потому что Эйлер–Кромер и Верле симплектичны: они точно сохраняют объём фазового пространства и при затратах в 1 FLOP гарантируют долговременную энергетическую устойчивость",
+  "en": "A) Because Euler–Cromer and Verlet are symplectic: they preserve phase-space volume exactly and guarantee long-term energy stability at a cost of 1 FLOP"
+ },
+ {
+  "k": "ce48bbe9",
+  "s": "B) Chunki ular 5-tartibli aniqlik beradi",
+  "ru": "B) Потому что они дают точность 5-го порядка",
+  "en": "B) Because they give fifth-order accuracy"
+ },
+ {
+  "k": "e2be06e0",
+  "s": "C) Chunki ularda vaqt qadami Δt ni umuman belgilash shart emas",
+  "ru": "C) Потому что в них вовсе не нужно задавать шаг времени Δt",
+  "en": "C) Because they do not require a time step Δt at all"
+ },
+ {
+  "k": "653639f7",
+  "s": "📚 4-ma’ruza bo‘yicha ilmiy-uslubiy adabiyotlar ro‘yxati:",
+  "ru": "📚 Список научно-методической литературы к лекции 4:",
+  "en": "📚 Scholarly and methodological references for Lecture 4:"
+ },
+ {
+  "k": "0f362f6a",
+  "s": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., va Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.",
+  "ru": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.",
+  "en": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "cac4764d",
+  "s": "<strong>Goldberg, D. (1991).</strong> What Every Computer Scientist Should Know About Floating-Point Arithmetic. <em>ACM Computing Surveys</em>, 23(1).",
+  "ru": "<strong>Goldberg, D. (1991).</strong> What Every Computer Scientist Should Know About Floating-Point Arithmetic. <em>ACM Computing Surveys</em>, 23(1).",
+  "en": "<strong>Goldberg, D. (1991).</strong> What Every Computer Scientist Should Know About Floating-Point Arithmetic. <em>ACM Computing Surveys</em>, 23(1)."
+ },
+ {
+  "k": "dccda2f8",
+  "s": "<strong>Hairer, E., Nørsett, S. P., va Wanner, G. (1993).</strong> <em>Solving Ordinary Differential Equations I: Nonstiff Problems</em> (2nd ed.). Springer.",
+  "ru": "<strong>Hairer, E., Nørsett, S. P., & Wanner, G. (1993).</strong> <em>Solving Ordinary Differential Equations I: Nonstiff Problems</em> (2nd ed.). Springer.",
+  "en": "<strong>Hairer, E., Nørsett, S. P., & Wanner, G. (1993).</strong> <em>Solving Ordinary Differential Equations I: Nonstiff Problems</em> (2nd ed.). Springer."
+ },
+ {
+  "k": "fbe110bc",
+  "s": "<strong>IEEE. (2019).</strong> <em>IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019)</em>. IEEE Standards Association.",
+  "ru": "<strong>IEEE. (2019).</strong> <em>IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019)</em>. IEEE Standards Association.",
+  "en": "<strong>IEEE. (2019).</strong> <em>IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019)</em>. IEEE Standards Association."
+ },
+ {
+  "k": "4542e4d9",
+  "s": "<strong>Landau, R. H., Páez, M. J., va Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH.",
+  "ru": "<strong>Landau, R. H., Páez, M. J., & Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH.",
+  "en": "<strong>Landau, R. H., Páez, M. J., & Bordeianu, C. C. (2015).</strong> <em>Computational Physics: Problem Solving with Python</em> (3rd ed.). Wiley-VCH."
+ },
+ {
+  "k": "88e332bd",
+  "s": "<strong>Chapra, S. C., va Canale, R. P. (2021).</strong> <em>Numerical Methods for Engineers</em> (8th ed.). McGraw-Hill.",
+  "ru": "<strong>Chapra, S. C., & Canale, R. P. (2021).</strong> <em>Numerical Methods for Engineers</em> (8th ed.). McGraw-Hill.",
+  "en": "<strong>Chapra, S. C., & Canale, R. P. (2021).</strong> <em>Numerical Methods for Engineers</em> (8th ed.). McGraw-Hill."
+ },
+ {
+  "k": "56477650",
+  "s": "<strong>Sargent, R. G. (2013).</strong> Verification and Validation of Simulation Models. <em>Journal of Simulation</em>, 7(1).",
+  "ru": "<strong>Sargent, R. G. (2013).</strong> Verification and Validation of Simulation Models. <em>Journal of Simulation</em>, 7(1).",
+  "en": "<strong>Sargent, R. G. (2013).</strong> Verification and Validation of Simulation Models. <em>Journal of Simulation</em>, 7(1)."
+ },
+ {
+  "k": "71a2267a",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman."
+ }
+]

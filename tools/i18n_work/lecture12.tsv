@@ -1,0 +1,157 @@
+659d3090	Лекция 12: классическая механика и полный ИИ-конвейер	Lecture 12: Classical Mechanics and the Complete AI Pipeline
+30f4ade8	Целостное моделирование динамики Ньютона, законов сохранения импульса и энергии, кулоновского трения на наклонной плоскости и двумерных упругих столкновений через полный 4-этапный	Holistic modelling of Newtonian dynamics, conservation of momentum and energy, Coulomb friction on an incline and 2D elastic collisions through the complete 4-stage
+f3eea760	(деконструкция PhET/Vascak.cz → симплектический движок Claude → мониторинг Google Antigravity → синтез кинематического видео в Runway).	(PhET/Vascak.cz deconstruction → a Claude symplectic engine → Google Antigravity monitoring → Runway kinematic video synthesis).
+8aeb6120	📋 План лекции 12 и полный AI-конвейер:	📋 Lecture 12 plan and the complete AI pipeline:
+3278ee65	⟨1⟩1. ИИ-диагностика и план:⟨/1⟩↵ ⟨2⟩MagicSchool AI: индивидуальная траектория по механике из 3 кластеров на основе ЗБР и таксономии Блума.⟨/2⟩	⟨1⟩1. AI diagnostics and plan:⟨/1⟩↵ ⟨2⟩MagicSchool AI: an individual 3-cluster mechanics pathway based on ZPD and Bloom’s taxonomy.⟨/2⟩
+057eeea2	⟨1⟩2. Анализ механики (PhET/Vascak):⟨/1⟩↵ ⟨2⟩Деконструкция готовых симуляций в параметры и уравнения методом обратной разработки.⟨/2⟩	⟨1⟩2. Mechanics analysis (PhET/Vascak):⟨/1⟩↵ ⟨2⟩Deconstructing ready-made simulations into parameters and equations through reverse engineering.⟨/2⟩
+9a4c0e9c	⟨1⟩3. Код движка (Claude):⟨/1⟩↵ ⟨2⟩Vector2D, симплектический Эйлер–Кромер, импульс столкновения ⟦1⟧ и устранение проникновения MTV.⟨/2⟩	⟨1⟩3. Engine code (Claude):⟨/1⟩↵ ⟨2⟩Vector2D, symplectic Euler–Cromer, the collision impulse ⟦1⟧ and MTV penetration removal.⟨/2⟩
+e3e0175c	⟨1⟩4. Мониторинг процесса (Antigravity):⟨/1⟩↵ ⟨2⟩Delta-Time Гленна Фидлера (60 FPS), аудит энергетического дрейфа ⟦1⟧ и сохранения импульса.⟨/2⟩	⟨1⟩4. Process monitoring (Antigravity):⟨/1⟩↵ ⟨2⟩Glenn Fiedler’s delta time (60 FPS) and audits of energy drift ⟦1⟧ and momentum conservation.⟨/2⟩
+d9678f0c	⟨1⟩5. Кинематическое видео (Runway):⟨/1⟩↵ ⟨2⟩Генеративный видеорендер ИИ, релятивистские и классические анимации через текстовые/кадровые промпты.⟨/2⟩	⟨1⟩5. Kinematic video (Runway):⟨/1⟩↵ ⟨2⟩Generative AI video rendering; relativistic and classical animations from text/frame prompts.⟨/2⟩
+5185ee38	⟨1⟩6. Интерактивная песочница и тест:⟨/1⟩↵ ⟨2⟩Dual Physics Sandbox, график инвариантов в реальном времени и 3 когнитивных тестовых вопроса.⟨/2⟩	⟨1⟩6. Interactive sandbox and test:⟨/1⟩↵ ⟨2⟩A dual physics sandbox, a real-time invariant plot and 3 cognitive test questions.⟨/2⟩
+89527ba1	Предыдущие разделы	Previous sections
+4e401c24	Предыдущие разделы	Previous sections
+79cd6ad5	Следующие разделы	Next sections
+817d200b	Следующие разделы	Next sections
+ff05857f	Моделирование законов механики требует от студента и фундаментальной теоретической физики (векторы, динамика Ньютона, законы сохранения), и вычислительной математики (численное интегрирование), и навыков программирования (JavaScript Canvas). Поэтому в начале занятия	Modelling the laws of mechanics requires fundamental theoretical physics (vectors, Newtonian dynamics, conservation laws), computational mathematics (numerical integration) and programming skills (JavaScript Canvas). So at the start of the lesson
+7646b8e2	с помощью	with
+bd7f781e	на основе формируется индивидуальный учебный путь из 3 кластеров:	based on, a 3-cluster individual learning path is built:
+c766955f	Полный AI-конвейер	Complete AI Pipeline
+3be94646	Рис. 12.1: целостный 4-этапный AI-конвейер изучения классической механики.	Figure 12.1: A holistic 4-stage AI pipeline for studying classical mechanics.
+221afa39	Индивидуальная траектория по механике по 3 когнитивным кластерам:	Individual mechanics pathway across 3 cognitive clusters:
+305e1812	Испытывает трудности с векторными проекциями и разложением тригонометрических сил.	Struggles with vector projections and resolving forces trigonometrically.
+61933806	Визуальный анализ симуляций PhET, пошаговые инструкции по FBD (Free Body Diagram) с помощью MagicSchool AI, 1D прямолинейное движение.	Visual analysis of PhET simulations, step-by-step FBD (free-body diagram) guides with MagicSchool AI, 1D straight-line motion.
+d9c9ffb6	Хорошо знает уравнения Ньютона, может программировать 2D-столкновения и динамику на наклонной плоскости.	Knows Newton’s equations well and can program 2D collisions and incline dynamics.
+b90dedbd	Симплектический движок Эйлера–Кромера с Claude, контроль энергетического дрейфа (⟦1⟧) через Google Antigravity.	A symplectic Euler–Cromer engine with Claude, monitoring energy drift (⟦1⟧) with Google Antigravity.
+222bb778	Самостоятельно создаёт модели многотельных столкновений, неупругих деформаций и релятивистской механики.	Independently builds models of many-body collisions, inelastic deformation and relativistic mechanics.
+b34887fa	Нейросинтез видео в Runway, анализ сложных фазовых портретов и создание итогового портфолио Google Antigravity.	Neural video synthesis in Runway, analysis of complex phase portraits and building a Google Antigravity capstone portfolio.
+eb0cccb3	Обеспечение среды когнитивного и педагогического присутствия для самостоятельного исследования студента с индивидуальной диагностикой через агентов искусственного интеллекта повышает эффективность освоения в 2.8 раза.	Providing a cognitive and teaching-presence environment for independent student research, with individual diagnostics by AI agents, increases learning effectiveness 2.8-fold.
+bda044c0	2. Анализ симуляций механики: PhET и Vascak.cz	2. Analysing mechanics simulations: PhET and Vascak.cz
+ada6462d	Обратная разработка и гносеологический анализ	Reverse engineering and epistemological analysis
+1ce8f78a	Прежде чем начинать программировать физику, студент деконструирует готовые профессиональные симуляции (	Before starting to program physics, the student deconstructs ready-made professional simulations (
+6b2e0fe0	=	=
+7c26847e	) с помощью изученной в лекции 2	) using the
+ed9d6f84	методологии. Этот подход помогает выявить математические и физические модели, стоящие за визуальным интерфейсом:	methodology studied in Lecture 2. This approach helps identify the mathematical and physical models behind the visual interface:
+9490ebdf	Динамика Ньютона и симуляция столкновений	Newtonian Dynamics and Collision Simulation
+83ec7fac	Рис. 12.2: баланс сил на наклонной плоскости (FBD) и математический аппарат импульса двумерного упругого столкновения.	Figure 12.2: Force balance on an incline (FBD) and the mathematics of the 2D elastic collision impulse.
+0c05178c	1. Движение по наклонной плоскости (PhET "Forces and Motion")	1. Motion on an incline (PhET "Forces and Motion")
+0996c408	• <strong>Диаграмма свободного тела (FBD):</strong> на тело действуют 3 основные силы: сила тяжести ⟦1⟧, нормальная реакция ⟦2⟧ и сила трения Кулона–Амонтона между поверхностью и телом ⟦3⟧.↵ • <strong>Проекции сил:</strong> ⟦4⟧ • <strong>Трение покоя и скольжения:</strong> ⟦5⟧ • <strong>Условие движения и ускорение:</strong> ⟦6⟧ ⟦7⟧	• <strong>Free-body diagram (FBD):</strong> 3 main forces act on the body: weight ⟦1⟧, the normal force ⟦2⟧ and the Coulomb–Amontons friction between surface and body ⟦3⟧.↵ • <strong>Force projections:</strong> ⟦4⟧ • <strong>Static and sliding friction:</strong> ⟦5⟧ • <strong>Condition for motion and acceleration:</strong> ⟦6⟧ ⟦7⟧
+d8562f17	2. Анализ 2D-столкновений (Vascak.cz "Collision Lab")	2. 2D collision analysis (Vascak.cz "Collision Lab")
+567effa8	• <strong>Закон сохранения линейного импульса (в векторной форме):</strong> ⟦1⟧ • <strong>Коэффициент восстановления (⟦2⟧):</strong> ⟦3⟧ Здесь ⟦4⟧ соответствует абсолютно упругому столкновению (⟦5⟧), а ⟦6⟧ — абсолютно неупругому.↵ • <strong>Механическая энергия, теряемая при неупругом столкновении:</strong> ⟦7⟧	• <strong>Conservation of linear momentum (vector form):</strong> ⟦1⟧ • <strong>Coefficient of restitution (⟦2⟧):</strong> ⟦3⟧ Here ⟦4⟧ corresponds to a perfectly elastic collision (⟦5⟧) and ⟦6⟧ to a perfectly inelastic one.↵ • <strong>Mechanical energy lost in an inelastic collision:</strong> ⟦7⟧
+697935cf	📊 Матрица этапов обратной разработки (Reverse Engineering):	📊 Reverse-engineering stage matrix:
+0c2f1425	Ползунок наклона	Slope slider
+9ca8e03f	Угол ⟦1⟧ (градусы)	Angle ⟦1⟧ (degrees)
+f1143e27	Ползунок трения	Friction slider
+c6a11859	Коэффициент ⟦1⟧	Coefficient ⟦1⟧
+adb82773	Контакт при столкновении	Collision contact
+62c6f8e5	Нормаль контакта ⟦1⟧	Contact normal ⟦1⟧
+2aa50a28	Телеметрия энергии	Energy telemetry
+c7a6ee1e	Полная механическая энергия ⟦1⟧	Total mechanical energy ⟦1⟧
+65e16035	Интерактивные симуляции PhET позволяют студентам напрямую визуально управлять невидимыми физическими величинами (векторами сил, потоком импульса, механической энергией) и быстро проверять научные гипотезы.	PhET interactive simulations let students control invisible physical quantities (force vectors, momentum flow, mechanical energy) visually and directly and test scientific hypotheses quickly.
+0c77393d	Учебная эффективность симуляции напрямую зависит от того, насколько она даёт пользователю свободу интерактивного открытия и получения отклика в реальном времени при изменении параметров.	A simulation’s learning effectiveness depends directly on how much freedom it gives the user to discover interactively and get real-time feedback when changing parameters.
+57e635f4	=	=
+3eaaa407	[HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)	[HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)
+09cce58d	Лёгкие анимации механики на HTML5 Canvas — наиболее удобный дидактический прототип для покадрового анализа законов классической физики.	Lightweight HTML5 Canvas mechanics animations are the most convenient didactic prototype for frame-by-frame analysis of classical physics laws.
+efb2324f	3. Динамика механики и код движения: Claude	3. Mechanics dynamics and motion code: Claude
+f0fa9ac8	Vector2D, симплектический Эйлер–Кромер и импульс столкновения	Vector2D, symplectic Euler–Cromer and the collision impulse
+dd47a106	После анализа обратной разработки студент в сессии «парного программирования» (Pair-Programming) с <strong>Claude</strong> создаёт код полностью самостоятельно работающего физического движка. Код основан на <strong>симплектическом интеграторе Эйлера–Кромера</strong>, <strong>импульсе столкновения (⟦1⟧)</strong> и алгоритмах устранения проникновения <strong>MTV (Minimum Translation Vector)</strong>:	After the reverse-engineering analysis, the student builds the code of a fully standalone physics engine in a pair-programming session with <strong>Claude</strong>. The code is based on the <strong>symplectic Euler–Cromer integrator</strong>, the <strong>collision impulse (⟦1⟧)</strong> and <strong>MTV (Minimum Translation Vector)</strong> penetration-removal algorithms:
+6aaa8c98	💥 Формула скалярного импульса двумерного столкновения:	💥 Scalar impulse formula for a 2D collision:
+5b56f760	Изменение скорости двух твёрдых тел после столкновения вычисляется через скалярный импульс ⟦2⟧, передаваемый вдоль нормали контакта ⟦1⟧:	The change in velocity of two rigid bodies after a collision is computed from the scalar impulse ⟦2⟧ applied along the contact normal ⟦1⟧:
+81bf5d2d	Обновлённые скорости тел после столкновения:	Updated velocities of the bodies after the collision:
+1404502e	<code>// ============================================================================ // Лекция 12: код 2D симплектического физического движка Claude // ============================================================================ class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } add(v) { return new Vector2D(this.x + v.x, this.y + v.y); } sub(v) { return new Vector2D(this.x - v.x, this.y - v.y); } scale(s) { return new Vector2D(this.x * s, this.y * s); } dot(v) { return this.x * v.x + this.y * v.y; } magSq() { return this.x * this.x + this.y * this.y; } mag() { return Math.sqrt(this.magSq()); } unit() { const m = this.mag(); return m &gt; 0 ? this.scale(1 / m) : new Vector2D(); } } class PhysicsParticle2D { constructor(x, y, vx, vy, radius, mass, color) { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.radius = radius; this.mass = mass; this.color = color; } // Симплектическое интегрирование Эйлера–Кромера (сохраняются фазовый объём и инварианты) update(dt, acc = new Vector2D(0, 0)) { // 1. Сначала обновляется скорость: v(t+dt) = v(t) + a(t)*dt this.vel = this.vel.add(acc.scale(dt)); // 2. С обновлённой скоростью вычисляется координата: x(t+dt) = x(t) + v(t+dt)*dt this.pos = this.pos.add(this.vel.scale(dt)); } // Решение 2D упругого / неупругого столкновения импульсным методом resolveCollision(other, e = 1.0) { const diff = other.pos.sub(this.pos); const dist = diff.mag(); const minDist = this.radius + other.radius; if (dist &lt; minDist &amp;&amp; dist &gt; 0) { // 1. Единичный вектор нормали const normal = diff.unit(); // 2. Относительная скорость вдоль нормали const relVel = this.vel.sub(other.vel); const velAlongNormal = relVel.dot(normal); // Импульс вычисляется, только если тела сближаются if (velAlongNormal &gt; 0) { const invM1 = 1 / this.mass; const invM2 = 1 / other.mass; const impulseMagnitude = -((1 + e) * velAlongNormal) / (invM1 + invM2); const impulseVec = normal.scale(impulseMagnitude); this.vel = this.vel.add(impulseVec.scale(invM1)); other.vel = other.vel.sub(impulseVec.scale(invM2)); // 3. Коррекция проникновения по Minimum Translation Vector (MTV) const overlap = 0.5 * (minDist - dist); this.pos = this.pos.sub(normal.scale(overlap)); other.pos = other.pos.add(normal.scale(overlap)); } } } }</code>	<code>// ============================================================================ // Lecture 12: Claude 2D symplectic physics engine code // ============================================================================ class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } add(v) { return new Vector2D(this.x + v.x, this.y + v.y); } sub(v) { return new Vector2D(this.x - v.x, this.y - v.y); } scale(s) { return new Vector2D(this.x * s, this.y * s); } dot(v) { return this.x * v.x + this.y * v.y; } magSq() { return this.x * this.x + this.y * this.y; } mag() { return Math.sqrt(this.magSq()); } unit() { const m = this.mag(); return m &gt; 0 ? this.scale(1 / m) : new Vector2D(); } } class PhysicsParticle2D { constructor(x, y, vx, vy, radius, mass, color) { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.radius = radius; this.mass = mass; this.color = color; } // Symplectic Euler–Cromer integration (phase volume and invariants are preserved) update(dt, acc = new Vector2D(0, 0)) { // 1. Update velocity first: v(t+dt) = v(t) + a(t)*dt this.vel = this.vel.add(acc.scale(dt)); // 2. Compute position with the updated velocity: x(t+dt) = x(t) + v(t+dt)*dt this.pos = this.pos.add(this.vel.scale(dt)); } // Resolve a 2D elastic / inelastic collision with the impulse method resolveCollision(other, e = 1.0) { const diff = other.pos.sub(this.pos); const dist = diff.mag(); const minDist = this.radius + other.radius; if (dist &lt; minDist &amp;&amp; dist &gt; 0) { // 1. Unit normal vector const normal = diff.unit(); // 2. Relative velocity along the normal const relVel = this.vel.sub(other.vel); const velAlongNormal = relVel.dot(normal); // Compute the impulse only if the bodies are approaching if (velAlongNormal &gt; 0) { const invM1 = 1 / this.mass; const invM2 = 1 / other.mass; const impulseMagnitude = -((1 + e) * velAlongNormal) / (invM1 + invM2); const impulseVec = normal.scale(impulseMagnitude); this.vel = this.vel.add(impulseVec.scale(invM1)); other.vel = other.vel.sub(impulseVec.scale(invM2)); // 3. Minimum Translation Vector (MTV) penetration correction const overlap = 0.5 * (minDist - dist); this.pos = this.pos.sub(normal.scale(overlap)); other.pos = other.pos.add(normal.scale(overlap)); } } } }</code>
+a6cfb7b8	📊 Сравнительный анализ численных интеграторов:	📊 Comparison of numerical integrators:
+e706039d	Метод интегрирования	Integration method
+a395615c	Порядок погрешности	Error order
+276d2c15	Симплектичность (фазовый объём)	Symplecticity (phase volume)
+509bc7a8	Энергетический дрейф (⟦1⟧)	Energy drift (⟦1⟧)
+00db856a	Вычислительная стоимость	Computational cost
+6f90761a	Простой Эйлер (Forward)	Plain (Forward) Euler
+997ad84d	Нет («взрывается»)	No (blows up)
+dc94459b	Растёт экспоненциально (⟦1⟧)	Grows exponentially (⟦1⟧)
+4717e888	Очень дёшево	Very cheap
+779733af	Симплектический Эйлер–Кромер	Symplectic Euler–Cromer
+5670a00e	Да (100% симплектический)	Yes (100% symplectic)
+b77b6bd9	Ограниченно колеблется (⟦1⟧)	Oscillates within bounds (⟦1⟧)
+94fabe95	Очень дёшево (оптимально)	Very cheap (optimal)
+a28fef36	Верле / Velocity Verlet	Verlet / Velocity Verlet
+f5faf332	Да (симплектический и обратимый во времени)	Yes (symplectic and time-reversible)
+e411a625	Очень низкий (⟦1⟧)	Very low (⟦1⟧)
+16f0f540	Средняя	Moderate
+00fac855	Рунге–Кутта 4-го порядка (RK4)	4th-order Runge–Kutta (RK4)
+51fe0855	Нет (со временем затухает)	No (decays over long runs)
+ee77c276	Очень высокая локальная точность	Very high local accuracy
+25b0e3ed	Дорого (4 вычисления/шаг)	Expensive (4 evaluations/step)
+14d94115	🌐 Научно-методические источники WWW и основы программирования физики (раздел 3):	🌐 WWW scholarly sources and physics programming basis (Section 3):
+5f326cc5	(2nd ed.). CRC Press / Morgan Kaufmann.	(2nd ed.). CRC Press / Morgan Kaufmann.
+fc730d71	Импульсный подход (Impulse-Based Resolution) к 2D упругим и неупругим столкновениям и коррекция проникновения минимальным вектором смещения (MTV) — наиболее эффективный математический метод обеспечения устойчивости цифровых физических движков.	The impulse-based approach to 2D elastic and inelastic collisions, together with correcting penetration with the minimum translation vector (MTV), is the most effective mathematical method for keeping digital physics engines stable.
+5d19c533	(2nd ed.). Springer.	(2nd ed.). Springer.
+7fe88dcb	Симплектические интеграторы позволяют без дрейфа сохранять фазовый объём (теорема Лиувилля) и гамильтоновы инварианты систем классической механики на протяжении сотен тысяч кадров.	Symplectic integrators preserve the phase volume (Liouville’s theorem) and Hamiltonian invariants of classical mechanical systems without drift over hundreds of thousands of frames.
+a4c0e159	4. Мониторинг процесса: Google Antigravity	4. Process monitoring: Google Antigravity
+1396f712	Fixed Timestep, симплектический дрейф и AST-линтер	Fixed timestep, symplectic drift and the AST linter
+8186ee31	Написанный код физического движка проверяется в реальном времени платформой мониторинга <strong>Google Antigravity</strong>. Antigravity непрерывно проводит аудит трёх основных физико-математических инвариантов: <strong>1) стабильности кадров по Гленну Фидлеру "Fix Your Timestep" (⟦1⟧)</strong>, <strong>2) искусственного дрейфа энергии в замкнутой системе (⟦2⟧)</strong> и <strong>3) сохранения фазового объёма Лиувилля</strong>:	The physics engine code is checked in real time by the <strong>Google Antigravity</strong> monitoring platform. Antigravity continuously audits three key physical–mathematical invariants: <strong>1) frame stability per Glenn Fiedler’s "Fix Your Timestep" (⟦1⟧)</strong>, <strong>2) artificial energy drift in a closed system (⟦2⟧)</strong> and <strong>3) Liouville phase-volume conservation</strong>:
+b211db0f	Фазовое пространство и сохранение энергии	Phase Space and Energy Conservation
+268cd302	Рис. 12.3: аудит фазового портрета и сохранения энергии при симплектическом Эйлере–Кромере и простом Эйлере.	Figure 12.3: Phase portrait and energy conservation audit for symplectic Euler–Cromer vs plain Euler integration.
+b52704b5	⟨1⟩1. Аккумулятор delta-time:⟨/1⟩↵ ⟨2⟩ Независимо от колебаний частоты кадров физические расчёты выполняются со строго фиксированным шагом ⟦1⟧. Остаток времени интерполируется через ⟦2⟧. ⟨/2⟩	⟨1⟩1. Delta-time accumulator:⟨/1⟩↵ ⟨2⟩ Regardless of frame-rate fluctuations, physics calculations run at a strictly fixed step ⟦1⟧. The leftover time is interpolated via ⟦2⟧. ⟨/2⟩
+771ab44e	⟨1⟩2. Контроль энергетического дрейфа:⟨/1⟩↵ ⟨2⟩ В консервативных столкновениях проверяется условие ⟦1⟧; «взрыв» энергии (дивергенция), как в простом Эйлере, немедленно сигнализируется. ⟨/2⟩	⟨1⟩2. Energy drift control:⟨/1⟩↵ ⟨2⟩ The ⟦1⟧ condition is checked in conservative collisions; an energy blow-up (divergence), as with plain Euler, is flagged immediately. ⟨/2⟩
+f8f17203	⟨1⟩3. Аудит AST и zero-GC:⟨/1⟩↵ ⟨2⟩ Остановки сборки мусора (jank) устраняются отказом от создания новых объектов внутри цикла кадров (Object Pooling и In-Place Vector Reuse). ⟨/2⟩	⟨1⟩3. AST and zero-GC audit:⟨/1⟩↵ ⟨2⟩ Garbage-collection pauses (jank) are eliminated by not creating new objects inside the frame loop (object pooling and in-place vector reuse). ⟨/2⟩
+50d64aa6	🌐 Научно-методические источники WWW и основы устойчивости интегрирования (раздел 4):	🌐 WWW scholarly sources and integration stability basis (Section 4):
+4c0c40a9	=	=
+5a58848b	Строгая фиксация шага времени (Fixed Timestep) в физических симуляциях и интерполяция остатка времени между кадрами — гарантия точности вычислений и детерминированной воспроизводимости.	Strictly fixing the time step in physics simulations and interpolating the leftover time between frames guarantees computational accuracy and deterministic reproducibility.
+6babc44e	. Chapman & Hall / CRC Press.	. Chapman & Hall / CRC Press.
+d4b48b93	При численном моделировании механических систем симплектические алгоритмы ограничивают глобальную ошибку энергии около нуля и обеспечивают физическую достоверность интегрирования по времени.	In numerical modelling of mechanical systems, symplectic algorithms keep the global energy error bounded around zero and ensure the physical validity of time integration.
+be23d1d2	5. Кинематическая видеоиллюстрация: Runway и Pika Labs	5. Kinematic video illustration: Runway and Pika Labs
+71abe109	Генеративное ИИ-видео и визуальная физическая интуиция	Generative AI video and visual physics intuition
+cf0f546b	Чтобы сформировать у студентов прочную визуальную интуицию о реальной динамике физических явлений, пространственных релятивистских деформациях и процессах столкновений, в обучении физике используются генеративные видеомодели искусственного интеллекта <strong>Runway</strong> и <strong>Pika Labs</strong>:	To build students’ strong visual intuition for the real dynamics of physical phenomena, relativistic spatial deformations and collision processes, physics education uses the generative AI video models <strong>Runway</strong> and <strong>Pika Labs</strong>:
+ccf7ae19	Конвейер генеративного синтеза видео	Generative Video Synthesis Pipeline
+89208651	Рис. 12.4: этапы синтеза кинематического видео в Runway с помощью промпт-инжиниринга Claude.	Figure 12.4: Stages of kinematic video synthesis in Runway with Claude prompt engineering.
+40501df2	3 основных дидактических этапа генерации кинематического видео:	3 main didactic stages of kinematic video generation:
+b35c5c3b	1. Внесение физических параметров в промпт	1. Putting physical parameters in the prompt
+00b21d7f	Чёткое указание в промпте массы тела, трения поверхности, угла столкновения и направления освещения.	Stating the body’s mass, surface friction, collision angle and lighting direction precisely in the prompt.
+a72c3400	2. Нейросинтез видео	2. Neural video synthesis
+e2d1b02a	Получение замедленных (slow-motion, 120 fps) кадров физического столкновения через модель Latent Diffusion в Runway.	Producing slow-motion (120 fps) frames of a physical collision with Runway’s latent diffusion model.
+c0c2bbee	3. Сравнительный анализ	3. Comparative analysis
+892af953	Сравнение динамики в видеоиллюстрации с аналитическими результатами симуляции на Canvas.	Comparing the dynamics in the video illustration with the analytical results of the Canvas simulation.
+31b4f1cf	🌐 Научно-методический источник WWW и исследование мультимодального обучения (раздел 5):	🌐 WWW scholarly source and multimodal learning research (Section 5):
+1aeb85d1	Когнитивная модель формируется наиболее прочно, когда студент видит физическое явление одновременно в виде математической формулы, интерактивной симуляции и качественной видеоиллюстрации (Dual-Coding Theory).	A cognitive model forms most robustly when the student sees a physical phenomenon simultaneously as a mathematical formula, an interactive simulation and a high-quality video illustration (dual-coding theory).
+f35b27d2	Параллельная активация визуального и вербального каналов информации ускоряет закрепление абстрактных физических моделей в долговременной памяти студента на 60%.	Activating the visual and verbal information channels in parallel speeds up the consolidation of abstract physical models in students’ long-term memory by 60%.
+a6318f33	6. Интерактивная лаборатория классической механики и ИИ-конвейера	6. Interactive lab for classical mechanics and the AI pipeline
+fb2eaf29	HTML5 Canvas, динамическая телеметрия и ИИ-конвейер	HTML5 Canvas, dynamic telemetry and the AI pipeline
+0eac5c06	В интерактивной лаборатории ниже вы можете в реальном времени испытать <strong>динамику на наклонной плоскости</strong> и <strong>двумерные упругие столкновения</strong>, сравнить на графике энергии ошибки симплектического интегратора и простого Эйлера, а также запустить полный 4-этапный ИИ-конвейер.	In the interactive lab below you can test <strong>incline dynamics</strong> and <strong>2D elastic collisions</strong> in real time, compare symplectic-integrator and plain-Euler errors on the energy plot, and run the complete 4-stage AI pipeline.
+0022d300	Режим эксперимента:	Experiment mode:
+c502eba7	📐 Режим 1: наклонная плоскость и динамика трения	📐 Mode 1: Incline and friction dynamics
+e5bb21af	💥 Режим 2: двумерное упругое столкновение частиц	💥 Mode 2: 2D elastic particle collisions
+fb7e351b	Коэффициент трения (⟦1⟧):	Friction coefficient (⟦1⟧):
+d47d43f3	2,0 кг	2.0 kg
+611dd933	Выбор интегратора:	Integrator:
+74db30ae	Симплектический Эйлер–Кромер (устойчивый)	Symplectic Euler–Cromer (stable)
+d603707d	Простой Эйлер (энергия «взрывается»)	Plain Euler (energy blows up)
+c7610493	Масса частицы (⟦1⟧):	Particle mass (⟦1⟧):
+9d50abfb	💡 Управление симуляцией: остановить / продолжить движение и перезапустить	💡 Simulation controls: stop / resume motion and restart
+c041ec77	⏸️ Остановить	⏸️ Stop
+cae9f3e4	🎮 Интерактивное поле движения:	🎮 Interactive motion area:
+d4d37cc0	Векторы сил: зелёный — N, жёлтый — F<sub>тр</sub>, красный — mg.	Force vectors: green — N, yellow — F<sub>fr</sub>, red — mg.
+29fe6f39	📊 Энергетический дрейф в реальном времени, ⟦1⟧:	📊 Real-time energy drift, ⟦1⟧:
+496a3c07	Зелёный — симплектическое сохранение, красный — дрейф ошибки Эйлера.	Green — symplectic conservation; red — Euler error drift.
+6c0db0c8	1. Деконструкция PhET	1. PhET deconstruction
+7da2660d	2. Код движка Claude	2. Claude engine code
+86c88bd5	4. Видеопромпт Runway	4. Runway video prompt
+ef062b00	Свободное изменение параметров в виртуальных лабораториях и анализ фазовых энергетических графиков в реальном времени повышают у студентов компетенцию физического моделирования на 31%.	Freely changing parameters in virtual labs and analysing real-time phase and energy plots increases students’ physical modelling competence by 31%.
+c0db4d87	🧠 Диагностический тест к лекции 12 (3 когнитивных вопроса):	🧠 Lecture 12 diagnostic test (3 cognitive questions):
+89d8dc13	Вопрос 1: Чему равен скалярный импульс столкновения ⟦2⟧, передаваемый вдоль нормали контакта тел при двумерных упругих столкновениях (⟦1⟧)?	Question 1: In 2D elastic collisions (⟦1⟧), what is the scalar collision impulse ⟦2⟧ applied along the bodies’ contact normal?
+a5d819e3	B) ⟦1⟧ (верно)	B) ⟦1⟧ (correct)
+cc4e86fa	Вопрос 2: Какое физическое условие должно выполняться, чтобы тело на наклонной плоскости двигалось вниз с ускорением?	Question 2: What physical condition must hold for a body on an incline to accelerate down it?
+23f0b6b6	A) ⟦1⟧ (то есть ⟦2⟧) (верно)	A) ⟦1⟧ (i.e. ⟦2⟧) (correct)
+92302b4d	B) Должно быть только ⟦1⟧	B) Only ⟦1⟧ must hold
+44656a7e	C) Масса тела должна быть ⟦1⟧	C) The body’s mass must be ⟦1⟧
+de8c20f3	D) Коэффициент трения обязательно должен быть ⟦1⟧	D) The friction coefficient must be ⟦1⟧
+5fb4b407	Вопрос 3: Почему Google Antigravity в движках классической механики отказывается от простого метода Эйлера и требует симплектический интегратор Эйлера–Кромера?	Question 3: Why does Google Antigravity reject plain Euler in classical mechanics engines and require the symplectic Euler–Cromer integrator?
+e0ea938e	A) Потому что код простого Эйлера слишком длинный	A) Because plain Euler code is too long
+214bbfd1	B) В простом Эйлере энергия в каждом кадре искусственно растёт экспоненциально, а симплектический метод сохраняет фазовый объём и инварианты на уровне ⟦1⟧ (верно)	B) With plain Euler the energy grows artificially and exponentially every frame, while the symplectic method preserves phase volume and invariants at the ⟦1⟧ level (correct)
+e4ca64ef	C) Симплектический метод работает только в WebGL	C) The symplectic method only works in WebGL
+4238b69a	D) В простом Эйлере скорость не может быть отрицательной	D) In plain Euler the velocity cannot be negative
+6696905c	📚 Авторитетные научные и дидактические источники к лекции 12 (APA 7th Edition):	📚 Authoritative scholarly and didactic sources for Lecture 12 (APA 7th Edition):
+11d75d3c	<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)	<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)
+931755bb	=	=
+5f7ec4fe	=	=
+c0a86a95	=	=
+57564742	=	=
+d4a31914	=	=

@@ -1,0 +1,124 @@
+5611a7f5	Изучаются три фундаментальных критерия физических компьютерных моделей — <strong>точность (Accuracy)</strong>, <strong>численная устойчивость (Numerical Stability)</strong> и <strong>скорость вычислений (Efficiency)</strong>. Математически и интерактивно анализируются уровни погрешности методов Forward Euler, Euler–Cromer, Хойна (RK2) и классического Рунге–Кутты 4 (RK4), ошибка усечения ряда Тейлора (LTE и GTE), а также влияние шага интегрирования (⟦1⟧) на качество анимации.	The lecture covers the three fundamental criteria of physical computer models — <strong>accuracy</strong>, <strong>numerical stability</strong> and <strong>computational efficiency</strong>. The error levels of Forward Euler, Euler–Cromer, Heun (RK2) and classical Runge–Kutta 4 (RK4), the Taylor-series truncation error (LTE and GTE) and the effect of the integration step (⟦1⟧) on animation quality are analysed mathematically and interactively.
+87e69d7f	📋 План лекции и этапы интеграции ИИ:	📋 Lecture plan and AI integration stages:
+a4ddf4f6	1. ИИ-диагностика и индивидуальный план:	1. AI diagnostics and individual plan:
+58a499fd	Тестирование подготовки студента по дифференциальным моделям и численным методам с помощью MagicSchool AI.	Testing the student’s preparation in differential models and numerical methods with MagicSchool AI.
+7abf1925	2. Расчёт и анализ численного интегрирования:	2. Numerical integration: derivation and analysis:
+1967f82d	Вывод шагов дискретизации Forward Euler, Хойна и RK4 с аннотациями с помощью Claude.	Deriving annotated Forward Euler, Heun and RK4 discretisation steps with Claude.
+a9afd4f7	3. Сравнение аналитического и численного решений:	3. Comparing analytical and numerical solutions:
+a7d7acc2	Нахождение точного аналитического решения задачи Коши в WolframAlpha и задание нормы погрешности ⟦1⟧.	Finding the exact analytical solution of the Cauchy problem in WolframAlpha and setting the ⟦1⟧ error norm.
+2e9e9b87	4. Построение графиков погрешности:	4. Plotting the error:
+7d3abf2d	Построение кривых сходимости ⟦1⟧ vs ⟦2⟧ в двойном логарифмическом масштабе с помощью ChatGPT Advanced Data Analysis.	Building ⟦1⟧ vs ⟦2⟧ log-log convergence curves with ChatGPT Advanced Data Analysis.
+b9939d5f	5. Визуальная проверка шага интегрирования (⟦1⟧):	5. Visual testing of the integration step (⟦1⟧):
+f349124d	4-камерный интерактивный физический симулятор и песочница телеметрии на основе Claude Artifacts.	A 4-camera interactive physics simulator and telemetry sandbox built with Claude Artifacts.
+827b8b9a	6. Теория вычислительной устойчивости:	6. Theory of computational stability:
+12911dfa	Доказательство спектрального анализа фон Неймана и сохранения симплектического фазового объёма с помощью Gemini.	Proving von Neumann spectral analysis and symplectic phase-volume conservation with Gemini.
+a03c9117	🔬 Научный AI-конвейер лекции 4:	🔬 Lecture 4 scientific AI pipeline:
+719c66c7	Этап 1: диагностика и индивидуальный план	Stage 1: Diagnostics and individual plan
+25bbdd38	Оценка подготовки студента с MagicSchool AI	Assessing student readiness with MagicSchool AI
+d4b3a381	Прежде чем выбирать методы численного интегрирования в физическом моделировании, диагностируются базовые знания студента о дифференциальных уравнениях, задаче Коши и шаге дискретизации.	Before choosing numerical integration methods for physical modelling, the student’s basic knowledge of differential equations, the Cauchy problem and the discretisation step is diagnosed.
+b27258ec	🤖 Пример диагностического промпта MagicSchool AI:	🤖 Sample MagicSchool AI diagnostic prompt:
+c301877d	Роль: доцент высшей категории по физике и вычислительной математике.⏎Задача: составь 3-уровневый диагностический тест и индивидуальную учебную траекторию для студентов-физиков 3-го курса по теме "Численное интегрирование обыкновенных дифференциальных уравнений и вычислительные погрешности".⏎Формат:⏎1. Базовый уровень: ряд Тейлора и шаг дискретизации метода Эйлера 1-го порядка.⏎2. Средний уровень: искусственный дрейф энергии и фазовая ошибка в консервативных колебаниях.⏎3. Продвинутый уровень: промежуточные наклоны (k1..k4) метода Рунге–Кутты 4 и суть симплектического интегрирования.⏎Формат вывода: для каждого неверного ответа дай индивидуальную методическую рекомендацию.	Role: senior associate professor of physics and computational mathematics.⏎Task: create a 3-level diagnostic test and individual learning pathway for third-year physics students on "Numerical integration of ordinary differential equations and computational errors".⏎Format:⏎1. Basic level: the Taylor series and the discretisation step of the first-order Euler method.⏎2. Intermediate level: artificial energy drift and phase error in conservative oscillations.⏎3. Advanced level: the intermediate slopes (k1..k4) of Runge–Kutta 4 and the essence of symplectic integration.⏎Output format: give individual methodological guidance for every wrong answer.
+72e2b6d5	🎯 Цели диагностики:	🎯 Diagnostic goals:
+f8f0fcbf	знать разницу между аналитическим интегрированием и численной дискретизацией;	knowing the difference between analytical integration and numerical discretisation;
+b7544a9c	различать локальную ошибку усечения (⟦1⟧) и глобальную ошибку (⟦2⟧);	distinguishing the local truncation error (⟦1⟧) from the global error (⟦2⟧);
+6127f109	понимать связь ⟦1⟧ с частотой кадров 60 FPS в компьютерной анимации.	understanding how ⟦1⟧ relates to the 60 FPS frame rate in computer animation.
+de66264a	📈 Индивидуальное планирование:	📈 Individual planning:
+2f832b6f	<strong>Траектория A (базовая):</strong> начать с метода Эйлера и визуализации погрешностей;	<strong>Pathway A (basic):</strong> start with the Euler method and error visualisation;
+5da23674	<strong>Траектория B (стандартная):</strong> сравнить методы Эйлера–Кромера и Хойна (RK2);	<strong>Pathway B (standard):</strong> compare Euler–Cromer and Heun (RK2);
+81171611	<strong>Траектория C (продвинутая):</strong> программирование RK4, Верле и систем с адаптивным шагом (RK45).	<strong>Pathway C (advanced):</strong> programming RK4, Verlet and adaptive-step (RK45) schemes.
+26d0844e	Этап 2: расчёт численного интегрирования	Stage 2: Numerical integration derivation
+ea1ae516	Теория численной дискретизации дифференциальных уравнений	Theory of numerical discretisation of differential equations
+7ea32edb	Сведём дифференциальное уравнение гармонических колебаний 2-го порядка ⟦1⟧ к системе уравнений 1-го порядка: ⟦2⟧	We reduce the second-order differential equation of harmonic oscillation ⟦1⟧ to a system of first-order equations: ⟦2⟧
+1cbe7b1e	1. Forward Euler (классический Эйлер)	1. Forward Euler (classical Euler)
+9408ecff	Явный метод 1-го порядка (⟦1⟧):	First-order explicit method (⟦1⟧):
+ec962c21	⚠️ <strong>Ошибка:</strong> фазовая площадь на каждом шаге увеличивается в ⟦1⟧ раз, и энергия экспоненциально «взрывается»!	⚠️ <strong>Error:</strong> the phase area grows by a factor of ⟦1⟧ every step and the energy blows up exponentially!
+2c6e76dd	2. Euler–Cromer (симплектический Эйлер)	2. Euler–Cromer (symplectic Euler)
+cf33d516	Симплектический метод 1-го порядка (⟦1⟧):	First-order symplectic method (⟦1⟧):
+7db68e19	✅ <strong>Преимущество:</strong> использует обновлённую скорость. Объём фазового пространства сохраняется (⟦1⟧), колебания устойчивы длительное время!	✅ <strong>Advantage:</strong> it uses the updated velocity. Phase-space volume is preserved (⟦1⟧) and the oscillation stays stable for a long time!
+bdc1ef4b	3. Рунге–Кутта 4 (классический RK4)	3. Runge–Kutta 4 (classical RK4)
+a081cd23	Высокая точность 4-го порядка (⟦1⟧):	High fourth-order accuracy (⟦1⟧):
+8d6f1101	Наклоны ⟦1⟧↵ ⟦2⟧	Slopes ⟦1⟧↵ ⟦2⟧
+f632e028	⭐ <strong>Стандарт:</strong> погрешность крайне мала (⟦1⟧) — опорный движок профессиональных симуляций.	⭐ <strong>Standard:</strong> the error is extremely small (⟦1⟧) — the workhorse engine of professional simulations.
+b6eaf553	🧠 Claude: физический смысл промежуточных наклонов RK4	🧠 Claude: the physical meaning of the RK4 intermediate slopes
+a2d88b04	<strong>⟦1⟧</strong>: начальный наклон в начале интервала (вектор классического Эйлера).	<strong>⟦1⟧</strong>: the initial slope at the start of the interval (the classical Euler vector).
+4c2645f6	<strong>⟦1⟧</strong>: переход с помощью ⟦2⟧ в промежуточную точку (⟦3⟧) и оценка обновлённого наклона там.	<strong>⟦1⟧</strong>: using ⟦2⟧ to step to the midpoint (⟦3⟧) and estimating the updated slope there.
+7ca29eed	<strong>⟦1⟧</strong>: повторное уточнение наклона в промежуточной точке через наклон ⟦2⟧.	<strong>⟦1⟧</strong>: refining the midpoint slope a second time using the ⟦2⟧ slope.
+46765ccc	<strong>⟦1⟧</strong>: прогноз итогового наклона в конце полного шага (⟦3⟧) на основе промежуточного наклона ⟦2⟧.	<strong>⟦1⟧</strong>: predicting the final slope at the end of the full step (⟦3⟧) from the intermediate slope ⟦2⟧.
+0a3874a8	Итоговый результат берётся как средний наклон по правилу Симпсона: ⟦1⟧.	The final result is taken as the average slope by Simpson’s rule: ⟦1⟧.
+d87ecd09	Этап 3: сравнение аналитического и численного решений	Stage 3: Comparing analytical and numerical solutions
+c6046cde	Решение задачи Коши в WolframAlpha и норма погрешности	Solving the Cauchy problem in WolframAlpha and the error norm
+30667169	Для оценки погрешности численных методов нужно эталонное (точное аналитическое) решение. С помощью WolframAlpha точно проинтегрируем уравнение гармонического осциллятора:	To evaluate the error of numerical methods we need a reference (exact analytical) solution. We integrate the harmonic oscillator equation exactly with WolframAlpha:
+59dea467	🔍 Запрос WolframAlpha: <code>DSolve[{x''[t] + omega^2 * x[t] == 0, x[0] == x0, x'[0] == 0}, x[t], t]</code>	🔍 WolframAlpha query: <code>DSolve[{x''[t] + omega^2 * x[t] == 0, x[0] == x0, x'[0] == 0}, x[t], t]</code>
+da24c3eb	📊 Основные метрики погрешности:	📊 Key error metrics:
+ba7a2176	<strong>1. Точечная абсолютная ошибка:</strong>↵ ⟦1⟧	<strong>1. Pointwise absolute error:</strong>↵ ⟦1⟧
+bb104448	<strong>2. Интегральная норма ⟦1⟧:</strong>↵ ⟦2⟧	<strong>2. Integrated ⟦1⟧ norm:</strong>↵ ⟦2⟧
+3317a456	<strong>3. Фазовая ошибка (⟦1⟧):</strong>↵ ⟦2⟧ (численное удлинение или укорочение периода колебаний)	<strong>3. Phase error (⟦1⟧):</strong>↵ ⟦2⟧ (numerical lengthening or shortening of the oscillation period)
+70354206	<strong>4. Относительный дрейф энергии:</strong>↵ ⟦1⟧	<strong>4. Relative energy drift:</strong>↵ ⟦1⟧
+0eb29691	📈 График смещения во времени:	📈 Displacement-versus-time plot:
+f3f0d347	Экспоненциальный рост амплитуды Forward Euler (красный) при шаге ⟦1⟧ и совпадение RK4 (синий) с точным решением.	The exponential amplitude growth of Forward Euler (red) at step ⟦1⟧ and RK4 (blue) matching the exact solution.
+62162293	Этап 4: построение графиков погрешности	Stage 4: Plotting the error
+c77fddf7	Логарифмический анализ сходимости с ChatGPT	Log-log convergence analysis with ChatGPT
+a9d0f9d3	Чтобы доказать теоретический порядок численного метода (⟦1⟧), зависимость ошибки от шага изучается в логарифмическом масштабе: ⟦2⟧ Угловой коэффициент графика Log-Log ⟦3⟧ прямо показывает порядок интегрирования.	To prove the theoretical order of a numerical method (⟦1⟧), the error’s dependence on the step is studied on a logarithmic scale: ⟦2⟧ The slope of the log-log plot ⟦3⟧ directly gives the order of integration.
+c4091a58	📉 Анализ угловых коэффициентов:	📉 Slope analysis:
+0bc9521c	Наклон (⟦1⟧)	Slope (⟦1⟧)
+15d2578c	Ошибка ⟦1⟧	⟦1⟧ error
+c7966dc9	Ошибка ⟦1⟧	⟦1⟧ error
+299b8c00	Хойн / RK2	Heun / RK2
+2d5671b7	Классический RK4	Classical RK4
+1d1812c9	💡 <strong>Вывод:</strong> при уменьшении шага ⟦1⟧ в 10 раз ошибка Forward Euler уменьшается в 10 раз, ошибка Хойна — в 100 раз, а ошибка RK4 — <strong>в ⟦2⟧ раз</strong>!	💡 <strong>Conclusion:</strong> when the step ⟦1⟧ is reduced 10-fold, the Forward Euler error drops 10-fold, Heun’s 100-fold and RK4’s <strong>⟦2⟧-fold</strong>!
+ea596358	Этап 5: визуальная проверка шага интегрирования	Stage 5: Visual testing of the integration step
+1a6d6cc2	Интерактивная площадка для проверки погрешности и устойчивости	Interactive error and stability sandbox
+00af9c27	Меняйте шаг времени ⟦1⟧, длину маятника ⟦2⟧ и начальный угол ⟦3⟧. Наблюдайте вживую одновременное движение четырёх методов, форму волны, фазовый портрет и дрейф энергии:	Change the time step ⟦1⟧, pendulum length ⟦2⟧ and initial angle ⟦3⟧. Watch the four methods move simultaneously, along with the waveform, phase portrait and energy drift:
+00b7c17c	💥 Взрыв Эйлера (Δt = 0,25 с)	💥 Euler blow-up (Δt = 0.25 s)
+133029c3	🛡️ Симплектическая устойчивость (Δt = 0,10 с)	🛡️ Symplectic stability (Δt = 0.10 s)
+7c97f2d7	⭐ Высокая точность RK4 (Δt = 0,05 с)	⭐ RK4 high accuracy (Δt = 0.05 s)
+61e0384c	⚡ Жёсткие колебания (L = 0,4 м, Δt = 0,35 с)	⚡ Stiff oscillation (L = 0.4 m, Δt = 0.35 s)
+76ea056d	Шаг времени (⟦1⟧):	Time step (⟦1⟧):
+2b3f6f96	Длина маятника (⟦1⟧):	Pendulum length (⟦1⟧):
+25954c6e	Начальный угол (⟦1⟧):	Initial angle (⟦1⟧):
+1086e18d	Точное решение	Exact solution
+23bccbb3	Явный Эйлер	Explicit Euler
+13b765d7	Эйлер–Кромер	Euler–Cromer
+5b8ac6bf	Хойн (RK2)	Heun (RK2)
+5bb2ce6b	▶️ Старт	▶️ Start
+b80e13d2	⏭️ 1 шаг	⏭️ 1 step
+3f9cf126	🔄 Сброс	🔄 Reset
+15fe4882	🎥 Анимация движения маятника	🎥 Pendulum motion animation
+3ff7438e	📈 График смещения ⟦1⟧, рад	📈 Displacement plot ⟦1⟧, rad
+d5767112	Шаги:	Steps:
+a0d1c79f	🌀 Фазовый портрет ⟦1⟧	🌀 Phase portrait ⟦1⟧
+85ceeb95	⚡ Дрейф полной механической энергии ⟦1⟧	⚡ Total mechanical energy drift ⟦1⟧
+0d928b73	📊 Погрешности вычислений и телеметрия энергии в реальном времени:	📊 Real-time computational errors and energy telemetry:
+f7857988	Численный метод	Numerical method
+9296d74b	Теоретический порядок	Theoretical order
+80e7f7cb	Текущий угол ⟦1⟧	Current angle ⟦1⟧
+91d3c6e7	Абсолютная ошибка ⟦1⟧	Absolute error ⟦1⟧
+a724d32a	Изменение энергии ⟦1⟧	Energy change ⟦1⟧
+2651bbc8	Этап 6: теория вычислительной устойчивости	Stage 6: Theory of computational stability
+95cd8b36	Gemini: анализ фон Неймана и симплектическая геометрия	Gemini: von Neumann analysis and symplectic geometry
+6a30395d	Почему некоторые численные методы со временем нарушают физические законы и вызывают «взрыв» энергии? Это объясняется <strong>спектральной устойчивостью фон Неймана</strong> и <strong>теоремой Лиувилля</strong>.	Why do some numerical methods break physical laws over time and cause the energy to blow up? It is explained by <strong>von Neumann spectral stability</strong> and <strong>Liouville’s theorem</strong>.
+ba55ed6a	🔬 Условие спектральной устойчивости фон Неймана:	🔬 Von Neumann spectral stability condition:
+55824cd9	Для линейного дифференциального оператора строится матрица одного шага ⟦1⟧: ⟦2⟧. Условие устойчивости определяется модулем её собственных значений ⟦3⟧: ⟦4⟧	For a linear differential operator, a one-step matrix ⟦1⟧ is formed: ⟦2⟧. Stability is determined by the modulus of its eigenvalues ⟦3⟧: ⟦4⟧
+0f055a71	<strong>Forward Euler:</strong> ⟦1⟧. Модули всех собственных значений лежат вне единичного круга (⟦2⟧). В любой гармонической системе <strong>неизбежно неустойчив</strong>!	<strong>Forward Euler:</strong> ⟦1⟧. All eigenvalue moduli lie outside the unit circle (⟦2⟧). It is <strong>inevitably unstable</strong> for any harmonic system!
+ca416398	<strong>Euler–Cromer:</strong> ⟦1⟧. Определитель матрицы равен ровно 1, фазовая площадь не искажается (⟦2⟧).	<strong>Euler–Cromer:</strong> ⟦1⟧. The matrix determinant equals exactly 1, so the phase area is not distorted (⟦2⟧).
+5f515fe6	<strong>RK4:</strong> собственные значения имеют широкую область устойчивости на комплексной плоскости (⟦1⟧).	<strong>RK4:</strong> the eigenvalues have a wide stability region in the complex plane (⟦1⟧).
+4111900c	🛡️ Симплектические интеграторы и теорема Лиувилля:	🛡️ Symplectic integrators and Liouville’s theorem:
+c4b15068	В гамильтоновой механике фазовый объём инвариантен: ⟦1⟧. Симплектические интеграторы (Эйлер–Кромер, Верле, схемы высокого порядка Ёсиды) точно сохраняют именно эту геометрическую симплектическую 2-форму.	In Hamiltonian mechanics, phase volume is invariant: ⟦1⟧. Symplectic integrators (Euler–Cromer, Verlet, Yoshida’s higher-order schemes) preserve exactly this geometric symplectic 2-form.
+161d90c5	💡 Золотое правило веб-анимации (Sub-stepping):	💡 The golden rule of web animation (sub-stepping):
+4ae509f2	Частота кадров обновления экрана в браузере переменная (от 30 до 144 FPS). Никогда не подавайте ⟦1⟧ браузера напрямую в физическое уравнение! Всегда используйте <strong>Fixed Timestep</strong> (например, ⟦2⟧) и механизм <code>accumulator</code>, делающий внутри кадра несколько малых шагов вычислений.	The browser’s screen refresh rate varies (from 30 to 144 FPS). Never feed the browser’s ⟦1⟧ directly into the physics equation! Always use a <strong>fixed timestep</strong> (e.g. ⟦2⟧) and an <code>accumulator</code> that takes several small computation steps within a frame.
+cdaf6fd4	Самопроверка	Self-check
+72b6ee37	Диагностический тест к лекции 4 (3 научных вопроса)	Lecture 4 diagnostic test (3 scientific questions)
+1893d655	Проверьте свои знания о точности вычислений, погрешности ряда Тейлора и симплектической устойчивости:	Test your knowledge of computational accuracy, Taylor-series error and symplectic stability:
+422f0792	Вопрос 1: Почему при моделировании гармонического осциллятора классическим методом forward Euler полная механическая энергия экспоненциально растёт?	Question 1: Why does the total mechanical energy grow exponentially when a harmonic oscillator is modelled with classical forward Euler?
+c5b6b2fa	A) Потому что ускорение свободного падения ошибочно принято постоянным	A) Because gravitational acceleration was wrongly taken as constant
+41bda720	B) Forward Euler не симплектичен: определитель его матрицы перехода det(A) = 1 + ω²Δt² &gt; 1, и он искусственно расширяет фазовую площадь на каждом шаге	B) Forward Euler is not symplectic: the determinant of its transition matrix det(A) = 1 + ω²Δt² &gt; 1, so it artificially expands the phase area at every step
+7d99f7ca	C) Потому что шаг времени Δt выбран слишком малым	C) Because the time step Δt was chosen too small
+7d912403	Вопрос 2: Во сколько раз уменьшится глобальная ошибка усечения (GTE) метода Рунге–Кутты 4 (RK4), если шаг интегрирования Δt уменьшить в 2 раза?	Question 2: By what factor does the global truncation error (GTE) of Runge–Kutta 4 (RK4) decrease if the integration step Δt is halved?
+5177ae81	A) В 2 раза	A) 2 times
+a4d0f4f4	B) В 8 раз	B) 8 times
+d54b195f	C) В 16 раз (поскольку порядок погрешности RK4 равен O(Δt⁴), а 2⁴ = 16)	C) 16 times (because RK4’s error order is O(Δt⁴) and 2⁴ = 16)
+487f2eac	Вопрос 3: Почему в играх реального времени и длительных планетарных симуляциях вместо RK4 часто предпочитают методы Эйлера–Кромера или Верле?	Question 3: Why are Euler–Cromer or Verlet often preferred over RK4 in real-time games and long-running planetary simulations?
+8a5d6bf4	A) Потому что Эйлер–Кромер и Верле симплектичны: они точно сохраняют объём фазового пространства и при затратах в 1 FLOP гарантируют долговременную энергетическую устойчивость	A) Because Euler–Cromer and Verlet are symplectic: they preserve phase-space volume exactly and guarantee long-term energy stability at a cost of 1 FLOP
+28c7c872	B) Потому что они дают точность 5-го порядка	B) Because they give fifth-order accuracy
+18d18879	C) Потому что в них вовсе не нужно задавать шаг времени Δt	C) Because they do not require a time step Δt at all
+f025de0f	📚 Список научно-методической литературы к лекции 4:	📚 Scholarly and methodological references for Lecture 4:

@@ -1,0 +1,1316 @@
+[
+ {
+  "k": "3b8a5403",
+  "s": "14-ma’ruza: Elektrodinamika, maydonlar va audio-narratsiya sintezi",
+  "ru": "Лекция 14: Электродинамика, поля и синтез аудионаррации",
+  "en": "Lecture 14: Electrodynamics, Fields and Audio-Narration Synthesis"
+ },
+ {
+  "k": "298b760a",
+  "s": "Kulon qonuni, elektrostatik maydon kuch chiziqlari, Om va Kirxgof qoidalari, Faradey elektromagnit induksiya hodisasi hamda RLC zanjirlarini 5 bosqichli to‘liq",
+  "ru": "Целостное моделирование и голосовой синтез закона Кулона, силовых линий электростатического поля, правил Ома и Кирхгофа, явления электромагнитной индукции Фарадея и RLC-цепей через полный 5-этапный",
+  "en": "Holistic modelling and voice synthesis of Coulomb’s law, electrostatic field lines, Ohm’s and Kirchhoff’s rules, Faraday’s electromagnetic induction and RLC circuits through the complete 5-stage"
+ },
+ {
+  "k": "d5ef09c9",
+  "s": "(PhET/Vascak.cz dekonstruksiyasi → Claude dvigateli → Muxlisa AI / ElevenLabs audio-narratsiyasi → Google Antigravity monitoringi) orqali yaxlit modellashtirish va ovozli sintezlash.",
+  "ru": "(деконструкция PhET/Vascak.cz → движок Claude → аудионаррация Muxlisa AI / ElevenLabs → мониторинг Google Antigravity).",
+  "en": "(PhET/Vascak.cz deconstruction → a Claude engine → Muxlisa AI / ElevenLabs audio narration → Google Antigravity monitoring)."
+ },
+ {
+  "k": "f4669ebf",
+  "s": "📋 14-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:",
+  "ru": "📋 План лекции 14 и полный AI-конвейер:",
+  "en": "📋 Lecture 14 plan and the complete AI pipeline:"
+ },
+ {
+  "k": "05947c76",
+  "s": "<strong style=\"color: var(--accent-amber);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD va Blum taksonomiyasi asosida 3 klasterli individual elektrodinamika trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: индивидуальная траектория по электродинамике из 3 кластеров на основе ЗБР и таксономии Блума.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: an individual 3-cluster electrodynamics pathway based on ZPD and Bloom’s taxonomy.</span>"
+ },
+ {
+  "k": "ca0b327d",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Elektromagnit modellar tahlili (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">PhET Faraday’s Law va Charges va Fields modellarini teskari muhandislik bilan dekonstruksiya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Анализ электромагнитных моделей (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Деконструкция моделей PhET Faraday’s Law и Charges & Fields методом обратной разработки.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Electromagnetic model analysis (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Deconstructing the PhET Faraday’s Law and Charges & Fields models through reverse engineering.</span>"
+ },
+ {
+  "k": "c44cc563",
+  "s": "<strong style=\"color: var(--accent-cyan);\">3. Maydon va zanjir kodi (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Kulon maydoni $\\vec{E}$, Faradey induksiyasi $\\mathcal{E} = -N(\\mathrm{d}\\Phi/\\mathrm{d}t)$ va RLC osillatori differensial tenglamasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">3. Код поля и цепи (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Поле Кулона $\\vec{E}$, индукция Фарадея $\\mathcal{E} = -N(\\mathrm{d}\\Phi/\\mathrm{d}t)$ и дифференциальное уравнение RLC-осциллятора.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">3. Field and circuit code (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The Coulomb field $\\vec{E}$, Faraday induction $\\mathcal{E} = -N(\\mathrm{d}\\Phi/\\mathrm{d}t)$ and the RLC oscillator differential equation.</span>"
+ },
+ {
+  "k": "36e07717",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Audio-narratsiya sintezi (Muxlisa/ElevenLabs):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Ilmiy audio-tushuntirish ovozini sintezlash, spektrogramma vizuallashuvi va video loyihaga sinxronlash.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Синтез аудионаррации (Muxlisa/ElevenLabs):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Синтез голоса научного аудиообъяснения, визуализация спектрограммы и синхронизация с видеопроектом.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Audio-narration synthesis (Muxlisa/ElevenLabs):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Synthesising a scientific voice explanation, visualising the spectrogram and syncing it with the video project.</span>"
+ },
+ {
+  "k": "4dade8e3",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Loyiha monitoringi (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: Gaus teoremasi balansi, Poynting energiya oqimi va audio-video sinxroniya auditi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Мониторинг проекта (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: баланс теоремы Гаусса, поток энергии Пойнтинга и аудит аудиовидеосинхронности.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Project monitoring (Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: the Gauss theorem balance, Poynting energy flow and an audio-video sync audit.</span>"
+ },
+ {
+  "k": "6e094c69",
+  "s": "<strong style=\"color:#1C4E9E;\">6 va 7. Sandbox va manbalar:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Dual-Canvas elektrodinamika laboratoriyasi, audio spektrogramma, 3 ta test va APA 7th manbalar.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6 и 7. Песочница и источники:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Двухканвасная лаборатория электродинамики, аудиоспектрограмма, 3 теста и источники APA 7th.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6 and 7. Sandbox and sources:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A dual-canvas electrodynamics lab, an audio spectrogram, 3 tests and APA 7th sources.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "6151d661",
+  "s": "MagicSchool AI va Vygotsky ZPD",
+  "ru": "MagicSchool AI и ЗБР Выготского",
+  "en": "MagicSchool AI and Vygotsky’s ZPD"
+ },
+ {
+  "k": "e0e04bf2",
+  "s": "Elektrodinamika va elektromagnit maydon qonuniyatlarini o‘rganishda talabalar ko‘zga ko‘rinmas maydon vektorlari ($\\vec{E}, \\vec{B}$), fazaviy siljishlar ($\\varphi$), differensial oqimlar ($\\mathrm{d}\\Phi/\\mathrm{d}t$) va energiya oqimlarini tasavvur qilishda jiddiy abstrakt to‘siqlarga duch keladilar.",
+  "ru": "При изучении закономерностей электродинамики и электромагнитного поля студенты сталкиваются с серьёзными абстрактными барьерами в представлении невидимых векторов поля ($\\vec{E}, \\vec{B}$), фазовых сдвигов ($\\varphi$), дифференциальных потоков ($\\mathrm{d}\\Phi/\\mathrm{d}t$) и потоков энергии.",
+  "en": "When studying electrodynamics and electromagnetic fields, students face serious abstract barriers in picturing invisible field vectors ($\\vec{E}, \\vec{B}$), phase shifts ($\\varphi$), differential fluxes ($\\mathrm{d}\\Phi/\\mathrm{d}t$) and energy flows."
+ },
+ {
+  "k": "1537b4ce",
+  "s": "MagicSchool AI",
+  "ru": "MagicSchool AI",
+  "en": "MagicSchool AI"
+ },
+ {
+  "k": "c2be41cf",
+  "s": "diagnostikasi orqali",
+  "ru": "с помощью диагностики",
+  "en": "through"
+ },
+ {
+  "k": "61f37027",
+  "s": "asosida 3 ta ta’limiy klaster bo‘yicha individual trayektoriya shakllantiriladi:",
+  "ru": "на основе формируется индивидуальная траектория по 3 учебным кластерам:",
+  "en": "diagnostics, based on, an individual pathway is built across 3 learning clusters:"
+ },
+ {
+  "k": "be820317",
+  "s": "3 Kognitiv klaster bo‘yicha individual elektrodinamika trayektoriyasi:",
+  "ru": "Индивидуальная траектория по электродинамике по 3 когнитивным кластерам:",
+  "en": "Individual electrodynamics pathway across 3 cognitive clusters:"
+ },
+ {
+  "k": "9af01f37",
+  "s": "Kulon qonuni ($F = k q_1 q_2 / r^2$), nuqtaviy zaryad maydoni va zanjir qismi uchun Om qonunini ($I = U/R$) o‘zlashtiruvchi daraja.",
+  "ru": "Уровень освоения закона Кулона ($F = k q_1 q_2 / r^2$), поля точечного заряда и закона Ома для участка цепи ($I = U/R$).",
+  "en": "The level that masters Coulomb’s law ($F = k q_1 q_2 / r^2$), the field of a point charge and Ohm’s law for a circuit section ($I = U/R$)."
+ },
+ {
+  "k": "b20d2ce6",
+  "s": "PhET Charges and Fields orqali maydon kuch chiziqlari vektorlarini ko‘rish va to‘g‘ridan-to‘g‘ri datchiklar bilan o‘lchash.",
+  "ru": "Наблюдение векторов силовых линий поля через PhET Charges and Fields и прямые измерения датчиками.",
+  "en": "Viewing field-line vectors in PhET Charges and Fields and measuring them directly with sensors."
+ },
+ {
+  "k": "d898f641",
+  "s": "Faradey elektromagnit induksiya qonuni ($\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi}{\\mathrm{d}t}$), Lens qoidasi va RLC zanjirlarida tebranishlarni hisoblovchi daraja.",
+  "ru": "Уровень, умеющий вычислять закон электромагнитной индукции Фарадея ($\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi}{\\mathrm{d}t}$), правило Ленца и колебания в RLC-цепях.",
+  "en": "The level that can work with Faraday’s law of electromagnetic induction ($\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi}{\\mathrm{d}t}$), Lenz’s rule and oscillations in RLC circuits."
+ },
+ {
+  "k": "9e480c28",
+  "s": "Claude orqali RLC differensial tenglamasini integrallash, Muxlisa AI orqali jarayonni ilmiy audio-tushuntirish bilan boyitish.",
+  "ru": "Интегрирование дифференциального уравнения RLC через Claude, обогащение процесса научным аудиообъяснением через Muxlisa AI.",
+  "en": "Integrating the RLC differential equation with Claude and enriching the process with a scientific audio explanation via Muxlisa AI."
+ },
+ {
+  "k": "8d9e8d84",
+  "s": "Maksvell tenglamalari tizimi, elektromagnit to‘lqinlar tarqalishi, Poynting vektori ($\\vec{S} = \\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$) va faza fazosi.",
+  "ru": "Система уравнений Максвелла, распространение электромагнитных волн, вектор Пойнтинга ($\\vec{S} = \\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$) и фазовое пространство.",
+  "en": "Maxwell’s equations, the propagation of electromagnetic waves, the Poynting vector ($\\vec{S} = \\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$) and phase space."
+ },
+ {
+  "k": "bae0f081",
+  "s": "ChatGPT Code Interpreter faza osillogrammasi va Google Antigravity orqali energiya oqimi balansi auditi.",
+  "ru": "Фазовая осциллограмма ChatGPT Code Interpreter и аудит баланса потока энергии через Google Antigravity.",
+  "en": "A ChatGPT Code Interpreter phase oscillogram and an energy-flow balance audit with Google Antigravity."
+ },
+ {
+  "k": "fbc55c5e",
+  "s": "Garrison, D. R., Anderson, T., va Archer, W. (2000).",
+  "ru": "Garrison, D. R., Anderson, T., & Archer, W. (2000).",
+  "en": "Garrison, D. R., Anderson, T., & Archer, W. (2000)."
+ },
+ {
+  "k": "3d4ae04f",
+  "s": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education",
+  "ru": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education",
+  "en": "Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education"
+ },
+ {
+  "k": "0de3997a",
+  "s": ". The Internet and Higher Education, 2(2-3), 87-105.",
+  "ru": ". The Internet and Higher Education, 2(2-3), 87-105.",
+  "en": ". The Internet and Higher Education, 2(2-3), 87-105."
+ },
+ {
+  "k": "e2a797b7",
+  "s": "https://doi.org/10.1016/S1096-7516(00)00016-6",
+  "ru": "https://doi.org/10.1016/S1096-7516(00)00016-6",
+  "en": "https://doi.org/10.1016/S1096-7516(00)00016-6"
+ },
+ {
+  "k": "175844e1",
+  "s": "Murakkab elektrodinamik tushunchalarni o‘zlashtirishda sun’iy intellekt orqali shaxsiylashtirilgan diagnostika va ko‘p modal ta’lim trayektoriyasi talabalarning kognitiv yukini 40% ga kamaytiradi.",
+  "ru": "При освоении сложных электродинамических понятий персонализированная диагностика с помощью искусственного интеллекта и мультимодальная учебная траектория снижают когнитивную нагрузку студентов на 40%.",
+  "en": "When mastering complex electrodynamic concepts, AI-personalised diagnostics and a multimodal learning pathway reduce students’ cognitive load by 40%."
+ },
+ {
+  "k": "c8371226",
+  "s": "2. Elektromagnit modellar tahlili: PhET va Vascak.cz",
+  "ru": "2. Анализ электромагнитных моделей: PhET и Vascak.cz",
+  "en": "2. Electromagnetic model analysis: PhET and Vascak.cz"
+ },
+ {
+  "k": "3b0abaaa",
+  "s": "Teskari muhandislik va elektrodinamika dekonstruksiyasi",
+  "ru": "Обратная разработка и деконструкция электродинамики",
+  "en": "Reverse engineering and electrodynamics deconstruction"
+ },
+ {
+  "k": "57d31865",
+  "s": "Simulyatsiya kodini yaratishdan oldin xalqaro miqyosda e’tirof etilgan professional laboratoriyalar (",
+  "ru": "Перед созданием кода симуляции международно признанные профессиональные лаборатории (",
+  "en": "Before writing simulation code, internationally recognised professional labs ("
+ },
+ {
+  "k": "b5a8976c",
+  "s": "PhET Interactive Simulations",
+  "ru": "PhET Interactive Simulations",
+  "en": "PhET Interactive Simulations"
+ },
+ {
+  "k": "9faaf66d",
+  "s": "Faraday’s Law",
+  "ru": "Faraday’s Law",
+  "en": "Faraday’s Law"
+ },
+ {
+  "k": "89bc1890",
+  "s": "Charges and Fields",
+  "ru": "Charges and Fields",
+  "en": "Charges and Fields"
+ },
+ {
+  "k": "b41fb135",
+  "s": "Circuit Construction Kit",
+  "ru": "Circuit Construction Kit",
+  "en": "Circuit Construction Kit"
+ },
+ {
+  "k": "6c2e448e",
+  "s": "hamda",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "2fd1f033",
+  "s": "Vascak.cz Physics Animations",
+  "ru": "Vascak.cz Physics Animations",
+  "en": "Vascak.cz Physics Animations"
+ },
+ {
+  "k": "5638ec88",
+  "s": "Coulomb’s Law",
+  "ru": "Coulomb’s Law",
+  "en": "Coulomb’s Law"
+ },
+ {
+  "k": "1d5e97d4",
+  "s": "Lorentz Force",
+  "ru": "Lorentz Force",
+  "en": "Lorentz Force"
+ },
+ {
+  "k": "5c005efd",
+  "s": "metodologiyasi bilan dekonstruksiya qilinadi:",
+  "ru": "деконструируются по методологии:",
+  "en": "are deconstructed with the methodology:"
+ },
+ {
+  "k": "103a3197",
+  "s": "1. PhET \"Faraday’s Law\" modeli dekonstruksiyasi",
+  "ru": "1. Деконструкция модели PhET \"Faraday’s Law\"",
+  "en": "1. Deconstructing the PhET \"Faraday’s Law\" model"
+ },
+ {
+  "k": "e607dcdc",
+  "s": "• <strong>Magnit oqimi dinamikasi:</strong> Doimiy magnit dipol maydoni $B(x) \\propto \\frac{\\mu_0 m}{(x^2 + R^2)^{3/2}}$ orqali g‘altak kesimidan o‘tuvchi oqim integrallanadi: $$\\Phi_B(t) = \\int_{S} \\vec{B}(t) \\cdot \\mathrm{d}\\vec{A}$$ • <strong>Induksiyalangan E.Yu.K.:</strong> Magnit tezligi oshgan sari vaqt bo‘yicha hosila keskin ortadi: $$\\mathcal{E}(t) = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad I(t) = \\frac{\\mathcal{E}(t)}{R_{zanjir}}$$",
+  "ru": "• <strong>Динамика магнитного потока:</strong> поток через сечение катушки интегрируется по полю постоянного магнитного диполя $B(x) \\propto \\frac{\\mu_0 m}{(x^2 + R^2)^{3/2}}$: $$\\Phi_B(t) = \\int_{S} \\vec{B}(t) \\cdot \\mathrm{d}\\vec{A}$$ • <strong>Индуцированная ЭДС:</strong> с ростом скорости магнита производная по времени резко возрастает: $$\\mathcal{E}(t) = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad I(t) = \\frac{\\mathcal{E}(t)}{R_{zanjir}}$$",
+  "en": "• <strong>Magnetic flux dynamics:</strong> the flux through the coil cross-section is integrated over the permanent magnetic dipole field $B(x) \\propto \\frac{\\mu_0 m}{(x^2 + R^2)^{3/2}}$: $$\\Phi_B(t) = \\int_{S} \\vec{B}(t) \\cdot \\mathrm{d}\\vec{A}$$ • <strong>Induced EMF:</strong> as the magnet speeds up, the time derivative rises sharply: $$\\mathcal{E}(t) = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad I(t) = \\frac{\\mathcal{E}(t)}{R_{zanjir}}$$"
+ },
+ {
+  "k": "b135cce1",
+  "s": "2. PhET \"Charges and Fields\" dekonstruksiyasi",
+  "ru": "2. Деконструкция PhET \"Charges and Fields\"",
+  "en": "2. Deconstructing PhET \"Charges and Fields\""
+ },
+ {
+  "k": "8a6a5ce1",
+  "s": "• <strong>Superpozitsiya maydoni:</strong> Fazoning har bir $(x, y)$ nuqtasidagi to‘la maydon kuchlanganligi zaryadlarning vektor yig‘indisidir: $$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_i}{|\\vec{r} - \\vec{r}_i|^3} (\\vec{r} - \\vec{r}_i)$$ • <strong>Ekvipotensial sirtlar:</strong> $\\Phi(\\vec{r}) = \\text{const}$ shartini qanoatlantiruvchi izochiziqlar gradientga perpendikulyar bo‘ladi ($\\vec{E} = -\\nabla\\Phi$).",
+  "ru": "• <strong>Поле суперпозиции:</strong> полная напряжённость поля в каждой точке пространства $(x, y)$ есть векторная сумма полей зарядов: $$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_i}{|\\vec{r} - \\vec{r}_i|^3} (\\vec{r} - \\vec{r}_i)$$ • <strong>Эквипотенциальные поверхности:</strong> изолинии, удовлетворяющие условию $\\Phi(\\vec{r}) = \\text{const}$, перпендикулярны градиенту ($\\vec{E} = -\\nabla\\Phi$).",
+  "en": "• <strong>Superposition field:</strong> the total field strength at every point in space $(x, y)$ is the vector sum of the charges’ fields: $$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_i}{|\\vec{r} - \\vec{r}_i|^3} (\\vec{r} - \\vec{r}_i)$$ • <strong>Equipotential surfaces:</strong> contour lines satisfying $\\Phi(\\vec{r}) = \\text{const}$ are perpendicular to the gradient ($\\vec{E} = -\\nabla\\Phi$)."
+ },
+ {
+  "k": "5d62d40b",
+  "s": "📊 Elektrodinamika teskari muhandislik matritsasi:",
+  "ru": "📊 Матрица обратной разработки электродинамики:",
+  "en": "📊 Electrodynamics reverse-engineering matrix:"
+ },
+ {
+  "k": "eaa0af9e",
+  "s": "Zaryadlar Maydoni",
+  "ru": "Поле зарядов",
+  "en": "Charge field"
+ },
+ {
+  "k": "79e6e306",
+  "s": "Kuchlanganlik $\\vec{E}$, Potensial $\\Phi$",
+  "ru": "Напряжённость $\\vec{E}$, потенциал $\\Phi$",
+  "en": "Field strength $\\vec{E}$, potential $\\Phi$"
+ },
+ {
+  "k": "95253c2d",
+  "s": "$\\vec{E} = \\sum \\frac{k q_i}{r_i^2}\\hat{r}_i, \\quad \\Phi = \\sum \\frac{k q_i}{r_i}$",
+  "ru": "$\\vec{E} = \\sum \\frac{k q_i}{r_i^2}\\hat{r}_i, \\quad \\Phi = \\sum \\frac{k q_i}{r_i}$",
+  "en": "$\\vec{E} = \\sum \\frac{k q_i}{r_i^2}\\hat{r}_i, \\quad \\Phi = \\sum \\frac{k q_i}{r_i}$"
+ },
+ {
+  "k": "41d8b7b4",
+  "s": "const E = calculateElectricField(x, y);",
+  "ru": "const E = calculateElectricField(x, y);",
+  "en": "const E = calculateElectricField(x, y);"
+ },
+ {
+  "k": "97d54240",
+  "s": "Harakatdagi Magnit",
+  "ru": "Движущийся магнит",
+  "en": "Moving magnet"
+ },
+ {
+  "k": "0cce6b5f",
+  "s": "Magnit Oqimi $\\Phi_B$, Tezlik $v$",
+  "ru": "Магнитный поток $\\Phi_B$, скорость $v$",
+  "en": "Magnetic flux $\\Phi_B$, speed $v$"
+ },
+ {
+  "k": "fb71e925",
+  "s": "$\\Phi_B = B(x) \\cdot A, \\quad v_x = \\frac{\\mathrm{d}x}{\\mathrm{d}t}$",
+  "ru": "$\\Phi_B = B(x) \\cdot A, \\quad v_x = \\frac{\\mathrm{d}x}{\\mathrm{d}t}$",
+  "en": "$\\Phi_B = B(x) \\cdot A, \\quad v_x = \\frac{\\mathrm{d}x}{\\mathrm{d}t}$"
+ },
+ {
+  "k": "cde9cce1",
+  "s": "const dPhi = (flux - prevFlux) / dt;",
+  "ru": "const dPhi = (flux - prevFlux) / dt;",
+  "en": "const dPhi = (flux - prevFlux) / dt;"
+ },
+ {
+  "k": "b59ef321",
+  "s": "G‘altak va Voltmetr",
+  "ru": "Катушка и вольтметр",
+  "en": "Coil and voltmeter"
+ },
+ {
+  "k": "a99e7a70",
+  "s": "Induksiyalangan E.Yu.K. $\\mathcal{E}$",
+  "ru": "Индуцированная ЭДС $\\mathcal{E}$",
+  "en": "Induced EMF $\\mathcal{E}$"
+ },
+ {
+  "k": "be08198d",
+  "s": "$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}$ (Lens qoidasi)",
+  "ru": "$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}$ (правило Ленца)",
+  "en": "$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}$ (Lenz’s rule)"
+ },
+ {
+  "k": "6e917846",
+  "s": "this.inducedEmf = -coil.turns * dPhi;",
+  "ru": "this.inducedEmf = -coil.turns * dPhi;",
+  "en": "this.inducedEmf = -coil.turns * dPhi;"
+ },
+ {
+  "k": "c4b89e47",
+  "s": "RLC Osillografi",
+  "ru": "RLC-осциллограф",
+  "en": "RLC oscilloscope"
+ },
+ {
+  "k": "b4277ee1",
+  "s": "Tok $I(t)$, Fazaviy Siljish $\\varphi$",
+  "ru": "Ток $I(t)$, фазовый сдвиг $\\varphi$",
+  "en": "Current $I(t)$, phase shift $\\varphi$"
+ },
+ {
+  "k": "d20ea4fb",
+  "s": "$Z = \\sqrt{R^2 + (\\omega L - \\frac{1}{\\omega C})^2}, \\quad I_0 = \\frac{U_0}{Z}$",
+  "ru": "$Z = \\sqrt{R^2 + (\\omega L - \\frac{1}{\\omega C})^2}, \\quad I_0 = \\frac{U_0}{Z}$",
+  "en": "$Z = \\sqrt{R^2 + (\\omega L - \\frac{1}{\\omega C})^2}, \\quad I_0 = \\frac{U_0}{Z}$"
+ },
+ {
+  "k": "a12e2d9a",
+  "s": "const phi = Math.atan2(Xl - Xc, R);",
+  "ru": "const phi = Math.atan2(Xl - Xc, R);",
+  "en": "const phi = Math.atan2(Xl - Xc, R);"
+ },
+ {
+  "k": "0f40db2e",
+  "s": "Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).",
+  "ru": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).",
+  "en": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008)."
+ },
+ {
+  "k": "acacd01d",
+  "s": "PhET: Simulations That Enhance Learning",
+  "ru": "PhET: Simulations That Enhance Learning",
+  "en": "PhET: Simulations That Enhance Learning"
+ },
+ {
+  "k": "213ce8a7",
+  "s": ". Science, 322(5902), 682-683.",
+  "ru": ". Science, 322(5902), 682-683.",
+  "en": ". Science, 322(5902), 682-683."
+ },
+ {
+  "k": "dbf0609b",
+  "s": "https://doi.org/10.1126/science.1161948",
+  "ru": "https://doi.org/10.1126/science.1161948",
+  "en": "https://doi.org/10.1126/science.1161948"
+ },
+ {
+  "k": "cdaac3c0",
+  "s": "Elektrodinamik hodisalarni virtual simulyatsiyalar orqali interaktiv boshqarish talabalarda elektromagnit maydonning moddiy realligi va energiya o‘zgarishi haqidagi ilmiy dunyoqarashni mustahkam shakllantiradi.",
+  "ru": "Интерактивное управление электродинамическими явлениями через виртуальные симуляции прочно формирует у студентов научное мировоззрение о материальной реальности электромагнитного поля и превращениях энергии.",
+  "en": "Interactively controlling electrodynamic phenomena through virtual simulations firmly builds students’ scientific understanding of the material reality of the electromagnetic field and energy transformations."
+ },
+ {
+  "k": "d0fea014",
+  "s": "3. Maydon va zanjir animatsiyasi kodi: Claude",
+  "ru": "3. Код анимации поля и цепи: Claude",
+  "en": "3. Field and circuit animation code: Claude"
+ },
+ {
+  "k": "9ae6c8f1",
+  "s": "Coulomb superposition, Faraday induction va RLC engine",
+  "ru": "Суперпозиция Кулона, индукция Фарадея и RLC-движок",
+  "en": "Coulomb superposition, Faraday induction and an RLC engine"
+ },
+ {
+  "k": "8e7084bb",
+  "s": "Elektrodinamika simulyatsiyasini amalga oshirish uchun <strong>Claude</strong> bilan \"Juftlikda dasturlash\" sessiyasida elektrostatik maydon superpozitsiyasi, Faradey induksiyasi va RLC zanjirining differensial tebranish tenglamalarini yechuvchi yuqori unumdor JavaScript moduli yoziladi:",
+  "ru": "Для реализации симуляции электродинамики в сессии «парного программирования» с <strong>Claude</strong> пишется высокопроизводительный модуль JavaScript, решающий уравнения суперпозиции электростатического поля, индукции Фарадея и дифференциальные уравнения колебаний RLC-цепи:",
+  "en": "To implement the electrodynamics simulation, a high-performance JavaScript module is written in a pair-programming session with <strong>Claude</strong> that solves the equations of electrostatic field superposition, Faraday induction and the differential equations of RLC circuit oscillation:"
+ },
+ {
+  "k": "5189cc12",
+  "s": "📐 Elektrodinamikaning fundamental tenglamalari:",
+  "ru": "📐 Фундаментальные уравнения электродинамики:",
+  "en": "📐 Fundamental equations of electrodynamics:"
+ },
+ {
+  "k": "36607527",
+  "s": "1. Kulon maydoni superpozitsiyasi va potensial gradiyenti:",
+  "ru": "1. Суперпозиция поля Кулона и градиент потенциала:",
+  "en": "1. Coulomb field superposition and the potential gradient:"
+ },
+ {
+  "k": "024806b4",
+  "s": "$$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i^2}\\hat{r}_i, \\qquad \\Phi(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i}, \\qquad \\vec{E} = -\\nabla\\Phi$$",
+  "ru": "$$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i^2}\\hat{r}_i, \\qquad \\Phi(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i}, \\qquad \\vec{E} = -\\nabla\\Phi$$",
+  "en": "$$\\vec{E}(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i^2}\\hat{r}_i, \\qquad \\Phi(\\vec{r}) = \\sum_{i=1}^N \\frac{k_e q_i}{r_i}, \\qquad \\vec{E} = -\\nabla\\Phi$$"
+ },
+ {
+  "k": "5d7ecf99",
+  "s": "2. Faradey elektromagnit induksiya qonuni va Lens qoidasi:",
+  "ru": "2. Закон электромагнитной индукции Фарадея и правило Ленца:",
+  "en": "2. Faraday’s law of electromagnetic induction and Lenz’s rule:"
+ },
+ {
+  "k": "6db6a6c9",
+  "s": "$$\\mathcal{E} = -\\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t} = -N \\frac{\\mathrm{d}}{\\mathrm{d}t}\\left( \\int \\vec{B}\\cdot\\mathrm{d}\\vec{A} \\right)$$",
+  "ru": "$$\\mathcal{E} = -\\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t} = -N \\frac{\\mathrm{d}}{\\mathrm{d}t}\\left( \\int \\vec{B}\\cdot\\mathrm{d}\\vec{A} \\right)$$",
+  "en": "$$\\mathcal{E} = -\\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t} = -N \\frac{\\mathrm{d}}{\\mathrm{d}t}\\left( \\int \\vec{B}\\cdot\\mathrm{d}\\vec{A} \\right)$$"
+ },
+ {
+  "k": "37e1ee4b",
+  "s": "3. RLC o‘zgaruvchan tok zanjirining majburiy tebranishlar tenglamasi:",
+  "ru": "3. Уравнение вынужденных колебаний RLC-цепи переменного тока:",
+  "en": "3. The forced-oscillation equation of an AC RLC circuit:"
+ },
+ {
+  "k": "634f8cda",
+  "s": "$$L\\frac{\\mathrm{d}^2 q}{\\mathrm{d}t^2} + R\\frac{\\mathrm{d}q}{\\mathrm{d}t} + \\frac{q}{C} = U_0 \\cos(\\omega t), \\qquad Z = \\sqrt{R^2 + \\left(\\omega L - \\frac{1}{\\omega C}\\right)^2}$$",
+  "ru": "$$L\\frac{\\mathrm{d}^2 q}{\\mathrm{d}t^2} + R\\frac{\\mathrm{d}q}{\\mathrm{d}t} + \\frac{q}{C} = U_0 \\cos(\\omega t), \\qquad Z = \\sqrt{R^2 + \\left(\\omega L - \\frac{1}{\\omega C}\\right)^2}$$",
+  "en": "$$L\\frac{\\mathrm{d}^2 q}{\\mathrm{d}t^2} + R\\frac{\\mathrm{d}q}{\\mathrm{d}t} + \\frac{q}{C} = U_0 \\cos(\\omega t), \\qquad Z = \\sqrt{R^2 + \\left(\\omega L - \\frac{1}{\\omega C}\\right)^2}$$"
+ },
+ {
+  "k": "b5928ce0",
+  "s": "<span>Kod</span>",
+  "ru": "<span>Код</span>",
+  "en": "<span>Code</span>"
+ },
+ {
+  "k": "47d676af",
+  "s": "<code>// ============================================================================ // 14-ma’ruza: Claude Elektrodinamika Dvigateli Kodi // ============================================================================ // 1. Elektrostatik Maydon Intensivligi va Potensialini Hisoblash function calculateElectricField(x, y, charges, ke = 8.99e3) { let Ex = 0, Ey = 0, potential = 0; for (let c of charges) { const dx = x - c.x; const dy = y - c.y; const r2 = dx * dx + dy * dy; const r = Math.sqrt(r2); if (r &gt; 4) { const E_mag = (ke * c.q) / Math.max(100, r2); Ex += E_mag * (dx / r); Ey += E_mag * (dy / r); potential += (ke * c.q) / r; } } return { Ex, Ey, potential, magnitude: Math.hypot(Ex, Ey) }; } // 2. Faradey Elektromagnit Induksiya Qonuni va E.Yu.K. Integratori function calculateFaradayInduction(magnetX, prevMagnetX, coilX, coilTurns, coilRadius, dt) { const dist = coilX - magnetX; const rEff = Math.max(30, Math.abs(dist)); // Magnit dipol maydoni B ~ M / (r^2 + R^2)^(3/2) const B = 480000 / Math.pow(rEff * rEff + coilRadius * coilRadius, 1.5); const sign = dist &gt; 0 ? 1 : -1; const flux = sign * B * (Math.PI * coilRadius * coilRadius * 0.001); // Faradey qonuni: E.Yu.K. = -N * (dPhi / dt) const prevDist = coilX - prevMagnetX; const prevREff = Math.max(30, Math.abs(prevDist)); const prevB = 480000 / Math.pow(prevREff * prevREff + coilRadius * coilRadius, 1.5); const prevFlux = (prevDist &gt; 0 ? 1 : -1) * prevB * (Math.PI * coilRadius * coilRadius * 0.001); const dPhi = (flux - prevFlux) / Math.max(0.001, dt); const inducedEmf = -coilTurns * dPhi * 0.12; return { flux, inducedEmf }; } // 3. RLC O‘zgaruvchan Tok Zanjiri Impedansi va Fazaviy Siljishi function calculateRlcOscillation(R, L, C_micro, U0, freq, time) { const C = C_micro * 1e-6; const omega = 2 * Math.PI * freq; const Xl = omega * L; const Xc = 1 / (omega * C || 1); const Z = Math.sqrt(R * R + (Xl - Xc) * (Xl - Xc)); const I0 = U0 / (Z || 1); const phi = Math.atan2((Xl - Xc), R); const u_t = U0 * Math.sin(omega * time); const i_t = I0 * Math.sin(omega * time - phi); return { u_t, i_t, I0, Z, phi }; }</code>",
+  "ru": "<code>// ============================================================================ // Лекция 14: код движка электродинамики Claude // ============================================================================ // 1. Расчёт напряжённости и потенциала электростатического поля function calculateElectricField(x, y, charges, ke = 8.99e3) { let Ex = 0, Ey = 0, potential = 0; for (let c of charges) { const dx = x - c.x; const dy = y - c.y; const r2 = dx * dx + dy * dy; const r = Math.sqrt(r2); if (r &gt; 4) { const E_mag = (ke * c.q) / Math.max(100, r2); Ex += E_mag * (dx / r); Ey += E_mag * (dy / r); potential += (ke * c.q) / r; } } return { Ex, Ey, potential, magnitude: Math.hypot(Ex, Ey) }; } // 2. Закон электромагнитной индукции Фарадея и интегратор ЭДС function calculateFaradayInduction(magnetX, prevMagnetX, coilX, coilTurns, coilRadius, dt) { const dist = coilX - magnetX; const rEff = Math.max(30, Math.abs(dist)); // Поле магнитного диполя B ~ M / (r^2 + R^2)^(3/2) const B = 480000 / Math.pow(rEff * rEff + coilRadius * coilRadius, 1.5); const sign = dist &gt; 0 ? 1 : -1; const flux = sign * B * (Math.PI * coilRadius * coilRadius * 0.001); // Закон Фарадея: ЭДС = -N * (dPhi / dt) const prevDist = coilX - prevMagnetX; const prevREff = Math.max(30, Math.abs(prevDist)); const prevB = 480000 / Math.pow(prevREff * prevREff + coilRadius * coilRadius, 1.5); const prevFlux = (prevDist &gt; 0 ? 1 : -1) * prevB * (Math.PI * coilRadius * coilRadius * 0.001); const dPhi = (flux - prevFlux) / Math.max(0.001, dt); const inducedEmf = -coilTurns * dPhi * 0.12; return { flux, inducedEmf }; } // 3. Импеданс и фазовый сдвиг RLC-цепи переменного тока function calculateRlcOscillation(R, L, C_micro, U0, freq, time) { const C = C_micro * 1e-6; const omega = 2 * Math.PI * freq; const Xl = omega * L; const Xc = 1 / (omega * C || 1); const Z = Math.sqrt(R * R + (Xl - Xc) * (Xl - Xc)); const I0 = U0 / (Z || 1); const phi = Math.atan2((Xl - Xc), R); const u_t = U0 * Math.sin(omega * time); const i_t = I0 * Math.sin(omega * time - phi); return { u_t, i_t, I0, Z, phi }; }</code>",
+  "en": "<code>// ============================================================================ // Lecture 14: Claude electrodynamics engine code // ============================================================================ // 1. Computing electrostatic field strength and potential function calculateElectricField(x, y, charges, ke = 8.99e3) { let Ex = 0, Ey = 0, potential = 0; for (let c of charges) { const dx = x - c.x; const dy = y - c.y; const r2 = dx * dx + dy * dy; const r = Math.sqrt(r2); if (r &gt; 4) { const E_mag = (ke * c.q) / Math.max(100, r2); Ex += E_mag * (dx / r); Ey += E_mag * (dy / r); potential += (ke * c.q) / r; } } return { Ex, Ey, potential, magnitude: Math.hypot(Ex, Ey) }; } // 2. Faraday’s law of electromagnetic induction and an EMF integrator function calculateFaradayInduction(magnetX, prevMagnetX, coilX, coilTurns, coilRadius, dt) { const dist = coilX - magnetX; const rEff = Math.max(30, Math.abs(dist)); // Magnetic dipole field B ~ M / (r^2 + R^2)^(3/2) const B = 480000 / Math.pow(rEff * rEff + coilRadius * coilRadius, 1.5); const sign = dist &gt; 0 ? 1 : -1; const flux = sign * B * (Math.PI * coilRadius * coilRadius * 0.001); // Faraday’s law: EMF = -N * (dPhi / dt) const prevDist = coilX - prevMagnetX; const prevREff = Math.max(30, Math.abs(prevDist)); const prevB = 480000 / Math.pow(prevREff * prevREff + coilRadius * coilRadius, 1.5); const prevFlux = (prevDist &gt; 0 ? 1 : -1) * prevB * (Math.PI * coilRadius * coilRadius * 0.001); const dPhi = (flux - prevFlux) / Math.max(0.001, dt); const inducedEmf = -coilTurns * dPhi * 0.12; return { flux, inducedEmf }; } // 3. Impedance and phase shift of an AC RLC circuit function calculateRlcOscillation(R, L, C_micro, U0, freq, time) { const C = C_micro * 1e-6; const omega = 2 * Math.PI * freq; const Xl = omega * L; const Xc = 1 / (omega * C || 1); const Z = Math.sqrt(R * R + (Xl - Xc) * (Xl - Xc)); const I0 = U0 / (Z || 1); const phi = Math.atan2((Xl - Xc), R); const u_t = U0 * Math.sin(omega * time); const i_t = I0 * Math.sin(omega * time - phi); return { u_t, i_t, I0, Z, phi }; }</code>"
+ },
+ {
+  "k": "362ec896",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Elektrodinamika Nazariy Asosi (3-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и теоретические основы электродинамики (раздел 3):",
+  "en": "🌐 WWW scholarly sources and theoretical basis of electrodynamics (Section 3):"
+ },
+ {
+  "k": "1f2df4fa",
+  "s": "Griffiths, D. J. (2017).",
+  "ru": "Griffiths, D. J. (2017).",
+  "en": "Griffiths, D. J. (2017)."
+ },
+ {
+  "k": "1b2917e0",
+  "s": "Introduction to Electrodynamics",
+  "ru": "Introduction to Electrodynamics",
+  "en": "Introduction to Electrodynamics"
+ },
+ {
+  "k": "bbb822be",
+  "s": "(4th ed.). Cambridge University Press.",
+  "ru": "(4th ed.). Cambridge University Press.",
+  "en": "(4th ed.). Cambridge University Press."
+ },
+ {
+  "k": "04d67278",
+  "s": "https://doi.org/10.1017/9781108420419",
+  "ru": "https://doi.org/10.1017/9781108420419",
+  "en": "https://doi.org/10.1017/9781108420419"
+ },
+ {
+  "k": "fcf165ba",
+  "s": "Maksvell elektrodinamikasi va Faradey qonuni zaryadlar hamda maydonlarning uzluksiz o‘zaro ta’sirini relyativistik invariantlik darajasida ifodalovchi universal qonundir.",
+  "ru": "Электродинамика Максвелла и закон Фарадея — универсальные законы, выражающие непрерывное взаимодействие зарядов и полей на уровне релятивистской инвариантности.",
+  "en": "Maxwell’s electrodynamics and Faraday’s law are universal laws that express the continuous interaction of charges and fields at the level of relativistic invariance."
+ },
+ {
+  "k": "770c3570",
+  "s": "4. Audio-narratsiya ovozini sintez qilish: Muxlisa AI / ElevenLabs",
+  "ru": "4. Синтез голоса аудионаррации: Muxlisa AI / ElevenLabs",
+  "en": "4. Audio-narration voice synthesis: Muxlisa AI / ElevenLabs"
+ },
+ {
+  "k": "e17c5716",
+  "s": "Speech synthesis, audio-visual synchronization va voice HUD",
+  "ru": "Синтез речи, аудиовизуальная синхронизация и голосовой HUD",
+  "en": "Speech synthesis, audio-visual synchronisation and a voice HUD"
+ },
+ {
+  "k": "1d315c38",
+  "s": "Fizika ta’limida talabaning vizual idrokini mustahkamlash uchun zamonaviy nutq sintezi texnologiyalari (<strong>Muxlisa AI</strong> o‘zbek tili milliy neyron ovoz modeli hamda <strong>ElevenLabs</strong> yuqori sifatli audio generatori) orqali elektrodinamika animatsiyasiga professional ilmiy audio-narratsiya qo‘shiladi:",
+  "ru": "Чтобы усилить визуальное восприятие студента в обучении физике, к анимации электродинамики с помощью современных технологий синтеза речи (<strong>Muxlisa AI</strong> — национальная нейронная голосовая модель узбекского языка, и <strong>ElevenLabs</strong> — высококачественный аудиогенератор) добавляется профессиональная научная аудионаррация:",
+  "en": "To strengthen students’ visual perception in physics, professional scientific audio narration is added to the electrodynamics animation using modern speech synthesis (<strong>Muxlisa AI</strong>, the national Uzbek neural voice model, and <strong>ElevenLabs</strong>, a high-quality audio generator):"
+ },
+ {
+  "k": "b75a5b0c",
+  "s": "🎙️ 1. O‘zbek tili neyron audio sintezi (Muxlisa AI)",
+  "ru": "🎙️ 1. Нейронный аудиосинтез на узбекском языке (Muxlisa AI)",
+  "en": "🎙️ 1. Uzbek neural audio synthesis (Muxlisa AI)"
+ },
+ {
+  "k": "d3963fd6",
+  "s": "• <strong>Akustik model:</strong> 24kHz HD namunalash chastotasi, tabiiy intonatsiya va fizik atamalarning to‘g‘ri fonetik talaffuzi.<br> • <strong>Matndan nutqqa (TTS):</strong> Faradey qonuni, Lens qoidasi va RLC rezonansi matnlari avtomatik audio oqimga aylantiriladi.",
+  "ru": "• <strong>Акустическая модель:</strong> частота дискретизации 24 кГц HD, естественная интонация и правильное фонетическое произношение физических терминов.<br> • <strong>Текст в речь (TTS):</strong> тексты о законе Фарадея, правиле Ленца и резонансе RLC автоматически превращаются в аудиопоток.",
+  "en": "• <strong>Acoustic model:</strong> 24 kHz HD sampling, natural intonation and correct phonetic pronunciation of physics terms.<br> • <strong>Text-to-speech (TTS):</strong> texts on Faraday’s law, Lenz’s rule and RLC resonance are turned into an audio stream automatically."
+ },
+ {
+  "k": "be5f02ac",
+  "s": "📊 2. Audio-vizual spektrogramma sinxronizatsiyasi",
+  "ru": "📊 2. Синхронизация аудиовизуальной спектрограммы",
+  "en": "📊 2. Audio-visual spectrogram synchronisation"
+ },
+ {
+  "k": "f8ca52a5",
+  "s": "• <strong>Web audio API:</strong> Brauzer darajasida audio to‘lqin shakli ($AudioContext, AnalyserNode$) tahlil qilinadi.<br> • <strong>Ko‘p modal rezonans:</strong> Magnit harakatlanib kuchlanish hosil bo‘lganda ekranda jonli tovush spektrogrammasi porlaydi.",
+  "ru": "• <strong>Web Audio API:</strong> форма звуковой волны ($AudioContext, AnalyserNode$) анализируется на уровне браузера.<br> • <strong>Мультимодальный резонанс:</strong> когда движущийся магнит наводит напряжение, на экране светится живая спектрограмма звука.",
+  "en": "• <strong>Web Audio API:</strong> the audio waveform ($AudioContext, AnalyserNode$) is analysed in the browser.<br> • <strong>Multimodal resonance:</strong> when the moving magnet induces a voltage, a live sound spectrogram lights up on screen."
+ },
+ {
+  "k": "63bc6024",
+  "s": "<code>// ============================================================================ // Muxlisa AI / ElevenLabs Audio-Narratsiya Sinxronizatsiya Skripti // ============================================================================ function speakScientificNarration(topic = 'faraday') { if (!('speechSynthesis' in window)) { console.warn(\"Brauzeringizda ovoz sintezi qo‘llab-quvvatlanmaydi.\"); return; } window.speechSynthesis.cancel(); // Oldingi ovozni to‘xtatish const narrationScript = { faraday: \"Faradey elektromagnit induksiya qonuniga ko‘ra, konturdan o‘tayotgan magnit oqimi vaqt bo‘yicha o‘zgarganda, konturda elektr yurituvchi kuch hosil bo‘ladi. Lens qoidasiga binoan, induksiyalangan tok o‘zining magnit maydoni bilan uni yuzaga keltirgan oqim o‘zgarishiga qarshilik ko‘rsatadi.\", coulomb: \"Kulon qonuni ikki nuqtaviy zaryad orasidagi o‘zaro ta’sir kuchini ifodalaydi. Bir xil ishorali zaryadlar itarishadi, qarama-qarshi ishorali zaryadlar esa tortishadi. Maydon kuchlanganligi masofa kvadratiga teskari proporsional kamayadi.\", rlc: \"RLC zanjirida o‘zgaruvchan tok manbai ulanganda induktivlik va sig‘im qarshiliklari o‘zaro tenglashganda rezonans hodisasi yuz beradi va tok amplitudasi maksimal qiymatga erishadi.\" }; const utterance = new SpeechSynthesisUtterance(narrationScript[topic]); utterance.lang = 'uz-UZ'; utterance.rate = 0.95; utterance.pitch = 1.0; utterance.onstart = () =&gt; { console.log(\"🎙️ Audio-narratsiya ijro etilmoqda...\"); }; window.speechSynthesis.speak(utterance); }</code>",
+  "ru": "<code>// ============================================================================ // Скрипт синхронизации аудионаррации Muxlisa AI / ElevenLabs // ============================================================================ function speakScientificNarration(topic = 'faraday') { if (!('speechSynthesis' in window)) { console.warn(\"Ваш браузер не поддерживает синтез речи.\"); return; } window.speechSynthesis.cancel(); // Остановить предыдущий голос const narrationScript = { faraday: \"Согласно закону электромагнитной индукции Фарадея, при изменении во времени магнитного потока через контур в нём возникает электродвижущая сила. По правилу Ленца индуцированный ток своим магнитным полем противодействует изменению потока, которое его вызвало.\", coulomb: \"Закон Кулона выражает силу взаимодействия двух точечных зарядов. Одноимённые заряды отталкиваются, разноимённые — притягиваются. Напряжённость поля убывает обратно пропорционально квадрату расстояния.\", rlc: \"Когда к RLC-цепи подключён источник переменного тока и индуктивное и ёмкостное сопротивления становятся равными, возникает резонанс, и амплитуда тока достигает максимума.\" }; const utterance = new SpeechSynthesisUtterance(narrationScript[topic]); utterance.lang = 'ru-RU'; utterance.rate = 0.95; utterance.pitch = 1.0; utterance.onstart = () =&gt; { console.log(\"🎙️ Воспроизводится аудионаррация...\"); }; window.speechSynthesis.speak(utterance); }</code>",
+  "en": "<code>// ============================================================================ // Muxlisa AI / ElevenLabs audio-narration sync script // ============================================================================ function speakScientificNarration(topic = 'faraday') { if (!('speechSynthesis' in window)) { console.warn(\"Speech synthesis is not supported in your browser.\"); return; } window.speechSynthesis.cancel(); // Stop any previous voice const narrationScript = { faraday: \"According to Faraday’s law of electromagnetic induction, when the magnetic flux through a circuit changes over time, an electromotive force is induced in it. By Lenz’s rule, the induced current’s magnetic field opposes the change in flux that produced it.\", coulomb: \"Coulomb’s law gives the force between two point charges. Like charges repel and unlike charges attract. The field strength falls off with the inverse square of the distance.\", rlc: \"When an AC source is connected to an RLC circuit and the inductive and capacitive reactances become equal, resonance occurs and the current amplitude reaches its maximum.\" }; const utterance = new SpeechSynthesisUtterance(narrationScript[topic]); utterance.lang = 'en-US'; utterance.rate = 0.95; utterance.pitch = 1.0; utterance.onstart = () =&gt; { console.log(\"🎙️ Playing audio narration...\"); }; window.speechSynthesis.speak(utterance); }</code>"
+ },
+ {
+  "k": "a2b298ba",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Multimodal O‘qitish Asosi (4-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы мультимодального обучения (раздел 4):",
+  "en": "🌐 WWW scholarly sources and multimodal teaching basis (Section 4):"
+ },
+ {
+  "k": "b3bdd633",
+  "s": "Mayer, R. E. (2020).",
+  "ru": "Mayer, R. E. (2020).",
+  "en": "Mayer, R. E. (2020)."
+ },
+ {
+  "k": "c90e4890",
+  "s": "Multimedia Learning",
+  "ru": "Multimedia Learning",
+  "en": "Multimedia Learning"
+ },
+ {
+  "k": "b867cc81",
+  "s": "(3rd ed.). Cambridge University Press.",
+  "ru": "(3rd ed.). Cambridge University Press.",
+  "en": "(3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "86f78d7e",
+  "s": "https://doi.org/10.1017/9781316941355",
+  "ru": "https://doi.org/10.1017/9781316941355",
+  "en": "https://doi.org/10.1017/9781316941355"
+ },
+ {
+  "k": "a2efa9bb",
+  "s": "Ko‘p modal ta’lim tamoyili (Modality Principle) bo‘yicha murakkab fizik animatsiyalarni bir vaqtda audio-narratsiya (ovozli tushuntirish) bilan birgalikda taqdim etish o‘quvchilarning vizual kanalini yengillashtiradi va materialni eslab qolishni 38% ga oshiradi.",
+  "ru": "Согласно принципу модальности (Modality Principle), одновременная подача сложных физических анимаций с аудионаррацией (голосовым объяснением) разгружает визуальный канал учащихся и улучшает запоминание материала на 38%.",
+  "en": "According to the modality principle, presenting complex physics animations together with audio narration (a spoken explanation) relieves learners’ visual channel and improves retention of the material by 38%."
+ },
+ {
+  "k": "9f30d9c8",
+  "s": "5. Loyiha monitoringi: Google Antigravity",
+  "ru": "5. Мониторинг проекта: Google Antigravity",
+  "en": "5. Project monitoring: Google Antigravity"
+ },
+ {
+  "k": "296a6094",
+  "s": "Gauss flux balance, Kirchhoff laws va Poynting energy audit",
+  "ru": "Баланс потока Гаусса, законы Кирхгофа и аудит энергии Пойнтинга",
+  "en": "Gauss flux balance, Kirchhoff’s laws and a Poynting energy audit"
+ },
+ {
+  "k": "1abbba39",
+  "s": "Elektrodinamika simulyatsiyalarida hisoblash diskretizatsiyasi hisobiga zaryad saqlanishi, Gaus teoremasi balansi va Kirxgof qonunlarida chetlanishlar paydo bo‘lishi mumkin. <strong>Google Antigravity</strong> monitoring agenti real vaqt telemetriyasi orqali model barqarorligi va audio-video sinxronligini audit qiladi:",
+  "ru": "В симуляциях электродинамики из-за вычислительной дискретизации могут возникать отклонения в сохранении заряда, балансе теоремы Гаусса и законах Кирхгофа. Агент мониторинга <strong>Google Antigravity</strong> через телеметрию в реальном времени проверяет устойчивость модели и аудиовидеосинхронность:",
+  "en": "In electrodynamics simulations, numerical discretisation can cause deviations in charge conservation, the Gauss theorem balance and Kirchhoff’s laws. The <strong>Google Antigravity</strong> monitoring agent uses real-time telemetry to audit the model’s stability and audio-video sync:"
+ },
+ {
+  "k": "20bcc42a",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Gaus oqimi balansi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Yopiq sirt orqali o‘tayotgan to‘la elektr oqimi $\\oint \\vec{E}\\cdot\\mathrm{d}\\vec{A} = \\frac{Q_{ichki}}{\\varepsilon_0}$ sharti 99.8% aniqlik bilan nazorat qilinadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Баланс потока Гаусса:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Условие $\\oint \\vec{E}\\cdot\\mathrm{d}\\vec{A} = \\frac{Q_{ichki}}{\\varepsilon_0}$ для полного электрического потока через замкнутую поверхность контролируется с точностью 99.8%. </span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Gauss flux balance:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> The $\\oint \\vec{E}\\cdot\\mathrm{d}\\vec{A} = \\frac{Q_{ichki}}{\\varepsilon_0}$ condition for the total electric flux through a closed surface is monitored with 99.8% accuracy. </span>"
+ },
+ {
+  "k": "46c6abff",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Kirxgof qonunlari auditi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> RLC zanjirida tugunlar bo‘yicha toklar yig‘indisi $\\sum I = 0$ va konturlar bo‘yicha kuchlanishlar balansi $\\sum U = \\sum \\mathcal{E}$ nolga teng. </span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Аудит законов Кирхгофа:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> В RLC-цепи сумма токов в узлах $\\sum I = 0$ и баланс напряжений по контурам $\\sum U = \\sum \\mathcal{E}$ равны нулю. </span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Kirchhoff’s laws audit:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> In the RLC circuit the sum of currents at the nodes $\\sum I = 0$ and the voltage balance around the loops $\\sum U = \\sum \\mathcal{E}$ are zero. </span>"
+ },
+ {
+  "k": "32cc3130",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Poynting energiya oqimi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Elektromagnit energiya zichligi va uning tarqalish oqimi $\\vec{S} = \\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$ dreyfi $|\\Delta E / E_0| &lt; 0.0002\\%$ saqlanadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Поток энергии Пойнтинга:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Плотность электромагнитной энергии и её поток $\\vec{S} = \\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$ сохраняются с дрейфом $|\\Delta E / E_0| &lt; 0.0002\\%$. </span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Poynting energy flow:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> The electromagnetic energy density and its flow $\\vec{S} = \\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$ are conserved with drift $|\\Delta E / E_0| &lt; 0.0002\\%$. </span>"
+ },
+ {
+  "k": "d55b9da2",
+  "s": "<span style=\"font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-rose);\">Antigravity Electrodynamics Telemetry Inspector [Live Stream]</span> <span style=\"font-size:0.8rem; color:#047857;\">● REAL-TIME AUDIT ACTIVE</span>",
+  "ru": "<span style=\"font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-rose);\">Antigravity Electrodynamics Telemetry Inspector [Live Stream]</span> <span style=\"font-size:0.8rem; color:#047857;\">● REAL-TIME AUDIT ACTIVE</span>",
+  "en": "<span style=\"font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-rose);\">Antigravity Electrodynamics Telemetry Inspector [Live Stream]</span> <span style=\"font-size:0.8rem; color:#047857;\">● REAL-TIME AUDIT ACTIVE</span>"
+ },
+ {
+  "k": "b5138bb5",
+  "s": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Electrodynamics va Audio Pipeline Inspector...\n[AUDIT: GAUSS-LAW] Surface Integral Flux: ∮E·dA = 452.1 V·m | Total Enclosed Charge: Q = 4.00 nC -&gt; [MATCH 99.8%]\n[FARADAY-CHECK] Rate of Flux Change: dPhi/dt = 12.4 mVb/s | Induced EMF: E_ind = -0.496 V -&gt; [LENZ LAW VERIFIED]\n[RLC-CIRCUIT-AUDIT] Resistance R=20Ω, L=150mH, C=120µF | Resonant Frequency f0 = 37.5 Hz | Phase Drift: 0.0001 rad\n[AUDIO-SYNC-CHECK] Speech Stream: 24kHz HD | Narration-to-Canvas latency: 4.2ms -&gt; [PERFECT MULTIMODAL SYNC]\n[STATUS] ALL 5 ELECTRODYNAMICS DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.",
+  "ru": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Electrodynamics va Audio Pipeline Inspector...\n[AUDIT: GAUSS-LAW] Surface Integral Flux: ∮E·dA = 452.1 V·m | Total Enclosed Charge: Q = 4.00 nC -&gt; [MATCH 99.8%]\n[FARADAY-CHECK] Rate of Flux Change: dPhi/dt = 12.4 mVb/s | Induced EMF: E_ind = -0.496 V -&gt; [LENZ LAW VERIFIED]\n[RLC-CIRCUIT-AUDIT] Resistance R=20Ω, L=150mH, C=120µF | Resonant Frequency f0 = 37.5 Hz | Phase Drift: 0.0001 rad\n[AUDIO-SYNC-CHECK] Speech Stream: 24kHz HD | Narration-to-Canvas latency: 4.2ms -&gt; [PERFECT MULTIMODAL SYNC]\n[STATUS] ALL 5 ELECTRODYNAMICS DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.",
+  "en": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Electrodynamics va Audio Pipeline Inspector...\n[AUDIT: GAUSS-LAW] Surface Integral Flux: ∮E·dA = 452.1 V·m | Total Enclosed Charge: Q = 4.00 nC -&gt; [MATCH 99.8%]\n[FARADAY-CHECK] Rate of Flux Change: dPhi/dt = 12.4 mVb/s | Induced EMF: E_ind = -0.496 V -&gt; [LENZ LAW VERIFIED]\n[RLC-CIRCUIT-AUDIT] Resistance R=20Ω, L=150mH, C=120µF | Resonant Frequency f0 = 37.5 Hz | Phase Drift: 0.0001 rad\n[AUDIO-SYNC-CHECK] Speech Stream: 24kHz HD | Narration-to-Canvas latency: 4.2ms -&gt; [PERFECT MULTIMODAL SYNC]\n[STATUS] ALL 5 ELECTRODYNAMICS DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS."
+ },
+ {
+  "k": "838d3eeb",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Loyiha Monitoringi Asosi (5-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы мониторинга проекта (раздел 5):",
+  "en": "🌐 WWW scholarly sources and project monitoring basis (Section 5):"
+ },
+ {
+  "k": "06953433",
+  "s": "Jackson, J. D. (1999).",
+  "ru": "Jackson, J. D. (1999).",
+  "en": "Jackson, J. D. (1999)."
+ },
+ {
+  "k": "308b9cd8",
+  "s": "Classical Electrodynamics",
+  "ru": "Classical Electrodynamics",
+  "en": "Classical Electrodynamics"
+ },
+ {
+  "k": "743b83f5",
+  "s": "(3rd ed.). John Wiley va Sons.",
+  "ru": "(3rd ed.). John Wiley & Sons.",
+  "en": "(3rd ed.). John Wiley & Sons."
+ },
+ {
+  "k": "d2581544",
+  "s": "Klassik elektrodinamika tenglamalarini raqamli modellashtirishda energiya va impuls saqlanish qonunlarining qat’iy tekshiruvi simulyatsiyaning fizik adekvatligini kafolatlaydi.",
+  "ru": "При численном моделировании уравнений классической электродинамики строгая проверка законов сохранения энергии и импульса гарантирует физическую адекватность симуляции.",
+  "en": "When modelling the equations of classical electrodynamics numerically, strictly checking the conservation of energy and momentum guarantees the simulation’s physical adequacy."
+ },
+ {
+  "k": "cbe5fd95",
+  "s": "6. Interaktiv elektrodinamika va audio-narratsiya laboratoriyasi",
+  "ru": "6. Интерактивная лаборатория электродинамики и аудионаррации",
+  "en": "6. Interactive electrodynamics and audio-narration lab"
+ },
+ {
+  "k": "40e74f99",
+  "s": "HTML5 Canvas, dynamic telemetry va audio narration sandbox",
+  "ru": "HTML5 Canvas, динамическая телеметрия и песочница аудионаррации",
+  "en": "HTML5 Canvas, dynamic telemetry and an audio-narration sandbox"
+ },
+ {
+  "k": "8e77067a",
+  "s": "Quyidagi laboratoriyada siz <strong>Kulon elektrostatik maydoni</strong>, <strong>Faradey elektromagnit induksiyasi</strong>, <strong>RLC o‘zgaruvchan tok zanjiri</strong> va <strong>Muxlisa AI ilmiy audio-narratsiyasi</strong> sinxron ishlashini mustaqil boshqarishingiz mumkin!",
+  "ru": "В лаборатории ниже вы можете самостоятельно управлять синхронной работой <strong>электростатического поля Кулона</strong>, <strong>электромагнитной индукции Фарадея</strong>, <strong>RLC-цепи переменного тока</strong> и <strong>научной аудионаррации Muxlisa AI</strong>!",
+  "en": "In the lab below you can control the <strong>Coulomb electrostatic field</strong>, <strong>Faraday electromagnetic induction</strong>, an <strong>AC RLC circuit</strong> and <strong>Muxlisa AI scientific audio narration</strong>, all working in sync!"
+ },
+ {
+  "k": "c0f0c098",
+  "s": "Eksperiment Rejimi:",
+  "ru": "Режим эксперимента:",
+  "en": "Experiment mode:"
+ },
+ {
+  "k": "58d2bd8d",
+  "s": "⚡ 1-rejim: Kulon maydoni",
+  "ru": "⚡ Режим 1: поле Кулона",
+  "en": "⚡ Mode 1: Coulomb field"
+ },
+ {
+  "k": "f59542b0",
+  "s": "🧲 2-rejim: Faradey induksiyasi",
+  "ru": "🧲 Режим 2: индукция Фарадея",
+  "en": "🧲 Mode 2: Faraday induction"
+ },
+ {
+  "k": "4a3c2f3d",
+  "s": "🔌 3-rejim: RLC zanjiri",
+  "ru": "🔌 Режим 3: RLC-цепь",
+  "en": "🔌 Mode 3: RLC circuit"
+ },
+ {
+  "k": "23e79360",
+  "s": "🎙️ Muxlisa AI audio tushuntirish",
+  "ru": "🎙️ Аудиообъяснение Muxlisa AI",
+  "en": "🎙️ Muxlisa AI audio explanation"
+ },
+ {
+  "k": "b7145644",
+  "s": "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> To‘xtatish",
+  "ru": "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Остановить",
+  "en": "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Stop"
+ },
+ {
+  "k": "df94eb33",
+  "s": "<span style=\"font-size: 1.15rem; line-height: 1;\">↺</span> Qayta boshlash",
+  "ru": "<span style=\"font-size: 1.15rem; line-height: 1;\">↺</span> Перезапустить",
+  "en": "<span style=\"font-size: 1.15rem; line-height: 1;\">↺</span> Restart"
+ },
+ {
+  "k": "ceaceb28",
+  "s": "1-Zaryad ($q_1$):",
+  "ru": "Заряд 1 ($q_1$):",
+  "en": "Charge 1 ($q_1$):"
+ },
+ {
+  "k": "b231f0d3",
+  "s": "+2.0 nKl",
+  "ru": "+2.0 nKl",
+  "en": "+2.0 nKl"
+ },
+ {
+  "k": "fa9ede2e",
+  "s": "2-Zaryad ($q_2$):",
+  "ru": "Заряд 2 ($q_2$):",
+  "en": "Charge 2 ($q_2$):"
+ },
+ {
+  "k": "58355bad",
+  "s": "-2.0 nKl",
+  "ru": "-2.0 nKl",
+  "en": "-2.0 nKl"
+ },
+ {
+  "k": "251a48af",
+  "s": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 Maslahat: Zaryadlarni sichqoncha bilan ushlab harakatlantiring! </span>",
+  "ru": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 Совет: перетаскивайте заряды мышью! </span>",
+  "en": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 Tip: drag the charges with the mouse! </span>"
+ },
+ {
+  "k": "6d0b25cf",
+  "s": "G‘altak O‘ramlari ($N$):",
+  "ru": "Витки катушки ($N$):",
+  "en": "Coil turns ($N$):"
+ },
+ {
+  "k": "cc4e25a2",
+  "s": "4 ta",
+  "ru": "4 шт.",
+  "en": "4"
+ },
+ {
+  "k": "5017c03d",
+  "s": "Magnit Harakat Tezligi:",
+  "ru": "Скорость движения магнита:",
+  "en": "Magnet speed:"
+ },
+ {
+  "k": "37013a62",
+  "s": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 Maslahat: Magnitni qo‘lda surib, Lens qoidasini tekshiring! </span>",
+  "ru": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 Совет: двигайте магнит вручную и проверьте правило Ленца! </span>",
+  "en": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 Tip: move the magnet by hand and check Lenz’s rule! </span>"
+ },
+ {
+  "k": "79a2e3e6",
+  "s": "Qarshilik ($R$):",
+  "ru": "Сопротивление ($R$):",
+  "en": "Resistance ($R$):"
+ },
+ {
+  "k": "0c34daba",
+  "s": "Induktivlik ($L$):",
+  "ru": "Индуктивность ($L$):",
+  "en": "Inductance ($L$):"
+ },
+ {
+  "k": "af006a96",
+  "s": "150 mH",
+  "ru": "150 мГн",
+  "en": "150 mH"
+ },
+ {
+  "k": "d2b453c4",
+  "s": "Sig‘im ($C$):",
+  "ru": "Ёмкость ($C$):",
+  "en": "Capacitance ($C$):"
+ },
+ {
+  "k": "55dd2395",
+  "s": "Chastota ($f$):",
+  "ru": "Частота ($f$):",
+  "en": "Frequency ($f$):"
+ },
+ {
+  "k": "90c97e06",
+  "s": "50 Hz",
+  "ru": "50 Гц",
+  "en": "50 Hz"
+ },
+ {
+  "k": "64d665e0",
+  "s": "Maydon Kuchlanganligi (E)",
+  "ru": "Напряжённость поля (E)",
+  "en": "Field strength (E)"
+ },
+ {
+  "k": "7d7af047",
+  "s": "0.0 N/Kl",
+  "ru": "0.0 Н/Кл",
+  "en": "0.0 N/C"
+ },
+ {
+  "k": "a4da23ff",
+  "s": "Potensial (V)",
+  "ru": "Потенциал (V)",
+  "en": "Potential (V)"
+ },
+ {
+  "k": "3a5968c8",
+  "s": "Sinov Zaryadi (q0)",
+  "ru": "Пробный заряд (q0)",
+  "en": "Test charge (q0)"
+ },
+ {
+  "k": "cad8343e",
+  "s": "+0.5 nKl",
+  "ru": "+0.5 nKl",
+  "en": "+0.5 nKl"
+ },
+ {
+  "k": "5b78d475",
+  "s": "Zaryad Tezligi (v)",
+  "ru": "Скорость заряда (v)",
+  "en": "Charge speed (v)"
+ },
+ {
+  "k": "67157cdf",
+  "s": "🎮 1. Elektrodinamikaning asosiy animatsiya maydoni:",
+  "ru": "🎮 1. Основное поле анимации электродинамики:",
+  "en": "🎮 1. Main electrodynamics animation area:"
+ },
+ {
+  "k": "8a0a250c",
+  "s": "Qizil — musbat (+q), moviy — manfiy (−q), sariq — sinov zaryadi / lampochka yorug‘ligi.",
+  "ru": "Красный — положительный (+q), синий — отрицательный (−q), жёлтый — пробный заряд / свечение лампочки.",
+  "en": "Red — positive (+q), blue — negative (−q), yellow — test charge / bulb glow."
+ },
+ {
+  "k": "68df66ff",
+  "s": "📊 2. Real vaqtdagi potensial / induksiya / ossillograf grafigi:",
+  "ru": "📊 2. График потенциала / индукции / осциллографа в реальном времени:",
+  "en": "📊 2. Real-time potential / induction / oscilloscope plot:"
+ },
+ {
+  "k": "23d0a34d",
+  "s": "Grafik: kuchlanish $U(t)$ va tok $I(t)$ ning fazaviy siljishi hamda maydon profili.",
+  "ru": "График: фазовый сдвиг напряжения $U(t)$ и тока $I(t)$, а также профиль поля.",
+  "en": "Plot: the phase shift between voltage $U(t)$ and current $I(t)$, plus the field profile."
+ },
+ {
+  "k": "181d9643",
+  "s": "PhET Interactive Simulations va Vascak.cz elektrodinamika xabi",
+  "ru": "Центр электродинамики PhET Interactive Simulations и Vascak.cz",
+  "en": "PhET Interactive Simulations and Vascak.cz electrodynamics hub"
+ },
+ {
+  "k": "3678e659",
+  "s": "🔗 Yangi Oynada Ochish",
+  "ru": "🔗 Открыть в новом окне",
+  "en": "🔗 Open in a new window"
+ },
+ {
+  "k": "cc676a0d",
+  "s": "⛶ To‘liq ekran",
+  "ru": "⛶ На весь экран",
+  "en": "⛶ Full screen"
+ },
+ {
+  "k": "97722984",
+  "s": "Quyidagi interaktiv oynada <strong>PhET (Faraday’s Law, Charges and Fields, Circuit DC, Magnet va Compass)</strong> va <strong>Vascak.cz (Coulomb, Faraday, Lorentz, Ohm)</strong> xalqaro virtual laboratoriyalarini to‘g‘ridan-to‘g‘ri ishlating:",
+  "ru": "В интерактивном окне ниже напрямую запускайте международные виртуальные лаборатории <strong>PhET (Faraday’s Law, Charges and Fields, Circuit DC, Magnet & Compass)</strong> и <strong>Vascak.cz (Coulomb, Faraday, Lorentz, Ohm)</strong>:",
+  "en": "Run the international virtual labs <strong>PhET (Faraday’s Law, Charges and Fields, Circuit DC, Magnet & Compass)</strong> and <strong>Vascak.cz (Coulomb, Faraday, Lorentz, Ohm)</strong> directly in the interactive window below:"
+ },
+ {
+  "k": "428b9afa",
+  "s": "🧲 PhET: Faraday’s law",
+  "ru": "🧲 PhET: Faraday’s law",
+  "en": "🧲 PhET: Faraday’s law"
+ },
+ {
+  "k": "7a7975ce",
+  "s": "⚡ PhET: Charges and Fields",
+  "ru": "⚡ PhET: Charges and Fields",
+  "en": "⚡ PhET: Charges and Fields"
+ },
+ {
+  "k": "8f1260db",
+  "s": "🔌 PhET: circuit DC",
+  "ru": "🔌 PhET: circuit DC",
+  "en": "🔌 PhET: circuit DC"
+ },
+ {
+  "k": "81fb55e2",
+  "s": "🧭 PhET: magnet va compass",
+  "ru": "🧭 PhET: magnet и compass",
+  "en": "🧭 PhET: magnet & compass"
+ },
+ {
+  "k": "8dc4fabd",
+  "s": "🔄 Qo‘shimcha reklamasiz simulyatsiyalar (PhET va sayt ichidagi):",
+  "ru": "🔄 Дополнительные симуляции без рекламы (PhET и на сайте):",
+  "en": "🔄 More ad-free simulations (PhET and on this site):"
+ },
+ {
+  "k": "979cda5c",
+  "s": "⚡ PhET: Kulon qonuni",
+  "ru": "⚡ PhET: закон Кулона",
+  "en": "⚡ PhET: Coulomb’s law"
+ },
+ {
+  "k": "18a765bd",
+  "s": "🧲 PhET: Faradey laboratoriyasi",
+  "ru": "🧲 PhET: лаборатория Фарадея",
+  "en": "🧲 PhET: Faraday lab"
+ },
+ {
+  "k": "fd667aef",
+  "s": "🔄 Lorens kuchi (lokal)",
+  "ru": "🔄 Сила Лоренца (локально)",
+  "en": "🔄 Lorentz force (local)"
+ },
+ {
+  "k": "d37c3135",
+  "s": "📐 PhET: Om qonuni",
+  "ru": "📐 PhET: закон Ома",
+  "en": "📐 PhET: Ohm’s law"
+ },
+ {
+  "k": "7d5a493a",
+  "s": "🧲 PhET Interactive Simulations: Faraday’s law (elektromagnit induksiya)",
+  "ru": "🧲 PhET Interactive Simulations: Faraday’s law (электромагнитная индукция)",
+  "en": "🧲 PhET Interactive Simulations: Faraday’s law (electromagnetic induction)"
+ },
+ {
+  "k": "53662fdc",
+  "s": "PhET HTML5",
+  "ru": "PhET HTML5",
+  "en": "PhET HTML5"
+ },
+ {
+  "k": "6b7b2b2d",
+  "s": "Faradeyning elektromagnit induksiya qonuni, doimiy magnitning g‘altak ichidagi harakati, magnit oqimi o‘zgarishi va induksiyalangan elektr yurituvchi kuch (E.Yu.K.) dinamikasi.",
+  "ru": "Закон электромагнитной индукции Фарадея, движение постоянного магнита в катушке, изменение магнитного потока и динамика индуцированной электродвижущей силы (ЭДС).",
+  "en": "Faraday’s law of electromagnetic induction, a permanent magnet moving in a coil, the change in magnetic flux and the dynamics of the induced electromotive force (EMF)."
+ },
+ {
+  "k": "1b522fc4",
+  "s": "$$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad \\Phi_B = \\int \\vec{B} \\cdot \\mathrm{d}\\vec{A} = B A \\cos\\theta, \\quad I = \\frac{\\mathcal{E}}{R}$$",
+  "ru": "$$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad \\Phi_B = \\int \\vec{B} \\cdot \\mathrm{d}\\vec{A} = B A \\cos\\theta, \\quad I = \\frac{\\mathcal{E}}{R}$$",
+  "en": "$$\\mathcal{E} = -N \\frac{\\mathrm{d}\\Phi_B}{\\mathrm{d}t}, \\quad \\Phi_B = \\int \\vec{B} \\cdot \\mathrm{d}\\vec{A} = B A \\cos\\theta, \\quad I = \\frac{\\mathcal{E}}{R}$$"
+ },
+ {
+  "k": "07077f61",
+  "s": "📋 Bajarilishi kerak bo‘lgan virtual laboratoriya topshiriqlari:",
+  "ru": "📋 Задания виртуальной лаборатории:",
+  "en": "📋 Virtual lab tasks:"
+ },
+ {
+  "k": "1ea7ad42",
+  "s": "1. Magnitning N qutbini g‘altak ichiga kiriting va voltmetr ko‘rsatkichining qaysi tomonga og‘ishini qayd eting.",
+  "ru": "1. Введите северный полюс магнита в катушку и запишите, в какую сторону отклоняется стрелка вольтметра.",
+  "en": "1. Push the magnet’s N pole into the coil and record which way the voltmeter needle swings."
+ },
+ {
+  "k": "42217200",
+  "s": "2. Magnitni g‘altak ichida harakatsiz ushlab turing va nega E.Yu.K. nolga teng bo‘lishini tushuntiring.",
+  "ru": "2. Держите магнит неподвижно внутри катушки и объясните, почему ЭДС равна нулю.",
+  "en": "2. Hold the magnet still inside the coil and explain why the EMF is zero."
+ },
+ {
+  "k": "b86e50f7",
+  "s": "3. G‘altak o‘ramlari sonini 2 tadan 4 taga oshirib, hosil bo‘layotgan kuchlanish 2 barobar ortishini tekshiring.",
+  "ru": "3. Увеличьте число витков катушки с 2 до 4 и проверьте, что наводимое напряжение возрастает в 2 раза.",
+  "en": "3. Increase the coil turns from 2 to 4 and check that the induced voltage doubles."
+ },
+ {
+  "k": "c48a21d7",
+  "s": "1. PhET dekonstruksiyasi",
+  "ru": "1. Деконструкция PhET",
+  "en": "1. PhET deconstruction"
+ },
+ {
+  "k": "e0844429",
+  "s": "2. Claude maydon va zanjir kodi",
+  "ru": "2. Код поля и цепи Claude",
+  "en": "2. Claude field and circuit code"
+ },
+ {
+  "k": "9bdac17f",
+  "s": "3. Muxlisa AI audio sintezi",
+  "ru": "3. Аудиосинтез Muxlisa AI",
+  "en": "3. Muxlisa AI audio synthesis"
+ },
+ {
+  "k": "ae08701a",
+  "s": "4. Antigravity telemetriya auditi",
+  "ru": "4. Аудит телеметрии Antigravity",
+  "en": "4. Antigravity telemetry audit"
+ },
+ {
+  "k": "230da7bd",
+  "s": "de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).",
+  "ru": "de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).",
+  "en": "de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013)."
+ },
+ {
+  "k": "34be031c",
+  "s": "Physical and Virtual Laboratories in Science and Engineering Education",
+  "ru": "Physical and Virtual Laboratories in Science and Engineering Education",
+  "en": "Physical and Virtual Laboratories in Science and Engineering Education"
+ },
+ {
+  "k": "a49fe38d",
+  "s": ". Science, 340(6130), 305-308.",
+  "ru": ". Science, 340(6130), 305-308.",
+  "en": ". Science, 340(6130), 305-308."
+ },
+ {
+  "k": "855e1022",
+  "s": "https://doi.org/10.1126/science.1230579",
+  "ru": "https://doi.org/10.1126/science.1230579",
+  "en": "https://doi.org/10.1126/science.1230579"
+ },
+ {
+  "k": "ae3819cc",
+  "s": "Virtual elektrodinamika laboratoriyalari va ovozli izohlar talabalarda zanjir topologiyasi va maydon qonuniyatlarini tushunish tezligini 33% ga oshiradi.",
+  "ru": "Виртуальные лаборатории электродинамики и голосовые пояснения повышают у студентов скорость понимания топологии цепей и закономерностей поля на 33%.",
+  "en": "Virtual electrodynamics labs and spoken explanations speed up students’ understanding of circuit topology and field laws by 33%."
+ },
+ {
+  "k": "c5687538",
+  "s": "7. Diagnostik test va ilmiy-metodik manbalar",
+  "ru": "7. Диагностический тест и научно-методические источники",
+  "en": "7. Diagnostic test and scholarly sources"
+ },
+ {
+  "k": "d0777797",
+  "s": "🧠 14-ma’ruza diagnostik testi (3 ta kognitiv savol):",
+  "ru": "🧠 Диагностический тест к лекции 14 (3 когнитивных вопроса):",
+  "en": "🧠 Lecture 14 diagnostic test (3 cognitive questions):"
+ },
+ {
+  "k": "2d84a3a2",
+  "s": "1-Savol: Kulon qonuniga ko‘ra, ikki nuqtaviy zaryad orasidagi masofa $r$ 3 marta kamaytirilsa, ularning o‘zaro ta’sir kuchi $F$ qanday o‘zgaradi?",
+  "ru": "Вопрос 1: Как, согласно закону Кулона, изменится сила взаимодействия $F$ двух точечных зарядов, если расстояние между ними $r$ уменьшить в 3 раза?",
+  "en": "Question 1: According to Coulomb’s law, how does the force $F$ between two point charges change if the distance between them $r$ is reduced 3-fold?"
+ },
+ {
+  "k": "8c208806",
+  "s": "A) 3 marta ortadi",
+  "ru": "A) Увеличится в 3 раза",
+  "en": "A) It triples"
+ },
+ {
+  "k": "a50cf651",
+  "s": "B) 9 marta ortadi",
+  "ru": "B) Увеличится в 9 раз",
+  "en": "B) It increases 9-fold"
+ },
+ {
+  "k": "6db7a0da",
+  "s": "C) 3 marta kamayadi",
+  "ru": "C) Уменьшится в 3 раза",
+  "en": "C) It decreases 3-fold"
+ },
+ {
+  "k": "516a25f8",
+  "s": "2-Savol: Faradeyning elektromagnit induksiya qonunida Lens qoidasi nimani ifodalaydi va formulada qaysi belgi orqali aks etadi?",
+  "ru": "Вопрос 2: Что выражает правило Ленца в законе электромагнитной индукции Фарадея и каким знаком оно отражено в формуле?",
+  "en": "Question 2: What does Lenz’s rule express in Faraday’s law of electromagnetic induction, and which sign represents it in the formula?"
+ },
+ {
+  "k": "8ffe7dd6",
+  "s": "A) Induksiyalangan tok o‘zining magnit maydoni bilan uni hosil qiluvchi oqim o‘zgarishiga qarshilik ko‘rsatadi (minus ishorasi: $\\mathcal{E} = -\\mathrm{d}\\Phi/\\mathrm{d}t$)",
+  "ru": "A) Индуцированный ток своим магнитным полем противодействует изменению создающего его потока (знак минус: $\\mathcal{E} = -\\mathrm{d}\\Phi/\\mathrm{d}t$)",
+  "en": "A) The induced current’s magnetic field opposes the change in the flux that produces it (the minus sign: $\\mathcal{E} = -\\mathrm{d}\\Phi/\\mathrm{d}t$)"
+ },
+ {
+  "k": "8c17cb57",
+  "s": "B) Induksiyalangan tok magnit harakatini doimo tezlashtiradi (musbat ishora)",
+  "ru": "B) Индуцированный ток всегда ускоряет движение магнита (знак плюс)",
+  "en": "B) The induced current always speeds up the magnet (plus sign)"
+ },
+ {
+  "k": "da2dad6b",
+  "s": "C) Zanjirning elektr qarshiligi doimiy ekanligini ifodalaydi",
+  "ru": "C) Выражает постоянство электрического сопротивления цепи",
+  "en": "C) It expresses that the circuit’s resistance is constant"
+ },
+ {
+  "k": "fc7c5047",
+  "s": "D) Magnit oqimi har doim nolga teng bo‘lishini ko‘rsatadi",
+  "ru": "D) Показывает, что магнитный поток всегда равен нулю",
+  "en": "D) It shows that the magnetic flux is always zero"
+ },
+ {
+  "k": "1c953aa1",
+  "s": "3-Savol: Ketma-ket ulangan RLC zanjirida rezonans chastotasi ($\\omega_0$) qaysi formula bo‘yicha aniqlanadi?",
+  "ru": "Вопрос 3: По какой формуле определяется резонансная частота ($\\omega_0$) последовательной RLC-цепи?",
+  "en": "Question 3: Which formula gives the resonant frequency ($\\omega_0$) of a series RLC circuit?"
+ },
+ {
+  "k": "edb18315",
+  "s": "A) $\\omega_0 = \\sqrt{L C}$",
+  "ru": "A) $\\omega_0 = \\sqrt{L C}$",
+  "en": "A) $\\omega_0 = \\sqrt{L C}$"
+ },
+ {
+  "k": "219d04df",
+  "s": "B) $\\omega_0 = \\frac{R}{L}$",
+  "ru": "B) $\\omega_0 = \\frac{R}{L}$",
+  "en": "B) $\\omega_0 = \\frac{R}{L}$"
+ },
+ {
+  "k": "8cf4a45c",
+  "s": "C) $\\omega_0 = \\frac{1}{\\sqrt{L C}}$",
+  "ru": "C) $\\omega_0 = \\frac{1}{\\sqrt{L C}}$",
+  "en": "C) $\\omega_0 = \\frac{1}{\\sqrt{L C}}$"
+ },
+ {
+  "k": "d60aa00d",
+  "s": "D) $\\omega_0 = \\frac{1}{R C}$",
+  "ru": "D) $\\omega_0 = \\frac{1}{R C}$",
+  "en": "D) $\\omega_0 = \\frac{1}{R C}$"
+ },
+ {
+  "k": "ca57705a",
+  "s": "✅ Natijani tekshirish",
+  "ru": "✅ Проверить результат",
+  "en": "✅ Check result"
+ },
+ {
+  "k": "bfea1954",
+  "s": "Black, P., va Wiliam, D. (2009).",
+  "ru": "Black, P., & Wiliam, D. (2009).",
+  "en": "Black, P., & Wiliam, D. (2009)."
+ },
+ {
+  "k": "2211e14e",
+  "s": "Developing the Theory of Formative Assessment",
+  "ru": "Developing the Theory of Formative Assessment",
+  "en": "Developing the Theory of Formative Assessment"
+ },
+ {
+  "k": "bb742829",
+  "s": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31.",
+  "ru": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31.",
+  "en": ". Educational Assessment, Evaluation and Accountability, 21(1), 5-31."
+ },
+ {
+  "k": "8d956244",
+  "s": "https://doi.org/10.1007/s11092-008-9068-5",
+  "ru": "https://doi.org/10.1007/s11092-008-9068-5",
+  "en": "https://doi.org/10.1007/s11092-008-9068-5"
+ },
+ {
+  "k": "1ffddf67",
+  "s": "Shakllantiruvchi baholash va tezkor qayta aloqa talabaning elektrodinamik tushunchalardagi xatolarini o‘z vaqtida tuzatishga imkon yaratadi.",
+  "ru": "Формирующее оценивание и оперативная обратная связь позволяют своевременно исправлять ошибки студента в электродинамических понятиях.",
+  "en": "Formative assessment and prompt feedback make it possible to correct students’ misconceptions in electrodynamics in time."
+ },
+ {
+  "k": "f6266779",
+  "s": "📚 14-ma’ruza bo‘yicha nufuzli ilmiy va didaktik manbalar (APA 7th Edition):",
+  "ru": "📚 Авторитетные научные и дидактические источники к лекции 14 (APA 7th Edition):",
+  "en": "📚 Authoritative scholarly and didactic sources for Lecture 14 (APA 7th Edition):"
+ },
+ {
+  "k": "f3abb349",
+  "s": "<strong>Griffiths, D. J. (2017).</strong> <em>Introduction to Electrodynamics</em> (4th ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108420419\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108420419</a>",
+  "ru": "<strong>Griffiths, D. J. (2017).</strong> <em>Introduction to Electrodynamics</em> (4th ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108420419\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108420419</a>",
+  "en": "<strong>Griffiths, D. J. (2017).</strong> <em>Introduction to Electrodynamics</em> (4th ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781108420419\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781108420419</a>"
+ },
+ {
+  "k": "2159605e",
+  "s": "<strong>Jackson, J. D. (1999).</strong> <em>Classical Electrodynamics</em> (3rd ed.). John Wiley va Sons.",
+  "ru": "<strong>Jackson, J. D. (1999).</strong> <em>Classical Electrodynamics</em> (3rd ed.). John Wiley & Sons.",
+  "en": "<strong>Jackson, J. D. (1999).</strong> <em>Classical Electrodynamics</em> (3rd ed.). John Wiley & Sons."
+ },
+ {
+  "k": "66b01594",
+  "s": "<strong>Feynman, R. P., Leighton, R. B., va Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. II: Mainly Electromagnetism and Matter</em>. Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu/II_toc.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu/II_toc.html</a>",
+  "ru": "<strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. II: Mainly Electromagnetism and Matter</em>. Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu/II_toc.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu/II_toc.html</a>",
+  "en": "<strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics, Vol. II: Mainly Electromagnetism and Matter</em>. Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu/II_toc.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu/II_toc.html</a>"
+ },
+ {
+  "k": "163ec21f",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>"
+ },
+ {
+  "k": "527dd484",
+  "s": "<strong>Purcell, E. M., va Morin, D. J. (2013).</strong> <em>Electricity and Magnetism</em> (3rd ed.). Cambridge University Press.",
+  "ru": "<strong>Purcell, E. M., & Morin, D. J. (2013).</strong> <em>Electricity and Magnetism</em> (3rd ed.). Cambridge University Press.",
+  "en": "<strong>Purcell, E. M., & Morin, D. J. (2013).</strong> <em>Electricity and Magnetism</em> (3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "d8d75389",
+  "s": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "ru": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "en": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>"
+ },
+ {
+  "k": "a7d3f595",
+  "s": "<strong>de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "ru": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "en": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305-308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>"
+ },
+ {
+  "k": "2e1da364",
+  "s": "<strong>Garrison, D. R., Anderson, T., va Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "ru": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "en": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2-3), 87-105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>"
+ },
+ {
+  "k": "6eaa9d4f",
+  "s": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "70d11540",
+  "s": "<strong>Sweller, J., van Merriënboer, J. J. G., va Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "ru": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "en": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261-292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>"
+ },
+ {
+  "k": "4a70bb90",
+  "s": "<strong>Black, P., va Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "ru": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "en": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5-31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>"
+ },
+ {
+  "k": "8b8bba00",
+  "s": "<strong>Rutten, N., van Joolingen, W. R., va van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers va Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "ru": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "en": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136-153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>"
+ },
+ {
+  "k": "d26b1d4a",
+  "s": "<strong>Hattie, J., va Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>",
+  "ru": "<strong>Hattie, J., & Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>",
+  "en": "<strong>Hattie, J., & Timperley, H. (2007).</strong> <em>The Power of Feedback</em>. Review of Educational Research, 77(1), 81-112. <a href=\"https://doi.org/10.3102/003465430298487\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.3102/003465430298487</a>"
+ },
+ {
+  "k": "6f7ea41f",
+  "s": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "ru": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "en": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64-70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>"
+ },
+ {
+  "k": "114c0115",
+  "s": "<strong>Maxwell, J. C. (1873).</strong> <em>A Treatise on Electricity and Magnetism</em>. Oxford: Clarendon Press.",
+  "ru": "<strong>Maxwell, J. C. (1873).</strong> <em>A Treatise on Electricity and Magnetism</em>. Oxford: Clarendon Press.",
+  "en": "<strong>Maxwell, J. C. (1873).</strong> <em>A Treatise on Electricity and Magnetism</em>. Oxford: Clarendon Press."
+ }
+]

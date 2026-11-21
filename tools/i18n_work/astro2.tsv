@@ -1,0 +1,93 @@
+51db8527	Дополнительная лекция A2 · Астрономия	Supplementary lecture A2 · Astronomy
+a39b8f25	Законы Кирхгофа, законы Планка, Вина и Стефана–Больцмана, серия Бальмера водорода и определение химического состава, измерение лучевой скорости и расширения Вселенной по доплеровскому смещению. Лабораторная работа с интерактивной моделью спектра, самодельным CD-спектроскопом и данными SDSS.	Kirchhoff’s laws; the Planck, Wien and Stefan–Boltzmann laws; hydrogen’s Balmer series and determining chemical composition; measuring radial velocity and the expansion of the Universe from Doppler shifts. A lab with an interactive spectrum model, a homemade CD spectroscope and SDSS data.
+23c60bd1	До звезды добраться нельзя, но, разложив её свет, можно узнать о её <strong>температуре, химическом составе, скорости и даже планетах вокруг неё</strong>. Спектральный анализ — основной наблюдательный метод астрофизики. В этой лекции изучаются излучение чёрного тела, происхождение спектральных линий и доплеровское смещение.	We cannot travel to a star, but by splitting its light we can learn its <strong>temperature, chemical composition, velocity and even the planets around it</strong>. Spectral analysis is astrophysics’ main observational method. This lecture covers black-body radiation, where spectral lines come from and the Doppler shift.
+ca1d5cc9	2.1. Законы Кирхгофа: типы спектров	2.1. Kirchhoff’s laws: types of spectra
+a1bfe1cb	<strong>Сплошной спектр</strong> — нагретое плотное тело (твёрдое тело, жидкость, плотный газ) излучает на всех длинах волн.	<strong>Continuous spectrum</strong> — a hot dense body (solid, liquid or dense gas) radiates at all wavelengths.
+88a23c76	<strong>Спектр излучения (эмиссионный)</strong> — разреженный горячий газ даёт яркие линии только на определённых длинах волн (например, газовые туманности).	<strong>Emission spectrum</strong> — a hot thin gas gives bright lines only at certain wavelengths (gas nebulae, for example).
+41be0c3a	<strong>Спектр поглощения (абсорбционный)</strong> — если сплошной свет проходит через более холодный разреженный газ, появляются тёмные линии именно на тех длинах волн, которые излучает этот газ. К этому типу относятся спектры звёзд: свет горячей фотосферы поглощается в более холодном слое атмосферы.	<strong>Absorption spectrum</strong> — when continuous light passes through a cooler thin gas, dark lines appear at exactly the wavelengths that gas would emit. Stellar spectra are of this type: light from the hot photosphere is absorbed in a cooler atmospheric layer.
+2e29b68a	2.2. Излучение чёрного тела	2.2. Black-body radiation
+398c83f3	Спектральная энергетическая яркость абсолютно чёрного тела выражается законом Планка:	A black body’s spectral radiance is given by Planck’s law:
+2445cd55	Здесь ⟦1⟧ Дж·с — постоянная Планка, ⟦2⟧ Дж/К — постоянная Больцмана, ⟦3⟧ — скорость света. Из кривой Планка следуют два важных результата:	Here ⟦1⟧ J·s is Planck’s constant, ⟦2⟧ J/K is Boltzmann’s constant and ⟦3⟧ is the speed of light. Two important results follow from the Planck curve:
+f5a74b38	<strong>Пример.</strong> Для Солнца ⟦1⟧ К: ⟦2⟧ нм — сине-зелёная часть спектра. Для Бетельгейзе (⟦3⟧ К) ⟦4⟧ нм — близко к инфракрасной области, поэтому звезда выглядит красной.	<strong>Example.</strong> For the Sun, ⟦1⟧ K: ⟦2⟧ nm — the blue-green part of the spectrum. For Betelgeuse (⟦3⟧ K), ⟦4⟧ nm — close to the infrared, which is why the star looks red.
+a33f1e6f	2.3. Спектральные линии и химический состав	2.3. Spectral lines and chemical composition
+b557878b	Атом каждого химического элемента поглощает или излучает только фотоны, соответствующие переходам между его энергетическими уровнями. Для линий атома водорода в видимой области (серия Бальмера):	Each element’s atoms absorb or emit only photons matching transitions between their own energy levels. For the hydrogen atom’s visible lines (the Balmer series):
+3862b432	Линия	Line
+63d44347	Элемент, переход	Element, transition
+a57d3e93	λ (в воздухе), нм	λ (in air), nm
+5ccfa2ee	Примечание	Note
+760c645b	Красная; придаёт цвет туманностям	Red; gives nebulae their colour
+70c6e227	Сине-зелёная	Blue-green
+c1d7a67b	Синяя	Blue
+cea71119	Фиолетовая	Violet
+c4a8a4de	=	=
+633a1592	Натрий (дублет)	Sodium (doublet)
+eb1d43f5	589,00 и 589,59	589.00 and 589.59
+d96f86fa	В модели в среднем 589,29 нм	The model uses an average of 589.29 nm
+4524c4d0	=	=
+e92da162	Магний	Magnesium
+2baa1bd7	Сильна у звёзд, подобных Солнцу	Strong in Sun-like stars
+75bc7e8d	<strong>Ca II H и K</strong>	<strong>Ca II H and K</strong>
+a3cc07c1	Ионизованный кальций	Ionised calcium
+25898af9	396,85 и 393,37	396.85 and 393.37
+ea3e091d	Сильнее всего у звёзд классов G и K	Strongest in G and K stars
+213818fb	Сила линий зависит не только от количества элемента, но и от температуры: линии Бальмера водорода сильнее всего при ~10 000 К (класс A). В более горячих звёздах водород ионизуется, а в более холодных большинство атомов остаётся на основном уровне. Спектральные классы (O, B, A, F, G, K, M) построены именно на этом эффекте.	Line strength depends not only on how much of an element there is but also on temperature: hydrogen’s Balmer lines are strongest at ~10,000 K (class A). In hotter stars hydrogen is ionised, while in cooler ones most atoms stay in the ground state. The spectral classes (O, B, A, F, G, K, M) are built on exactly this effect.
+1d0ce1e1	2.4. Доплеровское смещение	2.4. The Doppler shift
+1b5a5d38	Если источник удаляется от наблюдателя, линии смещаются к красному краю, если приближается — к фиолетовому. Красное смещение ⟦1⟧ и лучевая скорость ⟦2⟧ (при ⟦3⟧):	If the source moves away from the observer the lines shift towards the red; if it approaches they shift towards the violet. The redshift ⟦1⟧ and radial velocity ⟦2⟧ (for ⟦3⟧):
+d56c3642	<strong>Применение:</strong>	<strong>Applications:</strong>
+0ff48f11	<strong>Двойные звёзды и экзопланеты.</strong> Периодические колебания линий звезды выдают невидимый спутник. В 1995 году этим методом была найдена первая экзопланета у звезды, подобной Солнцу (51 Пегаса b).	<strong>Binary stars and exoplanets.</strong> Periodic wobbles in a star’s lines reveal an unseen companion. In 1995 the first exoplanet around a Sun-like star (51 Pegasi b) was found this way.
+599a7b71	<strong>Вращение галактик</strong> — по кривой вращения делается вывод о тёмной материи.	<strong>Galaxy rotation</strong> — dark matter is inferred from the rotation curve.
+1dfd1a6d	<strong>Расширение Вселенной.</strong> Закон Хаббла: ⟦1⟧. Современные измерения дают диапазон ⟦2⟧–⟦3⟧ км/(с·Мпк); это расхождение между методами называется «напряжённостью Хаббла» и активно исследуется.	<strong>The expanding Universe.</strong> Hubble’s law: ⟦1⟧. Current measurements give a range of ⟦2⟧–⟦3⟧ km/(s·Mpc); this disagreement between methods is called the "Hubble tension" and is being actively studied.
+f82d1129	Меняйте температуру и лучевую скорость. Верхний график — кривая Планка (цветной фон — видимый диапазон), внизу — видимый спектр с линиями поглощения. Маленькие чёрные чёрточки показывают лабораторное (несмещённое) положение линий.	Change the temperature and radial velocity. The top plot is the Planck curve (the coloured background is the visible range); below is the visible spectrum with absorption lines. The small black ticks mark the lines’ laboratory (unshifted) positions.
+5f3c4d68	Температура фотосферы:	Photosphere temperature:
+cc0a80c0	Лучевая скорость (+ удаление):	Radial velocity (+ receding):
+d9ea3a99	0 км/с	0 km/s
+cf480fff	Показывать линии поглощения	Show absorption lines
+95086912	Упражнение: скорость неизвестного объекта	Exercise: the speed of an unknown object
+52024aec	Нажмите кнопку: модель покажет спектр объекта со случайными температурой и скоростью. По смещению линии Hα рассчитайте лучевую скорость (⟦1⟧, при больших скоростях используйте релятивистскую формулу) и проверьте свой ответ.	Press the button: the model shows the spectrum of an object with a random temperature and velocity. Calculate the radial velocity from the shift of the Hα line (⟦1⟧; at high speeds use the relativistic formula) and check your answer.
+dd4512a4	🔭 Неизвестный объект	🔭 Unknown object
+6ccaaf26	v, км/с	v, km/s
+60f34133	Проверить	Check
+3ef627c4	наблюдать спектры излучения самодельным спектроскопом, калибровать шкалу длин волн и определить красное смещение и расстояние галактики по открытым данным Слоановского цифрового обзора неба (SDSS).	observe emission spectra with a homemade spectroscope, calibrate the wavelength scale and find a galaxy’s redshift and distance from Sloan Digital Sky Survey (SDSS) open data.
+70970388	<strong>Необходимые инструменты (все бесплатные или найдутся дома):</strong> старый CD/DVD-диск, картонная коробка, камера смартфона; ⟨2⟩SDSS SkyServer⟨/2⟩; ⟨3⟩база атомных спектров NIST⟨/3⟩; Google Colab; бесплатный тариф Gemini, ChatGPT или Claude.	<strong>What you need (all free or found at home):</strong> an old CD/DVD, a cardboard box, a smartphone camera; ⟨2⟩SDSS SkyServer⟨/2⟩; the ⟨3⟩NIST atomic spectra database⟨/3⟩; Google Colab; the free tier of Gemini, ChatGPT or Claude.
+b00c0386	Часть A. CD-спектроскоп	Part A. A CD spectroscope
+d1e6eeed	На одном конце коробки сделайте узкую (≈1 мм) щель, а на противоположной стороне установите кусок CD под углом ~45°. Плотные дорожки на CD работают как дифракционная решётка (шаг дорожек на CD ≈ 1,6 мкм, на DVD ≈ 0,74 мкм).	Cut a narrow (≈1 mm) slit at one end of the box and fit a piece of CD at ~45° on the opposite side. The CD’s closely spaced tracks act as a diffraction grating (track spacing ≈ 1.6 µm on a CD and ≈ 0.74 µm on a DVD).
+d9235dcb	Сфотографируйте телефоном спектр компактной люминесцентной (энергосберегающей) лампы. Линии ртути — 404,7; 435,8; 546,1; 577,0 и 579,1 нм — служат эталоном для калибровки.	Photograph the spectrum of a compact fluorescent (energy-saving) lamp with your phone. The mercury lines — 404.7, 435.8, 546.1, 577.0 and 579.1 nm — are the calibration reference.
+a0870413	Измерьте на снимке положения линий (в пикселях) и составьте линейное калибровочное уравнение «пиксель → нм».	Measure the line positions in the image (in pixels) and write a linear "pixel → nm" calibration equation.
+0bbc4ce6	При тех же настройках получите спектры лампы накаливания (сплошной спектр) и облачного неба (спектр Солнца, фраунгоферовы линии). <em>Внимание: не смотрите прямо на Солнце!</em>	With the same settings, take spectra of an incandescent bulb (continuous spectrum) and a cloudy sky (the solar spectrum with Fraunhofer lines). <em>Warning: never look directly at the Sun!</em>
+226da48c	Часть B. Красное смещение галактики (SDSS)	Part B. A galaxy’s redshift (SDSS)
+59f40a37	В SkyServer с помощью инструмента «Explore» выберите какую-нибудь спиральную галактику со спектром и скачайте спектр (CSV или FITS).	In SkyServer, use the "Explore" tool to pick a spiral galaxy that has a spectrum and download the spectrum (CSV or FITS).
+487918b9	Определите наблюдаемую длину волны эмиссионных линий Hα (в воздухе 656,28 нм) и [O III] (в воздухе 500,68 нм). Учтите, что в спектрах SDSS длины волн даны для вакуума (в вакууме Hα — 656,46 нм, [O III] — 500,82 нм).	Find the observed wavelengths of the Hα (656.28 nm in air) and [O III] (500.68 nm in air) emission lines. Note that SDSS spectra give vacuum wavelengths (Hα is 656.46 nm and [O III] 500.82 nm in vacuum).
+42405e2d	Рассчитайте ⟦1⟧ и сравните результат со значением в каталоге SDSS.	Calculate ⟦1⟧ and compare the result with the SDSS catalogue value.
+faa39a3a	Оцените расстояние по закону Хаббла (⟦1⟧, ⟦2⟧ км/(с·Мпк)). Насколько различается расстояние при значениях ⟦3⟧ 67 и 73?	Estimate the distance with Hubble’s law (⟦1⟧, ⟦2⟧ km/(s·Mpc)). How much does the distance differ for ⟦3⟧ values of 67 and 73?
+70f43547	Часть C. Работа с ИИ	Part C. Working with AI
+f22b22c0	Дайте ИИ следующий промпт, проверьте полученный код в Colab и сверьте результат с законом Вина:	Give the AI the following prompt, test the code in Colab and check the result against Wien’s law:
+e1f068b9	ИИ часто забывает перевести длину волны из нанометров в метры или смешивает единицы в аргументе экспоненты. Проверьте каждую формулу по размерности и запишите найденные ошибки в журнал ИИ.	AI often forgets to convert wavelength from nanometres to metres or mixes units inside the exponential. Check every formula dimensionally and log the errors you find in your AI journal.
+bc1dfe4b	Спектроскоп и калибровка	Spectroscope and calibration
+23d17a4f	Калибровочное уравнение, его погрешность и снимки спектров	The calibration equation, its error and the spectrum photos
+7212584d	Красное смещение и расстояние	Redshift and distance
+118b0cb4	⟦1⟧, ⟦2⟧, ⟦3⟧ рассчитаны правильно; учтена разница вакуум/воздух	⟦1⟧, ⟦2⟧ and ⟦3⟧ calculated correctly; the vacuum/air difference accounted for
+3e527967	Код и графики	Code and plots
+2937752e	Подгонка функции Планка работает, графики полные	The Planck-function fit works and the plots are complete
+a92df06b	Промпты, ответы ИИ и исправленные ошибки	Prompts, AI answers and corrected errors
+578cf193	Результаты сравнены с литературными значениями	The results are compared with published values
+574e0972	Вопрос 1. Максимум излучения звезды приходится на 290 нм. Какова примерно температура её поверхности?	Question 1. A star’s emission peaks at 290 nm. Roughly what is its surface temperature?
+0639ce1f	Вопрос 2. Почему в спектре звезды образуются тёмные (абсорбционные) линии?	Question 2. Why do dark (absorption) lines form in a star’s spectrum?
+fdc84610	A) Свет фотосферы поглощается в более холодном слое атмосферы	A) Light from the photosphere is absorbed in a cooler atmospheric layer
+4c381040	B) Внутри звезды образуются нейтрино	B) Neutrinos are produced inside the star
+17006592	C) Линза телескопа поглощает свет	C) The telescope lens absorbs the light
+137cdc15	D) Магнитное поле звезды отклоняет свет	D) The star’s magnetic field bends the light
+4aa21c73	Вопрос 3. В спектре галактики линия Hα наблюдается на 669,4 нм вместо 656,3 нм. Какова примерно скорость галактики?	Question 3. In a galaxy’s spectrum the Hα line is seen at 669.4 nm instead of 656.3 nm. Roughly what is the galaxy’s velocity?
+178fad00	A) 600 км/с, приближается	A) 600 km/s, approaching
+440d6fa8	B) 6000 км/с, удаляется	B) 6000 km/s, receding
+5253133e	C) 60 000 км/с, удаляется	C) 60,000 km/s, receding
+4c07226d	D) 6000 км/с, приближается	D) 6000 km/s, approaching
+a5089afc	Вопрос 4. Почему линии Бальмера водорода у звёзд класса O слабее, чем у класса A?	Question 4. Why are hydrogen’s Balmer lines weaker in O stars than in A stars?
+b6a6ccfb	A) В звёздах класса O нет водорода	A) O stars contain no hydrogen
+ad5442a4	B) При очень высокой температуре водород в основном ионизован	B) At very high temperatures hydrogen is mostly ionised
+9799f95b	C) Звёзды класса O очень далеко от нас	C) O stars are very far from us
+60027276	D) Линии Бальмера бывают только в инфракрасной области	D) Balmer lines occur only in the infrared
+796774ce	Какой параметр экзопланеты нельзя определить методом лучевых скоростей и почему?	Which exoplanet parameter cannot be found with the radial velocity method, and why?
+5c5ea9f2	Почему цвет звезды (например, показатель B−V) несёт информацию о её температуре?	Why does a star’s colour (for example, its B−V index) tell us about its temperature?
+0953eadf	Как кривая вращения галактики указывает на существование тёмной материи?	How does a galaxy’s rotation curve point to the existence of dark matter?
+916b9fcb	=	=
+377e5aa0	У меня есть файл спектра: первый столбец — длина волны (нм), второй — поток.⏎1) Запиши функцию Планка в виде B_λ(T) = 2hc²/λ⁵ · 1/(exp(hc/λkT) − 1)⏎   (в единицах СИ, с постоянными h, c, k).⏎2) С помощью scipy.optimize.curve_fit найди температуру T и масштабный коэффициент.⏎3) По найденной T вычисли λ_max из закона Вина и покажи на графике.⏎4) Исключи из подгонки области линий поглощения (Hα, Hβ, Na D)⏎   и объясни, почему это нужно делать.	I have a spectrum file: the first column is wavelength (nm), the second is flux.⏎1) Write the Planck function as B_λ(T) = 2hc²/λ⁵ · 1/(exp(hc/λkT) − 1)⏎   (in SI units, with the constants h, c, k).⏎2) Use scipy.optimize.curve_fit to find the temperature T and a scale factor.⏎3) From the fitted T, compute λ_max with Wien’s law and show it on the plot.⏎4) Exclude the absorption-line regions (Hα, Hβ, Na D) from the fit⏎   and explain why this has to be done.

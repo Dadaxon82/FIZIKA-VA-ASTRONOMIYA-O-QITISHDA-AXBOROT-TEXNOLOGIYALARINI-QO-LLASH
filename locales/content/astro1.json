@@ -1,0 +1,740 @@
+[
+ {
+  "k": "a64aa137",
+  "s": "Yopish",
+  "ru": "Закрыть",
+  "en": "Close"
+ },
+ {
+  "k": "0b8086c4",
+  "s": "Qo‘shimcha ma’ruza A1 · Astronomiya",
+  "ru": "Дополнительная лекция A1 · Астрономия",
+  "en": "Supplementary lecture A1 · Astronomy"
+ },
+ {
+  "k": "72b8514c",
+  "s": "Yulduzlarning spektral sinflari, yorqinlik va harorat orasidagi bog‘lanish, massa–yorqinlik munosabati hamda turli massali yulduzlarning hayot yo‘li. Interaktiv G–R diagrammasi va Gaia kosmik teleskopining ochiq ma’lumotlari bilan laboratoriya ishi.",
+  "ru": "Спектральные классы звёзд, связь между светимостью и температурой, соотношение масса–светимость и жизненный путь звёзд разной массы. Лабораторная работа с интерактивной диаграммой Г–Р и открытыми данными космического телескопа Gaia.",
+  "en": "Stellar spectral classes, the relationship between luminosity and temperature, the mass–luminosity relation and the life paths of stars of different masses. A lab with an interactive H–R diagram and open data from the Gaia space telescope."
+ },
+ {
+  "k": "d02399a5",
+  "s": "Yulduz — o‘z og‘irlik kuchi ta’sirida siqilgan va markazida termoyadro reaksiyalari kechadigan gaz shar. Uning butun hayot yo‘li asosan bitta kattalik — <strong>boshlang‘ich massa</strong> bilan belgilanadi. Ushbu ma’ruzada yulduzlarni tasniflash, Gertsshprung–Rassel (G–R) diagrammasi va turli massali yulduzlar evolyutsiyasi o‘rganiladi.",
+  "ru": "Звезда — газовый шар, сжатый собственной силой тяжести, в центре которого идут термоядерные реакции. Весь её жизненный путь в основном определяется одной величиной — <strong>начальной массой</strong>. В этой лекции изучаются классификация звёзд, диаграмма Герцшпрунга–Рассела (Г–Р) и эволюция звёзд разной массы.",
+  "en": "A star is a ball of gas squeezed by its own gravity, with thermonuclear reactions running at its centre. Its whole life is set mainly by one quantity — its <strong>initial mass</strong>. This lecture covers stellar classification, the Hertzsprung–Russell (H–R) diagram and the evolution of stars of different masses."
+ },
+ {
+  "k": "3d69eaf8",
+  "s": "1.1. Yulduzning asosiy parametrlari",
+  "ru": "1.1. Основные параметры звезды",
+  "en": "1.1. A star’s basic parameters"
+ },
+ {
+  "k": "1a8612bb",
+  "s": "Yulduz sirtini absolyut qora jism deb olsak, uning yorqinligi (bir sekundda chiqaradigan to‘liq energiyasi) radius va effektiv harorat orqali ifodalanadi (Stefan–Bolsman qonuni):",
+  "ru": "Если считать поверхность звезды абсолютно чёрным телом, её светимость (полная энергия, излучаемая за секунду) выражается через радиус и эффективную температуру (закон Стефана–Больцмана):",
+  "en": "Treating the star’s surface as a black body, its luminosity (the total energy emitted per second) is given by its radius and effective temperature (the Stefan–Boltzmann law):"
+ },
+ {
+  "k": "318df52e",
+  "s": "$$L = 4\\pi R^2 \\sigma T_{\\text{eff}}^4, \\qquad \\sigma = 5{,}670 \\cdot 10^{-8}\\ \\text{Vt}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
+  "ru": "$$L = 4\\pi R^2 \\sigma T_{\\text{eff}}^4, \\qquad \\sigma = 5{,}670 \\cdot 10^{-8}\\ \\text{Vt}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
+  "en": "$$L = 4\\pi R^2 \\sigma T_{\\text{eff}}^4, \\qquad \\sigma = 5{,}670 \\cdot 10^{-8}\\ \\text{Vt}/(\\text{m}^2 \\cdot \\text{K}^4)$$"
+ },
+ {
+  "k": "f60e368e",
+  "s": "Quyosh uchun nominal qiymatlar (XAI, 2015): $L_\\odot = 3{,}828 \\cdot 10^{26}$ Vt, $R_\\odot = 6{,}957 \\cdot 10^{8}$ m, $T_\\odot = 5772$ K. Shu sababli yulduz parametrlarini Quyosh birliklarida yozish qulay:",
+  "ru": "Номинальные значения для Солнца (МАС, 2015): $L_\\odot = 3{,}828 \\cdot 10^{26}$ Вт, $R_\\odot = 6{,}957 \\cdot 10^{8}$ м, $T_\\odot = 5772$ К. Поэтому параметры звёзд удобно записывать в солнечных единицах:",
+  "en": "Nominal solar values (IAU, 2015): $L_\\odot = 3{,}828 \\cdot 10^{26}$ W, $R_\\odot = 6{,}957 \\cdot 10^{8}$ m, $T_\\odot = 5772$ K. It is therefore convenient to write stellar parameters in solar units:"
+ },
+ {
+  "k": "dc826115",
+  "s": "$$\\frac{L}{L_\\odot} = \\left(\\frac{R}{R_\\odot}\\right)^2 \\left(\\frac{T}{T_\\odot}\\right)^4$$",
+  "ru": "$$\\frac{L}{L_\\odot} = \\left(\\frac{R}{R_\\odot}\\right)^2 \\left(\\frac{T}{T_\\odot}\\right)^4$$",
+  "en": "$$\\frac{L}{L_\\odot} = \\left(\\frac{R}{R_\\odot}\\right)^2 \\left(\\frac{T}{T_\\odot}\\right)^4$$"
+ },
+ {
+  "k": "b437571a",
+  "s": "Yulduzning ko‘rinma kattaligi $m$ va absolyut kattaligi $M$ (10 pk masofadan ko‘rinadigan kattalik) masofa moduli orqali bog‘langan:",
+  "ru": "Видимая звёздная величина $m$ и абсолютная звёздная величина $M$ (величина, видимая с расстояния 10 пк) связаны через модуль расстояния:",
+  "en": "The apparent magnitude $m$ and the absolute magnitude $M$ (the magnitude seen from 10 pc) are linked by the distance modulus:"
+ },
+ {
+  "k": "62285990",
+  "s": "$$m - M = 5\\lg d - 5 \\quad (d \\text{ — parsekda}), \\qquad d = \\frac{1}{\\varpi} \\quad (\\varpi \\text{ — yillik parallaks, yoy sekundida})$$",
+  "ru": "$$m - M = 5\\lg d - 5 \\quad (d \\text{ — parsekda}), \\qquad d = \\frac{1}{\\varpi} \\quad (\\varpi \\text{ — yillik parallaks, yoy sekundida})$$",
+  "en": "$$m - M = 5\\lg d - 5 \\quad (d \\text{ — parsekda}), \\qquad d = \\frac{1}{\\varpi} \\quad (\\varpi \\text{ — yillik parallaks, yoy sekundida})$$"
+ },
+ {
+  "k": "500bbcb9",
+  "s": "1.2. Spektral sinflar",
+  "ru": "1.2. Спектральные классы",
+  "en": "1.2. Spectral classes"
+ },
+ {
+  "k": "0d27cb49",
+  "s": "Yulduzlar spektridagi chiziqlar asosan sirt haroratiga bog‘liq. Garvard tasnifi bo‘yicha sinflar haroratning kamayishi tartibida joylashadi: <strong>O, B, A, F, G, K, M</strong>. Har bir sinf 0 dan 9 gacha qismlarga bo‘linadi (masalan, Quyosh — G2). Yorqinlik sinfi rim raqami bilan beriladi: I — supergigantlar, III — gigantlar, V — asosiy ketma-ketlik (mitti) yulduzlar.",
+  "ru": "Линии в спектрах звёзд зависят в основном от температуры поверхности. По Гарвардской классификации классы располагаются в порядке убывания температуры: <strong>O, B, A, F, G, K, M</strong>. Каждый класс делится на подклассы от 0 до 9 (например, Солнце — G2). Класс светимости обозначается римской цифрой: I — сверхгиганты, III — гиганты, V — звёзды главной последовательности (карлики).",
+  "en": "The lines in stellar spectra depend mainly on surface temperature. In the Harvard classification the classes run in order of decreasing temperature: <strong>O, B, A, F, G, K, M</strong>. Each class is split into subclasses 0 to 9 (the Sun is G2, for example). The luminosity class is given as a Roman numeral: I — supergiants, III — giants, V — main-sequence (dwarf) stars."
+ },
+ {
+  "k": "997916d1",
+  "s": "Sinf",
+  "ru": "Класс",
+  "en": "Class"
+ },
+ {
+  "k": "18f826f5",
+  "s": "Harorat, K",
+  "ru": "Температура, К",
+  "en": "Temperature, K"
+ },
+ {
+  "k": "a711edbe",
+  "s": "Rangi",
+  "ru": "Rangi",
+  "en": "Rangi"
+ },
+ {
+  "k": "942378e4",
+  "s": "Spektrdagi asosiy chiziqlar",
+  "ru": "Основные линии в спектре",
+  "en": "Main spectral lines"
+ },
+ {
+  "k": "9fac18cb",
+  "s": "Namuna",
+  "ru": "Пример",
+  "en": "Example"
+ },
+ {
+  "k": "c557f7f7",
+  "s": "havorang",
+  "ru": "голубой",
+  "en": "blue"
+ },
+ {
+  "k": "0df24e75",
+  "s": "ionlashgan geliy (He II)",
+  "ru": "ионизованный гелий (He II)",
+  "en": "ionised helium (He II)"
+ },
+ {
+  "k": "8967a1bd",
+  "s": "Mintaka (δ Orion), O9.5",
+  "ru": "Минтака (δ Ориона), O9.5",
+  "en": "Mintaka (δ Orionis), O9.5"
+ },
+ {
+  "k": "66d2b66a",
+  "s": "ko‘kimtir-oq",
+  "ru": "голубовато-белый",
+  "en": "bluish-white"
+ },
+ {
+  "k": "feb1bde4",
+  "s": "neytral geliy (He I), vodorod",
+  "ru": "нейтральный гелий (He I), водород",
+  "en": "neutral helium (He I), hydrogen"
+ },
+ {
+  "k": "a645ecc8",
+  "s": "Rigel, B8 Ia",
+  "ru": "Ригель, B8 Ia",
+  "en": "Rigel, B8 Ia"
+ },
+ {
+  "k": "60342e3d",
+  "s": "oq",
+  "ru": "белый",
+  "en": "white"
+ },
+ {
+  "k": "bf12509d",
+  "s": "Balmer seriyasi eng kuchli",
+  "ru": "серия Бальмера сильнее всего",
+  "en": "the Balmer series is strongest"
+ },
+ {
+  "k": "0155a48e",
+  "s": "Vega, A0 V; Sirius A",
+  "ru": "Vega, A0 V; Sirius A",
+  "en": "Vega, A0 V; Sirius A"
+ },
+ {
+  "k": "69826d39",
+  "s": "sarg‘ish-oq",
+  "ru": "желтовато-белый",
+  "en": "yellowish-white"
+ },
+ {
+  "k": "b759094b",
+  "s": "Ca II, metall chiziqlari kuchayadi",
+  "ru": "Ca II, линии металлов усиливаются",
+  "en": "Ca II; metal lines grow stronger"
+ },
+ {
+  "k": "5b6121ef",
+  "s": "Prosion A, F5 IV–V",
+  "ru": "Процион A, F5 IV–V",
+  "en": "Procyon A, F5 IV–V"
+ },
+ {
+  "k": "3cf4a17b",
+  "s": "sariq",
+  "ru": "жёлтый",
+  "en": "yellow"
+ },
+ {
+  "k": "01033c4c",
+  "s": "Ca II H va K, neytral metallar",
+  "ru": "Ca II H и K, нейтральные металлы",
+  "en": "Ca II H and K, neutral metals"
+ },
+ {
+  "k": "78fe41c7",
+  "s": "Quyosh, G2 V",
+  "ru": "Солнце, G2 V",
+  "en": "The Sun, G2 V"
+ },
+ {
+  "k": "232978c3",
+  "s": "to‘q sariq",
+  "ru": "оранжевый",
+  "en": "orange"
+ },
+ {
+  "k": "14dd7e02",
+  "s": "neytral metallar kuchli",
+  "ru": "нейтральные металлы сильны",
+  "en": "strong neutral metals"
+ },
+ {
+  "k": "57ccc68a",
+  "s": "Arktur, K1.5 III",
+  "ru": "Арктур, K1.5 III",
+  "en": "Arcturus, K1.5 III"
+ },
+ {
+  "k": "63f4abda",
+  "s": "qizil",
+  "ru": "красный",
+  "en": "red"
+ },
+ {
+  "k": "41912b64",
+  "s": "TiO molekulyar polosalari",
+  "ru": "молекулярные полосы TiO",
+  "en": "TiO molecular bands"
+ },
+ {
+  "k": "6e4351af",
+  "s": "Betelgeyze, M1–M2 Ia; Proksima Sentavra, M5.5 V",
+  "ru": "Бетельгейзе, M1–M2 Ia; Проксима Центавра, M5.5 V",
+  "en": "Betelgeuse, M1–M2 Ia; Proxima Centauri, M5.5 V"
+ },
+ {
+  "k": "c568b689",
+  "s": "1.3. Gertsshprung–Rassel diagrammasi",
+  "ru": "1.3. Диаграмма Герцшпрунга–Рассела",
+  "en": "1.3. The Hertzsprung–Russell diagram"
+ },
+ {
+  "k": "fe0faf00",
+  "s": "G–R diagrammasida gorizontal o‘q bo‘ylab harorat (yoki spektral sinf, rang ko‘rsatkichi), vertikal o‘q bo‘ylab yorqinlik (yoki absolyut kattalik) qo‘yiladi. An’anaga ko‘ra harorat <em>chapdan o‘ngga kamayadi</em>. Yulduzlar diagrammada tasodifiy joylashmaydi:",
+  "ru": "На диаграмме Г–Р по горизонтальной оси откладывается температура (или спектральный класс, показатель цвета), по вертикальной — светимость (или абсолютная звёздная величина). По традиции температура <em>убывает слева направо</em>. Звёзды располагаются на диаграмме не случайно:",
+  "en": "On an H–R diagram, temperature (or spectral class, colour index) runs along the horizontal axis and luminosity (or absolute magnitude) up the vertical axis. By tradition, temperature <em>decreases from left to right</em>. Stars do not fall on the diagram at random:"
+ },
+ {
+  "k": "9c5e19bc",
+  "s": "<strong>Asosiy ketma-ketlik</strong> — yadrosida vodorod yonayotgan yulduzlar (yulduzlarning taxminan 90 %). Ketma-ketlik bo‘ylab yuqoriga ko‘tarilgan sari massa ortadi.",
+  "ru": "<strong>Главная последовательность</strong> — звёзды, в ядре которых горит водород (примерно 90 % звёзд). При подъёме вдоль последовательности масса увеличивается.",
+  "en": "<strong>The main sequence</strong> — stars burning hydrogen in their cores (about 90 % of stars). Mass increases going up the sequence."
+ },
+ {
+  "k": "e96aab25",
+  "s": "<strong>Gigantlar va supergigantlar</strong> — yadroda vodorod tugagan, kengayib sovigan yulduzlar (yuqori o‘ng burchak).",
+  "ru": "<strong>Гиганты и сверхгиганты</strong> — звёзды, у которых водород в ядре закончился и которые расширились и остыли (верхний правый угол).",
+  "en": "<strong>Giants and supergiants</strong> — stars that have run out of core hydrogen and have expanded and cooled (top right corner)."
+ },
+ {
+  "k": "39b39c78",
+  "s": "<strong>Oq mittilar</strong> — termoyadro reaksiyalari to‘xtagan, Yer o‘lchamidagi issiq, ammo xira qoldiqlar (pastki chap burchak).",
+  "ru": "<strong>Белые карлики</strong> — горячие, но тусклые остатки размером с Землю, в которых термоядерные реакции прекратились (нижний левый угол).",
+  "en": "<strong>White dwarfs</strong> — hot but faint Earth-sized remnants in which thermonuclear reactions have stopped (bottom left corner)."
+ },
+ {
+  "k": "0ef06627",
+  "s": "1.4. Energiya manbai va yulduz umri",
+  "ru": "1.4. Источник энергии и время жизни звезды",
+  "en": "1.4. Energy source and stellar lifetime"
+ },
+ {
+  "k": "7408e4e9",
+  "s": "Asosiy ketma-ketlikdagi yulduz energiyani vodorodni geliyga aylantirib oladi. Quyoshga o‘xshash yulduzlarda proton-proton zanjiri, 1,3 M☉ dan og‘irroq yulduzlarda esa CNO sikli ustun bo‘ladi:",
+  "ru": "Звезда главной последовательности получает энергию, превращая водород в гелий. В звёздах, подобных Солнцу, преобладает протон-протонная цепочка, а в звёздах тяжелее 1,3 M☉ — цикл CNO:",
+  "en": "A main-sequence star gets its energy by turning hydrogen into helium. The proton–proton chain dominates in Sun-like stars, and the CNO cycle in stars heavier than 1.3 M☉:"
+ },
+ {
+  "k": "f867410c",
+  "s": "$$4\\,{}^{1}\\text{H} \\;\\rightarrow\\; {}^{4}\\text{He} + 2e^{+} + 2\\nu_e, \\qquad \\Delta E \\approx 26{,}7\\ \\text{MeV} \\;(\\text{massaning} \\approx 0{,}7\\,\\%)$$",
+  "ru": "$$4\\,{}^{1}\\text{H} \\;\\rightarrow\\; {}^{4}\\text{He} + 2e^{+} + 2\\nu_e, \\qquad \\Delta E \\approx 26{,}7\\ \\text{MeV} \\;(\\text{massaning} \\approx 0{,}7\\,\\%)$$",
+  "en": "$$4\\,{}^{1}\\text{H} \\;\\rightarrow\\; {}^{4}\\text{He} + 2e^{+} + 2\\nu_e, \\qquad \\Delta E \\approx 26{,}7\\ \\text{MeV} \\;(\\text{massaning} \\approx 0{,}7\\,\\%)$$"
+ },
+ {
+  "k": "5229b3f3",
+  "s": "Massa–yorqinlik munosabati (taxminan, $0{,}5\\,M_\\odot \\lesssim M \\lesssim 20\\,M_\\odot$ uchun) va undan kelib chiqadigan asosiy ketma-ketlikdagi umr:",
+  "ru": "Соотношение масса–светимость (приближённо, для $0{,}5\\,M_\\odot \\lesssim M \\lesssim 20\\,M_\\odot$) и вытекающее из него время жизни на главной последовательности:",
+  "en": "The mass–luminosity relation (approximately, for $0{,}5\\,M_\\odot \\lesssim M \\lesssim 20\\,M_\\odot$) and the resulting main-sequence lifetime:"
+ },
+ {
+  "k": "cffddd88",
+  "s": "$$\\frac{L}{L_\\odot} \\approx \\left(\\frac{M}{M_\\odot}\\right)^{3{,}5}, \\qquad t_{\\text{AK}} \\approx 10^{10}\\ \\text{yil} \\cdot \\frac{M/M_\\odot}{L/L_\\odot} \\approx 10^{10}\\ \\text{yil} \\cdot \\left(\\frac{M}{M_\\odot}\\right)^{-2{,}5}$$",
+  "ru": "$$\\frac{L}{L_\\odot} \\approx \\left(\\frac{M}{M_\\odot}\\right)^{3{,}5}, \\qquad t_{\\text{AK}} \\approx 10^{10}\\ \\text{yil} \\cdot \\frac{M/M_\\odot}{L/L_\\odot} \\approx 10^{10}\\ \\text{yil} \\cdot \\left(\\frac{M}{M_\\odot}\\right)^{-2{,}5}$$",
+  "en": "$$\\frac{L}{L_\\odot} \\approx \\left(\\frac{M}{M_\\odot}\\right)^{3{,}5}, \\qquad t_{\\text{AK}} \\approx 10^{10}\\ \\text{yil} \\cdot \\frac{M/M_\\odot}{L/L_\\odot} \\approx 10^{10}\\ \\text{yil} \\cdot \\left(\\frac{M}{M_\\odot}\\right)^{-2{,}5}$$"
+ },
+ {
+  "k": "37dfc8ba",
+  "s": "Demak, massasi 10 M☉ bo‘lgan yulduz Quyoshdan ~3000 marta yorqin, lekin atigi ~30 million yil yashaydi. Massasi 0,2 M☉ bo‘lgan qizil mitti esa yuzlab milliard yil yashaydi — bu Koinot yoshidan (13,8 mlrd yil) ancha ko‘p.",
+  "ru": "Значит, звезда массой 10 M☉ в ~3000 раз ярче Солнца, но живёт всего ~30 миллионов лет. А красный карлик массой 0,2 M☉ живёт сотни миллиардов лет — намного больше возраста Вселенной (13,8 млрд лет).",
+  "en": "So a 10 M☉ star is ~3000 times brighter than the Sun but lives only ~30 million years, while a 0.2 M☉ red dwarf lives hundreds of billions of years — far longer than the age of the Universe (13.8 billion years)."
+ },
+ {
+  "k": "88924995",
+  "s": "1.5. Evolyutsiya yo‘llari",
+  "ru": "1.5. Пути эволюции",
+  "en": "1.5. Evolutionary paths"
+ },
+ {
+  "k": "f6e439cc",
+  "s": "Kichik massa: M &lt; 0,5 M☉",
+  "ru": "Малая масса: M &lt; 0,5 M☉",
+  "en": "Low mass: M &lt; 0.5 M☉"
+ },
+ {
+  "k": "d269fd69",
+  "s": "Qizil mitti, to‘liq konvektiv.",
+  "ru": "Красный карлик, полностью конвективный.",
+  "en": "A red dwarf, fully convective."
+ },
+ {
+  "k": "049c2bee",
+  "s": "Vodorodni juda sekin sarflaydi (10¹¹–10¹³ yil).",
+  "ru": "Очень медленно расходует водород (10¹¹–10¹³ лет).",
+  "en": "Uses up its hydrogen very slowly (10¹¹–10¹³ years)."
+ },
+ {
+  "k": "82621a3e",
+  "s": "Nazariy yakun — geliyli oq mitti; bunday yulduzlar hali paydo bo‘lishga ulgurmagan.",
+  "ru": "Теоретический итог — гелиевый белый карлик; такие звёзды ещё не успели появиться.",
+  "en": "The theoretical end is a helium white dwarf; none has had time to form yet."
+ },
+ {
+  "k": "302ea702",
+  "s": "O‘rta massa: 0,5–8 M☉ (Quyosh ham)",
+  "ru": "Средняя масса: 0,5–8 M☉ (включая Солнце)",
+  "en": "Intermediate mass: 0.5–8 M☉ (including the Sun)"
+ },
+ {
+  "k": "b74aef44",
+  "s": "Asosiy ketma-ketlik.",
+  "ru": "Главная последовательность.",
+  "en": "Main sequence."
+ },
+ {
+  "k": "2f15517c",
+  "s": "Subgigant va qizil gigant (qobiqda vodorod yonadi).",
+  "ru": "Субгигант и красный гигант (в оболочке горит водород).",
+  "en": "Subgiant and red giant (hydrogen burns in a shell)."
+ },
+ {
+  "k": "c0bad049",
+  "s": "Yadroda geliy yonishi (uglerod va kislorod hosil bo‘ladi).",
+  "ru": "Горение гелия в ядре (образуются углерод и кислород).",
+  "en": "Core helium burning (producing carbon and oxygen)."
+ },
+ {
+  "k": "f964365b",
+  "s": "Asimptotik gigantlar tarmog‘i, tashqi qobiq tashlanadi — planetar tumanlik.",
+  "ru": "Асимптотическая ветвь гигантов, сброс внешней оболочки — планетарная туманность.",
+  "en": "The asymptotic giant branch; the outer envelope is shed — a planetary nebula."
+ },
+ {
+  "k": "e642407e",
+  "s": "Oq mitti; massasi Chandrasekar chegarasidan (≈1,4 M☉) kichik.",
+  "ru": "Белый карлик; масса меньше предела Чандрасекара (≈1,4 M☉).",
+  "en": "A white dwarf; its mass is below the Chandrasekhar limit (≈1.4 M☉)."
+ },
+ {
+  "k": "837734d0",
+  "s": "Katta massa: M &gt; 8 M☉",
+  "ru": "Большая масса: M &gt; 8 M☉",
+  "en": "High mass: M &gt; 8 M☉"
+ },
+ {
+  "k": "bc7e87e5",
+  "s": "Asosiy ketma-ketlik (CNO sikli).",
+  "ru": "Главная последовательность (цикл CNO).",
+  "en": "Main sequence (CNO cycle)."
+ },
+ {
+  "k": "d6a0425d",
+  "s": "Qizil (yoki ko‘k) supergigant: temirgacha elementlar sintezi.",
+  "ru": "Красный (или голубой) сверхгигант: синтез элементов до железа.",
+  "en": "Red (or blue) supergiant: fusing elements up to iron."
+ },
+ {
+  "k": "8a53e472",
+  "s": "Temir yadroning kollapsi — II tur o‘ta yangi yulduz.",
+  "ru": "Коллапс железного ядра — сверхновая II типа.",
+  "en": "Iron core collapse — a type II supernova."
+ },
+ {
+  "k": "6e3fa256",
+  "s": "Qoldiq: neytron yulduz yoki (taxminan 20–25 M☉ dan og‘ir yulduzlarda) qora tuynuk.",
+  "ru": "Остаток: нейтронная звезда или (у звёзд тяжелее примерно 20–25 M☉) чёрная дыра.",
+  "en": "Remnant: a neutron star or (for stars heavier than about 20–25 M☉) a black hole."
+ },
+ {
+  "k": "2288397b",
+  "s": "Oq mitti massasini boshlang‘ich massa bo‘yicha baholashning empirik formulasi: $M_{\\text{oq mitti}} \\approx 0{,}109\\,M_{\\text{bosh}} + 0{,}394\\,M_\\odot$ (Kalirai va b., 2008). Masalan, Quyosh oq mitti bo‘lganda massasi ≈ 0,5 M☉ bo‘ladi — qolgan qismini planetar tumanlik sifatida yo‘qotadi.",
+  "ru": "Эмпирическая формула оценки массы белого карлика по начальной массе: $M_{\\text{oq mitti}} \\approx 0{,}109\\,M_{\\text{bosh}} + 0{,}394\\,M_\\odot$ (Kalirai и др., 2008). Например, когда Солнце станет белым карликом, его масса будет ≈ 0,5 M☉ — остальное оно потеряет в виде планетарной туманности.",
+  "en": "An empirical formula for estimating a white dwarf’s mass from the initial mass: $M_{\\text{oq mitti}} \\approx 0{,}109\\,M_{\\text{bosh}} + 0{,}394\\,M_\\odot$ (Kalirai et al., 2008). For example, when the Sun becomes a white dwarf its mass will be ≈ 0.5 M☉ — it will lose the rest as a planetary nebula."
+ },
+ {
+  "k": "5665d3c3",
+  "s": "Massani tanlang va “Evolyutsiyani boshlash” tugmasini bosing. Model asosiy ketma-ketlikdagi parametrlarni yuqoridagi munosabatlar bo‘yicha hisoblaydi, keyingi bosqichlarni esa <strong>sxematik trek</strong> ko‘rinishida ko‘rsatadi. Bu yulduz tuzilishini hisoblovchi dastur emas — treklar ta’lim maqsadida soddalashtirilgan.",
+  "ru": "Выберите массу и нажмите кнопку «Начать эволюцию». Модель рассчитывает параметры на главной последовательности по приведённым выше соотношениям, а следующие этапы показывает в виде <strong>схематического трека</strong>. Это не программа расчёта строения звезды — треки упрощены в учебных целях.",
+  "en": "Choose a mass and press \"Start evolution\". The model computes the main-sequence parameters from the relations above and shows the later stages as a <strong>schematic track</strong>. This is not a stellar structure code — the tracks are simplified for teaching."
+ },
+ {
+  "k": "3677d840",
+  "s": "Boshlang‘ich massa:",
+  "ru": "Начальная масса:",
+  "en": "Initial mass:"
+ },
+ {
+  "k": "9b4fcf64",
+  "s": "▶ Evolyutsiyani boshlash",
+  "ru": "▶ Начать эволюцию",
+  "en": "▶ Start evolution"
+ },
+ {
+  "k": "b33dc78c",
+  "s": "Qaytadan",
+  "ru": "Заново",
+  "en": "Restart"
+ },
+ {
+  "k": "c32f3ca3",
+  "s": "Kuzatish vazifalari:",
+  "ru": "Задания для наблюдения:",
+  "en": "Observation tasks:"
+ },
+ {
+  "k": "96f35fec",
+  "s": "Massani 1 M☉ dan 10 M☉ ga oshiring. Yorqinlik va umr necha marta o‘zgaradi? Natijani $L \\propto M^{3,5}$ formulasi bilan solishtiring.",
+  "ru": "Увеличьте массу с 1 M☉ до 10 M☉. Во сколько раз меняются светимость и время жизни? Сравните результат с формулой $L \\propto M^{3,5}$.",
+  "en": "Increase the mass from 1 M☉ to 10 M☉. By what factors do the luminosity and lifetime change? Compare the result with the formula $L \\propto M^{3,5}$."
+ },
+ {
+  "k": "21a2d31a",
+  "s": "Qaysi massadan boshlab yulduz o‘ta yangi yulduz bo‘lib portlaydi? Nega aynan temir yadro kollapsga uchraydi?",
+  "ru": "Начиная с какой массы звезда взрывается как сверхновая? Почему коллапсирует именно железное ядро?",
+  "en": "From what mass does a star explode as a supernova? Why is it the iron core that collapses?"
+ },
+ {
+  "k": "650c078f",
+  "s": "Diagrammadagi Betelgeyze va Sirius B uchun $L = 4\\pi R^2 \\sigma T^4$ dan radiusni hisoblang. Ular Quyoshdan necha marta katta yoki kichik?",
+  "ru": "Для Бетельгейзе и Сириуса B на диаграмме рассчитайте радиус из $L = 4\\pi R^2 \\sigma T^4$. Во сколько раз они больше или меньше Солнца?",
+  "en": "For Betelgeuse and Sirius B on the diagram, calculate the radius from $L = 4\\pi R^2 \\sigma T^4$. How many times larger or smaller than the Sun are they?"
+ },
+ {
+  "k": "411176db",
+  "s": "0,2 M☉ massali yulduz uchun model nega evolyutsiyani ko‘rsatmaydi?",
+  "ru": "Почему модель не показывает эволюцию для звезды массой 0,2 M☉?",
+  "en": "Why does the model show no evolution for a 0.2 M☉ star?"
+ },
+ {
+  "k": "2dd7b252",
+  "s": "Gaia kosmik teleskopining ochiq ma’lumotlari asosida Quyosh atrofidagi yulduzlarning rang–kattalik (kuzatuv G–R) diagrammasini qurish, unda asosiy ketma-ketlik, gigantlar va oq mittilarni ajratish hamda SI yordamida yozilgan kodni fizik jihatdan tekshirish.",
+  "ru": "Построить на основе открытых данных космического телескопа Gaia диаграмму цвет–величина (наблюдательную диаграмму Г–Р) звёзд в окрестности Солнца, выделить на ней главную последовательность, гиганты и белые карлики, а также физически проверить код, написанный с помощью ИИ.",
+  "en": "Build a colour–magnitude (observational H–R) diagram of stars near the Sun from Gaia space telescope open data, pick out the main sequence, giants and white dwarfs, and check AI-written code for physical correctness."
+ },
+ {
+  "k": "be0f50ad",
+  "s": "<strong>Kerakli vositalar (hammasi bepul):</strong> <a class=\"citation-link\" href=\"https://gea.esac.esa.int/archive/\" target=\"_blank\" rel=\"noopener\">Gaia arxivi</a> (ro‘yxatdan o‘tmasdan so‘rov yuborish mumkin), <a class=\"citation-link\" href=\"https://colab.research.google.com\" target=\"_blank\" rel=\"noopener\">Google Colab</a>, Gemini, ChatGPT yoki Claude’ning bepul tarifi, ma’lumot tekshirish uchun <a class=\"citation-link\" href=\"https://simbad.cds.unistra.fr/simbad/\" target=\"_blank\" rel=\"noopener\">SIMBAD</a>.",
+  "ru": "<strong>Необходимые инструменты (все бесплатные):</strong> <a class=\"citation-link\" href=\"https://gea.esac.esa.int/archive/\" target=\"_blank\" rel=\"noopener\">архив Gaia</a> (запросы можно отправлять без регистрации), <a class=\"citation-link\" href=\"https://colab.research.google.com\" target=\"_blank\" rel=\"noopener\">Google Colab</a>, бесплатный тариф Gemini, ChatGPT или Claude, <a class=\"citation-link\" href=\"https://simbad.cds.unistra.fr/simbad/\" target=\"_blank\" rel=\"noopener\">SIMBAD</a> для проверки данных.",
+  "en": "<strong>Tools you need (all free):</strong> the <a class=\"citation-link\" href=\"https://gea.esac.esa.int/archive/\" target=\"_blank\" rel=\"noopener\">Gaia archive</a> (queries can be sent without signing up), <a class=\"citation-link\" href=\"https://colab.research.google.com\" target=\"_blank\" rel=\"noopener\">Google Colab</a>, the free tier of Gemini, ChatGPT or Claude, and <a class=\"citation-link\" href=\"https://simbad.cds.unistra.fr/simbad/\" target=\"_blank\" rel=\"noopener\">SIMBAD</a> for checking data."
+ },
+ {
+  "k": "46eb04d1",
+  "s": "Ishni bajarish tartibi",
+  "ru": "Порядок выполнения работы",
+  "en": "Procedure"
+ },
+ {
+  "k": "12a9826b",
+  "s": "<strong>Ma’lumot olish.</strong> Gaia arxivining “Search → Advanced (ADQL)” bo‘limida quyidagi so‘rovni bajaring va natijani CSV ko‘rinishida yuklab oling. So‘rov 100 pk ichidagi, parallaksi aniq o‘lchangan yulduzlarni tanlaydi.",
+  "ru": "<strong>Получение данных.</strong> В разделе «Search → Advanced (ADQL)» архива Gaia выполните следующий запрос и скачайте результат в формате CSV. Запрос выбирает звёзды в пределах 100 пк с точно измеренным параллаксом.",
+  "en": "<strong>Getting the data.</strong> In the Gaia archive’s \"Search → Advanced (ADQL)\" section, run the following query and download the result as CSV. The query selects stars within 100 pc with accurately measured parallaxes."
+ },
+ {
+  "k": "82a1d215",
+  "s": "SELECT TOP 5000 source_id, parallax, phot_g_mean_mag, bp_rp\nFROM gaiadr3.gaia_source\nWHERE parallax &gt; 10\n  AND parallax_over_error &gt; 10\n  AND bp_rp IS NOT NULL",
+  "ru": "SELECT TOP 5000 source_id, parallax, phot_g_mean_mag, bp_rp\nFROM gaiadr3.gaia_source\nWHERE parallax &gt; 10\n  AND parallax_over_error &gt; 10\n  AND bp_rp IS NOT NULL",
+  "en": "SELECT TOP 5000 source_id, parallax, phot_g_mean_mag, bp_rp\nFROM gaiadr3.gaia_source\nWHERE parallax &gt; 10\n  AND parallax_over_error &gt; 10\n  AND bp_rp IS NOT NULL"
+ },
+ {
+  "k": "9fdb75e4",
+  "s": "<strong>Absolyut kattalikni hisoblash.</strong> Parallaks milliyoy sekundlarda (mas) berilgani uchun $M_G = G + 5\\lg \\varpi_{\\text{mas}} - 10$ formulasidan foydalaning. Bu formulani masofa modulidan o‘zingiz keltirib chiqaring va hisobotga yozing.",
+  "ru": "<strong>Расчёт абсолютной величины.</strong> Поскольку параллакс дан в миллисекундах дуги (mas), используйте формулу $M_G = G + 5\\lg \\varpi_{\\text{mas}} - 10$. Выведите эту формулу из модуля расстояния самостоятельно и запишите в отчёт.",
+  "en": "<strong>Computing the absolute magnitude.</strong> Because the parallax is given in milliarcseconds (mas), use the formula $M_G = G + 5\\lg \\varpi_{\\text{mas}} - 10$. Derive it yourself from the distance modulus and write it in your report."
+ },
+ {
+  "k": "0e626fad",
+  "s": "<strong>Diagrammani qurish.</strong> Colab’da quyidagi kodni ishga tushiring (fayl nomini o‘zingiznikiga almashtiring):",
+  "ru": "<strong>Построение диаграммы.</strong> Запустите в Colab следующий код (замените имя файла на своё):",
+  "en": "<strong>Plotting the diagram.</strong> Run the following code in Colab (replace the file name with your own):"
+ },
+ {
+  "k": "0dc0a30b",
+  "s": "import pandas as pd, numpy as np, matplotlib.pyplot as plt\ndf = pd.read_csv(\"gaia_100pc.csv\")\ndf[\"M_G\"] = df[\"phot_g_mean_mag\"] + 5*np.log10(df[\"parallax\"]) - 10\nplt.figure(figsize=(6, 7))\nplt.scatter(df[\"bp_rp\"], df[\"M_G\"], s=1, c=df[\"bp_rp\"], cmap=\"RdYlBu_r\")\nplt.gca().invert_yaxis()          # yorug‘ yulduzlar yuqorida\nplt.xlabel(\"Rang ko‘rsatkichi BP − RP\")\nplt.ylabel(\"Absolyut kattalik M_G\")\nplt.title(\"Gaia DR3: 100 pk ichidagi yulduzlar\")\nplt.show()",
+  "ru": "import pandas as pd, numpy as np, matplotlib.pyplot as plt\ndf = pd.read_csv(\"gaia_100pc.csv\")\ndf[\"M_G\"] = df[\"phot_g_mean_mag\"] + 5*np.log10(df[\"parallax\"]) - 10\nplt.figure(figsize=(6, 7))\nplt.scatter(df[\"bp_rp\"], df[\"M_G\"], s=1, c=df[\"bp_rp\"], cmap=\"RdYlBu_r\")\nplt.gca().invert_yaxis()          # яркие звёзды сверху\nplt.xlabel(\"Показатель цвета BP − RP\")\nplt.ylabel(\"Абсолютная звёздная величина M_G\")\nplt.title(\"Gaia DR3: звёзды в пределах 100 пк\")\nplt.show()",
+  "en": "import pandas as pd, numpy as np, matplotlib.pyplot as plt\ndf = pd.read_csv(\"gaia_100pc.csv\")\ndf[\"M_G\"] = df[\"phot_g_mean_mag\"] + 5*np.log10(df[\"parallax\"]) - 10\nplt.figure(figsize=(6, 7))\nplt.scatter(df[\"bp_rp\"], df[\"M_G\"], s=1, c=df[\"bp_rp\"], cmap=\"RdYlBu_r\")\nplt.gca().invert_yaxis()          # bright stars at the top\nplt.xlabel(\"Colour index BP − RP\")\nplt.ylabel(\"Absolute magnitude M_G\")\nplt.title(\"Gaia DR3: stars within 100 pc\")\nplt.show()"
+ },
+ {
+  "k": "bb59c4cf",
+  "s": "<strong>SI bilan ishlash.</strong> Quyidagi promptni Gemini, ChatGPT yoki Claude’ga bering. Javobdagi kodni ishga tushiring va undagi har bir formulani 1-bo‘limdagi nazariya bilan tekshiring. SI xato qilgan joylarni hisobotda alohida ko‘rsating.",
+  "ru": "<strong>Работа с ИИ.</strong> Дайте следующий промпт Gemini, ChatGPT или Claude. Запустите код из ответа и проверьте каждую формулу в нём по теории раздела 1. Отдельно укажите в отчёте места, где ИИ ошибся.",
+  "en": "<strong>Working with AI.</strong> Give the following prompt to Gemini, ChatGPT or Claude. Run the code from the answer and check every formula in it against the Section 1 theory. Point out separately in your report where the AI made mistakes."
+ },
+ {
+  "k": "cb590882",
+  "s": "Sen astrofizika o‘qituvchisisan. Menda Gaia DR3 dan olingan CSV fayl bor:\nustunlar — parallax (mas), phot_g_mean_mag, bp_rp.\n1) Absolyut kattalik M_G ni hisoblovchi Python kod yoz va formulani izohla.\n2) Rang–kattalik diagrammasida asosiy ketma-ketlik, qizil gigantlar va oq\n   mittilarni taxminiy chegaralar bilan ajratib, har birini alohida rangda chiz.\n3) Har bir guruhdagi yulduzlar sonini chiqar.\nFaqat numpy, pandas va matplotlib dan foydalan. Taxminiy chegaralarni\nqanday tanlaganingni alohida tushuntir.",
+  "ru": "Ты — преподаватель астрофизики. У меня есть CSV-файл из Gaia DR3:\nстолбцы — parallax (mas), phot_g_mean_mag, bp_rp.\n1) Напиши код на Python, вычисляющий абсолютную величину M_G, и поясни формулу.\n2) На диаграмме цвет–величина выдели с приблизительными границами главную последовательность, красных гигантов и белых\n   карликов и нарисуй каждую группу отдельным цветом.\n3) Выведи число звёзд в каждой группе.\nИспользуй только numpy, pandas и matplotlib. Отдельно объясни, как ты\nвыбрал приблизительные границы.",
+  "en": "You are an astrophysics teacher. I have a CSV file from Gaia DR3:\ncolumns — parallax (mas), phot_g_mean_mag, bp_rp.\n1) Write Python code that computes the absolute magnitude M_G and explain the formula.\n2) On the colour–magnitude diagram, separate the main sequence, red giants and white\n   dwarfs with approximate boundaries and plot each group in its own colour.\n3) Print the number of stars in each group.\nUse only numpy, pandas and matplotlib. Explain separately how you\nchose the approximate boundaries."
+ },
+ {
+  "k": "d8a20743",
+  "s": "<strong>Tahlil.</strong> Diagrammada asosiy ketma-ketlik, gigantlar va oq mittilarni belgilang. Nima uchun 100 pk ichida gigantlar juda kam? (Ko‘rsatma: hajm cheklangan namunani yorqinlik cheklangan namuna bilan solishtiring.)",
+  "ru": "<strong>Анализ.</strong> Отметьте на диаграмме главную последовательность, гиганты и белые карлики. Почему в пределах 100 пк так мало гигантов? (Подсказка: сравните выборку, ограниченную объёмом, с выборкой, ограниченной яркостью.)",
+  "en": "<strong>Analysis.</strong> Mark the main sequence, giants and white dwarfs on the diagram. Why are there so few giants within 100 pc? (Hint: compare a volume-limited sample with a brightness-limited one.)"
+ },
+ {
+  "k": "7de5e51f",
+  "s": "<strong>Tekshiruv.</strong> Diagrammadan uchta yulduzni tanlab, ularning <code>source_id</code> si bo‘yicha SIMBAD’dan spektral sinfini toping. Sinf diagrammadagi joyiga mos keladimi?",
+  "ru": "<strong>Проверка.</strong> Выберите на диаграмме три звезды и по их <code>source_id</code> найдите в SIMBAD спектральный класс. Соответствует ли класс положению на диаграмме?",
+  "en": "<strong>Check.</strong> Pick three stars on the diagram and look up their spectral class in SIMBAD by <code>source_id</code>. Does the class match their position on the diagram?"
+ },
+ {
+  "k": "1d11220a",
+  "s": "Ilmiy aniqlik",
+  "ru": "Научная точность",
+  "en": "Scientific accuracy"
+ },
+ {
+  "k": "0f25df44",
+  "s": "Formulalar to‘g‘ri keltirilgan, birliklar ko‘rsatilgan, hududlar to‘g‘ri belgilangan",
+  "ru": "Формулы приведены правильно, единицы указаны, области отмечены верно",
+  "en": "Formulas are correct, units are given and regions are marked correctly"
+ },
+ {
+  "k": "b432fb03",
+  "s": "Ma’lumot bilan ishlash",
+  "ru": "Работа с данными",
+  "en": "Working with data"
+ },
+ {
+  "k": "becf7ff6",
+  "s": "ADQL so‘rovi, tanlash shartlari va namunaning cheklovlari tushuntirilgan",
+  "ru": "Объяснены запрос ADQL, условия отбора и ограничения выборки",
+  "en": "The ADQL query, selection conditions and sample limits are explained"
+ },
+ {
+  "k": "ade30898",
+  "s": "Kod va grafik",
+  "ru": "Код и график",
+  "en": "Code and plot"
+ },
+ {
+  "k": "10c2aaf7",
+  "s": "Diagramma o‘qlari, birliklari va sarlavhasi to‘liq; kod ishlaydi",
+  "ru": "Оси, единицы и заголовок диаграммы полные; код работает",
+  "en": "The diagram’s axes, units and title are complete; the code runs"
+ },
+ {
+  "k": "47ba9bab",
+  "s": "Promptlar, SI javoblari va topilgan xatolar qayd etilgan",
+  "ru": "Зафиксированы промпты, ответы ИИ и найденные ошибки",
+  "en": "Prompts, AI answers and the errors found are recorded"
+ },
+ {
+  "k": "1465f965",
+  "s": "Tahlil savollariga asosli javob berilgan",
+  "ru": "Даны обоснованные ответы на вопросы анализа",
+  "en": "The analysis questions are answered with sound reasoning"
+ },
+ {
+  "k": "4060acb3",
+  "s": "1-savol. G–R diagrammasining qaysi qismida oq mittilar joylashadi?",
+  "ru": "Вопрос 1. В какой части диаграммы Г–Р располагаются белые карлики?",
+  "en": "Question 1. Where on the H–R diagram are white dwarfs found?"
+ },
+ {
+  "k": "7a46c5ef",
+  "s": "A) Yuqori o‘ng burchakda",
+  "ru": "A) В верхнем правом углу",
+  "en": "A) Top right corner"
+ },
+ {
+  "k": "dbc566f7",
+  "s": "B) Pastki chap burchakda",
+  "ru": "B) В нижнем левом углу",
+  "en": "B) Bottom left corner"
+ },
+ {
+  "k": "17f44cb5",
+  "s": "C) Asosiy ketma-ketlikning o‘rtasida",
+  "ru": "C) В середине главной последовательности",
+  "en": "C) In the middle of the main sequence"
+ },
+ {
+  "k": "62c8be3f",
+  "s": "D) Pastki o‘ng burchakda",
+  "ru": "D) В нижнем правом углу",
+  "en": "D) Bottom right corner"
+ },
+ {
+  "k": "9a3e06af",
+  "s": "2-savol. Massasi Quyoshnikidan 4 marta katta yulduz asosiy ketma-ketlikda taxminan qancha yashaydi?",
+  "ru": "Вопрос 2. Сколько примерно живёт на главной последовательности звезда массой в 4 раза больше солнечной?",
+  "en": "Question 2. Roughly how long does a star of 4 solar masses spend on the main sequence?"
+ },
+ {
+  "k": "b8b9fb32",
+  "s": "A) 40 mlrd yil",
+  "ru": "A) 40 млрд лет",
+  "en": "A) 40 billion years"
+ },
+ {
+  "k": "cd3bda0e",
+  "s": "B) 2,5 mlrd yil",
+  "ru": "B) 2,5 млрд лет",
+  "en": "B) 2.5 billion years"
+ },
+ {
+  "k": "66519582",
+  "s": "C) 310 mln yil",
+  "ru": "C) 310 млн лет",
+  "en": "C) 310 million years"
+ },
+ {
+  "k": "8d31eca8",
+  "s": "D) 10 mln yil",
+  "ru": "D) 10 млн лет",
+  "en": "D) 10 million years"
+ },
+ {
+  "k": "2628d8d5",
+  "s": "3-savol. Ikki yulduzning harorati bir xil, birinchisining radiusi 10 marta katta. Yorqinliklar nisbati qancha?",
+  "ru": "Вопрос 3. Две звезды имеют одинаковую температуру, радиус первой в 10 раз больше. Каково отношение светимостей?",
+  "en": "Question 3. Two stars have the same temperature, and the first has 10 times the radius. What is the ratio of their luminosities?"
+ },
+ {
+  "k": "5f307018",
+  "s": "4-savol. Massasi 15 M☉ bo‘lgan yulduz evolyutsiyasi qanday yakunlanadi?",
+  "ru": "Вопрос 4. Чем завершается эволюция звезды массой 15 M☉?",
+  "en": "Question 4. How does the evolution of a 15 M☉ star end?"
+ },
+ {
+  "k": "5fab58a9",
+  "s": "A) Oq mitti va planetar tumanlik",
+  "ru": "A) Белый карлик и планетарная туманность",
+  "en": "A) A white dwarf and a planetary nebula"
+ },
+ {
+  "k": "95af7b9e",
+  "s": "B) II tur o‘ta yangi yulduz, qoldiq — neytron yulduz",
+  "ru": "B) Сверхновая II типа, остаток — нейтронная звезда",
+  "en": "B) A type II supernova leaving a neutron star"
+ },
+ {
+  "k": "dc6c5bc5",
+  "s": "C) Qizil mitti bo‘lib qoladi",
+  "ru": "C) Остаётся красным карликом",
+  "en": "C) It remains a red dwarf"
+ },
+ {
+  "k": "7355eba6",
+  "s": "D) Ia tur o‘ta yangi yulduz",
+  "ru": "D) Сверхновая типа Ia",
+  "en": "D) A type Ia supernova"
+ },
+ {
+  "k": "6ce43678",
+  "s": "Nima uchun asosiy ketma-ketlikda massa ortgan sari yulduz umri qisqaradi?",
+  "ru": "Почему на главной последовательности с ростом массы время жизни звезды сокращается?",
+  "en": "Why does a star’s lifetime get shorter as mass increases on the main sequence?"
+ },
+ {
+  "k": "58dbe2a5",
+  "s": "Chandrasekar chegarasi nima va u qaysi fizik bosim bilan bog‘liq?",
+  "ru": "Что такое предел Чандрасекара и с каким физическим давлением он связан?",
+  "en": "What is the Chandrasekhar limit and which physical pressure is it linked to?"
+ },
+ {
+  "k": "52a43c32",
+  "s": "Ochiq yulduz to‘dalari G–R diagrammasidagi “burilish nuqtasi” orqali to‘da yoshini qanday aniqlash mumkin?",
+  "ru": "Как определить возраст рассеянного звёздного скопления по «точке поворота» на диаграмме Г–Р?",
+  "en": "How can you find an open cluster’s age from the \"turn-off point\" on its H–R diagram?"
+ },
+ {
+  "k": "cfdff3b6",
+  "s": "Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class=\"citation-link\" href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1017/9781108380980</a>",
+  "ru": "Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class=\"citation-link\" href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1017/9781108380980</a>",
+  "en": "Carroll, B. W., &amp; Ostlie, D. A. (2017). <em>An Introduction to Modern Astrophysics</em> (2nd ed.). Cambridge University Press. <a class=\"citation-link\" href=\"https://doi.org/10.1017/9781108380980\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1017/9781108380980</a>"
+ },
+ {
+  "k": "179b5be0",
+  "s": "Kippenhahn, R., Weigert, A., &amp; Weiss, A. (2012). <em>Stellar Structure and Evolution</em> (2nd ed.). Springer. <a class=\"citation-link\" href=\"https://doi.org/10.1007/978-3-642-30304-3\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1007/978-3-642-30304-3</a>",
+  "ru": "Kippenhahn, R., Weigert, A., &amp; Weiss, A. (2012). <em>Stellar Structure and Evolution</em> (2nd ed.). Springer. <a class=\"citation-link\" href=\"https://doi.org/10.1007/978-3-642-30304-3\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1007/978-3-642-30304-3</a>",
+  "en": "Kippenhahn, R., Weigert, A., &amp; Weiss, A. (2012). <em>Stellar Structure and Evolution</em> (2nd ed.). Springer. <a class=\"citation-link\" href=\"https://doi.org/10.1007/978-3-642-30304-3\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1007/978-3-642-30304-3</a>"
+ },
+ {
+  "k": "d1037d54",
+  "s": "Prialnik, D. (2009). <em>An Introduction to the Theory of Stellar Structure and Evolution</em> (2nd ed.). Cambridge University Press.",
+  "ru": "Prialnik, D. (2009). <em>An Introduction to the Theory of Stellar Structure and Evolution</em> (2nd ed.). Cambridge University Press.",
+  "en": "Prialnik, D. (2009). <em>An Introduction to the Theory of Stellar Structure and Evolution</em> (2nd ed.). Cambridge University Press."
+ },
+ {
+  "k": "05572941",
+  "s": "Kalirai, J. S., Hansen, B. M. S., Kelson, D. D., Reitzel, D. B., Rich, R. M., &amp; Richer, H. B. (2008). The initial-final mass relation: Direct constraints at the low-mass end. <em>The Astrophysical Journal, 676</em>(1), 594–609. <a class=\"citation-link\" href=\"https://doi.org/10.1086/527028\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/527028</a>",
+  "ru": "Kalirai, J. S., Hansen, B. M. S., Kelson, D. D., Reitzel, D. B., Rich, R. M., &amp; Richer, H. B. (2008). The initial-final mass relation: Direct constraints at the low-mass end. <em>The Astrophysical Journal, 676</em>(1), 594–609. <a class=\"citation-link\" href=\"https://doi.org/10.1086/527028\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/527028</a>",
+  "en": "Kalirai, J. S., Hansen, B. M. S., Kelson, D. D., Reitzel, D. B., Rich, R. M., &amp; Richer, H. B. (2008). The initial-final mass relation: Direct constraints at the low-mass end. <em>The Astrophysical Journal, 676</em>(1), 594–609. <a class=\"citation-link\" href=\"https://doi.org/10.1086/527028\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1086/527028</a>"
+ },
+ {
+  "k": "86bf6a92",
+  "s": "Gaia Collaboration, Babusiaux, C., et al. (2018). Gaia Data Release 2: Observational Hertzsprung–Russell diagrams. <em>Astronomy &amp; Astrophysics, 616</em>, A10. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/201832843\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/201832843</a>",
+  "ru": "Gaia Collaboration, Babusiaux, C., et al. (2018). Gaia Data Release 2: Observational Hertzsprung–Russell diagrams. <em>Astronomy &amp; Astrophysics, 616</em>, A10. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/201832843\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/201832843</a>",
+  "en": "Gaia Collaboration, Babusiaux, C., et al. (2018). Gaia Data Release 2: Observational Hertzsprung–Russell diagrams. <em>Astronomy &amp; Astrophysics, 616</em>, A10. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/201832843\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/201832843</a>"
+ },
+ {
+  "k": "10a02380",
+  "s": "Gaia Collaboration, Vallenari, A., et al. (2023). Gaia Data Release 3: Summary of the content and survey properties. <em>Astronomy &amp; Astrophysics, 674</em>, A1. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/202243940\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/202243940</a>",
+  "ru": "Gaia Collaboration, Vallenari, A., et al. (2023). Gaia Data Release 3: Summary of the content and survey properties. <em>Astronomy &amp; Astrophysics, 674</em>, A1. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/202243940\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/202243940</a>",
+  "en": "Gaia Collaboration, Vallenari, A., et al. (2023). Gaia Data Release 3: Summary of the content and survey properties. <em>Astronomy &amp; Astrophysics, 674</em>, A1. <a class=\"citation-link\" href=\"https://doi.org/10.1051/0004-6361/202243940\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/0004-6361/202243940</a>"
+ },
+ {
+  "k": "58b56619",
+  "s": "Prša, A., et al. (2016). Nominal values for selected solar and planetary quantities: IAU 2015 Resolution B3. <em>The Astronomical Journal, 152</em>(2), 41. <a class=\"citation-link\" href=\"https://doi.org/10.3847/0004-6256/152/2/41\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/0004-6256/152/2/41</a>",
+  "ru": "Prša, A., et al. (2016). Nominal values for selected solar and planetary quantities: IAU 2015 Resolution B3. <em>The Astronomical Journal, 152</em>(2), 41. <a class=\"citation-link\" href=\"https://doi.org/10.3847/0004-6256/152/2/41\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/0004-6256/152/2/41</a>",
+  "en": "Prša, A., et al. (2016). Nominal values for selected solar and planetary quantities: IAU 2015 Resolution B3. <em>The Astronomical Journal, 152</em>(2), 41. <a class=\"citation-link\" href=\"https://doi.org/10.3847/0004-6256/152/2/41\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.3847/0004-6256/152/2/41</a>"
+ },
+ {
+  "k": "8c31f728",
+  "s": "Wenger, M., et al. (2000). The SIMBAD astronomical database. <em>Astronomy and Astrophysics Supplement Series, 143</em>, 9–22. <a class=\"citation-link\" href=\"https://doi.org/10.1051/aas:2000332\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/aas:2000332</a>",
+  "ru": "Wenger, M., et al. (2000). The SIMBAD astronomical database. <em>Astronomy and Astrophysics Supplement Series, 143</em>, 9–22. <a class=\"citation-link\" href=\"https://doi.org/10.1051/aas:2000332\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/aas:2000332</a>",
+  "en": "Wenger, M., et al. (2000). The SIMBAD astronomical database. <em>Astronomy and Astrophysics Supplement Series, 143</em>, 9–22. <a class=\"citation-link\" href=\"https://doi.org/10.1051/aas:2000332\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1051/aas:2000332</a>"
+ }
+]

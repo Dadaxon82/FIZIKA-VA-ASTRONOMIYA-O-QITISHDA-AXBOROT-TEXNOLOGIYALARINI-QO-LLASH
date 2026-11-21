@@ -1,0 +1,12 @@
+je1555c2	Аккумулятор Гленна Фидлера выполняет физические расчёты фиксированными шагами (dt = 1/60 с), что даёт полную устойчивость и детерминизм, не зависящие от FPS рендеринга.	Glenn Fiedler’s accumulator runs physics in fixed steps (dt = 1/60 s), giving complete stability and determinism independent of the render FPS.
+j1f3b7d0	Object Pooling устраняет выделение и очистку новой памяти, поэтому паузы Garbage Collection не возникают и анимация не подтормаживает.	Object pooling eliminates new memory allocation and clean-up, so garbage-collection pauses do not occur and the animation does not stutter.
+jdf8d2d2	Умножение внутреннего пиксельного буфера Canvas на DPR и масштабирование контекста обеспечивают кристально чёткое изображение на Retina-дисплеях.	Multiplying the Canvas’s internal pixel buffer by DPR and scaling the context gives crystal-clear drawing on Retina displays.
+jab11aa1	⟨1⟩⟨2⟩📊 Лекция 7: результат по архитектуре Canvas:⟨/2⟩	⟨1⟩⟨2⟩📊 Lecture 7 Canvas architecture result:⟨/2⟩
+j15239da	Архитектор движков физической графики (полностью освоено)	Physics Graphics Engine Architect (fully mastered)
+j0bf8353	Исследователь Canvas и анимации (частично освоено)	Canvas & Animation Explorer (partially mastered)
+j52a88a1	⟨1⟩⟨2⟩Ваша компетенция в моделировании на Canvas:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩Результат: {4} / 3 балла ({5}%)⟨/4⟩⟨/1⟩</div>	⟨1⟩⟨2⟩Your Canvas modelling competence:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩Score: {4} / 3 points ({5}%)⟨/4⟩⟨/1⟩</div>
+j7617fb5	Без ограничения (V-Sync)	Uncapped (V-Sync)
+j13d41ef	фиксированный Δt + интерполяция	fixed Δt + interpolation
+j02e44ed	аккумулятор фиксированного Δt	fixed-Δt accumulator
+j5188f85	переменный Δt	variable Δt
+jaf30d4a	Режим:	Mode:

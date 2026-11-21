@@ -1,0 +1,118 @@
+10601dd7	В этой лекции изучается фундаментальный научно-методологический конвейер компьютерной анимации и симуляции любого физического явления: <strong>наблюдение явления (PhET/Vascak) ⟦1⟧ определение физического закона (Gemini) ⟦2⟧ математическая модель (WolframAlpha) ⟦3⟧ алгоритмизация (Claude) ⟦4⟧ визуальный код (Canvas) ⟦5⟧ отладка (Code Interpreter)</strong>.	This lecture covers the fundamental scientific and methodological pipeline for animating and simulating any physical phenomenon on a computer: <strong>observing the phenomenon (PhET/Vascak) ⟦1⟧ identifying the physical law (Gemini) ⟦2⟧ mathematical model (WolframAlpha) ⟦3⟧ algorithm design (Claude) ⟦4⟧ visual code (Canvas) ⟦5⟧ debugging (Code Interpreter)</strong>.
+522b4ff7	📋 7-этапный план лекции и ИИ-инструменты:	📋 7-stage lecture plan and AI tools:
+c8126832	⟨1⟩1. ИИ-диагностика:⟨/1⟩↵ ⟨2⟩определение исходного уровня знаний с помощью MagicSchool AI.⟨/2⟩	⟨1⟩1. AI diagnostics:⟨/1⟩↵ ⟨2⟩identifying the initial level of knowledge with MagicSchool AI.⟨/2⟩
+1807f525	⟨1⟩2. Наблюдение явления:⟨/1⟩↵ ⟨2⟩анализ PhET Interactive Simulations и Vascak.cz.⟨/2⟩	⟨1⟩2. Observing the phenomenon:⟨/1⟩↵ ⟨2⟩analysis of PhET Interactive Simulations and Vascak.cz.⟨/2⟩
+63b7fde0	⟨1⟩3. Определение физического закона:⟨/1⟩↵ ⟨2⟩верификация закономерностей с помощью Gemini / ChatGPT.⟨/2⟩	⟨1⟩3. Identifying the physical law:⟨/1⟩↵ ⟨2⟩verifying the laws with Gemini / ChatGPT.⟨/2⟩
+c3c64388	⟨1⟩4. Математическая модель:⟨/1⟩↵ ⟨2⟩аппарат дифференциальных уравнений в WolframAlpha / ChatGPT.⟨/2⟩	⟨1⟩4. Mathematical model:⟨/1⟩↵ ⟨2⟩the differential-equation apparatus with WolframAlpha / ChatGPT.⟨/2⟩
+181ae387	⟨1⟩5. Алгоритм и логика:⟨/1⟩↵ ⟨2⟩Claude: численная дискретизация методами Эйлера–Кромера и RK4.⟨/2⟩	⟨1⟩5. Algorithm and logic:⟨/1⟩↵ ⟨2⟩Claude: numerical discretisation with Euler–Cromer and RK4.⟨/2⟩
+e1a42937	⟨1⟩6. Визуальный код и Canvas:⟨/1⟩↵ ⟨2⟩движок рендеринга HTML5 Canvas через Claude Artifacts.⟨/2⟩	⟨1⟩6. Visual code and Canvas:⟨/1⟩↵ ⟨2⟩an HTML5 Canvas rendering engine via Claude Artifacts.⟨/2⟩
+e16d03a5	⟨1⟩7. Отладка:⟨/1⟩↵ ⟨2⟩Code Interpreter: граничные условия, единицы измерения и фазовый анализ.⟨/2⟩	⟨1⟩7. Debugging:⟨/1⟩↵ ⟨2⟩Code Interpreter: boundary conditions, units and phase analysis.⟨/2⟩
+1ee066ce	⟨1⟩🔄 Обратная разработка:⟨/1⟩↵ ⟨2⟩создание новой модели путём деконструкции готовой симуляции.⟨/2⟩	⟨1⟩🔄 Reverse engineering:⟨/1⟩↵ ⟨2⟩building a new model by deconstructing a ready-made simulation.⟨/2⟩
+68e4f73e	Научный конвейер	Scientific pipeline
+16dc4be1	Общая методологическая цепочка физического моделирования	The general methodological chain of physical modelling
+8a9cc8e7	При создании любой физической симуляции строго соблюдается следующая фундаментальная цепочка:	Every physics simulation is built by strictly following this fundamental chain:
+a2c36297	Шаг 1	Step 1
+f23967fd	Наблюдение явления	Observing the phenomenon
+2e8c59b1	Наблюдение визуального поведения явления в PhET / Vascak.cz, выделение переменных и степеней свободы.	Observing how the phenomenon behaves visually in PhET / Vascak.cz and identifying the variables and degrees of freedom.
+586e4571	Шаг 2	Step 2
+b543705c	Определение физического закона	Identifying the physical law
+1b8a57d8	Определение закономерностей механики Ньютона, силы Лоренца, законов сохранения энергии и импульса (Gemini / ChatGPT).	Identifying the relevant laws: Newtonian mechanics, the Lorentz force, conservation of energy and momentum (Gemini / ChatGPT).
+25c28da9	Шаг 3	Step 3
+3dfde29b	Построение математической модели	Building the mathematical model
+4adb13bf	Составление системы дифференциальных уравнений (⟦1⟧) и задание граничных условий (WolframAlpha).	Setting up the system of differential equations (⟦1⟧) and specifying boundary conditions (WolframAlpha).
+7e3b9b32	Шаг 4	Step 4
+1eb7ae7d	Алгоритм и визуальный код	Algorithm and visual code
+d9344930	Дискретизация симплектическим методом Эйлера–Кромера или RK4 и рендеринг на Canvas со скоростью 60 FPS (Claude).	Discretisation with the symplectic Euler–Cromer method or RK4 and rendering on Canvas at 60 FPS (Claude).
+bf6e740f	🧠 MagicSchool AI: диагностика навыков моделирования	🧠 MagicSchool AI: diagnosing modelling skills
+ca04d61e	Адаптивный план	Adaptive plan
+d830ef2c	Перед компьютерным моделированием физических процессов определяется исходный уровень знаний каждого студента по дифференциальному исчислению, дискретизации и физическим координатам:	Before modelling physical processes on a computer, each student’s initial level in differential calculus, discretisation and physical coordinates is determined:
+95025704	Кластер A (Remedial)	Cluster A (Remedial)
+efcc7695	1D-движение и скалярные уравнения	1D motion and scalar equations
+ef5a450d	Прямолинейное равномерное и равнопеременное движение, готовые математические формулы и простой шаг Эйлера.	Uniform and uniformly accelerated straight-line motion, ready-made formulas and the simple Euler step.
+771bf1bc	Кластер B (стандарт)	Cluster B (standard)
+dd0b7c05	2D векторное движение и метод Эйлера–Кромера	2D vector motion and Euler–Cromer
+3c109423	Горизонтально брошенное тело, линейное сопротивление воздуха (⟦1⟧), симплектический интегратор Эйлера–Кромера и упругие удары.	A horizontally launched body, linear air drag (⟦1⟧), the symplectic Euler–Cromer integrator and elastic impacts.
+52acc772	Кластер C (Advanced)	Cluster C (Advanced)
+dc773fb1	Нелинейные системы и RK4	Non-linear systems and RK4
+70ed56b4	Квадратичное аэродинамическое сопротивление (⟦1⟧), переменная масса (уравнение Мещерского), метод Рунге–Кутты 4-го порядка и анализ фазового пространства.	Quadratic aerodynamic drag (⟦1⟧), variable mass (the Meshchersky equation), 4th-order Runge–Kutta and phase-space analysis.
+c945cb04	🧪 Диагностический тест по моделированию (3 вопроса)	🧪 Modelling diagnostic test (3 questions)
+52b58437	Интерактивная проверка	Interactive check
+564c377c	Ответьте на следующие вопросы. По результату система порекомендует вам подходящую <strong>учебную траекторию моделирования (кластер A, B или C)</strong>:	Answer the following questions. Based on the result, the system will recommend a suitable <strong>modelling learning pathway (Cluster A, B or C)</strong>:
+1553b22b	1. Как записываются дифференциальные уравнения по осям ⟦2⟧ и ⟦3⟧ для тела, движущегося при квадратичном сопротивлении воздуха (⟦1⟧)?	1. How are the differential equations along the ⟦2⟧ and ⟦3⟧ axes written for a body moving under quadratic air drag (⟦1⟧)?
+dcf65f9d	2. Почему на экране Canvas в браузере координату ⟦1⟧ необходимо преобразовывать в виде ⟦2⟧?	2. Why must the ⟦1⟧ coordinate be transformed as ⟦2⟧ on a browser Canvas?
+d0a1f4be	A) В Canvas ось ⟦1⟧ направлена вниз, а в декартовых координатах — вверх	A) On a Canvas the ⟦1⟧ axis points down, while in Cartesian coordinates it points up
+ec2c69d7	B) Чтобы убрать силу тяжести	B) To remove gravity
+75826808	C) Потому что JavaScript принимает только отрицательные числа	C) Because JavaScript accepts only negative numbers
+e28a5470	3. Какой будет скорость тела после абсолютно неупругого удара о стенку (⟦1⟧)?	3. What is a body’s velocity after a perfectly inelastic impact with a wall (⟦1⟧)?
+8cf2d5db	A) ⟦1⟧ (полностью отражается)	A) ⟦1⟧ (fully bounces back)
+64435a9d	B) ⟦1⟧ (тело прилипает к стенке и останавливается, кинетическая энергия переходит в теплоту)	B) ⟦1⟧ (the body sticks to the wall and stops; kinetic energy turns into heat)
+9b845716	📚 Список научно-методической литературы к лекции 2:	📚 Scholarly and methodological references for Lecture 2:
+4c43d692	🔬 Обратная разработка (Reverse Engineering): PhET и Vascak.cz	🔬 Reverse engineering: PhET and Vascak.cz
+8c13bd3b	Методика деконструкции	Deconstruction method
+231152a4	<strong>Обратная разработка</strong> — методика анализа существующей качественной симуляции (например, ⟨2⟩PhET Interactive Simulations⟨/2⟩ или Vascak.cz (на сайте есть реклама, поэтому ссылка не приводится)) с самостоятельным восстановлением стоящих за ней физических уравнений, параметров и алгоритмов:	<strong>Reverse engineering</strong> is the method of analysing an existing high-quality simulation (for example ⟨2⟩PhET Interactive Simulations⟨/2⟩ or Vascak.cz (the site carries ads, so no link is given)) and independently reconstructing the physical equations, parameters and algorithms behind it:
+32352d7f	🌐 1. PhET Interactive Simulations (Университет Колорадо)	🌐 1. PhET Interactive Simulations (University of Colorado)
+e6b775c5	Мировой портал физических симуляций с открытым исходным кодом. Основан на технологиях HTML5 Canvas/SVG и позволяет интерактивно изучать явления микро- и макромира.	A world-class portal of open-source physics simulations. Built on HTML5 Canvas/SVG, it lets learners explore micro- and macro-world phenomena interactively.
+b8d85823	🔹 <strong>Преимущество:</strong> высокая научная точность, векторные индикаторы в реальном времени.	🔹 <strong>Advantage:</strong> high scientific accuracy and real-time vector indicators.
+32a9e153	🔹 <strong>Объект анализа:</strong> <em>Projectile Motion, Wave Interference, Gravity и Orbits</em>.	🔹 <strong>Objects of analysis:</strong> <em>Projectile Motion, Wave Interference, Gravity and Orbits</em>.
+3a2b8a17	🌐 2. Физические анимации Vascak.cz (Владимир Вашчак)	🌐 2. Vascak.cz physics animations (Vladimír Vaščák)
+1409917a	Собрание сотен компактных и чистых физических анимаций. Демонстрирует абстрактные понятия электродинамики, оптики и атомной физики через простые механизмы.	A collection of hundreds of compact, clean physics animations. It demonstrates abstract concepts of electrodynamics, optics and atomic physics through simple mechanisms.
+dc07c077	🔹 <strong>Преимущество:</strong> компактный код HTML5 Canvas, простые параметрические модели.	🔹 <strong>Advantage:</strong> compact HTML5 Canvas code and simple parametric models.
+129d7bd8	🔹 <strong>Объект анализа:</strong> <em>Lorentz Force, Cyclotron, Doppler Effect, Young Slit</em>.	🔹 <strong>Objects of analysis:</strong> <em>Lorentz Force, Cyclotron, Doppler Effect, Young Slit</em>.
+a1a827c2	📊 4-уровневая матрица деконструкции:	📊 4-layer deconstruction matrix:
+5e6550c3	1. UI и входные переменные	1. UI and input variables
+4d9c8e9d	Ползунки, кнопки, входные масса ⟦1⟧, угол ⟦2⟧, скорость ⟦3⟧.	Sliders, buttons, input mass ⟦1⟧, angle ⟦2⟧, velocity ⟦3⟧.
+47632992	2. Векторы состояния	2. State vectors
+90cf6c85	Меняются в каждом кадре: координата ⟦1⟧, скорость ⟦2⟧, ускорение ⟦3⟧.	Change every frame: position ⟦1⟧, velocity ⟦2⟧, acceleration ⟦3⟧.
+d1d4d166	3. Дифференциальное уравнение	3. Differential equation
+f68daf2f	Законы Ньютона ⟦1⟧, сопротивление воздуха, сила упругости пружины ⟦2⟧.	Newton’s laws ⟦1⟧, air drag, the spring force ⟦2⟧.
+e08516c6	4. Выходная телеметрия	4. Output telemetry
+a6f44151	Дальность полёта ⟦1⟧, полная энергия ⟦2⟧, фазовый график ⟦3⟧.	Range ⟦1⟧, total energy ⟦2⟧, phase plot ⟦3⟧.
+888b19d4	📐 Математические модели и аппарат дифференциальных уравнений	📐 Mathematical models and the differential-equation apparatus
+2c17353b	WolframAlpha и ChatGPT	WolframAlpha and ChatGPT
+9dd1ef52	Основа физической симуляции — не аналитические формулы, а система дифференциальных уравнений. Аналитические формулы (например, ⟦1⟧) работают только в идеальных случаях; при наличии силы сопротивления, нелинейности или столкновений возможно лишь численное интегрирование:	The foundation of a physics simulation is not analytical formulas but a system of differential equations. Analytical formulas (e.g. ⟦1⟧) only hold in ideal cases; with drag, non-linearity or collisions, only numerical integration is possible:
+06d9f42e	1. Квадратичное аэродинамическое сопротивление воздуха	1. Quadratic aerodynamic air drag
+2b4d5d7a	Второй закон Ньютона в векторной форме:	Newton’s second law in vector form:
+b24bc553	Связанная система по координатам (⟦1⟧):	The coupled system by coordinates (⟦1⟧):
+d2f2e4a8	2. Затухающий математический маятник (нелинейный)	2. The damped simple pendulum (non-linear)
+e7277e67	Полное уравнение без ограничения малых углов (⟦1⟧):	The full equation without the small-angle restriction (⟦1⟧):
+d77a3c9f	Запись в пространстве состояний (⟦1⟧ и ⟦2⟧):	State-space form (⟦1⟧ and ⟦2⟧):
+dedad9d5	⚡ Сравнение алгоритмов численного интегрирования:	⚡ Comparison of numerical integration algorithms:
+bc33a8b8	⟨1⟩1. Forward Euler (классический):⟨/1⟩↵ ⟦1⟧↵ ⟦2⟧↵ ⟨2⟩⚠️ Неустойчив (⟦3⟧)⟨/2⟩	⟨1⟩1. Forward Euler (classical):⟨/1⟩↵ ⟦1⟧↵ ⟦2⟧↵ ⟨2⟩⚠️ Unstable (⟦3⟧)⟨/2⟩
+95b17bb3	⟨1⟩2. Euler–Cromer (симплектический):⟨/1⟩↵ ⟦1⟧↵ ⟦2⟧↵ ⟨2⟩✅ Симплектический (энергия сохраняется)⟨/2⟩	⟨1⟩2. Euler–Cromer (symplectic):⟨/1⟩↵ ⟦1⟧↵ ⟦2⟧↵ ⟨2⟩✅ Symplectic (energy is conserved)⟨/2⟩
+dd34ae09	⟨1⟩3. Рунге–Кутта 4 (RK4):⟨/1⟩↵ ⟦1⟧↵ Погрешность: ⟦2⟧↵ ⟨2⟩✅ Максимальная точность⟨/2⟩	⟨1⟩3. Runge–Kutta 4 (RK4):⟨/1⟩↵ ⟦1⟧↵ Error: ⟦2⟧↵ ⟨2⟩✅ Maximum accuracy⟨/2⟩
+7639d118	Дальность полёта R:	Range R:
+028a0795	Максимальная высота Hₘₐₓ:	Maximum height Hₘₐₓ:
+96d4af30	Предельная скорость vₜ:	Terminal velocity vₜ:
+6661a255	Параметры броска (RK4)	Launch parameters (RK4)
+ca5cc503	Начальная скорость v₀:	Initial velocity v₀:
+a9500cdf	Угол броска α:	Launch angle α:
+c107a6ed	Коэффициент сопротивления k:	Drag coefficient k:
+eb4151ba	⟨1⟩Жёлтая пунктирная линия:⟨/1⟩ идеальная парабола в вакууме.↵ ⟨2⟩Синяя жирная линия:⟨/2⟩ реальная траектория при квадратичном сопротивлении воздуха (⟦1⟧).	⟨1⟩Yellow dashed line:⟨/1⟩ the ideal parabola in a vacuum.↵ ⟨2⟩Thick blue line:⟨/2⟩ the real trajectory with quadratic air drag (⟦1⟧).
+af984457	Бросок	Launch
+00117d19	Ошибка классического Эйлера:	Classical Euler error:
+09389d11	Погрешность численных интеграторов	Numerical integrator error
+6efc2d63	⟨1⟩Красный (классический Эйлер):⟨/1⟩ ⟦1⟧ — на каждом шаге энергия искусственно растёт, и траектория в фазовом пространстве раскручивается спиралью.↵↵ ⟨2⟩Зелёный (симплектический Эйлер–Кромер):⟨/2⟩ сохраняет площадь в фазовом пространстве, образуя замкнутый эллипс.↵↵ ⟨3⟩Синий (RK4):⟨/3⟩ точная теоретическая окружность.	⟨1⟩Red (classical Euler):⟨/1⟩ ⟦1⟧ — the energy grows artificially at every step and the phase-space trajectory spirals outward.↵↵ ⟨2⟩Green (symplectic Euler–Cromer):⟨/2⟩ preserves phase-space area and forms a closed ellipse.↵↵ ⟨3⟩Blue (RK4):⟨/3⟩ the exact theoretical circle.
+584d9255	Полный импульс P:	Total momentum P:
+59cebd17	0,00 кг·м/с	0.00 kg·m/s
+c1c60d5f	Кинетическая энергия Eₖ:	Kinetic energy Eₖ:
+2b7a3661	Параметры столкновения	Collision parameters
+bd40a989	Коэффициент восстановления e:	Coefficient of restitution e:
+b2ed3286	1,00 (упругий)	1.00 (elastic)
+8d2f92b5	⟦1⟧: абсолютно упругое столкновение (⟦2⟧).↵ ⟦3⟧: неупругое столкновение (часть кинетической энергии переходит в теплоту).	⟦1⟧: perfectly elastic collision (⟦2⟧).↵ ⟦3⟧: inelastic collision (part of the kinetic energy turns into heat).
+8d7f4682	Типичная ошибка 1	Typical error 1
+dfb4f6dd	Единица угла (градусы и радианы)	Angle units (degrees vs radians)
+6dd0df3b	В JavaScript <code>Math.sin()</code> работает только с радианами. Исправьте <code>angle = 45°</code>:	In JavaScript <code>Math.sin()</code> works in radians only. Fix <code>angle = 45°</code>:
+eab8a62c	Проверить	Run test
+bdad36aa	Протестируйте код	Try the code
+8a094b08	Типичная ошибка 2	Typical error 2
+064f75b2	Неустойчивость Эйлера («взрыв» энергии)	Euler instability (energy blow-up)
+57b4bb39	Замените классический метод Эйлера симплектическим методом Эйлера–Кромера:	Replace classical Euler with symplectic Euler–Cromer:
+47c8f389	Типичная ошибка 3	Typical error 3
+d2b98568	Туннельный эффект стенки (выход за границу)	Wall tunnelling (escaping the boundary)
+8bd7031c	Чтобы тело не проходило сквозь стенку, зафиксируйте его положение на границе ⟦1⟧:	To stop the body passing through the wall, clamp its position at the ⟦1⟧ boundary:
+40b84da0	Типичная ошибка 4	Typical error 4
+2720fcbc	Сингулярность (бесконечная сила при ⟦1⟧)	Singularity (infinite force at ⟦1⟧)
+8833ac02	Чтобы знаменатель в силе гравитации / Кулона не обращался в ноль, добавьте сглаживающий параметр <code>eps = 0.5</code>:	To keep the denominator of the gravitational / Coulomb force from reaching zero, add a softening parameter <code>eps = 0.5</code>:
+3af403b9	Промпты для обратной разработки и моделирования	Reverse-engineering and modelling prompts
+a873bdba	Промпт для Claude: симуляция квадратичного сопротивления	Claude prompt: quadratic drag simulation
+5ea2f621	Ты — специалист по вычислительной физике. Напиши в одном HTML5-файле с помощью Canvas и Vanilla JS движение горизонтально брошенного тела с квадратичным сопротивлением воздуха (F = -0.5*Cd*rho*A*v*v). Используй метод Рунге–Кутты 4-го порядка (RK4). В реальном времени рисуй и параболу в вакууме (жёлтая пунктирная линия), и реальную кривую с сопротивлением воздуха (синяя). На панели телеметрии выводи дальность полёта, максимальную высоту и предельную скорость (terminal velocity).	You are a computational physics specialist. Write the motion of a horizontally launched body with quadratic air drag (F = -0.5*Cd*rho*A*v*v) in a single HTML5 file using Canvas and Vanilla JS. Use the 4th-order Runge–Kutta (RK4) method. In real time, draw both the vacuum parabola (yellow dashed line) and the real drag curve (blue). Show the range, maximum height and terminal velocity on a telemetry panel.

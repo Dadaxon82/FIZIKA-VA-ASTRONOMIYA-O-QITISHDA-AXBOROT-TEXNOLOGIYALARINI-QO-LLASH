@@ -1,0 +1,962 @@
+[
+ {
+  "k": "f1991596",
+  "s": "6-ma’ruza: Fizik modellarni shakllantirish",
+  "ru": "Лекция 6: Построение физических моделей",
+  "en": "Lecture 6: Building Physical Models"
+ },
+ {
+  "k": "e425da0a",
+  "s": "Erkin jism diagrammasi (Free-Body Diagram — FBD), Claude (Vision) optik dekonstruksiyasi, Nyutonning 2-qonuni vektor proyeksiyalari, Kulon-Amonton va Stribek ishqalanish dinamikasi, algoritmik blok-sxema qurish qoidalari, Sokratik debugging va PhET <em>\"Forces and Motion: Basics\"</em> simulyatsiyasining teskari muhandislik tahlili.",
+  "ru": "Диаграмма свободного тела (Free-Body Diagram — FBD), оптическая деконструкция с Claude (Vision), векторные проекции второго закона Ньютона, динамика трения Кулона–Амонтона и Штрибека, правила построения алгоритмических блок-схем, сократическая отладка и анализ симуляции PhET <em>\"Forces and Motion: Basics\"</em> методом обратной разработки.",
+  "en": "Free-body diagrams (FBD), optical deconstruction with Claude (Vision), vector projections of Newton’s second law, Coulomb–Amontons and Stribeck friction dynamics, rules for building algorithmic flowcharts, Socratic debugging and reverse-engineering analysis of the PhET <em>\"Forces and Motion: Basics\"</em> simulation."
+ },
+ {
+  "k": "6688c75c",
+  "s": "📋 6-ma’ruza rejasi va AI texnologik konveyeri:",
+  "ru": "📋 План лекции 6 и технологический ИИ-конвейер:",
+  "en": "📋 Lecture 6 plan and the AI technology pipeline:"
+ },
+ {
+  "k": "bae45061",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD tamoyili asosida 3 klasterli adaptiv o‘quv trayektoriyasini tuzish.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: построение адаптивной траектории из 3 кластеров на основе принципа ЗБР.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: building a 3-cluster adaptive pathway based on the ZPD principle.</span>"
+ },
+ {
+  "k": "c17006e4",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Erkin jism diagrammasi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Vision): Qo‘lda chizilgan eskizlardan vektorlar va burchaklarni ajratish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Диаграмма свободного тела:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Vision): выделение векторов и углов из эскизов, нарисованных от руки.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Free-body diagram:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Vision): extracting vectors and angles from hand-drawn sketches.</span>"
+ },
+ {
+  "k": "2a91fabe",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Vektor kuchlar tizimi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha / ChatGPT: Dekart proyeksiyalari ($Ox, Oy$), statik va kinetik ishqalanish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Система векторных сил:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha / ChatGPT: декартовы проекции ($Ox, Oy$), трение покоя и скольжения.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Vector force system:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha / ChatGPT: Cartesian projections ($Ox, Oy$), static and kinetic friction.</span>"
+ },
+ {
+  "k": "773cf317",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Blok-sxema va psevdokod:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Physics loop, Simplektik Eyler–Kromer integratori va to‘qnashuvlar.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Блок-схема и псевдокод:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Physics loop, симплектический интегратор Эйлера–Кромера и столкновения.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Flowchart and pseudocode:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: the physics loop, the symplectic Euler–Cromer integrator and collisions.</span>"
+ },
+ {
+  "k": "21986b2a",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Sokratik dialog va visuals:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude / Gemini: Fizik mantiqni tekshirish (Debugging) va Midjourney ilmiy illyustratsiyalari.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Сократический диалог и визуализация:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude / Gemini: проверка физической логики (отладка) и научные иллюстрации в Midjourney.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Socratic dialogue and visuals:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude / Gemini: checking the physics logic (debugging) and Midjourney scientific illustrations.</span>"
+ },
+ {
+  "k": "80b4127b",
+  "s": "<strong style=\"color:#1C4E9E;\">6. Simulyatsiya va PhET:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas jonli FBD dvigateli va PhET \"Forces and Motion: Basics\" integratsiyasi.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6. Симуляция и PhET:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Живой FBD-движок на HTML5 Canvas и интеграция PhET \"Forces and Motion: Basics\".</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6. Simulation and PhET:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A live HTML5 Canvas FBD engine and PhET \"Forces and Motion: Basics\" integration.</span>"
+ },
+ {
+  "k": "16f417d3",
+  "s": "1-bosqich: Sun’iy intellekt diagnostikasi",
+  "ru": "Этап 1: диагностика с помощью искусственного интеллекта",
+  "en": "Stage 1: AI diagnostics"
+ },
+ {
+  "k": "549fda0e",
+  "s": "MagicSchool AI: kognitiv diagnostika va 3 klasterli adaptiv o‘quv rejasi",
+  "ru": "MagicSchool AI: когнитивная диагностика и адаптивный учебный план из 3 кластеров",
+  "en": "MagicSchool AI: cognitive diagnostics and a 3-cluster adaptive learning plan"
+ },
+ {
+  "k": "7e6bc674",
+  "s": "Fizik modellashtirish kursi doirasida talabalarning fazoviy tasavvuri, vektorli hisob-kitob ko‘nikmalari va dasturlash tayyorgarligi keskin farq qiladi. <strong>MagicSchool AI</strong> platformasi Lev Vygotskiyning <em>Eng Yaqin Rivojlanish Zonasi (Zone of Proximal Development — ZPD)</em> hamda Bloom taksonomiyasining 6 pog‘onasi (Eslab qolish $\\to$ Tushunish $\\to$ Qo‘llash $\\to$ Tahlil $\\to$ Baholash $\\to$ Yaratish) asosida kirish diagnostikasini o‘tkazadi va talabalarni 3 ta ixtisoslashtirilgan klasterga ajratadi:",
+  "ru": "В курсе физического моделирования пространственное мышление, навыки векторных вычислений и подготовка в программировании у студентов сильно различаются. Платформа <strong>MagicSchool AI</strong> проводит входную диагностику на основе <em>зоны ближайшего развития (Zone of Proximal Development — ZPD)</em> Льва Выготского и 6 уровней таксономии Блума (запоминание $\\to$ понимание $\\to$ применение $\\to$ анализ $\\to$ оценка $\\to$ создание) и распределяет студентов по 3 специализированным кластерам:",
+  "en": "In a physical modelling course, students differ sharply in spatial reasoning, vector computation skills and programming preparation. <strong>MagicSchool AI</strong> runs an entry diagnostic based on Lev Vygotsky’s <em>Zone of Proximal Development (ZPD)</em> and the 6 levels of Bloom’s taxonomy (Remember $\\to$ Understand $\\to$ Apply $\\to$ Analyse $\\to$ Evaluate $\\to$ Create) and sorts students into 3 specialised clusters:"
+ },
+ {
+  "k": "db8be1b9",
+  "s": "Scaffolding",
+  "ru": "Scaffolding",
+  "en": "Scaffolding"
+ },
+ {
+  "k": "18b27eb6",
+  "s": "Nyutonning skalyar qonunlarini biladi, biroq qiya tekislikda erkin jism diagrammasini chizishda normal reaksiya $\\vec{N}$ va og‘irlik $m\\vec{g}$ proyeksiyalarini chalkashtiradi.",
+  "ru": "Знает скалярные законы Ньютона, но при построении диаграммы свободного тела на наклонной плоскости путает проекции нормальной реакции $\\vec{N}$ и силы тяжести $m\\vec{g}$.",
+  "en": "Knows Newton’s laws in scalar form but mixes up the projections of the normal force $\\vec{N}$ and weight $m\\vec{g}$ when drawing a free-body diagram on an incline."
+ },
+ {
+  "k": "a7dd94b3",
+  "s": "<strong>O‘quv yo‘nalishi:</strong> Qo‘llab-quvvatlovchi shablonlar (Scaffolding), PhET \"Forces and Motion\" vizual arqon tortishish tajribalari, 1D to‘g‘ri chiziqli harakat kodlari.",
+  "ru": "<strong>Учебное направление:</strong> поддерживающие шаблоны (скаффолдинг), визуальные опыты с перетягиванием каната в PhET \"Forces and Motion\", коды одномерного прямолинейного движения.",
+  "en": "<strong>Learning track:</strong> supporting templates (scaffolding), PhET \"Forces and Motion\" tug-of-war visual experiments, 1D straight-line motion code."
+ },
+ {
+  "k": "dcca9640",
+  "s": "2D Vektor proyeksiyalari ($mg\\sin\\alpha, mg\\cos\\alpha$) va statik/kinetik ishqalanish shartlarini to‘liq tushunadi. JavaScript sintaksisini biladi.",
+  "ru": "Полностью понимает двумерные векторные проекции ($mg\\sin\\alpha, mg\\cos\\alpha$) и условия трения покоя/скольжения. Знает синтаксис JavaScript.",
+  "en": "Fully understands 2D vector projections ($mg\\sin\\alpha, mg\\cos\\alpha$) and the static/kinetic friction conditions. Knows JavaScript syntax."
+ },
+ {
+  "k": "1a183793",
+  "s": "<strong>O‘quv yo‘nalishi:</strong> Claude bilan Simplektik Eyler–Kromer fizik dvigatelini mustaqil kodlash, HTML5 Canvas ekranida FBD vektorlarini real vaqtda renderlash.",
+  "ru": "<strong>Учебное направление:</strong> самостоятельное программирование с Claude физического движка на симплектическом методе Эйлера–Кромера, рендеринг FBD-векторов на HTML5 Canvas в реальном времени.",
+  "en": "<strong>Learning track:</strong> coding a symplectic Euler–Cromer physics engine independently with Claude and rendering FBD vectors on HTML5 Canvas in real time."
+ },
+ {
+  "k": "9763d6c7",
+  "s": "Differensial tenglamalar sistemasi, no-chiziqli kvadratik aerodinamika ($F_{drag} = -kv|v|$) va 4-tartibli Runge–Kutta (RK4) usullarini erkin qo‘llay oladi.",
+  "ru": "Свободно применяет системы дифференциальных уравнений, нелинейную квадратичную аэродинамику ($F_{drag} = -kv|v|$) и метод Рунге–Кутты 4-го порядка (RK4).",
+  "en": "Applies systems of differential equations, non-linear quadratic aerodynamics ($F_{drag} = -kv|v|$) and 4th-order Runge–Kutta (RK4) with ease."
+ },
+ {
+  "k": "d8805dfa",
+  "s": "<strong>O‘quv yo‘nalishi:</strong> Murakkab bog‘langan tizimlar (Atvud mashinasi, qiyalikdagi prujinali ossilyator), Claude Vision promptlarini optimallashtirish.",
+  "ru": "<strong>Учебное направление:</strong> сложные связанные системы (машина Атвуда, пружинный осциллятор на наклонной плоскости), оптимизация промптов для Claude Vision.",
+  "en": "<strong>Learning track:</strong> complex coupled systems (an Atwood machine, a spring oscillator on an incline) and optimising Claude Vision prompts."
+ },
+ {
+  "k": "90b31d1e",
+  "s": "🗺️ 4 Haftalik adaptiv modellashtirish yo‘l xaritasi (roadmap):",
+  "ru": "🗺️ Адаптивная 4-недельная дорожная карта моделирования (roadmap):",
+  "en": "🗺️ 4-week adaptive modelling roadmap:"
+ },
+ {
+  "k": "85431706",
+  "s": "FBD va Vektorlar",
+  "ru": "FBD и векторы",
+  "en": "FBD and vectors"
+ },
+ {
+  "k": "4c6c37fb",
+  "s": "1D Gorizontal kuchlar balansi va PhET Net Force",
+  "ru": "Баланс горизонтальных сил в 1D и PhET Net Force",
+  "en": "1D horizontal force balance and PhET Net Force"
+ },
+ {
+  "k": "590b83e0",
+  "s": "Qiya tekislikda FBD eskizlari va Dekart proyeksiyalari",
+  "ru": "Эскизы FBD на наклонной плоскости и декартовы проекции",
+  "en": "FBD sketches on an incline and Cartesian projections"
+ },
+ {
+  "k": "46906fee",
+  "s": "Ko‘p jismli tizimlar va bog‘lanish tenglamalari",
+  "ru": "Многотельные системы и уравнения связей",
+  "en": "Multi-body systems and constraint equations"
+ },
+ {
+  "k": "fc3a6018",
+  "s": "Vektorlar yo‘nalishi aniqligi (100%)",
+  "ru": "Точность направлений векторов (100%)",
+  "en": "Vector direction accuracy (100%)"
+ },
+ {
+  "k": "b678574b",
+  "s": "AI Dekonstruksiya",
+  "ru": "ИИ-деконструкция",
+  "en": "AI deconstruction"
+ },
+ {
+  "k": "da9ca73d",
+  "s": "Claude Vision bilan tayyor FBD shablonlarini o‘qish",
+  "ru": "Чтение готовых шаблонов FBD с Claude Vision",
+  "en": "Reading ready-made FBD templates with Claude Vision"
+ },
+ {
+  "k": "5bd99886",
+  "s": "O‘z qo‘l chizmasini Claude Vision orqali JSON ga o‘girish",
+  "ru": "Перевод собственного рисунка в JSON через Claude Vision",
+  "en": "Converting your own drawing to JSON with Claude Vision"
+ },
+ {
+  "k": "7006f2cb",
+  "s": "Murakkab chizmalarda gallyutsinatsiyalarni filtrlash",
+  "ru": "Фильтрация галлюцинаций на сложных рисунках",
+  "en": "Filtering hallucinations on complex drawings"
+ },
+ {
+  "k": "fd20892a",
+  "s": "JSON spetsifikatsiyasi to‘g‘riligi",
+  "ru": "Корректность JSON-спецификации",
+  "en": "JSON specification correctness"
+ },
+ {
+  "k": "5b4d2388",
+  "s": "Kodlash va Integratsiya",
+  "ru": "Программирование и интеграция",
+  "en": "Coding and integration"
+ },
+ {
+  "k": "13275b0f",
+  "s": "Scaffolding yordamida Eyler–Kromer kodini to‘ldirish",
+  "ru": "Дописывание кода Эйлера–Кромера со скаффолдингом",
+  "en": "Completing Euler–Cromer code with scaffolding"
+ },
+ {
+  "k": "fc602099",
+  "s": "Mustaqil Canvas FBD dvigateli va statik/kinetik mantiq",
+  "ru": "Самостоятельный FBD-движок на Canvas и логика покоя/скольжения",
+  "en": "An independent Canvas FBD engine and static/kinetic logic"
+ },
+ {
+  "k": "fcc05c12",
+  "s": "RK4 integratori va Stribek no-chiziqli ishqalanishi",
+  "ru": "Интегратор RK4 и нелинейное трение Штрибека",
+  "en": "The RK4 integrator and non-linear Stribeck friction"
+ },
+ {
+  "k": "339b97e2",
+  "s": "Energiya saqlanish barqarorligi",
+  "ru": "Устойчивость сохранения энергии",
+  "en": "Energy conservation stability"
+ },
+ {
+  "k": "be953b6e",
+  "s": "Capstone va Himoya",
+  "ru": "Capstone и защита",
+  "en": "Capstone and defence"
+ },
+ {
+  "k": "bf7fb033",
+  "s": "FBD simulyatorini PhET natijalari bilan solishtirish",
+  "ru": "Сравнение FBD-симулятора с результатами PhET",
+  "en": "Comparing the FBD simulator with PhET results"
+ },
+ {
+  "k": "03017523",
+  "s": "Interaktiv HUD va slayderlar bilan to‘liq laboratoriya",
+  "ru": "Полноценная лаборатория с интерактивным HUD и ползунками",
+  "en": "A complete lab with an interactive HUD and sliders"
+ },
+ {
+  "k": "219604c8",
+  "s": "Parametrik tahlil va GitHub Pages da nashr qilish",
+  "ru": "Параметрический анализ и публикация на GitHub Pages",
+  "en": "Parametric analysis and publishing on GitHub Pages"
+ },
+ {
+  "k": "a830e50b",
+  "s": "Ilmiy asoslangan xulosalar",
+  "ru": "Научно обоснованные выводы",
+  "en": "Evidence-based conclusions"
+ },
+ {
+  "k": "7bd35907",
+  "s": "MagicSchool AI uchun Moslashtirilgan Diagnostika Prompti",
+  "ru": "Адаптированный диагностический промпт для MagicSchool AI",
+  "en": "Customised diagnostic prompt for MagicSchool AI"
+ },
+ {
+  "k": "0c2e0652",
+  "s": "Nusxalash",
+  "ru": "Копировать",
+  "en": "Copy"
+ },
+ {
+  "k": "bf0542d6",
+  "s": "Sen Oliy ta’lim hisoblash fizikasi metodistisan. Talabalarning \"Erkin jism diagrammasi va kuchlar tahlili\" bo‘yicha tayyorgarligini baholash uchun 5 ta kognitiv test savoli ishlab chiq: 1) Qiya tekislikdagi normal reaksiya kuchi N yo‘nalishi va moduli, 2) Statik va kinetik ishqalanish kuchi o‘rtasidagi chegaraviy farq, 3) Nyuton 2-qonuni vektor tenglamasini Dekart o‘qlariga to‘g‘ri proyeksiyalash, 4) Simplektik Eyler–Kromer integratsiyasining oddiy Eylerdan afzalligi, 5) HTML5 Canvas ekranida fizik koordinatalarni piksel koordinatalariga o‘girish (toScreenX/Y). Natijalarni A, B, C klasterlarga ajratib, har biriga individual 4 haftalik laboratoriya yo‘l xaritasini tuz.",
+  "ru": "Ты — методист вузовского курса вычислительной физики. Разработай 5 когнитивных тестовых вопросов для оценки подготовки студентов по теме \"Диаграмма свободного тела и анализ сил\": 1) направление и модуль силы нормальной реакции N на наклонной плоскости; 2) граничное различие между силами трения покоя и скольжения; 3) правильная проекция векторного уравнения второго закона Ньютона на декартовы оси; 4) преимущество симплектического интегрирования Эйлера–Кромера перед простым методом Эйлера; 5) перевод физических координат в пиксельные на экране HTML5 Canvas (toScreenX/Y). Распредели результаты по кластерам A, B, C и для каждого составь индивидуальную 4-недельную дорожную карту лабораторных работ.",
+  "en": "You are a methodologist in university computational physics. Write 5 cognitive test questions to assess students’ readiness on \"Free-body diagrams and force analysis\": 1) the direction and magnitude of the normal force N on an incline, 2) the boundary between static and kinetic friction, 3) correctly projecting Newton’s second-law vector equation onto Cartesian axes, 4) the advantage of symplectic Euler–Cromer integration over plain Euler, 5) converting physical coordinates to pixel coordinates on an HTML5 Canvas (toScreenX/Y). Sort the results into clusters A, B and C and draw up an individual 4-week lab roadmap for each."
+ },
+ {
+  "k": "2fcde9f6",
+  "s": "2-bosqich: Optik vektor tahlili",
+  "ru": "Этап 2: оптический анализ векторов",
+  "en": "Stage 2: Optical vector analysis"
+ },
+ {
+  "k": "1e66ae60",
+  "s": "Claude (Vision): erkin jism diagrammasi optik dekonstruksiyasi",
+  "ru": "Claude (Vision): оптическая деконструкция диаграммы свободного тела",
+  "en": "Claude (Vision): optical deconstruction of a free-body diagram"
+ },
+ {
+  "k": "2d8d0a14",
+  "s": "<strong>Erkin Jism Diagrammasi (Free-Body Diagram — FBD)</strong> — bu klassik Nyuton mexanikasining fundamental asosi bo‘lib, o‘rganilayotgan jismni atrof-muhitdan to‘liq ajratib (izolyatsiya qilib), unga ta’sir qiluvchi barcha tashqi kuch vektorlarini grafik tasvirlash metodidir. Claude multimodal sun’iy intellekt modeli talaba tomonidan qog‘ozga qo‘lda chizilgan eskizlarni optik segmentatsiyalash orqali tahlil qiladi va uni kompyuter tushunadigan matematik hamda algoritmik spetsifikatsiyaga aylantiradi:",
+  "ru": "<strong>Диаграмма свободного тела (Free-Body Diagram — FBD)</strong> — фундаментальная основа классической механики Ньютона: метод графического изображения всех внешних векторов сил, действующих на изучаемое тело, полностью отделённое (изолированное) от окружения. Мультимодальная ИИ-модель Claude анализирует нарисованные студентом от руки на бумаге эскизы с помощью оптической сегментации и превращает их в понятную компьютеру математическую и алгоритмическую спецификацию:",
+  "en": "The <strong>free-body diagram (FBD)</strong> is the fundamental basis of classical Newtonian mechanics: a method of graphically showing all the external force vectors acting on a body that has been completely isolated from its surroundings. The multimodal AI model Claude analyses a student’s hand-drawn paper sketch through optical segmentation and turns it into a mathematical and algorithmic specification a computer can use:"
+ },
+ {
+  "k": "075c20a1",
+  "s": "🔍 Vision modelining 5 bosqichli dekonstruksiya bosqichlari:",
+  "ru": "🔍 5 этапов деконструкции Vision-модели:",
+  "en": "🔍 The vision model’s 5 deconstruction stages:"
+ },
+ {
+  "k": "68cefa43",
+  "s": "<strong>1. Tasvirni segmentatsiyalash:</strong> Asosiy jism geometriyasi (blok/shar), sirt profili (qiya tekislik) va burchaklarni ($\\alpha, \\theta$) aniqlash.",
+  "ru": "<strong>1. Сегментация изображения:</strong> определение геометрии основного тела (блок/шар), профиля поверхности (наклонная плоскость) и углов ($\\alpha, \\theta$).",
+  "en": "<strong>1. Image segmentation:</strong> identifying the main body’s geometry (block/ball), the surface profile (incline) and the angles ($\\alpha, \\theta$)."
+ },
+ {
+  "k": "a2ca7cdf",
+  "s": "<strong>2. Vektorlarni ajratish va klassifikatsiyalash:</strong> Har bir kuchning qo‘yilish nuqtasi, yo‘nalishi va shartli belgilanishlarini ($m\\vec{g}, \\vec{N}, \\vec{F}_{tort}, \\vec{F}_{ishq}$) aniqlash.",
+  "ru": "<strong>2. Выделение и классификация векторов:</strong> определение точки приложения, направления и условных обозначений каждой силы ($m\\vec{g}, \\vec{N}, \\vec{F}_{tort}, \\vec{F}_{ishq}$).",
+  "en": "<strong>2. Vector extraction and classification:</strong> identifying each force’s point of application, direction and label ($m\\vec{g}, \\vec{N}, \\vec{F}_{tort}, \\vec{F}_{ishq}$)."
+ },
+ {
+  "k": "bc85f16a",
+  "s": "<strong>3. Koordinata sistemasini moslashtirish:</strong> $Ox$ o‘qini harakat yo‘nalishi (qiyalik bo‘ylab), $Oy$ o‘qini esa sirtga perpendikulyar qilib o‘rnatish.",
+  "ru": "<strong>3. Согласование системы координат:</strong> ось $Ox$ — по направлению движения (вдоль наклона), ось $Oy$ — перпендикулярно поверхности.",
+  "en": "<strong>3. Aligning the coordinate system:</strong> the $Ox$ axis along the motion (along the incline) and the $Oy$ axis perpendicular to the surface."
+ },
+ {
+  "k": "33758aa1",
+  "s": "<strong>4. Bog‘lanish tenglamalarini tekshirish:</strong> Sirt orqali o‘tmaslik geometrik sharti ($y = \\text{const} \\implies a_y = 0$).",
+  "ru": "<strong>4. Проверка уравнений связей:</strong> геометрическое условие непрохождения сквозь поверхность ($y = \\text{const} \\implies a_y = 0$).",
+  "en": "<strong>4. Checking constraint equations:</strong> the geometric condition of not passing through the surface ($y = \\text{const} \\implies a_y = 0$)."
+ },
+ {
+  "k": "688a85e5",
+  "s": "<strong>5. Strukturaviy JSON generatsiyasi:</strong> Dasturiy fizik dvigatel (Canvas) to‘g‘ridan-to‘g‘ri qabul qiladigan toza ma’lumotlar massivini yaratish.",
+  "ru": "<strong>5. Генерация структурированного JSON:</strong> создание чистого массива данных, который программный физический движок (Canvas) принимает напрямую.",
+  "en": "<strong>5. Generating structured JSON:</strong> producing a clean data array that the software physics engine (Canvas) can consume directly."
+ },
+ {
+  "k": "033afb01",
+  "s": "📐 Qiya tekislikdagi FBD ilmiy chizmasi",
+  "ru": "📐 Научный чертёж FBD на наклонной плоскости",
+  "en": "📐 Scientific FBD drawing on an incline"
+ },
+ {
+  "k": "26a4ace8",
+  "s": "Free-Body Diagram on Incline",
+  "ru": "Free-Body Diagram on Incline",
+  "en": "Free-Body Diagram on Incline"
+ },
+ {
+  "k": "12f64817",
+  "s": "⚠️ AI Vision foydalanishida tipik xatolar va ularning oldini olish:",
+  "ru": "⚠️ Типичные ошибки при использовании AI Vision и их предотвращение:",
+  "en": "⚠️ Typical mistakes when using AI Vision and how to avoid them:"
+ },
+ {
+  "k": "f2152ab7",
+  "s": "<strong style=\"color:#E11D48;\">1. Parallaks va noaniq burchak:</strong><br> Kamera burchak ostida rasmga olinganda burchaklar buziladi. Rasm to‘g‘ridan-to‘g‘ri $90^\\circ$ tik olinishi shart.",
+  "ru": "<strong style=\"color:#E11D48;\">1. Параллакс и неточный угол:</strong><br> При съёмке под углом углы искажаются. Фотографировать нужно строго $90^\\circ$ сверху.",
+  "en": "<strong style=\"color:#E11D48;\">1. Parallax and inaccurate angles:</strong><br> Angles are distorted when the photo is taken at a slant. The picture must be taken straight on at $90^\\circ$."
+ },
+ {
+  "k": "855c4fe3",
+  "s": "<strong style=\"color:#A16207;\">2. Ichki kuchlarni qo‘shib yuborish:</strong><br> Jismning Yerga ko‘rsatadigan gravitatsiya kuchi yoki sirtga bosim kuchi FBD ga chizilmasligi kerak!",
+  "ru": "<strong style=\"color:#A16207;\">2. Добавление внутренних сил:</strong><br> Сила, с которой тело притягивает Землю, или сила давления на поверхность не должны изображаться на FBD!",
+  "en": "<strong style=\"color:#A16207;\">2. Including internal forces:</strong><br> The force the body exerts on the Earth, or its pressure on the surface, must not be drawn on the FBD!"
+ },
+ {
+  "k": "730320bc",
+  "s": "<strong style=\"color:#1C4E9E;\">3. Vektor o‘qlarining nomutanosibligi:</strong><br> Koordinata o‘qlari $Ox$ va $Oy$ qiyalik yuzasiga qat’iy parallel va perpendikulyar bo‘lishi lozim.",
+  "ru": "<strong style=\"color:#1C4E9E;\">3. Несогласованность осей векторов:</strong><br> Оси координат $Ox$ и $Oy$ должны быть строго параллельны и перпендикулярны поверхности наклона.",
+  "en": "<strong style=\"color:#1C4E9E;\">3. Misaligned vector axes:</strong><br> The $Ox$ and $Oy$ coordinate axes must be strictly parallel and perpendicular to the incline surface."
+ },
+ {
+  "k": "f41d8553",
+  "s": "Claude uchun FBD Vision Dekonstruksiya Prompti",
+  "ru": "Промпт Vision-деконструкции FBD для Claude",
+  "en": "FBD Vision deconstruction prompt for Claude"
+ },
+ {
+  "k": "fd66f1b7",
+  "s": "Sen Hisoblash mexanikasi bo‘yicha yetakchi mutaxassissan. Ilova qilingan erkin jism diagrammasi (FBD) chizmasini dekonstruksiya qil: 1) Jismga ta’sir qiluvchi barcha kuchlarni aniqla va ularning fizik kelib chiqishini ko‘rsat: - Og‘irlik kuchi (mg) — doimo Yer markaziga tik pastga yo‘naladi, - Normal reaksiya kuchi (N) — doimo sirtga perpendikulyar va jismdan tashqariga yo‘naladi, - Tashqi tortish kuchi (F_tort) — berilgan burchak bo‘yicha yo‘naladi, - Quruq ishqalanish kuchi (F_ishq) — ehtimoliy yoki mavjud harakatga qarama-qarshi yo‘naladi. 2) Qiyalik burchagi alfa va tortish kuchi burchagi theta ni aniqla. 3) Ox va Oy o‘qlari bo‘yicha kuchlar proyeksiyasi tenglamalarini LaTeX formatida tuz. 4) Statik va kinetik ishqalanish shartlarini ajrat. 5) Natijani toza JSON formatida chiqar: { \"body\": \"Box on inclined plane\", \"mass_kg\": 5.0, \"incline_angle_deg\": 30.0, \"forces\": [ { \"name\": \"Gravity\", \"symbol\": \"mg\", \"direction\": \"downward\", \"components\": { \"x\": \"-mg*sin(alpha)\", \"y\": \"-mg*cos(alpha)\" } }, { \"name\": \"Normal Force\", \"symbol\": \"N\", \"direction\": \"perpendicular to incline\", \"components\": { \"x\": \"0\", \"y\": \"N\" } }, { \"name\": \"Applied Force\", \"symbol\": \"F_app\", \"direction\": \"up the incline\", \"components\": { \"x\": \"F_app\", \"y\": \"0\" } }, { \"name\": \"Friction Force\", \"symbol\": \"F_fr\", \"direction\": \"opposing motion\", \"components\": { \"x\": \"-F_fr\", \"y\": \"0\" } } ], \"governing_equations\": { \"Oy_axis\": \"N - m*g*cos(alpha) = 0 =&gt; N = m*g*cos(alpha)\", \"Ox_axis\": \"F_app - m*g*sin(alpha) - F_fr = m*a_x\" } }",
+  "ru": "Ты — ведущий специалист по вычислительной механике. Выполни деконструкцию приложенной диаграммы свободного тела (FBD): 1) Определи все силы, действующие на тело, и укажи их физическое происхождение: - сила тяжести (mg) — всегда направлена вертикально вниз к центру Земли, - сила нормальной реакции (N) — всегда перпендикулярна поверхности и направлена от тела, - внешняя тянущая сила (F_тяг) — направлена под заданным углом, - сила сухого трения (F_тр) — направлена против возможного или фактического движения. 2) Определи угол наклона alpha и угол тянущей силы theta. 3) Составь в формате LaTeX уравнения проекций сил на оси Ox и Oy. 4) Раздели условия трения покоя и скольжения. 5) Выведи результат в чистом формате JSON: { \"body\": \"Box on inclined plane\", \"mass_kg\": 5.0, \"incline_angle_deg\": 30.0, \"forces\": [ { \"name\": \"Gravity\", \"symbol\": \"mg\", \"direction\": \"downward\", \"components\": { \"x\": \"-mg*sin(alpha)\", \"y\": \"-mg*cos(alpha)\" } }, { \"name\": \"Normal Force\", \"symbol\": \"N\", \"direction\": \"perpendicular to incline\", \"components\": { \"x\": \"0\", \"y\": \"N\" } }, { \"name\": \"Applied Force\", \"symbol\": \"F_app\", \"direction\": \"up the incline\", \"components\": { \"x\": \"F_app\", \"y\": \"0\" } }, { \"name\": \"Friction Force\", \"symbol\": \"F_fr\", \"direction\": \"opposing motion\", \"components\": { \"x\": \"-F_fr\", \"y\": \"0\" } } ], \"governing_equations\": { \"Oy_axis\": \"N - m*g*cos(alpha) = 0 =&gt; N = m*g*cos(alpha)\", \"Ox_axis\": \"F_app - m*g*sin(alpha) - F_fr = m*a_x\" } }",
+  "en": "You are a leading specialist in computational mechanics. Deconstruct the attached free-body diagram (FBD): 1) Identify all forces acting on the body and state their physical origin: - Weight (mg) — always points straight down toward the Earth’s centre, - Normal force (N) — always perpendicular to the surface, pointing away from it, - Applied pulling force (F_pull) — acts at the given angle, - Dry friction force (F_fr) — opposes the impending or actual motion. 2) Determine the incline angle alpha and the pulling-force angle theta. 3) Write the force-projection equations along the Ox and Oy axes in LaTeX. 4) Separate the static and kinetic friction conditions. 5) Output the result as clean JSON: { \"body\": \"Box on inclined plane\", \"mass_kg\": 5.0, \"incline_angle_deg\": 30.0, \"forces\": [ { \"name\": \"Gravity\", \"symbol\": \"mg\", \"direction\": \"downward\", \"components\": { \"x\": \"-mg*sin(alpha)\", \"y\": \"-mg*cos(alpha)\" } }, { \"name\": \"Normal Force\", \"symbol\": \"N\", \"direction\": \"perpendicular to incline\", \"components\": { \"x\": \"0\", \"y\": \"N\" } }, { \"name\": \"Applied Force\", \"symbol\": \"F_app\", \"direction\": \"up the incline\", \"components\": { \"x\": \"F_app\", \"y\": \"0\" } }, { \"name\": \"Friction Force\", \"symbol\": \"F_fr\", \"direction\": \"opposing motion\", \"components\": { \"x\": \"-F_fr\", \"y\": \"0\" } } ], \"governing_equations\": { \"Oy_axis\": \"N - m*g*cos(alpha) = 0 =&gt; N = m*g*cos(alpha)\", \"Ox_axis\": \"F_app - m*g*sin(alpha) - F_fr = m*a_x\" } }"
+ },
+ {
+  "k": "c60c1ff8",
+  "s": "3-bosqich: Matematik formalizatsiya",
+  "ru": "Этап 3: математическая формализация",
+  "en": "Stage 3: Mathematical formalisation"
+ },
+ {
+  "k": "6aa35451",
+  "s": "Vektor kuchlar va differensial tenglamalar tizimi: WolframAlpha va ChatGPT",
+  "ru": "Векторные силы и система дифференциальных уравнений: WolframAlpha и ChatGPT",
+  "en": "Vector forces and a system of differential equations: WolframAlpha and ChatGPT"
+ },
+ {
+  "k": "4f6638c4",
+  "s": "Nyutonning ikkinchi qonuni vektor differensial tenglama ko‘rinishida jismning massasi $m$ va unga qo‘yilgan barcha kuchlarning vektor yig‘indisi o‘rtasidagi fundamental munosabatni ifodalaydi:",
+  "ru": "Второй закон Ньютона в виде векторного дифференциального уравнения выражает фундаментальную связь между массой тела $m$ и векторной суммой всех приложенных к нему сил:",
+  "en": "Newton’s second law, as a vector differential equation, expresses the fundamental relation between the body’s mass $m$ and the vector sum of all forces applied to it:"
+ },
+ {
+  "k": "5f2a0afb",
+  "s": "$$\\sum \\vec{F} = m\\frac{d^2\\vec{r}}{dt^2} \\iff \\vec{N} + m\\vec{g} + \\vec{F}_{tort} + \\vec{F}_{ishq} = m\\vec{a}$$",
+  "ru": "$$\\sum \\vec{F} = m\\frac{d^2\\vec{r}}{dt^2} \\iff \\vec{N} + m\\vec{g} + \\vec{F}_{tort} + \\vec{F}_{ishq} = m\\vec{a}$$",
+  "en": "$$\\sum \\vec{F} = m\\frac{d^2\\vec{r}}{dt^2} \\iff \\vec{N} + m\\vec{g} + \\vec{F}_{tort} + \\vec{F}_{ishq} = m\\vec{a}$$"
+ },
+ {
+  "k": "b08c256c",
+  "s": "📐 Dekart o‘qlariga proyeksiyalash nazariyasi:",
+  "ru": "📐 Теория проецирования на декартовы оси:",
+  "en": "📐 Theory of projecting onto Cartesian axes:"
+ },
+ {
+  "k": "ab80d896",
+  "s": "<strong>$Oy$ o‘qi (sirtga tik — muvozanat sharti):</strong><br> Jism sirt bo‘ylab sirpanadi, ya’ni $y = \\text{const} \\implies a_y = 0$: $$N + F_{tort}\\sin\\theta - mg\\cos\\alpha = 0 \\implies N = mg\\cos\\alpha - F_{tort}\\sin\\theta$$",
+  "ru": "<strong>Ось $Oy$ (перпендикулярно поверхности — условие равновесия):</strong><br> Тело скользит вдоль поверхности, то есть $y = \\text{const} \\implies a_y = 0$: $$N + F_{tort}\\sin\\theta - mg\\cos\\alpha = 0 \\implies N = mg\\cos\\alpha - F_{tort}\\sin\\theta$$",
+  "en": "<strong>$Oy$ axis (perpendicular to the surface — equilibrium condition):</strong><br> The body slides along the surface, i.e. $y = \\text{const} \\implies a_y = 0$: $$N + F_{tort}\\sin\\theta - mg\\cos\\alpha = 0 \\implies N = mg\\cos\\alpha - F_{tort}\\sin\\theta$$"
+ },
+ {
+  "k": "8fa51668",
+  "s": "<strong>$Ox$ o‘qi (qiyalik bo‘ylab — dinamik harakat):</strong><br> $$F_{tort}\\cos\\theta - mg\\sin\\alpha - F_{ishq} = m a_x$$ $$\\implies a_x = \\frac{F_{tort}\\cos\\theta - mg\\sin\\alpha - F_{ishq}}{m}$$",
+  "ru": "<strong>Ось $Ox$ (вдоль наклона — динамическое движение):</strong><br> $$F_{tort}\\cos\\theta - mg\\sin\\alpha - F_{ishq} = m a_x$$ $$\\implies a_x = \\frac{F_{tort}\\cos\\theta - mg\\sin\\alpha - F_{ishq}}{m}$$",
+  "en": "<strong>$Ox$ axis (along the incline — dynamic motion):</strong><br> $$F_{tort}\\cos\\theta - mg\\sin\\alpha - F_{ishq} = m a_x$$ $$\\implies a_x = \\frac{F_{tort}\\cos\\theta - mg\\sin\\alpha - F_{ishq}}{m}$$"
+ },
+ {
+  "k": "8a42bba1",
+  "s": "⚡ Quruq ishqalanish dinamikasi (Kulon-Amonton va Stribek):",
+  "ru": "⚡ Динамика сухого трения (Кулон–Амонтон и Штрибек):",
+  "en": "⚡ Dry friction dynamics (Coulomb–Amontons and Stribeck):"
+ },
+ {
+  "k": "72b3c7ea",
+  "s": "Ishqalanish kuchi oddiy chiziqli kuch emas, balki fazaviy tezlik $v$ va harakatlantiruvchi kuch $F_{drive}$ ga bog‘liq no-chiziqli chegaraviy hodisadir:",
+  "ru": "Сила трения — не простая линейная сила, а нелинейное пороговое явление, зависящее от фазовой скорости $v$ и движущей силы $F_{drive}$:",
+  "en": "Friction is not a simple linear force but a non-linear threshold phenomenon that depends on the phase velocity $v$ and the driving force $F_{drive}$:"
+ },
+ {
+  "k": "1b1997f3",
+  "s": "<strong>1. Statik tinchlik holati ($|v| &lt; \\epsilon$):</strong> Agar $|F_{drive}| \\le F_{s,\\max} = \\mu_s N$ bo‘lsa, ishqalanish kuchi tashqi kuchni aynan kompensatsiya qiladi: $F_{ishq} = -F_{drive} \\implies a_x = 0, v = 0$.",
+  "ru": "<strong>1. Состояние статического покоя ($|v| &lt; \\epsilon$):</strong> если $|F_{drive}| \\le F_{s,\\max} = \\mu_s N$, сила трения в точности компенсирует внешнюю силу: $F_{ishq} = -F_{drive} \\implies a_x = 0, v = 0$.",
+  "en": "<strong>1. Static rest ($|v| &lt; \\epsilon$):</strong> if $|F_{drive}| \\le F_{s,\\max} = \\mu_s N$, friction exactly balances the external force: $F_{ishq} = -F_{drive} \\implies a_x = 0, v = 0$."
+ },
+ {
+  "k": "f8b257fa",
+  "s": "<strong>2. Kinetik sirpanish holati ($|v| \\ge \\epsilon$):</strong> Ishqalanish kuchi tezlik yo‘nalishiga qarama-qarshi yo‘naladi: $F_{ishq} = -\\text{sign}(v)\\mu_k N$.",
+  "ru": "<strong>2. Состояние кинетического скольжения ($|v| \\ge \\epsilon$):</strong> сила трения направлена против скорости: $F_{ishq} = -\\text{sign}(v)\\mu_k N$.",
+  "en": "<strong>2. Kinetic sliding ($|v| \\ge \\epsilon$):</strong> friction opposes the velocity: $F_{ishq} = -\\text{sign}(v)\\mu_k N$."
+ },
+ {
+  "k": "934417ed",
+  "s": "<strong>3. Kinetik sakrash ($\\mu_k &lt; \\mu_s$):</strong> Jism qo‘zg‘alishi bilan ishqalanish kuchi keskin pasayib, tezlanish sakrashi yuz beradi.",
+  "ru": "<strong>3. Кинетический скачок ($\\mu_k &lt; \\mu_s$):</strong> как только тело сдвигается, сила трения резко падает и происходит скачок ускорения.",
+  "en": "<strong>3. Kinetic jump ($\\mu_k &lt; \\mu_s$):</strong> as soon as the body starts moving, friction drops sharply and the acceleration jumps."
+ },
+ {
+  "k": "ab4d8f25",
+  "s": "Static va Kinetic Friction",
+  "ru": "Статическое и кинетическое трение",
+  "en": "Static and Kinetic Friction"
+ },
+ {
+  "k": "0b049407",
+  "s": "WolframAlpha uchun Differensial Tenglamalar Tekshiruv So‘rovi",
+  "ru": "Запрос WolframAlpha для проверки дифференциальных уравнений",
+  "en": "WolframAlpha query to check the differential equations"
+ },
+ {
+  "k": "f97673de",
+  "s": "solve m*x''(t) = F*cos(theta) - m*g*sin(alpha) - mu_k*(m*g*cos(alpha) - F*sin(theta)) with x(0)=0, x'(0)=0",
+  "ru": "solve m*x''(t) = F*cos(theta) - m*g*sin(alpha) - mu_k*(m*g*cos(alpha) - F*sin(theta)) with x(0)=0, x'(0)=0",
+  "en": "solve m*x''(t) = F*cos(theta) - m*g*sin(alpha) - mu_k*(m*g*cos(alpha) - F*sin(theta)) with x(0)=0, x'(0)=0"
+ },
+ {
+  "k": "ab678fc5",
+  "s": "4-bosqich: Algoritmlashtirish",
+  "ru": "Этап 4: алгоритмизация",
+  "en": "Stage 4: Algorithm design"
+ },
+ {
+  "k": "54f9e735",
+  "s": "Claude: algoritmik blok-sxema va psevdokod",
+  "ru": "Claude: алгоритмическая блок-схема и псевдокод",
+  "en": "Claude: algorithmic flowchart and pseudocode"
+ },
+ {
+  "k": "157b0822",
+  "s": "Uzluksiz fizik qonuniyatlardan raqamli kompyuter simulyatsiyasiga o‘tish uchun vaqt $t$ diskret intervallarga $\\Delta t$ (masalan, $\\Delta t = 1/60\\text{ s} \\approx 0.016\\text{ s}$) bo‘linadi. Ushbu hisoblash konveyeri <strong>Physics Main Loop</strong> deb ataladi:",
+  "ru": "Для перехода от непрерывных физических законов к цифровой компьютерной симуляции время $t$ делится на дискретные интервалы $\\Delta t$ (например, $\\Delta t = 1/60\\text{ s} \\approx 0.016\\text{ s}$). Этот вычислительный конвейер называется <strong>Physics Main Loop</strong>:",
+  "en": "To move from continuous physical laws to a digital computer simulation, time $t$ is divided into discrete intervals $\\Delta t$ (for example $\\Delta t = 1/60\\text{ s} \\approx 0.016\\text{ s}$). This computation pipeline is called the <strong>Physics Main Loop</strong>:"
+ },
+ {
+  "k": "cc741f5f",
+  "s": "Physics Simulation Flowchart",
+  "ru": "Physics Simulation Flowchart",
+  "en": "Physics Simulation Flowchart"
+ },
+ {
+  "k": "6d512b17",
+  "s": "🛡️ Simplektik Eyler–Kromer integratori:",
+  "ru": "🛡️ Симплектический интегратор Эйлера–Кромера:",
+  "en": "🛡️ The symplectic Euler–Cromer integrator:"
+ },
+ {
+  "k": "7d620276",
+  "s": "Nima uchun oddiy Forward Euler emas, aynan Eyler–Kromer?",
+  "ru": "Почему именно Эйлер–Кромер, а не простой Forward Euler?",
+  "en": "Why Euler–Cromer and not plain Forward Euler?"
+ },
+ {
+  "k": "3ca6a765",
+  "s": "// 1. Yangi tezlik hisoblanadi:<br> v(t + dt) = v(t) + a(t) * dt;<br><br> // 2. Yangi koordinata YANGI TEZLIK orqali yangilanadi:<br> x(t + dt) = x(t) + v(t + dt) * dt;",
+  "ru": "// 1. Вычисляется новая скорость:<br> v(t + dt) = v(t) + a(t) * dt;<br><br> // 2. Новая координата обновляется через НОВУЮ СКОРОСТЬ:<br> x(t + dt) = x(t) + v(t + dt) * dt;",
+  "en": "// 1. Compute the new velocity:<br> v(t + dt) = v(t) + a(t) * dt;<br><br> // 2. Update the position with the NEW VELOCITY:<br> x(t + dt) = x(t) + v(t + dt) * dt;"
+ },
+ {
+  "k": "ac43a8d8",
+  "s": "Ushbu kichik tartibiy farq Gamilton faza fazosi maydonini saqlaydi ($|\\det(J)| = 1$), energetik barqarorlikni kafolatlaydi va jism ishqalanish tufayli to‘xtaganda tebranib qolishining (numerical jitter) oldini oladi.",
+  "ru": "Это небольшое изменение порядка сохраняет площадь гамильтонова фазового пространства ($|\\det(J)| = 1$), гарантирует энергетическую устойчивость и предотвращает дрожание тела (numerical jitter) при его остановке из-за трения.",
+  "en": "This small change of order preserves Hamiltonian phase-space area ($|\\det(J)| = 1$), guarantees energy stability and prevents the body from jittering (numerical jitter) when friction brings it to rest."
+ },
+ {
+  "k": "f0840fe7",
+  "s": "🖥️ Canvas koordinata transformatsiyasi (toScreenX/Y):",
+  "ru": "🖥️ Преобразование координат Canvas (toScreenX/Y):",
+  "en": "🖥️ Canvas coordinate transformation (toScreenX/Y):"
+ },
+ {
+  "k": "4ac94307",
+  "s": "Brauzer ekranida chap yuqori burchak $(0, 0)$ bo‘lib, $Y$ o‘qi pastga yo‘nalgan. Qiyalikdagi harakat uchun to‘g‘ri proyeksiyalash:",
+  "ru": "На экране браузера левый верхний угол — $(0, 0)$, а ось $Y$ направлена вниз. Правильная проекция для движения по наклонной плоскости:",
+  "en": "In the browser the top-left corner is $(0, 0)$ and the $Y$ axis points down. The correct projection for motion on an incline:"
+ },
+ {
+  "k": "c2a695ca",
+  "s": "const x_screen = originX + s_phys * Math.cos(alpha) * scale;<br> const y_screen = originY - s_phys * Math.sin(alpha) * scale;",
+  "ru": "const x_screen = originX + s_phys * Math.cos(alpha) * scale;<br> const y_screen = originY - s_phys * Math.sin(alpha) * scale;",
+  "en": "const x_screen = originX + s_phys * Math.cos(alpha) * scale;<br> const y_screen = originY - s_phys * Math.sin(alpha) * scale;"
+ },
+ {
+  "k": "90d3c0ce",
+  "s": "Ekranda qiyalik burchagi bo‘yicha yuqoriga ko‘tarilish uchun $y$ koordinatasidan <strong>ayirish</strong> shart!",
+  "ru": "Чтобы на экране подниматься вверх по наклону, из координаты $y$ нужно <strong>вычитать</strong>!",
+  "en": "To move up the incline on screen you must <strong>subtract</strong> from the $y$ coordinate!"
+ },
+ {
+  "k": "3061d651",
+  "s": "Claude tomonidan Yozilgan Fizik Dvigatel Kodi",
+  "ru": "Код физического движка, написанный Claude",
+  "en": "Physics engine code written by Claude"
+ },
+ {
+  "k": "91a8b7b2",
+  "s": "nusxalash",
+  "ru": "копировать",
+  "en": "copy"
+ },
+ {
+  "k": "28759dc1",
+  "s": "// Claude Physics Engine Loop (Symplectic Euler-Cromer) function stepPhysics(state, params, dt) { const alpha = (params.angleDeg * Math.PI) / 180; const N = params.m * params.g * Math.cos(alpha); const mgPar = params.m * params.g * Math.sin(alpha); const fDrive = params.fApp - mgPar; const fMaxStatic = params.muS * N; const fKinetic = params.muK * N; // 1. Statik tinchlik holatini tekshirish (State Machine) if (Math.abs(state.v) &lt; 1e-4) { if (Math.abs(fDrive) &lt;= fMaxStatic) { state.v = 0; state.a = 0; state.fFr = -fDrive; state.fNet = 0; return; // Muvozanatda qoladi } } // 2. Kinetik sirpanish holati const dir = (Math.abs(state.v) &gt; 1e-4) ? Math.sign(state.v) : Math.sign(fDrive); state.fFr = -dir * fKinetic; state.fNet = fDrive + state.fFr; state.a = state.fNet / params.m; // 3. Simplektik Eyler–Kromer integrallash qadami state.v += state.a * dt; state.s += state.v * dt; }",
+  "ru": "// Claude Physics Engine Loop (Symplectic Euler-Cromer) function stepPhysics(state, params, dt) { const alpha = (params.angleDeg * Math.PI) / 180; const N = params.m * params.g * Math.cos(alpha); const mgPar = params.m * params.g * Math.sin(alpha); const fDrive = params.fApp - mgPar; const fMaxStatic = params.muS * N; const fKinetic = params.muK * N; // 1. Проверка состояния статического покоя (State Machine) if (Math.abs(state.v) &lt; 1e-4) { if (Math.abs(fDrive) &lt;= fMaxStatic) { state.v = 0; state.a = 0; state.fFr = -fDrive; state.fNet = 0; return; // Остаётся в равновесии } } // 2. Состояние кинетического скольжения const dir = (Math.abs(state.v) &gt; 1e-4) ? Math.sign(state.v) : Math.sign(fDrive); state.fFr = -dir * fKinetic; state.fNet = fDrive + state.fFr; state.a = state.fNet / params.m; // 3. Шаг симплектического интегрирования Эйлера–Кромера state.v += state.a * dt; state.s += state.v * dt; }",
+  "en": "// Claude Physics Engine Loop (Symplectic Euler-Cromer) function stepPhysics(state, params, dt) { const alpha = (params.angleDeg * Math.PI) / 180; const N = params.m * params.g * Math.cos(alpha); const mgPar = params.m * params.g * Math.sin(alpha); const fDrive = params.fApp - mgPar; const fMaxStatic = params.muS * N; const fKinetic = params.muK * N; // 1. Check the static-rest state (State Machine) if (Math.abs(state.v) &lt; 1e-4) { if (Math.abs(fDrive) &lt;= fMaxStatic) { state.v = 0; state.a = 0; state.fFr = -fDrive; state.fNet = 0; return; // Stays in equilibrium } } // 2. Kinetic sliding state const dir = (Math.abs(state.v) &gt; 1e-4) ? Math.sign(state.v) : Math.sign(fDrive); state.fFr = -dir * fKinetic; state.fNet = fDrive + state.fFr; state.a = state.fNet / params.m; // 3. Symplectic Euler–Cromer integration step state.v += state.a * dt; state.s += state.v * dt; }"
+ },
+ {
+  "k": "c661fbf0",
+  "s": "5-bosqich: Sokratik muloqot va ilmiy tasvirlar",
+  "ru": "Этап 5: сократический диалог и научные изображения",
+  "en": "Stage 5: Socratic dialogue and scientific images"
+ },
+ {
+  "k": "1f3ac0b8",
+  "s": "Claude / Gemini bilan fizik mantiqni tekshirish va Midjourney",
+  "ru": "Проверка физической логики с Claude / Gemini и Midjourney",
+  "en": "Checking the physics logic with Claude / Gemini, and Midjourney"
+ },
+ {
+  "k": "01347ed3",
+  "s": "Dastur yozish jarayonida talaba sun’iy intellektdan shunchaki tayyor javob ko‘chirib olmasligi, balki u bilan <strong>Sokratik muloqot</strong> o‘rnatishi kerak. AI talabaning xatosini to‘g‘ridan-to‘g‘ri ko‘rsatmasdan, yo‘naltiruvchi kontrsavollar orqali uni mustaqil ilmiy xulosaga olib keladi:",
+  "ru": "В процессе написания программы студент должен не просто копировать готовый ответ ИИ, а вести с ним <strong>сократический диалог</strong>. ИИ, не указывая ошибку студента напрямую, наводящими встречными вопросами подводит его к самостоятельному научному выводу:",
+  "en": "While writing a program, the student should not simply copy a ready answer from the AI but engage it in <strong>Socratic dialogue</strong>. Without pointing out the mistake directly, the AI leads the student to an independent scientific conclusion through guiding counter-questions:"
+ },
+ {
+  "k": "fc1cbde2",
+  "s": "💬 Real sokratik debugging dialogi transkripti:",
+  "ru": "💬 Стенограмма реального сократического диалога при отладке:",
+  "en": "💬 Transcript of a real Socratic debugging dialogue:"
+ },
+ {
+  "k": "acb99524",
+  "s": "<strong style=\"color:#1C4E9E;\">Talaba:</strong> \"Men simulyatsiyani ishga tushirdim, lekin qiyalik burchagini 45 gradusga oshirsam, jism qiyalik yuzasidan pastga tushib, polga botib ketyapti. Kodimda nima xato?\"",
+  "ru": "<strong style=\"color:#1C4E9E;\">Студент:</strong> \"Я запустил симуляцию, но если увеличить угол наклона до 45 градусов, тело уходит вниз с поверхности наклона и проваливается в пол. Что не так в моём коде?\"",
+  "en": "<strong style=\"color:#1C4E9E;\">Student:</strong> \"I ran the simulation, but if I raise the incline angle to 45 degrees the body slides off the incline surface and sinks into the floor. What’s wrong with my code?\""
+ },
+ {
+  "k": "a8ab07fd",
+  "s": "<strong style=\"color:#047857;\">Claude:</strong> \"Qiziq hodisa! Keling, buni tekshirib ko‘ramiz. Sizning Canvas render funksiyangizda $Y$ koordinatasi qanday hisoblanmoqda? Brauzerda $Y$ o‘qi pastga qarab o‘sishini hisobga olganmisiz? Agar qiyalik bo‘ylab yuqoriga harakatlansangiz, $y$ piksel qiymati oshishi kerakmi yoki kamayishi?\"",
+  "ru": "<strong style=\"color:#047857;\">Claude:</strong> \"Интересное явление! Давайте проверим. Как в вашей функции рендеринга Canvas вычисляется координата $Y$? Учли ли вы, что в браузере ось $Y$ растёт вниз? Если двигаться вверх по наклону, значение пикселя $y$ должно увеличиваться или уменьшаться?\"",
+  "en": "<strong style=\"color:#047857;\">Claude:</strong> \"Interesting! Let’s check. How is the $Y$ coordinate computed in your Canvas render function? Did you account for the $Y$ axis growing downward in the browser? If you move up the incline, should the $y$ pixel value increase or decrease?\""
+ },
+ {
+  "k": "37606a44",
+  "s": "<strong style=\"color:#1C4E9E;\">Talaba:</strong> \"Aha! Men <code>y = baseY + s * Math.sin(alpha)</code> deb yozgan ekanman. Ekran koordinatasida yuqoriga ko‘tarilish uchun <code>baseY - s * Math.sin(alpha)</code> deb ayirishim kerak ekan!\"",
+  "ru": "<strong style=\"color:#1C4E9E;\">Студент:</strong> \"Ага! Я написал <code>y = baseY + s * Math.sin(alpha)</code>. Чтобы подниматься вверх в экранных координатах, нужно вычитать: <code>baseY - s * Math.sin(alpha)</code>!\"",
+  "en": "<strong style=\"color:#1C4E9E;\">Student:</strong> \"Aha! I wrote <code>y = baseY + s * Math.sin(alpha)</code>. To go up in screen coordinates I need to subtract: <code>baseY - s * Math.sin(alpha)</code>!\""
+ },
+ {
+  "k": "f0377a15",
+  "s": "<strong style=\"color:#047857;\">Claude:</strong> \"Ofarin! Aynan shunday. Endi yana bir savol: Jism eng yuqori nuqtaga yetib tezligi nol bo‘lganda, u o‘sha yerda qoladimi yoki orqaga sirpanadimi? Kodingizda bu mantiq qanday ifodalangan?\"",
+  "ru": "<strong style=\"color:#047857;\">Claude:</strong> \"Браво! Именно так. Теперь ещё вопрос: когда тело достигнет верхней точки и его скорость станет нулевой, останется ли оно там или соскользнёт назад? Как эта логика выражена в вашем коде?\"",
+  "en": "<strong style=\"color:#047857;\">Claude:</strong> \"Well done! Exactly. Now another question: when the body reaches its highest point and its speed is zero, will it stay there or slide back? How is that logic expressed in your code?\""
+ },
+ {
+  "k": "e7030455",
+  "s": "<strong style=\"color:#1C4E9E;\">Talaba:</strong> \"Agar $mg\\sin\\alpha &gt; \\mu_s N$ bo‘lsa, og‘irlik kuchining parallel tashkil etuvchisi maksimal statik ishqalanishdan katta bo‘ladi va jism pastga sirpanadi. Agar kichik bo‘lsa, to‘xtab qoladi!\"",
+  "ru": "<strong style=\"color:#1C4E9E;\">Студент:</strong> \"Если $mg\\sin\\alpha &gt; \\mu_s N$, параллельная составляющая силы тяжести больше максимального трения покоя, и тело соскальзывает вниз. Если меньше — оно останавливается!\"",
+  "en": "<strong style=\"color:#1C4E9E;\">Student:</strong> \"If $mg\\sin\\alpha &gt; \\mu_s N$, the parallel component of weight exceeds maximum static friction and the body slides down. If it’s smaller, it stops!\""
+ },
+ {
+  "k": "a3c8df44",
+  "s": "🎨 Midjourney va DALL-E: ilmiy infografika sintezi",
+  "ru": "🎨 Midjourney и DALL-E: синтез научной инфографики",
+  "en": "🎨 Midjourney and DALL-E: synthesising scientific infographics"
+ },
+ {
+  "k": "9d1f43c5",
+  "s": "Visual AI",
+  "ru": "Visual AI",
+  "en": "Visual AI"
+ },
+ {
+  "k": "7f774128",
+  "s": "Dars taqdimotlari va elektron qo‘llanmalar uchun fotorealistik, optik aniq vektorli ilmiy laboratoriya illyustratsiyalarini sintezlash:",
+  "ru": "Синтез фотореалистичных, оптически точных векторных иллюстраций научной лаборатории для презентаций и электронных пособий:",
+  "en": "Synthesising photorealistic, optically accurate vector illustrations of a science lab for lesson slides and e-textbooks:"
+ },
+ {
+  "k": "04889e6a",
+  "s": "Midjourney Professional Ilmiy Prompt",
+  "ru": "Профессиональный научный промпт для Midjourney",
+  "en": "Professional scientific Midjourney prompt"
+ },
+ {
+  "k": "27586ed7",
+  "s": "A scientific 3D illustration of an inclined plane physics experiment, a metal block resting on a polished wooden slope at 30 degrees angle, glowing vector arrows representing normal force in cyan, gravity vector in red pointing down, friction vector in amber pointing up the slope, laboratory dark ambient background with laser grid lines, highly detailed, photorealistic, educational infographic, 8k resolution --ar 16:9 --v 6.0 --style raw",
+  "ru": "A scientific 3D illustration of an inclined plane physics experiment, a metal block resting on a polished wooden slope at 30 degrees angle, glowing vector arrows representing normal force in cyan, gravity vector in red pointing down, friction vector in amber pointing up the slope, laboratory dark ambient background with laser grid lines, highly detailed, photorealistic, educational infographic, 8k resolution --ar 16:9 --v 6.0 --style raw",
+  "en": "A scientific 3D illustration of an inclined plane physics experiment, a metal block resting on a polished wooden slope at 30 degrees angle, glowing vector arrows representing normal force in cyan, gravity vector in red pointing down, friction vector in amber pointing up the slope, laboratory dark ambient background with laser grid lines, highly detailed, photorealistic, educational infographic, 8k resolution --ar 16:9 --v 6.0 --style raw"
+ },
+ {
+  "k": "f6636f77",
+  "s": "Jonli simulyatsiya",
+  "ru": "Живая симуляция",
+  "en": "Live simulation"
+ },
+ {
+  "k": "4eda35db",
+  "s": "Erkin jism diagrammasi (EJD) interaktiv simulyatori",
+  "ru": "Интерактивный симулятор диаграммы свободного тела (FBD)",
+  "en": "Interactive free-body diagram (FBD) simulator"
+ },
+ {
+  "k": "9ddfe57b",
+  "s": "▶ Boshlash",
+  "ru": "▶ Старт",
+  "en": "▶ Start"
+ },
+ {
+  "k": "59776801",
+  "s": "↺ Qayta o‘rnatish",
+  "ru": "↺ Сбросить",
+  "en": "↺ Reset"
+ },
+ {
+  "k": "fbc7160e",
+  "s": "🎛️ Fizik parametrlarni boshqarish:",
+  "ru": "🎛️ Управление физическими параметрами:",
+  "en": "🎛️ Physical parameter controls:"
+ },
+ {
+  "k": "9692deaf",
+  "s": "Qiyalik burchagi ($\\alpha$):",
+  "ru": "Угол наклона ($\\alpha$):",
+  "en": "Incline angle ($\\alpha$):"
+ },
+ {
+  "k": "5106fb5f",
+  "s": "Jism massasi ($m$):",
+  "ru": "Масса тела ($m$):",
+  "en": "Body mass ($m$):"
+ },
+ {
+  "k": "db3c71ae",
+  "s": "5,0 kg",
+  "ru": "5,0 кг",
+  "en": "5.0 kg"
+ },
+ {
+  "k": "0c2716c9",
+  "s": "Tashqi tortish kuchi ($F_{tort}$):",
+  "ru": "Внешняя тянущая сила ($F_{tort}$):",
+  "en": "Applied pulling force ($F_{tort}$):"
+ },
+ {
+  "k": "5a167beb",
+  "s": "Statik $\\mu_s$:",
+  "ru": "Statik $\\mu_s$:",
+  "en": "Statik $\\mu_s$:"
+ },
+ {
+  "k": "4f3af996",
+  "s": "Kinetik $\\mu_k$:",
+  "ru": "Кинетический $\\mu_k$:",
+  "en": "Kinetic $\\mu_k$:"
+ },
+ {
+  "k": "3a804199",
+  "s": "$mg$ proyeksiyalari",
+  "ru": "Проекции $mg$",
+  "en": "$mg$ projections"
+ },
+ {
+  "k": "ed315fe0",
+  "s": "Natijaviy kuch $\\sum \\vec{F}$",
+  "ru": "Результирующая сила $\\sum \\vec{F}$",
+  "en": "Net force $\\sum \\vec{F}$"
+ },
+ {
+  "k": "0fc1dac6",
+  "s": "📊 Real vaqtdagi telemetriya:",
+  "ru": "📊 Телеметрия в реальном времени:",
+  "en": "📊 Real-time telemetry:"
+ },
+ {
+  "k": "52e00374",
+  "s": "Harakat holati:",
+  "ru": "Состояние движения:",
+  "en": "Motion state:"
+ },
+ {
+  "k": "4fd2ee64",
+  "s": "Muvozanatda (statik)",
+  "ru": "В равновесии (статика)",
+  "en": "At rest (static)"
+ },
+ {
+  "k": "38bf7bce",
+  "s": "Reaksiya $N$:",
+  "ru": "Реакция $N$:",
+  "en": "Normal $N$:"
+ },
+ {
+  "k": "7702e1b0",
+  "s": "Og‘irlik $mg$:",
+  "ru": "Вес $mg$:",
+  "en": "Weight $mg$:"
+ },
+ {
+  "k": "dd6aa87f",
+  "s": "$mg\\sin\\alpha$:",
+  "ru": "$mg\\sin\\alpha$:",
+  "en": "$mg\\sin\\alpha$:"
+ },
+ {
+  "k": "26f5aba4",
+  "s": "Ishqalanish $F_{ishq}$:",
+  "ru": "Трение $F_{ishq}$:",
+  "en": "Friction $F_{ishq}$:"
+ },
+ {
+  "k": "cf1110c3",
+  "s": "Maks. statik $F_{s,\\max}$:",
+  "ru": "Макс. статическое $F_{s,\\max}$:",
+  "en": "Max. static $F_{s,\\max}$:"
+ },
+ {
+  "k": "57a14a79",
+  "s": "Natijaviy $\\sum F$:",
+  "ru": "Результирующая $\\sum F$:",
+  "en": "Net $\\sum F$:"
+ },
+ {
+  "k": "fdbf51a2",
+  "s": "Tezlanish $a$:",
+  "ru": "Ускорение $a$:",
+  "en": "Acceleration $a$:"
+ },
+ {
+  "k": "dc8a6e78",
+  "s": "Tezlik $v$:",
+  "ru": "Скорость $v$:",
+  "en": "Speed $v$:"
+ },
+ {
+  "k": "b5a8976c",
+  "s": "PhET Interactive Simulations",
+  "ru": "PhET Interactive Simulations",
+  "en": "PhET Interactive Simulations"
+ },
+ {
+  "k": "a0777d7e",
+  "s": "PhET \"Forces and Motion: Basics\" simulyatsiyasi",
+  "ru": "Симуляция PhET \"Forces and Motion: Basics\"",
+  "en": "PhET \"Forces and Motion: Basics\" simulation"
+ },
+ {
+  "k": "f20f43ed",
+  "s": "Kolorado Universiteti (University of Colorado Boulder) tomonidan yaratilgan rasmiy HTML5 interaktiv laboratoriyasi:",
+  "ru": "Официальная интерактивная лаборатория HTML5, созданная Университетом Колорадо (University of Colorado Boulder):",
+  "en": "The official HTML5 interactive lab created by the University of Colorado Boulder:"
+ },
+ {
+  "k": "a326a53c",
+  "s": "🌐 PhET Simulyatsiyasini Yangi Oynada Ochish ↗",
+  "ru": "🌐 Открыть симуляцию PhET в новом окне ↗",
+  "en": "🌐 Open the PhET simulation in a new window ↗"
+ },
+ {
+  "k": "bd1776b3",
+  "s": "<strong style=\"color:#1C4E9E;\">1. Net force:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">Kuchlar muvozanati va arqon tortishish tahlili.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">1. Net force:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">баланс сил и анализ перетягивания каната.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">1. Net force:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">force balance and tug-of-war analysis.</span>"
+ },
+ {
+  "k": "a10582fe",
+  "s": "<strong style=\"color:#047857;\">2. Motion:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">Turli massali jismlar inersiyasi va tezlanishi.</span>",
+  "ru": "<strong style=\"color:#047857;\">2. Motion:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">инерция и ускорение тел разной массы.</span>",
+  "en": "<strong style=\"color:#047857;\">2. Motion:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">the inertia and acceleration of bodies of different mass.</span>"
+ },
+ {
+  "k": "9f4185ed",
+  "s": "<strong style=\"color:#A16207;\">3. Friction:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">Sirt g‘adir-budirligi va issiqlik ajralishi.</span>",
+  "ru": "<strong style=\"color:#A16207;\">3. Friction:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">шероховатость поверхности и выделение теплоты.</span>",
+  "en": "<strong style=\"color:#A16207;\">3. Friction:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">surface roughness and heat release.</span>"
+ },
+ {
+  "k": "4ac91575",
+  "s": "<strong style=\"color:#7C3AED;\">4. Acceleration:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">$a = F_{net} / m$ real vaqtli spidometri.</span>",
+  "ru": "<strong style=\"color:#7C3AED;\">4. Acceleration:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">спидометр $a = F_{net} / m$ в реальном времени.</span>",
+  "en": "<strong style=\"color:#7C3AED;\">4. Acceleration:</strong><br> <span style=\"font-size:0.82rem; color:var(--text-muted);\">a real-time $a = F_{net} / m$ speedometer.</span>"
+ },
+ {
+  "k": "33c6607c",
+  "s": "O‘z-o‘zini tekshirish",
+  "ru": "Самопроверка",
+  "en": "Self-check"
+ },
+ {
+  "k": "c34cf34e",
+  "s": "6-ma’ruza diagnostika testi (3 ta ilmiy savol)",
+  "ru": "Диагностический тест к лекции 6 (3 научных вопроса)",
+  "en": "Lecture 6 diagnostic test (3 scientific questions)"
+ },
+ {
+  "k": "a72bd474",
+  "s": "Erkin jism diagrammasi (FBD), vektor proyeksiyalari va sonli modellashtirish bo‘yicha bilimlaringizni sinab ko‘ring:",
+  "ru": "Проверьте свои знания по диаграмме свободного тела (FBD), векторным проекциям и численному моделированию:",
+  "en": "Test your knowledge of free-body diagrams (FBD), vector projections and numerical modelling:"
+ },
+ {
+  "k": "9457ca86",
+  "s": "1-savol: Qiya tekislikda sirpanayotgan jismning erkin jism diagrammasida (FBD) sirtning normal reaksiya kuchi $\\vec{N}$ qaysi yo‘nalishda chiziladi?",
+  "ru": "Вопрос 1: В каком направлении на диаграмме свободного тела (FBD) тела, скользящего по наклонной плоскости, изображается сила нормальной реакции поверхности $\\vec{N}$?",
+  "en": "Question 1: On the free-body diagram (FBD) of a body sliding down an incline, in which direction is the surface’s normal force $\\vec{N}$ drawn?"
+ },
+ {
+  "k": "e1f2240d",
+  "s": "A) Doimo Yer markaziga tik qarab",
+  "ru": "A) Всегда вертикально к центру Земли",
+  "en": "A) Always straight toward the Earth’s centre"
+ },
+ {
+  "k": "130f058f",
+  "s": "B) Qiyalik tekisligiga perpendikulyar ravishda jismdan tashqariga yo‘nalgan holda ($N = mg\\cos\\alpha$)",
+  "ru": "B) Перпендикулярно плоскости наклона, от тела наружу ($N = mg\\cos\\alpha$)",
+  "en": "B) Perpendicular to the incline plane, pointing away from it ($N = mg\\cos\\alpha$)"
+ },
+ {
+  "k": "c81078fb",
+  "s": "C) Qiyalik bo‘ylab harakat yo‘nalishida",
+  "ru": "C) Вдоль наклона по направлению движения",
+  "en": "C) Along the incline in the direction of motion"
+ },
+ {
+  "k": "c8836ace",
+  "s": "2-savol: Gorizontal tekislikdagi jismga $F_{tort} = 15\\text{ N}$ kuch berilmoqda. Agar maksimal statik ishqalanish $F_{s,\\max} = 25\\text{ N}$ va kinetik ishqalanish $F_k = 18\\text{ N}$ bo‘lsa, jismga ta’sir etayotgan haqiqiy ishqalanish kuchi qancha bo‘ladi?",
+  "ru": "Вопрос 2: К телу на горизонтальной плоскости приложена сила $F_{tort} = 15\\text{ N}$. Если максимальное трение покоя $F_{s,\\max} = 25\\text{ N}$, а трение скольжения $F_k = 18\\text{ N}$, какова действительная сила трения, действующая на тело?",
+  "en": "Question 2: A force $F_{tort} = 15\\text{ N}$ is applied to a body on a horizontal surface. If maximum static friction is $F_{s,\\max} = 25\\text{ N}$ and kinetic friction is $F_k = 18\\text{ N}$, what is the actual friction force on the body?"
+ },
+ {
+  "k": "233dd04b",
+  "s": "A) $15\\text{ N}$ (Chunki jism tinch turadi va statik ishqalanish tashqi kuchni aynan muvozanatlaydi: $F_{ishq} = F_{tort}$)",
+  "ru": "A) $15\\text{ N}$ (тело покоится, и трение покоя в точности уравновешивает внешнюю силу: $F_{ishq} = F_{tort}$)",
+  "en": "A) $15\\text{ N}$ (the body stays at rest and static friction exactly balances the external force: $F_{ishq} = F_{tort}$)"
+ },
+ {
+  "k": "be9a2fce",
+  "s": "B) $25\\text{ N}$",
+  "ru": "B) $25\\text{ N}$",
+  "en": "B) $25\\text{ N}$"
+ },
+ {
+  "k": "daf63ebf",
+  "s": "C) $18\\text{ N}$",
+  "ru": "C) $18\\text{ N}$",
+  "en": "C) $18\\text{ N}$"
+ },
+ {
+  "k": "b5d50f97",
+  "s": "3-savol: Simulyatsion fizik dvigatelda (HTML5 Canvas) simplektik Eyler–Kromer usuli nima sababdan klassik forward Euler usulidan ustun hisoblanadi?",
+  "ru": "Вопрос 3: Почему в физическом движке симуляции (HTML5 Canvas) симплектический метод Эйлера–Кромера считается лучше классического метода forward Euler?",
+  "en": "Question 3: Why is the symplectic Euler–Cromer method considered better than classical forward Euler in a simulation physics engine (HTML5 Canvas)?"
+ },
+ {
+  "k": "e7c3373d",
+  "s": "A) U koordinatani eski tezlik emas, aynan yangi hisoblangan tezlik $v(t+\\Delta t)$ bo‘yicha yangilaydi, bu esa faza fazosi maydonini saqlaydi va energiyaning sun’iy portlashini bartaraf etadi",
+  "ru": "A) Он обновляет координату не по старой, а именно по новой вычисленной скорости $v(t+\\Delta t)$, что сохраняет площадь фазового пространства и устраняет искусственный «взрыв» энергии",
+  "en": "A) It updates the position using the newly computed velocity $v(t+\\Delta t)$ rather than the old one, which preserves phase-space area and eliminates the artificial energy blow-up"
+ },
+ {
+  "k": "98043bdc",
+  "s": "B) Chunki u kvadrat ildiz hisoblamaydi",
+  "ru": "B) Потому что он не вычисляет квадратный корень",
+  "en": "B) Because it does not compute a square root"
+ },
+ {
+  "k": "3d75d327",
+  "s": "C) Chunki u faqat 3D modellar uchun mo‘ljallangan",
+  "ru": "C) Потому что он предназначен только для 3D-моделей",
+  "en": "C) Because it is intended only for 3D models"
+ },
+ {
+  "k": "dc22bb91",
+  "s": "📚 6-ma’ruza bo‘yicha ilmiy-uslubiy adabiyotlar ro‘yxati:",
+  "ru": "📚 Список научно-методической литературы к лекции 6:",
+  "en": "📚 Scholarly and methodological references for Lecture 6:"
+ },
+ {
+  "k": "fd0fb5db",
+  "s": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press.",
+  "ru": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press.",
+  "en": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press."
+ },
+ {
+  "k": "a6c78d68",
+  "s": "<strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Canvas API</em>. MDN Web Docs.",
+  "ru": "<strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Canvas API</em>. MDN Web Docs.",
+  "en": "<strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Canvas API</em>. MDN Web Docs."
+ },
+ {
+  "k": "36674cbb",
+  "s": "<strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium.",
+  "ru": "<strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium.",
+  "en": "<strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium."
+ },
+ {
+  "k": "2c913747",
+  "s": "<strong>Foley, J. D., van Dam, A., Feiner, S. K., va Hughes, J. F. (2013).</strong> <em>Computer Graphics: Principles and Practice</em> (3rd ed.). Addison-Wesley.",
+  "ru": "<strong>Foley, J. D., van Dam, A., Feiner, S. K., & Hughes, J. F. (2013).</strong> <em>Computer Graphics: Principles and Practice</em> (3rd ed.). Addison-Wesley.",
+  "en": "<strong>Foley, J. D., van Dam, A., Feiner, S. K., & Hughes, J. F. (2013).</strong> <em>Computer Graphics: Principles and Practice</em> (3rd ed.). Addison-Wesley."
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "7b9cce2d",
+  "s": "<strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer.",
+  "ru": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer.",
+  "en": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer."
+ },
+ {
+  "k": "54b0ebca",
+  "s": "<strong>Mishra, P., va Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>.",
+  "ru": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>.",
+  "en": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge. <em>Teachers College Record</em>."
+ },
+ {
+  "k": "71a2267a",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman."
+ }
+]

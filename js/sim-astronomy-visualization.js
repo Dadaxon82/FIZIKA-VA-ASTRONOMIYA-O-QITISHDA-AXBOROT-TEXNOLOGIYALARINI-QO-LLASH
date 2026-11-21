@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -103,24 +104,24 @@ function initAstronomyVisualizationLab() {
     let list = [];
 
     if (name === 'exoplanet') {
-      const star = new KeplerBody(0, 0, { M: 0.9, color: '#FBBF24', radius: 0.34, label: "Yulduz" });
+      const star = new KeplerBody(0, 0, { M: 0.9, color: '#FBBF24', radius: 0.34, label: __t("Yulduz") });
       star.r = 0; star.x = 0; star.y = 0; star.vx = 0; star.vy = 0; star.speed = 0; star.advance = () => {};
-      const planet = new KeplerBody(a0, e0, { M: 0.9, theta: 0, color: '#F97316', radius: 0.14, label: "Hot Jupiter", isPrimary: true });
+      const planet = new KeplerBody(a0, e0, { M: 0.9, theta: 0, color: '#F97316', radius: 0.14, label: __t("Hot Jupiter"), isPrimary: true });
       list = [star, planet];
       primary = planet;
     } else if (name === 'binary') {
-      const starB = new KeplerBody(a0, e0, { M: 1.0, theta: 0, color: '#38BDF8', radius: 0.2, label: "Yulduz B", isPrimary: true });
-      const starA = new KeplerBody(a0, e0, { M: 1.0, theta: Math.PI, color: '#F43F5E', radius: 0.2, label: "Yulduz A", mirrorOf: starB });
+      const starB = new KeplerBody(a0, e0, { M: 1.0, theta: 0, color: '#38BDF8', radius: 0.2, label: __t("Yulduz B"), isPrimary: true });
+      const starA = new KeplerBody(a0, e0, { M: 1.0, theta: Math.PI, color: '#F43F5E', radius: 0.2, label: __t("Yulduz A"), mirrorOf: starB });
       list = [starA, starB];
       primary = starB;
     } else {
       // solar: markaziy Quyosh (statik) + ichki sayyoralar + Yupiter + kometa
-      const mercury = new KeplerBody(0.39, 0.206, { color: '#94A3B8', radius: 0.05, label: "Merkuriy" });
-      const venus = new KeplerBody(0.72, 0.007, { color: '#FBBF24', radius: 0.07, label: "Venera" });
-      const earth = new KeplerBody(a0, e0, { color: '#38BDF8', radius: 0.08, label: "Yer", isPrimary: true });
-      const mars = new KeplerBody(1.52, 0.093, { color: '#F43F5E', radius: 0.06, label: "Mars" });
-      const jupiter = new KeplerBody(2.8, 0.048, { color: '#C084FC', radius: 0.16, label: "Yupiter" });
-      const comet = new KeplerBody(2.2, 0.85, { color: '#F8FAFC', radius: 0.03, label: "Kometa" });
+      const mercury = new KeplerBody(0.39, 0.206, { color: '#94A3B8', radius: 0.05, label: __t("Merkuriy") });
+      const venus = new KeplerBody(0.72, 0.007, { color: '#FBBF24', radius: 0.07, label: __t("Venera") });
+      const earth = new KeplerBody(a0, e0, { color: '#38BDF8', radius: 0.08, label: __t("Yer"), isPrimary: true });
+      const mars = new KeplerBody(1.52, 0.093, { color: '#F43F5E', radius: 0.06, label: __t("Mars") });
+      const jupiter = new KeplerBody(2.8, 0.048, { color: '#C084FC', radius: 0.16, label: __t("Yupiter") });
+      const comet = new KeplerBody(2.2, 0.85, { color: '#F8FAFC', radius: 0.03, label: __t("Kometa") });
       list = [mercury, venus, earth, mars, jupiter, comet];
       primary = earth;
     }
@@ -334,7 +335,7 @@ function initAstronomyVisualizationLab() {
 
   if (btnPlay) btnPlay.addEventListener('click', () => {
     isRunning = !isRunning;
-    btnPlay.textContent = isRunning ? '⏸ Pauza' : '▶ Davom ettirish';
+    btnPlay.textContent = isRunning ? __t("⏸ Pauza") : __t("▶ Davom ettirish");
     lastTime = null;
   });
   if (btnReset) btnReset.addEventListener('click', () => {
@@ -401,12 +402,12 @@ function initAstronomyVisualizationLab() {
     const velKms = primary.speed * AU_YR_TO_KMS;
     const periodYears = primary.period();
 
-    if (statDist) statDist.textContent = `${uzFix(distAU, 3)} AU (${uzFix((distAU * KM_PER_AU / 1e6), 1)} mln km)`;
+    if (statDist) statDist.textContent = `${uzFix(distAU, 3)} AU (${uzFix((distAU * KM_PER_AU / 1e6), 1)} ${__t("mln km")})`;
     if (statVel) statVel.textContent = `${uzFix(velKms, 2)} km/s`;
     if (statPeriod) statPeriod.textContent = periodYears >= 1
-      ? `${uzFix(periodYears, 2)} yil`
-      : `${uzFix((periodYears * 365.25), 1)} kun`;
-    if (statEnergy) statEnergy.textContent = '● barqaror (Kepler invarianti)';
+      ? __t("{0} yil", [uzFix(periodYears, 2)])
+      : __t("{0} kun", [uzFix((periodYears * 365.25), 1)]);
+    if (statEnergy) statEnergy.textContent = __t("● barqaror (Kepler invarianti)");
     if (statFps) statFps.textContent = Math.round(measuredFps) + ' FPS';
   }
 
@@ -470,9 +471,9 @@ function initTtsNarrativeDemo() {
   const wctx = waveCanvas.getContext('2d');
 
   const NARRATIVES = [
-    "Kepler ikkinchi qonuniga ko‘ra, sayyorani Quyosh bilan tutashtiruvchi radius-vektor teng vaqt oralig‘ida teng maydonlarni chizadi.",
-    "Bu shuni anglatadiki, sayyora Quyoshga yaqinlashganda — perigeliyda — tezroq, uzoqlashganda — afeliyda — sekinroq harakatlanadi.",
-    "Vis-Viva tenglamasi orbitaning istalgan nuqtasidagi tezlikni radius va katta yarim o‘q orqali aniqlashga imkon beradi."
+    __t("Kepler ikkinchi qonuniga ko‘ra, sayyorani Quyosh bilan tutashtiruvchi radius-vektor teng vaqt oralig‘ida teng maydonlarni chizadi."),
+    __t("Bu shuni anglatadiki, sayyora Quyoshga yaqinlashganda — perigeliyda — tezroq, uzoqlashganda — afeliyda — sekinroq harakatlanadi."),
+    __t("Vis-Viva tenglamasi orbitaning istalgan nuqtasidagi tezlikni radius va katta yarim o‘q orqali aniqlashga imkon beradi.")
   ];
 
   let waveAnimId = null;
@@ -537,7 +538,7 @@ function initTtsNarrativeDemo() {
   function setControlsState() {
     if (btnPause) {
       btnPause.disabled = !isSpeaking;
-      btnPause.textContent = isPaused ? '▶ Davom ettirish' : '⏸ Pauza';
+      btnPause.textContent = isPaused ? __t("▶ Davom ettirish") : __t("⏸ Pauza");
     }
     if (btnStop) btnStop.disabled = !isSpeaking;
   }
@@ -579,7 +580,7 @@ function initTtsNarrativeDemo() {
 
   btnPlay.addEventListener('click', () => {
     if (!('speechSynthesis' in window)) {
-      narrativeText.textContent = "⚠️ Brauzeringiz nutq sintezini (Web Speech API) qo‘llab-quvvatlamaydi.";
+      narrativeText.textContent = __t("⚠️ Brauzeringiz nutq sintezini (Web Speech API) qo‘llab-quvvatlamaydi.");
       return;
     }
 
@@ -615,7 +616,7 @@ function initTtsNarrativeDemo() {
       isSpeaking = false;
       isPaused = false;
       stopWave();
-      narrativeText.textContent = "\"Ovozli tushuntirishni boshlash uchun yuqoridagi tugmani bosing...\"";
+      narrativeText.textContent = __t("\"Ovozli tushuntirishni boshlash uchun yuqoridagi tugmani bosing...\"");
       setControlsState();
     });
   }

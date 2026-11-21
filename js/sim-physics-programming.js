@@ -1,3 +1,4 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * Lecture 8, Tab 6: 2D Vektorlar va To‘qnashuvlar Interaktiv Laboratoriyasi.
  * Sahifaning 4-bo‘limida keltirilgan Vector2D / RigidBody2D / resolveCollision
@@ -76,8 +77,8 @@ function initPhysicsProgrammingLab() {
       ];
     }
     if (preset === 'heavy-light') {
-      m1Slider.value = 15.0; m1Val.textContent = '15.0 kg';
-      m2Slider.value = 3.0; m2Val.textContent = '3.0 kg';
+      m1Slider.value = 15.0; m1Val.textContent = __t("15.0 kg");
+      m2Slider.value = 3.0; m2Val.textContent = __t("3.0 kg");
       return [
         new RigidBody2D(w * 0.2, h * 0.5, 100, 0, 15.0, radiusForMass(15.0), '#38BDF8'),
         new RigidBody2D(w * 0.8, h * 0.5, -60, 0, 3.0, radiusForMass(3.0), '#FBBF24')
@@ -121,7 +122,7 @@ function initPhysicsProgrammingLab() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? "⏸ To‘xtatish" : "▶ Davom ettirish";
+      btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : __t("▶ Davom ettirish");
       lastTime = null;
     });
   }

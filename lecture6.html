@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
           onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
   <script>
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
   </script>
@@ -982,9 +982,9 @@ function stepPhysics(state, params, dt) {
 
       const answers = [1, 0, 0]; // Correct indices for Q1, Q2, Q3
       const explanations = [
-        "Normal reaksiya kuchi N doimo sirtga perpendikulyar (tik) bo‘ladi. Qiya tekislikda uning moduli N = mg*cos(alpha) ga teng.",
-        "Tashqi kuch (15 N) maksimal statik ishqalanishdan (25 N) kichik bo‘lsa, jism qo‘zg‘almaydi va statik ishqalanish tashqi kuchga teng bo‘ladi (F_ishq = 15 N).",
-        "Simplektik Eyler–Kromer yangi tezlik bilan koordinatani yangilagani sababli simplektik 2-formani saqlaydi va energiyani barqaror ushlab turadi."
+        __t("Normal reaksiya kuchi N doimo sirtga perpendikulyar (tik) bo‘ladi. Qiya tekislikda uning moduli N = mg*cos(alpha) ga teng."),
+        __t("Tashqi kuch (15 N) maksimal statik ishqalanishdan (25 N) kichik bo‘lsa, jism qo‘zg‘almaydi va statik ishqalanish tashqi kuchga teng bo‘ladi (F_ishq = 15 N)."),
+        __t("Simplektik Eyler–Kromer yangi tezlik bilan koordinatani yangilagani sababli simplektik 2-formani saqlaydi va energiyani barqaror ushlab turadi.")
       ];
 
       let correctCount = 0;
@@ -994,14 +994,11 @@ function stepPhysics(state, params, dt) {
       }
 
       if (!allAnswered) {
-        feedbackEl.innerHTML = `<div style="background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;">
-          <span style="font-size:1.2rem;">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>
-        </div>`;
+        feedbackEl.innerHTML = __t("<div style=\"background:#F3F5F8; border:1px solid #F59E0B; color:#A16207; padding:12px 16px; border-radius:10px; margin-top:14px; display:flex; align-items:center; gap:10px;\">\n          <span style=\"font-size:1.2rem;\">⚠️</span><span>Iltimos, barcha 3 ta savolga javob belgilang!</span>\n        </div>", []);
         return;
       }
 
-      let htmlResult = `<div style="background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;">
-        <h4 style="font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;">📊 6-ma’ruza modellarni shakllantirish natijasi:</h4>`;
+      let htmlResult = __t("<div style=\"background:#F3F5F8; border:1px solid rgba(17,24,43,0.16); border-radius:14px; padding:20px; margin-top:16px;\">\n        <h4 style=\"font-size:1.15rem; margin-bottom:12px; color:#1C4E9E;\">📊 6-ma’ruza modellarni shakllantirish natijasi:</h4>", []);
 
       for (let i = 1; i <= 3; i++) {
         const userOpt = userAnswers6[i];
@@ -1010,24 +1007,20 @@ function stepPhysics(state, params, dt) {
 
         htmlResult += `<div style="margin-bottom:10px; padding:10px 14px; border-radius:8px; background:${isCorr ? 'rgba(52, 211, 153, 0.08)' : 'rgba(244, 63, 94, 0.08)'}; border:1px solid ${isCorr ? 'rgba(52, 211, 153, 0.3)' : 'rgba(244, 63, 94, 0.3)'};">
           <div style="font-weight:600; font-size:0.92rem; color:${isCorr ? '#047857' : '#E11D48'};">
-            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? "To‘g‘ri!" : "Xato!"}
+            ${isCorr ? '✅' : '❌'} ${i}-Savol: ${isCorr ? __t("To‘g‘ri!") : __t("Xato!")}
           </div>
           <div style="font-size:0.85rem; color:#66708A; margin-top:4px;">${explanations[i - 1]}</div>
         </div>`;
       }
 
-      let badgeName = "Fizik Modellar Arxitektori (To‘liq O‘zlashtirildi)";
+      let badgeName = __t("Fizik Modellar Arxitektori (To‘liq O‘zlashtirildi)");
       let badgeColor = '#047857';
       if (correctCount < 3) {
-        badgeName = "FBD va Kuchlar Tadqiqotchisi (Qisman O‘zlashtirildi)";
+        badgeName = __t("FBD va Kuchlar Tadqiqotchisi (Qisman O‘zlashtirildi)");
         badgeColor = '#1C4E9E';
       }
 
-      htmlResult += `<div style="margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid ${badgeColor}; text-align:center;">
-        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:${badgeColor}; font-weight:700;">Sizning Fizik Modellashtirish Kompetensiyangiz:</div>
-        <div style="font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;">${badgeName}</div>
-        <div style="font-family:var(--font-mono); font-size:0.9rem; color:${badgeColor};">Natija: ${correctCount} / 3 ball (${uzFix(((correctCount/3)*100), 0)}%)</div>
-      </div></div>`;
+      htmlResult += __t("<div style=\"margin-top:14px; padding:14px; border-radius:10px; background:rgba(17, 24, 43, 0.03); border:1px solid {0}; text-align:center;\">\n        <div style=\"font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:{1}; font-weight:700;\">Sizning Fizik Modellashtirish Kompetensiyangiz:</div>\n        <div style=\"font-size:1.25rem; font-weight:800; color:#11182B; margin:6px 0;\">{2}</div>\n        <div style=\"font-family:var(--font-mono); font-size:0.9rem; color:{3};\">Natija: {4} / 3 ball ({5}%)</div>\n      </div></div>", [badgeColor, badgeColor, badgeName, badgeColor, correctCount, uzFix(((correctCount/3)*100), 0)]);
 
       feedbackEl.innerHTML = htmlResult;
     };

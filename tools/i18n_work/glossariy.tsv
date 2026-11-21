@@ -1,0 +1,282 @@
+9d01fc71	Приложение к учебнику · Глоссарий	Textbook appendix · Glossary
+a5f5614e	127 основных терминов, встречающихся во всех лекциях и лабораторных работах: название, английский эквивалент, краткое определение и тема, в которой термин изучается. Введите слово на русском, узбекском или английском языке в поле поиска.	127 key terms used across all the lectures and labs: the term, its English equivalent, a short definition and the topic where it is studied. Type a word in the search box.
+c6239ec8	Например: импульс, prompt, redshift	For example: momentum, prompt, redshift
+ed770215	В словаре 127 терминов.	The glossary has 127 terms.
+0323e8c9	<strong>Устойчивость (численная)</strong>	<strong>Stability (numerical)</strong>
+549bce67	Свойство численного метода не усиливать ошибки.	The property of a numerical method of not amplifying errors.
+0b8220ce	<strong>Начальное условие</strong>	<strong>Initial condition</strong>
+4609610c	Значения состояния при t = 0, делающие решение дифференциального уравнения единственным.	The state values at t = 0 that make a differential equation’s solution unique.
+de0b5420	<strong>Детерминированная модель</strong>	<strong>Deterministic model</strong>
+2c8b69c1	=	=
+64de8fdc	Модель, всегда дающая одинаковый результат при одинаковых начальных условиях.	A model that always gives the same result for the same initial conditions.
+9ceea522	<strong>Дрейф энергии</strong>	<strong>Energy drift</strong>
+6e80bdf6	Постепенное изменение полной энергии замкнутой системы из-за численных ошибок.	The gradual change in a closed system’s total energy caused by numerical errors.
+7f75c1e7	<strong>Степень свободы</strong>	<strong>Degree of freedom</strong>
+c4aa9ea8	Число независимых координат, полностью определяющих состояние системы.	The number of independent coordinates that fully specify a system’s state.
+9649db84	<strong>Метод Эйлера</strong>	<strong>Euler method</strong>
+c3c479a9	Простейший численный метод первого порядка, заменяющий производную конечной разностью; энергию не сохраняет.	The simplest first-order numerical method, which replaces the derivative with a finite difference; it does not conserve energy.
+1d527bc0	<strong>Метод Эйлера–Кромера</strong>	<strong>Euler–Cromer method</strong>
+87ab419b	Симплектический метод, обновляющий сначала скорость, а затем координату с новой скоростью; при колебаниях энергия устойчива.	A symplectic method that updates the velocity first and then the position with the new velocity; energy stays stable for oscillations.
+33835e88	Пространство, в котором состояние системы изображается по осям координаты и импульса (или скорости).	The space in which a system’s state is plotted on position and momentum (or velocity) axes.
+52f13780	<strong>Шаг интегрирования</strong>	<strong>Integration step</strong>
+b482f680	=	=
+9deb8b64	Дискретный отрезок времени при численном интегрировании; его величина определяет точность и устойчивость.	The discrete time interval in numerical integration; its size sets the accuracy and stability.
+d8338752	<strong>Компьютерная модель</strong>	<strong>Computer model</strong>
+8ad63f27	=	=
+c317e731	Реализация математической модели в виде алгоритма и программы.	The implementation of a mathematical model as an algorithm and program.
+b90e6361	<strong>Сходимость</strong>	<strong>Convergence</strong>
+aca05129	Приближение численного решения к точному по мере уменьшения шага.	The numerical solution approaching the exact one as the step shrinks.
+cae9d4f2	<strong>Локальная и глобальная ошибка</strong>	<strong>Local and global error</strong>
+86d8cc5a	Численная ошибка на одном шаге и накопленная за всё интегрирование.	The numerical error in a single step and that accumulated over the whole integration.
+e27c3236	<strong>Математическая модель</strong>	<strong>Mathematical model</strong>
+958435f7	=	=
+41e880cb	Описание физического процесса уравнениями (чаще всего дифференциальными), начальными и граничными условиями.	Describing a physical process with equations (often differential equations) and initial and boundary conditions.
+354dd140	<strong>Модель</strong>	<strong>Model</strong>
+882b2cf3	=	=
+7ebd16c4	Упрощённое в целях изучения представление объекта или процесса, сохраняющее его существенные свойства.	A simplified representation of an object or process, made for study, that keeps its essential properties.
+f6338d06	<strong>Метод Монте-Карло</strong>	<strong>Monte Carlo method</strong>
+0ba59b5e	Метод статистической оценки величины с помощью большого числа случайных испытаний.	A method of estimating a quantity statistically through many random trials.
+e7c2db41	<strong>Псевдокод</strong>	<strong>Pseudocode</strong>
+e12dbf83	=	=
+46b2379a	Запись алгоритма, близкая к естественному языку, не привязанная к конкретному языку программирования.	Writing an algorithm close to natural language, without tying it to a specific programming language.
+ff2ebf53	<strong>Метод Рунге–Кутты (RK4)</strong>	<strong>Runge–Kutta method (RK4)</strong>
+b1d9b23f	Метод, дающий точность четвёртого порядка за счёт четырёх промежуточных вычислений на каждом шаге.	A method that achieves fourth-order accuracy with four intermediate evaluations per step.
+31b535db	<strong>Симплектический интегратор</strong>	<strong>Symplectic integrator</strong>
+938bda28	=	=
+e24f54ec	Численный метод, сохраняющий объём фазового пространства гамильтоновых систем и не дающий долговременного дрейфа энергии.	A numerical method that preserves the phase-space volume of Hamiltonian systems and gives no long-term energy drift.
+5318f7bb	Запуск компьютерной модели во времени для наблюдения за развитием процесса.	Running a computer model forward in time to watch how a process develops.
+ca7e0ce5	<strong>Стохастическая модель</strong>	<strong>Stochastic model</strong>
+29f399c3	=	=
+60c1a620	Модель, содержащая случайные величины, результат которой описывается вероятностным распределением.	A model containing random variables whose result is described by a probability distribution.
+f66fea93	<strong>Обратная разработка</strong>	<strong>Reverse engineering</strong>
+578569ec	Восстановление внутренней модели и алгоритма готовой симуляции путём наблюдения за ней.	Recovering a ready-made simulation’s internal model and algorithm by observing it.
+64d19d6c	<strong>Метод Верле</strong>	<strong>Verlet method</strong>
+2e4e5f6d	=	=
+27660f02	Симплектический метод второго порядка, широко применяемый в молекулярной динамике и игровых движках.	A second-order symplectic method widely used in molecular dynamics and game engines.
+1c7d8081	Элемент для попиксельного рисования 2D-графики в браузере с помощью JavaScript.	An element for drawing pixel-level 2D graphics in the browser with JavaScript.
+cc0dc756	=	=
+4cf06e08	Процесс поиска и исправления ошибок в программе.	The process of finding and fixing errors in a program.
+143d6f83	Реальное время, прошедшее между двумя кадрами; делает физику независимой от частоты кадров.	The real time between two frames; it makes the physics independent of the frame rate.
+d68e6987	<strong>Физический движок</strong>	<strong>Physics engine</strong>
+053de6e9	Программный модуль, рассчитывающий движение тел, силы и столкновения.	A software module that computes the motion of bodies, forces and collisions.
+6b166b1a	Сервис бесплатной публикации статического сайта из репозитория.	A service for publishing a static site from a repository for free.
+6b0fbf4d	<strong>Парное программирование</strong>	<strong>Pair programming</strong>
+4200e336	Совместное написание кода двумя участниками (здесь — студентом и ИИ): один пишет, другой проверяет.	Two participants (here, a student and an AI) writing code together: one writes, the other checks.
+c4d45fb1	<strong>Цикл кадров</strong>	<strong>Frame loop</strong>
+53f827f4	Повторяющийся процесс обновления состояния и перерисовки на каждом кадре.	A repeating process of updating the state and redrawing on every frame.
+b8f299db	<strong>Частота кадров</strong>	<strong>Frame rate</strong>
+e47afe33	Число кадров, отрисованных за секунду.	The number of frames drawn per second.
+6c181440	<strong>Устранение проникновения</strong>	<strong>Penetration resolution</strong>
+e4f99faf	Разведение столкнувшихся тел, устраняющее их перекрытие.	Separating colliding bodies to remove their overlap.
+81cdc276	<strong>Преобразование координат</strong>	<strong>Coordinate transformation</strong>
+e237d39f	Перевод физических координат (метры, а. е.) в пиксели экрана.	Converting physical coordinates (metres, AU) into screen pixels.
+b7ae370f	<strong>Фиксированный физический шаг</strong>	<strong>Fixed timestep</strong>
+d8ed3f3a	=	=
+40a0a03c	Обновление физики с постоянным Δt, а графики — с частотой экрана (метод аккумулятора).	Updating the physics with a constant Δt and the graphics at the screen rate (the accumulator method).
+47275277	<strong>Репозиторий</strong>	<strong>Repository</strong>
+6d19c1f2	Место хранения файлов проекта и истории изменений (например, GitHub).	Where a project’s files and change history are stored (for example, GitHub).
+59fccdff	Вызов анимации, согласованный со следующим обновлением экрана браузера.	An animation call synchronised with the browser’s next screen refresh.
+adb9dd19	<strong>Retina-масштабирование</strong>	<strong>Retina scaling</strong>
+79777dae	Получение чёткого изображения на экранах высокой плотности умножением размера Canvas на devicePixelRatio.	Getting a sharp image on high-density screens by multiplying the Canvas size by devicePixelRatio.
+c5108203	<strong>Скалярное произведение</strong>	<strong>Dot product</strong>
+a9e956da	Сумма произведений компонент двух векторов: a·b = |a||b|cos α.	The sum of the products of two vectors’ components: a·b = |a||b|cos α.
+c5ad83ad	<strong>Обнаружение столкновений</strong>	<strong>Collision detection</strong>
+08f47f4d	Проверка пересечения тел (например, что расстояние между центрами меньше суммы радиусов).	Checking whether bodies intersect (for example, whether the distance between centres is less than the sum of the radii).
+dd3b5af0	<strong>Вектор</strong>	<strong>Vector</strong>
+b4804943	Величина, имеющая модуль и направление; в программе задаётся компонентами (x, y).	A quantity with magnitude and direction; in code it is given by its (x, y) components.
+a39a6045	<strong>Академическая честность</strong>	<strong>Academic integrity</strong>
+9b5c25d0	Принцип самостоятельного выполнения своей работы и открытого указания источников и использования ИИ.	The principle of doing your own work independently and openly acknowledging sources and AI use.
+815b610b	<strong>Few-shot-запрос</strong>	<strong>Few-shot prompt</strong>
+01301835	Приведение нескольких образцов вместе с заданием.	Giving several examples along with the task.
+0f762f94	<strong>Цепочка рассуждений</strong>	<strong>Chain of thought</strong>
+e4259c2a	Способ попросить модель пошагово обосновать решение.	A way of asking the model to justify its solution step by step.
+646b81dc	<strong>Галлюцинация</strong>	<strong>Hallucination</strong>
+28a63c0f	=	=
+67ab2554	Выдача ИИ правдоподобной на вид, но неверной или вымышленной информации.	AI producing information that looks convincing but is wrong or made up.
+867d2d75	<strong>Генеративный ИИ</strong>	<strong>Generative AI</strong>
+0ee8a1d9	=	=
+1f037f75	Системы ИИ, создающие новый текст, изображения, звук или видео.	AI systems that create new text, images, audio or video.
+8c3ae97e	<strong>Большая языковая модель (БЯМ)</strong>	<strong>Large language model (LLM)</strong>
+7d800ddc	=	=
+b9d62d1d	Модель нейронной сети, обученная на больших объёмах текста и создающая текст и код.	A neural network model trained on large amounts of text that generates text and code.
+68410db0	<strong>Контекстное окно</strong>	<strong>Context window</strong>
+73b2e3ff	Максимальный объём текста (в токенах), который модель учитывает одновременно.	The maximum amount of text (in tokens) a model takes into account at once.
+33b24722	<strong>Мультимодальная модель</strong>	<strong>Multimodal model</strong>
+180b0b04	=	=
+b4cb8084	Модель, работающая с данными нескольких типов: текстом, изображением, звуком.	A model that works with several kinds of data, such as text, images and audio.
+7622be3b	<strong>Синтез речи</strong>	<strong>Speech synthesis</strong>
+c97e8c6b	Превращение текста в искусственный голос.	Turning text into an artificial voice.
+87e5b284	<strong>Распознавание речи</strong>	<strong>Speech recognition</strong>
+dbb45c23	Превращение устной речи в текст.	Turning spoken language into text.
+4211e951	<strong>Промпт</strong>	<strong>Prompt</strong>
+60fa1140	=	=
+7a091fa8	Текст задания или запроса, передаваемый модели ИИ.	The text of the task or request given to an AI model.
+7839ccb4	<strong>Промпт-инжиниринг</strong>	<strong>Prompt engineering</strong>
+3317e6cf	=	=
+6eb501b1	Искусство систематического составления запросов для получения от ИИ точного и надёжного результата.	The craft of writing requests systematically to get precise, reliable results from AI.
+7fa7d8a9	<strong>Назначение роли</strong>	<strong>Role assignment</strong>
+d23880a9	Задание модели роли определённого специалиста (например, «учитель физики»).	Giving the model the role of a particular expert (for example, "physics teacher").
+ed1f8191	<strong>ИИ-агент</strong>	<strong>AI agent</strong>
+3cfb0332	Система ИИ, самостоятельно планирующая задачу и выполняющая её в несколько шагов с помощью инструментов.	An AI system that plans a task on its own and carries it out in several steps using tools.
+075b4a3f	<strong>Журнал ИИ-промптов</strong>	<strong>AI prompt journal</strong>
+8dc555af	Запись запросов студента к ИИ, полученных ответов и результатов их проверки.	A record of the student’s requests to AI, the answers received and the results of checking them.
+4d734b53	<strong>Доля ошибок в словах</strong>	<strong>Word error rate</strong>
+de00a032	Доля заменённых, пропущенных и лишних слов в транскрипции.	The share of substituted, missing and extra words in a transcript.
+e70777dc	Язык разметки, управляющий паузами, ударениями и темпом в синтезе речи.	A markup language that controls pauses, stress and speed in speech synthesis.
+07772ee0	<strong>Искусственный интеллект (ИИ)</strong>	<strong>Artificial intelligence (AI)</strong>
+c89b0c68	Компьютерные системы, выполняющие задачи, которые обычно требуют человеческого мышления.	Computer systems that perform tasks that normally require human thinking.
+b2c3eed3	Наименьшая единица, на которую языковая модель делит текст (слово или его часть).	The smallest unit a language model splits text into (a word or part of one).
+47cdf8c7	<strong>Zero-shot-запрос</strong>	<strong>Zero-shot prompt</strong>
+6e6b9a7b	Постановка только задания без приведения образцов.	Giving only the task, without examples.
+3e6f1b5c	<strong>Адаптивное обучение</strong>	<strong>Adaptive learning</strong>
+11a1e41d	Автоматическая подстройка сложности заданий в зависимости от результатов студента.	Automatically adjusting task difficulty based on the student’s results.
+71ed5f69	<strong>Таксономия Блума</strong>	<strong>Bloom’s taxonomy</strong>
+634c1787	=	=
+697f72bb	Деление учебных целей на уровни запоминания, понимания, применения, анализа, оценки и создания.	Dividing learning goals into the levels of remembering, understanding, applying, analysing, evaluating and creating.
+a11183ff	Определение уровня знаний и потребностей студента до начала обучения.	Identifying a student’s level of knowledge and needs before teaching.
+88517fa7	<strong>Индивидуальная учебная траектория</strong>	<strong>Individual learning pathway</strong>
+57793bef	Учебный путь, адаптированный к потребностям студента.	A learning path tailored to the student’s needs.
+738811ee	<strong>Когнитивная нагрузка</strong>	<strong>Cognitive load</strong>
+e3499032	Нагрузка на рабочую память при усвоении учебного материала (теория Свеллера).	The strain on working memory when learning material (Sweller’s theory).
+d8476c92	Система управления курсом, заданиями и оцениванием (Moodle, Google Classroom).	A system for managing courses, assignments and assessment (Moodle, Google Classroom).
+998b96c8	<strong>Неверное представление</strong>	<strong>Misconception</strong>
+94b84def	Сложившееся у студента устойчивое мнение, противоречащее научному понятию.	A persistent belief a student holds that contradicts the scientific concept.
+417f72d0	Собрание работ и проектов студента и их описаний.	A collection of a student’s work and projects with their descriptions.
+d3a94bd9	<strong>Модель Раша</strong>	<strong>Rasch model</strong>
+8cd559c5	=	=
+f7276963	Модель теории тестирования, оценивающая трудность задания и способность студента на одной шкале.	A test theory model that measures task difficulty and student ability on the same scale.
+b35d9872	<strong>Рубрика</strong>	<strong>Rubric</strong>
+1f4d5014	=	=
+d79f2e94	Таблица с описанием критериев оценивания и их уровней.	A table describing the assessment criteria and their levels.
+ee349fb1	<strong>Скаффолдинг</strong>	<strong>Scaffolding</strong>
+3401437b	Поэтапная помощь студенту, которая постепенно уменьшается.	Step-by-step support for the student that is gradually withdrawn.
+86af6c75	<strong>Сценарий (урока)</strong>	<strong>Lesson script</strong>
+7a768d3e	=	=
+ebb6c8d6	Последовательное описание этапов урока или видео.	A step-by-step description of the stages of a lesson or video.
+dcbff17b	<strong>Итоговый проект</strong>	<strong>Capstone project</strong>
+f21c41a5	=	=
+dbe2321c	Самостоятельный проект, объединяющий знания и навыки, приобретённые в ходе курса.	An independent project that brings together the knowledge and skills gained in the course.
+77101e20	<strong>Зона ближайшего развития</strong>	<strong>Zone of proximal development</strong>
+f45bb43e	По Выготскому: область задач, которые студент выполняет не самостоятельно, но может выполнить с помощью.	In Vygotsky’s terms: the range of tasks a student cannot do alone but can do with help.
+3c5924a5	Изменение частоты волны из-за относительного движения источника и наблюдателя.	The change in a wave’s frequency due to the relative motion of source and observer.
+5e0c21e0	<strong>Напряжённость электрического поля</strong>	<strong>Electric field strength</strong>
+ee206226	Отношение силы, действующей на положительный пробный заряд, к величине этого заряда.	The force on a positive test charge divided by that charge.
+a6207c78	<strong>Электромагнитная индукция</strong>	<strong>Electromagnetic induction</strong>
+3c7b899d	Возникновение ЭДС в контуре при изменении магнитного потока (закон Фарадея).	An EMF arising in a circuit when the magnetic flux changes (Faraday’s law).
+e3b9b9bb	<strong>Энтропия</strong>	<strong>Entropy</strong>
+56c8d6a7	Мера беспорядка состояния системы; в замкнутой системе не убывает.	A measure of the disorder of a system’s state; it never decreases in an isolated system.
+535913f1	<strong>Диаграмма свободного тела</strong>	<strong>Free body diagram</strong>
+29793db9	Чертёж, на котором все силы, действующие на тело, изображены векторами.	A drawing that shows every force acting on a body as a vector.
+7ff614a3	<strong>Гармонические колебания</strong>	<strong>Harmonic oscillation</strong>
+bf2fa6db	=	=
+2145a61a	Колебания, при которых величина меняется во времени по синусоидальному закону.	An oscillation in which a quantity varies sinusoidally with time.
+ebd6f312	<strong>Уравнение состояния идеального газа</strong>	<strong>Ideal gas equation of state</strong>
+4c5d2fc7	pV = nRT — связь давления, объёма и температуры идеального газа.	pV = nRT — the relationship between an ideal gas’s pressure, volume and temperature.
+507a52cd	<strong>Импульс</strong>	<strong>Momentum</strong>
+4c2b2250	Произведение массы тела на его скорость: p = mv.	The product of a body’s mass and velocity: p = mv.
+899bde06	<strong>Интерференция</strong>	<strong>Interference</strong>
+fac4d342	Усиление и ослабление интенсивности при сложении когерентных волн.	The strengthening and weakening of intensity when coherent waves combine.
+12752766	<strong>Коэффициент трения</strong>	<strong>Coefficient of friction</strong>
+23c5c455	Отношение силы трения к силе нормального давления.	The ratio of the friction force to the normal force.
+3521d3ef	<strong>Цикл Карно</strong>	<strong>Carnot cycle</strong>
+4a0a8b82	Цикл идеальной тепловой машины из двух изотерм и двух адиабат; КПД η = 1 − T_C/T_H.	The ideal heat engine cycle of two isotherms and two adiabats; efficiency η = 1 − T_C/T_H.
+9844d938	<strong>Импульс силы</strong>	<strong>Impulse</strong>
+a885ec64	Интеграл силы по времени её действия; равен изменению импульса.	The integral of a force over the time it acts; equal to the change in momentum.
+b38ab5fc	<strong>Сила Лоренца</strong>	<strong>Lorentz force</strong>
+7e989813	Сила, действующая на заряд, движущийся в электромагнитном поле: F = q(E + v × B).	The force on a charge moving in an electromagnetic field: F = q(E + v × B).
+e9c1a72d	<strong>Распределение Максвелла–Больцмана</strong>	<strong>Maxwell–Boltzmann distribution</strong>
+291a9a75	Распределение молекул идеального газа по скоростям.	The distribution of an ideal gas’s molecules by speed.
+70fa7743	<strong>Радиоактивный распад</strong>	<strong>Radioactive decay</strong>
+332776eb	Самопроизвольное превращение нестабильных ядер в другие ядра: N(t) = N₀e^(−λt).	The spontaneous transformation of unstable nuclei into other nuclei: N(t) = N₀e^(−λt).
+fbfd15f1	<strong>Затухающие колебания</strong>	<strong>Damped oscillation</strong>
+28c5e511	=	=
+c3339356	Колебания, амплитуда которых убывает из-за трения или сопротивления.	An oscillation whose amplitude decreases because of friction or drag.
+8900b1de	<strong>Коэффициент восстановления</strong>	<strong>Coefficient of restitution</strong>
+6d8ed885	Отношение относительных скоростей после и до столкновения (0 — неупругое, 1 — упругое).	The ratio of relative speeds after and before a collision (0 — inelastic, 1 — elastic).
+92e85232	<strong>Период полураспада</strong>	<strong>Half-life</strong>
+1b477e1d	Время, за которое распадается половина радиоактивных ядер: T½ = ln 2 / λ.	The time in which half the radioactive nuclei decay: T½ = ln 2 / λ.
+68ee1c83	<strong>Абсолютная звёздная величина</strong>	<strong>Absolute magnitude</strong>
+ef7c733a	Звёздная величина звезды, видимая с расстояния 10 пк.	A star’s magnitude as seen from 10 pc.
+579b5bfe	<strong>Абсолютно чёрное тело</strong>	<strong>Black body</strong>
+ef8abb6e	Идеальное тело, поглощающее всё падающее излучение, спектр которого зависит только от температуры.	An ideal body that absorbs all radiation falling on it and whose spectrum depends only on temperature.
+46b64699	<strong>Разрешающая способность</strong>	<strong>Resolving power</strong>
+33b9124a	Наименьший угол между двумя точками, которые телескоп видит раздельно: θ ≈ 1,22λ/D.	The smallest angle between two points that a telescope can see separately: θ ≈ 1.22λ/D.
+3d5769df	<strong>Главная последовательность</strong>	<strong>Main sequence</strong>
+a0d1990c	Область диаграммы Г–Р, где располагаются звёзды с горящим в ядре водородом.	The region of the H–R diagram where stars burning hydrogen in their cores lie.
+2c6222ce	<strong>Астрономическая единица</strong>	<strong>Astronomical unit</strong>
+dba4b6fd	Среднее расстояние от Земли до Солнца: 1 а. е. = 1,496·10¹¹ м.	The mean distance from the Earth to the Sun: 1 AU = 1.496·10¹¹ m.
+6cacc650	<strong>Серия Бальмера</strong>	<strong>Balmer series</strong>
+b3d8cdf2	Видимые линии атома водорода, соответствующие переходам на уровень n = 2 (Hα, Hβ, …).	The hydrogen atom’s visible lines from transitions to the n = 2 level (Hα, Hβ, …).
+0a7eaf71	<strong>Предел Чандрасекара</strong>	<strong>Chandrasekhar limit</strong>
+e207a015	Максимальная масса белого карлика (≈ 1,4 M☉).	The maximum mass of a white dwarf (≈ 1.4 M☉).
+663d3b99	<strong>Эфемериды</strong>	<strong>Ephemeris</strong>
+a4745d23	=	=
+141c42aa	Таблица рассчитанных во времени положений небесных тел.	A table of celestial bodies’ positions computed over time.
+f4af1d23	<strong>Эффективная температура</strong>	<strong>Effective temperature</strong>
+5e0931a2	Температура абсолютно чёрного тела с той же светимостью и радиусом, что и звезда.	The temperature of a black body with the same luminosity and radius as the star.
+f63b1965	<strong>Экзопланета</strong>	<strong>Exoplanet</strong>
+feb33764	=	=
+280945d3	Планета, обращающаяся вокруг звезды, отличной от Солнца.	A planet orbiting a star other than the Sun.
+3b4bdebb	<strong>Свёртка по фазе</strong>	<strong>Phase folding</strong>
+424e4f42	Деление моментов наблюдений на пробный период и размещение всех точек в одном периоде.	Dividing the observation times by a trial period and placing all the points in a single period.
+28cef17a	<strong>Фотометрия</strong>	<strong>Photometry</strong>
+408b19a5	=	=
+26419aa1	Измерение светового потока небесных тел.	Measuring the light flux of celestial bodies.
+43747c35	=	=
+c8fa730a	Диаграмма звёзд по температуре (цвету) и светимости.	A diagram of stars by temperature (colour) and luminosity.
+6b28cf45	<strong>Закон Хаббла</strong>	<strong>Hubble’s law</strong>
+ead01eb4	=	=
+f23c883d	Скорость удаления галактик пропорциональна расстоянию: v = H₀d.	Galaxies recede at a speed proportional to their distance: v = H₀d.
+73b1242b	<strong>Законы Кеплера</strong>	<strong>Kepler’s laws</strong>
+70209305	=	=
+c44c439c	Планеты движутся по эллипсам; радиус-вектор за равные времена описывает равные площади; T² ∝ a³.	Planets move on ellipses; the radius vector sweeps equal areas in equal times; T² ∝ a³.
+0281d5a3	<strong>Видимая звёздная величина</strong>	<strong>Apparent magnitude</strong>
+61cd2559	Яркость звезды, видимая с Земли (логарифмическая шкала, меньшее число — ярче).	A star’s brightness as seen from Earth (a logarithmic scale; a smaller number is brighter).
+f48847d2	<strong>Модуль расстояния</strong>	<strong>Distance modulus</strong>
+f2379bbb	=	=
+e992467f	m − M = 5 lg d − 5 (d — в парсеках).	m − M = 5 log d − 5 (d in parsecs).
+993ec053	<strong>Нейтронная звезда</strong>	<strong>Neutron star</strong>
+a271f897	Сверхплотный объект, оставшийся после взрыва сверхновой и состоящий в основном из нейтронов.	An ultra-dense object, mostly neutrons, left after a supernova explosion.
+c674bf34	<strong>Белый карлик</strong>	<strong>White dwarf</strong>
+b90381d6	Плотный остаток звезды средней массы, оставшийся без термоядерных реакций.	The dense remnant of an intermediate-mass star left without thermonuclear reactions.
+d27042f2	<strong>Сверхновая</strong>	<strong>Supernova</strong>
+e4cba0a7	Взрыв звезды; тип II — коллапс ядра массивной звезды.	A stellar explosion; type II is the core collapse of a massive star.
+3aa132f1	<strong>Параллакс</strong>	<strong>Parallax</strong>
+d05e76dc	=	=
+a88ee197	Годичное смещение положения близкой звезды из-за движения Земли по орбите; основной метод измерения расстояний.	The yearly shift in a nearby star’s position caused by the Earth’s orbital motion; the main method of measuring distances.
+a93c4591	<strong>Парсек</strong>	<strong>Parsec</strong>
+30fefa59	=	=
+ebf0d128	Расстояние, на котором годичный параллакс равен 1″: 1 пк ≈ 3,26 светового года ≈ 3,086·10¹⁶ м.	The distance at which the annual parallax is 1″: 1 pc ≈ 3.26 light years ≈ 3.086·10¹⁶ m.
+3948d490	<strong>Закон Планка</strong>	<strong>Planck’s law</strong>
+ee6a0805	=	=
+eb64ce84	Распределение излучения абсолютно чёрного тела по длинам волн.	How a black body’s radiation is distributed over wavelength.
+810b738e	<strong>Красный гигант</strong>	<strong>Red giant</strong>
+be3fff7c	Расширившаяся после исчерпания водорода в ядре холодная, но очень яркая звезда.	A cool but very luminous star that has expanded after running out of core hydrogen.
+54a89dfc	<strong>Красное смещение</strong>	<strong>Redshift</strong>
+dfa22bc8	=	=
+02729898	Смещение спектральных линий в сторону длинных волн: z = Δλ/λ₀.	The shift of spectral lines towards longer wavelengths: z = Δλ/λ₀.
+50317771	<strong>Лучевая скорость</strong>	<strong>Radial velocity</strong>
+0078f590	Составляющая скорости объекта вдоль луча зрения.	The component of an object’s velocity along the line of sight.
+98cc5714	<strong>Цефеида</strong>	<strong>Cepheid</strong>
+403029be	Пульсирующая звезда-гигант, период которой зависит от светимости; мера расстояний.	A pulsating giant star whose period depends on its luminosity; a distance indicator.
+3f627411	<strong>Отношение сигнал/шум</strong>	<strong>Signal-to-noise ratio</strong>
+b6b60294	Отношение полезного сигнала к ошибке измерения; определяет точность фотометрии.	The ratio of the useful signal to the measurement error; it sets photometric precision.
+640426b4	<strong>Спектральный класс</strong>	<strong>Spectral class</strong>
+86c2d59a	Классификация звёзд по линиям в спектре (и температуре): O, B, A, F, G, K, M.	The classification of stars by their spectral lines (and temperature): O, B, A, F, G, K, M.
+f2bebb8d	<strong>Закон Стефана–Больцмана</strong>	<strong>Stefan–Boltzmann law</strong>
+0ba181ba	Поток излучения с единицы поверхности пропорционален T⁴: F = σT⁴.	The radiative flux per unit area is proportional to T⁴: F = σT⁴.
+a07c4c6f	<strong>Транзит</strong>	<strong>Transit</strong>
+d798c1f4	Прохождение планеты перед диском звезды и небольшое ослабление света звезды.	A planet passing in front of its star’s disc and slightly dimming its light.
+8fb8ac1d	<strong>Закон Вина</strong>	<strong>Wien’s law</strong>
+d548196b	=	=
+9bcc6df5	Длина волны максимума излучения обратно пропорциональна температуре: λ_max = b/T.	The wavelength of peak emission is inversely proportional to temperature: λ_max = b/T.
+7a25e20c	<strong>Уравнение vis-viva</strong>	<strong>Vis-viva equation</strong>
+009e3d01	Скорость тела на орбите: v² = GM(2/r − 1/a).	The speed of an orbiting body: v² = GM(2/r − 1/a).
+827cefa6	<strong>Светимость</strong>	<strong>Luminosity</strong>
+abffd6ef	=	=
+37a68e69	Полная энергия, излучаемая звездой за секунду (Вт или L☉).	The total energy a star emits per second (W or L☉).
+4356d808	<strong>Кривая блеска</strong>	<strong>Light curve</strong>
+34bbeca7	График зависимости яркости (звёздной величины) объекта от времени.	A graph of an object’s brightness (magnitude) over time.
+031c108b	<strong>Спектр поглощения</strong>	<strong>Absorption spectrum</strong>
+54874f27	Набор тёмных линий на фоне сплошного спектра.	A set of dark lines against a continuous spectrum.
+8d8eb147	Столбец «Где»: <strong>M</strong> — лекция, <strong>L</strong> — лабораторная работа, <strong>A</strong> — дополнительная лекция по астрономии (например, M7 — лекция 7).	"Where" column: <strong>M</strong> — lecture, <strong>L</strong> — lab work, <strong>A</strong> — supplementary astronomy lecture (for example, M7 — Lecture 7).

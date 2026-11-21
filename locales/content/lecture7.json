@@ -1,0 +1,866 @@
+[
+ {
+  "k": "94a7dce6",
+  "s": "7-ma’ruza: Dasturiy arxitektura va dvigatel",
+  "ru": "Лекция 7: Программная архитектура и движок",
+  "en": "Lecture 7: Software Architecture and the Engine"
+ },
+ {
+  "k": "0b0c145b",
+  "s": "HTML5 Canvas 2D konteksti, Glenn Fiedlerning <em>\"Fix Your Timestep\"</em> akkumulyatorli fizik tsikli, <code>requestAnimationFrame</code> apparat sinxronizatsiyasi, Google Antigravity monitoringi, ChatGPT kadr optimizatsiyasi (Dirty Rects, Multi-layer Canvas, Object Pooling) va Claude (Artifacts) vizual sinovlari.",
+  "ru": "2D-контекст HTML5 Canvas, физический цикл с аккумулятором <em>\"Fix Your Timestep\"</em> Гленна Фидлера, аппаратная синхронизация <code>requestAnimationFrame</code>, мониторинг в Google Antigravity, оптимизация кадров с ChatGPT (Dirty Rects, Multi-layer Canvas, Object Pooling) и визуальные тесты в Claude (Artifacts).",
+  "en": "The HTML5 Canvas 2D context, Glenn Fiedler’s <em>\"Fix Your Timestep\"</em> accumulator physics loop, <code>requestAnimationFrame</code> hardware synchronisation, Google Antigravity monitoring, ChatGPT frame optimisation (dirty rects, multi-layer Canvas, object pooling) and visual tests in Claude (Artifacts)."
+ },
+ {
+  "k": "e9053395",
+  "s": "📋 7-ma’ruza rejasi va AI texnologik konveyeri:",
+  "ru": "📋 План лекции 7 и технологический ИИ-конвейер:",
+  "en": "📋 Lecture 7 plan and the AI technology pipeline:"
+ },
+ {
+  "k": "c5cf9d9f",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD va Bloom taksonomiyasi bo‘yicha 3 klasterli adaptiv grafik o‘quv rejasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: адаптивный учебный план по графике из 3 кластеров на основе ЗБР и таксономии Блума.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: a 3-cluster adaptive graphics learning plan based on ZPD and Bloom’s taxonomy.</span>"
+ },
+ {
+  "k": "77e6731c",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Kod yozish va monitoring:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: Modulli dasturiy arxitektura, xotira (Heap) va kadr pacing monitoringi.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Написание кода и мониторинг:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: модульная программная архитектура, мониторинг памяти (Heap) и темпа кадров.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Coding and monitoring:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity: modular software architecture, memory (heap) and frame-pacing monitoring.</span>"
+ },
+ {
+  "k": "4393358f",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Kadr tsikli va delta-time:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Glenn Fiedler akkumulyatori, qat’iy qadam (Fixed dt) va alpha interpolyatsiyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Цикл кадров и delta-time:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: аккумулятор Гленна Фидлера, фиксированный шаг (Fixed dt) и альфа-интерполяция.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Frame loop and delta time:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Glenn Fiedler’s accumulator, a fixed step (fixed dt) and alpha interpolation.</span>"
+ },
+ {
+  "k": "9ba725bb",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Kadr optimizatsiyasi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT Code Interpreter: Dirty Rectangles, ko‘p qatlamli Canvas va Object Pooling (Zero-GC).</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Оптимизация кадров:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT Code Interpreter: Dirty Rectangles, многослойный Canvas и Object Pooling (Zero-GC).</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Frame optimisation:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT Code Interpreter: dirty rectangles, multi-layer Canvas and object pooling (zero-GC).</span>"
+ },
+ {
+  "k": "69b56c75",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Vizual sinov va Artifacts:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): Retina High-DPI dpr masshtablash, real vaqtli FPS va jank telemetriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Визуальный тест и Artifacts:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): масштабирование dpr для Retina High-DPI, телеметрия FPS и jank в реальном времени.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Visual test and Artifacts:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): Retina high-DPI dpr scaling and real-time FPS and jank telemetry.</span>"
+ },
+ {
+  "k": "cbb30f78",
+  "s": "<strong style=\"color:#1C4E9E;\">6. Simulyatsiya va test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas jonli arxitektura dvigateli, lag-simulyator, diagnostik test va adabiyotlar.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6. Симуляция и тест:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Живой архитектурный движок на HTML5 Canvas, симулятор лагов, диагностический тест и литература.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6. Simulation and test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A live HTML5 Canvas architecture engine, a lag simulator, a diagnostic test and references.</span>"
+ },
+ {
+  "k": "549fda0e",
+  "s": "MagicSchool AI: kognitiv diagnostika va 3 klasterli adaptiv o‘quv rejasi",
+  "ru": "MagicSchool AI: когнитивная диагностика и адаптивный учебный план из 3 кластеров",
+  "en": "MagicSchool AI: cognitive diagnostics and a 3-cluster adaptive learning plan"
+ },
+ {
+  "k": "22e1a5bf",
+  "s": "📚 Nazariy-Metodologik Asos:",
+  "ru": "📚 Теоретико-методологическая основа:",
+  "en": "📚 Theoretical and methodological basis:"
+ },
+ {
+  "k": "dbff1bf6",
+  "s": "Grafik va kompyuter fizikasi ta’limida talabalarning animatsiya mexanikasini o‘zlashtirishi",
+  "ru": "Освоение студентами механики анимации в обучении графике и компьютерной физике",
+  "en": "Students’ mastery of animation mechanics in graphics and computational physics education"
+ },
+ {
+  "k": "6c2e448e",
+  "s": "hamda",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "f4ed4142",
+  "s": "prinsiplari asosida tashkil etiladi. Dasturiy grafik apparat bilan ishlash tajribasi turli darajadagi talabalarni MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratadi.",
+  "ru": "организуется на основе принципов. По опыту работы с программным графическим аппаратом студенты разного уровня с помощью диагностики MagicSchool AI распределяются по 3 специализированным кластерам.",
+  "en": "is organised according to these principles. Based on their experience with graphics software, students of different levels are sorted into 3 specialised clusters through MagicSchool AI diagnostics."
+ },
+ {
+  "k": "3de0a63e",
+  "s": "HTML5 Canvas fizik simulyatsiyalarini yaratishda oddiy rasm chizishdan tashqari kadrlar yangilanishi chastotasi (FPS), kompyuter monitorlarining V-Sync xususiyatlari (60Hz, 120Hz, 144Hz) va vaqt diskretizatsiyasi hisobga olinishi lozim. Talabalar bilimi quyidagi 3 klasterga ajratiladi:",
+  "ru": "При создании физических симуляций на HTML5 Canvas, помимо простого рисования, необходимо учитывать частоту обновления кадров (FPS), особенности V-Sync мониторов (60 Гц, 120 Гц, 144 Гц) и дискретизацию времени. Знания студентов распределяются по следующим 3 кластерам:",
+  "en": "Building physics simulations on HTML5 Canvas involves more than drawing: frame rate (FPS), monitor V-Sync behaviour (60 Hz, 120 Hz, 144 Hz) and time discretisation must all be taken into account. Students’ knowledge is sorted into the following 3 clusters:"
+ },
+ {
+  "k": "db8be1b9",
+  "s": "Scaffolding",
+  "ru": "Scaffolding",
+  "en": "Scaffolding"
+ },
+ {
+  "k": "3440f083",
+  "s": "HTML5 Canvas 2D kontekstini biladi (`ctx.fillRect`, `ctx.arc`), biroq `requestAnimationFrame` va `setInterval` o‘rtasidagi fundamental farqni tushunmaydi. O‘zgaruvchan delta-time xatolariga yo‘l qo‘yadi.",
+  "ru": "Знает 2D-контекст HTML5 Canvas (`ctx.fillRect`, `ctx.arc`), но не понимает фундаментальной разницы между `requestAnimationFrame` и `setInterval`. Допускает ошибки переменного delta-time.",
+  "en": "Knows the HTML5 Canvas 2D context (`ctx.fillRect`, `ctx.arc`) but does not understand the fundamental difference between `requestAnimationFrame` and `setInterval`. Makes variable delta-time errors."
+ },
+ {
+  "k": "af933207",
+  "s": "<strong>O‘quv trayektoriyasi:</strong> Qo‘llab-quvvatlovchi andozalar (Scaffolding), oddiy 1D to‘g‘ri chiziqli harakat kadr tsikli, Canvas tozalash va to‘qnashuvlar.",
+  "ru": "<strong>Учебная траектория:</strong> поддерживающие шаблоны (скаффолдинг), простой цикл кадров для 1D прямолинейного движения, очистка Canvas и столкновения.",
+  "en": "<strong>Learning pathway:</strong> supporting templates (scaffolding), a simple frame loop for 1D straight-line motion, clearing the Canvas and collisions."
+ },
+ {
+  "k": "7b64a1a8",
+  "s": "Delta-Time ($\\Delta t$) tushunchasini to‘liq tushunadi. JavaScript ES6+ sintaksisiga ega. Monitor chastotasining (60Hz / 144Hz) fizik tezlikka ta’sirini anglaydi.",
+  "ru": "Полностью понимает понятие delta-time ($\\Delta t$). Владеет синтаксисом JavaScript ES6+. Понимает влияние частоты монитора (60 Гц / 144 Гц) на физическую скорость.",
+  "en": "Fully understands delta time ($\\Delta t$). Knows JavaScript ES6+ syntax. Understands how monitor refresh rate (60 Hz / 144 Hz) affects physical speed."
+ },
+ {
+  "k": "441110b3",
+  "s": "<strong>O‘quv trayektoriyasi:</strong> Glenn Fiedler akkumulyatorli tsiklini kodlash, Alpha holat interpolyatsiyasi va Retina High-DPI Canvas moslashuvi.",
+  "ru": "<strong>Учебная траектория:</strong> программирование цикла с аккумулятором Гленна Фидлера, альфа-интерполяция состояния и адаптация Canvas к Retina High-DPI.",
+  "en": "<strong>Learning pathway:</strong> coding Glenn Fiedler’s accumulator loop, alpha state interpolation and adapting Canvas to Retina high-DPI."
+ },
+ {
+  "k": "1b9a414c",
+  "s": "Xotira boshqaruvi, Garbage Collection (GC) pauzalari, Web Workers va OffscreenCanvas ko‘p oqimli arxitekturasi bilan tanish.",
+  "ru": "Знаком с управлением памятью, паузами Garbage Collection (GC), Web Workers и многопоточной архитектурой OffscreenCanvas.",
+  "en": "Familiar with memory management, garbage-collection (GC) pauses, Web Workers and the multi-threaded OffscreenCanvas architecture."
+ },
+ {
+  "k": "1c5c17cc",
+  "s": "<strong>O‘quv trayektoriyasi:</strong> Dirty Rectangles, Multi-layer Canvas, Object Pooling (Zero-GC dvigateli) va Web Workers rendering tadqiqoti.",
+  "ru": "<strong>Учебная траектория:</strong> исследование Dirty Rectangles, Multi-layer Canvas, Object Pooling (движок Zero-GC) и рендеринга в Web Workers.",
+  "en": "<strong>Learning pathway:</strong> researching dirty rectangles, multi-layer Canvas, object pooling (a zero-GC engine) and Web Worker rendering."
+ },
+ {
+  "k": "ef9830c1",
+  "s": "🗺️ 4 Haftalik adaptiv Canvas arxitekturasi yo‘l xaritasi:",
+  "ru": "🗺️ Адаптивная 4-недельная дорожная карта архитектуры Canvas:",
+  "en": "🗺️ 4-week adaptive Canvas architecture roadmap:"
+ },
+ {
+  "k": "2b01fd35",
+  "s": "Canvas Asoslari va rAF",
+  "ru": "Основы Canvas и rAF",
+  "en": "Canvas basics and rAF"
+ },
+ {
+  "k": "ca6962ed",
+  "s": "Canvas 2D primitivlari va oddiy `requestAnimationFrame` tsikli",
+  "ru": "Примитивы Canvas 2D и простой цикл `requestAnimationFrame`",
+  "en": "Canvas 2D primitives and a simple `requestAnimationFrame` loop"
+ },
+ {
+  "k": "0cdec5f3",
+  "s": "Delta-Time hisobi va fizik tezlikni vaqtga bog‘lash",
+  "ru": "Расчёт delta-time и привязка физической скорости ко времени",
+  "en": "Computing delta time and tying physical speed to time"
+ },
+ {
+  "k": "3c23e1df",
+  "s": "Retina High-DPI masshtablash va sub-pixel tekislash",
+  "ru": "Масштабирование Retina High-DPI и субпиксельное выравнивание",
+  "en": "Retina high-DPI scaling and sub-pixel alignment"
+ },
+ {
+  "k": "183bf791",
+  "s": "Kadrlar silliqligi (60 FPS)",
+  "ru": "Плавность кадров (60 FPS)",
+  "en": "Frame smoothness (60 FPS)"
+ },
+ {
+  "k": "fda3c35b",
+  "s": "Akkumulyator va Barqarorlik",
+  "ru": "Аккумулятор и устойчивость",
+  "en": "Accumulator and stability"
+ },
+ {
+  "k": "3ac5ac14",
+  "s": "O‘zgaruvchan dt muammolarini (Tunneling) kuzatish",
+  "ru": "Наблюдение проблем переменного dt (tunneling)",
+  "en": "Observing variable-dt problems (tunnelling)"
+ },
+ {
+  "k": "ac537f62",
+  "s": "Glenn Fiedler \"Fix Your Timestep\" akkumulyatorini joriy etish",
+  "ru": "Внедрение аккумулятора Гленна Фидлера \"Fix Your Timestep\"",
+  "en": "Implementing Glenn Fiedler’s \"Fix Your Timestep\" accumulator"
+ },
+ {
+  "k": "b8ed227e",
+  "s": "Spiral of Death himoyasi va Alpha interpolyatsiyasi",
+  "ru": "Защита от Spiral of Death и альфа-интерполяция",
+  "en": "Spiral-of-death protection and alpha interpolation"
+ },
+ {
+  "k": "dcbda077",
+  "s": "Fizik determinizm (100%)",
+  "ru": "Физический детерминизм (100%)",
+  "en": "Physical determinism (100%)"
+ },
+ {
+  "k": "b2005834",
+  "s": "Optimizatsiya va Xotira",
+  "ru": "Оптимизация и память",
+  "en": "Optimisation and memory"
+ },
+ {
+  "k": "88286dbe",
+  "s": "Kadrni tozalash va to‘qnashuvlar chegarasi",
+  "ru": "Очистка кадра и границы столкновений",
+  "en": "Frame clearing and collision boundaries"
+ },
+ {
+  "k": "888b91ae",
+  "s": "Object Pooling joriy etib, GC mikro-pauzalarini yo‘qotish",
+  "ru": "Внедрение Object Pooling и устранение микропауз GC",
+  "en": "Introducing object pooling and eliminating GC micro-pauses"
+ },
+ {
+  "k": "212ac271",
+  "s": "Dirty Rectangles va Multi-layer Canvas arxitekturasi",
+  "ru": "Архитектура Dirty Rectangles и Multi-layer Canvas",
+  "en": "Dirty rectangles and multi-layer Canvas architecture"
+ },
+ {
+  "k": "2d77ee07",
+  "s": "Jank kadrlar soni (&lt; 1%)",
+  "ru": "Доля «подтормаживающих» кадров (&lt; 1%)",
+  "en": "Share of janky frames (&lt; 1%)"
+ },
+ {
+  "k": "f61ca2c4",
+  "s": "Capstone va Telemetriya",
+  "ru": "Capstone и телеметрия",
+  "en": "Capstone and telemetry"
+ },
+ {
+  "k": "d7176007",
+  "s": "50 ta elastik to‘p simulyatsiyasini yig‘ish",
+  "ru": "Сборка симуляции из 50 упругих шаров",
+  "en": "Assembling a simulation of 50 elastic balls"
+ },
+ {
+  "k": "e55b40be",
+  "s": "Real vaqtli FPS/Frame Pacing HUD telemetriyasini qurish",
+  "ru": "Построение HUD-телеметрии FPS/Frame Pacing в реальном времени",
+  "en": "Building a real-time FPS / frame-pacing HUD"
+ },
+ {
+  "k": "460fa5e4",
+  "s": "OffscreenCanvas Web Worker ko‘p oqimli dvigatelini himoya qilish",
+  "ru": "Защита многопоточного движка OffscreenCanvas на Web Worker",
+  "en": "Defending a multi-threaded OffscreenCanvas Web Worker engine"
+ },
+ {
+  "k": "808389c3",
+  "s": "Akademik loyiha himoyasi",
+  "ru": "Защита учебного проекта",
+  "en": "Academic project defence"
+ },
+ {
+  "k": "7bd35907",
+  "s": "MagicSchool AI uchun Moslashtirilgan Diagnostika Prompti",
+  "ru": "Адаптированный диагностический промпт для MagicSchool AI",
+  "en": "Customised diagnostic prompt for MagicSchool AI"
+ },
+ {
+  "k": "0c2e0652",
+  "s": "Nusxalash",
+  "ru": "Копировать",
+  "en": "Copy"
+ },
+ {
+  "k": "eaabeb54",
+  "s": "Sen Oliy ta’lim hisoblash fizikasi va kompyuter grafikasi metodistisan. Talabalarning \"HTML5 Canvas Fizik Animatsiya Arxitekturasi\" bo‘yicha tayyorgarligini aniqlash uchun 5 ta kognitiv test savoli ishlab chiq: 1) requestAnimationFrame va setInterval o‘rtasidagi apparat darajasidagi farq, 2) O‘zgaruvchan delta-time da nima uchun tebranishlar va devordan o‘tib ketish (tunneling) yuz beradi, 3) Glenn Fiedler akkumulyatori fizik hisoblarni qanday barqarorlashtiradi, 4) Alpha interpolyatsiyasi qanday vazifani bajaradi, 5) JavaScript Garbage Collector pauzalarini yo‘qotish uchun Object Pooling qanday qo‘llaniladi. Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.",
+  "ru": "Ты — методист вузовского курса вычислительной физики и компьютерной графики. Разработай 5 когнитивных тестовых вопросов для определения подготовки студентов по теме \"Архитектура физической анимации на HTML5 Canvas\": 1) аппаратная разница между requestAnimationFrame и setInterval; 2) почему при переменном delta-time возникают дрожание и прохождение сквозь стенку (tunneling); 3) как аккумулятор Гленна Фидлера стабилизирует физические расчёты; 4) какую задачу выполняет альфа-интерполяция; 5) как применяется Object Pooling для устранения пауз сборщика мусора JavaScript. Распредели результаты по кластерам A, B, C и составь 4-недельный план лабораторных работ.",
+  "en": "You are a methodologist in university computational physics and computer graphics. Write 5 cognitive test questions to determine students’ readiness on \"HTML5 Canvas physics animation architecture\": 1) the hardware-level difference between requestAnimationFrame and setInterval, 2) why variable delta time causes jitter and passing through walls (tunnelling), 3) how Glenn Fiedler’s accumulator stabilises physics calculations, 4) what alpha interpolation does, 5) how object pooling is used to eliminate JavaScript garbage-collector pauses. Sort the results into clusters A, B and C and draw up a 4-week lab plan."
+ },
+ {
+  "k": "21d52b4c",
+  "s": "2-bosqich: Monitoring va arxitektura",
+  "ru": "Этап 2: мониторинг и архитектура",
+  "en": "Stage 2: Monitoring and architecture"
+ },
+ {
+  "k": "58525827",
+  "s": "Google Antigravity: dastur arxitekturasi va resurs monitoringi",
+  "ru": "Google Antigravity: архитектура программы и мониторинг ресурсов",
+  "en": "Google Antigravity: program architecture and resource monitoring"
+ },
+ {
+  "k": "ca73548e",
+  "s": "📚 Dasturiy Muhandislik va O‘yin Dvigatellari Arxitekturasi:",
+  "ru": "📚 Программная инженерия и архитектура игровых движков:",
+  "en": "📚 Software engineering and game engine architecture:"
+ },
+ {
+  "k": "6bdf6a33",
+  "s": "Zamonaviy kompyuter grafikasi va interaktiv tizimlar arxitekturasi qat’iy komponentli modullashuvni talab etadi (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). <strong>Google Antigravity</strong> agentik tizimi loyiha kodining modulliligini, xotira sarfini (Heap Profiling) va kadrlar barqarorligini avtomatlashtirilgan tarzda kuzatib boradi.",
+  "ru": "Архитектура современной компьютерной графики и интерактивных систем требует строгой компонентной модульности (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). Агентная система <strong>Google Antigravity</strong> автоматически отслеживает модульность кода проекта, расход памяти (Heap Profiling) и стабильность кадров.",
+  "en": "Modern computer graphics and interactive systems require strict component modularity (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). The <strong>Google Antigravity</strong> agentic system automatically monitors code modularity, memory use (heap profiling) and frame stability."
+ },
+ {
+  "k": "419d741f",
+  "s": "Fizik modellashtirish kodida fizik hisoblar va vizual renderlash qat’iy ajratilishi (Decoupling) zarur. Google Antigravity quyidagi 4 ta asosiy quyi tizimni shakllantiradi:",
+  "ru": "В коде физического моделирования физические расчёты и визуальный рендеринг должны быть строго разделены (Decoupling). Google Antigravity формирует следующие 4 основные подсистемы:",
+  "en": "In physics modelling code, physics calculations and visual rendering must be strictly decoupled. Google Antigravity establishes the following 4 main subsystems:"
+ },
+ {
+  "k": "d76fc3ea",
+  "s": "🏗️ Modulli dasturiy quyi tizimlar:",
+  "ru": "🏗️ Модульные программные подсистемы:",
+  "en": "🏗️ Modular software subsystems:"
+ },
+ {
+  "k": "13da3dd1",
+  "s": "<strong>1. CoreEngine (bosh boshqaruvchi):</strong> Kadrlar tsikli (`loop`), vaqt hisobi (`performance.now()`) va holatlar mashinasi (Play, Pause, Reset, Step).",
+  "ru": "<strong>1. CoreEngine (главный управляющий):</strong> цикл кадров (`loop`), учёт времени (`performance.now()`) и машина состояний (Play, Pause, Reset, Step).",
+  "en": "<strong>1. CoreEngine (main controller):</strong> the frame loop (`loop`), time keeping (`performance.now()`) and the state machine (Play, Pause, Reset, Step)."
+ },
+ {
+  "k": "eb8ab24b",
+  "s": "<strong>2. PhysicsSubsystem (fizik quyi tizim):</strong> Qat’iy qadamli integrator ($\\Delta t_{\\text{fixed}} = 1/60\\text{ s}$), kuchlar yig‘indisi, Nyuton mexanikasi va to‘qnashuvlar.",
+  "ru": "<strong>2. PhysicsSubsystem (физическая подсистема):</strong> интегратор с фиксированным шагом ($\\Delta t_{\\text{fixed}} = 1/60\\text{ s}$), суммирование сил, механика Ньютона и столкновения.",
+  "en": "<strong>2. PhysicsSubsystem:</strong> a fixed-step integrator ($\\Delta t_{\\text{fixed}} = 1/60\\text{ s}$), force summation, Newtonian mechanics and collisions."
+ },
+ {
+  "k": "d74a1a8f",
+  "s": "<strong>3. RenderSubsystem (grafik tizim):</strong> Canvas 2D kontekstida alpha-interpolyatsiya bilan chizish, Retina High-DPI masshtablash.",
+  "ru": "<strong>3. RenderSubsystem (графическая система):</strong> рисование в контексте Canvas 2D с альфа-интерполяцией, масштабирование Retina High-DPI.",
+  "en": "<strong>3. RenderSubsystem:</strong> drawing in the Canvas 2D context with alpha interpolation and Retina high-DPI scaling."
+ },
+ {
+  "k": "fe1912ba",
+  "s": "<strong>4. TelemetryHUD (monitoring):</strong> Real vaqtli FPS, Frame Time, Jank kadrlari va xotira monitoringi.",
+  "ru": "<strong>4. TelemetryHUD (мониторинг):</strong> FPS, Frame Time, «подтормаживающие» кадры и мониторинг памяти в реальном времени.",
+  "en": "<strong>4. TelemetryHUD (monitoring):</strong> real-time FPS, frame time, janky frames and memory monitoring."
+ },
+ {
+  "k": "2e23960f",
+  "s": "📊 Animatsiya konveyeri (pipeline)",
+  "ru": "📊 Конвейер анимации (pipeline)",
+  "en": "📊 Animation pipeline"
+ },
+ {
+  "k": "3bee4d35",
+  "s": "HTML5 Canvas Animation Loop Pipeline",
+  "ru": "HTML5 Canvas Animation Loop Pipeline",
+  "en": "HTML5 Canvas Animation Loop Pipeline"
+ },
+ {
+  "k": "33e633fb",
+  "s": "🛡️ Antigravity resurs va xotira monitoringi qoidalari:",
+  "ru": "🛡️ Правила мониторинга ресурсов и памяти Antigravity:",
+  "en": "🛡️ Antigravity resource and memory monitoring rules:"
+ },
+ {
+  "k": "ea7ce508",
+  "s": "<strong style=\"color:#1C4E9E;\">1. Kadr byudjeti (16.66 ms):</strong><br> 60 FPS barqarorligi uchun kadrning umumiy vaqti (Fizika + Render) $16.66\\text{ ms}$ dan oshmasligi shart.",
+  "ru": "<strong style=\"color:#1C4E9E;\">1. Бюджет кадра (16.66 мс):</strong><br> Для стабильных 60 FPS общее время кадра (физика + рендер) не должно превышать $16.66\\text{ ms}$.",
+  "en": "<strong style=\"color:#1C4E9E;\">1. Frame budget (16.66 ms):</strong><br> For a stable 60 FPS the total frame time (physics + render) must not exceed $16.66\\text{ ms}$."
+ },
+ {
+  "k": "6332ff49",
+  "s": "<strong style=\"color:#A16207;\">2. Heap memory chiziqliligi:</strong><br> Animatsiya tsikli ichida yangi massivlar yoki obyektlar yaratilmasligi, xotira sarfi gorizontal to‘g‘ri chiziq bo‘lishi lozim.",
+  "ru": "<strong style=\"color:#A16207;\">2. Линейность heap-памяти:</strong><br> Внутри цикла анимации не должны создаваться новые массивы или объекты; расход памяти должен быть горизонтальной прямой.",
+  "en": "<strong style=\"color:#A16207;\">2. Heap memory linearity:</strong><br> No new arrays or objects should be created inside the animation loop; memory use should be a flat horizontal line."
+ },
+ {
+  "k": "b159fdce",
+  "s": "<strong style=\"color:#E11D48;\">3. Jank (qotish) indikatori:</strong><br> Agar kadr vaqti $33.3\\text{ ms}$ dan oshsa, Antigravity monitoringi avtomatik qizil ogohlantirish qayd etadi.",
+  "ru": "<strong style=\"color:#E11D48;\">3. Индикатор jank (подтормаживания):</strong><br> Если время кадра превышает $33.3\\text{ ms}$, мониторинг Antigravity автоматически фиксирует красное предупреждение.",
+  "en": "<strong style=\"color:#E11D48;\">3. Jank indicator:</strong><br> If a frame takes longer than $33.3\\text{ ms}$, Antigravity monitoring automatically logs a red warning."
+ },
+ {
+  "k": "ff487a47",
+  "s": "3-bosqich: Matematik va algoritmik mantiq",
+  "ru": "Этап 3: математическая и алгоритмическая логика",
+  "en": "Stage 3: Mathematical and algorithmic logic"
+ },
+ {
+  "k": "c08c8f3c",
+  "s": "Glenn Fiedler \"Fix Your Timestep\" akkumulyatori va delta-time integratsiyasi",
+  "ru": "Аккумулятор Гленна Фидлера \"Fix Your Timestep\" и интегрирование delta-time",
+  "en": "Glenn Fiedler’s \"Fix Your Timestep\" accumulator and delta-time integration"
+ },
+ {
+  "k": "c70b6cc4",
+  "s": "📚 Ilmiy Nashr va Standart:",
+  "ru": "📚 Научная публикация и стандарт:",
+  "en": "📚 Scholarly publication and standard:"
+ },
+ {
+  "k": "726e43fc",
+  "s": "Interaktiv fizik tizimlarda vaqtni qat’iy diskretlash konsepsiyasi <strong>Glenn Fiedler (2004, <em>\"Fix Your Timestep!\"</em>, Gaffer on Games)</strong> tomonidan asoslab berilgan. Ushbu algoritm fizik dvigatel hisob-kitoblarini apparat monitorining yangilanish chastotasidan to‘liq ajratadi va simulyatsiyaning deterministik barqarorligini ta’minlaydi.",
+  "ru": "Концепция строгой дискретизации времени в интерактивных физических системах обоснована <strong>Гленном Фидлером (2004, <em>\"Fix Your Timestep!\"</em>, Gaffer on Games)</strong>. Этот алгоритм полностью отделяет расчёты физического движка от частоты обновления аппаратного монитора и обеспечивает детерминированную устойчивость симуляции.",
+  "en": "The concept of strict time discretisation in interactive physics systems was established by <strong>Glenn Fiedler (2004, <em>\"Fix Your Timestep!\"</em>, Gaffer on Games)</strong>. The algorithm fully decouples the physics engine’s calculations from the monitor’s refresh rate and ensures the simulation’s deterministic stability."
+ },
+ {
+  "k": "562e65fe",
+  "s": "Oddiy o‘zgaruvchan vaqt qadami (`x += v * dt`) qo‘llanilganda, kompyuterdagi tasodifiy kechikish (lag) vaqtida $dt$ kattalashib, jismlar devor ichidan o‘tib ketadi (Tunneling effekti) yoki tizim energiyasi portlaydi. <strong>Glenn Fiedler akkumulyatori</strong> bu muammoni to‘liq hal qiladi:",
+  "ru": "При простом переменном шаге времени (`x += v * dt`) во время случайной задержки (лага) $dt$ увеличивается, и тела проходят сквозь стенки (туннельный эффект) или энергия системы «взрывается». <strong>Аккумулятор Гленна Фидлера</strong> полностью решает эту проблему:",
+  "en": "With a plain variable time step (`x += v * dt`), a random lag makes $dt$ large and bodies pass through walls (tunnelling) or the system’s energy blows up. <strong>Glenn Fiedler’s accumulator</strong> solves this problem completely:"
+ },
+ {
+  "k": "a888bd6f",
+  "s": "Fixed va Variable Timestep",
+  "ru": "Fixed и Variable Timestep",
+  "en": "Fixed vs Variable Timestep"
+ },
+ {
+  "k": "f924d6e8",
+  "s": "📐 Matematik apparat va algoritm:",
+  "ru": "📐 Математический аппарат и алгоритм:",
+  "en": "📐 Mathematical apparatus and algorithm:"
+ },
+ {
+  "k": "77c2799a",
+  "s": "<strong>1. Vaqt to‘plash (accumulator):</strong> $$\\text{accumulator} \\mathrel{+}= \\min(\\Delta t_{\\text{frame}}, 0.25)$$ <em>(0.25 s chegarasi \"O‘lim spirali\" — Spiral of Death ning oldini oladi).</em>",
+  "ru": "<strong>1. Накопление времени (accumulator):</strong> $$\\text{accumulator} \\mathrel{+}= \\min(\\Delta t_{\\text{frame}}, 0.25)$$ <em>(порог 0.25 с предотвращает «спираль смерти» — Spiral of Death).</em>",
+  "en": "<strong>1. Accumulating time (accumulator):</strong> $$\\text{accumulator} \\mathrel{+}= \\min(\\Delta t_{\\text{frame}}, 0.25)$$ <em>(the 0.25 s cap prevents the \"spiral of death\").</em>"
+ },
+ {
+  "k": "09478c2b",
+  "s": "<strong>2. Qat’iy qadamlar bilan yutish (consumption):</strong> $$\\text{while } (\\text{accumulator} \\ge \\Delta t_{\\text{fixed}}) \\implies \\begin{cases} \\text{updatePhysics}(\\Delta t_{\\text{fixed}}) \\\\ \\text{accumulator} \\mathrel{-}= \\Delta t_{\\text{fixed}} \\end{cases}$$",
+  "ru": "<strong>2. Поглощение фиксированными шагами (consumption):</strong> $$\\text{while } (\\text{accumulator} \\ge \\Delta t_{\\text{fixed}}) \\implies \\begin{cases} \\text{updatePhysics}(\\Delta t_{\\text{fixed}}) \\\\ \\text{accumulator} \\mathrel{-}= \\Delta t_{\\text{fixed}} \\end{cases}$$",
+  "en": "<strong>2. Consuming in fixed steps (consumption):</strong> $$\\text{while } (\\text{accumulator} \\ge \\Delta t_{\\text{fixed}}) \\implies \\begin{cases} \\text{updatePhysics}(\\Delta t_{\\text{fixed}}) \\\\ \\text{accumulator} \\mathrel{-}= \\Delta t_{\\text{fixed}} \\end{cases}$$"
+ },
+ {
+  "k": "363cc6c9",
+  "s": "<strong>3. Alpha holat interpolyatsiyasi:</strong> $$\\alpha = \\frac{\\text{accumulator}}{\\Delta t_{\\text{fixed}}}, \\quad x_{\\text{render}} = x_{\\text{prev}}(1 - \\alpha) + x_{\\text{curr}}\\alpha$$",
+  "ru": "<strong>3. Альфа-интерполяция состояния:</strong> $$\\alpha = \\frac{\\text{accumulator}}{\\Delta t_{\\text{fixed}}}, \\quad x_{\\text{render}} = x_{\\text{prev}}(1 - \\alpha) + x_{\\text{curr}}\\alpha$$",
+  "en": "<strong>3. Alpha state interpolation:</strong> $$\\alpha = \\frac{\\text{accumulator}}{\\Delta t_{\\text{fixed}}}, \\quad x_{\\text{render}} = x_{\\text{prev}}(1 - \\alpha) + x_{\\text{curr}}\\alpha$$"
+ },
+ {
+  "k": "30439d59",
+  "s": "🛡️ Claude tomonidan ishlab chiqilgan tsikl:",
+  "ru": "🛡️ Цикл, разработанный Claude:",
+  "en": "🛡️ The loop developed by Claude:"
+ },
+ {
+  "k": "c2ec617d",
+  "s": "let lastTime = performance.now();<br> let accumulator = 0;<br> const fixedDelta = 1 / 60;<br><br> function loop(currentTime) {<br> &nbsp;&nbsp;let frameTime = (currentTime - lastTime) / 1000;<br> &nbsp;&nbsp;lastTime = currentTime;<br> &nbsp;&nbsp;if (frameTime &gt; 0.25) frameTime = 0.25;<br> &nbsp;&nbsp;accumulator += frameTime;<br><br> &nbsp;&nbsp;while (accumulator &gt;= fixedDelta) {<br> &nbsp;&nbsp;&nbsp;&nbsp;physics.update(fixedDelta);<br> &nbsp;&nbsp;&nbsp;&nbsp;accumulator -= fixedDelta;<br> &nbsp;&nbsp;}<br><br> &nbsp;&nbsp;const alpha = accumulator / fixedDelta;<br> &nbsp;&nbsp;render(alpha);<br> &nbsp;&nbsp;requestAnimationFrame(loop);<br> }",
+  "ru": "let lastTime = performance.now();<br> let accumulator = 0;<br> const fixedDelta = 1 / 60;<br><br> function loop(currentTime) {<br> &nbsp;&nbsp;let frameTime = (currentTime - lastTime) / 1000;<br> &nbsp;&nbsp;lastTime = currentTime;<br> &nbsp;&nbsp;if (frameTime &gt; 0.25) frameTime = 0.25;<br> &nbsp;&nbsp;accumulator += frameTime;<br><br> &nbsp;&nbsp;while (accumulator &gt;= fixedDelta) {<br> &nbsp;&nbsp;&nbsp;&nbsp;physics.update(fixedDelta);<br> &nbsp;&nbsp;&nbsp;&nbsp;accumulator -= fixedDelta;<br> &nbsp;&nbsp;}<br><br> &nbsp;&nbsp;const alpha = accumulator / fixedDelta;<br> &nbsp;&nbsp;render(alpha);<br> &nbsp;&nbsp;requestAnimationFrame(loop);<br> }",
+  "en": "let lastTime = performance.now();<br> let accumulator = 0;<br> const fixedDelta = 1 / 60;<br><br> function loop(currentTime) {<br> &nbsp;&nbsp;let frameTime = (currentTime - lastTime) / 1000;<br> &nbsp;&nbsp;lastTime = currentTime;<br> &nbsp;&nbsp;if (frameTime &gt; 0.25) frameTime = 0.25;<br> &nbsp;&nbsp;accumulator += frameTime;<br><br> &nbsp;&nbsp;while (accumulator &gt;= fixedDelta) {<br> &nbsp;&nbsp;&nbsp;&nbsp;physics.update(fixedDelta);<br> &nbsp;&nbsp;&nbsp;&nbsp;accumulator -= fixedDelta;<br> &nbsp;&nbsp;}<br><br> &nbsp;&nbsp;const alpha = accumulator / fixedDelta;<br> &nbsp;&nbsp;render(alpha);<br> &nbsp;&nbsp;requestAnimationFrame(loop);<br> }"
+ },
+ {
+  "k": "fe409063",
+  "s": "4-bosqich: Ishlash tezligi va xotira",
+  "ru": "Этап 4: производительность и память",
+  "en": "Stage 4: Performance and memory"
+ },
+ {
+  "k": "28ed4c12",
+  "s": "Kadr chastotasi optimizatsiyasi: ChatGPT Code Interpreter tahlili",
+  "ru": "Оптимизация частоты кадров: анализ в ChatGPT Code Interpreter",
+  "en": "Frame-rate optimisation: ChatGPT Code Interpreter analysis"
+ },
+ {
+  "k": "9d04130d",
+  "s": "📚 Veb Grafikasi Standarti va MDN Spetsifikatsiyasi:",
+  "ru": "📚 Стандарт веб-графики и спецификация MDN:",
+  "en": "📚 Web graphics standard and MDN specification:"
+ },
+ {
+  "k": "0ed68d4a",
+  "s": "<strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> hamda <strong>W3C HTML5 2D Canvas Context</strong> standartlariga muvofiq, yuqori zichlikdagi zarrachalar simulyatsiyasida kadr tushib ketishi (Frame Drop) CPU va GPU o‘rtasidagi ma’lumotlar o‘tkazuvchanligi va Garbage Collection (GC) to‘xtalishlari tufayli sodir bo‘ladi.",
+  "ru": "Согласно стандартам <strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> и <strong>W3C HTML5 2D Canvas Context</strong>, в симуляциях с высокой плотностью частиц падение кадров (Frame Drop) происходит из-за пропускной способности обмена данными между CPU и GPU и остановок Garbage Collection (GC).",
+  "en": "According to <strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> and the <strong>W3C HTML5 2D Canvas Context</strong> standard, frame drops in high-density particle simulations are caused by CPU–GPU data bandwidth and garbage-collection (GC) stalls."
+ },
+ {
+  "k": "12762246",
+  "s": "Canvas Optimization Performance",
+  "ru": "Canvas Optimization Performance",
+  "en": "Canvas Optimization Performance"
+ },
+ {
+  "k": "e1f6637d",
+  "s": "1. Object Pooling (zero-GC)",
+  "ru": "1. Object Pooling (zero-GC)",
+  "en": "1. Object Pooling (zero-GC)"
+ },
+ {
+  "k": "fadb1168",
+  "s": "Animatsiya tsikli ichida har bir kadrda <code>new Vector()</code> yoki yangi zarracha yaratish qat’iyan man etiladi. Obyektlar massivdan olinadi va qaytariladi, bu GC mikro-pauzalarini 0 ga tushiradi.",
+  "ru": "Внутри цикла анимации строго запрещено создавать <code>new Vector()</code> или новые частицы в каждом кадре. Объекты берутся из массива и возвращаются в него, что сводит микропаузы GC к 0.",
+  "en": "Creating <code>new Vector()</code> or new particles every frame inside the animation loop is strictly forbidden. Objects are taken from and returned to an array, which brings GC micro-pauses down to 0."
+ },
+ {
+  "k": "27af80e7",
+  "s": "2. Multi-layer Canvas (qatlamlash)",
+  "ru": "2. Multi-layer Canvas (разбиение на слои)",
+  "en": "2. Multi-layer Canvas (layering)"
+ },
+ {
+  "k": "c6cbb634",
+  "s": "Statik fon panjara chiziqlari pastki Canvas qatlamiga 1 marta chiziladi. Dinamik zarrachalar esa ustki shaffof qatlamda yangilanadi. Ortiqcha chizishlar 70% ga qisqaradi.",
+  "ru": "Статичные линии фоновой сетки рисуются на нижнем слое Canvas один раз. Динамические частицы обновляются на верхнем прозрачном слое. Лишние операции рисования сокращаются на 70%.",
+  "en": "Static background grid lines are drawn once on the lower Canvas layer. Dynamic particles are updated on the transparent upper layer. Redundant drawing drops by 70%."
+ },
+ {
+  "k": "2600ce2e",
+  "s": "3. Butun sonli koordinatalar",
+  "ru": "3. Целочисленные координаты",
+  "en": "3. Integer coordinates"
+ },
+ {
+  "k": "3b7c6514",
+  "s": "Kasr koordinatalar (masalan, <code>14.73px</code>) brauzerni qimmat anti-aliasing hisoblariga majbur qiladi. Koordinatalarni <code>(x | 0)</code> yoki <code>Math.round</code> orqali yaxlitlash kadr tezligini 20% oshiradi.",
+  "ru": "Дробные координаты (например, <code>14.73px</code>) заставляют браузер выполнять дорогостоящее сглаживание (anti-aliasing). Округление координат через <code>(x | 0)</code> или <code>Math.round</code> повышает частоту кадров на 20%.",
+  "en": "Fractional coordinates (e.g. <code>14.73px</code>) force the browser into expensive anti-aliasing. Rounding coordinates with <code>(x | 0)</code> or <code>Math.round</code> raises the frame rate by 20%."
+ },
+ {
+  "k": "b001b2a0",
+  "s": "5-bosqich: Vizual sinov va Retina",
+  "ru": "Этап 5: визуальный тест и Retina",
+  "en": "Stage 5: Visual test and Retina"
+ },
+ {
+  "k": "cc8c8c60",
+  "s": "Claude (Artifacts): Retina high-DPI masshtablash va vizual sinov",
+  "ru": "Claude (Artifacts): масштабирование Retina High-DPI и визуальный тест",
+  "en": "Claude (Artifacts): Retina high-DPI scaling and visual testing"
+ },
+ {
+  "k": "46430779",
+  "s": "📚 Retina va HiDPI Displey Standartlari:",
+  "ru": "📚 Стандарты дисплеев Retina и HiDPI:",
+  "en": "📚 Retina and HiDPI display standards:"
+ },
+ {
+  "k": "38007dbe",
+  "s": "Zamonaviy mobil va noutbuk ekranlarida piksellar zichligi koeffitsiyenti <strong>Device Pixel Ratio ($DPR \\ge 2$)</strong> ga teng. Standart Canvas piksel buferi o‘lchami CSS o‘lchamiga teng bo‘lsa, tasvir 4 barobar xiralashadi. <strong>Claude Artifacts</strong> muhitida ushbu muammo dinamik piksellar adapteri orqali bartaraf etiladi.",
+  "ru": "На современных экранах смартфонов и ноутбуков коэффициент плотности пикселей равен <strong>Device Pixel Ratio ($DPR \\ge 2$)</strong>. Если размер пиксельного буфера стандартного Canvas равен размеру CSS, изображение размывается в 4 раза. В среде <strong>Claude Artifacts</strong> эта проблема устраняется динамическим пиксельным адаптером.",
+  "en": "On modern phone and laptop screens the pixel-density factor equals the <strong>Device Pixel Ratio ($DPR \\ge 2$)</strong>. If a standard Canvas pixel buffer is the same size as its CSS box, the image is 4× blurrier. In <strong>Claude Artifacts</strong> this is solved with a dynamic pixel adapter."
+ },
+ {
+  "k": "16305bb2",
+  "s": "📱 Retina High-DPI adapter kodi:",
+  "ru": "📱 Код адаптера Retina High-DPI:",
+  "en": "📱 Retina high-DPI adapter code:"
+ },
+ {
+  "k": "b9cbea61",
+  "s": "function setupHighDPICanvas(canvas, ctx) {<br> &nbsp;&nbsp;const dpr = window.devicePixelRatio || 1;<br> &nbsp;&nbsp;const rect = canvas.getBoundingClientRect();<br><br> &nbsp;&nbsp;// 1. Ichki piksel buferini kengaytirish:<br> &nbsp;&nbsp;canvas.width = rect.width * dpr;<br> &nbsp;&nbsp;canvas.height = rect.height * dpr;<br><br> &nbsp;&nbsp;// 2. Grafik kontekstni masshtablash:<br> &nbsp;&nbsp;ctx.scale(dpr, dpr);<br><br> &nbsp;&nbsp;// 3. CSS o‘lchamini mustahkamlash:<br> &nbsp;&nbsp;canvas.style.width = `${rect.width}px`;<br> &nbsp;&nbsp;canvas.style.height = `${rect.height}px`;<br> }",
+  "ru": "function setupHighDPICanvas(canvas, ctx) {<br> &nbsp;&nbsp;const dpr = window.devicePixelRatio || 1;<br> &nbsp;&nbsp;const rect = canvas.getBoundingClientRect();<br><br> &nbsp;&nbsp;// 1. Расширение внутреннего пиксельного буфера:<br> &nbsp;&nbsp;canvas.width = rect.width * dpr;<br> &nbsp;&nbsp;canvas.height = rect.height * dpr;<br><br> &nbsp;&nbsp;// 2. Масштабирование графического контекста:<br> &nbsp;&nbsp;ctx.scale(dpr, dpr);<br><br> &nbsp;&nbsp;// 3. Закрепление CSS-размера:<br> &nbsp;&nbsp;canvas.style.width = `${rect.width}px`;<br> &nbsp;&nbsp;canvas.style.height = `${rect.height}px`;<br> }",
+  "en": "function setupHighDPICanvas(canvas, ctx) {<br> &nbsp;&nbsp;const dpr = window.devicePixelRatio || 1;<br> &nbsp;&nbsp;const rect = canvas.getBoundingClientRect();<br><br> &nbsp;&nbsp;// 1. Enlarge the internal pixel buffer:<br> &nbsp;&nbsp;canvas.width = rect.width * dpr;<br> &nbsp;&nbsp;canvas.height = rect.height * dpr;<br><br> &nbsp;&nbsp;// 2. Scale the graphics context:<br> &nbsp;&nbsp;ctx.scale(dpr, dpr);<br><br> &nbsp;&nbsp;// 3. Lock the CSS size:<br> &nbsp;&nbsp;canvas.style.width = `${rect.width}px`;<br> &nbsp;&nbsp;canvas.style.height = `${rect.height}px`;<br> }"
+ },
+ {
+  "k": "682f99b5",
+  "s": "🔍 Standart va Retina high-DPI sifat",
+  "ru": "🔍 Качество: стандарт и Retina high-DPI",
+  "en": "🔍 Standard vs Retina high-DPI quality"
+ },
+ {
+  "k": "95ec7bf8",
+  "s": "Retina High DPI Canvas Scaling",
+  "ru": "Retina High DPI Canvas Scaling",
+  "en": "Retina High DPI Canvas Scaling"
+ },
+ {
+  "k": "a7973cb6",
+  "s": "Jonli laboratoriya",
+  "ru": "Живая лаборатория",
+  "en": "Live laboratory"
+ },
+ {
+  "k": "a8587a1a",
+  "s": "Canvas fizik animatsiyasi arxitekturasining interaktiv laboratoriyasi",
+  "ru": "Интерактивная лаборатория архитектуры физической анимации на Canvas",
+  "en": "Interactive lab for Canvas physics animation architecture"
+ },
+ {
+  "k": "d3ab0017",
+  "s": "⏸ To‘xtatish",
+  "ru": "⏸ Остановить",
+  "en": "⏸ Stop"
+ },
+ {
+  "k": "59776801",
+  "s": "↺ Qayta o‘rnatish",
+  "ru": "↺ Сбросить",
+  "en": "↺ Reset"
+ },
+ {
+  "k": "5117c3cf",
+  "s": "<span style=\"font-size:0.85rem; font-weight:700; color:#1C4E9E;\">📈 Kadr vaqtlari grafigi (oxirgi kadrlar, ms):</span> <span style=\"font-size:0.75rem; color:#66708A;\">Yashil: &lt;18 ms (60 FPS) | Sariq: 18–25 ms | Qizil: &gt;25 ms (qotish)</span>",
+  "ru": "<span style=\"font-size:0.85rem; font-weight:700; color:#1C4E9E;\">📈 График времени кадров (последние кадры, мс):</span> <span style=\"font-size:0.75rem; color:#66708A;\">Зелёный: &lt;18 мс (60 FPS) | Жёлтый: 18–25 мс | Красный: &gt;25 мс (подтормаживание)</span>",
+  "en": "<span style=\"font-size:0.85rem; font-weight:700; color:#1C4E9E;\">📈 Frame-time graph (recent frames, ms):</span> <span style=\"font-size:0.75rem; color:#66708A;\">Green: &lt;18 ms (60 FPS) | Yellow: 18–25 ms | Red: &gt;25 ms (jank)</span>"
+ },
+ {
+  "k": "2d0bbae7",
+  "s": "🎛️ Dvigatel rejimlari va parametrlari:",
+  "ru": "🎛️ Режимы и параметры движка:",
+  "en": "🎛️ Engine modes and parameters:"
+ },
+ {
+  "k": "e616deb8",
+  "s": "Fizik integratsiya rejimi:",
+  "ru": "Режим физического интегрирования:",
+  "en": "Physics integration mode:"
+ },
+ {
+  "k": "47051751",
+  "s": "1. Qat’iy Δt + alfa-interpolyatsiya (G. Fiedler; tavsiya etiladi)",
+  "ru": "1. Фиксированный Δt + альфа-интерполяция (Г. Фидлер; рекомендуется)",
+  "en": "1. Fixed Δt + alpha interpolation (G. Fiedler; recommended)"
+ },
+ {
+  "k": "bfc04786",
+  "s": "2. Qat’iy Δt akkumulyatori (interpolyatsiyasiz)",
+  "ru": "2. Аккумулятор фиксированного Δt (без интерполяции)",
+  "en": "2. Fixed-Δt accumulator (no interpolation)"
+ },
+ {
+  "k": "e10a8a6d",
+  "s": "3. O‘zgaruvchan Δt (kechikishda tebranadi)",
+  "ru": "3. Переменный Δt (дрожит при задержках)",
+  "en": "3. Variable Δt (jitters under lag)"
+ },
+ {
+  "k": "01a8765e",
+  "s": "Kadr tezligi cheklovi (FPS):",
+  "ru": "Ограничение частоты кадров (FPS):",
+  "en": "Frame-rate cap (FPS):"
+ },
+ {
+  "k": "73227570",
+  "s": "Cheklovsiz (V-Sync)",
+  "ru": "Без ограничения (V-Sync)",
+  "en": "Uncapped (V-Sync)"
+ },
+ {
+  "k": "3b5d23d4",
+  "s": "Sun’iy protsessor yuklamasi (kechikish):",
+  "ru": "Искусственная нагрузка процессора (задержка):",
+  "en": "Artificial CPU load (delay):"
+ },
+ {
+  "k": "3a7ebe05",
+  "s": "0,0 ms",
+  "ru": "0,0 мс",
+  "en": "0.0 ms"
+ },
+ {
+  "k": "efb9fc81",
+  "s": "Zarrachalar soni:",
+  "ru": "Число частиц:",
+  "en": "Number of particles:"
+ },
+ {
+  "k": "b03775c7",
+  "s": "50 ta",
+  "ru": "50 шт.",
+  "en": "50"
+ },
+ {
+  "k": "446f6de2",
+  "s": "Obyektlar puli (xotirani qayta ishlatish)",
+  "ru": "Пул объектов (повторное использование памяти)",
+  "en": "Object pool (memory reuse)"
+ },
+ {
+  "k": "0fc1dac6",
+  "s": "📊 Real vaqtdagi telemetriya:",
+  "ru": "📊 Телеметрия в реальном времени:",
+  "en": "📊 Real-time telemetry:"
+ },
+ {
+  "k": "7dc208f0",
+  "s": "Renderlash chastotasi:",
+  "ru": "Частота рендеринга:",
+  "en": "Render rate:"
+ },
+ {
+  "k": "705e34d4",
+  "s": "60 FPS",
+  "ru": "60 FPS",
+  "en": "60 FPS"
+ },
+ {
+  "k": "a3ccfc64",
+  "s": "Fizika chastotasi:",
+  "ru": "Частота физики:",
+  "en": "Physics rate:"
+ },
+ {
+  "k": "4646fec3",
+  "s": "60 Hz",
+  "ru": "60 Гц",
+  "en": "60 Hz"
+ },
+ {
+  "k": "702a6295",
+  "s": "Kadr vaqti ($\\Delta t$):",
+  "ru": "Время кадра ($\\Delta t$):",
+  "en": "Frame time ($\\Delta t$):"
+ },
+ {
+  "k": "614e6fcc",
+  "s": "16,6 ms",
+  "ru": "16,6 мс",
+  "en": "16.6 ms"
+ },
+ {
+  "k": "e342779a",
+  "s": "Akkumulyator:",
+  "ru": "Аккумулятор:",
+  "en": "Accumulator:"
+ },
+ {
+  "k": "262853ac",
+  "s": "Fizik qadamlar / kadr:",
+  "ru": "Физических шагов / кадр:",
+  "en": "Physics steps / frame:"
+ },
+ {
+  "k": "c7c6b3bf",
+  "s": "Qotishlar soni:",
+  "ru": "Число подтормаживаний:",
+  "en": "Jank count:"
+ },
+ {
+  "k": "744c7afc",
+  "s": "O‘z-o‘zini baholash",
+  "ru": "Самооценка",
+  "en": "Self-assessment"
+ },
+ {
+  "k": "9967b6db",
+  "s": "7-ma’ruza diagnostika testi (3 ta ilmiy savol)",
+  "ru": "Диагностический тест к лекции 7 (3 научных вопроса)",
+  "en": "Lecture 7 diagnostic test (3 scientific questions)"
+ },
+ {
+  "k": "3d5cf99d",
+  "s": "HTML5 Canvas fizik animatsiya arxitekturasi, delta-time va kadrlar optimizatsiyasi bo‘yicha bilimlaringizni sinab ko‘ring:",
+  "ru": "Проверьте свои знания об архитектуре физической анимации на HTML5 Canvas, delta-time и оптимизации кадров:",
+  "en": "Test your knowledge of HTML5 Canvas physics animation architecture, delta time and frame optimisation:"
+ },
+ {
+  "k": "0d12ae94",
+  "s": "1-savol: Glenn Fiedlerning \"Fix Your Timestep\" akkumulyatorli arxitekturasida nima sababdan fizik qadam $\\Delta t_{\\text{fixed}} = 1/60\\text{ s}$ qat’iy saqlanadi?",
+  "ru": "Вопрос 1: Почему в архитектуре с аккумулятором \"Fix Your Timestep\" Гленна Фидлера физический шаг $\\Delta t_{\\text{fixed}} = 1/60\\text{ s}$ сохраняется фиксированным?",
+  "en": "Question 1: Why is the physics step $\\Delta t_{\\text{fixed}} = 1/60\\text{ s}$ kept fixed in Glenn Fiedler’s \"Fix Your Timestep\" accumulator architecture?"
+ },
+ {
+  "k": "26a1cc79",
+  "s": "A) Chunki kompyuter ekrani faqat 60 FPS da ishlay oladi",
+  "ru": "A) Потому что экран компьютера может работать только на 60 FPS",
+  "en": "A) Because a computer screen can only run at 60 FPS"
+ },
+ {
+  "k": "0bd56c18",
+  "s": "B) Fizik hisoblarni renderlash kadr chastotasidan (FPS) to‘liq mustaqil qilib, lag vaqtida devordan o‘tib ketish (tunneling) va energiya portlashining oldini olish uchun",
+  "ru": "B) Чтобы сделать физические расчёты полностью независимыми от частоты кадров рендеринга (FPS) и предотвратить прохождение сквозь стенки (tunneling) и «взрыв» энергии во время лагов",
+  "en": "B) To make physics calculations fully independent of the render frame rate (FPS) and prevent tunnelling through walls and energy blow-ups during lag"
+ },
+ {
+  "k": "7a7b7ae3",
+  "s": "C) Chunki JavaScript faqat butun sonlar bilan ishlaydi",
+  "ru": "C) Потому что JavaScript работает только с целыми числами",
+  "en": "C) Because JavaScript only works with integers"
+ },
+ {
+  "k": "513a8bbf",
+  "s": "2-savol: Yuqori yuklamali HTML5 Canvas animatsiyalarida Object Pooling (obyektlar havzasi) qo‘llashning asosiy maqsadi nima?",
+  "ru": "Вопрос 2: Какова главная цель применения Object Pooling (пула объектов) в высоконагруженных анимациях HTML5 Canvas?",
+  "en": "Question 2: What is the main purpose of object pooling in heavy HTML5 Canvas animations?"
+ },
+ {
+  "k": "7430fc14",
+  "s": "A) Har bir kadrda yangi obyektlar yaratishni to‘xtatib, Garbage Collector (GC) keltirib chiqaradigan mikro-qotishlarni (Jank) 0 ga tushirish",
+  "ru": "A) Прекратить создание новых объектов в каждом кадре и свести к 0 микроподтормаживания (jank), вызываемые сборщиком мусора (GC)",
+  "en": "A) To stop creating new objects every frame and reduce the micro-stutters (jank) caused by the garbage collector (GC) to 0"
+ },
+ {
+  "k": "fbd3634b",
+  "s": "B) Canvas ekranini kattalashtirish",
+  "ru": "B) Увеличить экран Canvas",
+  "en": "B) To enlarge the Canvas"
+ },
+ {
+  "k": "881b1c56",
+  "s": "C) Internet tezligini oshirish",
+  "ru": "C) Повысить скорость интернета",
+  "en": "C) To increase internet speed"
+ },
+ {
+  "k": "98068c47",
+  "s": "3-savol: Retina va HiDPI ekranlarda (Device Pixel Ratio $DPR \\ge 2$) Canvas elementining xiralashib qolmasligi uchun qanday chora ko‘riladi?",
+  "ru": "Вопрос 3: Какие меры принимаются, чтобы элемент Canvas не размывался на экранах Retina и HiDPI (Device Pixel Ratio $DPR \\ge 2$)?",
+  "en": "Question 3: What is done to keep a Canvas element from looking blurry on Retina and HiDPI screens (Device Pixel Ratio $DPR \\ge 2$)?"
+ },
+ {
+  "k": "da95a3b0",
+  "s": "A) `canvas.width` va `height` piksellar buferi $DPR$ ga ko‘paytiriladi va `ctx.scale(dpr, dpr)` orqali masshtablanadi",
+  "ru": "A) Пиксельный буфер `canvas.width` и `height` умножается на $DPR$ и масштабируется через `ctx.scale(dpr, dpr)`",
+  "en": "A) The `canvas.width` and `height` pixel buffer is multiplied by $DPR$ and scaled with `ctx.scale(dpr, dpr)`"
+ },
+ {
+  "k": "d78736d2",
+  "s": "B) Ekran yorug‘ligi oshiriladi",
+  "ru": "B) Увеличивается яркость экрана",
+  "en": "B) The screen brightness is increased"
+ },
+ {
+  "k": "8be8211f",
+  "s": "C) Faqat qora-oq ranglardan foydalaniladi",
+  "ru": "C) Используются только чёрно-белые цвета",
+  "en": "C) Only black and white colours are used"
+ },
+ {
+  "k": "372b66d8",
+  "s": "📚 7-ma’ruza bo‘yicha ilmiy-uslubiy adabiyotlar ro‘yxati:",
+  "ru": "📚 Список научно-методической литературы к лекции 7:",
+  "en": "📚 Scholarly and methodological references for Lecture 7:"
+ },
+ {
+  "k": "d3efb0e8",
+  "s": "<strong>Fiedler, G. (2004).</strong> Fix your timestep! <em>Gaffer on Games</em>. (Physics loop decoupling and accumulator algorithms).",
+  "ru": "<strong>Fiedler, G. (2004).</strong> Fix your timestep! <em>Gaffer on Games</em>. (Physics loop decoupling and accumulator algorithms).",
+  "en": "<strong>Fiedler, G. (2004).</strong> Fix your timestep! <em>Gaffer on Games</em>. (Physics loop decoupling and accumulator algorithms)."
+ },
+ {
+  "k": "9a539937",
+  "s": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed va variable timesteps).",
+  "ru": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed & variable timesteps).",
+  "en": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed & variable timesteps)."
+ },
+ {
+  "k": "a05768b8",
+  "s": "<strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Optimizing Canvas Performance</em>. MDN Web Docs.",
+  "ru": "<strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Optimizing Canvas Performance</em>. MDN Web Docs.",
+  "en": "<strong>Mozilla Developer Network (MDN). (2024).</strong> <em>Optimizing Canvas Performance</em>. MDN Web Docs."
+ },
+ {
+  "k": "36674cbb",
+  "s": "<strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium.",
+  "ru": "<strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium.",
+  "en": "<strong>W3C. (2023).</strong> <em>HTML Canvas 2D Context Specification</em>. World Wide Web Consortium."
+ },
+ {
+  "k": "71a2267a",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman."
+ },
+ {
+  "k": "99381d7c",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press."
+ },
+ {
+  "k": "7b9cce2d",
+  "s": "<strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer.",
+  "ru": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer.",
+  "en": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms</em>. Springer."
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ }
+]

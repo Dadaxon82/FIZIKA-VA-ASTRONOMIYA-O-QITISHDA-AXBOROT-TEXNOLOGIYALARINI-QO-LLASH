@@ -1,0 +1,1268 @@
+[
+ {
+  "k": "6b42c6d7",
+  "s": "9-ma’ruza: Kod generatsiyasi va prompt-muhandislik",
+  "ru": "Лекция 9: Генерация кода и промпт-инжиниринг",
+  "en": "Lecture 9: Code Generation and Prompt Engineering"
+ },
+ {
+  "k": "4b98effe",
+  "s": "Samarali prompt yozish metodikasi, Zero-Shot va Few-Shot va Chain-of-Thought (Claude), Google Antigravity AI monitoringi va avtomatik tuzatish, ChatGPT va Gemini prompt strukturasi hamda MagicSchool AI shaxsiy fizik prompt-kutubxonasi.",
+  "ru": "Методика написания эффективных промптов, Zero-Shot, Few-Shot и Chain-of-Thought (Claude), мониторинг и автоматическое исправление в Google Antigravity AI, структура промптов ChatGPT и Gemini, а также личная библиотека физических промптов в MagicSchool AI.",
+  "en": "Methods for writing effective prompts, Zero-Shot, Few-Shot and Chain-of-Thought (Claude), Google Antigravity AI monitoring and automatic fixing, ChatGPT and Gemini prompt structure, and a personal physics prompt library in MagicSchool AI."
+ },
+ {
+  "k": "00beefbf",
+  "s": "📋 9-ma’ruza rejasi va AI texnologik konveyeri:",
+  "ru": "📋 План лекции 9 и технологический ИИ-конвейер:",
+  "en": "📋 Lecture 9 plan and the AI technology pipeline:"
+ },
+ {
+  "k": "621a1d64",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD va Bloom taksonomiyasi asosida 3 klasterli adaptiv o‘quv trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: адаптивная учебная траектория из 3 кластеров на основе ЗБР и таксономии Блума.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: a 3-cluster adaptive pathway based on ZPD and Bloom’s taxonomy.</span>"
+ },
+ {
+  "k": "f616e1a2",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Prompt sinovlari va qiyos:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Zero-Shot, Few-Shot va CoT strategiyalari, Aniq va Noaniq fizik promptlar sinovi.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Тестирование и сравнение промптов:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: стратегии Zero-Shot, Few-Shot и CoT, проверка точных и нечётких физических промптов.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Prompt testing and comparison:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Zero-Shot, Few-Shot and CoT strategies; testing precise vs vague physics prompts.</span>"
+ },
+ {
+  "k": "f9d6529e",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Natijalar monitoringi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity AI: AST tahlil, energiya saqlanishi (dE/E0), FPS va avtomatik Self-Refine loop.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Мониторинг результатов:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity AI: анализ AST, сохранение энергии (dE/E0), FPS и автоматический цикл Self-Refine.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Monitoring results:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Google Antigravity AI: AST analysis, energy conservation (dE/E0), FPS and an automatic self-refine loop.</span>"
+ },
+ {
+  "k": "69b5ed8e",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Prompt strukturasi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT va Gemini: Rol, kontekst, fizik chegaraviy shartlar va JSON/ES6 sxemalari.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Структура промпта:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT и Gemini: роль, контекст, физические граничные условия и схемы JSON/ES6.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Prompt structure:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT and Gemini: role, context, physical boundary conditions and JSON/ES6 schemas.</span>"
+ },
+ {
+  "k": "652c07ce",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Shaxsiy prompt-kutubxona:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: Mexanika, MKT, Elektrodinamika, Optika va Kvant fizikasi uchun 10 ta tayyor shablon.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Личная библиотека промптов:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: 10 готовых шаблонов для механики, МКТ, электродинамики, оптики и квантовой физики.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Personal prompt library:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: 10 ready-made templates for mechanics, kinetic theory, electrodynamics, optics and quantum physics.</span>"
+ },
+ {
+  "k": "423f1570",
+  "s": "<strong style=\"color:#1C4E9E;\">6. Simulyator va manbalar:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas Prompt Workbench va Sandbox, jonli kod muharriri, diagnostika testi va APA-7 manbalar.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6. Симулятор и источники:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas Prompt Workbench и песочница, живой редактор кода, диагностический тест и источники APA-7.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6. Simulator and sources:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">An HTML5 Canvas prompt workbench and sandbox, a live code editor, a diagnostic test and APA-7 sources.</span>"
+ },
+ {
+  "k": "48e39dd1",
+  "s": "MagicSchool AI: prompt-muhandislik va kod generatsiyasi diagnostikasi",
+  "ru": "MagicSchool AI: диагностика промпт-инжиниринга и генерации кода",
+  "en": "MagicSchool AI: diagnosing prompt engineering and code generation"
+ },
+ {
+  "k": "982d88c4",
+  "s": "📚 Nazariy-metodologik asos va ilmiy manbalar:",
+  "ru": "📚 Теоретико-методологическая основа и научные источники:",
+  "en": "📚 Theoretical and methodological basis and scholarly sources:"
+ },
+ {
+  "k": "bcdfa517",
+  "s": "Sun’iy intellekt modellariga fizik muammolarni to‘g‘ri topshirish va yuqori aniqlikdagi simulyatsiya kodini olish",
+  "ru": "Правильная постановка физических задач моделям искусственного интеллекта и получение высокоточного кода симуляции",
+  "en": "Setting physics problems correctly for AI models and obtaining high-accuracy simulation code"
+ },
+ {
+  "k": "6c2e448e",
+  "s": "hamda",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "de20f16b",
+  "s": "tamoyillariga asoslanadi. Talabaning boshlang‘ich prompt yozish va dasturlash tajribasi MagicSchool AI orqali baholanib, 3 ta moslashuvchan o‘quv klasteriga yo‘naltiriladi.",
+  "ru": "основаны на этих принципах. Начальный опыт студента в написании промптов и программировании оценивается с помощью MagicSchool AI и направляется в 3 адаптивных учебных кластера.",
+  "en": "are based on these principles. The student’s initial prompt-writing and programming experience is assessed with MagicSchool AI and channelled into 3 adaptive learning clusters."
+ },
+ {
+  "k": "c9675df0",
+  "s": "🔗 <em>Asosiy Manbalar:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson va Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; White et al. (2023). <em>A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</em>, arXiv:2302.11382.",
+  "ru": "🔗 <em>Основные источники:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; White et al. (2023). <em>A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</em>, arXiv:2302.11382.",
+  "en": "🔗 <em>Key sources:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; White et al. (2023). <em>A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</em>, arXiv:2302.11382."
+ },
+ {
+  "k": "d9980339",
+  "s": "Fizika darslarida prompt-muhandislik faqatgina umumiy matn kiritish emas, balki fizik qonuniyatlar, differensial tenglamalar, boshlang‘ich va chegaraviy shartlar (Boundary Conditions) hamda sonli integratsiya usullarini AI modeliga qat’iy ko‘rsatma sifatida berish san’atidir.",
+  "ru": "Промпт-инжиниринг на уроках физики — это не просто ввод общего текста, а искусство давать ИИ-модели строгие указания: физические закономерности, дифференциальные уравнения, начальные и граничные условия (Boundary Conditions) и методы численного интегрирования.",
+  "en": "Prompt engineering in physics classes is not just typing general text; it is the art of giving the AI model strict instructions — physical laws, differential equations, initial and boundary conditions, and numerical integration methods."
+ },
+ {
+  "k": "06f796a4",
+  "s": "1-bosqich",
+  "ru": "Этап 1",
+  "en": "Stage 1"
+ },
+ {
+  "k": "04e88ff5",
+  "s": "<strong>Profil:</strong> AI bilan ishlashda \"Menga prujina kodi yoz\" kabi qisqa va noaniq so‘rov beruvchi talabalar.<br> <strong>Maqsad:</strong> Promptning asosiy 4 ustunini (Rol, Vazifa, Chegaralar, Format) o‘rganish va elementar kinematik simulyatsiyalar generatsiya qilish.",
+  "ru": "<strong>Профиль:</strong> студенты, которые дают ИИ короткие и нечёткие запросы вроде «напиши мне код пружины».<br> <strong>Цель:</strong> изучить 4 основных столпа промпта (роль, задача, ограничения, формат) и генерировать элементарные кинематические симуляции.",
+  "en": "<strong>Profile:</strong> students who give the AI short, vague requests such as \"write me spring code\".<br> <strong>Goal:</strong> learn the 4 main pillars of a prompt (role, task, constraints, format) and generate basic kinematic simulations."
+ },
+ {
+  "k": "8d62b09f",
+  "s": "Klaster B (o‘rta / amaliyotchi)",
+  "ru": "Кластер B (средний / практик)",
+  "en": "Cluster B (intermediate / practitioner)"
+ },
+ {
+  "k": "50692ecd",
+  "s": "2-bosqich",
+  "ru": "Этап 2",
+  "en": "Stage 2"
+ },
+ {
+  "k": "5dfce83a",
+  "s": "<strong>Profil:</strong> Prompt tuzishni biladi, biroq energetik invariantlar va sonli barqarorlik (Verlet/Euler) shartlarini promptda ifodalamaydi.<br> <strong>Maqsad:</strong> Chain-of-Thought (CoT) va Few-Shot usullari bilan dinamik va to‘qnashuvli tizimlar kodini olish.",
+  "ru": "<strong>Профиль:</strong> умеет составлять промпты, но не выражает в них энергетические инварианты и условия численной устойчивости (Верле/Эйлер).<br> <strong>Цель:</strong> получать код динамических систем и систем со столкновениями методами Chain-of-Thought (CoT) и Few-Shot.",
+  "en": "<strong>Profile:</strong> can write prompts but does not express energy invariants and numerical stability conditions (Verlet/Euler) in them.<br> <strong>Goal:</strong> obtain code for dynamic and collision systems using Chain-of-Thought (CoT) and Few-Shot methods."
+ },
+ {
+  "k": "1a312d0e",
+  "s": "Klaster C (ilg‘or / arxitektor)",
+  "ru": "Кластер C (продвинутый / архитектор)",
+  "en": "Cluster C (advanced / architect)"
+ },
+ {
+  "k": "e18ec622",
+  "s": "3-bosqich",
+  "ru": "Этап 3",
+  "en": "Stage 3"
+ },
+ {
+  "k": "528ac905",
+  "s": "<strong>Profil:</strong> Fizik tenglamalar va JavaScript arxitekturasini chuqur tushunadigan tadqiqotchi talabalar.<br> <strong>Maqsad:</strong> Ko‘p agentli arxitektura, Antigravity AI avtomatik monitoringi va to‘lqin/kvant fizikasi uchun prompt-kutubxona ishlab chiqish.",
+  "ru": "<strong>Профиль:</strong> студенты-исследователи, глубоко понимающие физические уравнения и архитектуру JavaScript.<br> <strong>Цель:</strong> разработка многоагентной архитектуры, автоматического мониторинга Antigravity AI и библиотеки промптов для волновой/квантовой физики.",
+  "en": "<strong>Profile:</strong> research-minded students with a deep understanding of physical equations and JavaScript architecture.<br> <strong>Goal:</strong> develop a multi-agent architecture, automatic Antigravity AI monitoring and a prompt library for wave/quantum physics."
+ },
+ {
+  "k": "42b3dfb8",
+  "s": "📋 4 Haftalik shaxsiylashtirilgan o‘quv yo‘l xaritasi:",
+  "ru": "📋 Персонализированная 4-недельная учебная дорожная карта:",
+  "en": "📋 Personalised 4-week learning roadmap:"
+ },
+ {
+  "k": "d4c7cad8",
+  "s": "Klaster B (o‘rta)",
+  "ru": "Кластер B (средний)",
+  "en": "Cluster B (intermediate)"
+ },
+ {
+  "k": "23bc2cfa",
+  "s": "Prompt anatomiyasi va Rol yuklash (Role Prompting).",
+  "ru": "Анатомия промпта и назначение роли (Role Prompting).",
+  "en": "Prompt anatomy and role prompting."
+ },
+ {
+  "k": "e77c462f",
+  "s": "Zero-Shot va Few-Shot strategiyalarini qiyoslash.",
+  "ru": "Сравнение стратегий Zero-Shot и Few-Shot.",
+  "en": "Comparing Zero-Shot and Few-Shot strategies."
+ },
+ {
+  "k": "aba49b91",
+  "s": "Multi-Agent arxitekturasi va Reflexion promptlash.",
+  "ru": "Многоагентная архитектура и промптинг Reflexion.",
+  "en": "Multi-agent architecture and Reflexion prompting."
+ },
+ {
+  "k": "66c99dbb",
+  "s": "Nyuton qonunlarini Canvasda chizish promptlari.",
+  "ru": "Промпты для отображения законов Ньютона на Canvas.",
+  "en": "Prompts for drawing Newton’s laws on Canvas."
+ },
+ {
+  "k": "c551672b",
+  "s": "Guk qonuni va so‘nuvchi tebranish CoT prompti.",
+  "ru": "CoT-промпт для закона Гука и затухающих колебаний.",
+  "en": "A CoT prompt for Hooke’s law and damped oscillation."
+ },
+ {
+  "k": "4eb1df40",
+  "s": "Boris integratori va Lorents kuchi simulyatsiyasi.",
+  "ru": "Интегратор Бориса и симуляция силы Лоренца.",
+  "en": "The Boris integrator and a Lorentz force simulation."
+ },
+ {
+  "k": "cecd7165",
+  "s": "Claude bilan xatolarni aniqlash va tuzatish.",
+  "ru": "Поиск и исправление ошибок с Claude.",
+  "en": "Finding and fixing bugs with Claude."
+ },
+ {
+  "k": "560ae0cc",
+  "s": "Google Antigravity AI bilan dE/E0 monitoringi.",
+  "ru": "Мониторинг dE/E0 в Google Antigravity AI.",
+  "en": "dE/E0 monitoring with Google Antigravity AI."
+ },
+ {
+  "k": "9cf7916c",
+  "s": "WebGL va real-vaqtli to‘lqin difraksiyasi kodi.",
+  "ru": "WebGL и код волновой дифракции в реальном времени.",
+  "en": "WebGL and real-time wave diffraction code."
+ },
+ {
+  "k": "5461b7d3",
+  "s": "Mexanika bo‘limi bo‘yicha shaxsiy 2 ta shablon.",
+  "ru": "2 личных шаблона по разделу «Механика».",
+  "en": "2 personal templates for the Mechanics topic."
+ },
+ {
+  "k": "b439ff4f",
+  "s": "5 ta bo‘lim bo‘yicha to‘liq prompt shablonlari.",
+  "ru": "Полные шаблоны промптов по 5 разделам.",
+  "en": "Complete prompt templates for all 5 topics."
+ },
+ {
+  "k": "d8c357c2",
+  "s": "Magistrlik kursi uchun ochiq prompt kutubxonasi.",
+  "ru": "Открытая библиотека промптов для магистерского курса.",
+  "en": "An open prompt library for a master’s course."
+ },
+ {
+  "k": "dc394dc3",
+  "s": "2-bosqich: Qiyosiy tajriba",
+  "ru": "Этап 2: сравнительный эксперимент",
+  "en": "Stage 2: Comparative experiment"
+ },
+ {
+  "k": "e416f1dc",
+  "s": "Claude: zero-shot, few-shot va chain-of-thought sinovlari",
+  "ru": "Claude: испытания zero-shot, few-shot и chain-of-thought",
+  "en": "Claude: zero-shot, few-shot and chain-of-thought trials"
+ },
+ {
+  "k": "20faf17f",
+  "s": "Katta til modellari (LLM) da hisoblash fizikasi mantiqini shakllantirish bo‘yicha <strong>Wei et al. (2022)</strong> ning <em>\"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\"</em> (NeurIPS 2022), <strong>Kojima et al. (2022)</strong> ning <em>\"Large Language Models are Zero-Shot Reasoners\"</em> hamda <strong>White et al. (2023)</strong> ning <em>\"A Prompt Pattern Catalog to Enhance Prompt Engineering\"</em> tadqiqotlari shuni ko‘rsatadiki, modeldan to‘g‘ridan-to‘g‘ri kod so‘rashga (Zero-Shot) nisbatan, differensial tenglama va chegaraviy shartlarni bosqichma-bosqich mulohaza qildirish (CoT) hisoblash aniqligini <strong>62% dan 96%+ gacha</strong> ko‘taradi.",
+  "ru": "Исследования <strong>Wei et al. (2022)</strong> <em>\"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\"</em> (NeurIPS 2022), <strong>Kojima et al. (2022)</strong> <em>\"Large Language Models are Zero-Shot Reasoners\"</em> и <strong>White et al. (2023)</strong> <em>\"A Prompt Pattern Catalog to Enhance Prompt Engineering\"</em> по формированию логики вычислительной физики в больших языковых моделях (LLM) показывают, что по сравнению с прямым запросом кода у модели (Zero-Shot) поэтапное рассуждение над дифференциальным уравнением и граничными условиями (CoT) повышает точность вычислений <strong>с 62% до 96%+</strong>.",
+  "en": "Research on building computational-physics reasoning into large language models (LLMs) — <strong>Wei et al. (2022)</strong>, <em>\"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\"</em> (NeurIPS 2022); <strong>Kojima et al. (2022)</strong>, <em>\"Large Language Models are Zero-Shot Reasoners\"</em>; and <strong>White et al. (2023)</strong>, <em>\"A Prompt Pattern Catalog to Enhance Prompt Engineering\"</em> — shows that, compared with asking the model for code directly (Zero-Shot), having it reason step by step through the differential equation and boundary conditions (CoT) raises computational accuracy <strong>from 62% to 96%+</strong>."
+ },
+ {
+  "k": "c475ebef",
+  "s": "🔗 <em>Asosiy Manbalar:</em> Wei, J., et al. (2022). <em>NeurIPS 2022</em>; Kojima, T., et al. (2022). <em>NeurIPS 2022</em>; Anthropic (2024). <em>Claude Prompt Engineering Interactive Guidelines</em>, docs.anthropic.com; White, J., et al. (2023). <em>arXiv:2302.11382</em>.",
+  "ru": "🔗 <em>Основные источники:</em> Wei, J., et al. (2022). <em>NeurIPS 2022</em>; Kojima, T., et al. (2022). <em>NeurIPS 2022</em>; Anthropic (2024). <em>Claude Prompt Engineering Interactive Guidelines</em>, docs.anthropic.com; White, J., et al. (2023). <em>arXiv:2302.11382</em>.",
+  "en": "🔗 <em>Key sources:</em> Wei, J., et al. (2022). <em>NeurIPS 2022</em>; Kojima, T., et al. (2022). <em>NeurIPS 2022</em>; Anthropic (2024). <em>Claude Prompt Engineering Interactive Guidelines</em>, docs.anthropic.com; White, J., et al. (2023). <em>arXiv:2302.11382</em>."
+ },
+ {
+  "k": "613ff978",
+  "s": "Chain of Thought va Zero-Shot",
+  "ru": "Chain of Thought и Zero-Shot",
+  "en": "Chain of Thought and Zero-Shot"
+ },
+ {
+  "k": "a67f3e77",
+  "s": "1-Rasm: Promptlash strategiyalari (Zero-Shot, Few-Shot, CoT) bo‘yicha sintaktik va fizik aniqlik darajasi.",
+  "ru": "Рис. 1: уровень синтаксической и физической точности по стратегиям промптинга (Zero-Shot, Few-Shot, CoT).",
+  "en": "Figure 1: Syntactic and physical accuracy by prompting strategy (Zero-Shot, Few-Shot, CoT)."
+ },
+ {
+  "k": "b2878f7d",
+  "s": "Promptlash strategiyalarining ilmiy-taqqoslash matritsasi:",
+  "ru": "Научная сравнительная матрица стратегий промптинга:",
+  "en": "Scientific comparison matrix of prompting strategies:"
+ },
+ {
+  "k": "355bd142",
+  "s": "Metrika / xususiyat",
+  "ru": "Метрика / свойство",
+  "en": "Metric / property"
+ },
+ {
+  "k": "df4c11e8",
+  "s": "❌ Noaniq (Vague)",
+  "ru": "❌ Нечёткий (Vague)",
+  "en": "❌ Vague"
+ },
+ {
+  "k": "87c32693",
+  "s": "⚡ Zero-shot (aniq)",
+  "ru": "⚡ Zero-shot (точный)",
+  "en": "⚡ Zero-shot (precise)"
+ },
+ {
+  "k": "b4f6f983",
+  "s": "🧩 Few-shot (misolli)",
+  "ru": "🧩 Few-shot (с примерами)",
+  "en": "🧩 Few-shot (with examples)"
+ },
+ {
+  "k": "7a50b269",
+  "s": "🧠 Chain-of-thought (CoT)",
+  "ru": "🧠 Chain-of-thought (CoT)",
+  "en": "🧠 Chain-of-thought (CoT)"
+ },
+ {
+  "k": "714b56a7",
+  "s": "Sintaktik To‘g‘rilik (AST)",
+  "ru": "Синтаксическая корректность (AST)",
+  "en": "Syntactic correctness (AST)"
+ },
+ {
+  "k": "f7c1c095",
+  "s": "58% (xatolar ko‘p)",
+  "ru": "58% (много ошибок)",
+  "en": "58% (many errors)"
+ },
+ {
+  "k": "15ed954e",
+  "s": "82% (ES6 sintaksis)",
+  "ru": "82% (синтаксис ES6)",
+  "en": "82% (ES6 syntax)"
+ },
+ {
+  "k": "3401c33a",
+  "s": "91% (standart)",
+  "ru": "91% (стандарт)",
+  "en": "91% (standard)"
+ },
+ {
+  "k": "a30302f6",
+  "s": "96% (xatosiz)",
+  "ru": "96% (без ошибок)",
+  "en": "96% (error-free)"
+ },
+ {
+  "k": "be1ec419",
+  "s": "Fizik Adekvatlik (Invariant)",
+  "ru": "Физическая адекватность (инвариант)",
+  "en": "Physical adequacy (invariant)"
+ },
+ {
+  "k": "40a009b0",
+  "s": "24% (kinematik yolg‘on)",
+  "ru": "24% (кинематическая фальшь)",
+  "en": "24% (kinematic fakery)"
+ },
+ {
+  "k": "841439a9",
+  "s": "62% (oddiy Eyler)",
+  "ru": "62% (простой Эйлер)",
+  "en": "62% (plain Euler)"
+ },
+ {
+  "k": "8a14f627",
+  "s": "78% (yarim dinamik)",
+  "ru": "78% (полудинамический)",
+  "en": "78% (semi-dynamic)"
+ },
+ {
+  "k": "07e25ac6",
+  "s": "93% (to‘liq differensial)",
+  "ru": "93% (полностью дифференциальный)",
+  "en": "93% (fully differential)"
+ },
+ {
+  "k": "c1fe89b3",
+  "s": "Chegaraviy Shartlar va Penetratsiya",
+  "ru": "Граничные условия и проникновение",
+  "en": "Boundary conditions and penetration"
+ },
+ {
+  "k": "32650945",
+  "s": "0% (obyekt yo‘qoladi)",
+  "ru": "0% (объект исчезает)",
+  "en": "0% (object disappears)"
+ },
+ {
+  "k": "efd9f30b",
+  "s": "45% (qotib qolish)",
+  "ru": "45% (залипание)",
+  "en": "45% (sticking)"
+ },
+ {
+  "k": "23070573",
+  "s": "80% (elastik sakrash)",
+  "ru": "80% (упругий отскок)",
+  "en": "80% (elastic bounce)"
+ },
+ {
+  "k": "2f7e3aca",
+  "s": "95% (MTV tuzatish)",
+  "ru": "95% (коррекция MTV)",
+  "en": "95% (MTV correction)"
+ },
+ {
+  "k": "21380c83",
+  "s": "Energiya Saqlanishi ($\\Delta E / E_0$)",
+  "ru": "Сохранение энергии ($\\Delta E / E_0$)",
+  "en": "Energy conservation ($\\Delta E / E_0$)"
+ },
+ {
+  "k": "cdddc41f",
+  "s": "Nazorat qilinmaydi",
+  "ru": "Не контролируется",
+  "en": "Not monitored"
+ },
+ {
+  "k": "59904df4",
+  "s": "Drift: &gt; 25%",
+  "ru": "Дрейф: &gt; 25%",
+  "en": "Drift: &gt; 25%"
+ },
+ {
+  "k": "389bfddd",
+  "s": "Drift: ~5-8%",
+  "ru": "Drift: ~5-8%",
+  "en": "Drift: ~5-8%"
+ },
+ {
+  "k": "c4db4899",
+  "s": "Drift: &lt; 0.1% (Simplektik)",
+  "ru": "Дрейф: &lt; 0.1% (симплектический)",
+  "en": "Drift: &lt; 0.1% (symplectic)"
+ },
+ {
+  "k": "7f5df574",
+  "s": "Tavsiya Qilinadigan O‘quv Bosqichi",
+  "ru": "Рекомендуемый этап обучения",
+  "en": "Recommended stage of study"
+ },
+ {
+  "k": "faf95c7c",
+  "s": "Qo‘llash taqiqlanadi",
+  "ru": "Применять запрещено",
+  "en": "Do not use"
+ },
+ {
+  "k": "ebcf87af",
+  "s": "1-kurs laboratoriya",
+  "ru": "Лабораторные 1-го курса",
+  "en": "First-year labs"
+ },
+ {
+  "k": "94caa471",
+  "s": "2-kurs umumiy fizika",
+  "ru": "Общая физика 2-го курса",
+  "en": "Second-year general physics"
+ },
+ {
+  "k": "bee5fda7",
+  "s": "Magistratura va Ilmiy tadqiqot",
+  "ru": "Магистратура и научные исследования",
+  "en": "Master’s level and research"
+ },
+ {
+  "k": "4707b081",
+  "s": "Eksperimental qiyos: 2D snaryad harakati misolida",
+  "ru": "Экспериментальное сравнение: на примере 2D-движения снаряда",
+  "en": "Experimental comparison: 2D projectile motion"
+ },
+ {
+  "k": "4aa570dd",
+  "s": "❌ Noaniq (Vague) prompt misoli",
+  "ru": "❌ Пример нечёткого (Vague) промпта",
+  "en": "❌ Example of a vague prompt"
+ },
+ {
+  "k": "842a4bdb",
+  "s": "Aniqlik: 24%",
+  "ru": "Точность: 24%",
+  "en": "Accuracy: 24%"
+ },
+ {
+  "k": "aaa286af",
+  "s": "\"Menga snaryad otilishini Canvasda ko‘rsatadigan JS kod yozib ber.\"",
+  "ru": "\"Напиши мне JS-код, который показывает выстрел снаряда на Canvas.\"",
+  "en": "\"Write me JS code that shows a projectile being fired on a Canvas.\""
+ },
+ {
+  "k": "f50cef6c",
+  "s": "<strong>Generatsiya qilingan kod kamchiliklari:</strong><br> 1. <em>Dinamik kuchlar yo‘q:</em> Faqat analitik $y = v_{0y}t - \\frac{1}{2}gt^2$ chizilgan. Shamol yoki havo qarshiligi hisobga olinmagan.<br> 2. <em>Masshtab buzilishi:</em> Metr va piksel o‘rtasida bog‘liqlik yo‘q, shuning uchun snaryad 0.1 soniyada ekrandan chiqib ketadi.<br> 3. <em>Chegara xatosi:</em> Yerga urilganda harakat to‘xtab qoladi yoki snaryad pastga qarab cheksiz tushaveradi.",
+  "ru": "<strong>Недостатки сгенерированного кода:</strong><br> 1. <em>Нет динамических сил:</em> нарисована только аналитическая $y = v_{0y}t - \\frac{1}{2}gt^2$. Ветер и сопротивление воздуха не учтены.<br> 2. <em>Нарушение масштаба:</em> нет связи между метрами и пикселями, поэтому снаряд за 0.1 секунды вылетает за пределы экрана.<br> 3. <em>Ошибка границы:</em> при ударе о землю движение останавливается или снаряд бесконечно падает вниз.",
+  "en": "<strong>Shortcomings of the generated code:</strong><br> 1. <em>No dynamic forces:</em> only the analytical $y = v_{0y}t - \\frac{1}{2}gt^2$ is drawn. Wind and air drag are ignored.<br> 2. <em>Broken scale:</em> there is no link between metres and pixels, so the projectile leaves the screen within 0.1 s.<br> 3. <em>Boundary error:</em> on hitting the ground the motion stops or the projectile keeps falling forever."
+ },
+ {
+  "k": "4dddfb96",
+  "s": "✅ Aniq fizik prompt (CoT) misoli",
+  "ru": "✅ Пример точного физического промпта (CoT)",
+  "en": "✅ Example of a precise physics prompt (CoT)"
+ },
+ {
+  "k": "01ca0960",
+  "s": "Aniqlik: 96%",
+  "ru": "Точность: 96%",
+  "en": "Accuracy: 96%"
+ },
+ {
+  "k": "b4443314",
+  "s": "\"Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yoz. Parametrlar: $g=9.81\\text{ m/s}^2$, aerodinamik qarshilik $\\vec{F}_{drag} = -0.5 \\rho C_d A |\\vec{v}| \\vec{v}$, shamol kuchi $\\vec{F}_{wind} = (F_w, 0)$. Yerga urilganda restitutsiya koeffitsiyenti $e=0.7$. Har kadrda tezlik vektori, to‘liq energiya $E_k+E_p$ va trayektoriya izi chizilsin.\"",
+  "ru": "\"Ты — специалист по вычислительной механике. Напиши ES6-класс для HTML5 Canvas, моделирующий 2D-движение снаряда методом Semi-implicit Euler. Параметры: $g=9.81\\text{ m/s}^2$, аэродинамическое сопротивление $\\vec{F}_{drag} = -0.5 \\rho C_d A |\\vec{v}| \\vec{v}$, сила ветра $\\vec{F}_{wind} = (F_w, 0)$. При ударе о землю коэффициент восстановления $e=0.7$. В каждом кадре рисуй вектор скорости, полную энергию $E_k+E_p$ и след траектории.\"",
+  "en": "\"You are a computational mechanics specialist. Write an ES6 class for HTML5 Canvas that models 2D projectile motion with the semi-implicit Euler method. Parameters: $g=9.81\\text{ m/s}^2$, aerodynamic drag $\\vec{F}_{drag} = -0.5 \\rho C_d A |\\vec{v}| \\vec{v}$, wind force $\\vec{F}_{wind} = (F_w, 0)$. On hitting the ground the coefficient of restitution is $e=0.7$. Draw the velocity vector, total energy $E_k+E_p$ and trajectory trail every frame.\""
+ },
+ {
+  "k": "7dab84c7",
+  "s": "<strong>Generatsiya qilingan kod yutuqlari:</strong><br> 1. <em>Haqiqiy vektor mexanikasi:</em> Kvadratik qarshilik kuchining proyeksiyalari to‘g‘ri integrallanadi.<br> 2. <em>Energetik nazorat:</em> Har kadrda mexanik energiya balansi real vaqtda hisoblanadi.<br> 3. <em>To‘liq avtonomlik:</em> Canvas o‘lchami o‘zgarganda koordinatalar adaptiv saqlanadi.",
+  "ru": "<strong>Достоинства сгенерированного кода:</strong><br> 1. <em>Настоящая векторная механика:</em> проекции квадратичной силы сопротивления интегрируются правильно.<br> 2. <em>Энергетический контроль:</em> баланс механической энергии вычисляется в каждом кадре в реальном времени.<br> 3. <em>Полная автономность:</em> при изменении размера Canvas координаты адаптивно сохраняются.",
+  "en": "<strong>Strengths of the generated code:</strong><br> 1. <em>Real vector mechanics:</em> the projections of the quadratic drag force are integrated correctly.<br> 2. <em>Energy control:</em> the mechanical energy balance is computed every frame in real time.<br> 3. <em>Full autonomy:</em> coordinates adapt when the Canvas is resized."
+ },
+ {
+  "k": "f4728cdd",
+  "s": "3-bosqich: Avtomatik nazorat",
+  "ru": "Этап 3: автоматический контроль",
+  "en": "Stage 3: Automatic control"
+ },
+ {
+  "k": "74af9521",
+  "s": "Google Antigravity AI: agentlik kod nazorati va refinement",
+  "ru": "Google Antigravity AI: агентный контроль кода и refinement",
+  "en": "Google Antigravity AI: agentic code control and refinement"
+ },
+ {
+  "k": "20b3a11b",
+  "s": "AI generatsiya qilgan fizik simulyatsiya kodining barqarorligi va ishonchliligini ta’minlash <strong>Google DeepMind (2024)</strong> ning agentlik monitoring tizimi hamda <strong>Shinn et al. (2023)</strong> ning <em>\"Reflexion: Language Agents with Verbal Reinforcement Learning\"</em> (NeurIPS 2023) arxitekturasiga tayanadi. Generatsiya qilingan har bir fizik skript statik sintaksis tahlili va dinamik fizik invariantlar tekshiruvidan o‘tkaziladi.",
+  "ru": "Обеспечение устойчивости и надёжности кода физической симуляции, сгенерированного ИИ, опирается на агентную систему мониторинга <strong>Google DeepMind (2024)</strong> и архитектуру <strong>Shinn et al. (2023)</strong> <em>\"Reflexion: Language Agents with Verbal Reinforcement Learning\"</em> (NeurIPS 2023). Каждый сгенерированный физический скрипт проходит статический анализ синтаксиса и динамическую проверку физических инвариантов.",
+  "en": "Ensuring the stability and reliability of AI-generated physics simulation code relies on the agentic monitoring system of <strong>Google DeepMind (2024)</strong> and the architecture of <strong>Shinn et al. (2023)</strong>, <em>\"Reflexion: Language Agents with Verbal Reinforcement Learning\"</em> (NeurIPS 2023). Every generated physics script goes through static syntax analysis and dynamic checks of physical invariants."
+ },
+ {
+  "k": "637411f0",
+  "s": "🔗 <em>Asosiy Manbalar:</em> Shinn, N., et al. (2023). <em>Reflexion: Language Agents with Verbal Reinforcement Learning</em>, NeurIPS 2023; Google DeepMind (2024). <em>Gemini System Architecture and Code Verification Protocols</em>; Press, W. H., et al. (2007). <em>Numerical Recipes</em>, Cambridge Univ. Press.",
+  "ru": "🔗 <em>Asosiy Источники:</em> Shinn, N., et al. (2023). <em>Reflexion: Language Agents with Verbal Reinforcement Learning</em>, NeurIPS 2023; Google DeepMind (2024). <em>Gemini System Architecture and Code Verification Protocols</em>; Press, W. H., et al. (2007). <em>Numerical Recipes</em>, Cambridge Univ. Press.",
+  "en": "🔗 <em>Asosiy Sources:</em> Shinn, N., et al. (2023). <em>Reflexion: Language Agents with Verbal Reinforcement Learning</em>, NeurIPS 2023; Google DeepMind (2024). <em>Gemini System Architecture and Code Verification Protocols</em>; Press, W. H., et al. (2007). <em>Numerical Recipes</em>, Cambridge Univ. Press."
+ },
+ {
+  "k": "a05a76b6",
+  "s": "Antigravity AI Monitoring Architecture",
+  "ru": "Antigravity AI Monitoring Architecture",
+  "en": "Antigravity AI Monitoring Architecture"
+ },
+ {
+  "k": "e6eb5d56",
+  "s": "2-Rasm: Google Antigravity AI ning 4 ustunli kod nazorati va avtomatik Self-Healing sikli.",
+  "ru": "Рис. 2: 4-колонный контроль кода Google Antigravity AI и автоматический цикл Self-Healing.",
+  "en": "Figure 2: Google Antigravity AI’s 4-pillar code control and automatic self-healing cycle."
+ },
+ {
+  "k": "41f00fa8",
+  "s": "Antigravity AI nazoratining 4 ustuni (arxitektura tafsilotlari):",
+  "ru": "4 столпа контроля Antigravity AI (детали архитектуры):",
+  "en": "The 4 pillars of Antigravity AI control (architecture details):"
+ },
+ {
+  "k": "ece3fae8",
+  "s": "1. Statik AST linter va xavfsizlik",
+  "ru": "1. Статический AST-линтер и безопасность",
+  "en": "1. Static AST linter and security"
+ },
+ {
+  "k": "fcd20de6",
+  "s": "Kod bajarilishidan oldin uning Abstract Syntax Tree (AST) daraxti tekshiriladi. Cheksiz <code>while(true)</code> tsikllari, <code>eval()</code> chaqiriqlari, xavfli global scope o‘zgaruvchilari va DOM ga to‘g‘ridan-to‘g‘ri noqonuniy murojaatlar aniqlanadi va bloklanadi.",
+  "ru": "Перед выполнением кода проверяется его абстрактное синтаксическое дерево (AST). Выявляются и блокируются бесконечные циклы <code>while(true)</code>, вызовы <code>eval()</code>, опасные переменные глобальной области и прямые недопустимые обращения к DOM.",
+  "en": "Before the code runs, its Abstract Syntax Tree (AST) is checked. Infinite <code>while(true)</code> loops, <code>eval()</code> calls, dangerous global-scope variables and illegal direct DOM access are detected and blocked."
+ },
+ {
+  "k": "6a657555",
+  "s": "2. Fizik invariantlar nazorati",
+  "ru": "2. Контроль физических инвариантов",
+  "en": "2. Physical invariant checks"
+ },
+ {
+  "k": "144b8997",
+  "s": "Simulyatsiya davomida real vaqtda energetik drift tekshiriladi: $$\\frac{|E(t) - E_0|}{E_0} &lt; 10^{-3}$$ Yopiq tizimlarda impuls invariantligi $\\sum \\vec{p} = \\text{const}$ hamda to'qnashuvlarda penetratsiya (overlap) yo'qligi dinamik tasdiqlanadi.",
+  "ru": "Во время симуляции в реальном времени проверяется энергетический дрейф: $$\\frac{|E(t) - E_0|}{E_0} &lt; 10^{-3}$$ Динамически подтверждаются инвариантность импульса в замкнутых системах $\\sum \\vec{p} = \\text{const}$ и отсутствие проникновения (overlap) при столкновениях.",
+  "en": "During the simulation the energy drift is checked in real time: $$\\frac{|E(t) - E_0|}{E_0} &lt; 10^{-3}$$ Momentum invariance in closed systems $\\sum \\vec{p} = \\text{const}$ and the absence of penetration (overlap) in collisions are confirmed dynamically."
+ },
+ {
+  "k": "36733cf0",
+  "s": "3. Dinamik kadr profayleri (60 FPS)",
+  "ru": "3. Динамический профайлер кадров (60 FPS)",
+  "en": "3. Dynamic frame profiler (60 FPS)"
+ },
+ {
+  "k": "ffc7194d",
+  "s": "Kadrlar oralig‘i $\\Delta t \\le 16.6\\text{ ms}$ ekanligi, \"Spiral of Death\" (vaqt o‘sishi oqibatida tsikl qotishi) ning oldi olinishi va Garbage Collector yukini minimallashtirish uchun obyektlar havzasi (Object Pool) nazorat qilinadi.",
+  "ru": "Контролируются интервал между кадрами $\\Delta t \\le 16.6\\text{ ms}$, предотвращение \"Spiral of Death\" (зависания цикла из-за роста времени) и пул объектов (Object Pool) для минимизации нагрузки на сборщик мусора.",
+  "en": "It monitors the frame interval $\\Delta t \\le 16.6\\text{ ms}$, prevention of the \"spiral of death\" (the loop freezing as time grows) and the object pool used to minimise garbage-collector load."
+ },
+ {
+  "k": "c8d42f18",
+  "s": "4. Avtomatik self-refine va Healing Loop",
+  "ru": "4. Автоматический self-refine и Healing Loop",
+  "en": "4. Automatic self-refine and healing loop"
+ },
+ {
+  "k": "7ad21d39",
+  "s": "Agar simulyatsiyada jism chegaradan chiqib ketsa yoki energiya portlashi kuzatilsa, Antigravity AI xatolik sababini (masalan: <em>\"Euler beqarorligi, dt juda katta\"</em>) avtomatik ravishda LLMga qayta yuborib, tuzatilgan kodni oladi.",
+  "ru": "Если в симуляции тело выходит за границы или наблюдается «взрыв» энергии, Antigravity AI автоматически отправляет причину ошибки (например: <em>\"неустойчивость Эйлера, dt слишком велик\"</em>) обратно в LLM и получает исправленный код.",
+  "en": "If a body leaves the boundary or the energy blows up, Antigravity AI automatically sends the cause of the error (e.g. <em>\"Euler instability, dt too large\"</em>) back to the LLM and gets corrected code."
+ },
+ {
+  "k": "5deb63dd",
+  "s": "4-bosqich: Muhandislik standartlari",
+  "ru": "Этап 4: инженерные стандарты",
+  "en": "Stage 4: Engineering standards"
+ },
+ {
+  "k": "f2596a47",
+  "s": "ChatGPT va Gemini: 5 elementli professional prompt arxitekturasi",
+  "ru": "ChatGPT и Gemini: 5-элементная профессиональная архитектура промпта",
+  "en": "ChatGPT and Gemini: a 5-element professional prompt architecture"
+ },
+ {
+  "k": "826cb983",
+  "s": "Fizik simulyatsiyalar uchun professional prompt arxitekturasi <strong>OpenAI (2024)</strong> <em>\"Prompt Engineering Best Practices for Code Generation\"</em> hamda <strong>Google DeepMind (2024)</strong> <em>\"Gemini System Instructions va Developer Guidelines\"</em> ishlab chiquvchilar standartlariga asoslanadi. Prompt 5 ta majburiy komponentdan iborat bo‘lganda, LLM ning to‘g‘ri va energetik saqlanuvchi kod generatsiya qilish ehtimoli <strong>98%</strong> ga yetadi.",
+  "ru": "Профессиональная архитектура промптов для физических симуляций основана на стандартах для разработчиков <strong>OpenAI (2024)</strong> <em>\"Prompt Engineering Best Practices for Code Generation\"</em> и <strong>Google DeepMind (2024)</strong> <em>\"Gemini System Instructions & Developer Guidelines\"</em>. Когда промпт состоит из 5 обязательных компонентов, вероятность генерации LLM корректного и энергосберегающего кода достигает <strong>98%</strong>.",
+  "en": "The professional prompt architecture for physics simulations is based on the developer standards of <strong>OpenAI (2024)</strong>, <em>\"Prompt Engineering Best Practices for Code Generation\"</em>, and <strong>Google DeepMind (2024)</strong>, <em>\"Gemini System Instructions & Developer Guidelines\"</em>. When a prompt contains all 5 mandatory components, the probability that the LLM generates correct, energy-conserving code reaches <strong>98%</strong>."
+ },
+ {
+  "k": "dbada5ae",
+  "s": "🔗 <em>Asosiy Manbalar:</em> OpenAI (2024). <em>OpenAI Developer Platform</em>; Google DeepMind (2024). <em>Gemini 1.5 Technical Report</em>; Anthropic (2024). <em>System Prompt Design Patterns</em>.",
+  "ru": "🔗 <em>Основные источники:</em> OpenAI (2024). <em>OpenAI Developer Platform</em>; Google DeepMind (2024). <em>Gemini 1.5 Technical Report</em>; Anthropic (2024). <em>System Prompt Design Patterns</em>.",
+  "en": "🔗 <em>Key sources:</em> OpenAI (2024). <em>OpenAI Developer Platform</em>; Google DeepMind (2024). <em>Gemini 1.5 Technical Report</em>; Anthropic (2024). <em>System Prompt Design Patterns</em>."
+ },
+ {
+  "k": "5c121863",
+  "s": "Prompt Engineering Workflow",
+  "ru": "Рабочий процесс промпт-инжиниринга",
+  "en": "Prompt Engineering Workflow"
+ },
+ {
+  "k": "995ce450",
+  "s": "3-Rasm: Fizik g‘oyadan interaktiv Canvas simulyatsiyasigacha bo‘lgan to‘liq konveyer.",
+  "ru": "Рис. 3: полный конвейер — от физической идеи до интерактивной симуляции на Canvas.",
+  "en": "Figure 3: The complete pipeline from a physics idea to an interactive Canvas simulation."
+ },
+ {
+  "k": "61b779cd",
+  "s": "🌟 5 Elementli professional prompt standarti (batafsil tavsif):",
+  "ru": "🌟 5-элементный профессиональный стандарт промпта (подробное описание):",
+  "en": "🌟 The 5-element professional prompt standard (in detail):"
+ },
+ {
+  "k": "3ae42709",
+  "s": "1. Rol Yuklash (Role Prompting):",
+  "ru": "1. Назначение роли (Role Prompting):",
+  "en": "1. Role prompting:"
+ },
+ {
+  "k": "bde158e4",
+  "s": "AI modeliga aniq ijtimoiy va ilmiy vazifani belgilaydi: <em>\"Sen universitet professori, hisoblash fizikasi mutaxassisi va yuqori unumdorlikka ega WebGL/Canvas dvigatellari dasturchisisan.\"</em>",
+  "ru": "Задаёт ИИ-модели чёткую социальную и научную роль: <em>\"Ты — профессор университета, специалист по вычислительной физике и разработчик высокопроизводительных движков WebGL/Canvas.\"</em>",
+  "en": "Gives the AI model a clear social and scientific role: <em>\"You are a university professor, a computational physics specialist and a developer of high-performance WebGL/Canvas engines.\"</em>"
+ },
+ {
+  "k": "e9e43cd7",
+  "s": "2. Kontekst va Aniq Maqsad (Context va Goal):",
+  "ru": "2. Контекст и чёткая цель (Context и Goal):",
+  "en": "2. Context and a clear goal:"
+ },
+ {
+  "k": "9e42428d",
+  "s": "Modellashtiriladigan hodisaning o‘quv va amaliy maqsadini bayon qiladi: <em>\"Magistratura talabalari uchun Kulon qonuni, zaryadlangan zarralar to‘qnashuvi va elektr maydon kuch chiziqlarini real vaqtda vizuallashtirish kerak.\"</em>",
+  "ru": "Описывает учебную и практическую цель моделируемого явления: <em>\"Для магистрантов нужно в реальном времени визуализировать закон Кулона, столкновения заряженных частиц и силовые линии электрического поля.\"</em>",
+  "en": "Describes the learning and practical goal of the modelled phenomenon: <em>\"Master’s students need a real-time visualisation of Coulomb’s law, collisions of charged particles and electric field lines.\"</em>"
+ },
+ {
+  "k": "19500a54",
+  "s": "3. Fizik Chegaralar va Matematik Tenglamalar (Constraints va Physics):",
+  "ru": "3. Физические ограничения и математические уравнения (Constraints и Physics):",
+  "en": "3. Physical constraints and mathematical equations:"
+ },
+ {
+  "k": "98a7806c",
+  "s": "Differensial tenglama, chegaraviy shartlar va integratsiya usuli aniq ifodalanadi: <em>\"Kuch formulasi: $\\vec{F} = k \\frac{q_1 q_2}{r^2} \\hat{r}$. Singulyarlikdan qochish uchun $r_{eff} = \\max(r, 10\\text{px})$. Sonli usul: Velocity Verlet (yoki Semi-implicit Euler). Devorlar bilan elastik to‘qnashuv ($e=0.95$).\"</em>",
+  "ru": "Чётко формулируются дифференциальное уравнение, граничные условия и метод интегрирования: <em>\"Формула силы: $\\vec{F} = k \\frac{q_1 q_2}{r^2} \\hat{r}$. Чтобы избежать сингулярности, $r_{eff} = \\max(r, 10\\text{px})$. Численный метод: Velocity Verlet (или Semi-implicit Euler). Упругое столкновение со стенками ($e=0.95$).\"</em>",
+  "en": "The differential equation, boundary conditions and integration method are stated precisely: <em>\"Force formula: $\\vec{F} = k \\frac{q_1 q_2}{r^2} \\hat{r}$. To avoid a singularity, $r_{eff} = \\max(r, 10\\text{px})$. Numerical method: Velocity Verlet (or semi-implicit Euler). Elastic collisions with the walls ($e=0.95$).\"</em>"
+ },
+ {
+  "k": "92c7cfdc",
+  "s": "4. Chiqish Formati va Arxitektura (Output Schema):",
+  "ru": "4. Формат вывода и архитектура (Output Schema):",
+  "en": "4. Output format and architecture (output schema):"
+ },
+ {
+  "k": "fcb2a026",
+  "s": "Kodni o‘rash va struktura talablari: <em>\"Hech qanday tashqi kutubxonalarsiz (Pure ES6 JavaScript). Klass konstruktor, update(dt), render(ctx) va getTelemetry() metodlarini o‘z ichiga olsin.\"</em>",
+  "ru": "Требования к оформлению и структуре кода: <em>\"Без каких-либо внешних библиотек (Pure ES6 JavaScript). Класс должен содержать конструктор и методы update(dt), render(ctx) и getTelemetry().\"</em>",
+  "en": "Code packaging and structure requirements: <em>\"No external libraries (pure ES6 JavaScript). The class should include a constructor and update(dt), render(ctx) and getTelemetry() methods.\"</em>"
+ },
+ {
+  "k": "988ab1bf",
+  "s": "5. O‘z-o‘zini Tekshirish Ko‘rsatmasi (Self-Refine Directive):",
+  "ru": "5. Указание на самопроверку (Self-Refine Directive):",
+  "en": "5. Self-refine directive:"
+ },
+ {
+  "k": "a656400b",
+  "s": "Kodni chiqarishdan oldin AI o‘z-o‘zini audit qiladi: <em>\"Kodni yakunlashdan oldin quyidagilarni tekshir: 1) Energiya saqlanadimi? 2) Chegaradan chiqib ketish bormi? 3) Delta-time hisobga olinganmi? 4) Kodda sintaktik xato yo‘qmi?\"</em>",
+  "ru": "Перед выводом кода ИИ проводит самоаудит: <em>\"Прежде чем завершить код, проверь: 1) Сохраняется ли энергия? 2) Есть ли выход за границы? 3) Учтён ли delta-time? 4) Нет ли в коде синтаксических ошибок?\"</em>",
+  "en": "Before outputting the code, the AI audits itself: <em>\"Before finishing the code, check: 1) Is energy conserved? 2) Does anything leave the boundary? 3) Is delta time taken into account? 4) Are there any syntax errors?\"</em>"
+ },
+ {
+  "k": "287e4956",
+  "s": "5-bosqich: Metodik xazina",
+  "ru": "Этап 5: методическая сокровищница",
+  "en": "Stage 5: Methodological treasury"
+ },
+ {
+  "k": "cd0ad956",
+  "s": "MagicSchool AI: 5 fundamental fizika bo‘limi uchun 10 ta tayyor prompt shablonlari",
+  "ru": "MagicSchool AI: 10 готовых шаблонов промптов для 5 фундаментальных разделов физики",
+  "en": "MagicSchool AI: 10 ready-made prompt templates for 5 fundamental physics topics"
+ },
+ {
+  "k": "e50fe930",
+  "s": "Pedagogik amaliyotda o‘qituvchi va talabaning vaqtini tejash hamda modellashtirish sifatini standartlashtirish maqsadida <strong>Halliday, Resnick va Walker (2018)</strong> <em>\"Fundamentals of Physics\"</em> hamda <strong>Serway va Jewett (2018)</strong> <em>\"Physics for Scientists and Engineers\"</em> universitet fizika kursi asosida 5 ta fundamental bo‘lim bo‘yicha prompt shablonlar kutubxonasi shakllantirildi.",
+  "ru": "Чтобы сэкономить время преподавателя и студента и стандартизировать качество моделирования в педагогической практике, на основе университетских курсов физики <strong>Halliday, Resnick и Walker (2018)</strong> <em>\"Fundamentals of Physics\"</em> и <strong>Serway и Jewett (2018)</strong> <em>\"Physics for Scientists and Engineers\"</em> сформирована библиотека шаблонов промптов по 5 фундаментальным разделам.",
+  "en": "To save teachers’ and students’ time and standardise modelling quality in teaching practice, a library of prompt templates for 5 fundamental topics was built on the university physics courses of <strong>Halliday, Resnick & Walker (2018)</strong>, <em>\"Fundamentals of Physics\"</em>, and <strong>Serway & Jewett (2018)</strong>, <em>\"Physics for Scientists and Engineers\"</em>."
+ },
+ {
+  "k": "4460abc3",
+  "s": "🔗 <em>Asosiy Manbalar:</em> Halliday, D., Resnick, R., va Walker, J. (2018). <em>Fundamentals of Physics</em> (11th ed.), Wiley; Serway, R. A., va Jewett, J. W. (2018). <em>Physics for Scientists and Engineers</em> (10th ed.), Cengage; MagicSchool AI Research (2024). <em>Prompt Library Scaffolding for STEM Classrooms</em>.",
+  "ru": "🔗 <em>Основные источники:</em> Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of Physics</em> (11th ed.), Wiley; Serway, R. A., & Jewett, J. W. (2018). <em>Physics for Scientists and Engineers</em> (10th ed.), Cengage; MagicSchool AI Research (2024). <em>Prompt Library Scaffolding for STEM Classrooms</em>.",
+  "en": "🔗 <em>Key sources:</em> Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of Physics</em> (11th ed.), Wiley; Serway, R. A., & Jewett, J. W. (2018). <em>Physics for Scientists and Engineers</em> (10th ed.), Cengage; MagicSchool AI Research (2024). <em>Prompt Library Scaffolding for STEM Classrooms</em>."
+ },
+ {
+  "k": "a0bc13e2",
+  "s": "Physics Prompt Taxonomy Matrix",
+  "ru": "Матрица таксономии физических промптов",
+  "en": "Physics Prompt Taxonomy Matrix"
+ },
+ {
+  "k": "9c99e42a",
+  "s": "4-Rasm: Fizika fanlari bo‘yicha prompt-muhandislik taksonomiyasi va shablonlar matritsasi.",
+  "ru": "Рис. 4: таксономия промпт-инжиниринга и матрица шаблонов по разделам физики.",
+  "en": "Figure 4: Prompt-engineering taxonomy and template matrix by physics topic."
+ },
+ {
+  "k": "790ae789",
+  "s": "1. Snaryad harakati va shamol (mexanika)",
+  "ru": "1. Движение снаряда и ветер (механика)",
+  "en": "1. Projectile motion and wind (mechanics)"
+ },
+ {
+  "k": "fc11a501",
+  "s": "Mexanika",
+  "ru": "Механика",
+  "en": "Mechanics"
+ },
+ {
+  "k": "1e57a42f",
+  "s": "\"Sen hisoblash mexanikasi mutaxassisisan. HTML5 Canvas uchun 2D snaryad harakatini Semi-implicit Euler usulida modellashtiruvchi ES6 klassini yarat. Shartlar: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, shamol kuchi F_wind = const. Yerga urilganda sakrash restitutsiyasi e=0.7. Real-vaqtda uchish masofasi (L) va maksimal balandlik (H) hisoblansin.\"",
+  "ru": "\"Ты — специалист по вычислительной механике. Создай ES6-класс для HTML5 Canvas, моделирующий 2D-движение снаряда методом Semi-implicit Euler. Условия: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, сила ветра F_wind = const. При ударе о землю коэффициент восстановления e=0.7. В реальном времени вычисляй дальность полёта (L) и максимальную высоту (H).\"",
+  "en": "\"You are a computational mechanics specialist. Create an ES6 class for HTML5 Canvas that models 2D projectile motion with the semi-implicit Euler method. Conditions: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, wind force F_wind = const. On hitting the ground, coefficient of restitution e=0.7. Compute the range (L) and maximum height (H) in real time.\""
+ },
+ {
+  "k": "c20e4807",
+  "s": "2. Prujinali mayatnik va so‘nish (mexanika)",
+  "ru": "2. Пружинный маятник и затухание (механика)",
+  "en": "2. Spring pendulum and damping (mechanics)"
+ },
+ {
+  "k": "ae2ca4d7",
+  "s": "\"HTML5 Canvasda vertikal so‘nuvchi prujinali mayatnikni Velocity Verlet usulida modellashtir. Tenglama: m*x'' + c*x' + k*x = m*g. Canvasda prujina spirali dinamik chizilsin, kinetik va potensial energiya balansi real vaqtda monitoring qilinsin.\"",
+  "ru": "\"Смоделируй на HTML5 Canvas вертикальный затухающий пружинный маятник методом Velocity Verlet. Уравнение: m*x'' + c*x' + k*x = m*g. На Canvas динамически рисуй спираль пружины, баланс кинетической и потенциальной энергии отслеживай в реальном времени.\"",
+  "en": "\"Model a vertical damped spring pendulum on HTML5 Canvas with the Velocity Verlet method. Equation: m*x'' + c*x' + k*x = m*g. Draw the spring coil dynamically on the Canvas and monitor the kinetic and potential energy balance in real time.\""
+ },
+ {
+  "k": "61dadf79",
+  "s": "3. 2D elastik impuls to‘qnashuvi",
+  "ru": "3. Импульс двумерного упругого столкновения",
+  "en": "3. 2D elastic impulse collision"
+ },
+ {
+  "k": "d404ffd9",
+  "s": "Impuls",
+  "ru": "Импульс",
+  "en": "Momentum"
+ },
+ {
+  "k": "56acb64d",
+  "s": "\"2D fazoda turli massali sharlar to‘qnashuvi uchun JavaScript dvigatelini yoz. To‘qnashuv impulsi j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) formulasi va Positional Correction (MTV) orqali penetratsiya bartaraf etilsin. Impuls va kinetik energiya saqlanishi tekshirilsin.\"",
+  "ru": "\"Напиши JavaScript-движок для столкновений шаров разной массы в 2D-пространстве. Устрани проникновение с помощью формулы импульса столкновения j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) и позиционной коррекции (MTV). Проверь сохранение импульса и кинетической энергии.\"",
+  "en": "\"Write a JavaScript engine for collisions of balls of different masses in 2D. Remove penetration using the collision impulse formula j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) and positional correction (MTV). Check conservation of momentum and kinetic energy.\""
+ },
+ {
+  "k": "625f5c1c",
+  "s": "4. Ideal gaz va MKT taqsimoti",
+  "ru": "4. Идеальный газ и распределение МКТ",
+  "en": "4. Ideal gas and the kinetic-theory distribution"
+ },
+ {
+  "k": "b0ae0be0",
+  "s": "Termodinamika",
+  "ru": "Термодинамика",
+  "en": "Thermodynamics"
+ },
+ {
+  "k": "7508594f",
+  "s": "\"Idishdagi N=100 ta gaz molekulalarining elastik to‘qnashuvini modellashtiruvchi Canvas dasturini yarat. Harorat (T) o‘zgarganda molekulalar tezligi Maksvell-Bolsman taqsimotiga mos kelsin, devorlarga tushayotgan bosim (P) hisoblansin.\"",
+  "ru": "\"Создай программу на Canvas, моделирующую упругие столкновения N=100 молекул газа в сосуде. При изменении температуры (T) скорости молекул должны соответствовать распределению Максвелла–Больцмана; вычисляй давление (P) на стенки.\"",
+  "en": "\"Create a Canvas program that models elastic collisions of N=100 gas molecules in a container. When the temperature (T) changes, the molecular speeds should follow the Maxwell–Boltzmann distribution, and the pressure (P) on the walls should be computed.\""
+ },
+ {
+  "k": "0a05f43e",
+  "s": "5. 2D issiqlik o‘tkazuvchanlik diffuziyasi",
+  "ru": "5. Диффузия теплопроводности в 2D",
+  "en": "5. 2D heat-conduction diffusion"
+ },
+ {
+  "k": "8c91d2d9",
+  "s": "\"Fure qonuni asosida 2D metall plastinkada issiqlik tarqalishi differensial tenglamasini (dT/dt = alpha * nabla^2 T) sonli to‘r (grid) usulida Canvasda rangli xarita (heatmap) ko‘rinishida animatsiya qiladigan ES6 klassini yoz.\"",
+  "ru": "\"Напиши ES6-класс, который на основе закона Фурье анимирует на Canvas в виде цветовой карты (heatmap) дифференциальное уравнение распространения тепла в 2D металлической пластине (dT/dt = alpha * nabla^2 T) методом численной сетки (grid).\"",
+  "en": "\"Write an ES6 class that, based on Fourier’s law, animates the differential equation of heat spreading in a 2D metal plate (dT/dt = alpha * nabla^2 T) on a Canvas as a heatmap using a numerical grid.\""
+ },
+ {
+  "k": "007111ab",
+  "s": "6. Kulon maydoni va kuch chiziqlari",
+  "ru": "6. Поле Кулона и силовые линии",
+  "en": "6. Coulomb field and field lines"
+ },
+ {
+  "k": "526a090f",
+  "s": "Elektrodinamika",
+  "ru": "Электродинамика",
+  "en": "Electrodynamics"
+ },
+ {
+  "k": "051ab3ef",
+  "s": "\"Foydalanuvchi sichqoncha bilan musbat va manfiy zaryadlarni qo‘yadigan, ular orasidagi elektrostatik kuch chiziqlari (E-field lines) va ekvipotensial sirtlarni Runge-Kutta 2 usulida chizadigan interaktiv Canvas yarat.\"",
+  "ru": "\"Создай интерактивный Canvas, где пользователь мышью ставит положительные и отрицательные заряды, а между ними методом Рунге–Кутты 2 рисуются электростатические силовые линии (E-field lines) и эквипотенциальные поверхности.\"",
+  "en": "\"Create an interactive Canvas where the user places positive and negative charges with the mouse, and the electrostatic field lines (E-field lines) and equipotential surfaces between them are drawn with the Runge–Kutta 2 method.\""
+ },
+ {
+  "k": "0fc90a12",
+  "s": "7. Lorents kuchi va siklotron harakati",
+  "ru": "7. Сила Лоренца и циклотронное движение",
+  "en": "7. Lorentz force and cyclotron motion"
+ },
+ {
+  "k": "856a7722",
+  "s": "\"Bir jinsli magnit (B) va elektr (E) maydondagi zaryadlangan zarracha trayektoriyasini Boris integratori yordamida modellashtir. Siklotron radiusi R = mv/(qB) va spiral harakat qadami real-vaqtda ekranda ko‘rsatilsin.\"",
+  "ru": "\"Смоделируй с помощью интегратора Бориса траекторию заряженной частицы в однородных магнитном (B) и электрическом (E) полях. Циклотронный радиус R = mv/(qB) и шаг спирального движения показывай на экране в реальном времени.\"",
+  "en": "\"Model the trajectory of a charged particle in uniform magnetic (B) and electric (E) fields with the Boris integrator. Show the cyclotron radius R = mv/(qB) and the pitch of the helical motion on screen in real time.\""
+ },
+ {
+  "k": "914439b0",
+  "s": "8. Ikki tirqishli difraksiya va Yung tajribasi",
+  "ru": "8. Дифракция на двух щелях и опыт Юнга",
+  "en": "8. Double-slit diffraction and Young’s experiment"
+ },
+ {
+  "k": "f6199b65",
+  "s": "Optika",
+  "ru": "Оптика",
+  "en": "Optics"
+ },
+ {
+  "k": "ff21cd82",
+  "s": "\"Yung tajribasidagi ikki tirqishli to‘lqin interferensiyasini HTML5 Canvasda 2D fazoviy maydon sifatida render qil. O‘ng tomonda ekran intensivligi I(y) = I0 * cos^2(delta/2) grafigi va rangli spektr chizilsin.\"",
+  "ru": "\"Отрендери на HTML5 Canvas интерференцию волн от двух щелей в опыте Юнга как 2D пространственное поле. Справа нарисуй график интенсивности на экране I(y) = I0 * cos^2(delta/2) и цветной спектр.\"",
+  "en": "\"Render two-slit wave interference from Young’s experiment on HTML5 Canvas as a 2D spatial field. On the right, draw the screen intensity plot I(y) = I0 * cos^2(delta/2) and a colour spectrum.\""
+ },
+ {
+  "k": "b552f60a",
+  "s": "9. Snell qonuni va to‘la ichki qaytish",
+  "ru": "9. Закон Снеллиуса и полное внутреннее отражение",
+  "en": "9. Snell’s law and total internal reflection"
+ },
+ {
+  "k": "234117aa",
+  "s": "\"Nur optikasi: n1 va n2 sindirish ko‘rsatkichli ikki muhit chegarasida nurning sinishi (n1*sin(a) = n2*sin(b)) va to‘la ichki qaytish (a &gt;= a_crit) hodisasini sichqoncha bilan nur burchagini o‘zgartiruvchi Canvasda modellashtir.\"",
+  "ru": "\"Лучевая оптика: смоделируй на Canvas, где угол луча меняется мышью, преломление луча на границе двух сред с показателями преломления n1 и n2 (n1*sin(a) = n2*sin(b)) и явление полного внутреннего отражения (a &gt;= a_crit).\"",
+  "en": "\"Ray optics: on a Canvas where the ray angle is changed with the mouse, model refraction at the boundary of two media with refractive indices n1 and n2 (n1*sin(a) = n2*sin(b)) and total internal reflection (a &gt;= a_crit).\""
+ },
+ {
+  "k": "75288193",
+  "s": "10. Bohr atom modeli va kvant sakrashlar",
+  "ru": "10. Модель атома Бора и квантовые скачки",
+  "en": "10. The Bohr atom model and quantum jumps"
+ },
+ {
+  "k": "90535d87",
+  "s": "Kvant fizikasi",
+  "ru": "Квантовая физика",
+  "en": "Quantum physics"
+ },
+ {
+  "k": "decd448c",
+  "s": "\"Vodorod atomining Bohr modeli: n=1,2,3,4 statsionar orbitalar. Foydalanuvchi orbitalarni bosganda elektronning kvant sakrashi va nurlangan foton to‘lqin paketi animatsiyasi chiqarilsin. Energiya sathi En = -13.6/n^2 eV hisoblansin.\"",
+  "ru": "\"Модель Бора атома водорода: стационарные орбиты n=1,2,3,4. При нажатии на орбиту пользователем показывай анимацию квантового скачка электрона и излучённого волнового пакета фотона. Вычисляй энергетический уровень En = -13.6/n^2 eV.\"",
+  "en": "\"The Bohr model of the hydrogen atom: stationary orbits n=1,2,3,4. When the user clicks an orbit, animate the electron’s quantum jump and the emitted photon wave packet. Compute the energy level En = -13.6/n^2 eV.\""
+ },
+ {
+  "k": "962dd424",
+  "s": "6-bosqich: Jonli laboratoriya",
+  "ru": "Этап 6: живая лаборатория",
+  "en": "Stage 6: Live laboratory"
+ },
+ {
+  "k": "124825c3",
+  "s": "HTML5 Canvas prompt dastgohi va jonli kod sinov maydoni",
+  "ru": "Верстак промптов HTML5 Canvas и живая песочница кода",
+  "en": "HTML5 Canvas prompt workbench and live code sandbox"
+ },
+ {
+  "k": "21314f86",
+  "s": "Interaktiv simulyatsiya dastgohlari orqali tushunchalarni mustahkamlash <strong>Wieman, Adams va Perkins (2008)</strong> <em>“PhET: Simulations That Enhance Learning”</em> hamda <strong>Fiedler (2004)</strong> <em>\"Fix Your Timestep\"</em> tamoyillariga tayanadi. Talaba turli xil prompt shablonlarini tanlashi, noaniq va aniq promptlar sifatini qiyoslashi, generatsiya qilingan ES6 kodini jonli ravishda tahrirlashi va <strong>“Kodni ishga tushirish”</strong> tugmasi orqali Canvasda fizik simulyatsiyani tekshirishi mumkin.",
+  "ru": "Закрепление понятий с помощью интерактивных симуляционных стендов опирается на принципы <strong>Wieman, Adams и Perkins (2008)</strong> <em>“PhET: Simulations That Enhance Learning”</em> и <strong>Fiedler (2004)</strong> <em>\"Fix Your Timestep\"</em>. Студент может выбирать разные шаблоны промптов, сравнивать качество нечётких и точных промптов, вживую редактировать сгенерированный ES6-код и проверять физическую симуляцию на Canvas кнопкой <strong>«Запустить код»</strong>.",
+  "en": "Reinforcing concepts with interactive simulation workbenches follows the principles of <strong>Wieman, Adams & Perkins (2008)</strong>, <em>“PhET: Simulations That Enhance Learning”</em>, and <strong>Fiedler (2004)</strong>, <em>\"Fix Your Timestep\"</em>. Students can choose different prompt templates, compare the quality of vague and precise prompts, edit the generated ES6 code live and check the physics simulation on Canvas with the <strong>“Run code”</strong> button."
+ },
+ {
+  "k": "ca45afd0",
+  "s": "🔗 <em>Asosiy manbalar:</em> Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683; Fiedler, G. (2004). <em>Fix Your Timestep!</em>, Gaffer on Games.",
+  "ru": "🔗 <em>Основные источники:</em> Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683; Fiedler, G. (2004). <em>Fix Your Timestep!</em>, Gaffer on Games.",
+  "en": "🔗 <em>Key sources:</em> Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683; Fiedler, G. (2004). <em>Fix Your Timestep!</em>, Gaffer on Games."
+ },
+ {
+  "k": "a03e4d71",
+  "s": "1. Snaryad va qarshilik",
+  "ru": "1. Снаряд и сопротивление",
+  "en": "1. Projectile and drag"
+ },
+ {
+  "k": "bdc13b09",
+  "s": "2. Prujina va so‘nish",
+  "ru": "2. Пружина и затухание",
+  "en": "2. Spring and damping"
+ },
+ {
+  "k": "591e6ea1",
+  "s": "3. 2D to‘qnashuv",
+  "ru": "3. 2D-столкновение",
+  "en": "3. 2D collision"
+ },
+ {
+  "k": "c2082d26",
+  "s": "4. To‘lqin interferensiyasi",
+  "ru": "4. Интерференция волн",
+  "en": "4. Wave interference"
+ },
+ {
+  "k": "edc191be",
+  "s": "✅ Aniq fizik prompt",
+  "ru": "✅ Точный физический промпт",
+  "en": "✅ Precise physics prompt"
+ },
+ {
+  "k": "6dc13bed",
+  "s": "KTM uchun prompt dastgohi",
+  "ru": "Верстак промптов для LLM",
+  "en": "LLM prompt workbench"
+ },
+ {
+  "k": "fcbf766f",
+  "s": "❌ Noaniq prompt",
+  "ru": "❌ Нечёткий промпт",
+  "en": "❌ Vague prompt"
+ },
+ {
+  "k": "5bc0adf1",
+  "s": "✅ Aniq prompt",
+  "ru": "✅ Точный промпт",
+  "en": "✅ Precise prompt"
+ },
+ {
+  "k": "98448c5d",
+  "s": "Yuklanmoqda...",
+  "ru": "Загрузка...",
+  "en": "Loading..."
+ },
+ {
+  "k": "5567c0da",
+  "s": "💻 Generatsiya qilingan kod (tahrirlash mumkin):",
+  "ru": "💻 Сгенерированный код (можно редактировать):",
+  "en": "💻 Generated code (editable):"
+ },
+ {
+  "k": "91090be7",
+  "s": "▶ Kodni ishga tushirish",
+  "ru": "▶ Запустить код",
+  "en": "▶ Run code"
+ },
+ {
+  "k": "d180ae17",
+  "s": "● Sinov maydoni holati: tayyor",
+  "ru": "● Состояние песочницы: готово",
+  "en": "● Sandbox status: ready"
+ },
+ {
+  "k": "b669c64f",
+  "s": "🪐 Canvas sinov maydoni:",
+  "ru": "🪐 Песочница Canvas:",
+  "en": "🪐 Canvas sandbox:"
+ },
+ {
+  "k": "7e0619bc",
+  "s": "⏸ Pauza",
+  "ru": "⏸ Пауза",
+  "en": "⏸ Pause"
+ },
+ {
+  "k": "3c91c9da",
+  "s": "🔄 Qayta",
+  "ru": "🔄 Заново",
+  "en": "🔄 Restart"
+ },
+ {
+  "k": "0b338ea8",
+  "s": "Vektorlar ($\\vec{v}$)",
+  "ru": "Векторы ($\\vec{v}$)",
+  "en": "Vectors ($\\vec{v}$)"
+ },
+ {
+  "k": "4914a1d1",
+  "s": "Trayektoriya izi",
+  "ru": "След траектории",
+  "en": "Trajectory trail"
+ },
+ {
+  "k": "da20f66e",
+  "s": "Kadr chastotasi:",
+  "ru": "Частота кадров:",
+  "en": "Frame rate:"
+ },
+ {
+  "k": "705e34d4",
+  "s": "60 FPS",
+  "ru": "60 FPS",
+  "en": "60 FPS"
+ },
+ {
+  "k": "c69fbd72",
+  "s": "To‘liq energiya ($E$):",
+  "ru": "Полная энергия ($E$):",
+  "en": "Total energy ($E$):"
+ },
+ {
+  "k": "8567ab9d",
+  "s": "Tezlik ($|\\vec{v}|$):",
+  "ru": "Скорость ($|\\vec{v}|$):",
+  "en": "Speed ($|\\vec{v}|$):"
+ },
+ {
+  "k": "4c239e46",
+  "s": "Invariant holati:",
+  "ru": "Состояние инварианта:",
+  "en": "Invariant status:"
+ },
+ {
+  "k": "83d144fc",
+  "s": "● barqaror",
+  "ru": "● устойчиво",
+  "en": "● stable"
+ },
+ {
+  "k": "1cc41a8b",
+  "s": "7-bosqich: Baholash va bibliografiya",
+  "ru": "Этап 7: оценивание и библиография",
+  "en": "Stage 7: Assessment and bibliography"
+ },
+ {
+  "k": "2b0040f4",
+  "s": "Diagnostik bilim sinovi va ilmiy adabiyotlar",
+  "ru": "Диагностическая проверка знаний и научная литература",
+  "en": "Diagnostic knowledge check and scholarly references"
+ },
+ {
+  "k": "f7b7211e",
+  "s": "Ushbu modulda qo‘llanilgan pedagogik baholash va ilmiy apparat <strong>American Psychological Association (APA 7th Edition)</strong> xalqaro bibliografik standartiga muvofiq rasmiylashtirilgan bo‘lib, eng so‘nggi nufuzli AI tadqiqotlari (NeurIPS, arXiv) va klassik universitet fizika darsliklarini qamrab oladi.",
+  "ru": "Педагогическое оценивание и научный аппарат, использованные в этом модуле, оформлены по международному библиографическому стандарту <strong>American Psychological Association (APA 7th Edition)</strong> и охватывают новейшие авторитетные исследования ИИ (NeurIPS, arXiv) и классические университетские учебники физики.",
+  "en": "The assessment and scholarly apparatus used in this module follow the <strong>American Psychological Association (APA 7th Edition)</strong> international bibliographic standard and cover the latest authoritative AI research (NeurIPS, arXiv) and classic university physics textbooks."
+ },
+ {
+  "k": "51896746",
+  "s": "🔗 <em>Asosiy Manbalar:</em> APA Style Manual (7th ed.); NeurIPS 2022-2023 Proceedings; Wiley va Cengage Physics Series.",
+  "ru": "🔗 <em>Основные источники:</em> APA Style Manual (7th ed.); NeurIPS 2022-2023 Proceedings; Wiley & Cengage Physics Series.",
+  "en": "🔗 <em>Key sources:</em> APA Style Manual (7th ed.); NeurIPS 2022-2023 Proceedings; Wiley & Cengage Physics Series."
+ },
+ {
+  "k": "24a58b6b",
+  "s": "🧠 Kognitiv diagnostika testi (3 ta savol):",
+  "ru": "🧠 Когнитивный диагностический тест (3 вопроса):",
+  "en": "🧠 Cognitive diagnostic test (3 questions):"
+ },
+ {
+  "k": "57096d24",
+  "s": "1. Prujinali ossilyator kodi generatsiyasida energiya o‘z-o‘zidan oshib ketmasligi (drift) uchun promptda qaysi sonli integratorni talab qilish zarur?",
+  "ru": "1. Какой численный интегратор нужно потребовать в промпте, чтобы при генерации кода пружинного осциллятора энергия не росла сама собой (drift)?",
+  "en": "1. Which numerical integrator should the prompt require so that energy does not grow by itself (drift) when generating spring oscillator code?"
+ },
+ {
+  "k": "b45c9fe0",
+  "s": "A) Oddiy Forward Euler usuli ($x_{n+1} = x_n + v_n dt$).",
+  "ru": "A) Простой метод Forward Euler ($x_{n+1} = x_n + v_n dt$).",
+  "en": "A) Plain Forward Euler ($x_{n+1} = x_n + v_n dt$)."
+ },
+ {
+  "k": "8f599e88",
+  "s": "B) Semi-implicit Euler yoki Velocity-Verlet simplektik integratori.",
+  "ru": "B) Симплектический интегратор Semi-implicit Euler или Velocity-Verlet.",
+  "en": "B) A symplectic semi-implicit Euler or Velocity-Verlet integrator."
+ },
+ {
+  "k": "93657882",
+  "s": "C) Hech qanday integratorsiz faqat Math.random() ishlatish.",
+  "ru": "C) Без всякого интегратора, только Math.random().",
+  "en": "C) No integrator at all, just Math.random()."
+ },
+ {
+  "k": "eca59467",
+  "s": "D) Faqat 1 kadrli qotirilgan tasvir berish.",
+  "ru": "D) Только статичное изображение из 1 кадра.",
+  "en": "D) Just a single static frame."
+ },
+ {
+  "k": "f408fc8b",
+  "s": "2. Nima sababdan Chain-of-Thought (CoT) promptlash fizik kod generatsiyasida Zero-Shot ga qaraganda ancha yuqori aniqlik (93%+ vs 62%) beradi?",
+  "ru": "2. Почему промптинг Chain-of-Thought (CoT) даёт при генерации физического кода гораздо более высокую точность (93%+ против 62%), чем Zero-Shot?",
+  "en": "2. Why does Chain-of-Thought (CoT) prompting give much higher accuracy (93%+ vs 62%) than Zero-Shot when generating physics code?"
+ },
+ {
+  "k": "fc1d4662",
+  "s": "A) CoT modelni to‘g‘ridan-to‘g‘ri kod yozishdan oldin differensial tenglama va fizik chegaralarni bosqichma-bosqich tahlil qilishga majbur qiladi.",
+  "ru": "A) CoT заставляет модель перед написанием кода поэтапно проанализировать дифференциальное уравнение и физические ограничения.",
+  "en": "A) CoT makes the model analyse the differential equation and physical constraints step by step before writing code."
+ },
+ {
+  "k": "c289b00e",
+  "s": "B) CoT prompt matnini qisqartirib yuboradi.",
+  "ru": "B) CoT сокращает текст промпта.",
+  "en": "B) CoT shortens the prompt text."
+ },
+ {
+  "k": "5ebe2100",
+  "s": "C) CoT Canvas tezligini sun’iy oshiradi.",
+  "ru": "C) CoT искусственно ускоряет Canvas.",
+  "en": "C) CoT artificially speeds up the Canvas."
+ },
+ {
+  "k": "9f4503c5",
+  "s": "D) Hech qanday ta’siri yo‘q, natija bir xil.",
+  "ru": "D) Никакого влияния, результат одинаковый.",
+  "en": "D) It has no effect; the result is the same."
+ },
+ {
+  "k": "c9ec99fc",
+  "s": "3. Google Antigravity AI monitoringida qaysi fizik ko‘rsatkich avtomatik ravishda tekshiriladi?",
+  "ru": "3. Какой физический показатель автоматически проверяется в мониторинге Google Antigravity AI?",
+  "en": "3. Which physical indicator is checked automatically by Google Antigravity AI monitoring?"
+ },
+ {
+  "k": "b3943578",
+  "s": "A) Faqat matn shriftining rangi.",
+  "ru": "A) Только цвет шрифта текста.",
+  "en": "A) Only the text font colour."
+ },
+ {
+  "k": "f1bea94a",
+  "s": "B) To‘liq energiya saqlanishi ($dE/E0 &lt; 10^{-3}$), impuls invariantligi va penetratsiya yo'qligi.",
+  "ru": "B) Сохранение полной энергии ($dE/E0 &lt; 10^{-3}$), инвариантность импульса и отсутствие проникновения.",
+  "en": "B) Total energy conservation ($dE/E0 &lt; 10^{-3}$), momentum invariance and no penetration."
+ },
+ {
+  "k": "de5ad89b",
+  "s": "C) Internet provayderining tezligi.",
+  "ru": "C) Скорость интернет-провайдера.",
+  "en": "C) The internet provider’s speed."
+ },
+ {
+  "k": "fe156352",
+  "s": "D) Monitorning diagonali.",
+  "ru": "D) Диагональ монитора.",
+  "en": "D) The monitor’s diagonal."
+ },
+ {
+  "k": "7510e340",
+  "s": "Natijalarni tekshirish",
+  "ru": "Проверить результаты",
+  "en": "Check results"
+ },
+ {
+  "k": "121f7ffc",
+  "s": "📚 Foydalanilgan ilmiy va metodologik adabiyotlar (APA 7th Edition):",
+  "ru": "📚 Использованная научная и методологическая литература (APA 7th Edition):",
+  "en": "📚 Scholarly and methodological references used (APA 7th Edition):"
+ },
+ {
+  "k": "5a4dc1f8",
+  "s": "<strong>White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., va Schmidt, D. C.</strong> (2023). <em>A prompt pattern catalog to enhance prompt engineering with ChatGPT</em>. arXiv preprint arXiv:2302.11382. <a href=\"https://arxiv.org/abs/2302.11382\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://arxiv.org/abs/2302.11382</a>",
+  "ru": "<strong>White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C.</strong> (2023). <em>A prompt pattern catalog to enhance prompt engineering with ChatGPT</em>. arXiv preprint arXiv:2302.11382. <a href=\"https://arxiv.org/abs/2302.11382\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://arxiv.org/abs/2302.11382</a>",
+  "en": "<strong>White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C.</strong> (2023). <em>A prompt pattern catalog to enhance prompt engineering with ChatGPT</em>. arXiv preprint arXiv:2302.11382. <a href=\"https://arxiv.org/abs/2302.11382\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://arxiv.org/abs/2302.11382</a>"
+ },
+ {
+  "k": "ae71e186",
+  "s": "<strong>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q. V., va Zhou, D.</strong> (2022). <em>Chain-of-thought prompting elicits reasoning in large language models</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 24824-24837.",
+  "ru": "<strong>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q. V., & Zhou, D.</strong> (2022). <em>Chain-of-thought prompting elicits reasoning in large language models</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 24824-24837.",
+  "en": "<strong>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., Le, Q. V., & Zhou, D.</strong> (2022). <em>Chain-of-thought prompting elicits reasoning in large language models</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 24824-24837."
+ },
+ {
+  "k": "e61ec06c",
+  "s": "<strong>Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., va Iwasawa, Y.</strong> (2022). <em>Large language models are zero-shot reasoners</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 22199-22213.",
+  "ru": "<strong>Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y.</strong> (2022). <em>Large language models are zero-shot reasoners</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 22199-22213.",
+  "en": "<strong>Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y.</strong> (2022). <em>Large language models are zero-shot reasoners</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 22199-22213."
+ },
+ {
+  "k": "40337563",
+  "s": "<strong>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., va Yao, S.</strong> (2023). <em>Reflexion: Language agents with verbal reinforcement learning</em>. Advances in Neural Information Processing Systems (NeurIPS 2023).",
+  "ru": "<strong>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., & Yao, S.</strong> (2023). <em>Reflexion: Language agents with verbal reinforcement learning</em>. Advances in Neural Information Processing Systems (NeurIPS 2023).",
+  "en": "<strong>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., & Yao, S.</strong> (2023). <em>Reflexion: Language agents with verbal reinforcement learning</em>. Advances in Neural Information Processing Systems (NeurIPS 2023)."
+ },
+ {
+  "k": "1982a1f2",
+  "s": "<strong>Anthropic.</strong> (2024). <em>Claude System Prompt and Interactive Code Generation Engineering</em>. Anthropic Research Documentation. <a href=\"https://docs.anthropic.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://docs.anthropic.com</a>",
+  "ru": "<strong>Anthropic.</strong> (2024). <em>Claude System Prompt and Interactive Code Generation Engineering</em>. Anthropic Research Documentation. <a href=\"https://docs.anthropic.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://docs.anthropic.com</a>",
+  "en": "<strong>Anthropic.</strong> (2024). <em>Claude System Prompt and Interactive Code Generation Engineering</em>. Anthropic Research Documentation. <a href=\"https://docs.anthropic.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://docs.anthropic.com</a>"
+ },
+ {
+  "k": "14548ccf",
+  "s": "<strong>Google DeepMind.</strong> (2024). <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em>. Google Research Tech Report.",
+  "ru": "<strong>Google DeepMind.</strong> (2024). <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em>. Google Research Tech Report.",
+  "en": "<strong>Google DeepMind.</strong> (2024). <em>Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context</em>. Google Research Tech Report."
+ },
+ {
+  "k": "35c56615",
+  "s": "<strong>OpenAI.</strong> (2024). <em>Prompt Engineering Best Practices for Code Generation and Complex Reasoning</em>. OpenAI Developer Platform.",
+  "ru": "<strong>OpenAI.</strong> (2024). <em>Prompt Engineering Best Practices for Code Generation and Complex Reasoning</em>. OpenAI Developer Platform.",
+  "en": "<strong>OpenAI.</strong> (2024). <em>Prompt Engineering Best Practices for Code Generation and Complex Reasoning</em>. OpenAI Developer Platform."
+ },
+ {
+  "k": "0fad4508",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J.</strong> (2018). <em>Fundamentals of Physics</em> (11th ed.). John Wiley va Sons.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J.</strong> (2018). <em>Fundamentals of Physics</em> (11th ed.). John Wiley & Sons.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J.</strong> (2018). <em>Fundamentals of Physics</em> (11th ed.). John Wiley & Sons."
+ },
+ {
+  "k": "6e4c5f0d",
+  "s": "<strong>Serway, R. A., va Jewett, J. W.</strong> (2018). <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning.",
+  "ru": "<strong>Serway, R. A., & Jewett, J. W.</strong> (2018). <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning.",
+  "en": "<strong>Serway, R. A., & Jewett, J. W.</strong> (2018). <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning."
+ },
+ {
+  "k": "77e1301c",
+  "s": "<strong>Vygotsky, L. S.</strong> (1978). <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S.</strong> (1978). <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S.</strong> (1978). <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press."
+ },
+ {
+  "k": "cb1e8d91",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R.</strong> (2001). <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R.</strong> (2001). <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R.</strong> (2001). <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman."
+ },
+ {
+  "k": "6380389a",
+  "s": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., va Flannery, B. P.</strong> (2007). <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.",
+  "ru": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P.</strong> (2007). <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.",
+  "en": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P.</strong> (2007). <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "45c8e307",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K.</strong> (2010). <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683.",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K.</strong> (2010). <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683.",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K.</strong> (2010). <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682-683."
+ },
+ {
+  "k": "149c190f",
+  "s": "<strong>MagicSchool AI Research.</strong> (2024). <em>AI-Driven Diagnostic Scaffolding and Prompt Taxonomy for STEM Classrooms</em>. <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://www.magicschool.ai</a>",
+  "ru": "<strong>MagicSchool AI Research.</strong> (2024). <em>AI-Driven Diagnostic Scaffolding and Prompt Taxonomy for STEM Classrooms</em>. <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://www.magicschool.ai</a>",
+  "en": "<strong>MagicSchool AI Research.</strong> (2024). <em>AI-Driven Diagnostic Scaffolding and Prompt Taxonomy for STEM Classrooms</em>. <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">https://www.magicschool.ai</a>"
+ }
+]

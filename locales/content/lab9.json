@@ -1,0 +1,908 @@
+[
+ {
+  "k": "a3282017",
+  "s": "9-laboratoriya mashg‘uloti: prompt engineering va physics Code synthesis",
+  "ru": "Лабораторное занятие 9: промпт-инжиниринг и синтез физического кода",
+  "en": "Lab 9: Prompt Engineering and Physics Code Synthesis"
+ },
+ {
+  "k": "5bd3cf91",
+  "s": "Generativ sun’iy intellekt modellarining fizik simulyatsiyalar yaratishdagi samaradorligi va xatosiz ishlashi bevosita <strong>Prompt Muhandisligi (Prompt Engineering)</strong> sifatiga bog‘liq. Ushbu laboratoriya mashg‘ulotida talabalar bitta fizik jarayon (masalan, garmonik va so‘nuvchi mayatnik tebranishi) uchun 4 xil darajadagi so‘rovlarni (Zero-shot, chegaralangan so‘rov, Chain-of-Thought va tizimli XML master-prompt) amalda sinab ko‘radi, <strong>Claude</strong> orqali kod generatsiya qiladi, <strong>Google Antigravity</strong> da jarayon va kadrlar barqarorligini qayd etadi, <strong>ChatGPT</strong> vositasida prompt strukturasini baholab, fizika ta’limi uchun shaxsiy prompt-kutubxonasini shakllantiradi.",
+  "ru": "Эффективность и безошибочность генеративных моделей ИИ при создании физических симуляций напрямую зависят от качества <strong>промпт-инжиниринга (Prompt Engineering)</strong>. На этом лабораторном занятии студенты на практике испытывают для одного физического процесса (например, гармонических и затухающих колебаний маятника) запросы 4 уровней (Zero-shot, ограниченный запрос, Chain-of-Thought и системный XML мастер-промпт), генерируют код с помощью <strong>Claude</strong>, фиксируют процесс и стабильность кадров в <strong>Google Antigravity</strong>, оценивают структуру промпта с помощью <strong>ChatGPT</strong> и формируют личную библиотеку промптов для физического образования.",
+  "en": "How effectively and error-free generative AI models build physics simulations depends directly on the quality of <strong>prompt engineering</strong>. In this lab, students test 4 levels of request (zero-shot, a constrained request, Chain-of-Thought and a structured XML master prompt) on a single physical process (for example, a harmonic and a damped pendulum), generate code with <strong>Claude</strong>, record the process and frame stability in <strong>Google Antigravity</strong>, assess the prompt structure with <strong>ChatGPT</strong> and build a personal prompt library for physics education."
+ },
+ {
+  "k": "1895945b",
+  "s": "📋 9-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:",
+  "ru": "📋 План лабораторного занятия 9 и этапы анализа:",
+  "en": "📋 Lab 9 plan and analysis stages:"
+ },
+ {
+  "k": "c205beec",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostika va shaxsiy reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">TPACK va ZPD mezonlari asosida prompt strukturalari, CoT mantiqi va fizik cheklovlar bo‘yicha diagnostik test hamda individual o‘quv trayektoriyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Диагностика и личный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Диагностический тест на основе критериев TPACK и ЗБР по структурам промптов, логике CoT и физическим ограничениям и индивидуальная учебная траектория.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Diagnostics and a personal plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A TPACK- and ZPD-based diagnostic test on prompt structures, CoT logic and physical constraints, plus an individual learning pathway.</span>"
+ },
+ {
+  "k": "bda192d2",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Prompt-muhandislik amaliyoti:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Rol-Kontekst-Vazifa-Cheklovlar arxitekturasi, Zero-shot, Few-shot, Chain-of-Thought va XML semantik teglari asosida 4 darajali so‘rovlar evolyutsiyasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Практика промпт-инжиниринга:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Архитектура «Роль–Контекст–Задача–Ограничения», эволюция запросов 4 уровней на основе Zero-shot, Few-shot, Chain-of-Thought и семантических XML-тегов.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Prompt engineering practice:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">The Role–Context–Task–Constraints architecture and the evolution of 4 request levels using zero-shot, few-shot, Chain-of-Thought and semantic XML tags.</span>"
+ },
+ {
+  "k": "946e11ba",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Claude sinovlari:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Artifacts interfeysida 4 xil darajadagi promptlarni sinovdan o‘tkazish, sintaksis va semantik tahlil hamda generatsiya qilingan kodlarni solishtirish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Испытания в Claude:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Испытание промптов 4 уровней в интерфейсе Artifacts, синтаксический и семантический анализ и сравнение сгенерированных кодов.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Claude tests:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Testing the 4 prompt levels in the Artifacts interface, syntactic and semantic analysis and comparing the generated code.</span>"
+ },
+ {
+  "k": "e542465d",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Antigravity va ChatGPT auditi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Antigravity orqali kod metrikalari monitoringi va ChatGPT yordamida prompt strukturasini baholash va takomillashtirish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Аудит в Antigravity и ChatGPT:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Мониторинг метрик кода через Antigravity и оценка и доработка структуры промпта с помощью ChatGPT.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Antigravity and ChatGPT audit:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Monitoring code metrics with Antigravity and assessing and improving the prompt structure with ChatGPT.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "c759fbbf",
+  "s": "1. Sun’iy intellekt uchun kognitiv diagnostika va individual ta’lim trayektoriyasi",
+  "ru": "1. Когнитивная диагностика и индивидуальная учебная траектория для работы с искусственным интеллектом",
+  "en": "1. Cognitive diagnostics and an individual learning pathway for AI work"
+ },
+ {
+  "k": "697eb133",
+  "s": "Fizika ta’limida dasturiy kod generatsiyasi oddiy matn yaratishdan tubdan farq qiladi: sun’iy intellektga berilayotgan so‘rovda matematik modellar, differensial tenglamalar, saqlanish qonunlari va raqamli integratsiya usullari aniq ko‘rsatilmasa, model \"sodda halyutsinatsiya\"ga uchrab, vizual jihatdan harakatlanadigan, biroq fizik qonunlarga zid bo‘lgan psevdo-kod yaratadi. <strong>TPACK</strong> (Mishra va Koehler, 2006) va <strong>ZPD</strong> (Vygotskiy, 1978) asosidagi 4 ta diagnostik savol talabaning dastlabki darajasini aniqlaydi.",
+  "ru": "В физическом образовании генерация программного кода принципиально отличается от создания обычного текста: если в запросе к искусственному интеллекту не указаны чётко математические модели, дифференциальные уравнения, законы сохранения и методы численного интегрирования, модель впадает в «простую галлюцинацию» и создаёт псевдокод, который визуально движется, но противоречит законам физики. 4 диагностических вопроса на основе <strong>TPACK</strong> (Mishra & Koehler, 2006) и <strong>ЗБР</strong> (Выготский, 1978) определяют исходный уровень студента.",
+  "en": "In physics education, generating code is fundamentally different from generating ordinary text: if the request to the AI does not spell out the mathematical models, differential equations, conservation laws and numerical integration methods, the model falls into \"naive hallucination\" and produces pseudo-code that moves on screen but breaks the laws of physics. Four diagnostic questions based on <strong>TPACK</strong> (Mishra & Koehler, 2006) and <strong>ZPD</strong> (Vygotsky, 1978) identify the student’s starting level."
+ },
+ {
+  "k": "6eeeb547",
+  "s": "1. Ilmiy-texnik kod generatsiyasi uchun tuziladigan professional prompt tarkibidagi eng zarur 5 ta poydevor komponent qaysilar?",
+  "ru": "1. Каковы 5 важнейших базовых компонентов профессионального промпта для генерации научно-технического кода?",
+  "en": "1. What are the 5 essential building blocks of a professional prompt for generating scientific code?"
+ },
+ {
+  "k": "0bdd97a0",
+  "s": "A) Faqat dasturlash tili nomi, fayl kengaytmasi va ranglar palitrasi.",
+  "ru": "A) Только название языка программирования, расширение файла и цветовая палитра.",
+  "en": "A) Only the programming language, the file extension and the colour palette."
+ },
+ {
+  "k": "3253b28d",
+  "s": "B) Salomlashish, minnatdorchilik bildirish va 500 ta tasodifiy so‘z.",
+  "ru": "B) Приветствие, благодарность и 500 случайных слов.",
+  "en": "B) A greeting, a thank-you and 500 random words."
+ },
+ {
+  "k": "addb60a5",
+  "s": "C) Tizimli Rol (Role), Vaziyat Konteksti (Context), Aniq Ko‘rsatma (Instruction), Fizik Cheklovlar (Constraints) va Chiqish Formati (Output Format).",
+  "ru": "C) Системная роль (Role), контекст ситуации (Context), чёткое указание (Instruction), физические ограничения (Constraints) и формат вывода (Output Format).",
+  "en": "C) A system role, the situation context, a clear instruction, physical constraints and an output format."
+ },
+ {
+  "k": "99beb88f",
+  "s": "2. Fizik masalalarni modellashtirishda \"Chain-of-Thought\" (CoT — Fikrlash zanjiri) yondashuvi nima uchun oddiy Zero-shot so‘rovidan ancha ustun?",
+  "ru": "2. Почему при моделировании физических задач подход «Chain-of-Thought» (CoT — цепочка рассуждений) значительно превосходит простой Zero-shot-запрос?",
+  "en": "2. When modelling physics problems, why is the \"Chain-of-Thought\" (CoT) approach far better than a plain zero-shot request?"
+ },
+ {
+  "k": "7c1e09c9",
+  "s": "A) Chunki u modelning ishlash tezligini 10 barobar oshiradi va xotirani tozalaydi.",
+  "ru": "A) Потому что он в 10 раз ускоряет работу модели и очищает память.",
+  "en": "A) Because it makes the model 10 times faster and clears its memory."
+ },
+ {
+  "k": "4a4352ce",
+  "s": "B) Chunki model bevosita yakuniy kodga sakramasdan, avval differensial tenglamani, kuchlar proyeksiyasini va integratsiya qadamini ketma-ket mulohaza qiladi, bu esa halyutsinatsiyani keskin kamaytiradi.",
+  "ru": "B) Потому что модель не перескакивает сразу к итоговому коду, а сначала последовательно рассуждает о дифференциальном уравнении, проекциях сил и шаге интегрирования, что резко снижает галлюцинации.",
+  "en": "B) Because the model does not jump straight to the final code but first reasons step by step about the differential equation, force projections and integration step, which sharply reduces hallucination."
+ },
+ {
+  "k": "f109b950",
+  "s": "C) Chunki Chain-of-Thought faqat matnlarni ingliz tilidan tarjima qilishda ishlatiladi.",
+  "ru": "C) Потому что Chain-of-Thought используется только для перевода текстов с английского.",
+  "en": "C) Because Chain-of-Thought is only used to translate text from English."
+ },
+ {
+  "k": "89133809",
+  "s": "3. Claude va Google Antigravity vositalarining fizika simulyatsiyasini yaratishdagi integratsiyasi qanday kechadi?",
+  "ru": "3. Как происходит интеграция инструментов Claude и Google Antigravity при создании физической симуляции?",
+  "en": "3. How do Claude and Google Antigravity work together when building a physics simulation?"
+ },
+ {
+  "k": "7799fb1c",
+  "s": "A) Claude Artifacts orqali sifatli mustaqil Canvas kodini yaratadi, Google Antigravity esa kodning kadrlar chastotasi (FPS), energiya saqlanishi va fizik qonuniyatlarga mosligini avtomat monitoring qiladi.",
+  "ru": "A) Claude через Artifacts создаёт качественный самостоятельный Canvas-код, а Google Antigravity автоматически отслеживает частоту кадров (FPS), сохранение энергии и соответствие кода физическим закономерностям.",
+  "en": "A) Claude creates good standalone Canvas code through Artifacts, and Google Antigravity automatically monitors the frame rate (FPS), energy conservation and whether the code obeys the physical laws."
+ },
+ {
+  "k": "a4c88398",
+  "s": "B) Ikkala platforma faqat internet tezligini o‘lchash uchun xizmat qiladi.",
+  "ru": "B) Обе платформы служат только для измерения скорости интернета.",
+  "en": "B) Both platforms only measure internet speed."
+ },
+ {
+  "k": "d6f14dcf",
+  "s": "C) Antigravity kod yozadi, Claude esa faqat matn shriftini tanlaydi.",
+  "ru": "C) Antigravity пишет код, а Claude только выбирает шрифт текста.",
+  "en": "C) Antigravity writes the code and Claude only picks the font."
+ },
+ {
+  "k": "b07695e6",
+  "s": "4. ChatGPT orqali yozilgan fizik prompt strukturasini baholash va takomillashtirishda qaysi asosiy mezonlarga e’tibor qaratiladi?",
+  "ru": "4. На какие основные критерии обращают внимание при оценке и доработке структуры физического промпта с помощью ChatGPT?",
+  "en": "4. Which main criteria matter when assessing and improving a physics prompt’s structure with ChatGPT?"
+ },
+ {
+  "k": "2bd9d4a1",
+  "s": "A) Prompt matnining harflar soni va undagi tinish belgilari miqdori.",
+  "ru": "A) Количество букв в тексте промпта и число знаков препинания в нём.",
+  "en": "A) The number of letters and punctuation marks in the prompt."
+ },
+ {
+  "k": "1b13b25d",
+  "s": "B) Foydalanuvchining kompyuter operatsion tizimi turi.",
+  "ru": "B) Тип операционной системы компьютера пользователя.",
+  "en": "B) The user’s computer operating system."
+ },
+ {
+  "k": "abeae597",
+  "s": "C) Semantik aniqlik, fizik qonuniyatlar va chegaraviy shartlarning to‘liqligi, sonli integratsiya usulining qat’iyligi hamda noaniqliklarni istisno qilish darajasi.",
+  "ru": "C) Семантическая точность, полнота физических закономерностей и граничных условий, строгость метода численного интегрирования и степень исключения неоднозначностей.",
+  "en": "C) Semantic precision, completeness of the physical laws and boundary conditions, rigour of the numerical integration method and how well ambiguity is ruled out."
+ },
+ {
+  "k": "81f83a92",
+  "s": "Diagnostika natijasini hisoblash va shaxsiy rejani tuzish",
+  "ru": "Рассчитать результат диагностики и составить личный план",
+  "en": "Calculate the diagnostic result and build a personal plan"
+ },
+ {
+  "k": "29853027",
+  "s": "Klaster aniqlanmoqda",
+  "ru": "Определяется кластер",
+  "en": "Identifying cluster"
+ },
+ {
+  "k": "19ec928a",
+  "s": "📋 Claude va Antigravity Uchun Shaxsiylashtirilgan Prompt:",
+  "ru": "📋 Персонализированный промпт для Claude и Antigravity:",
+  "en": "📋 Personalised prompt for Claude and Antigravity:"
+ },
+ {
+  "k": "fb924c40",
+  "s": "2. Prompt-muhandislik nazariyasi va fizika fani uchun so‘rovlar arxitekturasi",
+  "ru": "2. Теория промпт-инжиниринга и архитектура запросов для физики",
+  "en": "2. Prompt engineering theory and request architecture for physics"
+ },
+ {
+  "k": "80e81259",
+  "s": "Prompt muhandisligi — bu sun’iy intellekt modellariga (LLM) o‘zimiz istagan aniq fizik natijani, to‘g‘ri sonli hisob-kitoblarni va barqaror dasturiy kodni ishlab chiqarishga yo‘naltirilgan kiruvchi ma’lumotlarni tizimli shakllantirish fanidir (Brown et al., 2020; Wei et al., 2022).",
+  "ru": "Промпт-инжиниринг — это наука о систематическом формировании входных данных, направляющих модели искусственного интеллекта (LLM) на получение нужного нам точного физического результата, правильных численных расчётов и устойчивого программного кода (Brown et al., 2020; Wei et al., 2022).",
+  "en": "Prompt engineering is the discipline of systematically shaping inputs that steer AI models (LLMs) towards the exact physical result, correct numerical calculations and stable code we want (Brown et al., 2020; Wei et al., 2022)."
+ },
+ {
+  "k": "3e382346",
+  "s": "2.1. Professional fizik promptning 5 ta ustuni:",
+  "ru": "2.1. 5 столпов профессионального физического промпта:",
+  "en": "2.1. The 5 pillars of a professional physics prompt:"
+ },
+ {
+  "k": "77c1260e",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Tizimli rol (System Role):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">AI modelining o‘zini kim deb tasavvur qilishi: masalan, <em>\"Sen hisoblash fizikasi va JavaScript Canvas bo‘yicha yetakchi dasturchisan.\"</em></span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Системная роль (System Role):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Кем модель ИИ себя представляет: например, <em>«Ты — ведущий программист в области вычислительной физики и JavaScript Canvas.»</em></span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. System role:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Who the AI model imagines itself to be, for example: <em>\"You are a leading developer in computational physics and JavaScript Canvas.\"</em></span>"
+ },
+ {
+  "k": "7ac99be8",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Kontekst va didaktik maqsad:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Simulyatsiyaning o‘rni va vazifasi: masalan, <em>\"Oliy ta’lim talabalari uchun so‘nuvchi tebranishlar va fazaviy portretni tushuntirish laboratoriyasi.\"</em></span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Контекст и дидактическая цель:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Место и задача симуляции: например, <em>«Лаборатория для объяснения студентам вузов затухающих колебаний и фазового портрета.»</em></span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Context and teaching goal:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">The simulation’s place and purpose, for example: <em>\"A lab explaining damped oscillation and the phase portrait to university students.\"</em></span>"
+ },
+ {
+  "k": "5db9ea75",
+  "s": "<strong style=\"color: var(--accent-purple);\">3. Matematik va fizik chegaralar:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Aniq tenglamalar: $m \\frac{d^2\\theta}{dt^2} + b \\frac{d\\theta}{dt} + \\frac{mg}{L}\\sin\\theta = 0$, integratsiya usuli (Simplektik Eyler yoki Velocity Verlet).</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">3. Математические и физические границы:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Точные уравнения: $m \\frac{d^2\\theta}{dt^2} + b \\frac{d\\theta}{dt} + \\frac{mg}{L}\\sin\\theta = 0$, метод интегрирования (симплектический Эйлер или Velocity Verlet).</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">3. Mathematical and physical bounds:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">Exact equations: $m \\frac{d^2\\theta}{dt^2} + b \\frac{d\\theta}{dt} + \\frac{mg}{L}\\sin\\theta = 0$ and the integration method (symplectic Euler or velocity Verlet).</span>"
+ },
+ {
+  "k": "97e1ca2e",
+  "s": "<strong style=\"color: var(--accent-amber);\">4. Dasturiy va kadr cheklovlari:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">`requestAnimationFrame`, `delta-time` clamping ($dt \\le 0.04\\text{s}$), masshtab omillari va DPI retina sozlamalari.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">4. Программные и кадровые ограничения:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">`requestAnimationFrame`, ограничение `delta-time` ($dt \\le 0.04\\text{s}$), коэффициенты масштаба и настройки DPI retina.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">4. Software and frame constraints:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\">`requestAnimationFrame`, `delta-time` clamping ($dt \\le 0.04\\text{s}$), scale factors and retina DPI settings.</span>"
+ },
+ {
+  "k": "f9b2e24e",
+  "s": "<strong style=\"color:#1C4E9E;\">5. Chiqish formati (output specification):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\"><em>\"Bitta to‘liq mustaqil HTML5 fayli, tashqi kutubxonalarsiz, KaTeX formulalari va real vaqt energiya grafigi bilan.\"</em></span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">5. Формат вывода (output specification):</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\"><em>«Один полностью самостоятельный файл HTML5 без внешних библиотек, с формулами KaTeX и графиком энергии в реальном времени.»</em></span>",
+  "en": "<strong style=\"color:#1C4E9E;\">5. Output specification:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary);\"><em>\"A single fully self-contained HTML5 file with no external libraries, with KaTeX formulas and a real-time energy plot.\"</em></span>"
+ },
+ {
+  "k": "c373bf22",
+  "s": "2.2. Fizik so‘rovlarning 4 bosqichli evolyutsiyasi:",
+  "ru": "2.2. 4-этапная эволюция физических запросов:",
+  "en": "2.2. The 4-stage evolution of physics requests:"
+ },
+ {
+  "k": "0ef27fbb",
+  "s": "Turi",
+  "ru": "Turi",
+  "en": "Turi"
+ },
+ {
+  "k": "50c519c0",
+  "s": "Xarakteristikasi",
+  "ru": "Характеристика",
+  "en": "Description"
+ },
+ {
+  "k": "193ec760",
+  "s": "Kutiladigan kod sifati va xatolar",
+  "ru": "Ожидаемое качество кода и ошибки",
+  "en": "Expected code quality and errors"
+ },
+ {
+  "k": "f20c44a5",
+  "s": "<strong>1-Daraja</strong>",
+  "ru": "<strong>Уровень 1</strong>",
+  "en": "<strong>Level 1</strong>"
+ },
+ {
+  "k": "d1629b0b",
+  "s": "Sodda Zero-shot",
+  "ru": "Простой Zero-shot",
+  "en": "Plain zero-shot"
+ },
+ {
+  "k": "4f0be40f",
+  "s": "\"Mayatnik kodi yozib ber\" kabi noaniq va qisqa iboralar.",
+  "ru": "Неточные и короткие фразы вроде «Напиши код маятника».",
+  "en": "Vague, short phrases such as \"Write pendulum code\"."
+ },
+ {
+  "k": "42c5b9ca",
+  "s": "Delta-time yo‘q, energiya saqlanmaydi, kadr chastotasiga bog‘liq, xatolik darajasi &gt; 50%.",
+  "ru": "Нет delta-time, энергия не сохраняется, зависимость от частоты кадров, уровень ошибок &gt; 50%.",
+  "en": "No delta-time, energy not conserved, frame-rate dependent, error rate &gt; 50%."
+ },
+ {
+  "k": "e1aa1df0",
+  "s": "<strong>2-Daraja</strong>",
+  "ru": "<strong>Уровень 2</strong>",
+  "en": "<strong>Level 2</strong>"
+ },
+ {
+  "k": "ed2505d2",
+  "s": "Fizik Chegarali",
+  "ru": "С физическими границами",
+  "en": "Physically bounded"
+ },
+ {
+  "k": "5bbed82f",
+  "s": "Massa, uzunlik va oddiy Nyuton qonuni ko‘rsatilgan so‘rov.",
+  "ru": "Запрос с указанием массы, длины и простого закона Ньютона.",
+  "en": "A request that gives the mass, length and a simple Newton’s law."
+ },
+ {
+  "k": "72ee5f60",
+  "s": "Differensial tenglama to‘g‘ri, ammo Eyler usuli tufayli tebranish sekin-asta portlaydi.",
+  "ru": "Дифференциальное уравнение верное, но из-за метода Эйлера колебания постепенно «взрываются».",
+  "en": "The differential equation is correct, but the Euler method makes the oscillation gradually blow up."
+ },
+ {
+  "k": "f14b2bf3",
+  "s": "<strong>3-Daraja</strong>",
+  "ru": "<strong>Уровень 3</strong>",
+  "en": "<strong>Level 3</strong>"
+ },
+ {
+  "k": "80970352",
+  "s": "Role + CoT",
+  "ru": "Role + CoT",
+  "en": "Role + CoT"
+ },
+ {
+  "k": "3b2f83ac",
+  "s": "Ekspert roli, bosqichma-bosqich fizik mulohaza va simplektik usul talabi.",
+  "ru": "Роль эксперта, пошаговое физическое рассуждение и требование симплектического метода.",
+  "en": "An expert role, step-by-step physical reasoning and a requirement for a symplectic method."
+ },
+ {
+  "k": "ab9be525",
+  "s": "Yuqori barqarorlik, energiya invariantligi, so‘nish koeffitsiyenti to‘g‘ri hisoblangan.",
+  "ru": "Высокая устойчивость, инвариантность энергии, правильно рассчитанный коэффициент затухания.",
+  "en": "High stability, energy invariance and a correctly computed damping coefficient."
+ },
+ {
+  "k": "e8d4fece",
+  "s": "<strong>4-Daraja</strong>",
+  "ru": "<strong>Уровень 4</strong>",
+  "en": "<strong>Level 4</strong>"
+ },
+ {
+  "k": "f290efe2",
+  "s": "Tizimli XML Master",
+  "ru": "Системный XML Master",
+  "en": "Structured XML master"
+ },
+ {
+  "k": "46075a32",
+  "s": "Rol, kontekst, XML teglari, xatoliklarni oldini olish va fazaviy portret talabi.",
+  "ru": "Роль, контекст, XML-теги, предотвращение ошибок и требование фазового портрета.",
+  "en": "Role, context, XML tags, error prevention and a phase-portrait requirement."
+ },
+ {
+  "k": "3430b1e3",
+  "s": "Mukammal akademik daraja, Velocity Verlet integratsiyasi, telemetriya va to‘liq responsivlik.",
+  "ru": "Совершенный академический уровень, интегрирование Velocity Verlet, телеметрия и полная адаптивность.",
+  "en": "An excellent academic level, velocity Verlet integration, telemetry and full responsiveness."
+ },
+ {
+  "k": "f698270d",
+  "s": "2.3. Zamonaviy XML teglari asosida prompt tuzish (Anthropic standarti):",
+  "ru": "2.3. Составление промпта на основе современных XML-тегов (стандарт Anthropic):",
+  "en": "2.3. Writing prompts with modern XML tags (the Anthropic standard):"
+ },
+ {
+  "k": "aebd065b",
+  "s": "Claude kabi ilg‘or modellar XML teglari (<code>&lt;context&gt;</code>, <code>&lt;physics_model&gt;</code>, <code>&lt;constraints&gt;</code>) orqali berilgan so‘rovlarni semantik jihatdan 35% aniqroq qayta ishlaydi va ko‘rsatmalarni chalkashtirib yubormaydi.",
+  "ru": "Передовые модели, такие как Claude, обрабатывают запросы, заданные через XML-теги (<code>&lt;context&gt;</code>, <code>&lt;physics_model&gt;</code>, <code>&lt;constraints&gt;</code>), семантически на 35% точнее и не путают указания.",
+  "en": "Advanced models such as Claude process requests given through XML tags (<code>&lt;context&gt;</code>, <code>&lt;physics_model&gt;</code>, <code>&lt;constraints&gt;</code>) 35% more accurately in semantic terms and do not mix up the instructions."
+ },
+ {
+  "k": "b55ce144",
+  "s": "3. Promptlar sinovi va kod generatsiyasi: Claude (Artifacts)",
+  "ru": "3. Испытание промптов и генерация кода: Claude (Artifacts)",
+  "en": "3. Testing prompts and generating code: Claude (Artifacts)"
+ },
+ {
+  "k": "4c51f111",
+  "s": "Talaba Claude bilan muloqotda bitta fizik hodisa (garmonik va so‘nuvchi mayatnik) misolida 4 xil darajadagi promptlarni sinab ko‘radi va ularning natijasida olingan kodlarni qiyoslaydi.",
+  "ru": "В диалоге с Claude студент на примере одного физического явления (гармонический и затухающий маятник) испытывает промпты 4 уровней и сравнивает полученные в результате коды.",
+  "en": "Working with Claude, the student tests the 4 prompt levels on a single phenomenon (a harmonic and a damped pendulum) and compares the resulting code."
+ },
+ {
+  "k": "fda20d5d",
+  "s": "1-sinov: Noaniq zero-shot prompt (boshlang‘ich daraja)",
+  "ru": "Испытание 1: неточный zero-shot-промпт (начальный уровень)",
+  "en": "Test 1: A vague zero-shot prompt (beginner level)"
+ },
+ {
+  "k": "e333d9bd",
+  "s": "Past sifat (35/100)",
+  "ru": "Низкое качество (35/100)",
+  "en": "Low quality (35/100)"
+ },
+ {
+  "k": "08147bb6",
+  "s": "<strong>Kamchiliklari:</strong> Hech qanday fizik kattaliklar (ip uzunligi, massa, qarshilik kuchi) berilmagan. Natijada AI o‘zboshimchalik bilan qat’iy piksel qo‘shadi, delta-time hisobga olinmaydi.",
+  "ru": "<strong>Недостатки:</strong> не задано никаких физических величин (длина нити, масса, сила сопротивления). В результате ИИ произвольно прибавляет фиксированные пиксели, delta-time не учитывается.",
+  "en": "<strong>Weaknesses:</strong> no physical quantities are given (string length, mass, drag). As a result the AI adds fixed pixel steps arbitrarily and delta-time is ignored."
+ },
+ {
+  "k": "9919bcc4",
+  "s": "Claude Uchun Sinov Prompti:",
+  "ru": "Тестовый промпт для Claude:",
+  "en": "Test prompt for Claude:"
+ },
+ {
+  "k": "4351e0a2",
+  "s": "2-sinov: Fizik chegaralari ko‘rsatilgan prompt",
+  "ru": "Испытание 2: промпт с указанными физическими границами",
+  "en": "Test 2: A prompt with physical bounds"
+ },
+ {
+  "k": "66b73fed",
+  "s": "O‘rta sifat (68/100)",
+  "ru": "Среднее качество (68/100)",
+  "en": "Medium quality (68/100)"
+ },
+ {
+  "k": "788f372a",
+  "s": "<strong>Kamchiliklari:</strong> Aniq tenglama berilgan, biroq sonli integratsiya usuli (Oddiy Eyler) sababli energiya saqlanmaydi va vaqt o‘tishi bilan amplitudaning sun’iy o‘sishi kuzatiladi.",
+  "ru": "<strong>Недостатки:</strong> дано точное уравнение, однако из-за метода численного интегрирования (простой Эйлер) энергия не сохраняется, и со временем наблюдается искусственный рост амплитуды.",
+  "en": "<strong>Weaknesses:</strong> an exact equation is given, but the numerical integration method (simple Euler) does not conserve energy, and the amplitude grows artificially over time."
+ },
+ {
+  "k": "5c4e0125",
+  "s": "3-sinov: Role + Chain-of-Thought (CoT) prompt",
+  "ru": "Испытание 3: промпт Role + Chain-of-Thought (CoT)",
+  "en": "Test 3: A Role + Chain-of-Thought (CoT) prompt"
+ },
+ {
+  "k": "81411b14",
+  "s": "Yuqori sifat (88/100)",
+  "ru": "Высокое качество (88/100)",
+  "en": "High quality (88/100)"
+ },
+ {
+  "k": "c034841d",
+  "s": "<strong>Afzalliklari:</strong> Modelga ekspert roli yuklatilgan va fizik qadamlar (qarshilik kuchi, Simplektik Eyler, kadrlar vaqti) ketma-ket uqtirilgan. Energiya barqarorligi ta’minlanadi.",
+  "ru": "<strong>Преимущества:</strong> модели поручена роль эксперта, а физические шаги (сила сопротивления, симплектический Эйлер, время кадров) изложены последовательно. Обеспечивается устойчивость энергии.",
+  "en": "<strong>Strengths:</strong> the model is given an expert role and the physical steps (drag force, symplectic Euler, frame time) are spelt out in order. Energy stability is ensured."
+ },
+ {
+  "k": "90884f23",
+  "s": "4-sinov: To‘liq ishlab chiqilgan XML master prompt (Capstone darajasi)",
+  "ru": "Испытание 4: полностью проработанный XML мастер-промпт (уровень Capstone)",
+  "en": "Test 4: A fully developed XML master prompt (Capstone level)"
+ },
+ {
+  "k": "b1bec1fb",
+  "s": "Akademik benchmark (98/100)",
+  "ru": "Akademik benchmark (98/100)",
+  "en": "Akademik benchmark (98/100)"
+ },
+ {
+  "k": "5b998418",
+  "s": "<strong>Afzalliklari:</strong> Barcha talablar (fizik model, simplektik integratsiya, fazaviy portret, telemetriya, interaktivlik) strukturaviy XML teglariga ajratilgan. Kod 100% barqaror va ilmiy talablarga to‘la mos keladi.",
+  "ru": "<strong>Преимущества:</strong> все требования (физическая модель, симплектическое интегрирование, фазовый портрет, телеметрия, интерактивность) разделены по структурным XML-тегам. Код на 100% устойчив и полностью соответствует научным требованиям.",
+  "en": "<strong>Strengths:</strong> every requirement (physical model, symplectic integration, phase portrait, telemetry, interactivity) is split into structured XML tags. The code is 100% stable and fully meets scientific requirements."
+ },
+ {
+  "k": "46803582",
+  "s": "4. Natijalarni qayd etish va prompt strukturasini baholash: Google Antigravity va ChatGPT",
+  "ru": "4. Фиксация результатов и оценка структуры промпта: Google Antigravity и ChatGPT",
+  "en": "4. Recording the results and assessing the prompt structure: Google Antigravity and ChatGPT"
+ },
+ {
+  "k": "4ea52491",
+  "s": "Prompt muhandisligining yakuniy maqsadi — yozilgan so‘rovning barqaror va takrorlanuvchan natija berishini isbotlashdir. Bu jarayonda <strong>Google Antigravity</strong> agentlik tizimi kod unumdorligini, kadrlar barqarorligini va fizik xatoliklarni avtomat qayd etsa, <strong>ChatGPT</strong> prompt strukturasining semantik sifatini tekshirib beradi.",
+  "ru": "Конечная цель промпт-инжиниринга — доказать, что написанный запрос даёт устойчивый и воспроизводимый результат. В этом процессе агентная система <strong>Google Antigravity</strong> автоматически фиксирует производительность кода, стабильность кадров и физические ошибки, а <strong>ChatGPT</strong> проверяет семантическое качество структуры промпта.",
+  "en": "The final goal of prompt engineering is to prove that a request gives a stable, reproducible result. Here the <strong>Google Antigravity</strong> agentic system automatically records code performance, frame stability and physical errors, while <strong>ChatGPT</strong> checks the semantic quality of the prompt’s structure."
+ },
+ {
+  "k": "fbe5888a",
+  "s": "4.1. Google Antigravity avtonom monitoringi:",
+  "ru": "4.1. Автономный мониторинг Google Antigravity:",
+  "en": "4.1. Google Antigravity autonomous monitoring:"
+ },
+ {
+  "k": "83f29723",
+  "s": "Antigravity har bir generatsiya qilingan kod versiyasi bo‘yicha quyidagi metrikalarni avtomatik tarzda o‘lchaydi:",
+  "ru": "Antigravity автоматически измеряет следующие метрики для каждой сгенерированной версии кода:",
+  "en": "Antigravity automatically measures the following metrics for every generated code version:"
+ },
+ {
+  "k": "a31dae77",
+  "s": "<strong>Kadrlar yangilanish tezligi (FPS va jank):</strong> 1-darajali kodda kadrlar sakrashi ($Jank &gt; 15\\%$), 4-darajali kodda esa barqaror $60.0 \\pm 0.2\\text{ FPS}$.",
+  "ru": "<strong>Частота обновления кадров (FPS и jank):</strong> в коде 1-го уровня скачки кадров ($Jank &gt; 15\\%$), а в коде 4-го уровня стабильные $60.0 \\pm 0.2\\text{ FPS}$.",
+  "en": "<strong>Frame rate (FPS and jank):</strong> frame jumps ($Jank &gt; 15\\%$) in level 1 code and a steady $60.0 \\pm 0.2\\text{ FPS}$ in level 4 code."
+ },
+ {
+  "k": "bdd732eb",
+  "s": "<strong>Energiya dreyfi ($\\Delta E / E_0$):</strong> 10 000 kadr davomida standart Eyler usulida energiya $340\\%$ ga oshib ketishi, Velocity Verletda esa dreyf $0.05\\%$ dan oshmasligi.",
+  "ru": "<strong>Дрейф энергии ($\\Delta E / E_0$):</strong> за 10 000 кадров в стандартном методе Эйлера энергия возрастает на $340\\%$, а в Velocity Verlet дрейф не превышает $0.05\\%$.",
+  "en": "<strong>Energy drift ($\\Delta E / E_0$):</strong> over 10,000 frames, standard Euler lets the energy grow by $340\\%$, while with velocity Verlet the drift stays below $0.05\\%$."
+ },
+ {
+  "k": "1b81e91b",
+  "s": "<strong>Vaqt bog‘liqligi (V-Sync Drift):</strong> Turli monitorlarda (60Hz, 120Hz, 144Hz) harakat tezligining o‘zgarmasligi.",
+  "ru": "<strong>Зависимость от времени (V-Sync Drift):</strong> неизменность скорости движения на разных мониторах (60 Гц, 120 Гц, 144 Гц).",
+  "en": "<strong>Time dependence (V-Sync drift):</strong> the motion speed stays the same on different monitors (60 Hz, 120 Hz, 144 Hz)."
+ },
+ {
+  "k": "cfbf3f5c",
+  "s": "4.2. ChatGPT yordamida prompt strukturasini baholash topshirig‘i:",
+  "ru": "4.2. Задание по оценке структуры промпта с помощью ChatGPT:",
+  "en": "4.2. Task: assessing prompt structure with ChatGPT:"
+ },
+ {
+  "k": "ae2a447c",
+  "s": "Talaba o‘zi tuzgan har bir yangi promptni ChatGPT modeliga kiritib, quyidagi maxsus audit so‘rovi orqali uning struktura mukammalligini baholatadi:",
+  "ru": "Студент вводит каждый новый составленный промпт в модель ChatGPT и с помощью следующего специального аудит-запроса получает оценку совершенства его структуры:",
+  "en": "The student enters each new prompt into ChatGPT and uses the following special audit request to have its structure graded:"
+ },
+ {
+  "k": "2799b0bb",
+  "s": "5. Interaktiv prompt sinov maydoni va shaxsiy fizika prompt-kutubxonasi",
+  "ru": "5. Интерактивная площадка для испытания промптов и личная физическая библиотека промптов",
+  "en": "5. An interactive prompt test area and a personal physics prompt library"
+ },
+ {
+  "k": "4b90ea5b",
+  "s": "Quyidagi laboratoriya dastgohida 4 xil darajadagi promptlar orqali olingan simulyatsiya kodlari jonli rejimda ishlaydi. Siz turli darajalarni tanlab, ularning fizik aniqligi, fazaviy portreti va energiya barqarorligini o‘z ko‘zingiz bilan solishtirishingiz hamda o‘zingizning shaxsiy promptlaringizni kutubxonaga saqlashingiz mumkin.",
+  "ru": "На лабораторном стенде ниже в живом режиме работают коды симуляций, полученные с помощью промптов 4 уровней. Выбирая разные уровни, вы можете своими глазами сравнить их физическую точность, фазовый портрет и устойчивость энергии, а также сохранить в библиотеку свои личные промпты.",
+  "en": "On the lab bench below, simulation code obtained with the 4 prompt levels runs live. Choose different levels to compare their physical accuracy, phase portrait and energy stability for yourself, and save your own prompts to the library."
+ },
+ {
+  "k": "53342bb0",
+  "s": "4-daraja: XML master-so‘rov",
+  "ru": "Уровень 4: XML мастер-запрос",
+  "en": "Level 4: XML master request"
+ },
+ {
+  "k": "be2fe6ae",
+  "s": "Energiya xatoligi: —",
+  "ru": "Ошибка энергии: —",
+  "en": "Energy error: —"
+ },
+ {
+  "k": "93721b8d",
+  "s": "<span>📈 Chap: fazaviy portret (θ va ω)</span> <span>O‘ng: to‘liq energiya barqarorligi (E = Ep + Ek) 📊</span>",
+  "ru": "<span>📈 Слева: фазовый портрет (θ и ω)</span> <span>Справа: устойчивость полной энергии (E = Ep + Ek) 📊</span>",
+  "en": "<span>📈 Left: phase portrait (θ and ω)</span> <span>Right: total energy stability (E = Ep + Ek) 📊</span>"
+ },
+ {
+  "k": "a20ce70e",
+  "s": "⚙️ Prompt darajasini tanlash",
+  "ru": "⚙️ Выбор уровня промпта",
+  "en": "⚙️ Choose the prompt level"
+ },
+ {
+  "k": "653dca19",
+  "s": "Sinalayotgan prompt:",
+  "ru": "Тестируемый промпт:",
+  "en": "Prompt under test:"
+ },
+ {
+  "k": "a4763540",
+  "s": "4-daraja: XML master-so‘rov (98/100)",
+  "ru": "Уровень 4: XML мастер-запрос (98/100)",
+  "en": "Level 4: XML master request (98/100)"
+ },
+ {
+  "k": "4380e800",
+  "s": "3-daraja: rol + fikrlash zanjiri (88/100)",
+  "ru": "Уровень 3: роль + цепочка рассуждений (88/100)",
+  "en": "Level 3: role + chain of thought (88/100)"
+ },
+ {
+  "k": "dbd6b0ac",
+  "s": "2-daraja: chegaralangan prompt (68/100)",
+  "ru": "Уровень 2: ограниченный промпт (68/100)",
+  "en": "Level 2: constrained prompt (68/100)"
+ },
+ {
+  "k": "2d35f5f1",
+  "s": "1-daraja: sodda zero-shot (35/100)",
+  "ru": "Уровень 1: простой zero-shot (35/100)",
+  "en": "Level 1: plain zero-shot (35/100)"
+ },
+ {
+  "k": "e317fc26",
+  "s": "Ip uzunligi (L):",
+  "ru": "Длина нити (L):",
+  "en": "String length (L):"
+ },
+ {
+  "k": "5388684d",
+  "s": "Qarshilik koeffitsiyenti (β):",
+  "ru": "Коэффициент сопротивления (β):",
+  "en": "Damping coefficient (β):"
+ },
+ {
+  "k": "9ddfe57b",
+  "s": "▶ Boshlash",
+  "ru": "▶ Старт",
+  "en": "▶ Start"
+ },
+ {
+  "k": "d3ab0017",
+  "s": "⏸ To‘xtatish",
+  "ru": "⏸ Остановить",
+  "en": "⏸ Stop"
+ },
+ {
+  "k": "3c91c9da",
+  "s": "🔄 Qayta",
+  "ru": "🔄 Заново",
+  "en": "🔄 Restart"
+ },
+ {
+  "k": "bb671011",
+  "s": "📊 Antigravity telemetriyasi",
+  "ru": "📊 Телеметрия Antigravity",
+  "en": "📊 Antigravity telemetry"
+ },
+ {
+  "k": "153571f4",
+  "s": "Sonli integratsiya:",
+  "ru": "Численное интегрирование:",
+  "en": "Numerical integration:"
+ },
+ {
+  "k": "f4dc88a8",
+  "s": "Velocity Verlet",
+  "ru": "Velocity Verlet",
+  "en": "Velocity Verlet"
+ },
+ {
+  "k": "ccdd6bfe",
+  "s": "Kod sifati indeksi:",
+  "ru": "Индекс качества кода:",
+  "en": "Code quality index:"
+ },
+ {
+  "k": "0ae6253a",
+  "s": "Fizik aniqlik darajasi:",
+  "ru": "Уровень физической точности:",
+  "en": "Physical accuracy:"
+ },
+ {
+  "k": "7eff97a1",
+  "s": "Benuqson energetik barqarorlik, fazaviy trayektoriya chizig‘i, to‘liq telemetriya.",
+  "ru": "Безупречная энергетическая устойчивость, линия фазовой траектории, полная телеметрия.",
+  "en": "Flawless energy stability, a phase trajectory line and full telemetry."
+ },
+ {
+  "k": "4be9df0d",
+  "s": "📄 Tanlangan darajadagi prompt matni:",
+  "ru": "📄 Текст промпта выбранного уровня:",
+  "en": "📄 Prompt text for the selected level:"
+ },
+ {
+  "k": "02eacb5c",
+  "s": "📚 Fizika fani uchun shaxsiy prompt-kutubxona",
+  "ru": "📚 Личная библиотека промптов по физике",
+  "en": "📚 Personal physics prompt library"
+ },
+ {
+  "k": "d865ccfd",
+  "s": "💾 Kutubxonani eksport qilish (JSON)",
+  "ru": "💾 Экспортировать библиотеку (JSON)",
+  "en": "💾 Export library (JSON)"
+ },
+ {
+  "k": "d55a05ae",
+  "s": "Bo‘lim (soha):",
+  "ru": "Раздел (область):",
+  "en": "Section (field):"
+ },
+ {
+  "k": "fc11a501",
+  "s": "Mexanika",
+  "ru": "Механика",
+  "en": "Mechanics"
+ },
+ {
+  "k": "b0ae0be0",
+  "s": "Termodinamika",
+  "ru": "Термодинамика",
+  "en": "Thermodynamics"
+ },
+ {
+  "k": "526a090f",
+  "s": "Elektrodinamika",
+  "ru": "Электродинамика",
+  "en": "Electrodynamics"
+ },
+ {
+  "k": "f6199b65",
+  "s": "Optika",
+  "ru": "Оптика",
+  "en": "Optics"
+ },
+ {
+  "k": "c8b9b8d3",
+  "s": "Astronomiya va astrofizika",
+  "ru": "Астрономия и астрофизика",
+  "en": "Astronomy and astrophysics"
+ },
+ {
+  "k": "c9d84e0b",
+  "s": "Mo‘ljallangan SI modeli:",
+  "ru": "Целевая ИИ-модель:",
+  "en": "Target AI model:"
+ },
+ {
+  "k": "280fff37",
+  "s": "Claude",
+  "ru": "Claude",
+  "en": "Claude"
+ },
+ {
+  "k": "dfcce8a4",
+  "s": "Google Antigravity",
+  "ru": "Google Antigravity",
+  "en": "Google Antigravity"
+ },
+ {
+  "k": "4d6cdd18",
+  "s": "ChatGPT",
+  "ru": "ChatGPT",
+  "en": "ChatGPT"
+ },
+ {
+  "k": "0b8885f2",
+  "s": "Prompt sarlavhasi / maqsadi:",
+  "ru": "Заголовок / цель промпта:",
+  "en": "Prompt title / purpose:"
+ },
+ {
+  "k": "60f682c9",
+  "s": "Masalan: Prujinali mayatnikning fazaviy portreti...",
+  "ru": "Например: фазовый портрет пружинного маятника...",
+  "en": "For example: phase portrait of a spring pendulum..."
+ },
+ {
+  "k": "924421d4",
+  "s": "To‘liq prompt matni (XML yoki CoT formatida):",
+  "ru": "Полный текст промпта (в формате XML или CoT):",
+  "en": "Full prompt text (XML or CoT format):"
+ },
+ {
+  "k": "7861ebc3",
+  "s": "➕ Yangi promptni kutubxonaga saqlash",
+  "ru": "➕ Сохранить новый промпт в библиотеку",
+  "en": "➕ Save new prompt to library"
+ },
+ {
+  "k": "25d4c684",
+  "s": "Saqlangan promptlar ro‘yxati:",
+  "ru": "Список сохранённых промптов:",
+  "en": "Saved prompts:"
+ },
+ {
+  "k": "e12a9d8d",
+  "s": "6. Akademik baholash rubrikasi (100 ball) va ilmiy-metodologik manbalar",
+  "ru": "6. Академическая рубрика оценивания (100 баллов) и научно-методические источники",
+  "en": "6. Academic assessment rubric (100 points) and scholarly sources"
+ },
+ {
+  "k": "c57e5881",
+  "s": "Talabalarning 9-laboratoriya mashg‘uloti bo‘yicha erishgan bilimlari, prompt muhandisligi ko‘nikmalari va shaxsiy prompt-kutubxona sifati quyidagi 5 ta xalqaro akademik mezon bo‘yicha baholanadi.",
+  "ru": "Знания студентов, навыки промпт-инжиниринга и качество личной библиотеки промптов по лабораторному занятию 9 оцениваются по следующим 5 международным академическим критериям.",
+  "en": "Students’ knowledge, prompt engineering skills and the quality of their personal prompt library in Lab 9 are assessed on the following 5 international academic criteria."
+ },
+ {
+  "k": "382cbe8a",
+  "s": "1. Prompt strukturalash va arxitektura:",
+  "ru": "1. Структурирование и архитектура промпта:",
+  "en": "1. Prompt structuring and architecture:"
+ },
+ {
+  "k": "f6bfbac1",
+  "s": "Rol, Kontekst, Vazifa, Fizik chegaralar va Chiqish formati to‘liqligi.",
+  "ru": "Полнота роли, контекста, задачи, физических границ и формата вывода.",
+  "en": "Completeness of the role, context, task, physical bounds and output format."
+ },
+ {
+  "k": "4c464490",
+  "s": "2. 4 Xil prompt darajasini taqqoslash va tahlil:",
+  "ru": "2. Сравнение и анализ 4 уровней промптов:",
+  "en": "2. Comparing and analysing the 4 prompt levels:"
+ },
+ {
+  "k": "e871431a",
+  "s": "Zero-shot, chegaralangan, CoT va XML master-prompt kod sifati va energiya dreyfi tahlili.",
+  "ru": "Анализ качества кода и дрейфа энергии для zero-shot, ограниченного, CoT и XML мастер-промпта.",
+  "en": "Analysing code quality and energy drift for the zero-shot, constrained, CoT and XML master prompts."
+ },
+ {
+  "k": "61beefa8",
+  "s": "3. Claude kod generatsiyasi:",
+  "ru": "3. Генерация кода в Claude:",
+  "en": "3. Claude code generation:"
+ },
+ {
+  "k": "0e499c5e",
+  "s": "Artifacts orqali mustaqil Canvas kodini yaratish va sintaksis/semantik xatoliklarni tuzatish.",
+  "ru": "Создание самостоятельного Canvas-кода через Artifacts и исправление синтаксических/семантических ошибок.",
+  "en": "Creating standalone Canvas code through Artifacts and fixing syntactic/semantic errors."
+ },
+ {
+  "k": "709ba94a",
+  "s": "4. Google Antigravity va ChatGPT auditi:",
+  "ru": "4. Аудит в Google Antigravity и ChatGPT:",
+  "en": "4. Google Antigravity and ChatGPT audit:"
+ },
+ {
+  "k": "1a29ef12",
+  "s": "Antigravity monitoring metrikalari (FPS/Jank) va ChatGPT prompt tahlili rubrikasi.",
+  "ru": "Метрики мониторинга Antigravity (FPS/Jank) и рубрика анализа промпта ChatGPT.",
+  "en": "Antigravity monitoring metrics (FPS/jank) and the ChatGPT prompt analysis rubric."
+ },
+ {
+  "k": "d9d62e43",
+  "s": "5. Shaxsiy prompt-kutubxona va akademik hisobot:",
+  "ru": "5. Личная библиотека промптов и академический отчёт:",
+  "en": "5. Personal prompt library and academic report:"
+ },
+ {
+  "k": "d6f84262",
+  "s": "Fizika bo‘limlari bo‘yicha kamida 4 ta promptni kutubxonaga kiritish va sof o‘zbek tilidagi xulosalar.",
+  "ru": "Внесение в библиотеку не менее 4 промптов по разделам физики и выводы на грамотном академическом языке.",
+  "en": "Adding at least 4 prompts covering different areas of physics to the library and conclusions in clear academic language."
+ },
+ {
+  "k": "480b16ec",
+  "s": "Umumiy ballni hisoblash",
+  "ru": "Рассчитать общий балл",
+  "en": "Calculate the total score"
+ },
+ {
+  "k": "7bed2278",
+  "s": "Baholanmagan",
+  "ru": "Не оценено",
+  "en": "Not graded"
+ },
+ {
+  "k": "9b0e5074",
+  "s": "📚 Foydalanilgan ilmiy-metodologik adabiyotlar (APA 7 standarti):",
+  "ru": "📚 Использованная научно-методическая литература (стандарт APA 7):",
+  "en": "📚 References (APA 7):"
+ },
+ {
+  "k": "55adc55a",
+  "s": "Anthropic. (n.d.). <em>Use XML tags to structure your prompts</em>. Claude Docs. https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags",
+  "ru": "Anthropic. (n.d.). <em>Use XML tags to structure your prompts</em>. Claude Docs. https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags",
+  "en": "Anthropic. (n.d.). <em>Use XML tags to structure your prompts</em>. Claude Docs. https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags"
+ },
+ {
+  "k": "44b85f44",
+  "s": "Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., … Amodei, D. (2020). Language models are few-shot learners. <em>Advances in Neural Information Processing Systems, 33</em>, 1877–1901.",
+  "ru": "Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., … Amodei, D. (2020). Language models are few-shot learners. <em>Advances in Neural Information Processing Systems, 33</em>, 1877–1901.",
+  "en": "Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., … Amodei, D. (2020). Language models are few-shot learners. <em>Advances in Neural Information Processing Systems, 33</em>, 1877–1901."
+ },
+ {
+  "k": "3c65d375",
+  "s": "Cromer, A. (1981). Stable solutions using the Euler approximation. <em>American Journal of Physics, 49</em>(5), 455–459. https://doi.org/10.1119/1.12478",
+  "ru": "Cromer, A. (1981). Stable solutions using the Euler approximation. <em>American Journal of Physics, 49</em>(5), 455–459. https://doi.org/10.1119/1.12478",
+  "en": "Cromer, A. (1981). Stable solutions using the Euler approximation. <em>American Journal of Physics, 49</em>(5), 455–459. https://doi.org/10.1119/1.12478"
+ },
+ {
+  "k": "cca840c0",
+  "s": "Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., va Iwasawa, Y. (2022). Large language models are zero-shot reasoners. <em>Advances in Neural Information Processing Systems, 35</em>, 22199–22213.",
+  "ru": "Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y. (2022). Large language models are zero-shot reasoners. <em>Advances in Neural Information Processing Systems, 35</em>, 22199–22213.",
+  "en": "Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y. (2022). Large language models are zero-shot reasoners. <em>Advances in Neural Information Processing Systems, 35</em>, 22199–22213."
+ },
+ {
+  "k": "465deb03",
+  "s": "Mishra, P., va Koehler, M. J. (2006). Technological pedagogical content knowledge: A framework for teacher knowledge. <em>Teachers College Record, 108</em>(6), 1017–1054. https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "ru": "Mishra, P., & Koehler, M. J. (2006). Technological pedagogical content knowledge: A framework for teacher knowledge. <em>Teachers College Record, 108</em>(6), 1017–1054. https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "en": "Mishra, P., & Koehler, M. J. (2006). Technological pedagogical content knowledge: A framework for teacher knowledge. <em>Teachers College Record, 108</em>(6), 1017–1054. https://doi.org/10.1111/j.1467-9620.2006.00684.x"
+ },
+ {
+  "k": "5c96f179",
+  "s": "OpenAI. (2023). <em>ChatGPT technical report</em> (arXiv:2303.08774). arXiv. https://doi.org/10.48550/arXiv.2303.08774",
+  "ru": "OpenAI. (2023). <em>ChatGPT technical report</em> (arXiv:2303.08774). arXiv. https://doi.org/10.48550/arXiv.2303.08774",
+  "en": "OpenAI. (2023). <em>ChatGPT technical report</em> (arXiv:2303.08774). arXiv. https://doi.org/10.48550/arXiv.2303.08774"
+ },
+ {
+  "k": "37aa4219",
+  "s": "Vygotsky, L. S. (1978). <em>Mind in society: The development of higher psychological processes</em>. Harvard University Press.",
+  "ru": "Vygotsky, L. S. (1978). <em>Mind in society: The development of higher psychological processes</em>. Harvard University Press.",
+  "en": "Vygotsky, L. S. (1978). <em>Mind in society: The development of higher psychological processes</em>. Harvard University Press."
+ },
+ {
+  "k": "e89fde57",
+  "s": "Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q. V., va Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. <em>Advances in Neural Information Processing Systems, 35</em>, 24824–24837.",
+  "ru": "Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q. V., & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. <em>Advances in Neural Information Processing Systems, 35</em>, 24824–24837.",
+  "en": "Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q. V., & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. <em>Advances in Neural Information Processing Systems, 35</em>, 24824–24837."
+ },
+ {
+  "k": "27005f7a",
+  "s": "<a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\">Claude AI</a>",
+  "ru": "<a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\">Claude AI</a>",
+  "en": "<a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\">Claude AI</a>"
+ },
+ {
+  "k": "0fb5c66f",
+  "s": "<a href=\"https://chatgpt.com\" target=\"_blank\" rel=\"noopener\">ChatGPT</a>",
+  "ru": "<a href=\"https://chatgpt.com\" target=\"_blank\" rel=\"noopener\">ChatGPT</a>",
+  "en": "<a href=\"https://chatgpt.com\" target=\"_blank\" rel=\"noopener\">ChatGPT</a>"
+ }
+]

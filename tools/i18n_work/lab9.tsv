@@ -1,0 +1,119 @@
+ef3a031b	Лабораторное занятие 9: промпт-инжиниринг и синтез физического кода	Lab 9: Prompt Engineering and Physics Code Synthesis
+b9d324f0	Эффективность и безошибочность генеративных моделей ИИ при создании физических симуляций напрямую зависят от качества <strong>промпт-инжиниринга (Prompt Engineering)</strong>. На этом лабораторном занятии студенты на практике испытывают для одного физического процесса (например, гармонических и затухающих колебаний маятника) запросы 4 уровней (Zero-shot, ограниченный запрос, Chain-of-Thought и системный XML мастер-промпт), генерируют код с помощью <strong>Claude</strong>, фиксируют процесс и стабильность кадров в <strong>Google Antigravity</strong>, оценивают структуру промпта с помощью <strong>ChatGPT</strong> и формируют личную библиотеку промптов для физического образования.	How effectively and error-free generative AI models build physics simulations depends directly on the quality of <strong>prompt engineering</strong>. In this lab, students test 4 levels of request (zero-shot, a constrained request, Chain-of-Thought and a structured XML master prompt) on a single physical process (for example, a harmonic and a damped pendulum), generate code with <strong>Claude</strong>, record the process and frame stability in <strong>Google Antigravity</strong>, assess the prompt structure with <strong>ChatGPT</strong> and build a personal prompt library for physics education.
+3c7222c4	📋 План лабораторного занятия 9 и этапы анализа:	📋 Lab 9 plan and analysis stages:
+c20a04e3	⟨1⟩1. Диагностика и личный план:⟨/1⟩↵ ⟨2⟩Диагностический тест на основе критериев TPACK и ЗБР по структурам промптов, логике CoT и физическим ограничениям и индивидуальная учебная траектория.⟨/2⟩	⟨1⟩1. Diagnostics and a personal plan:⟨/1⟩↵ ⟨2⟩A TPACK- and ZPD-based diagnostic test on prompt structures, CoT logic and physical constraints, plus an individual learning pathway.⟨/2⟩
+c3e543de	⟨1⟩2. Практика промпт-инжиниринга:⟨/1⟩↵ ⟨2⟩Архитектура «Роль–Контекст–Задача–Ограничения», эволюция запросов 4 уровней на основе Zero-shot, Few-shot, Chain-of-Thought и семантических XML-тегов.⟨/2⟩	⟨1⟩2. Prompt engineering practice:⟨/1⟩↵ ⟨2⟩The Role–Context–Task–Constraints architecture and the evolution of 4 request levels using zero-shot, few-shot, Chain-of-Thought and semantic XML tags.⟨/2⟩
+430157dc	⟨1⟩3. Испытания в Claude:⟨/1⟩↵ ⟨2⟩Испытание промптов 4 уровней в интерфейсе Artifacts, синтаксический и семантический анализ и сравнение сгенерированных кодов.⟨/2⟩	⟨1⟩3. Claude tests:⟨/1⟩↵ ⟨2⟩Testing the 4 prompt levels in the Artifacts interface, syntactic and semantic analysis and comparing the generated code.⟨/2⟩
+bbe34e90	⟨1⟩4. Аудит в Antigravity и ChatGPT:⟨/1⟩↵ ⟨2⟩Мониторинг метрик кода через Antigravity и оценка и доработка структуры промпта с помощью ChatGPT.⟨/2⟩	⟨1⟩4. Antigravity and ChatGPT audit:⟨/1⟩↵ ⟨2⟩Monitoring code metrics with Antigravity and assessing and improving the prompt structure with ChatGPT.⟨/2⟩
+59c23800	В физическом образовании генерация программного кода принципиально отличается от создания обычного текста: если в запросе к искусственному интеллекту не указаны чётко математические модели, дифференциальные уравнения, законы сохранения и методы численного интегрирования, модель впадает в «простую галлюцинацию» и создаёт псевдокод, который визуально движется, но противоречит законам физики. 4 диагностических вопроса на основе <strong>TPACK</strong> (Mishra & Koehler, 2006) и <strong>ЗБР</strong> (Выготский, 1978) определяют исходный уровень студента.	In physics education, generating code is fundamentally different from generating ordinary text: if the request to the AI does not spell out the mathematical models, differential equations, conservation laws and numerical integration methods, the model falls into "naive hallucination" and produces pseudo-code that moves on screen but breaks the laws of physics. Four diagnostic questions based on <strong>TPACK</strong> (Mishra & Koehler, 2006) and <strong>ZPD</strong> (Vygotsky, 1978) identify the student’s starting level.
+486f3605	1. Каковы 5 важнейших базовых компонентов профессионального промпта для генерации научно-технического кода?	1. What are the 5 essential building blocks of a professional prompt for generating scientific code?
+16f009a6	A) Только название языка программирования, расширение файла и цветовая палитра.	A) Only the programming language, the file extension and the colour palette.
+aab93ef9	B) Приветствие, благодарность и 500 случайных слов.	B) A greeting, a thank-you and 500 random words.
+e74ffc15	C) Системная роль (Role), контекст ситуации (Context), чёткое указание (Instruction), физические ограничения (Constraints) и формат вывода (Output Format).	C) A system role, the situation context, a clear instruction, physical constraints and an output format.
+b9fd4994	2. Почему при моделировании физических задач подход «Chain-of-Thought» (CoT — цепочка рассуждений) значительно превосходит простой Zero-shot-запрос?	2. When modelling physics problems, why is the "Chain-of-Thought" (CoT) approach far better than a plain zero-shot request?
+dccde576	A) Потому что он в 10 раз ускоряет работу модели и очищает память.	A) Because it makes the model 10 times faster and clears its memory.
+8abb40d9	B) Потому что модель не перескакивает сразу к итоговому коду, а сначала последовательно рассуждает о дифференциальном уравнении, проекциях сил и шаге интегрирования, что резко снижает галлюцинации.	B) Because the model does not jump straight to the final code but first reasons step by step about the differential equation, force projections and integration step, which sharply reduces hallucination.
+1da9f28d	C) Потому что Chain-of-Thought используется только для перевода текстов с английского.	C) Because Chain-of-Thought is only used to translate text from English.
+d839bb74	3. Как происходит интеграция инструментов Claude и Google Antigravity при создании физической симуляции?	3. How do Claude and Google Antigravity work together when building a physics simulation?
+882c4fbc	A) Claude через Artifacts создаёт качественный самостоятельный Canvas-код, а Google Antigravity автоматически отслеживает частоту кадров (FPS), сохранение энергии и соответствие кода физическим закономерностям.	A) Claude creates good standalone Canvas code through Artifacts, and Google Antigravity automatically monitors the frame rate (FPS), energy conservation and whether the code obeys the physical laws.
+a03bc02a	B) Обе платформы служат только для измерения скорости интернета.	B) Both platforms only measure internet speed.
+2408dd5d	C) Antigravity пишет код, а Claude только выбирает шрифт текста.	C) Antigravity writes the code and Claude only picks the font.
+236877dc	4. На какие основные критерии обращают внимание при оценке и доработке структуры физического промпта с помощью ChatGPT?	4. Which main criteria matter when assessing and improving a physics prompt’s structure with ChatGPT?
+5ef11072	A) Количество букв в тексте промпта и число знаков препинания в нём.	A) The number of letters and punctuation marks in the prompt.
+0f9b2680	B) Тип операционной системы компьютера пользователя.	B) The user’s computer operating system.
+5df59ef1	C) Семантическая точность, полнота физических закономерностей и граничных условий, строгость метода численного интегрирования и степень исключения неоднозначностей.	C) Semantic precision, completeness of the physical laws and boundary conditions, rigour of the numerical integration method and how well ambiguity is ruled out.
+452de44a	📋 Персонализированный промпт для Claude и Antigravity:	📋 Personalised prompt for Claude and Antigravity:
+ef3c1dfc	2. Теория промпт-инжиниринга и архитектура запросов для физики	2. Prompt engineering theory and request architecture for physics
+ddfe62fa	Промпт-инжиниринг — это наука о систематическом формировании входных данных, направляющих модели искусственного интеллекта (LLM) на получение нужного нам точного физического результата, правильных численных расчётов и устойчивого программного кода (Brown et al., 2020; Wei et al., 2022).	Prompt engineering is the discipline of systematically shaping inputs that steer AI models (LLMs) towards the exact physical result, correct numerical calculations and stable code we want (Brown et al., 2020; Wei et al., 2022).
+624f29b9	2.1. 5 столпов профессионального физического промпта:	2.1. The 5 pillars of a professional physics prompt:
+4e7a56f6	⟨1⟩1. Системная роль (System Role):⟨/1⟩↵ ⟨2⟩Кем модель ИИ себя представляет: например, <em>«Ты — ведущий программист в области вычислительной физики и JavaScript Canvas.»</em>⟨/2⟩	⟨1⟩1. System role:⟨/1⟩↵ ⟨2⟩Who the AI model imagines itself to be, for example: <em>"You are a leading developer in computational physics and JavaScript Canvas."</em>⟨/2⟩
+73edf13e	⟨1⟩2. Контекст и дидактическая цель:⟨/1⟩↵ ⟨2⟩Место и задача симуляции: например, <em>«Лаборатория для объяснения студентам вузов затухающих колебаний и фазового портрета.»</em>⟨/2⟩	⟨1⟩2. Context and teaching goal:⟨/1⟩↵ ⟨2⟩The simulation’s place and purpose, for example: <em>"A lab explaining damped oscillation and the phase portrait to university students."</em>⟨/2⟩
+c15989ae	⟨1⟩3. Математические и физические границы:⟨/1⟩↵ ⟨2⟩Точные уравнения: ⟦1⟧, метод интегрирования (симплектический Эйлер или Velocity Verlet).⟨/2⟩	⟨1⟩3. Mathematical and physical bounds:⟨/1⟩↵ ⟨2⟩Exact equations: ⟦1⟧ and the integration method (symplectic Euler or velocity Verlet).⟨/2⟩
+05733ccf	⟨1⟩4. Программные и кадровые ограничения:⟨/1⟩↵ ⟨2⟩`requestAnimationFrame`, ограничение `delta-time` (⟦1⟧), коэффициенты масштаба и настройки DPI retina.⟨/2⟩	⟨1⟩4. Software and frame constraints:⟨/1⟩↵ ⟨2⟩`requestAnimationFrame`, `delta-time` clamping (⟦1⟧), scale factors and retina DPI settings.⟨/2⟩
+43be194e	⟨1⟩5. Формат вывода (output specification):⟨/1⟩↵ ⟨2⟩<em>«Один полностью самостоятельный файл HTML5 без внешних библиотек, с формулами KaTeX и графиком энергии в реальном времени.»</em>⟨/2⟩	⟨1⟩5. Output specification:⟨/1⟩↵ ⟨2⟩<em>"A single fully self-contained HTML5 file with no external libraries, with KaTeX formulas and a real-time energy plot."</em>⟨/2⟩
+2db17519	2.2. 4-этапная эволюция физических запросов:	2.2. The 4-stage evolution of physics requests:
+fcf9b23c	Характеристика	Description
+368ef63a	Ожидаемое качество кода и ошибки	Expected code quality and errors
+a348c8f6	<strong>Уровень 1</strong>	<strong>Level 1</strong>
+77b84aa2	Простой Zero-shot	Plain zero-shot
+621bed02	Неточные и короткие фразы вроде «Напиши код маятника».	Vague, short phrases such as "Write pendulum code".
+057bd326	Нет delta-time, энергия не сохраняется, зависимость от частоты кадров, уровень ошибок &gt; 50%.	No delta-time, energy not conserved, frame-rate dependent, error rate &gt; 50%.
+37fd2eb7	<strong>Уровень 2</strong>	<strong>Level 2</strong>
+ac2c7223	С физическими границами	Physically bounded
+ad3dcb7d	Запрос с указанием массы, длины и простого закона Ньютона.	A request that gives the mass, length and a simple Newton’s law.
+2e13ae58	Дифференциальное уравнение верное, но из-за метода Эйлера колебания постепенно «взрываются».	The differential equation is correct, but the Euler method makes the oscillation gradually blow up.
+124674c0	<strong>Уровень 3</strong>	<strong>Level 3</strong>
+2f3c5597	Роль эксперта, пошаговое физическое рассуждение и требование симплектического метода.	An expert role, step-by-step physical reasoning and a requirement for a symplectic method.
+936ac361	Высокая устойчивость, инвариантность энергии, правильно рассчитанный коэффициент затухания.	High stability, energy invariance and a correctly computed damping coefficient.
+525b49a3	<strong>Уровень 4</strong>	<strong>Level 4</strong>
+b13245fb	Системный XML Master	Structured XML master
+311aa7db	Роль, контекст, XML-теги, предотвращение ошибок и требование фазового портрета.	Role, context, XML tags, error prevention and a phase-portrait requirement.
+76317a1a	Совершенный академический уровень, интегрирование Velocity Verlet, телеметрия и полная адаптивность.	An excellent academic level, velocity Verlet integration, telemetry and full responsiveness.
+1f5b02ab	2.3. Составление промпта на основе современных XML-тегов (стандарт Anthropic):	2.3. Writing prompts with modern XML tags (the Anthropic standard):
+5d852159	Передовые модели, такие как Claude, обрабатывают запросы, заданные через XML-теги (<code>&lt;context&gt;</code>, <code>&lt;physics_model&gt;</code>, <code>&lt;constraints&gt;</code>), семантически на 35% точнее и не путают указания.	Advanced models such as Claude process requests given through XML tags (<code>&lt;context&gt;</code>, <code>&lt;physics_model&gt;</code>, <code>&lt;constraints&gt;</code>) 35% more accurately in semantic terms and do not mix up the instructions.
+d1f77bd0	3. Испытание промптов и генерация кода: Claude (Artifacts)	3. Testing prompts and generating code: Claude (Artifacts)
+bcd04b4c	В диалоге с Claude студент на примере одного физического явления (гармонический и затухающий маятник) испытывает промпты 4 уровней и сравнивает полученные в результате коды.	Working with Claude, the student tests the 4 prompt levels on a single phenomenon (a harmonic and a damped pendulum) and compares the resulting code.
+a3a4c5eb	Испытание 1: неточный zero-shot-промпт (начальный уровень)	Test 1: A vague zero-shot prompt (beginner level)
+aafdac8b	Низкое качество (35/100)	Low quality (35/100)
+9353ffe8	<strong>Недостатки:</strong> не задано никаких физических величин (длина нити, масса, сила сопротивления). В результате ИИ произвольно прибавляет фиксированные пиксели, delta-time не учитывается.	<strong>Weaknesses:</strong> no physical quantities are given (string length, mass, drag). As a result the AI adds fixed pixel steps arbitrarily and delta-time is ignored.
+f9548a6d	Тестовый промпт для Claude:	Test prompt for Claude:
+b3863c1b	Испытание 2: промпт с указанными физическими границами	Test 2: A prompt with physical bounds
+5ab7492d	Среднее качество (68/100)	Medium quality (68/100)
+b0b0c9a6	<strong>Недостатки:</strong> дано точное уравнение, однако из-за метода численного интегрирования (простой Эйлер) энергия не сохраняется, и со временем наблюдается искусственный рост амплитуды.	<strong>Weaknesses:</strong> an exact equation is given, but the numerical integration method (simple Euler) does not conserve energy, and the amplitude grows artificially over time.
+3fb0ecc7	Испытание 3: промпт Role + Chain-of-Thought (CoT)	Test 3: A Role + Chain-of-Thought (CoT) prompt
+87020cf7	Высокое качество (88/100)	High quality (88/100)
+3aa88c68	<strong>Преимущества:</strong> модели поручена роль эксперта, а физические шаги (сила сопротивления, симплектический Эйлер, время кадров) изложены последовательно. Обеспечивается устойчивость энергии.	<strong>Strengths:</strong> the model is given an expert role and the physical steps (drag force, symplectic Euler, frame time) are spelt out in order. Energy stability is ensured.
+0e682f9e	Испытание 4: полностью проработанный XML мастер-промпт (уровень Capstone)	Test 4: A fully developed XML master prompt (Capstone level)
+18a443cf	<strong>Преимущества:</strong> все требования (физическая модель, симплектическое интегрирование, фазовый портрет, телеметрия, интерактивность) разделены по структурным XML-тегам. Код на 100% устойчив и полностью соответствует научным требованиям.	<strong>Strengths:</strong> every requirement (physical model, symplectic integration, phase portrait, telemetry, interactivity) is split into structured XML tags. The code is 100% stable and fully meets scientific requirements.
+90749028	4. Фиксация результатов и оценка структуры промпта: Google Antigravity и ChatGPT	4. Recording the results and assessing the prompt structure: Google Antigravity and ChatGPT
+88be0aa2	Конечная цель промпт-инжиниринга — доказать, что написанный запрос даёт устойчивый и воспроизводимый результат. В этом процессе агентная система <strong>Google Antigravity</strong> автоматически фиксирует производительность кода, стабильность кадров и физические ошибки, а <strong>ChatGPT</strong> проверяет семантическое качество структуры промпта.	The final goal of prompt engineering is to prove that a request gives a stable, reproducible result. Here the <strong>Google Antigravity</strong> agentic system automatically records code performance, frame stability and physical errors, while <strong>ChatGPT</strong> checks the semantic quality of the prompt’s structure.
+f233707d	4.1. Автономный мониторинг Google Antigravity:	4.1. Google Antigravity autonomous monitoring:
+7c57c058	Antigravity автоматически измеряет следующие метрики для каждой сгенерированной версии кода:	Antigravity automatically measures the following metrics for every generated code version:
+60975f25	<strong>Частота обновления кадров (FPS и jank):</strong> в коде 1-го уровня скачки кадров (⟦1⟧), а в коде 4-го уровня стабильные ⟦2⟧.	<strong>Frame rate (FPS and jank):</strong> frame jumps (⟦1⟧) in level 1 code and a steady ⟦2⟧ in level 4 code.
+5f65f6df	<strong>Дрейф энергии (⟦1⟧):</strong> за 10 000 кадров в стандартном методе Эйлера энергия возрастает на ⟦2⟧, а в Velocity Verlet дрейф не превышает ⟦3⟧.	<strong>Energy drift (⟦1⟧):</strong> over 10,000 frames, standard Euler lets the energy grow by ⟦2⟧, while with velocity Verlet the drift stays below ⟦3⟧.
+a36d0878	<strong>Зависимость от времени (V-Sync Drift):</strong> неизменность скорости движения на разных мониторах (60 Гц, 120 Гц, 144 Гц).	<strong>Time dependence (V-Sync drift):</strong> the motion speed stays the same on different monitors (60 Hz, 120 Hz, 144 Hz).
+25a638d8	4.2. Задание по оценке структуры промпта с помощью ChatGPT:	4.2. Task: assessing prompt structure with ChatGPT:
+e4aa3a6c	Студент вводит каждый новый составленный промпт в модель ChatGPT и с помощью следующего специального аудит-запроса получает оценку совершенства его структуры:	The student enters each new prompt into ChatGPT and uses the following special audit request to have its structure graded:
+8e1a4514	5. Интерактивная площадка для испытания промптов и личная физическая библиотека промптов	5. An interactive prompt test area and a personal physics prompt library
+e1985a78	На лабораторном стенде ниже в живом режиме работают коды симуляций, полученные с помощью промптов 4 уровней. Выбирая разные уровни, вы можете своими глазами сравнить их физическую точность, фазовый портрет и устойчивость энергии, а также сохранить в библиотеку свои личные промпты.	On the lab bench below, simulation code obtained with the 4 prompt levels runs live. Choose different levels to compare their physical accuracy, phase portrait and energy stability for yourself, and save your own prompts to the library.
+655472c6	Уровень 4: XML мастер-запрос	Level 4: XML master request
+c303854f	Ошибка энергии: —	Energy error: —
+a3e5bb01	⟨1⟩📈 Слева: фазовый портрет (θ и ω)⟨/1⟩ ⟨2⟩Справа: устойчивость полной энергии (E = Ep + Ek) 📊⟨/2⟩	⟨1⟩📈 Left: phase portrait (θ and ω)⟨/1⟩ ⟨2⟩Right: total energy stability (E = Ep + Ek) 📊⟨/2⟩
+f89065c3	⚙️ Выбор уровня промпта	⚙️ Choose the prompt level
+7fab1240	Тестируемый промпт:	Prompt under test:
+f4595fed	Уровень 4: XML мастер-запрос (98/100)	Level 4: XML master request (98/100)
+c6617a8a	Уровень 3: роль + цепочка рассуждений (88/100)	Level 3: role + chain of thought (88/100)
+d95f1064	Уровень 2: ограниченный промпт (68/100)	Level 2: constrained prompt (68/100)
+8fd80dcf	Уровень 1: простой zero-shot (35/100)	Level 1: plain zero-shot (35/100)
+3c2d6600	Длина нити (L):	String length (L):
+65ad7a92	Коэффициент сопротивления (β):	Damping coefficient (β):
+a85f102c	📊 Телеметрия Antigravity	📊 Antigravity telemetry
+d534ebc5	Численное интегрирование:	Numerical integration:
+6aa0e222	=	=
+61528c16	Индекс качества кода:	Code quality index:
+a3a1106e	Уровень физической точности:	Physical accuracy:
+cf32b6bd	Безупречная энергетическая устойчивость, линия фазовой траектории, полная телеметрия.	Flawless energy stability, a phase trajectory line and full telemetry.
+8ad76363	📄 Текст промпта выбранного уровня:	📄 Prompt text for the selected level:
+bc1d1a65	📚 Личная библиотека промптов по физике	📚 Personal physics prompt library
+4e5a359a	💾 Экспортировать библиотеку (JSON)	💾 Export library (JSON)
+5f5ba636	Раздел (область):	Section (field):
+2329b5cb	Астрономия и астрофизика	Astronomy and astrophysics
+50d7cf00	Целевая ИИ-модель:	Target AI model:
+ec9e69b5	Заголовок / цель промпта:	Prompt title / purpose:
+8b577d4a	Например: фазовый портрет пружинного маятника...	For example: phase portrait of a spring pendulum...
+6b396014	Полный текст промпта (в формате XML или CoT):	Full prompt text (XML or CoT format):
+9c712d48	➕ Сохранить новый промпт в библиотеку	➕ Save new prompt to library
+d69aa27f	Список сохранённых промптов:	Saved prompts:
+3689a669	Знания студентов, навыки промпт-инжиниринга и качество личной библиотеки промптов по лабораторному занятию 9 оцениваются по следующим 5 международным академическим критериям.	Students’ knowledge, prompt engineering skills and the quality of their personal prompt library in Lab 9 are assessed on the following 5 international academic criteria.
+abd5c36a	1. Структурирование и архитектура промпта:	1. Prompt structuring and architecture:
+bf1ad613	Полнота роли, контекста, задачи, физических границ и формата вывода.	Completeness of the role, context, task, physical bounds and output format.
+0cae3710	2. Сравнение и анализ 4 уровней промптов:	2. Comparing and analysing the 4 prompt levels:
+88220682	Анализ качества кода и дрейфа энергии для zero-shot, ограниченного, CoT и XML мастер-промпта.	Analysing code quality and energy drift for the zero-shot, constrained, CoT and XML master prompts.
+ede6c5bc	3. Генерация кода в Claude:	3. Claude code generation:
+6c161eae	Создание самостоятельного Canvas-кода через Artifacts и исправление синтаксических/семантических ошибок.	Creating standalone Canvas code through Artifacts and fixing syntactic/semantic errors.
+8c199da5	4. Аудит в Google Antigravity и ChatGPT:	4. Google Antigravity and ChatGPT audit:
+e7bf507a	Метрики мониторинга Antigravity (FPS/Jank) и рубрика анализа промпта ChatGPT.	Antigravity monitoring metrics (FPS/jank) and the ChatGPT prompt analysis rubric.
+817843a3	5. Личная библиотека промптов и академический отчёт:	5. Personal prompt library and academic report:
+c6a29f98	Внесение в библиотеку не менее 4 промптов по разделам физики и выводы на грамотном академическом языке.	Adding at least 4 prompts covering different areas of physics to the library and conclusions in clear academic language.
+9d7ffa3d	📚 Использованная научно-методическая литература (стандарт APA 7):	📚 References (APA 7):
+6f889f71	Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y. (2022). Large language models are zero-shot reasoners. <em>Advances in Neural Information Processing Systems, 35</em>, 22199–22213.	Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y. (2022). Large language models are zero-shot reasoners. <em>Advances in Neural Information Processing Systems, 35</em>, 22199–22213.

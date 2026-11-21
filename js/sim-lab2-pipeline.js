@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -37,9 +38,9 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
-          toast('Prompt nusxalandi!');
+          toast(__t("Prompt nusxalandi!"));
         };
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(text).then(done).catch(() => { target.select(); document.execCommand('copy'); done(); });
@@ -59,25 +60,25 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
       color: 'var(--accent-cyan)',
-      object: 'PhET "Pendulum Lab" (matematik mayatnik) yoki erkin tushish',
-      plan: "Nyutonning 2-qonuni va garmonik tebranish davri $T = 2\\pi\\sqrt{l/g}$ dan boshlang. Avval ishqalanishsiz holatda energiya saqlanishini kuzating, so‘ngra oddiy va Eyler–Kromer algoritmlarini solishtiring.",
-      focus: "matematik mayatnik, kichik burchak yaqinlashuvi, T = 2*pi*sqrt(l/g), Eyler va Eyler–Kromer usullarining farqi"
+      object: __t("PhET \"Pendulum Lab\" (matematik mayatnik) yoki erkin tushish"),
+      plan: __t("Nyutonning 2-qonuni va garmonik tebranish davri $T = 2\\pi\\sqrt{l/g}$ dan boshlang. Avval ishqalanishsiz holatda energiya saqlanishini kuzating, so‘ngra oddiy va Eyler–Kromer algoritmlarini solishtiring."),
+      focus: __t("matematik mayatnik, kichik burchak yaqinlashuvi, T = 2*pi*sqrt(l/g), Eyler va Eyler–Kromer usullarining farqi")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
       color: 'var(--accent-emerald)',
-      object: 'PhET "Masses and Springs" (so‘nuvchi prujinali tebranish)',
-      plan: "So‘nuvchi tebranish tenglamasi $m\\ddot{x} + b\\dot{x} + kx = 0$ ni tiklang, $\\beta = b/(2m)$ va $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ ni o‘lchov natijalari bilan tasdiqlang. 5-bo‘limdagi dastgohda o‘z qiymatlaringizni validatorda tekshiring.",
-      focus: "so‘nuvchi tebranish, beta = b/(2m), omega_d, amplitudaning eksponensial so‘nishi, Eyler–Kromer algoritmi"
+      object: __t("PhET \"Masses and Springs\" (so‘nuvchi prujinali tebranish)"),
+      plan: __t("So‘nuvchi tebranish tenglamasi $m\\ddot{x} + b\\dot{x} + kx = 0$ ni tiklang, $\\beta = b/(2m)$ va $\\omega_d = \\sqrt{\\omega_0^2 - \\beta^2}$ ni o‘lchov natijalari bilan tasdiqlang. 5-bo‘limdagi dastgohda o‘z qiymatlaringizni validatorda tekshiring."),
+      focus: __t("so‘nuvchi tebranish, beta = b/(2m), omega_d, amplitudaning eksponensial so‘nishi, Eyler–Kromer algoritmi")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
       color: 'var(--accent-purple)',
-      object: 'PhET "Charges and Fields" yoki Vascak.cz Lorens kuchi / mass-spektrometr animatsiyasi',
-      plan: "Zaryadli zarrachaning $\\vec{F} = q\\vec{v} \\times \\vec{B}$ ta’siridagi harakatini tiklang, siklotron radiusi $r = mv/(qB)$ ni tekshiring va RK4 integratorini Eyler–Kromer bilan aniqlik bo‘yicha solishtiring.",
-      focus: "Lorens kuchi, siklotron chastotasi omega_c = qB/m, 2D/3D trayektoriya, RK4 va Eyler–Kromer aniqligini solishtirish"
+      object: __t("PhET \"Charges and Fields\" yoki Vascak.cz Lorens kuchi / mass-spektrometr animatsiyasi"),
+      plan: __t("Zaryadli zarrachaning $\\vec{F} = q\\vec{v} \\times \\vec{B}$ ta’siridagi harakatini tiklang, siklotron radiusi $r = mv/(qB)$ ni tekshiring va RK4 integratorini Eyler–Kromer bilan aniqlik bo‘yicha solishtiring."),
+      focus: __t("Lorens kuchi, siklotron chastotasi omega_c = qB/m, 2D/3D trayektoriya, RK4 va Eyler–Kromer aniqligini solishtirish")
     }
   };
 
@@ -87,10 +88,10 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
     btn.addEventListener('click', () => {
       const answers = Object.keys(DIAG_KEY).map(name => document.querySelector(`input[name="${name}"]:checked`));
       if (answers.some(a => !a)) {
-        toast("Iltimos, barcha 4 ta savolga javob bering!");
+        toast(__t("Iltimos, barcha 4 ta savolga javob bering!"));
         const box = document.getElementById('diag-result-box');
         box.style.display = 'block';
-        document.getElementById('diag-cluster-val').textContent = "⚠️ Barcha 4 ta savolga javob bering";
+        document.getElementById('diag-cluster-val').textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         document.getElementById('diag-score-val').textContent = '';
         document.getElementById('diag-plan-desc').textContent = '';
         document.getElementById('diag-personalized-prompt').value = '';
@@ -107,22 +108,16 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       const titleEl = document.getElementById('diag-cluster-val');
       titleEl.textContent = c.title;
       titleEl.style.color = c.color;
-      document.getElementById('diag-score-val').textContent = `${score} / 100 ball (${correct}/4 to‘g‘ri)`;
+      document.getElementById('diag-score-val').textContent = __t("{0} / 100 ball ({1}/4 to‘g‘ri)", [score, correct]);
 
       const wrong = Object.keys(DIAG_KEY).map((name, i) => answers[i].value === DIAG_KEY[name] ? null : i + 1).filter(Boolean);
       const planEl = document.getElementById('diag-plan-desc');
-      planEl.innerHTML = `<strong>Tavsiya etilgan obyekt:</strong> ${c.object}.<br><strong>Individual reja:</strong> ${c.plan}` +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar) mavzusi. To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
+      planEl.innerHTML = __t("<strong>Tavsiya etilgan obyekt:</strong> {0}.<br><strong>Individual reja:</strong> {1}", [c.object, c.plan]) +
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar) mavzusi. To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       document.getElementById('diag-personalized-prompt').value =
-`Siz fizika bo‘yicha Sokratik ilmiy konsultantsiz. Men 2-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Mening o‘rganish obyektim: ${c.object}.
-Asosiy mavzular: ${c.focus}.
-Iltimos:
-1. Tayyor javob yoki formulani to‘g‘ridan-to‘g‘ri bermang.
-2. Simulyatsiyani teskari muhandislik qilishim uchun bosqichma-bosqich 3 ta yo‘naltiruvchi savol bering.
-3. Men tiklagan formulani o‘lchov birliklari va limit holatlar orqali o‘zim tekshirishimga yordam bering.`;
+__t("Siz fizika bo‘yicha Sokratik ilmiy konsultantsiz. Men 2-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nMening o‘rganish obyektim: {2}.\nAsosiy mavzular: {3}.\nIltimos:\n1. Tayyor javob yoki formulani to‘g‘ridan-to‘g‘ri bermang.\n2. Simulyatsiyani teskari muhandislik qilishim uchun bosqichma-bosqich 3 ta yo‘naltiruvchi savol bering.\n3. Men tiklagan formulani o‘lchov birliklari va limit holatlar orqali o‘zim tekshirishimga yordam bering.", [score, key, c.object, c.focus]);
     });
   }
 
@@ -234,7 +229,7 @@ Iltimos:
       ctx.textAlign = 'left'; ctx.fillStyle = '#CBD5E1'; ctx.font = '11px ui-monospace, monospace';
       ctx.fillText(`ω₀ = √(k/m) = ${uzFix(w0, 3)} rad/s`, 12, 18);
       ctx.fillText(`β = b/(2m) = ${uzFix(beta, 3)} s⁻¹`, 12, 34);
-      ctx.fillText(beta < w0 ? 'Rejim: so‘nuvchi tebranish (β < ω₀)' : beta === w0 ? 'Rejim: kritik so‘nish' : 'Rejim: aperiodik (β > ω₀)', 12, 50);
+      ctx.fillText(beta < w0 ? __t("Rejim: so‘nuvchi tebranish (β < ω₀)") : beta === w0 ? __t("Rejim: kritik so‘nish") : __t("Rejim: aperiodik (β > ω₀)"), 12, 50);
 
       // O‘ng panel: x(t) va v(t) grafiklari
       const gx = leftW + 30, gw = W - gx - 14, gy = 14, gh = H - 40;
@@ -313,7 +308,7 @@ Iltimos:
     [slM, slK, slB].forEach(sl => sl.addEventListener('input', () => { updateLabels(); reset(); }));
     btnPlay.addEventListener('click', () => {
       running = !running;
-      btnPlay.textContent = running ? "⏸️ To‘xtatish" : '▶️ Davom etish';
+      btnPlay.textContent = running ? __t("⏸️ To‘xtatish") : __t("▶️ Davom etish");
     });
     btnReset.addEventListener('click', reset);
 
@@ -349,7 +344,7 @@ Iltimos:
       const T = underdamped ? (2 * Math.PI) / wd : NaN;
 
       if ([sw, sb, sT].some(v => isNaN(v))) {
-        out.innerHTML = box('#F59E0B', "⚠️ Iltimos, uchala qiymatni ham kiriting: $\\omega_d$, $\\beta$ va $T$.");
+        out.innerHTML = box('#F59E0B', __t("⚠️ Iltimos, uchala qiymatni ham kiriting: $\\omega_d$, $\\beta$ va $T$."));
         renderMath(out);
         return;
       }
@@ -363,14 +358,14 @@ Iltimos:
       const eb = err(sb, beta);
       rows.push(row('β', sb, beta, 's⁻¹', eb, TOL));
       if (eb > TOL) {
-        if (Math.abs(sb - b / m) / (b / m || 1) * 100 < TOL) hints.push("β uchun $b/m$ ni topdingiz. Tenglamani $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$ ko‘rinishiga keltiring: $\\dot{x}$ oldidagi koeffitsiyent $b/m$ ga teng bo‘lsa, $\\beta$ nimaga teng bo‘ladi?");
-        else hints.push("$\\beta$ ning o‘lchov birligi s⁻¹. $b$ (kg/s) va $m$ (kg) dan qanday kombinatsiya s⁻¹ beradi? Ko‘paytuvchi 2 qayerdan kelishini o‘ylab ko‘ring.");
+        if (Math.abs(sb - b / m) / (b / m || 1) * 100 < TOL) hints.push(__t("β uchun $b/m$ ni topdingiz. Tenglamani $\\ddot{x} + 2\\beta\\dot{x} + \\omega_0^2 x = 0$ ko‘rinishiga keltiring: $\\dot{x}$ oldidagi koeffitsiyent $b/m$ ga teng bo‘lsa, $\\beta$ nimaga teng bo‘ladi?"));
+        else hints.push(__t("$\\beta$ ning o‘lchov birligi s⁻¹. $b$ (kg/s) va $m$ (kg) dan qanday kombinatsiya s⁻¹ beradi? Ko‘paytuvchi 2 qayerdan kelishini o‘ylab ko‘ring."));
       }
 
       if (!underdamped) {
         out.innerHTML = box('#F59E0B',
-          `Joriy parametrlarda $\\beta = ${uzTex(beta, 3)} \\ge \\omega_0 = ${uzTex(w0, 3)}$ — tizim tebranmaydi (kritik yoki aperiodik so‘nish), shuning uchun $\\omega_d$ va $T$ mavjud emas. ` +
-          `Nega $\\omega_0^2 - \\beta^2 < 0$ bo‘lganda ildiz haqiqiy son bo‘lmasligini tushuntirib bering va $b$ ni kamaytirib qayta urinib ko‘ring.`);
+          __t("Joriy parametrlarda $\\beta = {0} \\ge \\omega_0 = {1}$ — tizim tebranmaydi (kritik yoki aperiodik so‘nish), shuning uchun $\\omega_d$ va $T$ mavjud emas. ", [uzTex(beta, 3), uzTex(w0, 3)]) +
+          __t("Nega $\\omega_0^2 - \\beta^2 < 0$ bo‘lganda ildiz haqiqiy son bo‘lmasligini tushuntirib bering va $b$ ni kamaytirib qayta urinib ko‘ring.", []));
         renderMath(out);
         return;
       }
@@ -379,30 +374,23 @@ Iltimos:
       const ew = err(sw, wd);
       rows.push(row('ω_d', sw, wd, 'rad/s', ew, TOL));
       if (ew > TOL) {
-        if (err(sw, w0) < 0.5 && err(w0, wd) > 0.5) hints.push("Siz $\\omega_0 = \\sqrt{k/m}$ ni kiritdingiz. So‘nish tebranish chastotasiga qanday ta’sir qiladi? $b \\to 0$ limitida sizning formulangiz nimaga aylanishi kerak?");
-        else hints.push("$\\omega_d$ ni $\\omega_0$ va $\\beta$ orqali ifodalang. $b$ ortganda tebranish tezlashadimi yoki sekinlashadimi — dastgohda tekshiring.");
+        if (err(sw, w0) < 0.5 && err(w0, wd) > 0.5) hints.push(__t("Siz $\\omega_0 = \\sqrt{k/m}$ ni kiritdingiz. So‘nish tebranish chastotasiga qanday ta’sir qiladi? $b \\to 0$ limitida sizning formulangiz nimaga aylanishi kerak?"));
+        else hints.push(__t("$\\omega_d$ ni $\\omega_0$ va $\\beta$ orqali ifodalang. $b$ ortganda tebranish tezlashadimi yoki sekinlashadimi — dastgohda tekshiring."));
       }
 
       // T
       const eT = err(sT, T);
       rows.push(row('T', sT, T, 's', eT, TOL));
       if (eT > TOL) {
-        if (Math.abs(sT - 1 / wd) / (1 / wd) * 100 < TOL) hints.push("$T = 1/\\omega_d$ deb oldingiz. Siklik chastota (rad/s) va davr (s) orasidagi bog‘liqlikda $2\\pi$ qayerdan keladi?");
-        else hints.push("Grafikda ketma-ket ikki maksimum orasidagi vaqtni o‘lchang va uni $2\\pi/\\omega_d$ bilan solishtiring.");
+        if (Math.abs(sT - 1 / wd) / (1 / wd) * 100 < TOL) hints.push(__t("$T = 1/\\omega_d$ deb oldingiz. Siklik chastota (rad/s) va davr (s) orasidagi bog‘liqlikda $2\\pi$ qayerdan keladi?"));
+        else hints.push(__t("Grafikda ketma-ket ikki maksimum orasidagi vaqtni o‘lchang va uni $2\\pi/\\omega_d$ bilan solishtiring."));
       }
 
       const allOk = rows.every(r => r.ok);
       out.innerHTML = box(allOk ? '#34D399' : '#F87171',
-        `<strong>${allOk ? "✅ Barcha formulalar tasdiqlandi!" : "🔍 Ba’zi qiymatlarni qayta ko‘rib chiqing"}</strong>
-         <span style="font-size:0.8rem; color: var(--text-muted);"> (m = ${uzFix(m, 1)} kg, k = ${uzFix(k, 1)} N/m, b = ${uzFix(b, 2)} kg/s; ruxsat etilgan xatolik ${TOL} %)</span>
-         <table style="width:100%; margin: 10px 0; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.85rem;">
-           <tr style="color: var(--text-muted);"><td>Kattalik</td><td>Sizniki</td><td>Nazariy</td><td>Xatolik ε</td><td></td></tr>
-           ${rows.map(r => r.html).join('')}
-         </table>
-         ${allOk
-          ? "Sokratik savol: agar massani 4 marta oshirsangiz, $\\beta$ va $\\omega_0$ qanday o‘zgaradi? Avval bashorat qiling, so‘ng slayder bilan tekshiring."
-          : '<strong>Yo‘naltiruvchi savollar:</strong><ul style="margin: 6px 0 0 18px;">' + hints.map(h => `<li>${h}</li>`).join('') + '</ul>'}
-         <div style="margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);">Eslatma: tekshiruv brauzerda analitik formulalar asosida bajariladi. Chuqurroq muhokama uchun 3-bo‘limdagi promptni Claude’ga yuboring.</div>`);
+        __t("<strong>{0}</strong>\n         <span style=\"font-size:0.8rem; color: var(--text-muted);\"> (m = {1} kg, k = {2} N/m, b = {3} kg/s; ruxsat etilgan xatolik {4} %)</span>\n         <table style=\"width:100%; margin: 10px 0; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.85rem;\">\n           <tr style=\"color: var(--text-muted);\"><td>Kattalik</td><td>Sizniki</td><td>Nazariy</td><td>Xatolik ε</td><td></td></tr>\n           {5}\n         </table>\n         {6}\n         <div style=\"margin-top: 10px; font-size: 0.78rem; color: var(--text-muted);\">Eslatma: tekshiruv brauzerda analitik formulalar asosida bajariladi. Chuqurroq muhokama uchun 3-bo‘limdagi promptni Claude’ga yuboring.</div>", [allOk ? __t("✅ Barcha formulalar tasdiqlandi!") : __t("🔍 Ba’zi qiymatlarni qayta ko‘rib chiqing"), uzFix(m, 1), uzFix(k, 1), uzFix(b, 2), TOL, rows.map(r => r.html).join(''), allOk
+          ? __t("Sokratik savol: agar massani 4 marta oshirsangiz, $\\beta$ va $\\omega_0$ qanday o‘zgaradi? Avval bashorat qiling, so‘ng slayder bilan tekshiring.")
+          : __t("<strong>Yo‘naltiruvchi savollar:</strong><ul style=\"margin: 6px 0 0 18px;\">") + hints.map(h => `<li>${h}</li>`).join('') + '</ul>']));
       renderMath(out);
     });
 
@@ -429,16 +417,16 @@ Iltimos:
     if (!selects.length || !totalEl) return;
 
     function grade(total) {
-      if (total >= 86) return { text: "A (A’lo — 5)", cls: 'badge-emerald' };
-      if (total >= 71) return { text: 'B (Yaxshi — 4)', cls: 'badge-cyan' };
-      if (total >= 55) return { text: 'C (Qoniqarli — 3)', cls: 'badge-amber' };
-      return { text: 'D (Qoniqarsiz — 2)', cls: 'badge-rose' };
+      if (total >= 86) return { text: __t("A (A’lo — 5)"), cls: 'badge-emerald' };
+      if (total >= 71) return { text: __t("B (Yaxshi — 4)"), cls: 'badge-cyan' };
+      if (total >= 55) return { text: __t("C (Qoniqarli — 3)"), cls: 'badge-amber' };
+      return { text: __t("D (Qoniqarsiz — 2)"), cls: 'badge-rose' };
     }
 
     function update() {
       let total = 0;
       selects.forEach(s => { total += parseInt(s.value, 10) || 0; });
-      totalEl.textContent = `${total} / 100 ball`;
+      totalEl.textContent = __t("{0} / 100 ball", [total]);
       if (gradeEl) {
         const g = grade(total);
         gradeEl.textContent = g.text;

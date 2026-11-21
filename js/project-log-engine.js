@@ -1,23 +1,24 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /**
  * PROJECT-LOG-ENGINE.JS - Google Antigravity AI: 15-Lab Semester Project Log Tracker
  */
 
 const semesterLabs = [
-  { id: 1, title: "1-Lab: Fizik Jarayonni Tanlash va Erkinlik Darajalarini Ajratish", tool: "MagicSchool AI", weight: 5 },
-  { id: 2, title: "2-Lab: Nazariy Differensial Tenglamalar Sistemasini Tuzish", tool: "Gemini", weight: 6 },
-  { id: 3, title: "3-Lab: PhET va Vascak.cz Simulyatsiyalarini Teskari Muhandislik Tahlili", tool: "PhET / Vascak", weight: 7 },
-  { id: 4, title: "4-Lab: Saqlanish Qonunlari va Chegaraviy Shartlarni Belgilash", tool: "WolframAlpha", weight: 6 },
-  { id: 5, title: "5-Lab: Sonli Integrallash: Forward Euler va Eyler-Kromer Kodlash", tool: "Claude", weight: 7 },
-  { id: 6, title: "6-Lab: 4-Tartibli Runge-Kutta (RK4) Algoritmini Qurish", tool: "Claude", weight: 8 },
-  { id: 7, title: "7-Lab: HTML5 Canvas Ekranida Koordinatalar Transformatsiyasi (toScreenX/Y)", tool: "Vanilla JS / Canvas", weight: 7 },
-  { id: 8, title: "8-Lab: Real Vaqtli Vektorlar (v, a, F) va Faza Fazosi Chizmasi", tool: "Canvas Dvigatel", weight: 7 },
-  { id: 9, title: "9-Lab: Interaktiv Boshqaruv: Slayderlar, Tugmalar va Telemetriya HUD", tool: "DOM & CSS Glass", weight: 6 },
-  { id: 10, title: "10-Lab: ChatGPT Code Interpreter yordamida Debugging va Xatolar Tahlili", tool: "Code Interpreter", weight: 8 },
-  { id: 11, title: "11-Lab: Midjourney yordamida Ilmiy Laboratoriya Teksturalarini Sintezlash", tool: "Midjourney", weight: 6 },
-  { id: 12, title: "12-Lab: Muxlisa AI / ElevenLabs orqali Fizik Izohlarni Audio-Narratsiya Qilish", tool: "ElevenLabs / TTS", weight: 7 },
-  { id: 13, title: "13-Lab: Otter.ai yordamida Laboratoriya Qaydlari va Hisobot Transkripsiyasi", tool: "Otter.ai", weight: 6 },
-  { id: 14, title: "14-Lab: Undetectable AI va Turnitin orqali Akademik Originallik Tekshiruvi", tool: "Undetectable AI", weight: 6 },
-  { id: 15, title: "15-Lab: Yakuniy Capstone Loyihani GitHub Pages da Nashr Qilish va Himoya", tool: "Google Antigravity AI", weight: 8 }
+  { id: 1, title: __t("1-Lab: Fizik Jarayonni Tanlash va Erkinlik Darajalarini Ajratish"), tool: "MagicSchool AI", weight: 5 },
+  { id: 2, title: __t("2-Lab: Nazariy Differensial Tenglamalar Sistemasini Tuzish"), tool: "Gemini", weight: 6 },
+  { id: 3, title: __t("3-Lab: PhET va Vascak.cz Simulyatsiyalarini Teskari Muhandislik Tahlili"), tool: "PhET / Vascak", weight: 7 },
+  { id: 4, title: __t("4-Lab: Saqlanish Qonunlari va Chegaraviy Shartlarni Belgilash"), tool: "WolframAlpha", weight: 6 },
+  { id: 5, title: __t("5-Lab: Sonli Integrallash: Forward Euler va Eyler-Kromer Kodlash"), tool: "Claude", weight: 7 },
+  { id: 6, title: __t("6-Lab: 4-Tartibli Runge-Kutta (RK4) Algoritmini Qurish"), tool: "Claude", weight: 8 },
+  { id: 7, title: __t("7-Lab: HTML5 Canvas Ekranida Koordinatalar Transformatsiyasi (toScreenX/Y)"), tool: "Vanilla JS / Canvas", weight: 7 },
+  { id: 8, title: __t("8-Lab: Real Vaqtli Vektorlar (v, a, F) va Faza Fazosi Chizmasi"), tool: __t("Canvas Dvigatel"), weight: 7 },
+  { id: 9, title: __t("9-Lab: Interaktiv Boshqaruv: Slayderlar, Tugmalar va Telemetriya HUD"), tool: "DOM & CSS Glass", weight: 6 },
+  { id: 10, title: __t("10-Lab: ChatGPT Code Interpreter yordamida Debugging va Xatolar Tahlili"), tool: "Code Interpreter", weight: 8 },
+  { id: 11, title: __t("11-Lab: Midjourney yordamida Ilmiy Laboratoriya Teksturalarini Sintezlash"), tool: "Midjourney", weight: 6 },
+  { id: 12, title: __t("12-Lab: Muxlisa AI / ElevenLabs orqali Fizik Izohlarni Audio-Narratsiya Qilish"), tool: "ElevenLabs / TTS", weight: 7 },
+  { id: 13, title: __t("13-Lab: Otter.ai yordamida Laboratoriya Qaydlari va Hisobot Transkripsiyasi"), tool: "Otter.ai", weight: 6 },
+  { id: 14, title: __t("14-Lab: Undetectable AI va Turnitin orqali Akademik Originallik Tekshiruvi"), tool: "Undetectable AI", weight: 6 },
+  { id: 15, title: __t("15-Lab: Yakuniy Capstone Loyihani GitHub Pages da Nashr Qilish va Himoya"), tool: "Google Antigravity AI", weight: 8 }
 ];
 
 let completedLabs = JSON.parse(localStorage.getItem('antigravity_completed_labs') || '[]');
@@ -59,11 +60,11 @@ window.renderProjectLog = function() {
         <span style="font-size:1.2rem;">${isDone ? '✅' : '⚪'}</span>
         <div>
           <div style="font-weight:600; font-size:0.92rem; color:${isDone ? '#047857' : '#11182B'}; text-decoration:${isDone ? 'line-through' : 'none'};">${lab.title}</div>
-          <div style="font-size:0.8rem; color:#66708A;">Asosiy AI Vosita: <strong style="color:#1C4E9E;">${lab.tool}</strong></div>
+          <div style="font-size:0.8rem; color:#66708A;">${__t("Asosiy AI Vosita:")} <strong style="color:#1C4E9E;">${lab.tool}</strong></div>
         </div>
       </div>
       <div style="display:flex; align-items:center; gap:10px;">
-        <span class="badge ${isDone ? 'badge-emerald' : 'badge-cyan'}" style="font-size:0.75rem;">+${lab.weight} Ball</span>
+        <span class="badge ${isDone ? 'badge-emerald' : 'badge-cyan'}" style="font-size:0.75rem;">+${lab.weight} ${__t("Ball")}</span>
       </div>
     `;
     listEl.appendChild(item);
@@ -71,20 +72,20 @@ window.renderProjectLog = function() {
 
   const pct = Math.round((earnedScore / totalScore) * 100);
   if (progressFill) progressFill.style.width = `${pct}%`;
-  if (progressText) progressText.textContent = `${pct}% (${completedLabs.length}/15 Lab Bajarildi - ${earnedScore}/${totalScore} Ball)`;
+  if (progressText) progressText.textContent = __t("{0}% ({1}/15 Lab Bajarildi - {2}/{3} Ball)", [pct, completedLabs.length, earnedScore, totalScore]);
   if (badgeCount) badgeCount.textContent = `${completedLabs.length} / 15`;
 };
 
 window.exportProjectLog = function() {
-  let md = "# GOOGLE ANTIGRAVITY AI - TALABA LOYIHA JURNALI (PROJECT LOG)\n\n";
+  let md = __t("# GOOGLE ANTIGRAVITY AI - TALABA LOYIHA JURNALI (PROJECT LOG)\n\n");
   md += `**Sana:** ${new Date().toLocaleDateString()}\n`;
   md += `**Bajarilgan Bosqichlar:** ${completedLabs.length} / 15\n\n`;
-  md += "| № | Laboratoriya Bosqichi | AI Vosita | Holati | Ball |\n";
+  md += __t("| № | Laboratoriya Bosqichi | AI Vosita | Holati | Ball |\n");
   md += "|---|---|---|---|---|\n";
 
   semesterLabs.forEach(lab => {
     const isDone = completedLabs.includes(lab.id);
-    md += `| ${lab.id} | ${lab.title} | ${lab.tool} | ${isDone ? 'Bajarildi (100%)' : 'Jarayonda'} | ${isDone ? lab.weight : 0}/${lab.weight} |\n`;
+    md += `| ${lab.id} | ${lab.title} | ${lab.tool} | ${isDone ? __t("Bajarildi (100%)") : __t("Jarayonda")} | ${isDone ? lab.weight : 0}/${lab.weight} |\n`;
   });
 
   const blob = new Blob([md], { type: 'text/markdown;charset=utf-8;' });
@@ -92,7 +93,7 @@ window.exportProjectLog = function() {
   link.href = URL.createObjectURL(blob);
   link.download = 'Antigravity_Loyiha_Jurnali_Hisobot.md';
   link.click();
-  if (window.showToast) window.showToast("Loyiha jurnali Markdown hisobot sifatida yuklab olindi!");
+  if (window.showToast) window.showToast(__t("Loyiha jurnali Markdown hisobot sifatida yuklab olindi!"));
 };
 
 document.addEventListener('DOMContentLoaded', () => {

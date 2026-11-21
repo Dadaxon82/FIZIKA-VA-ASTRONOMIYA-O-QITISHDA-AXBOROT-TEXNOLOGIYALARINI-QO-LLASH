@@ -1,0 +1,74 @@
+j7d70946	Если v_norm > 0, тела удаляются друг от друга, поэтому импульс не применяется.	If v_norm > 0, the bodies are moving apart, so no impulse is applied.
+j3e2f464	Позиционная коррекция MTV сдвигает тела вдоль нормали на половину глубины проникновения, полностью устраняя ошибку «проваливания» (sinking).	MTV positional correction pushes the bodies along the normal by half the penetration depth, completely eliminating the sinking bug.
+j356fcd8	При абсолютно неупругом столкновении (e = 0) относительная скорость вдоль нормали после удара равна 0, и тела движутся вместе.	In a perfectly inelastic collision (e = 0), the relative velocity along the normal after impact is 0 and the bodies move together.
+j44d6ef5	⟨1⟩⟨2⟩⚠️⟨/2⟩⟨3⟩Пожалуйста, ответьте на все 3 вопроса!⟨/3⟩⟨/1⟩	⟨1⟩⟨2⟩⚠️⟨/2⟩⟨3⟩Please answer all 3 questions!⟨/3⟩⟨/1⟩
+j8f847b0	⟨1⟩⟨2⟩📊 Лекция 8: результат по векторам и столкновениям:⟨/2⟩	⟨1⟩⟨2⟩📊 Lecture 8 vectors & collisions result:⟨/2⟩
+jf917a1a	Верно!	Correct!
+jb5cd780	Неверно!	Incorrect!
+j2d70912	Специалист по программированию физики и столкновениям (полностью освоено)	Physics Programming & Collisions Specialist (fully mastered)
+j808ea46	Исследователь векторной механики (частично освоено)	Vector Mechanics Explorer (partially mastered)
+ja056157	⟨1⟩⟨2⟩Ваша компетенция в векторном программировании:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩Результат: {4} / 3 балла ({5}%)⟨/4⟩⟨/1⟩</div>	⟨1⟩⟨2⟩Your vector programming competence:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩Score: {4} / 3 points ({5}%)⟨/4⟩⟨/1⟩</div>
+jf0245a4	15.0 кг	15.0 kg
+j15c0050	3.0 кг	3.0 kg
+j7091352	⏸ Остановить	⏸ Stop
+jee7b4a9	▶ Продолжить	▶ Resume
+ja7b7770	Если при свободных колебаниях математического маятника полная механическая энергия со временем искусственно растёт, в чём причина?	If the total mechanical energy of a simple pendulum grows artificially over time during free oscillations, what is the cause?
+je058ff0	A) Угол вычислялся в градусах, а не в радианах	A) The angle was computed in degrees rather than radians
+j2b41d38	Ошибка в градусах искажает период, но не вызывает экспоненциального «взрыва» энергии.	A degree error distorts the period but does not cause an exponential energy blow-up.
+ja8a7a54	B) Использован метод Forward Euler (классический Эйлер), который не является симплектическим	B) The Forward Euler (classical Euler) method was used, which is not symplectic
+j6a602f5	Именно классический метод Эйлера расширяет площадь в фазовом пространстве и на каждом шаге искусственно увеличивает энергию. Необходимо использовать Эйлера–Кромера или RK4!	It is precisely classical Euler that expands the phase-space area and artificially increases the energy at every step. Euler–Cromer or RK4 must be used!
+jd835264	C) Экран Canvas не очищался в каждом кадре	C) The Canvas was not cleared on every frame
+je84518f	Очистка Canvas влияет только на визуальную графику, а не на физические расчёты.	Clearing the Canvas only affects the visual graphics, not the physics calculations.
+j80e19b4	Почему в JavaScript запись Math.sin(30) не даёт ожидаемого значения 0.5?	Why does writing Math.sin(30) in JavaScript not give the expected value 0.5?
+ja7cf6d5	A) Math.sin работает только с целыми числами	A) Math.sin works only with integers
+j81856f3	Math.sin работает с вещественными числами.	Math.sin works with real numbers.
+j7de5b71	B) Аргумент задан в градусах, а JS ожидает угол только в радианах (30 * Math.PI / 180)	B) The argument is given in degrees, while JS expects the angle in radians only (30 * Math.PI / 180)
+j34bf1cd	Тригонометрические функции JavaScript (sin, cos, tan) всегда работают в радианах.	JavaScript trigonometric functions (sin, cos, tan) always work in radians.
+j2a9fdb6	C) Не загружена библиотека Math	C) The Math library is not loaded
+j7ccc832	Объект Math встроен в JS глобально.	The Math object is built into JS globally.
+jdd72655	Какое утверждение о кинетической энергии заряженной частицы, движущейся в однородном магнитном поле (E = 0), верно?	Which statement about the kinetic energy of a charged particle moving in a uniform magnetic field (E = 0) is correct?
+jfa77229	A) Кинетическая энергия сохраняется (сила Лоренца всегда перпендикулярна скорости частицы и не совершает работы)	A) Kinetic energy is conserved (the Lorentz force is always perpendicular to the particle’s velocity and does no work)
+jecff525	Верно! F = q(v x B) => F . v = 0 => dE_k/dt = 0. Магнитное поле изменяет только направление скорости.	Correct! F = q(v x B) => F . v = 0 => dE_k/dt = 0. A magnetic field changes only the direction of the velocity.
+jd4dfcdc	B) Кинетическая энергия растёт, так как частица ускоряется	B) Kinetic energy increases because the particle accelerates
+j62e1357	В магнитном поле модуль скорости не изменяется.	In a magnetic field the speed does not change.
+j0953c6b	C) Кинетическая энергия уменьшается, переходя в потенциальную	C) Kinetic energy decreases, turning into potential energy
+jdb84de9	В стационарном магнитном поле потенциальная энергия не изменяется.	In a static magnetic field the potential energy does not change.
+ja73a4ca	⟨1⟩⟨2⟩⚠️⟨/2⟩⟨3⟩Пожалуйста, ответьте на все 3 вопроса!⟨/3⟩⟨/1⟩	⟨1⟩⟨2⟩⚠️⟨/2⟩⟨3⟩Please answer all 3 questions!⟨/3⟩⟨/1⟩
+jc47062c	⟨1⟩⟨2⟩📊 Результаты диагностики по лекции 1:⟨/2⟩	⟨1⟩⟨2⟩📊 Lecture 1 diagnostic results:⟨/2⟩
+j25baaf8	Кластер A (начальный / Remedial)	Cluster A (Beginner / Remedial)
+j4f46d01	Рекомендуется осваивать физические модели поэтапно, с помощью скаффолдинга и визуальных инструкций.	It is recommended to master physical models step by step with scaffolding and visual guides.
+je1f1b68	Кластер B (средний / Standard)	Cluster B (Intermediate / Standard)
+j30f6135	Рекомендуется самостоятельно проектировать 2D-движки на Canvas и применять симплектический алгоритм Эйлера–Кромера.	It is recommended to design 2D Canvas engines independently and apply the symplectic Euler–Cromer algorithm.
+j7c52a42	Кластер C (продвинутый / Research)	Cluster C (Advanced / Research)
+jbed5b4e	Направляется на сложные проекты по 3D WebGL (Three.js), методу Рунге–Кутты 4-го порядка (RK4) и интегрированию Boris particle pusher.	Directed to advanced projects on 3D WebGL (Three.js), 4th-order Runge–Kutta (RK4) and Boris particle pusher integration.
+jcf85b03	⟨1⟩⟨2⟩Рекомендуемая учебная траектория:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩{3}⟨/4⟩ ⟨5⟩Общий результат: {5} / {6} баллов ({7}%)⟨/5⟩⟨/1⟩</div>	⟨1⟩⟨2⟩Recommended learning pathway:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩{3}⟨/4⟩ ⟨5⟩Overall score: {5} / {6} points ({7}%)⟨/5⟩⟨/1⟩</div>
+j00fa95a	Как записываются дифференциальные уравнения по осям x и y для тела, движущегося при квадратичном сопротивлении воздуха (F_drag = -k*v*v)?	How are the differential equations along the x and y axes written for a body moving under quadratic air drag (F_drag = -k*v*v)?
+j8ab3841	A) dv_x/dt = -k*v_x^2,  dv_y/dt = -g - k*v_y^2	A) dv_x/dt = -k*v_x^2,  dv_y/dt = -g - k*v_y^2
+j05bbe0b	Неверно! Сопротивление воздуха — вектор, который проецируется на оси в отношении v_x/|v| и v_y/|v|.	Incorrect! Air drag is a vector that projects onto the axes in the ratios v_x/|v| and v_y/|v|.
+j6127c91	=	=
+j795163c	Верно! Проецируя вектор F_drag = -k*|v|*v, получаем правильно связанную систему.	Correct! Projecting the vector F_drag = -k*|v|*v yields a correctly coupled system.
+j35373d1	=	=
+j36c92cd	Это формула для идеального вакуума без сопротивления.	This is the formula for an ideal vacuum without drag.
+jcdd8b4a	Почему на экране Canvas в браузере координату y необходимо преобразовывать в виде y_screen = H - (y_physics * scale)?	Why must the y coordinate be transformed as y_screen = H - (y_physics * scale) on a browser Canvas?
+j53ea9c7	A) В Canvas ось Y направлена вниз, а в декартовых координатах — вверх	A) On a Canvas the Y axis points down, while in Cartesian coordinates it points up
+j8323de7	Верно! Поскольку в экранных пикселях точка (0,0) находится в левом верхнем углу, ось Y необходимо перевернуть.	Correct! Because (0,0) is in the top-left corner in screen pixels, the Y axis must be flipped.
+jec2c69d	B) Чтобы убрать силу тяжести	B) To remove gravity
+j810a456	Гравитация не зависит от экрана — это физический закон.	Gravity does not depend on the screen — it is a physical law.
+j7582680	C) Потому что JavaScript принимает только отрицательные числа	C) Because JavaScript accepts only negative numbers
+j5a7154b	JavaScript работает со всеми вещественными числами.	JavaScript works with all real numbers.
+j641e8e5	Какой будет скорость тела после абсолютно неупругого удара о стенку (e = 0)?	What is a body’s velocity after a perfectly inelastic impact with a wall (e = 0)?
+jad21d33	A) v' = -v (полностью отражается назад)	A) v' = -v (fully bounces back)
+j82b1d17	Это случай e = 1 (абсолютно упругий удар).	This is the e = 1 case (perfectly elastic).
+jeb975cc	B) v' = 0 (тело прилипает к стенке и останавливается, кинетическая энергия переходит в теплоту)	B) v' = 0 (the body sticks to the wall and stops; kinetic energy turns into heat)
+j77ee74c	Верно! При e = 0 восстановления не происходит, и вся кинетическая энергия теряется.	Correct! With e = 0 there is no restitution and all kinetic energy is lost.
+jb2f8be0	Противоречит закону сохранения энергии.	Contradicts the law of conservation of energy.
+j7ef3236	⟨1⟩⟨2⟩📊 Результат диагностики моделирования по лекции 2:⟨/2⟩	⟨1⟩⟨2⟩📊 Lecture 2 modelling diagnostic result:⟨/2⟩
+j64a961f	Кластер B (2D-моделирование и симплектический метод Эйлера–Кромера)	Cluster B (2D Modelling & Symplectic Euler–Cromer)
+jc1116ba	Рекомендуются самостоятельные лабораторные работы по 2D векторному движению, гравитации и симплектическому интегратору Эйлера–Кромера.	Independent lab work on 2D vector motion, gravity and the symplectic Euler–Cromer integrator is recommended.
+j105b138	Кластер C (нелинейные системы, аэродинамическое сопротивление и интегратор RK4)	Cluster C (Non-linear Systems, Aerodynamic Drag & the RK4 Integrator)
+j75067ef	Рекомендуются научные симуляции по квадратичной силе сопротивления, системам дифференциальных уравнений и интегрированию методом Рунге–Кутты 4-го порядка (RK4).	Research simulations on quadratic drag, systems of differential equations and 4th-order Runge–Kutta (RK4) integration are recommended.
+jcf03cf4	Кластер A (1D-движение и основы скалярных уравнений)	Cluster A (1D Motion & Scalar Equation Basics)
+jcc464b4	Рекомендуются инструкции со скаффолдингом по основам дифференциального исчисления и простому шагу Эйлера.	Scaffolded guides on introductory differential calculus and the simple Euler step are recommended.
+j810caf6	⟨1⟩⟨2⟩Рекомендуемая траектория моделирования:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩{3}⟨/4⟩ ⟨5⟩Результат: {5} / {6} баллов ({7}%)⟨/5⟩⟨/1⟩</div>	⟨1⟩⟨2⟩Recommended modelling pathway:⟨/2⟩ ⟨3⟩{2}⟨/3⟩ ⟨4⟩{3}⟨/4⟩ ⟨5⟩Score: {5} / {6} points ({7}%)⟨/5⟩⟨/1⟩</div>
+j3ac421a	=	=
+j96adfb5	Промпт скопирован!	Prompt copied!

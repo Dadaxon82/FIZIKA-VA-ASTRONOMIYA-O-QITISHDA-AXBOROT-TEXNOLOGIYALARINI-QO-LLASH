@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -104,7 +105,7 @@ function initCanvasArchitecture() {
   if (fpsSlider) {
     fpsSlider.addEventListener('input', () => {
       const v = parseInt(fpsSlider.value, 10);
-      fpsVal.textContent = v >= 120 ? "Cheklovsiz (V-Sync)" : v + ' FPS';
+      fpsVal.textContent = v >= 120 ? __t("Cheklovsiz (V-Sync)") : v + ' FPS';
     });
   }
   if (cpuLoadSlider) {
@@ -122,7 +123,7 @@ function initCanvasArchitecture() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? "⏸ To‘xtatish" : "▶ Davom ettirish";
+      btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : __t("▶ Davom ettirish");
       lastTime = null; // pauzadan keyin katta dt sakramasligi uchun
     });
   }
@@ -198,11 +199,11 @@ function initCanvasArchitecture() {
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px sans-serif';
     const modeLabels = {
-      'fixed-interp': 'qat’iy Δt + interpolyatsiya',
-      'fixed': 'qat’iy Δt akkumulyatori',
-      'variable': "o‘zgaruvchan Δt"
+      'fixed-interp': __t("qat’iy Δt + interpolyatsiya"),
+      'fixed': __t("qat’iy Δt akkumulyatori"),
+      'variable': __t("o‘zgaruvchan Δt")
     };
-    ctx.fillText('Rejim: ' + (modeLabels[modeSelect.value] || ''), 20, 27);
+    ctx.fillText(__t("Rejim: ") + (modeLabels[modeSelect.value] || ''), 20, 27);
   }
 
   function drawPacingGraph() {
@@ -330,7 +331,7 @@ function initCanvasArchitecture() {
   }
 
   countVal.textContent = countSlider.value + ' ta';
-  fpsVal.textContent = parseInt(fpsSlider.value, 10) >= 120 ? "Cheklovsiz (V-Sync)" : fpsSlider.value + ' FPS';
+  fpsVal.textContent = parseInt(fpsSlider.value, 10) >= 120 ? __t("Cheklovsiz (V-Sync)") : fpsSlider.value + ' FPS';
   cpuLoadVal.textContent = uzFix(parseFloat(cpuLoadSlider.value), 1) + ' ms';
 
   resetSimulation();

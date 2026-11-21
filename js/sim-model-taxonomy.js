@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -92,7 +93,7 @@ function initKeplerDeterministic() {
     if (btnPlay) {
         btnPlay.addEventListener('click', () => {
             isRunning = !isRunning;
-            btnPlay.textContent = isRunning ? '⏸ To‘xtatish' : '▶ Davom ettirish';
+            btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : __t("▶ Davom ettirish");
             btnPlay.className = isRunning ? 'btn btn-amber' : 'btn btn-emerald';
         });
     }
@@ -125,7 +126,7 @@ function initKeplerDeterministic() {
             if (r < sun.r) {
                 // Collided with Sun
                 isRunning = false;
-                if (btnPlay) btnPlay.textContent = '▶ Qayta boshlash';
+                if (btnPlay) btnPlay.textContent = __t("▶ Qayta boshlash");
                 break;
             }
 
@@ -263,10 +264,10 @@ function initKeplerDeterministic() {
 
         ctx.fillStyle = '#38BDF8';
         ctx.font = 'bold 12px sans-serif';
-        ctx.fillText('DETERMINISTIK DINAMIK MODEL', 25, 33);
+        ctx.fillText(__t("DETERMINISTIK DINAMIK MODEL"), 25, 33);
         ctx.fillStyle = '#94A3B8';
         ctx.font = '11px sans-serif';
-        ctx.fillText('100 % oldindan aniq yopiq orbita (Kepler)', 25, 49);
+        ctx.fillText(__t("100 % oldindan aniq yopiq orbita (Kepler)"), 25, 49);
     }
 
     function loop() {
@@ -392,7 +393,7 @@ function initGasStochastic() {
     if (btnPlay) {
         btnPlay.addEventListener('click', () => {
             isRunning = !isRunning;
-            btnPlay.textContent = isRunning ? '⏸ To‘xtatish' : '▶ Davom ettirish';
+            btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : __t("▶ Davom ettirish");
             btnPlay.className = isRunning ? 'btn btn-amber' : 'btn btn-emerald';
         });
     }
@@ -573,7 +574,7 @@ function initGasStochastic() {
                 // Tracer label
                 ctx.fillStyle = '#FB7185';
                 ctx.font = 'bold 9px sans-serif';
-                ctx.fillText('Broun zarrasi', p.x + 8, p.y - 4);
+                ctx.fillText(__t("Broun zarrasi"), p.x + 8, p.y - 4);
             } else {
                 // Color by speed (Cold blue to hot orange)
                 const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
@@ -597,10 +598,10 @@ function initGasStochastic() {
 
         ctx.fillStyle = '#F43F5E';
         ctx.font = 'bold 12px sans-serif';
-        ctx.fillText('STOXASTIK DINAMIK MODEL', 25, 33);
+        ctx.fillText(__t("STOXASTIK DINAMIK MODEL"), 25, 33);
         ctx.fillStyle = '#94A3B8';
         ctx.font = '11px sans-serif';
-        ctx.fillText('N ta molekulaning tasodifiy to‘qnashuvi (MKT)', 25, 49);
+        ctx.fillText(__t("N ta molekulaning tasodifiy to‘qnashuvi (MKT)"), 25, 49);
 
         // Draw Live Maxwell-Boltzmann Histogram
         drawMaxwellHistogram();
@@ -673,12 +674,12 @@ function initGasStochastic() {
         // Axis labels
         hctx.fillStyle = '#94A3B8';
         hctx.font = '10px sans-serif';
-        hctx.fillText('Tezlik v [m/s] →', w - 90, h - 8);
+        hctx.fillText(__t("Tezlik v [m/s] →"), w - 90, h - 8);
         hctx.fillText('f(v)', 8, 20);
 
         // Legend
         hctx.fillStyle = '#FBBF24';
-        hctx.fillText('— Maksvell nazariy egri chizig‘i', paddingLeft + 10, 20);
+        hctx.fillText(__t("— Maksvell nazariy egri chizig‘i"), paddingLeft + 10, 20);
     }
 
     function loop() {

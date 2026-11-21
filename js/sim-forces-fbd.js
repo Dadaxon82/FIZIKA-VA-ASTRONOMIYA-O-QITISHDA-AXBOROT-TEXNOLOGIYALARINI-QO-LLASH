@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -77,7 +78,7 @@ function initFBD() {
   if (btnPlay) {
     btnPlay.addEventListener('click', () => {
       isRunning = !isRunning;
-      btnPlay.textContent = isRunning ? '⏸ To‘xtatish' : '▶ Boshlash';
+      btnPlay.textContent = isRunning ? __t("⏸ To‘xtatish") : __t("▶ Boshlash");
     });
   }
 
@@ -86,7 +87,7 @@ function initFBD() {
       s = 0;
       v = 0;
       isRunning = false;
-      if (btnPlay) btnPlay.textContent = '▶ Boshlash';
+      if (btnPlay) btnPlay.textContent = __t("▶ Boshlash");
     });
   }
 
@@ -110,13 +111,13 @@ function initFBD() {
       friction = -appliedNet;
       netForce = 0;
       accel = 0;
-      state = 'Muvozanatda (statik)';
+      state = __t("Muvozanatda (statik)");
     } else {
       const dir = moving ? Math.sign(v) : Math.sign(appliedNet || 1);
       friction = -dir * muk * N;
       netForce = appliedNet + friction;
       accel = netForce / mass;
-      state = dir > 0 ? 'Sirpanmoqda (yuqoriga) ↑' : 'Sirpanmoqda (pastga) ↓';
+      state = dir > 0 ? __t("Sirpanmoqda (yuqoriga) ↑") : __t("Sirpanmoqda (pastga) ↓");
     }
 
     return { alpha, angleDeg, mass, force, mg, mgPar, mgPerp, N, Fsmax, friction, netForce, accel, state };
@@ -136,12 +137,12 @@ function initFBD() {
 
     s += v * dt;
 
-    if (s > MAX_S) { s = MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = '▶ Boshlash'; }
-    if (s < -MAX_S) { s = -MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = '▶ Boshlash'; }
+    if (s > MAX_S) { s = MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = __t("▶ Boshlash"); }
+    if (s < -MAX_S) { s = -MAX_S; v = 0; isRunning = false; if (btnPlay) btnPlay.textContent = __t("▶ Boshlash"); }
   }
 
   function updateHUD(p) {
-    hudState.textContent = p.accel === 0 && p.netForce === 0 ? 'Muvozanatda (statik)' : p.state;
+    hudState.textContent = p.accel === 0 && p.netForce === 0 ? __t("Muvozanatda (statik)") : p.state;
     hudN.textContent = uzFix(p.N, 2) + ' N';
     hudMg.textContent = uzFix(p.mg, 2) + ' N';
     hudMgPar.textContent = uzFix(p.mgPar, 2) + ' N';

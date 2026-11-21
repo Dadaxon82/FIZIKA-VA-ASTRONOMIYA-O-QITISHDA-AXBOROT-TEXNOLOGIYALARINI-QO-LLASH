@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -56,9 +57,9 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
         const text = target.value || target.textContent;
         const done = () => {
           const old = btn.textContent;
-          btn.textContent = '✅ Nusxalandi!';
+          btn.textContent = __t("✅ Nusxalandi!");
           setTimeout(() => { btn.textContent = old; }, 1500);
-          toast('Nusxalandi!');
+          toast(__t("Nusxalandi!"));
         };
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(text).then(done).catch(() => { target.select(); document.execCommand('copy'); done(); });
@@ -78,19 +79,19 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
   const CLUSTERS = {
     A: {
-      title: 'Klaster "A" — Boshlang‘ich daraja',
-      plan: "Avval 2.1-bo‘limdagi <code>Vector2D</code> klassini qo‘lda qayta yozing va har bir metodni bitta sonli misolda tekshiring. So‘ng bir o‘lchamli markaziy to‘qnashuv uchun impuls va energiya saqlanishidan $v_1'$ va $v_2'$ ni qog‘ozda chiqaring. 5-bo‘limdagi «Bilyard» ssenariysida teng massali sharlar tezlik almashishini kuzating.",
-      focus: "vektor amallari, skalyar ko‘paytma, bir o‘lchamli elastik to‘qnashuv"
+      title: __t("Klaster \"A\" — Boshlang‘ich daraja"),
+      plan: __t("Avval 2.1-bo‘limdagi <code>Vector2D</code> klassini qo‘lda qayta yozing va har bir metodni bitta sonli misolda tekshiring. So‘ng bir o‘lchamli markaziy to‘qnashuv uchun impuls va energiya saqlanishidan $v_1'$ va $v_2'$ ni qog‘ozda chiqaring. 5-bo‘limdagi «Bilyard» ssenariysida teng massali sharlar tezlik almashishini kuzating."),
+      focus: __t("vektor amallari, skalyar ko‘paytma, bir o‘lchamli elastik to‘qnashuv")
     },
     B: {
-      title: 'Klaster "B" — Amaliyotchi daraja',
-      plan: "2.2–2.3-bo‘limlardagi $J$ formulasi va overlap resolution’ni JavaScript’da yozing. 3-bo‘limdagi 1- va 2-nosozlik promptlarini Claude’ga yuborib, uning tavsiyalarini o‘z kodingizda sinab ko‘ring. Dastgohda $e$ ni 1 dan 0,5 gacha kamaytirib, $E_k/E_{k0}$ grafigining o‘zgarishini tushuntiring.",
-      focus: "impuls skalyari J, pozitsiyani to‘g‘rilash, v_n > 0 sharti, tiklanish koeffitsiyenti"
+      title: __t("Klaster \"B\" — Amaliyotchi daraja"),
+      plan: __t("2.2–2.3-bo‘limlardagi $J$ formulasi va overlap resolution’ni JavaScript’da yozing. 3-bo‘limdagi 1- va 2-nosozlik promptlarini Claude’ga yuborib, uning tavsiyalarini o‘z kodingizda sinab ko‘ring. Dastgohda $e$ ni 1 dan 0,5 gacha kamaytirib, $E_k/E_{k0}$ grafigining o‘zgarishini tushuntiring."),
+      focus: __t("impuls skalyari J, pozitsiyani to‘g‘rilash, v_n > 0 sharti, tiklanish koeffitsiyenti")
     },
     C: {
-      title: 'Klaster "C" — Ilg‘or daraja',
-      plan: "Dvigatelga sub-stepping va uzluksiz to‘qnashuv aniqlash (CCD) variantlarini qo‘shib, tunnel effektini solishtiring. 4-bo‘limdagi Python skriptini $e = 0.7$ uchun kengaytirib, yo‘qotilgan energiyani $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$ formulasi bilan tekshiring. Keyingi qadam sifatida aylanish (inersiya momenti) va ishqalanishni qo‘shishni rejalashtiring (Hecker, 1997).",
-      focus: "sub-stepping va CCD, noelastik to‘qnashuvda energiya yo‘qotilishi, aylanma harakat"
+      title: __t("Klaster \"C\" — Ilg‘or daraja"),
+      plan: __t("Dvigatelga sub-stepping va uzluksiz to‘qnashuv aniqlash (CCD) variantlarini qo‘shib, tunnel effektini solishtiring. 4-bo‘limdagi Python skriptini $e = 0.7$ uchun kengaytirib, yo‘qotilgan energiyani $\\Delta E = \\tfrac{1}{2}\\mu(1-e^2)v_n^2$ formulasi bilan tekshiring. Keyingi qadam sifatida aylanish (inersiya momenti) va ishqalanishni qo‘shishni rejalashtiring (Hecker, 1997)."),
+      focus: __t("sub-stepping va CCD, noelastik to‘qnashuvda energiya yo‘qotilishi, aylanma harakat")
     }
   };
 
@@ -108,7 +109,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       box.style.display = 'block';
       if (answers.some(a => !a)) {
         scoreEl.textContent = '—';
-        clusterEl.textContent = '⚠️ Barcha 4 ta savolga javob bering';
+        clusterEl.textContent = __t("⚠️ Barcha 4 ta savolga javob bering");
         planEl.textContent = '';
         promptEl.value = '';
         return;
@@ -123,17 +124,11 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       scoreEl.textContent = `${score} / 100 (${correct}/4)`;
       clusterEl.textContent = c.title;
       planEl.innerHTML = c.plan +
-        (wrong.length ? `<br><strong>Qayta ko‘rib chiqing:</strong> ${wrong.join(', ')}-savol(lar). To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.` : '');
+        (wrong.length ? __t("<br><strong>Qayta ko‘rib chiqing:</strong> {0}-savol(lar). To‘g‘ri javoblar: 1-C, 2-B, 3-A, 4-C.", [wrong.join(', ')]) : '');
       renderMath(planEl);
 
       promptEl.value =
-`Sen mening juftlikdagi dasturlash sherigimsan (Navigator), men esa Driver’man. Men 8-laboratoriya diagnostik testidan ${score}/100 ball olib, "${key}" klasteriga kiritildim.
-Asosiy mavzular: ${c.focus}.
-Vazifa: JavaScript’da 2D doiralar uchun elastik to‘qnashuvli kichik fizika dvigatelini yozish (Vector2D, impuls skalyari J, overlap resolution).
-Qoidalar:
-1. Kodni men yozaman — sen avval men yuborgan bo‘lakni tahlil qilib, xatoni o‘zim topishim uchun yo‘naltiruvchi savol ber.
-2. Har bir tavsiyangni fizik qonun (impuls yoki energiya saqlanishi) bilan asosla.
-3. Tuzatishdan keyin tekshirish uchun bitta sonli test taklif qil (masalan, to‘qnashuvdan oldin va keyin to‘liq impulsni solishtirish).`;
+__t("Sen mening juftlikdagi dasturlash sherigimsan (Navigator), men esa Driver’man. Men 8-laboratoriya diagnostik testidan {0}/100 ball olib, \"{1}\" klasteriga kiritildim.\nAsosiy mavzular: {2}.\nVazifa: JavaScript’da 2D doiralar uchun elastik to‘qnashuvli kichik fizika dvigatelini yozish (Vector2D, impuls skalyari J, overlap resolution).\nQoidalar:\n1. Kodni men yozaman — sen avval men yuborgan bo‘lakni tahlil qilib, xatoni o‘zim topishim uchun yo‘naltiruvchi savol ber.\n2. Har bir tavsiyangni fizik qonun (impuls yoki energiya saqlanishi) bilan asosla.\n3. Tuzatishdan keyin tekshirish uchun bitta sonli test taklif qil (masalan, to‘qnashuvdan oldin va keyin to‘liq impulsni solishtirish).", [score, key, c.focus]);
     });
   }
 
@@ -357,7 +352,7 @@ Qoidalar:
 
       ctx.textAlign = 'left';
       ctx.fillStyle = 'rgba(226,232,240,0.75)';
-      ctx.fillText(`t = ${uzFix(simTime, 2)} s   |   katak = 1 m   |   ${SUBSTEPS} ta ichki qadam`, 10, 18);
+      ctx.fillText(__t("t = {0} s   |   katak = 1 m   |   {1} ta ichki qadam", [uzFix(simTime, 2), SUBSTEPS]), 10, 18);
       drawGraph();
     }
 
@@ -395,7 +390,7 @@ Qoidalar:
       }
       gctx.textAlign = 'left';
       gctx.fillStyle = '#94a3b8';
-      gctx.fillText('Ek/Ek₀ (vaqt bo‘yicha, har 0,05 s)', padL + 4, h - 4);
+      gctx.fillText(__t("Ek/Ek₀ (vaqt bo‘yicha, har 0,05 s)"), padL + 4, h - 4);
     }
 
     function updateHud() {
@@ -414,8 +409,8 @@ Qoidalar:
       const e = restitution();
       const st = hud('status');
       if (st) {
-        if (e >= 0.999) { st.textContent = 'Mutlaq elastik (e = 1,00)'; st.style.color = '#10b981'; }
-        else if (e <= 0.001) { st.textContent = 'Mutlaq noelastik (e = 0,00)'; st.style.color = '#f43f5e'; }
+        if (e >= 0.999) { st.textContent = __t("Mutlaq elastik (e = 1,00)"); st.style.color = '#10b981'; }
+        else if (e <= 0.001) { st.textContent = __t("Mutlaq noelastik (e = 0,00)"); st.style.color = '#f43f5e'; }
         else { st.textContent = `Noelastik (e = ${uzFix(e, 2)})`; st.style.color = '#f59e0b'; }
       }
     }
@@ -467,10 +462,10 @@ Qoidalar:
       const total = selects.reduce((a, s) => a + (parseInt(s.value, 10) || 0), 0);
       totalEl.textContent = `${total} / 100`;
       let g;
-      if (total >= 86) g = { text: "A’LO (5)", cls: 'badge-emerald', fb: "Barcha mezonlar yuqori darajada bajarilgan." };
-      else if (total >= 71) g = { text: 'YAXSHI (4)', cls: 'badge-cyan', fb: "Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing." };
-      else if (total >= 55) g = { text: 'QONIQARLI (3)', cls: 'badge-amber', fb: "Impuls formulasi, overlap resolution va saqlanish qonunlari tekshiruvini kuchaytiring." };
-      else g = { text: 'QONIQARSIZ (2)', cls: 'badge-rose', fb: "Laboratoriya ishini qayta bajarish tavsiya etiladi." };
+      if (total >= 86) g = { text: __t("A’LO (5)"), cls: 'badge-emerald', fb: __t("Barcha mezonlar yuqori darajada bajarilgan.") };
+      else if (total >= 71) g = { text: __t("YAXSHI (4)"), cls: 'badge-cyan', fb: __t("Yaxshi natija. Eng past ball olgan mezonni qayta ko‘rib chiqing.") };
+      else if (total >= 55) g = { text: __t("QONIQARLI (3)"), cls: 'badge-amber', fb: __t("Impuls formulasi, overlap resolution va saqlanish qonunlari tekshiruvini kuchaytiring.") };
+      else g = { text: __t("QONIQARSIZ (2)"), cls: 'badge-rose', fb: __t("Laboratoriya ishini qayta bajarish tavsiya etiladi.") };
       if (gradeEl) { gradeEl.textContent = g.text; gradeEl.className = 'badge ' + g.cls; }
       if (fbEl) fbEl.textContent = g.fb;
     }

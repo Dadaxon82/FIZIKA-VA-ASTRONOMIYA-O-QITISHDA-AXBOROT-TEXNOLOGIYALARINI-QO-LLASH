@@ -1,5 +1,6 @@
+if (!window.__t) window.__t = function (s, p) { return p ? s.replace(/\{(\d+)\}/g, function (m, i) { return p[i]; }) : s; };
 /* O‘zbekcha son formati: o‘nli vergul va minus belgisi (−) */
-function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', ','); }
+function uzFix(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('-', '\u2212').replace('.', (document.documentElement.lang || 'uz').slice(0, 2) === 'en' ? '.' : ','); }
 function uzTex(x, d) { var s = Number(x).toFixed(d); if (/^-0(\.0+)?$/.test(s)) s = s.slice(1); return s.replace('.', '{,}'); }
 function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0'; var p = Number(x).toExponential(d).split('e'); var m = p[0].replace('-', '\u2212').replace('.', ','); var e = parseInt(p[1], 10); if (e === 0) return m; var sup = String(e).replace('-', '\u207b').replace(/\d/g, function (c) { return '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079'[c]; }); return m + '\u00b710' + sup; }
 /**
@@ -257,7 +258,7 @@ function initMechanicsPipeline() {
     ctx.fillStyle = '#94A3B8';
     ctx.font = '11px monospace';
     const E = collisionEnergy(w, h);
-    ctx.fillText(`E = ${uzFix(E, 1)}   integrator: ${selIntegrator.value === 'euler' ? 'oddiy Eyler' : 'simplektik'}`, 10, 18);
+    ctx.fillText(`E = ${uzFix(E, 1)}   integrator: ${selIntegrator.value === 'euler' ? __t("oddiy Eyler") : 'simplektik'}`, 10, 18);
   }
 
   function drawArrow(ctx, x0, y0, x1, y1, color) {
@@ -340,14 +341,14 @@ function initMechanicsPipeline() {
 
   function togglePlay() {
     running = !running;
-    btnPlayInner.textContent = running ? '⏸️ To‘xtatish' : '▶️ Davom ettirish';
+    btnPlayInner.textContent = running ? __t("⏸️ To‘xtatish") : __t("▶️ Davom ettirish");
   }
   btnPlayInner.addEventListener('click', togglePlay);
 
   function resetSim() {
     resetAll();
     running = true;
-    btnPlayInner.textContent = "⏸️ To‘xtatish";
+    btnPlayInner.textContent = __t("⏸️ To‘xtatish");
   }
   btnResetInner.addEventListener('click', resetSim);
 
@@ -380,11 +381,11 @@ function initMechanicsPipeline() {
 
     if (mode === 'ramp') {
       drawRamp(ctx, w, h);
-      drawEnergyGraph(gctx, gw, gh, rampEnergyTrail, '#34D399', 'E(t) — qiya tekislik (ishqalanish bilan)');
+      drawEnergyGraph(gctx, gw, gh, rampEnergyTrail, '#34D399', __t("E(t) — qiya tekislik (ishqalanish bilan)"));
     } else {
       drawCollision(ctx, w, h);
       const color = selIntegrator.value === 'symplectic' ? '#34D399' : '#F43F5E';
-      drawEnergyGraph(gctx, gw, gh, collEnergyTrail, color, 'E(t) — ' + (selIntegrator.value === 'symplectic' ? 'Simplektik' : 'Oddiy Eyler'));
+      drawEnergyGraph(gctx, gw, gh, collEnergyTrail, color, 'E(t) — ' + (selIntegrator.value === 'symplectic' ? __t("Simplektik") : __t("Oddiy Eyler")));
     }
 
     frameCount++;
@@ -438,7 +439,7 @@ function initMechanicsPipeline() {
     if (!btn) return;
     btn.addEventListener('click', () => {
       navigator.clipboard.writeText(text).then(() => {
-        if (typeof window.showToast === 'function') window.showToast('Nusxalandi!');
+        if (typeof window.showToast === 'function') window.showToast(__t("Nusxalandi!"));
       });
     });
   }
@@ -451,17 +452,10 @@ function initMechanicsPipeline() {
         const tanA = Math.tan(rad);
         const willMove = tanA > mu;
         const a = willMove ? G * (Math.sin(rad) - mu * Math.cos(rad)) : 0;
-        showPipelineOutput(`
-          <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          Burchak α = ${angleDeg}°, ishqalanish μ = ${uzFix(mu, 2)}, massa m = ${uzFix(mass, 1)} kg.<br>
-          Harakat sharti: tan(α) = ${uzFix(tanA, 3)} ${willMove ? '&gt;' : '&le;'} μ = ${uzFix(mu, 2)} &rArr; jism ${willMove ? 'sirpanadi' : 'tinch turadi'}.<br>
-          Hisoblangan tezlanish: <strong>a = ${uzFix(a, 3)} m/s²</strong>.`);
+        showPipelineOutput(__t("\n          <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          Burchak α = {0}°, ishqalanish μ = {1}, massa m = {2} kg.<br>\n          Harakat sharti: tan(α) = {3} {4} μ = {5} &rArr; jism {6}.<br>\n          Hisoblangan tezlanish: <strong>a = {7} m/s²</strong>.", [angleDeg, uzFix(mu, 2), uzFix(mass, 1), uzFix(tanA, 3), willMove ? '&gt;' : '&le;', uzFix(mu, 2), willMove ? 'sirpanadi' : 'tinch turadi', uzFix(a, 3)]));
       } else {
         const e = parseFloat(slRestitution.value);
-        showPipelineOutput(`
-          <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>
-          Tiklanish koeffitsiyenti e = ${uzFix(e, 2)} &rArr; to‘qnashuv turi: <strong>${e === 1 ? 'mutlaq elastik' : (e === 0 ? 'mutlaq noelastik' : 'qisman elastik')}</strong>.<br>
-          Yo‘qotiladigan energiya ulushi (1 - e²) = ${uzFix((1 - e * e), 3)}.`);
+        showPipelineOutput(__t("\n          <strong>1. PhET/Vascak.cz Dekonstruksiyasi (Jonli Parametrlar):</strong><br>\n          Tiklanish koeffitsiyenti e = {0} &rArr; to‘qnashuv turi: <strong>{1}</strong>.<br>\n          Yo‘qotiladigan energiya ulushi (1 - e²) = {2}.", [uzFix(e, 2), e === 1 ? 'mutlaq elastik' : (e === 0 ? 'mutlaq noelastik' : 'qisman elastik'), uzFix((1 - e * e), 3)]));
       }
     });
   }
@@ -469,12 +463,9 @@ function initMechanicsPipeline() {
   if (btnPipeClaude) {
     btnPipeClaude.addEventListener('click', () => {
       const code = mode === 'ramp'
-        ? "const rad = angle * Math.PI / 180;\nconst a = Math.tan(rad) > mu ? g*(Math.sin(rad) - mu*Math.cos(rad)) : 0;\nv += a * dt;  // simplektik: avval tezlik\ns += v * dt;  // keyin koordinata"
+        ? __t("const rad = angle * Math.PI / 180;\nconst a = Math.tan(rad) > mu ? g*(Math.sin(rad) - mu*Math.cos(rad)) : 0;\nv += a * dt;  // simplektik: avval tezlik\ns += v * dt;  // keyin koordinata")
         : "const j = -((1+e) * velAlongNormal) / (1/m1 + 1/m2);\na.vel = a.vel.add(normal.scale(j / m1));\nb.vel = b.vel.sub(normal.scale(j / m2));";
-      showPipelineOutput(`
-        <strong>2. Claude Dvigatel Kodi:</strong>
-        <pre style="background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;"><code>${code}</code></pre>
-        <button id="btn-copy-claude-code" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
+      showPipelineOutput(__t("\n        <strong>2. Claude Dvigatel Kodi:</strong>\n        <pre style=\"background:#0B0F19; padding:10px 12px; border-radius:6px; margin-top:8px; overflow-x:auto; font-size:0.8rem; color:#E2E8F0;\"><code>{0}</code></pre>\n        <button id=\"btn-copy-claude-code\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>", [code]));
       attachCopyHandler('btn-copy-claude-code', code);
     });
   }
@@ -485,9 +476,9 @@ function initMechanicsPipeline() {
       if (mode === 'ramp') {
         if (rampEnergyTrail.length > 2) {
           const dropPct = ((rampPassStartEnergy - rampEnergy()) / Math.max(Math.abs(rampPassStartEnergy), 1e-6)) * 100;
-          energyLine = `Ishqalanish tufayli energiya joriy bosqichda monotonik kamaymoqda: ${uzFix(dropPct, 2)}% (fizik dissipatsiya, integratsion xatolik emas).`;
+          energyLine = __t("Ishqalanish tufayli energiya joriy bosqichda monotonik kamaymoqda: {0}% (fizik dissipatsiya, integratsion xatolik emas).", [uzFix(dropPct, 2)]);
         } else {
-          energyLine = 'Simulyatsiya hali boshlanmadi.';
+          energyLine = __t("Simulyatsiya hali boshlanmadi.");
         }
       } else {
         const trail = collEnergyTrail;
@@ -495,17 +486,13 @@ function initMechanicsPipeline() {
           const drift = Math.abs((trail[trail.length - 1] - trail[0]) / Math.max(Math.abs(trail[0]), 1e-6)) * 100;
           const verdict = selIntegrator.value === 'symplectic'
             ? `chegaralangan holatda (|ΔE/E₀| = ${uzFix(drift, 3)}% — barqaror)`
-            : `sun’iy o‘sib bormoqda (|ΔE/E₀| = ${uzFix(drift, 3)}% — dreyf aniqlandi)`;
-          energyLine = `Markaziy tiklovchi kuch ostida energiya ${verdict}.`;
+            : __t("sun’iy o‘sib bormoqda (|ΔE/E₀| = {0}% — dreyf aniqlandi)", [uzFix(drift, 3)]);
+          energyLine = __t("Markaziy tiklovchi kuch ostida energiya {0}.", [verdict]);
         } else {
-          energyLine = 'Simulyatsiya hali boshlanmadi.';
+          energyLine = __t("Simulyatsiya hali boshlanmadi.");
         }
       }
-      showPipelineOutput(`
-        <strong>3. Google Antigravity Audit Natijasi:</strong><br>
-        ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>
-        ✓ Delta-Time Akkumulyatori: ${lastFps} FPS, kadrlar barqaror ishlamoqda.<br>
-        ✓ Fizik Invariantlar: ${energyLine}`);
+      showPipelineOutput(__t("\n        <strong>3. Google Antigravity Audit Natijasi:</strong><br>\n        ✓ AST Statik Tahlil: eval() yoki xavfli DOM murojaati aniqlanmadi.<br>\n        ✓ Delta-Time Akkumulyatori: {0} FPS, kadrlar barqaror ishlamoqda.<br>\n        ✓ Fizik Invariantlar: {1}", [lastFps, energyLine]));
     });
   }
 
@@ -514,15 +501,12 @@ function initMechanicsPipeline() {
       let prompt;
       if (mode === 'ramp') {
         const { angleDeg, mu, mass } = rampParams();
-        prompt = `Slow-motion 120fps kinematik video: ${uzFix(mass, 1)} kg og‘irlikdagi metall blok ${angleDeg}° burchakli qiya tekislikda pastga sirpanmoqda, ishqalanish koeffitsiyenti ${uzFix(mu, 2)}, sirtdan mayda uchqunlar chiqmoqda, yon tomondan yumshoq studiya yorug‘ligi, fizik jihatdan real tezlanish bilan.`;
+        prompt = __t("Slow-motion 120fps kinematik video: {0} kg og‘irlikdagi metall blok {1}° burchakli qiya tekislikda pastga sirpanmoqda, ishqalanish koeffitsiyenti {2}, sirtdan mayda uchqunlar chiqmoqda, yon tomondan yumshoq studiya yorug‘ligi, fizik jihatdan real tezlanish bilan.", [uzFix(mass, 1), angleDeg, uzFix(mu, 2)]);
       } else {
         const e = parseFloat(slRestitution.value);
-        prompt = `Slow-motion 120fps kinematik video: ikkita rangli sharcha (ko‘k va sariq) laboratoriya maydonida to‘qnashmoqda, tiklanish koeffitsiyenti ${uzFix(e, 2)}, to‘qnashuv paytida kontakt normali bo‘yicha impuls uzatilishi aniq ko‘rinadi, yuqoridan tekis yoritilgan, fizik jihatdan real trayektoriya bilan.`;
+        prompt = __t("Slow-motion 120fps kinematik video: ikkita rangli sharcha (ko‘k va sariq) laboratoriya maydonida to‘qnashmoqda, tiklanish koeffitsiyenti {0}, to‘qnashuv paytida kontakt normali bo‘yicha impuls uzatilishi aniq ko‘rinadi, yuqoridan tekis yoritilgan, fizik jihatdan real trayektoriya bilan.", [uzFix(e, 2)]);
       }
-      showPipelineOutput(`
-        <strong>4. Runway Video Prompt:</strong><br>
-        <em style="color:#4B5464;">"${prompt}"</em><br>
-        <button id="btn-copy-runway-prompt" class="btn btn-secondary btn-sm" style="margin-top:8px;">📋 Nusxa olish</button>`);
+      showPipelineOutput(__t("\n        <strong>4. Runway Video Prompt:</strong><br>\n        <em style=\"color:#4B5464;\">\"{0}\"</em><br>\n        <button id=\"btn-copy-runway-prompt\" class=\"btn btn-secondary btn-sm\" style=\"margin-top:8px;\">📋 Nusxa olish</button>", [prompt]));
       attachCopyHandler('btn-copy-runway-prompt', prompt);
     });
   }

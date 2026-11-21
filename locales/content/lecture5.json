@@ -1,0 +1,1214 @@
+[
+ {
+  "k": "59d8c029",
+  "s": "Fizik bilish metodologiyasida <strong>Statik va Dinamik</strong>, <strong>Deterministik va Stoxastik</strong>, <strong>Diskret va Uzluksiz</strong> modellar tasnifi har tomonlama o‘rganiladi. PhET Interactive Simulations (<em>Gravity and Orbits</em>, <em>Gas Properties</em>, <em>Wave on a String</em>) hamda Vascak.cz platformalarining simulyatsiyalari teskari muhandislik (Reverse Engineering) orqali tahlil qilinib, Claude yordamida deterministik Kepler harakati hamda stoxastik Maksvell-Bolsman gaz kinetikasi interaktiv modellari yaratiladi.",
+  "ru": "В методологии физического познания всесторонне изучается классификация моделей: <strong>статические и динамические</strong>, <strong>детерминированные и стохастические</strong>, <strong>дискретные и непрерывные</strong>. Симуляции PhET Interactive Simulations (<em>Gravity and Orbits</em>, <em>Gas Properties</em>, <em>Wave on a String</em>) и платформы Vascak.cz анализируются методом обратной разработки (Reverse Engineering), а с помощью Claude создаются интерактивные модели детерминированного кеплеровского движения и стохастической газовой кинетики Максвелла–Больцмана.",
+  "en": "The methodology of physical inquiry is used to study the classification of models in depth: <strong>static vs dynamic</strong>, <strong>deterministic vs stochastic</strong>, <strong>discrete vs continuous</strong>. Simulations from PhET Interactive Simulations (<em>Gravity and Orbits</em>, <em>Gas Properties</em>, <em>Wave on a String</em>) and Vascak.cz are analysed through reverse engineering, and Claude is used to build interactive models of deterministic Keplerian motion and stochastic Maxwell–Boltzmann gas kinetics."
+ },
+ {
+  "k": "0b7da031",
+  "s": "📋 Ma’ruza rejasi va didaktik integratsiya bosqichlari:",
+  "ru": "📋 План лекции и этапы дидактической интеграции:",
+  "en": "📋 Lecture plan and didactic integration stages:"
+ },
+ {
+  "k": "53aa59e6",
+  "s": "1. Sun’iy intellekt uchun diagnostika:",
+  "ru": "1. Диагностика для искусственного интеллекта:",
+  "en": "1. AI diagnostics:"
+ },
+ {
+  "k": "4afb6c26",
+  "s": "MagicSchool AI orqali talabaning model turlari (Statik/Dinamik, Deterministik/Stoxastik) bo‘yicha tayyorgarligini testlash.",
+  "ru": "Тестирование подготовки студента по типам моделей (статические/динамические, детерминированные/стохастические) с помощью MagicSchool AI.",
+  "en": "Testing the student’s readiness on model types (static/dynamic, deterministic/stochastic) with MagicSchool AI."
+ },
+ {
+  "k": "4d114ecd",
+  "s": "2. Model turlarini vizual tahlil qilish:",
+  "ru": "2. Визуальный анализ типов моделей:",
+  "en": "2. Visual analysis of model types:"
+ },
+ {
+  "k": "525dcbe4",
+  "s": "PhET (Gas Properties, Gravity and Orbits) va Vascak.cz simulyatsiyalarining teskari muhandislik tasnifi.",
+  "ru": "Классификация симуляций PhET (Gas Properties, Gravity and Orbits) и Vascak.cz методом обратной разработки.",
+  "en": "Reverse-engineering classification of PhET (Gas Properties, Gravity and Orbits) and Vascak.cz simulations."
+ },
+ {
+  "k": "5fc118e6",
+  "s": "3. Modellar tasnifi va nazariy solishtirish:",
+  "ru": "3. Классификация моделей и теоретическое сравнение:",
+  "en": "3. Model classification and theoretical comparison:"
+ },
+ {
+  "k": "94457c0b",
+  "s": "Gemini / ChatGPT orqali 6-katakli kengaytirilgan taksonomik matritsani matematik formalizatsiya qilish.",
+  "ru": "Математическая формализация расширенной 6-ячеечной таксономической матрицы с помощью Gemini / ChatGPT.",
+  "en": "Mathematically formalising an extended 6-cell taxonomy matrix with Gemini / ChatGPT."
+ },
+ {
+  "k": "f11c097f",
+  "s": "4. Stoxastik va deterministik modellar kodi:",
+  "ru": "4. Код стохастических и детерминированных моделей:",
+  "en": "4. Code for stochastic and deterministic models:"
+ },
+ {
+  "k": "62c26bcc",
+  "s": "Claude yordamida Kepler orbitasi (deterministik) va 2D Gaz kinetikasi (stoxastik) dasturiy ta’minotini yozish.",
+  "ru": "Написание с Claude программ для орбиты Кеплера (детерминированной) и 2D газовой кинетики (стохастической).",
+  "en": "Writing software with Claude for a Kepler orbit (deterministic) and 2D gas kinetics (stochastic)."
+ },
+ {
+  "k": "9e3140e8",
+  "s": "5. Taqqoslama jadvallar va tuzilma:",
+  "ru": "5. Сравнительные таблицы и структура:",
+  "en": "5. Comparison tables and structure:"
+ },
+ {
+  "k": "19982c9c",
+  "s": "Claude Sonnet orqali hisoblash murakkabligi, xatolik manbalari va didaktik qo‘llash tavsiyanomasini ishlab chiqish.",
+  "ru": "Разработка с Claude Sonnet рекомендаций по вычислительной сложности, источникам погрешности и дидактическому применению.",
+  "en": "Using Claude Sonnet to develop guidance on computational complexity, error sources and didactic use."
+ },
+ {
+  "k": "c8dc7e3f",
+  "s": "6. Ikki motorli sinov maydoni:",
+  "ru": "6. Площадка с двумя движками:",
+  "en": "6. A two-engine sandbox:"
+ },
+ {
+  "k": "ac421747",
+  "s": "Kepler elliptik harakati va Maksvell-Bolsman tezliklar taqsimoti jonli telemetriyali veb-simulyatori.",
+  "ru": "Веб-симулятор с живой телеметрией: эллиптическое движение Кеплера и распределение скоростей Максвелла–Больцмана.",
+  "en": "A web simulator with live telemetry: Kepler elliptical motion and the Maxwell–Boltzmann speed distribution."
+ },
+ {
+  "k": "7df595e1",
+  "s": "🔬 5-ma’ruza bo‘yicha ilmiy AI-pipeline konveyeri:",
+  "ru": "🔬 Научный AI-конвейер лекции 5:",
+  "en": "🔬 Lecture 5 scientific AI pipeline:"
+ },
+ {
+  "k": "2f950c73",
+  "s": "Lecture 5 AI Workflow",
+  "ru": "Lecture 5 AI Workflow",
+  "en": "Lecture 5 AI Workflow"
+ },
+ {
+  "k": "64f8078d",
+  "s": "1. Modellashtirish — bilishning universal metodi sifatida",
+  "ru": "1. Моделирование как универсальный метод познания",
+  "en": "1. Modelling as a universal method of inquiry"
+ },
+ {
+  "k": "96404e3e",
+  "s": "Fizika fanida <strong>modellashtirish</strong> — bu real dunyodagi murakkab fizik hodisa, jism yoki tizimning eng muhim qonuniyatlarini saqlagan holda, uning soddalashtirilgan abstrakt nusxasini (modelini) yaratish va o‘rganish jarayonidir. Real fizik obyektlar cheksiz ko‘p faktorlar (havo qarshiligi, harorat o‘zgarishi, gravitatsion nobirjinslik, relyativistik effektlar) ta’sirida bo‘ladi. Ularning barchasini birdaniga hisobga olish inson miyasi uchun ham, eng kuchli superkompyuterlar uchun ham imkonsizdir.",
+  "ru": "В физике <strong>моделирование</strong> — это процесс создания и изучения упрощённой абстрактной копии (модели) сложного физического явления, тела или системы реального мира с сохранением важнейших её закономерностей. Реальные физические объекты подвержены бесконечному числу факторов (сопротивление воздуха, изменение температуры, гравитационная неоднородность, релятивистские эффекты). Учесть их все одновременно невозможно ни человеческому мозгу, ни самым мощным суперкомпьютерам.",
+  "en": "In physics, <strong>modelling</strong> is the process of creating and studying a simplified abstract copy (model) of a complex real-world phenomenon, body or system while keeping its most important laws. Real physical objects are affected by countless factors (air drag, temperature changes, gravitational non-uniformity, relativistic effects). Accounting for all of them at once is impossible for the human brain and for the most powerful supercomputers alike."
+ },
+ {
+  "k": "ea487d9f",
+  "s": "1. Obyekt va abstraksiya",
+  "ru": "1. Объект и абстракция",
+  "en": "1. Object and abstraction"
+ },
+ {
+  "k": "99c4e60e",
+  "s": "Real jism o‘lchamlari trayektoriya uzunligiga nisbatan juda kichik bo‘lsa, u <strong>moddiy nuqta</strong> deb olinadi. Molekulalar o‘zaro ta’sir kuchlari hisobga olinmasa, <strong>ideal gaz</strong> modeli yuzaga keladi.",
+  "ru": "Если размеры реального тела очень малы по сравнению с длиной траектории, оно принимается за <strong>материальную точку</strong>. Если не учитывать силы взаимодействия молекул, возникает модель <strong>идеального газа</strong>.",
+  "en": "If a real body’s size is tiny compared with the length of its trajectory, it is treated as a <strong>point mass</strong>. If intermolecular forces are ignored, the <strong>ideal gas</strong> model arises."
+ },
+ {
+  "k": "d7f74949",
+  "s": "2. Matematik model",
+  "ru": "2. Математическая модель",
+  "en": "2. Mathematical model"
+ },
+ {
+  "k": "114bf543",
+  "s": "Fizika qonunlarining differensial va algebraik tenglamalar ko‘rinishidagi ifodasi: Nyutonning 2-qonuni, Maksvell elektrodinamika tenglamalari, Shryodinger to‘lqin tenglamasi.",
+  "ru": "Выражение законов физики в виде дифференциальных и алгебраических уравнений: второй закон Ньютона, уравнения электродинамики Максвелла, волновое уравнение Шрёдингера.",
+  "en": "Physical laws expressed as differential and algebraic equations: Newton’s second law, Maxwell’s equations of electrodynamics, the Schrödinger wave equation."
+ },
+ {
+  "k": "255a49a2",
+  "s": "3. Kompyuter eksperimenti",
+  "ru": "3. Компьютерный эксперимент",
+  "en": "3. Computer experiment"
+ },
+ {
+  "k": "e295dde0",
+  "s": "Matematik tenglamalarning sonli usullar (Euler, RK4, Monte-Karlo) yordamida diskretlashtirilgan dasturiy kodi va interaktiv simulyatsiyasi orqali yangi bilimlarni kashf etish.",
+  "ru": "Открытие новых знаний через дискретизированный программный код и интерактивную симуляцию математических уравнений численными методами (Эйлер, RK4, Монте-Карло).",
+  "en": "Discovering new knowledge through discretised program code and interactive simulation of mathematical equations using numerical methods (Euler, RK4, Monte Carlo)."
+ },
+ {
+  "k": "098a0d2b",
+  "s": "Fizik modellashtirish zanjiri:",
+  "ru": "Цепочка физического моделирования:",
+  "en": "The physical modelling chain:"
+ },
+ {
+  "k": "49ba3155",
+  "s": "Real Fizik Obyekt → Gipoteza va Cheklovlar → Matematik Tenglamalar → Sonli Algoritm → Dasturiy Kod → Vizual Simulyatsiya → Verifikatsiya",
+  "ru": "Реальный физический объект → гипотеза и ограничения → математические уравнения → численный алгоритм → программный код → визуальная симуляция → верификация",
+  "en": "Real physical object → hypothesis and constraints → mathematical equations → numerical algorithm → program code → visual simulation → verification"
+ },
+ {
+  "k": "e4781730",
+  "s": "2. PhET va Vascak.cz simulyatsiyalarining teskari muhandisligi (Reverse Engineering) va modellarni tasniflash metodologiyasi",
+  "ru": "2. Обратная разработка (Reverse Engineering) симуляций PhET и Vascak.cz и методология классификации моделей",
+  "en": "2. Reverse engineering of PhET and Vascak.cz simulations and the methodology of model classification"
+ },
+ {
+  "k": "576c6cb4",
+  "s": "Oliy ta’lim talabalarida ilmiy-tadqiqot va dasturlash ko‘nikmalarini shakllantirishning eng samarali usullaridan biri — jahon miqyosidagi ochiq fizik simulyatsiyalar (Kolorado universitetining <strong>PhET Interactive Simulations</strong> va Chexiya o‘qituvchisi Vladimir Vascakning <strong>Vascak.cz</strong> resurslari) motorini <em>teskari muhandislik (Reverse Engineering)</em> usulida tahlil qilishdir. Bu yondashuv tayyor animatsiyani shunchaki tomosha qilishdan farqli o‘laroq, animatsiya orqasida yotgan <strong>differensial tenglamalar</strong>, <strong>chegaraviy shartlar</strong>, <strong>saqlanish qonunlari</strong> va <strong>sonli algoritmlar</strong>ni aniqlash hamda qayta tiklash imkonini beradi.",
+  "ru": "Один из самых эффективных способов формирования у студентов вузов исследовательских и программистских навыков — анализ движка открытых физических симуляций мирового уровня (<strong>PhET Interactive Simulations</strong> Университета Колорадо и ресурсы <strong>Vascak.cz</strong> чешского учителя Владимира Вашчака) методом <em>обратной разработки (Reverse Engineering)</em>. В отличие от простого просмотра готовой анимации, этот подход позволяет выявить и восстановить стоящие за ней <strong>дифференциальные уравнения</strong>, <strong>граничные условия</strong>, <strong>законы сохранения</strong> и <strong>численные алгоритмы</strong>.",
+  "en": "One of the most effective ways to build research and programming skills in university students is to analyse the engine of world-class open physics simulations (the University of Colorado’s <strong>PhET Interactive Simulations</strong> and the <strong>Vascak.cz</strong> resources of Czech teacher Vladimír Vaščák) through <em>reverse engineering</em>. Unlike simply watching a finished animation, this approach makes it possible to identify and reconstruct the <strong>differential equations</strong>, <strong>boundary conditions</strong>, <strong>conservation laws</strong> and <strong>numerical algorithms</strong> behind it."
+ },
+ {
+  "k": "ff53fa6f",
+  "s": "PhET Reverse Engineering",
+  "ru": "PhET Reverse Engineering",
+  "en": "PhET Reverse Engineering"
+ },
+ {
+  "k": "24e2b612",
+  "s": "🔬 Teskari muhandislikning 5 bosqichli ilmiy-metodologik algoritmi:",
+  "ru": "🔬 5-этапный научно-методологический алгоритм обратной разработки:",
+  "en": "🔬 The 5-stage scientific and methodological reverse-engineering algorithm:"
+ },
+ {
+  "k": "82673429",
+  "s": "1. Vizual fenomenologiya:",
+  "ru": "1. Визуальная феноменология:",
+  "en": "1. Visual phenomenology:"
+ },
+ {
+  "k": "ecbc4f8f",
+  "s": "Simulyatsiyadagi jism harakati (aylana, ellips, to‘lqin, to‘qnashuv) va boshqaruvchi slayderlar ro‘yxatini tuzish.",
+  "ru": "Составление списка движений тел в симуляции (окружность, эллипс, волна, столкновение) и управляющих ползунков.",
+  "en": "Listing the motions in the simulation (circle, ellipse, wave, collision) and the control sliders."
+ },
+ {
+  "k": "0cb271fa",
+  "s": "2. Holat vektori (state vector):",
+  "ru": "2. Вектор состояния (state vector):",
+  "en": "2. State vector:"
+ },
+ {
+  "k": "fbbd2d29",
+  "s": "Tizimning erkinlik darajalarini aniqlash: $\\vec{S}(t) = \\{x, y, z, v_x, v_y, v_z, m, T, P\\}$.",
+  "ru": "Определение степеней свободы системы: $\\vec{S}(t) = \\{x, y, z, v_x, v_y, v_z, m, T, P\\}$.",
+  "en": "Identifying the system’s degrees of freedom: $\\vec{S}(t) = \\{x, y, z, v_x, v_y, v_z, m, T, P\\}$."
+ },
+ {
+  "k": "a873ae30",
+  "s": "3. Fizik qonunlarni tiklash:",
+  "ru": "3. Восстановление физических законов:",
+  "en": "3. Reconstructing the physical laws:"
+ },
+ {
+  "k": "9ce93d71",
+  "s": "Harakatni boshqaruvchi asosiy differensial yoki statistik tenglamalarni (Nyuton, Maksvell, Bolsman) yozish.",
+  "ru": "Запись основных дифференциальных или статистических уравнений, управляющих движением (Ньютон, Максвелл, Больцман).",
+  "en": "Writing down the main differential or statistical equations governing the motion (Newton, Maxwell, Boltzmann)."
+ },
+ {
+  "k": "dc4cb4a7",
+  "s": "4. Chegaraviy shartlar:",
+  "ru": "4. Граничные условия:",
+  "en": "4. Boundary conditions:"
+ },
+ {
+  "k": "b8e20a69",
+  "s": "Elastik devorlar, ochiq chegaralar, so‘nish koeffitsiyentlari va cheklovlarni formalizatsiya qilish.",
+  "ru": "Формализация упругих стенок, открытых границ, коэффициентов затухания и ограничений.",
+  "en": "Formalising elastic walls, open boundaries, damping coefficients and constraints."
+ },
+ {
+  "k": "bf5385a5",
+  "s": "5. Dasturiy rekonstruksiya:",
+  "ru": "5. Программная реконструкция:",
+  "en": "5. Software reconstruction:"
+ },
+ {
+  "k": "15497ec0",
+  "s": "Claude / Python yordamida modelning soddalashtirilgan ishchi HTML5 Canvas prototipini yaratish.",
+  "ru": "Создание упрощённого рабочего прототипа модели на HTML5 Canvas с помощью Claude / Python.",
+  "en": "Building a simplified working HTML5 Canvas prototype of the model with Claude / Python."
+ },
+ {
+  "k": "817bb78b",
+  "s": "🌐 PhET Interactive Simulations loyihalarining chuqur teskari muhandisligi:",
+  "ru": "🌐 Глубокая обратная разработка проектов PhET Interactive Simulations:",
+  "en": "🌐 In-depth reverse engineering of PhET Interactive Simulations projects:"
+ },
+ {
+  "k": "ada7f8dc",
+  "s": "1. PhET: Gravity and Orbits (gravitatsiya va orbital harakat)",
+  "ru": "1. PhET: Gravity and Orbits (гравитация и орбитальное движение)",
+  "en": "1. PhET: Gravity and Orbits (gravity and orbital motion)"
+ },
+ {
+  "k": "4eb8b3b5",
+  "s": "Deterministik dinamik uzluksiz",
+  "ru": "Детерминированная динамическая непрерывная",
+  "en": "Deterministic, dynamic, continuous"
+ },
+ {
+  "k": "198c0950",
+  "s": "<strong>Matematik model:</strong> Ikki jism gravitatsion o‘zaro ta’siri Nyutonning 2-qonuni va Butun olam tortishish qonuni orqali 2-tartibli nochiziqli differensial tenglamalar sistemasi ko‘rinishida yoziladi: $$\\frac{d^2\\vec{r}}{dt^2} = - \\frac{G M}{r^3} \\vec{r} \\iff \\begin{cases} \\frac{dv_x}{dt} = - \\frac{GM x}{(x^2+y^2)^{3/2}} \\\\ \\frac{dv_y}{dt} = - \\frac{GM y}{(x^2+y^2)^{3/2}} \\end{cases}$$ <strong>Saqlanish qonunlari (invariantlar):</strong> <br>• To‘liq mexanik energiya: $E = \\frac{1}{2}m(v_x^2 + v_y^2) - \\frac{GMm}{\\sqrt{x^2+y^2}} = \\text{const}$ <br>• Burchak momenti (Impuls momenti): $\\vec{L} = \\vec{r} \\times m\\vec{v} = m(x v_y - y v_x)\\vec{k} = \\text{const}$ <br>• Laplas-Runge-Lents vektori $\\vec{A} = \\vec{v} \\times \\vec{L} - GMm\\frac{\\vec{r}}{r} = \\text{const}$ (orbita perigeliysining fazoda burilmasligini ta’minlaydi).",
+  "ru": "<strong>Математическая модель:</strong> гравитационное взаимодействие двух тел записывается через второй закон Ньютона и закон всемирного тяготения в виде системы нелинейных дифференциальных уравнений 2-го порядка: $$\\frac{d^2\\vec{r}}{dt^2} = - \\frac{G M}{r^3} \\vec{r} \\iff \\begin{cases} \\frac{dv_x}{dt} = - \\frac{GM x}{(x^2+y^2)^{3/2}} \\\\ \\frac{dv_y}{dt} = - \\frac{GM y}{(x^2+y^2)^{3/2}} \\end{cases}$$ <strong>Законы сохранения (инварианты):</strong> <br>• Полная механическая энергия: $E = \\frac{1}{2}m(v_x^2 + v_y^2) - \\frac{GMm}{\\sqrt{x^2+y^2}} = \\text{const}$ <br>• Угловой момент (момент импульса): $\\vec{L} = \\vec{r} \\times m\\vec{v} = m(x v_y - y v_x)\\vec{k} = \\text{const}$ <br>• Вектор Лапласа–Рунге–Ленца $\\vec{A} = \\vec{v} \\times \\vec{L} - GMm\\frac{\\vec{r}}{r} = \\text{const}$ (обеспечивает отсутствие поворота перигелия орбиты в пространстве).",
+  "en": "<strong>Mathematical model:</strong> the gravitational interaction of two bodies is written via Newton’s second law and the law of universal gravitation as a system of second-order non-linear differential equations: $$\\frac{d^2\\vec{r}}{dt^2} = - \\frac{G M}{r^3} \\vec{r} \\iff \\begin{cases} \\frac{dv_x}{dt} = - \\frac{GM x}{(x^2+y^2)^{3/2}} \\\\ \\frac{dv_y}{dt} = - \\frac{GM y}{(x^2+y^2)^{3/2}} \\end{cases}$$ <strong>Conservation laws (invariants):</strong> <br>• Total mechanical energy: $E = \\frac{1}{2}m(v_x^2 + v_y^2) - \\frac{GMm}{\\sqrt{x^2+y^2}} = \\text{const}$ <br>• Angular momentum: $\\vec{L} = \\vec{r} \\times m\\vec{v} = m(x v_y - y v_x)\\vec{k} = \\text{const}$ <br>• The Laplace–Runge–Lenz vector $\\vec{A} = \\vec{v} \\times \\vec{L} - GMm\\frac{\\vec{r}}{r} = \\text{const}$ (keeps the orbit’s perihelion from precessing in space)."
+ },
+ {
+  "k": "e8bd3a75",
+  "s": "Teskari muhandislik xulosalari:",
+  "ru": "Выводы обратной разработки:",
+  "en": "Reverse-engineering findings:"
+ },
+ {
+  "k": "df1de4c5",
+  "s": "<strong>Orbita geometriyasi:</strong> $v_0 = \\sqrt{GM/r_0}$ bo‘lganda doira ($e=0$), $v_0 &lt; \\sqrt{2GM/r_0}$ da ellips ($0 &lt; e &lt; 1$), $v_0 = \\sqrt{2GM/r_0}$ da parabola ($e=1$), $v_0 &gt; \\sqrt{2GM/r_0}$ da giperbola ($e&gt;1$).",
+  "ru": "<strong>Геометрия орбиты:</strong> при $v_0 = \\sqrt{GM/r_0}$ — окружность ($e=0$), при $v_0 &lt; \\sqrt{2GM/r_0}$ — эллипс ($0 &lt; e &lt; 1$), при $v_0 = \\sqrt{2GM/r_0}$ — парабола ($e=1$), при $v_0 &gt; \\sqrt{2GM/r_0}$ — гипербола ($e&gt;1$).",
+  "en": "<strong>Orbit geometry:</strong> for $v_0 = \\sqrt{GM/r_0}$ a circle ($e=0$), for $v_0 &lt; \\sqrt{2GM/r_0}$ an ellipse ($0 &lt; e &lt; 1$), for $v_0 = \\sqrt{2GM/r_0}$ a parabola ($e=1$), for $v_0 &gt; \\sqrt{2GM/r_0}$ a hyperbola ($e&gt;1$)."
+ },
+ {
+  "k": "f8231855",
+  "s": "<strong>Sonli integrator:</strong> PhET bu simulyatsiyada oddiy Eyler usulini ishlata olmaydi (chunki orbita spiral shaklida portlaydi). Simplektik <em>Verlet</em> yoki 4-tartibli <em>Runge–Kutta (RK4)</em> usuli qo‘llanilgan.",
+  "ru": "<strong>Численный интегратор:</strong> PhET не может использовать в этой симуляции простой метод Эйлера (орбита «взорвётся» по спирали). Применён симплектический метод <em>Верле</em> или метод <em>Рунге–Кутты 4-го порядка (RK4)</em>.",
+  "en": "<strong>Numerical integrator:</strong> PhET cannot use plain Euler in this simulation (the orbit would spiral out). A symplectic <em>Verlet</em> or 4th-order <em>Runge–Kutta (RK4)</em> method is used."
+ },
+ {
+  "k": "a0fe7eb9",
+  "s": "<strong>Tasnifi:</strong> <em>100% Deterministik Dinamik Model</em> — boshlang‘ich koordinata $(x_0, y_0)$ va tezlik $(v_{x0}, v_{y0})$ ma’lum bo‘lsa, istalgan kelajak vaqt $t$ dagi holat Koshi teoremasiga ko‘ra bir qiymatli aniqlanadi.",
+  "ru": "<strong>Классификация:</strong> <em>100% детерминированная динамическая модель</em> — если известны начальная координата $(x_0, y_0)$ и скорость $(v_{x0}, v_{y0})$, состояние в любой будущий момент $t$ однозначно определяется по теореме Коши.",
+  "en": "<strong>Classification:</strong> a <em>100% deterministic dynamic model</em> — if the initial position $(x_0, y_0)$ and velocity $(v_{x0}, v_{y0})$ are known, the state at any future time $t$ is uniquely determined by Cauchy’s theorem."
+ },
+ {
+  "k": "ed25b981",
+  "s": "2. PhET: Gas Properties (ideal gaz xossalari va MKT)",
+  "ru": "2. PhET: Gas Properties (свойства идеального газа и МКТ)",
+  "en": "2. PhET: Gas Properties (ideal gas properties and kinetic theory)"
+ },
+ {
+  "k": "5e32f0e6",
+  "s": "Stoxastik dinamik diskret",
+  "ru": "Стохастическая динамическая дискретная",
+  "en": "Stochastic, dynamic, discrete"
+ },
+ {
+  "k": "420cd05c",
+  "s": "<strong>Matematik model:</strong> $N$ ta mutlaq elastik qattiq disklar (Hard-Sphere Model). Zarrachalar to‘qnashuvida impuls va mexanik energiya saqlanadi: $$\\vec{v}_1' = \\vec{v}_1 - \\frac{2 m_2}{m_1+m_2}\\frac{(\\vec{v}_1-\\vec{v}_2)\\cdot(\\vec{r}_1-\\vec{r}_2)}{\\|\\vec{r}_1-\\vec{r}_2\\|^2}(\\vec{r}_1-\\vec{r}_2)$$ <strong>Makroskopik va mikroskopik parametrlar bog‘liqligi:</strong> <br>• Devorga berilgan impuls oqimi va Bosim: $P = \\frac{1}{A \\Delta t} \\sum_{k} 2 m |v_{\\perp, k}|$ <br>• Harorat va O‘rtacha Kinetik Energiya: $\\langle E_k \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle = k_B T \\quad \\text{(2D holatda)}$ <br>• Maksvell-Bolsman tezliklar taqsimoti: $$f(v) = \\frac{m}{k_B T} v \\exp\\left(-\\frac{m v^2}{2 k_B T}\\right)$$",
+  "ru": "<strong>Математическая модель:</strong> $N$ абсолютно упругих твёрдых дисков (Hard-Sphere Model). При столкновениях частиц сохраняются импульс и механическая энергия: $$\\vec{v}_1' = \\vec{v}_1 - \\frac{2 m_2}{m_1+m_2}\\frac{(\\vec{v}_1-\\vec{v}_2)\\cdot(\\vec{r}_1-\\vec{r}_2)}{\\|\\vec{r}_1-\\vec{r}_2\\|^2}(\\vec{r}_1-\\vec{r}_2)$$ <strong>Связь макро- и микроскопических параметров:</strong> <br>• Поток импульса на стенку и давление: $P = \\frac{1}{A \\Delta t} \\sum_{k} 2 m |v_{\\perp, k}|$ <br>• Температура и средняя кинетическая энергия: $\\langle E_k \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle = k_B T \\quad \\text{(2D holatda)}$ <br>• Распределение скоростей Максвелла–Больцмана: $$f(v) = \\frac{m}{k_B T} v \\exp\\left(-\\frac{m v^2}{2 k_B T}\\right)$$",
+  "en": "<strong>Mathematical model:</strong> $N$ perfectly elastic hard discs (hard-sphere model). Momentum and mechanical energy are conserved in particle collisions: $$\\vec{v}_1' = \\vec{v}_1 - \\frac{2 m_2}{m_1+m_2}\\frac{(\\vec{v}_1-\\vec{v}_2)\\cdot(\\vec{r}_1-\\vec{r}_2)}{\\|\\vec{r}_1-\\vec{r}_2\\|^2}(\\vec{r}_1-\\vec{r}_2)$$ <strong>Linking macroscopic and microscopic parameters:</strong> <br>• Momentum flux onto the wall and pressure: $P = \\frac{1}{A \\Delta t} \\sum_{k} 2 m |v_{\\perp, k}|$ <br>• Temperature and mean kinetic energy: $\\langle E_k \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle = k_B T \\quad \\text{(2D holatda)}$ <br>• The Maxwell–Boltzmann speed distribution: $$f(v) = \\frac{m}{k_B T} v \\exp\\left(-\\frac{m v^2}{2 k_B T}\\right)$$"
+ },
+ {
+  "k": "d24c6f21",
+  "s": "<strong>Dinamik xaos va tasodifiylik:</strong> Garchi har bir to‘qnashuv Nyuton mexanikasiga bo‘ysunsa-da, $N \\sim 100$ ta zarrachada trayektoriyalarning boshlang‘ich shartlarga o‘ta yuqori sezgirligi (Lyapunov eksponentasi $\\lambda &gt; 0$) tufayli tizim xaotik bo‘ladi.",
+  "ru": "<strong>Динамический хаос и случайность:</strong> хотя каждое столкновение подчиняется механике Ньютона, при $N \\sim 100$ частицах из-за чрезвычайной чувствительности траекторий к начальным условиям (показатель Ляпунова $\\lambda &gt; 0$) система становится хаотической.",
+  "en": "<strong>Dynamic chaos and randomness:</strong> although every collision obeys Newtonian mechanics, with $N \\sim 100$ particles the system becomes chaotic because trajectories are extremely sensitive to initial conditions (Lyapunov exponent $\\lambda &gt; 0$)."
+ },
+ {
+  "k": "84023519",
+  "s": "<strong>Statistik muvozanat:</strong> Boshida barcha zarrachalarga bir xil tezlik berilsa ham, 2-3 soniya to‘qnashuvlardan so‘ng tezliklar Maksvell taqsimoti egri chizig‘iga o‘z-o‘zidan kelib tushadi.",
+  "ru": "<strong>Статистическое равновесие:</strong> даже если вначале всем частицам задана одинаковая скорость, через 2–3 секунды столкновений скорости сами собой ложатся на кривую распределения Максвелла.",
+  "en": "<strong>Statistical equilibrium:</strong> even if all particles start with the same speed, after 2–3 seconds of collisions the speeds settle onto the Maxwell distribution curve on their own."
+ },
+ {
+  "k": "e5c9b697",
+  "s": "<strong>Tasnifi:</strong> <em>Stoxastik Dinamik Diskret Model</em> — alohida zarracha trayektoriyasi tasodifiy (Broun harakati), ammo butun ansambl qat’iy statistik qonuniyatlarga bo‘ysunadi.",
+  "ru": "<strong>Классификация:</strong> <em>стохастическая динамическая дискретная модель</em> — траектория отдельной частицы случайна (броуновское движение), но весь ансамбль подчиняется строгим статистическим закономерностям.",
+  "en": "<strong>Classification:</strong> a <em>stochastic dynamic discrete model</em> — an individual particle’s trajectory is random (Brownian motion), but the ensemble as a whole obeys strict statistical laws."
+ },
+ {
+  "k": "5b57f711",
+  "s": "3. PhET: Wave on a String (torda to‘lqin tarqalishi)",
+  "ru": "3. PhET: Wave on a String (распространение волны по струне)",
+  "en": "3. PhET: Wave on a String (wave propagation on a string)"
+ },
+ {
+  "k": "aa6f6834",
+  "s": "Deterministik uzluksiz maydon modeli",
+  "ru": "Детерминированная непрерывная модель поля",
+  "en": "Deterministic continuous field model"
+ },
+ {
+  "k": "a41d105c",
+  "s": "<strong>Matematik model:</strong> 1D tor tebranishining xususiy hosilali differensial to‘lqin tenglamasi (D’Alamber tenglamasi): $$\\frac{\\partial^2 u}{\\partial t^2} = v^2 \\frac{\\partial^2 u}{\\partial x^2} - \\gamma \\frac{\\partial u}{\\partial t}, \\quad v = \\sqrt{\\frac{T_{\\text{taranglik}}}{\\mu_{\\text{chiziqli zichlik}}}}$$ <strong>Chegaraviy shartlar (boundary conditions):</strong> <br>• <em>Qattiq mahkamlangan uch (Fixed End):</em> $u(L, t) = 0 \\implies$ to‘lqin $\\pi$ faza siljishi bilan qaytadi (to‘ntariladi). <br>• <em>Erkin uch (Loose End):</em> $\\frac{\\partial u}{\\partial x}\\big|_{x=L} = 0 \\implies$ to‘lqin faza o‘zgarmasdan qaytadi. <br>• <em>Cheksiz muhit (No End):</em> Chegaradan to‘lqin qaytmasdan to‘liq yutiladi.",
+  "ru": "<strong>Математическая модель:</strong> дифференциальное волновое уравнение в частных производных для колебаний 1D-струны (уравнение Д’Аламбера): $$\\frac{\\partial^2 u}{\\partial t^2} = v^2 \\frac{\\partial^2 u}{\\partial x^2} - \\gamma \\frac{\\partial u}{\\partial t}, \\quad v = \\sqrt{\\frac{T_{\\text{taranglik}}}{\\mu_{\\text{chiziqli zichlik}}}}$$ <strong>Граничные условия (boundary conditions):</strong> <br>• <em>Жёстко закреплённый конец (Fixed End):</em> $u(L, t) = 0 \\implies$ волна отражается со сдвигом фазы $\\pi$ (переворачивается). <br>• <em>Свободный конец (Loose End):</em> $\\frac{\\partial u}{\\partial x}\\big|_{x=L} = 0 \\implies$ волна отражается без изменения фазы. <br>• <em>Бесконечная среда (No End):</em> волна полностью поглощается на границе без отражения.",
+  "en": "<strong>Mathematical model:</strong> the partial differential wave equation for a vibrating 1D string (d’Alembert’s equation): $$\\frac{\\partial^2 u}{\\partial t^2} = v^2 \\frac{\\partial^2 u}{\\partial x^2} - \\gamma \\frac{\\partial u}{\\partial t}, \\quad v = \\sqrt{\\frac{T_{\\text{taranglik}}}{\\mu_{\\text{chiziqli zichlik}}}}$$ <strong>Boundary conditions:</strong> <br>• <em>Fixed end:</em> $u(L, t) = 0 \\implies$ the wave reflects with a $\\pi$ phase shift (inverted). <br>• <em>Loose end:</em> $\\frac{\\partial u}{\\partial x}\\big|_{x=L} = 0 \\implies$ the wave reflects without a phase change. <br>• <em>No end:</em> the wave is fully absorbed at the boundary with no reflection."
+ },
+ {
+  "k": "8390167f",
+  "s": "<strong>Diskretlash usuli:</strong> Uzluksiz tor kompyuterda $N$ ta o‘zaro prujinalar bilan ulangan diskret moddiy nuqtalar zanjiri (Chekli Ayirmalar — FDM) sifatida modellangan.",
+  "ru": "<strong>Способ дискретизации:</strong> непрерывная струна смоделирована в компьютере как цепочка из $N$ дискретных материальных точек, соединённых пружинами (метод конечных разностей — FDM).",
+  "en": "<strong>Discretisation:</strong> the continuous string is modelled in the computer as a chain of $N$ discrete point masses connected by springs (the finite-difference method, FDM)."
+ },
+ {
+  "k": "a20930bd",
+  "s": "<strong>Rezonans va turg‘un to‘lqinlar:</strong> Manba chastotasi $\\nu = \\frac{n v}{2L}$ bo‘lganda, torda turg‘un to‘lqinlar (tugunlar va bo‘rtiqlar) hosil bo‘ladi.",
+  "ru": "<strong>Резонанс и стоячие волны:</strong> при частоте источника $\\nu = \\frac{n v}{2L}$ на струне образуются стоячие волны (узлы и пучности).",
+  "en": "<strong>Resonance and standing waves:</strong> when the source frequency is $\\nu = \\frac{n v}{2L}$, standing waves (nodes and antinodes) form on the string."
+ },
+ {
+  "k": "5f0eea66",
+  "s": "<strong>Tasnifi:</strong> <em>Deterministik Uzluksiz Maydon Modeli</em> — fazoda vaqt bo‘yicha to‘lqin maydoni $u(x, t)$ ning evolyutsiyasini aniq ifodalaydi.",
+  "ru": "<strong>Классификация:</strong> <em>детерминированная непрерывная модель поля</em> — точно описывает эволюцию волнового поля $u(x, t)$ в пространстве и времени.",
+  "en": "<strong>Classification:</strong> a <em>deterministic continuous field model</em> — it precisely describes how the wave field $u(x, t)$ evolves in space and time."
+ },
+ {
+  "k": "b647327a",
+  "s": "🇨🇿 Vascak.cz fizik simulyatsiyalari bazasining didaktik va teskari muhandislik tahlili:",
+  "ru": "🇨🇿 Дидактический анализ и обратная разработка базы физических симуляций Vascak.cz:",
+  "en": "🇨🇿 Didactic and reverse-engineering analysis of the Vascak.cz physics simulation collection:"
+ },
+ {
+  "k": "31fa65b9",
+  "s": "<strong>Vascak.cz</strong> — Chexiyalik fizik Vladimir Vascak tomonidan yaratilgan, 200 dan ortiq interaktiv HTML5 Canvas animatsiyalarini o‘z ichiga olgan jahon miqyosidagi ochiq ta’lim platformasidir. Vascak simulyatsiyalarining asosiy kuchi — ularning vizual soddaligi, harakat formulalari bilan bevosita ko‘rgazmali bog‘langanligi va brauzerda o‘ta tez (60 FPS) ishlashidadir.",
+  "ru": "<strong>Vascak.cz</strong> — открытая образовательная платформа мирового уровня, созданная чешским физиком Владимиром Вашчаком и содержащая более 200 интерактивных анимаций на HTML5 Canvas. Главная сила симуляций Vascak — их визуальная простота, наглядная прямая связь с формулами движения и очень быстрая работа в браузере (60 FPS).",
+  "en": "<strong>Vascak.cz</strong> is a world-class open educational platform created by Czech physicist Vladimír Vaščák, with more than 200 interactive HTML5 Canvas animations. Its main strength is visual simplicity, a clear direct link to the equations of motion and very fast performance in the browser (60 FPS)."
+ },
+ {
+  "k": "c159f77f",
+  "s": "1. Mexanika bo‘limi (Vascak.cz)",
+  "ru": "1. Раздел «Механика» (Vascak.cz)",
+  "en": "1. Mechanics (Vascak.cz)"
+ },
+ {
+  "k": "d503267a",
+  "s": "<strong>Modellar:</strong> Kepler qonunlari, Matematik mayatnik, Prujinali ossilyator, Erkin tushish.<br> <strong>Tasnifi:</strong> <em>Deterministik Dinamik Model</em>.<br> <strong>Didaktik qo‘llanish:</strong> Nyuton mexanikasi tenglamalarining qat’iy analitik va sonli yechimlari orqali trayektoriya va energiyaning vaqt bo‘yicha o‘zgarishini ko‘rsatish.",
+  "ru": "<strong>Модели:</strong> законы Кеплера, математический маятник, пружинный осциллятор, свободное падение.<br> <strong>Классификация:</strong> <em>детерминированная динамическая модель</em>.<br> <strong>Дидактическое применение:</strong> показ изменения траектории и энергии во времени через строгие аналитические и численные решения уравнений механики Ньютона.",
+  "en": "<strong>Models:</strong> Kepler’s laws, the simple pendulum, the spring oscillator, free fall.<br> <strong>Classification:</strong> <em>deterministic dynamic model</em>.<br> <strong>Didactic use:</strong> showing how trajectory and energy change over time through exact analytical and numerical solutions of Newtonian equations."
+ },
+ {
+  "k": "34a34dfd",
+  "s": "2. Molekulyar fizika va MKT",
+  "ru": "2. Молекулярная физика и МКТ",
+  "en": "2. Molecular physics and kinetic theory"
+ },
+ {
+  "k": "1019f95c",
+  "s": "<strong>Modellar:</strong> Broun harakati (Broun harakati), Karno sikli, Gaz qonunlari (Boyl-Mariott, Gey-Lyussak).<br> <strong>Tasnifi:</strong> <em>Stoxastik va Fenomenologik Model</em>.<br> <strong>Didaktik qo‘llanish:</strong> Og‘ir chang zarrachasining yengil molekulalar zarbasi ostida xaotik siljishi (Langevin tenglamasi) orqali stoxastik dinamikani tushuntirish.",
+  "ru": "<strong>Модели:</strong> броуновское движение, цикл Карно, газовые законы (Бойля–Мариотта, Гей-Люссака).<br> <strong>Классификация:</strong> <em>стохастическая и феноменологическая модель</em>.<br> <strong>Дидактическое применение:</strong> объяснение стохастической динамики через хаотическое смещение тяжёлой пылинки под ударами лёгких молекул (уравнение Ланжевена).",
+  "en": "<strong>Models:</strong> Brownian motion, the Carnot cycle, the gas laws (Boyle–Mariotte, Gay-Lussac).<br> <strong>Classification:</strong> <em>stochastic and phenomenological model</em>.<br> <strong>Didactic use:</strong> explaining stochastic dynamics through the chaotic drift of a heavy dust grain struck by light molecules (the Langevin equation)."
+ },
+ {
+  "k": "1afbcf71",
+  "s": "3. Elektrodinamika va to‘lqinlar",
+  "ru": "3. Электродинамика и волны",
+  "en": "3. Electrodynamics and waves"
+ },
+ {
+  "k": "ae4020bd",
+  "s": "<strong>Modellar:</strong> Doppler effekti, RLC zanjiri tebranishlari, Lorents kuchi, Yung interferensiyasi.<br> <strong>Tasnifi:</strong> <em>Deterministik Maydon va Garmonik Model</em>.<br> <strong>Didaktik qo‘llanish:</strong> To‘lqin frontlarining sferik tarqalishi va faza superpozitsiyasini vizual ko‘rish.",
+  "ru": "<strong>Модели:</strong> эффект Доплера, колебания RLC-контура, сила Лоренца, интерференция Юнга.<br> <strong>Классификация:</strong> <em>детерминированная полевая и гармоническая модель</em>.<br> <strong>Дидактическое применение:</strong> наглядное наблюдение сферического распространения волновых фронтов и суперпозиции фаз.",
+  "en": "<strong>Models:</strong> the Doppler effect, RLC circuit oscillations, the Lorentz force, Young’s interference.<br> <strong>Classification:</strong> <em>deterministic field and harmonic model</em>.<br> <strong>Didactic use:</strong> visualising the spherical spread of wavefronts and phase superposition."
+ },
+ {
+  "k": "6f72fee8",
+  "s": "📊 PhET va Vascak.cz simulyatsiyalarining teskari muhandislik pasporti:",
+  "ru": "📊 Паспорт обратной разработки симуляций PhET и Vascak.cz:",
+  "en": "📊 Reverse-engineering passport of PhET and Vascak.cz simulations:"
+ },
+ {
+  "k": "ac7e31d4",
+  "s": "Platforma va simulyatsiya",
+  "ru": "Платформа и симуляция",
+  "en": "Platform and simulation"
+ },
+ {
+  "k": "054a9047",
+  "s": "Boshqariluvchi kirish parametrlari",
+  "ru": "Управляемые входные параметры",
+  "en": "Controllable input parameters"
+ },
+ {
+  "k": "6fdcfad9",
+  "s": "Tiklanuvchi matematik model",
+  "ru": "Восстанавливаемая математическая модель",
+  "en": "Reconstructed mathematical model"
+ },
+ {
+  "k": "e41b70ba",
+  "s": "Modelning taksonomik turi",
+  "ru": "Таксономический тип модели",
+  "en": "Taxonomic model type"
+ },
+ {
+  "k": "d1e15ac5",
+  "s": "Didaktik ahamiyati",
+  "ru": "Дидактическое значение",
+  "en": "Didactic value"
+ },
+ {
+  "k": "c501ca05",
+  "s": "<strong>PhET: Gravity va Orbits</strong>",
+  "ru": "<strong>PhET: Gravity и Orbits</strong>",
+  "en": "<strong>PhET: Gravity and Orbits</strong>"
+ },
+ {
+  "k": "c19c605a",
+  "s": "Massalar $M, m$, Boshlang‘ich radius $r_0$, Tezlik $v_0$",
+  "ru": "Массы $M, m$, начальный радиус $r_0$, скорость $v_0$",
+  "en": "Masses $M, m$, initial radius $r_0$, velocity $v_0$"
+ },
+ {
+  "k": "9956e194",
+  "s": "$\\vec{a} = -GM\\vec{r}/r^3$ (Koshi masalasi)",
+  "ru": "$\\vec{a} = -GM\\vec{r}/r^3$ (задача Коши)",
+  "en": "$\\vec{a} = -GM\\vec{r}/r^3$ (Cauchy problem)"
+ },
+ {
+  "k": "a1cdc61c",
+  "s": "<span class=\"badge badge-cyan\">Deterministik dinamik</span>",
+  "ru": "<span class=\"badge badge-cyan\">Детерминированная динамическая</span>",
+  "en": "<span class=\"badge badge-cyan\">Deterministic dynamic</span>"
+ },
+ {
+  "k": "cd129efa",
+  "s": "Orbita barqarorligi va Nyuton mexanikasi determinizmini isbotlash",
+  "ru": "Доказательство устойчивости орбиты и детерминизма механики Ньютона",
+  "en": "Demonstrating orbital stability and the determinism of Newtonian mechanics"
+ },
+ {
+  "k": "4fa437b5",
+  "s": "<strong>PhET: Gas Properties</strong>",
+  "ru": "<strong>PhET: Gas Properties</strong>",
+  "en": "<strong>PhET: Gas Properties</strong>"
+ },
+ {
+  "k": "2cbc1514",
+  "s": "Molekulalar soni $N$, Harorat $T$, Hajm $V$",
+  "ru": "Число молекул $N$, температура $T$, объём $V$",
+  "en": "Number of molecules $N$, temperature $T$, volume $V$"
+ },
+ {
+  "k": "e09fadc6",
+  "s": "Elastik to‘qnashuvlar va Maksvell-Bolsman taqsimoti",
+  "ru": "Упругие столкновения и распределение Максвелла–Больцмана",
+  "en": "Elastic collisions and the Maxwell–Boltzmann distribution"
+ },
+ {
+  "k": "e0e9df2d",
+  "s": "<span class=\"badge badge-rose\">Stoxastik diskret</span>",
+  "ru": "<span class=\"badge badge-rose\">Стохастическая дискретная</span>",
+  "en": "<span class=\"badge badge-rose\">Stochastic discrete</span>"
+ },
+ {
+  "k": "83474633",
+  "s": "Xaosdan statistik qonuniyat (Maksvell egri chizig‘i) kelib chiqishini ko‘rsatish",
+  "ru": "Показ возникновения статистической закономерности (кривой Максвелла) из хаоса",
+  "en": "Showing how a statistical law (the Maxwell curve) emerges from chaos"
+ },
+ {
+  "k": "bee9bc8a",
+  "s": "<strong>PhET: Wave on String</strong>",
+  "ru": "<strong>PhET: Wave on String</strong>",
+  "en": "<strong>PhET: Wave on String</strong>"
+ },
+ {
+  "k": "84f96567",
+  "s": "Amplituda $A$, Chastota $\\nu$, Taranglik $T$, So‘nish $\\gamma$",
+  "ru": "Амплитуда $A$, частота $\\nu$, натяжение $T$, затухание $\\gamma$",
+  "en": "Amplitude $A$, frequency $\\nu$, tension $T$, damping $\\gamma$"
+ },
+ {
+  "k": "f679348e",
+  "s": "$\\partial^2 u/\\partial t^2 = v^2 \\partial^2 u/\\partial x^2 - \\gamma \\partial u/\\partial t$",
+  "ru": "$\\partial^2 u/\\partial t^2 = v^2 \\partial^2 u/\\partial x^2 - \\gamma \\partial u/\\partial t$",
+  "en": "$\\partial^2 u/\\partial t^2 = v^2 \\partial^2 u/\\partial x^2 - \\gamma \\partial u/\\partial t$"
+ },
+ {
+  "k": "51123fe7",
+  "s": "<span class=\"badge badge-emerald\">Uzluksiz maydon</span>",
+  "ru": "<span class=\"badge badge-emerald\">Непрерывное поле</span>",
+  "en": "<span class=\"badge badge-emerald\">Continuous field</span>"
+ },
+ {
+  "k": "0dfea873",
+  "s": "Turg‘un to‘lqinlar, rezonans va chegaraviy shartlarni o‘rganish",
+  "ru": "Изучение стоячих волн, резонанса и граничных условий",
+  "en": "Studying standing waves, resonance and boundary conditions"
+ },
+ {
+  "k": "13282a65",
+  "s": "<strong>Vascak: Brownian Motion</strong>",
+  "ru": "<strong>Vascak: Brownian Motion</strong>",
+  "en": "<strong>Vascak: Brownian Motion</strong>"
+ },
+ {
+  "k": "f6f3f914",
+  "s": "Zarrachalar radiusi $R$, Harorat $T$, Zarrachalar soni",
+  "ru": "Радиус частиц $R$, температура $T$, число частиц",
+  "en": "Particle radius $R$, temperature $T$, number of particles"
+ },
+ {
+  "k": "1df30f3c",
+  "s": "Langevin tenglamasi: $m\\dot{v} = -\\gamma v + \\xi(t)$",
+  "ru": "Уравнение Ланжевена: $m\\dot{v} = -\\gamma v + \\xi(t)$",
+  "en": "Langevin equation: $m\\dot{v} = -\\gamma v + \\xi(t)$"
+ },
+ {
+  "k": "4ea82f6c",
+  "s": "<span class=\"badge badge-amber\">Stoxastik dinamik</span>",
+  "ru": "<span class=\"badge badge-amber\">Стохастическая динамическая</span>",
+  "en": "<span class=\"badge badge-amber\">Stochastic dynamic</span>"
+ },
+ {
+  "k": "869a5409",
+  "s": "Fluktuatsiya-dissipatsiya teoremasi va Broun diffuziyasini tushuntirish",
+  "ru": "Объяснение флуктуационно-диссипационной теоремы и броуновской диффузии",
+  "en": "Explaining the fluctuation–dissipation theorem and Brownian diffusion"
+ },
+ {
+  "k": "c76148a3",
+  "s": "<strong>Vascak: RLC Circuit</strong>",
+  "ru": "<strong>Vascak: RLC Circuit</strong>",
+  "en": "<strong>Vascak: RLC Circuit</strong>"
+ },
+ {
+  "k": "b3d67419",
+  "s": "Induktivlik $L$, Sig‘im $C$, Qarshilik $R$, Kuchlanish $U_0$",
+  "ru": "Индуктивность $L$, ёмкость $C$, сопротивление $R$, напряжение $U_0$",
+  "en": "Inductance $L$, capacitance $C$, resistance $R$, voltage $U_0$"
+ },
+ {
+  "k": "aa525e33",
+  "s": "$L\\ddot{q} + R\\dot{q} + q/C = U(t)$",
+  "ru": "$L\\ddot{q} + R\\dot{q} + q/C = U(t)$",
+  "en": "$L\\ddot{q} + R\\dot{q} + q/C = U(t)$"
+ },
+ {
+  "k": "368cc1e0",
+  "s": "<span class=\"badge badge-purple\">Deterministik garmonik</span>",
+  "ru": "<span class=\"badge badge-purple\">Детерминированная гармоническая</span>",
+  "en": "<span class=\"badge badge-purple\">Deterministic harmonic</span>"
+ },
+ {
+  "k": "c0a7cade",
+  "s": "Elektromagnit tebranishlar va so‘nish dekrementini tahlil qilish",
+  "ru": "Анализ электромагнитных колебаний и декремента затухания",
+  "en": "Analysing electromagnetic oscillations and the damping decrement"
+ },
+ {
+  "k": "aafa2112",
+  "s": "💡 Didaktik xulosa:",
+  "ru": "💡 Дидактический вывод:",
+  "en": "💡 Didactic conclusion:"
+ },
+ {
+  "k": "41094624",
+  "s": "PhET va Vascak.cz platformalarini \"teskari muhandislik\" qilish orqali talabalar passiv foydalanuvchidan <strong>aktiv fizik-tadqiqotchi va model arxitektori</strong> darajasiga ko‘tariladilar. Bu metod orqali talaba har qanday fizik jarayonni ko‘rgan zahoti uning differensial tenglamasini, chegaraviy shartlarini va adekvat model turini aniqlash malakasiga ega bo‘ladi.",
+  "ru": "Благодаря «обратной разработке» платформ PhET и Vascak.cz студенты поднимаются от пассивных пользователей до уровня <strong>активных физиков-исследователей и архитекторов моделей</strong>. С помощью этого метода студент, увидев любой физический процесс, сразу умеет определить его дифференциальное уравнение, граничные условия и адекватный тип модели.",
+  "en": "By \"reverse engineering\" PhET and Vascak.cz, students move from passive users to <strong>active physics researchers and model architects</strong>. With this method, a student who sees any physical process can immediately identify its differential equation, boundary conditions and the appropriate model type."
+ },
+ {
+  "k": "8c096d88",
+  "s": "3. Modellar tasnifi (taksonomiyasi) va nazariy solishtirish",
+  "ru": "3. Классификация (таксономия) моделей и теоретическое сравнение",
+  "en": "3. Model classification (taxonomy) and theoretical comparison"
+ },
+ {
+  "k": "39fb690d",
+  "s": "Gemini va ChatGPT yordamida olib borilgan ilmiy-metodologik tahlillar asosida fizik modellar 3 ta asosiy koordinata o‘qi bo‘yicha 6 ta yirik sinfga ajratiladi.",
+  "ru": "На основе научно-методологического анализа, проведённого с помощью Gemini и ChatGPT, физические модели делятся по 3 основным координатным осям на 6 крупных классов.",
+  "en": "Based on scientific and methodological analysis carried out with Gemini and ChatGPT, physical models are divided along 3 main axes into 6 major classes."
+ },
+ {
+  "k": "e6b454f4",
+  "s": "Model Taxonomy Matrix",
+  "ru": "Матрица таксономии моделей",
+  "en": "Model Taxonomy Matrix"
+ },
+ {
+  "k": "4b4a44f0",
+  "s": "Modellar tasnifining 3 asosiy mezoni:",
+  "ru": "3 основных критерия классификации моделей:",
+  "en": "The 3 main criteria for classifying models:"
+ },
+ {
+  "k": "c131dcee",
+  "s": "1. Vaqt omili: statik va dinamik",
+  "ru": "1. Фактор времени: статические и динамические",
+  "en": "1. Time: static vs dynamic"
+ },
+ {
+  "k": "8d8b16d8",
+  "s": "<strong>Statik:</strong> Tizim parametrlari vaqt o‘tishi bilan o‘zgarmaydi ($\\partial / \\partial t = 0$). Muvozanat shartlari: $\\sum \\vec{F} = 0, \\sum \\vec{M} = 0$.<br> <strong>Dinamik:</strong> Tizim holati vaqt o‘tishi bilan evolyutsiya qiladi: $\\frac{d\\vec{p}}{dt} = \\vec{F}$.",
+  "ru": "<strong>Статические:</strong> параметры системы не меняются со временем ($\\partial / \\partial t = 0$). Условия равновесия: $\\sum \\vec{F} = 0, \\sum \\vec{M} = 0$.<br> <strong>Динамические:</strong> состояние системы эволюционирует во времени: $\\frac{d\\vec{p}}{dt} = \\vec{F}$.",
+  "en": "<strong>Static:</strong> the system’s parameters do not change over time ($\\partial / \\partial t = 0$). Equilibrium conditions: $\\sum \\vec{F} = 0, \\sum \\vec{M} = 0$.<br> <strong>Dynamic:</strong> the system’s state evolves over time: $\\frac{d\\vec{p}}{dt} = \\vec{F}$."
+ },
+ {
+  "k": "6445ea90",
+  "s": "2. Tasodifiylik: deterministik va stoxastik",
+  "ru": "2. Случайность: детерминированные и стохастические",
+  "en": "2. Randomness: deterministic vs stochastic"
+ },
+ {
+  "k": "7a9d45d2",
+  "s": "<strong>Deterministik:</strong> Boshlang‘ich shartlar berilsa, yechim 100% bir qiymatli yagona bo‘ladi (Koshi masalasi).<br> <strong>Stoxastik:</strong> Tasodifiy ehtimolliklar, fluktuatsiyalar va Monte-Karlo statistikasi ustuvor bo‘ladi.",
+  "ru": "<strong>Детерминированные:</strong> при заданных начальных условиях решение на 100% однозначно и единственно (задача Коши).<br> <strong>Стохастические:</strong> преобладают случайные вероятности, флуктуации и статистика Монте-Карло.",
+  "en": "<strong>Deterministic:</strong> given the initial conditions, the solution is 100% unique (the Cauchy problem).<br> <strong>Stochastic:</strong> random probabilities, fluctuations and Monte Carlo statistics dominate."
+ },
+ {
+  "k": "d4e4ff6a",
+  "s": "3. Fazoviy tuzilma: diskret va uzluksiz",
+  "ru": "3. Пространственная структура: дискретные и непрерывные",
+  "en": "3. Spatial structure: discrete vs continuous"
+ },
+ {
+  "k": "d202a6d3",
+  "s": "<strong>Diskret:</strong> Alohida moddiy nuqtalar, molekulalar, tugunlar $(x_i, v_i)$ orqali ifodalanadi.<br> <strong>Uzluksiz:</strong> Tutash muhit maydonlari $\\rho(x,y,z), P(x,y,z), \\vec{v}(x,y,z)$ va xususiy hosilali differensial tenglamalar (PDE).",
+  "ru": "<strong>Дискретные:</strong> описываются отдельными материальными точками, молекулами, узлами $(x_i, v_i)$.<br> <strong>Непрерывные:</strong> поля сплошной среды $\\rho(x,y,z), P(x,y,z), \\vec{v}(x,y,z)$ и дифференциальные уравнения в частных производных (PDE).",
+  "en": "<strong>Discrete:</strong> described by individual point masses, molecules or nodes $(x_i, v_i)$.<br> <strong>Continuous:</strong> continuum fields $\\rho(x,y,z), P(x,y,z), \\vec{v}(x,y,z)$ and partial differential equations (PDEs)."
+ },
+ {
+  "k": "f36fc23a",
+  "s": "4. Claude: deterministik va stoxastik modellarning dasturiy kodi",
+  "ru": "4. Claude: программный код детерминированных и стохастических моделей",
+  "en": "4. Claude: code for deterministic and stochastic models"
+ },
+ {
+  "k": "1536d56a",
+  "s": "Quyida Claude tomonidan generatsiya qilingan va o‘quv jarayonida bevosita qo‘llanilishi mumkin bo‘lgan ikkita fundamental model kodi keltirilgan:",
+  "ru": "Ниже приведён код двух фундаментальных моделей, сгенерированный Claude, который можно непосредственно использовать в учебном процессе:",
+  "en": "Below is code for two fundamental models generated by Claude that can be used directly in teaching:"
+ },
+ {
+  "k": "900381f9",
+  "s": "1. Deterministik Kepler harakati kodi (JavaScript)",
+  "ru": "1. Код детерминированного движения Кеплера (JavaScript)",
+  "en": "1. Deterministic Kepler motion code (JavaScript)"
+ },
+ {
+  "k": "b5928ce0",
+  "s": "<span>Kod</span>",
+  "ru": "<span>Код</span>",
+  "en": "<span>Code</span>"
+ },
+ {
+  "k": "0debb852",
+  "s": "<code>// Deterministik Kepler: simplektik integrator function stepKepler(planet, GM, dt) { const r2 = planet.x * planet.x + planet.y * planet.y; const r = Math.sqrt(r2); // Gravitatsiya tezlanishi a = -GM / r^3 * r const a = -GM / (r2 * r); const ax = a * planet.x; const ay = a * planet.y; // Simplektik Eyler–Kromer (v yangilanib, keyin x topiladi) planet.vx += ax * dt; planet.vy += ay * dt; planet.x += planet.vx * dt; planet.y += planet.vy * dt; // Invariantlar: E va L const Ek = 0.5 * (planet.vx**2 + planet.vy**2); const Ep = -GM / r; const Etot = Ek + Ep; const L = planet.x * planet.vy - planet.y * planet.vx; return { Etot, L }; }</code>",
+  "ru": "<code>// Детерминированный Кеплер: симплектический интегратор function stepKepler(planet, GM, dt) { const r2 = planet.x * planet.x + planet.y * planet.y; const r = Math.sqrt(r2); // Гравитационное ускорение a = -GM / r^3 * r const a = -GM / (r2 * r); const ax = a * planet.x; const ay = a * planet.y; // Симплектический Эйлер–Кромер (сначала обновляется v, затем x) planet.vx += ax * dt; planet.vy += ay * dt; planet.x += planet.vx * dt; planet.y += planet.vy * dt; // Инварианты: E и L const Ek = 0.5 * (planet.vx**2 + planet.vy**2); const Ep = -GM / r; const Etot = Ek + Ep; const L = planet.x * planet.vy - planet.y * planet.vx; return { Etot, L }; }</code>",
+  "en": "<code>// Deterministic Kepler: symplectic integrator function stepKepler(planet, GM, dt) { const r2 = planet.x * planet.x + planet.y * planet.y; const r = Math.sqrt(r2); // Gravitational acceleration a = -GM / r^3 * r const a = -GM / (r2 * r); const ax = a * planet.x; const ay = a * planet.y; // Symplectic Euler–Cromer (update v first, then x) planet.vx += ax * dt; planet.vy += ay * dt; planet.x += planet.vx * dt; planet.y += planet.vy * dt; // Invariants: E and L const Ek = 0.5 * (planet.vx**2 + planet.vy**2); const Ep = -GM / r; const Etot = Ek + Ep; const L = planet.x * planet.vy - planet.y * planet.vx; return { Etot, L }; }</code>"
+ },
+ {
+  "k": "ff4ef538",
+  "s": "🔴 Yuqoridagi kodning jonli simulyatsiyasi:",
+  "ru": "🔴 Живая симуляция приведённого выше кода:",
+  "en": "🔴 Live simulation of the code above:"
+ },
+ {
+  "k": "89a96098",
+  "s": "2. Stoxastik 2D gaz to‘qnashuvi kodi (JavaScript)",
+  "ru": "2. Код стохастических столкновений 2D-газа (JavaScript)",
+  "en": "2. Stochastic 2D gas collision code (JavaScript)"
+ },
+ {
+  "k": "94b48578",
+  "s": "<code>// Stoxastik 2D elastik to‘qnashuvlar function resolveParticleCollision(p1, p2) { const dx = p2.x - p1.x; const dy = p2.y - p1.y; const dist2 = dx * dx + dy * dy; const minDist = p1.r + p2.r; if (dist2 &lt; minDist * minDist) { const dist = Math.sqrt(dist2) || 0.001; const nx = dx / dist; const ny = dy / dist; // Nisbiy tezlik const kx = p1.vx - p2.vx; const ky = p1.vy - p2.vy; const pvn = kx * nx + ky * ny; if (pvn &gt; 0) { const impulse = (2 * pvn) / (p1.m + p2.m); p1.vx -= impulse * p2.m * nx; p1.vy -= impulse * p2.m * ny; p2.vx += impulse * p1.m * nx; p2.vy += impulse * p1.m * ny; } } }</code>",
+  "ru": "<code>// Стохастические 2D упругие столкновения function resolveParticleCollision(p1, p2) { const dx = p2.x - p1.x; const dy = p2.y - p1.y; const dist2 = dx * dx + dy * dy; const minDist = p1.r + p2.r; if (dist2 &lt; minDist * minDist) { const dist = Math.sqrt(dist2) || 0.001; const nx = dx / dist; const ny = dy / dist; // Относительная скорость const kx = p1.vx - p2.vx; const ky = p1.vy - p2.vy; const pvn = kx * nx + ky * ny; if (pvn &gt; 0) { const impulse = (2 * pvn) / (p1.m + p2.m); p1.vx -= impulse * p2.m * nx; p1.vy -= impulse * p2.m * ny; p2.vx += impulse * p1.m * nx; p2.vy += impulse * p1.m * ny; } } }</code>",
+  "en": "<code>// Stochastic 2D elastic collisions function resolveParticleCollision(p1, p2) { const dx = p2.x - p1.x; const dy = p2.y - p1.y; const dist2 = dx * dx + dy * dy; const minDist = p1.r + p2.r; if (dist2 &lt; minDist * minDist) { const dist = Math.sqrt(dist2) || 0.001; const nx = dx / dist; const ny = dy / dist; // Relative velocity const kx = p1.vx - p2.vx; const ky = p1.vy - p2.vy; const pvn = kx * nx + ky * ny; if (pvn &gt; 0) { const impulse = (2 * pvn) / (p1.m + p2.m); p1.vx -= impulse * p2.m * nx; p1.vy -= impulse * p2.m * ny; p2.vx += impulse * p1.m * nx; p2.vy += impulse * p1.m * ny; } } }</code>"
+ },
+ {
+  "k": "d1aab75a",
+  "s": "5. Ikki motorli interaktiv sinov maydoni: deterministik va stoxastik modellar",
+  "ru": "5. Интерактивная площадка с двумя движками: детерминированные и стохастические модели",
+  "en": "5. Interactive two-engine sandbox: deterministic and stochastic models"
+ },
+ {
+  "k": "61b19703",
+  "s": "Quyidagi ikkita interaktiv fizik motor yordamida deterministik orbital harakat va stoxastik gaz kinetikasi qonuniyatlarini real vaqtda sinab ko‘ring.",
+  "ru": "С помощью двух интерактивных физических движков ниже проверьте в реальном времени закономерности детерминированного орбитального движения и стохастической газовой кинетики.",
+  "en": "Use the two interactive physics engines below to test the laws of deterministic orbital motion and stochastic gas kinetics in real time."
+ },
+ {
+  "k": "c22613b8",
+  "s": "🌌 1-motor: deterministik Kepler orbitasi",
+  "ru": "🌌 Движок 1: детерминированная орбита Кеплера",
+  "en": "🌌 Engine 1: deterministic Kepler orbit"
+ },
+ {
+  "k": "2395e3e9",
+  "s": "ODE / simplektik",
+  "ru": "ОДУ / симплектический",
+  "en": "ODE / symplectic"
+ },
+ {
+  "k": "687887e9",
+  "s": "Boshlang‘ich tezlik $v_0$:",
+  "ru": "Начальная скорость $v_0$:",
+  "en": "Initial velocity $v_0$:"
+ },
+ {
+  "k": "e2f1cecb",
+  "s": "Markaziy massa $M$:",
+  "ru": "Центральная масса $M$:",
+  "en": "Central mass $M$:"
+ },
+ {
+  "k": "d3ab0017",
+  "s": "⏸ To‘xtatish",
+  "ru": "⏸ Остановить",
+  "en": "⏸ Stop"
+ },
+ {
+  "k": "1adbbd52",
+  "s": "🔄 Qayta tiklash",
+  "ru": "🔄 Сбросить",
+  "en": "🔄 Reset"
+ },
+ {
+  "k": "5f9676d4",
+  "s": "🧹 Tozalash",
+  "ru": "🧹 Очистить",
+  "en": "🧹 Clear"
+ },
+ {
+  "k": "62a10f61",
+  "s": "Radius $r$:",
+  "ru": "Radius $r$:",
+  "en": "Radius $r$:"
+ },
+ {
+  "k": "dc8a6e78",
+  "s": "Tezlik $v$:",
+  "ru": "Скорость $v$:",
+  "en": "Speed $v$:"
+ },
+ {
+  "k": "c855b663",
+  "s": "14,5 km/s",
+  "ru": "14,5 км/с",
+  "en": "14.5 km/s"
+ },
+ {
+  "k": "56faf7b0",
+  "s": "Kin. energiya $E_k$:",
+  "ru": "Кин. энергия $E_k$:",
+  "en": "Kinetic energy $E_k$:"
+ },
+ {
+  "k": "9fe9ec59",
+  "s": "105,1 J/kg",
+  "ru": "105,1 Дж/кг",
+  "en": "105.1 J/kg"
+ },
+ {
+  "k": "9be94806",
+  "s": "Pot. energiya $E_p$:",
+  "ru": "Пот. энергия $E_p$:",
+  "en": "Potential energy $E_p$:"
+ },
+ {
+  "k": "ae7592ac",
+  "s": "−222,2 J/kg",
+  "ru": "−222,2 Дж/кг",
+  "en": "−222.2 J/kg"
+ },
+ {
+  "k": "313e511d",
+  "s": "To‘liq energiya $E$:",
+  "ru": "Полная энергия $E$:",
+  "en": "Total energy $E$:"
+ },
+ {
+  "k": "08ddcdf8",
+  "s": "−117,1 J/kg",
+  "ru": "−117,1 Дж/кг",
+  "en": "−117.1 J/kg"
+ },
+ {
+  "k": "3d088e60",
+  "s": "Impuls momenti $L$:",
+  "ru": "Момент импульса $L$:",
+  "en": "Angular momentum $L$:"
+ },
+ {
+  "k": "c98c39ae",
+  "s": "💨 2-motor: stoxastik 2D gaz kinetikasi",
+  "ru": "💨 Движок 2: стохастическая 2D газовая кинетика",
+  "en": "💨 Engine 2: stochastic 2D gas kinetics"
+ },
+ {
+  "k": "df32f90b",
+  "s": "MKT / Maksvell",
+  "ru": "МКТ / Максвелл",
+  "en": "Kinetic theory / Maxwell"
+ },
+ {
+  "k": "86d3b399",
+  "s": "Molekulalar soni $N$:",
+  "ru": "Число молекул $N$:",
+  "en": "Number of molecules $N$:"
+ },
+ {
+  "k": "5442db6a",
+  "s": "Harorat $T$:",
+  "ru": "Температура $T$:",
+  "en": "Temperature $T$:"
+ },
+ {
+  "k": "728d84ee",
+  "s": "🔥 Qizdirish",
+  "ru": "🔥 Нагреть",
+  "en": "🔥 Heat"
+ },
+ {
+  "k": "afe8f95f",
+  "s": "❄️ Sovitish",
+  "ru": "❄️ Охладить",
+  "en": "❄️ Cool"
+ },
+ {
+  "k": "db38420c",
+  "s": "🔄 Tiklash",
+  "ru": "🔄 Сбросить",
+  "en": "🔄 Reset"
+ },
+ {
+  "k": "f952dcfd",
+  "s": "Bosim $P$:",
+  "ru": "Давление $P$:",
+  "en": "Pressure $P$:"
+ },
+ {
+  "k": "89fd9bc6",
+  "s": "1,00 kPa",
+  "ru": "1,00 kPa",
+  "en": "1,00 kPa"
+ },
+ {
+  "k": "9675bcbf",
+  "s": "O‘rtacha $\\langle v\\rangle$:",
+  "ru": "Средняя $\\langle v\\rangle$:",
+  "en": "Mean $\\langle v\\rangle$:"
+ },
+ {
+  "k": "da7fe0ad",
+  "s": "Eng ehtimolli $v_p$:",
+  "ru": "Наиболее вероятная $v_p$:",
+  "en": "Most probable $v_p$:"
+ },
+ {
+  "k": "0fbb7eeb",
+  "s": "6. Taksonomik taqqoslash matritsasi va AI diagnostik test",
+  "ru": "6. Таксономическая матрица сравнения и диагностический ИИ-тест",
+  "en": "6. Taxonomic comparison matrix and AI diagnostic test"
+ },
+ {
+  "k": "aad03ce0",
+  "s": "Model turi",
+  "ru": "Тип модели",
+  "en": "Model type"
+ },
+ {
+  "k": "b0c17453",
+  "s": "Matematik apparat",
+  "ru": "Математический аппарат",
+  "en": "Mathematical apparatus"
+ },
+ {
+  "k": "3f71bf2c",
+  "s": "Boshlang‘ich shartlar",
+  "ru": "Начальные условия",
+  "en": "Initial conditions"
+ },
+ {
+  "k": "7b1610ca",
+  "s": "Hisoblash usuli",
+  "ru": "Метод вычисления",
+  "en": "Computation method"
+ },
+ {
+  "k": "3c8818af",
+  "s": "Xatolik manbai",
+  "ru": "Источник погрешности",
+  "en": "Error source"
+ },
+ {
+  "k": "a90cd13e",
+  "s": "Tipik fizik misollar",
+  "ru": "Типичные физические примеры",
+  "en": "Typical physical examples"
+ },
+ {
+  "k": "30a59fd2",
+  "s": "<strong style=\"color:var(--accent-cyan);\">Statik Deterministik</strong>",
+  "ru": "<strong style=\"color:var(--accent-cyan);\">Статическая детерминированная</strong>",
+  "en": "<strong style=\"color:var(--accent-cyan);\">Static deterministic</strong>"
+ },
+ {
+  "k": "6f9fa758",
+  "s": "Algebraik / Laplas tenglamalari",
+  "ru": "Алгебраические уравнения / уравнение Лапласа",
+  "en": "Algebraic / Laplace equations"
+ },
+ {
+  "k": "b8741a81",
+  "s": "Chegaraviy kuchlar va potensiallar",
+  "ru": "Граничные силы и потенциалы",
+  "en": "Boundary forces and potentials"
+ },
+ {
+  "k": "aa0a825a",
+  "s": "Matritsali Gauss, Chekli Elementlar (FEM)",
+  "ru": "Матричный метод Гаусса, метод конечных элементов (FEM)",
+  "en": "Gaussian elimination, finite elements (FEM)"
+ },
+ {
+  "k": "b86aa1c2",
+  "s": "Diskretlash panjarasi xatosi",
+  "ru": "Ошибка сетки дискретизации",
+  "en": "Discretisation mesh error"
+ },
+ {
+  "k": "f33d98e2",
+  "s": "Ko‘prik fermalari, elektrostatik maydon potensiali",
+  "ru": "Мостовые фермы, потенциал электростатического поля",
+  "en": "Bridge trusses, electrostatic potential"
+ },
+ {
+  "k": "2baf24ea",
+  "s": "<strong style=\"color:var(--accent-emerald);\">Dinamik Deterministik</strong>",
+  "ru": "<strong style=\"color:var(--accent-emerald);\">Динамическая детерминированная</strong>",
+  "en": "<strong style=\"color:var(--accent-emerald);\">Dynamic deterministic</strong>"
+ },
+ {
+  "k": "be5fb91b",
+  "s": "Oddiy differensial tenglamalar (ODE)",
+  "ru": "Обыкновенные дифференциальные уравнения (ОДУ)",
+  "en": "Ordinary differential equations (ODEs)"
+ },
+ {
+  "k": "050a562a",
+  "s": "Koshi shartlari $(x_0, v_0)$",
+  "ru": "Условия Коши $(x_0, v_0)$",
+  "en": "Cauchy conditions $(x_0, v_0)$"
+ },
+ {
+  "k": "d7bd9eca",
+  "s": "Euler-Cromer, Verlet, RK4",
+  "ru": "Эйлер–Кромер, Верле, RK4",
+  "en": "Euler–Cromer, Verlet, RK4"
+ },
+ {
+  "k": "e355ffed",
+  "s": "Vaqt qadami kesish xatosi $O(\\Delta t^p)$",
+  "ru": "Ошибка усечения по шагу времени $O(\\Delta t^p)$",
+  "en": "Time-step truncation error $O(\\Delta t^p)$"
+ },
+ {
+  "k": "5d3bbc91",
+  "s": "Kepler orbitasi, prujinali mayatnik, to‘p harakati",
+  "ru": "Орбита Кеплера, пружинный маятник, движение мяча",
+  "en": "Kepler orbit, spring pendulum, ball motion"
+ },
+ {
+  "k": "17926855",
+  "s": "<strong style=\"color:var(--accent-rose);\">Dinamik Stoxastik</strong>",
+  "ru": "<strong style=\"color:var(--accent-rose);\">Динамическая стохастическая</strong>",
+  "en": "<strong style=\"color:var(--accent-rose);\">Dynamic stochastic</strong>"
+ },
+ {
+  "k": "73938e78",
+  "s": "Ehtimollar nazariyasi, MKT tenglamalari",
+  "ru": "Теория вероятностей, уравнения МКТ",
+  "en": "Probability theory, kinetic-theory equations"
+ },
+ {
+  "k": "cbcd3ef2",
+  "s": "Zarrachalar soni $N$, Harorat $T$",
+  "ru": "Число частиц $N$, температура $T$",
+  "en": "Number of particles $N$, temperature $T$"
+ },
+ {
+  "k": "078d4bf9",
+  "s": "Elastik to‘qnashuvlar, Monte-Karlo",
+  "ru": "Упругие столкновения, Монте-Карло",
+  "en": "Elastic collisions, Monte Carlo"
+ },
+ {
+  "k": "8ee0d309",
+  "s": "Statistik fluktuatsiya $O(1/\\sqrt{N})$",
+  "ru": "Статистическая флуктуация $O(1/\\sqrt{N})$",
+  "en": "Statistical fluctuation $O(1/\\sqrt{N})$"
+ },
+ {
+  "k": "a32f10fc",
+  "s": "Broun harakati, ideal gaz, radioaktiv yemirilish",
+  "ru": "Броуновское движение, идеальный газ, радиоактивный распад",
+  "en": "Brownian motion, ideal gas, radioactive decay"
+ },
+ {
+  "k": "f965fca8",
+  "s": "<strong style=\"color:var(--accent-purple);\">Uzluksiz Maydon Modeli</strong>",
+  "ru": "<strong style=\"color:var(--accent-purple);\">Непрерывная модель поля</strong>",
+  "en": "<strong style=\"color:var(--accent-purple);\">Continuous field model</strong>"
+ },
+ {
+  "k": "dfa84ea4",
+  "s": "Xususiy hosilali tenglamalar (PDE)",
+  "ru": "Уравнения в частных производных (PDE)",
+  "en": "Partial differential equations (PDEs)"
+ },
+ {
+  "k": "cc112c92",
+  "s": "Boshlang‘ich va chegaraviy shartlar",
+  "ru": "Начальные и граничные условия",
+  "en": "Initial and boundary conditions"
+ },
+ {
+  "k": "ccd4cd54",
+  "s": "Chekli ayirmalar (FDM), Chekli hajmlar (FVM)",
+  "ru": "Конечные разности (FDM), конечные объёмы (FVM)",
+  "en": "Finite differences (FDM), finite volumes (FVM)"
+ },
+ {
+  "k": "695a4399",
+  "s": "Fazoviy va vaqt qadami xatosi",
+  "ru": "Ошибка пространственного и временного шага",
+  "en": "Spatial and temporal step error"
+ },
+ {
+  "k": "89e7ebeb",
+  "s": "Navier-Stokes gidrodinamikasi, Maksvell to‘lqinlari",
+  "ru": "Гидродинамика Навье–Стокса, волны Максвелла",
+  "en": "Navier–Stokes hydrodynamics, Maxwell waves"
+ },
+ {
+  "k": "cdc94c5b",
+  "s": "🧪 MagicSchool AI diagnostik testi (model turlari):",
+  "ru": "🧪 Диагностический тест MagicSchool AI (типы моделей):",
+  "en": "🧪 MagicSchool AI diagnostic test (model types):"
+ },
+ {
+  "k": "b6b385b4",
+  "s": "1-savol: Ko‘prik fermasi statik muvozanat modelida tashqi davriy kuch ta’sirida qanday holatda tizim dinamik modelga o‘tishni talab qiladi?",
+  "ru": "Вопрос 1: В каком случае модель статического равновесия мостовой фермы под действием внешней периодической силы требует перехода к динамической модели?",
+  "en": "Question 1: When does a static equilibrium model of a bridge truss under an external periodic force require switching to a dynamic model?"
+ },
+ {
+  "k": "91122112",
+  "s": "A) Tashqi kuch chastotasi konstruksiyaning xususiy tebranish chastotasiga yaqinlashib, rezonans va inersiya kuchlari ($\\frac{d^2x}{dt^2} \\neq 0$) muhim ahamiyat kasb etganda",
+  "ru": "A) Когда частота внешней силы приближается к собственной частоте колебаний конструкции и существенное значение приобретают резонанс и силы инерции ($\\frac{d^2x}{dt^2} \\neq 0$)",
+  "en": "A) When the forcing frequency approaches the structure’s natural frequency and resonance and inertial forces ($\\frac{d^2x}{dt^2} \\neq 0$) become significant"
+ },
+ {
+  "k": "c0b1ed96",
+  "s": "B) Ko‘prik uzunligi 100 metrdan oshganda",
+  "ru": "B) Когда длина моста превышает 100 метров",
+  "en": "B) When the bridge is longer than 100 metres"
+ },
+ {
+  "k": "f96643f6",
+  "s": "C) Faqat havo harorati 0 gradusdan pastga tushganda",
+  "ru": "C) Только когда температура воздуха опускается ниже 0 градусов",
+  "en": "C) Only when the air temperature drops below 0 degrees"
+ },
+ {
+  "k": "10441dbb",
+  "s": "2-savol: Nima sababdan PhET \"Gravity and Orbits\" simulyatsiyasidagi ikki jism masalasi qat’iy deterministik model hisoblanadi?",
+  "ru": "Вопрос 2: Почему задача двух тел в симуляции PhET «Gravity and Orbits» считается строго детерминированной моделью?",
+  "en": "Question 2: Why is the two-body problem in the PhET \"Gravity and Orbits\" simulation considered a strictly deterministic model?"
+ },
+ {
+  "k": "2cb59a81",
+  "s": "A) Chunki sayyoralar faqat yozda harakatlanadi",
+  "ru": "A) Потому что планеты движутся только летом",
+  "en": "A) Because planets move only in summer"
+ },
+ {
+  "k": "ab4caca3",
+  "s": "B) Chunki harakat Nyutonning 2-qonuni differensial tenglamasi bilan ifodalanadi va boshlang‘ich koordinata hamda tezlik $(x_0, v_0)$ berilsa, kelajakdagi orbita Koshi teoremasiga binoan 100% bir qiymatli yagona bo‘ladi",
+  "ru": "B) Потому что движение описывается дифференциальным уравнением второго закона Ньютона, и при заданных начальных координате и скорости $(x_0, v_0)$ будущая орбита по теореме Коши на 100% однозначна",
+  "en": "B) Because the motion is described by Newton’s second-law differential equation, and given the initial position and velocity $(x_0, v_0)$ the future orbit is 100% unique by Cauchy’s theorem"
+ },
+ {
+  "k": "e675aaf0",
+  "s": "C) Chunki sayyora massasi markaziy jism massasidan doimo katta",
+  "ru": "C) Потому что масса планеты всегда больше массы центрального тела",
+  "en": "C) Because the planet’s mass is always greater than the central body’s"
+ },
+ {
+  "k": "44f7a0df",
+  "s": "3-savol: Gaz molekulalari to‘qnashuvida (PhET \"Gas Properties\") alohida molekula trayektoriyasi deterministik emas, balki stoxastik model orqali o‘rganilishiga asosiy sabab nima?",
+  "ru": "Вопрос 3: Какова главная причина того, что траектория отдельной молекулы при столкновениях молекул газа (PhET «Gas Properties») изучается не детерминированной, а стохастической моделью?",
+  "en": "Question 3: What is the main reason that the trajectory of an individual molecule in gas collisions (PhET \"Gas Properties\") is studied with a stochastic rather than a deterministic model?"
+ },
+ {
+  "k": "d70e42f7",
+  "s": "A) Makroskopik hajmda zarrachalar soni juda ko‘p ($N \\sim 10^{23}$) va boshlang‘ich shartlarga o‘ta yuqori sezgirlik (dinamik xaos) tufayli alohida zarrachani emas, butun ansamblning Maksvell statistik taqsimotini hisoblash ancha adekvat va samaralidir",
+  "ru": "A) В макроскопическом объёме частиц очень много ($N \\sim 10^{23}$), а из-за крайне высокой чувствительности к начальным условиям (динамический хаос) гораздо адекватнее и эффективнее рассчитывать не отдельную частицу, а статистическое распределение Максвелла для всего ансамбля",
+  "en": "A) A macroscopic volume contains a huge number of particles ($N \\sim 10^{23}$), and because of extreme sensitivity to initial conditions (dynamic chaos) it is far more appropriate and efficient to compute the Maxwell statistical distribution of the whole ensemble rather than individual particles"
+ },
+ {
+  "k": "d99cba41",
+  "s": "B) Gaz molekulalarida impuls saqlanmasligi tufayli",
+  "ru": "B) Потому что в молекулах газа не сохраняется импульс",
+  "en": "B) Because momentum is not conserved in gas molecules"
+ },
+ {
+  "k": "1eb3c1b0",
+  "s": "C) Molekulalar faqat to‘g‘ri chiziq bo‘ylab harakatlana olgani uchun",
+  "ru": "C) Потому что молекулы могут двигаться только по прямой",
+  "en": "C) Because molecules can only move in straight lines"
+ },
+ {
+  "k": "35e1f396",
+  "s": "📚 5-ma’ruza bo‘yicha ilmiy-uslubiy adabiyotlar ro‘yxati:",
+  "ru": "📚 Список научно-методической литературы к лекции 5:",
+  "en": "📚 Scholarly and methodological references for Lecture 5:"
+ },
+ {
+  "k": "68301db2",
+  "s": "<strong>Zeigler, B. P., Praehofer, H., va Kim, T. G. (2000).</strong> <em>Theory of Modeling and Simulation</em> (2nd ed.). Academic Press.",
+  "ru": "<strong>Zeigler, B. P., Praehofer, H., & Kim, T. G. (2000).</strong> <em>Theory of Modeling and Simulation</em> (2nd ed.). Academic Press.",
+  "en": "<strong>Zeigler, B. P., Praehofer, H., & Kim, T. G. (2000).</strong> <em>Theory of Modeling and Simulation</em> (2nd ed.). Academic Press."
+ },
+ {
+  "k": "5635e166",
+  "s": "<strong>Bunge, M. (1973).</strong> <em>Method, Model and Matter</em>. D. Reidel Publishing.",
+  "ru": "<strong>Bunge, M. (1973).</strong> <em>Method, Model and Matter</em>. D. Reidel Publishing.",
+  "en": "<strong>Bunge, M. (1973).</strong> <em>Method, Model and Matter</em>. D. Reidel Publishing."
+ },
+ {
+  "k": "e25397b8",
+  "s": "<strong>Frigg, R., va Hartmann, S. (2020).</strong> Models in Science. <em>Stanford Encyclopedia of Philosophy</em>.",
+  "ru": "<strong>Frigg, R., & Hartmann, S. (2020).</strong> Models in Science. <em>Stanford Encyclopedia of Philosophy</em>.",
+  "en": "<strong>Frigg, R., & Hartmann, S. (2020).</strong> Models in Science. <em>Stanford Encyclopedia of Philosophy</em>."
+ },
+ {
+  "k": "8732610a",
+  "s": "<strong>Giere, R. N. (2004).</strong> How Models Are Used to Represent Reality. <em>Philosophy of Science</em>, 71(5).",
+  "ru": "<strong>Giere, R. N. (2004).</strong> How Models Are Used to Represent Reality. <em>Philosophy of Science</em>, 71(5).",
+  "en": "<strong>Giere, R. N. (2004).</strong> How Models Are Used to Represent Reality. <em>Philosophy of Science</em>, 71(5)."
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "d77222b3",
+  "s": "<strong>Gould, H., Tobochnik, J., va Christian, W. (2016).</strong> <em>An Introduction to Computer Simulation Methods</em> (3rd ed.). Pearson.",
+  "ru": "<strong>Gould, H., Tobochnik, J., & Christian, W. (2016).</strong> <em>An Introduction to Computer Simulation Methods</em> (3rd ed.). Pearson.",
+  "en": "<strong>Gould, H., Tobochnik, J., & Christian, W. (2016).</strong> <em>An Introduction to Computer Simulation Methods</em> (3rd ed.). Pearson."
+ },
+ {
+  "k": "99381d7c",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press."
+ },
+ {
+  "k": "71a2267a",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman."
+ }
+]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -944,7 +944,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
       if (!q1 || !q2 || !q3) {
         res.style.display = 'block';
         res.style.color = '#F59E0B';
-        res.textContent = '⚠️ Iltimos, barcha 3 ta savolga javob bering!';
+        res.textContent = __t("⚠️ Iltimos, barcha 3 ta savolga javob bering!");
         return;
       }
       
@@ -953,32 +953,32 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
 
       if (q1.value === 'B') {
         score++;
-        feedback.push('1-Savol: To‘g‘ri! 2 ta yarim yemirilish davridan so‘ng boshlang‘ich yadrolarning 75% qismi yemirilib, faqat 25% qoladi.');
+        feedback.push(__t("1-Savol: To‘g‘ri! 2 ta yarim yemirilish davridan so‘ng boshlang‘ich yadrolarning 75% qismi yemirilib, faqat 25% qoladi."));
       } else {
-        feedback.push('1-Savol: Noto‘g‘ri. $t=2T_{1/2}$ da $N = N_0/4$ qoladi, ya’ni 75% yemirilib ketadi (B varianti).');
+        feedback.push(__t("1-Savol: Noto‘g‘ri. $t=2T_{1/2}$ da $N = N_0/4$ qoladi, ya’ni 75% yemirilib ketadi (B varianti)."));
       }
 
       if (q2.value === 'A') {
         score++;
-        feedback.push('2-Savol: To‘g‘ri! Reaktor turg‘un ishlashi uchun ko‘payish koeffitsiyenti aynan $k = 1.000$ bo‘lishi kerak.');
+        feedback.push(__t("2-Savol: To‘g‘ri! Reaktor turg‘un ishlashi uchun ko‘payish koeffitsiyenti aynan $k = 1.000$ bo‘lishi kerak."));
       } else {
-        feedback.push('2-Savol: Noto‘g‘ri. Turg‘un boshqariluvchi kritik holatda $k=1.000$ bo‘ladi (A varianti).');
+        feedback.push(__t("2-Savol: Noto‘g‘ri. Turg‘un boshqariluvchi kritik holatda $k=1.000$ bo‘ladi (A varianti)."));
       }
 
       if (q3.value === 'A') {
         score++;
-        feedback.push('3-Savol: To‘g‘ri! Undetectable AI va akademik halollik talabiga binoan, mualliflik originalligi kamida 85% bo‘lishi shart.');
+        feedback.push(__t("3-Savol: To‘g‘ri! Undetectable AI va akademik halollik talabiga binoan, mualliflik originalligi kamida 85% bo‘lishi shart."));
       } else {
-        feedback.push('3-Savol: Noto‘g‘ri. Mustaqil bajarilganlik mezoniga ko‘ra originallik kamida 85%+ bo‘lishi talab etiladi (A varianti).');
+        feedback.push(__t("3-Savol: Noto‘g‘ri. Mustaqil bajarilganlik mezoniga ko‘ra originallik kamida 85%+ bo‘lishi talab etiladi (A varianti)."));
       }
       
       res.style.display = 'block';
       if (score === 3) {
         res.style.color = '#047857';
-        res.innerHTML = `🎉 Tabriklaymiz! 3/3 (100%) - Yadro fizikasi qonuniyatlari va Capstone mustaqil loyiha talablarini mukammal o‘zlashtirdingiz!<br><br><div style="color:#4B5464; font-size:0.9rem; line-height:1.6;">${feedback.join('<br>')}</div>`;
+        res.innerHTML = __t("🎉 Tabriklaymiz! 3/3 (100%) - Yadro fizikasi qonuniyatlari va Capstone mustaqil loyiha talablarini mukammal o‘zlashtirdingiz!<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{0}</div>", [feedback.join('<br>')]);
       } else {
         res.style.color = '#DC2626';
-        res.innerHTML = `Natija: ${score}/3 ta to‘g‘ri.<br><br><div style="color:#4B5464; font-size:0.9rem; line-height:1.6;">${feedback.join('<br>')}</div>`;
+        res.innerHTML = __t("Natija: {0}/3 ta to‘g‘ri.<br><br><div style=\"color:#4B5464; font-size:0.9rem; line-height:1.6;\">{1}</div>", [score, feedback.join('<br>')]);
       }
 
       if (window.renderMathInElement) {

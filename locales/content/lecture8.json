@@ -1,0 +1,1316 @@
+[
+ {
+  "k": "07737806",
+  "s": "8-ma’ruza: Dasturlash va vektor mexanikasi",
+  "ru": "Лекция 8: Программирование и векторная механика",
+  "en": "Lecture 8: Programming and Vector Mechanics"
+ },
+ {
+  "k": "7fa0300f",
+  "s": "Vektor arifmetikasi, Nyuton qonunlariga asoslangan kuch-tezlanish hisoblash, Claude bilan juftlikda dasturlash (Pair-Programming), 2D elastik to‘qnashuv impulsi (Impulse-based Collision Resolution), WolframAlpha tekshiruvi va ChatGPT trayektoriya tahlili.",
+  "ru": "Векторная арифметика, расчёт силы и ускорения на основе законов Ньютона, парное программирование с Claude (Pair-Programming), импульс двумерного упругого столкновения (Impulse-based Collision Resolution), проверка в WolframAlpha и анализ траекторий в ChatGPT.",
+  "en": "Vector arithmetic, force–acceleration computation based on Newton’s laws, pair programming with Claude, 2D elastic collision impulse (impulse-based collision resolution), verification in WolframAlpha and trajectory analysis in ChatGPT."
+ },
+ {
+  "k": "517c82fe",
+  "s": "📋 8-ma’ruza rejasi va AI texnologik konveyeri:",
+  "ru": "📋 План лекции 8 и технологический ИИ-конвейер:",
+  "en": "📋 Lecture 8 plan and the AI technology pipeline:"
+ },
+ {
+  "k": "ea787add",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: Vektorli algebra va to‘qnashuvlar bo‘yicha 3 klasterli adaptiv yo‘l xaritasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: адаптивная дорожная карта из 3 кластеров по векторной алгебре и столкновениям.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: a 3-cluster adaptive roadmap on vector algebra and collisions.</span>"
+ },
+ {
+  "k": "2772c758",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Juftlikda dasturlash:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: Driver-Navigator modeli, energiya saqlanishi va penetratsiyani debugging qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Парное программирование:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: модель Driver–Navigator, отладка сохранения энергии и взаимопроникновения тел.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Pair programming:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude: the Driver–Navigator model, debugging energy conservation and penetration.</span>"
+ },
+ {
+  "k": "c48c8f6d",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Vektor arifmetikasi va impuls:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha: Skalyar ko‘paytma, 2D elastik impuls ($j$) va MTV positional correction.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Векторная арифметика и импульс:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha: скалярное произведение, импульс двумерного упругого удара ($j$) и позиционная коррекция MTV.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Vector arithmetic and impulse:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha: dot product, 2D elastic impulse ($j$) and MTV positional correction.</span>"
+ },
+ {
+  "k": "a9edb2bd",
+  "s": "<strong style=\"color: var(--accent-purple);\">4. Dvigatel kodi (Artifacts):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): Vector2D, RigidBody2D va CollisionResolver to‘liq ES6 kodi.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">4. Код движка (Artifacts):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): полный ES6-код Vector2D, RigidBody2D и CollisionResolver.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">4. Engine code (Artifacts):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude (Artifacts): complete ES6 code for Vector2D, RigidBody2D and CollisionResolver.</span>"
+ },
+ {
+  "k": "3b537363",
+  "s": "<strong style=\"color: var(--accent-rose);\">5. Trayektoriya va grafika:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT (Code Interpreter): $x(t), y(t)$ trayektoriya izlari, kinetik energiya va impuls saqlanishi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">5. Траектория и графика:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT (Code Interpreter): следы траекторий $x(t), y(t)$, сохранение кинетической энергии и импульса.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">5. Trajectory and graphics:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">ChatGPT (Code Interpreter): $x(t), y(t)$ trajectory traces, conservation of kinetic energy and momentum.</span>"
+ },
+ {
+  "k": "a4981ce2",
+  "s": "<strong style=\"color:#1C4E9E;\">6. Simulyatsiya va test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas 2D to‘qnashuvlar laboratoriyasi, vektorlar overleyi, diagnostika va adabiyotlar.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6. Симуляция и тест:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Лаборатория двумерных столкновений на HTML5 Canvas, наложение векторов, диагностика и литература.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6. Simulation and test:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">HTML5 Canvas 2D collision laboratory, vector overlay, diagnostics and references.</span>"
+ },
+ {
+  "k": "593bd0bc",
+  "s": "MagicSchool AI: vektor mexanikasi va 3 klasterli adaptiv o‘quv rejasi",
+  "ru": "MagicSchool AI: векторная механика и адаптивный учебный план из 3 кластеров",
+  "en": "MagicSchool AI: vector mechanics and a 3-cluster adaptive learning plan"
+ },
+ {
+  "k": "ccf2cc5e",
+  "s": "📚 Nazariy-Metodologik Asos va Ilmiy Manbalar (WWW):",
+  "ru": "📚 Теоретико-методологическая основа и научные источники (WWW):",
+  "en": "📚 Theoretical and methodological basis and scholarly sources (WWW):"
+ },
+ {
+  "k": "82e7816e",
+  "s": "Fizika dasturlashda vektorli tafakkur va to‘qnashuvlar mexanikasini o‘zlashtirish",
+  "ru": "Освоение векторного мышления и механики столкновений в программировании физики",
+  "en": "Mastering vector thinking and collision mechanics in physics programming"
+ },
+ {
+  "k": "6c2e448e",
+  "s": "hamda",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "1d2a1a52",
+  "s": "prinsiplariga tayanadi. Talabalarning boshlang‘ich vektor-fizik va dasturlash bilimlari MagicSchool AI diagnostikasi orqali 3 ta ixtisoslashgan klasterga ajratiladi.",
+  "ru": ". Исходные знания студентов по векторной физике и программированию с помощью диагностики MagicSchool AI распределяются по 3 специализированным кластерам.",
+  "en": ". Students’ initial knowledge of vector physics and programming is sorted into 3 specialised clusters through MagicSchool AI diagnostics."
+ },
+ {
+  "k": "8ef44595",
+  "s": "🔗 <em>Asosiy manbalar:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson va Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; MagicSchool AI Research (2024). <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">magicschool.ai</a>.",
+  "ru": "🔗 <em>Основные источники:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; MagicSchool AI Research (2024). <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">magicschool.ai</a>.",
+  "en": "🔗 <em>Key sources:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; MagicSchool AI Research (2024). <a href=\"https://www.magicschool.ai\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">magicschool.ai</a>."
+ },
+ {
+  "k": "cf8f58a8",
+  "s": "Fizika dvigatellarini yaratishda vektorli arifmetika (qo‘shish, ayirish, skalyar ko‘paytma, normalizatsiya, akslantirish) fundamental poydevor hisoblanadi. MagicSchool AI kirish diagnostikasi orqali talabalarni quyidagi 3 klasterga ajratadi:",
+  "ru": "При создании физических движков векторная арифметика (сложение, вычитание, скалярное произведение, нормализация, отражение) является фундаментальной основой. С помощью входной диагностики MagicSchool AI студенты распределяются по следующим 3 кластерам:",
+  "en": "Vector arithmetic (addition, subtraction, dot product, normalisation, reflection) is the fundamental foundation of building physics engines. Using an entry diagnostic, MagicSchool AI sorts students into the following 3 clusters:"
+ },
+ {
+  "k": "db8be1b9",
+  "s": "Scaffolding",
+  "ru": "Scaffolding",
+  "en": "Scaffolding"
+ },
+ {
+  "k": "7d86c0c1",
+  "s": "Skalyar tezlik va massani biladi, biroq 2D vektorli qo‘shish va skalyar ko‘paytmani chalkashtiradi. To‘qnashuvda faqat bitta o‘q bo‘yicha tezlik ishorasini almashtirishga urinadi.",
+  "ru": "Знает скалярные скорость и массу, но путает двумерное сложение векторов и скалярное произведение. При столкновении пытается лишь сменить знак скорости вдоль одной оси.",
+  "en": "Knows scalar speed and mass but confuses 2D vector addition with the dot product. In a collision, only tries to flip the sign of the velocity along a single axis."
+ },
+ {
+  "k": "2960e2f7",
+  "s": "<strong>O‘quv trayektoriyasi:</strong> Vector2D klassini bosqichma-bosqich yozish, 1D markaziy elastik to‘qnashuvlar va devorga elastik urilish.",
+  "ru": "<strong>Учебная траектория:</strong> поэтапное написание класса Vector2D, одномерные центральные упругие столкновения и упругий удар о стенку.",
+  "en": "<strong>Learning pathway:</strong> writing the Vector2D class step by step, 1D head-on elastic collisions and elastic rebound from a wall."
+ },
+ {
+  "k": "a427df6a",
+  "s": "2D vektorli algebrani yaxshi biladi. Impuls saqlanish qonunini tushunadi. Penetratsiya (jismlar bir-biriga kirib ketishi) va energiya yo‘qolishi xatolariga yo‘l qo‘yadi.",
+  "ru": "Хорошо владеет двумерной векторной алгеброй. Понимает закон сохранения импульса. Допускает ошибки взаимопроникновения (тела входят друг в друга) и потери энергии.",
+  "en": "Has a good command of 2D vector algebra. Understands the law of conservation of momentum. Makes penetration errors (bodies sinking into each other) and energy-loss errors."
+ },
+ {
+  "k": "45caa8bf",
+  "s": "<strong>O‘quv trayektoriyasi:</strong> 2D impuls formulasi ($j$), MTV positional correction va Claude bilan juftlikda dasturlash.",
+  "ru": "<strong>Учебная траектория:</strong> формула двумерного импульса ($j$), позиционная коррекция MTV и парное программирование с Claude.",
+  "en": "<strong>Learning pathway:</strong> the 2D impulse formula ($j$), MTV positional correction and pair programming with Claude."
+ },
+ {
+  "k": "5ba51450",
+  "s": "Qattiq jism (Rigid Body) dinamikasini biladi. Aylanma inersiya va burchak tezligini hisobga olgan holda to‘qnashuvlarni modellashtira oladi.",
+  "ru": "Знает динамику твёрдого тела (Rigid Body). Умеет моделировать столкновения с учётом момента инерции и угловой скорости.",
+  "en": "Knows rigid-body dynamics. Can model collisions taking rotational inertia and angular velocity into account."
+ },
+ {
+  "k": "22445403",
+  "s": "<strong>O‘quv trayektoriyasi:</strong> Separating Axis Theorem (SAT) ko‘pburchaklar uchun, aylanishli impuls almashinuvi va parallel hisoblash.",
+  "ru": "<strong>Учебная траектория:</strong> теорема о разделяющей оси (SAT) для многоугольников, обмен импульсом с вращением и параллельные вычисления.",
+  "en": "<strong>Learning pathway:</strong> the Separating Axis Theorem (SAT) for polygons, impulse exchange with rotation and parallel computing."
+ },
+ {
+  "k": "ca8b73ad",
+  "s": "🗺️ 4 Haftalik adaptiv vektor dasturlash yo‘l xaritasi:",
+  "ru": "🗺️ Адаптивная 4-недельная дорожная карта векторного программирования:",
+  "en": "🗺️ 4-week adaptive roadmap for vector programming:"
+ },
+ {
+  "k": "aeb8e8ab",
+  "s": "Vektor Arifmetikasi",
+  "ru": "Векторная арифметика",
+  "en": "Vector arithmetic"
+ },
+ {
+  "k": "0d1077d0",
+  "s": "Vector2D klassi (add, sub, mult, mag)",
+  "ru": "Класс Vector2D (add, sub, mult, mag)",
+  "en": "Vector2D class (add, sub, mult, mag)"
+ },
+ {
+  "k": "4b1b639e",
+  "s": "Skalyar ko‘paytma (dot) va normalizatsiya",
+  "ru": "Скалярное произведение (dot) и нормализация",
+  "en": "Dot product (dot) and normalisation"
+ },
+ {
+  "k": "ce52d8ec",
+  "s": "Vektorli proyeksiyalar va akslantirish (reflect)",
+  "ru": "Векторные проекции и отражение (reflect)",
+  "en": "Vector projections and reflection (reflect)"
+ },
+ {
+  "k": "99de6473",
+  "s": "Vektor funksiyalari to‘g‘riligi (100%)",
+  "ru": "Корректность векторных функций (100%)",
+  "en": "Correctness of vector functions (100%)"
+ },
+ {
+  "k": "c28de805",
+  "s": "To‘qnashuv Impulsi",
+  "ru": "Импульс столкновения",
+  "en": "Collision impulse"
+ },
+ {
+  "k": "93c160ac",
+  "s": "1D elastik to‘qnashuv va tezliklar almashinuvi",
+  "ru": "Одномерное упругое столкновение и обмен скоростями",
+  "en": "1D elastic collision and velocity exchange"
+ },
+ {
+  "k": "0150998b",
+  "s": "2D impuls tenglamasi ($j$) va nisbiy tezlik",
+  "ru": "Уравнение двумерного импульса ($j$) и относительная скорость",
+  "en": "2D impulse equation ($j$) and relative velocity"
+ },
+ {
+  "k": "4e9242fd",
+  "s": "Aylanma inersiya va burchak momenti impulsi",
+  "ru": "Момент инерции и импульс углового момента",
+  "en": "Rotational inertia and angular momentum impulse"
+ },
+ {
+  "k": "487697e3",
+  "s": "Impuls saqlanish aniqligi",
+  "ru": "Точность сохранения импульса",
+  "en": "Momentum conservation accuracy"
+ },
+ {
+  "k": "c2cf12b7",
+  "s": "AI Debugging va Penetratsiya",
+  "ru": "ИИ-отладка и взаимопроникновение",
+  "en": "AI debugging and penetration"
+ },
+ {
+  "k": "bb954592",
+  "s": "Claude bilan oddiy xatolarni tuzatish",
+  "ru": "Исправление простых ошибок вместе с Claude",
+  "en": "Fixing simple bugs with Claude"
+ },
+ {
+  "k": "1bca1359",
+  "s": "Positional correction (MTV) bilan sinkingni yo‘qotish",
+  "ru": "Устранение «проваливания» (sinking) позиционной коррекцией (MTV)",
+  "en": "Eliminating sinking with positional correction (MTV)"
+ },
+ {
+  "k": "af6c8c1b",
+  "s": "SAT (Separating Axis Theorem) ko‘pburchaklar uchun",
+  "ru": "SAT (теорема о разделяющей оси) для многоугольников",
+  "en": "SAT (Separating Axis Theorem) for polygons"
+ },
+ {
+  "k": "177a762a",
+  "s": "Penetratsiya yo‘qligi ($0\\text{ px}$)",
+  "ru": "Отсутствие взаимопроникновения ($0\\text{ px}$)",
+  "en": "Zero penetration ($0\\text{ px}$)"
+ },
+ {
+  "k": "93c73cfd",
+  "s": "Capstone va Trayektoriya",
+  "ru": "Итоговый проект и траектория",
+  "en": "Capstone and trajectory"
+ },
+ {
+  "k": "8bdc0b28",
+  "s": "Bilyard to‘qnashuvi simulyatsiyasi",
+  "ru": "Симуляция бильярдного столкновения",
+  "en": "Billiard collision simulation"
+ },
+ {
+  "k": "fcb6daaa",
+  "s": "Ko‘p zarrachali dvigatel va energiya telemetriyasi",
+  "ru": "Многочастичный движок и телеметрия энергии",
+  "en": "Multi-particle engine and energy telemetry"
+ },
+ {
+  "k": "3f4b25cd",
+  "s": "Parametrik tahlil va fazoviy faza fazosi grafigi",
+  "ru": "Параметрический анализ и график фазового пространства",
+  "en": "Parametric analysis and phase-space plot"
+ },
+ {
+  "k": "808389c3",
+  "s": "Akademik loyiha himoyasi",
+  "ru": "Защита учебного проекта",
+  "en": "Academic project defence"
+ },
+ {
+  "k": "7bd35907",
+  "s": "MagicSchool AI uchun Moslashtirilgan Diagnostika Prompti",
+  "ru": "Адаптированный диагностический промпт для MagicSchool AI",
+  "en": "Customised diagnostic prompt for MagicSchool AI"
+ },
+ {
+  "k": "0c2e0652",
+  "s": "Nusxalash",
+  "ru": "Копировать",
+  "en": "Copy"
+ },
+ {
+  "k": "220138e5",
+  "s": "Sen Oliy ta’lim hisoblash fizikasi va dasturlash metodistisan. Talabalarning \"2D Vektor Mexanikasi va To‘qnashuvlar Dvigateli\" bo‘yicha tayyorgarligini baholash uchun 5 ta kognitiv test savoli ishlab chiq: 1) Ikki vektor skalyar ko‘paytmasi noldan kichik bo‘lishining fizik ma’nosi, 2) 2D to‘qnashuvda nisbiy tezlikning normalga proyeksiyasi v_norm &gt; 0 bo‘lsa nima sodir bo‘ladi, 3) To‘qnashuv impuls moduli formulasidagi (1 + e) hadi nimani ifodalaydi, 4) Nima uchun jismlar to‘qnashganda bir-birining ichiga kirib qoladi (sinking) va uni qanday tuzatish mumkin, 5) Elastik to‘qnashuvda umumiy kinetik energiya va impuls saqlanish sharti. Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.",
+  "ru": "Ты — методист вузовского курса вычислительной физики и программирования. Разработай 5 когнитивных тестовых вопросов для оценки подготовки студентов по теме \"Двумерная векторная механика и движок столкновений\": 1) физический смысл того, что скалярное произведение двух векторов меньше нуля; 2) что происходит при двумерном столкновении, если проекция относительной скорости на нормаль v_norm &gt; 0; 3) что выражает член (1 + e) в формуле модуля импульса столкновения; 4) почему при столкновении тела входят друг в друга (sinking) и как это исправить; 5) условие сохранения полной кинетической энергии и импульса при упругом столкновении. Распредели результаты по кластерам A, B, C и составь 4-недельный план лабораторных работ.",
+  "en": "You are a methodologist in university computational physics and programming. Create 5 cognitive test questions to assess students’ readiness on the topic \"2D Vector Mechanics and a Collision Engine\": 1) the physical meaning of the dot product of two vectors being less than zero; 2) what happens in a 2D collision if the projection of the relative velocity onto the normal v_norm &gt; 0; 3) what the (1 + e) term in the collision impulse magnitude formula expresses; 4) why bodies sink into each other on collision (sinking) and how to fix it; 5) the condition for conservation of total kinetic energy and momentum in an elastic collision. Sort the results into clusters A, B and C and draw up a 4-week laboratory plan."
+ },
+ {
+  "k": "5bd76d0e",
+  "s": "2-bosqich: AI juftlikda dasturlash",
+  "ru": "Этап 2: парное программирование с ИИ",
+  "en": "Stage 2: AI pair programming"
+ },
+ {
+  "k": "23a45274",
+  "s": "Claude bilan juftlikda dasturlash (Pair-Programming) va debugging",
+  "ru": "Парное программирование (Pair-Programming) и отладка с Claude",
+  "en": "Pair programming and debugging with Claude"
+ },
+ {
+  "k": "6afa047b",
+  "s": "📚 Metodologik Asos va Ilmiy-Texnik Manbalar (WWW):",
+  "ru": "📚 Методологическая основа и научно-технические источники (WWW):",
+  "en": "📚 Methodological basis and scientific and technical sources (WWW):"
+ },
+ {
+  "k": "15450c74",
+  "s": "Dasturiy injiniring va fizika ta’limida <strong>Driver-Navigator modeli (Williams va Kessler, 2002, <em>Pair Programming Illuminated</em>)</strong> talabalarning dasturlashdagi konseptual va mantiqiy xatolarini 40% dan ko‘proqqa qisqartirishi ilmiy isbotlangan (Begel va Nagappan, IEEE 2008). <strong>Claude</strong> bilan tashkil etilgan juftlikda dasturlash sessiyasida talaba kod yozadi (Driver), AI esa navigatorda fizik qonuniyatlarning buzilishini (energiya saqlanmasligi, massalar teskariligi, penetratsiya) Sokratik dialog uslubida real vaqtda aniqlaydi va tuzatish taklif etadi.",
+  "ru": "В программной инженерии и физическом образовании научно доказано, что <strong>модель Driver–Navigator (Williams и Kessler, 2002, <em>Pair Programming Illuminated</em>)</strong> сокращает концептуальные и логические ошибки студентов в программировании более чем на 40% (Begel и Nagappan, IEEE 2008). В сессии парного программирования с <strong>Claude</strong> студент пишет код (Driver), а ИИ в роли навигатора в реальном времени в стиле сократического диалога выявляет нарушения физических закономерностей (несохранение энергии, инверсия масс, взаимопроникновение) и предлагает исправления.",
+  "en": "In software engineering and physics education it has been shown that the <strong>Driver–Navigator model (Williams & Kessler, 2002, <em>Pair Programming Illuminated</em>)</strong> reduces students’ conceptual and logical programming errors by more than 40% (Begel & Nagappan, IEEE 2008). In a pair-programming session with <strong>Claude</strong>, the student writes the code (Driver) while the AI, as navigator, detects violations of physical laws (non-conservation of energy, mass inversion, penetration) in real time in a Socratic-dialogue style and suggests fixes."
+ },
+ {
+  "k": "1d911773",
+  "s": "🔗 <em>Asosiy manbalar:</em> Williams, L., va Kessler, R. (2002). <em>Pair Programming Illuminated</em>. Addison-Wesley (ISBN: 978-0201745764); Begel, A., va Nagappan, N. (2008). <em>Pair programming: what’s in it for me?</em> IEEE ESEM, DOI: <a href=\"https://doi.org/10.1145/1414004.1414026\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald); text-decoration: underline;\">10.1145/1414004.1414026</a>; Anthropic Research (2024). <em>Claude System Capabilities</em>. <a href=\"https://www.anthropic.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald); text-decoration: underline;\">anthropic.com</a>.",
+  "ru": "🔗 <em>Основные источники:</em> Williams, L., & Kessler, R. (2002). <em>Pair Programming Illuminated</em>. Addison-Wesley (ISBN: 978-0201745764); Begel, A., & Nagappan, N. (2008). <em>Pair programming: what’s in it for me?</em> IEEE ESEM, DOI: <a href=\"https://doi.org/10.1145/1414004.1414026\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald); text-decoration: underline;\">10.1145/1414004.1414026</a>; Anthropic Research (2024). <em>Claude System Capabilities</em>. <a href=\"https://www.anthropic.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald); text-decoration: underline;\">anthropic.com</a>.",
+  "en": "🔗 <em>Key sources:</em> Williams, L., & Kessler, R. (2002). <em>Pair Programming Illuminated</em>. Addison-Wesley (ISBN: 978-0201745764); Begel, A., & Nagappan, N. (2008). <em>Pair programming: what’s in it for me?</em> IEEE ESEM, DOI: <a href=\"https://doi.org/10.1145/1414004.1414026\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald); text-decoration: underline;\">10.1145/1414004.1414026</a>; Anthropic Research (2024). <em>Claude System Capabilities</em>. <a href=\"https://www.anthropic.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-emerald); text-decoration: underline;\">anthropic.com</a>."
+ },
+ {
+  "k": "db4acd57",
+  "s": "AI Pair Programming Workflow",
+  "ru": "AI Pair Programming Workflow",
+  "en": "AI Pair Programming Workflow"
+ },
+ {
+  "k": "fc1cbde2",
+  "s": "💬 Real sokratik debugging dialogi transkripti:",
+  "ru": "💬 Стенограмма реального сократического диалога при отладке:",
+  "en": "💬 Transcript of a real Socratic debugging dialogue:"
+ },
+ {
+  "k": "97da55d1",
+  "s": "Talaba (Driver):",
+  "ru": "Студент (Driver):",
+  "en": "Student (Driver):"
+ },
+ {
+  "k": "301d29ab",
+  "s": "\"Men 2 ta to‘p to‘qnashuvini yozdim. To‘plar bir-biriga urilganda to‘xtab qolmayapti, balki bir-birining ichiga kirib, yopishib tebranyapti. Kodimda impuls to‘g‘ri hisoblangan:\"",
+  "ru": "\"Я написал столкновение 2 шаров. При ударе шары не останавливаются, а входят друг в друга и, слипшись, колеблются. В моём коде импульс рассчитан правильно:\"",
+  "en": "\"I wrote a collision of 2 balls. When the balls hit, they don’t stop — they sink into each other and jitter stuck together. In my code the impulse is computed correctly:\""
+ },
+ {
+  "k": "5d07d5f2",
+  "s": "p1.vel.add(Vector2D.mult(n_hat, impulse / p1.m));<br> p2.vel.sub(Vector2D.mult(n_hat, impulse / p2.m));",
+  "ru": "p1.vel.add(Vector2D.mult(n_hat, impulse / p1.m));<br> p2.vel.sub(Vector2D.mult(n_hat, impulse / p2.m));",
+  "en": "p1.vel.add(Vector2D.mult(n_hat, impulse / p1.m));<br> p2.vel.sub(Vector2D.mult(n_hat, impulse / p2.m));"
+ },
+ {
+  "k": "36d8bfd8",
+  "s": "<strong style=\"color:#047857;\">Claude (Navigator):</strong> \"Ajoyib boshlanish! Tezliklar impulsi to‘g‘ri yangilanmoqda. Biroq jism koordinatalariga e’tibor bering: to‘qnashuv aniqlangan paytda ikkala shar allaqachon bir necha piksel bir-birining ichiga kirib bo‘lgan (`dist &lt; r1 + r2`). Agar siz faqat tezlikni o'zgartirsangiz va ular keyingi kadrda ham ajralishga ulgurmasa, impuls yana qayta qo'llanadi! Buni bartaraf etish uchun qanday geometrik siljish (Positional Correction) qilish kerak deb o'ylaysiz?\"",
+  "ru": "<strong style=\"color:#047857;\">Claude (Navigator):</strong> \"Отличное начало! Импульс скоростей обновляется правильно. Но обратите внимание на координаты тел: в момент обнаружения столкновения оба шара уже вошли друг в друга на несколько пикселей (`dist &lt; r1 + r2`). Если вы меняете только скорость и они не успевают разойтись к следующему кадру, импульс применится снова! Какое геометрическое смещение (Positional Correction), по-вашему, нужно сделать, чтобы это устранить?\"",
+  "en": "<strong style=\"color:#047857;\">Claude (Navigator):</strong> \"Great start! The velocity impulse is being updated correctly. But look at the body coordinates: at the moment the collision is detected, both balls have already sunk a few pixels into each other (`dist &lt; r1 + r2`). If you only change the velocity and they don’t manage to separate by the next frame, the impulse will be applied again! What geometric shift (Positional Correction) do you think is needed to fix this?\""
+ },
+ {
+  "k": "43e65a4b",
+  "s": "<strong style=\"color:#1C4E9E;\">Talaba (Driver):</strong> \"Aha! Penetratsiya chuqurligi `penetration = (r1 + r2) - dist` ga teng. Demak, ikkala to‘pni normal yo‘nalish bo‘yicha qarama-qarshi tomonga `penetration / 2` masofaga surib qo‘yishim kerak ekan!\"",
+  "ru": "<strong style=\"color:#1C4E9E;\">Студент (Driver):</strong> \"Ага! Глубина проникновения равна `penetration = (r1 + r2) - dist`. Значит, мне нужно сдвинуть оба шара вдоль нормали в противоположные стороны на расстояние `penetration / 2`!\"",
+  "en": "<strong style=\"color:#1C4E9E;\">Student (Driver):</strong> \"Aha! The penetration depth is `penetration = (r1 + r2) - dist`. So I need to push both balls apart along the normal, in opposite directions, by `penetration / 2`!\""
+ },
+ {
+  "k": "421c4afa",
+  "s": "<strong style=\"color:#047857;\">Claude (Navigator):</strong> \"Ofarin! Aynan shunday. Bunga fizikada **Minimum Translation Vector (MTV)** orqali penetratsiyani yo‘qotish deyiladi. Endi yana bir muhim shart: agar jismlar allaqachon bir-biridan uzoqlashayotgan bo‘lsa (`v_rel . n &gt; 0`), impuls hisoblanmasligi kerak, aks holda ular sun’iy ravishda tortishib qoladi.\"",
+  "ru": "<strong style=\"color:#047857;\">Claude (Navigator):</strong> \"Браво! Именно так. В физике это называется устранением взаимопроникновения с помощью **Minimum Translation Vector (MTV)**. Теперь ещё одно важное условие: если тела уже удаляются друг от друга (`v_rel . n &gt; 0`), импульс вычисляться не должен, иначе они будут искусственно притягиваться.\"",
+  "en": "<strong style=\"color:#047857;\">Claude (Navigator):</strong> \"Well done! Exactly. In physics this is called removing penetration with the **Minimum Translation Vector (MTV)**. Now one more important condition: if the bodies are already moving apart (`v_rel . n &gt; 0`), the impulse must not be computed, otherwise they will artificially stick together.\""
+ },
+ {
+  "k": "83ed0ea1",
+  "s": "⚠️ Juftlikda dasturlashda aniqlanadigan 3 ta asosiy fizik-algoritmik xato:",
+  "ru": "⚠️ 3 основные физико-алгоритмические ошибки, выявляемые при парном программировании:",
+  "en": "⚠️ 3 main physics-and-algorithm bugs uncovered in pair programming:"
+ },
+ {
+  "k": "9806c002",
+  "s": "1. Penetratsiya va yopishish (Sinking)",
+  "ru": "1. Взаимопроникновение и слипание (Sinking)",
+  "en": "1. Penetration and sticking (Sinking)"
+ },
+ {
+  "k": "3d76eeaa",
+  "s": "<strong>Sababi:</strong> Diskret vaqt qadami ($\\Delta t$) tufayli to‘qnashuv paytida jismlar bir-birining ichiga kirib ketadi. Faqat tezlik o‘zgartirilsa, keyingi kadrda ham $d &lt; r_1 + r_2$ qolib, impuls qayta-qayta hisoblanadi.",
+  "ru": "<strong>Причина:</strong> из-за дискретного шага времени ($\\Delta t$) при столкновении тела входят друг в друга. Если изменить только скорость, в следующем кадре по-прежнему $d &lt; r_1 + r_2$, и импульс вычисляется снова и снова.",
+  "en": "<strong>Cause:</strong> because of the discrete time step ($\\Delta t$), bodies sink into each other during a collision. If only the velocity is changed, $d &lt; r_1 + r_2$ still holds in the next frame and the impulse is computed again and again."
+ },
+ {
+  "k": "51951644",
+  "s": "<strong>Yechim:</strong> Positional correction (MTV) orqali jismlarni $\\frac{\\text{penetration}}{2}$ ga qarama-qarshi surish.",
+  "ru": "<strong>Решение:</strong> позиционная коррекция (MTV) — раздвинуть тела в противоположные стороны на $\\frac{\\text{penetration}}{2}$.",
+  "en": "<strong>Solution:</strong> positional correction (MTV) — push the bodies apart in opposite directions by $\\frac{\\text{penetration}}{2}$."
+ },
+ {
+  "k": "06fb7fd2",
+  "s": "2. Sun’iy energiya yaratilishi (Sticking Bug)",
+  "ru": "2. Искусственное возникновение энергии (Sticking Bug)",
+  "en": "2. Artificial creation of energy (Sticking Bug)"
+ },
+ {
+  "k": "138eb9cc",
+  "s": "<strong>Sababi:</strong> Jismlar to‘qnashib, allaqachon bir-biridan uzoqlashayotgan paytda ($v_{norm} \\ge 0$) impuls sharti tekshirilmasa, dvigatel ularga yana teskari impuls berib, sun’iy tortishish va cheksiz tezlanish hosil qiladi.",
+  "ru": "<strong>Причина:</strong> если не проверять условие импульса в момент, когда тела после столкновения уже удаляются друг от друга ($v_{norm} \\ge 0$), движок снова придаёт им обратный импульс, вызывая искусственное притяжение и бесконечное ускорение.",
+  "en": "<strong>Cause:</strong> if the impulse condition is not checked when the colliding bodies are already moving apart ($v_{norm} \\ge 0$), the engine applies a reverse impulse again, producing artificial attraction and unbounded acceleration."
+ },
+ {
+  "k": "610296ff",
+  "s": "<strong>Yechim:</strong> Qat’iy `if (vNorm &lt; 0)` shartini qo'yish.",
+  "ru": "<strong>Решение:</strong> ввести строгое условие `if (vNorm &lt; 0)`.",
+  "en": "<strong>Solution:</strong> add a strict `if (vNorm &lt; 0)` condition."
+ },
+ {
+  "k": "8babd5e4",
+  "s": "3. Massalar teskariligi (Inertia Singularity)",
+  "ru": "3. Инверсия масс (Inertia Singularity)",
+  "en": "3. Mass inversion (Inertia Singularity)"
+ },
+ {
+  "k": "9dd8cd53",
+  "s": "<strong>Sababi:</strong> Harakatsiz devor yoki cheksiz massali to‘siq bilan to‘qnashganda $m = \\infty$ ni dasturda nolga bo‘lish ($1/0$) orqali `NaN` yoki `Infinity` xatosi kelib chiqadi.",
+  "ru": "<strong>Причина:</strong> при столкновении с неподвижной стенкой или препятствием бесконечной массы деление $m = \\infty$ на ноль в программе ($1/0$) приводит к ошибке `NaN` или `Infinity`.",
+  "en": "<strong>Cause:</strong> when colliding with a fixed wall or an obstacle of infinite mass, dividing $m = \\infty$ by zero in code ($1/0$) produces a `NaN` or `Infinity` error."
+ },
+ {
+  "k": "6f866f86",
+  "s": "<strong>Yechim:</strong> To‘siqlar uchun $invMass = 0$ qiymatidan foydalanish.",
+  "ru": "<strong>Решение:</strong> для препятствий использовать значение $invMass = 0$.",
+  "en": "<strong>Solution:</strong> use the value $invMass = 0$ for obstacles."
+ },
+ {
+  "k": "488eb848",
+  "s": "Claude bilan Juftlikda Dasturlash va Debugging Prompti",
+  "ru": "Промпт для парного программирования и отладки с Claude",
+  "en": "Prompt for pair programming and debugging with Claude"
+ },
+ {
+  "k": "918bc556",
+  "s": "Sen tajribali Fizika Dasturlash bo‘yicha Senior Navigator (Pair-programmer) vazifasini bajarasan. Men senga o‘zim yozgan JavaScript/Canvas fizika dvigateli kodini yuboraman. Sen: 1) Koddagi fizik va matematik xatolarni (energiya saqlanishi, impuls, penetratsiya) aniqla; 2) Menga tayyor kodni darhol bermasdan, Sokratik savollar orqali xatoni o‘zim topishimga yordam ber; 3) Zero-allocation va ES6 Vector2D klassi bo‘yicha optimallashtirish tavsiyalarini ber.",
+  "ru": "Ты выполняешь роль опытного Senior Navigator (парного программиста) по программированию физики. Я пришлю тебе код физического движка на JavaScript/Canvas, который написал сам. Ты: 1) найди в коде физические и математические ошибки (сохранение энергии, импульс, взаимопроникновение); 2) не давай мне сразу готовый код, а помоги самому найти ошибку с помощью сократических вопросов; 3) дай рекомендации по оптимизации в части zero-allocation и ES6-класса Vector2D.",
+  "en": "You act as an experienced Senior Navigator (pair programmer) in physics programming. I will send you the code of a JavaScript/Canvas physics engine that I wrote myself. You should: 1) find the physical and mathematical errors in the code (energy conservation, momentum, penetration); 2) not give me the finished code right away, but help me find the bug myself through Socratic questions; 3) give optimisation recommendations regarding zero allocation and the ES6 Vector2D class."
+ },
+ {
+  "k": "cbd87e2c",
+  "s": "3-bosqich: Matematik apparat",
+  "ru": "Этап 3: математический аппарат",
+  "en": "Stage 3: Mathematical apparatus"
+ },
+ {
+  "k": "edea9acf",
+  "s": "Vektor arifmetikasi va 2D to‘qnashuv impuls mexanikasi: WolframAlpha",
+  "ru": "Векторная арифметика и импульсная механика двумерных столкновений: WolframAlpha",
+  "en": "Vector arithmetic and the impulse mechanics of 2D collisions: WolframAlpha"
+ },
+ {
+  "k": "68445a95",
+  "s": "📚 Nazariy Mexanika va Impuls Saqlanish Qonuni Asoslari (WWW):",
+  "ru": "📚 Основы теоретической механики и закона сохранения импульса (WWW):",
+  "en": "📚 Foundations of theoretical mechanics and the law of conservation of momentum (WWW):"
+ },
+ {
+  "k": "9e748045",
+  "s": "2D qattiq jismlar to‘qnashuvi <strong>David Baraff (1997, <em>Physically Based Modeling: Rigid Body Simulation</em>, SIGGRAPH)</strong>, <strong>Halliday, Resnick va Walker (2018, <em>Fundamentals of Physics</em>, 11th ed., Ch. 9)</strong> hamda <strong>Christer Ericson (2004, <em>Real-Time Collision Detection</em>)</strong> darsliklari asosida impuls dinamikasi orqali modellashtiriladi. WolframAlpha yordamida nochiziqli vektorli tenglamalar tizimi va kinetik energiya yo‘qotilishi analitik tarzda tekshiriladi.",
+  "ru": "Столкновение двумерных твёрдых тел моделируется через импульсную динамику на основе учебников <strong>David Baraff (1997, <em>Physically Based Modeling: Rigid Body Simulation</em>, SIGGRAPH)</strong>, <strong>Halliday, Resnick и Walker (2018, <em>Fundamentals of Physics</em>, 11th ed., Ch. 9)</strong> и <strong>Christer Ericson (2004, <em>Real-Time Collision Detection</em>)</strong>. С помощью WolframAlpha система нелинейных векторных уравнений и потери кинетической энергии проверяются аналитически.",
+  "en": "Collisions of 2D rigid bodies are modelled through impulse dynamics based on the textbooks by <strong>David Baraff (1997, <em>Physically Based Modeling: Rigid Body Simulation</em>, SIGGRAPH)</strong>, <strong>Halliday, Resnick & Walker (2018, <em>Fundamentals of Physics</em>, 11th ed., Ch. 9)</strong> and <strong>Christer Ericson (2004, <em>Real-Time Collision Detection</em>)</strong>. WolframAlpha is used to verify the system of non-linear vector equations and the kinetic energy loss analytically."
+ },
+ {
+  "k": "f379f87f",
+  "s": "🔗 <em>Asosiy manbalar:</em> Baraff, D. (1997). <a href=\"https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber); text-decoration: underline;\">SIGGRAPH Course Notes</a>; Halliday, Resnick, va Walker (2018). <em>Fundamentals of Physics</em>, Wiley (ISBN: 978-1119286240); Ericson, C. (2004). <em>Real-Time Collision Detection</em>, CRC Press (ISBN: 978-1558607323); Wolfram|Alpha Dynamics Solver: <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber); text-decoration: underline;\">wolframalpha.com</a>.",
+  "ru": "🔗 <em>Основные источники:</em> Baraff, D. (1997). <a href=\"https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber); text-decoration: underline;\">SIGGRAPH Course Notes</a>; Halliday, Resnick, & Walker (2018). <em>Fundamentals of Physics</em>, Wiley (ISBN: 978-1119286240); Ericson, C. (2004). <em>Real-Time Collision Detection</em>, CRC Press (ISBN: 978-1558607323); Wolfram|Alpha Dynamics Solver: <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber); text-decoration: underline;\">wolframalpha.com</a>.",
+  "en": "🔗 <em>Key sources:</em> Baraff, D. (1997). <a href=\"https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber); text-decoration: underline;\">SIGGRAPH Course Notes</a>; Halliday, Resnick, & Walker (2018). <em>Fundamentals of Physics</em>, Wiley (ISBN: 978-1119286240); Ericson, C. (2004). <em>Real-Time Collision Detection</em>, CRC Press (ISBN: 978-1558607323); Wolfram|Alpha Dynamics Solver: <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber); text-decoration: underline;\">wolframalpha.com</a>."
+ },
+ {
+  "k": "a5f74ff8",
+  "s": "Vector Math Operations",
+  "ru": "Vector Math Operations",
+  "en": "Vector Math Operations"
+ },
+ {
+  "k": "02a9a1e4",
+  "s": "📐 Asosiy vektor tenglamalari:",
+  "ru": "📐 Основные векторные уравнения:",
+  "en": "📐 Key vector equations:"
+ },
+ {
+  "k": "91d66622",
+  "s": "<strong>1. Nisbiy masofa va birlik normal vektor:</strong> $$\\vec{r}_{rel} = \\vec{r}_1 - \\vec{r}_2, \\quad d = |\\vec{r}_{rel}| = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}, \\quad \\hat{n} = \\frac{\\vec{r}_{rel}}{d}$$",
+  "ru": "<strong>1. Относительное расстояние и единичный вектор нормали:</strong> $$\\vec{r}_{rel} = \\vec{r}_1 - \\vec{r}_2, \\quad d = |\\vec{r}_{rel}| = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}, \\quad \\hat{n} = \\frac{\\vec{r}_{rel}}{d}$$",
+  "en": "<strong>1. Relative distance and the unit normal vector:</strong> $$\\vec{r}_{rel} = \\vec{r}_1 - \\vec{r}_2, \\quad d = |\\vec{r}_{rel}| = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}, \\quad \\hat{n} = \\frac{\\vec{r}_{rel}}{d}$$"
+ },
+ {
+  "k": "8c938f2b",
+  "s": "<strong>2. Nisbiy tezlik va normal proyeksiya:</strong> $$\\vec{v}_{rel} = \\vec{v}_1 - \\vec{v}_2, \\quad v_{norm} = \\vec{v}_{rel} \\cdot \\hat{n} = (v_{1x} - v_{2x})n_x + (v_{1y} - v_{2y})n_y$$ <em>Agar $v_{norm} \\ge 0$ bo‘lsa, jismlar bir-biridan uzoqlashmoqda va impuls hisoblanmaydi!</em>",
+  "ru": "<strong>2. Относительная скорость и проекция на нормаль:</strong> $$\\vec{v}_{rel} = \\vec{v}_1 - \\vec{v}_2, \\quad v_{norm} = \\vec{v}_{rel} \\cdot \\hat{n} = (v_{1x} - v_{2x})n_x + (v_{1y} - v_{2y})n_y$$ <em>Если $v_{norm} \\ge 0$, тела удаляются друг от друга и импульс не вычисляется!</em>",
+  "en": "<strong>2. Relative velocity and normal projection:</strong> $$\\vec{v}_{rel} = \\vec{v}_1 - \\vec{v}_2, \\quad v_{norm} = \\vec{v}_{rel} \\cdot \\hat{n} = (v_{1x} - v_{2x})n_x + (v_{1y} - v_{2y})n_y$$ <em>If $v_{norm} \\ge 0$, the bodies are moving apart and no impulse is computed!</em>"
+ },
+ {
+  "k": "e76e78be",
+  "s": "<strong>3. To‘qnashuv impuls skalyar moduli ($j$):</strong> $$j = \\frac{-(1 + e) v_{norm}}{\\frac{1}{m_1} + \\frac{1}{m_2}} = \\frac{-(1 + e)(\\vec{v}_{rel} \\cdot \\hat{n})}{\\frac{1}{m_1} + \\frac{1}{m_2}}$$ <em>(bu yerda $e \\in [0, 1]$ — tiklanish/elastiklik koeffitsiyenti).</em>",
+  "ru": "<strong>3. Скалярный модуль импульса столкновения ($j$):</strong> $$j = \\frac{-(1 + e) v_{norm}}{\\frac{1}{m_1} + \\frac{1}{m_2}} = \\frac{-(1 + e)(\\vec{v}_{rel} \\cdot \\hat{n})}{\\frac{1}{m_1} + \\frac{1}{m_2}}$$ <em>(где $e \\in [0, 1]$ — коэффициент восстановления/упругости).</em>",
+  "en": "<strong>3. Scalar magnitude of the collision impulse ($j$):</strong> $$j = \\frac{-(1 + e) v_{norm}}{\\frac{1}{m_1} + \\frac{1}{m_2}} = \\frac{-(1 + e)(\\vec{v}_{rel} \\cdot \\hat{n})}{\\frac{1}{m_1} + \\frac{1}{m_2}}$$ <em>(where $e \\in [0, 1]$ is the coefficient of restitution/elasticity).</em>"
+ },
+ {
+  "k": "7abe096c",
+  "s": "<strong>4. Tezliklarning yangilanishi:</strong> $$\\vec{v}_1' = \\vec{v}_1 + \\frac{j}{m_1}\\hat{n}, \\quad \\vec{v}_2' = \\vec{v}_2 - \\frac{j}{m_2}\\hat{n}$$",
+  "ru": "<strong>4. Обновление скоростей:</strong> $$\\vec{v}_1' = \\vec{v}_1 + \\frac{j}{m_1}\\hat{n}, \\quad \\vec{v}_2' = \\vec{v}_2 - \\frac{j}{m_2}\\hat{n}$$",
+  "en": "<strong>4. Velocity update:</strong> $$\\vec{v}_1' = \\vec{v}_1 + \\frac{j}{m_1}\\hat{n}, \\quad \\vec{v}_2' = \\vec{v}_2 - \\frac{j}{m_2}\\hat{n}$$"
+ },
+ {
+  "k": "e95d555e",
+  "s": "💥 2D impuls to‘qnashuv chizmasi",
+  "ru": "💥 Схема двумерного импульсного столкновения",
+  "en": "💥 Diagram of a 2D impulse collision"
+ },
+ {
+  "k": "822f7f4e",
+  "s": "2D Collision Impulse",
+  "ru": "2D Collision Impulse",
+  "en": "2D Collision Impulse"
+ },
+ {
+  "k": "2686a5ca",
+  "s": "Penetration Resolution",
+  "ru": "Penetration Resolution",
+  "en": "Penetration Resolution"
+ },
+ {
+  "k": "6b462103",
+  "s": "📊 1D to‘g‘ri chiziqli va 2D tekislikdagi to‘qnashuvlar qiyosiy tahlili:",
+  "ru": "📊 Сравнительный анализ одномерных прямолинейных и двумерных плоских столкновений:",
+  "en": "📊 Comparative analysis of 1D straight-line and 2D planar collisions:"
+ },
+ {
+  "k": "49593891",
+  "s": "Xususiyat / parametr",
+  "ru": "Свойство / параметр",
+  "en": "Property / parameter"
+ },
+ {
+  "k": "6b3f1b77",
+  "s": "1D markaziy to‘qnashuv",
+  "ru": "Одномерное центральное столкновение",
+  "en": "1D head-on collision"
+ },
+ {
+  "k": "c9f9502a",
+  "s": "2D qiya (oblique) to‘qnashuv",
+  "ru": "Двумерное косое (oblique) столкновение",
+  "en": "2D oblique collision"
+ },
+ {
+  "k": "76284d38",
+  "s": "Fizik saqlanish qonuni",
+  "ru": "Физический закон сохранения",
+  "en": "Physical conservation law"
+ },
+ {
+  "k": "d05bc4c6",
+  "s": "<strong>Tezliklar Yo‘nalishi</strong>",
+  "ru": "<strong>Направление скоростей</strong>",
+  "en": "<strong>Direction of velocities</strong>"
+ },
+ {
+  "k": "9dd1f339",
+  "s": "Faqat bitta o‘q ($x$) bo‘ylab ishora o‘zgaradi",
+  "ru": "Знак меняется только вдоль одной оси ($x$)",
+  "en": "The sign changes along one axis only ($x$)"
+ },
+ {
+  "k": "d325b618",
+  "s": "Normal ($\\hat{n}$) va tangensial ($\\hat{t}$) o‘qlarga ajraladi",
+  "ru": "Раскладывается на нормальную ($\\hat{n}$) и касательную ($\\hat{t}$) оси",
+  "en": "Decomposed into normal ($\\hat{n}$) and tangential ($\\hat{t}$) axes"
+ },
+ {
+  "k": "55e5f0cd",
+  "s": "Impuls vektorining o‘qlardagi proyeksiyalari",
+  "ru": "Проекции вектора импульса на оси",
+  "en": "Projections of the momentum vector onto the axes"
+ },
+ {
+  "k": "9628bfd3",
+  "s": "<strong>Normal Bo‘yicha Impuls ($j$)</strong>",
+  "ru": "<strong>Импульс по нормали ($j$)</strong>",
+  "en": "<strong>Normal impulse ($j$)</strong>"
+ },
+ {
+  "k": "f8d2e778",
+  "s": "$j = \\frac{-(1+e)(v_1 - v_2)}{1/m_1 + 1/m_2}$",
+  "ru": "$j = \\frac{-(1+e)(v_1 - v_2)}{1/m_1 + 1/m_2}$",
+  "en": "$j = \\frac{-(1+e)(v_1 - v_2)}{1/m_1 + 1/m_2}$"
+ },
+ {
+  "k": "a5149613",
+  "s": "$j = \\frac{-(1+e)(\\vec{v}_{rel} \\cdot \\hat{n})}{1/m_1 + 1/m_2}$",
+  "ru": "$j = \\frac{-(1+e)(\\vec{v}_{rel} \\cdot \\hat{n})}{1/m_1 + 1/m_2}$",
+  "en": "$j = \\frac{-(1+e)(\\vec{v}_{rel} \\cdot \\hat{n})}{1/m_1 + 1/m_2}$"
+ },
+ {
+  "k": "826a9f03",
+  "s": "Nyutonning 3-qonuni ($\\vec{F}_{12} = -\\vec{F}_{21}$)",
+  "ru": "Третий закон Ньютона ($\\vec{F}_{12} = -\\vec{F}_{21}$)",
+  "en": "Newton’s third law ($\\vec{F}_{12} = -\\vec{F}_{21}$)"
+ },
+ {
+  "k": "19181585",
+  "s": "<strong>Tangensial Tezlik ($v_t$)</strong>",
+  "ru": "<strong>Касательная скорость ($v_t$)</strong>",
+  "en": "<strong>Tangential velocity ($v_t$)</strong>"
+ },
+ {
+  "k": "b0f9c66d",
+  "s": "Mavjud emas ($v_t = 0$)",
+  "ru": "Отсутствует ($v_t = 0$)",
+  "en": "Not present ($v_t = 0$)"
+ },
+ {
+  "k": "64e96412",
+  "s": "Ishqalanishsiz holda o‘zgarmaydi ($v_{1t}' = v_{1t}$)",
+  "ru": "Без трения не изменяется ($v_{1t}' = v_{1t}$)",
+  "en": "Unchanged in the absence of friction ($v_{1t}' = v_{1t}$)"
+ },
+ {
+  "k": "3eebe037",
+  "s": "Urinma tekislikda kuch yo‘qligi",
+  "ru": "Отсутствие силы в касательной плоскости",
+  "en": "No force in the tangent plane"
+ },
+ {
+  "k": "34e88726",
+  "s": "<strong>Kinetik Energiya Farqi ($\\Delta E_k$)</strong>",
+  "ru": "<strong>Изменение кинетической энергии ($\\Delta E_k$)</strong>",
+  "en": "<strong>Kinetic energy change ($\\Delta E_k$)</strong>"
+ },
+ {
+  "k": "aa56f56f",
+  "s": "$\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu(v_1 - v_2)^2$",
+  "ru": "$\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu(v_1 - v_2)^2$",
+  "en": "$\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu(v_1 - v_2)^2$"
+ },
+ {
+  "k": "ab25d804",
+  "s": "$\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu(\\vec{v}_{rel}\\cdot\\hat{n})^2$",
+  "ru": "$\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu(\\vec{v}_{rel}\\cdot\\hat{n})^2$",
+  "en": "$\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu(\\vec{v}_{rel}\\cdot\\hat{n})^2$"
+ },
+ {
+  "k": "c7cc28bf",
+  "s": "Termodinamikaning 1-qonuni (Issiqlik ajralishi)",
+  "ru": "Первое начало термодинамики (выделение теплоты)",
+  "en": "First law of thermodynamics (heat release)"
+ },
+ {
+  "k": "99ef2849",
+  "s": "WolframAlpha uchun 3 Ta Ixtisoslashgan Impuls va Dinamika So‘rovlari",
+  "ru": "3 специализированных запроса к WolframAlpha по импульсу и динамике",
+  "en": "3 specialised impulse and dynamics queries for WolframAlpha"
+ },
+ {
+  "k": "c9761f60",
+  "s": "1) Umumiy 1D/2D impuls va tezliklar yechimi: solve {m1*v1 + m2*v2 = m1*u1 + m2*u2, (u2 - u1) = -e*(v2 - v1)} for u1, u2 2) Noelastik to‘qnashuvda energiya yo‘qolishi (e = 0.8): DeltaEk = 1/2 * (1 - e^2) * (m1*m2)/(m1+m2) * (v1 - v2)^2 where m1=3, m2=5, v1=10, v2=-4, e=0.8 3) 2D vektorli to‘qnashuv yechimi: 2D elastic collision vector: v1 = {4, 2}, v2 = {-2, 1}, n = {1, 0}, m1=2, m2=2",
+  "ru": "1) Общее решение для импульса и скоростей в 1D/2D: solve {m1*v1 + m2*v2 = m1*u1 + m2*u2, (u2 - u1) = -e*(v2 - v1)} for u1, u2 2) Потеря энергии при неупругом столкновении (e = 0.8): DeltaEk = 1/2 * (1 - e^2) * (m1*m2)/(m1+m2) * (v1 - v2)^2 where m1=3, m2=5, v1=10, v2=-4, e=0.8 3) Решение двумерного векторного столкновения: 2D elastic collision vector: v1 = {4, 2}, v2 = {-2, 1}, n = {1, 0}, m1=2, m2=2",
+  "en": "1) General 1D/2D impulse and velocity solution: solve {m1*v1 + m2*v2 = m1*u1 + m2*u2, (u2 - u1) = -e*(v2 - v1)} for u1, u2 2) Energy loss in an inelastic collision (e = 0.8): DeltaEk = 1/2 * (1 - e^2) * (m1*m2)/(m1+m2) * (v1 - v2)^2 where m1=3, m2=5, v1=10, v2=-4, e=0.8 3) 2D vector collision solution: 2D elastic collision vector: v1 = {4, 2}, v2 = {-2, 1}, n = {1, 0}, m1=2, m2=2"
+ },
+ {
+  "k": "08157a68",
+  "s": "4-bosqich: Kod strukturası",
+  "ru": "Этап 4: структура кода",
+  "en": "Stage 4: Code structure"
+ },
+ {
+  "k": "735d20aa",
+  "s": "Claude (Artifacts): to‘liq fizika dvigateli kodi",
+  "ru": "Claude (Artifacts): полный код физического движка",
+  "en": "Claude (Artifacts): complete physics engine code"
+ },
+ {
+  "k": "3be36e15",
+  "s": "📚 Dasturiy Standart va Arxitekturaviy Manbalar (WWW):",
+  "ru": "📚 Программные стандарты и архитектурные источники (WWW):",
+  "en": "📚 Software standards and architectural sources (WWW):"
+ },
+ {
+  "k": "3b130ef9",
+  "s": "Fizik dvigatel arxitekturasi <strong>Jason Gregory (2018, <em>Game Engine Architecture</em>, 3rd ed., CRC Press)</strong> hamda <strong>Glenn Fiedler (2004, <em>Collision Response</em>)</strong> prinsiplari asosida modulli ECMAScript 6 (ES6) formatida ishlab chiqilgan. Xotira ajratilishini (Memory Allocation) minimallashtirish, zarrachalar to‘qnashuvini diskret vaqt qadamlarida deterministik integratsiyalash ta’minlangan.",
+  "ru": "Архитектура физического движка разработана в модульном формате ECMAScript 6 (ES6) на основе принципов <strong>Jason Gregory (2018, <em>Game Engine Architecture</em>, 3rd ed., CRC Press)</strong> и <strong>Glenn Fiedler (2004, <em>Collision Response</em>)</strong>. Обеспечены минимизация выделения памяти (Memory Allocation) и детерминированное интегрирование столкновений частиц на дискретных шагах времени.",
+  "en": "The physics engine architecture follows the principles of <strong>Jason Gregory (2018, <em>Game Engine Architecture</em>, 3rd ed., CRC Press)</strong> and <strong>Glenn Fiedler (2004, <em>Collision Response</em>)</strong> and is written in modular ECMAScript 6 (ES6). It minimises memory allocation and integrates particle collisions deterministically over discrete time steps."
+ },
+ {
+  "k": "ac1debcb",
+  "s": "🔗 <em>Asosiy manbalar:</em> Gregory, J. (2018). <em>Game Engine Architecture</em>, CRC Press (ISBN: 978-1138035485); Fiedler, G. (2004). <a href=\"https://gafferongames.com/post/collision_response_and_coulomb_friction/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple); text-decoration: underline;\">Gaffer on Games: Collision Response</a>; Millington, I. (2010). <em>Game Physics Engine Development</em>, Morgan Kaufmann (ISBN: 978-0123819765); Mozilla Developer Network (MDN) 2D Physics: <a href=\"https://developer.mozilla.org\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple); text-decoration: underline;\">developer.mozilla.org</a>.",
+  "ru": "🔗 <em>Основные источники:</em> Gregory, J. (2018). <em>Game Engine Architecture</em>, CRC Press (ISBN: 978-1138035485); Fiedler, G. (2004). <a href=\"https://gafferongames.com/post/collision_response_and_coulomb_friction/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple); text-decoration: underline;\">Gaffer on Games: Collision Response</a>; Millington, I. (2010). <em>Game Physics Engine Development</em>, Morgan Kaufmann (ISBN: 978-0123819765); Mozilla Developer Network (MDN) 2D Physics: <a href=\"https://developer.mozilla.org\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple); text-decoration: underline;\">developer.mozilla.org</a>.",
+  "en": "🔗 <em>Key sources:</em> Gregory, J. (2018). <em>Game Engine Architecture</em>, CRC Press (ISBN: 978-1138035485); Fiedler, G. (2004). <a href=\"https://gafferongames.com/post/collision_response_and_coulomb_friction/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple); text-decoration: underline;\">Gaffer on Games: Collision Response</a>; Millington, I. (2010). <em>Game Physics Engine Development</em>, Morgan Kaufmann (ISBN: 978-0123819765); Mozilla Developer Network (MDN) 2D Physics: <a href=\"https://developer.mozilla.org\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-purple); text-decoration: underline;\">developer.mozilla.org</a>."
+ },
+ {
+  "k": "4b4dbd46",
+  "s": "Claude tomonidan Generatsiya Qilingan 2D Modular Physics Engine Kodi (ES6)",
+  "ru": "Код модульного 2D-физического движка (ES6), сгенерированный Claude",
+  "en": "Modular 2D Physics Engine Code (ES6) Generated by Claude"
+ },
+ {
+  "k": "91a8b7b2",
+  "s": "nusxalash",
+  "ru": "копировать",
+  "en": "copy"
+ },
+ {
+  "k": "cc8199ab",
+  "s": "// Claude 2D Vector Physics Engine (ES6) class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } set(x, y) { this.x = x; this.y = y; return this; } add(v) { this.x += v.x; this.y += v.y; return this; } sub(v) { this.x -= v.x; this.y -= v.y; return this; } mult(n) { this.x *= n; this.y *= n; return this; } mag() { return Math.sqrt(this.x * this.x + this.y * this.y); } dot(v) { return this.x * v.x + this.y * v.y; } normalize() { const m = this.mag(); if (m &gt; 0) { this.x /= m; this.y /= m; } return this; } dist(v) { const dx = this.x - v.x, dy = this.y - v.y; return Math.sqrt(dx * dx + dy * dy); } } class RigidBody2D { constructor(x, y, vx, vy, mass, radius, color = '#38BDF8') { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.acc = new Vector2D(0, 0); this.m = mass; this.invM = mass &gt; 0 ? 1 / mass : 0; // mass=0 bo‘lsa harakatsiz to‘siq this.r = radius; this.color = color; this.trail = []; } update(dt) { this.vel.x += this.acc.x * dt; this.vel.y += this.acc.y * dt; this.pos.x += this.vel.x * dt; this.pos.y += this.vel.y * dt; // Trayektoriya izi this.trail.push({ x: this.pos.x, y: this.pos.y }); if (this.trail.length &gt; 50) this.trail.shift(); } } function resolveCollision(b1, b2, restitution = 1.0) { const dx = b1.pos.x - b2.pos.x; const dy = b1.pos.y - b2.pos.y; const dist = Math.sqrt(dx * dx + dy * dy); const minDist = b1.r + b2.r; // 1. To‘qnashuvni aniqlash if (dist &lt; minDist &amp;&amp; dist &gt; 0) { const nx = dx / dist; const ny = dy / dist; const vRelX = b1.vel.x - b2.vel.x; const vRelY = b1.vel.y - b2.vel.y; const vNorm = vRelX * nx + vRelY * ny; // 2. Yaqinlashish shartini tekshirish (vNorm &lt; 0) if (vNorm &lt; 0) { const impulse = -(1 + restitution) * vNorm / (b1.invM + b2.invM); b1.vel.x += (impulse * b1.invM) * nx; b1.vel.y += (impulse * b1.invM) * ny; b2.vel.x -= (impulse * b2.invM) * nx; b2.vel.y -= (impulse * b2.invM) * ny; } // 3. Positional correction (Penetratsiyani massalarga mutanosib yo'qotish) const penetration = minDist - dist; const totalInvM = b1.invM + b2.invM; if (totalInvM &gt; 0) { b1.pos.x += (penetration * (b1.invM / totalInvM)) * nx; b1.pos.y += (penetration * (b1.invM / totalInvM)) * ny; b2.pos.x -= (penetration * (b2.invM / totalInvM)) * nx; b2.pos.y -= (penetration * (b2.invM / totalInvM)) * ny; } } }",
+  "ru": "// Claude 2D Vector Physics Engine (ES6) class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } set(x, y) { this.x = x; this.y = y; return this; } add(v) { this.x += v.x; this.y += v.y; return this; } sub(v) { this.x -= v.x; this.y -= v.y; return this; } mult(n) { this.x *= n; this.y *= n; return this; } mag() { return Math.sqrt(this.x * this.x + this.y * this.y); } dot(v) { return this.x * v.x + this.y * v.y; } normalize() { const m = this.mag(); if (m &gt; 0) { this.x /= m; this.y /= m; } return this; } dist(v) { const dx = this.x - v.x, dy = this.y - v.y; return Math.sqrt(dx * dx + dy * dy); } } class RigidBody2D { constructor(x, y, vx, vy, mass, radius, color = '#38BDF8') { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.acc = new Vector2D(0, 0); this.m = mass; this.invM = mass &gt; 0 ? 1 / mass : 0; // при mass=0 — неподвижное препятствие this.r = radius; this.color = color; this.trail = []; } update(dt) { this.vel.x += this.acc.x * dt; this.vel.y += this.acc.y * dt; this.pos.x += this.vel.x * dt; this.pos.y += this.vel.y * dt; // След траектории this.trail.push({ x: this.pos.x, y: this.pos.y }); if (this.trail.length &gt; 50) this.trail.shift(); } } function resolveCollision(b1, b2, restitution = 1.0) { const dx = b1.pos.x - b2.pos.x; const dy = b1.pos.y - b2.pos.y; const dist = Math.sqrt(dx * dx + dy * dy); const minDist = b1.r + b2.r; // 1. Обнаружение столкновения if (dist &lt; minDist &amp;&amp; dist &gt; 0) { const nx = dx / dist; const ny = dy / dist; const vRelX = b1.vel.x - b2.vel.x; const vRelY = b1.vel.y - b2.vel.y; const vNorm = vRelX * nx + vRelY * ny; // 2. Проверка условия сближения (vNorm &lt; 0) if (vNorm &lt; 0) { const impulse = -(1 + restitution) * vNorm / (b1.invM + b2.invM); b1.vel.x += (impulse * b1.invM) * nx; b1.vel.y += (impulse * b1.invM) * ny; b2.vel.x -= (impulse * b2.invM) * nx; b2.vel.y -= (impulse * b2.invM) * ny; } // 3. Positional correction (устранение проникновения пропорционально массам) const penetration = minDist - dist; const totalInvM = b1.invM + b2.invM; if (totalInvM &gt; 0) { b1.pos.x += (penetration * (b1.invM / totalInvM)) * nx; b1.pos.y += (penetration * (b1.invM / totalInvM)) * ny; b2.pos.x -= (penetration * (b2.invM / totalInvM)) * nx; b2.pos.y -= (penetration * (b2.invM / totalInvM)) * ny; } } }",
+  "en": "// Claude 2D Vector Physics Engine (ES6) class Vector2D { constructor(x = 0, y = 0) { this.x = x; this.y = y; } set(x, y) { this.x = x; this.y = y; return this; } add(v) { this.x += v.x; this.y += v.y; return this; } sub(v) { this.x -= v.x; this.y -= v.y; return this; } mult(n) { this.x *= n; this.y *= n; return this; } mag() { return Math.sqrt(this.x * this.x + this.y * this.y); } dot(v) { return this.x * v.x + this.y * v.y; } normalize() { const m = this.mag(); if (m &gt; 0) { this.x /= m; this.y /= m; } return this; } dist(v) { const dx = this.x - v.x, dy = this.y - v.y; return Math.sqrt(dx * dx + dy * dy); } } class RigidBody2D { constructor(x, y, vx, vy, mass, radius, color = '#38BDF8') { this.pos = new Vector2D(x, y); this.vel = new Vector2D(vx, vy); this.acc = new Vector2D(0, 0); this.m = mass; this.invM = mass &gt; 0 ? 1 / mass : 0; // mass=0 means a static obstacle this.r = radius; this.color = color; this.trail = []; } update(dt) { this.vel.x += this.acc.x * dt; this.vel.y += this.acc.y * dt; this.pos.x += this.vel.x * dt; this.pos.y += this.vel.y * dt; // Trajectory trail this.trail.push({ x: this.pos.x, y: this.pos.y }); if (this.trail.length &gt; 50) this.trail.shift(); } } function resolveCollision(b1, b2, restitution = 1.0) { const dx = b1.pos.x - b2.pos.x; const dy = b1.pos.y - b2.pos.y; const dist = Math.sqrt(dx * dx + dy * dy); const minDist = b1.r + b2.r; // 1. Collision detection if (dist &lt; minDist &amp;&amp; dist &gt; 0) { const nx = dx / dist; const ny = dy / dist; const vRelX = b1.vel.x - b2.vel.x; const vRelY = b1.vel.y - b2.vel.y; const vNorm = vRelX * nx + vRelY * ny; // 2. Check the approach condition (vNorm &lt; 0) if (vNorm &lt; 0) { const impulse = -(1 + restitution) * vNorm / (b1.invM + b2.invM); b1.vel.x += (impulse * b1.invM) * nx; b1.vel.y += (impulse * b1.invM) * ny; b2.vel.x -= (impulse * b2.invM) * nx; b2.vel.y -= (impulse * b2.invM) * ny; } // 3. Positional correction (remove penetration in proportion to mass) const penetration = minDist - dist; const totalInvM = b1.invM + b2.invM; if (totalInvM &gt; 0) { b1.pos.x += (penetration * (b1.invM / totalInvM)) * nx; b1.pos.y += (penetration * (b1.invM / totalInvM)) * ny; b2.pos.x -= (penetration * (b2.invM / totalInvM)) * nx; b2.pos.y -= (penetration * (b2.invM / totalInvM)) * ny; } } }"
+ },
+ {
+  "k": "6786c654",
+  "s": "5-bosqich: Trayektoriya va ma’lumotlar",
+  "ru": "Этап 5: траектория и данные",
+  "en": "Stage 5: Trajectory and data"
+ },
+ {
+  "k": "e017d936",
+  "s": "Harakat trayektoriyasi va saqlanish qonunlari grafiklari: ChatGPT",
+  "ru": "Графики траектории движения и законов сохранения: ChatGPT",
+  "en": "Plots of motion trajectories and conservation laws: ChatGPT"
+ },
+ {
+  "k": "911994c5",
+  "s": "📚 Fazoviy Dinamika va Sonli Tahlil Manbalari (WWW):",
+  "ru": "📚 Источники по пространственной динамике и численному анализу (WWW):",
+  "en": "📚 Sources on spatial dynamics and numerical analysis (WWW):"
+ },
+ {
+  "k": "9b4b27c1",
+  "s": "Fizika simulyatsiyasining ilmiy haqiqiyligi <strong>umumiy impuls ($\\vec{P} = \\text{const}$)</strong> va <strong>kinetik energiya ($E_k$)</strong> saqlanish qonunlari orqali tekshiriladi (Marion va Thornton, 1995, <em>Classical Dynamics of Particles and Systems</em>; Hairer et al., 2006, <em>Geometric Numerical Integration</em>). <strong>ChatGPT Code Interpreter</strong> simulyatsiyadan olingan telemetriya ma’lumotlarini qayta ishlab, faza fazosi va energiya dissipatsiyasini Matplotlib orqali tahlil qiladi.",
+  "ru": "Научная достоверность физической симуляции проверяется через законы сохранения <strong>полного импульса ($\\vec{P} = \\text{const}$)</strong> и <strong>кинетической энергии ($E_k$)</strong> (Marion и Thornton, 1995, <em>Classical Dynamics of Particles and Systems</em>; Hairer et al., 2006, <em>Geometric Numerical Integration</em>). <strong>ChatGPT Code Interpreter</strong> обрабатывает телеметрию, полученную из симуляции, и анализирует фазовое пространство и диссипацию энергии с помощью Matplotlib.",
+  "en": "The scientific validity of the physics simulation is checked through the conservation laws of <strong>total momentum ($\\vec{P} = \\text{const}$)</strong> and <strong>kinetic energy ($E_k$)</strong> (Marion & Thornton, 1995, <em>Classical Dynamics of Particles and Systems</em>; Hairer et al., 2006, <em>Geometric Numerical Integration</em>). <strong>ChatGPT Code Interpreter</strong> processes the telemetry exported from the simulation and analyses the phase space and energy dissipation with Matplotlib."
+ },
+ {
+  "k": "691f3fbd",
+  "s": "🔗 <em>Asosiy manbalar:</em> Marion, J. B., va Thornton, S. T. (1995). <em>Classical Dynamics</em>, Saunders College Pub.; Hairer, E., et al. (2006). <em>Geometric Numerical Integration</em>, Springer, DOI: <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">10.1007/3-540-30666-8</a>; Hunter, J. D. (2007). <em>Matplotlib: A 2D Graphics Environment</em>, Computing in Science va Eng., DOI: <a href=\"https://doi.org/10.1109/MCSE.2007.55\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">10.1109/MCSE.2007.55</a>; OpenAI (2024). <a href=\"https://openai.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">openai.com</a>.",
+  "ru": "🔗 <em>Основные источники:</em> Marion, J. B., & Thornton, S. T. (1995). <em>Classical Dynamics</em>, Saunders College Pub.; Hairer, E., et al. (2006). <em>Geometric Numerical Integration</em>, Springer, DOI: <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">10.1007/3-540-30666-8</a>; Hunter, J. D. (2007). <em>Matplotlib: A 2D Graphics Environment</em>, Computing in Science & Eng., DOI: <a href=\"https://doi.org/10.1109/MCSE.2007.55\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">10.1109/MCSE.2007.55</a>; OpenAI (2024). <a href=\"https://openai.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">openai.com</a>.",
+  "en": "🔗 <em>Key sources:</em> Marion, J. B., & Thornton, S. T. (1995). <em>Classical Dynamics</em>, Saunders College Pub.; Hairer, E., et al. (2006). <em>Geometric Numerical Integration</em>, Springer, DOI: <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">10.1007/3-540-30666-8</a>; Hunter, J. D. (2007). <em>Matplotlib: A 2D Graphics Environment</em>, Computing in Science & Eng., DOI: <a href=\"https://doi.org/10.1109/MCSE.2007.55\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">10.1109/MCSE.2007.55</a>; OpenAI (2024). <a href=\"https://openai.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-rose); text-decoration: underline;\">openai.com</a>."
+ },
+ {
+  "k": "22644895",
+  "s": "📊 ChatGPT Code Interpreter uchun Python tahlil skripti:",
+  "ru": "📊 Скрипт анализа на Python для ChatGPT Code Interpreter:",
+  "en": "📊 Python analysis script for ChatGPT Code Interpreter:"
+ },
+ {
+  "k": "54fb2b97",
+  "s": "import matplotlib.pyplot as plt<br> import numpy as np<br><br> # Telemetriya ma’lumotlarini tekshirish<br> time = np.linspace(0, 10, 500)<br> energy_elastic = 0.5 * m1 * v1**2 + 0.5 * m2 * v2**2<br> momentum_x = m1 * vx1 + m2 * vx2<br><br> plt.plot(time, energy_elastic, label='Kinetik Energiya (Ek)')<br> plt.axhline(energy_elastic[0], color='r', linestyle='--', label='Nazariy Ek')<br> plt.title('Elastik To\\'qnashuvda Energiya Saqlanishi')<br> plt.xlabel('Vaqt t (s)')<br> plt.ylabel('Energiya (J)')<br> plt.legend()<br> plt.show()",
+  "ru": "import matplotlib.pyplot as plt<br> import numpy as np<br><br> # Проверка данных телеметрии<br> time = np.linspace(0, 10, 500)<br> energy_elastic = 0.5 * m1 * v1**2 + 0.5 * m2 * v2**2<br> momentum_x = m1 * vx1 + m2 * vx2<br><br> plt.plot(time, energy_elastic, label='Кинетическая энергия (Ek)')<br> plt.axhline(energy_elastic[0], color='r', linestyle='--', label='Теоретическая Ek')<br> plt.title('Сохранение энергии при упругом столкновении')<br> plt.xlabel('Время t (с)')<br> plt.ylabel('Энергия (Дж)')<br> plt.legend()<br> plt.show()",
+  "en": "import matplotlib.pyplot as plt<br> import numpy as np<br><br> # Check the telemetry data<br> time = np.linspace(0, 10, 500)<br> energy_elastic = 0.5 * m1 * v1**2 + 0.5 * m2 * v2**2<br> momentum_x = m1 * vx1 + m2 * vx2<br><br> plt.plot(time, energy_elastic, label='Kinetic energy (Ek)')<br> plt.axhline(energy_elastic[0], color='r', linestyle='--', label='Theoretical Ek')<br> plt.title('Energy Conservation in an Elastic Collision')<br> plt.xlabel('Time t (s)')<br> plt.ylabel('Energy (J)')<br> plt.legend()<br> plt.show()"
+ },
+ {
+  "k": "2e0db1f1",
+  "s": "📈 To‘qnashuv natijalari tahlili:",
+  "ru": "📈 Анализ результатов столкновения:",
+  "en": "📈 Analysis of the collision results:"
+ },
+ {
+  "k": "71492cdc",
+  "s": "<strong>Elastik to‘qnashuv ($e = 1.0$):</strong> Umumiy kinetik energiya $E_k(t) = \\text{const}$ bo‘lib saqlanadi.",
+  "ru": "<strong>Упругое столкновение ($e = 1.0$):</strong> полная кинетическая энергия сохраняется: $E_k(t) = \\text{const}$.",
+  "en": "<strong>Elastic collision ($e = 1.0$):</strong> total kinetic energy is conserved: $E_k(t) = \\text{const}$."
+ },
+ {
+  "k": "8f919cf5",
+  "s": "<strong>Noelastik to‘qnashuv ($e &lt; 1.0$):</strong> Energiya farqi $\\Delta E_k = \\frac{1}{2}(1 - e^2)\\frac{m_1 m_2}{m_1 + m_2} v_{norm}^2$ ko‘rinishida ichki energiyaga (issiqlikka) aylanadi.",
+  "ru": "<strong>Неупругое столкновение ($e &lt; 1.0$):</strong> разность энергий $\\Delta E_k = \\frac{1}{2}(1 - e^2)\\frac{m_1 m_2}{m_1 + m_2} v_{norm}^2$ переходит во внутреннюю энергию (теплоту).",
+  "en": "<strong>Inelastic collision ($e &lt; 1.0$):</strong> the energy difference $\\Delta E_k = \\frac{1}{2}(1 - e^2)\\frac{m_1 m_2}{m_1 + m_2} v_{norm}^2$ is converted into internal energy (heat)."
+ },
+ {
+  "k": "7c6243cf",
+  "s": "<strong>Impuls saqlanishi:</strong> Tashqi kuchlar bo‘lmaganda ($g = 0$), to‘liq impuls $\\vec{P} = \\text{const}$ barcha $e$ qiymatlarida qat’iy saqlanadi.",
+  "ru": "<strong>Сохранение импульса:</strong> в отсутствие внешних сил ($g = 0$) полный импульс $\\vec{P} = \\text{const}$ строго сохраняется при всех значениях $e$.",
+  "en": "<strong>Momentum conservation:</strong> in the absence of external forces ($g = 0$), the total momentum $\\vec{P} = \\text{const}$ is strictly conserved for all values of $e$."
+ },
+ {
+  "k": "e48dbd7f",
+  "s": "📑 Simulyatsiyadan eksport qilinadigan telemetriya ma’lumotlari strukturasi:",
+  "ru": "📑 Структура данных телеметрии, экспортируемых из симуляции:",
+  "en": "📑 Structure of the telemetry data exported from the simulation:"
+ },
+ {
+  "k": "c02442d3",
+  "s": "Parametr",
+  "ru": "Параметр",
+  "en": "Parameter"
+ },
+ {
+  "k": "fddb9b54",
+  "s": "Turi / birligi",
+  "ru": "Тип / единица",
+  "en": "Type / unit"
+ },
+ {
+  "k": "08b5b518",
+  "s": "Fizik tavsifi",
+  "ru": "Физическое описание",
+  "en": "Physical description"
+ },
+ {
+  "k": "5b4c7f80",
+  "s": "ChatGPT tahlil maqsadi",
+  "ru": "Цель анализа в ChatGPT",
+  "en": "ChatGPT analysis goal"
+ },
+ {
+  "k": "061a830b",
+  "s": "<code>time_s</code>",
+  "ru": "<code>time_s</code>",
+  "en": "<code>time_s</code>"
+ },
+ {
+  "k": "68bf53a1",
+  "s": "Float (s)",
+  "ru": "Float (с)",
+  "en": "Float (s)"
+ },
+ {
+  "k": "933ead0b",
+  "s": "Vaqt koordinatasi ($\\Delta t = 1/60\\text{ s}$)",
+  "ru": "Временная координата ($\\Delta t = 1/60\\text{ s}$)",
+  "en": "Time coordinate ($\\Delta t = 1/60\\text{ s}$)"
+ },
+ {
+  "k": "49680dc3",
+  "s": "Vaqt shkalasi bo‘yicha bog‘lanish",
+  "ru": "Привязка ко временной шкале",
+  "en": "Alignment to the time scale"
+ },
+ {
+  "k": "86b02a0a",
+  "s": "Float (px / m)",
+  "ru": "Float (пкс / м)",
+  "en": "Float (px / m)"
+ },
+ {
+  "k": "3e3a6925",
+  "s": "Jismlarning fazoviy koordinatalari",
+  "ru": "Пространственные координаты тел",
+  "en": "Spatial coordinates of the bodies"
+ },
+ {
+  "k": "c5858f6d",
+  "s": "2D trayektoriya va to‘qnashuv nuqtasi grafigi",
+  "ru": "График двумерной траектории и точки столкновения",
+  "en": "Plot of the 2D trajectory and the collision point"
+ },
+ {
+  "k": "c6e75a25",
+  "s": "<code>v1_mag, v2_mag</code>",
+  "ru": "<code>v1_mag, v2_mag</code>",
+  "en": "<code>v1_mag, v2_mag</code>"
+ },
+ {
+  "k": "161aeb71",
+  "s": "Float (m/s)",
+  "ru": "Float (м/с)",
+  "en": "Float (m/s)"
+ },
+ {
+  "k": "0d2dde12",
+  "s": "Tezlik vektorlari modullari",
+  "ru": "Модули векторов скорости",
+  "en": "Magnitudes of the velocity vectors"
+ },
+ {
+  "k": "5778aeb5",
+  "s": "Tezliklar o‘zgarishi va nisbiy tezlik",
+  "ru": "Изменение скоростей и относительная скорость",
+  "en": "Velocity changes and relative velocity"
+ },
+ {
+  "k": "4a2ccc4c",
+  "s": "<code>total_energy_J</code>",
+  "ru": "<code>total_energy_J</code>",
+  "en": "<code>total_energy_J</code>"
+ },
+ {
+  "k": "4cadde6c",
+  "s": "Float (J)",
+  "ru": "Float (J)",
+  "en": "Float (J)"
+ },
+ {
+  "k": "d81e454c",
+  "s": "$E_k = \\frac{1}{2}m_1 v_1^2 + \\frac{1}{2}m_2 v_2^2$",
+  "ru": "$E_k = \\frac{1}{2}m_1 v_1^2 + \\frac{1}{2}m_2 v_2^2$",
+  "en": "$E_k = \\frac{1}{2}m_1 v_1^2 + \\frac{1}{2}m_2 v_2^2$"
+ },
+ {
+  "k": "b216cedf",
+  "s": "Energiya saqlanishi va dissipatsiyani tekshirish",
+  "ru": "Проверка сохранения энергии и диссипации",
+  "en": "Checking energy conservation and dissipation"
+ },
+ {
+  "k": "48fcb52e",
+  "s": "<code>total_momentum_kgms</code>",
+  "ru": "<code>total_momentum_kgms</code>",
+  "en": "<code>total_momentum_kgms</code>"
+ },
+ {
+  "k": "4cfb65a4",
+  "s": "Vector2D $(P_x, P_y)$",
+  "ru": "Vector2D $(P_x, P_y)$",
+  "en": "Vector2D $(P_x, P_y)$"
+ },
+ {
+  "k": "1fbecffb",
+  "s": "$\\vec{P} = m_1\\vec{v}_1 + m_2\\vec{v}_2$",
+  "ru": "$\\vec{P} = m_1\\vec{v}_1 + m_2\\vec{v}_2$",
+  "en": "$\\vec{P} = m_1\\vec{v}_1 + m_2\\vec{v}_2$"
+ },
+ {
+  "k": "08015158",
+  "s": "Impuls saqlanish qonuni doimiyligini tekshirish",
+  "ru": "Проверка постоянства по закону сохранения импульса",
+  "en": "Checking constancy under the law of conservation of momentum"
+ },
+ {
+  "k": "6fc274e9",
+  "s": "ChatGPT uchun Trayektoriya va Telemetriya Tahlili Prompti",
+  "ru": "Промпт для анализа траектории и телеметрии в ChatGPT",
+  "en": "Prompt for trajectory and telemetry analysis in ChatGPT"
+ },
+ {
+  "k": "2a65c160",
+  "s": "Men senga 2D to‘qnashuvlar simulyatsiyasidan eksport qilingan vaqt bo‘yicha ma’lumotlar massivini (t, x1, y1, vx1, vy1, x2, y2, vx2, vy2, Ek, Px, Py) beraman. Python Matplotlib orqali: 1) Har ikkala jismning 2D tekislikdagi (x, y) trayektoriya grafigini chiz; 2) To‘qnashuv nuqtasida tezlik vektorlari yo‘nalishini ko‘rsat; 3) Vaqtga bog‘liq kinetik energiya Ek(t) va to‘liq impuls P(t) grafiklarini hosil qilib, energiya yo‘qotilishi nazariy formulaga mos kelishini tekshir.",
+  "ru": "Я дам тебе массив данных по времени (t, x1, y1, vx1, vy1, x2, y2, vx2, vy2, Ek, Px, Py), экспортированный из симуляции двумерных столкновений. С помощью Python Matplotlib: 1) построй график траекторий обоих тел на плоскости (x, y); 2) покажи направления векторов скорости в точке столкновения; 3) построй зависимости кинетической энергии Ek(t) и полного импульса P(t) от времени и проверь, соответствует ли потеря энергии теоретической формуле.",
+  "en": "I will give you a time-series data array (t, x1, y1, vx1, vy1, x2, y2, vx2, vy2, Ek, Px, Py) exported from a 2D collision simulation. Using Python Matplotlib: 1) plot the trajectories of both bodies in the (x, y) plane; 2) show the directions of the velocity vectors at the collision point; 3) plot kinetic energy Ek(t) and total momentum P(t) over time and check whether the energy loss matches the theoretical formula."
+ },
+ {
+  "k": "f6636f77",
+  "s": "Jonli simulyatsiya",
+  "ru": "Живая симуляция",
+  "en": "Live simulation"
+ },
+ {
+  "k": "e8173447",
+  "s": "2D vektorlar va to‘qnashuvlar laboratoriyasi",
+  "ru": "Лаборатория двумерных векторов и столкновений",
+  "en": "2D vectors and collisions laboratory"
+ },
+ {
+  "k": "d3ab0017",
+  "s": "⏸ To‘xtatish",
+  "ru": "⏸ Остановить",
+  "en": "⏸ Stop"
+ },
+ {
+  "k": "59776801",
+  "s": "↺ Qayta o‘rnatish",
+  "ru": "↺ Сбросить",
+  "en": "↺ Reset"
+ },
+ {
+  "k": "25fc9532",
+  "s": "📚 Interaktiv ta’lim va PhET metodologiyasi:",
+  "ru": "📚 Интерактивное обучение и методология PhET:",
+  "en": "📚 Interactive learning and the PhET methodology:"
+ },
+ {
+  "k": "34315fb3",
+  "s": "Interaktiv fizika simulyatsiyalari talabalarning mexanik hodisalarni chuqur tushunishida <strong>Nobel mukofoti laureati Carl Wieman (PhET Interactive Simulations, 2008, <em>Science</em>)</strong> tamoyillariga muvofiq intellektual vosita bo‘lib xizmat qiladi. Dinamik vektor o‘qlari, trayektoriya izlari va real vaqtli telemetriya nazariy bilimlarni to‘g‘ridan-to‘g‘ri eksperimental tadqiqotga aylantiradi.",
+  "ru": "Интерактивные физические симуляции служат интеллектуальным инструментом для глубокого понимания студентами механических явлений в соответствии с принципами <strong>лауреата Нобелевской премии Карла Вимана (PhET Interactive Simulations, 2008, <em>Science</em>)</strong>. Динамические оси векторов, следы траекторий и телеметрия в реальном времени превращают теоретические знания в непосредственное экспериментальное исследование.",
+  "en": "Interactive physics simulations serve as an intellectual tool for deep understanding of mechanical phenomena, in line with the principles of <strong>Nobel laureate Carl Wieman (PhET Interactive Simulations, 2008, <em>Science</em>)</strong>. Dynamic vector arrows, trajectory traces and real-time telemetry turn theoretical knowledge directly into experimental inquiry."
+ },
+ {
+  "k": "ec4ac84c",
+  "s": "🔗 <em>Asosiy manbalar:</em> Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>, Science, DOI: <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">10.1126/science.1161948</a>; PhET Interactive Simulations, University of Colorado Boulder: <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">phet.colorado.edu</a>.",
+  "ru": "🔗 <em>Основные источники:</em> Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>, Science, DOI: <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">10.1126/science.1161948</a>; PhET Interactive Simulations, University of Colorado Boulder: <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">phet.colorado.edu</a>.",
+  "en": "🔗 <em>Key sources:</em> Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008). <em>PhET: Simulations That Enhance Learning</em>, Science, DOI: <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">10.1126/science.1161948</a>; PhET Interactive Simulations, University of Colorado Boulder: <a href=\"https://phet.colorado.edu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan); text-decoration: underline;\">phet.colorado.edu</a>."
+ },
+ {
+  "k": "fe7ed648",
+  "s": "🎛️ Parametrlar va ssenariylar:",
+  "ru": "🎛️ Параметры и сценарии:",
+  "en": "🎛️ Parameters and scenarios:"
+ },
+ {
+  "k": "9daebbfe",
+  "s": "Tajriba ssenariysi:",
+  "ru": "Сценарий опыта:",
+  "en": "Experiment scenario:"
+ },
+ {
+  "k": "f3a1b13f",
+  "s": "1. Markaziy elastik to‘qnashuv (m₁ = m₂)",
+  "ru": "1. Центральное упругое столкновение (m₁ = m₂)",
+  "en": "1. Head-on elastic collision (m₁ = m₂)"
+ },
+ {
+  "k": "f76a6e72",
+  "s": "2. Og‘ir va yengil jism to‘qnashuvi (m₁ = 5m₂)",
+  "ru": "2. Столкновение тяжёлого и лёгкого тела (m₁ = 5m₂)",
+  "en": "2. Heavy–light body collision (m₁ = 5m₂)"
+ },
+ {
+  "k": "71784c44",
+  "s": "3. Qiya (2D) to‘qnashuv",
+  "ru": "3. Косое (2D) столкновение",
+  "en": "3. Oblique (2D) collision"
+ },
+ {
+  "k": "9e30c1ad",
+  "s": "4. Ko‘p jismli gaz / bilyard modeli",
+  "ru": "4. Многотельная модель газа / бильярда",
+  "en": "4. Many-body gas / billiards model"
+ },
+ {
+  "k": "98d4f55d",
+  "s": "Tiklanish koeffitsiyenti ($e$):",
+  "ru": "Коэффициент восстановления ($e$):",
+  "en": "Coefficient of restitution ($e$):"
+ },
+ {
+  "k": "b2c5d861",
+  "s": "Massa $m_1$:",
+  "ru": "Масса $m_1$:",
+  "en": "Mass $m_1$:"
+ },
+ {
+  "k": "07eb22de",
+  "s": "3.0 kg",
+  "ru": "3.0 кг",
+  "en": "3.0 kg"
+ },
+ {
+  "k": "9e5ef2e8",
+  "s": "Massa $m_2$:",
+  "ru": "Масса $m_2$:",
+  "en": "Mass $m_2$:"
+ },
+ {
+  "k": "e2e37010",
+  "s": "Tezlik vektorlari ($\\vec{v}$)",
+  "ru": "Векторы скорости ($\\vec{v}$)",
+  "en": "Velocity vectors ($\\vec{v}$)"
+ },
+ {
+  "k": "177185cb",
+  "s": "Harakat trayektoriyasi izi",
+  "ru": "След траектории движения",
+  "en": "Motion trajectory trace"
+ },
+ {
+  "k": "aac74db3",
+  "s": "📊 Real vaqtli telemetriya (1 m = 100 px):",
+  "ru": "📊 Телеметрия в реальном времени (1 м = 100 пкс):",
+  "en": "📊 Real-time telemetry (1 m = 100 px):"
+ },
+ {
+  "k": "8162fd9a",
+  "s": "Kinetik energiya ($E_k$):",
+  "ru": "Кинетическая энергия ($E_k$):",
+  "en": "Kinetic energy ($E_k$):"
+ },
+ {
+  "k": "552e22ec",
+  "s": "0.00 kJ",
+  "ru": "0.00 кДж",
+  "en": "0.00 kJ"
+ },
+ {
+  "k": "1b73f488",
+  "s": "Umumiy impuls ($\\vec{P}$):",
+  "ru": "Полный импульс ($\\vec{P}$):",
+  "en": "Total momentum ($\\vec{P}$):"
+ },
+ {
+  "k": "52c56816",
+  "s": "To‘qnashuvlar soni:",
+  "ru": "Число столкновений:",
+  "en": "Number of collisions:"
+ },
+ {
+  "k": "23e1085c",
+  "s": "0 marta",
+  "ru": "0 marta",
+  "en": "0 marta"
+ },
+ {
+  "k": "4bb1e49b",
+  "s": "1-jism tezligi ($v_1$):",
+  "ru": "Скорость 1-го тела ($v_1$):",
+  "en": "Body 1 velocity ($v_1$):"
+ },
+ {
+  "k": "5c64184d",
+  "s": "0.0 px/s",
+  "ru": "0.0 пкс/с",
+  "en": "0.0 px/s"
+ },
+ {
+  "k": "b8e4d241",
+  "s": "2-jism tezligi ($v_2$):",
+  "ru": "Скорость 2-го тела ($v_2$):",
+  "en": "Body 2 velocity ($v_2$):"
+ },
+ {
+  "k": "e3b94dac",
+  "s": "🧪 Laboratoriya eksperimental tadqiqot topshiriqlari (PhET metodikasi):",
+  "ru": "🧪 Экспериментальные лабораторные задания (методика PhET):",
+  "en": "🧪 Experimental laboratory tasks (PhET methodology):"
+ },
+ {
+  "k": "3e7de0db",
+  "s": "1-Tajriba: Tezliklar Almashinuvi",
+  "ru": "Опыт 1: обмен скоростями",
+  "en": "Experiment 1: Velocity exchange"
+ },
+ {
+  "k": "8cdc8f5b",
+  "s": "Presetdan 1-ssenariyni tanlang ($m_1 = m_2 = 3\\text{ kg}, e = 1.0$). Sharlarning to‘qnashuvdan keyingi tezliklarini kuzating. Tezliklar to‘liq o‘zaro almashganini ($v_1' = v_2, v_2' = v_1$) va $E_k = \\text{const}$ ekanligini tasdiqlang.",
+  "ru": "Выберите в пресетах сценарий 1 ($m_1 = m_2 = 3\\text{ kg}, e = 1.0$). Пронаблюдайте скорости шаров после столкновения. Убедитесь, что скорости полностью поменялись местами ($v_1' = v_2, v_2' = v_1$) и что $E_k = \\text{const}$.",
+  "en": "Select scenario 1 from the presets ($m_1 = m_2 = 3\\text{ kg}, e = 1.0$). Observe the velocities of the balls after the collision. Confirm that the velocities have fully swapped ($v_1' = v_2, v_2' = v_1$) and that $E_k = \\text{const}$."
+ },
+ {
+  "k": "89cd9173",
+  "s": "2-Tajriba: Asimmetrik Massalar",
+  "ru": "Опыт 2: асимметричные массы",
+  "en": "Experiment 2: Asymmetric masses"
+ },
+ {
+  "k": "d9f8936a",
+  "s": "2-ssenariyni tanlang ($m_1 = 15\\text{ kg}, m_2 = 3\\text{ kg}$). Og‘ir jism yengil jismga urilganda, yengil jism tezligi deyarli $v_2' \\approx 2v_1$ gacha oshishini va impuls uzatilishini tahlil qiling.",
+  "ru": "Выберите сценарий 2 ($m_1 = 15\\text{ kg}, m_2 = 3\\text{ kg}$). Проанализируйте, как при ударе тяжёлого тела о лёгкое скорость лёгкого тела возрастает почти до $v_2' \\approx 2v_1$ и как передаётся импульс.",
+  "en": "Select scenario 2 ($m_1 = 15\\text{ kg}, m_2 = 3\\text{ kg}$). Analyse how, when a heavy body hits a light one, the speed of the light body rises to almost $v_2' \\approx 2v_1$ and how momentum is transferred."
+ },
+ {
+  "k": "1d543b5b",
+  "s": "3-Tajriba: Noelastik Dissipatsiya",
+  "ru": "Опыт 3: неупругая диссипация",
+  "en": "Experiment 3: Inelastic dissipation"
+ },
+ {
+  "k": "742f081a",
+  "s": "$e = 0.5$ qilib o‘rnating. HUD darchasidagi umumiy kinetik energiya kamayishini o‘lchang va $\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu v_{norm}^2$ nazariy formulasiga solishtiring.",
+  "ru": "Установите $e = 0.5$. Измерьте уменьшение полной кинетической энергии в окне HUD и сравните его с теоретической формулой $\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu v_{norm}^2$.",
+  "en": "Set $e = 0.5$. Measure the decrease in total kinetic energy in the HUD panel and compare it with the theoretical formula $\\Delta E_k = \\frac{1}{2}(1-e^2)\\mu v_{norm}^2$."
+ },
+ {
+  "k": "744c7afc",
+  "s": "O‘z-o‘zini baholash",
+  "ru": "Самооценка",
+  "en": "Self-assessment"
+ },
+ {
+  "k": "b6909b19",
+  "s": "📚 Psixometrik Baholash va Test Metodologiyasi (WWW):",
+  "ru": "📚 Психометрическое оценивание и методология тестирования (WWW):",
+  "en": "📚 Psychometric assessment and testing methodology (WWW):"
+ },
+ {
+  "k": "5a43f9db",
+  "s": "Ushbu test savollari <strong>Klassik Test Nazariyasi (CTT)</strong> hamda <strong>Bloom taksonomiyasining tahlil va sintez darajalari</strong> asosida ishlab chiqilgan bo‘lib, 2D vektor mexanikasi, to‘qnashuv impulsi va kompyuter fizikasi algoritmlarini kompleks baholashga mo‘ljallangan.",
+  "ru": "Эти тестовые вопросы разработаны на основе <strong>классической теории тестов (CTT)</strong> и <strong>уровней анализа и синтеза таксономии Блума</strong> и предназначены для комплексной оценки знаний по двумерной векторной механике, импульсу столкновения и алгоритмам компьютерной физики.",
+  "en": "These test questions are based on <strong>Classical Test Theory (CTT)</strong> and <strong>the analysis and synthesis levels of Bloom’s taxonomy</strong>, and are designed for a comprehensive assessment of 2D vector mechanics, collision impulse and computational physics algorithms."
+ },
+ {
+  "k": "c13b41e5",
+  "s": "🔗 <em>Asosiy manbalar:</em> Anderson, L. W., va Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>; Ebel, R. L., va Frisbie, D. A. (1991). <em>Essentials of Educational Measurement</em>, Prentice Hall.",
+  "ru": "🔗 <em>Основные источники:</em> Anderson, L. W., & Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>; Ebel, R. L., & Frisbie, D. A. (1991). <em>Essentials of Educational Measurement</em>, Prentice Hall.",
+  "en": "🔗 <em>Key sources:</em> Anderson, L. W., & Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>; Ebel, R. L., & Frisbie, D. A. (1991). <em>Essentials of Educational Measurement</em>, Prentice Hall."
+ },
+ {
+  "k": "4969f6cf",
+  "s": "2D vektor mexanikasi, to‘qnashuv impulsi va fizik dasturlash bo‘yicha bilimlaringizni sinab ko‘ring:",
+  "ru": "Проверьте свои знания по двумерной векторной механике, импульсу столкновения и программированию физики:",
+  "en": "Test your knowledge of 2D vector mechanics, collision impulse and physics programming:"
+ },
+ {
+  "k": "1eaa5a54",
+  "s": "1-savol: 2D elastik to‘qnashuvda nisbiy tezlikning normalga proyeksiyasi $v_{norm} = \\vec{v}_{rel} \\cdot \\hat{n} &gt; 0$ bo‘lsa, fizik dvigatel qanday qaror qabul qilishi kerak?",
+  "ru": "Вопрос 1: Какое решение должен принять физический движок, если при двумерном упругом столкновении проекция относительной скорости на нормаль $v_{norm} = \\vec{v}_{rel} \\cdot \\hat{n} &gt; 0$?",
+  "en": "Question 1: In a 2D elastic collision, what should the physics engine decide if the projection of the relative velocity onto the normal is $v_{norm} = \\vec{v}_{rel} \\cdot \\hat{n} &gt; 0$?"
+ },
+ {
+  "k": "467ffd59",
+  "s": "A) Impuls hisoblanmaydi, chunki jismlar allaqachon bir-biridan uzoqlashmoqda",
+  "ru": "A) Импульс не вычисляется, поскольку тела уже удаляются друг от друга",
+  "en": "A) No impulse is computed, because the bodies are already moving apart"
+ },
+ {
+  "k": "c8a6fa4d",
+  "s": "B) Ikkala jism tezligi nolga tenglashtiriladi",
+  "ru": "B) Скорости обоих тел обнуляются",
+  "en": "B) The velocities of both bodies are set to zero"
+ },
+ {
+  "k": "9e9d78c5",
+  "s": "C) Jismlar massasi 2 barobar oshiriladi",
+  "ru": "C) Массы тел увеличиваются в 2 раза",
+  "en": "C) The masses of the bodies are doubled"
+ },
+ {
+  "k": "3d295437",
+  "s": "2-savol: Simulyatsiyada to‘qnashgan shar shaklidagi jismlarning bir-birining ichiga kirib qolishi (interpenetration / sinking) qanday usul bilan bartaraf etiladi?",
+  "ru": "Вопрос 2: Каким способом в симуляции устраняется взаимопроникновение столкнувшихся шарообразных тел (interpenetration / sinking)?",
+  "en": "Question 2: How is the interpenetration (sinking) of colliding spherical bodies eliminated in a simulation?"
+ },
+ {
+  "k": "09c8d6b4",
+  "s": "A) Faqat gravitatsiya kuchini o‘chirish orqali",
+  "ru": "A) Только отключением силы тяжести",
+  "en": "A) Only by switching off gravity"
+ },
+ {
+  "k": "4f7aa0b8",
+  "s": "B) Minimum Translation Vector (MTV) positional correction: jismlarni to‘qnashuv normali bo‘yicha penetratsiya chuqurligining yarmiga (`penetration / 2`) qarama-qarshi surib qo‘yish orqali",
+  "ru": "B) Позиционной коррекцией Minimum Translation Vector (MTV): тела раздвигаются вдоль нормали столкновения в противоположные стороны на половину глубины проникновения (`penetration / 2`)",
+  "en": "B) By Minimum Translation Vector (MTV) positional correction: pushing the bodies apart along the collision normal in opposite directions by half the penetration depth (`penetration / 2`)"
+ },
+ {
+  "k": "15e19779",
+  "s": "C) Canvas rangini o‘zgartirish orqali",
+  "ru": "C) Изменением цвета Canvas",
+  "en": "C) By changing the Canvas colour"
+ },
+ {
+  "k": "63087b15",
+  "s": "3-savol: Mutlaq noelastik to‘qnashuvda ($e = 0$) to‘qnashuvdan keyin jismlarning normal o‘q bo‘yicha nisbiy tezligi qanday bo‘ladi?",
+  "ru": "Вопрос 3: Какой будет относительная скорость тел вдоль нормали после абсолютно неупругого столкновения ($e = 0$)?",
+  "en": "Question 3: After a perfectly inelastic collision ($e = 0$), what is the relative velocity of the bodies along the normal?"
+ },
+ {
+  "k": "7e673f64",
+  "s": "A) 0 ga teng bo‘ladi (jismlar normal bo‘yicha bir xil tezlikda birgalikda harakatlanadi)",
+  "ru": "A) Равна 0 (тела движутся вместе с одинаковой скоростью вдоль нормали)",
+  "en": "A) It equals 0 (the bodies move together with the same velocity along the normal)"
+ },
+ {
+  "k": "848817b9",
+  "s": "B) Cheksiz katta bo‘ladi",
+  "ru": "B) Бесконечно большой",
+  "en": "B) Infinitely large"
+ },
+ {
+  "k": "98744784",
+  "s": "C) Boshlang‘ich tezlikdan 2 barobar katta bo‘ladi",
+  "ru": "C) В 2 раза больше начальной скорости",
+  "en": "C) Twice the initial velocity"
+ },
+ {
+  "k": "018b5852",
+  "s": "📚 8-ma’ruza bo‘yicha to‘liq ilmiy-uslubiy adabiyotlar ro‘yxati (APA 7th):",
+  "ru": "📚 Полный список научно-методической литературы к лекции 8 (APA 7th):",
+  "en": "📚 Complete list of scholarly and methodological references for Lecture 8 (APA 7th):"
+ },
+ {
+  "k": "dcdb9c0e",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). John Wiley va Sons. (Chapter 9: Center of Mass and Linear Momentum — 2D Collisions va Energy Dissipation, pp. 215–248). ISBN: 978-1119286240.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). John Wiley & Sons. (Chapter 9: Center of Mass and Linear Momentum — 2D Collisions & Energy Dissipation, pp. 215–248). ISBN: 978-1119286240.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). John Wiley & Sons. (Chapter 9: Center of Mass and Linear Momentum — 2D Collisions & Energy Dissipation, pp. 215–248). ISBN: 978-1119286240."
+ },
+ {
+  "k": "caad8a4a",
+  "s": "<strong>Serway, R. A., va Jewett, J. W. (2018).</strong> <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning. (Chapter 9: Linear Momentum and Collisions). ISBN: 978-1337553292.",
+  "ru": "<strong>Serway, R. A., & Jewett, J. W. (2018).</strong> <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning. (Chapter 9: Linear Momentum and Collisions). ISBN: 978-1337553292.",
+  "en": "<strong>Serway, R. A., & Jewett, J. W. (2018).</strong> <em>Physics for Scientists and Engineers with Modern Physics</em> (10th ed.). Cengage Learning. (Chapter 9: Linear Momentum and Collisions). ISBN: 978-1337553292."
+ },
+ {
+  "k": "4b39bf19",
+  "s": "<strong>Baraff, D. (1997).</strong> <em>Physically Based Modeling: Rigid Body Simulation</em>. SIGGRAPH Course Notes, Robotics Institute, Carnegie Mellon University. URL: <a href=\"https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">cs.cmu.edu/~baraff/sigcourse/notesd1.pdf</a>.",
+  "ru": "<strong>Baraff, D. (1997).</strong> <em>Physically Based Modeling: Rigid Body Simulation</em>. SIGGRAPH Course Notes, Robotics Institute, Carnegie Mellon University. URL: <a href=\"https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">cs.cmu.edu/~baraff/sigcourse/notesd1.pdf</a>.",
+  "en": "<strong>Baraff, D. (1997).</strong> <em>Physically Based Modeling: Rigid Body Simulation</em>. SIGGRAPH Course Notes, Robotics Institute, Carnegie Mellon University. URL: <a href=\"https://www.cs.cmu.edu/~baraff/sigcourse/notesd1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">cs.cmu.edu/~baraff/sigcourse/notesd1.pdf</a>."
+ },
+ {
+  "k": "e65c3cba",
+  "s": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press / Taylor va Francis Group. (Chapter 12: The Physics Engine va Rigid Body Dynamics, pp. 680–745). ISBN: 978-1138035485.",
+  "ru": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press / Taylor & Francis Group. (Chapter 12: The Physics Engine & Rigid Body Dynamics, pp. 680–745). ISBN: 978-1138035485.",
+  "en": "<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press / Taylor & Francis Group. (Chapter 12: The Physics Engine & Rigid Body Dynamics, pp. 680–745). ISBN: 978-1138035485."
+ },
+ {
+  "k": "31db2536",
+  "s": "<strong>Williams, L., va Kessler, R. (2002).</strong> <em>Pair Programming Illuminated</em>. Addison-Wesley Professional. (ISBN: 978-0201745764).",
+  "ru": "<strong>Williams, L., & Kessler, R. (2002).</strong> <em>Pair Programming Illuminated</em>. Addison-Wesley Professional. (ISBN: 978-0201745764).",
+  "en": "<strong>Williams, L., & Kessler, R. (2002).</strong> <em>Pair Programming Illuminated</em>. Addison-Wesley Professional. (ISBN: 978-0201745764)."
+ },
+ {
+  "k": "0e667994",
+  "s": "<strong>Begel, A., va Nagappan, N. (2008).</strong> <em>Pair programming: what’s in it for me?</em> In <em>Proceedings of the 2008 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '08)</em>, pp. 120–128. DOI: <a href=\"https://doi.org/10.1145/1414004.1414026\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1145/1414004.1414026</a>.",
+  "ru": "<strong>Begel, A., & Nagappan, N. (2008).</strong> <em>Pair programming: what’s in it for me?</em> In <em>Proceedings of the 2008 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '08)</em>, pp. 120–128. DOI: <a href=\"https://doi.org/10.1145/1414004.1414026\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1145/1414004.1414026</a>.",
+  "en": "<strong>Begel, A., & Nagappan, N. (2008).</strong> <em>Pair programming: what’s in it for me?</em> In <em>Proceedings of the 2008 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '08)</em>, pp. 120–128. DOI: <a href=\"https://doi.org/10.1145/1414004.1414026\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1145/1414004.1414026</a>."
+ },
+ {
+  "k": "96bed388",
+  "s": "<strong>Fiedler, G. (2004).</strong> Collision response and numerical physics integration. <em>Gaffer on Games</em>. URL: <a href=\"https://gafferongames.com/post/collision_response_and_coulomb_friction/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">gafferongames.com</a>.",
+  "ru": "<strong>Fiedler, G. (2004).</strong> Collision response and numerical physics integration. <em>Gaffer on Games</em>. URL: <a href=\"https://gafferongames.com/post/collision_response_and_coulomb_friction/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">gafferongames.com</a>.",
+  "en": "<strong>Fiedler, G. (2004).</strong> Collision response and numerical physics integration. <em>Gaffer on Games</em>. URL: <a href=\"https://gafferongames.com/post/collision_response_and_coulomb_friction/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">gafferongames.com</a>."
+ },
+ {
+  "k": "f5742019",
+  "s": "<strong>Marion, J. B., va Thornton, S. T. (1995).</strong> <em>Classical Dynamics of Particles and Systems</em> (4th ed.). Saunders College Publishing. (ISBN: 978-0030973024).",
+  "ru": "<strong>Marion, J. B., & Thornton, S. T. (1995).</strong> <em>Classical Dynamics of Particles and Systems</em> (4th ed.). Saunders College Publishing. (ISBN: 978-0030973024).",
+  "en": "<strong>Marion, J. B., & Thornton, S. T. (1995).</strong> <em>Classical Dynamics of Particles and Systems</em> (4th ed.). Saunders College Publishing. (ISBN: 978-0030973024)."
+ },
+ {
+  "k": "43530870",
+  "s": "<strong>Hairer, E., Lubich, C., va Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. DOI: <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1007/3-540-30666-8</a>.",
+  "ru": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. DOI: <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1007/3-540-30666-8</a>.",
+  "en": "<strong>Hairer, E., Lubich, C., & Wanner, G. (2006).</strong> <em>Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations</em> (2nd ed.). Springer. DOI: <a href=\"https://doi.org/10.1007/3-540-30666-8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1007/3-540-30666-8</a>."
+ },
+ {
+  "k": "4f4b1fcb",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. <em>Science</em>, 322(5902), 682–683. DOI: <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1126/science.1161948</a>.",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. <em>Science</em>, 322(5902), 682–683. DOI: <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1126/science.1161948</a>.",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. <em>Science</em>, 322(5902), 682–683. DOI: <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-amber);\">10.1126/science.1161948</a>."
+ },
+ {
+  "k": "a8ff2d68",
+  "s": "<strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman. ISBN: 978-0801319037.",
+  "ru": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman. ISBN: 978-0801319037.",
+  "en": "<strong>Anderson, L. W., & Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives</em>. Longman. ISBN: 978-0801319037."
+ },
+ {
+  "k": "1f36374f",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press. ISBN: 978-0674576292.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press. ISBN: 978-0674576292.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press. ISBN: 978-0674576292."
+ }
+]

@@ -1,0 +1,29 @@
+j236e312	ось времени t →	time axis t →
+j4aa1853	колебания x(t)	x(t) oscillations
+jcccc9a9	Фазовое пространство (v и x)	Phase space (v and x)
+j55ab73f	 кг·м/с	 kg·m/s
+j1cd5633	=	=
+jf4f8c84	✅ ВЕРНО: угол переведён в радианы! sin(45°) ≈ 	✅ CORRECT: the angle was converted to radians! sin(45°) ≈
+j3dede21	 (теоретически: 0.7071)	 (theoretical: 0.7071)
+j93ce2d2	❌ ОШИБКА: Math.sin(45) остался в градусах! Результат: 	❌ ERROR: Math.sin(45) was left in degrees! Result:
+ja99caf4	 (ожидалось: 0.7071)	 (expected: 0.7071)
+jd7caf27	⚠️ Возвращённое значение не совпало: 	⚠️ The returned value did not match:
+jf731f7c	Синтаксическая ошибка: 	Syntax error:
+j9d0c3ef	=	=
+j82a35a8	✅ ВЕРНО: симплектический Эйлер–Кромер (сначала обновлена v, затем вычислена x). E = 	✅ CORRECT: symplectic Euler–Cromer (v updated first, then x computed). E =
+j5869b93	 Дж (сохранение устойчиво!)	 J (conservation is stable!)
+j6cc60a2	❌ НЕУСТОЙЧИВОСТЬ: классический Эйлер «взорвал» энергию! E = 	❌ INSTABILITY: classical Euler blew up the energy! E =
+j1a52eae	% погрешность)	% error)
+je57d6df	Ошибка: 	Error:
+jbc6bedd	✅ ВЕРНО: тело отражено, не войдя в стенку (x = 	✅ CORRECT: the body was reflected without entering the wall (x =
+j2f09a3f	 пкс, v = 	 px, v =
+j0b39116	 пкс/с)	 px/s)
+j4c069e9	❌ ТУННЕЛЬНЫЙ ЭФФЕКТ: тело осталось внутри или за пределами стенки (x = 	❌ TUNNELLING: the body was left inside or beyond the wall (x =
+jdd73676	⚠️ Возвращённое значение: x=	⚠️ Returned value: x=
+j5f5ec17	=	=
+jebadda9	✅ ВЕРНО: добавлен сглаживающий параметр (epsilon)! Сила удержана в конечных пределах: F = 	✅ CORRECT: a softening parameter (epsilon) was added! The force stays finite: F =
+jbb84d04	❌ СИНГУЛЯРНОСТЬ: при r -> 0 сила устремилась к бесконечности: F = 	❌ SINGULARITY: as r -> 0 the force tends to infinity: F =
+j989a777	 Н (движок зависнет!)	 N (the engine will freeze!)
+j6f62921	⚠️ Значение силы: 	⚠️ Force value:
+j4dc580f	Тест успешно пройден!	Test passed successfully!
+jfd4a953	Обнаружена ошибка!	Error detected!

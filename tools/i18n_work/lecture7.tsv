@@ -1,0 +1,123 @@
+5b49c75b	Лекция 7: Программная архитектура и движок	Lecture 7: Software Architecture and the Engine
+eb7ddf8b	2D-контекст HTML5 Canvas, физический цикл с аккумулятором <em>"Fix Your Timestep"</em> Гленна Фидлера, аппаратная синхронизация <code>requestAnimationFrame</code>, мониторинг в Google Antigravity, оптимизация кадров с ChatGPT (Dirty Rects, Multi-layer Canvas, Object Pooling) и визуальные тесты в Claude (Artifacts).	The HTML5 Canvas 2D context, Glenn Fiedler’s <em>"Fix Your Timestep"</em> accumulator physics loop, <code>requestAnimationFrame</code> hardware synchronisation, Google Antigravity monitoring, ChatGPT frame optimisation (dirty rects, multi-layer Canvas, object pooling) and visual tests in Claude (Artifacts).
+ff29c5da	📋 План лекции 7 и технологический ИИ-конвейер:	📋 Lecture 7 plan and the AI technology pipeline:
+ddc8b72b	⟨1⟩1. ИИ-диагностика и план:⟨/1⟩↵ ⟨2⟩MagicSchool AI: адаптивный учебный план по графике из 3 кластеров на основе ЗБР и таксономии Блума.⟨/2⟩	⟨1⟩1. AI diagnostics and plan:⟨/1⟩↵ ⟨2⟩MagicSchool AI: a 3-cluster adaptive graphics learning plan based on ZPD and Bloom’s taxonomy.⟨/2⟩
+2397f221	⟨1⟩2. Написание кода и мониторинг:⟨/1⟩↵ ⟨2⟩Google Antigravity: модульная программная архитектура, мониторинг памяти (Heap) и темпа кадров.⟨/2⟩	⟨1⟩2. Coding and monitoring:⟨/1⟩↵ ⟨2⟩Google Antigravity: modular software architecture, memory (heap) and frame-pacing monitoring.⟨/2⟩
+4f6049a8	⟨1⟩3. Цикл кадров и delta-time:⟨/1⟩↵ ⟨2⟩Claude: аккумулятор Гленна Фидлера, фиксированный шаг (Fixed dt) и альфа-интерполяция.⟨/2⟩	⟨1⟩3. Frame loop and delta time:⟨/1⟩↵ ⟨2⟩Claude: Glenn Fiedler’s accumulator, a fixed step (fixed dt) and alpha interpolation.⟨/2⟩
+739ad47c	⟨1⟩4. Оптимизация кадров:⟨/1⟩↵ ⟨2⟩ChatGPT Code Interpreter: Dirty Rectangles, многослойный Canvas и Object Pooling (Zero-GC).⟨/2⟩	⟨1⟩4. Frame optimisation:⟨/1⟩↵ ⟨2⟩ChatGPT Code Interpreter: dirty rectangles, multi-layer Canvas and object pooling (zero-GC).⟨/2⟩
+587042a5	⟨1⟩5. Визуальный тест и Artifacts:⟨/1⟩↵ ⟨2⟩Claude (Artifacts): масштабирование dpr для Retina High-DPI, телеметрия FPS и jank в реальном времени.⟨/2⟩	⟨1⟩5. Visual test and Artifacts:⟨/1⟩↵ ⟨2⟩Claude (Artifacts): Retina high-DPI dpr scaling and real-time FPS and jank telemetry.⟨/2⟩
+e40b0c00	⟨1⟩6. Симуляция и тест:⟨/1⟩↵ ⟨2⟩Живой архитектурный движок на HTML5 Canvas, симулятор лагов, диагностический тест и литература.⟨/2⟩	⟨1⟩6. Simulation and test:⟨/1⟩↵ ⟨2⟩A live HTML5 Canvas architecture engine, a lag simulator, a diagnostic test and references.⟨/2⟩
+1f60e78e	📚 Теоретико-методологическая основа:	📚 Theoretical and methodological basis:
+aeb8150d	Освоение студентами механики анимации в обучении графике и компьютерной физике	Students’ mastery of animation mechanics in graphics and computational physics education
+76c1bad0	организуется на основе принципов. По опыту работы с программным графическим аппаратом студенты разного уровня с помощью диагностики MagicSchool AI распределяются по 3 специализированным кластерам.	is organised according to these principles. Based on their experience with graphics software, students of different levels are sorted into 3 specialised clusters through MagicSchool AI diagnostics.
+a41f582e	При создании физических симуляций на HTML5 Canvas, помимо простого рисования, необходимо учитывать частоту обновления кадров (FPS), особенности V-Sync мониторов (60 Гц, 120 Гц, 144 Гц) и дискретизацию времени. Знания студентов распределяются по следующим 3 кластерам:	Building physics simulations on HTML5 Canvas involves more than drawing: frame rate (FPS), monitor V-Sync behaviour (60 Hz, 120 Hz, 144 Hz) and time discretisation must all be taken into account. Students’ knowledge is sorted into the following 3 clusters:
+1d28a34d	Знает 2D-контекст HTML5 Canvas (`ctx.fillRect`, `ctx.arc`), но не понимает фундаментальной разницы между `requestAnimationFrame` и `setInterval`. Допускает ошибки переменного delta-time.	Knows the HTML5 Canvas 2D context (`ctx.fillRect`, `ctx.arc`) but does not understand the fundamental difference between `requestAnimationFrame` and `setInterval`. Makes variable delta-time errors.
+3738aee2	<strong>Учебная траектория:</strong> поддерживающие шаблоны (скаффолдинг), простой цикл кадров для 1D прямолинейного движения, очистка Canvas и столкновения.	<strong>Learning pathway:</strong> supporting templates (scaffolding), a simple frame loop for 1D straight-line motion, clearing the Canvas and collisions.
+955cbb26	Полностью понимает понятие delta-time (⟦1⟧). Владеет синтаксисом JavaScript ES6+. Понимает влияние частоты монитора (60 Гц / 144 Гц) на физическую скорость.	Fully understands delta time (⟦1⟧). Knows JavaScript ES6+ syntax. Understands how monitor refresh rate (60 Hz / 144 Hz) affects physical speed.
+614abd98	<strong>Учебная траектория:</strong> программирование цикла с аккумулятором Гленна Фидлера, альфа-интерполяция состояния и адаптация Canvas к Retina High-DPI.	<strong>Learning pathway:</strong> coding Glenn Fiedler’s accumulator loop, alpha state interpolation and adapting Canvas to Retina high-DPI.
+3550ca5c	Знаком с управлением памятью, паузами Garbage Collection (GC), Web Workers и многопоточной архитектурой OffscreenCanvas.	Familiar with memory management, garbage-collection (GC) pauses, Web Workers and the multi-threaded OffscreenCanvas architecture.
+eb5b6e66	<strong>Учебная траектория:</strong> исследование Dirty Rectangles, Multi-layer Canvas, Object Pooling (движок Zero-GC) и рендеринга в Web Workers.	<strong>Learning pathway:</strong> researching dirty rectangles, multi-layer Canvas, object pooling (a zero-GC engine) and Web Worker rendering.
+fad3f35a	🗺️ Адаптивная 4-недельная дорожная карта архитектуры Canvas:	🗺️ 4-week adaptive Canvas architecture roadmap:
+f42613d7	Основы Canvas и rAF	Canvas basics and rAF
+c5e0e114	Примитивы Canvas 2D и простой цикл `requestAnimationFrame`	Canvas 2D primitives and a simple `requestAnimationFrame` loop
+1adbfc93	Расчёт delta-time и привязка физической скорости ко времени	Computing delta time and tying physical speed to time
+2bc91471	Масштабирование Retina High-DPI и субпиксельное выравнивание	Retina high-DPI scaling and sub-pixel alignment
+eb586885	Плавность кадров (60 FPS)	Frame smoothness (60 FPS)
+42a76762	Аккумулятор и устойчивость	Accumulator and stability
+9f23566c	Наблюдение проблем переменного dt (tunneling)	Observing variable-dt problems (tunnelling)
+57f38ca6	Внедрение аккумулятора Гленна Фидлера "Fix Your Timestep"	Implementing Glenn Fiedler’s "Fix Your Timestep" accumulator
+cdd78ac9	Защита от Spiral of Death и альфа-интерполяция	Spiral-of-death protection and alpha interpolation
+6f4db49c	Физический детерминизм (100%)	Physical determinism (100%)
+f3a452a0	Оптимизация и память	Optimisation and memory
+2f605b12	Очистка кадра и границы столкновений	Frame clearing and collision boundaries
+09e66b53	Внедрение Object Pooling и устранение микропауз GC	Introducing object pooling and eliminating GC micro-pauses
+f71e624a	Архитектура Dirty Rectangles и Multi-layer Canvas	Dirty rectangles and multi-layer Canvas architecture
+f5bdafc8	Доля «подтормаживающих» кадров (&lt; 1%)	Share of janky frames (&lt; 1%)
+56cbfbc3	Capstone и телеметрия	Capstone and telemetry
+a847c85d	Сборка симуляции из 50 упругих шаров	Assembling a simulation of 50 elastic balls
+4cb62aed	Построение HUD-телеметрии FPS/Frame Pacing в реальном времени	Building a real-time FPS / frame-pacing HUD
+d5b48bc9	Защита многопоточного движка OffscreenCanvas на Web Worker	Defending a multi-threaded OffscreenCanvas Web Worker engine
+3be57529	Ты — методист вузовского курса вычислительной физики и компьютерной графики. Разработай 5 когнитивных тестовых вопросов для определения подготовки студентов по теме "Архитектура физической анимации на HTML5 Canvas": 1) аппаратная разница между requestAnimationFrame и setInterval; 2) почему при переменном delta-time возникают дрожание и прохождение сквозь стенку (tunneling); 3) как аккумулятор Гленна Фидлера стабилизирует физические расчёты; 4) какую задачу выполняет альфа-интерполяция; 5) как применяется Object Pooling для устранения пауз сборщика мусора JavaScript. Распредели результаты по кластерам A, B, C и составь 4-недельный план лабораторных работ.	You are a methodologist in university computational physics and computer graphics. Write 5 cognitive test questions to determine students’ readiness on "HTML5 Canvas physics animation architecture": 1) the hardware-level difference between requestAnimationFrame and setInterval, 2) why variable delta time causes jitter and passing through walls (tunnelling), 3) how Glenn Fiedler’s accumulator stabilises physics calculations, 4) what alpha interpolation does, 5) how object pooling is used to eliminate JavaScript garbage-collector pauses. Sort the results into clusters A, B and C and draw up a 4-week lab plan.
+69334e09	Этап 2: мониторинг и архитектура	Stage 2: Monitoring and architecture
+677fc6cd	Google Antigravity: архитектура программы и мониторинг ресурсов	Google Antigravity: program architecture and resource monitoring
+51d4b080	📚 Программная инженерия и архитектура игровых движков:	📚 Software engineering and game engine architecture:
+d5dbb1c9	Архитектура современной компьютерной графики и интерактивных систем требует строгой компонентной модульности (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). Агентная система <strong>Google Antigravity</strong> автоматически отслеживает модульность кода проекта, расход памяти (Heap Profiling) и стабильность кадров.	Modern computer graphics and interactive systems require strict component modularity (<strong>Gregory, J., 2018, <em>Game Engine Architecture</em>, 3rd Ed., CRC Press</strong>). The <strong>Google Antigravity</strong> agentic system automatically monitors code modularity, memory use (heap profiling) and frame stability.
+fa5893b3	В коде физического моделирования физические расчёты и визуальный рендеринг должны быть строго разделены (Decoupling). Google Antigravity формирует следующие 4 основные подсистемы:	In physics modelling code, physics calculations and visual rendering must be strictly decoupled. Google Antigravity establishes the following 4 main subsystems:
+c39bb379	🏗️ Модульные программные подсистемы:	🏗️ Modular software subsystems:
+12b72552	<strong>1. CoreEngine (главный управляющий):</strong> цикл кадров (`loop`), учёт времени (`performance.now()`) и машина состояний (Play, Pause, Reset, Step).	<strong>1. CoreEngine (main controller):</strong> the frame loop (`loop`), time keeping (`performance.now()`) and the state machine (Play, Pause, Reset, Step).
+e6849631	<strong>2. PhysicsSubsystem (физическая подсистема):</strong> интегратор с фиксированным шагом (⟦1⟧), суммирование сил, механика Ньютона и столкновения.	<strong>2. PhysicsSubsystem:</strong> a fixed-step integrator (⟦1⟧), force summation, Newtonian mechanics and collisions.
+7a53632f	<strong>3. RenderSubsystem (графическая система):</strong> рисование в контексте Canvas 2D с альфа-интерполяцией, масштабирование Retina High-DPI.	<strong>3. RenderSubsystem:</strong> drawing in the Canvas 2D context with alpha interpolation and Retina high-DPI scaling.
+46fd6876	<strong>4. TelemetryHUD (мониторинг):</strong> FPS, Frame Time, «подтормаживающие» кадры и мониторинг памяти в реальном времени.	<strong>4. TelemetryHUD (monitoring):</strong> real-time FPS, frame time, janky frames and memory monitoring.
+217e2df0	📊 Конвейер анимации (pipeline)	📊 Animation pipeline
+fefb4dd0	🛡️ Правила мониторинга ресурсов и памяти Antigravity:	🛡️ Antigravity resource and memory monitoring rules:
+95f5354e	⟨1⟩1. Бюджет кадра (16.66 мс):⟨/1⟩↵ Для стабильных 60 FPS общее время кадра (физика + рендер) не должно превышать ⟦1⟧.	⟨1⟩1. Frame budget (16.66 ms):⟨/1⟩↵ For a stable 60 FPS the total frame time (physics + render) must not exceed ⟦1⟧.
+7851984f	⟨1⟩2. Линейность heap-памяти:⟨/1⟩↵ Внутри цикла анимации не должны создаваться новые массивы или объекты; расход памяти должен быть горизонтальной прямой.	⟨1⟩2. Heap memory linearity:⟨/1⟩↵ No new arrays or objects should be created inside the animation loop; memory use should be a flat horizontal line.
+414f0853	⟨1⟩3. Индикатор jank (подтормаживания):⟨/1⟩↵ Если время кадра превышает ⟦1⟧, мониторинг Antigravity автоматически фиксирует красное предупреждение.	⟨1⟩3. Jank indicator:⟨/1⟩↵ If a frame takes longer than ⟦1⟧, Antigravity monitoring automatically logs a red warning.
+6c2a3bb1	Этап 3: математическая и алгоритмическая логика	Stage 3: Mathematical and algorithmic logic
+b87bf5c4	Аккумулятор Гленна Фидлера "Fix Your Timestep" и интегрирование delta-time	Glenn Fiedler’s "Fix Your Timestep" accumulator and delta-time integration
+56b74d47	📚 Научная публикация и стандарт:	📚 Scholarly publication and standard:
+eb9a2f44	Концепция строгой дискретизации времени в интерактивных физических системах обоснована <strong>Гленном Фидлером (2004, <em>"Fix Your Timestep!"</em>, Gaffer on Games)</strong>. Этот алгоритм полностью отделяет расчёты физического движка от частоты обновления аппаратного монитора и обеспечивает детерминированную устойчивость симуляции.	The concept of strict time discretisation in interactive physics systems was established by <strong>Glenn Fiedler (2004, <em>"Fix Your Timestep!"</em>, Gaffer on Games)</strong>. The algorithm fully decouples the physics engine’s calculations from the monitor’s refresh rate and ensures the simulation’s deterministic stability.
+2097acb7	При простом переменном шаге времени (`x += v * dt`) во время случайной задержки (лага) ⟦1⟧ увеличивается, и тела проходят сквозь стенки (туннельный эффект) или энергия системы «взрывается». <strong>Аккумулятор Гленна Фидлера</strong> полностью решает эту проблему:	With a plain variable time step (`x += v * dt`), a random lag makes ⟦1⟧ large and bodies pass through walls (tunnelling) or the system’s energy blows up. <strong>Glenn Fiedler’s accumulator</strong> solves this problem completely:
+2bbdfeae	Fixed и Variable Timestep	Fixed vs Variable Timestep
+11816629	📐 Математический аппарат и алгоритм:	📐 Mathematical apparatus and algorithm:
+c32a381c	<strong>1. Накопление времени (accumulator):</strong> ⟦1⟧ <em>(порог 0.25 с предотвращает «спираль смерти» — Spiral of Death).</em>	<strong>1. Accumulating time (accumulator):</strong> ⟦1⟧ <em>(the 0.25 s cap prevents the "spiral of death").</em>
+0d11feb2	<strong>2. Поглощение фиксированными шагами (consumption):</strong> ⟦1⟧	<strong>2. Consuming in fixed steps (consumption):</strong> ⟦1⟧
+051c43b3	<strong>3. Альфа-интерполяция состояния:</strong> ⟦1⟧	<strong>3. Alpha state interpolation:</strong> ⟦1⟧
+97dbcd5d	🛡️ Цикл, разработанный Claude:	🛡️ The loop developed by Claude:
+718b65b1	Этап 4: производительность и память	Stage 4: Performance and memory
+b66281d4	Оптимизация частоты кадров: анализ в ChatGPT Code Interpreter	Frame-rate optimisation: ChatGPT Code Interpreter analysis
+b4b134e3	📚 Стандарт веб-графики и спецификация MDN:	📚 Web graphics standard and MDN specification:
+6d372155	Согласно стандартам <strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> и <strong>W3C HTML5 2D Canvas Context</strong>, в симуляциях с высокой плотностью частиц падение кадров (Frame Drop) происходит из-за пропускной способности обмена данными между CPU и GPU и остановок Garbage Collection (GC).	According to <strong>MDN Web Docs (2024, <em>Optimizing HTML5 Canvas</em>)</strong> and the <strong>W3C HTML5 2D Canvas Context</strong> standard, frame drops in high-density particle simulations are caused by CPU–GPU data bandwidth and garbage-collection (GC) stalls.
+93123a94	Внутри цикла анимации строго запрещено создавать <code>new Vector()</code> или новые частицы в каждом кадре. Объекты берутся из массива и возвращаются в него, что сводит микропаузы GC к 0.	Creating <code>new Vector()</code> or new particles every frame inside the animation loop is strictly forbidden. Objects are taken from and returned to an array, which brings GC micro-pauses down to 0.
+33fb5ab8	2. Multi-layer Canvas (разбиение на слои)	2. Multi-layer Canvas (layering)
+f744d842	Статичные линии фоновой сетки рисуются на нижнем слое Canvas один раз. Динамические частицы обновляются на верхнем прозрачном слое. Лишние операции рисования сокращаются на 70%.	Static background grid lines are drawn once on the lower Canvas layer. Dynamic particles are updated on the transparent upper layer. Redundant drawing drops by 70%.
+41c48141	3. Целочисленные координаты	3. Integer coordinates
+3358af05	Дробные координаты (например, <code>14.73px</code>) заставляют браузер выполнять дорогостоящее сглаживание (anti-aliasing). Округление координат через <code>(x | 0)</code> или <code>Math.round</code> повышает частоту кадров на 20%.	Fractional coordinates (e.g. <code>14.73px</code>) force the browser into expensive anti-aliasing. Rounding coordinates with <code>(x | 0)</code> or <code>Math.round</code> raises the frame rate by 20%.
+62f49d84	Этап 5: визуальный тест и Retina	Stage 5: Visual test and Retina
+2cd94d81	Claude (Artifacts): масштабирование Retina High-DPI и визуальный тест	Claude (Artifacts): Retina high-DPI scaling and visual testing
+9368a77a	📚 Стандарты дисплеев Retina и HiDPI:	📚 Retina and HiDPI display standards:
+81bdc923	На современных экранах смартфонов и ноутбуков коэффициент плотности пикселей равен <strong>Device Pixel Ratio (⟦1⟧)</strong>. Если размер пиксельного буфера стандартного Canvas равен размеру CSS, изображение размывается в 4 раза. В среде <strong>Claude Artifacts</strong> эта проблема устраняется динамическим пиксельным адаптером.	On modern phone and laptop screens the pixel-density factor equals the <strong>Device Pixel Ratio (⟦1⟧)</strong>. If a standard Canvas pixel buffer is the same size as its CSS box, the image is 4× blurrier. In <strong>Claude Artifacts</strong> this is solved with a dynamic pixel adapter.
+0d794cfb	📱 Код адаптера Retina High-DPI:	📱 Retina high-DPI adapter code:
+4d14a4c0	function setupHighDPICanvas(canvas, ctx) {↵ &nbsp;&nbsp;const dpr = window.devicePixelRatio || 1;↵ &nbsp;&nbsp;const rect = canvas.getBoundingClientRect();↵↵ &nbsp;&nbsp;// 1. Расширение внутреннего пиксельного буфера:↵ &nbsp;&nbsp;canvas.width = rect.width * dpr;↵ &nbsp;&nbsp;canvas.height = rect.height * dpr;↵↵ &nbsp;&nbsp;// 2. Масштабирование графического контекста:↵ &nbsp;&nbsp;ctx.scale(dpr, dpr);↵↵ &nbsp;&nbsp;// 3. Закрепление CSS-размера:↵ &nbsp;&nbsp;canvas.style.width = `⟦1⟧{rect.height}px`;↵ }	function setupHighDPICanvas(canvas, ctx) {↵ &nbsp;&nbsp;const dpr = window.devicePixelRatio || 1;↵ &nbsp;&nbsp;const rect = canvas.getBoundingClientRect();↵↵ &nbsp;&nbsp;// 1. Enlarge the internal pixel buffer:↵ &nbsp;&nbsp;canvas.width = rect.width * dpr;↵ &nbsp;&nbsp;canvas.height = rect.height * dpr;↵↵ &nbsp;&nbsp;// 2. Scale the graphics context:↵ &nbsp;&nbsp;ctx.scale(dpr, dpr);↵↵ &nbsp;&nbsp;// 3. Lock the CSS size:↵ &nbsp;&nbsp;canvas.style.width = `⟦1⟧{rect.height}px`;↵ }
+56eab4ee	🔍 Качество: стандарт и Retina high-DPI	🔍 Standard vs Retina high-DPI quality
+d1e5775f	Живая лаборатория	Live laboratory
+c5f57a75	Интерактивная лаборатория архитектуры физической анимации на Canvas	Interactive lab for Canvas physics animation architecture
+086f33c5	⟨1⟩📈 График времени кадров (последние кадры, мс):⟨/1⟩ ⟨2⟩Зелёный: &lt;18 мс (60 FPS) | Жёлтый: 18–25 мс | Красный: &gt;25 мс (подтормаживание)⟨/2⟩	⟨1⟩📈 Frame-time graph (recent frames, ms):⟨/1⟩ ⟨2⟩Green: &lt;18 ms (60 FPS) | Yellow: 18–25 ms | Red: &gt;25 ms (jank)⟨/2⟩
+834573cb	🎛️ Режимы и параметры движка:	🎛️ Engine modes and parameters:
+3027eb63	Режим физического интегрирования:	Physics integration mode:
+20036ee0	1. Фиксированный Δt + альфа-интерполяция (Г. Фидлер; рекомендуется)	1. Fixed Δt + alpha interpolation (G. Fiedler; recommended)
+636e1c09	2. Аккумулятор фиксированного Δt (без интерполяции)	2. Fixed-Δt accumulator (no interpolation)
+c53b3662	3. Переменный Δt (дрожит при задержках)	3. Variable Δt (jitters under lag)
+a33413f0	Ограничение частоты кадров (FPS):	Frame-rate cap (FPS):
+7617fb58	Без ограничения (V-Sync)	Uncapped (V-Sync)
+3c853263	Искусственная нагрузка процессора (задержка):	Artificial CPU load (delay):
+3438865b	0,0 мс	0.0 ms
+2c92d058	Число частиц:	Number of particles:
+58164ef1	50 шт.	50
+06b74d41	Пул объектов (повторное использование памяти)	Object pool (memory reuse)
+5fea81a0	Частота рендеринга:	Render rate:
+2b1aab9e	Частота физики:	Physics rate:
+c3c79a44	60 Гц	60 Hz
+6a65d053	Время кадра (⟦1⟧):	Frame time (⟦1⟧):
+59a7e27b	16,6 мс	16.6 ms
+78ea2491	Аккумулятор:	Accumulator:
+fd9d56a1	Физических шагов / кадр:	Physics steps / frame:
+9ca07338	Число подтормаживаний:	Jank count:
+11e58a4d	Диагностический тест к лекции 7 (3 научных вопроса)	Lecture 7 diagnostic test (3 scientific questions)
+a04eb4b5	Проверьте свои знания об архитектуре физической анимации на HTML5 Canvas, delta-time и оптимизации кадров:	Test your knowledge of HTML5 Canvas physics animation architecture, delta time and frame optimisation:
+6d9bfab8	Вопрос 1: Почему в архитектуре с аккумулятором "Fix Your Timestep" Гленна Фидлера физический шаг ⟦1⟧ сохраняется фиксированным?	Question 1: Why is the physics step ⟦1⟧ kept fixed in Glenn Fiedler’s "Fix Your Timestep" accumulator architecture?
+a1c97032	A) Потому что экран компьютера может работать только на 60 FPS	A) Because a computer screen can only run at 60 FPS
+f643cc0f	B) Чтобы сделать физические расчёты полностью независимыми от частоты кадров рендеринга (FPS) и предотвратить прохождение сквозь стенки (tunneling) и «взрыв» энергии во время лагов	B) To make physics calculations fully independent of the render frame rate (FPS) and prevent tunnelling through walls and energy blow-ups during lag
+ff369357	C) Потому что JavaScript работает только с целыми числами	C) Because JavaScript only works with integers
+7595e221	Вопрос 2: Какова главная цель применения Object Pooling (пула объектов) в высоконагруженных анимациях HTML5 Canvas?	Question 2: What is the main purpose of object pooling in heavy HTML5 Canvas animations?
+0cdd0d6e	A) Прекратить создание новых объектов в каждом кадре и свести к 0 микроподтормаживания (jank), вызываемые сборщиком мусора (GC)	A) To stop creating new objects every frame and reduce the micro-stutters (jank) caused by the garbage collector (GC) to 0
+ba4aa663	B) Увеличить экран Canvas	B) To enlarge the Canvas
+de87257d	C) Повысить скорость интернета	C) To increase internet speed
+7291e7c5	Вопрос 3: Какие меры принимаются, чтобы элемент Canvas не размывался на экранах Retina и HiDPI (Device Pixel Ratio ⟦1⟧)?	Question 3: What is done to keep a Canvas element from looking blurry on Retina and HiDPI screens (Device Pixel Ratio ⟦1⟧)?
+bcf1a72c	A) Пиксельный буфер `canvas.width` и `height` умножается на ⟦1⟧ и масштабируется через `ctx.scale(dpr, dpr)`	A) The `canvas.width` and `height` pixel buffer is multiplied by ⟦1⟧ and scaled with `ctx.scale(dpr, dpr)`
+8bff1792	B) Увеличивается яркость экрана	B) The screen brightness is increased
+b1ba3a82	C) Используются только чёрно-белые цвета	C) Only black and white colours are used
+6d54f39a	📚 Список научно-методической литературы к лекции 7:	📚 Scholarly and methodological references for Lecture 7:
+61acfe91	=	=
+2c2efabf	<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed & variable timesteps).	<strong>Gregory, J. (2018).</strong> <em>Game Engine Architecture</em> (3rd ed.). CRC Press. (Game loop architecture, frame pacing, fixed & variable timesteps).
+7cff4ddc	=	=

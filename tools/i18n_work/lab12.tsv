@@ -1,0 +1,67 @@
+004fee3d	Лабораторное занятие 12: законы Ньютона и программирование с помощью ИИ	Lab 12: Newton’s Laws and Coding with AI
+8e51219a	На этом лабораторном занятии студенты исследуют законы Ньютона и закон сохранения импульса в симуляции PhET «Collision Lab», затем с помощью Claude пишут на HTML5 Canvas движок упругих столкновений и проверяют результат с помощью агентов Google Antigravity. <strong>Algodoo</strong> — двумерная физическая «песочница» — используется для быстрого прототипирования механических систем и записи кинематических видео. Результаты кода численно проверяются на сохранение импульса и кинетической энергии.	In this lab, students investigate Newton’s laws and momentum conservation in the PhET "Collision Lab" simulation, then use Claude to write an elastic-collision engine in HTML5 Canvas and check the result with Google Antigravity agents. <strong>Algodoo</strong>, a 2D physics "sandbox", is used for quick prototyping of mechanical systems and recording kinematic videos. The code’s results are checked numerically for conservation of momentum and kinetic energy.
+df2c286f	📋 План лабораторного занятия 12 и этапы анализа:	📋 Lab 12 plan and analysis stages:
+364eac53	⟨1⟩1. Диагностика и индивидуальный план:⟨/1⟩↵ ⟨2⟩Тест по законам Ньютона, сохранению импульса и принципам моделирования в ИИ-инструментах.⟨/2⟩	⟨1⟩1. Diagnostics and an individual plan:⟨/1⟩↵ ⟨2⟩A test on Newton’s laws, momentum conservation and modelling principles in AI tools.⟨/2⟩
+3a46c1a5	⟨1⟩2. Проект по механике: полный конвейер:⟨/1⟩↵ ⟨2⟩Непрерывная цепочка анализа механической системы, генерации кода через ИИ и автоматизированного мониторинга результатов.⟨/2⟩	⟨1⟩2. Mechanics project: the full pipeline:⟨/1⟩↵ ⟨2⟩A continuous chain from analysing the mechanical system to generating code with AI and automated monitoring of the results.⟨/2⟩
+b66e3963	⟨1⟩3. Анализ модели (Vascak.cz / PhET):⟨/1⟩↵ ⟨2⟩Визуальное и аналитическое исследование кинематических и динамических переменных, таких как сила трения, масса, ускорение.⟨/2⟩	⟨1⟩3. Model analysis (Vascak.cz / PhET):⟨/1⟩↵ ⟨2⟩Visual and analytic study of kinematic and dynamic variables such as friction, mass and acceleration.⟨/2⟩
+29ae95fa	⟨1⟩4. Claude и мониторинг Antigravity:⟨/1⟩↵ ⟨2⟩Создание кода физического движка HTML5/JS с помощью Claude и его мониторинг с помощью агентов Antigravity.⟨/2⟩	⟨1⟩4. Claude and Antigravity monitoring:⟨/1⟩↵ ⟨2⟩Building HTML5/JS physics engine code with Claude and monitoring it with Antigravity agents.⟨/2⟩
+f818e028	Проверьте свои знания законов динамики Ньютона, сохранения импульса и архитектуры создания кода в ИИ-инструментах (Claude, Antigravity).	Test your knowledge of Newton’s laws of dynamics, momentum conservation and how code is built with AI tools (Claude, Antigravity).
+3ad649b6	Вопрос 1: При каком условии выполняется закон сохранения импульса (Momentum Conservation)?	Question 1: Under what condition does the law of conservation of momentum hold?
+e67d256b	A) Только при неупругих столкновениях	A) Only in inelastic collisions
+45669535	B) В замкнутых системах, где сумма внешних сил равна нулю	B) In closed systems where the sum of external forces is zero
+49102716	C) Только когда тела покоятся	C) Only when the bodies are at rest
+0a6c64ed	D) Когда скорость тела приближается к скорости света	D) When the body’s speed approaches the speed of light
+62dc2f2d	Вопрос 2: Для каких целей в основном используются такие платформы, как PhET и Vascak.cz?	Question 2: What are platforms such as PhET and Vascak.cz mainly used for?
+72d27970	A) Для решения математических уравнений	A) Solving mathematical equations
+a1c9ea9b	B) Для визуализации сложных физических процессов и исследования параметров	B) Visualising complex physical processes and investigating parameters
+49939921	C) Для обучения агентов искусственного интеллекта	C) Training AI agents
+aa353c4f	D) Для программирования 3D-игр	D) Programming 3D games
+1c00f226	Вопрос 3: Какое указание важнее при запросе (промпте) к Claude на создание кода физического движка (Physics Engine)?	Question 3: When asking (prompting) Claude to create physics engine code, which instruction matters most?
+5c5cbabd	A) Чётко задать основные физические закономерности, векторные операции и граничные условия	A) Clearly specifying the core physical laws, vector operations and boundary conditions
+1e5016f1	B) Описать только цвета и дизайн анимации	B) Describing only the animation’s colours and design
+2a53096c	C) Дать список HTML-тегов	C) Giving a list of HTML tags
+dd59e88e	D) Указать размер созданной симуляции в МБ	D) Stating the simulation’s size in MB
+035f4534	Вопрос 4: Какую операционную задачу выполняет Google Antigravity в многоагентной экосистеме?	Question 4: What operational role does Google Antigravity play in a multi-agent ecosystem?
+1522dc9e	A) Он только визуализирует изображения	A) It only visualises images
+f94d571d	B) Скрывает ошибки в браузере	B) It hides errors in the browser
+5dcbb5bd	C) Удаляет данные на сайте Vascak	C) It deletes data on the Vascak site
+13beadb6	D) Проверяет ошибки в ходе программирования (debugging), отслеживает код и оркестрирует агентов	D) It checks for errors during programming (debugging), monitors code and orchestrates agents
+f5d1932e	2. Проект по механике: полный конвейер (анализ ⟦1⟧ код ⟦2⟧ мониторинг)	2. Mechanics project: the full pipeline (analysis ⟦1⟧ code ⟦2⟧ monitoring)
+095e5235	При разработке сложных динамических симуляций высокую эффективность обеспечивает разбиение процесса на части и поручение каждого шага отдельному ИИ-инструменту (pipeline architecture).	When developing complex dynamic simulations, splitting the process into parts and assigning each step to a separate AI tool (pipeline architecture) is highly effective.
+89ab6734	Модель физической системы (массы, коэффициенты трения, начальные скорости) эмулируется с помощью приложений PhET или Vascak.cz.	The physical system model (masses, friction coefficients, initial velocities) is emulated with PhET or Vascak.cz apps.
+624c2064	Выводы анализа превращаются в точный технический «промпт» и вводятся в Claude. Claude переводит эти формулы и параметры в код HTML5 Canvas + JavaScript.	The analysis conclusions are turned into a precise technical "prompt" and given to Claude, which converts the formulas and parameters into HTML5 Canvas + JavaScript code.
+f32f2866	<strong>3. Автоматизированный мониторинг:</strong> написанный код проверяется через Google Antigravity (или подобные агентные системы), ошибки исправляются (debugging), и код размещается на платформе.	<strong>3. Automated monitoring:</strong> the code is checked with Google Antigravity (or similar agentic systems), bugs are fixed (debugging) and the code is deployed to the platform.
+2c56f058	Преимущества:	Advantages:
+2e3c021b	Экономия времени: генерация на основе готовых физических формул вместо написания кода с нуля.	Saving time: generation from ready physics formulas instead of writing code from scratch.
+a8f06cea	Снижение ошибок: системы ИИ точно применяют математику (итерации Ньютона–Рафсона или методы Эйлера/Рунге–Кутты).	Fewer errors: AI systems apply the mathematics precisely (Newton–Raphson iterations or Euler/Runge–Kutta methods).
+09f15ff0	Системное совершенствование: возможность быстро добавлять в симуляцию гибкие функции (friction, gravity, restitution) через агентов, подобных Antigravity.	Systematic improvement: flexible features (friction, gravity, restitution) can be added to the simulation quickly through agents such as Antigravity.
+1f61832c	3. Анализ модели: Vascak.cz и PhET	3. Model analysis: Vascak.cz and PhET
+43110eb2	Перед написанием кода симуляции необходимо исследовать её теоретические модели и уравнения движения через <strong>PhET Interactive Simulations</strong> и <strong>Vascak.cz</strong>. Они наглядно доказывают динамику столкновений (импульс) и движения.	Before writing simulation code, its theoretical models and equations of motion should be investigated with <strong>PhET Interactive Simulations</strong> and <strong>Vascak.cz</strong>. They show the dynamics of collisions (momentum) and motion visually.
+ee47ac9d	Второй закон Ньютона и импульс	Newton’s second law and momentum
+c391dd57	Сила, действующая на тело, равна произведению его массы на ускорение:	The force on a body equals its mass times its acceleration:
+ae197ab4	При упругих столкновениях сохраняются и импульс, и кинетическая энергия:	In elastic collisions both momentum and kinetic energy are conserved:
+bb6b7723	В симуляторах эти формулы управляются коэффициентом <strong>restitution</strong> (восстановления) ⟦1⟧. При абсолютно упругом столкновении ⟦2⟧, при частично упругом ⟦3⟧.	In simulators these formulas are controlled by the coefficient of <strong>restitution</strong> ⟦1⟧. For a perfectly elastic collision ⟦2⟧, for a partly elastic one ⟦3⟧.
+1cdd0f05	4. Физический движок: Claude и Antigravity	4. The physics engine: Claude and Antigravity
+a9cd4df7	На основе моделей, проанализированных в PhET, в Claude вводится подробный промпт, включающий физические переменные и логику рендеринга. В крупных проектах <strong>Google Antigravity</strong> автоматически упорядочивает качество кода (code linting), циклические зависимости (circular dependencies) и логические неисправности.	Based on the models analysed in PhET, Claude is given a detailed prompt with the physical variables and rendering logic. In large projects, <strong>Google Antigravity</strong> automatically handles code quality (linting), circular dependencies and logic bugs.
+5cb7aa1e	Структура промпта Claude	Claude prompt structure
+ccac12ff	«С помощью HTML5 Canvas и requestAnimationFrame смоделируй абсолютно упругое трёхмерное (3D) столкновение двух шаров. Массы и начальные скорости должны управляться через DOM. Используй закон сохранения импульса (m1v1 + m2v2 = ...) и чётко покажи обнаружение столкновения (distance &lt;= r1 + r2).»	"Using HTML5 Canvas and requestAnimationFrame, model a perfectly elastic three-dimensional (3D) collision between two balls. Let the masses and initial velocities be controlled through the DOM. Use the law of conservation of momentum (m1v1 + m2v2 = ...) and show the collision detection (distance &lt;= r1 + r2) clearly."
+d24aa0cb	Многоагентная система Antigravity	The Antigravity multi-agent system
+09f5ecc6	<strong>Анализ кода (аудит):</strong> проактивно находит ошибки деления на ноль (DivisionByZero) в векторных операциях.	<strong>Code analysis (audit):</strong> proactively finds division-by-zero errors in vector operations.
+54350c0c	<strong>Оркестрация CI/CD:</strong> полностью переводит работу над проектом в фоновый режим (background task) и самостоятельно прогоняет результат через тесты (unit tests).	<strong>CI/CD orchestration:</strong> moves work on the project fully into the background and independently runs the result through unit tests.
+945e91cd	<strong>Рефакторинг:</strong> разделяет монолитный код на небольшие модульные физические блоки логики.	<strong>Refactoring:</strong> splits monolithic code into small, modular physics logic units.
+f1f17e62	5. Интерактивный стенд: симулятор упругого 3D-столкновения (создан с помощью ИИ)	5. Interactive bench: a 3D elastic collision simulator (built with AI)
+a00a81fa	Этот движок написан с использованием закона сохранения импульса и технологии Claude и визуализирует упругое столкновение между телами.	This engine was written using the law of conservation of momentum and Claude, and visualises an elastic collision between bodies.
+da63ffe7	Голубой шар (m₁)	Blue ball (m₁)
+d43ba149	Масса:	Mass:
+2709b6f9	Фиолетовый шар (m₂)	Purple ball (m₂)
+91493d93	Запустить	Run
+51d1bea6	📊 Показатели мониторинга Antigravity	📊 Antigravity monitoring readings
+9442187e	Ожидание системы...	Waiting for the system...
+14849cca	6. Рубрика итоговой презентации и источники	6. Final presentation rubric and sources
+a1ef5920	Качество проекта (анализ ⟦1⟧ код ⟦2⟧ мониторинг) оценивается по следующей рубрике (всего: 100 баллов).	Project quality (analysis ⟦1⟧ code ⟦2⟧ monitoring) is assessed with the following rubric (total: 100 points).
+7d89136c	<strong>Физический анализ (Vascak/PhET):</strong> правильная постановка динамических закономерностей (импульс).	<strong>Physical analysis (Vascak/PhET):</strong> setting up the dynamic laws (momentum) correctly.
+511e83de	<strong>Генерация кода ИИ:</strong> безупречная работа Canvas и физической логики с помощью Claude.	<strong>AI code generation:</strong> Canvas and the physics logic working flawlessly with Claude.
+9d6355da	<strong>Мониторинг Antigravity / презентация:</strong> отслеживание ошибок (log) и уверенная презентация проекта.	<strong>Antigravity monitoring / presentation:</strong> tracking errors (logs) and presenting the project fluently.
+0ae7d892	=	=
+66bd7dec	=	=
+bae5533a	5. Vaščák, V. (n.d.). <em>Physics Animations/Simulations</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)	5. Vaščák, V. (n.d.). <em>Physics Animations/Simulations</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)

@@ -1,0 +1,1112 @@
+[
+ {
+  "k": "39778943",
+  "s": "4-laboratoriya mashg‘uloti: hisoblash fizikasi va sonli usullar aniqligi",
+  "ru": "Лабораторное занятие 4: вычислительная физика и точность численных методов",
+  "en": "Lab 4: Computational Physics and the Accuracy of Numerical Methods"
+ },
+ {
+  "k": "899aa9f0",
+  "s": "Kompyuter modellarida fizik qonuniyatlar uzluksiz differensial shakldan diskret sonli qadamlarga ajratiladi. Mazkur laboratoriya mashg‘ulotida <strong>oddiy mayatnik tebranishi</strong> misolida 1-tartibli <strong>Eyler usuli</strong> bilan aniq analitik yechim taqqoslanadi. Talaba turli integratsiya qadamlari ($\\Delta t = 0.2\\text{s}, 0.1\\text{s}, 0.05\\text{s}, 0.01\\text{s}$) uchun xatoliklar konvergentsiyasini sinovdan o‘tkazadi, fazaviy energiya portlashini tahlil qiladi hamda <strong>WolframAlpha</strong> va <strong>ChatGPT (Code Interpreter)</strong> orqali qiyosiy xatolik grafiklarini quradi.",
+  "ru": "В компьютерных моделях физические закономерности переводятся из непрерывной дифференциальной формы в дискретные численные шаги. На этом лабораторном занятии на примере <strong>колебаний простого маятника</strong> метод <strong>Эйлера</strong> 1-го порядка сравнивается с точным аналитическим решением. Студент проверяет сходимость ошибок для различных шагов интегрирования ($\\Delta t = 0.2\\text{s}, 0.1\\text{s}, 0.05\\text{s}, 0.01\\text{s}$), анализирует фазовый «взрыв» энергии и строит сравнительные графики ошибок с помощью <strong>WolframAlpha</strong> и <strong>ChatGPT (Code Interpreter)</strong>.",
+  "en": "In computer models, physical laws are converted from continuous differential form into discrete numerical steps. In this lab, the first-order <strong>Euler method</strong> is compared with the exact analytic solution using a <strong>simple pendulum</strong>. The student tests error convergence for different integration steps ($\\Delta t = 0.2\\text{s}, 0.1\\text{s}, 0.05\\text{s}, 0.01\\text{s}$), analyses the phase-space energy \"blow-up\" and plots comparative error graphs with <strong>WolframAlpha</strong> and <strong>ChatGPT (Code Interpreter)</strong>."
+ },
+ {
+  "k": "f75e92ac",
+  "s": "📋 4-laboratoriya mashg‘uloti rejasi va didaktik konveyeri:",
+  "ru": "📋 План лабораторного занятия 4 и дидактический конвейер:",
+  "en": "📋 Lab 4 plan and didactic pipeline:"
+ },
+ {
+  "k": "9e88a708",
+  "s": "<strong style=\"color: var(--accent-cyan);\">0. Diagnostika va individual reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Sonli integratsiya, Taylor qatori va xatoliklar tartibi bo‘yicha kognitiv diagnostika va shaxsiy o‘quv yo‘nalishi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">0. Диагностика и индивидуальный план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Когнитивная диагностика по численному интегрированию, ряду Тейлора и порядку ошибок и личная учебная траектория.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">0. Diagnostics and an individual plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Cognitive diagnostics on numerical integration, Taylor series and error order, plus a personal learning pathway.</span>"
+ },
+ {
+  "k": "3a23c662",
+  "s": "<strong style=\"color: var(--accent-purple);\">1. AI integratsiyasi (Claude va Wolfram):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Claude yordamida algoritmik kod yozish va WolframAlpha orqali analitik qadamlarni audit qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">1. Интеграция ИИ (Claude и Wolfram):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Написание алгоритмического кода с Claude и аудит аналитических шагов через WolframAlpha.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">1. AI integration (Claude and Wolfram):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Writing algorithmic code with Claude and auditing the analytic steps with WolframAlpha.</span>"
+ },
+ {
+  "k": "3e1d8527",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Sonli integratsiya algoritmi:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Eyler ($\\mathcal{O}(\\Delta t)$), Eyler–Kromer (Simplektik) va RK4 ($\\mathcal{O}(\\Delta t^4)$) usullarini matematik qiyoslash.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Алгоритм численного интегрирования:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Математическое сравнение методов Эйлера ($\\mathcal{O}(\\Delta t)$), Эйлера–Кромера (симплектический) и RK4 ($\\mathcal{O}(\\Delta t^4)$).</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Numerical integration algorithm:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A mathematical comparison of the Euler ($\\mathcal{O}(\\Delta t)$), Euler–Cromer (symplectic) and RK4 ($\\mathcal{O}(\\Delta t^4)$) methods.</span>"
+ },
+ {
+  "k": "5f929031",
+  "s": "<strong style=\"color: var(--accent-amber);\">3. Analitik hisoblash va grafiklar:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Code Interpreter (Python) va WolframAlpha orqali logarifmik xatolik konvergentsiyasini vizuallashtirish.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">3. Аналитические вычисления и графики:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Визуализация логарифмической сходимости ошибок с помощью Code Interpreter (Python) и WolframAlpha.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">3. Analytic calculation and plots:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Visualising logarithmic error convergence with Code Interpreter (Python) and WolframAlpha.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "0ba3a471",
+  "s": "0. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "0. Диагностика и индивидуальный план для искусственного интеллекта",
+  "en": "0. Diagnostics and an individual plan for AI work"
+ },
+ {
+  "k": "50e22abc",
+  "s": "TPACK modeli va Vygotskiy ZPD",
+  "ru": "Модель TPACK и ЗБР Выготского",
+  "en": "The TPACK model and Vygotsky’s ZPD"
+ },
+ {
+  "k": "0585e57b",
+  "s": "Ushbu laboratoriya mashg‘ulotini muvaffaqiyatli bajargan talaba quyidagi akademik va kasbiy kompetensiyalarga ega bo‘ladi:",
+  "ru": "Студент, успешно выполнивший это лабораторное занятие, приобретает следующие академические и профессиональные компетенции:",
+  "en": "A student who completes this lab successfully gains the following academic and professional competences:"
+ },
+ {
+  "k": "1221e435",
+  "s": "1. Nazariy kompetensiya:",
+  "ru": "1. Теоретическая компетенция:",
+  "en": "1. Theoretical competence:"
+ },
+ {
+  "k": "7c20a354",
+  "s": "Differensial tenglamalarni diskretlashda lokal xatolik ($\\mathcal{O}(\\Delta t^2)$) va global xatolik ($\\mathcal{O}(\\Delta t)$) o‘rtasidagi farqni matematik asoslay oladi.",
+  "ru": "Может математически обосновать разницу между локальной ошибкой ($\\mathcal{O}(\\Delta t^2)$) и глобальной ошибкой ($\\mathcal{O}(\\Delta t)$) при дискретизации дифференциальных уравнений.",
+  "en": "Can justify mathematically the difference between the local error ($\\mathcal{O}(\\Delta t^2)$) and the global error ($\\mathcal{O}(\\Delta t)$) when discretising differential equations."
+ },
+ {
+  "k": "5c788731",
+  "s": "2. Algoritmik kompetensiya:",
+  "ru": "2. Алгоритмическая компетенция:",
+  "en": "2. Algorithmic competence:"
+ },
+ {
+  "k": "a53fe67a",
+  "s": "Oddiy Eyler, Eyler–Kromer (Simplektik) va Runge–Kutta (RK4) usullarini JavaScript va Python tillarida to‘g‘ri dasturlaydi.",
+  "ru": "Правильно программирует простой метод Эйлера, метод Эйлера–Кромера (симплектический) и метод Рунге–Кутты (RK4) на JavaScript и Python.",
+  "en": "Correctly programs the simple Euler, Euler–Cromer (symplectic) and Runge–Kutta (RK4) methods in JavaScript and Python."
+ },
+ {
+  "k": "7afb2d4c",
+  "s": "3. AI-tahlil kompetensiyasi:",
+  "ru": "3. Компетенция ИИ-анализа:",
+  "en": "3. AI analysis competence:"
+ },
+ {
+  "k": "f3cab164",
+  "s": "WolframAlpha orqali aniq yechimni tekshiradi, ChatGPT Code Interpreter yordamida esa logarifmik konvergentsiya grafiklarini tahlil qiladi.",
+  "ru": "Проверяет точное решение через WolframAlpha, а с помощью ChatGPT Code Interpreter анализирует графики логарифмической сходимости.",
+  "en": "Checks the exact solution with WolframAlpha and analyses logarithmic convergence plots with ChatGPT Code Interpreter."
+ },
+ {
+  "k": "f0e0268d",
+  "s": "Quyidagi 4 ta savolga mustaqil javob bering. Test natijasi sizning hozirgi bilim darajangizni (A, B yoki C klaster) aniqlab, 4-laboratoriya uchun moslashtirilgan sun’iy intellekt yo‘riqnomasini (prompt) shakllantiradi:",
+  "ru": "Самостоятельно ответьте на 4 вопроса ниже. Результат теста определит ваш текущий уровень знаний (кластер A, B или C) и сформирует адаптированную инструкцию (промпт) для искусственного интеллекта для лабораторной работы 4:",
+  "en": "Answer the 4 questions below on your own. The result identifies your current level (cluster A, B or C) and builds an AI instruction (prompt) tailored for Lab 4:"
+ },
+ {
+  "k": "34bec4de",
+  "s": "1. 1-tartibli Eyler usulida integratsiya qadami $\\Delta t$ 2 barobar kamaytirilsa, hisoblashning umumiy (global) xatoligi qanday o‘zgaradi?",
+  "ru": "1. Как изменится общая (глобальная) ошибка вычислений в методе Эйлера 1-го порядка, если шаг интегрирования $\\Delta t$ уменьшить в 2 раза?",
+  "en": "1. In the first-order Euler method, how does the overall (global) error change if the integration step $\\Delta t$ is halved?"
+ },
+ {
+  "k": "911cbf01",
+  "s": "A) O‘zgarmaydi, chunki mayatnik davri doimiy",
+  "ru": "A) Не изменится, так как период маятника постоянен",
+  "en": "A) It does not change, because the pendulum’s period is constant"
+ },
+ {
+  "k": "7bc420aa",
+  "s": "B) Taxminan 2 barobar kamayadi (chunki global xatolik $\\mathcal{O}(\\Delta t)$ ga proporsional)",
+  "ru": "B) Уменьшится примерно в 2 раза (так как глобальная ошибка пропорциональна $\\mathcal{O}(\\Delta t)$)",
+  "en": "B) It falls roughly by half (because the global error is proportional to $\\mathcal{O}(\\Delta t)$)"
+ },
+ {
+  "k": "049ffa0f",
+  "s": "C) 4 barobar kamayadi (chunki xatolik kvadratik)",
+  "ru": "C) Уменьшится в 4 раза (так как ошибка квадратичная)",
+  "en": "C) It falls by a factor of 4 (because the error is quadratic)"
+ },
+ {
+  "k": "2ceb6054",
+  "s": "2. Nima sababdan tebranma tizimlarda (masalan, mayatnikda) klassik Eyler usuli qo‘llanilganda tebranish amplitudasi va mexanik energiya vaqt o‘tishi bilan tinimsiz o‘sib ketadi?",
+  "ru": "2. Почему в колебательных системах (например, в маятнике) при использовании классического метода Эйлера амплитуда колебаний и механическая энергия со временем непрерывно растут?",
+  "en": "2. Why do the oscillation amplitude and mechanical energy keep growing over time in oscillating systems (such as a pendulum) when the classical Euler method is used?"
+ },
+ {
+  "k": "034d545b",
+  "s": "A) Mayatnik ipining cho‘ziluvchanlik xususiyati inobatga olinmagani sababli",
+  "ru": "A) Потому что не учтена растяжимость нити маятника",
+  "en": "A) Because the stretchiness of the pendulum string is ignored"
+ },
+ {
+  "k": "587335e4",
+  "s": "B) Havoning turbulent qarshilik kuchi manfiy ishora bilan kiritilgani tufayli",
+  "ru": "B) Потому что сила турбулентного сопротивления воздуха введена с отрицательным знаком",
+  "en": "B) Because the turbulent air drag force is entered with a negative sign"
+ },
+ {
+  "k": "12952530",
+  "s": "C) Eyler usulining yakobiani $|\\det(J)| = 1 + \\omega_0^2 \\Delta t^2 &gt; 1$ bo‘lib, har bir qadamda fazaviy hajm va energiya sun’iy ko‘payadi",
+  "ru": "C) Якобиан метода Эйлера равен $|\\det(J)| = 1 + \\omega_0^2 \\Delta t^2 &gt; 1$, и на каждом шаге фазовый объём и энергия искусственно увеличиваются",
+  "en": "C) The Euler method’s Jacobian is $|\\det(J)| = 1 + \\omega_0^2 \\Delta t^2 &gt; 1$, so phase-space volume and energy grow artificially at each step"
+ },
+ {
+  "k": "043e9ec8",
+  "s": "3. Eyler–Kromer (Simplektik Eyler) usulining klassik Eyler usulidan bosh ustunligi nimada?",
+  "ru": "3. В чём главное преимущество метода Эйлера–Кромера (симплектического Эйлера) перед классическим методом Эйлера?",
+  "en": "3. What is the main advantage of the Euler–Cromer (symplectic Euler) method over the classical Euler method?"
+ },
+ {
+  "k": "9ea2f624",
+  "s": "A) U fazaviy maydon hajmini saqlaydi ($|\\det(J)| = 1$) va energiyaning cheksiz portlashiga yo‘l qo‘ymaydi",
+  "ru": "A) Он сохраняет объём фазового пространства ($|\\det(J)| = 1$) и не допускает неограниченного «взрыва» энергии",
+  "en": "A) It preserves phase-space volume ($|\\det(J)| = 1$) and prevents unbounded energy \"blow-up\""
+ },
+ {
+  "k": "bb5a4435",
+  "s": "B) U differensial tenglamani yechmasdan to‘g‘ridan-to‘g‘ri integrallaydi",
+  "ru": "B) Он интегрирует дифференциальное уравнение напрямую, не решая его",
+  "en": "B) It integrates the differential equation directly without solving it"
+ },
+ {
+  "k": "9c321c8c",
+  "s": "C) U faqat kosmik jismlar harakatida ishlaydi",
+  "ru": "C) Он работает только для движения космических тел",
+  "en": "C) It only works for the motion of celestial bodies"
+ },
+ {
+  "k": "8bbf45d5",
+  "s": "4. Hisoblash fizikasida WolframAlpha va ChatGPT Code Interpreter muhitlari qanday maqsadli integratsiyalanadi?",
+  "ru": "4. С какой целью в вычислительной физике интегрируются среды WolframAlpha и ChatGPT Code Interpreter?",
+  "en": "4. For what purpose are WolframAlpha and ChatGPT Code Interpreter combined in computational physics?"
+ },
+ {
+  "k": "70eb498c",
+  "s": "A) Faqat internetdan tayyor referat va taqdimotlar yuklab olish uchun",
+  "ru": "A) Только для скачивания готовых рефератов и презентаций из интернета",
+  "en": "A) Only to download ready-made essays and presentations from the internet"
+ },
+ {
+  "k": "3740de96",
+  "s": "B) Kompyuter monitorining yorug‘ligini avtomatik sozlash uchun",
+  "ru": "B) Для автоматической настройки яркости монитора компьютера",
+  "en": "B) To adjust the monitor brightness automatically"
+ },
+ {
+  "k": "acd476c6",
+  "s": "C) WolframAlpha orqali analitik etalon yechim va Taylor koeffitsiyentlari olinadi, Code Interpreter (Python) orqali sonli eksperiment va qiyosiy grafiklar quriladi",
+  "ru": "C) Через WolframAlpha получают аналитическое эталонное решение и коэффициенты Тейлора, а через Code Interpreter (Python) проводят численный эксперимент и строят сравнительные графики",
+  "en": "C) WolframAlpha provides the analytic reference solution and Taylor coefficients, while Code Interpreter (Python) runs the numerical experiment and builds comparative plots"
+ },
+ {
+  "k": "1968ae18",
+  "s": "🎯 Diagnostika natijasini aniqlash va individual reja tuzish",
+  "ru": "🎯 Определить результат диагностики и составить индивидуальный план",
+  "en": "🎯 Get the diagnostic result and build an individual plan"
+ },
+ {
+  "k": "0c4a4df9",
+  "s": "📋 Shaxsiy SI-Konsultant Uchun Tayyor Yo‘riqnoma (Prompt):",
+  "ru": "📋 Готовая инструкция (промпт) для личного ИИ-консультанта:",
+  "en": "📋 A ready instruction (prompt) for your personal AI consultant:"
+ },
+ {
+  "k": "53333116",
+  "s": "Mishra, P., va Koehler, M. J. (2006).",
+  "ru": "Mishra, P., & Koehler, M. J. (2006).",
+  "en": "Mishra, P., & Koehler, M. J. (2006)."
+ },
+ {
+  "k": "5e08db2a",
+  "s": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge",
+  "ru": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge",
+  "en": "Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge"
+ },
+ {
+  "k": "27de804e",
+  "s": ". Teachers College Record, 108(6), 1017–1054.",
+  "ru": ". Teachers College Record, 108(6), 1017–1054.",
+  "en": ". Teachers College Record, 108(6), 1017–1054."
+ },
+ {
+  "k": "7fa24f2d",
+  "s": "https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "ru": "https://doi.org/10.1111/j.1467-9620.2006.00684.x",
+  "en": "https://doi.org/10.1111/j.1467-9620.2006.00684.x"
+ },
+ {
+  "k": "1b985dc4",
+  "s": "Vygotsky, L. S. (1978).",
+  "ru": "Vygotsky, L. S. (1978).",
+  "en": "Vygotsky, L. S. (1978)."
+ },
+ {
+  "k": "bdd7953c",
+  "s": "Mind in Society: The Development of Higher Psychological Processes",
+  "ru": "Mind in Society: The Development of Higher Psychological Processes",
+  "en": "Mind in Society: The Development of Higher Psychological Processes"
+ },
+ {
+  "k": "7ff844f2",
+  "s": ". Harvard University Press.",
+  "ru": ". Harvard University Press.",
+  "en": ". Harvard University Press."
+ },
+ {
+  "k": "026f0994",
+  "s": "TPACK modeli texnologiyani (WolframAlpha, Code Interpreter) fan mazmuni (sonli usullar) va pedagogika bilan birgalikda qo‘llash zarurligini asoslaydi; Vygotskiyning ZPD tushunchasi esa diagnostika natijasiga ko‘ra talabaga yordam bilan bajariladigan, uning darajasidan biroz yuqori vazifa berishni asoslaydi.",
+  "ru": "Модель TPACK обосновывает необходимость применять технологию (WolframAlpha, Code Interpreter) вместе с предметным содержанием (численные методы) и педагогикой; понятие ЗБР Выготского обосновывает выдачу студенту по результатам диагностики задания чуть выше его уровня, выполнимого с помощью.",
+  "en": "The TPACK model justifies using technology (WolframAlpha, Code Interpreter) together with subject content (numerical methods) and pedagogy; Vygotsky’s ZPD justifies giving students, based on the diagnostic, a task slightly above their level that they can do with help."
+ },
+ {
+  "k": "7f843859",
+  "s": "1. AI integratsiyasi: Claude va WolframAlpha hisoblash bosqichlarini tekshirish va xatolikni tahlil qilishda yordamchi",
+  "ru": "1. Интеграция ИИ: Claude и WolframAlpha — помощники в проверке шагов вычислений и анализе ошибок",
+  "en": "1. AI integration: Claude and WolframAlpha as aids for checking calculation steps and analysing errors"
+ },
+ {
+  "k": "bd02a62f",
+  "s": "Sinergik tandem: neyrotarmoq va simvolli matematika",
+  "ru": "Синергетический тандем: нейросеть и символьная математика",
+  "en": "A synergistic tandem: neural network and symbolic mathematics"
+ },
+ {
+  "k": "879135a8",
+  "s": "Fizika modellarini kompyuterda sinashda ikkita tubdan farq qiluvchi texnologiya sinergiyasi talab etiladi: <strong>Generativ Katta Til Modeli (Claude)</strong> hamda <strong>Deterministik Simvolli Hisoblash Dvigateli (WolframAlpha)</strong>. Har ikki tizimning rollari quyidagicha taqsimlanadi:",
+  "ru": "При компьютерной проверке физических моделей требуется синергия двух принципиально разных технологий: <strong>генеративной большой языковой модели (Claude)</strong> и <strong>детерминированного символьного вычислительного движка (WolframAlpha)</strong>. Роли обеих систем распределяются следующим образом:",
+  "en": "Testing physics models on a computer needs the synergy of two fundamentally different technologies: a <strong>generative large language model (Claude)</strong> and a <strong>deterministic symbolic computation engine (WolframAlpha)</strong>. The two systems’ roles are split as follows:"
+ },
+ {
+  "k": "e38976fc",
+  "s": "<span class=\"badge badge-purple\">Generativ LLM va kod sintezi</span> <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">claude.ai ↗</a>",
+  "ru": "<span class=\"badge badge-purple\">Генеративная LLM и синтез кода</span> <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">claude.ai ↗</a>",
+  "en": "<span class=\"badge badge-purple\">Generative LLM and code synthesis</span> <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">claude.ai ↗</a>"
+ },
+ {
+  "k": "ab04bd8a",
+  "s": "Claude — mantiqiy arxitektor",
+  "ru": "Claude — логический архитектор",
+  "en": "Claude — the logical architect"
+ },
+ {
+  "k": "19476290",
+  "s": "Differensial tenglamani birinchi tartibli sistemaga keltirish algoritmini tushuntiradi.",
+  "ru": "Объясняет алгоритм приведения дифференциального уравнения к системе первого порядка.",
+  "en": "Explains the algorithm for reducing a differential equation to a first-order system."
+ },
+ {
+  "k": "d45e00ed",
+  "s": "Sonli integratsiya (Eyler, Eyler–Kromer, RK4) uchun toza, optimallashgan Python va JavaScript kodlarini sintezlaydi.",
+  "ru": "Синтезирует чистый, оптимизированный код Python и JavaScript для численного интегрирования (Эйлер, Эйлер–Кромер, RK4).",
+  "en": "Synthesises clean, optimised Python and JavaScript code for numerical integration (Euler, Euler–Cromer, RK4)."
+ },
+ {
+  "k": "6398f66e",
+  "s": "Natijalarni jadvallashtirish, xatoliklar dreyfini izohlash va metodik xulosalar tuzishda ko‘maklashadi.",
+  "ru": "Помогает табулировать результаты, объяснять дрейф ошибок и составлять методические выводы.",
+  "en": "Helps tabulate results, explain error drift and draw methodological conclusions."
+ },
+ {
+  "k": "c4a73903",
+  "s": "💡 <em>Asosiy vazifasi: Algoritmik kod yozish, gipoteza ilgari surish va tahliliy hisobot yaratish.</em>",
+  "ru": "💡 <em>Основная задача: написание алгоритмического кода, выдвижение гипотез и создание аналитического отчёта.</em>",
+  "en": "💡 <em>Main role: writing algorithmic code, proposing hypotheses and producing an analytical report.</em>"
+ },
+ {
+  "k": "bbac539c",
+  "s": "<span class=\"badge badge-rose\">Simvolli dvigatel va qat’iy matematika</span> <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">wolframalpha.com ↗</a>",
+  "ru": "<span class=\"badge badge-rose\">Символьный движок и строгая математика</span> <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">wolframalpha.com ↗</a>",
+  "en": "<span class=\"badge badge-rose\">Symbolic engine and rigorous mathematics</span> <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn btn-secondary btn-sm\">wolframalpha.com ↗</a>"
+ },
+ {
+  "k": "0bc2e95f",
+  "s": "WolframAlpha — aniq hisoblash etaloni",
+  "ru": "WolframAlpha — эталон точных вычислений",
+  "en": "WolframAlpha — the exact-computation reference"
+ },
+ {
+  "k": "4850172d",
+  "s": "Mayatnik tenglamasining analitik yechimini topadi: kichik burchaklarda garmonik yechim, katta burchaklarda esa davr to‘liq elliptik integral $T = 4\\sqrt{L/g}\\,K(\\sin(\\theta_0/2))$ orqali ifodalanadi.",
+  "ru": "Находит аналитическое решение уравнения маятника: при малых углах — гармоническое решение, а при больших углах период выражается через полный эллиптический интеграл $T = 4\\sqrt{L/g}\\,K(\\sin(\\theta_0/2))$.",
+  "en": "Finds the analytic solution of the pendulum equation: harmonic for small angles, while for large angles the period is expressed through the complete elliptic integral $T = 4\\sqrt{L/g}\\,K(\\sin(\\theta_0/2))$."
+ },
+ {
+  "k": "31bb8f98",
+  "s": "Taylor qatoriga yoyish orqali integratsiya xatoligining nazariy qoldiq hadini ($\\mathcal{O}(\\Delta t^2)$) hisoblaydi.",
+  "ru": "Через разложение в ряд Тейлора вычисляет теоретический остаточный член ошибки интегрирования ($\\mathcal{O}(\\Delta t^2)$).",
+  "en": "Computes the theoretical remainder term of the integration error ($\\mathcal{O}(\\Delta t^2)$) through a Taylor series expansion."
+ },
+ {
+  "k": "97717972",
+  "s": "Simvolli hisoblashda oraliq natijalar yaxlitlanmaydi; biroq tabiiy tildagi so‘rovni noto‘g‘ri talqin qilishi mumkin, shuning uchun so‘rov sintaksisi va natija talabaning o‘zi tomonidan tekshiriladi.",
+  "ru": "При символьных вычислениях промежуточные результаты не округляются; однако запрос на естественном языке может быть истолкован неверно, поэтому синтаксис запроса и результат проверяет сам студент.",
+  "en": "Symbolic computation does not round intermediate results; however, a natural-language query can be misread, so the student checks the query syntax and the result themselves."
+ },
+ {
+  "k": "0ac56d34",
+  "s": "💡 <em>Asosiy vazifasi: LLM javoblarini mustaqil tekshirish uchun deterministik simvolli hisoblash vositasi.</em>",
+  "ru": "💡 <em>Основная задача: детерминированное символьное вычислительное средство для независимой проверки ответов LLM.</em>",
+  "en": "💡 <em>Main role: a deterministic symbolic computation tool for independently checking LLM answers.</em>"
+ },
+ {
+  "k": "1f444527",
+  "s": "1.3. WolframAlpha uchun tayyor simvolli so‘rovlar (sintaksis):",
+  "ru": "1.3. Готовые символьные запросы для WolframAlpha (синтаксис):",
+  "en": "1.3. Ready symbolic queries for WolframAlpha (syntax):"
+ },
+ {
+  "k": "c4a1ad8e",
+  "s": "Quyidagi so‘rovlarni <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">WolframAlpha</a> qidiruv maydoniga kiritib, analitik hisob-kitoblar etalonini oling:",
+  "ru": "Введите следующие запросы в поле поиска <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">WolframAlpha</a> и получите эталон аналитических расчётов:",
+  "en": "Enter the following queries in the <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-cyan);\">WolframAlpha</a> search box to get reference analytic results:"
+ },
+ {
+  "k": "f9105560",
+  "s": "1-So‘rov: Mayatnikning Aniq Differensial Yechimi (Kichik burchaklar)",
+  "ru": "Запрос 1: точное дифференциальное решение маятника (малые углы)",
+  "en": "Query 1: The exact differential solution of the pendulum (small angles)"
+ },
+ {
+  "k": "34c55749",
+  "s": "Natija: $\\theta(t) = 0.2 \\cos(\\sqrt{9.8} t) \\approx 0.2 \\cos(3.1305 t)$. Bu bizning nazariy etalonimiz hisoblanadi.",
+  "ru": "Результат: $\\theta(t) = 0.2 \\cos(\\sqrt{9.8} t) \\approx 0.2 \\cos(3.1305 t)$. Это наш теоретический эталон.",
+  "en": "Result: $\\theta(t) = 0.2 \\cos(\\sqrt{9.8} t) \\approx 0.2 \\cos(3.1305 t)$. This is our theoretical reference."
+ },
+ {
+  "k": "44b39d7d",
+  "s": "2-So‘rov: Taylor Qatoriga Yoyish va Eyler Usulining Qoldiq Hadi",
+  "ru": "Запрос 2: разложение в ряд Тейлора и остаточный член метода Эйлера",
+  "en": "Query 2: Taylor series expansion and the Euler method’s remainder term"
+ },
+ {
+  "k": "0da53ef4",
+  "s": "Natija: $\\theta(t) = \\theta_0 - \\frac{1}{2}\\theta_0 \\omega^2 t^2 + \\mathcal{O}(t^4)$. Eyler usuli esa faqat $\\theta_0 + 0 \\cdot t$ hadini olgani sababli, birinchi qadamdanoq xatolik $\\Delta = \\frac{1}{2}\\theta_0 \\omega^2 (\\Delta t)^2$ ga teng bo‘ladi!",
+  "ru": "Результат: $\\theta(t) = \\theta_0 - \\frac{1}{2}\\theta_0 \\omega^2 t^2 + \\mathcal{O}(t^4)$. Поскольку метод Эйлера учитывает только член $\\theta_0 + 0 \\cdot t$, уже на первом шаге ошибка равна $\\Delta = \\frac{1}{2}\\theta_0 \\omega^2 (\\Delta t)^2$!",
+  "en": "Result: $\\theta(t) = \\theta_0 - \\frac{1}{2}\\theta_0 \\omega^2 t^2 + \\mathcal{O}(t^4)$. Because the Euler method keeps only the $\\theta_0 + 0 \\cdot t$ term, the error is already $\\Delta = \\frac{1}{2}\\theta_0 \\omega^2 (\\Delta t)^2$ after the first step!"
+ },
+ {
+  "k": "cfcb5e9b",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Simvolli AI (2-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и символьный ИИ (пункт 2):",
+  "en": "🌐 WWW scholarly sources and symbolic AI (Part 2):"
+ },
+ {
+  "k": "4801e4d3",
+  "s": "Wolfram Research. (n.d.).",
+  "ru": "Wolfram Research. (n.d.).",
+  "en": "Wolfram Research. (n.d.)."
+ },
+ {
+  "k": "d053d29c",
+  "s": "Wolfram|Alpha: Computational Intelligence",
+  "ru": "Wolfram|Alpha: Computational Intelligence",
+  "en": "Wolfram|Alpha: Computational Intelligence"
+ },
+ {
+  "k": "d52944de",
+  "s": "[Hisoblash tizimi].",
+  "ru": "[Вычислительная система].",
+  "en": "[Computational system]."
+ },
+ {
+  "k": "09d7dc0e",
+  "s": "https://www.wolframalpha.com",
+  "ru": "https://www.wolframalpha.com",
+  "en": "https://www.wolframalpha.com"
+ },
+ {
+  "k": "cc261ab8",
+  "s": "Anthropic. (2024).",
+  "ru": "Anthropic. (2024).",
+  "en": "Anthropic. (2024)."
+ },
+ {
+  "k": "b1efca82",
+  "s": "Claude Model Card Addendum",
+  "ru": "Claude Model Card Addendum",
+  "en": "Claude Model Card Addendum"
+ },
+ {
+  "k": "19d8edc7",
+  "s": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "ru": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+  "en": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+ },
+ {
+  "k": "b86e210e",
+  "s": "WolframAlpha — Wolfram Language asosidagi simvolli hisoblash tizimi (DSolve, Series kabi buyruqlarni bajaradi). Model kartasi Claude’ning kod yozish va mulohaza qilish imkoniyatlari bilan birga uning xato qilishi mumkinligini ham qayd etadi — shu sababli LLM yozgan kod va formulalar WolframAlpha hamda analitik yechim bilan tekshiriladi.",
+  "ru": "WolframAlpha — система символьных вычислений на основе Wolfram Language (выполняет такие команды, как DSolve, Series). Карточка модели отмечает возможности Claude в написании кода и рассуждениях, а также то, что он может ошибаться, — поэтому код и формулы, написанные LLM, проверяются через WolframAlpha и аналитическое решение.",
+  "en": "WolframAlpha is a symbolic computation system based on the Wolfram Language (it runs commands such as DSolve and Series). The model card notes Claude’s coding and reasoning abilities but also that it can make mistakes — so code and formulas written by an LLM are checked against WolframAlpha and the analytic solution."
+ },
+ {
+  "k": "3434155f",
+  "s": "2. Sonli integratsiya algoritmi: Claude va WolframAlpha",
+  "ru": "2. Алгоритм численного интегрирования: Claude и WolframAlpha",
+  "en": "2. Numerical integration algorithm: Claude and WolframAlpha"
+ },
+ {
+  "k": "aac4d941",
+  "s": "Matematik model va xatoliklar dekompozitsiyasi",
+  "ru": "Математическая модель и декомпозиция ошибок",
+  "en": "The mathematical model and error decomposition"
+ },
+ {
+  "k": "4c2fa9a7",
+  "s": "Matematik mayatnik — uzunligi $L$ bo‘lgan vaznsiz ipga osilgan massasi $m$ bo‘lgan moddiy nuqtadir. Tizimning harakat tenglamasi Nyutonning 2-qonunidan kelib chiqadi:",
+  "ru": "Математический маятник — материальная точка массой $m$, подвешенная на невесомой нити длиной $L$. Уравнение движения системы следует из 2-го закона Ньютона:",
+  "en": "A simple pendulum is a point mass $m$ hanging on a massless string of length $L$. The system’s equation of motion follows from Newton’s 2nd law:"
+ },
+ {
+  "k": "1e166954",
+  "s": "$$\\frac{d^2\\theta}{dt^2} + \\frac{g}{L} \\sin\\theta = 0$$",
+  "ru": "$$\\frac{d^2\\theta}{dt^2} + \\frac{g}{L} \\sin\\theta = 0$$",
+  "en": "$$\\frac{d^2\\theta}{dt^2} + \\frac{g}{L} \\sin\\theta = 0$$"
+ },
+ {
+  "k": "9fddfbad",
+  "s": "Kichik burchaklar yaqinlashishida ($\\sin\\theta \\approx \\theta$) xos tebranish chastotasi: $\\omega_0 = \\sqrt{\\frac{g}{L}}$.",
+  "ru": "В приближении малых углов ($\\sin\\theta \\approx \\theta$) собственная частота колебаний: $\\omega_0 = \\sqrt{\\frac{g}{L}}$.",
+  "en": "In the small-angle approximation ($\\sin\\theta \\approx \\theta$) the natural frequency is: $\\omega_0 = \\sqrt{\\frac{g}{L}}$."
+ },
+ {
+  "k": "faf9867b",
+  "s": "2.1. 1-tartibli differensial tenglamalar tizimiga ajratish:",
+  "ru": "2.1. Разделение на систему дифференциальных уравнений 1-го порядка:",
+  "en": "2.1. Splitting into a system of first-order differential equations:"
+ },
+ {
+  "k": "3267d635",
+  "s": "Kompyuterda sonli yechish uchun 2-tartibli tenglama burchak siljishi $\\theta$ va burchak tezligi $\\omega = \\frac{d\\theta}{dt}$ orqali ikkita 1-tartibli tenglamaga keltiriladi:",
+  "ru": "Для численного решения на компьютере уравнение 2-го порядка через угловое смещение $\\theta$ и угловую скорость $\\omega = \\frac{d\\theta}{dt}$ приводится к двум уравнениям 1-го порядка:",
+  "en": "To solve it numerically on a computer, the second-order equation is turned into two first-order equations using the angular displacement $\\theta$ and angular velocity $\\omega = \\frac{d\\theta}{dt}$:"
+ },
+ {
+  "k": "b2ff6226",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1-tenglama (burchak o‘zgarishi):</strong> $$\\frac{d\\theta}{dt} = \\omega$$",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">Уравнение 1 (изменение угла):</strong> $$\\frac{d\\theta}{dt} = \\omega$$",
+  "en": "<strong style=\"color: var(--accent-cyan);\">Equation 1 (change of angle):</strong> $$\\frac{d\\theta}{dt} = \\omega$$"
+ },
+ {
+  "k": "c26305bb",
+  "s": "<strong style=\"color: var(--accent-purple);\">2-tenglama (burchak tezlanishi):</strong> $$\\frac{d\\omega}{dt} = -\\frac{g}{L} \\sin\\theta$$",
+  "ru": "<strong style=\"color: var(--accent-purple);\">Уравнение 2 (угловое ускорение):</strong> $$\\frac{d\\omega}{dt} = -\\frac{g}{L} \\sin\\theta$$",
+  "en": "<strong style=\"color: var(--accent-purple);\">Equation 2 (angular acceleration):</strong> $$\\frac{d\\omega}{dt} = -\\frac{g}{L} \\sin\\theta$$"
+ },
+ {
+  "k": "3d4f6686",
+  "s": "2.2. Uchta asosiy sonli integratsiya usuli tahlili:",
+  "ru": "2.2. Анализ трёх основных методов численного интегрирования:",
+  "en": "2.2. Analysis of the three main numerical integration methods:"
+ },
+ {
+  "k": "f0c413f5",
+  "s": "Usul nomi",
+  "ru": "Название метода",
+  "en": "Method"
+ },
+ {
+  "k": "fd4e887e",
+  "s": "Rekurrent iteratsiya formulalari",
+  "ru": "Рекуррентные формулы итерации",
+  "en": "Recurrence formulas"
+ },
+ {
+  "k": "f16dd2e8",
+  "s": "Global xatolik",
+  "ru": "Глобальная ошибка",
+  "en": "Global error"
+ },
+ {
+  "k": "f30d8c8c",
+  "s": "Energiya saqlanishi",
+  "ru": "Сохранение энергии",
+  "en": "Energy conservation"
+ },
+ {
+  "k": "d8433205",
+  "s": "<strong style=\"color:#E11D48;\">Oddiy Eyler (Forward Euler)</strong>",
+  "ru": "<strong style=\"color:#E11D48;\">Простой Эйлер (Forward Euler)</strong>",
+  "en": "<strong style=\"color:#E11D48;\">Simple (Forward) Euler</strong>"
+ },
+ {
+  "k": "63b97cb6",
+  "s": "$$\\theta_{n+1} = \\theta_n + \\omega_n \\Delta t$$ $$\\omega_{n+1} = \\omega_n - \\frac{g}{L}\\sin(\\theta_n) \\Delta t$$",
+  "ru": "$$\\theta_{n+1} = \\theta_n + \\omega_n \\Delta t$$ $$\\omega_{n+1} = \\omega_n - \\frac{g}{L}\\sin(\\theta_n) \\Delta t$$",
+  "en": "$$\\theta_{n+1} = \\theta_n + \\omega_n \\Delta t$$ $$\\omega_{n+1} = \\omega_n - \\frac{g}{L}\\sin(\\theta_n) \\Delta t$$"
+ },
+ {
+  "k": "19d8624c",
+  "s": "$\\mathcal{O}(\\Delta t)$ (1-tartib)",
+  "ru": "$\\mathcal{O}(\\Delta t)$ (1-й порядок)",
+  "en": "$\\mathcal{O}(\\Delta t)$ (1st order)"
+ },
+ {
+  "k": "6e431f87",
+  "s": "<span class=\"badge badge-rose\">Saqlanmaydi (energiya dreyfi eksponensial o‘sadi)</span>",
+  "ru": "<span class=\"badge badge-rose\">Не сохраняется (дрейф энергии растёт экспоненциально)</span>",
+  "en": "<span class=\"badge badge-rose\">Not conserved (energy drift grows exponentially)</span>"
+ },
+ {
+  "k": "9ab6a857",
+  "s": "<strong style=\"color:#047857;\">Eyler–Kromer (Simplektik Eyler)</strong>",
+  "ru": "<strong style=\"color:#047857;\">Эйлер–Кромер (симплектический Эйлер)</strong>",
+  "en": "<strong style=\"color:#047857;\">Euler–Cromer (symplectic Euler)</strong>"
+ },
+ {
+  "k": "5ea6f058",
+  "s": "$$\\omega_{n+1} = \\omega_n - \\frac{g}{L}\\sin(\\theta_n) \\Delta t$$ $$\\theta_{n+1} = \\theta_n + \\omega_{n+1} \\Delta t$$",
+  "ru": "$$\\omega_{n+1} = \\omega_n - \\frac{g}{L}\\sin(\\theta_n) \\Delta t$$ $$\\theta_{n+1} = \\theta_n + \\omega_{n+1} \\Delta t$$",
+  "en": "$$\\omega_{n+1} = \\omega_n - \\frac{g}{L}\\sin(\\theta_n) \\Delta t$$ $$\\theta_{n+1} = \\theta_n + \\omega_{n+1} \\Delta t$$"
+ },
+ {
+  "k": "f22bdbad",
+  "s": "<span class=\"badge badge-emerald\">Barqaror (fazaviy hajm saqlanadi, energiya tebranadi)</span>",
+  "ru": "<span class=\"badge badge-emerald\">Устойчиво (фазовый объём сохраняется, энергия колеблется)</span>",
+  "en": "<span class=\"badge badge-emerald\">Stable (phase-space volume preserved, energy oscillates)</span>"
+ },
+ {
+  "k": "ce4cc9ae",
+  "s": "<strong style=\"color: #a855f7;\">Runge–Kutta 4 (RK4)</strong>",
+  "ru": "<strong style=\"color: #a855f7;\">Runge–Kutta 4 (RK4)</strong>",
+  "en": "<strong style=\"color: #a855f7;\">Runge–Kutta 4 (RK4)</strong>"
+ },
+ {
+  "k": "65df9a93",
+  "s": "$$k_1, k_2, k_3, k_4 \\text{ 4 ta oraliq qiyaliklar yig‘indisi}$$ $$y_{n+1} = y_n + \\frac{\\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$",
+  "ru": "$$k_1, k_2, k_3, k_4 \\text{ 4 ta oraliq qiyaliklar yig‘indisi}$$ $$y_{n+1} = y_n + \\frac{\\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$",
+  "en": "$$k_1, k_2, k_3, k_4 \\text{ 4 ta oraliq qiyaliklar yig‘indisi}$$ $$y_{n+1} = y_n + \\frac{\\Delta t}{6}(k_1 + 2k_2 + 2k_3 + k_4)$$"
+ },
+ {
+  "k": "e5e52bed",
+  "s": "$\\mathcal{O}(\\Delta t^4)$ (4-tartib)",
+  "ru": "$\\mathcal{O}(\\Delta t^4)$ (4-й порядок)",
+  "en": "$\\mathcal{O}(\\Delta t^4)$ (4th order)"
+ },
+ {
+  "k": "a0d97208",
+  "s": "<span class=\"badge badge-purple\">Yuqori aniqlik (chiziqli mayatnikda $\\Delta t=0.1$ s, 5 s oralig‘ida xatolik $\\sim 2\\cdot10^{-4}$ rad); lekin simplektik emas — juda uzoq vaqtda energiya sekin kamayadi</span>",
+  "ru": "<span class=\"badge badge-purple\">Высокая точность (для линейного маятника при $\\Delta t=0.1$ с на интервале 5 с ошибка $\\sim 2\\cdot10^{-4}$ рад); но не симплектический — за очень долгое время энергия медленно убывает</span>",
+  "en": "<span class=\"badge badge-purple\">High accuracy (for a linear pendulum at $\\Delta t=0.1$ s, the error over 5 s is $\\sim 2\\cdot10^{-4}$ rad); but not symplectic — over very long times the energy slowly decreases</span>"
+ },
+ {
+  "k": "63e4f5af",
+  "s": "Claude uchun algoritmik so‘rov (prompt):",
+  "ru": "Алгоритмический запрос (промпт) для Claude:",
+  "en": "Algorithmic request (prompt) for Claude:"
+ },
+ {
+  "k": "e5335605",
+  "s": "Ushbu yo‘riqnomani Claude oynasiga yuboring va algoritmlarning JavaScript / Python realizatsiyasini oling:",
+  "ru": "Отправьте эту инструкцию в окно Claude и получите реализацию алгоритмов на JavaScript / Python:",
+  "en": "Send this instruction to Claude and get JavaScript / Python implementations of the algorithms:"
+ },
+ {
+  "k": "fa6900fa",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Sonli Differensiallash (3-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и численное дифференцирование (пункт 3):",
+  "en": "🌐 WWW scholarly sources and numerical differentiation (Part 3):"
+ },
+ {
+  "k": "305a4818",
+  "s": "Hairer, E., Nørsett, S. P., va Wanner, G. (1993).",
+  "ru": "Hairer, E., Nørsett, S. P., & Wanner, G. (1993).",
+  "en": "Hairer, E., Nørsett, S. P., & Wanner, G. (1993)."
+ },
+ {
+  "k": "a4459b43",
+  "s": "Solving Ordinary Differential Equations I: Nonstiff Problems",
+  "ru": "Solving Ordinary Differential Equations I: Nonstiff Problems",
+  "en": "Solving Ordinary Differential Equations I: Nonstiff Problems"
+ },
+ {
+  "k": "bf4e1660",
+  "s": "(2nd rev. ed.). Springer.",
+  "ru": "(2nd rev. ed.). Springer.",
+  "en": "(2nd rev. ed.). Springer."
+ },
+ {
+  "k": "4a96f76b",
+  "s": "https://doi.org/10.1007/978-3-540-78862-1",
+  "ru": "https://doi.org/10.1007/978-3-540-78862-1",
+  "en": "https://doi.org/10.1007/978-3-540-78862-1"
+ },
+ {
+  "k": "e14eabf3",
+  "s": "Butcher, J. C. (2016).",
+  "ru": "Butcher, J. C. (2016).",
+  "en": "Butcher, J. C. (2016)."
+ },
+ {
+  "k": "2efd2de0",
+  "s": "Numerical Methods for Ordinary Differential Equations",
+  "ru": "Numerical Methods for Ordinary Differential Equations",
+  "en": "Numerical Methods for Ordinary Differential Equations"
+ },
+ {
+  "k": "743b83f5",
+  "s": "(3rd ed.). John Wiley va Sons.",
+  "ru": "(3rd ed.). John Wiley & Sons.",
+  "en": "(3rd ed.). John Wiley & Sons."
+ },
+ {
+  "k": "c00bec26",
+  "s": "https://doi.org/10.1002/9781119121534",
+  "ru": "https://doi.org/10.1002/9781119121534",
+  "en": "https://doi.org/10.1002/9781119121534"
+ },
+ {
+  "k": "459f53aa",
+  "s": "Cromer, A. (1981).",
+  "ru": "Cromer, A. (1981).",
+  "en": "Cromer, A. (1981)."
+ },
+ {
+  "k": "301a0eef",
+  "s": "Stable Solutions Using the Euler Approximation",
+  "ru": "Stable Solutions Using the Euler Approximation",
+  "en": "Stable Solutions Using the Euler Approximation"
+ },
+ {
+  "k": "011432aa",
+  "s": ". American Journal of Physics, 49(5), 455–459.",
+  "ru": ". American Journal of Physics, 49(5), 455–459.",
+  "en": ". American Journal of Physics, 49(5), 455–459."
+ },
+ {
+  "k": "de3abfac",
+  "s": "https://doi.org/10.1119/1.12478",
+  "ru": "https://doi.org/10.1119/1.12478",
+  "en": "https://doi.org/10.1119/1.12478"
+ },
+ {
+  "k": "fed49d17",
+  "s": "Hairer va hammualliflar hamda Butcher Eyler va Runge–Kutta usullarining lokal va global xatolik tartiblarini nazariy asoslaydi. Cromer (1981) Eyler usulidagi kichik o‘zgartirish tebranma masalalarda barqaror yechim berishini ko‘rsatgan. Gamilton tizimlarida simplektik integratorlar (Eyler–Kromer, Verlet) uzoq muddatli hisoblashlarda energiyani nosimplektik usullarga (standart RK4) qaraganda yaxshiroq saqlaydi — lekin qisqa vaqtdagi aniqlikda RK4 ustun.",
+  "ru": "Хайрер с соавторами и Бутчер теоретически обосновывают порядки локальной и глобальной ошибки методов Эйлера и Рунге–Кутты. Кромер (1981) показал, что небольшое изменение метода Эйлера даёт устойчивое решение в колебательных задачах. В гамильтоновых системах симплектические интеграторы (Эйлер–Кромер, Верле) при долгосрочных вычислениях сохраняют энергию лучше несимплектических методов (стандартный RK4) — но по точности на коротком интервале выигрывает RK4.",
+  "en": "Hairer and co-authors and Butcher prove the local and global error orders of the Euler and Runge–Kutta methods. Cromer (1981) showed that a small change to the Euler method gives a stable solution for oscillation problems. In Hamiltonian systems, symplectic integrators (Euler–Cromer, Verlet) conserve energy better over long runs than non-symplectic methods (standard RK4) — though RK4 wins on short-term accuracy."
+ },
+ {
+  "k": "fcefb626",
+  "s": "3. Analitik hisoblash va qiyosiy grafiklar: WolframAlpha yoki ChatGPT (Code Interpreter)",
+  "ru": "3. Аналитические вычисления и сравнительные графики: WolframAlpha или ChatGPT (Code Interpreter)",
+  "en": "3. Analytic calculation and comparative plots: WolframAlpha or ChatGPT (Code Interpreter)"
+ },
+ {
+  "k": "2dfa7c29",
+  "s": "Avtomatlashtirilgan Python tahlili va logarifmik konvergentsiya",
+  "ru": "Автоматизированный анализ на Python и логарифмическая сходимость",
+  "en": "Automated Python analysis and logarithmic convergence"
+ },
+ {
+  "k": "9e658d60",
+  "s": "Sonli usulning aniqlik tartibini isbotlashning eng qat’iy ilmiy yo‘li — <strong>xatoliklar konvergentsiyasi grafigini</strong> logarifmik masshtabda ($\\log(\\text{Xatolik})$ ga nisbatan $\\log(\\Delta t)$) qurishdir. Nazariyaga ko‘ra:",
+  "ru": "Самый строгий научный способ доказать порядок точности численного метода — построить <strong>график сходимости ошибок</strong> в логарифмическом масштабе ($\\log(\\Delta t)$ относительно $\\log(\\text{Xatolik})$). Согласно теории:",
+  "en": "The most rigorous scientific way to prove a numerical method’s order of accuracy is to plot an <strong>error convergence graph</strong> on a logarithmic scale ($\\log(\\Delta t)$ against $\\log(\\text{Xatolik})$). According to theory:"
+ },
+ {
+  "k": "fb663761",
+  "s": "$$\\text{Xatolik} \\approx C \\cdot (\\Delta t)^p \\implies \\ln(\\text{Xatolik}) \\approx p \\cdot \\ln(\\Delta t) + \\ln(C)$$",
+  "ru": "$$\\text{Xatolik} \\approx C \\cdot (\\Delta t)^p \\implies \\ln(\\text{Xatolik}) \\approx p \\cdot \\ln(\\Delta t) + \\ln(C)$$",
+  "en": "$$\\text{Xatolik} \\approx C \\cdot (\\Delta t)^p \\implies \\ln(\\text{Xatolik}) \\approx p \\cdot \\ln(\\Delta t) + \\ln(C)$$"
+ },
+ {
+  "k": "bff7a078",
+  "s": "Bu yerda to‘g‘ri chiziq qiyaligi $p$ sonli usulning tartibini ko‘rsatadi: Eyler va Eyler–Kromer uchun $p \\approx 1$, RK4 uchun $p \\approx 4$.<br> <strong style=\"color: var(--accent-rose);\">Muhim:</strong> analitik etalon $\\theta_0\\cos(\\omega_0 t)$ faqat <em>chiziqli</em> tenglama ($\\sin\\theta \\approx \\theta$) yechimi. Agar sonli usulda $\\sin\\theta$ ishlatilsa, xatolik qadam kichrayganda ham model xatoligi darajasida (masalan, $\\theta_0 = 0.2$ rad da $\\sim 7\\cdot10^{-3}$ rad) to‘xtab qoladi va qiyalik noto‘g‘ri chiqadi. Shu sababli quyidagi skriptda chiziqli tenglama integrallanadi.",
+  "ru": "Здесь наклон прямой $p$ показывает порядок численного метода: для Эйлера и Эйлера–Кромера $p \\approx 1$, для RK4 $p \\approx 4$.<br> <strong style=\"color: var(--accent-rose);\">Важно:</strong> аналитический эталон $\\theta_0\\cos(\\omega_0 t)$ — решение только <em>линейного</em> уравнения ($\\sin\\theta \\approx \\theta$). Если в численном методе использовать $\\sin\\theta$, то при уменьшении шага ошибка останавливается на уровне ошибки модели (например, $\\sim 7\\cdot10^{-3}$ рад при $\\theta_0 = 0.2$ рад), и наклон получается неверным. Поэтому в скрипте ниже интегрируется линейное уравнение.",
+  "en": "Here the slope $p$ of the line shows the method’s order: $p \\approx 1$ for Euler and Euler–Cromer and $p \\approx 4$ for RK4.<br> <strong style=\"color: var(--accent-rose);\">Important:</strong> the analytic reference $\\theta_0\\cos(\\omega_0 t)$ solves only the <em>linear</em> equation ($\\sin\\theta \\approx \\theta$). If the numerical method uses $\\sin\\theta$, the error stops at the model-error level as the step shrinks (for example, $\\sim 7\\cdot10^{-3}$ rad at $\\theta_0 = 0.2$ rad) and the slope comes out wrong. That is why the script below integrates the linear equation."
+ },
+ {
+  "k": "e7b26b83",
+  "s": "ChatGPT (Code Interpreter / Advanced Data Analysis) uchun to‘liq Python skripti:",
+  "ru": "Полный Python-скрипт для ChatGPT (Code Interpreter / Advanced Data Analysis):",
+  "en": "Full Python script for ChatGPT (Code Interpreter / Advanced Data Analysis):"
+ },
+ {
+  "k": "7b2e00c0",
+  "s": "<strong>Foydalanish tartibi:</strong> Ushbu kodni nusxalab, ChatGPT (yoki Google Colab / mahalliy Python) oynasiga joylang va \"Enter\" tugmasini bosing:",
+  "ru": "<strong>Порядок использования:</strong> скопируйте этот код, вставьте его в окно ChatGPT (или Google Colab / локальный Python) и нажмите «Enter»:",
+  "en": "<strong>How to use:</strong> copy this code, paste it into ChatGPT (or Google Colab / local Python) and press \"Enter\":"
+ },
+ {
+  "k": "5a708c5d",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manba va Code Interpreter (4-Reja):",
+  "ru": "🌐 Научно-методические источники WWW и Code Interpreter (пункт 4):",
+  "en": "🌐 WWW scholarly sources and Code Interpreter (Part 4):"
+ },
+ {
+  "k": "1b4c46a5",
+  "s": "OpenAI. (2023).",
+  "ru": "OpenAI. (2023).",
+  "en": "OpenAI. (2023)."
+ },
+ {
+  "k": "846229f6",
+  "s": "GPT-4 Technical Report",
+  "ru": "GPT-4 Technical Report",
+  "en": "GPT-4 Technical Report"
+ },
+ {
+  "k": "b05737fe",
+  "s": "(arXiv:2303.08774). arXiv.",
+  "ru": "(arXiv:2303.08774). arXiv.",
+  "en": "(arXiv:2303.08774). arXiv."
+ },
+ {
+  "k": "700600a5",
+  "s": "https://doi.org/10.48550/arXiv.2303.08774",
+  "ru": "https://doi.org/10.48550/arXiv.2303.08774",
+  "en": "https://doi.org/10.48550/arXiv.2303.08774"
+ },
+ {
+  "k": "ce57a0f1",
+  "s": "Press, W. H., Teukolsky, S. A., Vetterling, W. T., va Flannery, B. P. (2007).",
+  "ru": "Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007).",
+  "en": "Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007)."
+ },
+ {
+  "k": "b2f3655a",
+  "s": "Numerical Recipes: The Art of Scientific Computing",
+  "ru": "Numerical Recipes: The Art of Scientific Computing",
+  "en": "Numerical Recipes: The Art of Scientific Computing"
+ },
+ {
+  "k": "b867cc81",
+  "s": "(3rd ed.). Cambridge University Press.",
+  "ru": "(3rd ed.). Cambridge University Press.",
+  "en": "(3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "ed683aec",
+  "s": "Numerical Recipes ODE integratorlari (Runge–Kutta, qadamni boshqarish) va xatolikni baholashning amaliy qo‘llanmasi. ChatGPT texnik hisoboti model imkoniyatlari bilan birga uning ishonchsiz bo‘lishi va \"gallyutsinatsiya\" qilishi mumkinligini ham ta’kidlaydi — shu sababli Code Interpreter natijalari (kod, grafik, qiyalik) talaba tomonidan analitik baho bilan solishtirilib tekshiriladi.",
+  "ru": "Практическое руководство по интеграторам ОДУ Numerical Recipes (Рунге–Кутта, управление шагом) и оценке ошибок. Технический отчёт ChatGPT наряду с возможностями модели подчёркивает, что она может быть ненадёжной и «галлюцинировать» — поэтому результаты Code Interpreter (код, график, наклон) студент сверяет с аналитической оценкой.",
+  "en": "Numerical Recipes is a practical guide to ODE integrators (Runge–Kutta, step control) and error estimation. The ChatGPT technical report stresses, alongside the model’s abilities, that it can be unreliable and \"hallucinate\" — so the student checks Code Interpreter results (code, plot, slope) against an analytic estimate."
+ },
+ {
+  "k": "09317f01",
+  "s": "4. Amaliy tadqiqot: sonli integratsiya xatoligini hisoblash va interaktiv dastgoh",
+  "ru": "4. Практическое исследование: расчёт ошибки численного интегрирования и интерактивный стенд",
+  "en": "4. Practical study: calculating the numerical integration error and an interactive bench"
+ },
+ {
+  "k": "4be821bc",
+  "s": "Jonli mayatnik, fazaviy portret va dinamik xatolik monitori",
+  "ru": "Живой маятник, фазовый портрет и динамический монитор ошибок",
+  "en": "A live pendulum, phase portrait and dynamic error monitor"
+ },
+ {
+  "k": "4e3e765a",
+  "s": "Ushbu interaktiv laboratoriya stendida siz integratsiya qadami $\\Delta t$ ni o‘zgartirib, Eyler usulining etalon yechimdan qanday uzoqlashib ketishini (amplitudaning sun’iy eksponensial o‘sishini) hamda Eyler–Kromer usulining fazaviy barqarorligini real vaqtda kuzatishingiz mumkin. Dastgoh katta burchaklarda ham to‘g‘ri ishlashi uchun nochiziqli tenglama ($\\sin\\theta$) yechiladi; etalon sifatida juda kichik qadamli ($\\Delta t = 10^{-4}$ s) RK4 yechimi olinadi.",
+  "ru": "На этом интерактивном лабораторном стенде, меняя шаг интегрирования $\\Delta t$, вы можете в реальном времени наблюдать, как метод Эйлера уходит от эталонного решения (искусственный экспоненциальный рост амплитуды), и фазовую устойчивость метода Эйлера–Кромера. Чтобы стенд работал правильно и при больших углах, решается нелинейное уравнение ($\\sin\\theta$); в качестве эталона берётся решение RK4 с очень малым шагом ($\\Delta t = 10^{-4}$ с).",
+  "en": "On this interactive lab bench, change the integration step $\\Delta t$ to watch in real time how the Euler method drifts away from the reference solution (an artificial exponential growth in amplitude) and how the Euler–Cromer method stays phase-stable. So that the bench works correctly at large angles too, the nonlinear equation ($\\sin\\theta$) is solved; the reference is an RK4 solution with a very small step ($\\Delta t = 10^{-4}$ s)."
+ },
+ {
+  "k": "4f60a6aa",
+  "s": "⏱ Integratsiya qadami (Δt):",
+  "ru": "⏱ Шаг интегрирования (Δt):",
+  "en": "⏱ Integration step (Δt):"
+ },
+ {
+  "k": "451b0fb5",
+  "s": "<span>0,005 s (aniq)</span> <span>0,25 s (dag‘al)</span>",
+  "ru": "<span>0,005 с (точно)</span> <span>0,25 с (грубо)</span>",
+  "en": "<span>0.005 s (fine)</span> <span>0.25 s (coarse)</span>"
+ },
+ {
+  "k": "a9583881",
+  "s": "📐 Boshlang‘ich burchak (θ₀):",
+  "ru": "📐 Начальный угол (θ₀):",
+  "en": "📐 Initial angle (θ₀):"
+ },
+ {
+  "k": "21466982",
+  "s": "0,20 rad (11,5°)",
+  "ru": "0,20 rad (11,5°)",
+  "en": "0,20 rad (11,5°)"
+ },
+ {
+  "k": "2e3365b1",
+  "s": "<span>0,05 rad (3°)</span> <span>0,80 rad (46°)</span>",
+  "ru": "<span>0,05 rad (3°)</span> <span>0,80 rad (46°)</span>",
+  "en": "<span>0,05 rad (3°)</span> <span>0,80 rad (46°)</span>"
+ },
+ {
+  "k": "763d16d8",
+  "s": "📏 Ip uzunligi (L):",
+  "ru": "📏 Длина нити (L):",
+  "en": "📏 String length (L):"
+ },
+ {
+  "k": "242209d2",
+  "s": "⚙️ Sonli integratsiya usuli:",
+  "ru": "⚙️ Метод численного интегрирования:",
+  "en": "⚙️ Numerical integration method:"
+ },
+ {
+  "k": "b6d89f07",
+  "s": "1. Oddiy (oshkor) Eyler",
+  "ru": "1. Простой (явный) Эйлер",
+  "en": "1. Simple (explicit) Euler"
+ },
+ {
+  "k": "e00275d5",
+  "s": "2. Eyler–Kromer (simplektik)",
+  "ru": "2. Эйлер–Кромер (симплектический)",
+  "en": "2. Euler–Cromer (symplectic)"
+ },
+ {
+  "k": "9587bba1",
+  "s": "3. Runge–Kutta 4 (RK4)",
+  "ru": "3. Runge–Kutta 4 (RK4)",
+  "en": "3. Runge–Kutta 4 (RK4)"
+ },
+ {
+  "k": "9ddfe57b",
+  "s": "▶ Boshlash",
+  "ru": "▶ Старт",
+  "en": "▶ Start"
+ },
+ {
+  "k": "7e0619bc",
+  "s": "⏸ Pauza",
+  "ru": "⏸ Пауза",
+  "en": "⏸ Pause"
+ },
+ {
+  "k": "eb2003c8",
+  "s": "🔄 Qayta o‘rnatish",
+  "ru": "🔄 Сброс",
+  "en": "🔄 Reset"
+ },
+ {
+  "k": "cb320f1a",
+  "s": "Etalon θ:",
+  "ru": "Эталонное θ:",
+  "en": "Reference θ:"
+ },
+ {
+  "k": "7b87bb64",
+  "s": "0,2000 rad",
+  "ru": "0,2000 rad",
+  "en": "0,2000 rad"
+ },
+ {
+  "k": "4afb3442",
+  "s": "Sonli θ:",
+  "ru": "Численное θ:",
+  "en": "Numerical θ:"
+ },
+ {
+  "k": "7e35f8c7",
+  "s": "Xatolik |Δθ|:",
+  "ru": "Ошибка |Δθ|:",
+  "en": "Error |Δθ|:"
+ },
+ {
+  "k": "e8186a90",
+  "s": "0 rad",
+  "ru": "0 rad",
+  "en": "0 rad"
+ },
+ {
+  "k": "7c009e16",
+  "s": "Energiya E:",
+  "ru": "Энергия E:",
+  "en": "Energy E:"
+ },
+ {
+  "k": "f6cbff83",
+  "s": "🪐 Mayatnik tebranishi va fazaviy portret ($\\theta$ ga nisbatan $\\omega$):",
+  "ru": "🪐 Колебания маятника и фазовый портрет ($\\omega$ относительно $\\theta$):",
+  "en": "🪐 Pendulum oscillation and phase portrait ($\\omega$ against $\\theta$):"
+ },
+ {
+  "k": "8373deeb",
+  "s": "📈 Burchak $\\theta(t)$ va absolyut xatolik $|\\theta_{\\text{sonli}} - \\theta_{\\text{etalon}}|$ grafigi:",
+  "ru": "📈 График угла $\\theta(t)$ и абсолютной ошибки $|\\theta_{\\text{sonli}} - \\theta_{\\text{etalon}}|$:",
+  "en": "📈 Plot of the angle $\\theta(t)$ and the absolute error $|\\theta_{\\text{sonli}} - \\theta_{\\text{etalon}}|$:"
+ },
+ {
+  "k": "351fc1d2",
+  "s": "📊 4 xil qadam uchun avtomatik qiyosiy xatoliklar jadvali ($t = 5{,}0\\text{ s}$ holatida):",
+  "ru": "📊 Автоматическая сравнительная таблица ошибок для 4 разных шагов (при $t = 5{,}0\\text{ s}$):",
+  "en": "📊 Automatic comparative error table for 4 different steps (at $t = 5{,}0\\text{ s}$):"
+ },
+ {
+  "k": "d26e89ba",
+  "s": "Ushbu jadval joriy parametrlar ($L$, $\\theta_0$) asosida $t = 5{,}0\\text{ s}$ vaqt nuqtasida $\\Delta t \\in \\{0{,}2;\\ 0{,}1;\\ 0{,}05;\\ 0{,}01\\}\\text{ s}$ uchun sonli yechimlarning etalon yechimdan og‘ishini dinamik hisoblab beradi:",
+  "ru": "Эта таблица на основе текущих параметров ($L$, $\\theta_0$) динамически рассчитывает отклонение численных решений от эталонного решения в момент времени $t = 5{,}0\\text{ s}$ для $\\Delta t \\in \\{0{,}2;\\ 0{,}1;\\ 0{,}05;\\ 0{,}01\\}\\text{ s}$:",
+  "en": "Using the current parameters ($L$, $\\theta_0$), this table dynamically calculates how far the numerical solutions deviate from the reference at time $t = 5{,}0\\text{ s}$ for $\\Delta t \\in \\{0{,}2;\\ 0{,}1;\\ 0{,}05;\\ 0{,}01\\}\\text{ s}$:"
+ },
+ {
+  "k": "bbbdac24",
+  "s": "Qadam<br>($\\Delta t$)",
+  "ru": "Шаг<br>($\\Delta t$)",
+  "en": "Step<br>($\\Delta t$)"
+ },
+ {
+  "k": "d74a08ce",
+  "s": "Etalon ($\\theta_{\\text{etalon}}$, RK4, $\\Delta t=10^{-4}$)",
+  "ru": "Эталон ($\\theta_{\\text{etalon}}$, RK4, $\\Delta t=10^{-4}$)",
+  "en": "Reference ($\\theta_{\\text{etalon}}$, RK4, $\\Delta t=10^{-4}$)"
+ },
+ {
+  "k": "61fbdb33",
+  "s": "Oddiy Eyler ($\\theta_E$) va xatolik",
+  "ru": "Простой Эйлер ($\\theta_E$) и ошибка",
+  "en": "Simple Euler ($\\theta_E$) and error"
+ },
+ {
+  "k": "61157835",
+  "s": "Eyler–Kromer ($\\theta_C$) va xatolik",
+  "ru": "Эйлер–Кромер ($\\theta_C$) и ошибка",
+  "en": "Euler–Cromer ($\\theta_C$) and error"
+ },
+ {
+  "k": "93c2c6aa",
+  "s": "RK4 ($\\theta_{RK4}$) va xatolik",
+  "ru": "RK4 ($\\theta_{RK4}$) и ошибка",
+  "en": "RK4 ($\\theta_{RK4}$) and error"
+ },
+ {
+  "k": "12b2e6c0",
+  "s": "5. Baholash rubrikasi (100 ball) va ilmiy manbalar (APA 7)",
+  "ru": "5. Рубрика оценивания (100 баллов) и научные источники (APA 7)",
+  "en": "5. Assessment rubric (100 points) and scholarly sources (APA 7)"
+ },
+ {
+  "k": "f6d041a5",
+  "s": "4-laboratoriya mashg‘uloti talabaning differensial tenglamalarni sonli integrallash nazariyasini tushunishi, WolframAlpha va Code Interpreter orqali xatolik tahlilini to‘g‘ri o‘tkaza olishini 100 ballik shkalada baholaydi:",
+  "ru": "Лабораторное занятие 4 оценивает по 100-балльной шкале понимание студентом теории численного интегрирования дифференциальных уравнений и умение правильно проводить анализ ошибок через WolframAlpha и Code Interpreter:",
+  "en": "Lab 4 assesses, on a 100-point scale, the student’s understanding of the theory of numerically integrating differential equations and their ability to carry out error analysis correctly with WolframAlpha and Code Interpreter:"
+ },
+ {
+  "k": "9b95de48",
+  "s": "📊 Interaktiv rubrika kalkulyatori (4-laboratoriya):",
+  "ru": "📊 Интерактивный калькулятор рубрики (лабораторная 4):",
+  "en": "📊 Interactive rubric calculator (Lab 4):"
+ },
+ {
+  "k": "3dd53034",
+  "s": "<strong style=\"color: var(--text-main);\">1. Nazariy Tushuncha va Diagnostika Testi</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Differensial sistemaga ajratish, Eyler usulida energiya dreyfi sabablarini to‘g‘ri tushunish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">1. Теоретическое понимание и диагностический тест</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Разделение на дифференциальную систему, правильное понимание причин дрейфа энергии в методе Эйлера.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">1. Theoretical understanding and diagnostic test</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Splitting into a differential system and correctly understanding why energy drifts in the Euler method.</span>"
+ },
+ {
+  "k": "95d0a8fd",
+  "s": "<strong style=\"color: var(--text-main);\">2. Claude va WolframAlpha Simvolli Tahlili</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">WolframAlpha’da analitik yechim va Taylor qatorini chiqarish, Claude yordamida algoritmni diskretlash.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">2. Символьный анализ в Claude и WolframAlpha</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Получение аналитического решения и ряда Тейлора в WolframAlpha, дискретизация алгоритма с помощью Claude.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">2. Symbolic analysis with Claude and WolframAlpha</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Getting the analytic solution and Taylor series in WolframAlpha and discretising the algorithm with Claude.</span>"
+ },
+ {
+  "k": "06918af5",
+  "s": "<strong style=\"color: var(--text-main);\">3. Turli Δt Qadamlari Uchun Xatolik Jadvalini Tuzish</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">0.2s, 0.1s, 0.05s, 0.01s qadamlarda Eyler va Eyler–Kromer natijalarini etalon bilan solishtirish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">3. Составление таблицы ошибок для разных шагов Δt</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Сравнение результатов Эйлера и Эйлера–Кромера с эталоном при шагах 0.2 с, 0.1 с, 0.05 с, 0.01 с.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">3. Building an error table for different Δt steps</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Comparing Euler and Euler–Cromer results with the reference at steps of 0.2 s, 0.1 s, 0.05 s and 0.01 s.</span>"
+ },
+ {
+  "k": "74988e2b",
+  "s": "<strong style=\"color: var(--text-main);\">4. ChatGPT Code Interpreter (Python) Logarifmik Grafigi</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Python skriptini yurgazib, log(xatolik) vs log(dt) konvergentsiya to‘g‘ri chizig‘ini ilmiy asoslash.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">4. Логарифмический график в ChatGPT Code Interpreter (Python)</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Запуск Python-скрипта и научное обоснование прямой сходимости log(ошибка) vs log(dt).</span>",
+  "en": "<strong style=\"color: var(--text-main);\">4. A logarithmic plot in ChatGPT Code Interpreter (Python)</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Running the Python script and scientifically justifying the log(error) vs log(dt) convergence line.</span>"
+ },
+ {
+  "k": "88f95102",
+  "s": "<strong style=\"color: var(--text-main);\">5. Xulosa va Ilmiy Himoya</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Simplektik integratorlar ahamiyati va Eyler usulining cheklovlarini asosli bayon etish.</span>",
+  "ru": "<strong style=\"color: var(--text-main);\">5. Вывод и научная защита</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Обоснованное изложение значения симплектических интеграторов и ограничений метода Эйлера.</span>",
+  "en": "<strong style=\"color: var(--text-main);\">5. Conclusion and scientific defence</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A well-argued account of why symplectic integrators matter and of the Euler method’s limits.</span>"
+ },
+ {
+  "k": "f2191d93",
+  "s": "100 / 100 ball",
+  "ru": "100 / 100 баллов",
+  "en": "100 / 100 points"
+ },
+ {
+  "k": "751c583f",
+  "s": "A (A’lo — 5)",
+  "ru": "A (отлично — 5)",
+  "en": "A (excellent — 5)"
+ },
+ {
+  "k": "9bbfef6a",
+  "s": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>",
+  "ru": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>",
+  "en": "<strong>Anthropic. (2024).</strong> <em>Claude Model Card Addendum</em>. <a href=\"https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf</a>"
+ },
+ {
+  "k": "07f37cf5",
+  "s": "<strong>Butcher, J. C. (2016).</strong> <em>Numerical Methods for Ordinary Differential Equations</em> (3rd ed.). John Wiley va Sons. <a href=\"https://doi.org/10.1002/9781119121534\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/9781119121534</a>",
+  "ru": "<strong>Butcher, J. C. (2016).</strong> <em>Numerical Methods for Ordinary Differential Equations</em> (3rd ed.). John Wiley & Sons. <a href=\"https://doi.org/10.1002/9781119121534\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/9781119121534</a>",
+  "en": "<strong>Butcher, J. C. (2016).</strong> <em>Numerical Methods for Ordinary Differential Equations</em> (3rd ed.). John Wiley & Sons. <a href=\"https://doi.org/10.1002/9781119121534\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/9781119121534</a>"
+ },
+ {
+  "k": "1f44b52a",
+  "s": "<strong>Cromer, A. (1981).</strong> <em>Stable Solutions Using the Euler Approximation</em>. American Journal of Physics, 49(5), 455–459. <a href=\"https://doi.org/10.1119/1.12478\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1119/1.12478</a>",
+  "ru": "<strong>Cromer, A. (1981).</strong> <em>Stable Solutions Using the Euler Approximation</em>. American Journal of Physics, 49(5), 455–459. <a href=\"https://doi.org/10.1119/1.12478\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1119/1.12478</a>",
+  "en": "<strong>Cromer, A. (1981).</strong> <em>Stable Solutions Using the Euler Approximation</em>. American Journal of Physics, 49(5), 455–459. <a href=\"https://doi.org/10.1119/1.12478\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1119/1.12478</a>"
+ },
+ {
+  "k": "f9cbc19a",
+  "s": "<strong>Giordano, N. J., va Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson Prentice Hall.",
+  "ru": "<strong>Giordano, N. J., & Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson Prentice Hall.",
+  "en": "<strong>Giordano, N. J., & Nakanishi, H. (2006).</strong> <em>Computational Physics</em> (2nd ed.). Pearson Prentice Hall."
+ },
+ {
+  "k": "35f7d184",
+  "s": "<strong>Hairer, E., Nørsett, S. P., va Wanner, G. (1993).</strong> <em>Solving Ordinary Differential Equations I: Nonstiff Problems</em> (2nd rev. ed.). Springer. <a href=\"https://doi.org/10.1007/978-3-540-78862-1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/978-3-540-78862-1</a>",
+  "ru": "<strong>Hairer, E., Nørsett, S. P., & Wanner, G. (1993).</strong> <em>Solving Ordinary Differential Equations I: Nonstiff Problems</em> (2nd rev. ed.). Springer. <a href=\"https://doi.org/10.1007/978-3-540-78862-1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/978-3-540-78862-1</a>",
+  "en": "<strong>Hairer, E., Nørsett, S. P., & Wanner, G. (1993).</strong> <em>Solving Ordinary Differential Equations I: Nonstiff Problems</em> (2nd rev. ed.). Springer. <a href=\"https://doi.org/10.1007/978-3-540-78862-1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/978-3-540-78862-1</a>"
+ },
+ {
+  "k": "e2c0caa1",
+  "s": "<strong>Mishra, P., va Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>",
+  "ru": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>",
+  "en": "<strong>Mishra, P., & Koehler, M. J. (2006).</strong> <em>Technological Pedagogical Content Knowledge: A Framework for Teacher Knowledge</em>. Teachers College Record, 108(6), 1017–1054. <a href=\"https://doi.org/10.1111/j.1467-9620.2006.00684.x\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a>"
+ },
+ {
+  "k": "89bc9c00",
+  "s": "<strong>OpenAI. (2023).</strong> <em>GPT-4 Technical Report</em> (arXiv:2303.08774). arXiv. <a href=\"https://doi.org/10.48550/arXiv.2303.08774\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.48550/arXiv.2303.08774</a>",
+  "ru": "<strong>OpenAI. (2023).</strong> <em>GPT-4 Technical Report</em> (arXiv:2303.08774). arXiv. <a href=\"https://doi.org/10.48550/arXiv.2303.08774\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.48550/arXiv.2303.08774</a>",
+  "en": "<strong>OpenAI. (2023).</strong> <em>GPT-4 Technical Report</em> (arXiv:2303.08774). arXiv. <a href=\"https://doi.org/10.48550/arXiv.2303.08774\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.48550/arXiv.2303.08774</a>"
+ },
+ {
+  "k": "0f362f6a",
+  "s": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., va Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.",
+  "ru": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press.",
+  "en": "<strong>Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007).</strong> <em>Numerical Recipes: The Art of Scientific Computing</em> (3rd ed.). Cambridge University Press."
+ },
+ {
+  "k": "0e99e766",
+  "s": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, va E. Souberman, Eds.). Harvard University Press.",
+  "ru": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press.",
+  "en": "<strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em> (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press."
+ },
+ {
+  "k": "8adce1ac",
+  "s": "<strong>Wolfram Research. (n.d.).</strong> <em>Wolfram|Alpha: Computational Intelligence</em> [Hisoblash tizimi]. <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.wolframalpha.com</a>",
+  "ru": "<strong>Wolfram Research. (n.d.).</strong> <em>Wolfram|Alpha: Computational Intelligence</em> [Вычислительная система]. <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.wolframalpha.com</a>",
+  "en": "<strong>Wolfram Research. (n.d.).</strong> <em>Wolfram|Alpha: Computational Intelligence</em> [Computational system]. <a href=\"https://www.wolframalpha.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.wolframalpha.com</a>"
+ }
+]

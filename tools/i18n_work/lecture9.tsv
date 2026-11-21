@@ -1,0 +1,195 @@
+2a26aec3	Лекция 9: Генерация кода и промпт-инжиниринг	Lecture 9: Code Generation and Prompt Engineering
+abff86f6	Методика написания эффективных промптов, Zero-Shot, Few-Shot и Chain-of-Thought (Claude), мониторинг и автоматическое исправление в Google Antigravity AI, структура промптов ChatGPT и Gemini, а также личная библиотека физических промптов в MagicSchool AI.	Methods for writing effective prompts, Zero-Shot, Few-Shot and Chain-of-Thought (Claude), Google Antigravity AI monitoring and automatic fixing, ChatGPT and Gemini prompt structure, and a personal physics prompt library in MagicSchool AI.
+6829abc8	📋 План лекции 9 и технологический ИИ-конвейер:	📋 Lecture 9 plan and the AI technology pipeline:
+f9a2b22a	⟨1⟩1. ИИ-диагностика и план:⟨/1⟩↵ ⟨2⟩MagicSchool AI: адаптивная учебная траектория из 3 кластеров на основе ЗБР и таксономии Блума.⟨/2⟩	⟨1⟩1. AI diagnostics and plan:⟨/1⟩↵ ⟨2⟩MagicSchool AI: a 3-cluster adaptive pathway based on ZPD and Bloom’s taxonomy.⟨/2⟩
+eb2525f9	⟨1⟩2. Тестирование и сравнение промптов:⟨/1⟩↵ ⟨2⟩Claude: стратегии Zero-Shot, Few-Shot и CoT, проверка точных и нечётких физических промптов.⟨/2⟩	⟨1⟩2. Prompt testing and comparison:⟨/1⟩↵ ⟨2⟩Claude: Zero-Shot, Few-Shot and CoT strategies; testing precise vs vague physics prompts.⟨/2⟩
+c558bc9e	⟨1⟩3. Мониторинг результатов:⟨/1⟩↵ ⟨2⟩Google Antigravity AI: анализ AST, сохранение энергии (dE/E0), FPS и автоматический цикл Self-Refine.⟨/2⟩	⟨1⟩3. Monitoring results:⟨/1⟩↵ ⟨2⟩Google Antigravity AI: AST analysis, energy conservation (dE/E0), FPS and an automatic self-refine loop.⟨/2⟩
+ddb27b76	⟨1⟩4. Структура промпта:⟨/1⟩↵ ⟨2⟩ChatGPT и Gemini: роль, контекст, физические граничные условия и схемы JSON/ES6.⟨/2⟩	⟨1⟩4. Prompt structure:⟨/1⟩↵ ⟨2⟩ChatGPT and Gemini: role, context, physical boundary conditions and JSON/ES6 schemas.⟨/2⟩
+9c57963e	⟨1⟩5. Личная библиотека промптов:⟨/1⟩↵ ⟨2⟩MagicSchool AI: 10 готовых шаблонов для механики, МКТ, электродинамики, оптики и квантовой физики.⟨/2⟩	⟨1⟩5. Personal prompt library:⟨/1⟩↵ ⟨2⟩MagicSchool AI: 10 ready-made templates for mechanics, kinetic theory, electrodynamics, optics and quantum physics.⟨/2⟩
+b3cf54df	⟨1⟩6. Симулятор и источники:⟨/1⟩↵ ⟨2⟩HTML5 Canvas Prompt Workbench и песочница, живой редактор кода, диагностический тест и источники APA-7.⟨/2⟩	⟨1⟩6. Simulator and sources:⟨/1⟩↵ ⟨2⟩An HTML5 Canvas prompt workbench and sandbox, a live code editor, a diagnostic test and APA-7 sources.⟨/2⟩
+66b29546	MagicSchool AI: диагностика промпт-инжиниринга и генерации кода	MagicSchool AI: diagnosing prompt engineering and code generation
+3f0885bb	📚 Теоретико-методологическая основа и научные источники:	📚 Theoretical and methodological basis and scholarly sources:
+47ed725f	Правильная постановка физических задач моделям искусственного интеллекта и получение высокоточного кода симуляции	Setting physics problems correctly for AI models and obtaining high-accuracy simulation code
+a72f316a	основаны на этих принципах. Начальный опыт студента в написании промптов и программировании оценивается с помощью MagicSchool AI и направляется в 3 адаптивных учебных кластера.	are based on these principles. The student’s initial prompt-writing and programming experience is assessed with MagicSchool AI and channelled into 3 adaptive learning clusters.
+aa2b43ff	🔗 <em>Основные источники:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; White et al. (2023). <em>A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</em>, arXiv:2302.11382.	🔗 <em>Key sources:</em> Vygotsky, L. S. (1978). <em>Mind in Society</em>, Harvard Univ. Press; Anderson & Krathwohl (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>, Longman; White et al. (2023). <em>A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</em>, arXiv:2302.11382.
+a4ea2425	Промпт-инжиниринг на уроках физики — это не просто ввод общего текста, а искусство давать ИИ-модели строгие указания: физические закономерности, дифференциальные уравнения, начальные и граничные условия (Boundary Conditions) и методы численного интегрирования.	Prompt engineering in physics classes is not just typing general text; it is the art of giving the AI model strict instructions — physical laws, differential equations, initial and boundary conditions, and numerical integration methods.
+9a56cd4e	Этап 1	Stage 1
+17a36eca	<strong>Профиль:</strong> студенты, которые дают ИИ короткие и нечёткие запросы вроде «напиши мне код пружины».↵ <strong>Цель:</strong> изучить 4 основных столпа промпта (роль, задача, ограничения, формат) и генерировать элементарные кинематические симуляции.	<strong>Profile:</strong> students who give the AI short, vague requests such as "write me spring code".↵ <strong>Goal:</strong> learn the 4 main pillars of a prompt (role, task, constraints, format) and generate basic kinematic simulations.
+43a11042	Кластер B (средний / практик)	Cluster B (intermediate / practitioner)
+7acc09e7	Этап 2	Stage 2
+3cb02af8	<strong>Профиль:</strong> умеет составлять промпты, но не выражает в них энергетические инварианты и условия численной устойчивости (Верле/Эйлер).↵ <strong>Цель:</strong> получать код динамических систем и систем со столкновениями методами Chain-of-Thought (CoT) и Few-Shot.	<strong>Profile:</strong> can write prompts but does not express energy invariants and numerical stability conditions (Verlet/Euler) in them.↵ <strong>Goal:</strong> obtain code for dynamic and collision systems using Chain-of-Thought (CoT) and Few-Shot methods.
+79a4c096	Кластер C (продвинутый / архитектор)	Cluster C (advanced / architect)
+77a87f66	Этап 3	Stage 3
+b63aed7f	<strong>Профиль:</strong> студенты-исследователи, глубоко понимающие физические уравнения и архитектуру JavaScript.↵ <strong>Цель:</strong> разработка многоагентной архитектуры, автоматического мониторинга Antigravity AI и библиотеки промптов для волновой/квантовой физики.	<strong>Profile:</strong> research-minded students with a deep understanding of physical equations and JavaScript architecture.↵ <strong>Goal:</strong> develop a multi-agent architecture, automatic Antigravity AI monitoring and a prompt library for wave/quantum physics.
+60aaf2fa	📋 Персонализированная 4-недельная учебная дорожная карта:	📋 Personalised 4-week learning roadmap:
+6d25aae4	Кластер B (средний)	Cluster B (intermediate)
+021e9eef	Анатомия промпта и назначение роли (Role Prompting).	Prompt anatomy and role prompting.
+3d19eb86	Сравнение стратегий Zero-Shot и Few-Shot.	Comparing Zero-Shot and Few-Shot strategies.
+02729abd	Многоагентная архитектура и промптинг Reflexion.	Multi-agent architecture and Reflexion prompting.
+ca119ad0	Промпты для отображения законов Ньютона на Canvas.	Prompts for drawing Newton’s laws on Canvas.
+eba740e7	CoT-промпт для закона Гука и затухающих колебаний.	A CoT prompt for Hooke’s law and damped oscillation.
+20ebec73	Интегратор Бориса и симуляция силы Лоренца.	The Boris integrator and a Lorentz force simulation.
+a2b024df	Поиск и исправление ошибок с Claude.	Finding and fixing bugs with Claude.
+84675175	Мониторинг dE/E0 в Google Antigravity AI.	dE/E0 monitoring with Google Antigravity AI.
+b5844641	WebGL и код волновой дифракции в реальном времени.	WebGL and real-time wave diffraction code.
+3ad3710b	2 личных шаблона по разделу «Механика».	2 personal templates for the Mechanics topic.
+5eef8761	Полные шаблоны промптов по 5 разделам.	Complete prompt templates for all 5 topics.
+467a6ec4	Открытая библиотека промптов для магистерского курса.	An open prompt library for a master’s course.
+a35dc4c3	Этап 2: сравнительный эксперимент	Stage 2: Comparative experiment
+b9a57d7e	Claude: испытания zero-shot, few-shot и chain-of-thought	Claude: zero-shot, few-shot and chain-of-thought trials
+e9aac8dc	Исследования <strong>Wei et al. (2022)</strong> <em>"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"</em> (NeurIPS 2022), <strong>Kojima et al. (2022)</strong> <em>"Large Language Models are Zero-Shot Reasoners"</em> и <strong>White et al. (2023)</strong> <em>"A Prompt Pattern Catalog to Enhance Prompt Engineering"</em> по формированию логики вычислительной физики в больших языковых моделях (LLM) показывают, что по сравнению с прямым запросом кода у модели (Zero-Shot) поэтапное рассуждение над дифференциальным уравнением и граничными условиями (CoT) повышает точность вычислений <strong>с 62% до 96%+</strong>.	Research on building computational-physics reasoning into large language models (LLMs) — <strong>Wei et al. (2022)</strong>, <em>"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"</em> (NeurIPS 2022); <strong>Kojima et al. (2022)</strong>, <em>"Large Language Models are Zero-Shot Reasoners"</em>; and <strong>White et al. (2023)</strong>, <em>"A Prompt Pattern Catalog to Enhance Prompt Engineering"</em> — shows that, compared with asking the model for code directly (Zero-Shot), having it reason step by step through the differential equation and boundary conditions (CoT) raises computational accuracy <strong>from 62% to 96%+</strong>.
+354ac594	🔗 <em>Основные источники:</em> Wei, J., et al. (2022). <em>NeurIPS 2022</em>; Kojima, T., et al. (2022). <em>NeurIPS 2022</em>; Anthropic (2024). <em>Claude Prompt Engineering Interactive Guidelines</em>, docs.anthropic.com; White, J., et al. (2023). <em>arXiv:2302.11382</em>.	🔗 <em>Key sources:</em> Wei, J., et al. (2022). <em>NeurIPS 2022</em>; Kojima, T., et al. (2022). <em>NeurIPS 2022</em>; Anthropic (2024). <em>Claude Prompt Engineering Interactive Guidelines</em>, docs.anthropic.com; White, J., et al. (2023). <em>arXiv:2302.11382</em>.
+0260fda1	Chain of Thought и Zero-Shot	Chain of Thought and Zero-Shot
+0747d214	Рис. 1: уровень синтаксической и физической точности по стратегиям промптинга (Zero-Shot, Few-Shot, CoT).	Figure 1: Syntactic and physical accuracy by prompting strategy (Zero-Shot, Few-Shot, CoT).
+20254a27	Научная сравнительная матрица стратегий промптинга:	Scientific comparison matrix of prompting strategies:
+091b8f64	Метрика / свойство	Metric / property
+b81ac867	❌ Нечёткий (Vague)	❌ Vague
+dab79137	⚡ Zero-shot (точный)	⚡ Zero-shot (precise)
+63500d46	🧩 Few-shot (с примерами)	🧩 Few-shot (with examples)
+a51892ba	Синтаксическая корректность (AST)	Syntactic correctness (AST)
+e9476979	58% (много ошибок)	58% (many errors)
+cb84363e	82% (синтаксис ES6)	82% (ES6 syntax)
+d439746b	91% (стандарт)	91% (standard)
+4faaf238	96% (без ошибок)	96% (error-free)
+5d99f616	Физическая адекватность (инвариант)	Physical adequacy (invariant)
+77554f03	24% (кинематическая фальшь)	24% (kinematic fakery)
+1043ffef	62% (простой Эйлер)	62% (plain Euler)
+f2f00b52	78% (полудинамический)	78% (semi-dynamic)
+d937dbb1	93% (полностью дифференциальный)	93% (fully differential)
+73a395b1	Граничные условия и проникновение	Boundary conditions and penetration
+8b8ac343	0% (объект исчезает)	0% (object disappears)
+7d3cea65	45% (залипание)	45% (sticking)
+f2428465	80% (упругий отскок)	80% (elastic bounce)
+7cfcdfb2	95% (коррекция MTV)	95% (MTV correction)
+0a25fc3b	Сохранение энергии (⟦1⟧)	Energy conservation (⟦1⟧)
+3df9c671	Не контролируется	Not monitored
+082ffe58	Дрейф: &gt; 25%	Drift: &gt; 25%
+3ae94ea6	Дрейф: &lt; 0.1% (симплектический)	Drift: &lt; 0.1% (symplectic)
+7cac5007	Рекомендуемый этап обучения	Recommended stage of study
+8a93aad3	Применять запрещено	Do not use
+5b6bfbe3	Лабораторные 1-го курса	First-year labs
+93bfb549	Общая физика 2-го курса	Second-year general physics
+2fb98f7f	Магистратура и научные исследования	Master’s level and research
+84c2e129	Экспериментальное сравнение: на примере 2D-движения снаряда	Experimental comparison: 2D projectile motion
+67c8d9ae	❌ Пример нечёткого (Vague) промпта	❌ Example of a vague prompt
+bd89c24d	Точность: 24%	Accuracy: 24%
+45e727be	"Напиши мне JS-код, который показывает выстрел снаряда на Canvas."	"Write me JS code that shows a projectile being fired on a Canvas."
+ad018213	<strong>Недостатки сгенерированного кода:</strong>↵ 1. <em>Нет динамических сил:</em> нарисована только аналитическая ⟦1⟧. Ветер и сопротивление воздуха не учтены.↵ 2. <em>Нарушение масштаба:</em> нет связи между метрами и пикселями, поэтому снаряд за 0.1 секунды вылетает за пределы экрана.↵ 3. <em>Ошибка границы:</em> при ударе о землю движение останавливается или снаряд бесконечно падает вниз.	<strong>Shortcomings of the generated code:</strong>↵ 1. <em>No dynamic forces:</em> only the analytical ⟦1⟧ is drawn. Wind and air drag are ignored.↵ 2. <em>Broken scale:</em> there is no link between metres and pixels, so the projectile leaves the screen within 0.1 s.↵ 3. <em>Boundary error:</em> on hitting the ground the motion stops or the projectile keeps falling forever.
+cade1d15	✅ Пример точного физического промпта (CoT)	✅ Example of a precise physics prompt (CoT)
+d4e73c15	Точность: 96%	Accuracy: 96%
+7dad9e1c	"Ты — специалист по вычислительной механике. Напиши ES6-класс для HTML5 Canvas, моделирующий 2D-движение снаряда методом Semi-implicit Euler. Параметры: ⟦1⟧, аэродинамическое сопротивление ⟦2⟧, сила ветра ⟦3⟧. При ударе о землю коэффициент восстановления ⟦4⟧. В каждом кадре рисуй вектор скорости, полную энергию ⟦5⟧ и след траектории."	"You are a computational mechanics specialist. Write an ES6 class for HTML5 Canvas that models 2D projectile motion with the semi-implicit Euler method. Parameters: ⟦1⟧, aerodynamic drag ⟦2⟧, wind force ⟦3⟧. On hitting the ground the coefficient of restitution is ⟦4⟧. Draw the velocity vector, total energy ⟦5⟧ and trajectory trail every frame."
+e1e69417	<strong>Достоинства сгенерированного кода:</strong>↵ 1. <em>Настоящая векторная механика:</em> проекции квадратичной силы сопротивления интегрируются правильно.↵ 2. <em>Энергетический контроль:</em> баланс механической энергии вычисляется в каждом кадре в реальном времени.↵ 3. <em>Полная автономность:</em> при изменении размера Canvas координаты адаптивно сохраняются.	<strong>Strengths of the generated code:</strong>↵ 1. <em>Real vector mechanics:</em> the projections of the quadratic drag force are integrated correctly.↵ 2. <em>Energy control:</em> the mechanical energy balance is computed every frame in real time.↵ 3. <em>Full autonomy:</em> coordinates adapt when the Canvas is resized.
+6afd4a6a	Этап 3: автоматический контроль	Stage 3: Automatic control
+789f3ada	Google Antigravity AI: агентный контроль кода и refinement	Google Antigravity AI: agentic code control and refinement
+e0191ff9	Обеспечение устойчивости и надёжности кода физической симуляции, сгенерированного ИИ, опирается на агентную систему мониторинга <strong>Google DeepMind (2024)</strong> и архитектуру <strong>Shinn et al. (2023)</strong> <em>"Reflexion: Language Agents with Verbal Reinforcement Learning"</em> (NeurIPS 2023). Каждый сгенерированный физический скрипт проходит статический анализ синтаксиса и динамическую проверку физических инвариантов.	Ensuring the stability and reliability of AI-generated physics simulation code relies on the agentic monitoring system of <strong>Google DeepMind (2024)</strong> and the architecture of <strong>Shinn et al. (2023)</strong>, <em>"Reflexion: Language Agents with Verbal Reinforcement Learning"</em> (NeurIPS 2023). Every generated physics script goes through static syntax analysis and dynamic checks of physical invariants.
+ffafc719	Рис. 2: 4-колонный контроль кода Google Antigravity AI и автоматический цикл Self-Healing.	Figure 2: Google Antigravity AI’s 4-pillar code control and automatic self-healing cycle.
+c383dbab	4 столпа контроля Antigravity AI (детали архитектуры):	The 4 pillars of Antigravity AI control (architecture details):
+b1d37576	1. Статический AST-линтер и безопасность	1. Static AST linter and security
+4d3a2597	Перед выполнением кода проверяется его абстрактное синтаксическое дерево (AST). Выявляются и блокируются бесконечные циклы <code>while(true)</code>, вызовы <code>eval()</code>, опасные переменные глобальной области и прямые недопустимые обращения к DOM.	Before the code runs, its Abstract Syntax Tree (AST) is checked. Infinite <code>while(true)</code> loops, <code>eval()</code> calls, dangerous global-scope variables and illegal direct DOM access are detected and blocked.
+06619484	2. Контроль физических инвариантов	2. Physical invariant checks
+428ce39c	Во время симуляции в реальном времени проверяется энергетический дрейф: ⟦1⟧ Динамически подтверждаются инвариантность импульса в замкнутых системах ⟦2⟧ и отсутствие проникновения (overlap) при столкновениях.	During the simulation the energy drift is checked in real time: ⟦1⟧ Momentum invariance in closed systems ⟦2⟧ and the absence of penetration (overlap) in collisions are confirmed dynamically.
+76ef5c92	3. Динамический профайлер кадров (60 FPS)	3. Dynamic frame profiler (60 FPS)
+7938cdc1	Контролируются интервал между кадрами ⟦1⟧, предотвращение "Spiral of Death" (зависания цикла из-за роста времени) и пул объектов (Object Pool) для минимизации нагрузки на сборщик мусора.	It monitors the frame interval ⟦1⟧, prevention of the "spiral of death" (the loop freezing as time grows) and the object pool used to minimise garbage-collector load.
+d99e5530	4. Автоматический self-refine и Healing Loop	4. Automatic self-refine and healing loop
+b5d13262	Если в симуляции тело выходит за границы или наблюдается «взрыв» энергии, Antigravity AI автоматически отправляет причину ошибки (например: <em>"неустойчивость Эйлера, dt слишком велик"</em>) обратно в LLM и получает исправленный код.	If a body leaves the boundary or the energy blows up, Antigravity AI automatically sends the cause of the error (e.g. <em>"Euler instability, dt too large"</em>) back to the LLM and gets corrected code.
+e8fe114c	Этап 4: инженерные стандарты	Stage 4: Engineering standards
+91f60c48	ChatGPT и Gemini: 5-элементная профессиональная архитектура промпта	ChatGPT and Gemini: a 5-element professional prompt architecture
+bd3c8e5b	Профессиональная архитектура промптов для физических симуляций основана на стандартах для разработчиков <strong>OpenAI (2024)</strong> <em>"Prompt Engineering Best Practices for Code Generation"</em> и <strong>Google DeepMind (2024)</strong> <em>"Gemini System Instructions & Developer Guidelines"</em>. Когда промпт состоит из 5 обязательных компонентов, вероятность генерации LLM корректного и энергосберегающего кода достигает <strong>98%</strong>.	The professional prompt architecture for physics simulations is based on the developer standards of <strong>OpenAI (2024)</strong>, <em>"Prompt Engineering Best Practices for Code Generation"</em>, and <strong>Google DeepMind (2024)</strong>, <em>"Gemini System Instructions & Developer Guidelines"</em>. When a prompt contains all 5 mandatory components, the probability that the LLM generates correct, energy-conserving code reaches <strong>98%</strong>.
+3d244249	🔗 <em>Основные источники:</em> OpenAI (2024). <em>OpenAI Developer Platform</em>; Google DeepMind (2024). <em>Gemini 1.5 Technical Report</em>; Anthropic (2024). <em>System Prompt Design Patterns</em>.	🔗 <em>Key sources:</em> OpenAI (2024). <em>OpenAI Developer Platform</em>; Google DeepMind (2024). <em>Gemini 1.5 Technical Report</em>; Anthropic (2024). <em>System Prompt Design Patterns</em>.
+8a3a9a3b	Рабочий процесс промпт-инжиниринга	Prompt Engineering Workflow
+b5515ee8	Рис. 3: полный конвейер — от физической идеи до интерактивной симуляции на Canvas.	Figure 3: The complete pipeline from a physics idea to an interactive Canvas simulation.
+71b6508d	🌟 5-элементный профессиональный стандарт промпта (подробное описание):	🌟 The 5-element professional prompt standard (in detail):
+f875cfc6	1. Назначение роли (Role Prompting):	1. Role prompting:
+5c0e47ca	Задаёт ИИ-модели чёткую социальную и научную роль: <em>"Ты — профессор университета, специалист по вычислительной физике и разработчик высокопроизводительных движков WebGL/Canvas."</em>	Gives the AI model a clear social and scientific role: <em>"You are a university professor, a computational physics specialist and a developer of high-performance WebGL/Canvas engines."</em>
+d5a19877	2. Контекст и чёткая цель (Context и Goal):	2. Context and a clear goal:
+cd7d5489	Описывает учебную и практическую цель моделируемого явления: <em>"Для магистрантов нужно в реальном времени визуализировать закон Кулона, столкновения заряженных частиц и силовые линии электрического поля."</em>	Describes the learning and practical goal of the modelled phenomenon: <em>"Master’s students need a real-time visualisation of Coulomb’s law, collisions of charged particles and electric field lines."</em>
+e6cafa6b	3. Физические ограничения и математические уравнения (Constraints и Physics):	3. Physical constraints and mathematical equations:
+80179dac	Чётко формулируются дифференциальное уравнение, граничные условия и метод интегрирования: <em>"Формула силы: ⟦1⟧. Чтобы избежать сингулярности, ⟦2⟧. Численный метод: Velocity Verlet (или Semi-implicit Euler). Упругое столкновение со стенками (⟦3⟧)."</em>	The differential equation, boundary conditions and integration method are stated precisely: <em>"Force formula: ⟦1⟧. To avoid a singularity, ⟦2⟧. Numerical method: Velocity Verlet (or semi-implicit Euler). Elastic collisions with the walls (⟦3⟧)."</em>
+56dd19e3	4. Формат вывода и архитектура (Output Schema):	4. Output format and architecture (output schema):
+6b644f5f	Требования к оформлению и структуре кода: <em>"Без каких-либо внешних библиотек (Pure ES6 JavaScript). Класс должен содержать конструктор и методы update(dt), render(ctx) и getTelemetry()."</em>	Code packaging and structure requirements: <em>"No external libraries (pure ES6 JavaScript). The class should include a constructor and update(dt), render(ctx) and getTelemetry() methods."</em>
+39c6e071	5. Указание на самопроверку (Self-Refine Directive):	5. Self-refine directive:
+54b44117	Перед выводом кода ИИ проводит самоаудит: <em>"Прежде чем завершить код, проверь: 1) Сохраняется ли энергия? 2) Есть ли выход за границы? 3) Учтён ли delta-time? 4) Нет ли в коде синтаксических ошибок?"</em>	Before outputting the code, the AI audits itself: <em>"Before finishing the code, check: 1) Is energy conserved? 2) Does anything leave the boundary? 3) Is delta time taken into account? 4) Are there any syntax errors?"</em>
+b1292d24	Этап 5: методическая сокровищница	Stage 5: Methodological treasury
+f46f9325	MagicSchool AI: 10 готовых шаблонов промптов для 5 фундаментальных разделов физики	MagicSchool AI: 10 ready-made prompt templates for 5 fundamental physics topics
+59f345a2	Чтобы сэкономить время преподавателя и студента и стандартизировать качество моделирования в педагогической практике, на основе университетских курсов физики <strong>Halliday, Resnick и Walker (2018)</strong> <em>"Fundamentals of Physics"</em> и <strong>Serway и Jewett (2018)</strong> <em>"Physics for Scientists and Engineers"</em> сформирована библиотека шаблонов промптов по 5 фундаментальным разделам.	To save teachers’ and students’ time and standardise modelling quality in teaching practice, a library of prompt templates for 5 fundamental topics was built on the university physics courses of <strong>Halliday, Resnick & Walker (2018)</strong>, <em>"Fundamentals of Physics"</em>, and <strong>Serway & Jewett (2018)</strong>, <em>"Physics for Scientists and Engineers"</em>.
+c9cd6cef	🔗 <em>Основные источники:</em> Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of Physics</em> (11th ed.), Wiley; Serway, R. A., & Jewett, J. W. (2018). <em>Physics for Scientists and Engineers</em> (10th ed.), Cengage; MagicSchool AI Research (2024). <em>Prompt Library Scaffolding for STEM Classrooms</em>.	🔗 <em>Key sources:</em> Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentals of Physics</em> (11th ed.), Wiley; Serway, R. A., & Jewett, J. W. (2018). <em>Physics for Scientists and Engineers</em> (10th ed.), Cengage; MagicSchool AI Research (2024). <em>Prompt Library Scaffolding for STEM Classrooms</em>.
+453f7420	Матрица таксономии физических промптов	Physics Prompt Taxonomy Matrix
+ae70b772	Рис. 4: таксономия промпт-инжиниринга и матрица шаблонов по разделам физики.	Figure 4: Prompt-engineering taxonomy and template matrix by physics topic.
+5b5143e2	1. Движение снаряда и ветер (механика)	1. Projectile motion and wind (mechanics)
+4bb44b61	Механика	Mechanics
+9ca53c3d	"Ты — специалист по вычислительной механике. Создай ES6-класс для HTML5 Canvas, моделирующий 2D-движение снаряда методом Semi-implicit Euler. Условия: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, сила ветра F_wind = const. При ударе о землю коэффициент восстановления e=0.7. В реальном времени вычисляй дальность полёта (L) и максимальную высоту (H)."	"You are a computational mechanics specialist. Create an ES6 class for HTML5 Canvas that models 2D projectile motion with the semi-implicit Euler method. Conditions: g=9.81 m/s^2, F_drag = 0.5*rho*Cd*A*v^2, wind force F_wind = const. On hitting the ground, coefficient of restitution e=0.7. Compute the range (L) and maximum height (H) in real time."
+45b44e3f	2. Пружинный маятник и затухание (механика)	2. Spring pendulum and damping (mechanics)
+e4eeccf8	"Смоделируй на HTML5 Canvas вертикальный затухающий пружинный маятник методом Velocity Verlet. Уравнение: m*x'' + c*x' + k*x = m*g. На Canvas динамически рисуй спираль пружины, баланс кинетической и потенциальной энергии отслеживай в реальном времени."	"Model a vertical damped spring pendulum on HTML5 Canvas with the Velocity Verlet method. Equation: m*x'' + c*x' + k*x = m*g. Draw the spring coil dynamically on the Canvas and monitor the kinetic and potential energy balance in real time."
+4d495643	3. Импульс двумерного упругого столкновения	3. 2D elastic impulse collision
+b35d6adb	Импульс	Momentum
+d0e4c63b	"Напиши JavaScript-движок для столкновений шаров разной массы в 2D-пространстве. Устрани проникновение с помощью формулы импульса столкновения j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) и позиционной коррекции (MTV). Проверь сохранение импульса и кинетической энергии."	"Write a JavaScript engine for collisions of balls of different masses in 2D. Remove penetration using the collision impulse formula j = -(1+e)*(v_rel . n)/(1/m1 + 1/m2) and positional correction (MTV). Check conservation of momentum and kinetic energy."
+34f68f4c	4. Идеальный газ и распределение МКТ	4. Ideal gas and the kinetic-theory distribution
+54e72129	Термодинамика	Thermodynamics
+b55273e9	"Создай программу на Canvas, моделирующую упругие столкновения N=100 молекул газа в сосуде. При изменении температуры (T) скорости молекул должны соответствовать распределению Максвелла–Больцмана; вычисляй давление (P) на стенки."	"Create a Canvas program that models elastic collisions of N=100 gas molecules in a container. When the temperature (T) changes, the molecular speeds should follow the Maxwell–Boltzmann distribution, and the pressure (P) on the walls should be computed."
+2c9f3050	5. Диффузия теплопроводности в 2D	5. 2D heat-conduction diffusion
+92d123f7	"Напиши ES6-класс, который на основе закона Фурье анимирует на Canvas в виде цветовой карты (heatmap) дифференциальное уравнение распространения тепла в 2D металлической пластине (dT/dt = alpha * nabla^2 T) методом численной сетки (grid)."	"Write an ES6 class that, based on Fourier’s law, animates the differential equation of heat spreading in a 2D metal plate (dT/dt = alpha * nabla^2 T) on a Canvas as a heatmap using a numerical grid."
+51e434b0	6. Поле Кулона и силовые линии	6. Coulomb field and field lines
+a4d0f2e3	Электродинамика	Electrodynamics
+fd76599e	"Создай интерактивный Canvas, где пользователь мышью ставит положительные и отрицательные заряды, а между ними методом Рунге–Кутты 2 рисуются электростатические силовые линии (E-field lines) и эквипотенциальные поверхности."	"Create an interactive Canvas where the user places positive and negative charges with the mouse, and the electrostatic field lines (E-field lines) and equipotential surfaces between them are drawn with the Runge–Kutta 2 method."
+ec1ed65a	7. Сила Лоренца и циклотронное движение	7. Lorentz force and cyclotron motion
+0620a6a5	"Смоделируй с помощью интегратора Бориса траекторию заряженной частицы в однородных магнитном (B) и электрическом (E) полях. Циклотронный радиус R = mv/(qB) и шаг спирального движения показывай на экране в реальном времени."	"Model the trajectory of a charged particle in uniform magnetic (B) and electric (E) fields with the Boris integrator. Show the cyclotron radius R = mv/(qB) and the pitch of the helical motion on screen in real time."
+72d8e60e	8. Дифракция на двух щелях и опыт Юнга	8. Double-slit diffraction and Young’s experiment
+fba4d96a	Оптика	Optics
+e0a68cea	"Отрендери на HTML5 Canvas интерференцию волн от двух щелей в опыте Юнга как 2D пространственное поле. Справа нарисуй график интенсивности на экране I(y) = I0 * cos^2(delta/2) и цветной спектр."	"Render two-slit wave interference from Young’s experiment on HTML5 Canvas as a 2D spatial field. On the right, draw the screen intensity plot I(y) = I0 * cos^2(delta/2) and a colour spectrum."
+6ee1b771	9. Закон Снеллиуса и полное внутреннее отражение	9. Snell’s law and total internal reflection
+04bfe220	"Лучевая оптика: смоделируй на Canvas, где угол луча меняется мышью, преломление луча на границе двух сред с показателями преломления n1 и n2 (n1*sin(a) = n2*sin(b)) и явление полного внутреннего отражения (a &gt;= a_crit)."	"Ray optics: on a Canvas where the ray angle is changed with the mouse, model refraction at the boundary of two media with refractive indices n1 and n2 (n1*sin(a) = n2*sin(b)) and total internal reflection (a &gt;= a_crit)."
+1c7fa3c8	10. Модель атома Бора и квантовые скачки	10. The Bohr atom model and quantum jumps
+a355c839	Квантовая физика	Quantum physics
+bf0d6628	"Модель Бора атома водорода: стационарные орбиты n=1,2,3,4. При нажатии на орбиту пользователем показывай анимацию квантового скачка электрона и излучённого волнового пакета фотона. Вычисляй энергетический уровень En = -13.6/n^2 eV."	"The Bohr model of the hydrogen atom: stationary orbits n=1,2,3,4. When the user clicks an orbit, animate the electron’s quantum jump and the emitted photon wave packet. Compute the energy level En = -13.6/n^2 eV."
+0b8015bf	Этап 6: живая лаборатория	Stage 6: Live laboratory
+e1748998	Верстак промптов HTML5 Canvas и живая песочница кода	HTML5 Canvas prompt workbench and live code sandbox
+573dd44e	Закрепление понятий с помощью интерактивных симуляционных стендов опирается на принципы <strong>Wieman, Adams и Perkins (2008)</strong> <em>“PhET: Simulations That Enhance Learning”</em> и <strong>Fiedler (2004)</strong> <em>"Fix Your Timestep"</em>. Студент может выбирать разные шаблоны промптов, сравнивать качество нечётких и точных промптов, вживую редактировать сгенерированный ES6-код и проверять физическую симуляцию на Canvas кнопкой <strong>«Запустить код»</strong>.	Reinforcing concepts with interactive simulation workbenches follows the principles of <strong>Wieman, Adams & Perkins (2008)</strong>, <em>“PhET: Simulations That Enhance Learning”</em>, and <strong>Fiedler (2004)</strong>, <em>"Fix Your Timestep"</em>. Students can choose different prompt templates, compare the quality of vague and precise prompts, edit the generated ES6 code live and check the physics simulation on Canvas with the <strong>“Run code”</strong> button.
+843887ea	1. Снаряд и сопротивление	1. Projectile and drag
+e7bb44f3	2. Пружина и затухание	2. Spring and damping
+1eeac64d	3. 2D-столкновение	3. 2D collision
+5748b1a1	4. Интерференция волн	4. Wave interference
+cd8b38c5	✅ Точный физический промпт	✅ Precise physics prompt
+26d9d5d5	Верстак промптов для LLM	LLM prompt workbench
+f565e8b6	❌ Нечёткий промпт	❌ Vague prompt
+275b0ab0	✅ Точный промпт	✅ Precise prompt
+c90e7bad	Загрузка...	Loading...
+9ecf485d	💻 Сгенерированный код (можно редактировать):	💻 Generated code (editable):
+961c99a8	▶ Запустить код	▶ Run code
+a87f6f14	● Состояние песочницы: готово	● Sandbox status: ready
+73c51b3d	🪐 Песочница Canvas:	🪐 Canvas sandbox:
+4ca927e0	⏸ Пауза	⏸ Pause
+6ce220ec	🔄 Заново	🔄 Restart
+37a650ba	Векторы (⟦1⟧)	Vectors (⟦1⟧)
+8506d639	След траектории	Trajectory trail
+461880b9	Частота кадров:	Frame rate:
+849ad47e	Полная энергия (⟦1⟧):	Total energy (⟦1⟧):
+90ccb6cd	Скорость (⟦1⟧):	Speed (⟦1⟧):
+eadd0cee	Состояние инварианта:	Invariant status:
+a3c959ca	● устойчиво	● stable
+19255776	Этап 7: оценивание и библиография	Stage 7: Assessment and bibliography
+b287eb03	Диагностическая проверка знаний и научная литература	Diagnostic knowledge check and scholarly references
+a41ee9ac	Педагогическое оценивание и научный аппарат, использованные в этом модуле, оформлены по международному библиографическому стандарту <strong>American Psychological Association (APA 7th Edition)</strong> и охватывают новейшие авторитетные исследования ИИ (NeurIPS, arXiv) и классические университетские учебники физики.	The assessment and scholarly apparatus used in this module follow the <strong>American Psychological Association (APA 7th Edition)</strong> international bibliographic standard and cover the latest authoritative AI research (NeurIPS, arXiv) and classic university physics textbooks.
+0cd13be8	🔗 <em>Основные источники:</em> APA Style Manual (7th ed.); NeurIPS 2022-2023 Proceedings; Wiley & Cengage Physics Series.	🔗 <em>Key sources:</em> APA Style Manual (7th ed.); NeurIPS 2022-2023 Proceedings; Wiley & Cengage Physics Series.
+2241c1c2	🧠 Когнитивный диагностический тест (3 вопроса):	🧠 Cognitive diagnostic test (3 questions):
+f04037f2	1. Какой численный интегратор нужно потребовать в промпте, чтобы при генерации кода пружинного осциллятора энергия не росла сама собой (drift)?	1. Which numerical integrator should the prompt require so that energy does not grow by itself (drift) when generating spring oscillator code?
+fb06f078	A) Простой метод Forward Euler (⟦1⟧).	A) Plain Forward Euler (⟦1⟧).
+f262b72f	B) Симплектический интегратор Semi-implicit Euler или Velocity-Verlet.	B) A symplectic semi-implicit Euler or Velocity-Verlet integrator.
+66d9eb07	C) Без всякого интегратора, только Math.random().	C) No integrator at all, just Math.random().
+fc98e91f	D) Только статичное изображение из 1 кадра.	D) Just a single static frame.
+49f5bdfa	2. Почему промптинг Chain-of-Thought (CoT) даёт при генерации физического кода гораздо более высокую точность (93%+ против 62%), чем Zero-Shot?	2. Why does Chain-of-Thought (CoT) prompting give much higher accuracy (93%+ vs 62%) than Zero-Shot when generating physics code?
+089005f9	A) CoT заставляет модель перед написанием кода поэтапно проанализировать дифференциальное уравнение и физические ограничения.	A) CoT makes the model analyse the differential equation and physical constraints step by step before writing code.
+6a4518a6	B) CoT сокращает текст промпта.	B) CoT shortens the prompt text.
+31590f90	C) CoT искусственно ускоряет Canvas.	C) CoT artificially speeds up the Canvas.
+926337fd	D) Никакого влияния, результат одинаковый.	D) It has no effect; the result is the same.
+10605e5d	3. Какой физический показатель автоматически проверяется в мониторинге Google Antigravity AI?	3. Which physical indicator is checked automatically by Google Antigravity AI monitoring?
+e119bf28	A) Только цвет шрифта текста.	A) Only the text font colour.
+e6b39405	B) Сохранение полной энергии (⟦1⟧), инвариантность импульса и отсутствие проникновения.	B) Total energy conservation (⟦1⟧), momentum invariance and no penetration.
+cfba86aa	C) Скорость интернет-провайдера.	C) The internet provider’s speed.
+21fb1599	D) Диагональ монитора.	D) The monitor’s diagonal.
+980494e7	Проверить результаты	Check results
+ac19d64c	📚 Использованная научная и методологическая литература (APA 7th Edition):	📚 Scholarly and methodological references used (APA 7th Edition):
+67255e11	<strong>White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C.</strong> (2023). <em>A prompt pattern catalog to enhance prompt engineering with ChatGPT</em>. arXiv preprint arXiv:2302.11382. ⟨3⟩https://arxiv.org/abs/2302.11382⟨/3⟩	<strong>White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C.</strong> (2023). <em>A prompt pattern catalog to enhance prompt engineering with ChatGPT</em>. arXiv preprint arXiv:2302.11382. ⟨3⟩https://arxiv.org/abs/2302.11382⟨/3⟩
+6ea537c4	<strong>Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y.</strong> (2022). <em>Large language models are zero-shot reasoners</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 22199-22213.	<strong>Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y.</strong> (2022). <em>Large language models are zero-shot reasoners</em>. Advances in Neural Information Processing Systems (NeurIPS 2022), 35, 22199-22213.
+6f71852a	=	=
+b1e34f62	=	=
+9d72cf44	=	=

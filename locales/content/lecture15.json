@@ -1,0 +1,1334 @@
+[
+ {
+  "k": "0588593d",
+  "s": "15-ma’ruza: Yadro fizikasi, Capstone yakuniy loyiha va 7 AI pipeline",
+  "ru": "Лекция 15: Ядерная физика, итоговый проект Capstone и 7 AI-конвейер",
+  "en": "Lecture 15: Nuclear Physics, the Capstone Project and the 7-Tool AI Pipeline"
+ },
+ {
+  "k": "5a3507d7",
+  "s": "Radioaktiv yemirilish qonuni ($N(t)=N_0 e^{-\\lambda t}$), Uran-235 zanjirli yadro bo‘linishi (fission: $E=\\Delta mc^2 \\approx 200\\text{ MeV}$) va termoyadroviy sintez (fusion: $^{2}\\text{H}+^{3}\\text{H}\\rightarrow^{4}\\text{He}+n+17.6\\text{ MeV}$) jarayonlarini modellashtirish hamda talabaning mustaqil tanlagan fizik mavzusi bo‘yicha to‘liq <strong>7 ta AI vosita</strong> (MagicSchool → PhET/Vascak → Claude → Google Antigravity → ElevenLabs/Muxlisa → Otter.ai → Undetectable AI) yordamida yakuniy mustaqil loyihani (Capstone) yaratish va himoya qilish metodologiyasi.",
+  "ru": "Моделирование закона радиоактивного распада ($N(t)=N_0 e^{-\\lambda t}$), цепного деления урана-235 (fission: $E=\\Delta mc^2 \\approx 200\\text{ MeV}$) и термоядерного синтеза (fusion: $^{2}\\text{H}+^{3}\\text{H}\\rightarrow^{4}\\text{He}+n+17.6\\text{ MeV}$), а также методология создания и защиты итогового самостоятельного проекта (Capstone) по выбранной студентом физической теме с помощью полного набора из <strong>7 ИИ-инструментов</strong> (MagicSchool → PhET/Vascak → Claude → Google Antigravity → ElevenLabs/Muxlisa → Otter.ai → Undetectable AI).",
+  "en": "Modelling the radioactive decay law ($N(t)=N_0 e^{-\\lambda t}$), uranium-235 chain fission ($E=\\Delta mc^2 \\approx 200\\text{ MeV}$) and thermonuclear fusion ($^{2}\\text{H}+^{3}\\text{H}\\rightarrow^{4}\\text{He}+n+17.6\\text{ MeV}$), plus the methodology for building and defending a final independent project (Capstone) on a physics topic of the student’s choice with a complete set of <strong>7 AI tools</strong> (MagicSchool → PhET/Vascak → Claude → Google Antigravity → ElevenLabs/Muxlisa → Otter.ai → Undetectable AI)."
+ },
+ {
+  "k": "2ead2bb8",
+  "s": "📋 15-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:",
+  "ru": "📋 План лекции 15 и полный AI-конвейер:",
+  "en": "📋 Lecture 15 plan and the complete AI pipeline:"
+ },
+ {
+  "k": "4fa15e51",
+  "s": "<strong style=\"color: var(--accent-amber);\">1. AI diagnostika va reja:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: ZPD va Blum taksonomiyasi asosida 3 klasterli individual yadro fizikasi va Capstone rejasi.</span>",
+  "ru": "<strong style=\"color: var(--accent-amber);\">1. ИИ-диагностика и план:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: индивидуальный план по ядерной физике и Capstone из 3 кластеров на основе ЗБР и таксономии Блума.</span>",
+  "en": "<strong style=\"color: var(--accent-amber);\">1. AI diagnostics and plan:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">MagicSchool AI: an individual 3-cluster nuclear physics and Capstone plan based on ZPD and Bloom’s taxonomy.</span>"
+ },
+ {
+  "k": "4539089c",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Teskari muhandislik (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">PhET Nuclear Fission, Radioactive Dating va Vascak.cz modellarini dekonstruksiya qilish.</span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Обратная разработка (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Деконструкция моделей PhET Nuclear Fission, Radioactive Dating и Vascak.cz.</span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Reverse engineering (PhET/Vascak):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Deconstructing the PhET Nuclear Fission and Radioactive Dating models and Vascak.cz.</span>"
+ },
+ {
+  "k": "6ecb5ea8",
+  "s": "<strong style=\"color: var(--accent-cyan);\">3. Simulyator kodi (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Monte-Karlo yemirilishi, neytron ko‘payish zanjiri ($k$), mass-defekt energiyasi va Tokamak plazmasi kodi.</span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">3. Код симулятора (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Распад методом Монте-Карло, цепь размножения нейтронов ($k$), энергия дефекта масс и код плазмы токамака.</span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">3. Simulator code (Claude):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Monte Carlo decay, the neutron multiplication chain ($k$), mass-defect energy and tokamak plasma code.</span>"
+ },
+ {
+  "k": "f384f30d",
+  "s": "<strong style=\"color: var(--accent-rose);\">4. Monitoring (Google Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Barion/lepton sonlari saqlanishi, energiya-massa dreyfi $|\\Delta E/E_0| &lt; 0.0001\\%$ va xavfsizlik auditi.</span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">4. Мониторинг (Google Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Сохранение барионного/лептонного чисел, дрейф энергии-массы $|\\Delta E/E_0| &lt; 0.0001\\%$ и аудит безопасности.</span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">4. Monitoring (Google Antigravity):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Baryon/lepton number conservation, energy–mass drift $|\\Delta E/E_0| &lt; 0.0001\\%$ and a safety audit.</span>"
+ },
+ {
+  "k": "e7a9fbcf",
+  "s": "<strong style=\"color: var(--accent-purple);\">5. Baholash rubrikalari (MagicSchool AI):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Capstone loyihani baholash uchun 5 ta mezonli 100 ballik shkala va himoya reglamenti.</span>",
+  "ru": "<strong style=\"color: var(--accent-purple);\">5. Рубрики оценивания (MagicSchool AI):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">100-балльная шкала по 5 критериям и регламент защиты для оценки проекта Capstone.</span>",
+  "en": "<strong style=\"color: var(--accent-purple);\">5. Assessment rubrics (MagicSchool AI):</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">A 100-point, 5-criterion scale and defence procedure for assessing the Capstone project.</span>"
+ },
+ {
+  "k": "8ef84e9c",
+  "s": "<strong style=\"color:#1C4E9E;\">6 va 7. Capstone, sandbox va manbalar:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Undetectable AI akademik halollik nazorati, dual-canvas sandbox va APA 7th manbalar.</span>",
+  "ru": "<strong style=\"color:#1C4E9E;\">6 и 7. Capstone, песочница и источники:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Контроль академической честности Undetectable AI, двухканвасная песочница и источники APA 7th.</span>",
+  "en": "<strong style=\"color:#1C4E9E;\">6 and 7. Capstone, sandbox and sources:</strong><br> <span style=\"font-size: 0.85rem; color: var(--text-secondary);\">Undetectable AI academic-integrity checks, a dual-canvas sandbox and APA 7th sources.</span>"
+ },
+ {
+  "k": "d04078af",
+  "s": "Oldingi bo‘limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "cfd2a30e",
+  "s": "Oldingi bo'limlar",
+  "ru": "Предыдущие разделы",
+  "en": "Previous sections"
+ },
+ {
+  "k": "dc66f609",
+  "s": "Keyingi bo‘limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "5ac35574",
+  "s": "Keyingi bo'limlar",
+  "ru": "Следующие разделы",
+  "en": "Next sections"
+ },
+ {
+  "k": "84947504",
+  "s": "1. Sun’iy intellekt uchun diagnostika va individual reja",
+  "ru": "1. Диагностика для искусственного интеллекта и индивидуальный план",
+  "en": "1. AI diagnostics and individual plan"
+ },
+ {
+  "k": "6151d661",
+  "s": "MagicSchool AI va Vygotsky ZPD",
+  "ru": "MagicSchool AI и ЗБР Выготского",
+  "en": "MagicSchool AI and Vygotsky’s ZPD"
+ },
+ {
+  "k": "0e67a941",
+  "s": "Yadro fizikasi mikrodunyosi ko‘zga ko‘rinmas kvant-yadro kuchlari ($10^{-15}\\text{ m}$), stoxastik radioaktiv yemirilish, zanjirli yadro bo‘linishi va yuqori energiyali termoyadroviy sintez jarayonlaridan iborat.",
+  "ru": "Микромир ядерной физики состоит из невидимых квантово-ядерных сил ($10^{-15}\\text{ m}$), стохастического радиоактивного распада, цепного деления ядер и высокоэнергетического термоядерного синтеза.",
+  "en": "The microworld of nuclear physics consists of invisible quantum nuclear forces ($10^{-15}\\text{ m}$), stochastic radioactive decay, chain nuclear fission and high-energy thermonuclear fusion."
+ },
+ {
+  "k": "1537b4ce",
+  "s": "MagicSchool AI",
+  "ru": "MagicSchool AI",
+  "en": "MagicSchool AI"
+ },
+ {
+  "k": "8648538b",
+  "s": "yordamida",
+  "ru": "с помощью",
+  "en": "with"
+ },
+ {
+  "k": "0fced5ac",
+  "s": "asosida talabalar 3 ta kognitiv klasterga ajratilib, shaxsiylashtirilgan o‘quv trayektoriyasi shakllantiriladi:",
+  "ru": "на основе студенты распределяются по 3 когнитивным кластерам и формируется персонализированная учебная траектория:",
+  "en": "based on, students are sorted into 3 cognitive clusters and a personalised learning pathway is built:"
+ },
+ {
+  "k": "18839294",
+  "s": "3 Kognitiv klaster bo‘yicha individual yadro fizikasi va Capstone trayektoriyasi:",
+  "ru": "Индивидуальная траектория по ядерной физике и Capstone по 3 когнитивным кластерам:",
+  "en": "Individual nuclear physics and Capstone pathway across 3 cognitive clusters:"
+ },
+ {
+  "k": "6963f370",
+  "s": "Radioaktiv yemirilish qonuni ($N(t) = N_0 2^{-t/T_{1/2}}$), $\\alpha, \\beta, \\gamma$ nurlanish turlari va yadro bog‘lanish energiyasi tushunchasini o‘zlashtiruvchi daraja.",
+  "ru": "Уровень освоения закона радиоактивного распада ($N(t) = N_0 2^{-t/T_{1/2}}$), видов излучения $\\alpha, \\beta, \\gamma$ и понятия энергии связи ядра.",
+  "en": "The level that masters the radioactive decay law ($N(t) = N_0 2^{-t/T_{1/2}}$), the $\\alpha, \\beta, \\gamma$ types of radiation and the concept of nuclear binding energy."
+ },
+ {
+  "k": "908954e7",
+  "s": "PhET Radioactive Dating Game orqali stoxastik yemirilish egri chiziqlarini ko‘rish va hisoblash.",
+  "ru": "Наблюдение и расчёт стохастических кривых распада через PhET Radioactive Dating Game.",
+  "en": "Viewing and calculating stochastic decay curves with the PhET Radioactive Dating Game."
+ },
+ {
+  "k": "8f03c8e3",
+  "s": "Uran-235 zanjirli bo‘linishi ($^{235}\\text{U} + n \\rightarrow \\text{Ba} + \\text{Kr} + 3n + 200\\text{ MeV}$), ko‘payish koeffitsiyenti $k$ va reaktor boshqaruvi.",
+  "ru": "Цепное деление урана-235 ($^{235}\\text{U} + n \\rightarrow \\text{Ba} + \\text{Kr} + 3n + 200\\text{ MeV}$), коэффициент размножения $k$ и управление реактором.",
+  "en": "Uranium-235 chain fission ($^{235}\\text{U} + n \\rightarrow \\text{Ba} + \\text{Kr} + 3n + 200\\text{ MeV}$), the multiplication factor $k$ and reactor control."
+ },
+ {
+  "k": "918b9caa",
+  "s": "Claude orqali neytronlar kinetikasi va mass-defekt energiyasini hisoblovchi kod yaratish.",
+  "ru": "Создание через Claude кода, рассчитывающего кинетику нейтронов и энергию дефекта масс.",
+  "en": "Using Claude to write code that computes neutron kinetics and mass-defect energy."
+ },
+ {
+  "k": "6e9ed8eb",
+  "s": "Klaster C: tadqiqotchi / Capstone",
+  "ru": "Кластер C: исследователь / Capstone",
+  "en": "Cluster C: researcher / Capstone"
+ },
+ {
+  "k": "2c0e067c",
+  "s": "Termoyadroviy sintez (D-T Tokamak plazmasi), mustaqil tanlangan murakkab fizik jarayonni noldan simulyatsiya qilish va uni to‘liq ilmiy himoya qilish.",
+  "ru": "Термоядерный синтез (плазма токамака D-T), симуляция с нуля самостоятельно выбранного сложного физического процесса и его полная научная защита.",
+  "en": "Thermonuclear fusion (D-T tokamak plasma), simulating an independently chosen complex physical process from scratch and defending it scientifically in full."
+ },
+ {
+  "k": "92e5d1de",
+  "s": "Barcha 7 ta AI vositani yaxlit pipeline konveyeriga birlashtirish va Undetectable AI bilan hisobot originalligini kafolatlash.",
+  "ru": "Объединение всех 7 ИИ-инструментов в целостный конвейер и гарантия оригинальности отчёта с Undetectable AI.",
+  "en": "Combining all 7 AI tools into an integrated pipeline and guaranteeing the report’s originality with Undetectable AI."
+ },
+ {
+  "k": "a2939ccd",
+  "s": "Krane, K. S. (1988).",
+  "ru": "Krane, K. S. (1988).",
+  "en": "Krane, K. S. (1988)."
+ },
+ {
+  "k": "f9e704ec",
+  "s": "Introductory Nuclear Physics",
+  "ru": "Introductory Nuclear Physics",
+  "en": "Introductory Nuclear Physics"
+ },
+ {
+  "k": "eaa18a4c",
+  "s": ". John Wiley va Sons.",
+  "ru": ". John Wiley & Sons.",
+  "en": ". John Wiley & Sons."
+ },
+ {
+  "k": "58d8abb6",
+  "s": "Yadro fizikasining asosiy universitet darsligi: radioaktiv yemirilish qonuni (6-bob), $\\alpha$-, $\\beta$- va $\\gamma$-yemirilish (8–10-boblar), yadro bo‘linishi (13-bob) va termoyadroviy sintez (14-bob). Ushbu bo‘limdagi klaster trayektoriyalarining fizik mazmuni shu darslikka tayanadi.",
+  "ru": "Основной университетский учебник ядерной физики: закон радиоактивного распада (гл. 6), $\\alpha$-, $\\beta$- и $\\gamma$-распад (гл. 8–10), деление ядер (гл. 13) и термоядерный синтез (гл. 14). Физическое содержание траекторий кластеров в этом разделе опирается на этот учебник.",
+  "en": "The core university nuclear physics textbook: the radioactive decay law (ch. 6), $\\alpha$-, $\\beta$- and $\\gamma$-decay (ch. 8–10), nuclear fission (ch. 13) and thermonuclear fusion (ch. 14). The physics in this section’s cluster pathways is based on this textbook."
+ },
+ {
+  "k": "ee8c24b6",
+  "s": "2. Teskari muhandislik tahlili: PhET va Vascak.cz",
+  "ru": "2. Анализ обратной разработки: PhET и Vascak.cz",
+  "en": "2. Reverse-engineering analysis: PhET and Vascak.cz"
+ },
+ {
+  "k": "949ae4d2",
+  "s": "Reverse Engineering va nuclear model deconstruction",
+  "ru": "Обратная разработка и деконструкция ядерных моделей",
+  "en": "Reverse engineering and nuclear model deconstruction"
+ },
+ {
+  "k": "b64cd105",
+  "s": "Yadro fizikasi modellarini yaratishda xalqaro e’tirof etilgan laboratoriyalar (<strong>PhET Interactive Simulations</strong> — <em>Nuclear Fission</em>, <em>Radioactive Dating Game</em>, <em>Alpha Decay</em> hamda <strong>Vascak.cz</strong> — <em>Radioactive Decay</em>, <em>Nuclear Reactor</em>) teskari muhandislik orqali dekonstruksiya qilinadi:",
+  "ru": "При создании моделей ядерной физики методом обратной разработки деконструируются международно признанные лаборатории (<strong>PhET Interactive Simulations</strong> — <em>Nuclear Fission</em>, <em>Radioactive Dating Game</em>, <em>Alpha Decay</em> и <strong>Vascak.cz</strong> — <em>Radioactive Decay</em>, <em>Nuclear Reactor</em>):",
+  "en": "To build nuclear physics models, internationally recognised labs (<strong>PhET Interactive Simulations</strong> — <em>Nuclear Fission</em>, <em>Radioactive Dating Game</em>, <em>Alpha Decay</em> — and <strong>Vascak.cz</strong> — <em>Radioactive Decay</em>, <em>Nuclear Reactor</em>) are deconstructed through reverse engineering:"
+ },
+ {
+  "k": "a3d3f988",
+  "s": "1. PhET \"Nuclear Fission\"",
+  "ru": "1. PhET \"Nuclear Fission\"",
+  "en": "1. PhET \"Nuclear Fission\""
+ },
+ {
+  "k": "52b521e7",
+  "s": "• <strong>Bitta yadro bo‘linishi:</strong> $^{235}_{92}\\text{U} + ^{1}_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3 ^{1}_0n + 200\\text{ MeV}$.<br> • <strong>Zanjirli reaksiya:</strong> Neytronlarning geometrik ko‘payishi $n(t) = n_0 k^{t/\\tau}$ va boshqaruv sterjenlari dinamikasi.",
+  "ru": "• <strong>Деление одного ядра:</strong> $^{235}_{92}\\text{U} + ^{1}_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3 ^{1}_0n + 200\\text{ MeV}$.<br> • <strong>Цепная реакция:</strong> геометрическое размножение нейтронов $n(t) = n_0 k^{t/\\tau}$ и динамика управляющих стержней.",
+  "en": "• <strong>Fission of a single nucleus:</strong> $^{235}_{92}\\text{U} + ^{1}_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3 ^{1}_0n + 200\\text{ MeV}$.<br> • <strong>Chain reaction:</strong> geometric neutron multiplication $n(t) = n_0 k^{t/\\tau}$ and control-rod dynamics."
+ },
+ {
+  "k": "d76a17ee",
+  "s": "2. PhET \"Radioactive Dating\"",
+  "ru": "2. PhET \"Radioactive Dating\"",
+  "en": "2. PhET \"Radioactive Dating\""
+ },
+ {
+  "k": "32123ec4",
+  "s": "• <strong>Stoxastik yemirilish:</strong> Har bir yadro uchun $\\Delta t$ vaqt oralig‘ida yemirilish ehtimolligi $P = 1 - e^{-\\lambda \\Delta t}$.<br> • <strong>Izotopik tahlil:</strong> Uglerod-14 ($T_{1/2} \\approx 5730$ yil) orqali arxeologik, Uran-238 ($T_{1/2} \\approx 4.47 \\cdot 10^9$ yil) orqali geologik yoshni hisoblash.",
+  "ru": "• <strong>Стохастический распад:</strong> вероятность распада каждого ядра за интервал времени $\\Delta t$ равна $P = 1 - e^{-\\lambda \\Delta t}$.<br> • <strong>Изотопный анализ:</strong> расчёт археологического возраста по углероду-14 ($T_{1/2} \\approx 5730$ лет) и геологического — по урану-238 ($T_{1/2} \\approx 4.47 \\cdot 10^9$ лет).",
+  "en": "• <strong>Stochastic decay:</strong> the probability of each nucleus decaying in a time interval $\\Delta t$ is $P = 1 - e^{-\\lambda \\Delta t}$.<br> • <strong>Isotopic analysis:</strong> computing archaeological ages with carbon-14 ($T_{1/2} \\approx 5730$ years) and geological ages with uranium-238 ($T_{1/2} \\approx 4.47 \\cdot 10^9$ years)."
+ },
+ {
+  "k": "e30f83b6",
+  "s": "3. Vascak.cz \"Nuclear Reactor\"",
+  "ru": "3. Vascak.cz \"Nuclear Reactor\"",
+  "en": "3. Vascak.cz \"Nuclear Reactor\""
+ },
+ {
+  "k": "02b9fe3d",
+  "s": "• <strong>Reaktor termogidravlikasi:</strong> TVEL issiqlik ajratishi va sovutish konturi issiqlik balansi: $Q = \\dot{m} c_p \\Delta T$.<br> • <strong>Kritiklik holati:</strong> $k = 1.000$ kritik, $k &gt; 1$ o‘ta kritik, $k &lt; 1$ subkritik rejimlar.",
+  "ru": "• <strong>Теплогидравлика реактора:</strong> тепловыделение ТВЭЛ и тепловой баланс контура охлаждения: $Q = \\dot{m} c_p \\Delta T$.<br> • <strong>Критичность:</strong> режимы $k = 1.000$ — критический, $k &gt; 1$ — надкритический, $k &lt; 1$ — подкритический.",
+  "en": "• <strong>Reactor thermal hydraulics:</strong> fuel-rod heat output and the cooling-loop heat balance: $Q = \\dot{m} c_p \\Delta T$.<br> • <strong>Criticality:</strong> $k = 1.000$ critical, $k &gt; 1$ supercritical and $k &lt; 1$ subcritical regimes."
+ },
+ {
+  "k": "4357b7c7",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Teskari Muhandislik Asosi (2-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы обратной разработки (раздел 2):",
+  "en": "🌐 WWW scholarly sources and reverse-engineering basis (Section 2):"
+ },
+ {
+  "k": "0f40db2e",
+  "s": "Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).",
+  "ru": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).",
+  "en": "Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008)."
+ },
+ {
+  "k": "acacd01d",
+  "s": "PhET: Simulations That Enhance Learning",
+  "ru": "PhET: Simulations That Enhance Learning",
+  "en": "PhET: Simulations That Enhance Learning"
+ },
+ {
+  "k": "20cc8bc5",
+  "s": ". Science, 322(5902), 682–683.",
+  "ru": ". Science, 322(5902), 682–683.",
+  "en": ". Science, 322(5902), 682–683."
+ },
+ {
+  "k": "dbf0609b",
+  "s": "https://doi.org/10.1126/science.1161948",
+  "ru": "https://doi.org/10.1126/science.1161948",
+  "en": "https://doi.org/10.1126/science.1161948"
+ },
+ {
+  "k": "956cbfad",
+  "s": "PhET simulyatsiyalarini loyihalash tamoyillari: ko‘zga ko‘rinmas jarayonlarni vizuallashtirish, darhol qayta aloqa beruvchi interaktiv boshqaruv va talabaning mustaqil tadqiqotini rag‘batlantirish orqali konseptual tushunishni chuqurlashtirish.",
+  "ru": "Принципы проектирования симуляций PhET: углубление концептуального понимания через визуализацию невидимых процессов, интерактивное управление с мгновенной обратной связью и стимулирование самостоятельного исследования студента.",
+  "en": "PhET simulation design principles: deepening conceptual understanding by visualising invisible processes, interactive controls with immediate feedback and encouraging students’ own inquiry."
+ },
+ {
+  "k": "4978c942",
+  "s": "Eslatma:",
+  "ru": "Примечание:",
+  "en": "Note:"
+ },
+ {
+  "k": "3dbda075",
+  "s": "PhET’ning",
+  "ru": "симуляции PhET",
+  "en": "PhET’s"
+ },
+ {
+  "k": "a5c23346",
+  "s": "Nuclear Fission",
+  "ru": "Nuclear Fission",
+  "en": "Nuclear Fission"
+ },
+ {
+  "k": "65bd4ff1",
+  "s": "Radioactive Dating Game",
+  "ru": "Radioactive Dating Game",
+  "en": "Radioactive Dating Game"
+ },
+ {
+  "k": "4449c878",
+  "s": "va",
+  "ru": "и",
+  "en": "and"
+ },
+ {
+  "k": "08b885d1",
+  "s": "Alpha Decay",
+  "ru": "Alpha Decay",
+  "en": "Alpha Decay"
+ },
+ {
+  "k": "631cd3ec",
+  "s": "simulyatsiyalari eski Java versiyada mavjud; brauzerda (HTML5) ishlaydigan eng yaqin muqobil —",
+  "ru": "существуют в старой версии на Java; ближайшая альтернатива, работающая в браузере (HTML5), —",
+  "en": "simulations exist only in the old Java version; the closest alternative that runs in the browser (HTML5) is"
+ },
+ {
+  "k": "83f4ae31",
+  "s": "Build a Nucleus",
+  "ru": "Build a Nucleus",
+  "en": "Build a Nucleus"
+ },
+ {
+  "k": "30f37a2f",
+  "s": "(7-bo‘limdagi jonli laboratoriya).",
+  "ru": "(живая лаборатория в разделе 7).",
+  "en": "(the live lab in Section 7)."
+ },
+ {
+  "k": "1b1420bb",
+  "s": "3. To‘liq simulyator kodi generatsiyasi: Claude",
+  "ru": "3. Генерация полного кода симулятора: Claude",
+  "en": "3. Generating complete simulator code: Claude"
+ },
+ {
+  "k": "218a21d4",
+  "s": "Full JavaScript Nuclear Engine va Monte Carlo solvers",
+  "ru": "Полный ядерный движок на JavaScript и решатели Монте-Карло",
+  "en": "A full JavaScript nuclear engine and Monte Carlo solvers"
+ },
+ {
+  "k": "e9e48c5d",
+  "s": "Yadro fizikasi qonuniyatlarini raqamli modellashtirish uchun <strong>Claude</strong> yordamida sof JavaScript va HTML5 Canvas dvigateli kodi generatsiya qilinadi:",
+  "ru": "Для цифрового моделирования законов ядерной физики с помощью <strong>Claude</strong> генерируется код движка на чистом JavaScript и HTML5 Canvas:",
+  "en": "To model the laws of nuclear physics digitally, <strong>Claude</strong> generates engine code in pure JavaScript and HTML5 Canvas:"
+ },
+ {
+  "k": "232a391c",
+  "s": "📐 Yadro fizikasining fundamental formulalari:",
+  "ru": "📐 Фундаментальные формулы ядерной физики:",
+  "en": "📐 Fundamental formulas of nuclear physics:"
+ },
+ {
+  "k": "9bf80ada",
+  "s": "<strong>1. Radioaktiv yemirilish qonuni:</strong><br> $$N(t) = N_0 e^{-\\lambda t} = N_0 2^{-t/T_{1/2}}, \\quad A(t) = \\lambda N(t)$$ <strong>2. Mass-defekt va bog‘lanish energiyasi:</strong><br> $$\\Delta m = [Z m_p + (A-Z)m_n] - M_{\\text{yadro}}, \\quad E_{\\text{bog‘}} = \\Delta m c^2$$",
+  "ru": "<strong>1. Закон радиоактивного распада:</strong><br> $$N(t) = N_0 e^{-\\lambda t} = N_0 2^{-t/T_{1/2}}, \\quad A(t) = \\lambda N(t)$$ <strong>2. Дефект масс и энергия связи:</strong><br> $$\\Delta m = [Z m_p + (A-Z)m_n] - M_{\\text{yadro}}, \\quad E_{\\text{bog‘}} = \\Delta m c^2$$",
+  "en": "<strong>1. The radioactive decay law:</strong><br> $$N(t) = N_0 e^{-\\lambda t} = N_0 2^{-t/T_{1/2}}, \\quad A(t) = \\lambda N(t)$$ <strong>2. Mass defect and binding energy:</strong><br> $$\\Delta m = [Z m_p + (A-Z)m_n] - M_{\\text{yadro}}, \\quad E_{\\text{bog‘}} = \\Delta m c^2$$"
+ },
+ {
+  "k": "9d4270e2",
+  "s": "<strong>3. Uran-235 bo‘linish zanjirli reaksiyasi:</strong><br> $$^{235}_{92}\\text{U} + ^{1}_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3 ^{1}_0n + 200\\text{ MeV}$$ <strong>4. D-T termoyadroviy sintez:</strong><br> $$^{2}_{1}\\text{H} + ^{3}_{1}\\text{H} \\rightarrow ^{4}_{2}\\text{He} + ^{1}_{0}n + 17.6\\text{ MeV}$$",
+  "ru": "<strong>3. Цепная реакция деления урана-235:</strong><br> $$^{235}_{92}\\text{U} + ^{1}_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3 ^{1}_0n + 200\\text{ MeV}$$ <strong>4. Термоядерный синтез D-T:</strong><br> $$^{2}_{1}\\text{H} + ^{3}_{1}\\text{H} \\rightarrow ^{4}_{2}\\text{He} + ^{1}_{0}n + 17.6\\text{ MeV}$$",
+  "en": "<strong>3. The uranium-235 fission chain reaction:</strong><br> $$^{235}_{92}\\text{U} + ^{1}_0n \\rightarrow ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3 ^{1}_0n + 200\\text{ MeV}$$ <strong>4. D-T thermonuclear fusion:</strong><br> $$^{2}_{1}\\text{H} + ^{3}_{1}\\text{H} \\rightarrow ^{4}_{2}\\text{He} + ^{1}_{0}n + 17.6\\text{ MeV}$$"
+ },
+ {
+  "k": "b5928ce0",
+  "s": "<span>Kod</span>",
+  "ru": "<span>Код</span>",
+  "en": "<span>Code</span>"
+ },
+ {
+  "k": "7df8712f",
+  "s": "<code>// ============================================================================ // 15-ma’ruza: Claude Yadro Fizikasi va Zanjirli Reaksiya Dvigateli // ============================================================================ // 1. Stoxastik Monte-Karlo Radioaktiv Yemirilish Integratori function simulateRadioactiveDecay(nuclei, lambda, dt) { const prob = 1 - Math.exp(-lambda * dt); let decayedCount = 0; for (let n of nuclei) { if (n.state === 'active' &amp;&amp; Math.random() &lt; prob) { n.state = 'decayed'; decayedCount++; } } return { decayedCount, remaining: nuclei.filter(n =&gt; n.state === 'active').length }; } // 2. Uran-235 Zanjirli Bo‘linishi va Neytronlar Dinamikasi function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) { let energyYield = 0; for (let i = neutrons.length - 1; i &gt;= 0; i--) { const n = neutrons[i]; n.x += n.vx * dt; n.y += n.vy * dt; n.life -= dt; // Boshqaruv sterjeni yutishi (Kadmiy / Bor) if (Math.abs(n.x - 290) &lt; 16 &amp;&amp; n.y &lt; 30 + 220 * controlRodDepth) { n.life = 0; } // Uran-235 yadrosi bilan to'qnashuv for (let nucl of nuclei) { if (nucl.state === 'stable' &amp;&amp; Math.hypot(n.x - nucl.x, n.y - nucl.y) &lt; nucl.r + 4) { nucl.state = 'fissioned'; energyYield += 200; // MeV // 3 ta yangi tezkor neytron ajralishi for (let k = 0; k &lt; 3; k++) { const a = Math.random() * Math.PI * 2; neutrons.push({ x: nucl.x, y: nucl.y, vx: Math.cos(a)*180, vy: Math.sin(a)*180, life: 6.0 }); } n.life = 0; break; } } if (n.life &lt;= 0) neutrons.splice(i, 1); } return { energyYield, neutronCount: neutrons.length }; }</code>",
+  "ru": "<code>// ============================================================================ // Лекция 15: движок ядерной физики и цепной реакции Claude // ============================================================================ // 1. Стохастический интегратор радиоактивного распада методом Монте-Карло function simulateRadioactiveDecay(nuclei, lambda, dt) { const prob = 1 - Math.exp(-lambda * dt); let decayedCount = 0; for (let n of nuclei) { if (n.state === 'active' &amp;&amp; Math.random() &lt; prob) { n.state = 'decayed'; decayedCount++; } } return { decayedCount, remaining: nuclei.filter(n =&gt; n.state === 'active').length }; } // 2. Цепное деление урана-235 и динамика нейтронов function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) { let energyYield = 0; for (let i = neutrons.length - 1; i &gt;= 0; i--) { const n = neutrons[i]; n.x += n.vx * dt; n.y += n.vy * dt; n.life -= dt; // Поглощение управляющим стержнем (кадмий / бор) if (Math.abs(n.x - 290) &lt; 16 &amp;&amp; n.y &lt; 30 + 220 * controlRodDepth) { n.life = 0; } // Столкновение с ядром урана-235 for (let nucl of nuclei) { if (nucl.state === 'stable' &amp;&amp; Math.hypot(n.x - nucl.x, n.y - nucl.y) &lt; nucl.r + 4) { nucl.state = 'fissioned'; energyYield += 200; // МэВ // Выделение 3 новых быстрых нейтронов for (let k = 0; k &lt; 3; k++) { const a = Math.random() * Math.PI * 2; neutrons.push({ x: nucl.x, y: nucl.y, vx: Math.cos(a)*180, vy: Math.sin(a)*180, life: 6.0 }); } n.life = 0; break; } } if (n.life &lt;= 0) neutrons.splice(i, 1); } return { energyYield, neutronCount: neutrons.length }; }</code>",
+  "en": "<code>// ============================================================================ // Lecture 15: Claude nuclear physics and chain reaction engine // ============================================================================ // 1. Stochastic Monte Carlo radioactive decay integrator function simulateRadioactiveDecay(nuclei, lambda, dt) { const prob = 1 - Math.exp(-lambda * dt); let decayedCount = 0; for (let n of nuclei) { if (n.state === 'active' &amp;&amp; Math.random() &lt; prob) { n.state = 'decayed'; decayedCount++; } } return { decayedCount, remaining: nuclei.filter(n =&gt; n.state === 'active').length }; } // 2. Uranium-235 chain fission and neutron dynamics function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) { let energyYield = 0; for (let i = neutrons.length - 1; i &gt;= 0; i--) { const n = neutrons[i]; n.x += n.vx * dt; n.y += n.vy * dt; n.life -= dt; // Absorption by a control rod (cadmium / boron) if (Math.abs(n.x - 290) &lt; 16 &amp;&amp; n.y &lt; 30 + 220 * controlRodDepth) { n.life = 0; } // Collision with a uranium-235 nucleus for (let nucl of nuclei) { if (nucl.state === 'stable' &amp;&amp; Math.hypot(n.x - nucl.x, n.y - nucl.y) &lt; nucl.r + 4) { nucl.state = 'fissioned'; energyYield += 200; // MeV // Release 3 new fast neutrons for (let k = 0; k &lt; 3; k++) { const a = Math.random() * Math.PI * 2; neutrons.push({ x: nucl.x, y: nucl.y, vx: Math.cos(a)*180, vy: Math.sin(a)*180, life: 6.0 }); } n.life = 0; break; } } if (n.life &lt;= 0) neutrons.splice(i, 1); } return { energyYield, neutronCount: neutrons.length }; }</code>"
+ },
+ {
+  "k": "9489e94b",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Yadroviy Modellashtirish Asosi (3-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы ядерного моделирования (раздел 3):",
+  "en": "🌐 WWW scholarly sources and nuclear modelling basis (Section 3):"
+ },
+ {
+  "k": "f12ad584",
+  "s": "Metropolis, N., va Ulam, S. (1949).",
+  "ru": "Metropolis, N., & Ulam, S. (1949).",
+  "en": "Metropolis, N., & Ulam, S. (1949)."
+ },
+ {
+  "k": "5499dc37",
+  "s": "The Monte Carlo Method",
+  "ru": "The Monte Carlo Method",
+  "en": "The Monte Carlo Method"
+ },
+ {
+  "k": "ef083fd6",
+  "s": ". Journal of the American Statistical Association, 44(247), 335–341.",
+  "ru": ". Journal of the American Statistical Association, 44(247), 335–341.",
+  "en": ". Journal of the American Statistical Association, 44(247), 335–341."
+ },
+ {
+  "k": "d6feaa27",
+  "s": "https://doi.org/10.1080/01621459.1949.10483310",
+  "ru": "https://doi.org/10.1080/01621459.1949.10483310",
+  "en": "https://doi.org/10.1080/01621459.1949.10483310"
+ },
+ {
+  "k": "44723a2f",
+  "s": "Monte-Karlo usulining asos soluvchi maqolasi: tasodifiy sonlar yordamida neytronlar ko‘payishi kabi stoxastik jarayonlarni statistik modellashtirish. Yuqoridagi",
+  "ru": "Основополагающая статья метода Монте-Карло: статистическое моделирование стохастических процессов, таких как размножение нейтронов, с помощью случайных чисел. Приведённые выше функции",
+  "en": "The founding paper of the Monte Carlo method: statistical modelling of stochastic processes such as neutron multiplication with random numbers. The functions"
+ },
+ {
+  "k": "75c2438a",
+  "s": "simulateRadioactiveDecay",
+  "ru": "simulateRadioactiveDecay",
+  "en": "simulateRadioactiveDecay"
+ },
+ {
+  "k": "b5cc72cf",
+  "s": "updateFissionChainReaction",
+  "ru": "updateFissionChainReaction",
+  "en": "updateFissionChainReaction"
+ },
+ {
+  "k": "b67ada4e",
+  "s": "funksiyalari aynan shu yondashuvga asoslangan.",
+  "ru": "основаны именно на этом подходе.",
+  "en": "above are based on exactly this approach."
+ },
+ {
+  "k": "d95b8943",
+  "s": "4. Jarayon monitoringi: Google Antigravity",
+  "ru": "4. Мониторинг процесса: Google Antigravity",
+  "en": "4. Process monitoring: Google Antigravity"
+ },
+ {
+  "k": "0ad5797a",
+  "s": "Conservation laws, baryon number va energy-mass audit",
+  "ru": "Законы сохранения, барионное число и аудит энергии-массы",
+  "en": "Conservation laws, baryon number and an energy–mass audit"
+ },
+ {
+  "k": "c1bcf8cf",
+  "s": "Yadro reaksiyalari modellashtirilganda hisoblash diskretizatsiyasi hisobiga barion va lepton zaryadlari buzilishi, mass-defekt energiyasida dreyf paydo bo‘lishi mumkin. <strong>Google Antigravity</strong> monitoring agenti simulyatsiya aniqligini nazorat qiladi:",
+  "ru": "При моделировании ядерных реакций из-за вычислительной дискретизации могут нарушаться барионный и лептонный заряды и возникать дрейф энергии дефекта масс. Агент мониторинга <strong>Google Antigravity</strong> контролирует точность симуляции:",
+  "en": "When modelling nuclear reactions, numerical discretisation can break baryon and lepton charges and cause drift in mass-defect energy. The <strong>Google Antigravity</strong> monitoring agent checks the simulation’s accuracy:"
+ },
+ {
+  "k": "a74eaced",
+  "s": "<strong style=\"color: var(--accent-cyan);\">1. Barion va lepton balansi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Reaksiyadan oldingi va keyingi nuklonlar soni $\\sum A_{\\text{bosh}} = \\sum A_{\\text{oxir}} = 236$ aniqligi 100% saqlanadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-cyan);\">1. Баланс барионов и лептонов:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Число нуклонов до и после реакции $\\sum A_{\\text{bosh}} = \\sum A_{\\text{oxir}} = 236$ сохраняется со 100% точностью. </span>",
+  "en": "<strong style=\"color: var(--accent-cyan);\">1. Baryon and lepton balance:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> The number of nucleons before and after the reaction $\\sum A_{\\text{bosh}} = \\sum A_{\\text{oxir}} = 236$ is conserved with 100% accuracy. </span>"
+ },
+ {
+  "k": "a2309249",
+  "s": "<strong style=\"color: var(--accent-emerald);\">2. Elektr zaryadi saqlanishi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Protonlar zaryadi balansi $\\sum Z_{\\text{bosh}} = \\sum Z_{\\text{oxir}} = 92$ qat’iy nazorat qilinadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-emerald);\">2. Сохранение электрического заряда:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Баланс заряда протонов $\\sum Z_{\\text{bosh}} = \\sum Z_{\\text{oxir}} = 92$ строго контролируется. </span>",
+  "en": "<strong style=\"color: var(--accent-emerald);\">2. Electric charge conservation:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> The proton charge balance $\\sum Z_{\\text{bosh}} = \\sum Z_{\\text{oxir}} = 92$ is strictly monitored. </span>"
+ },
+ {
+  "k": "9b0dc123",
+  "s": "<strong style=\"color: var(--accent-rose);\">3. Energiya-massa ekvivalentligi:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Ajralib chiqayotgan $Q = \\Delta m c^2$ energiyaning nazariy qiymatdan dreyfi $|\\Delta E / E_0| &lt; 0.0001\\%$ darajasida saqlanadi. </span>",
+  "ru": "<strong style=\"color: var(--accent-rose);\">3. Эквивалентность энергии и массы:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> Дрейф выделяемой энергии $Q = \\Delta m c^2$ от теоретического значения удерживается на уровне $|\\Delta E / E_0| &lt; 0.0001\\%$. </span>",
+  "en": "<strong style=\"color: var(--accent-rose);\">3. Energy–mass equivalence:</strong><br> <span style=\"font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;\"> The drift of the released $Q = \\Delta m c^2$ energy from its theoretical value is kept at the $|\\Delta E / E_0| &lt; 0.0001\\%$ level. </span>"
+ },
+ {
+  "k": "01463f81",
+  "s": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Nuclear Physics va Capstone Pipeline Telemetry...\n[AUDIT: BARYON-NUMBER] Initial A=236 (U-235+n) -&gt; Final A=141(Ba) + 92(Kr) + 3(n) = 236 -&gt; [CONSERVED 100%]\n[AUDIT: CHARGE-BALANCE] Initial Z=92 -&gt; Final Z=56(Ba) + 36(Kr) = 92 -&gt; [CONSERVED 100%]\n[ENERGY-AUDIT] Fission Mass Defect: Δm = 0.1860 u -&gt; Prompt Q = 173.3 MeV (+ fragment β/γ decays ≈ 200 MeV total) -&gt; [DRIFT 0.0000%]\n[CONTROL-ROD-CHECK] Rod Depth: 20% | Multiplication Factor k = 1.000 -&gt; [STEADY CRITICAL REGIME]\n[STATUS] ALL NUCLEAR DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.",
+  "ru": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Nuclear Physics va Capstone Pipeline Telemetry...\n[AUDIT: BARYON-NUMBER] Initial A=236 (U-235+n) -&gt; Final A=141(Ba) + 92(Kr) + 3(n) = 236 -&gt; [CONSERVED 100%]\n[AUDIT: CHARGE-BALANCE] Initial Z=92 -&gt; Final Z=56(Ba) + 36(Kr) = 92 -&gt; [CONSERVED 100%]\n[ENERGY-AUDIT] Fission Mass Defect: Δm = 0.1860 u -&gt; Prompt Q = 173.3 MeV (+ fragment β/γ decays ≈ 200 MeV total) -&gt; [DRIFT 0.0000%]\n[CONTROL-ROD-CHECK] Rod Depth: 20% | Multiplication Factor k = 1.000 -&gt; [STEADY CRITICAL REGIME]\n[STATUS] ALL NUCLEAR DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS.",
+  "en": "[ANTIGRAVITY-AGENT] &gt;&gt; Initializing Nuclear Physics va Capstone Pipeline Telemetry...\n[AUDIT: BARYON-NUMBER] Initial A=236 (U-235+n) -&gt; Final A=141(Ba) + 92(Kr) + 3(n) = 236 -&gt; [CONSERVED 100%]\n[AUDIT: CHARGE-BALANCE] Initial Z=92 -&gt; Final Z=56(Ba) + 36(Kr) = 92 -&gt; [CONSERVED 100%]\n[ENERGY-AUDIT] Fission Mass Defect: Δm = 0.1860 u -&gt; Prompt Q = 173.3 MeV (+ fragment β/γ decays ≈ 200 MeV total) -&gt; [DRIFT 0.0000%]\n[CONTROL-ROD-CHECK] Rod Depth: 20% | Multiplication Factor k = 1.000 -&gt; [STEADY CRITICAL REGIME]\n[STATUS] ALL NUCLEAR DIAGNOSTIC CHECKS PASSED WITH 0 DRIFT ERRORS."
+ },
+ {
+  "k": "a70b136e",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Loyiha Monitoringi Asosi (4-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы мониторинга проекта (раздел 4):",
+  "en": "🌐 WWW scholarly sources and project monitoring basis (Section 4):"
+ },
+ {
+  "k": "201b195d",
+  "s": "Halliday, D., Resnick, R., va Walker, J. (2018).",
+  "ru": "Halliday, D., Resnick, R., & Walker, J. (2018).",
+  "en": "Halliday, D., Resnick, R., & Walker, J. (2018)."
+ },
+ {
+  "k": "689090db",
+  "s": "Fundamentals of Physics",
+  "ru": "Fundamentals of Physics",
+  "en": "Fundamentals of Physics"
+ },
+ {
+  "k": "80fb9edd",
+  "s": "(11th ed.). Wiley.",
+  "ru": "(11th ed.). Wiley.",
+  "en": "(11th ed.). Wiley."
+ },
+ {
+  "k": "4ab5e245",
+  "s": "42-bob (",
+  "ru": "Гл. 42 (",
+  "en": "Ch. 42 ("
+ },
+ {
+  "k": "178c6b28",
+  "s": "Nuclear Physics",
+  "ru": "Nuclear Physics",
+  "en": "Nuclear Physics"
+ },
+ {
+  "k": "a4b8c420",
+  "s": ") va 43-bob (",
+  "ru": ") и гл. 43 (",
+  "en": ") and ch. 43 ("
+ },
+ {
+  "k": "7b1863c1",
+  "s": "Energy from the Nucleus",
+  "ru": "Energy from the Nucleus",
+  "en": "Energy from the Nucleus"
+ },
+ {
+  "k": "49c9b622",
+  "s": "): yadro reaksiyalarida massa soni $A$ va zaryad soni $Z$ saqlanishi, $Q = \\Delta m c^2$ energiya balansi hamda reaktorning ko‘payish koeffitsiyenti $k$ — telemetriya auditidagi tekshiruvlarning nazariy asosi.",
+  "ru": "): сохранение массового числа $A$ и зарядового числа $Z$ в ядерных реакциях, энергетический баланс $Q = \\Delta m c^2$ и коэффициент размножения реактора $k$ — теоретическая основа проверок в аудите телеметрии.",
+  "en": "): conservation of mass number $A$ and charge number $Z$ in nuclear reactions, the $Q = \\Delta m c^2$ energy balance and the reactor multiplication factor $k$ — the theoretical basis of the checks in the telemetry audit."
+ },
+ {
+  "k": "daf77075",
+  "s": "5. Baholash rubrikalari: MagicSchool AI",
+  "ru": "5. Рубрики оценивания: MagicSchool AI",
+  "en": "5. Assessment rubrics: MagicSchool AI"
+ },
+ {
+  "k": "2aa2ac3d",
+  "s": "100 ballik yakuniy loyiha (Capstone) baholash rubrikasi",
+  "ru": "100-балльная рубрика оценивания итогового проекта (Capstone)",
+  "en": "A 100-point rubric for assessing the final (Capstone) project"
+ },
+ {
+  "k": "7d976a48",
+  "s": "Yakuniy Mustaqil Loyiha (Capstone Project)ni xolis, shaffof va standartlashtirilgan tarzda baholash uchun <strong>MagicSchool AI</strong> yordamida 5 ta mezonli 100 ballik kompleks rubrika ishlab chiqildi:",
+  "ru": "Для объективной, прозрачной и стандартизированной оценки итогового самостоятельного проекта (Capstone Project) с помощью <strong>MagicSchool AI</strong> разработана комплексная 100-балльная рубрика по 5 критериям:",
+  "en": "A comprehensive 100-point rubric with 5 criteria was developed with <strong>MagicSchool AI</strong> for objective, transparent and standardised assessment of the final independent (Capstone) project:"
+ },
+ {
+  "k": "652ca873",
+  "s": "Baholash mezoni",
+  "ru": "Критерий оценивания",
+  "en": "Criterion"
+ },
+ {
+  "k": "2a6e35d2",
+  "s": "Maks. Ball",
+  "ru": "Макс. балл",
+  "en": "Max. points"
+ },
+ {
+  "k": "8a525944",
+  "s": "A’lo (86-100%)",
+  "ru": "Отлично (86–100%)",
+  "en": "Excellent (86–100%)"
+ },
+ {
+  "k": "0520aa05",
+  "s": "Yaxshi (71-85%)",
+  "ru": "Хорошо (71–85%)",
+  "en": "Good (71–85%)"
+ },
+ {
+  "k": "2b49a599",
+  "s": "Qoniqarli (55-70%)",
+  "ru": "Удовлетворительно (55–70%)",
+  "en": "Satisfactory (55–70%)"
+ },
+ {
+  "k": "34dee174",
+  "s": "1. Fizik Adekvatlik va Matematik Aniqlik",
+  "ru": "1. Физическая адекватность и математическая точность",
+  "en": "1. Physical adequacy and mathematical accuracy"
+ },
+ {
+  "k": "deaf1570",
+  "s": "Differensial tenglamalar, saqlanish qonunlari va mass-defekt formulalari xatosiz modellashtirilgan.",
+  "ru": "Дифференциальные уравнения, законы сохранения и формулы дефекта масс смоделированы без ошибок.",
+  "en": "Differential equations, conservation laws and mass-defect formulas are modelled without errors."
+ },
+ {
+  "k": "ca36e763",
+  "s": "Formulalarda kichik noaniqlik bor, lekin asosiy dinamika to‘g‘ri.",
+  "ru": "В формулах есть небольшие неточности, но основная динамика верна.",
+  "en": "There are minor inaccuracies in the formulas, but the main dynamics are correct."
+ },
+ {
+  "k": "2a752d48",
+  "s": "Statik formulalar kiritilgan, differensial hisob yo‘q.",
+  "ru": "Введены статические формулы, дифференциального исчисления нет.",
+  "en": "Static formulas are used; there is no differential calculus."
+ },
+ {
+  "k": "03aee94d",
+  "s": "2. Kod Arxitekturasi va Interaktivlik",
+  "ru": "2. Архитектура кода и интерактивность",
+  "en": "2. Code architecture and interactivity"
+ },
+ {
+  "k": "c2eac95e",
+  "s": "Modulli sof JavaScript kodi, 60 FPS, to‘liq interaktiv slayderlar va sichqoncha bilan boshqaruv.",
+  "ru": "Модульный код на чистом JavaScript, 60 FPS, полностью интерактивные ползунки и управление мышью.",
+  "en": "Modular pure JavaScript, 60 FPS, fully interactive sliders and mouse control."
+ },
+ {
+  "k": "8fbe9c23",
+  "s": "Kod barqaror ishlaydi, biroq ayrim boshqaruv tugmalarida kechikish bor.",
+  "ru": "Код работает стабильно, но у некоторых элементов управления есть задержка.",
+  "en": "The code runs stably, but some controls lag."
+ },
+ {
+  "k": "de9de973",
+  "s": "Slayderlar cheklangan, interaktivlik past.",
+  "ru": "Ползунки ограничены, интерактивность низкая.",
+  "en": "Sliders are limited and interactivity is low."
+ },
+ {
+  "k": "2c9ba7f9",
+  "s": "3. Multimodal Ovoz va Vizual Dizayn",
+  "ru": "3. Мультимодальный звук и визуальный дизайн",
+  "en": "3. Multimodal sound and visual design"
+ },
+ {
+  "k": "80e9c290",
+  "s": "Muxlisa AI / ElevenLabs audio-narratsiyasi, spektrogramma va qorong‘u rejimli zamonaviy UI.",
+  "ru": "Аудионаррация Muxlisa AI / ElevenLabs, спектрограмма и современный UI в тёмной теме.",
+  "en": "Muxlisa AI / ElevenLabs audio narration, a spectrogram and a modern dark-mode UI."
+ },
+ {
+  "k": "5725b9d1",
+  "s": "Ovoz mavjud, lekin animatsiya bilan to‘liq sinxronlashmagan.",
+  "ru": "Голос есть, но не полностью синхронизирован с анимацией.",
+  "en": "There is a voice, but it is not fully synchronised with the animation."
+ },
+ {
+  "k": "695552bd",
+  "s": "Faqat matnli izohlar bor, audio sintez yo‘q.",
+  "ru": "Только текстовые пояснения, аудиосинтеза нет.",
+  "en": "Text explanations only; no audio synthesis."
+ },
+ {
+  "k": "58896504",
+  "s": "4. Telemetriya va Saqlanish Qonunlari Auditi",
+  "ru": "4. Телеметрия и аудит законов сохранения",
+  "en": "4. Telemetry and conservation-law audit"
+ },
+ {
+  "k": "e45af065",
+  "s": "Google Antigravity monitoringi: barion soni, energiya dreyfi doimiy auditda.",
+  "ru": "Мониторинг Google Antigravity: барионное число и дрейф энергии под постоянным аудитом.",
+  "en": "Google Antigravity monitoring: baryon number and energy drift under continuous audit."
+ },
+ {
+  "k": "81a19040",
+  "s": "Telemetriya ko‘rsatkichlari bor, lekin saqlanish balansi to‘liq emas.",
+  "ru": "Показатели телеметрии есть, но баланс сохранения неполный.",
+  "en": "Telemetry readings exist, but the conservation balance is incomplete."
+ },
+ {
+  "k": "fc4e6655",
+  "s": "Telemetriya mavjud emas.",
+  "ru": "Телеметрии нет.",
+  "en": "No telemetry."
+ },
+ {
+  "k": "f4635e2f",
+  "s": "5. Ilmiy Himoya va Raqamli Portfolio",
+  "ru": "5. Научная защита и цифровое портфолио",
+  "en": "5. Scientific defence and digital portfolio"
+ },
+ {
+  "k": "0532a21f",
+  "s": "Otter.ai transkripsiyasi, to‘liq portfolio pasporti va Undetectable AI originallik sertifikati.",
+  "ru": "Транскрипция Otter.ai, полный паспорт портфолио и сертификат оригинальности Undetectable AI.",
+  "en": "An Otter.ai transcript, a complete portfolio passport and an Undetectable AI originality certificate."
+ },
+ {
+  "k": "43f46892",
+  "s": "Portfolio tayyorlangan, ammo ilmiy atamalar izohi yetarli emas.",
+  "ru": "Портфолио подготовлено, но пояснений научных терминов недостаточно.",
+  "en": "The portfolio is ready, but the scientific terms are not explained well enough."
+ },
+ {
+  "k": "9019ccc2",
+  "s": "Qisqa hisobot bilan cheklangan.",
+  "ru": "Ограничено кратким отчётом.",
+  "en": "Limited to a short report."
+ },
+ {
+  "k": "03bde4ee",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Baholash Rubrikasi Asosi (5-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы рубрики оценивания (раздел 5):",
+  "en": "🌐 WWW scholarly sources and assessment rubric basis (Section 5):"
+ },
+ {
+  "k": "bfea1954",
+  "s": "Black, P., va Wiliam, D. (2009).",
+  "ru": "Black, P., & Wiliam, D. (2009).",
+  "en": "Black, P., & Wiliam, D. (2009)."
+ },
+ {
+  "k": "2211e14e",
+  "s": "Developing the Theory of Formative Assessment",
+  "ru": "Developing the Theory of Formative Assessment",
+  "en": "Developing the Theory of Formative Assessment"
+ },
+ {
+  "k": "0578cfdb",
+  "s": ". Educational Assessment, Evaluation and Accountability, 21(1), 5–31.",
+  "ru": ". Educational Assessment, Evaluation and Accountability, 21(1), 5–31.",
+  "en": ". Educational Assessment, Evaluation and Accountability, 21(1), 5–31."
+ },
+ {
+  "k": "8d956244",
+  "s": "https://doi.org/10.1007/s11092-008-9068-5",
+  "ru": "https://doi.org/10.1007/s11092-008-9068-5",
+  "en": "https://doi.org/10.1007/s11092-008-9068-5"
+ },
+ {
+  "k": "421f6928",
+  "s": "Shakllantiruvchi baholashning besh asosiy strategiyasi, jumladan o‘quv maqsadlari va muvaffaqiyat mezonlarini talabaga oldindan aniq tushuntirish — Capstone rubrikasini himoyadan oldin e’lon qilishning nazariy asosi.",
+  "ru": "Пять основных стратегий формирующего оценивания, включая заблаговременное чёткое разъяснение студенту учебных целей и критериев успеха, — теоретическая основа объявления рубрики Capstone до защиты.",
+  "en": "The five key strategies of formative assessment, including explaining learning goals and success criteria clearly to students in advance, are the theoretical basis for publishing the Capstone rubric before the defence."
+ },
+ {
+  "k": "5a578b54",
+  "s": "6. Capstone mustaqil loyiha metodologiyasi va Undetectable AI",
+  "ru": "6. Методология самостоятельного проекта Capstone и Undetectable AI",
+  "en": "6. Capstone independent project methodology and Undetectable AI"
+ },
+ {
+  "k": "a4b94547",
+  "s": "7 ta AI vositali to‘liq pipeline va akademik halollik",
+  "ru": "Полный конвейер из 7 ИИ-инструментов и академическая честность",
+  "en": "A complete 7-tool AI pipeline and academic integrity"
+ },
+ {
+  "k": "13f989ee",
+  "s": "15-Ma’ruzaning eng muhim qismi — <strong>Yakuniy Mustaqil Loyiha (Capstone Project)</strong> metodologiyasidir. Har bir talaba o‘quv dasturida o‘qitilmagan yangi fizik jarayonni tanlab, 7 ta sun’iy intellekt vositasi yordamida to‘liq mustaqil simulyatsion veb-sahifasini yaratadi:",
+  "ru": "Важнейшая часть лекции 15 — методология <strong>итогового самостоятельного проекта (Capstone Project)</strong>. Каждый студент выбирает новый физический процесс, не изучавшийся в программе, и с помощью 7 инструментов искусственного интеллекта создаёт полностью самостоятельную веб-страницу с симуляцией:",
+  "en": "The most important part of Lecture 15 is the methodology of the <strong>final independent (Capstone) project</strong>. Each student chooses a new physical process not covered in the syllabus and uses 7 AI tools to build a fully independent simulation web page:"
+ },
+ {
+  "k": "05755d7f",
+  "s": "🚀 7 Bosqichli yaxlit AI pipeline hayotiy sikli:",
+  "ru": "🚀 7-этапный жизненный цикл целостного AI-конвейера:",
+  "en": "🚀 The 7-stage life cycle of the integrated AI pipeline:"
+ },
+ {
+  "k": "bff21b29",
+  "s": "<strong>MagicSchool AI:</strong> Mavzu diagnostikasi va individual reja tuzish.",
+  "ru": "<strong>MagicSchool AI:</strong> диагностика темы и составление индивидуального плана.",
+  "en": "<strong>MagicSchool AI:</strong> topic diagnostics and an individual plan."
+ },
+ {
+  "k": "53407f43",
+  "s": "<strong>PhET / Vascak.cz:</strong> Mavjud ilmiy laboratoriyani dekonstruksiya qilish.",
+  "ru": "<strong>PhET / Vascak.cz:</strong> деконструкция существующей научной лаборатории.",
+  "en": "<strong>PhET / Vascak.cz:</strong> deconstructing an existing science lab."
+ },
+ {
+  "k": "cf0d01d8",
+  "s": "<strong>Claude:</strong> Sof JavaScript fizik dvigatel kodini generatsiya qilish.",
+  "ru": "<strong>Claude:</strong> генерация кода физического движка на чистом JavaScript.",
+  "en": "<strong>Claude:</strong> generating pure JavaScript physics engine code."
+ },
+ {
+  "k": "e2f40928",
+  "s": "<strong>Google Antigravity:</strong> Real vaqt telemetriyasi va energiya saqlanishini audit qilish.",
+  "ru": "<strong>Google Antigravity:</strong> телеметрия в реальном времени и аудит сохранения энергии.",
+  "en": "<strong>Google Antigravity:</strong> real-time telemetry and an energy-conservation audit."
+ },
+ {
+  "k": "c0f0697b",
+  "s": "<strong>Muxlisa AI / ElevenLabs:</strong> O‘zbek neyron TTS ovozli ilmiy tushuntirishni sinxronlash.",
+  "ru": "<strong>Muxlisa AI / ElevenLabs:</strong> синхронизация научного голосового объяснения нейронным TTS на узбекском.",
+  "en": "<strong>Muxlisa AI / ElevenLabs:</strong> synchronising a spoken scientific explanation with Uzbek neural TTS."
+ },
+ {
+  "k": "5079c7b2",
+  "s": "<strong>Otter.ai:</strong> Himoya nutqi transkripsiyasi va raqamli portfolio pasporti.",
+  "ru": "<strong>Otter.ai:</strong> транскрипция защитной речи и паспорт цифрового портфолио.",
+  "en": "<strong>Otter.ai:</strong> transcribing the defence speech and the digital portfolio passport."
+ },
+ {
+  "k": "1d12e914",
+  "s": "<strong>Undetectable AI:</strong> Matn originalligini tekshirish va akademik halollikni tasdiqlash.",
+  "ru": "<strong>Undetectable AI:</strong> проверка оригинальности текста и подтверждение академической честности.",
+  "en": "<strong>Undetectable AI:</strong> checking text originality and confirming academic integrity."
+ },
+ {
+  "k": "fd2dd45a",
+  "s": "🛡️ Undetectable AI va akademik halollik nazorati:",
+  "ru": "🛡️ Undetectable AI и контроль академической честности:",
+  "en": "🛡️ Undetectable AI and academic integrity control:"
+ },
+ {
+  "k": "ba45919b",
+  "s": "• <strong>Majburiy talab:</strong> Talaba AI yozgan umumiy matnlarni o‘zining shaxsiy virtual tajriba o‘lchovlari, formulalari va tahlillari bilan boyitishi shart.<br> • <strong>AI detektor filtrlari:</strong> Loyiha hisoboti Undetectable AI, Turnitin AI va GPTZero orqali tekshiriladi. Mustaqil mualliflik ulushi <strong>85%+</strong> bo‘lishi talab etiladi; biroq detektor natijasi yagona dalil emas — loyiha jarayoni (kod tarixi, qoralamalar, himoya nutqi) ham baholanadi.<br> • <strong>Plagiatga qarshi:</strong> Qo‘llanilgan barcha ilmiy manbalar va AI vositalariga APA 7 standarti bo‘yicha havola keltiriladi.<br> • <strong>Muhim eslatma:</strong> Undetectable AI xizmati asosan AI-matnni \"insoniylashtirish\" (detektorlarni chetlab o‘tish) vositasi sifatida tanilgan. Loyihada undan faqat AI-detektor moduli sifatida foydalaniladi; hisobot matnini \"humanizer\" orqali qayta yozdirish akademik halollikni buzish hisoblanadi.",
+  "ru": "• <strong>Обязательное требование:</strong> студент должен дополнить общие тексты, написанные ИИ, своими личными измерениями виртуального эксперимента, формулами и анализом.<br> • <strong>Фильтры ИИ-детекторов:</strong> отчёт по проекту проверяется через Undetectable AI, Turnitin AI и GPTZero. Требуется доля самостоятельного авторства <strong>85%+</strong>; однако результат детектора — не единственное доказательство: оценивается и процесс работы над проектом (история кода, черновики, защитная речь).<br> • <strong>Против плагиата:</strong> на все использованные научные источники и ИИ-инструменты даются ссылки по стандарту APA 7.<br> • <strong>Важное примечание:</strong> сервис Undetectable AI известен прежде всего как инструмент «очеловечивания» ИИ-текста (обхода детекторов). В проекте он используется только как модуль ИИ-детектора; переписывание текста отчёта через «humanizer» считается нарушением академической честности.",
+  "en": "• <strong>Mandatory requirement:</strong> students must enrich generic AI-written text with their own virtual experiment measurements, formulas and analysis.<br> • <strong>AI detector filters:</strong> the project report is checked with Undetectable AI, Turnitin AI and GPTZero. An independent-authorship share of <strong>85%+</strong> is required; however, a detector score is not the only evidence — the project process (code history, drafts, the defence talk) is assessed too.<br> • <strong>Against plagiarism:</strong> all scientific sources and AI tools used are cited according to APA 7.<br> • <strong>Important note:</strong> Undetectable AI is mainly known as a tool for \"humanising\" AI text (evading detectors). In this project it is used only as an AI-detector module; rewriting the report through a \"humanizer\" counts as a breach of academic integrity."
+ },
+ {
+  "k": "ec5bbe88",
+  "s": "🌐 WWW Ilmiy-Uslubiy Manbalar va Akademik Halollik Asosi (6-Bo‘lim):",
+  "ru": "🌐 Научно-методические источники WWW и основы академической честности (раздел 6):",
+  "en": "🌐 WWW scholarly sources and academic integrity basis (Section 6):"
+ },
+ {
+  "k": "a87e9c3b",
+  "s": "Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., va Waddington, L. (2023).",
+  "ru": "Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).",
+  "en": "Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023)."
+ },
+ {
+  "k": "e13dfb1a",
+  "s": "Testing of Detection Tools for AI-Generated Text",
+  "ru": "Testing of Detection Tools for AI-Generated Text",
+  "en": "Testing of Detection Tools for AI-Generated Text"
+ },
+ {
+  "k": "c04a8725",
+  "s": ". International Journal for Educational Integrity, 19, Article 26.",
+  "ru": ". International Journal for Educational Integrity, 19, Article 26.",
+  "en": ". International Journal for Educational Integrity, 19, Article 26."
+ },
+ {
+  "k": "ecfecfd4",
+  "s": "https://doi.org/10.1007/s40979-023-00146-z",
+  "ru": "https://doi.org/10.1007/s40979-023-00146-z",
+  "en": "https://doi.org/10.1007/s40979-023-00146-z"
+ },
+ {
+  "k": "606ee9f5",
+  "s": "14 ta AI-detektor (jumladan Turnitin) sinovdan o‘tkazilgan: vositalar na aniq, na ishonchli ekani, matnni qayta ifodalash (obfuscation) esa aniqlikni keskin pasaytirishi ko‘rsatilgan. Shu sababli detektor foizi akademik halollikning yagona dalili sifatida qabul qilinmaydi.",
+  "ru": "Протестированы 14 ИИ-детекторов (включая Turnitin): показано, что инструменты ни точны, ни надёжны, а перефразирование текста (obfuscation) резко снижает точность. Поэтому процент детектора не принимается как единственное доказательство академической честности.",
+  "en": "14 AI detectors (including Turnitin) were tested: the tools were shown to be neither accurate nor reliable, and paraphrasing (obfuscation) sharply reduces accuracy. A detector percentage is therefore not accepted as the sole evidence of academic integrity."
+ },
+ {
+  "k": "d149b160",
+  "s": "Cotton, D. R. E., Cotton, P. A., va Shipway, J. R. (2024).",
+  "ru": "Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).",
+  "en": "Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024)."
+ },
+ {
+  "k": "b2116788",
+  "s": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT",
+  "ru": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT",
+  "en": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT"
+ },
+ {
+  "k": "3ea007d1",
+  "s": ". Innovations in Education and Teaching International, 61(2), 228–239.",
+  "ru": ". Innovations in Education and Teaching International, 61(2), 228–239.",
+  "en": ". Innovations in Education and Teaching International, 61(2), 228–239."
+ },
+ {
+  "k": "35de07d9",
+  "s": "https://doi.org/10.1080/14703297.2023.2190148",
+  "ru": "https://doi.org/10.1080/14703297.2023.2190148",
+  "en": "https://doi.org/10.1080/14703297.2023.2190148"
+ },
+ {
+  "k": "a916e4a6",
+  "s": "Generativ AI davrida akademik halollikni ta’minlash strategiyalari: aniq qoidalar, jarayonga yo‘naltirilgan topshiriqlar va og‘zaki himoya.",
+  "ru": "Стратегии обеспечения академической честности в эпоху генеративного ИИ: чёткие правила, задания, ориентированные на процесс, и устная защита.",
+  "en": "Strategies for ensuring academic integrity in the era of generative AI: clear rules, process-oriented assignments and oral defence."
+ },
+ {
+  "k": "106090e5",
+  "s": "7. Interaktiv simulyator sandbox, diagnostik test va manbalar",
+  "ru": "7. Интерактивная песочница-симулятор, диагностический тест и источники",
+  "en": "7. Interactive simulator sandbox, diagnostic test and sources"
+ },
+ {
+  "k": "b6c4b9a7",
+  "s": "HTML5 Canvas, Nuclear Reactor va APA 7th bibliography",
+  "ru": "HTML5 Canvas, ядерный реактор и библиография APA 7th",
+  "en": "HTML5 Canvas, a nuclear reactor and an APA 7th bibliography"
+ },
+ {
+  "k": "7d919326",
+  "s": "Quyidagi laboratoriyada siz <strong>Radioaktiv yemirilish</strong>, <strong>Uran-235 zanjirli bo‘linishi</strong>, <strong>Termoyadroviy sintez (Tokamak)</strong> va <strong>Yakuniy loyiha (Capstone) monitoring konsoli</strong> sinxron ishlashini mustaqil boshqarishingiz mumkin!",
+  "ru": "В лаборатории ниже вы можете самостоятельно управлять синхронной работой <strong>радиоактивного распада</strong>, <strong>цепного деления урана-235</strong>, <strong>термоядерного синтеза (токамак)</strong> и <strong>консоли мониторинга итогового проекта (Capstone)</strong>!",
+  "en": "In the lab below you can control <strong>radioactive decay</strong>, <strong>uranium-235 chain fission</strong>, <strong>thermonuclear fusion (tokamak)</strong> and the <strong>Capstone project monitoring console</strong>, all working in sync!"
+ },
+ {
+  "k": "ba614905",
+  "s": "3D Eksperiment Rejimi:",
+  "ru": "3D-режим эксперимента:",
+  "en": "3D experiment mode:"
+ },
+ {
+  "k": "8e93014f",
+  "s": "⏳ 1: 3D radioaktiv yemirilish",
+  "ru": "⏳ 1: 3D радиоактивный распад",
+  "en": "⏳ 1: 3D radioactive decay"
+ },
+ {
+  "k": "2c20f52b",
+  "s": "☢️ 2: 3D Uran-235 bo‘linishi",
+  "ru": "☢️ 2: 3D деление урана-235",
+  "en": "☢️ 2: 3D uranium-235 fission"
+ },
+ {
+  "k": "d4e46b7e",
+  "s": "🌌 3: 3D termoyadroviy sintez",
+  "ru": "🌌 3: 3D термоядерный синтез",
+  "en": "🌌 3: 3D thermonuclear fusion"
+ },
+ {
+  "k": "7e18955f",
+  "s": "🎓 4: 3D Capstone konsoli",
+  "ru": "🎓 4: 3D консоль Capstone",
+  "en": "🎓 4: 3D Capstone console"
+ },
+ {
+  "k": "29a59045",
+  "s": "🔄 3D aylanish: ON",
+  "ru": "🔄 3D-вращение: ВКЛ",
+  "en": "🔄 3D rotation: ON"
+ },
+ {
+  "k": "e5569add",
+  "s": "📐 3D kamera reset",
+  "ru": "📐 Сброс 3D-камеры",
+  "en": "📐 Reset 3D camera"
+ },
+ {
+  "k": "23276762",
+  "s": "🎙️ Muxlisa AI audio",
+  "ru": "🎙️ Аудио Muxlisa AI",
+  "en": "🎙️ Muxlisa AI audio"
+ },
+ {
+  "k": "b7145644",
+  "s": "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> To‘xtatish",
+  "ru": "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Остановить",
+  "en": "<span style=\"font-size: 1.1rem; line-height: 1;\">⏸</span> Stop"
+ },
+ {
+  "k": "df94eb33",
+  "s": "<span style=\"font-size: 1.15rem; line-height: 1;\">↺</span> Qayta boshlash",
+  "ru": "<span style=\"font-size: 1.15rem; line-height: 1;\">↺</span> Перезапустить",
+  "en": "<span style=\"font-size: 1.15rem; line-height: 1;\">↺</span> Restart"
+ },
+ {
+  "k": "858b1f51",
+  "s": "3D Kadmiy Sterjenlari Chuqurligi:",
+  "ru": "Глубина кадмиевых стержней (3D):",
+  "en": "3D cadmium rod depth:"
+ },
+ {
+  "k": "a18dfff0",
+  "s": "3D Fazoga Yangi Neytron Otish:",
+  "ru": "Запустить новый нейтрон в 3D-пространство:",
+  "en": "Fire a new neutron into 3D space:"
+ },
+ {
+  "k": "81a23a9d",
+  "s": "🚀 3D neytron uchirish",
+  "ru": "🚀 Запустить 3D-нейтрон",
+  "en": "🚀 Launch a 3D neutron"
+ },
+ {
+  "k": "ea723dcc",
+  "s": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 3D Boshqaruv: Sichqoncha bilan 360° aylantiring va g‘ildirak bilan masshtablang! </span>",
+  "ru": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 3D-управление: вращайте мышью на 360° и масштабируйте колесом! </span>",
+  "en": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 3D controls: rotate 360° with the mouse and zoom with the wheel! </span>"
+ },
+ {
+  "k": "109145a2",
+  "s": "Yarim Yemirilish Davri ($T_{1/2}$):",
+  "ru": "Период полураспада ($T_{1/2}$):",
+  "en": "Half-life ($T_{1/2}$):"
+ },
+ {
+  "k": "acc88afa",
+  "s": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 3D Kristall Panjara: 64 ta yadro stoxastik eksponensial kamayishi. </span>",
+  "ru": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 3D-кристаллическая решётка: стохастическое экспоненциальное убывание 64 ядер. </span>",
+  "en": "<span style=\"font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;\"> 💡 3D crystal lattice: the stochastic exponential decay of 64 nuclei. </span>"
+ },
+ {
+  "k": "211b7931",
+  "s": "Ajralgan Energiya",
+  "ru": "Выделенная энергия",
+  "en": "Energy released"
+ },
+ {
+  "k": "9afb0b9b",
+  "s": "0 MeV",
+  "ru": "0 MeV",
+  "en": "0 MeV"
+ },
+ {
+  "k": "ea176aef",
+  "s": "Koeffitsiyent (k)",
+  "ru": "Коэффициент (k)",
+  "en": "Factor (k)"
+ },
+ {
+  "k": "e0d38a74",
+  "s": "U-235 Yadrolari",
+  "ru": "Ядра U-235",
+  "en": "U-235 nuclei"
+ },
+ {
+  "k": "49ed7989",
+  "s": "52 ta",
+  "ru": "52 шт.",
+  "en": "52"
+ },
+ {
+  "k": "eddf2c7a",
+  "s": "Erkin Neytronlar",
+  "ru": "Свободные нейтроны",
+  "en": "Free neutrons"
+ },
+ {
+  "k": "387d85e0",
+  "s": "2 ta",
+  "ru": "2 шт.",
+  "en": "2"
+ },
+ {
+  "k": "ad5143ab",
+  "s": "🎮 1. Asosiy 3D maydon: yadro reaktori va tokamak plazmasi:",
+  "ru": "🎮 1. Основное 3D-поле: ядерный реактор и плазма токамака:",
+  "en": "🎮 1. Main 3D area: the nuclear reactor and tokamak plasma:"
+ },
+ {
+  "k": "988b7fb8",
+  "s": "💡 3D fazoviy rejim: sichqoncha yoki sensor bilan 360° erkin aylantiring, g‘ildirak orqali yaqinlashtiring.",
+  "ru": "💡 3D-пространственный режим: свободно вращайте на 360° мышью или касанием, приближайте колесом.",
+  "en": "💡 3D spatial mode: rotate freely through 360° with the mouse or touch, zoom with the wheel."
+ },
+ {
+  "k": "616c2e84",
+  "s": "📊 2. Real vaqtdagi energiya va yemirilish grafigi:",
+  "ru": "📊 2. График энергии и распада в реальном времени:",
+  "en": "📊 2. Real-time energy and decay plot:"
+ },
+ {
+  "k": "9f3461cd",
+  "s": "Grafik: eksponensial yemirilish egri chizig‘i $N(t)$ va energiya oqimi.",
+  "ru": "График: экспоненциальная кривая распада $N(t)$ и поток энергии.",
+  "en": "Plot: the exponential decay curve $N(t)$ and energy flow."
+ },
+ {
+  "k": "2330e1ec",
+  "s": "PhET va Vascak.cz yadro fizikasi xabi",
+  "ru": "Центр ядерной физики PhET и Vascak.cz",
+  "en": "PhET and Vascak.cz nuclear physics hub"
+ },
+ {
+  "k": "3678e659",
+  "s": "🔗 Yangi Oynada Ochish",
+  "ru": "🔗 Открыть в новом окне",
+  "en": "🔗 Open in a new window"
+ },
+ {
+  "k": "cc676a0d",
+  "s": "⛶ To‘liq ekran",
+  "ru": "⛶ На весь экран",
+  "en": "⛶ Full screen"
+ },
+ {
+  "k": "5d564442",
+  "s": "☢️ PhET: Build a Nucleus (yadro tuzilishi)",
+  "ru": "☢️ PhET: Build a Nucleus (строение ядра)",
+  "en": "☢️ PhET: Build a Nucleus (nuclear structure)"
+ },
+ {
+  "k": "90389ac0",
+  "s": "⏳ PhET: isotopes va dating (izotoplar)",
+  "ru": "⏳ PhET: isotopes и dating (изотопы)",
+  "en": "⏳ PhET: isotopes & dating"
+ },
+ {
+  "k": "3bae0476",
+  "s": "🎯 PhET: Rutherford scattering",
+  "ru": "🎯 PhET: Rutherford scattering",
+  "en": "🎯 PhET: Rutherford scattering"
+ },
+ {
+  "k": "a2bfc044",
+  "s": "🔄 Vascak.cz Yadro Fizikasi (O‘zbek tilida, Reklamasiz HTML5) va Portal Simulyatsiyasi:",
+  "ru": "🔄 Ядерная физика Vascak.cz (HTML5 без рекламы) и симуляции портала:",
+  "en": "🔄 Vascak.cz nuclear physics (ad-free HTML5) and portal simulations:"
+ },
+ {
+  "k": "0bf8d1c2",
+  "s": "☢️ Vascak: radioaktiv yemirilish",
+  "ru": "☢️ Vascak: радиоактивный распад",
+  "en": "☢️ Vascak: radioactive decay"
+ },
+ {
+  "k": "b716ea7a",
+  "s": "💥 Vascak: yadro reaksiyalari",
+  "ru": "💥 Vascak: ядерные реакции",
+  "en": "💥 Vascak: nuclear reactions"
+ },
+ {
+  "k": "6893e40f",
+  "s": "🛡️ Vascak: radioaktiv nurlanish",
+  "ru": "🛡️ Vascak: радиоактивное излучение",
+  "en": "🛡️ Vascak: radioactive radiation"
+ },
+ {
+  "k": "640de11a",
+  "s": "🌌 Quyosh sintezi (pp-zanjir)",
+  "ru": "🌌 Синтез на Солнце (pp-цепочка)",
+  "en": "🌌 Solar fusion (pp chain)"
+ },
+ {
+  "k": "cc7ec15f",
+  "s": "📜 Radioaktiv qatorlar (U-238 / Th-232)",
+  "ru": "📜 Радиоактивные ряды (U-238 / Th-232)",
+  "en": "📜 Radioactive series (U-238 / Th-232)"
+ },
+ {
+  "k": "b41ee066",
+  "s": "☢️ PhET Interactive Simulations: Build a Nucleus (atom yadrosi sintezi va bog‘lanish)",
+  "ru": "☢️ PhET Interactive Simulations: Build a Nucleus (синтез атомного ядра и связь)",
+  "en": "☢️ PhET Interactive Simulations: Build a Nucleus (building the nucleus and binding)"
+ },
+ {
+  "k": "b578e6c0",
+  "s": "Atom yadrosining proton va neytronlardan tuzilishi, nuklidlar xaritasidagi barqarorlik yo‘lagi (Band of Stability), bog‘lanish energiyasi va radioaktiv yemirilish/bo‘linish chegaralarini o‘rganish.",
+  "ru": "Изучение строения атомного ядра из протонов и нейтронов, полосы стабильности на карте нуклидов (Band of Stability), энергии связи и границ радиоактивного распада/деления.",
+  "en": "Studying how the nucleus is built from protons and neutrons, the band of stability on the chart of nuclides, binding energy and the limits of radioactive decay/fission."
+ },
+ {
+  "k": "08e4dc40",
+  "s": "$$E_b = [Z m_p + (A-Z) m_n - M(A,Z)] c^2 = \\Delta m c^2, \\quad ^{235}_{92}\\text{U} + n \\rightarrow \\text{Bo‘linish}$$",
+  "ru": "$$E_b = [Z m_p + (A-Z) m_n - M(A,Z)] c^2 = \\Delta m c^2, \\quad ^{235}_{92}\\text{U} + n \\rightarrow \\text{Bo‘linish}$$",
+  "en": "$$E_b = [Z m_p + (A-Z) m_n - M(A,Z)] c^2 = \\Delta m c^2, \\quad ^{235}_{92}\\text{U} + n \\rightarrow \\text{Bo‘linish}$$"
+ },
+ {
+  "k": "abea6f12",
+  "s": "1. Proton va neytronlarni qo‘shib, barqaror va radioaktiv beqaror izotoplar hosil bo‘lishini kuzating.",
+  "ru": "1. Добавляя протоны и нейтроны, пронаблюдайте образование стабильных и радиоактивно нестабильных изотопов.",
+  "en": "1. Add protons and neutrons and watch stable and radioactive unstable isotopes form."
+ },
+ {
+  "k": "f60091b6",
+  "s": "2. Yadroning solishtirma bog‘lanish energiyasi $E_b / A$ ning massa soniga bog‘liqligini tahlil qiling.",
+  "ru": "2. Проанализируйте зависимость удельной энергии связи ядра $E_b / A$ от массового числа.",
+  "en": "2. Analyse how the nucleus’s specific binding energy $E_b / A$ depends on the mass number."
+ },
+ {
+  "k": "7f5932e9",
+  "s": "3. Zanjirli yadro bo‘linishi va sintezi reaksiyalarining energetik yutug‘ini baholang.",
+  "ru": "3. Оцените энергетический выигрыш реакций цепного деления и синтеза.",
+  "en": "3. Estimate the energy gain of chain fission and fusion reactions."
+ },
+ {
+  "k": "7a1745c0",
+  "s": "🧠 15-ma’ruza diagnostik testi (3 ta kognitiv savol):",
+  "ru": "🧠 Диагностический тест к лекции 15 (3 когнитивных вопроса):",
+  "en": "🧠 Lecture 15 diagnostic test (3 cognitive questions):"
+ },
+ {
+  "k": "4dcb98c4",
+  "s": "1-Savol: Radioaktiv yemirilish qonuniga ko‘ra, $t = 2 T_{1/2}$ vaqt o‘tgach, boshlang‘ich yadrolarning necha foizi yemirilib ulguradi?",
+  "ru": "Вопрос 1: Какой процент исходных ядер успеет распасться, согласно закону радиоактивного распада, по прошествии времени $t = 2 T_{1/2}$?",
+  "en": "Question 1: According to the radioactive decay law, what percentage of the initial nuclei will have decayed after a time $t = 2 T_{1/2}$?"
+ },
+ {
+  "k": "3cfe967b",
+  "s": "2-Savol: Yadro reaktorida zanjirli reaksiya barqaror (turg‘un kritik rejimda) kechishi uchun neytronlarning ko‘payish koeffitsiyenti $k$ nechaga teng bo‘lishi shart?",
+  "ru": "Вопрос 2: Чему должен быть равен коэффициент размножения нейтронов $k$, чтобы цепная реакция в ядерном реакторе шла устойчиво (в стационарном критическом режиме)?",
+  "en": "Question 2: What must the neutron multiplication factor $k$ be for a chain reaction in a nuclear reactor to proceed steadily (in a stable critical regime)?"
+ },
+ {
+  "k": "f3b92901",
+  "s": "3-Savol: Capstone mustaqil loyihasida Undetectable AI va akademik halollik talabiga ko‘ra, talabaning shaxsiy mualliflik ulushi kamida necha foiz bo‘lishi shart?",
+  "ru": "Вопрос 3: Какой должна быть, согласно требованию Undetectable AI и академической честности, минимальная доля личного авторства студента в самостоятельном проекте Capstone?",
+  "en": "Question 3: Under the Undetectable AI and academic integrity requirement, what is the minimum share of the student’s own authorship in the Capstone project?"
+ },
+ {
+  "k": "dbff6743",
+  "s": "A) 85% va undan yuqori",
+  "ru": "A) 85% и выше",
+  "en": "A) 85% or more"
+ },
+ {
+  "k": "70c7bc34",
+  "s": "D) Muhim emas",
+  "ru": "D) Не важно",
+  "en": "D) It does not matter"
+ },
+ {
+  "k": "ca57705a",
+  "s": "✅ Natijani tekshirish",
+  "ru": "✅ Проверить результат",
+  "en": "✅ Check result"
+ },
+ {
+  "k": "5e19548c",
+  "s": "📚 15-ma’ruza bo‘yicha nufuzli ilmiy va didaktik manbalar (APA 7th Edition):",
+  "ru": "📚 Авторитетные научные и дидактические источники к лекции 15 (APA 7th Edition):",
+  "en": "📚 Authoritative scholarly and didactic sources for Lecture 15 (APA 7th Edition):"
+ },
+ {
+  "k": "c498e0f1",
+  "s": "<strong>Krane, K. S. (1988).</strong> <em>Introductory Nuclear Physics</em>. John Wiley va Sons.",
+  "ru": "<strong>Krane, K. S. (1988).</strong> <em>Introductory Nuclear Physics</em>. John Wiley & Sons.",
+  "en": "<strong>Krane, K. S. (1988).</strong> <em>Introductory Nuclear Physics</em>. John Wiley & Sons."
+ },
+ {
+  "k": "1d5d518c",
+  "s": "<strong>Lamarsh, J. R., va Baratta, A. J. (2001).</strong> <em>Introduction to Nuclear Engineering</em> (3rd ed.). Prentice Hall.",
+  "ru": "<strong>Lamarsh, J. R., & Baratta, A. J. (2001).</strong> <em>Introduction to Nuclear Engineering</em> (3rd ed.). Prentice Hall.",
+  "en": "<strong>Lamarsh, J. R., & Baratta, A. J. (2001).</strong> <em>Introduction to Nuclear Engineering</em> (3rd ed.). Prentice Hall."
+ },
+ {
+  "k": "17a85b5e",
+  "s": "<strong>Chen, F. F. (2016).</strong> <em>Introduction to Plasma Physics and Controlled Fusion</em> (3rd ed.). Springer. <a href=\"https://doi.org/10.1007/978-3-319-22309-4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/978-3-319-22309-4</a>",
+  "ru": "<strong>Chen, F. F. (2016).</strong> <em>Introduction to Plasma Physics and Controlled Fusion</em> (3rd ed.). Springer. <a href=\"https://doi.org/10.1007/978-3-319-22309-4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/978-3-319-22309-4</a>",
+  "en": "<strong>Chen, F. F. (2016).</strong> <em>Introduction to Plasma Physics and Controlled Fusion</em> (3rd ed.). Springer. <a href=\"https://doi.org/10.1007/978-3-319-22309-4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/978-3-319-22309-4</a>"
+ },
+ {
+  "k": "9c96bb35",
+  "s": "<strong>Griffiths, D. J., va Schroeter, D. F. (2018).</strong> <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316995433\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316995433</a>",
+  "ru": "<strong>Griffiths, D. J., & Schroeter, D. F. (2018).</strong> <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316995433\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316995433</a>",
+  "en": "<strong>Griffiths, D. J., & Schroeter, D. F. (2018).</strong> <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316995433\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316995433</a>"
+ },
+ {
+  "k": "70788a67",
+  "s": "<strong>Halliday, D., Resnick, R., va Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "ru": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley.",
+  "en": "<strong>Halliday, D., Resnick, R., & Walker, J. (2018).</strong> <em>Fundamentals of Physics</em> (11th ed.). Wiley."
+ },
+ {
+  "k": "267564e3",
+  "s": "<strong>Feynman, R. P., Leighton, R. B., va Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics</em> (New millennium ed., Vols. I va III). Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu</a>",
+  "ru": "<strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics</em> (New millennium ed., Vols. I & III). Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu</a>",
+  "en": "<strong>Feynman, R. P., Leighton, R. B., & Sands, M. (2011).</strong> <em>The Feynman Lectures on Physics</em> (New millennium ed., Vols. I & III). Basic Books. <a href=\"https://www.feynmanlectures.caltech.edu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://www.feynmanlectures.caltech.edu</a>"
+ },
+ {
+  "k": "fa61f864",
+  "s": "<strong>Einstein, A. (1905).</strong> <em>Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?</em> Annalen der Physik, 18(13), 639–641. <a href=\"https://doi.org/10.1002/andp.19053231314\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/andp.19053231314</a>",
+  "ru": "<strong>Einstein, A. (1905).</strong> <em>Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?</em> Annalen der Physik, 18(13), 639–641. <a href=\"https://doi.org/10.1002/andp.19053231314\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/andp.19053231314</a>",
+  "en": "<strong>Einstein, A. (1905).</strong> <em>Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?</em> Annalen der Physik, 18(13), 639–641. <a href=\"https://doi.org/10.1002/andp.19053231314\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1002/andp.19053231314</a>"
+ },
+ {
+  "k": "72c1d124",
+  "s": "<strong>Metropolis, N., va Ulam, S. (1949).</strong> <em>The Monte Carlo Method</em>. Journal of the American Statistical Association, 44(247), 335–341. <a href=\"https://doi.org/10.1080/01621459.1949.10483310\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/01621459.1949.10483310</a>",
+  "ru": "<strong>Metropolis, N., & Ulam, S. (1949).</strong> <em>The Monte Carlo Method</em>. Journal of the American Statistical Association, 44(247), 335–341. <a href=\"https://doi.org/10.1080/01621459.1949.10483310\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/01621459.1949.10483310</a>",
+  "en": "<strong>Metropolis, N., & Ulam, S. (1949).</strong> <em>The Monte Carlo Method</em>. Journal of the American Statistical Association, 44(247), 335–341. <a href=\"https://doi.org/10.1080/01621459.1949.10483310\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/01621459.1949.10483310</a>"
+ },
+ {
+  "k": "412b2901",
+  "s": "<strong>Wieman, C. E., Adams, W. K., va Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "ru": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>",
+  "en": "<strong>Wieman, C. E., Adams, W. K., & Perkins, K. K. (2008).</strong> <em>PhET: Simulations That Enhance Learning</em>. Science, 322(5902), 682–683. <a href=\"https://doi.org/10.1126/science.1161948\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1161948</a>"
+ },
+ {
+  "k": "29833b33",
+  "s": "<strong>PhET Interactive Simulations. (n.d.).</strong> <em>Build a Nucleus</em> [HTML5 simulyatsiya]. University of Colorado Boulder. <a href=\"https://phet.colorado.edu/en/simulations/build-a-nucleus\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu/en/simulations/build-a-nucleus</a>",
+  "ru": "<strong>PhET Interactive Simulations. (n.d.).</strong> <em>Build a Nucleus</em> [HTML5-симуляция]. University of Colorado Boulder. <a href=\"https://phet.colorado.edu/en/simulations/build-a-nucleus\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu/en/simulations/build-a-nucleus</a>",
+  "en": "<strong>PhET Interactive Simulations. (n.d.).</strong> <em>Build a Nucleus</em> [HTML5 simulation]. University of Colorado Boulder. <a href=\"https://phet.colorado.edu/en/simulations/build-a-nucleus\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://phet.colorado.edu/en/simulations/build-a-nucleus</a>"
+ },
+ {
+  "k": "60a8a324",
+  "s": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations: Nuclear Physics</em> [HTML5 animatsiyalar]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (saytda reklama bor, shuning uchun bu yerda havola berilmagan)",
+  "ru": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations: Nuclear Physics</em> [HTML5-анимации]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (на сайте есть реклама, поэтому ссылка здесь не приводится)",
+  "en": "<strong>Vaščák, V. (n.d.).</strong> <em>Physics Animations/Simulations: Nuclear Physics</em> [HTML5 animations]. Vascak.cz. https://www.vascak.cz/physicsanimations.php (the site carries ads, so no link is given here)"
+ },
+ {
+  "k": "b725075f",
+  "s": "<strong>de Jong, T., Linn, M. C., va Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305–308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "ru": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305–308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>",
+  "en": "<strong>de Jong, T., Linn, M. C., & Zacharia, Z. C. (2013).</strong> <em>Physical and Virtual Laboratories in Science and Engineering Education</em>. Science, 340(6130), 305–308. <a href=\"https://doi.org/10.1126/science.1230579\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1126/science.1230579</a>"
+ },
+ {
+  "k": "e1b7a91e",
+  "s": "<strong>Rutten, N., van Joolingen, W. R., va van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers va Education, 58(1), 136–153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "ru": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136–153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>",
+  "en": "<strong>Rutten, N., van Joolingen, W. R., & van der Veen, J. T. (2012).</strong> <em>The Learning Effects of Computer Simulations in Science Education</em>. Computers & Education, 58(1), 136–153. <a href=\"https://doi.org/10.1016/j.compedu.2011.07.017\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/j.compedu.2011.07.017</a>"
+ },
+ {
+  "k": "d8d75389",
+  "s": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "ru": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>",
+  "en": "<strong>Mayer, R. E. (2020).</strong> <em>Multimedia Learning</em> (3rd ed.). Cambridge University Press. <a href=\"https://doi.org/10.1017/9781316941355\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1017/9781316941355</a>"
+ },
+ {
+  "k": "2767f096",
+  "s": "<strong>Sweller, J., van Merriënboer, J. J. G., va Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "ru": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>",
+  "en": "<strong>Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019).</strong> <em>Cognitive Architecture and Instructional Design: 20 Years Later</em>. Educational Psychology Review, 31(2), 261–292. <a href=\"https://doi.org/10.1007/s10648-019-09465-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s10648-019-09465-5</a>"
+ },
+ {
+  "k": "ce814ca4",
+  "s": "<strong>Garrison, D. R., Anderson, T., va Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2–3), 87–105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "ru": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2–3), 87–105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>",
+  "en": "<strong>Garrison, D. R., Anderson, T., & Archer, W. (2000).</strong> <em>Critical Inquiry in a Text-Based Environment: Computer Conferencing in Higher Education</em>. The Internet and Higher Education, 2(2–3), 87–105. <a href=\"https://doi.org/10.1016/S1096-7516(00)00016-6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1016/S1096-7516(00)00016-6</a>"
+ },
+ {
+  "k": "e679372e",
+  "s": "<strong>Black, P., va Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "ru": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>",
+  "en": "<strong>Black, P., & Wiliam, D. (2009).</strong> <em>Developing the Theory of Formative Assessment</em>. Educational Assessment, Evaluation and Accountability, 21(1), 5–31. <a href=\"https://doi.org/10.1007/s11092-008-9068-5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s11092-008-9068-5</a>"
+ },
+ {
+  "k": "3eb9d6f5",
+  "s": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64–70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "ru": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64–70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>",
+  "en": "<strong>Zimmerman, B. J. (2002).</strong> <em>Becoming a Self-Regulated Learner: An Overview</em>. Theory Into Practice, 41(2), 64–70. <a href=\"https://doi.org/10.1207/s15430421tip4102_2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1207/s15430421tip4102_2</a>"
+ },
+ {
+  "k": "fd2863a3",
+  "s": "<strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., va Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href=\"https://doi.org/10.1007/s40979-023-00146-z\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s40979-023-00146-z</a>",
+  "ru": "<strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href=\"https://doi.org/10.1007/s40979-023-00146-z\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s40979-023-00146-z</a>",
+  "en": "<strong>Weber-Wulff, D., Anohina-Naumeca, A., Bjelobaba, S., Foltýnek, T., Guerrero-Dib, J., Popoola, O., Šigut, P., & Waddington, L. (2023).</strong> <em>Testing of Detection Tools for AI-Generated Text</em>. International Journal for Educational Integrity, 19, Article 26. <a href=\"https://doi.org/10.1007/s40979-023-00146-z\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1007/s40979-023-00146-z</a>"
+ },
+ {
+  "k": "aef8baac",
+  "s": "<strong>Cotton, D. R. E., Cotton, P. A., va Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href=\"https://doi.org/10.1080/14703297.2023.2190148\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/14703297.2023.2190148</a>",
+  "ru": "<strong>Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href=\"https://doi.org/10.1080/14703297.2023.2190148\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/14703297.2023.2190148</a>",
+  "en": "<strong>Cotton, D. R. E., Cotton, P. A., & Shipway, J. R. (2024).</strong> <em>Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT</em>. Innovations in Education and Teaching International, 61(2), 228–239. <a href=\"https://doi.org/10.1080/14703297.2023.2190148\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"citation-link\">https://doi.org/10.1080/14703297.2023.2190148</a>"
+ }
+]

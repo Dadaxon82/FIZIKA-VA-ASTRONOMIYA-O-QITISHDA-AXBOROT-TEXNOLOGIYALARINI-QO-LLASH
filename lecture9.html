@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz" data-i18n-coverage="partial">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1005,21 +1005,21 @@
         res.style.background = 'rgba(244, 63, 94, 0.15)';
         res.style.color = '#FDA4AF';
         res.style.border = '1px solid #F43F5E';
-        res.textContent = '⚠️ Iltimos, barcha 3 ta savolga javob belgilang!';
+        res.textContent = __t("⚠️ Iltimos, barcha 3 ta savolga javob belgilang!");
         return;
       }
 
       let score = 0;
       let feedback = [];
 
-      if (q1.value === 'b') { score++; feedback.push("1-savol: To‘g‘ri (Velocity-Verlet simplektik integratori energiyani saqlaydi)."); }
-      else { feedback.push("1-savol: Noto‘g‘ri (Forward Euler energiyani sun'iy oshirib yuboradi)."); }
+      if (q1.value === 'b') { score++; feedback.push(__t("1-savol: To‘g‘ri (Velocity-Verlet simplektik integratori energiyani saqlaydi).")); }
+      else { feedback.push(__t("1-savol: Noto‘g‘ri (Forward Euler energiyani sun'iy oshirib yuboradi).")); }
 
-      if (q2.value === 'a') { score++; feedback.push("2-savol: To‘g‘ri (CoT differensial tenglama va chegaralarni qadamma-qadam tahlil qildiradi)."); }
-      else { feedback.push("2-savol: Noto‘g‘ri (CoT mantiqiy fikrlash zanjirini hosil qiladi)."); }
+      if (q2.value === 'a') { score++; feedback.push(__t("2-savol: To‘g‘ri (CoT differensial tenglama va chegaralarni qadamma-qadam tahlil qildiradi).")); }
+      else { feedback.push(__t("2-savol: Noto‘g‘ri (CoT mantiqiy fikrlash zanjirini hosil qiladi).")); }
 
-      if (q3.value === 'b') { score++; feedback.push("3-savol: To‘g‘ri (dE/E0 < 1e-3 energiya invariantligi va impuls nazorat qilinadi)."); }
-      else { feedback.push("3-savol: Noto‘g‘ri (Antigravity AI fizik invariantlar va saqlanish qonunlarini tekshiradi)."); }
+      if (q3.value === 'b') { score++; feedback.push(__t("3-savol: To‘g‘ri (dE/E0 < 1e-3 energiya invariantligi va impuls nazorat qilinadi).")); }
+      else { feedback.push(__t("3-savol: Noto‘g‘ri (Antigravity AI fizik invariantlar va saqlanish qonunlarini tekshiradi).")); }
 
       res.style.display = 'block';
       if (score === 3) {
@@ -1031,7 +1031,7 @@
         res.style.background = 'rgba(251, 191, 36, 0.15)';
         res.style.color = '#FDE68A';
         res.style.border = '1px solid #FBBF24';
-        res.innerHTML = `<strong>Natija: ${score}/3 ball</strong><br>` + feedback.join('<br>');
+        res.innerHTML = __t("<strong>Natija: {0}/3 ball</strong><br>", [score]) + feedback.join('<br>');
       }
     }
   </script>

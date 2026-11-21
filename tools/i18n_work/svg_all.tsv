@@ -1,0 +1,284 @@
+sb6c9349	Импульс 2D-столкновения	2D Collision Impulse
+s23da024	n̂ (нормаль)	n̂ (normal)
+sc3bf822	точка столкновения	collision point
+sa275095	Скалярный модуль импульса	Impulse Scalar Magnitude
+s8bc1daf	=	=
+s6433c07	MagicSchool AI: адаптивная учебная траектория (цикл SRL Циммермана)	MagicSchool AI: Adaptive Learning Pathway (Zimmerman SRL Cycle)
+sc513b94	1. Предваритель-	1. Fore-
+s986a1b8	ное обдумывание	thought
+s876a7cc	Постановка целей	Goal setting
+s5b226de	2. Выполнение &amp;	2. Performance &amp;
+see06eaf	контроль внимания Otter.ai	Otter.ai attention control
+sfa4d0f6	3. Само-	3. Self-
+s759004c	оценка	reflection
+s130a014	Анализ «когнитивного радара»	Cognitive radar analysis
+s8aaab08	MagicSchool AI: микромодуль скаффолдинга на основе ЗБР	MagicSchool AI: ZPD-based scaffolding micro-module
+sf22bf16	Динамика роста по когнитивным кластерам (модули 1—11)	Growth Dynamics by Cognitive Cluster (Modules 1—11)
+sdd63f62	Кластер A	Cluster A
+s1a478da	Кластер B	Cluster B
+se8b31c6	Кластер C	Cluster C
+s4239087	Модель SRL Циммермана (2002)	Zimmerman (2002) SRL Model
+sf1f936f	Персонализированная ИИ-траектория	An AI-personalised pathway
+sb4e81ab	повышает эффективность освоения	increases learning effectiveness
+s5cc0e26	на 38%	by 38%
+sc563121	Google Antigravity AI: 4-колонный контроль кода и цикл Self-Healing	Google Antigravity AI: 4-Pillar Code Control and Self-Healing Cycle
+s0e338d3	=	=
+sfaa4efd	опасное обращение к DOM	unsafe DOM access
+s4c54356	2. Физические инварианты	2. Physical invariants
+s0db4fa9	=	=
+see75a8f	сохранение импульса	momentum conservation
+s3645886	3. Профиль кадра	3. Frame profile
+sa643eba	=	=
+s4c7d08d	контроль Object Pool	Object Pool control
+s641a4f4	Повторная отправка	Resend the error
+s93b7c99	ошибки в LLM	to the LLM
+s5790eee	При обнаружении ошибки: автоматическая повторная генерация (Reflexion, Shinn et al. 2023)	On error: automatic regeneration (Reflexion, Shinn et al. 2023)
+s81839fa	Итог: устойчивый, энергосберегающий и безопасный код симуляции	Result: stable, energy-conserving, safe simulation code
+s5041361	Обнаружение экзопланет: доплеровский и транзитный графики	Exoplanet Detection: Doppler and Transit Plots
+s1a72a9c	Кривая лучевой скорости (Доплер)	Doppler Radial Velocity Curve
+s66f736c	=	=
+sc5e503c	Транзитная кривая блеска	Transit Light Curve
+s4e67bd6	Физический смысл:	Physical meaning:
+s2b9d825	Доплеровский метод по смещению спектральных линий из-за колебаний звезды под притяжением планеты	The Doppler method uses spectral-line shifts caused by the star wobbling under the planet’s pull
+s56634c1	определяет массу планеты (m_p·sin i). Транзитная фотометрия по временному падению потока	to determine the planet’s mass (m_p·sin i). Transit photometry uses the temporary dip in light flux
+s10dbf13	света при прохождении планеты перед звездой вычисляет радиус планеты (R_p/R*).	as the planet passes in front of the star to compute the planet’s radius (R_p/R*).
+sc2f7262	Конвейер визуализации астрономических данных	Astronomical Data Visualisation Pipeline
+s490bf46	1. Данные	1. Data
+seae50e4	параметры Кеплера	Kepler parameters
+s1387cd5	2. Масштабирование	2. Scaling
+sf211fa4	а.е. → нормированные	AU → normalised
+s1ccaf80	единицы	units
+sa33e494	Аффинное преобразование	Affine transform
+s71327f2	(координаты Canvas)	(Canvas coordinates)
+s99cec0b	HUD-телеметрия	HUD telemetry
+s60fc33b	5. Аудиосинхронизация	5. Audio sync
+sfe7cf6c	TTS-озвучка,	TTS narration,
+sa50bb1c	тайм-коды SSML	SSML time codes
+s47d6fb8	Замкнутое решение Кеплера → без ошибок интегрирования, энергия и момент импульса сохраняются точно	Closed-form Kepler solution → no integration error; energy and angular momentum are conserved exactly
+sa105b0a	Оптимизация Canvas разделением на слои	Optimising Canvas by splitting it into layers
+s50a592e	❌ До: один Canvas	❌ Before: a single Canvas
+s950892c	Сетка и частицы перерисовываются вместе в каждом кадре	The grid and particles are redrawn together every frame
+s8140d00	✅ После: двухслойный Canvas	✅ After: a two-layer Canvas
+sac36ad0	Слой 1: фон (статичный)	Layer 1: background (static)
+sfc92bd5	Рисуется один раз и больше не перерисовывается	Drawn once and never redrawn
+sea64d71	Слой 2: динамический (прозрачный)	Layer 2: dynamic (transparent)
+s3a06aca	Каждый кадр обновляются только частицы	Only the particles are updated each frame
+sb96d6a2	Итог: лишние операции рисования сокращаются примерно на 70 %	Result: redundant drawing operations drop by about 70 %
+s884179a	Фазовый портрет и сохранение энергии: симплектический vs простой Эйлер	Phase Portrait and Energy Conservation: Symplectic vs Plain Euler
+s2c93c2a	Фазовый портрет (x, v)	Phase portrait (x, v)
+s93045c4	Симплектический Эйлер–Кромер — замкнутая устойчивая орбита	Symplectic Euler–Cromer — closed, stable orbit
+s39fbb92	График энергии E(t)	Energy E(t) plot
+sa8cfd51	ограничена (&lt;10⁻³)	bounded (&lt;10⁻³)
+se9bfc33	экспоненциальный взрыв	exponential blow-up
+s2dc96fb	Простой Эйлер — искусственный рост энергии (дрейф)	Plain Euler — artificial energy growth (drift)
+s191be37	=	=
+sa1a280a	=	=
+s48b2ac5	Сила тяжести (mg)	Weight (mg)
+s239dc0e	Внешняя сила (F)	Applied force (F)
+s4759706	Трение (f)	Friction (f)
+s89e5e04	составляющие mg	mg components
+s420d433	Диаграмма свободного тела (FBD) на наклонной плоскости	Free-Body Diagram (FBD) of a Body on an Incline
+s2375f61	Стратегии промптинга: сравнение уровня точности	Prompting Strategies: Accuracy Comparison
+s0dbddc3	Нечёткий	Vague
+sa3ea809	Физическая адекватность (инвариант) — Wei et al. (2022), Kojima et al. (2022)	Physical adequacy (invariant) — Wei et al. (2022), Kojima et al. (2022)
+s10f1a2f	Переменный (Variable) vs фиксированный (Fixed) шаг времени	Variable vs Fixed Time Step
+s6f56529	Переменный dt (неустойчиво)	Variable dt (unstable)
+s4e68f84	большой dt (лаг)!	large dt (lag)!
+s88813b8	снова лаг!	lag again!
+sa30939a	x += v · dt — при большом dt тело может «туннелировать» сквозь стенку	x += v · dt — with a large dt the body can "tunnel" through the wall
+s8269b31	Аккумулятор fixed dt (устойчиво, детерминированно)	Fixed-dt accumulator (stable, deterministic)
+s6c2cc3c	Каждый шаг = Δt_fixed (1/60 с). При лаге несколько шагов «поглощаются» подряд (while accumulator ≥ Δt)	Each step = Δt_fixed (1/60 s). On lag, several steps are "consumed" in a row (while accumulator ≥ Δt)
+sea92438	Альфа-интерполяция:	Alpha interpolation:
+s724a416	x_render = x_prev · (1 − α) + x_curr · α,  где α = accumulator / Δt_fixed — для плавного отображения между кадрами.	x_render = x_prev · (1 − α) + x_curr · α,  where α = accumulator / Δt_fixed — for smooth rendering between frames.
+sf13c955	График сил статического и кинетического трения	Static and Kinetic Friction Force Graph
+s7f4e9e4	Приложенная сила, F	Applied force, F
+sfa295e2	=	=
+s6fbe645	=	=
+sb0ca82a	Статическая зона	Static zone
+sebb8190	(тело неподвижно, f = F)	(body at rest, f = F)
+s135290d	Кинетическая зона	Kinetic zone
+sfc75309	(тело скользит, f = μ_k N постоянна)	(body sliding, f = μ_k N constant)
+s6c9fe66	Трение покоя (f_s)	Static friction (f_s)
+se5c06c7	Трение скольжения (f_k)	Kinetic friction (f_k)
+sd7e58bf	Начало скольжения	Onset of sliding
+s344cc64	Эллиптическая орбита Кеплера и инварианты	Kepler Elliptical Orbit and Invariants
+sccea40c	Солнце (фокус)	Sun (focus)
+s095c7f6	Перигелий (r_p)	Perihelion (r_p)
+s7d9a5f6	Афелий (r_a)	Aphelion (r_a)
+sb5f24b5	=	=
+s06aa0d9	Сохраняющиеся инварианты	Conserved Invariants
+s72c9633	=	=
+se45cf88	=	=
+s026dc34	Дистанционный курс физики: архитектура LMS и цикл обратной связи с ИИ	Distance Physics Course: LMS Architecture and AI Feedback Loop
+s78d25e0	Студент	Student
+s1509776	=	=
+s43dbbb9	Аудио → сырой транскрипт	Audio → raw transcript
+sb4a8ddd	Конспект LaTeX +	LaTeX notes +
+s0e82fb6	Ядро LMS	LMS Core
+sf76df57	LTI 1.3 • xAPI • журнал оценок	LTI 1.3 • xAPI • Gradebook
+s1c143ca	Симуляторы HTML5 Canvas	HTML5 Canvas Simulators
+sd32dbcb	Когнитивный радар • скаффолдинг ЗБР	Cognitive Radar • ZPD Scaffolding
+sbe8e2f2	Индивидуальная учебная траектория	Individual Learning Pathway
+se5c79d0	Адаптивный цикл обратной связи на основе телеметрии (обновляется еженедельно)	Telemetry-driven adaptive feedback loop (updated weekly)
+se406e90	Аудит цифрового портфолио и сертификация	Digital Portfolio Audit and Certification
+s4aa464d	Возможности 4 ведущих LMS для физики/STEM	Physics/STEM Capabilities of 4 Leading LMS Platforms
+s5e82a54	Критерий	Criterion
+s54ece2c	Телеметрия xAPI	xAPI telemetry
+sb3f25f2	Отлично (Native)	Excellent (native)
+s976a38e	Полная	Full
+se7768e7	Плагин Logstore	Logstore plugin
+s021f520	Отлично (STACK/Maxima)	Excellent (STACK/Maxima)
+saa99af4	Отлично (Editor)	Excellent (Editor)
+s454b21a	Лидер (OAuth2)	Leading (OAuth2)
+seb407f1	Через внешний LTI	Via external LTI
+s4667ebd	Отлично (MathJax)	Excellent (MathJax)
+sbc04783	=	=
+sde0e097	Отлично (CodeJail)	Excellent (CodeJail)
+s1fe8c7f	Расширения	Add-ons
+s279f298	Ограничено	Limited
+s69386da	Источник: стандарт LTI 1.3 1EdTech Consortium (2023) и официальная документация платформ	Source: 1EdTech Consortium (2023) LTI 1.3 standard and official platform documentation
+s1e71cc4	Классическая механика: полный 4-этапный AI-конвейер	Classical Mechanics: A Complete 4-Stage AI Pipeline
+sa6533a1	=	=
+se310e2c	Обратная разработка:	Reverse engineering:
+s0921060	FBD, уравнения,	FBD, equations,
+s764e27d	выделение параметров	parameter extraction
+s26256a5	Vector2D, симплектический	Vector2D, symplectic
+seb2bbc5	Эйлер–Кромер, MTV	Euler–Cromer, MTV
+s8cc45bf	движок столкновений	collision engine
+sa92725b	аудит ΔE/E₀ &lt; 10⁻³,	ΔE/E₀ &lt; 10⁻³ audit,
+s348ceab	анализ безопасности AST	AST security analysis
+saed2d02	Нейросинтез видео,	Neural video synthesis,
+sb1ad92c	кинематическая	slow-motion kinematic
+s0735672	иллюстрация slow-motion	illustration
+s77d231f	Итог: физически устойчивая, энергосберегающая	Result: a physically stable, energy-conserving
+s4b12b3c	механическая симуляция + кинематическое видео	mechanics simulation + kinematic video
+s9c24914	(готово для итогового цифрового портфолио)	(ready for the capstone digital portfolio)
+s84f5a0f	FBD наклонной плоскости и импульс 2D упругого столкновения	Incline FBD and 2D Elastic Collision Impulse
+sa2fb56d	Диаграмма свободного тела (FBD)	Free-Body Diagram (FBD)
+sa472c63	F_тр	F_fr
+sb0b0a38	=	=
+sd33ddf8	Условие движения: tanα &gt; μₛ ⇒ a = g(sinα - μₖcosα)	Condition for motion: tanα &gt; μₛ ⇒ a = g(sinα - μₖcosα)
+sf814a38	Импульс 2D упругого столкновения	2D Elastic Collision Impulse
+s45869fd	нормаль контакта n	contact normal n
+scab3572	Парное программирование с ИИ (Driver–Navigator): рабочий процесс	AI Pair Programming (Driver–Navigator) Workflow
+s07aba1b	👤 Студент (Driver)	👤 Student (Driver)
+s7da2d6d	Пишет код	Writes the code
+sbf030b8	реализует классы	implements the classes
+s4532d45	Клавиатура и мышь	Keyboard and mouse
+s5161513	полностью у студента	fully in the student’s hands
+se58fea6	Отслеживает физические ошибки	Watches for physics errors
+s3c793ae	(энергия, импульс, проникновение)	(energy, momentum, penetration)
+s0cde1ca	Задаёт сократические вопросы	Asks Socratic questions
+s8f938dc	Не пишет код	Does not write code
+scd94ed3	напрямую, только направляет	directly, only guides
+s2be235b	Обмен кодом	Code sharing
+s94aa30b	Отзыв / вопрос	Feedback / question
+s2a3c75b	Итеративный цикл: написать → проверить → исправить	Iterative cycle: Write → Check → Fix
+sd1d8952	Устранение проникновения: Minimum Translation Vector (MTV)	Resolving Penetration: Minimum Translation Vector (MTV)
+s7c7d6c1	❌ До: тела вошли друг в друга	❌ Before: bodies have sunk into each other
+s9125fe6	=	=
+s79cd8cc	✅ После: разделены по MTV	✅ After: separated by the MTV
+sbcef954	каждое сдвигается на penetration/2	each is moved by penetration/2
+s852baf5	=	=
+sdd80835	Physics Main Loop (конвейер физических вычислений)	Physics Main Loop (physics computation pipeline)
+s5581812	1. Начальное	1. Initial
+sf67602d	состояние (s₀, v₀)	state (s₀, v₀)
+s9adf641	2. Расчёт	2. Compute
+sea77aea	сил (ΣF)	forces (ΣF)
+s17d7030	3. Ускорение	3. Acceleration
+sbf995e6	4. Интегрирование	4. Integration
+s4bc20c1	(Эйлер–Кромер)	(Euler–Cromer)
+saff3f83	=	=
+s47feba0	(рисование на Canvas)	(Canvas drawing)
+s9a1479b	requestAnimationFrame(loop) — повторяется каждый кадр (~60 fps, dt ≈ 0.016 с)	requestAnimationFrame(loop) — repeats every frame (~60 fps, dt ≈ 0.016 s)
+sa419640	От физической идеи до интерактивной симуляции на Canvas	From a Physics Idea to an Interactive Canvas Simulation
+s6333017	2. Контекст	2. Context
+s5f2bde6	3. Ограничения	3. Constraints
+s3368bd3	5. Самоаудит	5. Self-audit
+scd9da5e	При полном наборе из 5 компонентов вероятность корректной генерации кода LLM достигает 98%	With all 5 components in place, the probability of the LLM generating correct code reaches 98%
+sb80601f	Таксономия промпт-инжиниринга по разделам физики	Prompt-Engineering Taxonomy by Physics Topic
+s4bb44b6	Механика	Mechanics
+s02a708b	Снаряд, пружина	Projectile, spring
+sb35d6ad	Импульс	Momentum
+s521b6b7	2D-столкновение	2D collision
+s54e7212	Термодинамика	Thermodynamics
+s9cd7a8b	МКТ, теплота	Kinetic theory, heat
+sa4d0f2e	Электродинамика	Electrodynamics
+s87725cb	Кулон, Лоренц	Coulomb, Lorentz
+s25e9d1b	Оптика/кванты	Optics/Quantum
+s1a8fbb2	Дифракция, Бор	Diffraction, Bohr
+s5174853	По 2 готовых шаблона промптов на каждый раздел — всего 10	2 ready-made prompt templates per topic — 10 in total
+s9159a6c	Каждый шаблон соответствует стандарту из 5 элементов:	Each template follows the 5-element standard:
+sd0eecb9	Роль → Контекст → Физические ограничения → Формат вывода → Self-Refine	Role → Context → Physical Constraints → Output Format → Self-Refine
+s4d7c19f	Конвейер анимации HTML5 Canvas (requestAnimationFrame)	HTML5 Canvas Animation Pipeline (requestAnimationFrame)
+sf1ad89f	Кадр браузера	Browser frame
+sbf4298b	(~16.6 мс, 60 Гц)	(~16.6 ms, 60Hz)
+se5aaff0	вызывается callback	callback is called
+scbf7eac	Аккумулятор	Accumulator
+se66ef05	=	=
+sa6ef8fc	=	=
+sef66d29	Физика	Physics
+s2c0bb87	Обновление	Update
+sfca189f	=	=
+s13ee60e	Рисование на Canvas	Canvas drawing
+s0cf078d	Повторяется в каждом кадре браузера — синхронно с частотой обновления экрана	Repeats on every browser frame — in sync with the screen refresh rate
+s59100fe	Стандартное vs Retina High-DPI масштабирование Canvas	Standard vs Retina High-DPI Canvas Scaling
+s0b07a9c	❌ Стандарт (принято DPR = 1)	❌ Standard (assumes DPR = 1)
+sa001fff	canvas.width = ширина CSS (например, 300px)	canvas.width = CSS width (e.g. 300px)
+s35879e9	✅ Retina High-DPI (учтено DPR = 2)	✅ Retina High-DPI (DPR = 2 accounted for)
+s22ba917	canvas.width = ширина CSS × devicePixelRatio (600px)	canvas.width = CSS width × devicePixelRatio (600px)
+s9bec019	Причина:	Reason:
+sd8bf830	Если не учитывать плотность пикселей (DPR), браузер растягивает низкочастотный буфер пикселей	If pixel density (DPR) is ignored, the browser stretches a low-resolution pixel buffer
+s5b035d1	до размера экрана — изображение размыто. Если умножить внутренний буфер на DPR и применить ctx.scale(dpr, dpr), изображение остаётся чётким.	to the screen size — the image looks blurry. Multiplying the internal buffer by DPR and applying ctx.scale(dpr, dpr) keeps the image sharp.
+sd71243f	Google Antigravity AI: конвейер цифрового портфолио по физике	Google Antigravity AI: Digital Physics Portfolio Pipeline
+s1cb8112	1. Процессный	1. Process
+s9e7ef07	Лабораторный журнал,	Lab journal,
+sf84f80f	логи MagicSchool	MagicSchool logs
+s70c7136	Анализ	Analysis
+se00307a	Качество кода, безопасность,	Code quality, security,
+sd1729c5	соответствие архитектуре	architectural fit
+sf79846c	3. Аудит физических	3. Physical
+s625c16f	инвариантов	Invariants Audit
+s3a4c810	=	=
+s8a35bee	Цифровой паспорт на	GitHub Pages digital
+s5f56e23	GitHub Pages + бейдж	passport + badge
+s70ff0c8	Аудит не пройден: студенту возвращаются рекомендации по исправлению	Audit failed: correction recommendations are returned to the student
+saf4359f	🏅 Сертификат Antigravity AI	🏅 Antigravity AI Certificate
+s28106a5	Подтверждает 100% прохождение аудита	Certifies that code quality and physical
+s19d23dc	качества кода и физических инвариантов	invariants passed a 100% audit
+s484c325	4 TTS-движка: многомерная матрица оценки	4 TTS Engines: Multi-Dimensional Evaluation Matrix
+sd39daa6	=	=
+s60cce58	Узбекский: отлично	Uzbek: Excellent
+s3522f54	Термины: 94%	Terms: 94%
+s66cbc2a	SSML: средне	SSML: Medium
+s03fc734	Узбекский: очень хорошо	Uzbek: Very good
+s87d43d0	Термины: 89%	Terms: 89%
+s952ade6	SSML: хорошо	SSML: Good
+s3b00888	Многоязычность: отлично	Multilingual: Excellent
+s01e74f0	Термины: 96%	Terms: 96%
+s31fc95a	SSML: отлично (ms)	SSML: Excellent (ms)
+s5ff1529	Узбекский: хорошо	Uzbek: Good
+s1b2542b	Термины: 91%	Terms: 91%
+sddae4c6	SSML: превосходно	SSML: Outstanding
+s7766621	По шкале естественности MOS (Mean Opinion Score), максимум 5.0	On the MOS (Mean Opinion Score) naturalness scale, max 5.0
+sc88cf73	Векторная арифметика: сложение, скалярное произведение и нормализация	Vector Arithmetic: Addition, Dot Product and Normalisation
+s9dc6d0f	1. Сложение векторов	1. Vector Addition
+sb79bba5	2. Скалярное произведение (dot)	2. Dot Product (dot)
+s15e1570	v·n̂ = |v||n̂|cos(θ) — проекция на нормаль	v·n̂ = |v||n̂|cos(θ) — normal projection
+sab46eb4	v·n̂ &lt; 0 → сближение; v·n̂ ≥ 0 → удаление	v·n̂ &lt; 0 → approaching; v·n̂ ≥ 0 → separating
+se8f0fd8	3. Нормализация	3. Normalisation
+s2bcaaf9	v (длинный)	v (long)
+seeb3e38	Длина = 1, единичный вектор (направление сохраняется)	Length = 1, unit vector (direction preserved)
+se75e5fd	Конвейер синтеза кинематического видео в Runway Gen-2	Kinematic Video Synthesis Pipeline with Runway Gen-2
+s5c009eb	1. Внесение физических	1. Putting Physical
+s446647b	параметров в промпт	Parameters in the Prompt
+scdaaf10	масса, трение,	mass, friction,
+s4e6fe6b	угол, освещение	angle, lighting
+sd99fb75	2. Нейросинтез	2. Neural Video
+sbb50670	видео (Runway Gen-2)	Synthesis (Runway Gen-2)
+s3cbfbac	3. Сравнительный	3. Comparative
+sf02beee	Видео vs Canvas	Video vs Canvas
+sa8e3daf	результаты симуляции	simulation results
+sce663f9	Теория двойного кодирования (Paivio, 2007):	Dual-Coding Theory (Paivio, 2007):
+sa0f3bc2	при параллельной активации визуального и вербального каналов	when visual and verbal channels are activated in parallel
+sb36330c	закрепление в долговременной памяти ускоряется на 60%	consolidation in long-term memory speeds up by 60%
