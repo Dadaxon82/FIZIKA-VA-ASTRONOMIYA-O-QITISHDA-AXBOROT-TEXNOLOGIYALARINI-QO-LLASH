@@ -11,3 +11,7 @@ Tekshiruv: node --check app.js; node --check js/mustaqil-public.js; node --test 
 Sayt statik GitHub Pages asosida bepul ishlaydi, CNAME (ilimziyo.uz) o‘zgartirilmagan. Metodik namunalar yangi majburiy baholash mezonlari emas.
 
 Brauzerda avval 1440px va 390px ekranlar uchun bosh sahifa, simulyator, qidiruv va navigatsiya smoke-testdan o‘tgan. Barcha fizik modellarning ilmiy ekspertizasi va tashqi CDN resurslarini doimiy ishlashi alohida baholanishi lozim.
+
+## Ovozli o‘qish (YAF Voice)
+
+Har bir ma’ruza, laboratoriya va astronomiya sahifasi sarlavhasida "Tinglash" tugmasi bor: sahifani xatboshma-xatboshi ovoz bilan o‘qiydi (pauza/davom, oldingi/keyingi, istalgan xatboshidan boshlash, Esc — to‘xtatish). Formulalar KaTeX annotatsiyasidan so‘zga aylantirilib o‘qiladi. O‘zbekcha ovoz uchun oldindan tayyorlangan MP3 fayllar (`audio/uz/`) ishlatiladi; ular `.github/workflows/ovoz.yml` orqali GitHub Actions’da `edge-tts` yordamida avtomatik yaratiladi (API kalit kerak emas). MP3 hali tayyor bo‘lmagan yoki RU/EN tillarida — brauzerning o‘z ovozi ishlatiladi. Kod: `js/yaf-voice.js`, `css/yaf-voice.css`; tekshiruv: `python3 tools/voice_check.py .`.

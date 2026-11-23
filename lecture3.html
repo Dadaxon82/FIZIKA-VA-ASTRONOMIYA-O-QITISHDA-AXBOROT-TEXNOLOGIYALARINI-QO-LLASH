@@ -57,6 +57,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 <link rel="alternate" hreflang="ru" href="https://ilimziyo.uz/lecture3.html?lang=ru">
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture3.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture3.html">
+<link rel="stylesheet" href="css/yaf-voice.css">
 </head>
 <body>
 
@@ -180,6 +181,8 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
     
     <!-- Hero / Title Section -->
     <div class="section-header">
+      <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="tab-antigravity,tab-pipeline,tab-tts,tab-otter,tab-undetectable,tab-diag3" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
+      
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
         <span class="badge badge-cyan" data-i18n="common.lectureNo.l3">3-ma’ruza</span>
         <span class="badge badge-emerald" data-i18n="pages.lecture3.badge2">Sun’iy intellekt ekotizimi</span>
@@ -702,5 +705,6 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       const narrator = new TTSNarrator('tts-wave-canvas');
     });
   </script>
+<script defer src="js/yaf-voice.js"></script>
 </body>
 </html>

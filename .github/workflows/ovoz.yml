@@ -1,0 +1,87 @@
+# O'zbekcha neyron ovozli MP3 fayllarni avtomatik tayyorlaydi (YAF Voice).
+# Sahifalar yoki ovoz mantiqi o'zgarganda ishga tushadi: faqat yangi/o'zgargan xatboshilar ovozlanadi.
+# Qo'lda: Actions → "Ovoz (o'zbekcha MP3)" → Run workflow.
+#
+# SOZLASH (loyihaga qarab o'zgartiring):
+#   SITE_DIR  — brauzerga beriladigan tayyor sayt papkasi (statik sayt bo'lsa ".", yig'iladigan bo'lsa "dist", "build", "_site"...)
+#   AUDIO_DIR — MP3 lar saqlanadigan papka REPOZITORIYDA. U nashr qilinganda sayt ildizida "audio/uz/" bo'lib chiqishi shart
+#               (statik sayt: "audio/uz"; Vite/Next/Docusaurus: "public/audio/uz" yoki "static/audio/uz").
+#   BUILD_CMD — sayt yig'iladigan bo'lsa yig'ish buyrug'i (statik sayt uchun bo'sh qoldiring).
+name: Ovoz (o'zbekcha MP3)
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'audio/**'
+      - 'public/audio/**'
+      - 'static/audio/**'
+      - '**/*.mp3'
+  workflow_dispatch:
+    inputs:
+      voice:
+        description: "Ovoz: uz-UZ-SardorNeural (erkak) yoki uz-UZ-MadinaNeural (ayol)"
+        default: "uz-UZ-SardorNeural"
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: ovoz
+  cancel-in-progress: false
+
+env:
+  SITE_DIR: "."
+  AUDIO_DIR: "audio/uz"
+  BUILD_CMD: ""
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      TTS_VOICE: ${{ github.event.inputs.voice || 'uz-UZ-SardorNeural' }}
+      TTS_RATE: "-4%"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Kutubxonalar
+        run: |
+          pip install "edge-tts>=7" playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Saytni yig'ish (kerak bo'lsa)
+        if: env.BUILD_CMD != ''
+        run: ${{ env.BUILD_CMD }}
+
+      - name: Ovoz matnlarini yig'ish
+        run: python tools/tts_extract.py "$SITE_DIR" "$AUDIO_DIR/texts.json"
+
+      - name: Ovoz o'zgargan bo'lsa eski fayllarni tozalash
+        run: |
+          if [ -f "$AUDIO_DIR/manifest.json" ] && ! grep -q "\"voice\":\"$TTS_VOICE\"" "$AUDIO_DIR/manifest.json"; then
+            echo "Ovoz almashtirildi — barcha MP3 qayta yaratiladi"; rm -f "$AUDIO_DIR"/*.mp3
+          fi
+
+      - name: MP3 yaratish
+        run: python tools/tts_generate.py "$AUDIO_DIR"
+
+      - name: Saqlash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A "$AUDIO_DIR"
+          if git diff --cached --quiet; then echo "O'zgarish yo'q"; exit 0; fi
+          git commit -m "Ovoz: o'zbekcha MP3 fayllar yangilandi"
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 5; done
+
+      - name: GitHub Pages ni yangilash (Pages "branch" rejimida bo'lsa)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
