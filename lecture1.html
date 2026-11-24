@@ -561,17 +561,10 @@
     <section id="tab-simulators" class="doc-sec">
         <h2><span class="num">9</span><span data-i18n="pages.lecture1.tab4">4. Claude jonli simulyatorlar</span></h2>
 
-        <!-- Simulators sub-nav -->
-        <div class="tabs-nav" style="border-bottom: 1px solid var(--border-color); margin-bottom: 20px;">
-          <button class="tab-btn active" data-tab="subtab-pendulum" data-i18n="pages.lecture1.tab6">1. So‘nuvchi mayatnik (RK4)</button>
-          <button class="tab-btn" data-tab="subtab-lorentz" data-i18n="pages.lecture1.tab7">2. Lorens kuchi (3D, Boris usuli)</button>
-          <button class="tab-btn" data-tab="subtab-doppler" data-i18n="pages.lecture1.tab8">3. Doppler effekti va Max konusi</button>
-          <button class="tab-btn" data-tab="subtab-optics" data-i18n="pages.lecture1.tab9">4. Yung interferensiyasi</button>
-        </div>
-
         <!-- Subtab 1: Pendulum -->
-        <div id="subtab-pendulum" class="tab-content active">
-          <div class="sim-container">
+        <div id="subtab-pendulum" class="sim-wrap">
+          <h3 data-i18n="pages.lecture1.tab6">1. So‘nuvchi mayatnik (RK4)</h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="pendulum-canvas" class="sim-canvas"></canvas>
 
@@ -596,17 +589,17 @@
 
               <div class="control-group">
                 <label class="control-label">Ip uzunligi L: <span id="val-pendulum-l" class="control-val">2,0 m</span></label>
-                <input type="range" id="slider-pendulum-l" class="slider-input" min="0.5" max="4.0" step="0.1" value="2.0">
+                <input type="range" id="slider-pendulum-l" data-k="L" class="slider-input" min="0.5" max="4.0" step="0.1" value="2.0">
               </div>
 
               <div class="control-group">
                 <label class="control-label">So‘nish koeffitsiyenti γ: <span id="val-pendulum-gamma" class="control-val">0,15</span></label>
-                <input type="range" id="slider-pendulum-gamma" class="slider-input" min="0.0" max="0.8" step="0.02" value="0.15">
+                <input type="range" id="slider-pendulum-gamma" data-k="gamma" class="slider-input" min="0.0" max="0.8" step="0.02" value="0.15">
               </div>
 
               <div class="control-group">
                 <label class="control-label">Erkin tushish tezlanishi g: <span id="val-pendulum-g" class="control-val">9,81 m/s²</span></label>
-                <input type="range" id="slider-pendulum-g" class="slider-input" min="1.6" max="25.0" step="0.1" value="9.81">
+                <input type="range" id="slider-pendulum-g" data-k="g" class="slider-input" min="1.6" max="25.0" step="0.1" value="9.81">
               </div>
 
               <h4 style="font-size:0.9rem; margin-top:8px;">Faza fazosi attraktori (θ va ω):</h4>
@@ -617,11 +610,24 @@
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-pendulum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-pendulum">
+            <li data-set='{"L":2.0,"gamma":0.15,"g":9.81}'>Bu model so‘nuvchi matematik mayatnikni RK4 integratori bilan hisoblaydi. Boshlang‘ich holatda ip uzunligi ikki metr, so‘nish koeffitsiyenti past, erkin tushish tezlanishi Yerdagidek.</li>
+            <li data-set='{"gamma":0.6}'>Endi so‘nish koeffitsiyentini oshiramiz. Tebranish amplitudasi tezroq so‘nadi, chunki energiya ishqalanish tufayli tezroq yo‘qoladi.</li>
+            <li data-set='{"gamma":0.05,"L":4.0}'>So‘nishni kamaytirib, ip uzunligini to‘rt metrga yetkazamiz. Davr formulasi bo‘yicha davr ortadi — tebranish sekinlashadi, deyarli so‘nmaydi.</li>
+            <li data-set='{"g":1.62}'>Erkin tushish tezlanishini Oy sharoitiga, bir butun oltmish ikki yuzdan metr sekundkvadratga o‘zgartiramiz. Davr yanada ortadi — mayatnik juda sekin tebranadi.</li>
+            <li data-set='{"L":2.0,"gamma":0.15,"g":9.81}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
         </div>
 
         <!-- Subtab 2: Lorentz 3D -->
-        <div id="subtab-lorentz" class="tab-content">
-          <div class="sim-container">
+        <div id="subtab-lorentz" class="sim-wrap">
+          <h3 data-i18n="pages.lecture1.tab7">2. Lorens kuchi (3D, Boris usuli)</h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="lorentz-canvas" class="sim-canvas"></canvas>
               <div class="sim-hud">
@@ -638,17 +644,17 @@
 
               <div class="control-group">
                 <label class="control-label"><span>Maydon induksiyasi B<sub style="font-size:0.7em;">z</sub>:</span> <span id="val-lorentz-b" class="control-val">1,5 Tl</span></label>
-                <input type="range" id="slider-lorentz-b" class="slider-input" min="0.2" max="4.0" step="0.1" value="1.5">
+                <input type="range" id="slider-lorentz-b" data-k="B" class="slider-input" min="0.2" max="4.0" step="0.1" value="1.5">
               </div>
 
               <div class="control-group">
                 <label class="control-label"><span>Ko‘ndalang tezlik v<sub style="font-size:0.7em;">⊥</sub>:</span> <span id="val-lorentz-vperp" class="control-val">3,0 m/s</span></label>
-                <input type="range" id="slider-lorentz-vperp" class="slider-input" min="0.5" max="6.0" step="0.1" value="3.0">
+                <input type="range" id="slider-lorentz-vperp" data-k="vperp" class="slider-input" min="0.5" max="6.0" step="0.1" value="3.0">
               </div>
 
               <div class="control-group">
                 <label class="control-label"><span>Bo‘ylama tezlik v<sub style="font-size:0.7em;">∥</sub>:</span> <span id="val-lorentz-vpar" class="control-val">1,2 m/s</span></label>
-                <input type="range" id="slider-lorentz-vpar" class="slider-input" min="0.0" max="4.0" step="0.1" value="1.2">
+                <input type="range" id="slider-lorentz-vpar" data-k="vpar" class="slider-input" min="0.0" max="4.0" step="0.1" value="1.2">
               </div>
 
               <div class="control-actions">
@@ -656,11 +662,24 @@
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-lorentz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-lorentz">
+            <li data-set='{"B":1.5,"vperp":3.0,"vpar":1.2}'>Bu model bir jinsli magnit maydonidagi zaryadlangan zarrachaning spiral harakatini Boris usuli bilan hisoblaydi.</li>
+            <li data-set='{"B":3.5}'>Maydon induksiyasini oshiramiz. Larmor radiusi kichrayadi, spiral torayadi, siklotron chastotasi esa ortadi.</li>
+            <li data-set='{"vperp":5.5,"B":1.0}'>Endi ko‘ndalang tezlikni oshirib, maydonni kamaytiramiz — spiral radiusi kattalashadi.</li>
+            <li data-set='{"vpar":3.5}'>Bo‘ylama tezlikni oshirsak, spiral cho‘zilib, zarracha maydon chizig‘i bo‘ylab tezroq siljiydi.</li>
+            <li data-set='{"B":1.5,"vperp":3.0,"vpar":1.2}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
         </div>
 
         <!-- Subtab 3: Doppler -->
-        <div id="subtab-doppler" class="tab-content">
-          <div class="sim-container">
+        <div id="subtab-doppler" class="sim-wrap">
+          <h3 data-i18n="pages.lecture1.tab8">3. Doppler effekti va Max konusi</h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="doppler-canvas" class="sim-canvas"></canvas>
             </div>
@@ -669,7 +688,7 @@
               <h3 style="font-size:1.15rem; margin-bottom:6px;">Doppler effekti va Max konusi</h3>
               <div class="control-group">
                 <label class="control-label">Max soni M (v/c): <span id="val-doppler-mach" class="control-val">0,70</span></label>
-                <input type="range" id="slider-doppler-mach" class="slider-input" min="0.0" max="1.5" step="0.05" value="0.7">
+                <input type="range" id="slider-doppler-mach" data-k="M" class="slider-input" min="0.0" max="1.5" step="0.05" value="0.7">
               </div>
               <div class="sim-info-box">
                 $M &lt; 1$: tovushdan sekin harakat — to‘lqin frontlari manba oldida siqiladi.<br>
@@ -677,11 +696,23 @@
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-doppler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-doppler">
+            <li data-set='{"M":0.7}'>Bu model tovush manbasining harakatidagi Doppler effekti va Max konusini ko‘rsatadi. Hozir Max soni nol butun yettidan — manba tovushdan sekinroq harakatlanmoqda.</li>
+            <li data-set='{"M":0.95}'>Max sonini birga yaqinlashtiramiz. To‘lqin frontlari manba oldida deyarli ustma-ust tushadi.</li>
+            <li data-set='{"M":1.3}'>Endi Max sonidan oshib ketamiz. Manba tovushdan tezroq harakatlanadi va orqasida Max zarba konusi hosil bo‘ladi.</li>
+            <li data-set='{"M":0.7}'>Parametrni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
         </div>
 
         <!-- Subtab 4: Optics -->
-        <div id="subtab-optics" class="tab-content">
-          <div class="sim-container">
+        <div id="subtab-optics" class="sim-wrap">
+          <h3 data-i18n="pages.lecture1.tab9">4. Yung interferensiyasi</h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="optics-canvas" class="sim-canvas"></canvas>
             </div>
@@ -690,15 +721,26 @@
               <h3 style="font-size:1.15rem; margin-bottom:6px;" data-i18n="home.simulators.sim_tab4">Yung interferensiyasi</h3>
               <div class="control-group">
                 <label class="control-label">To‘lqin uzunligi λ: <span id="val-optics-wl" class="control-val">532 nm (yashil)</span></label>
-                <input type="range" id="slider-optics-wl" class="slider-input" min="380" max="750" step="5" value="532">
+                <input type="range" id="slider-optics-wl" data-k="wl" class="slider-input" min="380" max="750" step="5" value="532">
               </div>
 
               <div class="control-group">
                 <label class="control-label">Tirqishlar orasidagi masofa d: <span id="val-optics-d" class="control-val">0,25 mm</span></label>
-                <input type="range" id="slider-optics-d" class="slider-input" min="0.1" max="0.8" step="0.02" value="0.25">
+                <input type="range" id="slider-optics-d" data-k="d" class="slider-input" min="0.1" max="0.8" step="0.02" value="0.25">
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-optics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-optics">
+            <li data-set='{"wl":532,"d":0.25}'>Bu model Yung ikki tirqishli interferensiya tajribasini ko‘rsatadi. Hozir to‘lqin uzunligi besh yuz o‘ttiz ikki nanometr — yashil lazer, tirqishlar orasidagi masofa nol butun yigirma beshdan millimetr.</li>
+            <li data-set='{"wl":700}'>To‘lqin uzunligini yetti yuz nanometrga, ya’ni qizil nurga o‘zgartiramiz. Interferensiya chiziqlari orasidagi masofa kattalashadi, chunki u to‘lqin uzunligiga to‘g‘ri proporsional.</li>
+            <li data-set='{"d":0.6}'>Endi tirqishlar orasidagi masofani oshiramiz. Chiziqlar bir-biriga yaqinlashadi.</li>
+            <li data-set='{"wl":532,"d":0.25}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
         </div>
 
     </section>
