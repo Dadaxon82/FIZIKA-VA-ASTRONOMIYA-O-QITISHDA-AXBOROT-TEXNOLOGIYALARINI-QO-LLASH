@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>1-ma’ruza: Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib fizik simulyatsion animatsiya yaratish paradigmasi</title>
   <meta name="description" content="1-ma'ruza: raqamli texnologiyalar davrida sun'iy intellekt yordamida fizik simulyatsion animatsiya yaratish paradigmasi haqida.">
   <link rel="stylesheet" href="css/main.css">
@@ -58,6 +59,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture1.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture1.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -97,6 +99,10 @@
 
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <div class="hamburger-icon">
             <span></span>
@@ -146,26 +152,46 @@
   <main class="main-container" style="padding-top: 40px; padding-bottom: 90px;">
 
     <!-- Hero / Title Section -->
-    <div id="hero" class="section-header">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,vread-pre3,vread-pre4,vread-pre5,tab-magicschool,tab-gemini,tab-midjourney,tab-simulators,subtab-pendulum,subtab-lorentz,subtab-doppler,subtab-optics,tab-rubrics" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
-        <span class="badge badge-emerald" data-i18n="common.lectureNo.l1">1-ma’ruza</span>
-        <span class="badge badge-cyan" data-i18n="pages.lecture1.badge2">Oliy ta’lim va magistratura</span>
-        <span class="badge badge-purple" data-i18n="pages.lecture1.badge3">AI-native ta’lim paradigmasi</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotation">Annotatsiya</a> / <span data-i18n="common.lectureNo.l1">1-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l1">1-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c" data-i18n="pages.lecture1.badge2">Oliy ta’lim va magistratura</span>
+        <span class="chip v" data-i18n="pages.lecture1.badge3">AI-native ta’lim paradigmasi</span>
       </div>
       <h1  data-i18n="pages.lecture1.h1">
         Kirish. Raqamli texnologiyalar davrida sun’iy intellektdan foydalanib <br>
         <span class="text-gradient" data-i18n="pages.lecture1.h1Accent">fizik simulyatsion animatsiya yaratish paradigmasi</span>
       </h1>
-      <p style="font-size: 1.15rem; color:#4B5464; max-width: 1050px; line-height: 1.7;">
+      <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 1050px; line-height: 1.7;">
         Ushbu ma’ruzada an’anaviy <em style="color: var(--text-main);">"dasturni sintaktik o‘rganish"</em> yondashuvidan farqli o‘laroq, talabani <strong style="color: var(--text-main);">"Fizik-Muhandis va Dasturiy Arxitektor"</strong> sifatida shakllantirish, generativ sun’iy intellekt vositalari (MagicSchool AI, Gemini/ChatGPT, Midjourney, Runway, Claude) sinergiyasida interaktiv Web-simulyatsiyalar yaratishning to‘liq 5 bosqichli yo‘l xaritasi va Capstone portfolio talablari o‘rganiladi.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture1.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#vread-pre2" data-i18n="pages.lecture1.tocGoal">2. Fanning maqsadi</a></li>
+        <li><a href="#vread-pre3" data-i18n="pages.lecture1.tocParadigm">3. Paradigma qiyosi</a></li>
+        <li><a href="#vread-pre4" data-i18n="pages.lecture1.tocRoadmap">4. Semestr yo‘l xaritasi</a></li>
+        <li><a href="#vread-pre5" data-i18n="pages.lecture1.tocFreeAlt">5. Bepul muqobillar</a></li>
+        <li><a href="#tab-magicschool" data-i18n="pages.lecture1.tab1">6. MagicSchool AI va diagnostika</a></li>
+        <li><a href="#tab-gemini" data-i18n="pages.lecture1.tab2">7. Gemini / ChatGPT ssenariy</a></li>
+        <li><a href="#tab-midjourney" data-i18n="pages.lecture1.tab3">8. Midjourney va Runway</a></li>
+        <li><a href="#tab-simulators" data-i18n="pages.lecture1.tab4">9. Jonli simulyatorlar</a></li>
+        <li><a href="#tab-rubrics" data-i18n="pages.lecture1.tab5">10. Baholash va Capstone</a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 6-Stage Reja Banner -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma’ruza rejasi:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h2><span class="num">1</span>📋 Ma’ruza rejasi</h2>
       <div class="grid-3" style="gap: 16px;">
         <div class="glass-panel" style="padding: 12px 16px; border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1-2. AI diagnostika va individual reja:</strong><br>
@@ -192,12 +218,12 @@
           <span style="font-size: 0.9rem; color: var(--text-secondary);">Mustaqil Web simulyatsiyalar yaratish va portfolio himoyasi.</span>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Fanning Maqsad va Vazifalari Section -->
-    <div id="vread-pre2" class="glass-panel" style="margin-bottom: 40px;">
+    <section id="vread-pre2" class="doc-sec">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
-        <h2 style="margin-bottom:0;">🎯 Fanning didaktik maqsadi va yakuniy mahorat mezonlari</h2>
+        <h2 style="margin-bottom:0;"><span class="num">2</span>🎯 Fanning didaktik maqsadi va yakuniy mahorat mezonlari</h2>
         <span class="badge badge-emerald">Kutilayotgan natija</span>
       </div>
       <p style="margin-bottom: 20px; color: var(--text-secondary);">
@@ -221,12 +247,12 @@
           <p style="font-size:0.9rem;">Ishlab chiqilgan simulyatsiyani GitHub Pages orqali ochiq tarmoqqa joylash, ilmiy pasportini tuzish va himoya qilish.</p>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Pedagogik paradigma qiyosi -->
-    <div id="vread-pre3" class="glass-panel" style="margin-bottom: 40px;">
+    <section id="vread-pre3" class="doc-sec">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
-        <h2 style="margin-bottom:0;">⚖️ Pedagogik paradigma qiyosi: an’anaviy va AI-native modellashtirish</h2>
+        <h2 style="margin-bottom:0;"><span class="num">3</span>⚖️ Pedagogik paradigma qiyosi: an’anaviy va AI-native modellashtirish</h2>
         <span class="badge badge-purple">Yondashuvlar farqi</span>
       </div>
       <div class="grid-2" style="gap: 18px;">
@@ -249,12 +275,12 @@
           </ul>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- 5-Stage Semester Roadmap Flowchart -->
-    <div id="vread-pre4" class="glass-panel" style="margin-bottom: 40px; text-align: center;">
+    <section id="vread-pre4" class="doc-sec" style="text-align: center;">
       <span class="badge badge-amber" style="margin-bottom: 12px;">Semestr trayektoriyasi</span>
-      <h2 style="margin-bottom: 14px;">5 Bosqichli semestr yo‘l xaritasi (roadmap)</h2>
+      <h2 style="margin-bottom: 14px; justify-content: center;"><span class="num">4</span>5 Bosqichli semestr yo‘l xaritasi (roadmap)</h2>
       <p style="max-width: 800px; margin: 0 auto 30px; color: var(--text-secondary);">
         Talabaning 1-haftadagi nazariyadan 16-haftadagi Capstone himoyasigacha bo‘lgan to‘liq o‘quv oqimi:
       </p>
@@ -292,11 +318,11 @@
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Bepul muqobillar -->
-    <div id="vread-pre5" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre5" class="doc-sec free-alt" style="border-left: 4px solid var(--accent-emerald);">
+      <h2 style="margin-bottom: 10px; font-size: 1.2rem;"><span class="num">5</span><span data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</span></h2>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt1"><strong style="color: var(--text-main);">Midjourney</strong> o‘rniga: Microsoft Designer (Bing Image Creator), Gemini yoki ChatGPT bepul tarifidagi tasvir generatsiyasi, Stable Diffusion; aniq ilmiy chizmalar uchun Inkscape, diagrams.net, GeoGebra.</li>
@@ -306,23 +332,13 @@
         <li data-i18n="freeAlt.alt5"><strong style="color: var(--text-main);">ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
+    </section>
 
-    <!-- Tabs Container: 6 Main Modules -->
-    <div class="tabs-container" style="margin-bottom: 40px;">
-      <div class="tabs-nav">
-        <button class="tab-btn active" data-tab="tab-magicschool" data-i18n="pages.lecture1.tab1">1. MagicSchool AI va diagnostika</button>
-        <button class="tab-btn" data-tab="tab-gemini" data-i18n="pages.lecture1.tab2">2. Gemini / ChatGPT ssenariy</button>
-        <button class="tab-btn" data-tab="tab-midjourney" data-i18n="pages.lecture1.tab3">3. Midjourney va Runway</button>
-        <button class="tab-btn" data-tab="tab-simulators" data-i18n="pages.lecture1.tab4">4. Claude jonli simulyatorlar</button>
-        <button class="tab-btn" data-tab="tab-rubrics" data-i18n="pages.lecture1.tab5">5. Baholash va Capstone rubrikasi</button>
-      </div>
-
-      <!-- Tab 1: MagicSchool AI -->
-      <div id="tab-magicschool" class="tab-content active">
+    <!-- Tab 1: MagicSchool AI -->
+    <section id="tab-magicschool" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">🧠 MagicSchool AI: boshlang‘ich diagnostika va 3 klasterli adaptiv trayektoriya</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">6</span>🧠 MagicSchool AI: boshlang‘ich diagnostika va 3 klasterli adaptiv trayektoriya</h2>
             <span class="badge badge-cyan">Vygotskiy ZPD modeli</span>
           </div>
 
@@ -450,13 +466,13 @@
             <li><strong style="color: var(--text-main);">Mozilla Developer Network (MDN). (2024).</strong> <em style="color: var(--text-main);">Web Animations API</em>. MDN Web Docs.</li>
           </ol>
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 2: Gemini & GPT-4 -->
-      <div id="tab-gemini" class="tab-content">
+    <!-- Tab 2: Gemini & GPT-4 -->
+    <section id="tab-gemini" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">📖 Gemini va ChatGPT: 4 bosqichli dars ssenariysi injiniringi</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">7</span>📖 Gemini va ChatGPT: 4 bosqichli dars ssenariysi injiniringi</h2>
             <span class="badge badge-emerald">Nazariya va pedagogika</span>
           </div>
 
@@ -499,13 +515,13 @@
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 3: Midjourney & Runway -->
-      <div id="tab-midjourney" class="tab-content">
+    <!-- Tab 3: Midjourney & Runway -->
+    <section id="tab-midjourney" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">🎨 Midjourney va Runway: multimodal ilmiy aktivlar</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">8</span>🎨 Midjourney va Runway: multimodal ilmiy aktivlar</h2>
             <span class="badge badge-amber">Grafika va video</span>
           </div>
 
@@ -539,13 +555,14 @@
 </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 4: Live Canvas Simulators -->
-      <div id="tab-simulators" class="tab-content">
+    <!-- Tab 4: Live Canvas Simulators -->
+    <section id="tab-simulators" class="doc-sec">
+        <h2><span class="num">9</span><span data-i18n="pages.lecture1.tab4">4. Claude jonli simulyatorlar</span></h2>
 
         <!-- Simulators sub-nav -->
-        <div class="tabs-nav" style="border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 20px;">
+        <div class="tabs-nav" style="border-bottom: 1px solid var(--border-color); margin-bottom: 20px;">
           <button class="tab-btn active" data-tab="subtab-pendulum" data-i18n="pages.lecture1.tab6">1. So‘nuvchi mayatnik (RK4)</button>
           <button class="tab-btn" data-tab="subtab-lorentz" data-i18n="pages.lecture1.tab7">2. Lorens kuchi (3D, Boris usuli)</button>
           <button class="tab-btn" data-tab="subtab-doppler" data-i18n="pages.lecture1.tab8">3. Doppler effekti va Max konusi</button>
@@ -684,13 +701,13 @@
           </div>
         </div>
 
-      </div>
+    </section>
 
-      <!-- Tab 5: Rubrics & Capstone -->
-      <div id="tab-rubrics" class="tab-content">
+    <!-- Tab 5: Rubrics & Capstone -->
+    <section id="tab-rubrics" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">📊 5 Mezonli baholash standarti va Capstone portfolioga qo‘yiladigan talablar</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">10</span>📊 5 Mezonli baholash standarti va Capstone portfolioga qo‘yiladigan talablar</h2>
             <span class="badge badge-purple">Baholash matritsasi</span>
           </div>
 
@@ -745,7 +762,13 @@
             </div>
           </div>
         </div>
-      </div>
+    </section>
+
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="annotatsiya.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="nav.annotation">Annotatsiya</h3></a>
+      <a class="card next" href="lecture2.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l2">2-ma’ruza</h3></a>
+    </nav>
+    </div>
     </div>
   </main>
 
@@ -864,5 +887,6 @@
     });
   </script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

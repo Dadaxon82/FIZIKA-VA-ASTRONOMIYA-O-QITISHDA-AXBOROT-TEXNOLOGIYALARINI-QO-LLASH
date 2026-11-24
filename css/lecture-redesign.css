@@ -1,0 +1,78 @@
+/* 1-ma'ruza uchun pilot qayta dizayn: referens loyiha strukturasi (hero/crumbs/chips,
+   TOC + ketma-ket nomerlangan bo'limlar, callout/example/pager) saytning o'z (light)
+   token'lariga (css/main.css) moslab ko'chirildi. Faqat lecture1.html yuklaydi —
+   boshqa sahifalarga ta'sir qilmaydi. Kun/tun rejimi shu sahifaga xos qo'shimcha. */
+
+.theme-btn { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: var(--radius-full); border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; transition: .15s; }
+.theme-btn:hover { border-color: var(--border-hover); color: var(--accent-cyan); }
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn .sun { display: none; }
+html[data-theme="dark"] .theme-btn .moon { display: none; }
+html[data-theme="dark"] .theme-btn .sun { display: block; }
+
+html[data-theme="dark"] {
+  --bg-primary: #0B1220;
+  --bg-secondary: #0F172A;
+  --bg-card: #121B2E;
+  --bg-card-hover: #182538;
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(90, 160, 255, 0.5);
+  --border-active: rgba(90, 160, 255, 0.65);
+  --text-main: #E7ECF5;
+  --text-primary: #E7ECF5;
+  --text-secondary: #AAB4C8;
+  --text-muted: #8993A8;
+}
+html[data-theme="dark"] body { background: var(--bg-primary); }
+
+/* --- Hero: crumbs / eyebrow / chips --- */
+.page-hero .crumbs { font-size: .85rem; color: var(--text-muted); margin-bottom: .75rem; }
+.page-hero .crumbs a { color: var(--text-muted); text-decoration: none; }
+.page-hero .crumbs a:hover { color: var(--accent-cyan); text-decoration: underline; }
+.page-hero .eyebrow { font: 700 .82rem var(--font-mono); letter-spacing: .04em; color: var(--accent-cyan); margin-bottom: .5rem; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: var(--radius-full); font-size: .78rem; font-weight: 700; background: var(--bg-card-hover); color: var(--text-secondary); border: 1px solid var(--border-color); }
+.chip.c { color: var(--accent-cyan); border-color: rgba(28,78,158,.25); }
+.chip.v { color: var(--accent-purple); border-color: rgba(124,58,237,.25); }
+.chip.a { color: var(--accent-emerald); border-color: rgba(4,120,87,.25); }
+
+/* --- TOC + doc-sec layout --- */
+.doc-layout { display: grid; grid-template-columns: 240px 1fr; gap: 32px; align-items: start; margin-top: 8px; }
+.toc { position: sticky; top: 90px; align-self: start; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); }
+.toc h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); margin-bottom: 10px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.toc a { display: block; padding: 5px 8px; border-radius: 8px; font-size: .86rem; color: var(--text-secondary); text-decoration: none; border-left: 2px solid transparent; }
+.toc a:hover { background: var(--bg-card-hover); color: var(--text-main); }
+.toc a.on { color: var(--accent-cyan); border-left-color: var(--accent-cyan); background: var(--bg-card-hover); font-weight: 700; }
+.doc { min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+.doc-sec { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm); scroll-margin-top: 90px; }
+.doc-sec > h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.doc-sec > h2 .num { display: inline-grid; place-items: center; width: 30px; height: 30px; flex-shrink: 0; border-radius: var(--radius-full); background: var(--accent-cyan); color: #fff; font-size: .85rem; font-weight: 800; }
+
+/* --- Callout / example --- */
+.callout { border-radius: var(--radius-md); padding: 14px 18px; margin: 14px 0; font-size: .92rem; line-height: 1.6; border: 1px solid var(--border-color); }
+.callout b { display: block; margin-bottom: 4px; }
+.callout.info { background: rgba(28,78,158,.06); border-color: rgba(28,78,158,.2); }
+.callout.info b { color: var(--accent-cyan); }
+.callout.ai { background: rgba(124,58,237,.06); border-color: rgba(124,58,237,.2); }
+.callout.ai b { color: var(--accent-purple); }
+.example { border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; margin: 14px 0; }
+.example .ex-h { background: var(--bg-card-hover); padding: 10px 16px; font-weight: 700; font-size: .92rem; }
+.example .ex-b { padding: 16px; }
+.example details summary { cursor: pointer; color: var(--accent-cyan); font-weight: 600; font-size: .88rem; margin-top: 8px; }
+
+/* --- Pager (prev/next) --- */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+.pager .card { display: block; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px 18px; text-decoration: none; color: var(--text-main); transition: .15s; }
+.pager .card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-md); }
+.pager .card.next { text-align: right; }
+.pager .badge { display: block; font-size: .72rem; color: var(--text-muted); margin-bottom: 4px; }
+.pager .card h3 { margin: 0; font-size: 1rem; }
+
+@media (max-width: 860px) {
+  .doc-layout { grid-template-columns: 1fr; }
+  .toc { position: static; }
+  .pager { grid-template-columns: 1fr; }
+  .pager .card.next { text-align: left; }
+}
