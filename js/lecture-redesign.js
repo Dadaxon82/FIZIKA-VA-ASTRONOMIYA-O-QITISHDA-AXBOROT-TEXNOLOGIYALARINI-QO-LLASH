@@ -9,16 +9,20 @@
     });
   }
 
+  function toggleTocGroup(li) {
+    var open = li.classList.toggle('open');
+    var expandBtn = li.querySelector('.toc-expand');
+    if (expandBtn) expandBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
   document.querySelectorAll('.toc-group > a').forEach(function (a) {
-    a.addEventListener('click', function () { a.closest('.toc-group').classList.add('open'); });
+    a.addEventListener('click', function () { toggleTocGroup(a.closest('.toc-group')); });
   });
 
   document.querySelectorAll('.toc-expand').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
-      var li = btn.closest('.toc-group');
-      var open = li.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggleTocGroup(btn.closest('.toc-group'));
     });
   });
 
@@ -35,11 +39,7 @@
         if (e.isIntersecting) {
           tocLinks.forEach(function (a) { a.classList.remove('on'); });
           var a = map.get(e.target);
-          if (a) {
-            a.classList.add('on');
-            var group = a.closest('.toc-group');
-            if (group) group.classList.add('open');
-          }
+          if (a) a.classList.add('on');
         }
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
