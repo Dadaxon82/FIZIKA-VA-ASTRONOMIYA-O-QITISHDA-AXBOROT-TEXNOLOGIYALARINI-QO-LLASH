@@ -48,7 +48,7 @@ html[data-theme="dark"] body { background: var(--bg-primary); }
 .toc-group { position: relative; }
 .toc-group .toc-expand { position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; border: none; background: none; color: var(--text-muted); cursor: pointer; font-size: .8rem; transition: transform .15s; }
 .toc-group.open .toc-expand { transform: rotate(180deg); color: var(--accent-cyan); }
-.toc-sub { display: none; list-style: none; margin: 2px 0 2px 14px; padding: 0; flex-direction: column; gap: 2px; border-left: 2px solid var(--border-color); }
+.toc .toc-sub { display: none; list-style: none; margin: 2px 0 2px 14px; padding: 0; flex-direction: column; gap: 2px; border-left: 2px solid var(--border-color); }
 .toc-group.open .toc-sub { display: flex; }
 .toc-sub a { font-size: .8rem; padding: 4px 8px; }
 .doc { min-width: 0; display: flex; flex-direction: column; gap: 28px; }

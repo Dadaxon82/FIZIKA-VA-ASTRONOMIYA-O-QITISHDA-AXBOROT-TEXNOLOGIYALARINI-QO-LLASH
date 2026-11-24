@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>2-ma’ruza: Fizik jarayonni modellashtirish metodologiyasi</title>
   <meta name="description" content="2-ma'ruza: fizik jarayonni modellashtirish metodologiyasi — kuzatishdan vizual kod va debugginggacha bo'lgan bosqichlar.">
   <link rel="stylesheet" href="css/main.css">
@@ -58,6 +59,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture2.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture2.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -114,6 +116,10 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <div class="hamburger-icon">
             <span></span>
@@ -180,27 +186,53 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
     
     <!-- Hero / Title Section -->
-    <div id="hero" class="section-header">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-diag2,tab-reverse2,tab-math,tab-sims,subtab-projectile,subtab-spring,subtab-collision,tab-debug-sandboxes,tab-prompts2" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
-        <span class="badge badge-purple" data-i18n="common.lectureNo.l2">2-ma’ruza</span>
-        <span class="badge badge-cyan" data-i18n="pages.lecture2.badge2">Hisoblash fizikasi va metodologiya</span>
-        <span class="badge badge-emerald" data-i18n="pages.lecture2.badge3">Teskari muhandislik (Reverse Engineering)</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotation">Annotatsiya</a> / <span data-i18n="common.lectureNo.l2">2-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l2">2-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c" data-i18n="pages.lecture2.badge2">Hisoblash fizikasi va metodologiya</span>
+        <span class="chip v" data-i18n="pages.lecture2.badge3">Teskari muhandislik (Reverse Engineering)</span>
       </div>
       <h1  data-i18n="pages.lecture2.h1">
         Fizik jarayonni modellashtirish metodologiyasi: <br>
         <span class="text-gradient" data-i18n="pages.lecture2.h1Accent">kuzatishdan vizual kod va debugginggacha</span>
       </h1>
-      <p style="font-size: 1.15rem; color:#4B5464; max-width: 1050px; line-height: 1.7;">
-        Ushbu ma’ruzada har qanday fizik hodisani kompyuterda animatsiya va simulyatsiya qilishning fundamental ilmiy-metodologik konveyeri o‘rganiladi: 
+      <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 1050px; line-height: 1.7;">
+        Ushbu ma’ruzada har qanday fizik hodisani kompyuterda animatsiya va simulyatsiya qilishning fundamental ilmiy-metodologik konveyeri o‘rganiladi:
         <strong>Hodisani kuzatish (PhET/Vascak) $\to$ Fizik qonunni aniqlash (Gemini) $\to$ Matematik model (WolframAlpha) $\to$ Algoritmlashtirish (Claude) $\to$ Vizual kod (Canvas) $\to$ Xatolarni tuzatish (Code Interpreter)</strong>.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture2.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#vread-pre2" data-i18n="pages.lecture2.tocPipeline">2. Metodologik zanjir</a></li>
+        <li><a href="#tab-diag2">3. <span data-i18n="pages.lecture2.tab1">AI diagnostika (MagicSchool)</span></a></li>
+        <li><a href="#tab-reverse2">4. <span data-i18n="pages.lecture2.tab2">Teskari muhandislik (PhET va Vascak)</span></a></li>
+        <li><a href="#tab-math">5. <span data-i18n="pages.lecture2.tab3">Matematik model (differensial tenglamalar)</span></a></li>
+        <li class="toc-group">
+          <a href="#tab-sims">6. <span data-i18n="pages.lecture2.tab4">Jonli simulyatorlar (Drag, Integratorlar, Impuls)</span></a>
+          <button class="toc-expand" type="button" aria-expanded="false" aria-label="Kichik bo‘limlarni ko‘rsatish">▾</button>
+          <ol class="toc-sub">
+            <li><a href="#subtab-projectile">6.1 <span data-i18n="pages.lecture2.tab7">Aerodinamik drag (RK4)</span></a></li>
+            <li><a href="#subtab-spring">6.2 <span data-i18n="pages.lecture2.tab8">Integratorlar xatosi (Eyler va RK4)</span></a></li>
+            <li><a href="#subtab-collision">6.3 <span data-i18n="pages.lecture2.tab9">To‘qnashuvlar (Impuls va Restitution)</span></a></li>
+          </ol>
+        </li>
+        <li><a href="#tab-debug-sandboxes">7. <span data-i18n="pages.lecture2.tab5">4 ta debugging sandboxes</span></a></li>
+        <li><a href="#tab-prompts2">8. <span data-i18n="pages.lecture2.tab6">Tizimli promptlar arxivi</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 7-Stage Reja Banner -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-purple);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 7 Bosqichli ma’ruza rejasi va AI vositalari:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-purple);">
+      <h2><span class="num">1</span>📋 7 Bosqichli ma’ruza rejasi va AI vositalari</h2>
       <div class="grid-4" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika:</strong><br>
@@ -235,12 +267,12 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Tayyor simulyatsiyani dekonstruksiya qilib yangi model yaratish.</span>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Methodology Pipeline Flowchart -->
-    <div id="vread-pre2" class="glass-panel" style="margin-bottom: 40px; text-align: center;">
+    <section id="vread-pre2" class="doc-sec" style="text-align: center;">
       <span class="badge badge-cyan" style="margin-bottom: 12px;">Ilmiy konveyer</span>
-      <h2 style="margin-bottom: 14px;">Fizik modellashtirishning umumiy metodologik zanjiri</h2>
+      <h2 style="justify-content: center;"><span class="num">2</span>Fizik modellashtirishning umumiy metodologik zanjiri</h2>
       <p style="max-width: 850px; margin: 0 auto 30px;">
         Har qanday fizik simulyatsiyani yaratishda quyidagi fundamental zanjir bo‘yicha qat’iy harakat qilinadi:
       </p>
@@ -278,24 +310,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Tabs Container: 6 Main Methodological Modules -->
-    <div class="tabs-container" style="margin-bottom: 40px;">
-      <div class="tabs-nav">
-        <button class="tab-btn active" data-tab="tab-diag2" data-i18n="pages.lecture2.tab1">1. AI diagnostika (MagicSchool)</button>
-        <button class="tab-btn" data-tab="tab-reverse2" data-i18n="pages.lecture2.tab2">2. Teskari muhandislik (PhET va Vascak)</button>
-        <button class="tab-btn" data-tab="tab-math" data-i18n="pages.lecture2.tab3">3. Matematik model (differensial tenglamalar)</button>
-        <button class="tab-btn" data-tab="tab-sims" data-i18n="pages.lecture2.tab4">4. Jonli simulyatorlar (Drag, Integratorlar, Impuls)</button>
-        <button class="tab-btn" data-tab="tab-debug-sandboxes" data-i18n="pages.lecture2.tab5">5. 4 ta debugging sandboxes</button>
-        <button class="tab-btn" data-tab="tab-prompts2" data-i18n="pages.lecture2.tab6">6. Tizimli promptlar arxivi</button>
-      </div>
-
-      <!-- Tab 1: AI Diagnostika (MagicSchool) -->
-      <div id="tab-diag2" class="tab-content active">
+    <!-- Tab 1: AI Diagnostika (MagicSchool) -->
+    <section id="tab-diag2" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">🧠 MagicSchool AI: modellashtirish ko‘nikmalari diagnostikasi</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">3</span>🧠 MagicSchool AI: modellashtirish ko‘nikmalari diagnostikasi</h2>
             <span class="badge badge-cyan">Adaptiv reja</span>
           </div>
 
@@ -430,13 +451,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
             <li><strong>Vygotsky, L. S. (1978).</strong> <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press.</li>
           </ol>
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 2: Teskari Muhandislik (PhET & Vascak.cz) -->
-      <div id="tab-reverse2" class="tab-content">
+    <!-- Tab 2: Teskari Muhandislik (PhET & Vascak.cz) -->
+    <section id="tab-reverse2" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">🔬 Teskari muhandislik (Reverse Engineering): PhET va Vascak.cz</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">4</span>🔬 Teskari muhandislik (Reverse Engineering): PhET va Vascak.cz</h2>
             <span class="badge badge-emerald">Dekonstruksiya metodikasi</span>
           </div>
 
@@ -489,13 +510,13 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 3: Matematik Model & Tenglamalar -->
-      <div id="tab-math" class="tab-content">
+    <!-- Tab 3: Matematik Model & Tenglamalar -->
+    <section id="tab-math" class="doc-sec">
         <div class="glass-panel">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h2 style="font-size: 1.4rem;">📐 Matematik modellar va differensial tenglamalar apparati</h2>
+            <h2 style="font-size: 1.4rem;"><span class="num">5</span>📐 Matematik modellar va differensial tenglamalar apparati</h2>
             <span class="badge badge-purple">WolframAlpha va ChatGPT</span>
           </div>
 
@@ -562,21 +583,16 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 4: Jonli Simulyatorlar -->
-      <div id="tab-sims" class="tab-content">
-        
-        <!-- Simulators sub-nav -->
-        <div class="tabs-nav" style="border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 20px;">
-          <button class="tab-btn active" data-tab="subtab-projectile" data-i18n="pages.lecture2.tab7">1. Aerodinamik drag (RK4)</button>
-          <button class="tab-btn" data-tab="subtab-spring" data-i18n="pages.lecture2.tab8">2. Integratorlar xatosi (Eyler va RK4)</button>
-          <button class="tab-btn" data-tab="subtab-collision" data-i18n="pages.lecture2.tab9">3. To‘qnashuvlar (Impuls va Restitution)</button>
-        </div>
+    <!-- Tab 4: Jonli Simulyatorlar -->
+    <section id="tab-sims" class="doc-sec">
+        <h2><span class="num">6</span><span data-i18n="pages.lecture2.tab4">Jonli simulyatorlar (Drag, Integratorlar, Impuls)</span></h2>
 
         <!-- Subtab 1: Projectile Drag -->
-        <div id="subtab-projectile" class="tab-content active">
-          <div class="sim-container">
+        <div id="subtab-projectile" class="sim-wrap">
+          <h3><span class="num sub">6.1</span><span data-i18n="pages.lecture2.tab7">Aerodinamik drag (RK4)</span></h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="projectile-canvas" class="sim-canvas"></canvas>
               <div class="sim-hud">
@@ -588,20 +604,20 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
             <div class="sim-controls">
               <h3 style="font-size:1.15rem; margin-bottom:6px;">Otish parametrlari (RK4)</h3>
-              
+
               <div class="control-group">
                 <label class="control-label">Boshlang‘ich tezlik v₀: <span id="val-proj-v0" class="control-val">35,0 m/s</span></label>
-                <input type="range" id="slider-proj-v0" class="slider-input" min="10" max="60" step="1" value="35">
+                <input type="range" id="slider-proj-v0" data-k="v0" class="slider-input" min="10" max="60" step="1" value="35">
               </div>
 
               <div class="control-group">
                 <label class="control-label">Otish burchagi α: <span id="val-proj-angle" class="control-val">45°</span></label>
-                <input type="range" id="slider-proj-angle" class="slider-input" min="10" max="85" step="1" value="45">
+                <input type="range" id="slider-proj-angle" data-k="angle" class="slider-input" min="10" max="85" step="1" value="45">
               </div>
 
               <div class="control-group">
                 <label class="control-label">Qarshilik koeffitsiyenti k: <span id="val-proj-k" class="control-val">0,08 m⁻¹</span></label>
-                <input type="range" id="slider-proj-k" class="slider-input" min="0.0" max="0.25" step="0.01" value="0.08">
+                <input type="range" id="slider-proj-k" data-k="k" class="slider-input" min="0.0" max="0.25" step="0.01" value="0.08">
               </div>
 
               <div class="sim-info-box">
@@ -614,11 +630,23 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-projectile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-projectile">
+            <li data-set='{"v0":35,"angle":45,"k":0.08}'>Bu model havo qarshiligidagi otilgan jism harakatini RK4 usuli bilan hisoblaydi. Boshlang‘ich tezlik o‘ttiz besh metr sekundda, otish burchagi qirq besh darajada.</li>
+            <li data-set='{"k":0.22}'>Qarshilik koeffitsiyentini oshiramiz. Haqiqiy trayektoriya ideal parabоladan ancha qisqaradi, chekli tezlikka tezroq yetadi.</li>
+            <li data-set='{"angle":70,"k":0.02}'>Endi qarshilikni kamaytirib, burchakni yetmish darajaga ko‘taramiz. Trayektoriya deyarli vakuumdagi parabolaga yaqinlashadi, lekin balandroq va qisqaroq uchadi.</li>
+            <li data-set='{"v0":35,"angle":45,"k":0.08}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
         </div>
 
         <!-- Subtab 2: Integrators Comparison -->
-        <div id="subtab-spring" class="tab-content">
-          <div class="sim-container">
+        <div id="subtab-spring" class="sim-wrap">
+          <h3><span class="num sub">6.2</span><span data-i18n="pages.lecture2.tab8">Integratorlar xatosi (Eyler va RK4)</span></h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="spring-canvas" class="sim-canvas"></canvas>
               <div class="sim-hud">
@@ -639,11 +667,22 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-spring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model uchta integratorni bir vaqtda taqqoslab tushuntiradi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-spring">
+            <li data-set='{}'>Bu model bitta prujina osilatorini uchta xil sonli integrator — klassik Eyler, simplektik Eyler–Kromer va to‘rtinchi tartibli Runge–Kutta — bilan bir vaqtda hisoblaydi.</li>
+            <li data-set='{}'>Qizil chiziq — klassik Eyler, uning energiyasi har bir qadamda sun’iy oshib, faza fazosida spiral bo‘lib tashqariga tarqaladi — bu beqarorlik.</li>
+            <li data-set='{}'>Yashil chiziq — simplektik Eyler–Kromer, u faza fazosidagi yuzani saqlab, berk ellips chizadi. Moviy chiziq — RK4, eng aniq natija: nazariy aylanaga mos keladi.</li>
+          </ol>
         </div>
 
         <!-- Subtab 3: Collisions -->
-        <div id="subtab-collision" class="tab-content">
-          <div class="sim-container">
+        <div id="subtab-collision" class="sim-wrap">
+          <h3><span class="num sub">6.3</span><span data-i18n="pages.lecture2.tab9">To‘qnashuvlar (Impuls va Restitution)</span></h3>
+          <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="collision-canvas" class="sim-canvas"></canvas>
               <div class="sim-hud">
@@ -654,10 +693,10 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 
             <div class="sim-controls">
               <h3 style="font-size:1.15rem; margin-bottom:6px;">To‘qnashuv parametrlari</h3>
-              
+
               <div class="control-group">
                 <label class="control-label">Tiklanish koeffitsiyenti e: <span id="val-col-e" class="control-val">1,00 (elastik)</span></label>
-                <input type="range" id="slider-col-e" class="slider-input" min="0.0" max="1.0" step="0.05" value="1.0">
+                <input type="range" id="slider-col-e" data-k="e" class="slider-input" min="0.0" max="1.0" step="0.05" value="1.0">
               </div>
 
               <div class="sim-info-box">
@@ -670,14 +709,26 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
               </div>
             </div>
           </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-collision"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-collision">
+            <li data-set='{"e":1.0}'>Bu model ikki jismning devordan to‘qnashuvida impuls va kinetik energiya qanday o‘zgarishini ko‘rsatadi. Hozir tiklanish koeffitsiyenti bir — bu to‘liq elastik to‘qnashuv, kinetik energiya saqlanadi.</li>
+            <li data-set='{"e":0.3}'>Tiklanish koeffitsiyentini nol butun uchdan ga kamaytiramiz. To‘qnashuvdan so‘ng tezlik ancha kamayadi — kinetik energiyaning katta qismi issiqlikka aylanadi.</li>
+            <li data-set='{"e":0.0}'>Nolga tushirsak — to‘liq noelastik to‘qnashuv: jism devorga yopishib qoladi, kinetik energiya maksimal darajada yo‘qoladi.</li>
+            <li data-set='{"e":1.0}'>Parametrni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
         </div>
 
-      </div>
+    </section>
 
-      <!-- Tab 5: 4 ta Debugging Sandboxes -->
-      <div id="tab-debug-sandboxes" class="tab-content">
+    <!-- Tab 5: 4 ta Debugging Sandboxes -->
+    <section id="tab-debug-sandboxes" class="doc-sec">
+        <h2><span class="num">7</span><span data-i18n="pages.lecture2.tab5">4 ta debugging sandboxes</span></h2>
         <div class="grid-2">
-          
+
           <!-- Sandbox 1 -->
           <div class="glass-panel">
             <span class="badge badge-rose" style="margin-bottom:8px;">1-tipik xatolik</span>
@@ -740,12 +791,12 @@ var F = (G * M * m) / (r * r);</textarea>
           </div>
 
         </div>
-      </div>
+    </section>
 
-      <!-- Tab 6: Prompts Archive -->
-      <div id="tab-prompts2" class="tab-content">
+    <!-- Tab 6: Prompts Archive -->
+    <section id="tab-prompts2" class="doc-sec">
         <div class="glass-panel">
-          <h2 style="font-size:1.4rem; margin-bottom:16px;">Teskari muhandislik va modellashtirish promptlari</h2>
+          <h2 style="font-size:1.4rem; margin-bottom:16px;"><span class="num">8</span>Teskari muhandislik va modellashtirish promptlari</h2>
           
           <div class="code-block">
   <div class="code-header">
@@ -760,8 +811,13 @@ var F = (G * M * m) / (r * r);</textarea>
 </div>
 
         </div>
-      </div>
+    </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture1.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l1">1-ma’ruza</h3></a>
+      <a class="card next" href="lecture3.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l3">3-ma’ruza</h3></a>
+    </nav>
+    </div>
     </div>
   </main>
 
@@ -817,5 +873,6 @@ var F = (G * M * m) / (r * r);</textarea>
     });
   </script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>
