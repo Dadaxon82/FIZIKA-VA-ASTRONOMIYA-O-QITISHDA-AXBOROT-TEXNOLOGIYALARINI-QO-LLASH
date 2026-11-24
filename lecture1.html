@@ -180,11 +180,20 @@
         <li><a href="#vread-pre3" data-i18n="pages.lecture1.tocParadigm">3. Paradigma qiyosi</a></li>
         <li><a href="#vread-pre4" data-i18n="pages.lecture1.tocRoadmap">4. Semestr yo‘l xaritasi</a></li>
         <li><a href="#vread-pre5" data-i18n="pages.lecture1.tocFreeAlt">5. Bepul muqobillar</a></li>
-        <li><a href="#tab-magicschool" data-i18n="pages.lecture1.tab1">6. MagicSchool AI va diagnostika</a></li>
-        <li><a href="#tab-gemini" data-i18n="pages.lecture1.tab2">7. Gemini / ChatGPT ssenariy</a></li>
-        <li><a href="#tab-midjourney" data-i18n="pages.lecture1.tab3">8. Midjourney va Runway</a></li>
-        <li><a href="#tab-simulators" data-i18n="pages.lecture1.tab4">9. Jonli simulyatorlar</a></li>
-        <li><a href="#tab-rubrics" data-i18n="pages.lecture1.tab5">10. Baholash va Capstone</a></li>
+        <li><a href="#tab-magicschool">6. <span data-i18n="pages.lecture1.tab1">MagicSchool AI va diagnostika</span></a></li>
+        <li><a href="#tab-gemini">7. <span data-i18n="pages.lecture1.tab2">Gemini / ChatGPT ssenariy</span></a></li>
+        <li><a href="#tab-midjourney">8. <span data-i18n="pages.lecture1.tab3">Midjourney va Runway</span></a></li>
+        <li class="toc-group">
+          <a href="#tab-simulators">9. <span data-i18n="pages.lecture1.tab4">Jonli simulyatorlar</span></a>
+          <button class="toc-expand" type="button" aria-expanded="false" aria-label="Kichik bo‘limlarni ko‘rsatish">▾</button>
+          <ol class="toc-sub">
+            <li><a href="#subtab-pendulum">9.1 <span data-i18n="pages.lecture1.tab6">So‘nuvchi mayatnik (RK4)</span></a></li>
+            <li><a href="#subtab-lorentz">9.2 <span data-i18n="pages.lecture1.tab7">Lorens kuchi (3D, Boris usuli)</span></a></li>
+            <li><a href="#subtab-doppler">9.3 <span data-i18n="pages.lecture1.tab8">Doppler effekti va Max konusi</span></a></li>
+            <li><a href="#subtab-optics">9.4 <span data-i18n="pages.lecture1.tab9">Yung interferensiyasi</span></a></li>
+          </ol>
+        </li>
+        <li><a href="#tab-rubrics">10. <span data-i18n="pages.lecture1.tab5">Baholash va Capstone</span></a></li>
       </ol>
     </aside>
     <div class="doc">
@@ -559,11 +568,11 @@
 
     <!-- Tab 4: Live Canvas Simulators -->
     <section id="tab-simulators" class="doc-sec">
-        <h2><span class="num">9</span><span data-i18n="pages.lecture1.tab4">4. Claude jonli simulyatorlar</span></h2>
+        <h2><span class="num">9</span><span data-i18n="pages.lecture1.tab4">Claude jonli simulyatorlar</span></h2>
 
         <!-- Subtab 1: Pendulum -->
         <div id="subtab-pendulum" class="sim-wrap">
-          <h3 data-i18n="pages.lecture1.tab6">1. So‘nuvchi mayatnik (RK4)</h3>
+          <h3><span class="num sub">9.1</span><span data-i18n="pages.lecture1.tab6">So‘nuvchi mayatnik (RK4)</span></h3>
           <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="pendulum-canvas" class="sim-canvas"></canvas>
@@ -626,7 +635,7 @@
 
         <!-- Subtab 2: Lorentz 3D -->
         <div id="subtab-lorentz" class="sim-wrap">
-          <h3 data-i18n="pages.lecture1.tab7">2. Lorens kuchi (3D, Boris usuli)</h3>
+          <h3><span class="num sub">9.2</span><span data-i18n="pages.lecture1.tab7">Lorens kuchi (3D, Boris usuli)</span></h3>
           <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="lorentz-canvas" class="sim-canvas"></canvas>
@@ -678,7 +687,7 @@
 
         <!-- Subtab 3: Doppler -->
         <div id="subtab-doppler" class="sim-wrap">
-          <h3 data-i18n="pages.lecture1.tab8">3. Doppler effekti va Max konusi</h3>
+          <h3><span class="num sub">9.3</span><span data-i18n="pages.lecture1.tab8">Doppler effekti va Max konusi</span></h3>
           <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="doppler-canvas" class="sim-canvas"></canvas>
@@ -711,7 +720,7 @@
 
         <!-- Subtab 4: Optics -->
         <div id="subtab-optics" class="sim-wrap">
-          <h3 data-i18n="pages.lecture1.tab9">4. Yung interferensiyasi</h3>
+          <h3><span class="num sub">9.4</span><span data-i18n="pages.lecture1.tab9">Yung interferensiyasi</span></h3>
           <div class="sim-container sim-box">
             <div class="canvas-viewport-wrapper">
               <canvas id="optics-canvas" class="sim-canvas"></canvas>
