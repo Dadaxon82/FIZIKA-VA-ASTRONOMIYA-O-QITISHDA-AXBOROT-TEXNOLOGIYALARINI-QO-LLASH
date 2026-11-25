@@ -748,10 +748,12 @@ Qoidalar:
             Matematik jihatdan qat’iy model (chapda) bilan neyron tarmoq generativ videosidagi ehtimoliy siljishlarni (o‘ngda) real vaqtda solishtiring:
           </p>
 
+          <div class="sim-wrap">
+          <div class="sim-box">
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; align-items: center;">
             <div>
               <label for="comp-sim-mode" style="font-size: 0.85rem; color: var(--text-secondary);">Model rejimi:</label>
-              <select id="comp-sim-mode" style="padding: 6px 10px; background:#F3F5F8; border: 1px solid rgba(17,24,43,0.26); color:#11182B; border-radius: 4px; font-size: 0.85rem;">
+              <select id="comp-sim-mode" data-k="mode" style="padding: 6px 10px; background:#F3F5F8; border: 1px solid rgba(17,24,43,0.26); color:#11182B; border-radius: 4px; font-size: 0.85rem;">
                 <option value="pendulum">Matematik mayatnik tebranishi</option>
                 <option value="free-fall">Jismning erkin tushishi</option>
               </select>
@@ -762,7 +764,7 @@ Qoidalar:
 
             <div style="display: flex; align-items: center; gap: 8px; margin-left: auto;">
               <label for="comp-sim-noise" style="font-size: 0.85rem; color: var(--accent-amber);">SI noaniqligi (dreyf):</label>
-              <input type="range" id="comp-sim-noise" min="0" max="0.5" step="0.05" value="0.1" style="width: 100px;">
+              <input type="range" id="comp-sim-noise" data-k="noise" min="0" max="0.5" step="0.05" value="0.1" style="width: 100px;">
               <span id="comp-sim-noise-val" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--accent-amber);">10%</span>
             </div>
           </div>
@@ -773,6 +775,19 @@ Qoidalar:
 
           <div id="comp-sim-delta" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary); text-align: right;">
             Burchak xatoligi: <strong style="color:#047857;">0,00°</strong>
+          </div>
+          </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-comp1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-comp1">
+            <li data-set='{"mode":"#0","noise":0.1}'>Bu model matematik mayatnik tebranishini ikki usulda hisoblaydi: chapda — qat’iy Runge–Kutta integrallash, o‘ngda — generativ SI videosidagi ehtimoliy dreyfni taqlid qiluvchi model. Hozir noaniqlik o‘n foiz.</li>
+            <li data-set='{"noise":0.5}'>SI noaniqligini eng yuqori darajaga — ellik foizga oshiramiz. E’tibor bering: amber rangdagi mayatnik tezda fazadan chetlanib, burchak xatoligi tez ortadi — generativ video fizik qonunlarga qat’iy amal qilmaydi.</li>
+            <li data-set='{"mode":"#1","noise":0.2}'>Endi rejimni erkin tushish jarayoniga o‘tkazamiz. Bu yerda ham xuddi shunday: deterministik jism aniq y(t) = v₀t + gt²/2 formulasi bo‘yicha tushadi, generativ model esa asta-sekin undan chetlashadi.</li>
+            <li data-set='{"mode":"#0","noise":0.1}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
           </div>
         </div>
 
