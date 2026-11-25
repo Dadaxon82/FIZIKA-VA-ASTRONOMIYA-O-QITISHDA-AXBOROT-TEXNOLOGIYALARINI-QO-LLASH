@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>8-laboratoriya: Sun’iy intellekt bilan juftlikda dasturlash orqali fizika dvigateli kodini yozish</title>
   <meta name="description" content="8-laboratoriya: sun'iy intellekt bilan juftlikda dasturlash orqali fizika dvigateli kodini yozish.">
   <link rel="stylesheet" href="css/main.css">
@@ -156,6 +157,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lab8.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lab8.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -206,6 +208,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -269,8 +275,11 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotation">Annotatsiya</a> / <span data-i18n="common.labNo.l8">8-laboratoriya</span></nav>
+      <div class="eyebrow" data-i18n="common.labNo.l8">8-laboratoriya</div>
+
       
       <span class="badge badge-emerald">8-laboratoriya mashg‘uloti: AI pair-programming va computational physics</span>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.labs.card8.title">
@@ -279,11 +288,26 @@
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Kompyuter simulyatsiyalari va kompyuter o‘yinlarining markaziy qismi — qattiq jismlar to‘qnashuvini aniq hisoblovchi fizik dvigatel (Physics Engine) hisoblanadi. Mazkur laboratoriya mashg‘ulotida 6-laboratoriyada tuzilgan kuchlar va harakat tenglamalari asosida 2D Vektor arifmetikasi, doiralar to‘qnashuvini aniqlash, impuls skalyari ($J$) almashinuvi hamda yopishib qolish (sticky collision) muammosini bartaraf etuvchi to‘liq dvigatel yaratiladi. <strong>Claude</strong> (yoki boshqa zamonaviy LLM) bilan juftlikda dasturlash (Driver / Navigator) metodologiyasida kod xatoliklari tuzatiladi, <strong>ChatGPT Code Interpreter</strong> (hozirgi nomi — ChatGPT’dagi ma’lumotlar tahlili vositasi) muhitida esa impuls va energiyaning saqlanish qonunlari sonli tekshiriladi.
       </p>
-    </div>
+    </section>
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lab8.tocPlan">1. 📋 8-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</a></li>
+        <li><a href="#tab-reja1">2. <span data-i18n="tabs.1_diagnostika_va_individual_reja">Diagnostika va individual reja</span></a></li>
+        <li><a href="#tab-reja2">3. <span data-i18n="pages.lab8.tab2">Fizika dvigateli nazariyasi</span></a></li>
+        <li><a href="#tab-reja3">4. <span data-i18n="pages.lab8.tab3">Claude juftlikda debugging</span></a></li>
+        <li><a href="#tab-reja4">5. <span data-i18n="pages.lab8.tab4">Code Interpreter verifikatsiyasi</span></a></li>
+        <li><a href="#tab-reja5">6. <span data-i18n="pages.lab8.tab5">Interaktiv dvigatel dastgohi</span></a></li>
+        <li><a href="#tab-reja6">7. <span data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">Baholash rubrikasi va manbalar</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
+
 
     <!-- 4-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 8-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-emerald);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 8-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</h3>
       <div class="grid-4" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. Diagnostika va shaxsiy reja:</strong><br>
@@ -302,40 +326,14 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Impuls va kinetik energiya saqlanishining sonli tekshiruvi: 10 000 ta tasodifiy to‘qnashuv (Monte-Karlo) sinovi va xatoliklar taqsimoti.</span>
         </div>
       </div>
-    </div>
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_diagnostika_va_individual_reja">1. Diagnostika va individual reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lab8.tab2">2. Fizika dvigateli nazariyasi</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lab8.tab3">3. Claude juftlikda debugging</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lab8.tab4">4. Code Interpreter verifikatsiyasi</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lab8.tab5">5. Interaktiv dvigatel dastgohi</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">6. Baholash rubrikasi va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
+    </section>
 
     <!-- ========================================================================= -->
     <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
     <!-- ========================================================================= -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
-          1. Sun’iy intellekt uchun kognitiv diagnostika va individual ta’lim trayektoriyasi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);"><span class="num">2</span>Sun’iy intellekt uchun kognitiv diagnostika va individual ta’lim trayektoriyasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Fizika dvigatelini kodlash talabadan ham chuqur nazariy fizika (Nyutonning uchinchi qonuni, impuls va kinetik energiya saqlanishi, elastik va noelastik to‘qnashuvlar dinamikasi), hamda 2D vektor arifmetikasi va obyektga yo‘naltirilgan dasturlash (OOP) bilimlarini talab etadi. <strong>TPACK</strong> (Mishra va Koehler, 2006) va <strong>ZPD</strong> (Vygotskiy, 1978) konsepsiyalariga asoslangan quyidagi 4 ta diagnostik savol orqali talabaning kognitiv profili aniqlanadi va Claude bilan juftlikda ishlash uchun shaxsiy prompt generatsiya qilinadi.
@@ -442,10 +440,9 @@
     <!-- ========================================================================= -->
     <!-- TAB 2: Fizika Dvigatelini Yozish (Nazariya & Algoritmlar) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-emerald);">
-          2. Fizika dvigatelini Claude bilan yozish: vektor arifmetikasi va to‘qnashuvlar dinamikasi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-emerald);"><span class="num">3</span>Fizika dvigatelini Claude bilan yozish: vektor arifmetikasi va to‘qnashuvlar dinamikasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
           Kompyuter fizik dvigateli (Physics Engine) — tabiatning mexanik qonuniyatlarini raqamli muhitda diskret vaqt qadamlari orqali modellashtiruvchi dasturiy majmuadir. 6-laboratoriyada tuzilgan FBD (Erkin jism diagrammasi) kuchlar muvozanati endi dinamik to‘qnashuv impulslari bilan boyitiladi.
@@ -519,10 +516,9 @@
     <!-- ========================================================================= -->
     <!-- TAB 3: Juftlikda Dasturlash va Debugging (Claude) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-purple);">
-          3. Juftlikda dasturlash va debugging: Claude bilan hamkorlik
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-purple);"><span class="num">4</span>Juftlikda dasturlash va debugging: Claude bilan hamkorlik
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Juftlikda dasturlash (Pair-Programming) — ikki dasturchi bitta kod ustida ishlaydigan usul. Williams va boshq. (2000) tajribasida juftliklar yozgan dasturlar avtomatik testlardan ko‘proq o‘tgan, umumiy sarflangan vaqt esa biroz (taxminan 15% ga) oshgan. AI bilan juftlikda ishlash inson bilan ishlashning to‘liq o‘rnini bosmaydi: masalan, GitHub Copilot bo‘yicha nazorat tajribasida vazifa 55,8% tezroq bajarilgan (Peng va boshq., 2023), biroq AI taklif qilgan kodni har doim o‘zingiz tushunib, sinab ko‘rishingiz shart. Ushbu laboratoriyada talaba <strong>Driver</strong> (amaliy kod yozuvchi va interfeysni boshqaruvchi), Claude esa <strong>Navigator</strong> (algoritm arxitekturasi, fizik qonunlarga muvofiqlik va nosozliklarni izlovchi mutaxassis) rolini bajaradi.
@@ -612,10 +608,9 @@ Kadr siklida sub-stepping (har bir kadrni N ta kichik qadam subDt = dt / N ga bo
     <!-- ========================================================================= -->
     <!-- TAB 4: Fizik Qonunlar Algoritmi Tekshiruvi (Code Interpreter) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-amber);">
-          4. Fizik qonunlar algoritmi tekshiruvi: ChatGPT Code Interpreter muhitida verifikatsiya
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-amber);"><span class="num">5</span>Fizik qonunlar algoritmi tekshiruvi: ChatGPT Code Interpreter muhitida verifikatsiya
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Fizika dvigatelining ilmiy ishonchliligi uning fundamental saqlanish qonunlariga (Kinetik energiya va To‘liq impuls vektori) qanchalik qat’iy amal qilishiga bog‘liq. <strong>ChatGPT Code Interpreter</strong> (keyinchalik "Advanced Data Analysis" deb nomlangan) Python muhitida to‘qnashuv formulalarini 10 000 ta tasodifiy to‘qnashuv (Monte-Karlo) asosida sinovdan o‘tkazish va xatoliklar taqsimotini hisoblash imkonini beradi. Quyidagi skriptni o‘zingiz ham ishga tushirib, AI bergan natijalar bilan solishtiring: $e = 1$ da impuls va energiya xatoligi faqat suzuvchi nuqta yaxlitlash darajasida (~$10^{-13}$) bo‘lishi kerak.
@@ -703,10 +698,9 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
     <!-- ========================================================================= -->
     <!-- TAB 5: Interaktiv Dvigatel Dastgohi (Fizik Arena & Telemetriya) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
-          5. Fizik dvigatelning interaktiv dastgohi va saqlanish qonunlari telemetriyasi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);"><span class="num">6</span>Fizik dvigatelning interaktiv dastgohi va saqlanish qonunlari telemetriyasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Quyidagi laboratoriya dastgohida <code>Vector2D</code> arifmetikasi, doira-doira to‘qnashuvi impulsi va kesishishni bartaraf etish (overlap resolution) algoritmlari to‘liq real vaqt rejimida ishlaydi. Telemetriya oynasida to‘liq kinetik energiya va impuls vektori jonli kuzatiladi. Masshtab: 100 piksel = 1 m. Devorlar mutlaq elastik, lekin ular tashqi jism bo‘lgani uchun devorga urilganda sharlar tizimining impulsi o‘zgaradi; energiya esa $e = 1$ da saqlanadi.
@@ -820,10 +814,9 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
     <!-- ========================================================================= -->
     <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
     <!-- ========================================================================= -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
-          6. Akademik baholash rubrikasi (100 ball) va ilmiy-metodologik manbalar
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);"><span class="num">7</span>Akademik baholash rubrikasi (100 ball) va ilmiy-metodologik manbalar
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Talabalarning 8-laboratoriya mashg‘uloti bo‘yicha erishgan amaliy va nazariy natijalari quyidagi 5 ta mezon bo‘yicha baholanadi.
@@ -961,6 +954,13 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
       </div>
     </section>
 
+  
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lab7.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.labNo.l7">...</h3></a>
+      <a class="card next" href="lab9.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.labNo.l9">...</h3></a>
+    </nav>
+    </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -1098,5 +1098,6 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
   <script src="js/sim-lab8-physics-engine.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

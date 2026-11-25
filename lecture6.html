@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>6-ma’ruza: Raqamli texnologiya yordamida fizik modellarni shakllantirish</title>
   <meta name="description" content="6-ma'ruza: raqamli texnologiya yordamida fizik modellarni shakllantirish, erkin jism diagrammasi va blok-sxemalar.">
   <link rel="stylesheet" href="css/main.css">
@@ -44,6 +45,7 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture6.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture6.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -94,6 +96,10 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -157,21 +163,43 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-sec1,tab-sec2,tab-sec3,tab-sec4,tab-sec5,tab-sec6,tab-sec7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-cyan">6-ma’ruza: Fizik modellarni shakllantirish</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a> / <span data-i18n="common.lectureNo.l6">6-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l6">6-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c">Fizik modellarni shakllantirish</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card6.title">
         Raqamli texnologiya yordamida fizik modellarni shakllantirish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Erkin jism diagrammasi (Free-Body Diagram — FBD), Claude (Vision) optik dekonstruksiyasi, Nyutonning 2-qonuni vektor proyeksiyalari, Kulon-Amonton va Stribek ishqalanish dinamikasi, algoritmik blok-sxema qurish qoidalari, Sokratik debugging va PhET <em>"Forces and Motion: Basics"</em> simulyatsiyasining teskari muhandislik tahlili.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture6.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#vread-pre2" data-i18n="pages.lecture6.tocFreeAlt">2. Bepul muqobillar</a></li>
+        <li><a href="#tab-sec1">3. <span data-i18n="tabs.1_ai_diagnostika">AI diagnostika</span></a></li>
+        <li><a href="#tab-sec2">4. <span data-i18n="pages.lecture6.tab2">Claude Vision (FBD)</span></a></li>
+        <li><a href="#tab-sec3">5. <span data-i18n="pages.lecture6.tab3">Vektor tenglamalar</span></a></li>
+        <li><a href="#tab-sec4">6. <span data-i18n="pages.lecture6.tab4">Algoritm va psevdokod</span></a></li>
+        <li><a href="#tab-sec5">7. <span data-i18n="pages.lecture6.tab5">Sokratik dialog</span></a></li>
+        <li><a href="#tab-sec6">8. <span data-i18n="pages.lecture6.tab6">Interaktiv EJD va PhET</span></a></li>
+        <li><a href="#tab-sec7">9. <span data-i18n="pages.lecture6.tab7">Diagnostik test</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 6-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 6-ma’ruza rejasi va AI texnologik konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h2><span class="num">1</span>📋 6-ma’ruza rejasi va AI texnologik konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika va reja:</strong><br>
@@ -198,34 +226,22 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           <span style="font-size: 0.85rem; color: var(--text-secondary);">HTML5 Canvas jonli FBD dvigateli va PhET "Forces and Motion: Basics" integratsiyasi.</span>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Bepul muqobillar -->
-    <div id="vread-pre2" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre2" class="doc-sec free-alt" style="border-left: 4px solid var(--accent-emerald);">
+      <h2 style="margin-bottom: 10px; font-size: 1.2rem;"><span class="num">2</span><span data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</span></h2>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt1"><strong>Midjourney</strong> o‘rniga: Microsoft Designer (Bing Image Creator), Gemini yoki ChatGPT bepul tarifidagi tasvir generatsiyasi, Stable Diffusion; aniq ilmiy chizmalar uchun Inkscape, diagrams.net, GeoGebra.</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
+    </section>
 
-    <!-- Tabs Container: 7 Main Stages -->
-    <div class="tabs-container" style="margin-bottom: 40px;">
-      <div class="tabs-nav">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')" data-i18n="tabs.1_ai_diagnostika">1. AI diagnostika</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')" data-i18n="pages.lecture6.tab2">2. Claude Vision (FBD)</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')" data-i18n="pages.lecture6.tab3">3. Vektor tenglamalar</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')" data-i18n="pages.lecture6.tab4">4. Algoritm va psevdokod</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')" data-i18n="pages.lecture6.tab5">5. Sokratik dialog</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')" data-i18n="pages.lecture6.tab6">6. Interaktiv EJD va PhET</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')" data-i18n="pages.lecture6.tab7">7. Diagnostik test</button>
-      </div>
-
-      <!-- TAB 1: AI Diagnostika & Individual Reja -->
-      <div id="tab-sec1" class="tab-content active">
+    <!-- TAB 1: AI Diagnostika & Individual Reja -->
+    <section id="tab-sec1" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan">1-bosqich: Sun’iy intellekt diagnostikasi</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: kognitiv diagnostika va 3 klasterli adaptiv o‘quv rejasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">3</span>MagicSchool AI: kognitiv diagnostika va 3 klasterli adaptiv o‘quv rejasi</h2>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
             Fizik modellashtirish kursi doirasida talabalarning fazoviy tasavvuri, vektorli hisob-kitob ko‘nikmalari va dasturlash tayyorgarligi keskin farq qiladi. <strong>MagicSchool AI</strong> platformasi Lev Vygotskiyning <em>Eng Yaqin Rivojlanish Zonasi (Zone of Proximal Development — ZPD)</em> hamda Bloom taksonomiyasining 6 pog‘onasi (Eslab qolish $\to$ Tushunish $\to$ Qo‘llash $\to$ Tahlil $\to$ Baholash $\to$ Yaratish) asosida kirish diagnostikasini o‘tkazadi va talabalarni 3 ta ixtisoslashtirilgan klasterga ajratadi:
@@ -341,13 +357,13 @@ Natijalarni A, B, C klasterlarga ajratib, har biriga individual 4 haftalik labor
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 2: Claude Vision (FBD Dekonstruksiyasi) -->
-      <div id="tab-sec2" class="tab-content">
+    <!-- TAB 2: Claude Vision (FBD Dekonstruksiyasi) -->
+    <section id="tab-sec2" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-emerald">2-bosqich: Optik vektor tahlili</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude (Vision): erkin jism diagrammasi optik dekonstruksiyasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">4</span>Claude (Vision): erkin jism diagrammasi optik dekonstruksiyasi</h2>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
             <strong>Erkin Jism Diagrammasi (Free-Body Diagram — FBD)</strong> — bu klassik Nyuton mexanikasining fundamental asosi bo‘lib, o‘rganilayotgan jismni atrof-muhitdan to‘liq ajratib (izolyatsiya qilib), unga ta’sir qiluvchi barcha tashqi kuch vektorlarini grafik tasvirlash metodidir. Claude multimodal sun’iy intellekt modeli talaba tomonidan qog‘ozga qo‘lda chizilgan eskizlarni optik segmentatsiyalash orqali tahlil qiladi va uni kompyuter tushunadigan matematik hamda algoritmik spetsifikatsiyaga aylantiradi:
@@ -425,13 +441,13 @@ Natijalarni A, B, C klasterlarga ajratib, har biriga individual 4 haftalik labor
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 3: Vektor Kuchlar va Tenglamalar Tizimi -->
-      <div id="tab-sec3" class="tab-content">
+    <!-- TAB 3: Vektor Kuchlar va Tenglamalar Tizimi -->
+    <section id="tab-sec3" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-amber">3-bosqich: Matematik formalizatsiya</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Vektor kuchlar va differensial tenglamalar tizimi: WolframAlpha va ChatGPT</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">5</span>Vektor kuchlar va differensial tenglamalar tizimi: WolframAlpha va ChatGPT</h2>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
             Nyutonning ikkinchi qonuni vektor differensial tenglama ko‘rinishida jismning massasi $m$ va unga qo‘yilgan barcha kuchlarning vektor yig‘indisi o‘rtasidagi fundamental munosabatni ifodalaydi:
@@ -484,13 +500,13 @@ Natijalarni A, B, C klasterlarga ajratib, har biriga individual 4 haftalik labor
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 4: Algoritmik Blok-Sxema va Psevdokod -->
-      <div id="tab-sec4" class="tab-content">
+    <!-- TAB 4: Algoritmik Blok-Sxema va Psevdokod -->
+    <section id="tab-sec4" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-purple">4-bosqich: Algoritmlashtirish</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude: algoritmik blok-sxema va psevdokod</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">6</span>Claude: algoritmik blok-sxema va psevdokod</h2>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
             Uzluksiz fizik qonuniyatlardan raqamli kompyuter simulyatsiyasiga o‘tish uchun vaqt $t$ diskret intervallarga $\Delta t$ (masalan, $\Delta t = 1/60\text{ s} \approx 0.016\text{ s}$) bo‘linadi. Ushbu hisoblash konveyeri <strong>Physics Main Loop</strong> deb ataladi:
@@ -602,13 +618,13 @@ function stepPhysics(state, params, dt) {
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 5: Sokratik Dialog & Midjourney -->
-      <div id="tab-sec5" class="tab-content">
+    <!-- TAB 5: Sokratik Dialog & Midjourney -->
+    <section id="tab-sec5" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-rose">5-bosqich: Sokratik muloqot va ilmiy tasvirlar</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude / Gemini bilan fizik mantiqni tekshirish va Midjourney</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">7</span>Claude / Gemini bilan fizik mantiqni tekshirish va Midjourney</h2>
 
           <p style="line-height:1.75; color:var(--text-secondary); margin-bottom:18px;">
             Dastur yozish jarayonida talaba sun’iy intellektdan shunchaki tayyor javob ko‘chirib olmasligi, balki u bilan <strong>Sokratik muloqot</strong> o‘rnatishi kerak. AI talabaning xatosini to‘g‘ridan-to‘g‘ri ko‘rsatmasdan, yo‘naltiruvchi kontrsavollar orqali uni mustaqil ilmiy xulosaga olib keladi:
@@ -660,15 +676,15 @@ function stepPhysics(state, params, dt) {
 </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 6: Interaktiv FBD Simulyatori & PhET -->
-      <div id="tab-sec6" class="tab-content">
+    <!-- TAB 6: Interaktiv FBD Simulyatori & PhET -->
+    <section id="tab-sec6" class="doc-sec">
         <div class="glass-panel" style="margin-bottom: 30px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
             <div>
               <span class="badge badge-cyan">Jonli simulyatsiya</span>
-              <h2 style="margin-top: 6px;">Erkin jism diagrammasi (EJD) interaktiv simulyatori</h2>
+              <h2 style="margin-top: 6px;"><span class="num">8</span>Erkin jism diagrammasi (EJD) interaktiv simulyatori</h2>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
               <button id="fbd-play-btn" class="btn btn-primary">▶ Boshlash</button>
@@ -824,20 +840,20 @@ function stepPhysics(state, params, dt) {
 
             <!-- Iframe Embed Preview -->
             <div style="position:relative; width:100%; height:500px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.15);">
-              <iframe src="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html" 
-                      style="width:100%; height:100%; border:none;" 
+              <iframe src="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html"
+                      style="width:100%; height:100%; border:none;"
                       allowfullscreen
                       title="PhET Forces and Motion Basics"></iframe>
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 7: Diagnostik Test -->
-      <div id="tab-sec7" class="tab-content">
+    <!-- TAB 7: Diagnostik Test -->
+    <section id="tab-sec7" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan">O‘z-o‘zini tekshirish</span>
-          <h2 style="margin-top: 12px; margin-bottom: 12px;">6-ma’ruza diagnostika testi (3 ta ilmiy savol)</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 12px;"><span class="num">9</span>6-ma’ruza diagnostika testi (3 ta ilmiy savol)</h2>
           <p style="color:var(--text-secondary); margin-bottom:24px;">
             Erkin jism diagrammasi (FBD), vektor proyeksiyalari va sonli modellashtirish bo‘yicha bilimlaringizni sinab ko‘ring:
           </p>
@@ -935,8 +951,13 @@ function stepPhysics(state, params, dt) {
             <li><strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
           </ol>
         </div>
-      </div>
+    </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture5.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l5">5-ma’ruza</h3></a>
+      <a class="card next" href="lecture7.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l7">7-ma’ruza</h3></a>
+    </nav>
+    </div>
     </div>
   </main>
 
@@ -1029,5 +1050,6 @@ function stepPhysics(state, params, dt) {
     };
   </script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

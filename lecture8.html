@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>8-ma’ruza: AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar</title>
   <meta name="description" content="8-ma'ruza: AI yordamida fizika dasturlash — vektorlar, kuchlar va 2D elastik to'qnashuvlar modellashtirilishi.">
   <link rel="stylesheet" href="css/main.css">
@@ -38,6 +39,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture8.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture8.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -88,6 +90,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -151,21 +157,42 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,tab-sec1,tab-sec2,tab-sec3,tab-sec4,tab-sec5,tab-sec6,tab-sec7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-cyan">8-ma’ruza: Dasturlash va vektor mexanikasi</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a> / <span data-i18n="common.lectureNo.l8">8-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l8">8-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c">8-ma’ruza: Dasturlash va vektor mexanikasi</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card8.title">
         AI yordamida fizika dasturlash: vektorlar, kuchlar, to‘qnashuvlar
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Vektor arifmetikasi, Nyuton qonunlariga asoslangan kuch-tezlanish hisoblash, Claude bilan juftlikda dasturlash (Pair-Programming), 2D elastik to‘qnashuv impulsi (Impulse-based Collision Resolution), WolframAlpha tekshiruvi va ChatGPT trayektoriya tahlili.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture8.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#tab-sec1">2. <span data-i18n="tabs.1_ai_diagnostika">AI diagnostika</span></a></li>
+        <li><a href="#tab-sec2">3. <span data-i18n="pages.lecture8.tab2">Juftlikda dasturlash</span></a></li>
+        <li><a href="#tab-sec3">4. <span data-i18n="pages.lecture8.tab3">Vektor arifmetikasi</span></a></li>
+        <li><a href="#tab-sec4">5. <span data-i18n="pages.lecture8.tab4">Dvigatel kodi</span></a></li>
+        <li><a href="#tab-sec5">6. <span data-i18n="pages.lecture8.tab5">Trayektoriya grafiklari</span></a></li>
+        <li><a href="#tab-sec6">7. <span data-i18n="tabs.6_interaktiv_laboratoriya">Interaktiv laboratoriya</span></a></li>
+        <li><a href="#tab-sec7">8. <span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 6-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 8-ma’ruza rejasi va AI texnologik konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h2><span class="num">1</span>📋 8-ma’ruza rejasi va AI texnologik konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika va reja:</strong><br>
@@ -191,26 +218,13 @@
           <strong style="color:#1C4E9E;">6. Simulyatsiya va test:</strong><br>
           <span style="font-size: 0.85rem; color: var(--text-secondary);">HTML5 Canvas 2D to‘qnashuvlar laboratoriyasi, vektorlar overleyi, diagnostika va adabiyotlar.</span>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Tabs Container: 7 Main Stages -->
-    <div class="tabs-container" style="margin-bottom: 40px;">
-      <div class="tabs-nav">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')" data-i18n="tabs.1_ai_diagnostika">1. AI diagnostika</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')" data-i18n="pages.lecture8.tab2">2. Juftlikda dasturlash</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')" data-i18n="pages.lecture8.tab3">3. Vektor arifmetikasi</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')" data-i18n="pages.lecture8.tab4">4. Dvigatel kodi</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')" data-i18n="pages.lecture8.tab5">5. Trayektoriya grafiklari</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')" data-i18n="tabs.6_interaktiv_laboratoriya">6. Interaktiv laboratoriya</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
-      </div>
-
-      <!-- TAB 1: AI Diagnostika & Individual Reja -->
-      <div id="tab-sec1" class="tab-content active">
+    <!-- TAB 1: AI Diagnostika & Individual Reja -->
+    <section id="tab-sec1" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan" data-i18n="common.stage1Cognitive">1-bosqich: Kognitiv diagnostika</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: vektor mexanikasi va 3 klasterli adaptiv o‘quv rejasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">2</span>MagicSchool AI: vektor mexanikasi va 3 klasterli adaptiv o‘quv rejasi</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -339,13 +353,13 @@ Natijalarni A, B, C klasterlarga ajratib, 4 haftalik laboratoriya rejasini tuz.
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 2: Juftlikda Dasturlash (Pair-Programming) -->
-      <div id="tab-sec2" class="tab-content">
+    <!-- TAB 2: Juftlikda Dasturlash (Pair-Programming) -->
+    <section id="tab-sec2" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-emerald">2-bosqich: AI juftlikda dasturlash</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude bilan juftlikda dasturlash (Pair-Programming) va debugging</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">3</span>Claude bilan juftlikda dasturlash (Pair-Programming) va debugging</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(52, 211, 153, 0.05); border-left: 4px solid var(--accent-emerald); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -439,13 +453,13 @@ Sen:
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 3: Vektor Arifmetikasi & Impuls -->
-      <div id="tab-sec3" class="tab-content">
+    <!-- TAB 3: Vektor Arifmetikasi & Impuls -->
+    <section id="tab-sec3" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-amber">3-bosqich: Matematik apparat</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Vektor arifmetikasi va 2D to‘qnashuv impuls mexanikasi: WolframAlpha</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">4</span>Vektor arifmetikasi va 2D to‘qnashuv impuls mexanikasi: WolframAlpha</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(251, 191, 36, 0.05); border-left: 4px solid var(--accent-amber); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -559,13 +573,13 @@ Sen:
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 4: Fizika Dvigateli To'liq Kodi -->
-      <div id="tab-sec4" class="tab-content">
+    <!-- TAB 4: Fizika Dvigateli To'liq Kodi -->
+    <section id="tab-sec4" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-purple">4-bosqich: Kod strukturası</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude (Artifacts): to‘liq fizika dvigateli kodi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">5</span>Claude (Artifacts): to‘liq fizika dvigateli kodi</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(168, 85, 247, 0.05); border-left: 4px solid var(--accent-purple); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -731,13 +745,13 @@ function resolveCollision(b1, b2, restitution = 1.0) {
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 5: Harakat Trayektoriyasi Grafiklari -->
-      <div id="tab-sec5" class="tab-content">
+    <!-- TAB 5: Harakat Trayektoriyasi Grafiklari -->
+    <section id="tab-sec5" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-rose">5-bosqich: Trayektoriya va ma’lumotlar</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Harakat trayektoriyasi va saqlanish qonunlari grafiklari: ChatGPT</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">6</span>Harakat trayektoriyasi va saqlanish qonunlari grafiklari: ChatGPT</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(244, 63, 94, 0.05); border-left: 4px solid var(--accent-rose); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -845,15 +859,15 @@ Python Matplotlib orqali:
   </div>
 </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 6: Interaktiv Laboratoriya -->
-      <div id="tab-sec6" class="tab-content">
+    <!-- TAB 6: Interaktiv Laboratoriya -->
+    <section id="tab-sec6" class="doc-sec">
         <div class="glass-panel" style="margin-bottom: 30px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
             <div>
               <span class="badge badge-cyan">Jonli simulyatsiya</span>
-              <h2 style="margin-top: 6px;">2D vektorlar va to‘qnashuvlar laboratoriyasi</h2>
+              <h2 style="margin-top: 6px;"><span class="num">7</span>2D vektorlar va to‘qnashuvlar laboratoriyasi</h2>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
               <button id="prog-play-btn" class="btn btn-primary">⏸ To‘xtatish</button>
@@ -875,6 +889,8 @@ Python Matplotlib orqali:
           </div>
 
           <!-- Main Simulation Canvas -->
+          <div class="sim-wrap">
+          <div class="sim-box">
           <div style="background:#0F172A; border-radius:12px; border:1px solid rgba(255,255,255,0.1); overflow:hidden; margin-bottom:20px; text-align:center;">
             <canvas id="collision-canvas" width="900" height="450" style="width:100%; aspect-ratio:900/450; display:block;"></canvas>
           </div>
@@ -888,7 +904,7 @@ Python Matplotlib orqali:
               
               <div class="slider-group" style="margin-bottom:14px;">
                 <label style="font-size:0.88rem; display:block; margin-bottom:6px; color:#11182B;">Tajriba ssenariysi:</label>
-                <select id="prog-preset" style="width:100%; padding:8px 12px; background:#F3F5F8; border:1px solid #334155; color:#11182B; border-radius:6px;">
+                <select id="prog-preset" data-k="preset" style="width:100%; padding:8px 12px; background:#F3F5F8; border:1px solid #334155; color:#11182B; border-radius:6px;">
                   <option value="head-on">1. Markaziy elastik to‘qnashuv (m₁ = m₂)</option>
                   <option value="heavy-light">2. Og‘ir va yengil jism to‘qnashuvi (m₁ = 5m₂)</option>
                   <option value="oblique">3. Qiya (2D) to‘qnashuv</option>
@@ -901,7 +917,7 @@ Python Matplotlib orqali:
                   <span>Tiklanish koeffitsiyenti ($e$):</span>
                   <strong id="prog-restitution-val" style="color:#A16207;">1.00</strong>
                 </div>
-                <input type="range" id="prog-restitution" min="0.0" max="1.0" step="0.05" value="1.0" style="width:100%;">
+                <input type="range" id="prog-restitution" data-k="e" min="0.0" max="1.0" step="0.05" value="1.0" style="width:100%;">
               </div>
 
               <div class="grid-2" style="gap:12px; margin-bottom:12px;">
@@ -910,7 +926,7 @@ Python Matplotlib orqali:
                     <span>Massa $m_1$:</span>
                     <strong id="prog-m1-val" style="color:#1C4E9E;">3.0 kg</strong>
                   </div>
-                  <input type="range" id="prog-m1" min="1.0" max="15.0" step="0.5" value="3.0" style="width:100%;">
+                  <input type="range" id="prog-m1" data-k="m1" min="1.0" max="15.0" step="0.5" value="3.0" style="width:100%;">
                 </div>
 
                 <div class="slider-group">
@@ -918,7 +934,7 @@ Python Matplotlib orqali:
                     <span>Massa $m_2$:</span>
                     <strong id="prog-m2-val" style="color:#047857;">3.0 kg</strong>
                   </div>
-                  <input type="range" id="prog-m2" min="1.0" max="15.0" step="0.5" value="3.0" style="width:100%;">
+                  <input type="range" id="prog-m2" data-k="m2" min="1.0" max="15.0" step="0.5" value="3.0" style="width:100%;">
                 </div>
               </div>
 
@@ -961,6 +977,20 @@ Python Matplotlib orqali:
             </div>
 
           </div>
+          </div>
+          <div class="tour-bar">
+            <button class="voice-btn" type="button" data-tour="tour-collision8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+            <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+          </div>
+          <div class="tour-cap" aria-live="polite"></div>
+          <ol class="vh tour-steps" id="tour-collision8">
+            <li data-set='{"preset":"#0","e":1.0,"m1":3.0,"m2":3.0}'>Bu model ikki jism to‘qnashuvida impuls va kinetik energiya saqlanishini ko‘rsatadi. Hozir ikkala massa teng, tiklanish koeffitsiyenti bir — bu to‘liq elastik markaziy to‘qnashuv.</li>
+            <li data-set='{"m1":12.0,"m2":2.0}'>Birinchi jism massasini ancha oshiramiz. Og‘ir jism yengil jismga urilganda, yengil jism tezligi keskin oshib ketadi, impuls esa to‘liq uzatiladi.</li>
+            <li data-set='{"m1":3.0,"m2":3.0,"e":0.2}'>Massalarni tenglashtirib, tiklanish koeffitsiyentini kamaytiramiz. Endi to‘qnashuv deyarli noelastik — kinetik energiyaning katta qismi issiqlikka aylanadi.</li>
+            <li data-set='{"preset":"#2","e":1.0}'>Qiya, ya’ni ikki o‘lchamli to‘qnashuv ssenariysiga o‘tamiz. Endi tezlik normal va tangensial tashkil etuvchilarga ajraladi.</li>
+            <li data-set='{"preset":"#0","e":1.0,"m1":3.0,"m2":3.0}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+          </ol>
+          </div>
 
           <!-- 3 Structured Lab Experiments Guide -->
           <div class="glass-panel" style="background:#F3F5F8; border-left:4px solid var(--accent-cyan);">
@@ -989,11 +1019,12 @@ Python Matplotlib orqali:
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 7: Diagnostik Test & Adabiyotlar -->
-      <div id="tab-sec7" class="tab-content">
+    <!-- TAB 7: Diagnostik Test & Adabiyotlar -->
+    <section id="tab-sec7" class="doc-sec">
         <div class="glass-panel" style="margin-bottom:30px;">
+          <h2><span class="num">8</span><span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></h2>
           <span class="badge badge-cyan">O‘z-o‘zini baholash</span>
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -1110,8 +1141,14 @@ Python Matplotlib orqali:
           </ol>
         </div>
 
-      </div>
+    </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture7.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l7">7-ma’ruza</h3></a>
+      <a class="card next" href="lecture9.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l9">9-ma’ruza</h3></a>
+    </nav>
+    </div>
+    </div>
     </div>
   </main>
 
@@ -1203,5 +1240,6 @@ Python Matplotlib orqali:
     };
   </script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

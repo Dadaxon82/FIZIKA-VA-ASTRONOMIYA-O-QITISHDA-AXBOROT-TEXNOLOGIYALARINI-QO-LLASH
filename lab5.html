@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>5-laboratoriya: Deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash va ularning o‘ziga xos xususiyatlarini vizual tahlil qilish</title>
   <meta name="description" content="5-laboratoriya: deterministik va stoxastik modellarni kompyuter simulyatsiyalari asosida taqqoslash.">
   <link rel="stylesheet" href="css/main.css">
@@ -149,6 +150,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lab5.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lab5.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -199,6 +201,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -262,8 +268,11 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotation">Annotatsiya</a> / <span data-i18n="common.labNo.l5">5-laboratoriya</span></nav>
+      <div class="eyebrow" data-i18n="common.labNo.l5">5-laboratoriya</div>
+
       
       <span class="badge badge-purple">5-laboratoriya mashg‘uloti: model turlari va kompyuter simulyatsiyasi</span>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="pages.lab5.h1">
@@ -272,11 +281,26 @@
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Kompyuterda fizik jarayonlarni modellashtirishning ikkita yirik paradigmasi mavjud: qat’iy sabab-oqibat qonuniyatiga bo‘ysunuvchi <strong>Deterministik dinamik modellar</strong> (Nyuton mexanikasi, orbital dinamika) hamda tasodifiy ehtimolli fluktuatsiyalarga tayanuvchi <strong>Stoxastik modellar</strong> (gazlarning kinetik nazariyasi, Broun harakati). Mazkur laboratoriya mashg‘ulotida talabalar <strong>PhET Interactive Simulations</strong> bazasidagi ikkita etalon simulyatsiyani (<em>«Gravity and Orbits»</em> va <em>«Gas Properties»</em>) tanlab oladi, ularning matematik apparatini, kirish-chiqish parametrlarini qiyoslaydi hamda <strong>Claude yoki Gemini</strong> yordamida chuqur tahliliy taqqoslash hisobotini tayyorlaydi.
       </p>
-    </div>
+    </section>
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lab5.tocPlan">1. 📋 5-laboratoriya mashg‘uloti rejasi va tahliliy konveyeri:</a></li>
+        <li><a href="#tab-reja1">2. <span data-i18n="tabs.1_diagnostika_va_individual_reja">Diagnostika va individual reja</span></a></li>
+        <li><a href="#tab-reja2">3. <span data-i18n="pages.lab5.tab2">Model turlari nazariyasi</span></a></li>
+        <li><a href="#tab-reja3">4. <span data-i18n="pages.lab5.tab3">Virtual baza: PhET simulations</span></a></li>
+        <li><a href="#tab-reja4">5. <span data-i18n="pages.lab5.tab4">Tahlil va qiyosiy hisobot (AI)</span></a></li>
+        <li><a href="#tab-reja5">6. <span data-i18n="pages.lab5.tab5">Interaktiv dual dastgoh (stend)</span></a></li>
+        <li><a href="#tab-reja6">7. <span data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">Baholash rubrikasi va manbalar</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
+
 
     <!-- 4-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-purple);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 5-laboratoriya mashg‘uloti rejasi va tahliliy konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-purple);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 5-laboratoriya mashg‘uloti rejasi va tahliliy konveyeri:</h3>
       <div class="grid-4" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. Diagnostika va individual reja:</strong><br>
@@ -295,40 +319,15 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">8 ta mezonli qiyosiy taqqoslash jadvalini to‘ldirish va IMRaD formatidagi ilmiy hisobot loyihasini shakllantirish.</span>
         </div>
       </div>
-    </div>
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_diagnostika_va_individual_reja">1. Diagnostika va individual reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lab5.tab2">2. Model turlari nazariyasi</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lab5.tab3">3. Virtual baza: PhET simulations</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lab5.tab4">4. Tahlil va qiyosiy hisobot (AI)</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lab5.tab5">5. Interaktiv dual dastgoh (stend)</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">6. Baholash rubrikasi va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
+    </section>
 
     <!-- ========================================================================= -->
     <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
     <!-- ========================================================================= -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec" style="background:none;border:none;box-shadow:none;padding:0;">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Sun’iy intellekt uchun diagnostika va individual reja</h2>
+          <h2 class="card-title"><span class="num">2</span>Sun’iy intellekt uchun diagnostika va individual reja</h2>
           <span class="badge badge-cyan">TPACK modeli va Vygotskiy ZPD</span>
         </div>
 
@@ -478,10 +477,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 2: Model Turlari Nazariyasi -->
     <!-- ========================================================================= -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec" style="background:none;border:none;box-shadow:none;padding:0;">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Model turlarini aniqlash va taqqoslash (deterministik va stoxastik)</h2>
+          <h2 class="card-title"><span class="num">3</span>Model turlarini aniqlash va taqqoslash (deterministik va stoxastik)</h2>
           <span class="badge badge-purple">Ilmiy paradigma va matematik poydevor</span>
         </div>
 
@@ -604,10 +603,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 3: Virtual Baza (PhET Simulations) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec" style="background:none;border:none;box-shadow:none;padding:0;">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. Virtual laboratoriya bazasi: PhET Interactive Simulations</h2>
+          <h2 class="card-title"><span class="num">4</span>Virtual laboratoriya bazasi: PhET Interactive Simulations</h2>
           <span class="badge badge-emerald">Kolorado universiteti ochiq ta’lim resursi</span>
         </div>
 
@@ -682,10 +681,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 4: Tahlil & Qiyosiy Hisobot (AI) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec" style="background:none;border:none;box-shadow:none;padding:0;">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Modellarni tahlil qilish va qiyosiy hisobot: Claude yoki Gemini</h2>
+          <h2 class="card-title"><span class="num">5</span>Modellarni tahlil qilish va qiyosiy hisobot: Claude yoki Gemini</h2>
           <span class="badge badge-amber">Sokratik konsultatsiya va IMRaD akademik hisoboti</span>
         </div>
 
@@ -747,10 +746,10 @@ Quyidagi elementlar bo‘lishi shart:
     <!-- ========================================================================= -->
     <!-- TAB 5: Interaktiv Dual Dastgoh (Stend) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec" style="background:none;border:none;box-shadow:none;padding:0;">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">5. Ikki oynali interaktiv dastgoh: deterministik va stoxastik modellarni jonli taqqoslash</h2>
+          <h2 class="card-title"><span class="num">6</span>Ikki oynali interaktiv dastgoh: deterministik va stoxastik modellarni jonli taqqoslash</h2>
           <span class="badge badge-cyan">Parallel Canvas simulyatori va real vaqtdagi statistik tahlil</span>
         </div>
 
@@ -862,10 +861,10 @@ Quyidagi elementlar bo‘lishi shart:
     <!-- ========================================================================= -->
     <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
     <!-- ========================================================================= -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec" style="background:none;border:none;box-shadow:none;padding:0;">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">6. Baholash rubrikasi (100 ball) va ilmiy manbalar (APA 7)</h2>
+          <h2 class="card-title"><span class="num">7</span>Baholash rubrikasi (100 ball) va ilmiy manbalar (APA 7)</h2>
           <span class="badge badge-emerald" data-i18n="common.academicAssessment">Akademik baholash va bibliografiya</span>
         </div>
 
@@ -1009,6 +1008,13 @@ Quyidagi elementlar bo‘lishi shart:
       </div>
     </section>
 
+  
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lab4.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.labNo.l4">...</h3></a>
+      <a class="card next" href="lab6.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.labNo.l6">...</h3></a>
+    </nav>
+    </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -1116,5 +1122,6 @@ Quyidagi elementlar bo‘lishi shart:
   <script src="js/sim-lab5-deterministic-stochastic.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>9-ma’ruza: Sun’iy intellekt (AI) bilan kod generatsiyasi va prompt-muhandislik</title>
   <meta name="description" content="9-ma'ruza: sun'iy intellekt (AI) bilan kod generatsiyasi va professional prompt-muhandislik strategiyalari.">
   <link rel="stylesheet" href="css/main.css">
@@ -38,6 +39,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture9.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture9.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -88,6 +90,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -151,21 +157,42 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,tab-sec1,tab-sec2,tab-sec3,tab-sec4,tab-sec5,tab-sec6,tab-sec7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-cyan">9-ma’ruza: Kod generatsiyasi va prompt-muhandislik</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a> / <span data-i18n="common.lectureNo.l9">9-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l9">9-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c">9-ma’ruza: Kod generatsiyasi va prompt-muhandislik</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="pages.lecture9.h1">
         Sun’iy intellekt (AI) bilan kod generatsiyasi va prompt-muhandislik
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Samarali prompt yozish metodikasi, Zero-Shot va Few-Shot va Chain-of-Thought (Claude), Google Antigravity AI monitoringi va avtomatik tuzatish, ChatGPT va Gemini prompt strukturasi hamda MagicSchool AI shaxsiy fizik prompt-kutubxonasi.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture9.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#tab-sec1">2. <span data-i18n="tabs.1_ai_diagnostika">AI diagnostika</span></a></li>
+        <li><a href="#tab-sec2">3. <span data-i18n="pages.lecture9.tab2">Prompt sinovlari</span></a></li>
+        <li><a href="#tab-sec3">4. <span data-i18n="pages.lecture9.tab3">AI monitoring</span></a></li>
+        <li><a href="#tab-sec4">5. <span data-i18n="pages.lecture9.tab4">Prompt strukturasi</span></a></li>
+        <li><a href="#tab-sec5">6. <span data-i18n="pages.lecture9.tab5">Prompt-kutubxona</span></a></li>
+        <li><a href="#tab-sec6">7. <span data-i18n="tabs.6_interaktiv_laboratoriya">Interaktiv laboratoriya</span></a></li>
+        <li><a href="#tab-sec7">8. <span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 6-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 9-ma’ruza rejasi va AI texnologik konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h2><span class="num">1</span>📋 9-ma’ruza rejasi va AI texnologik konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika va reja:</strong><br>
@@ -192,25 +219,13 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">HTML5 Canvas Prompt Workbench va Sandbox, jonli kod muharriri, diagnostika testi va APA-7 manbalar.</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Tabs Container: 7 Main Stages -->
-    <div class="tabs-container" style="margin-bottom: 40px;">
-      <div class="tabs-nav">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')" data-i18n="tabs.1_ai_diagnostika">1. AI diagnostika</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')" data-i18n="pages.lecture9.tab2">2. Prompt sinovlari</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')" data-i18n="pages.lecture9.tab3">3. AI monitoring</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')" data-i18n="pages.lecture9.tab4">4. Prompt strukturasi</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')" data-i18n="pages.lecture9.tab5">5. Prompt-kutubxona</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')" data-i18n="tabs.6_interaktiv_laboratoriya">6. Interaktiv laboratoriya</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
-      </div>
-
-      <!-- TAB 1: AI Diagnostika & Individual Reja -->
-      <div id="tab-sec1" class="tab-content active">
+    <!-- TAB 1: AI Diagnostika & Individual Reja -->
+    <section id="tab-sec1" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan" data-i18n="common.stage1Cognitive">1-bosqich: Kognitiv diagnostika</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: prompt-muhandislik va kod generatsiyasi diagnostikasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">2</span>MagicSchool AI: prompt-muhandislik va kod generatsiyasi diagnostikasi</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -306,13 +321,13 @@
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 2: Prompt Sinovlari va Taqqoslash -->
-      <div id="tab-sec2" class="tab-content">
+    <!-- TAB 2: Prompt Sinovlari va Taqqoslash -->
+    <section id="tab-sec2" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-emerald">2-bosqich: Qiyosiy tajriba</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Claude: zero-shot, few-shot va chain-of-thought sinovlari</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">3</span>Claude: zero-shot, few-shot va chain-of-thought sinovlari</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(52, 211, 153, 0.05); border-left: 4px solid var(--accent-emerald); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -423,13 +438,13 @@
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 3: Prompt Natijalari Monitoringi -->
-      <div id="tab-sec3" class="tab-content">
+    <!-- TAB 3: Prompt Natijalari Monitoringi -->
+    <section id="tab-sec3" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-amber">3-bosqich: Avtomatik nazorat</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Google Antigravity AI: agentlik kod nazorati va refinement</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">4</span>Google Antigravity AI: agentlik kod nazorati va refinement</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(251, 191, 36, 0.05); border-left: 4px solid var(--accent-amber); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -485,13 +500,13 @@
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 4: Prompt Strukturasini Takomillashtirish -->
-      <div id="tab-sec4" class="tab-content">
+    <!-- TAB 4: Prompt Strukturasini Takomillashtirish -->
+    <section id="tab-sec4" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-purple">4-bosqich: Muhandislik standartlari</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">ChatGPT va Gemini: 5 elementli professional prompt arxitekturasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">5</span>ChatGPT va Gemini: 5 elementli professional prompt arxitekturasi</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(168, 85, 247, 0.05); border-left: 4px solid var(--accent-purple); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -552,13 +567,13 @@
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 5: Shaxsiy Prompt-Kutubxona -->
-      <div id="tab-sec5" class="tab-content">
+    <!-- TAB 5: Shaxsiy Prompt-Kutubxona -->
+    <section id="tab-sec5" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-rose">5-bosqich: Metodik xazina</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI: 5 fundamental fizika bo‘limi uchun 10 ta tayyor prompt shablonlari</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">6</span>MagicSchool AI: 5 fundamental fizika bo‘limi uchun 10 ta tayyor prompt shablonlari</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(244, 63, 94, 0.05); border-left: 4px solid var(--accent-rose); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -725,13 +740,13 @@
 
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 6: Interaktiv Prompt-Simulyator Laboratoriyasi -->
-      <div id="tab-sec6" class="tab-content">
+    <!-- TAB 6: Interaktiv Prompt-Simulyator Laboratoriyasi -->
+    <section id="tab-sec6" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan">6-bosqich: Jonli laboratoriya</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">HTML5 Canvas prompt dastgohi va jonli kod sinov maydoni</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">7</span>HTML5 Canvas prompt dastgohi va jonli kod sinov maydoni</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(56, 189, 248, 0.05); border-left: 4px solid var(--accent-cyan); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -842,13 +857,13 @@
           </div>
 
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 7: Test & Manbalar -->
-      <div id="tab-sec7" class="tab-content">
+    <!-- TAB 7: Test & Manbalar -->
+    <section id="tab-sec7" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-purple">7-bosqich: Baholash va bibliografiya</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Diagnostik bilim sinovi va ilmiy adabiyotlar</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">8</span>Diagnostik bilim sinovi va ilmiy adabiyotlar</h2>
 
           <!-- Scientific Citation Box -->
           <div class="citation-box" style="background: rgba(168, 85, 247, 0.05); border-left: 4px solid var(--accent-purple); padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
@@ -963,8 +978,13 @@
           </div>
 
         </div>
-      </div>
+    </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture8.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l8">8-ma’ruza</h3></a>
+      <a class="card next" href="lecture10.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l10">10-ma’ruza</h3></a>
+    </nav>
+    </div>
     </div>
   </main>
 
@@ -1039,5 +1059,6 @@
     }
   </script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

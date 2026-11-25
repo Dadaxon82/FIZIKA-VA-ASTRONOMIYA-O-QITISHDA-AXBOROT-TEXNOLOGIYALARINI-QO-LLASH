@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>10-ma’ruza: Fizik va astronomik ma’lumotlarni vizuallashtirish: grafik va interaktiv model qurish</title>
   <meta name="description" content="10-ma'ruza: fizik va astronomik ma'lumotlarni vizuallashtirish — grafik va interaktiv model qurish usullari.">
   <link rel="stylesheet" href="css/main.css">
@@ -41,6 +42,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture10.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture10.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -91,6 +93,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -154,21 +160,43 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6,tab-reja7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-cyan">10-ma’ruza: Fizik va astronomik ma’lumotlarni vizuallashtirish</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a> / <span data-i18n="common.lectureNo.l10">10-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l10">10-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c">10-ma’ruza: Fizik va astronomik ma’lumotlarni vizuallashtirish</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="pages.lecture10.h1">
         Fizik va astronomik ma’lumotlarni vizuallashtirish: grafik va interaktiv model qurish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Katta masshtabdagi orbital mexanika (Kepler qonunlari, Vis-Viva energetik tenglamasi, Laplace-Runge-Lenz vektori), HTML5 Canvas-da koordinatalar transformatsiyasi (World-to-Screen), audio-vizual sinxronizatsiya (Doppler radial tezlik spektri, ekzosayyora tranzit nur egri chizig‘i) hamda 4 ta yetakchi TTS dvigateli (Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS) qiyosiy tahlili.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture10.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#vread-pre2">2. <span data-i18n="pages.lecture10.tocFreeAlt">Bepul muqobillar</span></a></li>
+        <li><a href="#tab-reja1">3. <span data-i18n="tabs.1_ai_diagnostika_va_reja">AI diagnostika va reja</span></a></li>
+        <li><a href="#tab-reja2">4. <span data-i18n="pages.lecture10.tab2">Kod va Antigravity monitoring</span></a></li>
+        <li><a href="#tab-reja3">5. <span data-i18n="pages.lecture10.tab3">Canvas tsikli va delta-time</span></a></li>
+        <li><a href="#tab-reja4">6. <span data-i18n="pages.lecture10.tab4">Fizika dvigateli kodi</span></a></li>
+        <li><a href="#tab-reja5">7. <span data-i18n="pages.lecture10.tab5">Trayektoriya va audio-sinxron</span></a></li>
+        <li><a href="#tab-reja6">8. <span data-i18n="tabs.6_interaktiv_laboratoriya">Interaktiv laboratoriya</span></a></li>
+        <li><a href="#tab-reja7">9. <span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 6-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 10-ma’ruza rejasi va AI texnologik konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h2><span class="num">1</span>📋 10-ma’ruza rejasi va AI texnologik konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika va reja:</strong><br>
@@ -195,10 +223,10 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">HTML5 Canvas Quyosh va Ekzosayyora simulyatori, real vaqt telemetriyasi va diagnostik test.</span>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Bepul muqobillar -->
-    <div id="vread-pre2" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre2" class="doc-sec free-alt" style="border-left: 4px solid var(--accent-emerald);">
+      <h2 style="font-size: 1.1rem;"><span class="num">2</span><span data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</span></h2>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt5"><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
@@ -206,24 +234,13 @@
         <li data-i18n="freeAlt.alt7"><strong>Google Cloud TTS</strong> o‘rniga: Web Speech API (hisob va to‘lov kartasi talab qilinmaydi).</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
-
-    <!-- Tab Navigation -->
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture10.tab2">2. Kod va Antigravity monitoring</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture10.tab3">3. Canvas tsikli va delta-time</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lecture10.tab4">4. Fizika dvigateli kodi</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture10.tab5">5. Trayektoriya va audio-sinxron</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reja6')" data-i18n="tabs.6_interaktiv_laboratoriya">6. Interaktiv laboratoriya</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reja7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
-    </div>
+    </section>
 
     <!-- TAB 1: AI Diagnostika va Individual Reja -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Sun’iy intellekt uchun diagnostika va individual reja</h2>
+          <h2 class="card-title"><span class="num">3</span>Sun’iy intellekt uchun diagnostika va individual reja</h2>
           <span class="badge badge-cyan">MagicSchool AI va Vygotsky ZPD</span>
         </div>
 
@@ -272,10 +289,10 @@
     </section>
 
     <!-- TAB 2: Google Antigravity & Monitoring -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Kod yozish va monitoring platformasi: Google Antigravity</h2>
+          <h2 class="card-title"><span class="num">4</span>Kod yozish va monitoring platformasi: Google Antigravity</h2>
           <span class="badge badge-emerald">Invariants, precision va AST linting</span>
         </div>
 
@@ -329,10 +346,10 @@
     </section>
 
     <!-- TAB 3: Claude & Canvas Kadr Tsikli -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. Canvas kadr tsikli va delta-time integratsiyasi</h2>
+          <h2 class="card-title"><span class="num">5</span>Canvas kadr tsikli va delta-time integratsiyasi</h2>
           <span class="badge badge-amber">Claude va world-to-screen</span>
         </div>
 
@@ -396,10 +413,10 @@ function astronomyAnimationLoop(timestamp) {
     </section>
 
     <!-- TAB 4: Fizika Dvigateli Kodi -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Fizika dvigateli to‘liq kodi: Claude (Artifacts)</h2>
+          <h2 class="card-title"><span class="num">6</span>Fizika dvigateli to‘liq kodi: Claude (Artifacts)</h2>
           <span class="badge badge-purple">Kepler, vis-viva va orbital engine</span>
         </div>
 
@@ -485,10 +502,10 @@ class KeplerianEngine {
     </section>
 
     <!-- TAB 5: Trayektoriya & Audio-Sinxron -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">5. Harakat trayektoriyasi grafiklari va audio-vizual sinxronizatsiya</h2>
+          <h2 class="card-title"><span class="num">7</span>Harakat trayektoriyasi grafiklari va audio-vizual sinxronizatsiya</h2>
           <span class="badge badge-rose">Doppler, transit photometry va 4 TTS matrix</span>
         </div>
 
@@ -592,10 +609,10 @@ class KeplerianEngine {
     </section>
 
     <!-- TAB 6: Interaktiv Laboratoriya -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">6. Interaktiv astronomiya va fizika simulyatori laboratoriyasi</h2>
+          <h2 class="card-title"><span class="num">8</span>Interaktiv astronomiya va fizika simulyatori laboratoriyasi</h2>
           <span class="badge badge-cyan">HTML5 Canvas sandbox va live telemetry</span>
         </div>
 
@@ -603,6 +620,8 @@ class KeplerianEngine {
           Quyidagi interaktiv laboratoriyada siz Quyosh tizimi sayyoralari, yuqori ekssentrisitetli kometalar yoki begona yulduz atrofidagi ekzosayyoralar harakatini real vaqt rejimida kuzatishingiz mumkin. Katta yarim o‘q ($a$) va ekssentrisitet ($e$) parametrlarini o‘zgartirib, Kepler maydonlar qonuni va orbital tezlik dinamikasini sinang!
         </p>
 
+        <div class="sim-wrap">
+        <div class="sim-box">
         <!-- Presets Selector -->
         <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
           <button class="btn btn-secondary astro-preset-btn active" data-preset="solar">🪐 Quyosh tizimi (ichki + Yupiter + kometa)</button>
@@ -634,19 +653,19 @@ class KeplerianEngine {
             <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
               Ekssentrisitet ($e$): <strong id="val-eccentricity" style="color: var(--accent-cyan);">0.02</strong>
             </label>
-            <input id="sl-eccentricity" type="range" min="0.0" max="0.9" step="0.01" value="0.02" style="width: 100%;">
+            <input id="sl-eccentricity" data-k="e" type="range" min="0.0" max="0.9" step="0.01" value="0.02" style="width: 100%;">
           </div>
           <div>
             <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
               Katta Yarim O‘q ($a$): <strong id="val-semi-major" style="color: var(--accent-emerald);">1.00 AU</strong>
             </label>
-            <input id="sl-semi-major" type="range" min="0.4" max="3.0" step="0.05" value="1.0" style="width: 100%;">
+            <input id="sl-semi-major" data-k="a" type="range" min="0.4" max="3.0" step="0.05" value="1.0" style="width: 100%;">
           </div>
           <div>
             <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
               Vaqt Masshtabi ($k_{speed}$): <strong id="val-time-scale" style="color: var(--accent-amber);">1.5x</strong>
             </label>
-            <input id="sl-time-scale" type="range" min="0.2" max="5.0" step="0.1" value="1.5" style="width: 100%;">
+            <input id="sl-time-scale" data-k="speed" type="range" min="0.2" max="5.0" step="0.1" value="1.5" style="width: 100%;">
           </div>
         </div>
 
@@ -660,6 +679,20 @@ class KeplerianEngine {
           <label style="font-size: 0.88rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; cursor: pointer;">
             <input type="checkbox" id="chk-astro-trails" checked> Harakat izlari (Orbital Trails)
           </label>
+        </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-astro10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-astro10">
+          <li data-set='{"e":0.02,"a":1.0,"speed":1.5}'>Bu model Kepler orbital mexanikasini ko‘rsatadi. Hozir ekssentrisitet deyarli nolga teng — bu Yerning orbitasiga yaqin, deyarli doiraviy orbita.</li>
+          <li data-set='{"e":0.7}'>Ekssentrisitetni sezilarli oshiramiz. Orbita cho‘zilgan ellipsga aylanadi — sayyora periheliyda tezlashadi, afeliyda esa sekinlashadi, xuddi Kepler ikkinchi qonuni aytganidek.</li>
+          <li data-set='{"a":2.5,"e":0.1}'>Katta yarim o‘qni oshiramiz. Kepler uchinchi qonuniga ko‘ra aylanish davri ortadi — uzoqroq orbita, sekinroq umumiy aylanish.</li>
+          <li data-set='{"speed":4.0}'>Vaqt masshtabini tezlashtiramiz, shunda butun orbital davrni qisqa vaqt ichida kuzatish mumkin.</li>
+          <li data-set='{"e":0.02,"a":1.0,"speed":1.5}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
         </div>
 
         <!-- Audio-Narrative & TTS Demo Widget -->
@@ -698,10 +731,10 @@ class KeplerianEngine {
     </section>
 
     <!-- TAB 7: Test & Manbalar -->
-    <section id="tab-reja7" class="tab-content">
+    <section id="tab-reja7" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">7. Diagnostik test va ilmiy-metodik manbalar</h2>
+          <h2 class="card-title"><span class="num">9</span>Diagnostik test va ilmiy-metodik manbalar</h2>
           <span class="badge badge-cyan" data-i18n="common.assessAndBib">Bilimni baholash va APA 7th bibliography</span>
         </div>
 
@@ -773,6 +806,12 @@ class KeplerianEngine {
       </div>
     </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture9.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l9">9-ma’ruza</h3></a>
+      <a class="card next" href="lecture11.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l11">11-ma’ruza</h3></a>
+    </nav>
+    </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -835,5 +874,6 @@ class KeplerianEngine {
   <script type="module" src="js/sim-astronomy-visualization.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

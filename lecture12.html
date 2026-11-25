@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>12-ma’ruza: Mexanika qonuniyatlarini modellashtirish va animatsiya qilish</title>
   <meta name="description" content="12-ma'ruza: mexanika qonuniyatlarini modellashtirish va animatsiya qilish, Nyuton dinamikasi va AI-pipeline.">
   <link rel="stylesheet" href="css/main.css">
@@ -38,6 +39,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture12.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture12.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -88,6 +90,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -151,21 +157,49 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
+      <nav class="crumbs" aria-label="Yo'nalish">
+        <a href="index.html" data-i18n="nav.home">Bosh sahifa</a>
+        <span>/</span>
+        <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a>
+        <span>/</span>
+        <span data-i18n="common.lectureNo.l12">12-ma’ruza</span>
+      </nav>
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6,tab-reja7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-cyan">12-ma’ruza: klassik mexanika va to‘liq SI-konveyer</span>
+      <div class="eyebrow">
+        <span class="badge badge-cyan">12-ma’ruza: klassik mexanika va to‘liq SI-konveyer</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card12.title">
         Mexanika qonuniyatlarini modellashtirish va animatsiya qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Nyuton dinamikasi, impuls va energiyaning saqlanish qonunlari, qiya tekislikdagi Kulon ishqalanishi hamda 2D elastik to‘qnashuvlarni to‘liq 4 bosqichli <strong data-i18n="common.aiPipeline">AI-Pipeline konveyeri</strong> (PhET/Vascak.cz dekonstruksiyasi &rarr; Claude simplektik dvigateli &rarr; Google Antigravity monitoringi &rarr; Runway kinematik video sintezi) orqali yaxlit modellashtirish.
       </p>
-    </div>
+      <div class="chips">
+        <span class="chip" data-i18n="common.lectureNo.l12">12-ma’ruza</span>
+      </div>
+    </section>
+
+    <div class="doc-layout">
+      <aside class="toc">
+        <h2 data-i18n="pages.lecture12.tocTitle">Mundarija</h2>
+        <ol>
+          <li><a href="#vread-pre1">1. <span data-i18n="pages.lecture12.tocPlan">12-ma’ruza rejasi</span></a></li>
+          <li><a href="#vread-pre2">2. <span data-i18n="pages.lecture12.tocFreeAlt">Bepul muqobillar</span></a></li>
+          <li><a href="#tab-reja1">3. <span data-i18n="tabs.1_ai_diagnostika_va_reja">AI diagnostika va reja</span></a></li>
+          <li><a href="#tab-reja2">4. <span data-i18n="pages.lecture12.tab2">Mexanika simulyatsiyalari tahlili</span></a></li>
+          <li><a href="#tab-reja3">5. <span data-i18n="pages.lecture12.tab3">Mexanika dinamikasi va kod</span></a></li>
+          <li><a href="#tab-reja4">6. <span data-i18n="tabs.4_jarayon_monitoringi_antigravity">Jarayon monitoringi (Antigravity)</span></a></li>
+          <li><a href="#tab-reja5">7. <span data-i18n="pages.lecture12.tab5">Kinematik video illyustratsiya</span></a></li>
+          <li><a href="#tab-reja6">8. <span data-i18n="pages.lecture12.tab6">Interaktiv mexanika sandbox</span></a></li>
+          <li><a href="#tab-reja7">9. <span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></a></li>
+        </ol>
+      </aside>
+      <div class="doc">
 
     <!-- 5-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 12-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec">
+      <h2 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 12-ma’ruza rejasi va to‘liq AI-pipeline konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. AI diagnostika va reja:</strong><br>
@@ -192,49 +226,23 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Dual Physics Sandbox, Real-Time Invariantlar Grafigi va 3 ta kognitiv test savoli.</span>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Bepul muqobillar -->
-    <div id="vread-pre2" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre2" class="doc-sec free-alt">
+      <h2 style="margin-bottom: 10px; font-size: 1.1rem;"><span class="num">2</span><span data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</span></h2>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt2"><strong>Runway</strong> o‘rniga: o‘z Canvas simulyatsiyangizni OBS Studio bilan ekrandan yozib olish, Manim (Python) yoki Blender bilan animatsiya, Shotcut/Kdenlive bilan montaj.</li>
         <li data-i18n="freeAlt.alt4"><strong>Pika</strong> o‘rniga: Manim, Blender, OBS Studio.</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
-
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture12.tab2">2. Mexanika simulyatsiyalari tahlili</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture12.tab3">3. Mexanika dinamikasi va kod</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="tabs.4_jarayon_monitoringi_antigravity">4. Jarayon monitoringi (Antigravity)</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture12.tab5">5. Kinematik video illyustratsiya</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="pages.lecture12.tab6">6. Interaktiv mexanika sandbox</button>
-        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
+    </section>
 
     <!-- TAB 1: AI Diagnostika va Individual Reja -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Sun’iy intellekt uchun diagnostika va individual reja</h2>
+          <h2 class="card-title"><span class="num">3</span>Sun’iy intellekt uchun diagnostika va individual reja</h2>
           <span class="badge badge-cyan">MagicSchool AI va Vygotsky ZPD</span>
         </div>
 
@@ -283,10 +291,10 @@
     </section>
 
     <!-- TAB 2: Mexanika Simulyatsiyalari Tahlili -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Mexanika simulyatsiyalari tahlili: PhET va Vascak.cz</h2>
+          <h2 class="card-title"><span class="num">4</span>Mexanika simulyatsiyalari tahlili: PhET va Vascak.cz</h2>
           <span class="badge badge-emerald">Teskari muhandislik va gnoseologik tahlil</span>
         </div>
 
@@ -394,10 +402,10 @@
     </section>
 
     <!-- TAB 3: Mexanika Dinamikasi & Kod -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. Mexanika dinamikasi va harakat kodi: Claude</h2>
+          <h2 class="card-title"><span class="num">5</span>Mexanika dinamikasi va harakat kodi: Claude</h2>
           <span class="badge badge-purple">Vector2D, symplectic Euler-Cromer va collision impulse</span>
         </div>
 
@@ -556,10 +564,10 @@ class PhysicsParticle2D {
     </section>
 
     <!-- TAB 4: Jarayon Monitoringi (Antigravity) -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Jarayon monitoringi: Google Antigravity</h2>
+          <h2 class="card-title"><span class="num">6</span>Jarayon monitoringi: Google Antigravity</h2>
           <span class="badge badge-amber">Fixed Timestep, symplectic drift va AST linter</span>
         </div>
 
@@ -610,10 +618,10 @@ class PhysicsParticle2D {
     </section>
 
     <!-- TAB 5: Kinematik Video Illyustratsiya -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">5. Kinematik video illyustratsiya: Runway va Pika Labs</h2>
+          <h2 class="card-title"><span class="num">7</span>Kinematik video illyustratsiya: Runway va Pika Labs</h2>
           <span class="badge badge-rose">Generative AI video va visual physics intuition</span>
         </div>
 
@@ -665,10 +673,10 @@ class PhysicsParticle2D {
     </section>
 
     <!-- TAB 6: Interaktiv Mexanika Sandbox -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">6. Klassik mexanika va SI-konveyerning interaktiv laboratoriyasi</h2>
+          <h2 class="card-title"><span class="num">8</span>Klassik mexanika va SI-konveyerning interaktiv laboratoriyasi</h2>
           <span class="badge badge-cyan">HTML5 Canvas, dinamik telemetriya va SI-konveyer</span>
         </div>
 
@@ -676,6 +684,8 @@ class PhysicsParticle2D {
           Quyidagi interaktiv laboratoriyada siz <strong>qiya tekislikdagi dinamika</strong> va <strong>2D elastik to‘qnashuvlar</strong> jarayonini real vaqt rejimida sinab ko‘rishingiz, simplektik integrator va oddiy Eyler xatoliklarini energiya grafigida solishtirishingiz hamda 4 bosqichli to‘liq SI-konveyerni ishga tushirishingiz mumkin.
         </p>
 
+        <div class="sim-wrap">
+        <div class="sim-box">
         <!-- Mode Selector Bar -->
         <div style="display: flex; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;">
           <span style="font-size: 0.88rem; color: var(--text-secondary); font-weight: bold;">Eksperiment rejimi:</span>
@@ -685,26 +695,26 @@ class PhysicsParticle2D {
 
         <!-- Controls Bar -->
         <div class="glass-panel" style="margin-bottom: 20px; padding: 18px;">
-          
+
           <!-- Ramp Controls Group -->
           <div id="ramp-controls-group" class="grid-3" style="gap: 16px;">
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Qiyalik burchagi ($\alpha$): <strong id="val-ramp-angle" style="color: var(--accent-cyan);">30°</strong>
               </label>
-              <input type="range" id="sl-ramp-angle" min="5" max="60" value="30" step="1" style="width: 100%;">
+              <input type="range" id="sl-ramp-angle" data-k="angle" min="5" max="60" value="30" step="1" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Ishqalanish koeffitsiyenti ($\mu$): <strong id="val-ramp-mu" style="color: var(--accent-amber);">0,15</strong>
               </label>
-              <input type="range" id="sl-ramp-mu" min="0.00" max="0.80" value="0.15" step="0.02" style="width: 100%;">
+              <input type="range" id="sl-ramp-mu" data-k="mu" min="0.00" max="0.80" value="0.15" step="0.02" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Jism massasi ($m$): <strong id="val-mech-mass" style="color: var(--accent-emerald);">2,0 kg</strong>
               </label>
-              <input type="range" id="sl-mech-mass" min="0.5" max="10.0" value="2.0" step="0.5" style="width: 100%;">
+              <input type="range" id="sl-mech-mass" data-k="mass" min="0.5" max="10.0" value="2.0" step="0.5" style="width: 100%;">
             </div>
           </div>
 
@@ -714,7 +724,7 @@ class PhysicsParticle2D {
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Tiklanish koeffitsiyenti ($e$): <strong id="val-restitution" style="color: var(--accent-cyan);">1,00</strong>
               </label>
-              <input type="range" id="sl-restitution" min="0.0" max="1.0" value="1.0" step="0.05" style="width: 100%;">
+              <input type="range" id="sl-restitution" data-k="e" min="0.0" max="1.0" value="1.0" step="0.05" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
@@ -729,7 +739,7 @@ class PhysicsParticle2D {
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Zarracha massasi ($m_1$): <strong id="val-ball-mass" style="color: var(--accent-emerald);">2,0 kg</strong>
               </label>
-              <input type="range" id="sl-ball-mass" min="0.5" max="10.0" value="2.0" step="0.5" style="width: 100%;">
+              <input type="range" id="sl-ball-mass" data-k="m1" min="0.5" max="10.0" value="2.0" step="0.5" style="width: 100%;">
             </div>
           </div>
 
@@ -754,6 +764,20 @@ class PhysicsParticle2D {
             <canvas id="mechanics-graph-canvas" width="320" height="300" style="display: block; margin: 0 auto; max-width: 100%; height: auto;"></canvas>
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Yashil — simplektik saqlanish, qizil — Eyler xatoligi dreyfi.</div>
           </div>
+        </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-mech12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-mech12">
+          <li data-set='{"angle":30,"mu":0.15,"mass":2.0}'>Bu model qiya tekislikdagi harakatni ko‘rsatadi: $a = g(\sin\alpha - \mu\cos\alpha)$. Hozirgi 30° burchak va o‘rtacha ishqalanishda jism asta pastga sirpanadi.</li>
+          <li data-set='{"angle":55}'>Qiyalik burchagini oshiramiz. $\tan\alpha$ ortgani sayin tezlanish kattalashadi — jism tezroq sirpanadi.</li>
+          <li data-set='{"angle":10,"mu":0.6}'>Endi burchakni kichraytirib, ishqalanishni kuchaytiramiz. $\tan\alpha \le \mu_s$ sharti bajariladi — jism qiya tekislikda tinch turadi ($a=0$).</li>
+          <li data-set='{"angle":30,"mu":0.05,"mass":6.0}'>Ishqalanishni kamaytirib, massani oshiramiz. Massa tezlanishga bevosita ta’sir qilmaydi ($a$ massadan mustaqil), lekin kinetik energiya $\frac{1}{2}mv^2$ ortadi.</li>
+          <li data-set='{"angle":30,"mu":0.15,"mass":2.0}'>Boshlang‘ich qiymatlarga qaytamiz. Endi boshqaruv sizga o‘tadi — burchak, ishqalanish va massani o‘zingiz o‘zgartirib, energiya grafigidagi simplektik saqlanishni kuzating.</li>
+        </ol>
         </div>
 
         <!-- Full AI-Pipeline Interactive Panel -->
@@ -784,10 +808,10 @@ class PhysicsParticle2D {
     </section>
 
     <!-- TAB 7: Test & Manbalar -->
-    <section id="tab-reja7" class="tab-content">
+    <section id="tab-reja7" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">7. Diagnostik test va ilmiy-metodik manbalar</h2>
+          <h2 class="card-title"><span class="num">9</span>Diagnostik test va ilmiy-metodik manbalar</h2>
           <span class="badge badge-cyan" data-i18n="common.assessAndBib">Bilimni baholash va APA 7th bibliography</span>
         </div>
 
@@ -864,6 +888,14 @@ class PhysicsParticle2D {
         </ol>
       </div>
     </section>
+
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture11.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l11">11-ma’ruza</h3></a>
+      <a class="card next" href="lecture13.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l13">13-ma’ruza</h3></a>
+    </nav>
+
+      </div>
+    </div>
 
   </main>
 
@@ -1001,5 +1033,6 @@ class PhysicsParticle2D {
   <script src="js/sim-mechanics-pipeline.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

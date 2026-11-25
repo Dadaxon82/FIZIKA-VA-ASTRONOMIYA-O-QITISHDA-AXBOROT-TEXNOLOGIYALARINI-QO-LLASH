@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>15-ma’ruza: Yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi</title>
   <meta name="description" content="15-ma'ruza: yadro fizikasi qonuniyatlari va yakuniy loyiha metodologiyasi, radioaktiv yemirilish modeli.">
   <link rel="stylesheet" href="css/main.css">
@@ -38,6 +39,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture15.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture15.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -88,6 +90,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -151,21 +157,49 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
+      <nav class="crumbs" aria-label="Yo'nalish">
+        <a href="index.html" data-i18n="nav.home">Bosh sahifa</a>
+        <span>/</span>
+        <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a>
+        <span>/</span>
+        <span data-i18n="common.lectureNo.l15">15-ma’ruza</span>
+      </nav>
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6,tab-reja7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-rose">15-ma’ruza: Yadro fizikasi, Capstone yakuniy loyiha va 7 AI pipeline</span>
+      <div class="eyebrow">
+        <span class="badge badge-rose">15-ma’ruza: Yadro fizikasi, Capstone yakuniy loyiha va 7 AI pipeline</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card15.title">
         Yadro fizikasi qonuniyatlari va yakuniy mustaqil loyiha (Capstone) metodologiyasi
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Radioaktiv yemirilish qonuni ($N(t)=N_0 e^{-\lambda t}$), Uran-235 zanjirli yadro bo‘linishi (fission: $E=\Delta mc^2 \approx 200\text{ MeV}$) va termoyadroviy sintez (fusion: $^{2}\text{H}+^{3}\text{H}\rightarrow^{4}\text{He}+n+17.6\text{ MeV}$) jarayonlarini modellashtirish hamda talabaning mustaqil tanlagan fizik mavzusi bo‘yicha to‘liq <strong>7 ta AI vosita</strong> (MagicSchool &rarr; PhET/Vascak &rarr; Claude &rarr; Google Antigravity &rarr; ElevenLabs/Muxlisa &rarr; Otter.ai &rarr; Undetectable AI) yordamida yakuniy mustaqil loyihani (Capstone) yaratish va himoya qilish metodologiyasi.
       </p>
-    </div>
+      <div class="chips">
+        <span class="chip" data-i18n="common.lectureNo.l15">15-ma’ruza</span>
+      </div>
+    </section>
+
+    <div class="doc-layout">
+      <aside class="toc">
+        <h2 data-i18n="pages.lecture15.tocTitle">Mundarija</h2>
+        <ol>
+          <li><a href="#vread-pre1">1. <span data-i18n="pages.lecture15.tocPlan">15-ma’ruza rejasi</span></a></li>
+          <li><a href="#vread-pre2">2. <span data-i18n="pages.lecture15.tocFreeAlt">Bepul muqobillar</span></a></li>
+          <li><a href="#tab-reja1">3. <span data-i18n="tabs.1_ai_diagnostika_va_reja">AI diagnostika va reja</span></a></li>
+          <li><a href="#tab-reja2">4. <span data-i18n="pages.lecture15.tab2">Teskari muhandislik tahlili</span></a></li>
+          <li><a href="#tab-reja3">5. <span data-i18n="pages.lecture15.tab3">To‘liq simulyator kodi</span></a></li>
+          <li><a href="#tab-reja4">6. <span data-i18n="tabs.4_jarayon_monitoringi_antigravity">Jarayon monitoringi (Antigravity)</span></a></li>
+          <li><a href="#tab-reja5">7. <span data-i18n="pages.lecture15.tab5">Baholash rubrikalari</span></a></li>
+          <li><a href="#tab-reja6">8. <span data-i18n="pages.lecture15.tab6">Capstone va Undetectable AI</span></a></li>
+          <li><a href="#tab-reja7">9. <span data-i18n="pages.lecture15.tab7">Interaktiv sandbox va manbalar</span></a></li>
+        </ol>
+      </aside>
+      <div class="doc">
 
     <!-- 5-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-rose);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 15-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec">
+      <h2 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 15-ma’ruza rejasi va to‘liq AI-pipeline konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">1. AI diagnostika va reja:</strong><br>
@@ -192,51 +226,25 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Undetectable AI akademik halollik nazorati, dual-canvas sandbox va APA 7th manbalar.</span>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Bepul muqobillar -->
-    <div id="vread-pre2" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre2" class="doc-sec free-alt">
+      <h2 style="margin-bottom: 10px; font-size: 1.1rem;"><span class="num">2</span><span data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</span></h2>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt5"><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
         <li data-i18n="freeAlt.alt8"><strong>Otter.ai</strong> o‘rniga: Whisper — ochiq manbali, o‘zbek tilini qo‘llaydi, Google Colab’da bepul ishlaydi.</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
-
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture15.tab2">2. Teskari muhandislik tahlili</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture15.tab3">3. To‘liq simulyator kodi</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="tabs.4_jarayon_monitoringi_antigravity">4. Jarayon monitoringi (Antigravity)</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture15.tab5">5. Baholash rubrikalari</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="pages.lecture15.tab6">6. Capstone va Undetectable AI</button>
-        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')" data-i18n="pages.lecture15.tab7">7. Interaktiv sandbox va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
+    </section>
 
     <!-- ========================================================================= -->
     <!-- TAB 1: AI Diagnostika va Individual Reja -->
     <!-- ========================================================================= -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Sun’iy intellekt uchun diagnostika va individual reja</h2>
+          <h2 class="card-title"><span class="num">3</span>Sun’iy intellekt uchun diagnostika va individual reja</h2>
           <span class="badge badge-amber">MagicSchool AI va Vygotsky ZPD</span>
         </div>
 
@@ -282,10 +290,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 2: Teskari Muhandislik Tahlili -->
     <!-- ========================================================================= -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Teskari muhandislik tahlili: PhET va Vascak.cz</h2>
+          <h2 class="card-title"><span class="num">4</span>Teskari muhandislik tahlili: PhET va Vascak.cz</h2>
           <span class="badge badge-emerald">Reverse Engineering va nuclear model deconstruction</span>
         </div>
 
@@ -334,10 +342,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 3: To'liq Simulyator Kodi Generatsiyasi -->
     <!-- ========================================================================= -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. To‘liq simulyator kodi generatsiyasi: Claude</h2>
+          <h2 class="card-title"><span class="num">5</span>To‘liq simulyator kodi generatsiyasi: Claude</h2>
           <span class="badge badge-cyan">Full JavaScript Nuclear Engine va Monte Carlo solvers</span>
         </div>
 
@@ -434,10 +442,10 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
     <!-- ========================================================================= -->
     <!-- TAB 4: Jarayon Monitoringi (Google Antigravity) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Jarayon monitoringi: Google Antigravity</h2>
+          <h2 class="card-title"><span class="num">6</span>Jarayon monitoringi: Google Antigravity</h2>
           <span class="badge badge-rose">Conservation laws, baryon number va energy-mass audit</span>
         </div>
 
@@ -489,10 +497,10 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
     <!-- ========================================================================= -->
     <!-- TAB 5: Baholash Rubrikalari (MagicSchool AI) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">5. Baholash rubrikalari: MagicSchool AI</h2>
+          <h2 class="card-title"><span class="num">7</span>Baholash rubrikalari: MagicSchool AI</h2>
           <span class="badge badge-purple">100 ballik yakuniy loyiha (Capstone) baholash rubrikasi</span>
         </div>
 
@@ -565,10 +573,10 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
     <!-- ========================================================================= -->
     <!-- TAB 6: Capstone Mustaqil Loyiha & Undetectable AI -->
     <!-- ========================================================================= -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">6. Capstone mustaqil loyiha metodologiyasi va Undetectable AI</h2>
+          <h2 class="card-title"><span class="num">8</span>Capstone mustaqil loyiha metodologiyasi va Undetectable AI</h2>
           <span class="badge badge-cyan">7 ta AI vositali to‘liq pipeline va akademik halollik</span>
         </div>
 
@@ -617,10 +625,10 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
     <!-- ========================================================================= -->
     <!-- TAB 7: Interaktiv Sandbox, Test & Manbalar -->
     <!-- ========================================================================= -->
-    <section id="tab-reja7" class="tab-content">
+    <section id="tab-reja7" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">7. Interaktiv simulyator sandbox, diagnostik test va manbalar</h2>
+          <h2 class="card-title"><span class="num">9</span>Interaktiv simulyator sandbox, diagnostik test va manbalar</h2>
           <span class="badge badge-rose">HTML5 Canvas, Nuclear Reactor va APA 7th bibliography</span>
         </div>
 
@@ -628,6 +636,8 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
           Quyidagi laboratoriyada siz <strong>Radioaktiv yemirilish</strong>, <strong>Uran-235 zanjirli bo‘linishi</strong>, <strong>Termoyadroviy sintez (Tokamak)</strong> va <strong>Yakuniy loyiha (Capstone) monitoring konsoli</strong> sinxron ishlashini mustaqil boshqarishingiz mumkin!
         </p>
 
+        <div class="sim-wrap">
+        <div class="sim-box">
         <!-- Mode Bar -->
         <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
           <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
@@ -660,7 +670,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 3D Kadmiy Sterjenlari Chuqurligi: <strong id="val-control-rods" style="color: var(--accent-amber);">20%</strong>
               </label>
-              <input type="range" id="sl-control-rods" min="0" max="1" value="0.2" step="0.05" style="width: 100%;">
+              <input type="range" id="sl-control-rods" data-k="rods" min="0" max="1" value="0.2" step="0.05" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
@@ -682,7 +692,7 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Yarim Yemirilish Davri ($T_{1/2}$): <strong id="val-decay-halflife" style="color: var(--accent-emerald);">4.5 s</strong>
               </label>
-              <input type="range" id="sl-decay-halflife" min="1.5" max="10.0" value="4.5" step="0.5" style="width: 100%;">
+              <input type="range" id="sl-decay-halflife" data-k="half" min="1.5" max="10.0" value="4.5" step="0.5" style="width: 100%;">
             </div>
             <div>
               <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;">
@@ -725,6 +735,19 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
             <canvas id="nuclear-graph-canvas" width="460" height="360" style="display: block; margin: 0 auto; max-width: 100%; height: auto;"></canvas>
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Grafik: eksponensial yemirilish egri chizig‘i $N(t)$ va energiya oqimi.</div>
           </div>
+        </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-nuclear15"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-nuclear15">
+          <li data-set='{"rods":0.2}'>Bu model Uran-235 zanjirli bo‘linishini ko‘rsatadi. Kadmiy sterjenlari 20% chuqurlikda — ko‘payish koeffitsiyenti $k$ birdan sal katta, reaksiya tez o‘sadi.</li>
+          <li data-set='{"rods":0.8}'>Sterjenlarni chuqurroq kiritamiz. Ko‘proq neytron yutiladi — $k$ birga yaqinlashadi, zanjirli reaksiya barqaror (kritik) rejimga o‘tadi.</li>
+          <li data-set='{"rods":1.0}'>Sterjenlarni to‘liq kiritamiz. $k < 1$ bo‘lib, reaksiya subkritik holatga o‘tadi va neytronlar soni kamayib, jarayon to‘xtaydi.</li>
+          <li data-set='{"rods":0.2}'>Boshlang‘ich holatga qaytamiz. Endi boshqaruv sizga o‘tadi — sterjenlar chuqurligini o‘zingiz o‘zgartirib, energiya va $k$ koeffitsiyentining o‘zgarishini kuzating.</li>
+        </ol>
         </div>
 
         <!-- PhET & Vascak Hub -->
@@ -870,6 +893,14 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
       </div>
     </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture14.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l14">14-ma’ruza</h3></a>
+      <a class="card next" href="lab1.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="nav.labShort.l1">1-laboratoriya</h3></a>
+    </nav>
+
+      </div>
+    </div>
+
   </main>
 
   <!-- Footer -->
@@ -993,5 +1024,6 @@ function updateFissionChainReaction(nuclei, neutrons, controlRodDepth, dt) {
   <script src="js/sim-nuclear-capstone.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

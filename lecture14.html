@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>14-ma’ruza: Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish</title>
   <meta name="description" content="14-ma'ruza: elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish — Kulon va Faradey qonunlari.">
   <link rel="stylesheet" href="css/main.css">
@@ -38,6 +39,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture14.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture14.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -88,6 +90,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -151,21 +157,49 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
+      <nav class="crumbs" aria-label="Yo'nalish">
+        <a href="index.html" data-i18n="nav.home">Bosh sahifa</a>
+        <span>/</span>
+        <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a>
+        <span>/</span>
+        <span data-i18n="common.lectureNo.l14">14-ma’ruza</span>
+      </nav>
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6,tab-reja7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-cyan">14-ma’ruza: Elektrodinamika, maydonlar va audio-narratsiya sintezi</span>
+      <div class="eyebrow">
+        <span class="badge badge-cyan">14-ma’ruza: Elektrodinamika, maydonlar va audio-narratsiya sintezi</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card14.title">
         Elektrodinamika qonuniyatlarini modellashtirish va simulyatsiya qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Kulon qonuni, elektrostatik maydon kuch chiziqlari, Om va Kirxgof qoidalari, Faradey elektromagnit induksiya hodisasi hamda RLC zanjirlarini 5 bosqichli to‘liq <strong data-i18n="common.aiPipeline">AI-Pipeline konveyeri</strong> (PhET/Vascak.cz dekonstruksiyasi &rarr; Claude dvigateli &rarr; Muxlisa AI / ElevenLabs audio-narratsiyasi &rarr; Google Antigravity monitoringi) orqali yaxlit modellashtirish va ovozli sintezlash.
       </p>
-    </div>
+      <div class="chips">
+        <span class="chip" data-i18n="common.lectureNo.l14">14-ma’ruza</span>
+      </div>
+    </section>
+
+    <div class="doc-layout">
+      <aside class="toc">
+        <h2 data-i18n="pages.lecture14.tocTitle">Mundarija</h2>
+        <ol>
+          <li><a href="#vread-pre1">1. <span data-i18n="pages.lecture14.tocPlan">14-ma’ruza rejasi</span></a></li>
+          <li><a href="#vread-pre2">2. <span data-i18n="pages.lecture14.tocFreeAlt">Bepul muqobillar</span></a></li>
+          <li><a href="#tab-reja1">3. <span data-i18n="tabs.1_ai_diagnostika_va_reja">AI diagnostika va reja</span></a></li>
+          <li><a href="#tab-reja2">4. <span data-i18n="pages.lecture14.tab2">Elektromagnit modellar tahlili</span></a></li>
+          <li><a href="#tab-reja3">5. <span data-i18n="pages.lecture14.tab3">Maydon va zanjir animatsiyasi kodi</span></a></li>
+          <li><a href="#tab-reja4">6. <span data-i18n="pages.lecture14.tab4">Audio-narratsiya ovozini sintez qilish</span></a></li>
+          <li><a href="#tab-reja5">7. <span data-i18n="pages.lecture14.tab5">Loyiha monitoringi (Antigravity)</span></a></li>
+          <li><a href="#tab-reja6">8. <span data-i18n="pages.lecture14.tab6">Interaktiv elektrodinamika sandbox</span></a></li>
+          <li><a href="#tab-reja7">9. <span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></a></li>
+        </ol>
+      </aside>
+      <div class="doc">
 
     <!-- 5-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 14-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec">
+      <h2 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 14-ma’ruza rejasi va to‘liq AI-pipeline konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">1. AI diagnostika va reja:</strong><br>
@@ -192,50 +226,24 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Dual-Canvas elektrodinamika laboratoriyasi, audio spektrogramma, 3 ta test va APA 7th manbalar.</span>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Bepul muqobillar -->
-    <div id="vread-pre2" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre2" class="doc-sec free-alt">
+      <h2 style="margin-bottom: 10px; font-size: 1.1rem;"><span class="num">2</span><span data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</span></h2>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt5"><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
-
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture14.tab2">2. Elektromagnit modellar tahlili</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture14.tab3">3. Maydon va zanjir animatsiyasi kodi</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lecture14.tab4">4. Audio-narratsiya ovozini sintez qilish</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture14.tab5">5. Loyiha monitoringi (Antigravity)</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="pages.lecture14.tab6">6. Interaktiv elektrodinamika sandbox</button>
-        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
+    </section>
 
     <!-- ========================================================================= -->
     <!-- TAB 1: AI Diagnostika va Individual Reja -->
     <!-- ========================================================================= -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Sun’iy intellekt uchun diagnostika va individual reja</h2>
+          <h2 class="card-title"><span class="num">3</span>Sun’iy intellekt uchun diagnostika va individual reja</h2>
           <span class="badge badge-amber">MagicSchool AI va Vygotsky ZPD</span>
         </div>
 
@@ -281,10 +289,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 2: Elektromagnit Modellar Tahlili -->
     <!-- ========================================================================= -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Elektromagnit modellar tahlili: PhET va Vascak.cz</h2>
+          <h2 class="card-title"><span class="num">4</span>Elektromagnit modellar tahlili: PhET va Vascak.cz</h2>
           <span class="badge badge-emerald">Teskari muhandislik va elektrodinamika dekonstruksiyasi</span>
         </div>
 
@@ -371,10 +379,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 3: Maydon va Zanjir Animatsiyasi Kodi -->
     <!-- ========================================================================= -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. Maydon va zanjir animatsiyasi kodi: Claude</h2>
+          <h2 class="card-title"><span class="num">5</span>Maydon va zanjir animatsiyasi kodi: Claude</h2>
           <span class="badge badge-cyan">Coulomb superposition, Faraday induction va RLC engine</span>
         </div>
 
@@ -482,10 +490,10 @@ function calculateRlcOscillation(R, L, C_micro, U0, freq, time) {
     <!-- ========================================================================= -->
     <!-- TAB 4: Audio-Narratsiya Ovozini Sintez Qilish -->
     <!-- ========================================================================= -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Audio-narratsiya ovozini sintez qilish: Muxlisa AI / ElevenLabs</h2>
+          <h2 class="card-title"><span class="num">6</span>Audio-narratsiya ovozini sintez qilish: Muxlisa AI / ElevenLabs</h2>
           <span class="badge badge-purple">Speech synthesis, audio-visual synchronization va voice HUD</span>
         </div>
 
@@ -561,10 +569,10 @@ function speakScientificNarration(topic = 'faraday') {
     <!-- ========================================================================= -->
     <!-- TAB 5: Loyiha Monitoringi (Antigravity) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">5. Loyiha monitoringi: Google Antigravity</h2>
+          <h2 class="card-title"><span class="num">7</span>Loyiha monitoringi: Google Antigravity</h2>
           <span class="badge badge-rose">Gauss flux balance, Kirchhoff laws va Poynting energy audit</span>
         </div>
 
@@ -622,10 +630,10 @@ function speakScientificNarration(topic = 'faraday') {
     <!-- ========================================================================= -->
     <!-- TAB 6: Interaktiv Elektrodinamika Sandbox -->
     <!-- ========================================================================= -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">6. Interaktiv elektrodinamika va audio-narratsiya laboratoriyasi</h2>
+          <h2 class="card-title"><span class="num">8</span>Interaktiv elektrodinamika va audio-narratsiya laboratoriyasi</h2>
           <span class="badge badge-cyan">HTML5 Canvas, dynamic telemetry va audio narration sandbox</span>
         </div>
 
@@ -633,6 +641,8 @@ function speakScientificNarration(topic = 'faraday') {
           Quyidagi laboratoriyada siz <strong>Kulon elektrostatik maydoni</strong>, <strong>Faradey elektromagnit induksiyasi</strong>, <strong>RLC o‘zgaruvchan tok zanjiri</strong> va <strong>Muxlisa AI ilmiy audio-narratsiyasi</strong> sinxron ishlashini mustaqil boshqarishingiz mumkin!
         </p>
 
+        <div class="sim-wrap">
+        <div class="sim-box">
         <!-- Mode & Global Action Bar -->
         <div style="display: flex; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
           <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
@@ -659,13 +669,13 @@ function speakScientificNarration(topic = 'faraday') {
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 1-Zaryad ($q_1$): <strong id="val-charge-q1" style="color: var(--accent-rose);">+2.0 nKl</strong>
               </label>
-              <input type="range" id="sl-charge-q1" min="-5" max="5" value="2" step="0.5" style="width: 100%;">
+              <input type="range" id="sl-charge-q1" data-k="q1" min="-5" max="5" value="2" step="0.5" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 2-Zaryad ($q_2$): <strong id="val-charge-q2" style="color: var(--accent-cyan);">-2.0 nKl</strong>
               </label>
-              <input type="range" id="sl-charge-q2" min="-5" max="5" value="-2" step="0.5" style="width: 100%;">
+              <input type="range" id="sl-charge-q2" data-k="q2" min="-5" max="5" value="-2" step="0.5" style="width: 100%;">
             </div>
             <div>
               <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;">
@@ -680,13 +690,13 @@ function speakScientificNarration(topic = 'faraday') {
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 G‘altak O‘ramlari ($N$): <strong id="val-coil-turns" style="color: var(--accent-amber);">4 ta</strong>
               </label>
-              <input type="range" id="sl-coil-turns" min="1" max="6" value="4" step="1" style="width: 100%;">
+              <input type="range" id="sl-coil-turns" data-k="turns" min="1" max="6" value="4" step="1" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Magnit Harakat Tezligi: <strong id="val-magnet-speed" style="color: var(--accent-emerald);">1.6x</strong>
               </label>
-              <input type="range" id="sl-magnet-speed" min="0.5" max="4.0" value="1.6" step="0.2" style="width: 100%;">
+              <input type="range" id="sl-magnet-speed" data-k="mspeed" min="0.5" max="4.0" value="1.6" step="0.2" style="width: 100%;">
             </div>
             <div>
               <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 14px;">
@@ -701,25 +711,25 @@ function speakScientificNarration(topic = 'faraday') {
               <label style="font-size: 0.82rem; color: var(--text-secondary); display: block; margin-bottom: 4px;">
                 Qarshilik ($R$): <strong id="val-rlc-r" style="color: var(--accent-amber);">20 Ω</strong>
               </label>
-              <input type="range" id="sl-rlc-r" min="5" max="100" value="20" step="5" style="width: 100%;">
+              <input type="range" id="sl-rlc-r" data-k="r" min="5" max="100" value="20" step="5" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.82rem; color: var(--text-secondary); display: block; margin-bottom: 4px;">
                 Induktivlik ($L$): <strong id="val-rlc-l" style="color: var(--accent-emerald);">150 mH</strong>
               </label>
-              <input type="range" id="sl-rlc-l" min="0.05" max="0.5" value="0.15" step="0.05" style="width: 100%;">
+              <input type="range" id="sl-rlc-l" data-k="l" min="0.05" max="0.5" value="0.15" step="0.05" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.82rem; color: var(--text-secondary); display: block; margin-bottom: 4px;">
                 Sig‘im ($C$): <strong id="val-rlc-c" style="color: var(--accent-purple);">120 µF</strong>
               </label>
-              <input type="range" id="sl-rlc-c" min="20" max="300" value="120" step="20" style="width: 100%;">
+              <input type="range" id="sl-rlc-c" data-k="c" min="20" max="300" value="120" step="20" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.82rem; color: var(--text-secondary); display: block; margin-bottom: 4px;">
                 Chastota ($f$): <strong id="val-rlc-freq" style="color: var(--accent-cyan);">50 Hz</strong>
               </label>
-              <input type="range" id="sl-rlc-freq" min="10" max="150" value="50" step="5" style="width: 100%;">
+              <input type="range" id="sl-rlc-freq" data-k="freq" min="10" max="150" value="50" step="5" style="width: 100%;">
             </div>
           </div>
 
@@ -757,6 +767,19 @@ function speakScientificNarration(topic = 'faraday') {
             <canvas id="electro-graph-canvas" width="460" height="360" style="display: block; margin: 0 auto; max-width: 100%; height: auto;"></canvas>
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Grafik: kuchlanish $U(t)$ va tok $I(t)$ ning fazaviy siljishi hamda maydon profili.</div>
           </div>
+        </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-electro14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-electro14">
+          <li data-set='{"q1":2,"q2":-2}'>Bu model Kulon elektrostatik maydonini ko‘rsatadi: $\vec{E} = kq/r^2$. Hozir musbat va manfiy zaryadlar o‘zaro tortishadi.</li>
+          <li data-set='{"q1":5,"q2":5}'>Ikkala zaryadni ham musbat qilamiz. Endi ular bir xil ishorali bo‘lgani uchun bir-biridan qochadi — maydon chiziqlari tashqariga yo‘naladi.</li>
+          <li data-set='{"q1":-4,"q2":1}'>Zaryadlarni asimmetrik qilamiz. Kuchliroq manfiy zaryad atrofida maydon kuchlanganligi kattaroq bo‘ladi ($E \propto q$).</li>
+          <li data-set='{"q1":2,"q2":-2}'>Boshlang‘ich qiymatlarga qaytamiz. Endi boshqaruv sizga o‘tadi — zaryadlarni o‘zingiz o‘zgartirib, maydon chiziqlari va potensial grafigini kuzating.</li>
+        </ol>
         </div>
 
         <!-- ========================================================================= -->
@@ -873,10 +896,10 @@ function speakScientificNarration(topic = 'faraday') {
     <!-- ========================================================================= -->
     <!-- TAB 7: Test & Manbalar -->
     <!-- ========================================================================= -->
-    <section id="tab-reja7" class="tab-content">
+    <section id="tab-reja7" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">7. Diagnostik test va ilmiy-metodik manbalar</h2>
+          <h2 class="card-title"><span class="num">9</span>Diagnostik test va ilmiy-metodik manbalar</h2>
           <span class="badge badge-cyan" data-i18n="common.assessAndBib">Bilimni baholash va APA 7th bibliography</span>
         </div>
 
@@ -948,6 +971,14 @@ function speakScientificNarration(topic = 'faraday') {
         </ol>
       </div>
     </section>
+
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture13.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l13">13-ma’ruza</h3></a>
+      <a class="card next" href="lecture15.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l15">15-ma’ruza</h3></a>
+    </nav>
+
+      </div>
+    </div>
 
   </main>
 
@@ -1072,5 +1103,6 @@ function speakScientificNarration(topic = 'faraday') {
   <script src="js/sim-electrodynamics-pipeline.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

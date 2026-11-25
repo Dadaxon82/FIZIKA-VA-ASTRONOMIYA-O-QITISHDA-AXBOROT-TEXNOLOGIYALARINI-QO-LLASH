@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>10-laboratoriya: Fizik va astronomik ma’lumotlar bazasidan olingan ko‘rsatkichlar asosida jismlar harakati trayektoriyasining interaktiv grafiklarini vizuallashtirish</title>
   <meta name="description" content="10-laboratoriya: fizik va astronomik ma'lumotlar asosida jismlar trayektoriyasining interaktiv grafiklari.">
   <link rel="stylesheet" href="css/main.css">
@@ -156,6 +157,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lab10.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lab10.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -206,6 +208,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -269,8 +275,11 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotation">Annotatsiya</a> / <span data-i18n="common.labNo.l10">10-laboratoriya</span></nav>
+      <div class="eyebrow" data-i18n="common.labNo.l10">10-laboratoriya</div>
+
       
       <span class="badge badge-cyan">10-laboratoriya mashg‘uloti: astronomical data va speech synthesis</span>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.labs.card10.title">
@@ -279,11 +288,27 @@
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Zamonaviy astronomiya va astrofizika ta’limi ochiq ma’lumotlar bazalariga (NASA JPL Horizons, ESA Gaia) tayanadi. Ushbu laboratoriya mashg‘ulotida talabalar sayyoralar va kometalar harakatini <strong>Kepler qonunlari</strong> asosida vizuallashtiradi, <strong>Gemini</strong> yordamida ilmiy diktorlik ssenariysini yozadi, <strong>Muxlisa AI</strong>, <strong>Aisha AI</strong>, <strong>ElevenLabs</strong> yoki <strong>Google Cloud TTS</strong> orqali o‘zbek tilida nutq sintez qiladi hamda ovozni animatsiya vaqt shkalasi (timeline) bilan aniq sinxronlashtiradi.
       </p>
-    </div>
+    </section>
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lab10.tocPlan">1. 📋 10-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</a></li>
+        <li><a href="#vread-pre2" data-i18n="pages.lab10.tocFreeAlt">2. 💡 Pullik vositalarning bepul muqobillari</a></li>
+        <li><a href="#tab-reja1">3. <span data-i18n="tabs.1_diagnostika_va_individual_reja">Diagnostika va individual reja</span></a></li>
+        <li><a href="#tab-reja2">4. <span data-i18n="pages.lab10.tab2">Astronomik trayektoriyalar va ovoz nazariyasi</span></a></li>
+        <li><a href="#tab-reja3">5. <span data-i18n="pages.lab10.tab3">Muxlisa AI, Aisha va ElevenLabs TTS</span></a></li>
+        <li><a href="#tab-reja4">6. <span data-i18n="pages.lab10.tab4">Gemini ssenariy va sinxronizatsiya</span></a></li>
+        <li><a href="#tab-reja5">7. <span data-i18n="pages.lab10.tab5">Interaktiv dastgoh va audio pleer</span></a></li>
+        <li><a href="#tab-reja6">8. <span data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">Baholash rubrikasi va manbalar</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
+
 
     <!-- 4-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 10-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h3 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 10-laboratoriya mashg‘uloti rejasi va tahliliy bosqichlari:</h3>
       <div class="grid-4" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-cyan);">1. Diagnostika va shaxsiy reja:</strong><br>
@@ -302,10 +327,10 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Gemini modeli orqali vaqt belgilari (timestamps [00:00 - 00:30]) bilan boyitilgan, fonetik moslashgan ilmiy diktorlik ssenariysini shakllantirish.</span>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Bepul muqobillar -->
-    <div id="vread-pre2" class="glass-panel free-alt" style="margin-bottom: 28px; border-left: 4px solid var(--accent-emerald);">
-      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title">💡 Pullik vositalarning bepul muqobillari</h3>
+    <section id="vread-pre2" class="doc-sec free-alt" style="border-left: 4px solid var(--accent-emerald);">
+      <h3 style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="freeAlt.title"><span class="num">2</span>💡 Pullik vositalarning bepul muqobillari</h3>
       <p style="margin-bottom: 8px; font-size: 0.95rem;" data-i18n="freeAlt.intro">Bu sahifada tilga olingan ayrim vositalar pullik, limitli yoki O‘zbekistonda cheklangan bo‘lishi mumkin. Topshiriqlarni quyidagi bepul vositalar bilan ham to‘liq bajarish mumkin:</p>
       <ul style="margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.7;">
         <li data-i18n="freeAlt.alt5"><strong>ElevenLabs</strong> o‘rniga: brauzerdagi Web Speech API, Microsoft Edge “Ovoz chiqarib o‘qish” funksiyasidagi o‘zbekcha ovozlar, Audacity bilan o‘z ovozingizni yozish.</li>
@@ -313,40 +338,15 @@
         <li data-i18n="freeAlt.alt7"><strong>Google Cloud TTS</strong> o‘rniga: Web Speech API (hisob va to‘lov kartasi talab qilinmaydi).</li>
       </ul>
       <p style="margin-top: 8px; font-size: 0.85rem;" data-i18n="freeAlt.fullList">To‘liq ro‘yxat: <a href="si-vositalari.html#bepul" class="citation-link" data-i18n="freeAlt.toolsPage">SI vositalari sahifasi</a>.</p>
-    </div>
+    </section>
 
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_diagnostika_va_individual_reja">1. Diagnostika va individual reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lab10.tab2">2. Astronomik trayektoriyalar va ovoz nazariyasi</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lab10.tab3">3. Muxlisa AI, Aisha va ElevenLabs TTS</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lab10.tab4">4. Gemini ssenariy va sinxronizatsiya</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lab10.tab5">5. Interaktiv dastgoh va audio pleer</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="tabs.6_baholash_rubrikasi_va_manbalar">6. Baholash rubrikasi va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
 
     <!-- ========================================================================= -->
     <!-- TAB 1: Kognitiv Diagnostika va Individual Reja -->
     <!-- ========================================================================= -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
-          1. Sun’iy intellekt uchun kognitiv diagnostika va individual ta’lim trayektoriyasi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);"><span class="num">3</span>Sun’iy intellekt uchun kognitiv diagnostika va individual ta’lim trayektoriyasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Astronomik animatsiyalarga ovoz sintez qilish va ularni sinxronlashtirish — bir vaqtning o‘zida ham orbital dinamika qonuniyatlarini (Kepler, Nyuton), ham neyron tarmoqli nutq sintezi (Text-to-Speech) texnologiyalarini va audio-video montaj mezonlarini bilishni talab etadi. <strong>TPACK</strong> va <strong>ZPD</strong> tamoyillari asosida tuzilgan quyidagi 4 ta diagnostik savol talabaning dastlabki darajasini aniqlaydi.
@@ -453,10 +453,9 @@
     <!-- ========================================================================= -->
     <!-- TAB 2: Astronomik Trayektoriyalar & Ovoz Sintezi Nazariyasi -->
     <!-- ========================================================================= -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-emerald);">
-          2. Astronomik trayektoriyalar (Kepler qonunlari) va nutq sintezi (TTS) nazariyasi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-emerald);"><span class="num">4</span>Astronomik trayektoriyalar (Kepler qonunlari) va nutq sintezi (TTS) nazariyasi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
           Jismlarning kosmik fazodagi harakatini modellashtirish osmon mexanikasining klassik qonunlariga asoslanadi. NASA Jet Propulsion Laboratory (JPL) Horizons ochiq ma’lumotlar bazasi har bir sayyora va kometa uchun orbital elementlarni real vaqt rejimida taqdim etadi.
@@ -518,10 +517,9 @@
     <!-- ========================================================================= -->
     <!-- TAB 3: Nutq Sintezi Vositalari (Muxlisa AI, Aisha AI, ElevenLabs) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-purple);">
-          3. Nutq sintezi va ovoz generatsiyasi vositalari: Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-purple);"><span class="num">5</span>Nutq sintezi va ovoz generatsiyasi vositalari: Muxlisa AI, Aisha AI, ElevenLabs, Google Cloud TTS
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Fizika darslari va astronomik videodarslar yaratishda foydalaniladigan zamonaviy 4 ta yetakchi nutq sintezi platformasining taqqoslama tahlili va amaliy sozlamalari.
@@ -593,10 +591,9 @@
     <!-- ========================================================================= -->
     <!-- TAB 4: Gemini Ovozli Matn Tahriri va Ssenariy -->
     <!-- ========================================================================= -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-amber);">
-          4. Ovozli matn tahriri va ssenariy: Gemini multimodal prompt muhandisligi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-amber);"><span class="num">6</span>Ovozli matn tahriri va ssenariy: Gemini multimodal prompt muhandisligi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Oddiy ilmiy maqola matnini to‘g‘ridan-to‘g‘ri ovozga aylantirib bo‘lmaydi: og‘zaki nutqda jumlalar qisqa, tushunarli, aniq urg‘uli va vaqt kadrlariga moslangan bo‘lishi kerak. <strong>Gemini</strong> modeli fizika-astronomiya ko‘rsatkichlarini professional radio-diktor ssenariysiga aylantiruvchi eng qulay vositadir.
@@ -636,10 +633,9 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
     <!-- ========================================================================= -->
     <!-- TAB 5: Interaktiv Dastgoh & Audio Pleer -->
     <!-- ========================================================================= -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
-          5. Astronomik trayektoriya va sinxron ovoz pleerining interaktiv dastgohi
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);"><span class="num">7</span>Astronomik trayektoriya va sinxron ovoz pleerining interaktiv dastgohi
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Quyidagi laboratoriya dastgohida NASA JPL Horizons ko‘rsatkichlari bo‘yicha haqiqiy orbital harakat animatsiyasi hamda Gemini tomonidan tuzilgan vaqt shkalasi bo‘yicha sinxron ovozli tushuntirish ishlaydi. <strong>“🎙️ Ovozli tushuntirishni boshlash”</strong> tugmasini bosib, ovoz va animatsiya uyg‘unligini tekshiring.
@@ -758,10 +754,9 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
     <!-- ========================================================================= -->
     <!-- TAB 6: Baholash Rubrikasi & Manbalar -->
     <!-- ========================================================================= -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="glass-panel" style="margin-bottom: 25px;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);">
-          6. Akademik baholash rubrikasi (100 ball) va ilmiy-metodologik manbalar
+        <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-cyan);"><span class="num">8</span>Akademik baholash rubrikasi (100 ball) va ilmiy-metodologik manbalar
         </h2>
         <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
           Talabalarning 10-laboratoriya mashg‘uloti bo‘yicha astronomik ma’lumotlar vizualizatsiyasi va nutq sintezini integratsiyalash ko‘nikmalari quyidagi 5 ta standart mezon asosida baholanadi.
@@ -896,6 +891,13 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
       </div>
     </section>
 
+  
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lab9.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.labNo.l9">...</h3></a>
+      <a class="card next" href="lab11.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.labNo.l11">...</h3></a>
+    </nav>
+    </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -1033,5 +1035,6 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
   <script src="js/sim-lab10-astro-audio.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

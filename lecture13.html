@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>13-ma’ruza: Termodinamika qonuniyatlarini modellashtirish va animatsiya qilish</title>
   <meta name="description" content="13-ma'ruza: termodinamika qonuniyatlarini modellashtirish va animatsiya qilish, Maksvell-Bolsman taqsimoti.">
   <link rel="stylesheet" href="css/main.css">
@@ -38,6 +39,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture13.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture13.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -88,6 +90,10 @@
       </ul>
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <span></span><span></span><span></span>
         </button>
@@ -151,21 +157,48 @@
   <main class="main-container">
 
     <!-- Hero Header -->
-    <div id="hero" class="hero-panel" style="margin-bottom: 30px;">
+    <section id="hero" class="page-hero">
+      <nav class="crumbs" aria-label="Yo'nalish">
+        <a href="index.html" data-i18n="nav.home">Bosh sahifa</a>
+        <span>/</span>
+        <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a>
+        <span>/</span>
+        <span data-i18n="common.lectureNo.l13">13-ma’ruza</span>
+      </nav>
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,tab-reja1,tab-reja2,tab-reja3,tab-reja4,tab-reja5,tab-reja6,tab-reja7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <span class="badge badge-amber">13-ma’ruza: Molekulyar fizika va stoxastik termodinamika</span>
+      <div class="eyebrow">
+        <span class="badge badge-amber">13-ma’ruza: Molekulyar fizika va stoxastik termodinamika</span>
+      </div>
       <h1 style="margin-top: 10px; margin-bottom: 12px; font-size: 2.15rem; line-height: 1.3;" data-i18n="home.lectures.card13.title">
         Termodinamika qonuniyatlarini modellashtirish va animatsiya qilish
       </h1>
       <p style="color: var(--text-secondary); max-width: 980px; font-size: 1.05rem; line-height: 1.65;">
         Ideal gaz qonunlari, molekulyar-kinetik nazariya (MKT), Maksvell-Bolsman tezliklar taqsimoti, stoxastik (ehtimoliy) hisoblashlar hamda $P-V$ va $T-S$ sikl faza diagrammalarini to‘liq 5 bosqichli <strong data-i18n="common.aiPipeline">AI-Pipeline konveyeri</strong> (PhET/Vascak.cz dekonstruksiyasi &rarr; Claude stoxastik dvigateli &rarr; ChatGPT Code Interpreter grafiklari &rarr; Google Antigravity monitoringi) orqali yaxlit modellashtirish.
       </p>
-    </div>
+      <div class="chips">
+        <span class="chip" data-i18n="common.lectureNo.l13">13-ma’ruza</span>
+      </div>
+    </section>
+
+    <div class="doc-layout">
+      <aside class="toc">
+        <h2 data-i18n="pages.lecture13.tocTitle">Mundarija</h2>
+        <ol>
+          <li><a href="#vread-pre1">1. <span data-i18n="pages.lecture13.tocPlan">13-ma’ruza rejasi</span></a></li>
+          <li><a href="#tab-reja1">2. <span data-i18n="tabs.1_ai_diagnostika_va_reja">AI diagnostika va reja</span></a></li>
+          <li><a href="#tab-reja2">3. <span data-i18n="pages.lecture13.tab2">Termodinamika simulyatsiyalari tahlili</span></a></li>
+          <li><a href="#tab-reja3">4. <span data-i18n="pages.lecture13.tab3">Stoxastik simulyatsiya kodi</span></a></li>
+          <li><a href="#tab-reja4">5. <span data-i18n="pages.lecture13.tab4">P-V va T-S grafiklari</span></a></li>
+          <li><a href="#tab-reja5">6. <span data-i18n="pages.lecture13.tab5">Jarayon monitoringi (Antigravity)</span></a></li>
+          <li><a href="#tab-reja6">7. <span data-i18n="pages.lecture13.tab6">Interaktiv termodinamika sandbox</span></a></li>
+          <li><a href="#tab-reja7">8. <span data-i18n="tabs.7_test_va_manbalar">Test va manbalar</span></a></li>
+        </ol>
+      </aside>
+      <div class="doc">
 
     <!-- 5-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 35px; border-left: 4px solid var(--accent-amber);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 13-ma’ruza rejasi va to‘liq AI-pipeline konveyeri:</h3>
+    <section id="vread-pre1" class="doc-sec">
+      <h2 style="margin-bottom: 14px; font-size: 1.25rem;"><span class="num">1</span>📋 13-ma’ruza rejasi va to‘liq AI-pipeline konveyeri</h2>
       <div class="grid-3" style="gap: 14px;">
         <div style="background: rgba(17, 24, 43, 0.02); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <strong style="color: var(--accent-amber);">1. AI diagnostika va reja:</strong><br>
@@ -192,41 +225,15 @@
           <span style="font-size: 0.85rem; color: var(--text-secondary);">Dual-Canvas stoxastik gaz va sikl laboratoriyasi, 3 ta kognitiv test va APA 7th manbalar.</span>
         </div>
       </div>
-    </div>
-
-    <!-- Tab Navigation with Horizontal Carousel / Scroll Controls -->
-    <div class="tabs-scroll-wrapper">
-      <button class="tabs-scroll-btn tabs-scroll-prev" id="tabs-scroll-prev" aria-label="Oldingi bo'limlar" title="Oldingi bo‘limlar" onclick="scrollTabsNav(-220)">
-        ◀
-      </button>
-
-      <div class="tabs-nav" id="main-tabs-nav">
-        <button class="tab-btn active" data-tab="tab-reja1" onclick="switchTab(event, 'tab-reja1')" data-i18n="tabs.1_ai_diagnostika_va_reja">1. AI diagnostika va reja</button>
-        <button class="tab-btn" data-tab="tab-reja2" onclick="switchTab(event, 'tab-reja2')" data-i18n="pages.lecture13.tab2">2. Termodinamika simulyatsiyalari tahlili</button>
-        <button class="tab-btn" data-tab="tab-reja3" onclick="switchTab(event, 'tab-reja3')" data-i18n="pages.lecture13.tab3">3. Stoxastik simulyatsiya kodi</button>
-        <button class="tab-btn" data-tab="tab-reja4" onclick="switchTab(event, 'tab-reja4')" data-i18n="pages.lecture13.tab4">4. Bosim-hajm (P-V) va harorat-entropiya (T-S) grafiklari</button>
-        <button class="tab-btn" data-tab="tab-reja5" onclick="switchTab(event, 'tab-reja5')" data-i18n="pages.lecture13.tab5">5. Jarayon monitoringi (Antigravity)</button>
-        <button class="tab-btn" data-tab="tab-reja6" onclick="switchTab(event, 'tab-reja6')" data-i18n="pages.lecture13.tab6">6. Interaktiv termodinamika sandbox</button>
-        <button class="tab-btn" data-tab="tab-reja7" onclick="switchTab(event, 'tab-reja7')" data-i18n="tabs.7_test_va_manbalar">7. Test va manbalar</button>
-      </div>
-
-      <button class="tabs-scroll-btn tabs-scroll-next" id="tabs-scroll-next" aria-label="Keyingi bo'limlar" title="Keyingi bo‘limlar" onclick="scrollTabsNav(220)">
-        ▶
-      </button>
-    </div>
-
-    <!-- Scroll Progress Track Indicator -->
-    <div class="tabs-scroll-track-container">
-      <div class="tabs-scroll-thumb" id="tabs-scroll-thumb"></div>
-    </div>
+    </section>
 
     <!-- ========================================================================= -->
     <!-- TAB 1: AI Diagnostika va Individual Reja -->
     <!-- ========================================================================= -->
-    <section id="tab-reja1" class="tab-content active">
+    <section id="tab-reja1" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">1. Sun’iy intellekt uchun diagnostika va individual reja</h2>
+          <h2 class="card-title"><span class="num">2</span>Sun’iy intellekt uchun diagnostika va individual reja</h2>
           <span class="badge badge-amber">MagicSchool AI va Vygotsky ZPD</span>
         </div>
 
@@ -272,10 +279,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 2: Termodinamika Simulyatsiyalari Tahlili -->
     <!-- ========================================================================= -->
-    <section id="tab-reja2" class="tab-content">
+    <section id="tab-reja2" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">2. Termodinamika simulyatsiyalari tahlili: PhET va Vascak.cz</h2>
+          <h2 class="card-title"><span class="num">3</span>Termodinamika simulyatsiyalari tahlili: PhET va Vascak.cz</h2>
           <span class="badge badge-emerald">Teskari muhandislik va MKT dekonstruksiyasi</span>
         </div>
 
@@ -362,10 +369,10 @@
     <!-- ========================================================================= -->
     <!-- TAB 3: Stoxastik Simulyatsiya Kodi -->
     <!-- ========================================================================= -->
-    <section id="tab-reja3" class="tab-content">
+    <section id="tab-reja3" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">3. Stoxastik jarayonlar simulyatsiyasi kodi: Claude</h2>
+          <h2 class="card-title"><span class="num">4</span>Stoxastik jarayonlar simulyatsiyasi kodi: Claude</h2>
           <span class="badge badge-cyan">Box-Muller transform, Maxwell-Boltzmann va elastic ensemble</span>
         </div>
 
@@ -469,10 +476,10 @@ function updateGasWallCollisions(particle, left, right, top, bottom, dt) {
     <!-- ========================================================================= -->
     <!-- TAB 4: P-V va T-S Grafiklari -->
     <!-- ========================================================================= -->
-    <section id="tab-reja4" class="tab-content">
+    <section id="tab-reja4" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">4. Bosim – hajm (P-V) va harorat – entropiya (T-S) grafiklarini chizish: ChatGPT (Code Interpreter)</h2>
+          <h2 class="card-title"><span class="num">5</span>Bosim – hajm (P-V) va harorat – entropiya (T-S) grafiklarini chizish: ChatGPT (Code Interpreter)</h2>
           <span class="badge badge-purple">Phase space, Carnot efficiency va entropy planes</span>
         </div>
 
@@ -558,10 +565,10 @@ plt.show()</code>
     <!-- ========================================================================= -->
     <!-- TAB 5: Jarayon Monitoringi (Antigravity) -->
     <!-- ========================================================================= -->
-    <section id="tab-reja5" class="tab-content">
+    <section id="tab-reja5" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">5. Ish jarayoni monitoringi: Google Antigravity</h2>
+          <h2 class="card-title"><span class="num">6</span>Ish jarayoni monitoringi: Google Antigravity</h2>
           <span class="badge badge-rose">Chi-square test, Energy Conservation va entropy audit</span>
         </div>
 
@@ -620,10 +627,10 @@ plt.show()</code>
     <!-- ========================================================================= -->
     <!-- TAB 6: Interaktiv Termodinamika Sandbox -->
     <!-- ========================================================================= -->
-    <section id="tab-reja6" class="tab-content">
+    <section id="tab-reja6" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">6. Interaktiv termodinamika va stoxastik faza laboratoriyasi</h2>
+          <h2 class="card-title"><span class="num">7</span>Interaktiv termodinamika va stoxastik faza laboratoriyasi</h2>
           <span class="badge badge-cyan">HTML5 Canvas, dynamic telemetry va thermodynamics sandbox</span>
         </div>
 
@@ -631,6 +638,8 @@ plt.show()</code>
           Quyidagi laboratoriyada siz <strong>Stoxastik gaz molekulalarining mikroskopik harakati</strong> (harorat, porshen hajmi va Maksvell tezliklar spektri) hamda <strong>Real vaqtda P-V va T-S sikl diagrammasi</strong> sinxron ishlashini sinab ko‘rishingiz mumkin!
         </p>
 
+        <div class="sim-wrap">
+        <div class="sim-box">
         <!-- Mode Selector Bar -->
         <div style="display: flex; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;">
           <span style="font-size: 0.88rem; color: var(--text-secondary); font-weight: bold;">Eksperiment Rejimi:</span>
@@ -640,26 +649,26 @@ plt.show()</code>
 
         <!-- Controls Bar -->
         <div class="glass-panel" style="margin-bottom: 20px; padding: 18px;">
-          
+
           <!-- Gas Controls Group -->
           <div id="gas-controls-group" class="grid-3" style="gap: 16px;">
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Harorat ($T$): <strong id="val-gas-temp" style="color: var(--accent-amber);">300 K</strong>
               </label>
-              <input type="range" id="sl-gas-temp" min="100" max="800" value="300" step="10" style="width: 100%;">
+              <input type="range" id="sl-gas-temp" data-k="temp" min="100" max="800" value="300" step="10" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Porshen Hajmi ($V$): <strong id="val-gas-piston" style="color: var(--accent-cyan);">85% (2.85 L)</strong>
               </label>
-              <input type="range" id="sl-gas-piston" min="40" max="95" value="85" step="1" style="width: 100%;">
+              <input type="range" id="sl-gas-piston" data-k="piston" min="40" max="95" value="85" step="1" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Molekulalar Soni ($N$): <strong id="val-gas-count" style="color: var(--accent-emerald);">120</strong>
               </label>
-              <input type="range" id="sl-gas-count" min="40" max="250" value="120" step="10" style="width: 100%;">
+              <input type="range" id="sl-gas-count" data-k="count" min="40" max="250" value="120" step="10" style="width: 100%;">
             </div>
           </div>
 
@@ -699,13 +708,13 @@ plt.show()</code>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Issiq Manba ($T_H$): <strong id="val-cycle-th" style="color: var(--accent-rose);">600 K</strong>
               </label>
-              <input type="range" id="sl-cycle-th" min="400" max="800" value="600" step="20" style="width: 100%;">
+              <input type="range" id="sl-cycle-th" data-k="th" min="400" max="800" value="600" step="20" style="width: 100%;">
             </div>
             <div>
               <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Sovuq Manba ($T_C$): <strong id="val-cycle-tc" style="color: var(--accent-cyan);">300 K</strong>
               </label>
-              <input type="range" id="sl-cycle-tc" min="150" max="400" value="300" step="10" style="width: 100%;">
+              <input type="range" id="sl-cycle-tc" data-k="tc" min="150" max="400" value="300" step="10" style="width: 100%;">
             </div>
           </div>
 
@@ -752,6 +761,20 @@ plt.show()</code>
             <canvas id="thermo-graph-canvas" width="320" height="300" style="display: block; margin: 0 auto; max-width: 100%; height: auto;"></canvas>
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Sikl yuzasi — foydali mexanik ish $A = \oint P \mathrm{d}V$; qizil nuqta — joriy termodinamik holat.</div>
           </div>
+        </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-thermo13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-thermo13">
+          <li data-set='{"temp":300,"piston":85,"count":120}'>Bu model stoxastik gaz molekulalarini ko‘rsatadi: $v_{rms} = \sqrt{3k_BT/m}$. Hozirgi 300 K haroratda zarrachalar o‘rtacha tezlikda harakatlanadi.</li>
+          <li data-set='{"temp":750}'>Haroratni oshiramiz. Maksvell-Bolsman taqsimoti o‘ng tomonga siljiydi — zarrachalar tezlashadi va bosim $P$ ortadi.</li>
+          <li data-set='{"piston":45}'>Endi porshenni siqamiz. Hajm $V$ kamayishi bilan Boyl–Mariott qonuniga ko‘ra bosim yanada ortadi ($P \propto 1/V$).</li>
+          <li data-set='{"count":250,"temp":300,"piston":85}'>Molekulalar sonini oshiramiz. Ko‘proq zarracha statistik taqsimotni silliqroq ko‘rsatadi, lekin bosim ham ortadi ($P \propto N$).</li>
+          <li data-set='{"temp":300,"piston":85,"count":120}'>Boshlang‘ich qiymatlarga qaytamiz. Endi boshqaruv sizga o‘tadi — harorat, porshen va molekulalar sonini o‘zingiz o‘zgartirib, P–V diagrammasini kuzating.</li>
+        </ol>
         </div>
 
         <!-- ========================================================================= -->
@@ -871,10 +894,10 @@ plt.show()</code>
     <!-- ========================================================================= -->
     <!-- TAB 7: Test & Manbalar -->
     <!-- ========================================================================= -->
-    <section id="tab-reja7" class="tab-content">
+    <section id="tab-reja7" class="doc-sec">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">7. Diagnostik test va ilmiy-metodik manbalar</h2>
+          <h2 class="card-title"><span class="num">8</span>Diagnostik test va ilmiy-metodik manbalar</h2>
           <span class="badge badge-cyan" data-i18n="common.assessAndBib">Bilimni baholash va APA 7th bibliography</span>
         </div>
 
@@ -946,6 +969,14 @@ plt.show()</code>
         </ol>
       </div>
     </section>
+
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture12.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l12">12-ma’ruza</h3></a>
+      <a class="card next" href="lecture14.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l14">14-ma’ruza</h3></a>
+    </nav>
+
+      </div>
+    </div>
 
   </main>
 
@@ -1070,5 +1101,6 @@ plt.show()</code>
   <script src="js/sim-thermodynamics-pipeline.js"></script>
   <script src="js/ui-controller.js"></script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>

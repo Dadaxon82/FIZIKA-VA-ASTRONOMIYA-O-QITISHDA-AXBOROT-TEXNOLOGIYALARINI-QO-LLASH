@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/i18n-boot.js"></script>
+  <script>(function(){try{var t=localStorage.getItem('ilimziyo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>4-ma’ruza: Zamonaviy kompyuter modeliga qo‘yiladigan talablar va hisoblash aniqligi</title>
   <meta name="description" content="4-ma'ruza: zamonaviy kompyuter modeliga qo'yiladigan talablar va hisoblash aniqligini baholash mezonlari.">
   <link rel="stylesheet" href="css/main.css">
@@ -52,6 +53,7 @@
 <link rel="alternate" hreflang="en" href="https://ilimziyo.uz/lecture4.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://ilimziyo.uz/lecture4.html">
 <link rel="stylesheet" href="css/yaf-voice.css">
+<link rel="stylesheet" href="css/lecture-redesign.css">
 </head>
 <body>
 
@@ -108,6 +110,10 @@
 
       <div class="nav-actions">
         <a href="index.html#muallif" class="btn btn-secondary btn-sm" data-i18n="nav.author">Muallif</a>
+        <button class="theme-btn" type="button" aria-label="Kun va tun rejimini almashtirish" title="Kun / tun rejimi">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyu" data-i18n-attr="aria-label:nav.menu">
           <div class="hamburger-icon">
             <span></span>
@@ -174,26 +180,45 @@
   <main class="container" style="padding-top: 40px; padding-bottom: 90px;">
     
     <!-- Hero / Title Section -->
-    <div id="hero" class="section-header">
+    <section id="hero" class="page-hero">
       <div style="text-align:left"><button class="btn btn-secondary btn-sm voice-btn" type="button" data-read="hero,vread-pre1,vread-pre2,tab-sec1,tab-sec2,tab-sec3,tab-sec4,tab-sec5,tab-sec6,tab-sec7" style="margin-bottom:12px" title="Mavzuni ovozli tinglash" aria-label="Mavzuni ovozli tinglash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Tinglash</span></button></div>
-      
-      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
-        <span class="badge badge-cyan" data-i18n="common.lectureNo.l4">4-ma’ruza</span>
-        <span class="badge badge-emerald" data-i18n="pages.lecture4.badge2">Hisoblash aniqligi</span>
-        <span class="badge badge-purple" data-i18n="pages.lecture4.badge3">Sonli barqarorlik va simplektik tizimlar</span>
+
+      <nav class="crumbs" aria-label="Yo‘l"><a href="index.html" data-i18n="nav.home">Bosh sahifa</a> / <a href="annotatsiya.html" data-i18n="nav.annotationToc">Annotatsiya</a> / <span data-i18n="common.lectureNo.l4">4-ma’ruza</span></nav>
+      <div class="eyebrow" data-i18n="common.lectureNo.l4">4-ma’ruza</div>
+
+      <div class="chips" style="margin-bottom: 12px;">
+        <span class="chip c" data-i18n="pages.lecture4.badge2">Hisoblash aniqligi</span>
+        <span class="chip v" data-i18n="pages.lecture4.badge3">Sonli barqarorlik va simplektik tizimlar</span>
       </div>
       <h1  data-i18n="pages.lecture4.h1">
         Zamonaviy kompyuter modeliga <br>
         <span class="text-gradient" data-i18n="pages.lecture4.h1Accent">qo‘yiladigan talablar va hisoblash aniqligi</span>
       </h1>
-      <p style="font-size: 1.15rem; color:#4B5464; max-width: 1050px; line-height: 1.7;">
+      <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 1050px; line-height: 1.7;">
         Fizik kompyuter modellarining uch fundamental mezoni — <strong>Aniqlik (Accuracy)</strong>, <strong>Barqarorlik (Numerical Stability)</strong> va <strong>Hisoblash Tezligi (Efficiency)</strong> o‘rganiladi. Forward Euler, Euler-Cromer, Heun (RK2) va Klassik Runge-Kutta 4 (RK4) usullarining xatolik darajalari, Teylor qatori kesish xatosi (LTE va GTE) hamda integratsiya qadami ($\Delta t$) ning animatsiya sifatiga ta’siri matematik va interaktiv tarzda tahlil qilinadi.
       </p>
-    </div>
+    </section>
+
+    <div class="doc-layout">
+    <aside class="toc" aria-label="Sahifa mundarijasi">
+      <h2 data-i18n="pages.lecture1.tocTitle">Mundarija</h2>
+      <ol>
+        <li><a href="#vread-pre1" data-i18n="pages.lecture4.tocPlan">1. Ma’ruza rejasi</a></li>
+        <li><a href="#vread-pre2" data-i18n="pages.lecture4.tocPipeline">2. AI-pipeline konveyeri</a></li>
+        <li><a href="#tab-sec1">3. <span data-i18n="pages.lecture4.tab1">Diagnostika va reja</span></a></li>
+        <li><a href="#tab-sec2">4. <span data-i18n="pages.lecture4.tab2">Sonli integrallash</span></a></li>
+        <li><a href="#tab-sec3">5. <span data-i18n="pages.lecture4.tab3">WolframAlpha qiyos</span></a></li>
+        <li><a href="#tab-sec4">6. <span data-i18n="pages.lecture4.tab4">Log-log xatolik</span></a></li>
+        <li><a href="#tab-sec5">7. <span data-i18n="pages.lecture4.tab5">Interaktiv sandbox</span></a></li>
+        <li><a href="#tab-sec6">8. <span data-i18n="pages.lecture4.tab6">Barqarorlik nazariyasi</span></a></li>
+        <li><a href="#tab-sec7">9. <span data-i18n="pages.lecture4.tab7">Diagnostik test</span></a></li>
+      </ol>
+    </aside>
+    <div class="doc">
 
     <!-- 6-Stage Reja Grid -->
-    <div id="vread-pre1" class="glass-panel" style="margin-bottom: 40px; border-left: 4px solid var(--accent-cyan);">
-      <h3 style="margin-bottom: 14px; font-size: 1.25rem;">📋 Ma’ruza rejasi va AI integratsiyasi bosqichlari:</h3>
+    <section id="vread-pre1" class="doc-sec" style="border-left: 4px solid var(--accent-cyan);">
+      <h2><span class="num">1</span>📋 Ma’ruza rejasi va AI integratsiyasi bosqichlari</h2>
       <div class="grid-3">
         <div style="background:rgba(17, 24, 43, 0.02); padding:14px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
           <strong style="color:var(--accent-cyan);">1. AI diagnostika va individual reja:</strong>
@@ -220,31 +245,19 @@
           <p style="font-size:0.88rem; margin-top:4px;">Gemini orqali Fon Neyman (von Neumann) spektral tahlili va simplektik fazaviy hajm saqlanishini isbotlash.</p>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- AI Workflow Diagram Banner -->
-    <div id="vread-pre2" class="glass-panel" style="margin-bottom: 40px; text-align:center;">
-      <h3 style="margin-bottom: 12px; color: var(--accent-cyan);">🔬 4-ma’ruza bo‘yicha ilmiy AI-pipeline konveyeri:</h3>
+    <section id="vread-pre2" class="doc-sec" style="text-align:center;">
+      <h2 style="margin-bottom: 12px; color: var(--accent-cyan); justify-content: center;"><span class="num">2</span>🔬 4-ma’ruza bo‘yicha ilmiy AI-pipeline konveyeri</h2>
       <img src="assets/fig_lecture4_workflow.png" alt="Lecture 4 AI Workflow" style="max-width:100%; border-radius:10px; border:1px solid rgba(255,255,255,0.1); margin-top:10px;">
-    </div>
+    </section>
 
-    <!-- Tabbed Educational Sections -->
-    <div class="tabs-container">
-      <div class="tabs-nav">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-sec1')" data-i18n="pages.lecture4.tab1">1. Diagnostika va reja</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec2')" data-i18n="pages.lecture4.tab2">2. Sonli integrallash</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec3')" data-i18n="pages.lecture4.tab3">3. WolframAlpha qiyos</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec4')" data-i18n="pages.lecture4.tab4">4. Log-log xatolik</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec5')" data-i18n="pages.lecture4.tab5">5. Interaktiv sandbox</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec6')" data-i18n="pages.lecture4.tab6">6. Barqarorlik nazariyasi</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-sec7')" data-i18n="pages.lecture4.tab7">🧪 Diagnostik test</button>
-      </div>
-
-      <!-- TAB 1: MagicSchool AI Diagnostika -->
-      <div id="tab-sec1" class="tab-content active">
+    <!-- TAB 1: MagicSchool AI Diagnostika -->
+    <section id="tab-sec1" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan">1-bosqich: Diagnostika va individual reja</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">MagicSchool AI bilan talaba tayyorgarligini baholash</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">3</span>MagicSchool AI bilan talaba tayyorgarligini baholash</h2>
           
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
             Fizik modellashtirishda sonli integrallash usullarini tanlashdan oldin, talabaning differensial tenglamalar, Koshi masalasi va diskretlash qadami tushunchalari bo‘yicha bazaviy bilimlari diagnostika qilinadi.
@@ -281,13 +294,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 2: Claude Sonli Integrallash -->
-      <div id="tab-sec2" class="tab-content">
+    <!-- TAB 2: Claude Sonli Integrallash -->
+    <section id="tab-sec2" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-emerald">2-bosqich: Sonli integratsiya hisobi</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Differensial tenglamalarni sonli diskretlash nazariyasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">4</span>Differensial tenglamalarni sonli diskretlash nazariyasi</h2>
 
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:18px;">
             Garmonik tebranishning 2-tartibli differensial tenglamasi $\ddot{x} + \omega_0^2 x = 0$ ni 1-tartibli tenglamalar sistemasiga keltiramiz:
@@ -345,13 +358,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             </ul>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 3: WolframAlpha Analitik vs Sonli Yechim -->
-      <div id="tab-sec3" class="tab-content">
+    <!-- TAB 3: WolframAlpha Analitik vs Sonli Yechim -->
+    <section id="tab-sec3" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-purple">3-bosqich: Analitik va sonli yechimlar qiyosi</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">WolframAlpha bilan Koshi masalasini yechish va xatolik normasi</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">5</span>WolframAlpha bilan Koshi masalasini yechish va xatolik normasi</h2>
 
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
             Sonli usullarning xatosini baholash uchun etalon (aniq analitik) yechim kerak bo‘ladi. WolframAlpha orqali garmonik ossilyator tenglamasini aniq integrallaymiz:
@@ -398,13 +411,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 4: ChatGPT ADA Log-Log Xatolik -->
-      <div id="tab-sec4" class="tab-content">
+    <!-- TAB 4: ChatGPT ADA Log-Log Xatolik -->
+    <section id="tab-sec4" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-amber">4-bosqich: Xatolik grafiklarini qurish</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">ChatGPT bilan log-log konvergensiya tahlili</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">6</span>ChatGPT bilan log-log konvergensiya tahlili</h2>
 
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:16px;">
             Sonli usulning nazariy tartibini ($p$) isbotlash uchun xatolikning qadamga bog‘liqligi logarifmik masshtabda o‘rganiladi:
@@ -454,13 +467,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 5: Interaktiv Sandbox (Claude) -->
-      <div id="tab-sec5" class="tab-content">
+    <!-- TAB 5: Interaktiv Sandbox (Claude) -->
+    <section id="tab-sec5" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-rose">5-bosqich: integrallash qadamini vizual sinash</span>
-          <h2 style="margin-top: 12px; margin-bottom: 12px;">Interaktiv xatolik va barqarorlik sinov maydoni</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 12px;"><span class="num">7</span>Interaktiv xatolik va barqarorlik sinov maydoni</h2>
           <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">
             Vaqt qadami $\Delta t$, mayatnik uzunligi $L$ va boshlang‘ich burchak $\theta_0$ ni o‘zgartiring. To‘rt usulning bir vaqtda harakatini, to‘lqin shaklini, faza portretini va energiya dreyfini jonli kuzating:
           </p>
@@ -586,13 +599,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             </div>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 6: Gemini Barqarorlik Nazariyasi -->
-      <div id="tab-sec6" class="tab-content">
+    <!-- TAB 6: Gemini Barqarorlik Nazariyasi -->
+    <section id="tab-sec6" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-purple">6-bosqich: Hisoblash barqarorligi nazariyasi</span>
-          <h2 style="margin-top: 12px; margin-bottom: 16px;">Gemini: Fon Neyman tahlili va simplektik geometriya</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 16px;"><span class="num">8</span>Gemini: Fon Neyman tahlili va simplektik geometriya</h2>
 
           <p style="line-height:1.7; color:var(--text-secondary); margin-bottom:18px;">
             Nima sababdan ba’zi sonli usullar vaqt o‘tishi bilan fizik qonuniyatlarni buzib, energiya portlashini keltirib chiqaradi? Buning sababi <strong>Fon Neyman (von Neumann) spektral barqarorligi</strong> va <strong>Liuvill teoremasi</strong> bilan tushuntiriladi.
@@ -628,13 +641,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             </p>
           </div>
         </div>
-      </div>
+    </section>
 
-      <!-- TAB 7: Diagnostik Test -->
-      <div id="tab-sec7" class="tab-content">
+    <!-- TAB 7: Diagnostik Test -->
+    <section id="tab-sec7" class="doc-sec">
         <div class="glass-panel">
           <span class="badge badge-cyan">O‘z-o‘zini tekshirish</span>
-          <h2 style="margin-top: 12px; margin-bottom: 12px;">4-ma’ruza diagnostika testi (3 ta ilmiy savol)</h2>
+          <h2 style="margin-top: 12px; margin-bottom: 12px;"><span class="num">9</span>4-ma’ruza diagnostika testi (3 ta ilmiy savol)</h2>
           <p style="color:var(--text-secondary); margin-bottom:24px;">
             Hisoblash aniqligi, Teylor qatori xatosi va simplektik barqarorlik bo‘yicha bilimlaringizni sinab ko‘ring:
           </p>
@@ -732,8 +745,13 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
             <li><strong>Anderson, L. W., va Krathwohl, D. R. (2001).</strong> <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman.</li>
           </ol>
         </div>
-      </div>
+    </section>
 
+    <nav class="pager" aria-label="Sahifalar">
+      <a class="card" href="lecture3.html"><span class="badge" data-i18n="common.prevPage">← Oldingi</span><h3 data-i18n="common.lectureNo.l3">3-ma’ruza</h3></a>
+      <a class="card next" href="lecture5.html"><span class="badge" data-i18n="common.nextPage">Keyingi →</span><h3 data-i18n="common.lectureNo.l5">5-ma’ruza</h3></a>
+    </nav>
+    </div>
     </div>
   </main>
 
@@ -825,5 +843,6 @@ Chiqish formati: Har bir xato javob uchun individual metodik yo‘llanma berilsi
     };
   </script>
 <script defer src="js/yaf-voice.js"></script>
+<script defer src="js/lecture-redesign.js"></script>
 </body>
 </html>
