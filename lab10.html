@@ -642,8 +642,9 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
         </p>
 
         <!-- Main Simulator Layout: Left Canvases, Right Controls & Info -->
-        <div class="lab-sim-grid" style="margin-bottom: 20px;">
-          
+        <div class="sim-wrap">
+        <div class="sim-box lab-sim-grid" style="margin-bottom: 20px;">
+
           <!-- Left Canvases -->
           <div>
             <!-- Orbit Canvas -->
@@ -680,7 +681,7 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
 
               <div style="margin-bottom: 12px;">
                 <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">NASA JPL parametrlari:</label>
-                <select id="lab10-body-select" style="width: 100%; padding: 8px 10px; background:#F3F5F8; border: 1px solid var(--border-color); color:#11182B; border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <select id="lab10-body-select" data-k="body" style="width: 100%; padding: 8px 10px; background:#F3F5F8; border: 1px solid var(--border-color); color:#11182B; border-radius: var(--radius-sm); font-size: 0.88rem;">
                   <option value="halley" selected>1. Galley kometasi (e = 0,967, o‘ta cho‘ziq)</option>
                   <option value="mars">2. Mars (e = 0,093, sezilarli ellips)</option>
                   <option value="earth">3. Yer (e = 0,017, deyarli aylanma)</option>
@@ -729,7 +730,7 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
                   <span style="color: var(--text-secondary);">Ijro tezligi:</span>
                   <strong id="lab10-speed-val" style="color: var(--accent-cyan);">1,00×</strong>
                 </div>
-                <input type="range" id="lab10-speed-slider" min="0.5" max="2.0" step="0.25" value="1.0" style="width: 100%;">
+                <input type="range" id="lab10-speed-slider" data-k="speed" min="0.5" max="2.0" step="0.25" value="1.0" style="width: 100%;">
               </div>
 
               <!-- Visual Options -->
@@ -748,6 +749,19 @@ Matn: "Barcha sayyoralar ellips bo‘ylab harakatlanadi. Quyosh ellips fokusida 
           </div>
 
         </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-orbit10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o'zi parametrlarni o'zgartirib natijani tushuntiradi; so'ng boshqaruv sizga o'tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-orbit10">
+          <li data-set='{"body":"#0","speed":1.0}'>Galley kometasi: ekssentrisitet 0,967 — o‘ta cho‘ziq ellips. Perigeliyda tezlik keskin ortadi, afeliyda esa sekinlashadi — bu Kepler ikkinchi qonuni.</li>
+          <li data-set='{"body":"#3"}'>Endi Yupiterga o‘tamiz — ekssentrisitet atigi 0,048, orbita deyarli aylana shaklida, lekin katta yarim o‘q ancha kattaroq.</li>
+          <li data-set='{"body":"#2","speed":2.0}'>Yer orbitasiga o‘tib, ijro tezligini ikki baravar oshiramiz — deyarli doiraviy orbitada tezlik yil davomida kam o‘zgaradi.</li>
+          <li data-set='{"body":"#0","speed":1.0}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-orbit10"]')?.addEventListener('click', () => { const btn = document.getElementById('lab10-play-btn'); if (btn && !btn.disabled) btn.click(); });</script>
       </div>
     </section>
 

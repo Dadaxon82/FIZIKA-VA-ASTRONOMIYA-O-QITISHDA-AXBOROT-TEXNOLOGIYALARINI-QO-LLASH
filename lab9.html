@@ -672,8 +672,9 @@ So‘ngra ushbu promptni yanada takomillashtirilgan XML master-shablon ko‘rini
         </p>
 
         <!-- Comparison Sandbox Grid: Left Canvases, Right Controls -->
-        <div class="lab-sim-grid" style="margin-bottom: 30px;">
-          
+        <div class="sim-wrap">
+        <div class="sim-box lab-sim-grid" style="margin-bottom: 30px;">
+
           <!-- Canvases Column -->
           <div>
             <div style="background:#F3F5F8; border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
@@ -703,7 +704,7 @@ So‘ngra ushbu promptni yanada takomillashtirilgan XML master-shablon ko‘rini
 
               <div style="margin-bottom: 12px;">
                 <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">Sinalayotgan prompt:</label>
-                <select id="lab9-prompt-level-select" style="width: 100%; padding: 8px 10px; background:#F3F5F8; border: 1px solid var(--border-color); color:#11182B; border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <select id="lab9-prompt-level-select" data-k="level" style="width: 100%; padding: 8px 10px; background:#F3F5F8; border: 1px solid var(--border-color); color:#11182B; border-radius: var(--radius-sm); font-size: 0.88rem;">
                   <option value="level4" selected>4-daraja: XML master-so‘rov (98/100)</option>
                   <option value="level3">3-daraja: rol + fikrlash zanjiri (88/100)</option>
                   <option value="level2">2-daraja: chegaralangan prompt (68/100)</option>
@@ -717,7 +718,7 @@ So‘ngra ushbu promptni yanada takomillashtirilgan XML master-shablon ko‘rini
                   <span style="color: var(--text-secondary);">Ip uzunligi (L):</span>
                   <strong id="lab9-length-val" style="color: var(--accent-cyan);">1,80 m</strong>
                 </div>
-                <input type="range" id="lab9-length-slider" min="100" max="240" step="10" value="180" style="width: 100%;">
+                <input type="range" id="lab9-length-slider" data-k="L" min="100" max="240" step="10" value="180" style="width: 100%;">
               </div>
 
               <div style="margin-bottom: 12px;">
@@ -725,7 +726,7 @@ So‘ngra ushbu promptni yanada takomillashtirilgan XML master-shablon ko‘rini
                   <span style="color: var(--text-secondary);">Qarshilik koeffitsiyenti (β):</span>
                   <strong id="lab9-damping-val" style="color: var(--accent-cyan);">0,050</strong>
                 </div>
-                <input type="range" id="lab9-damping-slider" min="0" max="0.2" step="0.01" value="0.05" style="width: 100%;">
+                <input type="range" id="lab9-damping-slider" data-k="beta" min="0" max="0.2" step="0.01" value="0.05" style="width: 100%;">
               </div>
 
               <!-- Action Buttons -->
@@ -763,6 +764,19 @@ So‘ngra ushbu promptni yanada takomillashtirilgan XML master-shablon ko‘rini
           </div>
 
         </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-prompt9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o'zi parametrlarni o'zgartirib natijani tushuntiradi; so'ng boshqaruv sizga o'tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-prompt9">
+          <li data-set='{"level":"#0","L":180,"beta":0.05}'>To‘rtinchi daraja promptida Velocity Verlet integratori ishlatiladi — energiya deyarli benuqson saqlanadi, fazaviy portret silliq spiralga yaqin.</li>
+          <li data-set='{"level":"#3"}'>Endi birinchi, eng sodda zero-shot promptga o‘tamiz. Bu daraja Eyler usulidan foydalanadi — energiya vaqt o‘tishi bilan sun’iy ravishda orta boshlaydi, fazaviy portret kengayadi.</li>
+          <li data-set='{"level":"#0","L":220,"beta":0.15}'>Yaxshi promptga qaytib, ip uzunligini ikki yigirmagacha, qarshilik koeffitsiyentini 0,15gacha oshiramiz — tebranish davri ortadi va amplituda tezroq so‘nadi, lekin energiya hisob-kitobi barqaror qoladi.</li>
+          <li data-set='{"level":"#0","L":180,"beta":0.05}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-prompt9"]')?.addEventListener('click', () => { const btn = document.getElementById('lab9-play-btn'); if (btn && !btn.disabled) btn.click(); });</script>
 
         <!-- Prompt Preview Textarea -->
         <div style="margin-bottom: 30px;">

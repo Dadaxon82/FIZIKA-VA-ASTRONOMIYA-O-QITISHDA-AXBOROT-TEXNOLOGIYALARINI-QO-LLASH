@@ -714,6 +714,8 @@ Iltimos, ushbu jarayonni JavaScript (HTML5 Canvas uchun) yoki Python (NumPy/Matp
         </p>
 
         <!-- Simulator Controls Bar -->
+        <div class="sim-wrap">
+        <div class="sim-box">
         <div style="background:#F3F5F8; padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
           <div class="grid-3" style="gap: 16px; margin-bottom: 14px;">
             <div>
@@ -721,7 +723,7 @@ Iltimos, ushbu jarayonni JavaScript (HTML5 Canvas uchun) yoki Python (NumPy/Matp
                 <span>Qiyalik burchagi ($\alpha$):</span>
                 <strong id="lab6-angle-val" style="color: var(--accent-amber);">30°</strong>
               </label>
-              <input type="range" id="lab6-angle-slider" min="0" max="60" step="1" value="30" style="width: 100%;">
+              <input type="range" id="lab6-angle-slider" data-k="angle" min="0" max="60" step="1" value="30" style="width: 100%;">
             </div>
 
             <div>
@@ -729,7 +731,7 @@ Iltimos, ushbu jarayonni JavaScript (HTML5 Canvas uchun) yoki Python (NumPy/Matp
                 <span>Ishqalanish koeffitsiyenti ($\mu$):</span>
                 <strong id="lab6-mu-val" style="color: var(--accent-cyan);">0,25</strong>
               </label>
-              <input type="range" id="lab6-mu-slider" min="0.0" max="0.8" step="0.01" value="0.25" style="width: 100%;">
+              <input type="range" id="lab6-mu-slider" data-k="mu" min="0.0" max="0.8" step="0.01" value="0.25" style="width: 100%;">
             </div>
 
             <div>
@@ -737,7 +739,7 @@ Iltimos, ushbu jarayonni JavaScript (HTML5 Canvas uchun) yoki Python (NumPy/Matp
                 <span>Jism massasi ($m$):</span>
                 <strong id="lab6-mass-val" style="color: var(--accent-emerald);">2,0 kg</strong>
               </label>
-              <input type="range" id="lab6-mass-slider" min="0.5" max="10.0" step="0.5" value="2.0" style="width: 100%;">
+              <input type="range" id="lab6-mass-slider" data-k="mass" min="0.5" max="10.0" step="0.5" value="2.0" style="width: 100%;">
             </div>
           </div>
 
@@ -811,6 +813,38 @@ Iltimos, ushbu jarayonni JavaScript (HTML5 Canvas uchun) yoki Python (NumPy/Matp
             </div>
           </div>
         </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-incline6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o'zi parametrlarni o'zgartirib natijani tushuntiradi; so'ng boshqaruv sizga o'tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-incline6">
+          <li data-set='{"angle":30,"mu":0.25,"mass":2.0}'>Qiya tekislikka EJD dastgohi: burchak o‘ttiz daraja, ishqalanish koeffitsiyenti 0,25, massa ikki kilogramm. Tangens o‘ttiz darajadan katta — demak jism allaqachon sirpanishi kerak.</li>
+          <li data-set='{"angle":50}'>Burchakni ellik darajagacha oshiramiz. Og‘irlik kuchining qiyalikka parallel tashkil etuvchisi ortadi, natijaviy kuch va tezlanish kattalashadi — jism tezroq sirpanadi.</li>
+          <li data-set='{"mu":0.75}'>Endi ishqalanish koeffitsiyentini 0,75gacha oshiramiz. Ishqalanish kuchi kattalashib, natijaviy kuchni kamaytiradi — tezlanish sezilarli pasayadi.</li>
+          <li data-set='{"angle":30,"mu":0.25,"mass":2.0}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>
+        (function () {
+          var t;
+          ['lab6-angle-slider', 'lab6-mu-slider', 'lab6-mass-slider'].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) el.addEventListener('input', function () {
+              clearTimeout(t);
+              t = setTimeout(function () {
+                var btn = document.getElementById('lab6-play-btn');
+                if (btn && !btn.disabled) btn.click();
+              }, 150);
+            });
+          });
+          document.querySelector('[data-tour="tour-incline6"]')?.addEventListener('click', function () {
+            var btn = document.getElementById('lab6-play-btn');
+            if (btn && !btn.disabled) btn.click();
+          });
+        })();
+        </script>
 
       </div>
     </section>

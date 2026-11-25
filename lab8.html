@@ -707,8 +707,9 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
         </p>
 
         <!-- Simulation Grid: Left Arena, Right Telemetry & Controls -->
-        <div class="lab8-sim-grid">
-          
+        <div class="sim-wrap">
+        <div class="sim-box lab8-sim-grid">
+
           <!-- Canvas Column -->
           <div>
             <div style="background:#F3F5F8; border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
@@ -738,7 +739,7 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
               <!-- Scenario Selector -->
               <div style="margin-bottom: 12px;">
                 <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">Fizik ssenariy:</label>
-                <select id="lab8-scenario-select" style="width: 100%; padding: 8px 10px; background:#F3F5F8; border: 1px solid var(--border-color); color:#11182B; border-radius: var(--radius-sm); font-size: 0.88rem;">
+                <select id="lab8-scenario-select" data-k="scenario" style="width: 100%; padding: 8px 10px; background:#F3F5F8; border: 1px solid var(--border-color); color:#11182B; border-radius: var(--radius-sm); font-size: 0.88rem;">
                   <option value="billiard">1. Bilyard to‘qnashuvi (1:1 massalar, markaziy zarba)</option>
                   <option value="heavy_light">2. Og‘ir va yengil shar (10:1 massalar nisbati)</option>
                   <option value="oblique">3. Qiya to‘qnashuv (2D, nomarkaziy zarba)</option>
@@ -752,7 +753,7 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
                   <span style="color: var(--text-secondary);">Tiklanish koeffitsiyenti (e):</span>
                   <strong id="lab8-restitution-val" style="color: var(--accent-cyan);">1,00</strong>
                 </div>
-                <input type="range" id="lab8-restitution-slider" min="0" max="1" step="0.05" value="1.00" style="width: 100%;">
+                <input type="range" id="lab8-restitution-slider" data-k="e" min="0" max="1" step="0.05" value="1.00" style="width: 100%;">
                 <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;">
                   <span>0,0 (noelastik)</span>
                   <span>0,5 (aralash)</span>
@@ -808,6 +809,19 @@ Iltimos, ushbu formulalarni Python muhitida 10 000 ta tasodifiy to‘qnashuv (m1
           </div>
 
         </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-engine8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o'zi parametrlarni o'zgartirib natijani tushuntiradi; so'ng boshqaruv sizga o'tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-engine8">
+          <li data-set='{"scenario":"#0","e":1.0}'>Bilyard ssenariysi: teng massali ikki shar markaziy zarbada to‘qnashadi, tiklanish koeffitsiyenti bir — mutlaq elastik, energiya to‘liq saqlanadi.</li>
+          <li data-set='{"scenario":"#1"}'>Endi og‘ir va yengil sharlar ssenariysiga o‘tamiz — massalar nisbati o‘n ga bir. Impuls baribir saqlanadi, lekin tezliklar taqsimoti butunlay boshqacha bo‘ladi.</li>
+          <li data-set='{"scenario":"#3","e":0.6}'>Gaz molekulalari xaosi ssenariysini tanlab, tiklanish koeffitsiyentini 0,6gacha tushiramiz — endi to‘qnashuvlar noelastik, kinetik energiya nisbati grafikda asta pasayib boradi.</li>
+          <li data-set='{"scenario":"#0","e":1.0}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-engine8"]')?.addEventListener('click', () => { const btn = document.getElementById('lab8-play-btn'); if (btn && !btn.disabled) btn.click(); });</script>
       </div>
     </section>
 
