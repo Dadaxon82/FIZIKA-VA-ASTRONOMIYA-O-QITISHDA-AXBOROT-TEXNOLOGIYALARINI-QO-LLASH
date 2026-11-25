@@ -1499,30 +1499,31 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
           Porshen holatini (hajm, V) va olov haroratini (T) o‘zgartirish orqali bosim (P) o‘zgarishini real vaqtda kuzating. O‘ng paneldagi P–V grafigi o‘zgarishni qayd etib boradi.
         </p>
 
-        <div style="background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 20px;">
-          
+        <div class="sim-wrap">
+        <div class="sim-box" style="background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 20px;">
+
           <div class="grid-2" style="gap: 20px;">
             <!-- Gas Container Canvas -->
             <div style="background: #1e293b; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); position: relative;">
               <canvas id="lab13-gas-canvas" width="400" height="300" style="width: 100%; height: 300px; background: #000; border-radius: 4px; border: 1px solid #334155; display: block;"></canvas>
             </div>
-            
+
             <!-- P-V Graph Canvas -->
             <div style="background: #1e293b; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
               <canvas id="lab13-pv-canvas" width="300" height="300" style="width: 100%; height: 300px; background: #09090b; border-radius: 4px; border: 1px solid #334155; display: block;"></canvas>
             </div>
           </div>
-          
+
           <!-- Controls -->
           <div style="background: #F3F5F8; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
             <div class="grid-3" style="gap: 15px;">
               <div>
                 <strong style="color: var(--accent-cyan); display:block; margin-bottom: 8px;">Harorat (T): <span id="temp-val">300</span> K</strong>
-                <input type="range" id="temp-slider" min="100" max="1000" value="300" style="width: 100%;">
+                <input type="range" id="temp-slider" data-k="temp" min="100" max="1000" value="300" style="width: 100%;">
               </div>
               <div>
                 <strong style="color: var(--accent-purple); display:block; margin-bottom: 8px;">Hajm / porshen (V): <span id="vol-val">100</span> %</strong>
-                <input type="range" id="vol-slider" min="30" max="100" value="100" style="width: 100%;">
+                <input type="range" id="vol-slider" data-k="vol" min="30" max="100" value="100" style="width: 100%;">
               </div>
               <div style="display: flex; align-items: flex-end; justify-content: center; gap: 10px;">
                 <button class="btn btn-primary" onclick="startGasSim()">Ishga tushirish</button>
@@ -1534,6 +1535,19 @@ function uzExp(x, d) { if (!isFinite(x)) return '\u221e'; if (x === 0) return '0
             </div>
           </div>
         </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-gas13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-gas13">
+          <li data-set='{"temp":300,"vol":100}'>Bu model porshenli idishdagi ideal gazni stoxastik zarrachalar yordamida modellashtiradi. Hozir harorat uch yuz kelvin, hajm to‘liq — yuz foiz.</li>
+          <li data-set='{"vol":40}'>Porshenni siqib, hajmni qirq foizga tushiramiz. Zarrachalar devorga tezroq-tezroq uriladi, bosim ortadi — bu Boyl–Mariott qonuni.</li>
+          <li data-set='{"vol":100,"temp":800}'>Endi hajmni qaytarib, haroratni sakkiz yuz kelvingacha oshiramiz. Zarrachalar tezligi oshadi, bosim yana ko‘tariladi — bu Gey-Lyussak qonuni.</li>
+          <li data-set='{"temp":300,"vol":100}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-gas13"]')?.addEventListener('click', () => { if (typeof isGasRunning !== 'undefined' && !isGasRunning) startGasSim(); });</script>
       </div>
     </section>
 
