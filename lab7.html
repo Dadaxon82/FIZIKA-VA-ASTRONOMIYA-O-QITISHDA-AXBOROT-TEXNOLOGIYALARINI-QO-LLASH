@@ -775,13 +775,15 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
         </p>
 
         <!-- Controls Bar -->
+        <div class="sim-wrap">
+        <div class="sim-box">
         <div style="background:#F3F5F8; padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px;">
           <div class="grid-3" style="gap: 16px; margin-bottom: 14px;">
             <div>
               <label style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Fizik rejimni tanlash:
               </label>
-              <select id="lab7-mode-select" class="btn btn-secondary btn-sm" style="width: 100%;">
+              <select id="lab7-mode-select" data-k="mode" class="btn btn-secondary btn-sm" style="width: 100%;">
                 <option value="ball">⚽ 2D elastik to‘p harakati</option>
                 <option value="oscillator">〰️ Prujinali garmonik tebranish</option>
               </select>
@@ -791,7 +793,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
               <label style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">
                 Kadrlar chastotasini sun’iy cheklash (FPS):
               </label>
-              <select id="lab7-throttle-select" class="btn btn-secondary btn-sm" style="width: 100%;">
+              <select id="lab7-throttle-select" data-k="throttle" class="btn btn-secondary btn-sm" style="width: 100%;">
                 <option value="0">⚡ Cheklovsiz (ekran V-Sync, 60+ Hz)</option>
                 <option value="60">🖥 60 FPS (standart)</option>
                 <option value="30">🐢 30 FPS (cheklangan)</option>
@@ -804,7 +806,7 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
                 <span>Harakat tezligi / masshtab:</span>
                 <strong id="lab7-speed-val" style="color: var(--accent-cyan);">1,0×</strong>
               </label>
-              <input type="range" id="lab7-speed-slider" min="0.2" max="2.5" step="0.1" value="1.0" style="width: 100%;">
+              <input type="range" id="lab7-speed-slider" data-k="speed" min="0.2" max="2.5" step="0.1" value="1.0" style="width: 100%;">
             </div>
           </div>
 
@@ -865,6 +867,20 @@ Kod to‘liq zamonaviy ES6 sinflarida va toza o‘zbekcha izohlar bilan taqdim e
             Holat: <strong id="hud-lab7-status" style="color: #10b981;">Barqaror (FPS ga bog‘liq emas)</strong>
           </div>
         </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-fps7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o'zi parametrlarni o'zgartirib natijani tushuntiradi; so'ng boshqaruv sizga o'tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-fps7">
+          <li data-set='{"mode":"#0","throttle":"#1","speed":1.0}'>Bu dastgoh delta-time integratsiyasining ahamiyatini ko‘rsatadi. Hozir to‘p rejimi, chastota oltmish FPS ga cheklangan, tezlik masshtabi bitta.</li>
+          <li data-set='{"throttle":"#3"}'>Chastotani o‘n besh FPS gacha tushiramiz. Delta-time yoqilgani uchun to‘pning haqiqiy tezligi o‘zgarmaydi — faqat animatsiya "sakrab" harakatlanganday ko‘rinadi.</li>
+          <li data-set='{"mode":"#1","throttle":"#1","speed":1.5}'>Endi prujinali garmonik tebranish rejimiga o‘tamiz, chastotani oltmish FPS ga qaytaramiz va tezlik masshtabini bir yarimga oshiramiz — tebranish davri FPS dan mustaqil qoladi.</li>
+          <li data-set='{"mode":"#0","throttle":"#1","speed":1.0}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-fps7"]')?.addEventListener('click', () => { const btn = document.getElementById('lab7-play-btn'); if (btn && !btn.disabled) btn.click(); });</script>
 
       </div>
     </section>

@@ -779,7 +779,8 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
         </p>
 
         <!-- Canvas Stendi -->
-        <div style="background: rgba(11, 17, 32, 0.95); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 18px; margin-bottom: 20px;">
+        <div class="sim-wrap">
+        <div class="sim-box" style="background: rgba(11, 17, 32, 0.95); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 18px; margin-bottom: 20px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
             <div style="display: flex; gap: 10px;">
               <button id="sim-play-pause" class="btn btn-primary btn-sm">⏸️ To‘xtatish</button>
@@ -806,7 +807,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
                 <label for="sim-mass">Massa ($m$):</label>
                 <strong id="val-sim-mass" style="color: var(--accent-cyan);">1,0 kg</strong>
               </div>
-              <input type="range" id="sim-mass" min="0.5" max="3.0" step="0.1" value="1.0" style="width: 100%;">
+              <input type="range" id="sim-mass" data-k="m" min="0.5" max="3.0" step="0.1" value="1.0" style="width: 100%;">
             </div>
 
             <div>
@@ -814,7 +815,7 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
                 <label for="sim-spring">Bikrlik ($k$):</label>
                 <strong id="val-sim-spring" style="color: var(--accent-amber);">20,0 N/m</strong>
               </div>
-              <input type="range" id="sim-spring" min="5" max="50" step="1" value="20" style="width: 100%;">
+              <input type="range" id="sim-spring" data-k="k" min="5" max="50" step="1" value="20" style="width: 100%;">
             </div>
 
             <div>
@@ -822,9 +823,21 @@ Ushbu ma’lumotlar asosida IMRaD (Title, Abstract, Introduction, Reverse Engine
                 <label for="sim-damping">Muhit qarshiligi ($b$):</label>
                 <strong id="val-sim-damping" style="color: var(--accent-emerald);">0,35 kg/s</strong>
               </div>
-              <input type="range" id="sim-damping" min="0.0" max="1.5" step="0.05" value="0.35" style="width: 100%;">
+              <input type="range" id="sim-damping" data-k="b" min="0.0" max="1.5" step="0.05" value="0.35" style="width: 100%;">
             </div>
           </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-oscillator2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-oscillator2">
+          <li data-set='{"m":1.0,"k":20,"b":0.35}'>Bu dastgoh prujina-yuk tizimining so‘nuvchi tebranishini Eyler–Kromer usulida hisoblaydi. Hozir massa bir kilogramm, bikrlik yigirma n’yuton metrga, qarshilik esa kichik — shuning uchun amplituda sekin so‘nadi.</li>
+          <li data-set='{"b":1.2}'>Muhit qarshiligini sezilarli oshiramiz. Endi so‘nish koeffitsiyenti beta ortadi, tebranish amplitudasi tezroq kamayadi — grafikdagi sariq egri chiziq tezda tekislanadi.</li>
+          <li data-set='{"b":0.1,"k":45}'>Qarshilikni yana kamaytirib, prujina bikrligini oshiramiz. Bu siklik chastota ω₀ = √(k/m) ni oshiradi — yuk tezroq tebranadi.</li>
+          <li data-set='{"m":1.0,"k":20,"b":0.35}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
         </div>
 
         <!-- Claude sokratik validator interfeysi -->

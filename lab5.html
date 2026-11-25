@@ -758,6 +758,8 @@ Quyidagi elementlar bo‘lishi shart:
         </p>
 
         <!-- Boshqaruv Tugmalari -->
+        <div class="sim-wrap">
+        <div class="sim-box">
         <div class="glass-panel" style="padding: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
             <button id="lab5-btn-play" class="btn btn-primary" style="padding: 9px 20px;">▶ Ikkala simulyatsiyani boshlash</button>
@@ -790,13 +792,13 @@ Quyidagi elementlar bo‘lishi shart:
                 <label style="color: var(--accent-cyan); font-weight: 600; display: block; margin-bottom: 2px;">
                   Sayyora massasi: <span id="lab5-mass-val" style="color: var(--text-main); font-family: var(--font-mono);">1,0 M<sub style="font-size: 0.6em;">⊕</sub></span>
                 </label>
-                <input type="range" id="lab5-mass-slider" min="0.2" max="3.0" step="0.1" value="1.0" style="width: 100%; cursor: pointer;">
+                <input type="range" id="lab5-mass-slider" data-k="mass" min="0.2" max="3.0" step="0.1" value="1.0" style="width: 100%; cursor: pointer;">
               </div>
               <div>
                 <label style="color: var(--accent-emerald); font-weight: 600; display: block; margin-bottom: 2px;">
                   Boshlang‘ich tezlik v₀: <span id="lab5-vel-val" style="color: var(--text-main); font-family: var(--font-mono);">2,8</span>
                 </label>
-                <input type="range" id="lab5-vel-slider" min="1.5" max="4.0" step="0.1" value="2.8" style="width: 100%; cursor: pointer;">
+                <input type="range" id="lab5-vel-slider" data-k="vel" min="1.5" max="4.0" step="0.1" value="2.8" style="width: 100%; cursor: pointer;">
               </div>
             </div>
 
@@ -825,13 +827,13 @@ Quyidagi elementlar bo‘lishi shart:
                 <label style="color: var(--accent-purple); font-weight: 600; display: block; margin-bottom: 2px;">
                   Gaz harorati T: <span id="lab5-temp-val" style="color: var(--text-main); font-family: var(--font-mono);">300 K</span>
                 </label>
-                <input type="range" id="lab5-temp-slider" min="100" max="600" step="25" value="300" style="width: 100%; cursor: pointer;">
+                <input type="range" id="lab5-temp-slider" data-k="temp" min="100" max="600" step="25" value="300" style="width: 100%; cursor: pointer;">
               </div>
               <div>
                 <label style="color: var(--accent-rose); font-weight: 600; display: block; margin-bottom: 2px;">
                   Molekulalar soni N: <span id="lab5-count-val" style="color: var(--text-main); font-family: var(--font-mono);">65 ta</span>
                 </label>
-                <input type="range" id="lab5-count-slider" min="20" max="130" step="5" value="65" style="width: 100%; cursor: pointer;">
+                <input type="range" id="lab5-count-slider" data-k="count" min="20" max="130" step="5" value="65" style="width: 100%; cursor: pointer;">
               </div>
             </div>
 
@@ -843,6 +845,20 @@ Quyidagi elementlar bo‘lishi shart:
           </div>
 
         </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-detsto5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-detsto5">
+          <li data-set='{"mass":1.0,"vel":2.8,"temp":300,"count":65}'>Bu dastgohda ikki tizim bir vaqtda ishlaydi: chapda — Nyuton gravitatsiyasiga bo‘ysunuvchi deterministik orbita, o‘ngda — molekulalar to‘qnashuvidan hosil bo‘ladigan stoxastik Broun harakati. Hozirgi boshlang‘ich tezlik va harorat qiymatlarida orbita yopiq ellips hosil qiladi.</li>
+          <li data-set='{"vel":1.8}'>Boshlang‘ich tezlikni kamaytiramiz. Orbita kichikroq va davri qisqaroq ellipsga aylanadi — Kepler qonuniga ko‘ra energiya kamayganda orbita “torayadi”.</li>
+          <li data-set='{"temp":600,"count":130}'>Endi gaz haroratini va molekulalar sonini oshiramiz. Molekulalar tezroq harakatlanadi, markaziy qizil zarracha tezroq va keskinroq siljiydi — bu Broun harakati fluktuatsiyasining issiqlik energiyasiga bog‘liqligini ko‘rsatadi.</li>
+          <li data-set='{"mass":1.0,"vel":2.8,"temp":300,"count":65}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-detsto5"]')?.addEventListener('click', () => { document.getElementById('lab5-btn-play')?.click(); });</script>
 
         <!-- Tahliliy Qiyoslash Xulosasi Bloki -->
         <div class="glass-panel" style="padding: 18px;">

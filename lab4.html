@@ -815,15 +815,17 @@ plt.show()</textarea>
         </p>
 
         <!-- Boshqaruv Paneli -->
+        <div class="sim-wrap">
+        <div class="sim-box">
         <div class="glass-panel" style="padding: 18px; margin-bottom: 20px;">
           <div class="grid-4" style="gap: 16px; align-items: center;">
-            
+
             <!-- dt slayderi -->
             <div>
               <label style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600; display: block; margin-bottom: 4px;">
                 ⏱ Integratsiya qadami (Δt): <span id="lab4-dt-val" style="color: var(--text-main); font-family: var(--font-mono);">0,050 s</span>
               </label>
-              <input type="range" id="lab4-dt-slider" min="0.005" max="0.25" step="0.005" value="0.05" style="width: 100%; cursor: pointer;">
+              <input type="range" id="lab4-dt-slider" data-k="dt" min="0.005" max="0.25" step="0.005" value="0.05" style="width: 100%; cursor: pointer;">
               <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted);">
                 <span>0,005 s (aniq)</span>
                 <span>0,25 s (dag‘al)</span>
@@ -835,7 +837,7 @@ plt.show()</textarea>
               <label style="font-size: 0.85rem; color: var(--accent-amber); font-weight: 600; display: block; margin-bottom: 4px;">
                 📐 Boshlang‘ich burchak (θ₀): <span id="lab4-theta0-val" style="color: var(--text-main); font-family: var(--font-mono);">0,20 rad (11,5°)</span>
               </label>
-              <input type="range" id="lab4-theta0-slider" min="0.05" max="0.8" step="0.01" value="0.20" style="width: 100%; cursor: pointer;">
+              <input type="range" id="lab4-theta0-slider" data-k="theta0" min="0.05" max="0.8" step="0.01" value="0.20" style="width: 100%; cursor: pointer;">
               <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted);">
                 <span>0,05 rad (3°)</span>
                 <span>0,80 rad (46°)</span>
@@ -847,7 +849,7 @@ plt.show()</textarea>
               <label style="font-size: 0.85rem; color: var(--accent-emerald); font-weight: 600; display: block; margin-bottom: 4px;">
                 📏 Ip uzunligi (L): <span id="lab4-length-val" style="color: var(--text-main); font-family: var(--font-mono);">1,00 m</span>
               </label>
-              <input type="range" id="lab4-length-slider" min="0.5" max="2.0" step="0.1" value="1.0" style="width: 100%; cursor: pointer;">
+              <input type="range" id="lab4-length-slider" data-k="L" min="0.5" max="2.0" step="0.1" value="1.0" style="width: 100%; cursor: pointer;">
               <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted);">
                 <span>0,5 m</span>
                 <span>2,0 m</span>
@@ -859,7 +861,7 @@ plt.show()</textarea>
               <label style="font-size: 0.85rem; color:#7C3AED; font-weight: 600; display: block; margin-bottom: 4px;">
                 ⚙️ Sonli integratsiya usuli:
               </label>
-              <select id="lab4-method-select" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B; cursor: pointer;">
+              <select id="lab4-method-select" data-k="method" style="width: 100%; padding: 8px; background:#F3F5F8; border: 1px solid var(--border-color); border-radius: 6px; color:#11182B; cursor: pointer;">
                 <option value="euler">1. Oddiy (oshkor) Eyler</option>
                 <option value="cromer" selected>2. Eyler–Kromer (simplektik)</option>
                 <option value="rk4">3. Runge–Kutta 4 (RK4)</option>
@@ -906,6 +908,20 @@ plt.show()</textarea>
           </div>
 
         </div>
+        </div>
+        <div class="tour-bar">
+          <button class="voice-btn" type="button" data-tour="tour-pendulum4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Ovozli namoyish</span></button>
+          <span class="muted" style="font-size:.82rem; color: var(--text-muted);">Model o‘zi parametrlarni o‘zgartirib natijani tushuntiradi; so‘ng boshqaruv sizga o‘tadi.</span>
+        </div>
+        <div class="tour-cap" aria-live="polite"></div>
+        <ol class="vh tour-steps" id="tour-pendulum4">
+          <li data-set='{"method":"#1","dt":0.05,"theta0":0.2,"L":1.0}'>Bu dastgoh mayatnik tenglamasini uch xil sonli usulda yechib, juda kichik qadamli RK4 etalon yechim bilan solishtiradi. Hozir Eyler–Kromer usuli, qadam 0,05 soniya qo‘llanilmoqda — xatolik juda kichik.</li>
+          <li data-set='{"method":"#0","dt":0.2}'>Endi oddiy (oshkor) Eyler usuliga o‘tamiz va qadamni dag‘allashtiramiz — 0,2 soniyagacha. Diqqat qiling: pastdagi |Δθ| grafigi va energiya qiymati tez o‘sib ketadi — bu usul energiyani sun’iy ravishda qo‘shib, mayatnikni "portlatadi".</li>
+          <li data-set='{"method":"#2"}'>Endi xuddi shu katta qadamda Runge–Kutta 4 (RK4) usuliga o‘tamiz. Xatolik darhol necha barobar kichrayadi — RK4 to‘rtinchi tartibli aniqlikka ega.</li>
+          <li data-set='{"method":"#1","dt":0.05,"theta0":0.2,"L":1.0}'>Parametrlarni boshlang‘ich holatga qaytaramiz.</li>
+        </ol>
+        </div>
+        <script>document.querySelector('[data-tour="tour-pendulum4"]')?.addEventListener('click', () => { document.getElementById('lab4-btn-play')?.click(); });</script>
 
         <!-- Dinamik Qiyosiy Xatolik Jadvali -->
         <div class="glass-panel" style="padding: 20px;">
